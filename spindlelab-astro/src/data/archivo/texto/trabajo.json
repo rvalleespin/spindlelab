@@ -1,0 +1,242 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
+ "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "id": "trabajo",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "trabajo",
+  "ruta": "/v3/trabajo/",
+  "title": "Trabajo de diseño y desarrollo web · SpindleLab",
+  "description": "Sitios, una app y herramientas que diseñamos y programamos, y cuatro marcas inventadas para rubros que atendemos. Cada entrada dice de quién es y qué se midió.",
+  "senales": "Simón, e12/senales-obra.md §2.2 (el title de Simón, con la consulta que lo buscaría; la description es la mía)",
+  "estructura": "spec-visual.md §2.2: barra lateral con el h1, el conteo, la entradilla y el filtro; a la derecha el muro de dos columnas.",
+  "secciones": [
+   {
+    "id": "cabecera",
+    "nombre": "Título, bajada y filtro",
+    "trabajo": "Decir qué hay y cómo leer el tipo de cada entrada, sobre todo qué es un concepto.",
+    "elementos": [
+     {
+      "id": "trabajo.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Trabajo",
+      "uso": "miga",
+      "estado": "nuevo"
+     },
+     {
+      "id": "trabajo.h1",
+      "rol": "h1",
+      "tinta": "Trabajo.",
+      "gris": "Lo que diseñamos y programamos, y cómo lo resolveríamos en tu rubro.",
+      "texto": "Trabajo. Lo que diseñamos y programamos, y cómo lo resolveríamos en tu rubro.",
+      "estado": "queda",
+      "origen": "texto-paso2.json «trabajo.h1»"
+     },
+     {
+      "id": "trabajo.entradilla",
+      "rol": "entradilla",
+      "texto": "Cada entrada dice de quién es. Cliente es un encargo pagado: hoy hay uno con caso publicado, con sus dos sitios. Propio lo hicimos para nosotros, sin encargo. Concepto es una marca inventada para mostrar cómo trabajaríamos un rubro: no existe, no tuvo clientes y no lleva cifras.",
+      "estado": "queda",
+      "origen": "texto-paso2.json «trabajo.entradilla»"
+     },
+     {
+      "id": "trabajo.conteo",
+      "rol": "rotulo",
+      "texto": "(10)",
+      "nota": "Conteo verdadero de entradas; sale del dato, no se escribe a mano.",
+      "estado": "queda",
+      "origen": "texto-paso2.json «trabajo.conteo»"
+     },
+     {
+      "id": "trabajo.filtro",
+      "rol": "rotulo",
+      "uso": "filtro",
+      "opciones": [
+       "Todo (10)",
+       "Cliente (2)",
+       "Propio (4)",
+       "Concepto (4)"
+      ],
+      "nota": "El filtro filtra de verdad (encargo §2, vista 2). Los conteos salen del dato. Tres tipos y no cuatro: el lock §7 separaba «herramienta», pero Verifica y Cumple también es una herramienta gratis y la diferencia no se podía explicar en una línea. Si Lucía la quiere de vuelta, la entradilla suma una frase.",
+      "estado": "queda",
+      "origen": "texto-paso2.json «trabajo.filtro»"
+     },
+     {
+      "id": "trabajo.filtro.nombre",
+      "rol": "nota",
+      "texto": "Filtrar por tipo",
+      "uso": "nombre accesible",
+      "donde": "aria-label del grupo de botones del filtro (cada botón con aria-pressed)",
+      "estado": "nuevo"
+     }
+    ],
+    "borrado": [
+     "«trabajo.nota-herramientas» sale: en A la línea mono es tipo · año, sin herramientas (texto-paso2, «Para la construcción», dirección A). Las herramientas van en el caso, después de lo que hacen. La spec §2.2 permite «hasta dos ingredientes»: cero cabe en ese tope.",
+     "La columna «Resultado» es de B y no va en A; queda en texto-paso2.json."
+    ]
+   }
+  ],
+  "entradas": [
+   {
+    "id": "combeau-fotografia",
+    "nombre": "Combeau, fotografía",
+    "bajada": "El sitio de un fotógrafo de retrato. Él sube sus series desde un panel, y el sitio las publica con cada foto ajustada a la pantalla de quien la mira.",
+    "tipo": "Cliente",
+    "anio": "2026",
+    "linea": "Cliente · 2026",
+    "destino": "/v3/trabajo/combeau/#fotografia",
+    "cursor": "Ver el caso",
+    "fuente": "inventario-casos §2.1 (las dos etiquetas y su efecto: «él carga sus series solo», «805 kB → 95 kB»)",
+    "estado": "queda",
+    "origen": "texto-paso2.json trabajo.entradas «combeau-fotografia»",
+    "herramientas_fuera": [
+     "Decap CMS",
+     "Netlify Image CDN"
+    ]
+   },
+   {
+    "id": "praxi",
+    "nombre": "Praxi",
+    "bajada": "Una app de entrenamiento con un coach de IA que se acuerda de cada serie. El modelo conversa; cuándo subir el peso lo calcula el código.",
+    "tipo": "Propio",
+    "anio": "2026",
+    "linea": "Propio · 2026",
+    "destino": "/v3/trabajo/praxi/",
+    "cursor": "Ver el caso",
+    "fuente": "inventario-praxi §4 y §8.1",
+    "estado": "queda",
+    "origen": "texto-paso2.json trabajo.entradas «praxi»",
+    "herramientas_fuera": [
+     "API de Anthropic",
+     "Lógica de entrenamiento en código"
+    ],
+    "nota": "Si su portada del muro lleva personas, va con «Las personas están generadas con IA.»"
+   },
+   {
+    "id": "sesenta",
+    "nombre": "Sesenta",
+    "bajada": "Un estudio de abogados laborales que no existe, del lado del trabajador. Su portada cuenta los días hábiles que te quedan para demandar.",
+    "tipo": "Concepto",
+    "anio": "2026",
+    "linea": "Concepto · 2026",
+    "destino": "/v3/trabajo/sesenta/",
+    "cursor": "Ver el concepto",
+    "fuente": "marketing/portafolio/06-sesenta/ficha.md §4.1 y §6",
+    "estado": "queda",
+    "origen": "texto-paso2.json trabajo.entradas «sesenta»"
+   },
+   {
+    "id": "verifica-y-cumple",
+    "nombre": "Verifica y Cumple",
+    "bajada": "Revisa gratis las señales técnicas que la Ley 21.719, de datos personales, le pide a un sitio con formulario. No es asesoría legal ni certifica que cumples.",
+    "tipo": "Propio",
+    "anio": "2026",
+    "linea": "Propio · 2026",
+    "destino": "https://verifica.spindlelab.cl/",
+    "cursor": "Ver el sitio",
+    "fuente": "inventario-casos §2.3 y §4.1 y §7 («describe señales; no certifica»)",
+    "estado": "queda",
+    "origen": "texto-paso2.json trabajo.entradas «verifica-y-cumple»",
+    "herramientas_fuera": [
+     "Cloudflare Pages Functions"
+    ],
+    "pie": "La persona a caballo de esta portada está generada con IA.",
+    "nota": "Enlaza al producto, que responde; con la flecha ↗ en SVG junto al nombre y, oculto a la vista, «(sitio aparte: verifica.spindlelab.cl)»."
+   },
+   {
+    "id": "ocelo",
+    "nombre": "Ocelo",
+    "bajada": "Una clínica de ojos que no existe, en Providencia. En vez de prometer que vas a dejar los lentes, te muestra el examen que dice si te puedes operar.",
+    "tipo": "Concepto",
+    "anio": "2026",
+    "linea": "Concepto · 2026",
+    "destino": "/v3/trabajo/ocelo/",
+    "cursor": "Ver el concepto",
+    "fuente": "marketing/portafolio/05-ocelo/caso.md (Desafío, Estrategia) y ficha.md §6",
+    "estado": "queda",
+    "origen": "texto-paso2.json trabajo.entradas «ocelo»"
+   },
+   {
+    "id": "combeau-modelo",
+    "nombre": "Combeau, modelo",
+    "bajada": "El mismo cliente, el otro oficio: su book de modelo, en inglés, que también se edita desde el panel. Los videos se descargan solo cuando alguien los abre.",
+    "tipo": "Cliente",
+    "anio": "2026",
+    "linea": "Cliente · 2026",
+    "destino": "/v3/trabajo/combeau/#modelo",
+    "cursor": "Ver el caso",
+    "fuente": "inventario-casos §2.2 («0 kB de video en la carga inicial»)",
+    "estado": "queda",
+    "origen": "texto-paso2.json trabajo.entradas «combeau-modelo»",
+    "herramientas_fuera": [
+     "Decap CMS",
+     "Video con carga diferida"
+    ]
+   },
+   {
+    "id": "doceavo",
+    "nombre": "Doceavo",
+    "bajada": "Un estudio contable que no existe, en Concepción. Su portada te dice cuándo vence tu próxima declaración mensual, y su logo cambia cada mes.",
+    "tipo": "Concepto",
+    "anio": "2026",
+    "linea": "Concepto · 2026",
+    "destino": "/v3/trabajo/doceavo/",
+    "cursor": "Ver el concepto",
+    "fuente": "marketing/portafolio/07-doceavo/caso.md (Estrategia, Identidad)",
+    "estado": "queda",
+    "origen": "texto-paso2.json trabajo.entradas «doceavo»"
+   },
+   {
+    "id": "chequeo",
+    "nombre": "El chequeo de 21 señales",
+    "bajada": "Escribes la dirección de un sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué se dedica. También avisa si el servidor los echa aunque tu configuración los deje pasar.",
+    "tipo": "Propio",
+    "anio": "2026",
+    "linea": "Propio · 2026",
+    "destino": "/v3/diagnostico/",
+    "cursor": "Ir al chequeo",
+    "fuente": "inventario-casos §2.4 y §4.4",
+    "estado": "cambia",
+    "origen": "texto-paso2.json trabajo.entradas «chequeo»",
+    "herramientas_fuera": [
+     "Cloudflare Pages Functions",
+     "Prueba con robots de IA"
+    ],
+    "antes": "Escribes un dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden entrar y entender a qué se dedica. También avisa si el servidor los echa aunque tu configuración los deje pasar.",
+    "por_que": "«pueden entrar» le sonó a hackeo al gerente en la lectura fría (texto-paso2, home, «Lo que se borró»), y la home y /diagnostico/ ya lo dicen así: un solo idioma para el chequeo."
+   },
+   {
+    "id": "tonela",
+    "nombre": "Tonela",
+    "bajada": "Un proveedor de izaje que no existe, en Antofagasta: eslingas, cadenas y grilletes. Ordena su sitio con el color que la norma le da a cada capacidad de carga.",
+    "tipo": "Concepto",
+    "anio": "2026",
+    "linea": "Concepto · 2026",
+    "destino": "/v3/trabajo/tonela/",
+    "cursor": "Ver el concepto",
+    "fuente": "marketing/portafolio/04-tonela/caso.md (Desafío, Estrategia)",
+    "estado": "queda",
+    "origen": "texto-paso2.json trabajo.entradas «tonela»"
+   },
+   {
+    "id": "spindlelab",
+    "nombre": "spindlelab.cl",
+    "bajada": "Este sitio. El chequeo de la portada corre en nuestro servidor, y las herramientas que miden las visitas, Google Analytics y el píxel de Meta, no cargan hasta que aceptas las cookies.",
+    "tipo": "Propio",
+    "anio": "2026",
+    "linea": "Propio · 2026",
+    "fuente": "inventario-casos §2.6 y §4.1 (36 y 73 son dichos, sin crudo). El 100 del 14-oct no va: con la regla cambiada, el abogado lo leyó como «cambiaron la escala y ahora sacan el máximo» (lectura fría, vuelta 2). La alternativa: inventario-casos.json «GA4 y Meta Pixel tras el aviso de cookies», medido en e12/inventario/crudo/carga-playwright.json (16-oct-2026 17:54Z, portada de producción, 3 corridas a 1440 y a 390, sin aceptar cookies: el único tercero es static.cloudflareinsights.com, unos 10,6 kB)",
+    "estado": "cambia",
+    "origen": "texto-paso2.json trabajo.entradas «spindlelab»",
+    "herramientas_fuera": [
+     "Cloudflare Pages Functions",
+     "Analítica tras el aviso de cookies"
+    ],
+    "nota": "Sin enlace: es este sitio. La pieza no es un enlace, no tiene círculo ni velo (spec §2.2).",
+    "antes": "Este sitio. El chequeo de la portada corre en nuestro servidor, y Google Analytics y el píxel de Meta no cargan hasta que aceptas las cookies.",
+    "por_que": "Lectura fría, 19-oct: no sabía qué es el píxel de Meta. Ahora dice para qué sirven los dos antes de nombrarlos."
+   }
+  ],
+  "orden": "El orden del muro de la spec §2.2, que es el del paso 2: una de cliente primero y los conceptos intercalados."
+ }
+}

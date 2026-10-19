@@ -1,0 +1,178 @@
+---
+// ÍNDICE DE TRABAJO DE A · ARCHIVO (obra E12, corrida 2, tanda 2). Diego, 19-oct-2026.
+//
+// La URL no cambia: /v3/trabajo/ pasa de src/pages/v3/trabajo.astro (la página de driftime, que A reemplaza) a
+// src/pages/v3/trabajo/index.astro, para que los casos vivan al lado (/v3/trabajo/<caso>/).
+//
+// Contrato: spec-visual.md §2.2 (barra lateral desde 1194, filtro que filtra de verdad, muro de dos columnas en el
+// orden de Clara, adónde lleva cada entrada), §3.3 (las diez portadas), §3.4 (techo de campo del índice) y §4.
+// Implementación de referencia: tableros/e12-direcciones/proto/a/trabajo/; donde difiere, manda la spec.
+//
+// El texto es de Clara, tal cual (texto-obra.json, «trabajo»: el h1, la entradilla, el conteo, el filtro y las diez
+// entradas con su bajada, su línea mono y su destino). Los conteos salen de las entradas y el build se cae si no
+// dicen lo mismo que el texto de Clara. Las señales, de Simón (senales-obra.md §2.2): CollectionPage + ItemList +
+// BreadcrumbList; el ItemList sigue el orden del muro y una entrada sin enlace va como CreativeWork sin url.
+//
+// El muro va en el orden de Clara en el documento (así lo lee el teclado y el lector de pantalla) y se reparte en dos
+// columnas con la retícula: cada pieza a la columna más corta (muro.mjs; sin JS, la columna que le toca con las alturas
+// de su proporción). desvios.md, tanda 2.
+import Layout from '../../../layouts/Layout.astro';
+import PaginaA from '../../../components/a/PaginaA.astro';
+import Pieza from '../../../components/a/Pieza.astro';
+import Miga from '../../../components/a/Miga.astro';
+import { LAYOUT_A } from '../../../components/a/layout-a';
+import { textoDe, igualQue } from '../../../data/archivo/texto.mjs';
+import comun from '../../../data/archivo/texto/comun.json';
+import trabajo from '../../../data/archivo/texto/trabajo.json';
+import medios from '../../../data/archivo/medios.json';
+
+const t = textoDe(trabajo, comun);
+const pagina = trabajo.texto;
+const m = medios.medios;
+const externo = t('comun.externo').texto;
+
+// Las diez portadas en las tres proporciones de Koto (spec §2.2, en el orden de Clara). spindlelab.cl lleva la captura
+// de /privacidad/ y no la del prototipo, que es la portada con el hilo de oro (spec §6.8): desvios.md, tanda 2.
+const PORTADAS: Record<string, { medio: string; forma: 'p-45' | 'p-43' | 'p-53' }> = {
+  'combeau-fotografia': { medio: 'combeau-fotografia-45', forma: 'p-45' },
+  praxi: { medio: 'praxi-43', forma: 'p-43' },
+  sesenta: { medio: 'sesenta-45', forma: 'p-45' },
+  'verifica-y-cumple': { medio: 'verifica-y-cumple-53', forma: 'p-53' },
+  ocelo: { medio: 'ocelo-43', forma: 'p-43' },
+  'combeau-modelo': { medio: 'combeau-modelo-45', forma: 'p-45' },
+  doceavo: { medio: 'doceavo-53', forma: 'p-53' },
+  chequeo: { medio: 'chequeo-43', forma: 'p-43' },
+  tonela: { medio: 'tonela-45', forma: 'p-45' },
+  spindlelab: { medio: 'spindlelab-privacidad-53', forma: 'p-53' },
+};
+const ALTO = { 'p-45': 5 / 4, 'p-43': 3 / 4, 'p-53': 3 / 5 } as const;
+
+type Entrada = { id: string; nombre: string; bajada: string; tipo: string; linea: string; destino?: string; cursor?: string; pie?: string };
+const entradas = (pagina.entradas as Entrada[]).map((e) => {
+  const p = PORTADAS[e.id];
+  if (!p) throw new Error(`/trabajo/: la entrada «${e.id}» no tiene portada`);
+  return { ...e, ...p, medio: m[p.medio as keyof typeof m], clave: e.tipo.toLowerCase() };
+});
+
+// La columna de cada pieza sin JS: la más corta, con el alto de su proporción y unas líneas de texto (como el
+// prototipo, data-alto). muro.mjs la vuelve a calcular con el alto medido.
+{
+  const cols = [0, 0];
+  for (const e of entradas as (typeof entradas[number] & { columna?: number })[]) {
+    const c = cols[0] <= cols[1] ? 0 : 1;
+    e.columna = c + 1;
+    cols[c] += ALTO[e.forma] + 0.2 + (e.pie ? 0.05 : 0);
+  }
+}
+
+// Los conteos (spec §2.2; Clara: «salen del dato»): el total y uno por tipo, iguales al texto del filtro.
+const contar = (clave?: string) => entradas.filter((e) => !clave || e.clave === clave).length;
+const opciones = (t('trabajo.filtro').opciones as string[]).map((o) => {
+  const [, nombre, n] = o.match(/^(.+) \((\d+)\)$/) || [];
+  if (!nombre) throw new Error(`/trabajo/: opción del filtro sin conteo: «${o}»`);
+  const clave = nombre === 'Todo' ? 'todo' : nombre.toLowerCase();
+  igualQue(String(contar(clave === 'todo' ? undefined : clave)), n, `/trabajo/, conteo de «${nombre}»`);
+  return { texto: o, nombre, n, clave };
+});
+const conteo = t('trabajo.conteo').texto;
+igualQue(conteo, `(${entradas.length})`, '/trabajo/, el conteo del título');
+
+// ---- Señales (Simón, senales-obra.md §2.2)
+const title = pagina.title;
+const description = pagina.description;
+if (title.length > 60 || description.length < 120 || description.length > 160) {
+  throw new Error(`/trabajo/: title (${title.length}) o description (${description.length}) fuera de los largos de senales-obra.md §1.2`);
+}
+const URL_FINAL = 'https://spindlelab.cl/trabajo/';
+// La URL final (sin /v3/) de adonde lleva cada entrada; las de fuera, tal cual; sin destino, sin url.
+const final = (d?: string) => (!d ? undefined : /^https?:/.test(d) ? d : `https://spindlelab.cl${d.replace(/^\/v3\//, '/')}`);
+// El nombre del ListItem (Simón): Combeau con su nombre completo y los conceptos marcados como tales.
+const nombreLista = (e: (typeof entradas)[number]) =>
+  e.id.startsWith('combeau-') ? `Bernardo ${e.nombre}` : e.clave === 'concepto' ? `${e.nombre} (concepto)` : e.nombre;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${URL_FINAL}#collectionpage`,
+      url: URL_FINAL,
+      name: title,
+      description,
+      inLanguage: 'es-CL',
+      isPartOf: { '@id': 'https://spindlelab.cl/#website' },
+      about: { '@id': 'https://spindlelab.cl/#org' },
+      breadcrumb: { '@id': `${URL_FINAL}#breadcrumb` },
+      mainEntity: { '@id': `${URL_FINAL}#itemlist` },
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${URL_FINAL}#itemlist`,
+      numberOfItems: entradas.length,
+      itemListOrder: 'https://schema.org/ItemListUnordered',
+      itemListElement: entradas.map((e, i) =>
+        final(e.destino)
+          ? { '@type': 'ListItem', position: i + 1, name: nombreLista(e), url: final(e.destino) }
+          : { '@type': 'ListItem', position: i + 1, item: { '@type': 'CreativeWork', name: nombreLista(e) } }
+      ),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${URL_FINAL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
+        { '@type': 'ListItem', position: 2, name: 'Trabajo', item: URL_FINAL },
+      ],
+    },
+  ],
+};
+const h1 = t('trabajo.h1') as { tinta: string; gris: string };
+const miga = (t('trabajo.miga').texto as string).split(' · ');
+---
+<Layout title={title} description={description} ogImage="/assets/img/og-e12-trabajo.jpg?v=1" ogImageAlt="Tres piezas de SpindleLab: el sitio de un fotógrafo, la app Praxi y Sesenta, un concepto." {...LAYOUT_A}>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  <PaginaA>
+    <div class="indice">
+      {/* La barra lateral (desde 1194, pegajosa; bajo 1194, arriba del muro): miga, h1 en dos tintas, conteo, entradilla
+           y el filtro, que filtra de verdad (muro.mjs). */}
+      <div class="indice__lateral">
+        <Miga items={[{ texto: miga[0], href: '/v3/' }, { texto: miga[1] }]} />
+        <h1 class="t-titulo"><span class="tinta">{h1.tinta}</span> <span class="gris">{h1.gris}</span></h1>
+        <p class="rotulo">{conteo}</p>
+        <p class="chico">{t('trabajo.entradilla').texto}</p>
+        <div class="filtro" role="group" aria-label={t('trabajo.filtro.nombre').texto} data-filtro>
+          <ul>
+            {opciones.map((o, i) => (
+              <li><button type="button" data-tipo={o.clave} aria-pressed={i === 0 ? 'true' : 'false'} aria-label={o.texto}>{o.nombre}<span class="filtro__n rotulo" aria-hidden="true">({o.n})</span></button></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      {/* El muro: dos columnas desde 834, una bajo 834; en el documento, el orden de Clara. */}
+      <div class="muro" data-muro>
+        {entradas.map((e) => (
+          <Pieza
+            id={e.id}
+            nombre={e.nombre}
+            bajada={e.bajada}
+            linea={e.linea}
+            destino={e.destino}
+            cursor={e.cursor}
+            pie={e.pie}
+            medio={e.medio}
+            forma={e.forma}
+            externo={externo}
+            nivel="h2"
+            indice
+            tipo={e.clave}
+            columna={(e as { columna?: number }).columna}
+          />
+        ))}
+      </div>
+    </div>
+  </PaginaA>
+</Layout>
+
+<script>
+  import '../../../scripts/archivo/muro.mjs';
+</script>

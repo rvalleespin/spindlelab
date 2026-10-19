@@ -1,164 +1,139 @@
 ---
-// HOME — sistema driftime (5-oct-2026).
+// HOME DE A · ARCHIVO (obra E12, corrida 2, tanda 2). Diego, 19-oct-2026.
 //
-// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md
-// Tablero de referencia: …/tableros/driftime-home/ (aprobado por Ramón el 5-oct)
-// Lo que había antes en este archivo, con su historia completa (los cuatro intentos de la
-// bajada, por qué el h1 dejó de ser una pregunta, la medición de «motor»), está en el git:
-//   git log --follow -p -- spindlelab-astro/src/pages/v3/index.astro
-// No se repite acá; se lee allá antes de tocar el hero.
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md §2.1 (las siete secciones y sus columnas), §3.1
+// (la portada con el hilo de oro y su velo), §3.2 (la cinta), §3.3 (medios) y §4. Implementación de referencia: el
+// prototipo tableros/e12-direcciones/proto/a/index.html y el estudio de la portada e12/spec/portada/; donde difieren,
+// manda la spec. Lo que la spec no cubría está en spindlelab-v3/desvios.md, tanda 2.
 //
-// LAS REGLAS QUE SOSTIENEN ESTA PÁGINA:
-// · Dirección A (Ramón, 2-oct): el instrumento va PRIMERO en el orden de lectura. Ocupa el
-//   aire negro que en driftime queda sobre el titular.
-// · El display (.d-display, Manrope 800 mayúsculas) aparece aquí en CINCO lugares: el h1 y
-//   las cuatro palabras de campo. En todo el sitio, en ninguno más.
-// · La obra va arriba del pliegue (driftime la pone ahí; la v3 la había bajado).
-// · Precios: los de oferta-v3.json, siempre «desde … + IVA».
-// · Cero imagen de banco y cero gente inventada (spec §5).
-// · El chequeo es la herramienta real: ids chq-* y /api/chequeo, como antes. Su resultado
-//   lleva a contacto de la v3 (data-contacto del formulario, que lee v3-chequeo.js).
-// · Title y description de producción, como las otras 20 rutas (revisión cruzada, 6-oct; antes
-//   eran de maqueta interna y nombraban a la referencia): el title de spindlelab-site/index.html
-//   con «·» en vez de raya, y la description por defecto de Layout.astro (la de la home Astro
-//   publicada; dice 24 horas, como el resto de la v3, y no las 48 de spindlelab-site). El
-//   noindex se mantiene.
-// · QA final (6-oct), paquete A: el title baja a 53 caracteres (el chequeo de la casa pide de 15
-//   a 65 y el anterior medía 67; mismo texto sin «para empresas») y la página suma un nodo
-//   WebPage con fechas en su JSON-LD (Layout no se toca). Fila del hero en proporciones
-//   mixtas, rótulo único por obra (`rotulo` en obra-v3.json), pestañas de los campos con la
-//   implementación de MovimientoV3, foco de la pila con FocoPila, srcset en las piezas y
-//   la línea de precio con el marcado del índice de servicios.
+// El texto es de Clara, tal cual: se lee de src/data/archivo/texto/ (copias de e12/texto/texto-obra.json, ver
+// texto.mjs). Los precios y los nombres de servicio salen de oferta-v3.json y servicios-v3.json, y el build se cae si
+// no son iguales, como texto, a los de Clara. Las señales (title, description, JSON-LD, imagen al compartir) son de
+// Simón, e12/senales-obra.md §2.1.
+//
+// Las clases de la portada (.portada-v, .portada-v__medio, .portada-v__pie) son las que miden
+// e12/spec/herramientas/portada.mjs y contraste-portada.py: no se cambian sin cambiar esas dos.
 import Layout from '../../layouts/Layout.astro';
-import NavV3 from '../../components/v3/NavV3.astro';
-import FooterV3 from '../../components/v3/FooterV3.astro';
-import Pieza from '../../components/v3/Pieza.astro';
-import FocoPila from '../../components/v3/FocoPila.astro';
-import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../consts-v3';
-import '../../styles/chequeo-v3.css'; // el resultado del chequeo se pinta con estas clases
-import '../../styles/driftime.css';
+import PaginaA from '../../components/a/PaginaA.astro';
+import Video from '../../components/a/Video.astro';
+import Chequeo from '../../components/a/Chequeo.astro';
+import Pieza from '../../components/a/Pieza.astro';
+import Imagen from '../../components/a/Imagen.astro';
+import Icono from '../../components/a/Icono.astro';
+import { LAYOUT_A } from '../../components/a/layout-a';
+import { textoDe, igualQue, contiene, medioDe } from '../../data/archivo/texto.mjs';
+import comun from '../../data/archivo/texto/comun.json';
+import home from '../../data/archivo/texto/home.json';
+import trabajo from '../../data/archivo/texto/trabajo.json';
+import casoPraxi from '../../data/archivo/texto/caso-praxi.json';
+import medios from '../../data/archivo/medios.json';
+import cinta from '../../data/archivo/cinta.json';
 import oferta from '../../data/oferta-v3.json';
-import obra from '../../data/obra-v3.json';
-import indice from '../../data/blog-v3/_indice.json';
+import servicios from '../../data/servicios-v3.json';
 
-// TABLETA VERTICAL = CELULAR (QA final, mirada #1): el mismo corte que driftime.css. En una
-// tableta parada la fila del hero va en carrusel y los campos en la grilla de dos celdas, así
-// que la imagen de celular (`srcCel`) también manda ahí.
-const TAB = '(max-width: 1024px) and (orientation: portrait)';
-const CEL = `(max-width: 767px), ${TAB}`;
-// Cada foto del pool y cada mockup tiene su versión de 800 px (`<foto>-800.jpg`, la misma
-// imagen reescalada): el navegador la elige cuando la pieza se ve chica (QA final, técnica #8).
-const v800 = (src: string) => src.replace(/\.jpg$/, '-800.jpg');
-const candidatas = (src: string, w: number, v?: number) => `${v800(src)} 800w, ${src}${v ? `?v=${v}` : ''} ${w}w`;
-
-// La fila del hero sale del MISMO dato que /v3/trabajo/. Rótulo único por obra: `rotulo` de
-// obra-v3.json («Combeau, fotografía · Cliente»), el mismo en el hero y en el campo
-// Desarrollo (QA final, mirada #10). Una pieza de concepto lleva además su rótulo en papel.
-// PROPORCIONES MIXTAS CON ALTO COMÚN (QA final, mirada #5): cuatro teléfonos iguales se leían
-// como cuatro tarjetas (antislop B1). Las piezas 2 y 4 van en el mockup ancho (notebook +
-// teléfono, 4:3) y la 1 y la 3 en el alto (teléfono, 10:11). Cada una en su proporción, sin
-// recorte: `--r` por pieza y `--suma` en la fila, el mecanismo de los campos. El alt de cada
-// imagen describe ese mockup: `altMock` el par, `altMockAlto` solo el teléfono.
-const MOCK = { alto: { w: 1000, h: 1100 }, ancho: { w: 1600, h: 1200 } } as const;
-// El ancho con que se verá cada pieza, con la misma cuenta del CSS (driftime.css, «fila del
-// hero»): en escritorio, (ancho − márgenes − 3 huecos) × r / suma; en carrusel, el alto fijo
-// por r. Medido con currentSrc: a 1440 con DPR 2 cada pieza pide la de 800.
-const SIZES_TIRA = {
-  alto: `(max-width: 767px) calc((100vw - 20px) * 0.618), ${TAB} calc((100vw - 40px) * 0.3636), calc((100vw - 129px) * 0.2027)`,
-  ancho: `(max-width: 767px) calc((100vw - 20px) * 0.9067), ${TAB} calc((100vw - 40px) * 0.5333), calc((100vw - 129px) * 0.2973)`,
+const t = textoDe(home, comun);
+const pagina = home.texto;
+const m = medios.medios;
+const entradas = trabajo.texto.entradas;
+const entrada = (id: string) => {
+  const e = entradas.find((x: { id: string }) => x.id === id);
+  if (!e) throw new Error(`La entrada «${id}» no está en trabajo.entradas`);
+  return e;
 };
-const tira = obra.casos.map((c: any, i: number) => {
-  const forma: 'alto' | 'ancho' = i % 2 === 1 ? 'ancho' : 'alto';
-  const src: string = forma === 'ancho' ? c.mock : c.mockAlto;
-  const { w, h } = MOCK[forma];
+const dos = (id: string) => t(id) as { tinta: string; gris: string };
+const externo = t('comun.externo').texto;
+
+// ---- La cinta (§3.2): los tiempos de cada tramo son los del video (cinta.json, tanda 1); la ficha, la de Clara
+// (home.cinta.tramos), que reemplaza la del prototipo. Mismos ocho tramos, en el mismo orden, o el build se cae.
+const tramosClara = t('home.cinta.tramos').tramos as { nombre: string; linea: string; bajada: string; destino: string; nota?: string }[];
+if (tramosClara.length !== cinta.length) throw new Error('La cinta tiene otro número de tramos que la ficha de Clara');
+const tramos = cinta.map((c, i) => {
+  const k = tramosClara[i];
+  igualQue(c.nombre, k.nombre, `cinta, tramo ${i + 1}`);
+  return { desde: c.desde, hasta: c.hasta, nombre: k.nombre, linea: k.linea, bajada: k.bajada, destino: k.destino, nota: k.nota || '', fuera: /^https?:/.test(k.destino) };
+});
+const primero = tramos[0];
+
+// ---- El índice corto (§2.1, fila 3): Combeau fotografía 16:9, el par 4:5 | 4:5 (Praxi, Verifica y Cumple) y Sesenta
+// 16:9, con el nombre, la bajada y la línea de /trabajo/ (solo tipo · año).
+const corto = [
+  { id: 'combeau-fotografia', medio: m['combeau-fotografia-169'], forma: 'p-169' },
+  { id: 'praxi', medio: m['praxi-45'], forma: 'p-45' },
+  { id: 'verifica-y-cumple', medio: m['verifica-y-cumple-45'], forma: 'p-45', pie: t('home.obra.pie-verifica').texto },
+  { id: 'sesenta', medio: m['sesenta-home-169'], forma: 'p-169' },
+].map((p) => ({ ...p, e: entrada(p.id) }));
+// «[ Todo el trabajo ] (10)»: el 10 es el conteo verdadero del índice (Clara).
+const todo = t('home.obra.todo').texto;
+igualQue(todo, `[ Todo el trabajo ] (${entradas.length})`, 'home, el corchete del índice corto');
+
+// ---- Cada pieza, con un dato medido (§2.1, fila 4). Los medios, los de §3.3: la galería de Combeau, los números de
+// Praxi (con el pie de datos de ejemplo que Clara le escribió a esa captura en el caso) y las 12 cosas de Verifica y
+// Cumple, sin su puntaje (defecto 20).
+const numeros = medioDe(casoPraxi, 'praxi-numeros-169.webp');
+igualQue(m['praxi-numeros-169'].alt, numeros.alt, 'prueba, alt de los números de Praxi');
+const pruebas = [
+  { id: 'combeau', medio: m['combeau-galeria-169'] },
+  { id: 'praxi', medio: m['praxi-numeros-169'], pie: numeros.pie as string },
+  { id: 'vyc', medio: m['verifica-y-cumple-12-169'] },
+].map((p) => ({
+  ...p,
+  pieza: t(`home.prueba.${p.id}.pieza`).texto,
+  dato: t(`home.prueba.${p.id}.dato`).texto,
+  ficha: t(`home.prueba.${p.id}.ficha`).campos as { rotulo: string; valor: string }[],
+}));
+
+// ---- Servicios (§2.1, fila 5): nombres y precios de los JSON, iguales como texto a los de Clara.
+const [mDesarrollo, mExiste, mSostener] = oferta.momentos;
+const sv = servicios as Record<string, { secciones: { planes?: { precio: string }[] }[] }>;
+const precioDe = (slug: string, i: number) => sv[slug].secciones[1].planes![i].precio;
+const filas = [
+  { k: 'dw', nombre: mDesarrollo.items[0].n, precio: mDesarrollo.planes[0].p, href: mDesarrollo.items[0].href, puerta: true },
+  { k: 'via', nombre: mExiste.items[0].n, precio: precioDe('visibilidad-en-ia', 0), href: mExiste.items[0].href },
+  { k: 'aud', nombre: mExiste.items[1].n, precio: precioDe('auditoria-seo-tecnica', 1), href: mExiste.items[1].href },
+  { k: 'aco', nombre: mSostener.items[0].n, precio: precioDe('acompanamiento-mensual', 0), href: mSostener.items[0].href },
+].map((f) => {
+  igualQue(f.nombre, t(`home.servicios.${f.k}.nombre`).texto, `servicios, nombre de ${f.k}`);
+  igualQue(f.precio, t(`home.servicios.${f.k}.precio`).texto, `servicios, precio de ${f.k}`);
+  const boton = t(`home.servicios.${f.k}.boton`);
+  igualQue(f.href, boton.destino, `servicios, destino de ${f.k}`);
   return {
-    src, w, h, srcset: candidatas(src, w), sizes: SIZES_TIRA[forma],
-    alt: forma === 'ancho' ? c.altMock : c.altMockAlto ?? c.altMock,
-    concepto: c.tipo === 'concepto',
-    etiquetas: [c.rotulo],
+    ...f,
+    situacion: t(`home.servicios.${f.k}.situacion`).texto,
+    texto: t(`home.servicios.${f.k}.texto`).texto,
+    escena: f.k === 'via' ? t('home.servicios.via.escena').texto : '',
+    boton: boton.texto,
   };
 });
-const sumaTira = tira.reduce((t: number, p: any) => t + p.w / p.h, 0);
+// «También»: Paid Media y Gestión de redes en una línea de cuerpo, con sus enlaces y sus precios (Clara). Los nombres
+// son los de oferta-v3.json (tambien) y los precios, los de servicios-v3.json, dentro de la frase tal cual.
+const tambien = t('home.servicios.tambien');
+const [tRedes, tPaid] = oferta.tambien;
+contiene(tambien.texto, precioDe('paid-media', 0).replace(/^Desde /, 'desde '), 'servicios, también (Paid Media)');
+contiene(tambien.texto, precioDe('redes-sociales', 0).replace(/^Desde /, 'desde '), 'servicios, también (redes)');
+const enlacesTambien = Object.entries(tambien.enlaces as Record<string, string>);
+igualQue(enlacesTambien[0][0], tPaid.n, 'servicios, también: nombre de Paid Media');
+igualQue(enlacesTambien[0][1], tPaid.href, 'servicios, también: destino de Paid Media');
+igualQue(enlacesTambien[1][0], tRedes.n, 'servicios, también: nombre de redes');
+igualQue(enlacesTambien[1][1], tRedes.href, 'servicios, también: destino de redes');
+// La frase partida en sus dos enlaces, sin cambiar una letra.
+const trozos: { texto: string; href?: string }[] = [];
+{
+  let resto = tambien.texto as string;
+  for (const [texto, href] of enlacesTambien) {
+    const i = resto.indexOf(texto);
+    if (i < 0) throw new Error(`servicios, también: falta «${texto}» en la frase`);
+    trozos.push({ texto: resto.slice(0, i) }, { texto, href });
+    resto = resto.slice(i + texto.length);
+  }
+  trozos.push({ texto: resto });
+}
 
-// Los cuatro campos, en el orden que fija el giro del 29-sep: Desarrollo abre.
-// Las imágenes salen solo del pool honesto (spec §5). w y h son los del archivo (QA final,
-// técnica #9). `v`: versión del archivo cuando cambió de contenido con el mismo nombre (caché
-// de 7 días en /assets/*): hilos.jpg ganó contraste (QA final, mirada #6).
-// Desarrollo lee la obra de obra-v3.json: la captura de Combeau termina al final de la banda
-// verde (`combeau-fotografia-ancho-2.jpg`, 1440 × 616; la anterior cortaba la fila de retratos
-// a la altura de la frente, QA final, mirada #4). El alt también sale de ahí (`alt`, el de la
-// captura plana): escrito a mano, el mismo archivo tenía otro alt en Desarrollo web (spec §7,
-// una imagen, un alt; rescate, 13-oct).
-type Img = { src: string; w: number; h: number; alt: string; v?: number; etq?: string; cel?: string; pos?: string };
-const caso = (slug: string) => obra.casos.find((c: any) => c.slug === slug) as any;
-const combeau = caso('combeau-fotografia');
-const vyc = caso('verifica-y-cumple');
-const imgs: Record<string, Img[]> = {
-  Desarrollo: [
-    { src: combeau.img, w: combeau.w, h: combeau.h, cel: combeau.mockAlto, alt: combeau.alt, etq: combeau.rotulo },
-    { src: vyc.img, w: vyc.w, h: vyc.h, cel: vyc.mockAlto, alt: vyc.alt, etq: vyc.rotulo },
-  ],
-  Visibilidad: [
-    { src: '/assets/img/d/hilos.jpg', v: 2, w: 1600, h: 960, alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal' },
-    { src: '/assets/img/d/ventana.jpg', w: 1600, h: 670, pos: '72% 50%', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop' },
-  ],
-  Continuidad: [
-    { src: '/assets/img/d/domino-curva.jpg', w: 1600, h: 1600, alt: 'Fichas de dominó de madera en fila curva sobre piedra oscura, con luz cálida' },
-    { src: '/assets/img/d/escritorio.jpg', w: 1600, h: 670, pos: '34% 50%', alt: 'Escritorio de madera con un laptop, un cuaderno y una taza junto a la ventana' },
-  ],
-  Alcance: [
-    { src: '/assets/img/d/hilo.jpg', w: 1400, h: 787, pos: '55% 50%', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro' },
-    { src: '/assets/img/d/domino.jpg', w: 1600, h: 1600, alt: 'Fichas de dominó cayendo en fila sobre fondo negro' },
-  ],
-};
-// Celular y tableta vertical: media fila, pero la celda es vertical y la imagen la cubre
-// (object-fit: cover), así que se ve a lo ALTO de la celda por su proporción. La celda mide
-// ~1,35 veces su ancho en celular y ~1,9 en tableta: una foto ancha (ventana, 2,39) se pinta a
-// ~3 anchos de celda y pide el archivo grande; un mockup en teléfono (0,91), el de 800.
-const sizesCelda = (r: number) =>
-  `(max-width: 767px) calc((100vw - 50px) * ${(Math.max(1, 1.35 * r) / 2).toFixed(3)}), ${TAB} calc((100vw - 96px) * ${(Math.max(1, 1.9 * r) / 2).toFixed(3)})`;
-const campos = [
-  ...oferta.momentos.map((m: any) => ({ palabra: m.palabra, campo: m.campo, momento: m.momento, items: m.items })),
-  { palabra: oferta.tambienPanel.palabra, campo: oferta.tambienPanel.campo, momento: oferta.tambienPanel.momento, items: oferta.tambien },
-].map((c) => {
-  const lista = imgs[c.palabra] ?? [];
-  const suma = lista.reduce((t, im) => t + im.w / im.h, 0);
-  return {
-    ...c, id: c.palabra.toLowerCase(), suma,
-    // Escritorio: lo que dé el menor de los dos topes del CSS, el alto que deja la cabecera
-    // (~100vh − 500 px) o el ancho de la fila repartido por r / suma; cada pieza mide r × ese
-    // alto, sin recorte.
-    imgs: lista.map((im) => {
-      const r = im.w / im.h;
-      return {
-        ...im, url: im.src + (im.v ? `?v=${im.v}` : ''), srcset: candidatas(im.src, im.w, im.v),
-        sizes: `${sizesCelda(r)}, min(calc((100vh - 500px) * ${r.toFixed(3)}), calc((100vw - 96px) * ${(r / suma).toFixed(3)}))`,
-      };
-    }),
-  };
-});
-
-// «$490.000 · $690.000 con Visibilidad IA» → una alternativa por trozo, y cada trozo no se
-// parte (QA final, conversión #4; el marcado del índice de servicios, spec §7 del 5-oct).
-const alternativas = (p: string) => p.split(' · ');
-
-const posts = [...indice].sort((a: any, b: any) => (a.datePublished < b.datePublished ? 1 : -1)).slice(0, 4);
-const fecha = (iso: string) =>
-  new Date(iso + 'T12:00:00').toLocaleDateString('es-CL', { day: 'numeric', month: 'short', year: 'numeric' }).replace('.', '');
-
-// EL NODO DE LA PÁGINA (QA final, conversión #2). La home reprobaba su propio chequeo por «sin
-// fechas en tu schema». Layout emite #org, #website y #autor-ramon y no se toca; la página suma
-// solo su WebPage, con el @id de la portada publicada (patrón de Método: …/#webpage).
-// · datePublished 2026-07-08: la portada estaba en línea ese día (plan-operativo-90-dias.md,
-//   semana 1: Search Console verificado y sitemap enviado, «Correcto», 11 páginas).
-// · dateModified: la fecha de esta versión. AL PUBLICAR LA V3 se cambia por el día en que
-//   sale (si no, el grafo diría que la portada no cambió desde hoy).
-// · La meta description (E8, 14-oct; Simón y Clara, fila 50, con el visto bueno de Ramón)
-//   vuelve a nombrar a Gemini y ya no promete que te recomienden antes que tu competencia:
-//   «puedan citarte». Revierte el motor de a70e945, que partía de que Google-Extended es solo
-//   de entrenamiento: según la documentación de Google, también controla el grounding de
-//   Gemini Apps, así que el sitio sí cuenta para Gemini (copy-secciones.md, revisión de Simón).
-const TITLE = 'SEO técnico y visibilidad en IA en Chile · SpindleLab';
+// ---- Señales (Simón, senales-obra.md §2.1): title y description de Clara, que son los de Simón.
+const title = pagina.title;
+const description = pagina.description;
+if (title.length > 60 || description.length < 120 || description.length > 160) {
+  throw new Error(`home: title (${title.length}) o description (${description.length}) fuera de los largos de senales-obra.md §1.2`);
+}
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -166,133 +141,164 @@ const jsonLd = {
       '@type': 'WebPage',
       '@id': 'https://spindlelab.cl/#webpage',
       url: 'https://spindlelab.cl/',
-      name: TITLE,
+      name: title,
+      description,
       inLanguage: 'es-CL',
       isPartOf: { '@id': 'https://spindlelab.cl/#website' },
       about: { '@id': 'https://spindlelab.cl/#org' },
-      datePublished: '2026-07-08',
-      dateModified: '2026-10-06',
     },
   ],
 };
 ---
-
-<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt}
-  title={TITLE}
-  description="Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity puedan citarte. Diagnóstico gratis en 24 horas."
-  bodyClass="d-body d-home"
->
+<Layout title={title} description={description} ogImage="/assets/img/og-e12-marca.jpg?v=1" ogImageAlt="SpindleLab, estudio de diseño y tecnología: diseñamos y programamos sitios a medida." {...LAYOUT_A}>
   <meta slot="head" name="robots" content="noindex, nofollow" />
+  <link slot="head" rel="preload" as="image" href="/v3/portada/hilo-1920-poster.webp" fetchpriority="high" />
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  <NavV3 />
-
-  <main>
-    {/* ============================================================== 1 · HERO */}
-    <section class="d-hero" aria-labelledby="h1">
-      <div class="d-instr" id="chequeo">
-        <p class="d-rot">Chequeo de visibilidad en IA</p>
-        <form class="d-dom chq-form" id="chq-form" novalidate aria-describedby="chq-nota" data-contacto={CONTACTO}>
-          <label for="chq-dominio" class="d-sr">Tu dominio</label>
-          <input id="chq-dominio" name="dominio" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="tuempresa.cl" required />
-          <button id="chq-btn" type="submit">Ver cómo lo lee</button>
-        </form>
-        <p class="d-nota" id="chq-nota"><b>21 señales, con la metodología publicada.</b> Es el mismo chequeo con el que partimos cada proyecto.</p>
-        <div class="chq-error" id="chq-error" role="alert" style="margin-top:10px"></div>
-        <div id="chq-out" aria-live="polite" style="margin-top:24px"></div>
-      </div>
-
-      <div class="d-titular">
-        <p class="d-ojillo">Estás pagando para que lleguen a tu sitio.</p>
-        <h1 class="d-display" id="h1">Ahí se corta<br />el circuito</h1>
-      </div>
-
-      {/* role="region": un div no anuncia su aria-label, y a 390 el carrusel recibe foco
-           (QA final, técnica #12). */}
-      <div class="d-fila d-fila--hero" role="region" aria-label="Trabajo entregado" style={`--suma:${sumaTira.toFixed(4)}`}>
-        {tira.map((t: any, i: number) => (
-          <Pieza src={t.src} srcset={t.srcset} sizes={t.sizes} alt={t.alt} concepto={t.concepto} etiquetas={t.etiquetas} ancho={t.w} alto={t.h} proporcion={t.w / t.h} eager={i < 2} />
-        ))}
+  <PaginaA>
+    {/* 1 · PORTADA (§2.1, fila 1; §3.1). El hilo de oro a sangre; la pausa, primer control. Sobre el velo (desde 834) o
+         debajo, sobre el lienzo (bajo 834): el rótulo, el h1 en dos tintas, la entradilla y el chequeo. */}
+    <section class="portada-v" aria-labelledby="portada-titulo">
+      <Video
+        clase="portada-v__medio"
+        sangre
+        pausaArriba
+        primeraPantalla
+        poster="/v3/portada/hilo-1920-poster.webp"
+        ancho={1920}
+        alto={1080}
+        fuentes={[
+          { desde: 834, webm: '/v3/portada/hilo-1920.webm', mp4: '/v3/portada/hilo-1920.mp4' },
+          { webm: '/v3/portada/hilo-960.webm', mp4: '/v3/portada/hilo-960.mp4' },
+        ]}
+      />
+      <div class="portada-v__pie">
+        <div class="portada-v__decl">
+          <p class="rotulo">{t('home.portada.rotulo').texto}</p>
+          <h1 class="t-portada" id="portada-titulo"><span class="tinta">{dos('home.portada.h1').tinta}</span> <span class="gris">{dos('home.portada.h1').gris}</span></h1>
+          <p class="cuerpo entradilla">{t('home.portada.entradilla').texto}</p>
+        </div>
+        <div class="portada-v__chequeo">
+          <Chequeo
+            apilado
+            rotulo={t('home.chequeo.rotulo').texto}
+            intro={t('home.chequeo.intro').texto}
+            etiqueta={t('home.chequeo.label').texto}
+            ejemplo={t('home.chequeo.placeholder').texto}
+            boton={t('home.chequeo.boton').texto}
+            ayuda={t('home.chequeo.ayuda').texto}
+          />
+        </div>
       </div>
     </section>
 
-    {/* ============================================================== 2 · PRESENTACIÓN */}
-    {/* Del post publicado del 1-sep-2026 (corpus de voz). El referente va entero: «es la
-         máquina que responde…». Su falta fue el bloqueante de las dos direcciones del 2-oct. */}
-    <section class="d-pres" aria-label="Qué hacemos">
-      <p class="d-guia">Tu sitio está escrito para personas. Pero cada vez más, el primero en llegar no es una persona: es la máquina que responde cuando alguien pregunta por tu rubro. Si esa máquina no puede leerte, entenderte ni citarte, la consulta que pagaste termina en otra parte.</p>
-      <div class="d-btns"><a class="d-btn" href="/v3/metodo/">Ver el método</a></div>
+    {/* 2 · LA CINTA (§2.1, fila 2; §3.2): 16:9 exacta, sin titular a la vista; la ficha del tramo que pasa al lado desde
+         1194 y, bajo 1194, como rótulo de placa sobre la cinta. cinta.mjs la cambia con el tramo. */}
+    <section class="seccion reticula cinta-s" aria-label={t('home.cinta.nombre').texto} data-cinta>
+      <div class="cinta-s__marco" data-entrada>
+        <Video clase="p-169" poster="/v3/cinta/cinta-poster.webp" ancho={1280} alto={720} webm="/v3/cinta/cinta.webm" mp4="/v3/cinta/cinta.mp4" />
+        <p class="marca-medio rotulo" data-cinta-rotulo><span class="tinta">{primero.nombre}</span> <span class="gris">· {primero.linea}</span></p>
+        <p class="marca-medio marca-medio--abajo chico" data-cinta-nota hidden={!primero.nota}>{primero.nota}</p>
+      </div>
+      <div class="cinta-s__ficha" data-cinta-ficha>
+        <p class="rotulo" data-ficha-linea>{primero.linea}</p>
+        <p class="t-titulo t-display"><a class="subrayado" href={primero.destino} data-ficha-nombre><span data-ficha-texto>{primero.nombre}</span><span data-ficha-fuera hidden={!primero.fuera}><Icono nombre="fuera" /><span class="solo-lector">{externo}</span></span></a></p>
+        <p class="chico" data-ficha-bajada>{primero.bajada}</p>
+        <p class="chico tinta" data-ficha-nota hidden={!primero.nota}>{primero.nota}</p>
+      </div>
+      <script type="application/json" id="cinta-tramos" is:inline set:html={JSON.stringify(tramos)} />
     </section>
 
-    {/* ============================================================== 3 · CAMPOS */}
-    {campos.map((c) => (
-      <section class:list={['d-campo', `d-campo--${c.campo}`]} aria-labelledby={`t-${c.id}`}>
-        <div class="d-campo__cab">
-          <h2 class="d-display" id={`t-${c.id}`}>{c.palabra}</h2>
-          {/* Dos servicios: pestañas (MovimientoV3: flechas, Inicio/Fin, tabindex itinerante).
-               Uno solo: la píldora es un rótulo, no un control (QA final, técnica #7). */}
-          {c.items.length > 1 ? (
-            <div class="d-pills" role="tablist" aria-labelledby={`t-${c.id}`} data-pestanas>
-              {c.items.map((it: any, i: number) => (
-                <button class="d-pill" role="tab" type="button" aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} aria-controls={`p-${c.id}-${i}`} id={`tab-${c.id}-${i}`}>{it.n}</button>
-              ))}
-            </div>
-          ) : (
-            <div class="d-pills"><span class="d-pill d-pill--rotulo">{c.items[0].n}</span></div>
-          )}
-          {c.items.map((it: any, i: number) => (
-            <div class="d-panel" id={`p-${c.id}-${i}`} role={c.items.length > 1 ? 'tabpanel' : undefined} aria-labelledby={c.items.length > 1 ? `tab-${c.id}-${i}` : undefined} hidden={i !== 0}>
-              <p class="d-desc"><b>{c.momento}.</b> {it.d}</p>
-              {/* Espacios reales entre las piezas y separador aria-hidden: sin CSS se leía
-                   «Desde$390.000…+ IVA». Cada alternativa con su plan no se parte. */}
-              <p class="d-precio" style="margin-top:18px">
-                {alternativas(it.p).map((a, k, todas) => [
-                  k > 0 ? ' ' : '',
-                  <span class="d-pre-alt">{k === 0 && [<span class="d-pre-rot">Desde</span>, <span class="d-pre-sep" aria-hidden="true"></span>, ' ']}<b>{a}{k < todas.length - 1 ? '\u00a0·' : ''}</b>{k === todas.length - 1 && [' ', <span class="d-pre-rot">+ IVA</span>]}</span>,
-                ])}
-              </p>
-              <div class="d-btns" style="margin-top:18px">
-                <a class="d-btn" href={it.href}>Ver {it.n}</a>
-                <a class="d-btn" href={CONTACTO}>Escríbenos</a>
-              </div>
-            </div>
+    {/* 3 · ÍNDICE CORTO (§2.1, fila 3): el h2 pegajoso a la izquierda desde 1194; las cuatro piezas a la derecha. */}
+    <section class="seccion reticula destacados" aria-labelledby="h-obra">
+      <div class="destacados__cab">
+        <h2 class="t-declaracion" id="h-obra"><span class="tinta">{dos('home.obra.h2').tinta}</span> <span class="gris">{dos('home.obra.h2').gris}</span></h2>
+      </div>
+      <div class="destacados__lista">
+        <Pieza id={`d-${corto[0].id}`} nombre={corto[0].e.nombre} bajada={corto[0].e.bajada} linea={corto[0].e.linea} destino={corto[0].e.destino} cursor={corto[0].e.cursor} medio={corto[0].medio} forma={corto[0].forma} externo={externo} entrada />
+        <div class="fila-par">
+          {corto.slice(1, 3).map((p) => (
+            <Pieza id={`d-${p.id}`} nombre={p.e.nombre} bajada={p.e.bajada} linea={p.e.linea} destino={p.e.destino} cursor={p.e.cursor} medio={p.medio} forma={p.forma} pie={p.pie} externo={externo} />
           ))}
         </div>
-        <div class="d-fila d-fila--2" style={`--suma:${c.suma.toFixed(4)}`}>
-          {c.imgs.map((im) => <Pieza etqAbajo={im.cel ? 'escritorio' : undefined} src={im.url} srcset={im.srcset} sizes={im.sizes} alt={im.alt} etiquetas={im.etq ? [im.etq] : []} ancho={im.w} alto={im.h} proporcion={im.w / im.h} srcCel={im.cel} srcsetCel={im.cel ? candidatas(im.cel, MOCK.alto.w) : undefined} sizesCel={im.cel ? sizesCelda(MOCK.alto.w / MOCK.alto.h) : undefined} anchoCel={im.cel ? MOCK.alto.w : undefined} altoCel={im.cel ? MOCK.alto.h : undefined} mediaCel={CEL} posicion={im.pos} />)}
+        <Pieza id={`d-${corto[3].id}`} nombre={corto[3].e.nombre} bajada={corto[3].e.bajada} linea={corto[3].e.linea} destino={corto[3].e.destino} cursor={corto[3].e.cursor} medio={corto[3].medio} forma={corto[3].forma} externo={externo} />
+      </div>
+      <div class="destacados__pie">
+        <p class="chico">{t('home.obra.concepto').texto}</p>
+        <a class="corchete" href={t('home.obra.todo').destino}>{todo}</a>
+      </div>
+    </section>
+
+    {/* 4 · CADA PIEZA, CON UN DATO MEDIDO (§2.1, fila 4): tres filas con su borde de arriba, sin caja. */}
+    <section class="seccion reticula prueba" aria-labelledby="h-prueba">
+      <div class="prueba__cab">
+        <h2 class="t-declaracion" id="h-prueba"><span class="tinta">{dos('home.prueba.h2').tinta}</span> <span class="gris">{dos('home.prueba.h2').gris}</span></h2>
+        <p class="cuerpo caja">{t('home.prueba.aviso').texto}</p>
+      </div>
+      {pruebas.map((p, i) => (
+        <div class="prueba__fila">
+          <div class="prueba__medio" data-entrada={i === 0 ? '' : undefined}>
+            <Imagen src={p.medio.src} alt={p.medio.alt} ancho={p.medio.ancho} alto={p.medio.alto} clase="p-169" />
+            {p.pie && <p class="pie">{p.pie}</p>}
+          </div>
+          <div class="prueba__dato">
+            <h3 class="t-titulo">{p.pieza}</h3>
+            <p class="cuerpo">{p.dato}</p>
+            {p.ficha.map((f) => <p class="ficha-linea"><span class="rotulo">{f.rotulo}</span> <span class="dato tinta">{f.valor}</span></p>)}
+          </div>
         </div>
-      </section>
-    ))}
+      ))}
+    </section>
 
-    {/* ============================================================== 4 · QUIÉN */}
-    {/* Donde driftime pone su muro de 12 logos. Acá no: cero prueba social inventada, y hay
-         un solo cliente con permiso. Lo verificable es la persona. */}
-    <section class="d-quien d-tapa" aria-labelledby="t-quien">
-      <Pieza src="/assets/img/ramon-vallejos.jpg" alt="Ramón Vallejos, consultor de SpindleLab" ancho={896} alto={1200} />
-      <div class="d-quien__txt">
-        <h2 class="d-h2" id="t-quien">No te prometo. Te muestro.</h2>
-        <p class="d-guia d-gris">Detrás de SpindleLab está una persona, no una agencia de veinte. Al terminar cada proyecto, volvemos a correr el chequeo de arriba sobre tu dominio.</p>
-        <div style="display:flex;flex-direction:column;gap:2px"><span>Ramón Vallejos</span><span class="d-chico d-gris">Consultor de SEO técnico y visibilidad en IA · Chile</span></div>
-        <div class="d-btns"><a class="d-btn" href="/v3/nosotros/">Conocer a Ramón</a></div>
+    {/* 5 · SERVICIOS (§2.1, fila 5): Desarrollo web primero y a la escala de la declaración; los otros tres a título;
+         Paid Media y redes en una línea. Precios en blanco, iguales a los JSON. */}
+    <section class="seccion reticula servicios" aria-labelledby="h-serv">
+      <div class="servicios__cab">
+        <h2 class="t-declaracion" id="h-serv"><span class="tinta">{dos('home.servicios.h2').tinta}</span> <span class="gris">{dos('home.servicios.h2').gris}</span></h2>
+        <p class="cuerpo caja">{t('home.servicios.guia').texto}</p>
+      </div>
+      {filas.map((f) => (
+        <div class:list={['servicio', 'borde', { 'servicio--puerta': f.puerta }]}>
+          <p class="servicio__sit cuerpo">{f.situacion}</p>
+          <div class="servicio__cuerpo">
+            <h3 class={f.puerta ? 't-declaracion' : 't-titulo'}>{f.nombre}</h3>
+            <p class="cuerpo caja">{f.texto}</p>
+            {f.escena && <p class="chico caja">{f.escena}</p>}
+          </div>
+          <div class="servicio__precio">
+            <p class="cuerpo valor">{f.precio}</p>
+            <a class:list={['boton', f.puerta ? 'boton--claro' : 'boton--placa']} href={f.href}>{f.boton}<Icono nombre="flecha" /></a>
+          </div>
+        </div>
+      ))}
+      <p class="servicios__tambien cuerpo">{trozos.map((p) => (p.href ? <a href={p.href}>{p.texto}</a> : p.texto))}</p>
+    </section>
+
+    {/* 6 · QUIÉN ESTÁ DETRÁS (§2.1, fila 6): el retrato 3:4 entero y grande; el texto apoyado abajo. */}
+    <section class="seccion reticula quien" aria-labelledby="h-quien">
+      <div class="quien__retrato" data-entrada>
+        <Imagen src={m['ramon-vallejos-34'].src} alt={t('home.quien.retrato').texto} ancho={m['ramon-vallejos-34'].ancho} alto={m['ramon-vallejos-34'].alto} clase="p-34" />
+      </div>
+      <div class="quien__txt">
+        <h2 class="t-declaracion" id="h-quien"><span class="tinta">{dos('home.quien.h2').tinta}</span> <span class="gris">{dos('home.quien.h2').gris}</span></h2>
+        <p class="cuerpo caja">{t('home.quien.cv').texto}</p>
+        <p class="cuerpo caja">{t('home.quien.publicado').texto}</p>
+        <a class="boton boton--placa" href={t('home.quien.boton').destino}>{t('home.quien.boton').texto}<Icono nombre="flecha" /></a>
       </div>
     </section>
 
-    {/* ============================================================== 5 · EL TALLER */}
-    <section class="d-indice d-tapa" aria-labelledby="t-taller">
-      <div class="d-indice__cab">
-        <h2 class="d-h2" id="t-taller">Lo que escribimos sobre búsqueda e IA</h2>
-        <a class="d-btn d-btn--alt" href="/v3/blog/">Ver el blog</a>
+    {/* 7 · CONTACTO (§2.1, fila 7). */}
+    <section class="seccion reticula contacto" aria-labelledby="h-contacto">
+      <div class="contacto__txt">
+        <h2 class="t-declaracion" id="h-contacto"><span class="tinta">{dos('home.contacto.h2').tinta}</span> <span class="gris">{dos('home.contacto.h2').gris}</span></h2>
+        <p class="cuerpo caja">{t('home.contacto.que-es').texto}</p>
+        <p class="cuerpo caja">{t('home.contacto.de-cero').texto}</p>
+        <a class="boton boton--claro" href={t('home.contacto.boton').destino}>{t('home.contacto.boton').texto}<Icono nombre="flecha" /></a>
+        <p class="chico"><a href="mailto:hola@spindlelab.cl">{t('home.contacto.correo').texto}</a></p>
       </div>
-      <ol>
-        {posts.map((p: any) => (
-          <li><a href={`/v3/blog/${p.slug}/`}><time datetime={p.datePublished}>{fecha(p.datePublished)}</time><span class="d-h3">{p.headline}</span><span class="d-flecha" aria-hidden="true">→</span></a></li>
-        ))}
-      </ol>
     </section>
-  </main>
-
-  {/* Foco no oculto en la pila de campos (spec §3; QA final, técnica #1). */}
-  <FocoPila bandas=".d-campo" />
-  <FooterV3 />
-
-  <script src="/assets/js/v3-chequeo.js?v=3" is:inline defer></script>
+  </PaginaA>
 </Layout>
+
+<script>
+  import '../../scripts/archivo/cinta.mjs';
+</script>
