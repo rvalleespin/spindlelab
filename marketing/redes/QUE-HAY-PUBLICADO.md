@@ -8,7 +8,7 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 > `linkedin.com/company/135255820/admin/page-posts/published/` para la página ·
 > `linkedin.com/in/me/recent-activity/all/` para el perfil personal.
 
-## Página de empresa (12 seguidores)
+## Página de empresa (13 seguidores)
 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
@@ -18,6 +18,7 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 | **22-sep** | ⛔ Explicador Ley 21.719 (plural) — **publicado y retirado el mismo día, por repetido** | 53 impresiones en ~40 min | `24-jue-ley-21719/publicar.md` |
 | **✅ 13-oct** | "Si en tu empresa alguien preguntó si aparecen en ChatGPT..." — qué se puede medir gratis de la visibilidad en IA (Search Console), en plural; adaptación del post personal del 7-oct | publicado, verificado (urn 7515830695420821504) | `2026-10-octubre-linkedin/13-mar-pagina-visibilidad-en-ia/publicar.md` |
 | **✅ 15-oct** | "Si tu negocio aparece en Google Maps con un nombre y en tu sitio con otro, conviene dejarlos iguales..." — el nombre del perfil de empresa en Google y en el sitio, en plural; adaptación del post personal del mismo día | publicado, verificado (urn 7516494396259962881; 1 comentario como SpindleLab) | `2026-10-octubre-linkedin/15-jue-pagina-nombre-del-negocio/publicar.md` |
+| **✅ 19-oct** | Reel cara a cámara de Ramón, video nativo de 28 s: "Hay una ley nueva en Chile que protege los datos de las personas..." — un sitio con formulario de contacto entra en la ley y casi nunca hay que rehacerlo; cierre en el chequeo de Verifica y Cumple; plural. Mismo video que salió en Instagram el 16-oct | publicado, verificado (ugcPost 7517938366471020544 / activity 7517938438629752832; 1 comentario como SpindleLab) | `marketing/encargos-otras-sesiones/reel-linkedin-publicado-19oct.md` (el texto original vive en la rama `claude/relanzamiento-sep-social-wygda1`) |
 | **✅ 25-sep** | Los tres mitos de la Ley 21.719 (delegado voluntario, sin 72h, el 4% con dos condiciones) | **398 impresiones** · ✏️ **editado esa tarde: el 4% es solo de las gravísimas** | `24-jue-tres-mitos-ley21719/publicar.md` |
 
 ## Cómo se mide si esto sirvió (desde el 30-sep-2026)
