@@ -2,7 +2,7 @@
 
 **19-oct-2026, desde las 09:55 (Chile) · Clara (copy de interfaz) con Renata (copy de venta)** · rama `claude/magical-franklin-ckfki2` · fuente: `texto-obra.json` (este archivo sale de ahí con `herramientas/md-obra.py`; no se edita a mano) · se comprueba con `herramientas/comprobar-obra.py`.
 
-**Estado:** En avance (19-oct): escrito y comprobado con herramientas/comprobar-obra.py; faltan los dos detectores completos y la lectura fría en contexto aparte. Nada se publica: lo revisa Ramón.
+**Estado:** Listo para revisión (19-oct): escrito, comprobado con herramientas/comprobar-obra.py, con los dos detectores corridos enteros y una lectura fría en contexto aparte, y corregido con lo que dijeron. Nada se publica: lo revisa Ramón, y lo construye Diego en la corrida 2.
 
 **Manda:**
 
@@ -39,7 +39,7 @@
 | 5d | Se nombran los modelos | Claude Haiku 4.5 registra lo que escribes y deja la conclusión del día; Claude Sonnet 5 conversa como coach con las cuentas ya hechas. En la lista para el técnico, con su identificador del código. |
 | 5e | Se dice que se construyó con agentes de IA | En los créditos y en un párrafo de «La pieza», con el conteo medido (218 de 219) y separando las herramientas que programaron de los modelos de la app. |
 | 5f | Praxi y Combeau, los dos casos reales | El caso Combeau es nuevo: una página con dos partes (#fotografia y #modelo), con lo que tiene fila en inventario-casos §2.9. |
-| 6 | Los puntajes propios no se muestran (por defecto) | Ni 54 → 94 ni 36 → 73 en ninguna página. En «Cada pieza, con su prueba», Verifica y Cumple lleva un dato nuevo (cierra el defecto 20). |
+| 6 | Los puntajes propios no se muestran (por defecto) | Ni 54 → 94 ni 36 → 73 en ninguna página. En «Cada pieza, con un dato medido», Verifica y Cumple lleva un dato nuevo (cierra el defecto 20). |
 | 7 | A Combeau se le recortan sus medidas (por defecto) | Ningún texto ni alt las menciona, ni dice que hay algo recortado (defecto 21 en A). |
 | 8 a 10 | Ninguna interior clara; círculo blanco; logo monocromo (por defecto) | Sin efecto en el texto. El círculo dice adónde lleva: «Ver el caso», «Ver el concepto», «Ver el sitio» (Verifica y Cumple) e «Ir al chequeo». |
 
@@ -113,7 +113,7 @@
 - `title` SpindleLab · Estudio de diseño y tecnología en Santiago
 - `description` Diseñamos y programamos sitios y herramientas a medida, listos para que Google y ChatGPT puedan leerlos. Precios publicados y un chequeo gratis de tu sitio.
 - <sub>Señales: Simón, e12/senales-obra.md §2.1 (la description de Simón, de 156; la mía medía 170 y nombraba «la IA»: queda la de él, que nombra ChatGPT como el h1)</sub>
-- *Estructura:* spec-visual.md §2.1: portada con el video del hilo de oro → la cinta → índice corto → cada pieza con su prueba → servicios → quién está detrás → contacto.
+- *Estructura:* spec-visual.md §2.1: portada con el video del hilo de oro → la cinta → índice corto → cada pieza con un dato medido → servicios → quién está detrás → contacto.
 
 ### Portada: el hilo de oro, la declaración y el chequeo
 
@@ -188,13 +188,13 @@
   → `/v3/trabajo/`  
   <sub>Nota: El único corchete de la página (lock §14). El 10 es el conteo verdadero del índice: si cambia el número de entradas, cambia aquí.</sub>
 
-### Cada pieza, con su prueba
+### Cada pieza, con un dato medido
 
 *Trabajo del bloque:* Cumplir lo que dice el posicionamiento: lo que construimos se puede medir. Una pieza al lado de un dato revisable, con fecha.
 
-- `h2` · **cambia** Cada pieza, con su prueba. *Al lado de lo que hicimos, un dato con fecha que puedes revisar.*  
+- `h2` · **cambia** Cada pieza, con un dato medido. *Y su fecha, para que lo revises tú.*  
   <sub>Antes: «Cada pieza, con su prueba. Al lado de lo que hicimos, un dato con su fecha, que puedes revisar.»</sub>  
-  <sub>Por qué: Lock §14: la continuación gris va de 6 a 13 palabras y la tinta hasta 8 (lo midió herramientas/comprobar-obra.py).</sub>
+  <sub>Por qué: Lock §14: la continuación gris va de 6 a 13 palabras y la tinta hasta 8 (lo midió herramientas/comprobar-obra.py). Lectura fría, 19-oct: «Cada pieza, con su prueba» le sonó a folleto, y leyó «prueba» como promesa de resultado de negocio, que el párrafo de abajo dice que no hay. Ahora dice lo que es: un dato medido, con su fecha.</sub>
 - `parrafo` No son cifras de ventas de clientes: esas no las tenemos medidas, y no las vamos a inventar. Son datos de cómo quedó hecho el trabajo.
 - `h3` El sitio de Bernardo Combeau, fotógrafo de retrato.
 - `parrafo` Él sube sus fotos tal como las tiene, sin achicarlas, y el sitio las ajusta solo a la pantalla de cada visitante. Una foto que él sube con 805 kB, quien la mira la recibe en 95 kB: ocho veces más liviana, así que en el celular aparece antes.  
@@ -234,18 +234,26 @@
   → `/v3/servicios/desarrollo-web/`
 - `rotulo · situacion` Tu sitio existe y no lo vas a rehacer.
 - `h3` Visibilidad en IA
-- `parrafo` Cuando alguien le pregunta por tu rubro a ChatGPT o a otro asistente de IA, como Gemini o Perplexity, la respuesta sale de lo que esas herramientas leen en internet: tu sitio y lo que otros dicen de ti. Trabajamos los dos para que tu empresa pueda aparecer. Nadie puede prometerte que aparezcas, y no tenemos una cifra de cuántos clientes llegan hoy por ahí. Por eso el primer paso, el chequeo, es gratis.  
-  <sub>Fuente: servicios-v3.json visibilidad-en-ia.lead; e11/material.md E17 y §6 («No prometemos», /v3/servicios/visibilidad-en-ia/)</sub>
-- `nota · escena` En septiembre revisamos desde afuera el sitio público de un estudio de abogados que aquí no nombramos, con más de 250 artículos. Google podía leer su sitio; ChatGPT, Claude y Perplexity recibían un error. Lo causaba una regla del servicio que protege su sitio, que alguien activó sin saber qué apagaba.  
+- `parrafo` · **cambia** Cuando alguien le pregunta por tu rubro a ChatGPT o a otro asistente de IA, como Gemini o Perplexity, la respuesta sale de lo que esas herramientas leen en internet: tu sitio y lo que otros dicen de ti. Trabajamos los dos para que tu empresa pueda aparecer. Nadie puede prometerte que aparezcas; lo que sí te mostramos es qué responden hoy y quién aparece en tu lugar, y en el Acompañamiento mensual lo volvemos a medir cada mes.  
+  <sub>Antes: «Cuando alguien le pregunta por tu rubro a ChatGPT o a otro asistente de IA, como Gemini o Perplexity, la respuesta sale de lo que esas herramientas leen en internet: tu sitio y lo que otros dicen de ti. Trabajamos los dos para que tu empresa pueda aparecer. Nadie puede prometerte que aparezcas, y no tenemos una cifra de cuántos clientes llegan hoy por ahí. Por eso el primer paso, el chequeo, es gratis.»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: «no tenemos una cifra de cuántos clientes llegan hoy por ahí» lo leyó como «venden algo de $400.000 y admiten que no saben si sirve», el primero de sus diez. Queda la frase honesta («Nadie puede prometerte…») y se suma lo que el servicio sí entrega y mide (servicios-v3.json, Auditoría de Visibilidad y Acompañamiento Esencial: «Quién gana hoy esas respuestas», «~10 consultas medidas al mes»).</sub>  
+  <sub>Fuente: servicios-v3.json visibilidad-en-ia.lead; e11/material.md E17 y §6 («No prometemos», /v3/servicios/visibilidad-en-ia/); servicios-v3.json visibilidad-en-ia, planes (Auditoría de Visibilidad: medición en tres motores y quién gana hoy esas respuestas; Acompañamiento Esencial: consultas medidas al mes)</sub>
+- `nota · escena` · **cambia** En septiembre revisamos desde afuera el sitio público de un estudio de abogados que aquí no nombramos, con más de 250 artículos. Google podía leer su sitio; ChatGPT, Claude y Perplexity recibían un error. Lo causaba una regla del servicio que protege su sitio, que alguien activó sin saber que también dejaba fuera a los buscadores de IA.  
+  <sub>Antes: «En septiembre revisamos desde afuera el sitio público de un estudio de abogados que aquí no nombramos, con más de 250 artículos. Google podía leer su sitio; ChatGPT, Claude y Perplexity recibían un error. Lo causaba una regla del servicio que protege su sitio, que alguien activó sin saber qué apagaba.»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: «sin saber qué apagaba» lo dejó sin saber qué se había apagado. Ahora lo dice. Quién la activó y cómo terminó no los sabemos, y no se escriben.</sub>  
   <sub>Fuente: e11/material.md E1; ventas/presentaciones/*-2026-09-11/preguntas-y-hallazgos.md:24-39 («una regla del CDN que alguien activó sin saber qué apagaba»; la prueba fue sobre la portada)</sub>
-- `nota · precio` Desde $400.000 + IVA  
+- `nota · precio` · **cambia** Desde $400.000 + IVA · una vez  
+  <sub>Antes: «Desde $400.000 + IVA»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: no sabía si el precio era una vez o al mes. «una vez» es como lo dice servicios-v3.json.</sub>  
   <sub>Fuente: servicios-v3.json visibilidad-en-ia (Auditoría de Visibilidad)</sub>
 - `boton` Ver Visibilidad en IA  
   → `/v3/servicios/visibilidad-en-ia/`
 - `rotulo · situacion` Quieres saber qué frena a tu sitio en Google.
 - `h3` Auditoría SEO técnica
 - `parrafo` El SEO técnico es lo que permite que Google encuentre tus páginas, las lea y las muestre. La auditoría revisa tu sitio completo y te dice qué falla y qué arreglar primero.
-- `nota · precio` Desde $490.000 + IVA  
+- `nota · precio` · **cambia** Desde $490.000 + IVA · una vez  
+  <sub>Antes: «Desde $490.000 + IVA»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: no sabía si el precio era una vez o al mes. «una vez» es como lo dice servicios-v3.json.</sub>  
   <sub>Fuente: servicios-v3.json auditoria-seo-tecnica (Auditoría Completa)</sub>
 - `boton` Ver Auditoría SEO técnica  
   → `/v3/servicios/auditoria-seo-tecnica/`
@@ -333,9 +341,11 @@
 | 7 | **Doceavo** | Un estudio contable que no existe, en Concepción. Su portada te dice cuándo vence tu próxima declaración mensual, y su logo cambia cada mes. | Concepto · 2026 | `/v3/trabajo/doceavo/` · «Ver el concepto» |  |
 | 8 | **El chequeo de 21 señales** **(cambia)** | Escribes la dirección de un sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué se dedica. También avisa si el servidor los echa aunque tu configuración los deje pasar. | Propio · 2026 | `/v3/diagnostico/` · «Ir al chequeo» |  |
 | 9 | **Tonela** | Un proveedor de izaje que no existe, en Antofagasta: eslingas, cadenas y grilletes. Ordena su sitio con el color que la norma le da a cada capacidad de carga. | Concepto · 2026 | `/v3/trabajo/tonela/` · «Ver el concepto» |  |
-| 10 | **spindlelab.cl** | Este sitio. El chequeo de la portada corre en nuestro servidor, y Google Analytics y el píxel de Meta no cargan hasta que aceptas las cookies. | Propio · 2026 | sin enlace | Sin enlace: es este sitio. La pieza no es un enlace, no tiene círculo ni velo (spec §2.2). |
+| 10 | **spindlelab.cl** **(cambia)** | Este sitio. El chequeo de la portada corre en nuestro servidor, y las herramientas que miden las visitas, Google Analytics y el píxel de Meta, no cargan hasta que aceptas las cookies. | Propio · 2026 | sin enlace | Sin enlace: es este sitio. La pieza no es un enlace, no tiene círculo ni velo (spec §2.2). |
 
 <sub>El chequeo de 21 señales: antes «Escribes un dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden entrar y entender a qué se dedica. También avisa si el servidor los echa aunque tu configuración los deje pasar.». «pueden entrar» le sonó a hackeo al gerente en la lectura fría (texto-paso2, home, «Lo que se borró»), y la home y /diagnostico/ ya lo dicen así: un solo idioma para el chequeo.</sub>
+
+<sub>spindlelab.cl: antes «Este sitio. El chequeo de la portada corre en nuestro servidor, y Google Analytics y el píxel de Meta no cargan hasta que aceptas las cookies.». Lectura fría, 19-oct: no sabía qué es el píxel de Meta. Ahora dice para qué sirven los dos antes de nombrarlos.</sub>
 
 <sub>Fuentes por entrada: Combeau, fotografía: inventario-casos §2.1 (las dos etiquetas y su efecto: «él carga sus series solo», «805 kB → 95 kB») · Praxi: inventario-praxi §4 y §8.1 · Sesenta: marketing/portafolio/06-sesenta/ficha.md §4.1 y §6 · Verifica y Cumple: inventario-casos §2.3 y §4.1 y §7 («describe señales; no certifica») · Ocelo: marketing/portafolio/05-ocelo/caso.md (Desafío, Estrategia) y ficha.md §6 · Combeau, modelo: inventario-casos §2.2 («0 kB de video en la carga inicial») · Doceavo: marketing/portafolio/07-doceavo/caso.md (Estrategia, Identidad) · El chequeo de 21 señales: inventario-casos §2.4 y §4.4 · Tonela: marketing/portafolio/04-tonela/caso.md (Desafío, Estrategia) · spindlelab.cl: inventario-casos §2.6 y §4.1 (36 y 73 son dichos, sin crudo). El 100 del 14-oct no va: con la regla cambiada, el abogado lo leyó como «cambiaron la escala y ahora sacan el máximo» (lectura fría, vuelta 2). La alternativa: inventario-casos.json «GA4 y Meta Pixel tras el aviso de cookies», medido en e12/inventario/crudo/carga-playwright.json (16-oct-2026 17:54Z, portada de producción, 3 corridas a 1440 y a 390, sin aceptar cookies: el único tercero es static.cloudflareinsights.com, unos 10,6 kB)</sub>
 
@@ -473,8 +483,9 @@
   <sub>Fuente: inventario-praxi §7 (brand.json, voice.json; el acento pasó de #8069F2 a #E2F349 el 26-jul) y §4 (design-check en prebuild, 8/8)</sub>
 - `parrafo` La campaña usa el mismo chat como pieza: un reel donde la conversación con el coach aparece sobre el video.  
   <sub>Fuente: inventario-praxi §7 (reel «a memoria»)</sub>
-- `parrafo` · **nuevo** El sitio y la app los programó Ramón con agentes de IA: sesiones de Claude Code que escriben código a partir de sus instrucciones. Entre el 21 de julio y el 25 de agosto quedaron 219 cambios de código, y 218 llevan la firma de esas sesiones. Son herramientas para programar: no son los modelos que conversan dentro de Praxi.  
-  <sub>Por qué: Compuerta 2, 5e: el caso dice que se construyó con agentes de IA, con verdad y sin jerga. No dice que Ramón revisó cada cambio: 50 commits fueron directo a main (inventario-praxi §8.1).</sub>  
+- `parrafo` · **nuevo** El sitio y la app los programó Ramón con agentes de IA: sesiones de Claude Code que escriben código a partir de sus instrucciones. Entre el 21 de julio y el 25 de agosto se guardaron 219 cambios en el código, y en 218 quedó anotado que los escribieron esas sesiones. Son herramientas para programar: no son los modelos que conversan dentro de Praxi.  
+  <sub>Antes: «El sitio y la app los programó Ramón con agentes de IA: sesiones de Claude Code que escriben código a partir de sus instrucciones. Entre el 21 de julio y el 25 de agosto quedaron 219 cambios de código, y 218 llevan la firma de esas sesiones. Son herramientas para programar: no son los modelos que conversan dentro de Praxi.»</sub>  
+  <sub>Por qué: Compuerta 2, 5e: el caso dice que se construyó con agentes de IA, con verdad y sin jerga. No dice que Ramón revisó cada cambio: 50 commits fueron directo a main (inventario-praxi §8.1). Lectura fría, 19-oct: no sabía qué es «un cambio de código» ni «la firma». El conteo es el mismo (inventario-praxi §2). Sigue sin decir que Ramón revisó cada cambio, porque 50 fueron directo a main.</sub>  
   <sub>Fuente: inventario-praxi §2 («Quién lo hizo», medido con git log el 19-oct) y §8.2 (no decir que la app usa el modelo que la programó)</sub>
 - `nota · referencia` · **cambia** Los números son de ejemplo: los escribimos para la portada de Praxi y no son de un usuario.  
   <sub>Dónde: Bajo las capturas de la conversación y de «Tu progreso, en números» (inventario-praxi §6)</sub>  
@@ -507,9 +518,9 @@
 - `h2` · **cambia** Qué se midió y qué no.  
   <sub>Antes: «Lo que se midió, y lo que no.»</sub>  
   <sub>Por qué: Lock §21.5: titulares de sección de 2 a 7 palabras (lo midió herramientas/comprobar-obra.py).</sub>
-- `parrafo` · **cambia** De Praxi no mostramos usuarios, uso ni ventas: no hay una medición que podamos publicar. Lo que sí está medido es cómo quedó hecha. El 16 de octubre de 2026, sobre la última versión, pasaron las 384 pruebas automáticas, la revisión de marca pasó sus 8 reglas y el sitio se armó sin errores.  
+- `parrafo` · **cambia** De Praxi no mostramos usuarios, uso ni ventas: no hay una medición que podamos publicar. Lo que sí está medido es cómo quedó hecha. El 16 de octubre de 2026, sobre la última versión, pasaron las 384 pruebas automáticas, la revisión de marca (la que no deja publicar un color fuera de la paleta) pasó sus 8 reglas y el sitio se armó sin errores.  
   <sub>Antes: «No tenemos un número de usuarios, de uso ni de ventas de Praxi que podamos publicar, así que no ponemos ninguno. El 16 de octubre de 2026, sobre la última versión, pasaron las 384 pruebas automáticas, la revisión de marca pasó sus 8 reglas y el sitio se armó sin errores.»</sub>  
-  <sub>Por qué: Sin «que podamos publicar», que sugería un número escondido; el resto, igual.</sub>  
+  <sub>Por qué: Sin «que podamos publicar», que sugería un número escondido; el resto, igual. Lectura fría, 19-oct: no sabía qué es la revisión de marca. El paréntesis repite lo que dice «La pieza».</sub>  
   <sub>Fuente: inventario-praxi §0.4, §8.1 y crudo/verificacion-copia.txt</sub>
 
 | Medio | Forma | Alt o descripción | Pie |
@@ -608,7 +619,9 @@
 - `h2` · **cambia** Un panel y fotos a su medida.  
   <sub>Antes: «Un panel, y cada foto a su medida.»</sub>  
   <sub>Por qué: Lock §21.5: titulares de sección de 2 a 7 palabras (lo midió herramientas/comprobar-obra.py).</sub>
-- `parrafo` · **nuevo** Bernardo entra a su panel con su cuenta de GitHub y desde ahí carga sus series: la portada, sus retratos, sus proyectos y lo que cuenta de su estudio. Para cada foto marca qué parte no se puede cortar, y el sitio respeta ese punto en los recuadros de la portada y de las galerías.  
+- `parrafo` · **nuevo** Bernardo entra a su panel con una cuenta de GitHub, el servicio donde se guarda su sitio, y desde ahí carga sus series: la portada, sus retratos, sus proyectos y lo que cuenta de su estudio. Como una misma foto aparece en recuadros de distinta forma, en cada una él marca el punto que no se puede perder, como una cara, y el sitio recorta alrededor de ese punto en la portada y en las galerías.  
+  <sub>Antes: «Bernardo entra a su panel con su cuenta de GitHub y desde ahí carga sus series: la portada, sus retratos, sus proyectos y lo que cuenta de su estudio. Para cada foto marca qué parte no se puede cortar, y el sitio respeta ese punto en los recuadros de la portada y de las galerías.»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: se perdió en «su cuenta de GitHub» («¿mi secretaria tendría que tener cuenta de GitHub?») y no entendió «qué parte no se puede cortar». Ahora dice qué es GitHub y para qué marca ese punto. «como una cara» es un ejemplo de uso, no una foto en particular.</sub>  
   <sub>Fuente: inventario-casos §2.1 (Decap CMS, login con GitHub) y §2.9 (colecciones del panel; encuadre de fotos, en producción según revision-panel-admin-bernardo.md:586-588; no medido el 19-oct)</sub>
 - `parrafo` · **nuevo** Él sube cada foto tal como la tiene, y el sitio la entrega al tamaño de la pantalla de quien la mira. Una foto de su portada que él subió con 805 kB le llega al visitante en 95 kB, ocho veces más liviana. En el book de modelo, los videos no se descargan hasta que alguien los abre.  
   <sub>Fuente: inventario-casos §2.1 (Netlify Image CDN: 804.697 → 94.576 bytes, WebP a 828 px, 16 y 19-oct) y §2.2 (0 kB de video en la carga inicial)</sub>
@@ -622,8 +635,10 @@
   - Marca qué parte de cada foto no se corta en los recuadros. (Encuadre hecho para su panel)
   - Sube la foto tal cual y el sitio la entrega recortada y liviana. (Netlify Image CDN)
   - El book no baja sus videos hasta que hacen falta. (Video con carga diferida)
-  - Una máquina puede leer quién es y a qué se dedica. (Datos estructurados)
+  - Google y la IA pueden leer quién es y a qué se dedica. (Datos estructurados)
   - Las páginas llegan armadas, sin esperar scripts de otros sitios. (Astro)  
+  <sub>Antes: «Sexto ítem: «Una máquina puede leer quién es y a qué se dedica. (Datos estructurados)»»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: «Una máquina puede leer…» le sonó a texto de máquina; ahora dice cuáles.</sub>  
   <sub>Fuente: inventario-casos §2.1, §2.2 y §2.9, «Ingredientes con fila»</sub>
 
 | Medio | Forma | Alt o descripción | Pie |
@@ -663,9 +678,9 @@
 - `h2` · **nuevo** Ningún dato de su negocio.
 - `parrafo` · **nuevo** No medimos visitas, consultas ni ventas del sitio de Bernardo, y no tenemos ningún dato de su negocio para mostrar. Lo que sí está medido, el 16 de octubre de 2026, es cómo quedó hecho: la foto de su portada llegaba en 95 kB en vez de 805, y el book abría sin descargar ningún video.  
   <sub>Fuente: inventario-casos §4.4 (sin métrica de negocio), §2.1 y §2.2</sub>
-- `parrafo` · **nuevo** Hay también una señal de que el panel le sirve, sin número: después de que el sitio cambió de servidor, en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas.  
+- `parrafo` · **nuevo** Lo que esperábamos del panel pasó, aunque sin número: en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas.  
   <sub>Antes: «Hay también una señal de que el panel le sirve, sin número: después de que el sitio cambió de servidor, en septiembre, Bernardo publicó solo una campaña y fotos nuevas.»</sub>  
-  <sub>Por qué: Detectores, 19-oct: «publicó solo una campaña» se leía como «publicó apenas una campaña»; lo que se quiere decir es que la publicó sin pedirnos nada.</sub>  
+  <sub>Por qué: Detectores, 19-oct: «publicó solo una campaña» se leía como «publicó apenas una campaña»; lo que se quiere decir es que la publicó sin pedirnos nada. Lectura fría, 19-oct: «después de que el sitio cambió de servidor» le abrió una pregunta que el caso no contesta («¿estaba malo?»), y «una señal» le pareció poco. Ahora se ata a la hipótesis («Íbamos a saber si funcionaba cuando publicara una serie nueva sin pedirnos nada») y sale el servidor. La fecha es la de la fuente: lo dice la revisión del panel, escrita entre el 8 y el 23 de septiembre.</sub>  
   <sub>Fuente: inventario-casos §2.9, «Él usa el panel solo» (dicho: revision-panel-admin-bernardo.md:589-590, «confirmado por HTTP directo»)</sub>
 
 ### Siguiente
@@ -1038,7 +1053,9 @@
 - `h2` · **nuevo** El almanaque al revés.
 - `parrafo` · **nuevo** «doceavo» va en minúsculas, y su símbolo es una cuadrícula de 3 por 4 casillas: el año, de enero arriba a la izquierda a diciembre abajo a la derecha. La casilla del mes en curso va llena, así que el logo cambia solo cada mes: el sitio lo dibuja con la fecha del día, y el ícono de la pestaña también.  
   <sub>Fuente: marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)</sub>
-- `parrafo` · **nuevo** La letra es Recursive, que tiene un ajuste para volverse de ancho fijo sin cambiar de familia: el texto se lee normal y las cifras se ordenan en columnas, con las mismas letras. El color es el de un libro contable, verde pálido con su renglón y su columna, y un solo rojo que marca únicamente lo que vence. En un almanaque el rojo es feriado; aquí es plazo.  
+- `parrafo` · **nuevo** La letra es Recursive, que puede darle el mismo ancho a cada letra y a cada cifra sin dejar de ser la misma letra: el texto se lee normal y las cifras quedan en columna. El color es el de un libro contable, verde pálido con su renglón y su columna, y un solo rojo que marca únicamente lo que vence. En un almanaque el rojo es feriado; aquí es plazo.  
+  <sub>Antes: «La letra es Recursive, que tiene un ajuste para volverse de ancho fijo sin cambiar de familia: el texto se lee normal y las cifras se ordenan en columnas, con las mismas letras. El color es el de un libro contable, verde pálido con su renglón y su columna, y un solo rojo que marca únicamente lo que vence. En un almanaque el rojo es feriado; aquí es plazo.»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: no entendió «ancho fijo» ni «sin cambiar de familia». El hecho de caso.md (el eje que la vuelve monoespaciada) no cambia.</sub>  
   <sub>Fuente: marketing/portafolio/07-doceavo/caso.md (hechos de ficha.md §4, calendario del SII)</sub>
 
 | Medio | Forma | Alt o descripción | Pie |
@@ -1291,7 +1308,10 @@
   <sub>Por qué: Con punto, como en la home.</sub>
 - `h3` Desarrollo web  
   → `/v3/servicios/desarrollo-web/`
-- `nota · precio` Desde $390.000 · $690.000 · $1.190.000 + IVA
+- `nota · precio` · **cambia** Página de Campaña desde $390.000 · Sitio Esencial desde $690.000 · Sitio Completo desde $1.190.000 + IVA  
+  <sub>Antes: «Desde $390.000 · $690.000 · $1.190.000 + IVA»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: tres precios en una línea, sin decir si era uno, tres o un rango. Cada uno va con el nombre de su plan, tal cual de oferta-v3.json.</sub>  
+  <sub>Fuente: servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)</sub>
 - `parrafo` · **cambia** Lo diseñamos y lo programamos a medida, sin plantilla. Queda listo para que Google y la IA puedan leerlo, y antes de entregarlo le pasamos el chequeo gratis.  
   <sub>Antes: «El sitio nace legible para las máquinas que hoy recomiendan tu negocio. Lo compruebas con el chequeo gratis, sobre tu dominio, antes y después.»</sub>  
   <sub>Por qué: La línea de la home (texto-paso2 «home.servicios.dw.texto», aprobada en la compuerta 2): dice primero que lo diseñamos y lo programamos. La de E8 hablaba solo de máquinas.</sub>
@@ -1299,20 +1319,31 @@
 - `parrafo` No hace falta reconstruir para que una IA pueda citarte.
 - `h3` Visibilidad en IA  
   → `/v3/servicios/visibilidad-en-ia/`
-- `nota · precio` Desde $400.000 + IVA
-- `parrafo` Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro.
+- `nota · precio` · **cambia** Desde $400.000 + IVA · una vez  
+  <sub>Antes: «Desde $400.000 + IVA»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: no sabía si era una vez o al mes; servicios-v3.json lo dice así.</sub>  
+  <sub>Fuente: servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)</sub>
+- `parrafo` · **cambia** Mide qué responden hoy ChatGPT, Gemini y Perplexity cuando preguntan por tu rubro y quién aparece en tu lugar, y te dice qué falta para que puedan citarte.  
+  <sub>Antes: «Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro.»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: «¿Visibilidad en IA lo arregla o solo lo dice?». Ahora dice qué entrega el plan con que parte el precio (servicios-v3.json, Auditoría de Visibilidad: medición en ChatGPT, Gemini y Perplexity; quién gana hoy esas respuestas; qué falta).</sub>
 - `h3` Auditoría SEO técnica  
   → `/v3/servicios/auditoria-seo-tecnica/`
-- `nota · precio` Desde $490.000 · $690.000 con Visibilidad en IA + IVA
-- `parrafo` · **cambia** Revisa tu sitio completo y te dice qué le impide a Google encontrar tus páginas, leerlas y mostrarlas, y qué arreglar primero.  
+- `nota · precio` · **cambia** Desde $490.000 + IVA · una vez · con Visibilidad en IA, desde $690.000 + IVA  
+  <sub>Antes: «Desde $490.000 · $690.000 con Visibilidad en IA + IVA»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: igual; los dos precios de la Auditoría, como los dice servicios-v3.json.</sub>  
+  <sub>Fuente: servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)</sub>
+- `parrafo` · **cambia** Revisa tu sitio completo y te dice qué le impide a Google encontrar tus páginas, leerlas y mostrarlas, y qué arreglar primero. Te deja el plan y el código listos para tu equipo; si prefieres que lo hagamos nosotros, es el Acompañamiento mensual.  
   <sub>Antes: «Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué arreglar primero.»</sub>  
-  <sub>Por qué: Cuatro términos sin explicar (brief §2); la home ya lo dice así desde la lectura fría.</sub>
+  <sub>Por qué: Cuatro términos sin explicar (brief §2); la home ya lo dice así desde la lectura fría. Lectura fría, 19-oct: «te dice qué arreglar. ¿Quién lo arregla?». servicios-v3.json: «con plan y código listos»; /metodo/: «Tú decides si los ejecuta tu equipo… o los ejecutamos nosotros».</sub>
 - `h2` · **cambia** Tu sitio ya funciona y quieres que siga mejorando.  
   <sub>Antes: «Ya giras y quieres sostenerlo»</sub>  
   <sub>Por qué: Lectura fría, vuelta 2: el gerente lo leyó como traducción y la dueña de la clínica no lo entendió.</sub>
 - `h3` Acompañamiento mensual  
   → `/v3/servicios/acompanamiento-mensual/`
-- `nota · precio` Desde $590.000/mes · $790.000/mes Pro + IVA
+- `nota · precio` · **cambia** Desde $590.000/mes + IVA · las dos juntas, desde $790.000/mes + IVA  
+  <sub>Antes: «Desde $590.000/mes · $790.000/mes Pro + IVA»</sub>  
+  <sub>Por qué: Lectura fría, 19-oct: «¿Qué es Pro?»: el Pro es SEO técnico y visibilidad en IA juntas (servicios-v3.json); lo dice en vez de nombrarlo.</sub>  
+  <sub>Fuente: servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)</sub>
 - `parrafo` · **cambia** Una auditoría te dice qué hacer; este servicio lo hace, mes a mes, en SEO técnico, en visibilidad en IA o en las dos. Mínimo tres meses.  
   <sub>Antes: «Implementación continua e informes quincenales de SEO técnico o de visibilidad en IA.»</sub>  
   <sub>Por qué: La línea de la home; la cadencia de informes es R2, abierta, y no se promete aquí.</sub>
@@ -1320,14 +1351,18 @@
 - `h3` · **nuevo** Gestión de redes sociales  
   → `/v3/servicios/redes-sociales/`  
   <sub>Por qué: Detectores, 19-oct: los otros cuatro servicios llevan su nombre y su precio en esta página, y estos dos no; sin nombre, el párrafo no dice qué servicio es.</sub>
-- `nota · precio` · **nuevo** Desde $390.000/mes · $590.000/mes con pauta + IVA
+- `nota · precio` · **nuevo** Desde $390.000/mes + IVA · con publicidad, desde $590.000/mes + IVA  
+  <sub>Por qué: Lectura fría, 19-oct: «$590.000/mes con pauta» lo entendió solo más abajo; «publicidad» es la palabra del párrafo de al lado.</sub>  
+  <sub>Fuente: servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)</sub>
 - `parrafo` · **cambia** Tus publicaciones y tu publicidad en LinkedIn, Instagram y Facebook.  
   <sub>Antes: «Orgánico y pauta social en LinkedIn y Meta.»</sub>  
   <sub>Por qué: «Orgánico» y «pauta social» son jerga; Meta es Instagram y Facebook (la home lo dice así).</sub>
 - `h3` · **nuevo** Paid Media (Google)  
   → `/v3/servicios/paid-media/`  
   <sub>Por qué: Igual que Gestión de redes sociales.</sub>
-- `nota · precio` · **nuevo** Desde $350.000/mes · $550.000/mes Pro + IVA
+- `nota · precio` · **nuevo** Desde $350.000/mes + IVA, sin contar lo que inviertes en los anuncios · con varias campañas, desde $550.000/mes + IVA  
+  <sub>Por qué: Lectura fría, 19-oct: «Pro» sin explicar; el Pro es más de una campaña (servicios-v3.json). Lo de la inversión aparte es la línea de la home.</sub>  
+  <sub>Fuente: servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)</sub>
 - `parrafo` Google Ads para llegar a quien ya está buscando lo que ofreces.
 
 ### Lo que pones tú
@@ -1814,7 +1849,7 @@
 - **La persona a caballo de la portada de Verifica y Cumple está generada con IA.** Lo dice el commit que la puso (698821e, 21-sep: «Imagen generada (Higgsfield, cinematic_studio_2_5): un fiscalizador a caballo»). Hallazgo de esta corrida: ningún documento de la obra lo anotaba. Todo medio de Verifica y Cumple donde se vea lleva el pie: el tramo de la cinta, el índice corto de la home, el muro, la franja de Auditoría SEO técnica y la imagen de la ley en /diagnostico/.
 - **«El 16 de octubre respondió en 0,52 segundos» (Verifica y Cumple, home).** Medido una vez, el 16-oct (inventario-casos §2.3). Si Javiera pide la mediana de tres, se mide en la corrida 2 y la cifra se cambia aquí, con su fecha.
 - **«ocho veces más liviana» (Combeau).** 804.697 / 94.576 = 8,5 (inventario-casos §2.1). «Ocho veces» redondea hacia abajo.
-- **«después de que el sitio cambió de servidor, en septiembre, Bernardo publicó solo una campaña y fotos nuevas» (Combeau, Sin métrica).** Dicho, no medido hoy: revision-panel-admin-bernardo.md:589-590 («confirmado por HTTP directo»). Si Javiera pide medirlo, se mide o la frase sale.
+- **«en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas» (Combeau, Sin métrica).** Dicho, no medido hoy: revision-panel-admin-bernardo.md:589-590 («confirmado por HTTP directo»). Si Javiera pide medirlo, se mide o la frase sale.
 - **El encuadre de fotos en el panel de Combeau, y que hoy se abre con «Editar foto».** Dicho: en producción según revision-panel-admin-bernardo.md:586-588; el panel por dentro no se pudo abrir el 19-oct (pide su sesión de GitHub). Las capturas son del 3-sep y su pie lo dice.
 - **«en las reseñas de las apps de entrenamiento se repite la misma queja» (Praxi).** Dicho: investigación interna de Praxi del 3-ago, cinco citas marcadas [D] (inventario-praxi §8.1). Ya no dice «la que más se repite».
 - **Los tres cambios en primera persona de /nosotros/ (Por qué un solo sistema, párrafos 2 y 3; «Diseño y programo a medida»).** Son la voz de Ramón fuera de la bio: los confirma él. Si no, quedan los de hoy (el párrafo 3 de hoy dispara el detector A4).
@@ -1832,6 +1867,9 @@
 - Spec §2.2: la línea mono de /trabajo/ en A es «tipo · año», sin herramientas (salida A del paso 2, que cerró el defecto 16). La spec dice «hasta dos ingredientes»: cero cabe; conviene que lo diga.
 - La persona generada en la portada de Verifica y Cumple: dónde va el pie en la cinta, el índice corto, el muro y la franja de Auditoría SEO técnica. Propuesta: en la franja, «sus 12 cosas» (verifica-y-cumple-12-169), sin persona, y el pie sobra.
 - La foto servida de Combeau es cuadrada (828 × 828): su forma en la fila la decides tú.
+- Lectura fría, 19-oct: «Qué quiere decir» va debajo de los planes de Desarrollo web, y el lector se encontró con «Home», schema, AEO/GEO y CMS antes de su explicación. Propuesta: el glosario antes de los planes, o cada término de los planes enlazado a su línea.
+- Lectura fría, 19-oct: en Praxi, «Las personas están generadas con IA» se lee seis veces y «Los números son de ejemplo» cuatro; el lector concluyó que «casi todo es falso». Propuesta: cuando dos o más medios de una misma fila llevan el mismo pie, va una vez bajo la fila.
+- La sección 4 de la home se titula ahora «Cada pieza, con un dato medido» (lectura fría, 19-oct). La spec la nombra por el título viejo, «Cada pieza, con su prueba» (spec-visual.md:54, :295, :508 y :531): es la misma sección, con los mismos ids (home.prueba.*), y conviene renombrarla para que Diego no busque dos.
 
 **Diego (construcción)**
 
@@ -1853,6 +1891,7 @@
 
 - Paid Media dice cuatro veces que optimiza «con agentes de IA» (servicios-v3.json paid-media) y no tiene fila en ningún inventario; el criterio 13 del paso 2 pedía que toda afirmación de IA remita a Praxi. No lo toqué porque no es del giro: lo decides tú (o se le pone fila).
 - Las preguntas de la lectura fría del paso 2 que siguen sin respuesta: el anticipo, si hay un costo mensual, de quién es el código al terminar, qué pasa si no estás disponible, cuántas rondas trae cada plan, si atiendes regiones y si hay WhatsApp.
+- Lectura fría del 19-oct, lo que no es texto: un solo cliente con caso pesa más que cualquier frase (sus números 3 y 5); y preguntas que el sitio no contesta: si las 24 horas son hábiles, cuánto cuesta y quién paga el hosting y el dominio, quién hace un cambio chico (un teléfono, un precio) después de entregar un sitio sin panel y cuánto cuesta, y qué pasa con el sitio que ya tiene mientras se hace el nuevo.
 
 ## Los dos detectores, corridos sobre este texto
 
@@ -1906,8 +1945,40 @@ Corridos enteros el 19-oct sobre el texto visible de las 20 páginas (813 textos
 | #9 · gráficos falsos o todo texto | Donde falta material, el hueco se nombra en vez de rellenarse: las pantallas internas de Praxi llevan su texto («praxi.pieza.hueco») y no se arman con datos inventados. |
 | Prueba del copy (borrar 30 %) | Ver A10 y la lectura fría. |
 
+## La lectura fría
+
+Corrida el 19-oct con el CLI de Claude Code (`claude -p`, 2.1.303) en un directorio vacío del scratchpad, fuera del repo y con todas las herramientas desactivadas: el lector no vio nada más que lectura-fria/obra-instrucciones.txt y el texto visible de ocho páginas (home, /trabajo/, Praxi, Combeau, Doceavo como muestra de los conceptos, /servicios/, Desarrollo web y /contacto/), sacado del JSON con md-obra.py --lector, sin fuentes, notas ni razonamiento. Un lector: dueño de una pyme de servicios B2B de 20 personas en Santiago, con un sitio viejo, que llegó por un correo y nunca oyó de SpindleLab. Su informe va íntegro, sin editar, en lectura-fria/obra-salida.txt. Es una lectura simulada: sirve para ver dónde se pierde alguien que no sabe de sitios, no para medir cuántos. Las correcciones de abajo no las volvió a leer nadie; la próxima lectura es la de Javiera, sobre lo construido. Lo que entendió bien: qué hace la empresa (en una frase suya: «hacen páginas web a medida para empresas como la mía, y si ya tengo una, la revisan para que Google y ChatGPT la lean»), qué es un Concepto, y en Praxi qué hace la IA y qué no («la IA conversa… calcular cuándo subir el peso lo hace un programa con reglas fijas»). Lo que haría al terminar: probar el chequeo.
+
+**Lo que cambió por ella**
+
+- Home, «Cada pieza, con su prueba» → «Cada pieza, con un dato medido. Y su fecha, para que lo revises tú.»: le sonó a folleto y leyó «prueba» como resultado de negocio.
+- Home, Visibilidad en IA: salió «no tenemos una cifra de cuántos clientes llegan hoy por ahí», que leyó como «venden algo de $400.000 y admiten que no saben si sirve» (su número 1). Queda «Nadie puede prometerte que aparezcas» y se suma lo que el servicio entrega y mide, según servicios-v3.json.
+- Home, la escena del estudio de abogados: «sin saber qué apagaba» pasa a «sin saber que también dejaba fuera a los buscadores de IA». Quién activó la regla y cómo terminó no lo sabemos, y no se escribe.
+- Precios: «una vez» en Visibilidad en IA y en Auditoría SEO técnica (home y /servicios/), como lo dice servicios-v3.json. En /servicios/, cada precio va con lo que es: los tres planes de Desarrollo web con su nombre, «las dos juntas» en vez de «Pro» en Acompañamiento mensual, «con publicidad» en Redes y «con varias campañas» en Paid Media. Los montos, iguales a los JSON.
+- /servicios/: Visibilidad en IA dice qué entrega («Mide qué responden hoy… y quién aparece en tu lugar, y te dice qué falta») y Auditoría SEO técnica dice quién arregla («Te deja el plan y el código listos para tu equipo; si prefieres que lo hagamos nosotros, es el Acompañamiento mensual»). Era su número 9: no distinguía los dos servicios.
+- /trabajo/, spindlelab.cl: dice para qué sirven Google Analytics y el píxel de Meta antes de nombrarlos.
+- Praxi: «219 cambios de código, y 218 llevan la firma» pasa a «se guardaron 219 cambios en el código, y en 218 quedó anotado que los escribieron esas sesiones»; y «la revisión de marca» dice entre paréntesis qué hace.
+- Combeau: qué es GitHub («el servicio donde se guarda su sitio») y para qué marca un punto en cada foto; el ítem «Una máquina puede leer…» dice cuáles; y el cierre se ata a la hipótesis en vez de abrir una pregunta sobre el servidor.
+- Doceavo: «ancho fijo sin cambiar de familia» se dice en palabras.
+
+**Lo que dijo y no cambié, y por qué**
+
+- «Estudio de diseño y tecnología» con una sola persona detrás (sus números 6 y B): es el rótulo del hero 3, que Ramón eligió tal cual en la compuerta 2. La home dice quién está detrás dos secciones más abajo.
+- Pocos casos reales, mucho Concepto, personas generadas con IA (sus números 3 y 5, y E): no es un problema de texto. El texto dice la verdad de la vitrina; lo que la cambia es un segundo cliente con caso (va a Ramón). El pie de las personas generadas no sale: es la regla de la obra.
+- La prueba no es de negocio (su número 4): no hay cifras de ventas de clientes y la página lo dice. Lo que se puede hacer en el texto, que cada dato diga qué le cambia al visitante, ya está («así que en el celular aparece antes»).
+- Los textos y las fotos los pone el cliente (su número 7), el anticipo, las 24 horas, el costo de hosting y quién hace los cambios chicos después: son de la oferta, no del texto. Van a Ramón.
+- Las siglas de los planes de Desarrollo web («Home», schema, indexación, AEO/GEO, CMS): son texto de oferta-v3.json, que no se toca; «Qué quiere decir» las explica, pero debajo de los planes, y el lector las leyó antes (va a Lucía).
+- «Mira 21 cosas de tu sitio. ¿Qué cosas?»: la primera pantalla no tiene lugar para la lista; el resultado del chequeo y /diagnostico/ las muestran.
+- Los nombres de modelos y herramientas de Praxi y Combeau: Ramón pidió nombrar los modelos (5d), cada uno va con lo que hace, y la lista va bajo «El detalle, para quien quiera mostrárselo a su técnico». El lector se saltó esa lista, que es lo que se espera de él.
+- Los títulos cortos de los casos («La IA conversa. El código decide.», «El almanaque al revés.») y los rótulos Problema, Hipótesis, Solución, La pieza y Sin métrica: son la estructura de caso de Koto que Ramón pidió en la compuerta 1 (C1.4), y «Sin métrica» es el rótulo que exige el brief.
+- «Paid Media (Google)» en inglés: es el nombre del servicio en los JSON; la home dice al lado qué es.
+- «RIR 2»: está dentro de la descripción de una captura, no en el texto de la página.
+
 ## Historial de correcciones
 
 | Fecha | Corrección | Origen |
 |---|---|---|
 | 19-oct-2026 | Primera versión: el texto de las 27 rutas sobre A, con la compuerta 2 aplicada (portada, cinta, Praxi 5b a 5e, Combeau nuevo, cuatro conceptos, rutas que quedan con el giro) | Clara, con Renata; brief «Compuerta 2» |
+| 19-oct-2026 | Lo que quedó sin commit en la corrida cortada: titulares de caso con punto en sus dos partes, nombres y precios de los servicios en /servicios/, un pie por medio en Praxi | Clara, corrida retomada |
+| 19-oct-2026 | Los dos detectores, enteros: «publicó solo» en Combeau; el «Sin métrica» de Ocelo, Doceavo y Tonela sin elogiar la pieza; Redes y Paid Media con nombre y precio en /servicios/; la primera línea de /metodo/ sin «estrategia AEO/GEO» | antislop-web.md y refero-design anti-ai-slop.md |
+| 19-oct-2026 | Lectura fría (un dueño de pyme que no conoce SpindleLab): el título de la prueba, Visibilidad en IA en la home, precios con «una vez» y con lo que es cada uno, qué entrega Visibilidad en IA y quién arregla en la Auditoría, y siete aclaraciones en Praxi, Combeau, Doceavo y /trabajo/ | lectura-fria/obra-salida.txt |
