@@ -1,7 +1,7 @@
 # Encargo · El giro del 16-oct: SpindleLab como estudio de diseño y tecnología
 
 **Fecha:** 16-oct-2026, 14:05 (Chile) · **actualizado a las 19:50** con la compuerta 1 de E12: el manual de marca
-antiguo queda sin efecto en diseño (§5)
+antiguo queda sin efecto en diseño (§5) · **y el 19-oct, 09:55**, con la compuerta 2: la dirección elegida (§6)
 **De:** el estudio web, al encuadrar la obra E12 del v3. Lo escribe Mauro.
 **Para:** la troncal (Tomás).
 **Decide y edita:** la troncal, con Ramón. Desde la rama del estudio web (`claude/magical-franklin-ckfki2`) no se
@@ -154,3 +154,22 @@ el sitio no sale antes que ella.
   la muestra como trabajo propio. Si la ficha o el organigrama tienen que decirlo, es tuyo.
 
 **Desde aquí no se toca** el manual, `CLAUDE.md`, las fichas, el pipeline, el plan ni las piezas de redes o de outbound.
+
+## 6 · Actualización del 19-oct, 09:55: la dirección elegida
+
+**Qué eligió Ramón.** En la compuerta 2 de E12 (19-oct, a eso de las 09:50), **la dirección A · Archivo**. Registro:
+`marketing/oficina/obras-web/spindlelab-v3/e12/brief-de-obra.md`, sección «Compuerta 2»; su respuesta textual, en
+`e12/insumos-ramon-19oct.md`. Como en §1 y §5, la fuente es su conversación con la sesión del estudio web.
+
+| | Lo elegido |
+|---|---|
+| Letra | **Google Sans Flex** para titulares y cuerpo, y **DM Mono 500** para datos y rótulos |
+| Color | **Lienzo negro `#060606`** en todas las páginas; el color lo trae el trabajo mostrado, nunca la interfaz |
+| Logo | **Camino 2, «El huso»:** la «i» de SpindleLab dibujada como el huso de hilar del nombre, **monocromo**, en Google Sans Flex wght 600 |
+
+**Todavía no es para aplicar.** La spec de A se está reescribiendo y el logo es un camino, no el dibujo final. **El
+encargo para el manual nuevo** (la letra, los colores con su rol y su contraste, y el logo) **te llega al cierre de la
+obra**, cuando la spec y el logo final estén construidos. Hasta entonces sigue valiendo §5: lo que ya circula usa el
+manual viejo, y lo decides tú con Ramón.
+
+**Desde aquí no se toca** el manual, `CLAUDE.md`, las fichas, el pipeline ni el plan.

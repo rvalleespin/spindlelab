@@ -228,6 +228,27 @@ quedó fuera el 5-oct.
 > de la compuerta 2; qué hacen mientras tanto las piezas de redes y el outbound que usan el manual viejo lo decide
 > ella (`marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md` §5). Registro: fila del 16-oct
 > (compuerta 1 de E12) en el §7 de `spec-visual.md`.
+>
+> **Estado al 19-oct, 09:55 (E12, compuerta 2 cerrada):** el paso 2 quedó hecho y aprobado por Javiera en la vuelta 2
+> (`e12/acta-paso-2.md`, `70d7c23`: los 19 defectos de la vuelta 1 cerrados y cuatro menores nuevos, 20 a 23): cuatro
+> piezas de concepto (Tonela, Ocelo, Sesenta y Doceavo), tres caminos de logo, el texto de Clara con su lectura fría, el
+> inventario de Praxi y dos direcciones sobre negro con su tablero (`tableros/e12-direcciones/`). Ramón cerró la
+> compuerta 2 el 19-oct, a eso de las 09:50 (`e12/brief-de-obra.md`, sección «Compuerta 2»; textual en
+> `e12/insumos-ramon-19oct.md`): **A · Archivo** (Google Sans Flex con DM Mono, lienzo `#060606`); **logo El huso**,
+> monocromo; **hero 3**; **la portada de la home es el video del hilo de oro del sitio actual**, como desvío autorizado
+> de la regla de solo trabajo real; **ninguna generación pagada** («cuando tenga plata vamos con lo faltante»); y **Praxi
+> y Combeau, los dos casos reales**: el de Praxi nombra sus modelos, dice que se construyó con agentes de IA y no cuenta
+> que está en pausa. Las preguntas 6 a 10 no las contestó y quedan por defecto: los puntajes propios no se muestran,
+> Combeau va sin sus medidas personales, ninguna interior lleva el lienzo claro, el cursor es blanco y el logo,
+> monocromo. B queda como historia. **Sigue:** en esta corrida, la spec de E12 sobre A (Lucía reescribe
+> `spec-visual.md`), el logo final, el texto de la obra, y el inventario y las señales al día, sin tocar
+> `spindlelab-astro/`; en la siguiente, la construcción de A en `spindlelab-astro/`, la QA de Javiera en contexto limpio
+> y el cierre. Nada se publica. **Lo que esto le cambia a lo abierto:** R9 queda en las cuatro piezas de concepto del
+> índice, que Ramón revisa antes de que salgan (Raigal sale del índice y pasa a archivo, con Aplomo y Deslinde, como
+> decía el tablero); R5 sigue para la construcción; R1 sigue abierta y frena publicar, no construir; R2 a R4 y R6 a R8,
+> igual. **Para la troncal:** la dirección elegida está en
+> `marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md` §6; el encargo del manual nuevo llega al cierre
+> de la obra. Registro: fila del 19-oct (compuerta 2 de E12) en el §7 de `spec-visual.md`.
 
 No necesita decisión. Se hace en esta rama, se mide y queda anotado en el §7 de la spec.
 
