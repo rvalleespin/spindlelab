@@ -1,0 +1,78 @@
+{
+ "archivos": {
+  "cinta.webm": {
+   "bytes": 976539,
+   "segundos": 16.0,
+   "pistas": [
+    "video"
+   ],
+   "codec": [
+    "vp9"
+   ],
+   "px": [
+    1280,
+    720
+   ]
+  },
+  "cinta.mp4": {
+   "bytes": 986256,
+   "segundos": 16.0,
+   "pistas": [
+    "video"
+   ],
+   "codec": [
+    "h264"
+   ],
+   "px": [
+    1280,
+    720
+   ],
+   "faststart": true
+  },
+  "cinta-poster.webp": {
+   "bytes": 30674
+  }
+ },
+ "tramos": [
+  {
+   "nombre": "Combeau, fotografía",
+   "rehecho": true,
+   "psnr_contra_prototipo_mp4": 13.462004
+  },
+  {
+   "nombre": "Sesenta",
+   "rehecho": false,
+   "psnr_contra_prototipo_mp4": 99.0
+  },
+  {
+   "nombre": "Praxi",
+   "rehecho": false,
+   "psnr_contra_prototipo_mp4": 59.016753
+  },
+  {
+   "nombre": "Tonela",
+   "rehecho": false,
+   "psnr_contra_prototipo_mp4": 26.336028
+  },
+  {
+   "nombre": "Verifica y Cumple",
+   "rehecho": false,
+   "psnr_contra_prototipo_mp4": 46.220445
+  },
+  {
+   "nombre": "Ocelo",
+   "rehecho": false,
+   "psnr_contra_prototipo_mp4": 49.776581
+  },
+  {
+   "nombre": "Combeau, modelo",
+   "rehecho": true,
+   "psnr_contra_prototipo_mp4": 10.858764
+  },
+  {
+   "nombre": "Doceavo",
+   "rehecho": false,
+   "psnr_contra_prototipo_mp4": 99.0
+  }
+ ]
+}
