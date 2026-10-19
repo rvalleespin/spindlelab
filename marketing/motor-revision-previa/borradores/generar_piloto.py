@@ -7,13 +7,13 @@ import json, re, csv, sys
 RAIZ = '/home/user/spindlelab/marketing/motor-revision-previa/'
 BAJA_SITIO = "Si no quieres que te escriba, dime y no insisto. Saqué tu correo del sitio de ustedes; en verifica.spindlelab.cl/privacidad digo qué datos trato y cómo pedir que deje de hacerlo."
 PRECIO_C1 = "Dejar un aviso de cookies que pregunte antes cuesta $149.000 + IVA."
-PRECIO_F1 = "Arreglarlo cuesta $149.000 + IVA: un aviso junto al formulario y una plantilla de política para que la revise tu abogado."
-PRECIO_F1_ESTUDIO = "Arreglarlo cuesta $149.000 + IVA: un aviso junto al formulario y una plantilla de política para que la revisen en el estudio."
+PRECIO_F1 = "Arreglarlo cuesta $149.000 + IVA e incluye un aviso junto al formulario y una plantilla de política para que la revise tu abogado."
+PRECIO_F1_ESTUDIO = "Arreglarlo cuesta $149.000 + IVA e incluye un aviso junto al formulario y una plantilla de política para que la revisen en el estudio."
 LLAMADA = "Si quieres, lo vemos en una llamada de 20 minutos."
 LLAMADA_MUESTRO = "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría."
 CHEQUEO = "Puedes verlo tú, gratis y sin registro: verifica.spindlelab.cl"
 VERLO_F1 = "Puedes verlo tú: abre la portada, baja hasta el formulario y busca ese enlace."
-INCOGNITO = "Puedes verlo tú: abre el sitio en una ventana de incógnito, sin aceptar nada, y mira las cookies desde el ícono a la izquierda de la dirección."
+INCOGNITO = "Puedes verlo tú: abre el sitio en una ventana de incógnito, sin aceptar nada, espera unos diez segundos y mira las cookies desde el ícono a la izquierda de la dirección."
 DERIVA = "Si no eres tú quien ve el sitio, ¿con quién lo hablo?"
 SIN_AVISO = "En la portada no vi ningún aviso donde el visitante pueda aceptar o rechazar."
 
@@ -63,16 +63,27 @@ for id, v in ver.items():
     if not txt:
         RESERVA.append(dict(id=id, dominio=v['dominio'], email=ent[v['dominio']]['email'], motivo='Confirmado, pero los dos revisores no coinciden en ninguna cookie de medicion nombrable: remedir')); continue
     dom = v['dominio']
-    EXTRA_C1 = {'V07': "Más abajo, en esa misma portada, hay un formulario de contacto, así que quien te escribe ya tiene esas cookies guardadas en su navegador."}
+    FORM = "Más abajo, en esa misma portada, hay un formulario de contacto, así que quien te escribe ya tiene esas cookies guardadas en su navegador."
+    EXTRA_C1 = {'V07': FORM, 'V29': FORM}   # formulario visto por el motor en 2-3 rondas, por un revisor y en la captura r1-B; consecuencia que el dueño siente (criterio 3 de Ramon)
     if txt == 'cookies de Google Analytics':
         # Criterio 3 de Ramon (14-oct): solo Analytics, sin formulario, sin grabacion de sesion y sin publicidad = el correo diria 'cookies' y nada mas.
         extra = {'V58': 'tiene 1 formulario en la portada: candidato a F1, falta verificarlo con dos revisores', 'V74': 'el motor y un revisor vieron Clarity (grabacion de sesion) pero el otro no: remedir antes de escribir'}.get(id, 'sin formulario, sin Pixel de Meta, sin Clarity/Hotjar y sin publicidad: no hay consecuencia que el dueño sienta')
         RESERVA.append(dict(id=id, dominio=dom, email=ent[dom]['email'], motivo='Solo cookies de Google Analytics; ' + extra)); continue
+    ncook = len(v['cookies_medicion_en_ambos'])
+    if id == 'V43':
+        # Revision independiente: solo _gcl_au se escribe en carga pasiva; _ga y _ga_* aparecen tras mover el mouse o hacer scroll. No se dice 'sin hacer nada' de las de analitica.
+        p2 = f"Entré a {dom} sin aceptar nada y, en cuanto cargó la portada, mi navegador guardó una cookie de publicidad de Google; al navegar un poco más se sumaron las de analítica. {SIN_AVISO} Más abajo hay un formulario que pide nombre, teléfono y correo, y quien lo llena ya lleva esas cookies guardadas."
+        inc = "Puedes verlo tú: abre el sitio en una ventana de incógnito, sin aceptar nada, y mira las cookies desde el ícono a la izquierda de la dirección, al cargar y de nuevo después de bajar por la página."
+    else:
+        guardadas = ('guardada una ' + txt.replace('cookies ', 'cookie ', 1)) if ncook == 1 else ('guardadas ' + txt)   # una sola cookie = singular (V54, V21)
+        p2 = f"Entré a {dom} sin hacer nada y, en unos diez segundos, mi navegador ya tenía {guardadas}. {SIN_AVISO}" + (' ' + EXTRA_C1[id] if id in EXTRA_C1 else '')
+        inc = INCOGNITO
     d = base(id, asunto='las cookies de ' + dom, peso=peso,
-             cuerpo=[SALUDO.get(id, 'Hola:'),
-                     f"Entré a {dom} sin hacer nada y, en unos diez segundos, mi navegador ya tenía guardadas {txt}. {SIN_AVISO}" + (' ' + EXTRA_C1[id] if id in EXTRA_C1 else ''),
-                     INCOGNITO, PRECIO_C1 + ' ' + LLAMADA_MUESTRO, DERIVA],
-             notas=f"Verificado por 2 revisores (19-oct). Cookies nombradas = las de medición que vieron ambos: {', '.join(v['cookies_medicion_en_ambos'])}. Sin aviso visible en ninguna captura (antes y despues del primer gesto). Medido desde IP de nube. Sin Consent Mode bloqueante (gcs=G100) en ninguna peticion. NO se afirma que Google/Meta 'reciban la visita' ni que el sitio 'no tenga politica'." + (" El formulario de la portada (V07) lo vieron el motor en 2 rondas, un revisor y la captura r1-B; ESTE SITIO SI TIENE politica de privacidad en el pie: el correo no habla de politica." if id == 'V07' else ''))
+             cuerpo=[SALUDO.get(id, 'Hola:'), p2, inc, PRECIO_C1 + ' ' + LLAMADA_MUESTRO, DERIVA],
+             notas=f"Verificado por 2 revisores (19-oct). Cookies nombradas = las de medición que vieron ambos: {', '.join(v['cookies_medicion_en_ambos'])}. Sin aviso visible en ninguna captura (antes y despues del primer gesto). Medido desde IP de nube. Sin Consent Mode bloqueante (gcs=G100) en ninguna peticion. NO se afirma que Google/Meta 'reciban la visita' ni que el sitio 'no tenga politica'."
+                   + (" El formulario de la portada lo vieron el motor en 2-3 rondas, un revisor y la captura r1-B." if id in EXTRA_C1 or id == 'V43' else '')
+                   + (" ESTE SITIO SI TIENE politica de privacidad en el pie: el correo no habla de politica." if id == 'V07' else '')
+                   + (" V43: solo _gcl_au se escribe en carga pasiva; las de analitica (_ga, _ga_*) aparecen tras mover el mouse o hacer scroll: el correo lo dice asi." if id == 'V43' else ''))
     D.append(d)
 
 # ---- F1: formulario que pide correo/telefono y ningun enlace a politica de privacidad en la portada (redactado a mano desde lo que vieron los dos revisores)
@@ -81,23 +92,25 @@ for id, v in ver.items():
 # y no se manda al chequeo gratis de verifica.spindlelab.cl: nadie lo corrio sobre estos dominios, y si el dueño no ve lo mismo el correo queda desmentido. Se le dice donde mirar en SU portada.
 LUGAR = "ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad"
 HECHO_F1 = {
- 'V06': f"Revisé la portada de cypauditores.cl. El formulario de contacto pide nombre, correo y celular, y quien lo llena no ve qué se hace con esos datos. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.",
- 'V111': f"Revisé la portada de molinarios.cl: quien escribe por el formulario de la sección Contáctanos deja nombre y correo, y no ve qué se hace con ellos, porque {LUGAR} del estudio.",
- 'V17': "Revisé la portada de finpartner.cl: quien deja su correo en los formularios, entre ellos el de Diagnóstico gratuito de la primera pantalla, no ve qué se hace con él, porque ni junto a los formularios, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.",
- 'V20': "Revisé lcconsultores.cl: quien escribe por el formulario de la sección Contacto deja nombre y correo, y teléfono si quiere, y no ve qué se hace con esos datos, porque en la página, pie incluido, no encontré un enlace a una política de privacidad.",
- 'V28': f"Revisé la portada de ulloaycia.cl: quien te escribe por el formulario de la sección Escríbenos no ve qué se hace con su correo, porque {LUGAR}.",
- 'V30': "Revisé la portada de sbsolutions.cl: quien escribe por el formulario de la sección Contacto deja nombre y correo, y no ve qué se hace con ellos, porque ni junto al formulario ni en el pie encontré un enlace a una política de privacidad.",
- 'V37': "Revisé la portada de bgconsultoria.cl: quien deja nombre, teléfono y correo en el formulario ¿Tienes alguna consulta? no ve qué se hace con ellos, porque ni en el menú ni en el pie encontré un enlace a una política de privacidad.",
- 'V57': "Revisé la portada de reb-chile.cl: quien deja nombre, correo y teléfono en el formulario Vende con nosotros, al final de la página, no ve qué se hace con ellos, porque ni junto al formulario ni en el pie encontré un enlace a una política de privacidad.",
- 'V65': "Revisé la portada de remax-start.cl: quien escribe por el formulario Escríbenos, al final de la página, deja nombre, correo y teléfono, y no ve qué se hace con ellos, porque ni cerca del formulario ni en el pie encontré un enlace a una política de privacidad.",
- 'V67': "Revisé la portada de audiprop.com: quien escribe por el formulario de la sección Contáctanos, al final de la página, deja nombre, apellido y correo, y no ve qué se hace con ellos, porque ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.",
- 'V89': "Revisé la portada de medicinachina.cl: quien pide hora clínica por el formulario deja nombre y teléfono, y no ve qué se hace con esos datos, porque ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad de la escuela.",
- 'V94': "Revisé la portada de trustdoc.cl: quien llena el formulario de contacto deja nombre, cargo, organización, correo y teléfono. Bajo el botón dice que los datos se tratarán conforme a la ley, pero ni ahí, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que explique cómo.",
+ 'V06': 'Revisé la portada de cypauditores.cl. El formulario de contacto pide nombre, correo y celular. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
+ 'V111': 'Revisé la portada de molinarios.cl. El formulario de la sección Contáctanos pide nombre y correo. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad del estudio que diga qué se hace con esos datos.',
+ 'V17': 'Revisé la portada de finpartner.cl. El formulario de Diagnóstico gratuito, en la primera pantalla, pide además del correo la facturación y el régimen tributario. No encontré un enlace a una política de privacidad junto a él, en el menú ni en el pie.',
+ 'V20': 'Revisé lcconsultores.cl. El formulario de la sección Contacto pide nombre y correo, y opcionalmente teléfono. En la página, pie incluido, no encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
+ 'V28': 'Revisé la portada de ulloaycia.cl. El formulario de la sección Escríbenos pide nombre y correo. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
+ 'V30': 'Revisé la portada de sbsolutions.cl. El formulario de la sección Contacto pide nombre, correo y consulta. Ni junto al formulario ni en el pie encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
+ 'V37': 'Revisé la portada de bgconsultoria.cl. El formulario «¿Tienes alguna consulta?» pide nombre, teléfono y correo. Ni en el menú ni en el pie encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
+ 'V57': 'Revisé la portada de reb-chile.cl. El formulario Vende con nosotros, al final de la página, pide nombre, correo y teléfono. Ni junto al formulario ni en el pie encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
+ 'V65': 'Revisé la portada de remax-start.cl. El formulario Escríbenos, al final de la página, pide nombre, correo y teléfono. Ni cerca del formulario ni en el pie encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
+ 'V67': 'Revisé la portada de audiprop.com. El formulario de la sección Contáctanos, al final de la página, pide nombre, apellido y correo. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
+ 'V89': 'Revisé la portada de medicinachina.cl. El formulario para pedir hora clínica pide nombre y teléfono. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad de la escuela que diga qué se hace con esos datos.',
+ 'V94': 'Revisé la portada de trustdoc.cl. El formulario de contacto pide nombre, cargo, organización y correo, y teléfono si quiere. Bajo el botón dice que los datos se tratarán conforme a la ley, pero ni junto a ese texto, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que explique cómo.',
 }
+VERLO_CUSTOM = {'V17': "Puedes verlo tú: abre la portada y busca ese enlace junto al formulario, en el menú o en el pie."}
 def f1(id, hecho, notas, precio=PRECIO_F1, verlo=VERLO_F1):
     dom = ver[id]['dominio']
     hecho = HECHO_F1.get(id, hecho)
     if verlo == CHEQUEO: verlo = VERLO_F1
+    verlo = VERLO_CUSTOM.get(id, verlo)
     D.append(base(id, asunto='el formulario de ' + dom, peso=2,
                   cuerpo=[SALUDO.get(id, 'Hola:'), hecho, verlo, precio + ' ' + LLAMADA, DERIVA], notas='Verificado por 2 revisores (19-oct). ' + notas))
 f1('V06', "El formulario de contacto de la portada de cypauditores.cl pide nombre, correo y celular, y en la portada, pie incluido, no encontré un enlace a una política de privacidad que diga qué se hace con esos datos.",
