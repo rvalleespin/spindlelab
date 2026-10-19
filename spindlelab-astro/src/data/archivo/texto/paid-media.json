@@ -1,0 +1,51 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
+ "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "id": "paid-media",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "paid-media",
+  "ruta": "/v3/servicios/paid-media/",
+  "title": "Paid Media (Google): anuncios de búsqueda · SpindleLab",
+  "description": "Armamos y manejamos tu Google Ads para que tu anuncio salga cuando alguien busca lo que vendes, con el presupuesto bajo tu control. Desde $350.000/mes + IVA.",
+  "senales": "Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json)",
+  "modo": "queda con ajustes",
+  "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
+  "secciones": [
+   {
+    "id": "cabecera",
+    "nombre": "Cabecera",
+    "trabajo": "Nombrar el servicio y decir qué le hace al cliente.",
+    "elementos": [
+     {
+      "id": "paid-media.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Servicios · Paid Media (Google)",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "uso": "miga",
+      "estado": "queda"
+     },
+     {
+      "id": "paid-media.h1",
+      "rol": "h1",
+      "tinta": "Paid Media (Google).",
+      "gris": "Tu anuncio aparece cuando alguien busca en Google lo que vendes.",
+      "texto": "Paid Media (Google). Tu anuncio aparece cuando alguien busca en Google lo que vendes.",
+      "antes": "Paid Media (Google)",
+      "origen": "spindlelab-astro/src/data/servicios-v3.json paid-media.h1",
+      "por_que": "La plantilla de A pone el h1 en dos tintas; el nombre del servicio no cambia y la continuación dice qué le hace al cliente.",
+      "estado": "cambia"
+     },
+     {
+      "id": "paid-media.resto",
+      "rol": "nota",
+      "texto": "Queda tal cual, desde su dato: la línea con el precio («linea»), los dos botones, la nota de precios, el lead, todas las secciones con sus planes y precios, las preguntas, el cierre y «Siguiente».",
+      "uso": "referencia",
+      "origen": "spindlelab-astro/src/data/servicios-v3.json paid-media",
+      "estado": "queda"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,344 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
+ "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "id": "servicios",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "servicios",
+  "ruta": "/v3/servicios/",
+  "modo": "queda con ajustes",
+  "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
+  "title": "Servicios: desarrollo web, SEO técnico y visibilidad en IA",
+  "description": "Desarrollo web a medida desde $390.000 + IVA, y SEO técnico y visibilidad en IA para que Google y ChatGPT puedan leer y citar tu sitio. Precios publicados.",
+  "senales": "Simón, e12/senales-obra.md §2.7",
+  "estructura": "spec-visual.md §2.4, fila /v3/servicios/: cabecera; una sección por momento de oferta-v3.json; «Lo que pones tú»; «Empieza por el chequeo». Sin campo de color por servicio.",
+  "secciones": [
+   {
+    "id": "cabecera",
+    "nombre": "Cabecera",
+    "trabajo": "Decir que la puerta es el sitio: lo hacemos o lo dejamos legible.",
+    "elementos": [
+     {
+      "id": "servicios.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Servicios",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "uso": "miga",
+      "estado": "queda"
+     },
+     {
+      "id": "servicios.h1",
+      "rol": "h1",
+      "tinta": "Qué hacemos.",
+      "gris": "Diseñamos y programamos sitios, y los dejamos listos para Google y la IA.",
+      "texto": "Qué hacemos. Diseñamos y programamos sitios, y los dejamos listos para Google y la IA.",
+      "antes": "Qué hacemos",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "por_que": "La plantilla de A pone el h1 en dos tintas; la continuación dice el giro: primero se diseña y se programa.",
+      "estado": "cambia"
+     },
+     {
+      "id": "servicios.entradilla",
+      "rol": "entradilla",
+      "texto": "Si tu sitio hay que hacerlo de nuevo, o no existe, lo diseñamos y lo programamos. Si ya tienes uno y funciona, revisamos qué le impide a Google y a ChatGPT leerlo, y lo arreglamos. Antes de contratar nada, puedes revisarlo gratis con el chequeo.",
+      "antes": "El centro es tu sitio. Si hay que hacerlo de nuevo, lo construimos; si ya tienes uno y funciona, hay una puerta para eso. Y antes de contratar nada, mira gratis cómo te leen hoy.",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "por_que": "Brief §3: Desarrollo web pasa a ser la puerta del estudio. «Hay una puerta para eso» no decía cuál.",
+      "enlaces": {
+       "el chequeo": "/v3/diagnostico/"
+      },
+      "estado": "cambia"
+     },
+     {
+      "id": "servicios.nota",
+      "rol": "nota",
+      "texto": "Valores en pesos, + IVA. Los publicamos para que compares antes de escribirnos.",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "estado": "queda"
+     }
+    ]
+   },
+   {
+    "id": "momentos",
+    "nombre": "Una sección por momento",
+    "trabajo": "Que cada lector encuentre su caso por la situación en que está, con los mismos rótulos de la home.",
+    "elementos": [
+     {
+      "id": "servicios.momentos.nota",
+      "rol": "nota",
+      "texto": "Nombres de servicio y precios, tal cual de oferta-v3.json momentos[].items[] («n» y «p», con «Desde … + IVA» como hoy). Las cuatro situaciones y las líneas son las de la home, que pasaron por la lectura fría. El rótulo mono de cada momento es su número de orden: «01», «02», «03», «04». Las «palabras» del dato (Desarrollo, Visibilidad, Continuidad, Alcance) no van: eran nombres internos (E11, fila 8).",
+      "uso": "referencia",
+      "estado": "nuevo"
+     },
+     {
+      "id": "servicios.m1.situacion",
+      "rol": "h2",
+      "texto": "Tu sitio te frena, o no existe.",
+      "antes": "Tu sitio te frena, o no existe",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[0].momento",
+      "por_que": "Con punto, como en la home.",
+      "estado": "cambia"
+     },
+     {
+      "id": "servicios.m1.s1.nombre",
+      "rol": "h2",
+      "texto": "Desarrollo web",
+      "estado": "queda",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[0].items[0].n",
+      "nivel": 3,
+      "destino": "/v3/servicios/desarrollo-web/"
+     },
+     {
+      "id": "servicios.m1.s1.precio",
+      "rol": "nota",
+      "texto": "Página de Campaña desde $390.000 · Sitio Esencial desde $690.000 · Sitio Completo desde $1.190.000 + IVA",
+      "estado": "cambia",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[0].items[0].p (con «Desde … + IVA», como hoy)",
+      "uso": "precio",
+      "antes": "Desde $390.000 · $690.000 · $1.190.000 + IVA",
+      "por_que": "Lectura fría, 19-oct: tres precios en una línea, sin decir si era uno, tres o un rango. Cada uno va con el nombre de su plan, tal cual de oferta-v3.json.",
+      "fuente": "servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)"
+     },
+     {
+      "id": "servicios.m1.dw",
+      "rol": "parrafo",
+      "texto": "Lo diseñamos y lo programamos a medida, sin plantilla. Queda listo para que Google y la IA puedan leerlo, y antes de entregarlo le pasamos el chequeo gratis.",
+      "antes": "El sitio nace legible para las máquinas que hoy recomiendan tu negocio. Lo compruebas con el chequeo gratis, sobre tu dominio, antes y después.",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[0].items[0].dIndice",
+      "por_que": "La línea de la home (texto-paso2 «home.servicios.dw.texto», aprobada en la compuerta 2): dice primero que lo diseñamos y lo programamos. La de E8 hablaba solo de máquinas.",
+      "estado": "cambia"
+     },
+     {
+      "id": "servicios.m2.situacion",
+      "rol": "h2",
+      "texto": "Tu sitio existe y no lo vas a rehacer.",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].momento",
+      "estado": "queda"
+     },
+     {
+      "id": "servicios.m2.nota",
+      "rol": "parrafo",
+      "texto": "No hace falta reconstruir para que una IA pueda citarte.",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].nota",
+      "estado": "queda"
+     },
+     {
+      "id": "servicios.m2.s1.nombre",
+      "rol": "h2",
+      "texto": "Visibilidad en IA",
+      "estado": "queda",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[0].n",
+      "nivel": 3,
+      "destino": "/v3/servicios/visibilidad-en-ia/"
+     },
+     {
+      "id": "servicios.m2.s1.precio",
+      "rol": "nota",
+      "texto": "Desde $400.000 + IVA · una vez",
+      "estado": "cambia",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[0].p (con «Desde … + IVA», como hoy)",
+      "uso": "precio",
+      "antes": "Desde $400.000 + IVA",
+      "por_que": "Lectura fría, 19-oct: no sabía si era una vez o al mes; servicios-v3.json lo dice así.",
+      "fuente": "servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)"
+     },
+     {
+      "id": "servicios.m2.via",
+      "rol": "parrafo",
+      "texto": "Mide qué responden hoy ChatGPT, Gemini y Perplexity cuando preguntan por tu rubro y quién aparece en tu lugar, y te dice qué falta para que puedan citarte.",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[0].d",
+      "estado": "cambia",
+      "antes": "Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro.",
+      "por_que": "Lectura fría, 19-oct: «¿Visibilidad en IA lo arregla o solo lo dice?». Ahora dice qué entrega el plan con que parte el precio (servicios-v3.json, Auditoría de Visibilidad: medición en ChatGPT, Gemini y Perplexity; quién gana hoy esas respuestas; qué falta)."
+     },
+     {
+      "id": "servicios.m2.s2.nombre",
+      "rol": "h2",
+      "texto": "Auditoría SEO técnica",
+      "estado": "queda",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[1].n",
+      "nivel": 3,
+      "destino": "/v3/servicios/auditoria-seo-tecnica/"
+     },
+     {
+      "id": "servicios.m2.s2.precio",
+      "rol": "nota",
+      "texto": "Desde $490.000 + IVA · una vez · con Visibilidad en IA, desde $690.000 + IVA",
+      "estado": "cambia",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[1].p (con «Desde … + IVA», como hoy)",
+      "uso": "precio",
+      "antes": "Desde $490.000 · $690.000 con Visibilidad en IA + IVA",
+      "por_que": "Lectura fría, 19-oct: igual; los dos precios de la Auditoría, como los dice servicios-v3.json.",
+      "fuente": "servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)"
+     },
+     {
+      "id": "servicios.m2.aud",
+      "rol": "parrafo",
+      "texto": "Revisa tu sitio completo y te dice qué le impide a Google encontrar tus páginas, leerlas y mostrarlas, y qué arreglar primero. Te deja el plan y el código listos para tu equipo; si prefieres que lo hagamos nosotros, es el Acompañamiento mensual.",
+      "antes": "Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué arreglar primero.",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[1].items[1].d",
+      "por_que": "Cuatro términos sin explicar (brief §2); la home ya lo dice así desde la lectura fría. Lectura fría, 19-oct: «te dice qué arreglar. ¿Quién lo arregla?». servicios-v3.json: «con plan y código listos»; /metodo/: «Tú decides si los ejecuta tu equipo… o los ejecutamos nosotros».",
+      "estado": "cambia"
+     },
+     {
+      "id": "servicios.m3.situacion",
+      "rol": "h2",
+      "texto": "Tu sitio ya funciona y quieres que siga mejorando.",
+      "antes": "Ya giras y quieres sostenerlo",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[2].momento",
+      "por_que": "Lectura fría, vuelta 2: el gerente lo leyó como traducción y la dueña de la clínica no lo entendió.",
+      "estado": "cambia"
+     },
+     {
+      "id": "servicios.m3.s1.nombre",
+      "rol": "h2",
+      "texto": "Acompañamiento mensual",
+      "estado": "queda",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[2].items[0].n",
+      "nivel": 3,
+      "destino": "/v3/servicios/acompanamiento-mensual/"
+     },
+     {
+      "id": "servicios.m3.s1.precio",
+      "rol": "nota",
+      "texto": "Desde $590.000/mes + IVA · las dos juntas, desde $790.000/mes + IVA",
+      "estado": "cambia",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[2].items[0].p (con «Desde … + IVA», como hoy)",
+      "uso": "precio",
+      "antes": "Desde $590.000/mes · $790.000/mes Pro + IVA",
+      "por_que": "Lectura fría, 19-oct: «¿Qué es Pro?»: el Pro es SEO técnico y visibilidad en IA juntas (servicios-v3.json); lo dice en vez de nombrarlo.",
+      "fuente": "servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)"
+     },
+     {
+      "id": "servicios.m3.aco",
+      "rol": "parrafo",
+      "texto": "Una auditoría te dice qué hacer; este servicio lo hace, mes a mes, en SEO técnico, en visibilidad en IA o en las dos. Mínimo tres meses.",
+      "antes": "Implementación continua e informes quincenales de SEO técnico o de visibilidad en IA.",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json momentos[2].items[0].d",
+      "por_que": "La línea de la home; la cadencia de informes es R2, abierta, y no se promete aquí.",
+      "estado": "cambia"
+     },
+     {
+      "id": "servicios.m4.situacion",
+      "rol": "h2",
+      "texto": "Ya tienes demanda y quieres más.",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json tambienPanel.momento",
+      "estado": "queda"
+     },
+     {
+      "id": "servicios.m4.s1.nombre",
+      "rol": "h2",
+      "texto": "Gestión de redes sociales",
+      "estado": "nuevo",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[0].n",
+      "nivel": 3,
+      "destino": "/v3/servicios/redes-sociales/",
+      "por_que": "Detectores, 19-oct: los otros cuatro servicios llevan su nombre y su precio en esta página, y estos dos no; sin nombre, el párrafo no dice qué servicio es."
+     },
+     {
+      "id": "servicios.m4.s1.precio",
+      "rol": "nota",
+      "texto": "Desde $390.000/mes + IVA · con publicidad, desde $590.000/mes + IVA",
+      "estado": "nuevo",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[0].p (con «Desde … + IVA», como los demás)",
+      "uso": "precio",
+      "por_que": "Lectura fría, 19-oct: «$590.000/mes con pauta» lo entendió solo más abajo; «publicidad» es la palabra del párrafo de al lado.",
+      "fuente": "servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)"
+     },
+     {
+      "id": "servicios.m4.redes",
+      "rol": "parrafo",
+      "texto": "Tus publicaciones y tu publicidad en LinkedIn, Instagram y Facebook.",
+      "antes": "Orgánico y pauta social en LinkedIn y Meta.",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[0].d",
+      "por_que": "«Orgánico» y «pauta social» son jerga; Meta es Instagram y Facebook (la home lo dice así).",
+      "estado": "cambia"
+     },
+     {
+      "id": "servicios.m4.s2.nombre",
+      "rol": "h2",
+      "texto": "Paid Media (Google)",
+      "estado": "nuevo",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[1].n",
+      "nivel": 3,
+      "destino": "/v3/servicios/paid-media/",
+      "por_que": "Igual que Gestión de redes sociales."
+     },
+     {
+      "id": "servicios.m4.s2.precio",
+      "rol": "nota",
+      "texto": "Desde $350.000/mes + IVA, sin contar lo que inviertes en los anuncios · con varias campañas, desde $550.000/mes + IVA",
+      "estado": "nuevo",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[1].p (con «Desde … + IVA», como los demás)",
+      "uso": "precio",
+      "por_que": "Lectura fría, 19-oct: «Pro» sin explicar; el Pro es más de una campaña (servicios-v3.json). Lo de la inversión aparte es la línea de la home.",
+      "fuente": "servicios-v3.json y oferta-v3.json (los montos, comparados como texto por comprobar-obra.py)"
+     },
+     {
+      "id": "servicios.m4.paid",
+      "rol": "parrafo",
+      "texto": "Google Ads para llegar a quien ya está buscando lo que ofreces.",
+      "origen": "spindlelab-astro/src/data/oferta-v3.json tambien[1].d",
+      "estado": "queda"
+     }
+    ]
+   },
+   {
+    "id": "pones",
+    "nombre": "Lo que pones tú",
+    "trabajo": "Decir qué no está en los planes antes de que alguien lo suponga.",
+    "elementos": [
+     {
+      "id": "servicios.pones",
+      "rol": "nota",
+      "texto": "Queda tal cual: «Lo que pones tú», sus tres puntos y «Si no tienes quién lo produzca, te conectamos con partners.»",
+      "uso": "referencia",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "estado": "queda"
+     }
+    ]
+   },
+   {
+    "id": "chequeo",
+    "nombre": "Empieza por el chequeo",
+    "trabajo": "Llevar al chequeo.",
+    "elementos": [
+     {
+      "id": "servicios.chequeo.h2",
+      "rol": "h2",
+      "texto": "Empieza por el chequeo",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "estado": "queda"
+     },
+     {
+      "id": "servicios.chequeo.p",
+      "rol": "parrafo",
+      "texto": "Es gratis y mira 21 cosas de tu sitio en segundos, sin pedirte el correo. Cada una que no pase viene con la instrucción para arreglarla.",
+      "antes": "Es gratis y revisa 21 señales de tu dominio en segundos, sin pedirte el correo. Cada señal que no pases viene con la instrucción para arreglarla.",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "por_que": "El mismo idioma del chequeo en todo el sitio («21 cosas», «tu sitio»), que pasó por la lectura fría.",
+      "estado": "cambia"
+     },
+     {
+      "id": "servicios.chequeo.boton",
+      "rol": "boton",
+      "texto": "Revisar mi sitio gratis",
+      "antes": "Correr el chequeo",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "por_que": "El botón dice qué pasa al hacer clic, igual que en Desarrollo web.",
+      "destino": "/v3/diagnostico/",
+      "estado": "cambia"
+     },
+     {
+      "id": "servicios.chequeo.boton2",
+      "rol": "boton",
+      "texto": "Pedir el diagnóstico",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "destino": "/v3/contacto/",
+      "estado": "queda"
+     }
+    ]
+   }
+  ]
+ }
+}
