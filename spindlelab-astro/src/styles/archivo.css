@@ -973,6 +973,10 @@ body.a-body.a-sin-js .filtro { display: none; }
 .a-body .cierre .cuerpo { max-width: var(--a-caja); }
 .a-body .int-siguiente { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 16px; }
 .a-body .int-siguiente a { display: inline-flex; align-items: baseline; gap: 8px; }
+/* su área de 44 de alto bajo 834 y con puntero grueso (§4.3; medido: 28), sin mover lo que se ve */
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .int-siguiente a { align-items: center; min-height: 44px; margin-block: -8px; }
+}
 
 /* ------------------------------------------------------------------ movimiento reducido (§1.6) */
 /* Ningún resorte corre, el círculo no existe, todo está en su lugar y los cambios de color son instantáneos. */
