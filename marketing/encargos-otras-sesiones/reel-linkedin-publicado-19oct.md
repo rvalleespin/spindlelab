@@ -62,8 +62,9 @@ Respaldo de cada afirmación: las cinco cosas y "no pide registro ni guarda el d
 ## Compartir de Ramón: hecho (19-oct, 10:40) y medición a las 48 h
 
 - **Compartido** por Ramón desde su perfil, con el comentario propuesto (verificado en su perfil: texto idéntico y el video de la página embebido). Enlace: `linkedin.com/feed/update/urn:li:activity:7517942732221313024/`.
-- ⚠️ **Al ratito de compartir (10:53) su compartir tenía 0 comentarios**: el primer comentario con el enlace (`El chequeo: https://verifica.spindlelab.cl`) todavía no estaba, y el texto dice "El enlace está en el primer comentario".
-  Se le preguntó si lo pone esta sesión. Ver el estado en la próxima actualización de este archivo.
+- ✅ **El primer comentario con el enlace ya estaba**, puesto por el propio Ramón (autor, `El chequeo: https://verifica.spindlelab.cl`, con la tarjeta de Verifica), unos 10 minutos después de compartir.
+  **Corrección:** a las 10:53 esta sesión informó "0 comentarios" por una lectura equivocada del contador (la expresión buscaba el texto "comentario" y la página solo muestra el número junto al icono) y se lo avisó a Ramón como pendiente.
+  Al volver a abrir el compartir a las 11:06 estaba el comentario, con "1" y 5 impresiones. No se publicó ningún duplicado. **Moraleja:** el contador de comentarios se lee con captura, no con una expresión sobre el texto.
 - **Medición pedida por Ramón: a las 48 horas** (miércoles 21-oct, ~10:45). Recordatorio agendado en el calendario de `hola@spindlelab.cl` con `manuvalleespin@gmail.com` como invitado (aceptado el método el 15-oct).
   Cómo medir: página `linkedin.com/company/135255820/admin/analytics/updates/`, tabla "Interacción con el contenido", fila del reel (impresiones, visualizaciones, clics, reacciones, comentarios, compartidos);
   y en el perfil de Ramón (`/in/me/recent-activity/shares/`), las impresiones de su compartir. Además, si en el chequeo aparecieron revisiones de origen orgánico (Cloudflare), anotarlas.
@@ -73,7 +74,7 @@ Respaldo de cada afirmación: las cinco cosas y "no pide registro ni guarda el d
 | Pieza | Impresiones | Visualizaciones | Reacciones | Comentarios | Compartidos |
 |---|---|---|---|---|---|
 | Reel en la página | 4 | 6 | 0 | 1 (el de la página, con el enlace) | 1 (el de Ramón) |
-| Compartir de Ramón en su perfil | 3 | n/d | 0 | 0 | n/d |
+| Compartir de Ramón en su perfil | 3 (5 a las 11:06) | n/d | 0 | 1 (el de Ramón, con el enlace; la línea base de las 10:58 decía 0 por el error de lectura) | n/d |
 
 Para comparar, los dos posts de texto anteriores de la página: 15-oct, 12 impresiones; 13-oct, 60. La página tiene 13 seguidores y 8 de 50 créditos de invitación.
 
