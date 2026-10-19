@@ -26,7 +26,7 @@ const a = articulo(Astro.params.slug as string);
   <meta slot="head" name="robots" content="noindex, nofollow" />
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(a.jsonLd)} />
   <PaginaA>
-    <article class="caso articulo">
+    <article class="caso articulo" data-linea="120">
       <header class="lateral">
         <Miga items={[{ texto: a.miga[0], href: '/v3/' }, { texto: a.miga[1], href: '/v3/blog/' }, { texto: a.miga[2] }]} />
         <h1 class="t-titulo" set:html={a.h1} />

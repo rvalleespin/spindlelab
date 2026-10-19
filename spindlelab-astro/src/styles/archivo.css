@@ -1057,6 +1057,9 @@ body.a-body.a-sin-js .filtro { display: none; }
 .a-body .formulario__listo .cuerpo { max-width: var(--a-caja); }
 @media (max-width: 833.98px), (pointer: coarse) {
   .a-body .formulario__directo a { display: inline-flex; align-items: center; min-height: 44px; margin-block: -13.5px; }
+  /* el enlace dentro de la frase del consentimiento: su área de 44 de alto sin mover la línea (el relleno de un elemento
+     en línea no cambia el alto de la línea) */
+  .a-body .consiento a { padding-block: 14px; }
 }
 
 /* EL ÍNDICE DEL BLOG (§2.5): la barra lateral del índice de trabajo y, a la derecha, las filas: borde superior en la
@@ -1126,6 +1129,9 @@ body.a-body.a-sin-js .filtro { display: none; }
   font-size: var(--a-t-titulo); line-height: 1.2; color: var(--a-blanco); text-wrap: balance;
 }
 .a-body .prosa .nota { padding-top: 12px; border-top: 1px solid var(--a-linea); }
+/* un enlace dentro de la nota (un div, no un párrafo): su área de 44 de alto bajo 834 y con puntero grueso, sin mover la
+   línea (§4.3) */
+@media (max-width: 833.98px), (pointer: coarse) { .a-body .prosa .nota a { padding-block: 14px; } }
 /* Las preguntas del artículo (details): filas con la línea de sección; «+» y «–» en mono */
 .a-body .prosa .faq { max-width: var(--a-caja); border-bottom: 1px solid var(--a-linea-seccion); }
 .a-body .prosa details { border-top: 1px solid var(--a-linea-seccion); }
