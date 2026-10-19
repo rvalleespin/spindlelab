@@ -5,7 +5,7 @@ rama `claude/magical-franklin-ckfki2` · manda la sección «Compuerta 1» de `e
 praxi como caso ya que creó un sitio y una app») y `e12/encargo-paso-2.md` §5 · gemelo legible por máquina:
 `inventario-praxi.json` · material y capturas en `e12/praxi/`.
 
-**Actualizado el 19-oct-2026, entre las 09:55 y las 10:40 (Chile) · Diego, con el criterio de Simón · con las respuestas
+**Actualizado el 19-oct-2026, entre las 09:55 y las 10:06 (Chile) · Diego, con el criterio de Simón · con las respuestas
 de Ramón en la compuerta 2** (19-oct, hacia las 09:50: «5a tienes capturas en los archivos. 5b no se cuenta 5c las
 fotos están en la nube. 5d nombra. 5e. si fue con agentes de IA. 5f ambos son casos reales»), leídas como las dejó el
 orquestador con Ramón. Lo que cambió va en §10 (ahora «Lo que respondió Ramón») y en cada línea afectada, marcado
@@ -98,8 +98,8 @@ se construyó vive en una copia sin `.git` en el scratchpad de la sesión, y el 
 | Archivo web | `web.archive.org/cdx` para ver si hay capturas públicas del sitio en agosto | 23:08 | **No se pudo**: el proxy de la sesión cortó la conexión. Queda sin dato |
 | **19-oct ·** Historial completo, para «construida con agentes de IA» [C2.5e] | `git clone --bare --filter=blob:none` de `rvalleespin/praxis-coach` **en el scratchpad** (sin blobs: solo commits y árboles), y `git log` sobre `main`: conteos con y sin merge, la línea `Co-Authored-By` de cada commit y sus valores, la línea `Claude-Session`, autores y fechas. `/home/user/praxis-coach` no se tocó: es superficial y no se le hizo `fetch` | 12:55 a 12:59 | `praxi/crudo/historial-git-praxi.txt` (con los comandos al final; los id de sesión, omitidos) |
 | **19-oct ·** Estado de `praxi.coach` [C2.5b] | `curl -sS -D -` con user-agent de Chrome 141 sobre `/`, `www.` y `/planes`, solo `GET` | 12:59 | `praxi/crudo/estado-praxi.coach-19oct-headers.txt`: los tres, `402` y `x-vercel-error: DEPLOYMENT_DISABLED` |
-| **19-oct ·** Papel de cada modelo [C2.5d] | Lectura de `lib/anthropic.ts` y búsqueda de `COACH_MODEL` y `EXTRACTION_MODEL` en `app/` y `lib/` (sin tests), hasta la ruta que llama a cada función | — | §4 y §5 (archivo y línea de cada uso) |
-| **19-oct ·** Capturas de la app con sesión [C2.5a] | Búsqueda de imágenes y videos en los archivos versionados de los dos repos (`git ls-files` con extensión de imagen o video, y nombres con «captur», «screen» o «pantalla») | — | §10, punto 1 |
+| **19-oct ·** Papel de cada modelo [C2.5d] | Lectura de `lib/anthropic.ts` y búsqueda de `COACH_MODEL` y `EXTRACTION_MODEL` en `app/` y `lib/` (sin tests), hasta la ruta que llama a cada función | (no aplica) | §4 y §5 (archivo y línea de cada uso) |
+| **19-oct ·** Capturas de la app con sesión [C2.5a] | Búsqueda de imágenes y videos en los archivos versionados de los dos repos (`git ls-files` con extensión de imagen o video, y nombres con «captur», «screen» o «pantalla») | (no aplica) | §10, punto 1 |
 
 **Lo que las capturas no muestran bien:** el Chromium de Playwright **no reproduce H.264** (`canPlayType` vacío; los
 `<video>` terminan con error 4). Por eso el hero y el login se ven con su **póster**, que es exactamente el repliegue que
@@ -439,5 +439,5 @@ lleva la pregunta como estaba, tachada, y lo que queda.
 | Fecha | Corrección | Origen |
 |---|---|---|
 | 16-oct, 20:12 | Primera versión | Diego, con Simón |
-| 19-oct, 10:40 | **Compuerta 2, respuestas 5a a 5f.** §10 pasa a «Lo que respondió Ramón», con la numeración de antes; marcas **[C2.5x]** en el encabezado, §0 (puntos 1, 2, 3, 5, 6 y 7), §1 (cuatro filas nuevas), §2 («Quién lo hizo» y «Estado»), §4 (una fila por modelo), §5 (los nombres y el punto 6, la conclusión del día), §6 (la `sec06` sale; las capturas que hay y el hueco), §7 (las tres fotos), §8 (cuatro filas en 8.1 y tres en 8.2), §9 (Ficha, Cómo piensa, Resultado, Aplicación) y §11. Dos filas nuevas en §8.1 que pedía el texto del paso 2: la señal «activado» y la queja de las reseñas, con lo que cada una permite decir | Ramón, compuerta 2; Diego, con Simón |
+| 19-oct, 10:06 | **Compuerta 2, respuestas 5a a 5f.** §10 pasa a «Lo que respondió Ramón», con la numeración de antes; marcas **[C2.5x]** en el encabezado, §0 (puntos 1, 2, 3, 5, 6 y 7), §1 (cuatro filas nuevas), §2 («Quién lo hizo» y «Estado»), §4 (una fila por modelo), §5 (los nombres y el punto 6, la conclusión del día), §6 (la `sec06` sale; las capturas que hay y el hueco), §7 (las tres fotos), §8 (cuatro filas en 8.1 y tres en 8.2), §9 (Ficha, Cómo piensa, Resultado, Aplicación) y §11. Dos filas nuevas en §8.1 que pedía el texto del paso 2: la señal «activado» y la queja de las reseñas, con lo que cada una permite decir | Ramón, compuerta 2; Diego, con Simón |
 | 19-oct | **349 → 350 commits.** El 16-oct se contaron con la API de GitHub (4 páginas de 100); el 19-oct, con `git log` sobre un clon completo: 350 (219 sin merge, 131 merges). Vale el de `git log`, que tiene crudo | Diego |

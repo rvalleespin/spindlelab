@@ -5,6 +5,10 @@
 ingredientes que cito tienen fila en `inventario-casos.md` (§2; en su `.json`, clave `senales`) y, los de Praxi, en
 `inventario-praxi.md` §11, que esta nota no repite. Lo leído hoy está en `e12/inventario/crudo/`.
 
+**19-oct, compuerta 2: donde esta nota choque con `e12/senales-obra.md`, manda esa.** Allá Combeau es una sola ruta
+(`/trabajo/combeau/`), Verifica y Cumple, el chequeo y spindlelab.cl no tienen página de caso, el 54 → 94 no va, y
+están el resto de las rutas de la obra, las imágenes al compartir y los `title` y `description` de cada una.
+
 **La regla, en una línea:** el JSON-LD dice lo que la página dice en texto y lo que tiene fila en el inventario; nada más.
 Ningún número va en los datos estructurados como calificación, y ninguna pieza de concepto se declara como empresa,
 cliente o servicio que exista.

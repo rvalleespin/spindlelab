@@ -680,4 +680,4 @@ porque entremedio cambiaron dos hojas de estilo (Ocelo y Sesenta, `9122486`).
 | La cinta de la home de A | (no se había revisado) | Muestra la línea en su tramo «Combeau, modelo» (12 a 14 s): se rehace en la construcción con `combeau-modelo-cinta.*` (§9, punto 9) |
 | Puntajes propios (§4.1, §9.1) | «Decide Ramón» | No se muestran (pregunta 6, por defecto); siguen medidos aquí |
 | Praxi (§2) | «Fuera de línea» en la columna de estado | Igual el 19-oct, pero dato interno: el caso no lo cuenta (pregunta 5b) |
-| Un ingrediente nuevo de Combeau | — | «Encuadre de fotos en el panel», con su fila en §2.9 (repo de otra sesión, 3-sep; en producción según ese documento; no medido hoy) |
+| Un ingrediente nuevo de Combeau | (no había) | «Encuadre de fotos en el panel», con su fila en §2.9 (repo de otra sesión, 3-sep; en producción según ese documento; no medido hoy) |
