@@ -42,6 +42,23 @@ que contradice el plural que se decidió el 19-oct.
 - LinkedIn **agregó subtítulos automáticos** al video ("Los subtítulos automáticos se han añadido a tu vídeo", con botón "Editar subtítulos"). El video ya lleva subtítulos quemados; quien active los de LinkedIn verá los dos.
   Queda a criterio de Ramón si los quita desde el post.
 
+## El compartir de Ramón (decidido el 19-oct: "sí, escríbeme el comentario para compartirlo")
+
+Lo comparte él desde su perfil, **con comentario propio, nunca el botón pelado**, y desde la **URL pública** del post (sin `?actorCompanyId=`), no desde la vista de administrador, que fija la identidad en la página
+(`https://www.linkedin.com/feed/update/urn:li:ugcPost:7517938366471020544/`). Esta sesión no lo hace: es contenido en su perfil.
+
+**Comentario del compartir (singular, sin enlace, sin "Si" al inicio):**
+
+> El chequeo gratis del que habla este post de la página de SpindleLab lo armé yo.
+>
+> Revisa cinco cosas de tu sitio: si enlaza una política de privacidad que abre, si abre por https, si pide permiso antes de cargar rastreadores, si algún formulario trae la casilla de "acepto" ya marcada y qué servicios externos carga. No pide registro ni guarda el dominio.
+>
+> Pruébalo con el tuyo. El enlace está en el primer comentario.
+
+**Primer comentario de Ramón bajo su compartir** (el enlace no va en el cuerpo, igual que en todos sus posts): "El chequeo: https://verifica.spindlelab.cl"
+
+Respaldo de cada afirmación: las cinco cosas y "no pide registro ni guarda el dominio" salen de `verifica.spindlelab.cl`, sección "Lo que sí revisamos" y pie de página, leídas el 13 y el 19-oct. "Lo armé yo" es un hecho de Ramón (es el autor del servicio).
+
 ## Lo que sigue pendiente (no es de esta sesión)
 
 - **El compartir de Ramón desde su perfil**, con comentario propio. La página tiene 13 seguidores; sin eso casi no llega a nadie. **Ramón aún no ha dicho si lo quiere** (el 25-sep rechazó un compartir). No se hizo.
