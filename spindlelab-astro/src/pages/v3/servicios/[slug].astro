@@ -1,334 +1,164 @@
 ---
-// LAS CINCO PÁGINAS DE SERVICIO en el lenguaje de driftime (5-oct-2026).
+// LOS CINCO SERVICIOS SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 4). Diego, 19-oct-2026.
+// Visibilidad en IA, Auditoría SEO técnica, Acompañamiento mensual, Gestión de redes sociales y Paid Media (Google).
 //
-// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md (§4, plantilla «Servicio»).
-// Molde: ./desarrollo-web.astro. Misma estructura, alimentada por src/data/servicios-v3.json:
-//   miga · h1 .d-h1 · línea · 2 botones → imagen a sangre → nota + entrada →
-//   secciones pegajosas (incluye · galería · planes · bloques · preguntas · cierre) →
-//   siguiente servicio → pie.
-// Las secciones se buscan por su FORMA (lista, planes, bloques), no por su posición, y una
-// sección que el servicio no trae no se pinta: nada de títulos sobre un hueco.
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md §2.4: la plantilla interior, «las secciones de hoy
+// (incluye, planes, fases, preguntas, cierre) con la misma forma que Desarrollo web». La franja: el chequeo en
+// Visibilidad en IA (es lo que mide este servicio), Verifica y Cumple en Auditoría (el producto propio al que se le
+// aplicó, sin su puntaje) y ninguna en los otros tres (ninguna pieza del inventario muestra ese servicio aplicado). Lo
+// que la spec no cubría está en spindlelab-v3/desvios.md, tanda 4.
 //
-// LO QUE SE CONSERVA de la versión anterior: URL, title, description, noindex y el JSON-LD
-// (Service + BreadcrumbList + FAQPage, mismos @id). Layout ya emite organización, sitio y
-// persona; repetirlos duplicaría @id.
-// El BreadcrumbList dice lo mismo que la miga visible (spec §7, filas del índice y del
-// artículo; antislop C8): posición 2 «Servicios» y posición 3 el nombre en caja de oración.
-// QA2, 6-oct. Desde E8 (paso 1) los dos nombres están escritos en el JSON.
+// EL TEXTO. Clara cambia de cada uno la miga, el h1 (en dos tintas: el nombre del servicio y lo que le hace al cliente)
+// y el alt (y el pie) de la franja (src/data/archivo/texto/<slug>.json); lo demás «queda tal cual, desde su dato»: la
+// línea con el precio, los dos botones, la nota de precios, el lead, las secciones con sus planes y precios, las
+// preguntas, el cierre y «Siguiente» salen de servicios-v3.json, como hoy, con el mismo armado que tenían en la página
+// anterior (el título de cada punto de la lista partido en su «:», las comillas «», los enlaces de ENLACES). Los dos
+// botones de la cabecera y los del cierre son los de hoy. Todo monto a la vista se compara con los JSON (servicios.mjs).
 //
-// TODO EL TEXTO SALE DEL JSON (E8, paso 1, 14-oct). Hasta ahí la página corregía el dato
-// antes de pintarlo (CORRIGE, LIMPIEZA, leadSin, CAJA y los campos de texto de PROPIO); esas
-// correcciones quedaron escritas en servicios-v3.json, que ahora dice exactamente lo que se
-// ve (medido: la extracción de las 21 rutas da 0 diferencias contra la base 63f1e55). La
-// receta, par por par, está en marketing/oficina/obras-web/spindlelab-v3/e8/herramientas/
-// migrar-paso1.mjs. Campos que antes vivían aquí y ahora están en el JSON de cada servicio:
-// · `linea` (bajo el h1): la meta description + la «note» del hero de la página publicada
-//   (public/servicios/<slug>/index.html), con el «+ IVA» que exige la spec §7. Las de Redes y
-//   Acompañamiento nombran el precio del plan que de verdad trae lo que dicen (QA2, 6-oct).
-// · `nota` (nota-card, [negrita, resto]): la «pack-note» de esa misma página publicada.
-// · `marcas` y `marcasSr`, en la sección de bloques: las «num» publicadas (Sí/No en
-//   visibilidad, A–D en los entregables de la auditoría, S1–S4 en el mes tipo). Redes y Paid
-//   Media numeran 01–04 como las fases de Desarrollo Web: son procesos en orden.
-// · `compromiso`, en la sección de planes (E8, tanda 3, 14-oct): el compromiso de los 3 meses
-//   que Ramón aprobó, solo en Visibilidad y Acompañamiento. Va como última fila de #planes, un
-//   <p class="d-cuerpo"> entre filetes como las respuestas de las preguntas. No va al JSON-LD.
-//   Pasa por enlaza(): «chequeo gratis» lleva a /v3/diagnostico/ (ver ENLACES).
-//   Los dos puntos que el pase de voz dejó en "" (el primero de Esencial en Acompañamiento y
-//   en Paid Media; vacíos y no borrados, para no correr los punteros) no se pintan: los
-//   puntos pasan por filter(Boolean).
-// LO QUE LA QA YA SACÓ DEL JSON, CON SU MOTIVO (para no devolverlo en una edición):
-// · Precio con UNA notación en toda la página (spec §3 .precio): «$590.000/mes + IVA», nunca
-//   «590.000 CLP» ni «$590.000 /mes». El JSON-LD sigue declarando priceCurrency CLP.
-// · «Equipo dedicado» (Acompañamiento, plan y Offer): SpindleLab es una consultoría
-//   unipersonal (contexto-agente-spindlelab.md, línea 4); plural de tamaño sin respaldo
-//   (antislop A9, innegociable), y además iba en la Offer que leen los motores de IA. QA, 5-oct.
-// · «Sin compromiso» / «Sin costo ni compromiso»: frase de folleto (spec §7, fila de
-//   Contacto); el precio de la fila ya dice «Gratis». QA2, 6-oct.
-// · «Motor» (Redes y Paid Media, también en las Offer): jerga interna (B8). QA2, 6-oct.
-// · Repeticiones (A10): «nada de un volcado de 200 hallazgos» en la nota de Auditoría; «el
-//   creativo lo pones tú» en la nota de Redes; «bajo tu control», «la respetamos al peso» y
-//   «no hacia todo el mundo» en Paid Media; el h2 «Ejecución, contenido y medición» de
-//   Acompañamiento (repetía la tríada de la entrada; no «Lo que pasa cada mes», que chocaba
-//   con «Así se ve un mes tipo»).
-// · Entradas: la tendencia sin fuente de Visibilidad («Cada día más decisiones…», A2), el
-//   contraste de folleto de Acompañamiento («Calidad de agencia, trato directo de
-//   consultor», A4), la de Redes reescrita con hechos del mismo JSON (A2, A10, B8) y la de
-//   Paid Media sin repetir el presupuesto ni «motor».
-// · «Del mini-diagnóstico gratis a la auditoría» (Auditoría): «chequeo» es el automático de
-//   /v3/diagnostico/ (spec §7, fila de Nosotros; manual §08). «En celular y computador» (A7).
-// · La FAQ de pauta social de Redes dice desde qué plan («Desde el plan Orgánico + Pauta»):
-//   el Orgánico ($390.000) no trae pauta (brief §3, manual §08).
-// · Cierres de Acompañamiento y Paid Media: nombran el paso del botón (el diagnóstico en 24 h).
-//   El titular publicado de Paid Media era «¿Listo para acelerar el motor?» (A5).
-// · Caja de oración en el h1 y la miga (A6). El title y serviceName conservan el nombre de
-//   producto como está publicado (spec §7).
-// Todo lo escrito en la página está registrado en la spec §7 (filas del 6-oct, Servicios).
-//
-// LO QUE SE DEJA AFUERA A PROPÓSITO:
-// · El tinte de color del campo en la sección de bloques (la versión anterior lo tenía).
-//   La página de referencia, Desarrollo Web, no usa su brasa en ninguna parte: los casos de
-//   driftime son negro e imagen. Se sigue la referencia. El manual §04 dice que ninguna
-//   página queda sin campo: el conflicto es del contrato y está escalado a Lucía/Ramón
-//   (spec §7, 6-oct). No lo decide el constructor.
-// · Piezas de obra (sitios de clientes): ninguno de estos cinco servicios las produjo, y
-//   mostrarlas acá sería prueba social inventada. Solo el pool honesto de fotografía.
+// LAS SEÑALES (Simón, senales-obra.md §2.7): title y description de Clara, que son los de Simón; el grafo de hoy queda
+// (Service con su OfferCatalog, BreadcrumbList igual a la miga, FAQPage con las preguntas a la vista), y la description
+// del Service pasa a ser la de la página. Imagen al compartir: og-e12-<slug>.jpg (og-tanda-4.mjs).
 import Layout from '../../../layouts/Layout.astro';
-import { CONTACTO_V3 as CONTACTO, SERVICIOS_V3, OG_V3 } from '../../../consts-v3';
-import NavV3 from '../../../components/v3/NavV3.astro';
-import FooterV3 from '../../../components/v3/FooterV3.astro';
-import Pieza from '../../../components/v3/Pieza.astro';
-import Miga from '../../../components/v3/Miga.astro';
-import '../../../styles/driftime.css';
+import PaginaA from '../../../components/a/PaginaA.astro';
+import Miga from '../../../components/a/Miga.astro';
+import Icono from '../../../components/a/Icono.astro';
+import { LAYOUT_A } from '../../../components/a/layout-a';
+import { textoDe, igualQue } from '../../../data/archivo/texto.mjs';
+import { SITIO, siguiente, soloMontosDe } from '../../../data/archivo/servicios.mjs';
+import comun from '../../../data/archivo/texto/comun.json';
+import textoServicios from '../../../data/archivo/texto/servicios.json';
+import dw from '../../../data/archivo/texto/desarrollo-web.json';
+import trabajo from '../../../data/archivo/texto/trabajo.json';
+import via from '../../../data/archivo/texto/visibilidad-en-ia.json';
+import aud from '../../../data/archivo/texto/auditoria-seo-tecnica.json';
+import aco from '../../../data/archivo/texto/acompanamiento-mensual.json';
+import redes from '../../../data/archivo/texto/redes-sociales.json';
+import paid from '../../../data/archivo/texto/paid-media.json';
+import medios from '../../../data/archivo/medios.json';
 import servicios from '../../../data/servicios-v3.json';
 
 export function getStaticPaths() {
   return Object.keys(servicios).map((slug) => ({ params: { slug } }));
 }
 
-const { slug } = Astro.params;
+const { slug } = Astro.params as { slug: string };
+const s = (servicios as Record<string, any>)[slug];
+const COPIAS: Record<string, any> = {
+  'visibilidad-en-ia': via,
+  'auditoria-seo-tecnica': aud,
+  'acompanamiento-mensual': aco,
+  'redes-sociales': redes,
+  'paid-media': paid,
+};
+const copia = COPIAS[slug];
+if (!copia) throw new Error(`[slug].astro: falta la copia del texto de Clara de «${slug}» (extraer-texto.mjs ${slug})`);
+const t = textoDe(copia, comun, dw, textoServicios);
+const pagina = copia.texto;
+const RUTA = `/v3/servicios/${slug}/`;
+const h1 = t(`${slug}.h1`) as { tinta: string; gris: string };
+igualQue(h1.tinta.replace(/\.$/, ''), s.h1, `${slug}, el nombre del h1`);
 
-// ------------------------------------------------------------------ el dato
-// Se pinta tal cual: el JSON ya dice lo que se ve (ver la cabecera). Lo visible y el JSON-LD
-// salen del mismo objeto, así la FAQ visible y la FAQPage, y el plan y su Offer, no se separan.
-const s = (servicios as Record<string, any>)[slug!];
+// ---- La miga (Clara), y el BreadcrumbList del JSON dice lo mismo
+const miga = (t(`${slug}.miga`).texto as string).split(' · ');
+igualQue(s.breadcrumb.map((b: { name: string }) => b.name).join(' · '), miga.join(' · '), `${slug}, BreadcrumbList y miga`);
 
-// ------------------------------------------------------------------ secciones por forma
+// ---- Lo que queda tal cual, desde su dato (servicios-v3.json)
 const secs: any[] = s.secciones ?? [];
 const secIncluye = secs.find((x) => Array.isArray(x.lista) && x.lista.length);
 const secPlanes = secs.find((x) => Array.isArray(x.planes) && x.planes.length);
 const secBloques = secs.find((x) => Array.isArray(x.bloques) && x.bloques.length);
-// Las dos de párrafos: la primera titula las preguntas, la última es el cierre.
 const conParrafos = secs.filter((x) => Array.isArray(x.parrafos));
 const hFaq: string = conParrafos.length > 1 ? conParrafos[0].h2 : 'Preguntas frecuentes';
 const secCierre = conParrafos.length ? conParrafos[conParrafos.length - 1] : null;
 const faq: { p: string; r: string }[] = s.faq ?? [];
+soloMontosDe([s.linea, s.lead, ...faq.map((f) => f.r), secPlanes?.nota ?? '', secPlanes?.compromiso ?? ''].join(' '), slug, `${slug}, el texto`);
 
-// ------------------------------------------------------------------ texto
-const comillas = (t: string) => t.replace(/"([^"]+)"/g, '«$1»');
-const mayus = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
-const sinPunto = (t: string) => t.replace(/\.\s*$/, '');
-// «Rastreo e indexación: qué puede ver Google…» → título + cuerpo, como en la publicada
-// (allá el título iba en <b>).
-const partir = (t: string) => {
-  const i = t.indexOf(': ');
-  return i > 0 && i <= 90 ? { t: t.slice(0, i), d: mayus(comillas(t.slice(i + 2))) } : { t: '', d: comillas(t) };
+// El armado de la página anterior, que es como se lee hoy: «Rastreo e indexación: qué puede ver…» → el título y el
+// cuerpo (con mayúscula inicial); las comillas rectas pasan a «».
+const comillas = (x: string) => x.replace(/"([^"]+)"/g, '«$1»');
+const mayus = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
+const partir = (x: string) => {
+  const i = x.indexOf(': ');
+  return i > 0 && i <= 90 ? { t: x.slice(0, i), d: mayus(comillas(x.slice(i + 2))) } : { t: '', d: comillas(x) };
 };
 
-// ------------------------------------------------------------------ enlaces en el texto corrido
-// Una página que el texto nombra va enlazada (web-qa-critico paso 3), y «protocolo público»
-// es una afirmación que la página tiene que dejar comprobar (manual §08): en la publicada
-// enlazaba a /diagnostico/#medicion-mensual; en la v3 ese texto vive en /v3/diagnostico/,
-// sección «Lo que este chequeo no mide.» (#s-nom). QA2, 6-oct.
-// Solo en lo visible: el FAQPage sigue en texto plano. Cada frase se enlaza una vez por página
-// (la primera), y nunca hacia la misma página. El texto se escapa ANTES de insertar el <a>, así
-// que set:html es seguro aunque el dato venga del JSON.
+// Las frases que la página anterior enlazaba en el texto corrido, la primera vez y nunca hacia la misma página. El texto
+// se escapa antes de poner el enlace: set:html es seguro aunque el dato venga del JSON. Todas van con su ruta (§5.2.2).
 const ENLACES: [string, string][] = [
-  ['protocolo público', '/v3/blog/como-aparecer-en-chatgpt/#como-medir-si-esta-funcionando'],   // el mismo destino que Método: ahí está el protocolo (mismas preguntas, mismos motores); #s-nom no lo publicaba y decía otra cadencia
+  ['protocolo público', '/v3/blog/como-aparecer-en-chatgpt/#como-medir-si-esta-funcionando'],
   ['servicio de acompañamiento mensual', '/v3/servicios/acompanamiento-mensual/'],
   ['Gestión de redes sociales', '/v3/servicios/redes-sociales/'],
   ['Paid Media (Google)', '/v3/servicios/paid-media/'],
-  // El compromiso de los 3 meses (Visibilidad y Acompañamiento) se mide con el chequeo y
-  // termina «El chequeo es público, así que lo compruebas tú»: el texto lo nombra, así que va
-  // enlazado, al mismo destino que «Correr el chequeo» del cierre (E8, QA ronda 1, defecto 3).
-  // Hoy la frase solo está en esos dos párrafos.
   ['chequeo gratis', '/v3/diagnostico/'],
 ];
-const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const esc = (x: string) => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const enlazadas = new Set<string>();
-const enlaza = (t: string) =>
+const enlaza = (x: string) =>
   ENLACES.reduce((a, [frase, href]) => {
-    if (enlazadas.has(frase) || href === `/v3/servicios/${slug}/` || !a.includes(frase)) return a;
+    if (enlazadas.has(frase) || href === RUTA || !a.includes(frase)) return a;
     enlazadas.add(frase);
-    return a.replace(frase, `<a class="d-enl-svc" href="${href}">${frase}</a>`);
-  }, esc(t));
+    return a.replace(frase, `<a href="${href}">${frase}</a>`);
+  }, esc(x));
 
-// ------------------------------------------------------------------ lo propio de cada servicio
-// v: versión del archivo (?v=N) cuando cambió de contenido con el mismo nombre. sin800: no hay
-// versión de 800 px (el retrato mide 896 de ancho: no hace falta).
-type Img = { src: string; alt: string; w: number; h: number; pos?: string; etq?: string; v?: number; sin800?: boolean };
-const IMG: Record<string, Img> = {
-  hilo: { src: '/assets/img/d/hilo.jpg', alt: 'Un hilo luminoso cruza en diagonal un fondo verde oscuro', w: 1400, h: 787 },
-  // Recorte del 5-oct (spec §5): 1600×960 y ya sin la línea dorada, así que el alt tampoco la nombra.
-  // El mismo alt de la home y del blog, mirando la imagen: son cantos de hojas, no fibras (C5;
-  // una imagen con dos alts que describen objetos distintos). Revisión cruzada, 6-oct.
-  // v 2: el archivo se re-exportó con más contraste (QA final, mirada #6); la home ya lo pide
-  // con ?v=2, y la misma URL en todas las páginas es un solo archivo en caché.
-  hilos: { src: '/assets/img/d/hilos.jpg', alt: 'Cantos de hojas apiladas en azul oscuro, en diagonal', w: 1600, h: 960, v: 2 },
-  domino: { src: '/assets/img/d/domino.jpg', alt: 'Fichas de dominó negras cayendo en fila sobre un fondo oscuro', w: 1600, h: 1600 },
-  dominoCurva: { src: '/assets/img/d/domino-curva.jpg', alt: 'Fichas de dominó de madera en fila curva sobre piedra oscura, con luz cálida', w: 1600, h: 1600 },
-  escritorio: { src: '/assets/img/d/escritorio.jpg', alt: 'Escritorio de madera junto a la ventana, con un laptop, un cuaderno abierto y una taza', w: 1600, h: 670 },
-  ventana: { src: '/assets/img/d/ventana.jpg', alt: 'Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto, un laptop y una taza', w: 1600, h: 670 },
-  ramon: { src: '/assets/img/ramon-vallejos.jpg', alt: 'Ramón Vallejos, consultor de SpindleLab', w: 896, h: 1200, etq: 'Ramón Vallejos', sin800: true },
-};
-
-// ------------------------------------------------------------------ peso de las fotos
-// QA final, técnica #8: cada foto del pool tiene su versión de 800 px (`<foto>-800.jpg`, la
-// misma foto reescalada), y `sizes` le dice al navegador a qué ancho se va a PINTAR, no el de
-// su caja: con object-fit: cover, una foto más ancha que su caja se pinta más ancha que ella
-// (escritorio.jpg, 2,39, en la caja 4:3 de celular se pinta a 1,79 veces la caja). Los
-// anchos salen de driftime.css: márgenes de 40 px (20 en celular), gutter de 16, grilla de 12.
-const urlDe = (im: Img) => im.src + (im.v ? `?v=${im.v}` : '');
-const srcsetDe = (im: Img) => (im.sin800 ? undefined : `${im.src.replace(/\.jpg$/, '-800.jpg')} 800w, ${urlDe(im)} ${im.w}w`);
-const f = (n: number) => n.toFixed(3);
-const CEL = '(max-width: 767px)';
-// Proporciones de caja como constantes, una división por línea: el compilador de Astro lee
-// «1 / 3, n / 2» en una misma línea como una expresión regular y la página no compila.
-const R_CEL = 4 / 3;        // .d-sangre y .d-g-media en celular
-const R_SANGRE = 2.39;      // .d-sangre en escritorio
-const R_ANCHA = 16 / 9;     // .d-g-ancha sin proporción propia
-const R_ALTA_CEL = 0.8;     // .d-g-alta en celular (4:5)
-const TERCIO = 1 / 3;
-const DOS_TERCIOS = 2 / 3;
-const razon = (im: Img) => im.w / im.h;
-// Imagen a sangre: caja de 2,39 en escritorio (100vw − 80) y de 4:3 en celular (100vw − 40).
-// `zoomCel`: el encuadre de domino.jpg en celular se acerca con transform (ver <style>).
-const sizesSangre = (im: Img, zoomCel = 1) => {
-  const cel = Math.max(1, razon(im) / R_CEL) * zoomCel;
-  const esc = Math.max(1, razon(im) / R_SANGRE);
-  return `${CEL} calc((100vw - 40px) * ${f(cel)}), calc((100vw - 80px) * ${f(esc)})`;
-};
-// Galería (.d-galeria--svc). Escritorio: la media mide 8 de 12 columnas, (100vw − 88) × 2/3, en
-// 4:3; la alta, 4 de 12, con el alto de la media (aspect-ratio auto), que es (100vw − 80) × 0,5;
-// la ancha, todo el ancho en 16:9. Celular: todas a todo el ancho, la alta en 4:5.
-const sizesGal = (forma: string, im: Img) => {
-  const n = razon(im);
-  let cel = Math.max(1, n / R_ANCHA);
-  let esc = `(100vw - 80px) * ${f(Math.max(1, n / R_ANCHA))}`;
-  if (forma === 'd-g-alta') {
-    cel = Math.max(1, n / R_ALTA_CEL);
-    esc = `(100vw - 80px) * ${f(Math.max(TERCIO, n * 0.5))}`;
-  } else if (forma === 'd-g-media') {
-    cel = Math.max(1, n / R_CEL);
-    esc = `(100vw - 88px) * ${f(DOS_TERCIOS * Math.max(1, 0.75 * n))}`;
-  }
-  return `${CEL} calc((100vw - 40px) * ${f(cel)}), calc(${esc})`;
-};
-
-interface Propio {
-  linea: string;
-  nota: [string, string];
-  sangre: Img;
-  // Encuadre propio de la imagen a sangre cuando object-position no alcanza (ver <style>).
-  sangreClase?: string;
-  // Galería: una o dos imágenes del pool, distintas de la de cabecera y de otra familia
-  // (hilo/hilos, dominó/dominó curva y escritorio/ventana se parecen entre sí).
-  // REPARTO (QA2, 6-oct): recorridas con «Siguiente», en ciclo (… → Paid Media → Desarrollo
-  // Web → Visibilidad …), ninguna foto aparece en más de dos páginas seguidas. Desarrollo Web
-  // usa escritorio (cabecera) y ventana (galería), y eso también cuenta.
-  // Y (revisión cruzada, 6-oct) ninguna FAMILIA de cabecera en dos páginas seguidas: antes
-  // Auditoría (dominó) → Acompañamiento (dominó curvo) abrían las dos con fichas, y con el
-  // dominó curvo de la galería de Visibilidad eran tres pantallas seguidas de dominó. Ahora
-  // las cabeceras del ciclo son mesa (DW) · hilos · dominó · mesa · dominó curvo · hilo.
-  // Cada página, foto por foto (cabecera + galería):
-  //   DW escritorio + ventana · Visibilidad hilos + escritorio, dominó curvo ·
-  //   Auditoría dominó + ventana, hilo · Acompañamiento ventana + Ramón, hilos ·
-  //   Redes dominó curvo + escritorio · Paid Media hilo + dominó curvo.
-  // Ninguna foto en más de dos páginas seguidas.
-  galeria: { img: Img; forma: 'd-g-media' | 'd-g-alta' | 'd-g-ancha'; pos?: string }[];
-  // Los bloques son pasos en orden (el mes tipo, las quincenas): van en <ol>, como las fases
-  // de Método y de Desarrollo web, con la marca aria-hidden. Sin esto van en <ul>: Sí/No de
-  // Visibilidad y los entregables A–D de Auditoría no son una secuencia (rescate, 13-oct).
-  secuencia?: boolean;
-  // El cierre suma «Correr el chequeo» → /v3/diagnostico/: la puerta de quien ya tiene sitio
-  // (brief §2), el mismo par que Nosotros y el índice. QA2, 6-oct. No en Redes ni Paid Media:
-  // el chequeo lee el sitio para la IA, que no es lo que esos dos servicios trabajan.
-  cierreChequeo?: boolean;
-}
-
-// Solo imágenes y forma. El texto de cada servicio (línea, nota, marcas, entrada, cierre)
-// está en servicios-v3.json desde E8, paso 1.
-const PROPIO: Record<string, Propio> = {
-  'visibilidad-en-ia': {
-    sangre: { ...IMG.hilos, pos: '50% 22%' },
-    galeria: [{ img: IMG.escritorio, forma: 'd-g-media', pos: '35% 50%' }, { img: IMG.dominoCurva, forma: 'd-g-alta', pos: '40% 50%' }],
-    cierreChequeo: true,
-  },
-  'auditoria-seo-tecnica': {
-    // domino.jpg tiene el 30 % de arriba en negro puro y, sobre el lienzo negro, la pieza
-    // perdía el borde (QA, 5-oct). Se queda (es la única cabecera del pool que no repite la
-    // de otra página) pero con el encuadre cerrado sobre las fichas: d-sangre--domino-svc.
-    sangre: { ...IMG.domino },
-    sangreClase: 'd-sangre--domino-svc',
-    galeria: [{ img: IMG.ventana, forma: 'd-g-media', pos: '40% 50%' }, { img: IMG.hilo, forma: 'd-g-alta', pos: '30% 50%' }],
-    cierreChequeo: true,
-  },
-  'acompanamiento-mensual': {
-    // Ventana y no dominó curvo (revisión cruzada, 6-oct): la página anterior, Auditoría, abre
-    // con dominó, y eran dos cabeceras seguidas de fichas.
-    sangre: { ...IMG.ventana, pos: '50% 50%' },
-    // La reunión mensual de decisiones es con el consultor, y el consultor es verificable.
-    // hilos y no escritorio: escritorio es de la misma familia que la cabecera (ventana).
-    galeria: [{ img: IMG.ramon, forma: 'd-g-alta', pos: '50% 30%' }, { img: IMG.hilos, forma: 'd-g-media', pos: '50% 50%' }],
-    secuencia: true,
-    cierreChequeo: true,
-  },
-  'redes-sociales': {
-    // Dominó curvo de cabecera (revisión cruzada, 6-oct): pasa aquí desde Acompañamiento, que
-    // ahora abre con ventana. Mismo encuadre que tenía allá.
-    sangre: { ...IMG.dominoCurva, pos: '50% 62%' },
-    // Una sola imagen (QA2, 6-oct). Escritorio y no hilos: Acompañamiento, la anterior, ya
-    // lleva hilos en su galería; hilo/hilos tampoco, porque hilo es la cabecera de la página
-    // siguiente (Paid Media). domino.jpg no va: su fondo negro puro se funde con el lienzo
-    // (medido: se lee como un hueco), y además es la familia de la cabecera.
-    galeria: [{ img: IMG.escritorio, forma: 'd-g-ancha', pos: '40% 50%' }],
-    secuencia: true,
-  },
-  'paid-media': {
-    sangre: { ...IMG.hilo, pos: '50% 45%' },
-    // Dominó curvo y no domino.jpg: el negro puro de esa foto se fundía con el lienzo y la
-    // pieza parecía empezar 100 px más abajo que la de al lado (QA, 5-oct).
-    // Una sola imagen (QA2, 6-oct). Sin ventana: Desarrollo Web (la siguiente) la lleva en su
-    // galería y Acompañamiento de cabecera. hilo/hilos no (misma familia que la cabecera),
-    // escritorio tampoco (Redes → Paid Media → Desarrollo Web: tres seguidas). Queda el dominó
-    // curvo: desde la revisión cruzada (6-oct) está en Visibilidad (galería), Redes (cabecera)
-    // y aquí; Redes → Paid Media son dos páginas seguidas, nunca tres.
-    galeria: [{ img: IMG.dominoCurva, forma: 'd-g-ancha', pos: '50% 55%' }],
-    secuencia: true,
-  },
-};
-const pr = PROPIO[slug!];
-if (!pr) throw new Error(`[slug].astro: falta la entrada de PROPIO para «${slug}» (imágenes y forma). Un servicio nuevo en servicios-v3.json la necesita.`);
-const ListaBloques = pr.secuencia ? 'ol' : 'ul';
-const lead: string = s.lead ?? '';
-// Una palabra con guion («mini-diagnóstico») no se corta en el guion. Recibe texto YA
-// escapado (esc): la línea y la nota salen del JSON, así que set:html es seguro.
-const sinCorte = (t: string) => t.replace(/([\wáéíóúñÁÉÍÓÚÑ$.]+-[\wáéíóúñÁÉÍÓÚÑ.]+)/g, '<span class="d-nw-svc">$1</span>');
-
-// Caja de oración en todo lo visible: h1, miga y «Siguiente» (antislop A6: sin Title Case,
-// ni en el h1 ni en la nav). El title y el nodo Service conservan el nombre de producto como
-// está publicado; la miga del grafo dice lo mismo que la visible (ver jsonLd). «Paid Media»
-// se deja: es el nombre en inglés del canal.
-// «Siguiente» lee su nombre de SERVICIOS_V3 (consts-v3), que desde la revisión cruzada (6-oct)
-// trae los nombres en caja de oración: el menú, el pie y «Siguiente» dicen lo mismo. El h1 y
-// la miga salen del JSON (h1 y breadcrumb/2), que desde E8 (paso 1) ya los trae en caja de
-// oración: hasta ahí los fijaba el mapa CAJA de esta página.
-const h1: string = s.h1;
-// La miga visible dice lo mismo que el h1, y el BreadcrumbList dice lo mismo que la miga.
-const nombre: string = s.breadcrumb?.[2]?.name ?? s.h1;
-
-// Siguiente servicio: el que sigue en el menú, en ciclo (Paid Media → Desarrollo web).
-const aqui = SERVICIOS_V3.findIndex((x) => x.href === `/v3/servicios/${slug}/`);
-const sig = SERVICIOS_V3[(aqui + 1) % SERVICIOS_V3.length];
-const sigLabel: string = sig.label;
-
-// Texto corrido con sus ENLACES, calculado en el orden en que se lee la página (así «la
-// primera vez» es la primera que ve el lector). Solo lo visible; el FAQPage va en texto plano.
-const incluyeHtml = (secIncluye?.lista ?? []).map((t: string) => { const x = partir(t); return { t: x.t, d: enlaza(x.d) }; });
-const planesH2Html: string = secPlanes ? sinCorte(esc(sinPunto(secPlanes.h2))) : '';
-const planesNotaHtml: string = secPlanes?.nota ? enlaza(comillas(secPlanes.nota)) : '';
+// En el orden en que se lee la página, para que «la primera vez» sea la primera que ve quien lee
+const incluye = (secIncluye?.lista ?? []).map((x: string) => { const p = partir(x); return { t: p.t, d: enlaza(p.d) }; });
 const compromisoHtml: string = secPlanes?.compromiso ? enlaza(secPlanes.compromiso) : '';
+const notaPlanesHtml: string = secPlanes?.nota ? enlaza(comillas(secPlanes.nota)) : '';
 const bloquesHtml: string[] = (secBloques?.bloques ?? []).map((b: any) => enlaza(comillas(b.d)));
-// Las marcas de los bloques (Sí/No, A–D, S1–S4, 01–04) y su lectura para lector de pantalla
-// viven junto a los bloques, en el JSON.
+const faqHtml: string[] = faq.map((f) => enlaza(f.r));
+
+// Los bloques en la forma de las fases: la marca (Sí/No, A–D, S1–S4, 01–04) delante del título, como «01 ·
+// Descubrimiento» en Desarrollo web. Si son pasos en orden van en una lista ordenada y la marca no se lee; si traen su
+// lectura (Sí → «Prometemos:», S1 → «Semana 1:»), se lee esa.
+const SECUENCIA = new Set(['acompanamiento-mensual', 'redes-sociales', 'paid-media']);
 const marcas: string[] = secBloques?.marcas ?? [];
 const marcasSr: string[] | undefined = secBloques?.marcasSr;
-const faqHtml: string[] = faq.map((f) => enlaza(f.r));
-// El h2 del cierre de Redes, del pase de voz (E8), dejaba «redes» sola en la última línea a
-// 1440 («…al que llevan tus / redes»). Espacio duro entre las dos últimas palabras, solo en lo
-// visible (E8, QA ronda 1, defecto 5). Si el JSON cambia ese h2, el reemplazo no calza y solo
-// se pierde el espacio duro. Los otros cierres no se tocan: el sistema no equilibra los h2.
-const cierreH2: string = secCierre ? sinPunto(secCierre.h2).replace('tus redes', 'tus redes') : '';
+const enOrden = SECUENCIA.has(slug);
+const ListaBloques = enOrden ? 'ol' : 'ul';
 
+// ---- La franja (§2.4)
+const m = medios.medios as Record<string, { src: string; ancho: number; alto: number; alt: string }>;
+const entradas = trabajo.texto.entradas as { id: string; nombre: string; linea: string }[];
+const entrada = (id: string) => {
+  const e = entradas.find((x) => x.id === id);
+  if (!e) throw new Error(`${slug}: la entrada «${id}» no está en trabajo.entradas`);
+  return e;
+};
+// La imagen de la spec va bajo 834 (16:9, recortada al centro: 1050 px alcanzan). Desde 834, el mismo centro a 2,39
+// sacado a 1920 de la misma captura (franjas-tanda-4.py): el de 1050 se veía agrandado 1,34 veces a 1440.
+type Medio = { src: string; ancho: number; alto: number };
+let franja: null | { medio: Medio; ancha: Medio; alt: string; pieza: { nombre: string; linea: string }; pie?: string } = null;
+if (slug === 'visibilidad-en-ia') {
+  // El alt de Clara («… con el resultado de un sitio en pantalla») describe un resultado que el archivo de la spec no
+  // muestra: chequeo-43 es la primera pantalla del chequeo, sin resultado. Va el alt que se escribió mirando ese archivo
+  // (medios.json, tanda 2). desvios.md, tanda 4.
+  franja = { medio: m['chequeo-43'], ancha: m['chequeo-239'], alt: m['chequeo-43'].alt, pieza: entrada('chequeo') };
+} else if (slug === 'auditoria-seo-tecnica') {
+  // El alt y el pie de Clara: la franja sigue siendo la portada de Verifica y Cumple (spec §2.4), así que su condición se
+  // cumple y el pie va.
+  franja = { medio: m['verifica-y-cumple-53'], ancha: m['verifica-y-cumple-239'], alt: t(`${slug}.franja.alt`).texto, pieza: entrada('verifica-y-cumple'), pie: t(`${slug}.franja.pie`).texto };
+}
+
+// ---- Los botones y «Siguiente». Los de la cabecera y del cierre son los de hoy (Clara: «quedan tal cual»): «Ver
+// planes» y «Correr el chequeo» solo existían en la página anterior; «Escríbenos», «Pedir el diagnóstico» y «Siguiente»
+// son los mismos textos de Clara en el menú, en /servicios/ y en Desarrollo web.
+const VER_PLANES = 'Ver planes';
+const CORRER_CHEQUEO = 'Correr el chequeo';
+const escribenos = t('comun.nav.escribenos').texto;
+const pedir = t('servicios.chequeo.boton2').texto;
+// El chequeo en el cierre, como hoy: no en Redes ni en Paid Media (el chequeo lee el sitio para la IA, que no es lo que
+// esos dos servicios trabajan)
+const cierreChequeo = !['redes-sociales', 'paid-media'].includes(slug);
+const sig = siguiente(slug);
+const rotuloSiguiente = t('dw.siguiente').rotulo as string;
+
+// ---- Señales (Simón, senales-obra.md §2.7)
+const title = pagina.title;
+const description = pagina.description;
+if (title.length > 60 || description.length < 120 || description.length > 160) {
+  throw new Error(`${slug}: title (${title.length}) o description (${description.length}) fuera de los largos de senales-obra.md §1.2`);
+}
+soloMontosDe(`${title} ${description}`, slug, `${slug}, title y description`);
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -337,173 +167,133 @@ const jsonLd = {
       '@id': `${s.canonical}#service`,
       name: s.serviceName,
       serviceType: s.serviceType,
-      provider: { '@id': 'https://spindlelab.cl/#org' },
+      description,
+      provider: { '@id': `${SITIO}/#org` },
       areaServed: { '@type': 'Country', name: 'Chile' },
       ...(s.offerCatalog ? { hasOfferCatalog: s.offerCatalog } : {}),
     },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${s.canonical}#breadcrumb`,
-      // Spec §7 (regla, C8): posición 2 «Servicios», posición 3 el nombre de la miga visible.
-      // Los dos ya vienen así en el JSON.
-      itemListElement: s.breadcrumb,
-    },
+    { '@type': 'BreadcrumbList', '@id': `${s.canonical}#breadcrumb`, itemListElement: s.breadcrumb },
     {
       '@type': 'FAQPage',
       '@id': `${s.canonical}#faq`,
-      mainEntity: s.faq.map((f: any) => ({
-        '@type': 'Question',
-        name: f.p,
-        acceptedAnswer: { '@type': 'Answer', text: f.r },
-      })),
+      mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })),
     },
   ],
 };
+const og = { src: `/assets/img/og-e12-${slug}.jpg?v=1`, alt: `SpindleLab: ${h1.tinta} ${h1.gris}` };
 ---
-<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt} title={s.title} description={s.description} bodyClass="d-body">
+<Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <meta slot="head" name="robots" content="noindex, nofollow" />
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  <NavV3 />
-
-  {/* Plantilla «servicio» = el caso de driftime (spec §4). Cero display: las internas no
-       usan Manrope 800 en mayúsculas. Cero oro: el único es el punto del módulo. */}
-  <main>
-    <header class="d-cab">
-      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Servicios', href: '/v3/servicios/' }, { label: nombre }]} />
-      <h1 class="d-h1">{h1}</h1>
-      <p class="d-linea" set:html={sinCorte(esc(s.linea))} />
-      <div class="d-btns">
-        {secPlanes && <a class="d-btn" href="#planes">Ver planes</a>}
-        <a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a>
+  <PaginaA>
+    {/* 1 · CABECERA (§2.4.1): miga, h1 en dos tintas, la línea con el precio, el lead y la nota de los precios; los botones */}
+    <section class="reticula int-cab" aria-labelledby="h-titulo">
+      <Miga items={[{ texto: miga[0], href: '/v3/' }, { texto: miga[1], href: '/v3/servicios/' }, { texto: miga[2] }]} />
+      <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{h1.tinta}</span> <span class="gris">{h1.gris}</span></h1>
+      <p class="cuerpo caja">{s.linea}</p>
+      {s.lead && <p class="cuerpo caja">{comillas(s.lead)}</p>}
+      <p class="chico caja">{s.nota.join(' ')}</p>
+      <div class="botones">
+        {secPlanes && <a class="boton boton--claro" href={`${RUTA}#planes`}>{VER_PLANES}</a>}
+        <a class="boton boton--placa" href="/v3/contacto/">{escribenos}<Icono nombre="flecha" /></a>
       </div>
-    </header>
+    </section>
 
-    <figure class:list={['d-sangre', pr.sangreClase]}>
-      <img src={urlDe(pr.sangre)} srcset={srcsetDe(pr.sangre)} sizes={srcsetDe(pr.sangre) ? sizesSangre(pr.sangre, pr.sangreClase === 'd-sangre--domino-svc' ? 1.82 : 1) : undefined} alt={pr.sangre.alt} width={pr.sangre.w} height={pr.sangre.h} loading="eager" fetchpriority="high" style={pr.sangre.pos ? `object-position:${pr.sangre.pos}` : undefined} />
-    </figure>
+    {/* 2 · LA FRANJA (§2.4.2): a lo más una, 2,39 desde 834 y 16:9 bajo 834, recortada al centro */}
+    {franja && (
+      <figure class="reticula franja" data-entrada>
+        <div class="medio">
+          <picture>
+            <source media="(min-width: 834px)" srcset={franja.ancha.src} width={franja.ancha.ancho} height={franja.ancha.alto} />
+            <img src={franja.medio.src} alt={franja.alt} width={franja.medio.ancho} height={franja.medio.alto} loading="eager" fetchpriority="high" decoding="async" />
+          </picture>
+        </div>
+        <figcaption>
+          <p class="pie"><span class="tinta">{franja.pieza.nombre}</span> <span class="rotulo">· {franja.pieza.linea}</span></p>
+          {franja.pie && <p class="pie">{franja.pie}</p>}
+        </figcaption>
+      </figure>
+    )}
 
-    <div class="d-entrada">
-      <p class="d-nota-card"><b>{s.nota[0]}</b> <Fragment set:html={sinCorte(esc(s.nota[1]))} /></p>
-      {lead && <p class="d-guia">{comillas(lead)}</p>}
-    </div>
-
+    {/* 3 · LO QUE INCLUYE (lista, c5–c12) */}
     {secIncluye && (
-      <section class="d-sec" aria-labelledby="s-inc">
-        <div class="d-eti"><h2 class="d-h2" id="s-inc">{sinPunto(secIncluye.h2)}</h2></div>
-        <div class="d-filas">
-          {incluyeHtml.map((x: { t: string; d: string }) =>
-            x.t ? (<div><h3 class="d-h3">{x.t}</h3><p class="d-cuerpo d-inc-svc" set:html={x.d} /></div>) : (<p class="d-guia" set:html={x.d} />))}
-        </div>
-      </section>
-    )}
-
-    {/* Galería entre secciones, asimétrica. Solo fotografía del pool honesto (spec §5). */}
-    {pr.galeria.length > 0 && (
-      <div class="d-galeria d-galeria--svc">
-        {pr.galeria.map((g) => (
-          <Pieza src={urlDe(g.img)} srcset={srcsetDe(g.img)} sizes={sizesGal(g.forma, g.img)} alt={g.img.alt} ancho={g.img.w} alto={g.img.h} clase={g.forma} posicion={g.pos} etiquetas={g.img.etq ? [g.img.etq] : []} />
-        ))}
-      </div>
-    )}
-
-    {secPlanes && (
-      <section class="d-sec" id="planes" aria-labelledby="s-pla">
-        <div class="d-eti">
-          <h2 class="d-h2" id="s-pla" set:html={planesH2Html} />
-          {planesNotaHtml && <p class="d-chico" set:html={planesNotaHtml} />}
-        </div>
-        <div class="d-filas">
-          {secPlanes.planes.map((p: any) => (
-            <div class="d-plan">
-              <h3 class="d-h3">{p.nombre}</h3><span class="d-plan__precio">{p.precio}</span>
-              {p.tagline && <p class="d-cuerpo">{p.tagline}</p>}
-              {p.puntos?.filter(Boolean).length > 0 && <ul>{p.puntos.filter(Boolean).map((x: string) => <li>{x}</li>)}</ul>}
-            </div>
+      <section class="seccion reticula" aria-labelledby="h-incluye">
+        <div class="int-sec__cab"><h2 class="t-declaracion" id="h-incluye">{secIncluye.h2}</h2></div>
+        <ul class="int-sec__cuerpo int-lista">
+          {incluye.map((x: { t: string; d: string }) => (
+            <li>{x.t && <h3 class="int-lista__t tinta">{x.t}</h3>}<p class="cuerpo" set:html={x.d} /></li>
           ))}
-          {compromisoHtml && <p class="d-cuerpo" set:html={compromisoHtml} />}
+        </ul>
+      </section>
+    )}
+
+    {/* 4 · PLANES (c5–c16): los planes y, debajo, el compromiso y la nota */}
+    {secPlanes && (
+      <section class="seccion reticula" id="planes" aria-labelledby="h-planes">
+        <div class="int-sec__cab"><h2 class="t-declaracion" id="h-planes">{secPlanes.h2}</h2></div>
+        <div class="int-sec__cuerpo int-sec__cuerpo--ancho">
+          {secPlanes.planes.map((p: any) => (
+            <article class="plan">
+              <div><h3>{p.nombre}</h3><p class="cuerpo plan__precio">{p.precio}</p></div>
+              {p.tagline && <p class="cuerpo">{p.tagline}</p>}
+              {p.puntos?.filter(Boolean).length > 0 && <ul>{p.puntos.filter(Boolean).map((x: string) => <li>{x}</li>)}</ul>}
+            </article>
+          ))}
+          {(compromisoHtml || notaPlanesHtml) && (
+            <div class="planes__pie">
+              {compromisoHtml && <p class="cuerpo" set:html={compromisoHtml} />}
+              {notaPlanesHtml && <p class="chico" set:html={notaPlanesHtml} />}
+            </div>
+          )}
         </div>
       </section>
     )}
 
+    {/* 5 · LOS BLOQUES, en la forma de las fases (c5–c12) */}
     {secBloques && (
-      <section class="d-sec" aria-labelledby="s-blo">
-        <div class="d-eti"><h2 class="d-h2" id="s-blo">{sinPunto(secBloques.h2)}</h2></div>
-        <ListaBloques class="d-filas">
+      <section class="seccion reticula" aria-labelledby="h-bloques">
+        <div class="int-sec__cab"><h2 class="t-declaracion" id="h-bloques">{secBloques.h2}</h2></div>
+        <ListaBloques class="int-sec__cuerpo">
           {secBloques.bloques.map((b: any, i: number) => (
-            <li class="d-fase">
-              <span class="d-fase__n" aria-hidden={marcasSr || pr.secuencia ? 'true' : undefined}>{marcas[i] ?? String(i + 1).padStart(2, '0')}</span>
-              <h3 class="d-h3">{marcasSr?.[i] && <span class="d-sr">{marcasSr[i]} </span>}{b.t}</h3>
-              <p class="d-cuerpo" set:html={bloquesHtml[i]} />
+            <li class="fase">
+              <h3 class="t-fase">
+                <span aria-hidden={marcasSr || enOrden ? 'true' : undefined}>{marcas[i] ?? String(i + 1).padStart(2, '0')} · </span>
+                {marcasSr?.[i] && <span class="solo-lector">{marcasSr[i]} </span>}
+                {b.t}
+              </h3>
+              <p class="cuerpo" set:html={bloquesHtml[i]} />
             </li>
           ))}
         </ListaBloques>
       </section>
     )}
 
+    {/* 6 · PREGUNTAS (c5–c12) */}
     {faq.length > 0 && (
-      <section class="d-sec d-faq" aria-labelledby="s-faq">
-        <div class="d-eti"><h2 class="d-h2" id="s-faq">{sinPunto(hFaq)}</h2></div>
-        <div class="d-filas">
-          {faq.map((f, i) => (<div><h3 class="d-h3">{f.p}</h3><p class="d-cuerpo" set:html={faqHtml[i]} /></div>))}
+      <section class="seccion reticula" aria-labelledby="h-faq">
+        <div class="int-sec__cab"><h2 class="t-declaracion" id="h-faq">{hFaq}</h2></div>
+        <div class="int-sec__cuerpo">
+          {faq.map((f, i) => (
+            <div class="pregunta"><h3>{f.p}</h3><p class="cuerpo" set:html={faqHtml[i]} /></div>
+          ))}
         </div>
       </section>
     )}
 
-    {/* El cierre de la página publicada: la oferta concreta (mini-diagnóstico en 24 h), que
-         el pie no dice. Criterio de éxito de la obra = conversión. Sección corta: --quieta, la
-         etiqueta no se pega (spec §7; se despegaba del párrafo y bajaba 90 px hasta el botón). */}
-    {secCierre && (
-      <section class="d-sec d-sec--quieta" aria-labelledby="s-cie">
-        <div class="d-eti"><h2 class="d-h2" id="s-cie">{cierreH2}</h2></div>
-        <div class="d-cierre-svc">
-          <p class="d-guia">{secCierre.parrafos?.[0]}</p>
-          <div class="d-btns">
-            <a class="d-btn" href={CONTACTO}>Pedir el diagnóstico</a>
-            {pr.cierreChequeo && <a class="d-btn d-btn--alt" href="/v3/diagnostico/">Correr el chequeo</a>}
-          </div>
+    {/* 7 · CIERRE (§2.4.4) y «Siguiente» */}
+    <section class="seccion reticula" aria-labelledby="h-cierre">
+      <div class="cierre">
+        {secCierre && <h2 class="t-declaracion" id="h-cierre">{secCierre.h2}</h2>}
+        {secCierre?.parrafos?.[0] && <p class="cuerpo">{secCierre.parrafos[0]}</p>}
+        <div class="botones">
+          <a class="boton boton--claro" href="/v3/contacto/">{pedir}<Icono nombre="flecha" /></a>
+          {cierreChequeo && <a class="boton boton--placa" href="/v3/diagnostico/">{CORRER_CHEQUEO}</a>}
         </div>
-      </section>
-    )}
-
-    <a class="d-siguiente" href={sig.href}><span class="d-chico d-gris">Siguiente</span><span class="d-h1">{sigLabel}{'\u00a0'}→</span></a>
-  </main>
-
-  <FooterV3 />
+        <div class="int-siguiente">
+          <p class="rotulo">{rotuloSiguiente}</p>
+          <a class="t-titulo t-display subrayado" href={sig.href}>{sig.nombre}<Icono nombre="flecha" /></a>
+        </div>
+      </div>
+    </section>
+  </PaginaA>
 </Layout>
-
-<style>
-  /* Galería de dos: la alta toma el alto de la media, así las dos terminan en la misma
-     línea (sin esto la alta, en 3:4, queda 86 px más corta y deja un escalón). En celular
-     se apilan y vuelven a los ratios de driftime.css. */
-  @media (min-width: 768px) {
-    .d-galeria--svc :global(.d-g-alta) { aspect-ratio: auto; }
-  }
-  .d-inc-svc { margin-top: 8px; }
-  /* Enlaces dentro del texto corrido (ENLACES): papel y subrayado fino, como los de Método y
-     del artículo. Sin subrayado no se distinguen: el preflight deja los <a> sin decoración. */
-  /* .d-body a { color: inherit } (driftime.css) pesa 0,1,1: hace falta el mismo ancla para ganarle. */
-  :global(.d-body a.d-enl-svc) { color: var(--d-papel); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
-  :global(.d-body a.d-enl-svc:hover) { text-decoration-thickness: 2px; }
-  :global(.d-nw-svc) { white-space: nowrap; }
-  .d-cierre-svc { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
-  .d-cierre-svc .d-guia { max-width: 640px; }
-
-  /* «Siguiente» apilado bajo 768: ya no es un parche de esta página. La regla vive en el
-     sistema (driftime.css, QA final, mirada #7) y vale igual para Desarrollo web, Trabajo y
-     Nosotros. */
-
-  /* domino.jpg (1600×1600): de 0 a 28 % de alto es negro puro, medido por franjas. Las
-     fichas ocupan del 28 al 80 %, y la primera fila toda iluminada está en el 44 %.
-     · Escritorio (2,39): la ventana mide el 41,8 % del alto. object-position 76 % la pone
-       en 44–86 %: la ficha de adelante toca el borde superior.
-     · Celular (4:3): la ventana mide el 75 %; ni con 100 % sale del negro. Se acerca ×1,82
-       desde abajo: object-position 45 % + scale con origen en 20 % 100 % deja a la vista
-       x 9–64 % · y 45–86 % de la foto (880 px de foto para 350 de pantalla). Medido por
-       borde sobre la foto, con luma > 14 como «se ve»: arriba 55 %, izquierda 82 %,
-       derecha 100 %, abajo 82 %. Con el ×1,6 anterior (y 42–89 %) arriba era 34 % y la
-       esquina superior izquierda quedaba en negro (luma 8 sobre el lienzo). */
-  .d-sangre--domino-svc img { object-position: 50% 76%; }
-  @media (max-width: 767px) {
-    .d-sangre--domino-svc img { object-position: 50% 45%; transform: scale(1.82); transform-origin: 20% 100%; }
-  }
-</style>

@@ -1,332 +1,170 @@
 ---
-// ÍNDICE DE SERVICIOS — sistema driftime (5-oct-2026).
+// SERVICIOS SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 4). Diego, 19-oct-2026.
 //
-// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md, §4 plantilla «Índice»:
-// h1 60 px + entrada → filas editoriales, cada servicio con su campo de color y su precio.
-// Implementación de referencia: src/pages/v3/servicios/desarrollo-web.astro (cabecera, entrada,
-// secciones pegajosas) y src/pages/v3/index.astro (campos y línea de precio).
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md §2.4, fila /v3/servicios/: la cabecera («Qué
+// hacemos»); una sección por momento de oferta-v3.json (a la izquierda su número y su situación, a la derecha sus
+// servicios como filas enlazadas: el nombre a Título con la flecha, la línea de qué hace y el precio en blanco); «Lo que
+// pones tú»; «Empieza por el chequeo». Sin campo de color por servicio (lo que Ramón rechazó de driftime). La plantilla
+// interior vive en archivo.css (INTERIOR); lo que la spec no cubría está en spindlelab-v3/desvios.md, tanda 4.
 //
-// LO QUE ORDENA LA PÁGINA: el MOMENTO del cliente, igual que la home. Cada momento es una
-// banda del color de su campo (brasa = Desarrollo, navy = Visibilidad, petróleo = Continuidad,
-// ciruela = Alcance) y adentro van sus servicios como filas con filete, nunca tarjetas. En
-// escritorio las bandas se pegan arriba y se apilan, como los campos de la home y de driftime.
-// En celular no se pegan: una banda más alta que la pantalla escondería su final bajo la
-// siguiente.
-//
-// SIN DISPLAY: una interna tiene cero usos de Manrope 800 en mayúsculas. La palabra del campo,
-// que en la home es display, acá va como rótulo chico en caja normal.
-//
-// CONTRASTE EN LAS BANDAS: brasa con blanco da 4,70:1 y petróleo con su crema 5,06:1. Pasan
-// AA, pero sin margen: cualquier opacidad en el texto los deja abajo. Por eso todo el texto de
-// una banda va al 100 % (incluido el «Desde» y el «+ IVA» del precio) y la jerarquía se hace
-// con tamaño y peso.
-//
-// La banda es un componente propio de esta página, declarado en la spec (§3 «banda del
-// índice» y §7): alto variable, filete en el color del texto al 32 %, pegajosa solo desde
-// 768 px de ancho y 680 px de alto.
-//
-// LOS PRECIOS Y EL ORDEN VIVEN EN src/data/oferta-v3.json, compartido con la home: un precio
-// escrito a mano en dos lados termina distinto en uno. Se muestran con la misma forma que en
-// la home: «Desde | … | + IVA».
-//
-// De «dentro / fuera» queda solo «fuera» (QA 5-oct, A10): «dentro» repetía los servicios que
-// las cuatro bandas acaban de mostrar, y en el orden contrario. El FAQ no se duplica acá; vive
-// en cada página de servicio.
-//
-// FOCO EN LA PILA PEGAJOSA (QA2 5-oct, bloqueante, WCAG 2.4.11): hacia atrás con Shift+Tab, una
-// fila de una banda anterior quedaba entera bajo la banda siguiente. El navegador no hace
-// scroll porque la fila está geométricamente dentro de la ventana. El script del final lleva
-// la ventana a la posición natural de la banda cuando el foco cae tapado; sin JS, la banda con
-// el foco sube encima de las otras (CSS). Spec §3, regla de toda pila pegajosa.
+// El texto es de Clara, tal cual (src/data/archivo/texto/servicios.json, copia de e12/texto/texto-obra.json). Los
+// nombres, los destinos y los precios se comparan, como texto, con oferta-v3.json y servicios-v3.json, y el build se cae
+// si no son iguales (servicios.mjs). «Lo que pones tú» queda como estaba: sus tres puntos salen de oferta-v3.json
+// («fuera») y su título y su pie, de la nota de Clara que los cita.
+// Las señales (title, description, JSON-LD, imagen al compartir) son de Simón, e12/senales-obra.md §2.7.
 import Layout from '../../../layouts/Layout.astro';
-import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../../consts-v3';
-import NavV3 from '../../../components/v3/NavV3.astro';
-import FooterV3 from '../../../components/v3/FooterV3.astro';
-import Miga from '../../../components/v3/Miga.astro';
-import '../../../styles/driftime.css';
+import PaginaA from '../../../components/a/PaginaA.astro';
+import Miga from '../../../components/a/Miga.astro';
+import Icono from '../../../components/a/Icono.astro';
+import { LAYOUT_A } from '../../../components/a/layout-a';
+import { textoDe, igualQue, contiene } from '../../../data/archivo/texto.mjs';
+import { ORDEN, SITIO, trozos, comprobarPrecio } from '../../../data/archivo/servicios.mjs';
+import comun from '../../../data/archivo/texto/comun.json';
+import servicios from '../../../data/archivo/texto/servicios.json';
 import oferta from '../../../data/oferta-v3.json';
 import paginas from '../../../data/paginas-v3.json';
 
-const url = 'https://spindlelab.cl/servicios/';
+const t = textoDe(servicios, comun);
+const pagina = servicios.texto;
+const dos = (id: string) => t(id) as { tinta: string; gris: string };
+
+// ---- Cabecera
+const migaClara = t('servicios.miga').texto.split(' · ');
+igualQue(migaClara.join(' · '), 'Inicio · Servicios', 'servicios, la miga');
+const entradilla = t('servicios.entradilla');
+const trozosEntradilla = trozos(entradilla.texto, entradilla.enlaces);
+
+// ---- Los cuatro momentos: los tres de oferta-v3.json (momentos) y «también» (Redes y Paid Media). Cada servicio, con
+// su nombre, su destino y su precio de Clara, comparados con los JSON; y su línea, la de la home (Clara).
+const lineaDe: Record<string, string> = {
+  'desarrollo-web': 'servicios.m1.dw',
+  'visibilidad-en-ia': 'servicios.m2.via',
+  'auditoria-seo-tecnica': 'servicios.m2.aud',
+  'acompanamiento-mensual': 'servicios.m3.aco',
+  'redes-sociales': 'servicios.m4.redes',
+  'paid-media': 'servicios.m4.paid',
+};
+const itemsDe = [...oferta.momentos.map((m) => m.items), oferta.tambien];
+const momentos = itemsDe.map((items, i) => {
+  const k = `servicios.m${i + 1}`;
+  const filas = items.map((it, j) => {
+    const nombre = t(`${k}.s${j + 1}.nombre`);
+    const precio = t(`${k}.s${j + 1}.precio`).texto;
+    const slug = it.href.split('/').filter(Boolean).pop() as string;
+    igualQue(it.n, nombre.texto, `servicios, nombre del servicio ${j + 1} del momento ${i + 1}`);
+    igualQue(it.href, nombre.destino, `servicios, destino de «${it.n}»`);
+    comprobarPrecio(precio, slug, `servicios, precio de «${it.n}»`);
+    return { slug, nombre: it.n, href: it.href, precio, linea: t(lineaDe[slug]).texto };
+  });
+  let nota = '';
+  try { nota = t(`${k}.nota`).texto; } catch (e) { nota = ''; }
+  return { id: `m${i + 1}`, numero: String(i + 1).padStart(2, '0'), situacion: t(`${k}.situacion`).texto, nota, filas };
+});
+// Los planes de Desarrollo web, nombrados en su línea de precio, son los de oferta-v3.json
+for (const p of oferta.momentos[0].planes.slice(0, 3)) contiene(momentos[0].filas[0].precio, p.n, 'servicios, planes de Desarrollo web');
+// Los seis, en el orden de servicios.mjs (el de «Siguiente» y del ItemList)
+igualQue(momentos.flatMap((m) => m.filas.map((f) => f.slug)).join(' '), ORDEN.map((s) => s.slug).join(' '), 'servicios, el orden');
+
+// ---- Lo que pones tú: queda tal cual (Clara lo cita en su nota). Los tres puntos, de oferta-v3.json; cada uno con su
+// rótulo en blanco y el detalle en gris, como hoy.
+const pones = t('servicios.pones').texto;
+const ponesTitulo = contiene(pones, 'Lo que pones tú', 'servicios, «Lo que pones tú»') && 'Lo que pones tú';
+const ponesPie = contiene(pones, 'Si no tienes quién lo produzca, te conectamos con partners.', 'servicios, el pie de «Lo que pones tú»') && 'Si no tienes quién lo produzca, te conectamos con partners.';
+if (oferta.fuera.length !== 3) throw new Error('servicios: «Lo que pones tú» tiene tres puntos (Clara)');
+const partir = (texto: string) => {
+  const i = texto.indexOf(': ');
+  return i === -1 ? { a: '', b: texto } : { a: texto.slice(0, i + 1), b: texto.slice(i + 2) };
+};
+const fuera = oferta.fuera.map(partir);
+
+// ---- Empieza por el chequeo
+const b1 = t('servicios.chequeo.boton');
+const b2 = t('servicios.chequeo.boton2');
+
+// ---- Señales (Simón, senales-obra.md §2.7): title y description de Clara, que son los de Simón. El grafo de hoy queda:
+// BreadcrumbList (igual a la miga) + ItemList, en el orden de la página, cada servicio con su nodo Service publicado.
+const title = pagina.title;
+const description = pagina.description;
+if (title.length > 60 || description.length < 120 || description.length > 160) {
+  throw new Error(`servicios: title (${title.length}) o description (${description.length}) fuera de los largos de senales-obra.md §1.2`);
+}
 const pub = (paginas as Record<string, any>).servicios;
-
-// El grafo es el de producción (public/servicios/index.html), que paginas-v3.json guarda
-// extraído: mismos dos nodos y mismos @id. Cada ítem apunta al nodo Service con el mismo @id
-// que Layout.astro declara en makesOffer; sin eso el índice queda desconectado de los
-// servicios (QA 5-oct, C8). La organización y la persona ya las emite Layout.astro.
-// La miga dice «Servicios», como el menú, el pie y la miga de cada servicio (QA2 5-oct, C8):
-// el JSON publicado la llamaba «Soluciones» y el mismo ítem quedaba con dos nombres en el
-// grafo. Desde E8 (paso 1) el JSON ya dice «Servicios».
-const migas = pub.breadcrumb;
-
-// El ItemList dice lo mismo que la página (QA final, técnica #13c; antislop C8): se llama
-// «Servicios de SpindleLab», como la miga y el menú (el JSON publicado decía «Soluciones»; ya
-// no, desde E8), y va en el orden de las bandas: Desarrollo, Visibilidad, Auditoría,
-// Acompañamiento, Redes, Paid Media (el JSON pone Desarrollo Web sexto). El orden sale de
-// oferta-v3.json, el mismo dato que pinta las bandas; cada ítem conserva su nodo Service
-// publicado (mismo @id y nombre de producto, spec §7). Un servicio de la página que el JSON
-// no traiga hace caer el build.
-const ordenPagina: string[] = [...oferta.momentos.flatMap((m: any) => m.items), ...oferta.tambien].map((it: any) => it.href.replace('/v3/', '/'));
+const url = `${SITIO}/servicios/`;
+igualQue(pub.breadcrumb.map((b: { name: string }) => b.name).join(' · '), migaClara.join(' · '), 'servicios, BreadcrumbList y miga');
 const itemList = {
   ...pub.itemList,
-  itemListElement: ordenPagina.map((ruta, i) => {
-    const li = pub.itemList.itemListElement.find((x: any) => x.item.url === `https://spindlelab.cl${ruta}`);
-    if (!li) throw new Error(`servicios/index.astro: el ItemList publicado no trae ${ruta}`);
+  '@id': `${url}#itemlist`,
+  itemListElement: ORDEN.map((s, i) => {
+    const li = pub.itemList.itemListElement.find((x: any) => x.item.url === `${SITIO}/servicios/${s.slug}/`);
+    if (!li) throw new Error(`servicios: el ItemList publicado no trae ${s.slug}`);
     return { ...li, position: i + 1 };
   }),
 };
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${url}#breadcrumb`,
-      itemListElement: migas,
-    },
-    {
-      ...itemList,
-      '@id': `${url}#itemlist`,
-    },
+    { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: pub.breadcrumb },
+    itemList,
   ],
 };
-
-// LO QUE ESTA PÁGINA LEE DE oferta-v3.json Y LA HOME NO (E8, paso 1, 14-oct). Hasta ahí la
-// página tapaba el JSON con tres mapas propios (notaPagina, descPagina, fueraPagina); desde
-// ahí el JSON dice lo que se ve (medido: 0 diferencias en las 21 rutas contra la base
-// 63f1e55):
-// · `nota` de cada banda (la home no la pinta). La de Desarrollo traía dos antítesis seguidas
-//   y jerga («primer commit», «AEO»), y la de Visibilidad repetía «no lo vas a rehacer», que
-//   ya dice su h2 (QA 5-oct, A4/A10/B8). Desarrollo va SIN nota, '' (QA2 5-oct, A10): la guía
-//   de la entrada, la nota y la fila decían tres veces seguidas que el sitio nace legible
-//   para la IA. Petróleo no tiene.
-// · `dIndice`, la descripción de fila propia de esta página (QA2 5-oct, A10), solo en
-//   Desarrollo web. Su `d` se comparte con la home y es la línea CERRADA del campo
-//   Desarrollo: ahí «el mismo chequeo» remite al instrumento del hero; aquí no hay chequeo
-//   antes y «el mismo» no remitía a nada. La hoja cerrada no se toca.
-// · `fuera` (la home no la lee). «Lo que pones tú» (QA2 5-oct, voz precisa): con «Lo que no
-//   hacemos: Creación de contenido» la página negaba el «contenido para búsqueda e IA» que
-//   vende Acompañamiento. Rótulo y término vienen de la página publicada: «Fuera (lo pones
-//   tú)» y «el contenido creativo (redacción, diseño gráfico, video) lo pones tú».
-
-// «$490.000 · $690.000 con Visibilidad IA» → una alternativa por trozo. Cada trozo no se
-// parte: la línea solo corta entre alternativas, nunca dentro de «$690.000 con Visibilidad
-// IA» (QA 5-oct). El punto va pegado con espacio duro a la alternativa anterior, así ninguna
-// línea empieza con «·».
-const alternativas = (p: string) => p.split(' · ');
-
-// Las cuatro bandas, en el orden de la home: Desarrollo abre, Alcance cierra.
-const bandas = [
-  ...oferta.momentos.map((m: any) => ({ palabra: m.palabra, campo: m.campo, momento: m.momento, nota: m.nota, items: m.items })),
-  { palabra: oferta.tambienPanel.palabra, campo: oferta.tambienPanel.campo, momento: oferta.tambienPanel.momento, nota: oferta.tambienPanel.nota, items: oferta.tambien },
-].map((b) => ({
-  ...b,
-  id: `m-${b.palabra.toLowerCase()}`,
-  items: b.items.map((it: any) => ({ ...it, d: it.dIndice ?? it.d })),
-}));
-
-// «Creación de contenido: redacción y guiones…» → el rótulo en papel, el detalle en gris.
-const partir = (t: string) => {
-  const i = t.indexOf(': ');
-  return i === -1 ? { a: '', b: t } : { a: t.slice(0, i + 1), b: t.slice(i + 2) };
-};
+const og = { src: '/assets/img/og-e12-servicios.jpg?v=1', alt: `SpindleLab: ${dos('servicios.h1').tinta} ${dos('servicios.h1').gris}` };
 ---
-<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt}
-  title="Servicios: SEO técnico, visibilidad en IA y desarrollo web"
-  description="SEO técnico, visibilidad en motores de IA y desarrollo web a medida, con precios publicados. Chequeo gratis antes de contratar nada."
-  bodyClass="d-body"
->
+<Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <meta slot="head" name="robots" content="noindex, nofollow" />
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  <NavV3 />
+  <PaginaA>
+    {/* 1 · CABECERA (§2.4.1): miga, h1 en dos tintas, la entradilla con su enlace al chequeo y la nota de los precios */}
+    <section class="reticula int-cab" aria-labelledby="h-titulo">
+      <Miga items={[{ texto: migaClara[0], href: '/v3/' }, { texto: migaClara[1] }]} />
+      <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{dos('servicios.h1').tinta}</span> <span class="gris">{dos('servicios.h1').gris}</span></h1>
+      <p class="cuerpo caja">{trozosEntradilla.map((p) => (p.href ? <a href={p.href}>{p.texto}</a> : p.texto))}</p>
+      <p class="chico caja">{t('servicios.nota').texto}</p>
+    </section>
 
-  <main>
-    <header class="d-cab">
-      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Servicios' }]} />
-      <h1 class="d-h1">Qué hacemos</h1>
-    </header>
-
-    <div class="d-entrada">
-      <p class="d-nota-card"><b>Valores en pesos, + IVA.</b> Los publicamos para que compares antes de escribirnos.</p>
-      {/* Los dos destinos que anuncia van enlazados (QA 5-oct): el chequeo, que la description
-           promete, quedaba a ~3.500 px. Sin repetir la fila de Desarrollo Web, que se comparte
-           con la home, ni el «no lo vas a rehacer» del h2 de Visibilidad. */}
-      <p class="d-guia">El centro es tu sitio. Si hay que hacerlo de nuevo, lo construimos; si ya tienes uno y funciona, <a class="d-enlace-sidx" href="#m-visibilidad">hay una puerta para eso</a>. Y antes de contratar nada, <a class="d-enlace-sidx" href="/v3/diagnostico/">mira gratis cómo te leen hoy</a>.</p>
-    </div>
-
-    {/* Las bandas de los cuatro momentos. Cada fila es un enlace entero al servicio. */}
-    <div class="d-bandas-sidx">
-      {bandas.map((b) => (
-        <section class:list={['d-banda-sidx', `d-banda-sidx--${b.campo}`]} aria-labelledby={b.id}>
-          <div class="d-banda-sidx__cab">
-            <p class="d-banda-sidx__pal">{b.palabra}</p>
-            <h2 class="d-h2" id={b.id}>{b.momento}</h2>
-            {b.nota && <p class="d-banda-sidx__nota">{b.nota}</p>}
-          </div>
-          <ul class="d-banda-sidx__filas">
-            {b.items.map((it: any) => (
-              <li>
-                <a class="d-fila-sidx" href={it.href}>
-                  <h3 class="d-h3">{it.n}</h3>
-                  <span class="d-fila-sidx__flecha" aria-hidden="true">→</span>
-                  <p class="d-fila-sidx__d">{it.d}</p>
-                  {/* Espacios reales entre las piezas: sin ellos el texto sin CSS (lector de
-                       pantalla, copiar, rastreador) era «Desde$390.000 … $1.190.000+ IVA». */}
-                  <p class="d-precio">
-                    {alternativas(it.p).map((a, i, todas) => [
-                      i > 0 ? ' ' : '',
-                      <span class="d-pre-alt-sidx">{i === 0 && [<span class="d-pre-rot">Desde</span>, <span class="d-pre-sep" aria-hidden="true"></span>, ' ']}<b>{a}{i < todas.length - 1 ? ' ·' : ''}</b>{i === todas.length - 1 && [' ', <span class="d-pre-rot">+ IVA</span>]}</span>,
-                    ])}
-                  </p>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ))}
-    </div>
-
-    {/* EL LÍMITE. Decir qué NO se hace evita el malentendido de alcance. Solo la mitad
-         «fuera»: la mitad «dentro» repetía las bandas (QA 5-oct, A10/B7). Sección corta: la
-         etiqueta no se pega (spec §7). Rótulo, término y pie de la página publicada (QA2 5-oct):
-         «lo pones tú», «contenido creativo» y «Si no tienes quién lo produzca…», donde el «lo»
-         tiene referente. */}
-    <section class="d-sec d-sec--quieta" aria-labelledby="s-limite">
-      <div class="d-eti"><h2 class="d-h2" id="s-limite">Lo que pones tú</h2></div>
-      <div>
-        <ul class="d-filas d-lista-sidx">
-          {oferta.fuera.map((t: string) => { const p = partir(t); return <li>{p.a && <span>{p.a} </span>}<span class="d-gris">{p.b}</span></li>; })}
+    {/* 2 · UNA SECCIÓN POR MOMENTO (§2.4, fila /v3/servicios/): su número y su situación a la izquierda (pegajosos desde
+         1194), sus servicios a la derecha, en c5–c16, como filas enlazadas */}
+    {momentos.map((m) => (
+      <section class="seccion reticula" aria-labelledby={`h-${m.id}`}>
+        <div class="int-sec__cab">
+          <p class="rotulo">{m.numero}</p>
+          <h2 class="t-declaracion" id={`h-${m.id}`}>{m.situacion}</h2>
+          {m.nota && <p class="cuerpo">{m.nota}</p>}
+        </div>
+        <ul class="int-sec__cuerpo int-sec__cuerpo--ancho">
+          {m.filas.map((f) => (
+            <li class="fila-servicio">
+              <h3 class="t-titulo fila-servicio__nombre"><a class="subrayado" href={f.href}>{f.nombre}<Icono nombre="flecha" /></a></h3>
+              <p class="cuerpo fila-servicio__linea">{f.linea}</p>
+              <p class="cuerpo fila-servicio__precio">{f.precio}</p>
+            </li>
+          ))}
         </ul>
-        <p class="d-chico d-gris d-limite-sidx__pie">Si no tienes quién lo produzca, te conectamos con partners.</p>
+      </section>
+    ))}
+
+    {/* 3 · LO QUE PONES TÚ: una lista, con la línea entre filas */}
+    <section class="seccion reticula" aria-labelledby="h-pones">
+      <div class="int-sec__cab">
+        <h2 class="t-declaracion" id="h-pones">{ponesTitulo}</h2>
+      </div>
+      <div class="int-sec__cuerpo">
+        <ul class="int-lista">
+          {fuera.map((x) => <li><p class="cuerpo">{x.a && [<span class="tinta">{x.a}</span>, ' ']}{x.b}</p></li>)}
+        </ul>
+        <p class="chico int-lista__pie">{ponesPie}</p>
       </div>
     </section>
 
-    {/* El texto describe lo que hace el botón (QA 5-oct, bloqueante): el chequeo es el
-         automático de /v3/diagnostico/, sobre tu sitio; no mira la competencia, eso es el
-         diagnóstico completo. Mismo destino que «Chequeo gratis» del pie y del menú.
-         Desde el pase de voz (E8, 14-oct) la guía dice qué hace el chequeo (21 señales, cada
-         una con su instrucción) y no repite la línea de /v3/diagnostico/, adonde lleva el
-         botón. Si vuelve a nombrar motores, son los de esa línea (ChatGPT, Claude,
-         Perplexity): Gemini no se prueba en vivo en functions/api/chequeo.js (spec §7). */}
-    <section class="d-sec d-sec--quieta" aria-labelledby="s-chequeo">
-      <div class="d-eti"><h2 class="d-h2" id="s-chequeo">Empieza por el chequeo</h2></div>
-      <div>
-        <p class="d-guia">Es gratis y revisa 21 señales de tu dominio en segundos, sin pedirte el correo. Cada señal que no pases viene con la instrucción para arreglarla.</p>
-        <div class="d-btns d-chequeo-sidx"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Pedir el diagnóstico</a></div>
+    {/* 4 · EMPIEZA POR EL CHEQUEO: el cierre de la plantilla (§2.4.4) */}
+    <section class="seccion reticula" aria-labelledby="h-chequeo">
+      <div class="cierre">
+        <h2 class="t-declaracion" id="h-chequeo">{t('servicios.chequeo.h2').texto}</h2>
+        <p class="cuerpo">{t('servicios.chequeo.p').texto}</p>
+        <div class="botones">
+          <a class="boton boton--claro" href={b1.destino}>{b1.texto}<Icono nombre="flecha" /></a>
+          <a class="boton boton--placa" href={b2.destino}>{b2.texto}</a>
+        </div>
       </div>
     </section>
-  </main>
-
-  <FooterV3 />
-
-  <script>
-    // FOCO NO OCULTO EN LA PILA PEGAJOSA (WCAG 2.2 SC 2.4.11; QA2 5-oct, bloqueante).
-    // Hacia atrás (Shift+Tab), la fila enfocada de una banda anterior queda pegada en top:0
-    // bajo la banda siguiente: está dentro de la ventana, así que el navegador no hace scroll.
-    // Si el foco cae tapado, la ventana va a la posición natural de su banda: el comienzo de la
-    // pila más el alto de las bandas anteriores. Ahí la banda está entera arriba y las
-    // siguientes, debajo de ella. Solo si la banda se está pegando: se lee del estilo calculado,
-    // así el media query vive en un solo lugar (el CSS).
-    const pila = document.querySelector<HTMLElement>('.d-bandas-sidx');
-    if (pila) {
-      pila.dataset.foco = 'js';
-      const visible = (el: Element) => {
-        const r = el.getBoundingClientRect();
-        // Tres puntos sobre la línea media del elemento, como mide QA.
-        return [0.15, 0.5, 0.85].every((f) => {
-          const x = r.left + r.width * f, y = r.top + r.height / 2;
-          if (y < 0 || y > window.innerHeight || x < 0 || x > window.innerWidth) return false;
-          const en = document.elementFromPoint(x, y);
-          return !!en && (en === el || el.contains(en));
-        });
-      };
-      pila.addEventListener('focusin', (e) => {
-        const el = e.target as HTMLElement;
-        const banda = el.closest<HTMLElement>('.d-banda-sidx');
-        if (!banda || getComputedStyle(banda).position !== 'sticky') return;
-        // Un cuadro después: el scroll propio del navegador al enfocar ya ocurrió.
-        requestAnimationFrame(() => {
-          if (document.activeElement !== el || visible(el)) return;
-          let top = pila.getBoundingClientRect().top + window.scrollY;
-          for (const b of pila.children) { if (b === banda) break; top += (b as HTMLElement).offsetHeight; }
-          window.scrollTo({ top: Math.round(top), behavior: 'instant' });
-        });
-      });
-    }
-  </script>
+  </PaginaA>
 </Layout>
-
-<style>
-  /* ------------------------------------------------------------ bandas de los momentos */
-  .d-bandas-sidx { margin-top: 120px; }
-  .d-banda-sidx { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); padding: 96px var(--d-m) 80px; }
-  .d-banda-sidx--brasa { background: var(--d-brasa); color: var(--d-brasa-t); }
-  .d-banda-sidx--navy { background: var(--d-navy); color: var(--d-navy-t); }
-  .d-banda-sidx--petroleo { background: var(--d-petroleo); color: var(--d-petroleo-t); }
-  .d-banda-sidx--ciruela { background: var(--d-ciruela); color: var(--d-ciruela-t); }
-  /* Escritorio: se pegan arriba y la siguiente tapa a la anterior. El padding de arriba deja
-     libre el módulo de navegación, que está fijo encima. Solo si la banda cabe en la pantalla:
-     medidas de 768 a 1920 px de ancho, la más alta mide ~590 px; con menos de 680 px de alto
-     de ventana (un portátil chico) se apilan sin pegarse, para que ninguna esconda su final. */
-  @media (min-width: 768px) and (min-height: 680px) {
-    .d-banda-sidx { position: sticky; top: 0; }
-    .d-banda-sidx:nth-child(1) { z-index: 1; }
-    .d-banda-sidx:nth-child(2) { z-index: 2; }
-    .d-banda-sidx:nth-child(3) { z-index: 3; }
-    .d-banda-sidx:nth-child(4) { z-index: 4; }
-    /* Sin JS (el script del final no corrió): la banda con el foco sube encima de las demás,
-       para que Shift+Tab nunca deje el foco tapado. Con JS no hace falta y no se aplica: el
-       script lleva la banda a su sitio, y una banda subida taparía a las siguientes al seguir
-       bajando con el foco todavía adentro. */
-    .d-bandas-sidx:not([data-foco]) .d-banda-sidx:focus-within { z-index: 5; }
-  }
-  /* El ancla de la entrada («hay una puerta para eso») cae acá. En celular la banda no se pega
-     y el h2 quedaba bajo el módulo de navegación (medido: h2 en y=0, módulo hasta y=86). */
-  .d-banda-sidx .d-h2 { scroll-margin-top: 140px; }
-  /* Escritorio: 96 de padding + rótulo + 12 de hueco = 127; la banda queda justo arriba, sin
-     la franja de la anterior (con 140 asomaban 12 px de brasa). */
-  @media (min-width: 768px) { .d-banda-sidx .d-h2 { scroll-margin-top: 127px; } }
-  .d-banda-sidx__cab { display: flex; flex-direction: column; gap: 12px; align-self: start; padding-right: clamp(0px, 3vw, 48px); }
-  .d-banda-sidx__pal { font-size: 0.8125rem; font-weight: 500; margin: 0; }
-  .d-banda-sidx__nota { font-size: 0.875rem; line-height: 1.5; max-width: 340px; margin: 6px 0 0; }
-  .d-banda-sidx__filas { list-style: none; margin: 0; padding: 0; }
-
-  /* La fila: nombre y flecha arriba, la línea y el precio debajo. Filete en el color del texto
-     de la banda; es un separador, no texto, así que su opacidad no afecta el contraste. */
-  .d-fila-sidx { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px 24px; padding: 24px 0 28px; border-top: 1px solid color-mix(in srgb, currentColor 32%, transparent); text-decoration: none; }
-  .d-banda-sidx__filas li:last-child .d-fila-sidx { border-bottom: 1px solid color-mix(in srgb, currentColor 32%, transparent); }
-  .d-fila-sidx .d-h3 { grid-column: 1; grid-row: 1; }
-  .d-fila-sidx__flecha { grid-column: 2; grid-row: 1; font-size: 1.5rem; line-height: 1.4; }
-  /* Medida en em, no en px (QA2 5-oct, manual §05): 620 px daban 75–79 caracteres por línea.
-     28.5em es el valor que la spec §7 midió con Range para el cuerpo de 18 px en Manrope. */
-  .d-fila-sidx__d { grid-column: 1 / -1; font-size: clamp(1.0625rem, 1.25vw, 1.125rem); line-height: 1.6; margin: 0; max-width: 28.5em; }
-  /* El precio fluye como texto, no como flex: en celular el flex dejaba el separador solo al
-     final de una línea y el «+ IVA» huérfano en la siguiente. En línea, solo corta entre las
-     palabras de la cifra; «Desde» queda pegado a la primera y «+ IVA» a la última. */
-  .d-fila-sidx .d-precio { grid-column: 1 / -1; margin-top: 6px; display: block; line-height: 1.6; }
-  /* Cada alternativa con su plan no se parte: «$690.000 con Visibilidad IA + IVA» va junto.
-     Entre las piezas hay espacios reales (~4 px); los márgenes de abajo suman lo que falta
-     para los 12 px de antes. */
-  .d-fila-sidx .d-pre-alt-sidx { white-space: nowrap; }
-  .d-fila-sidx .d-pre-sep { display: inline-block; width: 1px; height: 14px; vertical-align: -2px; margin: 0 8px 0 12px; }   /* un solo espacio real, después: el texto lee «Desde $390.000» */
-  .d-fila-sidx .d-pre-rot { opacity: 1; }
-  .d-fila-sidx .d-pre-rot:last-child { margin-left: 8px; white-space: nowrap; }
-  .d-fila-sidx:hover .d-h3 { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
-  .d-fila-sidx:focus-visible { outline-color: currentColor; outline-offset: 4px; }
-
-  @media (max-width: 767px) {
-    .d-bandas-sidx { margin-top: 80px; }
-    .d-banda-sidx { grid-template-columns: 1fr; gap: 28px; padding: 56px var(--d-m) 48px; }
-    .d-banda-sidx__cab { padding-right: 0; }
-  }
-
-  /* ------------------------------------------------------------ entrada */
-  .d-enlace-sidx { text-decoration: underline; text-underline-offset: 0.16em; text-decoration-thickness: 1px; }
-  .d-enlace-sidx:hover { text-decoration-thickness: 2px; }
-
-  /* ------------------------------------------------------------ lo que no hacemos */
-  .d-lista-sidx { list-style: none; padding: 0; margin: 0; }
-  .d-lista-sidx li { font-size: clamp(1.0625rem, 1.25vw, 1.125rem); line-height: 1.6; }
-  .d-limite-sidx__pie { margin: 14px 0 0; }
-
-  .d-chequeo-sidx { margin-top: 28px; }
-</style>

@@ -842,9 +842,11 @@ body.a-body.a-sin-js .filtro { display: none; }
 /* ================================================================== INTERIOR (spec §2.4) · tanda 4 */
 /* La plantilla de las páginas de la casa, la de Koto en /services y /about (lock §20.1): negras, con a lo más una franja
    de imagen. Implementación de referencia: la vista 5 del prototipo (proto/a/servicios/desarrollo-web/); los espacios
-   del prototipo que no están en la escala de §1.5 van al paso más cercano (14 → 12 o 16, 10 → 12, 28 → 24). */
+   del prototipo que no están en la escala de §1.5 van al paso más cercano (14 → 12 o 16, 10 → 12, 28 → 24). La usan
+   /v3/servicios/, Desarrollo web y los cinco servicios de [slug].astro (desvios.md, tanda 4). */
 
-/* 1 · Cabecera: miga; h1 a Declaración en dos tintas (c1–c10 desde 1194); la entradilla (tope 493); los botones. 48 arriba */
+/* 1 · Cabecera: miga; h1 a Declaración en dos tintas (c1–c10 desde 1194); la entradilla y lo que la acompaña (tope 493);
+   los botones. 48 arriba */
 .a-body .int-cab { padding-top: 48px; row-gap: 16px; }
 .a-body .int-cab > * { grid-column: 1 / -1; }
 @media (min-width: 1194px) { .a-body .int-cab h1 { grid-column: 1 / span 10; } }
@@ -853,16 +855,19 @@ body.a-body.a-sin-js .filtro { display: none; }
 .a-body .int-cab .botones { margin-top: 8px; }
 
 /* 2 · La franja (a lo más una): un medio del trabajo a todo el ancho de la retícula, 2,39:1 desde 834 y 16:9 bajo 834,
-   radio 6, 56 arriba; recortada al centro. Nunca un campo (§3.4). */
+   radio 6, 56 arriba; recortada al centro. Nunca un campo (§3.4). Debajo, el nombre de la pieza en blanco y su línea
+   mono, como el pie del prototipo; y el aviso de Clara si la imagen lleva una persona generada. */
 .a-body .franja { margin-top: 56px; }
 .a-body .franja > * { grid-column: 1 / -1; }
 .a-body .franja .medio { aspect-ratio: 16 / 9; }
-.a-body .franja .medio > img { object-position: 50% 50%; }
+.a-body .franja .medio > picture { display: block; width: 100%; height: 100%; }
+.a-body .franja .medio > img, .a-body .franja .medio > picture > img { object-position: 50% 50%; }
 @media (min-width: 834px) { .a-body .franja .medio { aspect-ratio: 2.39; } }
 .a-body .franja .pie .tinta { color: var(--a-blanco); }
+.a-body .franja .pie + .pie { margin-top: 4px; }
 
 /* 3 · Las secciones: el h2 a Declaración en c1–c4, pegajoso a 88 px desde 1194 (bajo 1194, arriba de su contenido); el
-   contenido en c5–c12 (listas, fases, preguntas) o en c5–c16 (planes, piezas). */
+   contenido en c5–c12 (listas, fases, preguntas) o en c5–c16 (planes, piezas, las filas de servicios). */
 .a-body .int-sec__cab { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
 .a-body .int-sec__cab .cuerpo, .a-body .int-sec__cab .chico { max-width: var(--a-caja); }
 .a-body .int-sec__cuerpo { grid-column: 1 / -1; min-width: 0; }
@@ -872,23 +877,39 @@ body.a-body.a-sin-js .filtro { display: none; }
   .a-body .int-sec__cuerpo--ancho { grid-column: 5 / -1; }
 }
 
-/* Una lista: filas con la línea entre filas (--a-linea), el texto con el tope de la caja */
+/* Una lista: filas con la línea entre filas (--a-linea), el texto con el tope de la caja. Si la fila tiene título (los
+   cinco servicios: «Rastreo e indexación: …»), el título va en blanco a cuerpo, como el nombre de una pieza. */
 .a-body .int-lista > li { padding: 12px 0; border-top: 1px solid var(--a-linea); }
 .a-body .int-lista > li > .cuerpo, .a-body .int-lista > li > .chico { max-width: var(--a-caja); }
+.a-body .int-lista__t {
+  max-width: var(--a-caja); margin-bottom: 4px; font-stretch: 100%; font-weight: 370; font-size: var(--a-t-cuerpo);
+  line-height: var(--a-i-cuerpo); text-wrap: pretty;
+}
 .a-body .int-lista__pie { margin-top: 16px; max-width: var(--a-caja); }
 
 /* Las filas de servicios de /servicios/ (una por servicio del momento): el nombre a Título con la flecha, la línea de qué
-   hace y el precio en blanco; desde 834, en las columnas de los planes (3:4:3). Toda la fila lleva al servicio: el
-   enlace es el nombre y su área se estira a la fila. */
+   hace y el precio en blanco, con la línea de sección como los planes. Desde 834, sobre las doce columnas de la retícula
+   que ocupa la lista (c5–c16 desde 1194; todas de 834 a 1193): el nombre en 3, la línea en 5 y el precio en las 3
+   últimas, con una columna libre antes del precio (en 3:4:3 la línea y el precio quedaban a 8 px; desvios.md, tanda 4).
+   Toda la fila lleva al servicio: el enlace es el nombre y su área se estira a la fila; al pasar el mouse por la fila,
+   el subrayado del nombre va al 100 % (§4.1). */
 .a-body .fila-servicio {
   position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px var(--a-g); padding: 16px 0 32px;
-  border-top: 1px solid var(--a-linea);
+  border-top: 1px solid var(--a-linea-seccion);
 }
 .a-body .fila-servicio h3 { font-size: var(--a-t-titulo); line-height: 1.2; }
-.a-body .fila-servicio h3 a { display: inline-flex; align-items: baseline; gap: 8px; }
 .a-body .fila-servicio h3 a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
-.a-body .fila-servicio .precio { color: var(--a-blanco); }
-@media (min-width: 834px) { .a-body .fila-servicio { grid-template-columns: 3fr 4fr 3fr; } }
+.a-body .fila-servicio h3 .icono-flecha { margin-left: 8px; }
+.a-body .fila-servicio:hover a.subrayado { text-decoration-color: var(--a-blanco); }
+.a-body .fila-servicio .cuerpo { max-width: var(--a-caja); }
+.a-body .fila-servicio .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .fila-servicio__precio { color: var(--a-blanco); }
+@media (min-width: 834px) {
+  .a-body .fila-servicio { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .a-body .fila-servicio__nombre { grid-column: 1 / span 3; }
+  .a-body .fila-servicio__linea { grid-column: 4 / span 5; }
+  .a-body .fila-servicio__precio { grid-column: 10 / span 3; }
+}
 
 /* «Sitios que construimos» (Desarrollo web): tres portadas 4:5 en c5–c16, una columna bajo 834 */
 .a-body .obra3 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px var(--a-g); }
@@ -896,12 +917,12 @@ body.a-body.a-sin-js .filtro { display: none; }
 .a-body .obra3__pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; margin-top: 24px; }
 .a-body .obra3__pie .chico { max-width: var(--a-caja); }
 
-/* El glosario de los planes (Desarrollo web): antes de los planes, en dos columnas desde 834 */
-.a-body .glosario { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 var(--a-g); margin-bottom: 40px; }
-@media (min-width: 834px) { .a-body .glosario { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.a-body .glosario__rot { grid-column: 1 / -1; margin-bottom: 8px; }
-.a-body .glosario li { padding: 12px 0; border-top: 1px solid var(--a-linea); }
-.a-body .glosario li .chico { max-width: var(--a-caja); }
+/* El glosario de los planes (Desarrollo web): antes de los planes (Clara), su rótulo y la lista en dos columnas desde 834 */
+.a-body .glosario { margin-bottom: 40px; }
+.a-body .glosario__rot { margin-bottom: 8px; }
+.a-body .glosario__lista { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 var(--a-g); }
+@media (min-width: 834px) { .a-body .glosario__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.a-body .glosario__lista li { padding: 12px 0; border-top: 1px solid var(--a-linea); max-width: var(--a-caja); }
 
 /* Los planes: filas con la línea de sección; desde 834 en columnas 3:4:3 (nombre y precio · línea · puntos) */
 .a-body .plan {
@@ -912,13 +933,14 @@ body.a-body.a-sin-js .filtro { display: none; }
 .a-body .plan h3 { font-size: var(--a-t-titulo); line-height: 1.2; }
 .a-body .plan__precio { margin-top: 8px; color: var(--a-blanco); }
 .a-body .plan .cuerpo { max-width: var(--a-caja); }
-.a-body .plan li { padding: 4px 0; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .plan li { padding: 4px 0; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); text-wrap: pretty; }
 .a-body .plan li::before { content: '· '; color: var(--a-gris); }
+/* Debajo de los planes: el compromiso de los tres meses (cuerpo) y la nota de los precios (chico) */
 .a-body .planes__pie { display: flex; flex-direction: column; gap: 16px; padding-top: 16px; border-top: 1px solid var(--a-linea-seccion); }
 .a-body .planes__pie .cuerpo, .a-body .planes__pie .chico { max-width: var(--a-caja); }
 .a-body .planes__pie .cuerpo + .cuerpo { margin-top: 0; }
 
-/* Las fases (y los bloques de los servicios, en la misma forma): filas con la línea de sección; desde 834, 2:5 */
+/* Las fases (y los bloques de los cinco servicios, en la misma forma): filas con la línea de sección; desde 834, 2:5 */
 .a-body .fase {
   display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px var(--a-g); padding: 16px 0 24px;
   border-top: 1px solid var(--a-linea-seccion);
@@ -926,10 +948,11 @@ body.a-body.a-sin-js .filtro { display: none; }
 @media (min-width: 834px) { .a-body .fase { grid-template-columns: 2fr 5fr; } }
 .a-body .t-fase { font-size: var(--a-t-titulo); line-height: 1.2; color: var(--a-blanco); transition: color var(--a-color); }
 .a-body .fase .cuerpo { max-width: var(--a-caja); transition: color var(--a-color); }
-/* La fase a la vista pasa del gris al blanco en 167 ms (§2.4, solo en «Cinco fases» de Desarrollo web; fases.mjs). Sin
-   JS, los títulos en blanco y el cuerpo en gris; con movimiento reducido, todas en blanco. */
-body.a-body:not(.a-sin-js) .fases--vista .fase:not(.a-la-vista) .t-fase { color: var(--a-gris); }
-.a-body .fases--vista .fase.a-la-vista .cuerpo { color: var(--a-blanco); }
+/* La fase a la vista pasa del gris al blanco en 167 ms (§2.4: solo «Cinco fases» de Desarrollo web; fases.mjs marca la
+   lista con data-vista cuando puede observarla). Sin JS, los títulos en blanco y el cuerpo en gris; con movimiento
+   reducido, todas en blanco y sin transición. */
+.a-body .fases--vista[data-vista] .fase:not(.a-la-vista) .t-fase { color: var(--a-gris); }
+.a-body .fases--vista[data-vista] .fase.a-la-vista .cuerpo { color: var(--a-blanco); }
 @media (prefers-reduced-motion: reduce) {
   body.a-body .fases--vista .fase .t-fase, body.a-body .fases--vista .fase .cuerpo { color: var(--a-blanco); }
 }
@@ -943,7 +966,8 @@ body.a-body:not(.a-sin-js) .fases--vista .fase:not(.a-la-vista) .t-fase { color:
 .a-body .pregunta h3 { font-size: var(--a-t-titulo); line-height: 1.2; }
 .a-body .pregunta .cuerpo { max-width: var(--a-caja); }
 
-/* 4 · El cierre: c1–c9, el h2 en dos tintas, el párrafo y los botones de contacto o del chequeo; «Siguiente» debajo */
+/* 4 · El cierre: c1–c9, el h2 (en dos tintas si las trae), el párrafo y los botones de contacto o del chequeo;
+   «Siguiente» debajo, 32 px más abajo (el gap de 16 y su margen) */
 .a-body .cierre { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 @media (min-width: 1194px) { .a-body .cierre { grid-column: 1 / span 9; } }
 .a-body .cierre .cuerpo { max-width: var(--a-caja); }
