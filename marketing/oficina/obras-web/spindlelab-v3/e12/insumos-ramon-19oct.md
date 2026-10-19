@@ -54,3 +54,18 @@ y queda como decía el tablero.
 - **Las opciones 1 y 2 del hero:** quedan en `e12/texto/texto-paso2.json`, marcadas.
 - **La pauta de fotos y clips generados para los conceptos** (9 fotos y 2 clips, `plan-e12.md`): sin generar hasta que
   Ramón diga que hay presupuesto («cuando tenga plata vamos con lo faltante»). Los conceptos siguen con lo que tienen.
+
+## 5. La pregunta del Layout (spec §0.5), contestada el 19-oct a las 11:44 (Chile)
+
+Pregunta, tal como se le hizo: «La plantilla común de todas las páginas (Layout.astro, donde viven Google Analytics, el
+aviso de cookies y el Pixel) no se puede tocar según el brief. Mientras siga así, las páginas nuevas cargan 93 KB de
+letras viejas que no usan, el favicon y la barra del teléfono siguen siendo los de antes, y el scroll suavizado se queda
+cargado aunque lo dejemos apagado. ¿Le agregamos cinco opciones que solo use /v3/? Las 20 páginas publicadas quedarían
+idénticas byte a byte (se comprueba antes de subir) y Analytics, cookies y Pixel no se tocan.»
+
+Respuesta de Ramón: **«Sí, agrégalas (Recomendado)»**.
+
+Qué autoriza, y nada más: cinco props opcionales en `src/layouts/Layout.astro` (Lenis, letras precargadas,
+`theme-color`, favicon y lo que el `Layout` pone de `#org`/`jobTitle`), cada una con valor por defecto igual al de
+hoy, que solo pasan las páginas de `/v3/`. Condición: las páginas publicadas salen iguales byte a byte (`diff` del
+`dist/` de esas rutas antes y después) y gtag, el consentimiento y el Pixel no cambian. Va a `desvios.md`.
