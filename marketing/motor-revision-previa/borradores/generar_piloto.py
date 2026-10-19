@@ -94,7 +94,7 @@ LUGAR = "ni junto al formulario, ni en el menú, ni en el pie encontré un enlac
 HECHO_F1 = {
  'V06': 'Revisé la portada de cypauditores.cl. El formulario de contacto pide nombre, correo y celular. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
  'V111': 'Revisé la portada de molinarios.cl. El formulario de la sección Contáctanos pide nombre y correo. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad del estudio que diga qué se hace con esos datos.',
- 'V17': 'Revisé la portada de finpartner.cl. El formulario de Diagnóstico gratuito, en la primera pantalla, pide además del correo la facturación y el régimen tributario. No encontré un enlace a una política de privacidad junto a él, en el menú ni en el pie.',
+ 'V17': 'Revisé la portada de finpartner.cl. El formulario de Diagnóstico gratuito, en la primera pantalla, pide además del correo la facturación y el régimen tributario. No encontré un enlace a una política de privacidad que diga qué se hace con esos datos, ni junto al formulario, ni en el menú, ni en el pie.',
  'V20': 'Revisé lcconsultores.cl. El formulario de la sección Contacto pide nombre y correo, y opcionalmente teléfono. En la página, pie incluido, no encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
  'V28': 'Revisé la portada de ulloaycia.cl. El formulario de la sección Escríbenos pide nombre y correo. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
  'V30': 'Revisé la portada de sbsolutions.cl. El formulario de la sección Contacto pide nombre, correo y consulta. Ni junto al formulario ni en el pie encontré un enlace a una política de privacidad que diga qué se hace con esos datos.',
@@ -105,7 +105,7 @@ HECHO_F1 = {
  'V89': 'Revisé la portada de medicinachina.cl. El formulario para pedir hora clínica pide nombre y teléfono. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad de la escuela que diga qué se hace con esos datos.',
  'V94': 'Revisé la portada de trustdoc.cl. El formulario de contacto pide nombre, cargo, organización y correo, y teléfono si quiere. Bajo el botón dice que los datos se tratarán conforme a la ley, pero ni junto a ese texto, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que explique cómo.',
 }
-VERLO_CUSTOM = {'V17': "Puedes verlo tú: abre la portada y busca ese enlace junto al formulario, en el menú o en el pie."}
+VERLO_CUSTOM = {'V17': "Puedes verlo tú: abre la portada y busca ese enlace."}
 def f1(id, hecho, notas, precio=PRECIO_F1, verlo=VERLO_F1):
     dom = ver[id]['dominio']
     hecho = HECHO_F1.get(id, hecho)

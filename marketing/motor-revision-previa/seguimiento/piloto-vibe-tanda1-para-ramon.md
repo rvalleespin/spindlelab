@@ -1,6 +1,6 @@
 # Piloto Vibe, tanda 1: borradores en Gmail (19-oct-2026)
 
-**Estado:** 14 borradores creados en Gmail (hola@spindlelab.cl). **Nada está enviado.** Falta V28 (ulloaycia.cl, formulario sin política), que espera una segunda lectura independiente de su texto reescrito: con él la tanda 1 llega a 15.
+**Estado:** 15 borradores creados en Gmail (hola@spindlelab.cl): 14 de cookies y V28 (ulloaycia.cl, formulario sin política). **Nada está enviado.**
 
 ## Antes de enviar cada uno (2 minutos)
 Mi medición salió de una IP de nube de EE.UU. y los correos dicen "entré" y "mi navegador": son tus palabras. Para cada uno:
