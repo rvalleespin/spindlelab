@@ -1,0 +1,264 @@
+{
+ "capturar.mjs (8 anchos)": {
+  "/v3/prueba-base-a/ @ 360": {
+   "desborde": 0,
+   "desbordeSinClip": 0,
+   "h1": 1,
+   "altoCab": 90,
+   "alto": 2163,
+   "letras": [
+    "Google Sans Flex 100 1000",
+    "DM Mono 500"
+   ],
+   "errores": []
+  },
+  "/v3/prueba-base-a/ @ 390": {
+   "desborde": 0,
+   "desbordeSinClip": 0,
+   "h1": 1,
+   "altoCab": 90,
+   "alto": 2141,
+   "letras": [
+    "Google Sans Flex 100 1000",
+    "DM Mono 500"
+   ],
+   "errores": []
+  },
+  "/v3/prueba-base-a/ @ 768": {
+   "desborde": 0,
+   "desbordeSinClip": 0,
+   "h1": 1,
+   "altoCab": 90,
+   "alto": 2564,
+   "letras": [
+    "Google Sans Flex 100 1000",
+    "DM Mono 500"
+   ],
+   "errores": []
+  },
+  "/v3/prueba-base-a/ @ 834": {
+   "desborde": 0,
+   "desbordeSinClip": 0,
+   "h1": 1,
+   "altoCab": 64,
+   "alto": 2756,
+   "letras": [
+    "Google Sans Flex 100 1000",
+    "DM Mono 500"
+   ],
+   "errores": []
+  },
+  "/v3/prueba-base-a/ @ 1024": {
+   "desborde": 0,
+   "desbordeSinClip": 0,
+   "h1": 1,
+   "altoCab": 64,
+   "alto": 3055,
+   "letras": [
+    "Google Sans Flex 100 1000",
+    "DM Mono 500"
+   ],
+   "errores": []
+  },
+  "/v3/prueba-base-a/ @ 1194": {
+   "desborde": 0,
+   "desbordeSinClip": 0,
+   "h1": 1,
+   "altoCab": 64,
+   "alto": 2611,
+   "letras": [
+    "Google Sans Flex 100 1000",
+    "DM Mono 500"
+   ],
+   "errores": []
+  },
+  "/v3/prueba-base-a/ @ 1440": {
+   "desborde": 0,
+   "desbordeSinClip": 0,
+   "h1": 1,
+   "altoCab": 64,
+   "alto": 2958,
+   "letras": [
+    "Google Sans Flex 100 1000",
+    "DM Mono 500"
+   ],
+   "errores": []
+  },
+  "/v3/prueba-base-a/ @ 1920": {
+   "desborde": 0,
+   "desbordeSinClip": 0,
+   "h1": 1,
+   "altoCab": 64,
+   "alto": 3566,
+   "letras": [
+    "Google Sans Flex 100 1000",
+    "DM Mono 500"
+   ],
+   "errores": []
+  }
+ },
+ "comprobar-base.mjs": {
+  "ruta": "/v3/prueba-base-a/",
+  "cuando": "2026-10-19T16:54:33.096Z",
+  "html": {
+   "anclasSueltas": 0,
+   "bodyLenisPrevent": true,
+   "claseHtml": "lenis",
+   "sinJsQuitado": true
+  },
+  "rueda": {
+   "al90ms": 45,
+   "final": 100
+  },
+  "saltar": {
+   "clase": "saltar boton boton--claro",
+   "texto": "Saltar al contenido",
+   "href": "/v3/prueba-base-a/#contenido",
+   "visible": true
+  },
+  "encabezado": {
+   "plegada": true,
+   "opacidadPlaca": 1,
+   "top": 0,
+   "alto": 64,
+   "rellenoFila": "28px"
+  },
+  "cursor": {
+   "sobrePieza": {
+    "visible": true,
+    "texto": "Ver el caso",
+    "ancho": 88,
+    "centro": [
+     366,
+     459
+    ],
+    "teclado": false,
+    "cursorPieza": "none"
+   },
+   "puntero": [
+    366,
+    459
+   ],
+   "conTab": {
+    "visible": false,
+    "texto": "Ver el caso",
+    "ancho": 0,
+    "centro": [
+     366,
+     459
+    ],
+    "teclado": true,
+    "cursorPieza": "pointer"
+   },
+   "desplazadoBajoMouseQuieto": {
+    "visible": false,
+    "texto": "Ver el caso",
+    "ancho": 0,
+    "centro": [
+     366,
+     459
+    ],
+    "teclado": true,
+    "cursorPieza": "pointer"
+   },
+   "conMovimientoReal": {
+    "visible": true,
+    "texto": "Ver el caso",
+    "ancho": 88,
+    "centro": [
+     396,
+     860
+    ],
+    "teclado": false,
+    "cursorPieza": "none"
+   }
+  },
+  "videos1440": [
+   {
+    "fuente": "hilo-1920.webm",
+    "pausado": true,
+    "corriendo": true,
+    "pausaVisible": true,
+    "ariaPressed": "false",
+    "ariaLabel": "Pausar el video"
+   },
+   {
+    "fuente": "cinta.webm",
+    "pausado": false,
+    "corriendo": true,
+    "pausaVisible": true,
+    "ariaPressed": "false",
+    "ariaLabel": "Pausar el video"
+   }
+  ],
+  "pausaApretada": {
+   "fuente": "hilo-1920.webm",
+   "pausado": true,
+   "corriendo": true,
+   "pausaVisible": true,
+   "ariaPressed": "true",
+   "ariaLabel": "Seguir el video"
+  },
+  "pausaOtraVez": {
+   "fuente": "hilo-1920.webm",
+   "pausado": false,
+   "corriendo": true,
+   "pausaVisible": true,
+   "ariaPressed": "false",
+   "ariaLabel": "Pausar el video"
+  },
+  "errores1440": [],
+  "videos390": [
+   {
+    "fuente": "hilo-960.webm",
+    "pausado": false,
+    "corriendo": true,
+    "pausaVisible": true,
+    "ariaPressed": "false",
+    "ariaLabel": "Pausar el video"
+   },
+   {
+    "fuente": "cinta.webm",
+    "pausado": false,
+    "corriendo": true,
+    "pausaVisible": true,
+    "ariaPressed": "false",
+    "ariaLabel": "Pausar el video"
+   }
+  ],
+  "circulo390": false,
+  "errores390": [],
+  "reducido": {
+   "videos": [
+    {
+     "fuente": "",
+     "pausado": true,
+     "corriendo": false,
+     "pausaVisible": true,
+     "ariaPressed": "true",
+     "ariaLabel": "Seguir el video"
+    },
+    {
+     "fuente": "cinta.webm",
+     "pausado": true,
+     "corriendo": false,
+     "pausaVisible": true,
+     "ariaPressed": "true",
+     "ariaLabel": "Seguir el video"
+    }
+   ],
+   "circulo": "none",
+   "entradasConEstilo": 0,
+   "transiciones": "0s",
+   "trasApretarSeguir": {
+    "fuente": "hilo-1920.webm",
+    "pausado": false,
+    "corriendo": true,
+    "pausaVisible": true,
+    "ariaPressed": "false",
+    "ariaLabel": "Pausar el video"
+   }
+  },
+  "erroresReducido": []
+ }
+}

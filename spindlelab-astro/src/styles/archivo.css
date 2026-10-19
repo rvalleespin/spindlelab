@@ -259,6 +259,10 @@ body.a-body {
   .a-body .cab__nav a, .a-body .miga a { min-width: 44px; justify-content: center; }
   .a-body .pie-sitio .cab__logo { margin-block: -12px; }
   .a-body .pie-sitio__correo { display: inline-flex; align-items: center; min-height: 44px; padding-top: 6px; margin-block: -18px -12px; }
+  /* el botón «Cookies» que consent-banner.js cuelga junto al correo trae su estilo en línea: va con !important */
+  html body.a-body .pie-sitio #cookie-preferencias {
+    display: inline-flex !important; align-items: center; min-height: 44px; padding-top: 6px !important; margin-block: -18px -12px !important;
+  }
 }
 
 /* ------------------------------------------------------------------ medios (§3.3) */
@@ -430,7 +434,7 @@ html body.a-body #cookie-banner button:focus-visible { outline: 2px solid var(--
    sombra): por eso aquí va con !important. Placa, radio 4, sin sombra ni borde (§1.5). */
 html body.a-body #cookie-aviso {
   background: var(--a-placa) !important; border: 0 !important; border-radius: 4px !important; box-shadow: none !important;
-  color: var(--a-blanco) !important; font-family: var(--a-f-letra) !important; font-weight: 370 !important;
+  color: var(--a-gris) !important; font-family: var(--a-f-letra) !important; font-weight: 370 !important;
   font-size: 14px !important; line-height: 1.35 !important;
 }
 html body.a-body #cookie-aviso button {
@@ -453,9 +457,17 @@ html body.a-body #cookie-aviso button:last-child { background: var(--a-placa-act
 @media (min-width: 834px) {
   html:has(body.a-body):has(:focus-visible) { scroll-padding-top: 80px; }
 }
+/* El alto del aviso, medido en esta hoja (tanda 1): 69 px en una fila (desde ~850), 115 de 600 a 834, 134 de 390 a 414
+   y 153 a 360 y 320. El relleno es ese alto más unos 20 px. */
 html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 96px; }
 @media (max-width: 899.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 136px; }
+}
+@media (max-width: 599.98px) {
   html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 160px; }
+}
+@media (max-width: 379.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 176px; }
 }
 
 /* ------------------------------------------------------------------ movimiento reducido (§1.6) */
