@@ -1,9 +1,9 @@
 {
  "resumen": {
-  "ok": 23,
-  "ajustar": 11
+  "ok": 28,
+  "ajustar": 6
  },
- "nota": "V06 y V07 revisados sobre el texto anterior; ya reescritos segun este parecer. V28 revisado sobre el texto reescrito.",
+ "nota": "Segunda lectura de 13 borradores reescritos (V28,V06,V111,V17,V20,V30,V37,V57,V65,V67,V89,V94,V43). Para esos ids vale esta segunda lectura; para el resto, la primera.",
  "revisiones": [
   {
    "id": "V64",
@@ -40,12 +40,6 @@
    "veredicto": "ok",
    "problemas": [],
    "comentario": "Lo enviaría tal cual. Cada afirmación está respaldada: las cookies de Google (analítica y publicidad) y de Meta las vieron los dos revisores, a los 11 s y sin tocar nada. La ausencia de aviso se afirma solo para la portada, y las capturas r1-A y r1-B no muestran ninguno. Las tres corridas coinciden y ninguna petición lleva gcs, así que no hay Consent Mode que lo desmienta. Pasa el criterio de corte porque el sitio tiene publicidad (Google Ads y Meta), no solo Analytics. Las reglas duras se cumplen: 109 palabras, sin raya larga, sin exclamaciones, sin cookies nombradas, $149.000 + IVA sin \"desde\" ni plazo, y la llamada de 20 minutos. reservas@carilafquen.cl aparece publicado en el sitio (cabecera y pie), así que \"Saqué tu correo del sitio de ustedes\" es verdadero. La derivación \"¿con quién lo hablo?\" cubre al buzón de rol, y Carilafquen (cabañas y spa) no es competidor."
-  },
-  {
-   "id": "V28",
-   "veredicto": "ok",
-   "problemas": [],
-   "comentario": "Lo enviaría: cada hecho calza con lo que vieron los dos revisores (formulario en la sección Escríbenos, sin enlace a política en menú, cuerpo ni pie, solo portada), no cita leyes ni nombra cookies, tiene 101 palabras, precio $149.000 + IVA sin \"desde\" ni plazo, llamada de 20 minutos y derivación; la baja es verdadera porque gromero@ulloaycia.cl está publicado en la barra superior de la portada, y no es competidor ni está en las listas de exclusión. Antes de pulsar enviar, Ramón debería abrir la portada y mirar el formulario y el pie (30 segundos), porque \"revisé\" y \"encontré\" van en su voz y la medición la hizo el motor; y de forma opcional, \"quien te escribe por el formulario\" podría ser \"quien escribe por el formulario\", para no dar por hecho que ese buzón recibe los mensajes."
   },
   {
    "id": "V60",
@@ -96,25 +90,6 @@
    "comentario": "Lo enviaría tal cual: cada frase calza con lo que vieron los dos revisores (_fbp, _ga y _ga_REE5YKX68G en las 3 corridas, aviso nulo en ambos tramos, sin banner en las capturas de escritorio ni móvil), no dice que Google o Meta reciban nada, ni que falte política, ni cita la ley. contacto@imr.cl está publicado como enlace en la portada, así que la baja es verdadera. Pasa el criterio de corte por el píxel de Meta (publicidad), no es competidor, tiene 107 palabras, el precio de $149.000 + IVA sin \"desde\" ni plazo y la llamada de 20 minutos. Nota para Ramón, no para el texto: el cuerpo no dice quién escribe (lo dice la firma) y los párrafos 2 a 4 son idénticos en todo el lote C1; para un buzón de rol alcanza, porque la derivación final resuelve quién lo lee."
   },
   {
-   "id": "V06",
-   "veredicto": "ajustar",
-   "problemas": [
-    {
-     "tipo": "destinatario",
-     "frase": "una plantilla de política para que la revisen en el estudio",
-     "por_que": "\"En el estudio\" está copiado del correo a un estudio de abogados (V111, único otro borrador que lo usa). C y P Auditores es una firma de auditoría, contabilidad e impuestos de 11 a 50 personas, y el kit entrega la plantilla para que la revise el abogado del cliente (ficha F1). Así como está, el correo da por hecho que tienen quien revise textos legales en casa; los demás borradores de rubros no jurídicos dicen \"tu abogado\".",
-     "correccion": "Arreglarlo cuesta $149.000 + IVA e incluye un aviso junto al formulario y una plantilla de política para que la revise tu abogado. Si quieres, lo vemos en una llamada de 20 minutos."
-    },
-    {
-     "tipo": "claridad_para_quien_decide",
-     "frase": "Revisé la portada de cypauditores.cl: quien llena el formulario de contacto deja nombre, correo y celular, y no ve qué se hace con esos datos, porque ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.",
-     "por_que": "Es una sola oración de unas 50 palabras con tres \"ni\" encadenados, y la consecuencia queda enterrada a mitad de frase. Además los tres párrafos de contenido abren con dos puntos de anuncio (\"...cypauditores.cl:\", \"Puedes verlo tú:\", \"cuesta $149.000 + IVA:\"), el tic que Ramón rechazó el 23-sep. No es un error de hecho: todo lo afirmado está respaldado por los dos revisores, pero se lee como informe y no como alguien hablando. Prioridad menor que el punto anterior.",
-     "correccion": "P1: \"Revisé la portada de cypauditores.cl. El formulario de contacto pide nombre, correo y celular, y quien lo llena no ve qué se hace con esos datos. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.\" P2: \"Puedes verlo tú. Abre la portada, baja hasta el formulario y busca ese enlace.\""
-    }
-   ],
-   "comentario": "Si fuera el dueño del sitio, lo enviaría tras cambiar \\\"en el estudio\\\" por \\\"tu abogado\\\" y soltar la primera oración. Los hechos aguantan contra los dos revisores (solo portada, celular obligatorio, formulario no ubicado en la primera pantalla, sin cookies ni leyes ni \\\"no tienen política\\\"), la baja es verdadera (contacto@cypauditores.cl está en la cabecera y en la sección de contacto de la portada, que es la columna pagina), son 104 palabras, el precio va sin \\\"desde\\\" ni plazo, y C y P audita y hace contabilidad, no vende protección de datos."
-  },
-  {
    "id": "V07",
    "veredicto": "ajustar",
    "problemas": [
@@ -140,43 +115,6 @@
    "comentario": "Si fuera el dueño del sitio entendería qué vieron y lo comprobaría en un minuto. El precio de $149.000 + IVA y la llamada corta no me incomodan, pero me preguntaría qué me cambia hasta que el correo conecte las cookies con el formulario de mi portada. No lo trataría como competidor: ATF ofrece auditoría, asesoría legal y 'compliance corporativo' (prevención de delitos), sin protección de datos ni ciberseguridad visibles. Los hechos, las reglas duras (103 palabras, sin raya larga, sin exclamaciones, sin 'desde', sin plazo, sin leyes) y la fuente de la baja están bien."
   },
   {
-   "id": "V111",
-   "veredicto": "ok",
-   "problemas": [],
-   "comentario": "Como dueño abriría la portada, bajaría a Contáctanos y comprobaría en medio minuto que no hay enlace a una política. Ni el reCAPTCHA (cubierto con \"del estudio\"), ni la baja (info@molinarios.cl está publicado en su portada, contactos.csv lo registra), ni el rubro (áreas: construcción, litigios, seguros, energía; no vende protección de datos) desmienten nada, y la oferta respeta que el estudio revise la plantilla. Lo enviaría tal cual."
-  },
-  {
-   "id": "V17",
-   "veredicto": "ajustar",
-   "problemas": [
-    {
-     "tipo": "afirma_de_mas",
-     "frase": "no ve qué se hace con él, porque ni junto a los formularios, ni en el menú, ni en el pie encontré un enlace a una política de privacidad",
-     "por_que": "Dice que el visitante \"no ve qué se hace con su correo\". Los hechos solo respaldan la ausencia de un enlace a una política en la portada. Las advertencias prohíben afirmar algo sobre el tratamiento de los datos y presentar las frases del sitio como falta de promesa. Además, la captura r1-A muestra \"Sin spam · Sin compromiso\" bajo el botón del formulario, y el sitio dice \"Sin spam. Solo el calendario.\" y \"Confidencialidad total\". El dueño puede contestar en diez segundos que sí dice qué se hace con el dato, y el correo queda desmentido en su primera frase. El \"porque\" también presenta como causa algo que nadie midió. Las notas internas reconocen el riesgo, pero la frase del borrador lo mantiene.",
-     "correccion": "Revisé la portada de finpartner.cl. El formulario de Diagnóstico gratuito de la primera pantalla pide, además del correo, la facturación y el régimen tributario, y no encontré un enlace a una política de privacidad junto a él, en el menú ni en el pie.\n\nLos campos de facturación y régimen figuran en los hechos del revisor 1 y se ven en la captura r1-A. Con ellos la consecuencia queda en un dato que sí se verificó: un estudio contable que pide esas cifras sin enlazar una política. Se evita además la frase larga con tres \"ni\"."
-    },
-    {
-     "tipo": "claridad_para_quien_decide",
-     "frase": "Puedes verlo tú: abre la portada, baja hasta el formulario y busca ese enlace.",
-     "por_que": "El párrafo anterior ubica el formulario \"en la primera pantalla\", y la captura lo confirma: está arriba, sin bajar. \"Baja hasta el formulario\" contradice eso. El paso de comprobación en 30 segundos pierde precisión justo donde el dueño lo va a intentar. Además, la instrucción no dice dónde buscar el enlace (junto al formulario, menú o pie).",
-     "correccion": "Puedes verlo tú: abre la portada y busca ese enlace junto al formulario, en el menú o en el pie."
-    },
-    {
-     "tipo": "otro",
-     "frase": "un aviso junto al formulario y una plantilla de política para que la revise tu abogado",
-     "por_que": "El primer párrafo habla de \"los formularios\" (son tres en la portada) y el arreglo se vende para \"el formulario\" en singular. Un lector atento pregunta por los otros dos, y decir \"los formularios\" comprometería el alcance del kit sin que nadie lo haya definido. Centrar el hallazgo en el formulario de la primera pantalla (ver la corrección 1) deja ambas partes coherentes. El precio ($149.000 + IVA, sin \"desde\" y sin plazo), la llamada de 20 minutos y la plantilla revisada por el abogado están bien y no se tocan.",
-     "correccion": "Con la corrección 1 la frase queda igual: \"Arreglarlo cuesta $149.000 + IVA: un aviso junto al formulario y una plantilla de política para que la revise tu abogado. Si quieres, lo vemos en una llamada de 20 minutos.\" Con las tres correcciones el cuerpo queda en unas 105 palabras."
-    }
-   ],
-   "comentario": "Si yo fuera el dueño de Finpartner, abriría la portada, vería que no hay enlace a una política y probablemente se lo pasaría a quien administra el sitio. Pero la frase \\\"no ve qué se hace con él\\\" me haría dudar, porque debajo del botón dice \\\"Sin spam · Sin compromiso\\\" y la portada dice \\\"Confidencialidad total\\\". Sin esa frase, el correo es verdadero y corto, y pasa el criterio de corte: es un formulario que pide facturación y régimen tributario sin política enlazada. La baja es verdadera, porque contacto@finpartner.cl es el mailto publicado en la portada. \\\"Hola:\\\" y la derivación están bien, la empresa es contable y no vende protección de datos, y se cumplen las reglas duras (108 palabras, sin raya larga ni exclamaciones, sin cookies ni jerga, precio sin \\\"desde\\\" ni plazo, llamada de 20 minutos). Con los tres cambios se puede enviar."
-  },
-  {
-   "id": "V20",
-   "veredicto": "ok",
-   "problemas": [],
-   "comentario": "Lo enviaría tal cual. Cada afirmación calza con lo que vieron los dos revisores y con las capturas r1-A y r1-B: el formulario está en la sección Contacto y no en la primera pantalla, pide nombre y correo con teléfono opcional, y no hay enlace a política ni texto de consentimiento en la página, pie incluido. No dice \"no tienen política\" ni nada sobre cookies, la ley o lo que hace Web3Forms. Tiene 101 palabras sin saludo, sin raya larga, sin exclamaciones y sin jerga. El precio es $149.000 + IVA sin \"desde\" y sin plazo, menciona la llamada de 20 minutos y trae la derivación y \"Hola:\". La baja es verdadera: contacto@lcconsultores.cl está publicado en el propio sitio y contactos.csv lo marca como correo-publicado. Es un estudio contable, no un competidor, y pasa el criterio de corte (formulario que ya trata datos sin política). Único detalle opcional, no bloqueante: la primera frase es larga y se podría partir en dos."
-  },
-  {
    "id": "V29",
    "veredicto": "ajustar",
    "problemas": [
@@ -196,66 +134,10 @@
    "comentario": "Los hechos aguantan: cookies _gcl_au, _ga y _ga_NECQ7YW4J3 vistas por ambos revisores y en las 3 rondas del motor, sin banner en las capturas de los dos tramos, redactado como \\\"no vi\\\" y sin afirmar que Google recibe la visita, sin política, sin ley. Las reglas duras pasan: 103 palabras, sin raya, sin exclamaciones, $149.000 + IVA sin \\\"desde\\\" ni plazo, asunto en minúsculas, llamada de 20 minutos, derivación presente. La baja es verdadera: contacto@marquezauditores.cl está publicado en la portada (contactos.csv, r1-B y un revisor), no figura en la lista de exclusión y la empresa no vende protección de datos. Si yo fuera el dueño de un estudio contable, entendería el hecho pero no sabría por qué me importa; con la frase del formulario lo mandaría. Antes de enviar, Ramón debería abrir el sitio él mismo en Chrome desde Chile (la medición fue desde IP de nube y headless, y el correo dice \\\"entré\\\" y \\\"mi navegador\\\") y confirmar que la firma lo identifica a él y a SpindleLab, porque el cuerpo no lo hace y el buzón es de rol."
   },
   {
-   "id": "V30",
-   "veredicto": "ok",
-   "problemas": [],
-   "comentario": "Si fuera el dueño del sitio lo enviaría tal cual: 100 palabras sin saludo, sin raya ni exclamaciones, y el hallazgo (formulario con nombre y correo, sin enlace a política en la portada ni en el pie) coincide con los hechos de ambos revisores y respeta sus advertencias: dice \"portada\", no \"sitio\", no dice \"no tienen política\", no cita leyes y no menciona teléfono. La baja es verdadera, porque el correo está publicado en la portada como enlace mailto. El saludo \"Hola:\", la derivación, el precio $149.000 + IVA sin \"desde\" ni plazo y la llamada de 20 minutos están bien, y la empresa vende contabilidad y RR.HH., no protección de datos. Dos observaciones que no cambian el veredicto. Primero, entrada.csv y contactos.csv marcan sbscontacto@ como \"personal\", pero es un buzón de rol, como dice el borrador; el texto funciona igual para quien lo lea. Segundo, tres de los cuatro párrafos se apoyan en \"X: Y\" y el primero es una sola frase de 46 palabras; si Ramón quiere más voz hablada, puede partir esa frase en dos al revisarlo, pero no es un defecto."
-  },
-  {
-   "id": "V37",
-   "veredicto": "ajustar",
-   "problemas": [
-    {
-     "tipo": "claridad_para_quien_decide",
-     "frase": "quien deja nombre, teléfono y correo en el formulario ¿Tienes alguna consulta? no ve qué se hace con ellos, porque ni en el menú ni en el pie encontré un enlace a una política de privacidad.",
-     "por_que": "El título del formulario va con sus signos de interrogación pegados a la frase y la oración sigue en minúscula (\"¿Tienes alguna consulta? no ve...\"). Se lee como un error de tipeo o como una pregunta suelta. Además es una sola oración de unas 40 palabras con dos puntos y un \"porque ni... ni...\", pesada para un primer toque.",
-     "correccion": "Revisé la portada de bgconsultoria.cl. El formulario «¿Tienes alguna consulta?» pide nombre, teléfono y correo y no dice qué se hace con esos datos. Ni en el menú ni en el pie encontré un enlace a una política de privacidad."
-    },
-    {
-     "tipo": "afirma_de_mas",
-     "frase": "no ve qué se hace con ellos",
-     "por_que": "Falta poco, pero la advertencia del revisor dice que no se envió el formulario y que solo se afirma lo visible antes de enviar. \"Quien deja sus datos no ve qué se hace con ellos\" abarca también lo que aparece después de enviar, que nadie midió. Lo que sí vieron los dos revisores es que el formulario no trae texto ni casilla sobre el tratamiento de los datos.",
-     "correccion": "\"el formulario no dice qué se hace con esos datos\" (lo que se ve antes de enviar, respaldado por ambos revisores). Queda resuelto con la reescritura del primer párrafo de arriba."
-    },
-    {
-     "tipo": "tono_o_voz",
-     "frase": "Revisé la portada de bgconsultoria.cl: quien deja... / Puedes verlo tú: abre... / Arreglarlo cuesta $149.000 + IVA: un aviso...",
-     "por_que": "Los tres párrafos de contenido llevan dos puntos como anuncio-remate. Es el tic que Ramón rechazó el 23-sep (\"mucho x: y\"), y se nota más en un correo corto, donde cada párrafo avisa de qué va y luego lo entrega. Con la reescritura del primer párrafo bajan a dos. Conviene dejar uno solo.",
-     "correccion": "Párrafo 3: \"Arreglarlo cuesta $149.000 + IVA e incluye un aviso junto al formulario y una plantilla de política para que la revise tu abogado. Si quieres, lo vemos en una llamada de 20 minutos.\" El párrafo 2 puede quedar como está (es el único dos puntos natural: instrucción para comprobar)."
-    }
-   ],
-   "comentario": "Si fuera el dueño del sitio lo enviaría: el hallazgo es verdadero y se comprueba en 30 segundos. El precio va sin \\\"desde\\\" y sin plazo, no cita leyes y el criterio de corte se cumple (formulario con nombre, teléfono y correo sin enlace a política). La baja es verdadera, porque el correo Gmail está en el pie de la portada (se ve en r1-B y coincide con la columna pagina del CSV) y el rubro es contabilidad, no un competidor. Solo hay que arreglar la frase larga del primer párrafo y bajar los dos puntos. Nota menor: entrada.csv clasifica el correo como \\\"personal\\\" y el borrador como \\\"rol\\\"; es el buzón de la empresa y el saludo \\\"Hola:\\\" sirve igual."
-  },
-  {
    "id": "V42",
    "veredicto": "ok",
    "problemas": [],
    "comentario": "Lo enviaría tal cual. Los dos revisores confirman las tres cookies de Google (analítica y Google Ads) a los 11 s, y las 3 corridas y las capturas de los dos tramos, también la móvil, no muestran aviso de cookies. El correo no afirma que Google reciba la visita, ni que no haya política, ni cita la ley. La dirección contacto@condominio.cl sí está publicada en condominio.cl/contacto, así que la línea de baja es verdadera. El sitio no vende protección de datos y tiene publicidad (etiqueta de Google Ads), así que pasa el criterio de corte. Cumple las reglas duras: 103 palabras sin saludo, $149.000 + IVA sin \"desde\" ni plazo, llamada de 20 minutos y derivación. Retoque opcional, no obligatorio: escribir \"ningún aviso de cookies\" en el primer párrafo, porque la portada sí muestra un pop-up de Instagram y una barra inferior con una X que no son avisos de cookies."
-  },
-  {
-   "id": "V43",
-   "veredicto": "ajustar",
-   "problemas": [
-    {
-     "tipo": "afirma_de_mas",
-     "frase": "Entré a urbanally.cl sin hacer nada y, en unos diez segundos, mi navegador ya tenía guardadas cookies de Google (analítica y publicidad).",
-     "por_que": "Las advertencias de los dos revisores lo prohíben expresamente. En carga pasiva (26 a 33 s, y en las tres corridas del motor, tramo A) solo se escribe _gcl_au, que es la de publicidad. Las de analítica (_ga y _ga_1KMKT4QP8T) aparecen únicamente tras mover el mouse o hacer scroll. Con 'sin hacer nada' + 'analítica' el dueño puede abrir la portada quieto, ver una sola cookie y concluir que el correo exagera.",
-     "correccion": "Entré a urbanally.cl sin aceptar nada y, en cuanto cargó la portada, mi navegador guardó una cookie de publicidad de Google; al navegar un poco más se sumaron las de analítica. En la portada no vi ningún aviso donde el visitante pueda aceptar o rechazar. Más abajo hay un formulario que pide nombre, teléfono y correo, y quien lo llena ya lleva esas cookies guardadas. (Usar 'al navegar un poco', no 'al mover el mouse': el disparador exacto no se aisló. Con las demás correcciones el cuerpo queda en unas 143 palabras sin saludo, bajo el tope de 150.)"
-    },
-    {
-     "tipo": "otro",
-     "frase": "Puedes verlo tú: abre el sitio en una ventana de incógnito, sin aceptar nada, y mira las cookies desde el ícono a la izquierda de la dirección.",
-     "por_que": "El correo promete algo que el dueño comprueba en 30 segundos, pero la instrucción no menciona que hay que mirar dos veces. Quien mire una sola vez, al cargar, verá solo la de publicidad y no la de analítica, y la prueba no coincidirá con el texto de P1.",
-     "correccion": "Puedes verlo tú: abre el sitio en una ventana de incógnito, sin aceptar nada, y mira las cookies desde el ícono a la izquierda de la dirección, al cargar y de nuevo después de bajar por la página."
-    },
-    {
-     "tipo": "claridad_para_quien_decide",
-     "frase": "En la portada no vi ningún aviso donde el visitante pueda aceptar o rechazar. (y no hay ninguna frase de consecuencia antes del precio)",
-     "por_que": "El correo pasa el criterio de corte de la sección 14 (hay cookie de publicidad de Google y un formulario que pide nombre, teléfono y correo; la ficha del motor lo marca 'con consecuencia: formulario sin enlace a política'), pero el texto no usa esa consecuencia. Queda en 'tienes cookies y no hay aviso', y un gerente de una inmobiliaria responde '¿y?' antes de llegar a los $149.000. Ambos revisores confirmaron el formulario de la portada ('¿Necesitas más información?': nombre, teléfono, email y proyecto) y lo vi en la captura r1-B. No está en la primera pantalla (en el tramo A figura como no visible), por eso la corrección dice 'más abajo' y no 'arriba'.",
-     "correccion": "Agregar a P1 la frase: \"Más abajo hay un formulario que pide nombre, teléfono y correo, y quien lo llena ya lleva esas cookies guardadas.\" No agregar lo de la política de privacidad: es un segundo hallazgo y volvería el correo doble."
-    }
-   ],
-   "comentario": "Si fuera el dueño de Urbanally, abriría el sitio quieto, vería una sola cookie y pensaría que el remitente exagera, aunque el hallazgo es real. Con la secuencia corregida (publicidad al cargar, analítica al navegar) más la línea del formulario, el correo queda verdadero, comprobable y con algo que el dueño siente. La baja es verdadera (contacto@urbanally.cl está publicado en la barra superior de la portada, como se ve en r1-A), no es competidor (inmobiliaria), y precio, llamada de 20 minutos, derivación, asunto y reglas duras están bien. La frase 'sin hacer nada ... analítica y publicidad' parece ser plantilla de los otros correos C1 de la tanda: conviene revisar en cada uno si la analítica salió sin gesto."
   },
   {
    "id": "V49",
@@ -277,73 +159,10 @@
    "comentario": "Con el cambio de 'cookies' a 'una cookie' lo enviaría. Lo demás aguanta. El hallazgo está respaldado por los dos revisores y las capturas: _fbp a los 11 s sin tocar nada, y ningún aviso en r1-A, r1-B, r2-B, r3-A ni en las capturas móviles. El correo no dice que Meta reciba la visita, no dice que falte política (el sitio sí tiene una enlazada), no nombra cookies y no cita la ley. La baja es verdadera: contacto@aguasbonitas.cl aparece en el pie de la portada y contactos.csv lo marca como publicado en esa URL. 'Hola:' y la derivación están bien para un buzón de rol. El precio es $149.000 + IVA sin 'desde' ni plazo, y la llamada de 20 minutos está. Son 103 palabras, sin raya larga ni exclamaciones. No es competidor (desarrolladora de fincas agro-residenciales). Pasa el criterio de corte: hay píxel de Meta, o sea publicidad, y un formulario que pide nombre, correo y teléfono. Dos notas para Ramón, no para el texto: la medición la hizo un navegador automatizado desde IP de nube, así que conviene abrir el sitio en incógnito antes de enviar para que 'entré' sea literal. Y el sitio es WordPress con un plugin de píxel, así que el aviso que pregunte antes parece factible, pero se confirma en la llamada."
   },
   {
-   "id": "V57",
-   "veredicto": "ok",
-   "problemas": [],
-   "comentario": "Si fuera el dueño de REB, lo leería entero y podría comprobarlo en 30 segundos: el formulario \"Vende con nosotros\" está al final de la portada y pide nombre, correo y teléfono (hechos de los dos revisores). Ninguna de las 84 enlaces de la portada lleva a una política de privacidad. El correo se limita a la portada, no afirma nada sobre el resto del sitio, la ley ni el destino de los datos, y no culpa a Convecta. Cumple las reglas duras: 103 palabras (conté 46+14+31+12), sin raya larga ni exclamaciones, sin jerga, \"Hola:\" para un buzón de siglas, derivación, llamada de 20 minutos, $149.000 + IVA sin \"desde\" y sin plazo, y asunto en minúsculas. La baja es verdadera: reb@reb-chile.cl está en el encabezado de la portada (visible en r1-A.jpg y en navegador-r3.json; contactos.csv, columna pagina = https://reb-chile.cl/). Los CSV dicen tipo \"personal\" porque el extractor lo marca así por defecto, y generar_piloto.py lo reclasifica como rol; el texto funciona sin conocer a Ramón. No es competidor (vende corretaje y asesoría inmobiliaria) y no aparece en la lista de exclusión. Pulido opcional, no necesario: poner el nombre del formulario entre comillas («Vende con nosotros»), y los tres dos puntos seguidos (portada:, tú:, IVA:) son el patrón ya aprobado de los correos enviados, no un defecto nuevo."
-  },
-  {
-   "id": "V65",
-   "veredicto": "ajustar",
-   "problemas": [
-    {
-     "tipo": "afirma_de_mas",
-     "frase": "y no ve qué se hace con ellos",
-     "por_que": "Los dos revisores comprobaron que no hay enlace, casilla ni texto de privacidad junto al botón, pero ninguno envió el formulario. Su advertencia dice que se desconoce si tras el envío aparece algún texto. Como está escrita, la frase afirma lo que ve quien escribe en todo el proceso. Lo verificado es lo que hay en la página antes de enviar. Es poco probable que lo refuten, pero conviene que la frase diga solo lo que se vio.",
-     "correccion": "y junto al botón no hay ningún texto que diga qué se hace con esos datos"
-    },
-    {
-     "tipo": "claridad_para_quien_decide",
-     "frase": "Revisé la portada de remax-start.cl: quien escribe por el formulario Escríbenos, al final de la página, deja nombre, correo y teléfono, y no ve qué se hace con ellos, porque ni cerca del formulario ni en el pie encontré un enlace a una política de privacidad.",
-     "por_que": "Es una sola oración de unas 43 palabras con tres incisos, y el hallazgo, el significado y la evidencia vienen mezclados. Un buzón de rol (contacto@) lo puede leer una secretaria o un agente sin contexto. La estrategia §7 pide el hallazgo en una línea, luego el significado en una frase llana. Dividirla no cambia ningún hecho y el correo sigue bajo 150 palabras (queda en unas 110).",
-     "correccion": "Revisé la portada de remax-start.cl. Quien escribe por el formulario Escríbenos, al final de la página, deja nombre, correo y teléfono, y junto al botón no hay ningún texto que diga qué se hace con esos datos. Tampoco encontré, ni cerca del formulario ni en el pie, un enlace a una política de privacidad."
-    }
-   ],
-   "comentario": "Si fuera el dueño del sitio, lo enviaría tras partir la primera oración en dos y dejar la frase de lo que ve quien escribe acotada a lo medido (antes de enviar). El resto está bien. Los hechos están respaldados por los dos revisores. El correo no dice que no haya política en todo el sitio, no cita leyes y no menciona cookies, como pedía la advertencia. Cumple las reglas duras: 103 palabras sin saludo, sin raya larga, precio $149.000 + IVA sin \"desde\" ni plazo, llamada de 20 minutos. El correo es publicado por el propio sitio (mailto en la portada, contactos.csv), así que \"Saqué tu correo del sitio de ustedes\" es cierto. El destinatario no es competidor. Un formulario sin política califica para escribir según §14.3, y la derivación \"¿con quién lo hablo?\" está."
-  },
-  {
-   "id": "V67",
-   "veredicto": "ok",
-   "problemas": [],
-   "comentario": "Si fuera el dueño del sitio, lo enviaría tal cual. Cada afirmación calza con los hechos de los dos revisores y no choca con ninguna advertencia: alcance \"portada\", formulario \"al final de la página\" en Contáctanos, nombre, apellido y correo sin teléfono, y \"no encontré\" un enlace a política junto al formulario, en el menú ni en el pie. No cita leyes, no dice \"en todo el sitio\", no habla de cookies ni de Google o Meta. Cumple las reglas duras: 110 palabras, sin raya larga ni exclamaciones, precio $149.000 + IVA sin \"desde\" y sin plazo, llamada de 20 minutos, derivación \"¿con quién lo hablo?\" y asunto en minúsculas. Pasa el criterio de corte (formulario sin política, forma probada de Focus Contable). No es competidor: es consultoría inmobiliaria. La baja es verdadera: contactos.csv marca el correo como \"correo-publicado\" en https://www.audiprop.com/ y el pie del sitio lo muestra. \"Hola:\" y la firma con Ramón y SpindleLab funcionan para un buzón de rol. Solo un pulido opcional, no un defecto: el primer párrafo es una frase larga de unas 50 palabras que se podría cortar en dos."
-  },
-  {
    "id": "V84",
    "veredicto": "ok",
    "problemas": [],
    "comentario": "Lo enviaría tal cual. Todo calza con lo que vieron los dos revisores y con las capturas (las 3 cookies _ga, _ga_* y _gcl_au a los 11 s, idénticas en los dos tramos de las 3 corridas, sin aviso en la portada de escritorio ni en el móvil), no dice que Google reciba la visita ni que no haya política, hay publicidad (Google Ads) así que pasa el criterio de corte, y la baja es verdadera porque contacto@resolaud.cl figura como publicado en www.resolaud.cl. Cumple las reglas duras (103 palabras, sin raya ni exclamaciones ni jerga, $149.000 + IVA sin \"desde\" ni plazo, llamada de 20 minutos, derivación presente). Nota para Ramón, no para el texto: el pie dice \"Hecho por Massmedia\", así que el buzón probablemente reenviará a la agencia; en la llamada conviene confirmar que se puede editar el código antes de comprometer el aviso, y tener algo listo para \"te muestro cómo lo dejaría\"."
-  },
-  {
-   "id": "V89",
-   "veredicto": "ajustar",
-   "problemas": [
-    {
-     "tipo": "afirma_de_mas",
-     "frase": "y no ve qué se hace con esos datos, porque ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad de la escuela",
-     "por_que": "Lo respaldado por los dos revisores es que no hay enlace a una política ni texto de consentimiento junto al formulario. Que el visitante no vea qué se hace con sus datos va más allá: el propio formulario (captura r1-A) dice 'Solicite su hora clínica y lo llamaremos para agendar', o sea que sí declara un uso. El correo va a un buzón de secretaría, que es quien devuelve esas llamadas, y lo rebatiría en dos segundos. La advertencia de los revisores pide además no afirmar nada sobre lo que se hace con los datos. La misma frase está en el resto de los correos F1 del lote (en V17 la nota ya anticipa este riesgo), así que conviene corregir la plantilla. De paso se parte la oración de 46 palabras en dos.",
-     "correccion": "Revisé la portada de medicinachina.cl. Quien pide hora clínica por el formulario deja nombre y teléfono, y ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad de la escuela."
-    }
-   ],
-   "comentario": "Si fuera el dueño, lo leería como un hecho verdadero y comprobable en 30 segundos (formulario sin enlace a política), y no es un caso de corte: hay un formulario que ya trata datos. Lo demás está en regla: 106 palabras, sin raya larga ni exclamaciones ni jerga, sin cookies ni leyes, solo portada, teléfono y no correo, asunto en minúsculas, $149.000 + IVA sin \"desde\" ni plazo, llamada de 20 minutos, derivación presente, saludo \"Hola:\" correcto para secretaria@, y la baja es verdadera (secretaria@medicinachina.cl está en el pie de la portada, contactos.csv lo marca como correo publicado). La empresa es una escuela de medicina china, no vende protección de datos. Corrijo solo la inferencia sobre lo que el visitante \"no ve\", porque el formulario dice que llaman para agendar."
-  },
-  {
-   "id": "V94",
-   "veredicto": "ajustar",
-   "problemas": [
-    {
-     "tipo": "afirma_de_mas",
-     "frase": "deja nombre, cargo, organización, correo y teléfono",
-     "por_que": "Los hechos verificados dicen que el correo es obligatorio y el teléfono es opcional, y las advertencias lo repiten dos veces. La lista pone el teléfono al mismo nivel que los demás datos, y el dueño ve \"(opcional)\" en el formulario al comprobarlo en 30 segundos. No dice \"obliga\", pero tampoco lo marca. El borrador V20 ya resuelve el mismo caso con \"y teléfono si quiere\".",
-     "correccion": "deja nombre, cargo, organización y correo, y teléfono si quiere"
-    },
-    {
-     "tipo": "claridad_para_quien_decide",
-     "frase": "Revisé la portada de trustdoc.cl: quien llena el formulario de contacto deja nombre, cargo, organización, correo y teléfono. Bajo el botón dice que los datos se tratarán conforme a la ley, pero ni ahí, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que explique cómo.",
-     "por_que": "Son 53 palabras en un solo párrafo que abre con dos puntos como anuncio, el tic que Ramón rechazó el 23-sep, y reúne tres ideas: los campos, la línea del sitio y el enlace que falta. \"Ni ahí\" es ambiguo, porque no queda claro si remite al texto bajo el botón. Para un gerente sin conocimiento técnico es la frase más pesada del correo. Los hechos que cita sí están respaldados: la línea bajo el botón existe y no tiene enlace, no hay enlace a política en el menú ni en el pie, y el formulario está al final de la portada. La paráfrasis \"conforme a la ley\" es lo que dice el sitio, sin citar leyes.",
-     "correccion": "Revisé la portada de trustdoc.cl. Quien llena el formulario de contacto deja nombre, cargo, organización y correo, y teléfono si quiere. Bajo el botón dice que los datos se tratarán conforme a la ley, pero ni junto a ese texto, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que explique cómo."
-    }
-   ],
-   "comentario": "Si fuera el dueño, lo enviaría con esos dos retoques: el hallazgo es verdadero, se comprueba en 30 segundos y tiene una consecuencia que el dueño siente (un formulario con datos personales y una promesa de tratarlos conforme a la ley, sin enlace a una política). TrustDoc es una firma de auditoría médico-legal, no vende protección de datos, y las notas internas la describen mal como \\\"empresa de documentos digitales\\\". El correo contacto@trustdoc.cl está publicado en la portada, el sitio no figura en la lista de exclusión, y el borrador cumple las reglas duras: 110 palabras, sin raya larga, precio sin \\\"desde\\\" ni plazo, llamada de 20 minutos y derivación."
   },
   {
    "id": "V21",
@@ -363,6 +182,110 @@
     }
    ],
    "comentario": "Si fuera el dueño del sitio, entendería qué pasó y cómo comprobarlo en un minuto, y el precio y la llamada de 20 minutos vienen sin presión. Corregiría solo el plural: es una sola cookie, y el correo debe decir exactamente eso. El resto está en regla: 102 palabras, sin raya ni exclamaciones ni jerga, sin \"desde\" ni plazo, y sin afirmar que Google recibe la visita. Verifiqué en las capturas de los dos tramos que no hay aviso. La dirección es un buzón de rol (contacto@) que el propio sitio publica en un enlace mailto de la portada (6 veces), así que \"Saqué tu correo del sitio de ustedes\" es verdadero. La derivación está presente. HQS es una firma de contabilidad y auditoría, no un competidor. Pasa el criterio de corte del 14-oct porque hay publicidad (Google Ads con remarketing), aunque sea una sola cookie."
+  },
+  {
+   "id": "V28",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Como dueño abriría la portada, bajaría a Escríbenos y vería en 30 segundos que no hay enlace a una política: el hallazgo es verdadero, se limita a la portada, no cita la ley, trae precio sin \"desde\" ni plazo, llamada de 20 minutos y derivación, y la línea de baja es cierta (gromero@ulloaycia.cl está en la barra superior de la portada). Único cabo suelto fuera del texto enviado: la nota interna dice \"portada y /contacto/\", pero solo un revisor afirma /contacto/ (el otro dice que no lo abrió), y el correo no lo usa, así que no afecta."
+  },
+  {
+   "id": "V06",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Como dueño abriría la portada, bajaría al formulario (está al final, como dice el correo), miraría el pie y el menú, y vería que es cierto. Cada hecho lo vieron los dos revisores, y no hay cookies, leyes, \"no tienen política\" ni \"primera pantalla\". Tiene 101 palabras (131 con la baja), precio $149.000 + IVA sin \"desde\" ni plazo, llamada de 20 minutos y derivación. La baja es verdadera: contacto@cypauditores.cl está en la cabecera y en la sección de contacto de la portada, que es la columna pagina. No es competidor: audita y hace contabilidad, impuestos y payroll, y no está en la lista de exclusión. Antes de enviar, Ramón debería abrir la portada 30 segundos, porque \"revisé\" y \"encontré\" van en su voz y el motor midió desde un datacenter."
+  },
+  {
+   "id": "V111",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Si fuera el dueño del estudio y leyera esto en el info@, lo entendería en veinte segundos y no tendría nada que refutar. Cada frase está respaldada por los dos revisores, evita las trampas (no dice teléfono, no dice \"no tienen política\", dice \"del estudio\" por el reCAPTCHA, deja la revisión legal en manos del estudio) y cumple las reglas duras (105 palabras, $149.000 + IVA sin \"desde\" ni plazo, llamada de 20 minutos, derivación presente). Antes de enviar, Ramón debería mirar 20 segundos la página Áreas de práctica buscando \"datos personales\" (filtro de competidor del §11, que los revisores no cerraron para esta firma, aunque su descripción no lista esa área) y confirmar que la firma sale al pie, porque el cuerpo no presenta a Ramón y es un buzón de rol."
+  },
+  {
+   "id": "V17",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "No encontré un enlace a una política de privacidad junto a él, en el menú ni en el pie.",
+     "por_que": "El correo dice qué falta (un enlace) pero no qué significa para el dueño. Los correos hermanos ya enviados el 19-oct (pfeffer, gazmuri, palavicino) y los otros F1 de este lote incluyen \"que diga qué se hace con esos datos\"; V17 la perdió. Sin esa cláusula, un gerente lee \"no hay un enlace\" y se pregunta para qué le sirve. Agregarla no afirma que el sitio no diga nada (la portada sí dice \"Confidencialidad total\" y \"Sin spam\", sin enlace): describe lo que cumpliría una política, y los dos revisores sostienen la ausencia del enlace en menú, pie y entorno del formulario (30 enlaces revisados).",
+     "correccion": "No encontré un enlace a una política de privacidad que diga qué se hace con esos datos, ni junto al formulario, ni en el menú, ni en el pie."
+    },
+    {
+     "tipo": "tono_o_voz",
+     "frase": "Puedes verlo tú: abre la portada y busca ese enlace junto al formulario, en el menú o en el pie.",
+     "por_que": "Repite casi palabra por palabra los tres lugares que ya nombró el párrafo anterior. Es el tic de la voz de Ramón (decir algo y volver a decirlo en la frase siguiente) y alarga un primer toque que debe ser corto. Con la corrección anterior los lugares quedan dichos una sola vez en el primer párrafo.",
+     "correccion": "Puedes verlo tú: abre la portada y busca ese enlace."
+    }
+   ],
+   "comentario": "Si yo fuera el dueño del sitio, esto me parece honesto y comprobable: el formulario de Diagnóstico gratuito está en la primera pantalla (lo confirma la captura r1-A) y pide facturación y régimen tributario; el enlace falta en el formulario, el menú y el pie (los dos revisores y la captura lo respaldan). No afirma que no exista política en otras páginas, no cita leyes y ni dice nada de lo que advierten los revisores. Cumple las reglas duras (107 palabras sin saludo, sin raya larga ni exclamaciones, asunto en minúsculas, $149.000 + IVA sin \\\"desde\\\" ni plazo, llamada de 20 minutos, derivación presente). El destinatario es contacto@finpartner.cl, publicado en la portada, así que la baja es verdadera. No es competidor: es contabilidad y asesoría tributaria, sin servicios de datos. Con las dos correcciones queda en unas 106 palabras y listo para que Ramón lo apruebe."
+  },
+  {
+   "id": "V20",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Si fuera el dueño, abriría el sitio, iría a Contacto y comprobaría en medio minuto que es cierto. El correo es corto (97 palabras), no cita leyes, no presiona y dice que el texto legal lo revisa un abogado. Todo lo afirmado está en los hechos de los dos revisores y no choca con las advertencias: se limita a \"la página\" y a \"no encontré\", el teléfono figura como opcional, no habla de cookies ni de lo que hace Web3Forms, y ubica el formulario en la sección Contacto, no en la primera pantalla. La línea de baja es verdadera: contacto@lcconsultores.cl está publicado en la portada, columna pagina de contactos.csv. Vibe solo aportó datos de empresa, no el correo. El dominio no figura en la lista de exclusión ni en el registro de enviados, y la empresa es de contabilidad y tributario, no vende protección de datos. El hallazgo pasa el criterio de corte de Ramón: un formulario sin política es un caso que sí se escribe, aunque el resto del sitio esté limpio. Cumple las reglas duras: precio sin \"desde\" y sin plazo, llamada de 20 minutos, saludo \"Hola:\" y derivación, sin raya larga ni exclamaciones. Está listo para que Ramón lo apruebe y lo envíe."
+  },
+  {
+   "id": "V30",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Lo enviaría tal cual. Son 99 palabras sin saludo, sin raya larga ni exclamaciones, y todo el hallazgo cabe dentro de lo verificado: formulario de la sección Contacto con nombre, correo y consulta, y sin enlace a política en la portada ni en el pie. Dice \"portada\" y no \"sitio\", no cita leyes y no menciona teléfono. La baja es verdadera, porque sbscontacto@sbsolutions.cl está publicado en la portada como enlace mailto (contactos.csv, página https://sbsolutions.cl/). La empresa vende contabilidad y RR.HH., no protección de datos, y no hay contacto previo ni exclusión. El saludo \"Hola:\", la derivación, el precio de $149.000 + IVA sin \"desde\" ni plazo y la llamada de 20 minutos están bien. Pasa el criterio de corte de la sección 14, porque un formulario sin enlace a política sí se escribe. Dos observaciones para Ramón que no cambian el veredicto. Uno: entrada.csv y contactos.csv marcan este buzón como \"personal\", pero es de rol, como dice el borrador. El texto sirve igual para quien lo lea. Dos: \"incluye un aviso junto al formulario\" no figura en el alcance escrito del kit (estrategia sección 1 y ficha mencionan solo la plantilla de política). La frase es la misma en todo el piloto y es la solución natural a este hallazgo, así que solo conviene confirmar que Ramón la entrega."
+  },
+  {
+   "id": "V37",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Lo enviaría tal como está. Todo lo que afirma sobre el sitio lo respaldan los dos revisores y la captura r1-B. El formulario «¿Tienes alguna consulta?» pide nombre, teléfono y correo. No hay enlace a política en el menú ni en el pie. El correo dice «revisé la portada», no «el sitio», y deja el formulario al final de la página, que es donde está. El correo publicado figura en el pie de la portada, así que la línea de baja es verdadera. Cumple las reglas duras: 98 palabras, sin raya, sin exclamaciones, sin jerga, sin leyes, con el precio y la llamada de 20 minutos como corresponde. Pasa el criterio de corte, porque un formulario sin política es el caso que Ramón dejó como legítimo. No vende protección de datos (contabilidad y auditoría) y no hay envío previo ni exclusión. El «rol» del borrador contra el «personal» de los CSV está explicado en generar_piloto.py: el extractor llama «personal» a todo lo que no esté en su lista de roles. La dirección es un gmail de empresa que el propio sitio publica, y el texto funciona para quien lo abra sin conocer a Ramón. Retoque opcional, no necesario: «Eso lo arreglo yo» en vez de «Arreglarlo cuesta», y mencionar la política enlazada desde el pie, que es lo que responde al hallazgo."
+  },
+  {
+   "id": "V57",
+   "veredicto": "ajustar",
+   "problemas": [
+    {
+     "tipo": "afirma_de_mas",
+     "frase": "busca ese enlace",
+     "por_que": "El cuerpo habla de \"un enlace a una política de privacidad\" sin decir de quién. Los dos revisores avisan que la portada trae la insignia de reCAPTCHA de Google, fija abajo a la izquierda y visible desde la primera pantalla (se ve en r1-A.jpg). Al pasar el mouse muestra \"Privacidad · Términos\", que son enlaces de Google. Un dueño que siga el \"puedes verlo tú\" puede toparse con eso y decir que sí hay política, y la comprobación de 30 segundos se cae. Los borradores hermanos V28, V89, V94 y X26 sí llevan el calificativo (\"de la escuela\", \"del estudio\"); este no.",
+     "correccion": "Ni junto al formulario ni en el pie encontré un enlace a una política de privacidad de REB que diga qué se hace con esos datos."
+    },
+    {
+     "tipo": "claridad_para_quien_decide",
+     "frase": "El formulario Vende con nosotros, al final de la página, pide nombre, correo y teléfono.",
+     "por_que": "El título de la sección va sin comillas, así que \"Vende con nosotros\" se lee como una orden o como parte de la frase. En la portada es el encabezado en mayúsculas \"VENDE CON NOSOTROS\". El hecho en sí está bien: los campos son Nombre y Apellidos, Email, Teléfono y Comentarios, y está al final de la página (a unos 6.600 px de 7.270 px), no en la primera pantalla.",
+     "correccion": "El formulario «Vende con nosotros», al final de la página, pide nombre, correo y teléfono."
+    }
+   ],
+   "comentario": "Si fuera el dueño del sitio, lo mandaría con dos retoques menores. Cada hecho coincide con lo que vieron los dos revisores: solo portada, campos y ubicación del formulario, y ningún enlace a política en toda la portada. No habla de cookies, de Google ni de lo que la ley exige. Hay 103 palabras sin el saludo, sin raya larga ni exclamaciones, con $149.000 + IVA sin \\\"desde\\\" ni plazo, la llamada de 20 minutos, la derivación y el asunto en minúsculas. La línea de baja es verdadera: reb@reb-chile.cl aparece en la cabecera de la portada (r1-A.jpg, y contactos.csv apunta a https://reb-chile.cl/). REB es corredora inmobiliaria con asesoría en derecho inmobiliario y corporativo, no vende protección de datos, así que no hay competidor. Según el criterio de corte (sección 14, punto 5), un formulario sin política es una forma legítima de escribir. Dos observaciones que no frenan el envío. Primero, entrada.csv y contactos.csv marcan el buzón como \\\"personal\\\" y el borrador dice \\\"rol\\\"; reb@ son las siglas de la empresa, y \\\"Hola:\\\" más la derivación funcionan en ambos casos. Segundo, la oferta menciona un aviso y una plantilla de política, pero no que la política quede enlazada desde el pie. Es el alcance publicado del kit, así que no es un error. Si Ramón quiere atar el arreglo al hallazgo, la frase aprobada del toque 2 sirve: \\\"un aviso junto al formulario y la política enlazada desde el pie, con un texto base para que lo revise tu abogado\\\".\"]"
+  },
+  {
+   "id": "V65",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Si fuera el dueño de remax-start.cl, abriría la portada, bajaría hasta Escríbenos y vería que el formulario pide nombre, correo y teléfono y que no hay enlace a una política, así que lo pasaría a quien administra el sitio. Lo enviaría tal cual. Comprobé el HTML publicado: el formulario titulado \"Escríbenos\" tiene los tres campos obligatorios, está en la sección Contacto (la última antes del pie) y no aparece ninguna palabra \"privacidad\", \"política\" ni \"consentimiento\" en toda la portada, lo que respalda el \"ni cerca del formulario ni en el pie\". Los dos defectos de la revisión anterior (frase larga y \"no ve qué se hace con ellos\") ya no están. Cumple las reglas duras: 101 palabras sin saludo, sin raya larga ni exclamaciones, sin jerga, cookies ni leyes, y $149.000 + IVA sin \"desde\" ni plazo, con la llamada de 20 minutos, la derivación y el asunto en minúsculas. Es una inmobiliaria, no un competidor, y no está en la lista de exclusión. La baja es verdadera: el mismo contacto@ está publicado como mailto en la portada, que es la URL de la columna pagina. Dos notas para Ramón, no para el texto: el sitio enlaza al perfil de la oficina en remax.cl, así que en la respuesta puede salir \"eso lo maneja RE/MAX Chile\" y conviene tener lista una respuesta corta; y \"Escríbenos\" también es el texto del botón flotante de WhatsApp, pero \"baja hasta el formulario\" desambigua."
+  },
+  {
+   "id": "V67",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Si fuera el dueño de Audiprop, entendería en 30 segundos qué mirar (el formulario al final de la portada) y cuánto cuesta arreglarlo, y no encontraría nada exagerado ni falso. Cada afirmación calza con los dos revisores: portada y no todo el sitio, formulario con nombre, apellido y correo sin teléfono, ningún enlace a política en el formulario, el menú ni el pie. No cita leyes, no usa \"desde\" ni plazo, tiene 108 palabras, la llamada de 20 minutos y la derivación, y la baja es verdadera (contacto@audiprop.com figura en el pie del sitio). La empresa es de gestión inmobiliaria, no un competidor, y pasa el criterio de corte de Ramón (sección 14, punto 5: formulario sin política). Lo único que le falta es una frase de por qué importa, pero no hay una segura que no afirme de más, así que lo dejaría como está."
+  },
+  {
+   "id": "V89",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Lo enviaría tal como está. Cada afirmación (nombre y teléfono, sin enlace a política junto al formulario, en el menú ni en el pie, \"de la escuela\" para dejar fuera la insignia de reCAPTCHA de Google) la respaldan los dos revisores y no choca con ninguna advertencia. Tiene 105 palabras, sin raya larga ni jerga, con precio sin \"desde\" ni plazo, llamada de 20 minutos, derivación y baja verdadera (secretaria@ está publicada en la portada según contactos.csv y los revisores; Vibe solo dio el dominio). Cumple el criterio de corte del 14-oct (formulario que trata datos personales sin política) y no es competidor."
+  },
+  {
+   "id": "V94",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Si fuera el dueño del sitio, lo enviaría tal cual. Cada afirmación está respaldada por los dos revisores (formulario al final de la portada, correo obligatorio y teléfono opcional, la línea de texto bajo el botón sin enlace, ningún enlace a política en 28 enlaces). El correo dice \"portada\" y \"encontré\", no dice \"no tienen política\", no cita leyes ni afirma lo que la ley exige. Evita además citar la Ley 21.719 como \"vigente\". Cumple las reglas duras: 116 palabras sin el saludo, sin raya larga ni exclamaciones, $149.000 + IVA sin \"desde\" y sin plazo, llamada de 20 minutos, derivación presente, asunto en minúsculas. La baja es verdadera: contacto@trustdoc.cl está publicado como mailto en la propia portada (\"correo institucional\"). TrustDoc hace auditoría médico-legal (licencias médicas, peritajes), no vende privacidad ni cumplimiento, así que no es competidor; solo las notas internas lo describen mal como \"documentos digitales\". Pasa el criterio de corte: formulario que pide datos y sin política enlazada, el caso que Ramón dijo que sí se escribe. Funciona para un buzón de rol: \"Hola:\" y la derivación bastan, y la firma identifica a Ramón y a SpindleLab."
+  },
+  {
+   "id": "V43",
+   "veredicto": "ok",
+   "problemas": [],
+   "comentario": "Si fuera el dueño, lo mandaría tal cual. Cada afirmación calza con los dos revisores y con las capturas: la cookie de publicidad (_gcl_au) sola en carga pasiva, las de analítica solo \"al navegar un poco\", ningún aviso en la portada en los dos tramos, formulario con nombre, teléfono y correo más abajo (r1-B). No dice \"recibe la visita\", no dice \"sin política\", no cita leyes, no usa nombres de cookies ni jerga. Cumple las reglas: 143 palabras sin el saludo, sin raya ni exclamaciones, asunto en minúsculas, $149.000 + IVA sin \"desde\" ni plazo, llamada de 20 minutos, \"Hola:\", derivación al final. El correo contacto@urbanally.cl está publicado en el encabezado de la portada (r1-A), así que la baja \"Saqué tu correo del sitio de ustedes\" es verdadera. No es competidor (inmobiliaria). Pasa el criterio de corte: publicidad de Google más formulario con datos personales y sin aviso. Una sola precaución, que no es defecto del texto: \"entré\" va en primera persona y la medición salió de un navegador de nube. Antes de enviar, Ramón debería abrir el sitio en incógnito desde Chile y mirar el segundo tramo."
   }
  ]
 }
