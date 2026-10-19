@@ -5809,5 +5809,130 @@
    "que": "Primera versión: el texto de las 27 rutas sobre A, con la compuerta 2 aplicada (portada, cinta, Praxi 5b a 5e, Combeau nuevo, cuatro conceptos, rutas que quedan con el giro)",
    "origen": "Clara, con Renata; brief «Compuerta 2»"
   }
- ]
+ ],
+ "detectores": {
+  "resumen": "Corridos enteros el 19-oct sobre el texto visible de las 20 páginas (813 textos, con alt, title y description), leyendo cada página y con herramientas/comprobar-obra.py para lo que se cuenta. Lo de código y lo visual no es del texto: lo mide Javiera sobre lo construido en la corrida 2, y aquí queda dicho dónde. Cuatro defectos encontrados y corregidos en esta pasada; dos ítems quedan abiertos con su porqué.",
+  "filas": {
+   "antislop-web.md · A, copy": [
+    {
+     "item": "A1 · verbos de folleto",
+     "resultado": "Cero. comprobar-obra.py busca impulsa, potencia, transforma, revoluciona, maximiza, «siguiente nivel» y «soluciones a tu medida». «asesoría integral» aparece una vez, citada entre «» como el cliché del rubro que Doceavo no usa."
+    },
+    {
+     "item": "A2 · relleno de apertura",
+     "resultado": "Cero. Cada página abre con su h1 diciendo qué es; ningún primer párrafo se puede borrar sin perder un hecho."
+    },
+    {
+     "item": "A3 · tricolon automático",
+     "resultado": "Abierto en la home, con porqué: tiene tres series de tres. «empresas, clínicas y estudios profesionales» es el hero 3 tal como lo eligió Ramón; «lo que está bien, lo que lo frena y qué haríamos primero» son las tres partes reales del mini-diagnóstico; «los precios, el método y el chequeo» son tres páginas que existen. En las tres, borrar el tercero quita un hecho. En Ocelo, «la honestidad también es diseño» + tres decisiones era ritmo de remate: corregido."
+    },
+    {
+     "item": "A4 · «no solo X, sino Y»",
+     "resultado": "Cero. El de /diagnostico/ («y no solo el sitio») ya iba cambiado a «además del sitio»."
+    },
+    {
+     "item": "A5 · pregunta retórica, «¿Listo para…?»",
+     "resultado": "Cero. Las únicas preguntas son títulos de preguntas frecuentes o citas entre «» (lo que alguien le pregunta a una IA, el «¿te despidieron?» de los estudios laborales). Lo comprueba comprobar-obra.py, regla 3."
+    },
+    {
+     "item": "A6 · Title Case",
+     "resultado": "Cero en titulares, botones y nav. Llevan mayúsculas los nombres propios: los planes de oferta-v3.json («Página de Campaña», «Sitio Esencial», «Sitio Completo», «Plataforma a Medida», que van idénticos al dato) y las letras de los conceptos (Atkinson Hyperlegible, Big Shoulders Stencil, Barlow Semi Condensed)."
+    },
+    {
+     "item": "A7 · castellano de acá, tuteo",
+     "resultado": "Tuteo en todo el sitio; cero voseo, «móvil», «ordenador» o «coste». «Ustedes» solo en las preguntas frecuentes, en boca del visitante. «partners» queda en la bio de /nosotros/, que no se toca (brief §3, R4)."
+    },
+    {
+     "item": "A8 · raya como golpe",
+     "resultado": "Cero rayas (— y –) en el texto visible. comprobar-obra.py, regla 2."
+    },
+    {
+     "item": "A9 · prueba social sin respaldo",
+     "resultado": "Cero. Cada cifra a la vista tiene fila en un inventario y su fecha (805 → 95 kB, 384 pruebas, 0,52 s, 219 y 218 cambios). Ni 54 → 94 ni 36 → 73. Las personas generadas con IA llevan su pie en cada medio donde se ven, incluida la de Verifica y Cumple, que no lo tenía. Los conceptos dicen en la ficha y al cerrar que no existen."
+    },
+    {
+     "item": "A10 · sobreescritura",
+     "resultado": "Pasada de borrado hecha página por página. La página más larga es Praxi (≈1.500 palabras con los alt); sus párrafos van de 20 a 66 palabras, como los de Koto, y la lista «Con qué está hecho» es para el técnico, plegada bajo su rótulo. La lectura fría dice si sobra (ver abajo)."
+    }
+   ],
+   "antislop-web.md · B, estructura (lo que toca al texto)": [
+    {
+     "item": "B1 · tres tarjetas iguales",
+     "resultado": "El texto no las pide: los servicios van como lista por situación, Desarrollo web primero y Redes y Paid Media al final. Cómo se ven, lo fija la spec."
+    },
+    {
+     "item": "B2 · «¿por qué elegirnos?»",
+     "resultado": "No existe. «Quién está detrás» va con hechos que se pueden revisar: las agencias, con nombre, y que precios, método y chequeo están publicados."
+    },
+    {
+     "item": "B3 · FAQ inventado",
+     "resultado": "Abierto, con porqué: las seis preguntas de Desarrollo web vienen del paso 2 y salen de las dudas que dejaron los lectores fríos y del FAQ que ya tenía la página; ninguna sale de un correo de cliente, porque no hay registro de esas preguntas. No se suma ninguna."
+    },
+    {
+     "item": "B4 · fila de métricas",
+     "resultado": "No hay. Cada dato va junto a su pieza, con «Medido» y fecha."
+    },
+    {
+     "item": "B5 · formulario largo",
+     "resultado": "Cuatro campos (nombre, correo, dirección del sitio y el mensaje, opcional) y la casilla de consentimiento."
+    },
+    {
+     "item": "B6 · hero vacío",
+     "resultado": "El h1 dice qué se vende y a quién, y el chequeo va en la misma pantalla (C1.1). La composición sobre el video la fija la spec."
+    },
+    {
+     "item": "B7 · orden de secciones",
+     "resultado": "El del brief §3 con [C2.4]: portada, cinta, índice corto, prueba, servicios, quién está detrás, contacto."
+    },
+    {
+     "item": "B8 · jerga como título",
+     "resultado": "Corregido uno: la primera línea de /metodo/ decía «estrategia AEO/GEO» sin explicar. Los títulos de sección hablan de la situación del visitante. «SEO técnico» y «Visibilidad en IA» son nombres de servicio y van siempre con una línea de qué hacen. Quedan siglas en los planes de Desarrollo web (schema, indexación, AEO/GEO, CMS), que son texto de oferta-v3.json y no se cambian: las explica «Qué quiere decir», justo debajo."
+    }
+   ],
+   "antislop-web.md · C y D": [
+    {
+     "item": "C1 a C4, C6 a C9",
+     "resultado": "Son del código: los mide Javiera en la corrida 2. Lo que sí deja el texto: un h1 por página, los nombres accesibles (nav, logo, pausa del video, secciones) y el enlace para saltar al contenido."
+    },
+    {
+     "item": "C5 · alt de relleno",
+     "resultado": "Cero. Cada alt describe la imagen mirándola; los videos que se mueven solos llevan descripción y aria-hidden, y el del hilo de oro va con alt vacío porque no tiene texto ni información propia (comprobar-obra.py, regla 8)."
+    },
+    {
+     "item": "D · rubro cambiado, sobre el texto",
+     "resultado": "El h1 de la home no le sirve a otro rubro: nombra sitios a medida y que Google y ChatGPT puedan leerlos."
+    },
+    {
+     "item": "D · leído en voz alta",
+     "resultado": "Hecho con el hero, cada apertura de caso y cada «Sin métrica». Salió de ahí el «publicó solo una campaña» de Combeau, que en voz alta dice «apenas una»."
+    },
+    {
+     "item": "D · logo tapado",
+     "resultado": "Es visual: Javiera, sobre lo construido."
+    }
+   ],
+   "refero-design · anti-ai-slop.md": [
+    {
+     "item": "#1 índigo, #2 tarjetas, #3 oscuro, #5 emoji, #6 franja lateral, #8 roles de token",
+     "resultado": "Visuales, de la spec y de la construcción. El oscuro no es por defecto: lo decidió Ramón en la compuerta 1 (C1.6). En el texto no hay emoji; las flechas (→, ↗) son de la tipografía y la ↗ va en SVG con aria-hidden."
+    },
+    {
+     "item": "#4 · palabra destacada para «dar gusto»",
+     "resultado": "Los titulares en dos tintas no destacan una palabra: son una frase entera partida en dos, la regla de Koto medida en el lock (§2.8 y §14), con largos que comprueba comprobar-obra.py."
+    },
+    {
+     "item": "#7 · promediar referencias",
+     "resultado": "El texto sigue a Koto en la estructura de caso (Problema, Hipótesis, Solución, La pieza, Sin métrica) y no mezcla la de B."
+    },
+    {
+     "item": "#9 · gráficos falsos o todo texto",
+     "resultado": "Donde falta material, el hueco se nombra en vez de rellenarse: las pantallas internas de Praxi llevan su texto («praxi.pieza.hueco») y no se arman con datos inventados."
+    },
+    {
+     "item": "Prueba del copy (borrar 30 %)",
+     "resultado": "Ver A10 y la lectura fría."
+    }
+   ]
+  }
+ }
 }

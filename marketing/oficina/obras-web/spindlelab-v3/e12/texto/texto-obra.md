@@ -1854,6 +1854,58 @@
 - Paid Media dice cuatro veces que optimiza «con agentes de IA» (servicios-v3.json paid-media) y no tiene fila en ningún inventario; el criterio 13 del paso 2 pedía que toda afirmación de IA remita a Praxi. No lo toqué porque no es del giro: lo decides tú (o se le pone fila).
 - Las preguntas de la lectura fría del paso 2 que siguen sin respuesta: el anticipo, si hay un costo mensual, de quién es el código al terminar, qué pasa si no estás disponible, cuántas rondas trae cada plan, si atiendes regiones y si hay WhatsApp.
 
+## Los dos detectores, corridos sobre este texto
+
+Corridos enteros el 19-oct sobre el texto visible de las 20 páginas (813 textos, con alt, title y description), leyendo cada página y con herramientas/comprobar-obra.py para lo que se cuenta. Lo de código y lo visual no es del texto: lo mide Javiera sobre lo construido en la corrida 2, y aquí queda dicho dónde. Cuatro defectos encontrados y corregidos en esta pasada; dos ítems quedan abiertos con su porqué.
+
+**antislop-web.md · A, copy**
+
+| Ítem | Resultado |
+|---|---|
+| A1 · verbos de folleto | Cero. comprobar-obra.py busca impulsa, potencia, transforma, revoluciona, maximiza, «siguiente nivel» y «soluciones a tu medida». «asesoría integral» aparece una vez, citada entre «» como el cliché del rubro que Doceavo no usa. |
+| A2 · relleno de apertura | Cero. Cada página abre con su h1 diciendo qué es; ningún primer párrafo se puede borrar sin perder un hecho. |
+| A3 · tricolon automático | Abierto en la home, con porqué: tiene tres series de tres. «empresas, clínicas y estudios profesionales» es el hero 3 tal como lo eligió Ramón; «lo que está bien, lo que lo frena y qué haríamos primero» son las tres partes reales del mini-diagnóstico; «los precios, el método y el chequeo» son tres páginas que existen. En las tres, borrar el tercero quita un hecho. En Ocelo, «la honestidad también es diseño» + tres decisiones era ritmo de remate: corregido. |
+| A4 · «no solo X, sino Y» | Cero. El de /diagnostico/ («y no solo el sitio») ya iba cambiado a «además del sitio». |
+| A5 · pregunta retórica, «¿Listo para…?» | Cero. Las únicas preguntas son títulos de preguntas frecuentes o citas entre «» (lo que alguien le pregunta a una IA, el «¿te despidieron?» de los estudios laborales). Lo comprueba comprobar-obra.py, regla 3. |
+| A6 · Title Case | Cero en titulares, botones y nav. Llevan mayúsculas los nombres propios: los planes de oferta-v3.json («Página de Campaña», «Sitio Esencial», «Sitio Completo», «Plataforma a Medida», que van idénticos al dato) y las letras de los conceptos (Atkinson Hyperlegible, Big Shoulders Stencil, Barlow Semi Condensed). |
+| A7 · castellano de acá, tuteo | Tuteo en todo el sitio; cero voseo, «móvil», «ordenador» o «coste». «Ustedes» solo en las preguntas frecuentes, en boca del visitante. «partners» queda en la bio de /nosotros/, que no se toca (brief §3, R4). |
+| A8 · raya como golpe | Cero rayas (— y –) en el texto visible. comprobar-obra.py, regla 2. |
+| A9 · prueba social sin respaldo | Cero. Cada cifra a la vista tiene fila en un inventario y su fecha (805 → 95 kB, 384 pruebas, 0,52 s, 219 y 218 cambios). Ni 54 → 94 ni 36 → 73. Las personas generadas con IA llevan su pie en cada medio donde se ven, incluida la de Verifica y Cumple, que no lo tenía. Los conceptos dicen en la ficha y al cerrar que no existen. |
+| A10 · sobreescritura | Pasada de borrado hecha página por página. La página más larga es Praxi (≈1.500 palabras con los alt); sus párrafos van de 20 a 66 palabras, como los de Koto, y la lista «Con qué está hecho» es para el técnico, plegada bajo su rótulo. La lectura fría dice si sobra (ver abajo). |
+
+**antislop-web.md · B, estructura (lo que toca al texto)**
+
+| Ítem | Resultado |
+|---|---|
+| B1 · tres tarjetas iguales | El texto no las pide: los servicios van como lista por situación, Desarrollo web primero y Redes y Paid Media al final. Cómo se ven, lo fija la spec. |
+| B2 · «¿por qué elegirnos?» | No existe. «Quién está detrás» va con hechos que se pueden revisar: las agencias, con nombre, y que precios, método y chequeo están publicados. |
+| B3 · FAQ inventado | Abierto, con porqué: las seis preguntas de Desarrollo web vienen del paso 2 y salen de las dudas que dejaron los lectores fríos y del FAQ que ya tenía la página; ninguna sale de un correo de cliente, porque no hay registro de esas preguntas. No se suma ninguna. |
+| B4 · fila de métricas | No hay. Cada dato va junto a su pieza, con «Medido» y fecha. |
+| B5 · formulario largo | Cuatro campos (nombre, correo, dirección del sitio y el mensaje, opcional) y la casilla de consentimiento. |
+| B6 · hero vacío | El h1 dice qué se vende y a quién, y el chequeo va en la misma pantalla (C1.1). La composición sobre el video la fija la spec. |
+| B7 · orden de secciones | El del brief §3 con [C2.4]: portada, cinta, índice corto, prueba, servicios, quién está detrás, contacto. |
+| B8 · jerga como título | Corregido uno: la primera línea de /metodo/ decía «estrategia AEO/GEO» sin explicar. Los títulos de sección hablan de la situación del visitante. «SEO técnico» y «Visibilidad en IA» son nombres de servicio y van siempre con una línea de qué hacen. Quedan siglas en los planes de Desarrollo web (schema, indexación, AEO/GEO, CMS), que son texto de oferta-v3.json y no se cambian: las explica «Qué quiere decir», justo debajo. |
+
+**antislop-web.md · C y D**
+
+| Ítem | Resultado |
+|---|---|
+| C1 a C4, C6 a C9 | Son del código: los mide Javiera en la corrida 2. Lo que sí deja el texto: un h1 por página, los nombres accesibles (nav, logo, pausa del video, secciones) y el enlace para saltar al contenido. |
+| C5 · alt de relleno | Cero. Cada alt describe la imagen mirándola; los videos que se mueven solos llevan descripción y aria-hidden, y el del hilo de oro va con alt vacío porque no tiene texto ni información propia (comprobar-obra.py, regla 8). |
+| D · rubro cambiado, sobre el texto | El h1 de la home no le sirve a otro rubro: nombra sitios a medida y que Google y ChatGPT puedan leerlos. |
+| D · leído en voz alta | Hecho con el hero, cada apertura de caso y cada «Sin métrica». Salió de ahí el «publicó solo una campaña» de Combeau, que en voz alta dice «apenas una». |
+| D · logo tapado | Es visual: Javiera, sobre lo construido. |
+
+**refero-design · anti-ai-slop.md**
+
+| Ítem | Resultado |
+|---|---|
+| #1 índigo, #2 tarjetas, #3 oscuro, #5 emoji, #6 franja lateral, #8 roles de token | Visuales, de la spec y de la construcción. El oscuro no es por defecto: lo decidió Ramón en la compuerta 1 (C1.6). En el texto no hay emoji; las flechas (→, ↗) son de la tipografía y la ↗ va en SVG con aria-hidden. |
+| #4 · palabra destacada para «dar gusto» | Los titulares en dos tintas no destacan una palabra: son una frase entera partida en dos, la regla de Koto medida en el lock (§2.8 y §14), con largos que comprueba comprobar-obra.py. |
+| #7 · promediar referencias | El texto sigue a Koto en la estructura de caso (Problema, Hipótesis, Solución, La pieza, Sin métrica) y no mezcla la de B. |
+| #9 · gráficos falsos o todo texto | Donde falta material, el hueco se nombra en vez de rellenarse: las pantallas internas de Praxi llevan su texto («praxi.pieza.hueco») y no se arman con datos inventados. |
+| Prueba del copy (borrar 30 %) | Ver A10 y la lectura fría. |
+
 ## Historial de correcciones
 
 | Fecha | Corrección | Origen |
