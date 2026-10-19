@@ -63,15 +63,16 @@ for id, v in ver.items():
     if not txt:
         RESERVA.append(dict(id=id, dominio=v['dominio'], email=ent[v['dominio']]['email'], motivo='Confirmado, pero los dos revisores no coinciden en ninguna cookie de medicion nombrable: remedir')); continue
     dom = v['dominio']
+    EXTRA_C1 = {'V07': "Más abajo, en esa misma portada, hay un formulario de contacto, así que quien te escribe ya tiene esas cookies guardadas en su navegador."}
     if txt == 'cookies de Google Analytics':
         # Criterio 3 de Ramon (14-oct): solo Analytics, sin formulario, sin grabacion de sesion y sin publicidad = el correo diria 'cookies' y nada mas.
         extra = {'V58': 'tiene 1 formulario en la portada: candidato a F1, falta verificarlo con dos revisores', 'V74': 'el motor y un revisor vieron Clarity (grabacion de sesion) pero el otro no: remedir antes de escribir'}.get(id, 'sin formulario, sin Pixel de Meta, sin Clarity/Hotjar y sin publicidad: no hay consecuencia que el dueño sienta')
         RESERVA.append(dict(id=id, dominio=dom, email=ent[dom]['email'], motivo='Solo cookies de Google Analytics; ' + extra)); continue
     d = base(id, asunto='las cookies de ' + dom, peso=peso,
              cuerpo=[SALUDO.get(id, 'Hola:'),
-                     f"Entré a {dom} sin hacer nada y, en unos diez segundos, mi navegador ya tenía guardadas {txt}. {SIN_AVISO}",
+                     f"Entré a {dom} sin hacer nada y, en unos diez segundos, mi navegador ya tenía guardadas {txt}. {SIN_AVISO}" + (' ' + EXTRA_C1[id] if id in EXTRA_C1 else ''),
                      INCOGNITO, PRECIO_C1 + ' ' + LLAMADA_MUESTRO, DERIVA],
-             notas=f"Verificado por 2 revisores (19-oct). Cookies nombradas = las de medición que vieron ambos: {', '.join(v['cookies_medicion_en_ambos'])}. Sin aviso visible en ninguna captura (antes y despues del primer gesto). Medido desde IP de nube. Sin Consent Mode bloqueante (gcs=G100) en ninguna peticion. NO se afirma que Google/Meta 'reciban la visita' ni que el sitio 'no tenga politica'.")
+             notas=f"Verificado por 2 revisores (19-oct). Cookies nombradas = las de medición que vieron ambos: {', '.join(v['cookies_medicion_en_ambos'])}. Sin aviso visible en ninguna captura (antes y despues del primer gesto). Medido desde IP de nube. Sin Consent Mode bloqueante (gcs=G100) en ninguna peticion. NO se afirma que Google/Meta 'reciban la visita' ni que el sitio 'no tenga politica'." + (" El formulario de la portada (V07) lo vieron el motor en 2 rondas, un revisor y la captura r1-B; ESTE SITIO SI TIENE politica de privacidad en el pie: el correo no habla de politica." if id == 'V07' else ''))
     D.append(d)
 
 # ---- F1: formulario que pide correo/telefono y ningun enlace a politica de privacidad en la portada (redactado a mano desde lo que vieron los dos revisores)
@@ -80,7 +81,7 @@ for id, v in ver.items():
 # y no se manda al chequeo gratis de verifica.spindlelab.cl: nadie lo corrio sobre estos dominios, y si el dueño no ve lo mismo el correo queda desmentido. Se le dice donde mirar en SU portada.
 LUGAR = "ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad"
 HECHO_F1 = {
- 'V06': f"Revisé la portada de cypauditores.cl: quien llena el formulario de contacto deja nombre, correo y celular, y no ve qué se hace con esos datos, porque {LUGAR}.",
+ 'V06': f"Revisé la portada de cypauditores.cl. El formulario de contacto pide nombre, correo y celular, y quien lo llena no ve qué se hace con esos datos. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.",
  'V111': f"Revisé la portada de molinarios.cl: quien escribe por el formulario de la sección Contáctanos deja nombre y correo, y no ve qué se hace con ellos, porque {LUGAR} del estudio.",
  'V17': "Revisé la portada de finpartner.cl: quien deja su correo en los formularios, entre ellos el de Diagnóstico gratuito de la primera pantalla, no ve qué se hace con él, porque ni junto a los formularios, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.",
  'V20': "Revisé lcconsultores.cl: quien escribe por el formulario de la sección Contacto deja nombre y correo, y teléfono si quiere, y no ve qué se hace con esos datos, porque en la página, pie incluido, no encontré un enlace a una política de privacidad.",
@@ -100,7 +101,7 @@ def f1(id, hecho, notas, precio=PRECIO_F1, verlo=VERLO_F1):
     D.append(base(id, asunto='el formulario de ' + dom, peso=2,
                   cuerpo=[SALUDO.get(id, 'Hola:'), hecho, verlo, precio + ' ' + LLAMADA, DERIVA], notas='Verificado por 2 revisores (19-oct). ' + notas))
 f1('V06', "El formulario de contacto de la portada de cypauditores.cl pide nombre, correo y celular, y en la portada, pie incluido, no encontré un enlace a una política de privacidad que diga qué se hace con esos datos.",
-   "Solo portada. El celular es obligatorio. El pie solo tiene Inicio, Nosotros, Servicios y Contacto.", precio=PRECIO_F1_ESTUDIO)
+   "Solo portada. El celular es obligatorio. El pie solo tiene Inicio, Nosotros, Servicios y Contacto. Firma de auditoria (no estudio juridico): el precio dice 'tu abogado'.")
 f1('V111', "El formulario de la sección Contáctanos de molinarios.cl pide nombre, correo y mensaje, y en la portada, pie incluido, no encontré un enlace a una política de privacidad del estudio que diga qué se hace con esos datos.",
    "Solo portada en español (hay version en ingles sin medir). NO pide telefono. Cuatro rutas tipicas de politica dan 404, pero eso no prueba que no exista otra: el correo dice 'en la portada'. Estudio de abogados: tono sobrio.", precio=PRECIO_F1_ESTUDIO, verlo=CHEQUEO)
 f1('V17', "La portada de finpartner.cl tiene tres formularios que piden correo, entre ellos el de Diagnóstico gratuito de la primera pantalla, y en la portada, pie incluido, no encontré un enlace a una política de privacidad que diga qué se hace con esos datos.",

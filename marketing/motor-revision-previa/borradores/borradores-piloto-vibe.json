@@ -358,14 +358,14 @@
   "peso": 2,
   "cuerpo": [
    "Hola:",
-   "Revisé la portada de cypauditores.cl: quien llena el formulario de contacto deja nombre, correo y celular, y no ve qué se hace con esos datos, porque ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.",
+   "Revisé la portada de cypauditores.cl. El formulario de contacto pide nombre, correo y celular, y quien lo llena no ve qué se hace con esos datos. Ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.",
    "Puedes verlo tú: abre la portada, baja hasta el formulario y busca ese enlace.",
-   "Arreglarlo cuesta $149.000 + IVA: un aviso junto al formulario y una plantilla de política para que la revisen en el estudio. Si quieres, lo vemos en una llamada de 20 minutos.",
+   "Arreglarlo cuesta $149.000 + IVA: un aviso junto al formulario y una plantilla de política para que la revise tu abogado. Si quieres, lo vemos en una llamada de 20 minutos.",
    "Si no eres tú quien ve el sitio, ¿con quién lo hablo?"
   ],
-  "notas": "Verificado por 2 revisores (19-oct). Solo portada. El celular es obligatorio. El pie solo tiene Inicio, Nosotros, Servicios y Contacto.",
+  "notas": "Verificado por 2 revisores (19-oct). Solo portada. El celular es obligatorio. El pie solo tiene Inicio, Nosotros, Servicios y Contacto. Firma de auditoria (no estudio juridico): el precio dice 'tu abogado'.",
   "tanda": 2,
-  "palabras": 104
+  "palabras": 103
  },
  {
   "id": "V07",
@@ -381,14 +381,14 @@
   "peso": 2,
   "cuerpo": [
    "Hola:",
-   "Entré a atfgroup.cl sin hacer nada y, en unos diez segundos, mi navegador ya tenía guardadas cookies de Google (analítica y publicidad). En la portada no vi ningún aviso donde el visitante pueda aceptar o rechazar.",
+   "Entré a atfgroup.cl sin hacer nada y, en unos diez segundos, mi navegador ya tenía guardadas cookies de Google (analítica y publicidad). En la portada no vi ningún aviso donde el visitante pueda aceptar o rechazar. Más abajo, en esa misma portada, hay un formulario de contacto, así que quien te escribe ya tiene esas cookies guardadas en su navegador.",
    "Puedes verlo tú: abre el sitio en una ventana de incógnito, sin aceptar nada, y mira las cookies desde el ícono a la izquierda de la dirección.",
    "Dejar un aviso de cookies que pregunte antes cuesta $149.000 + IVA. Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
    "Si no eres tú quien ve el sitio, ¿con quién lo hablo?"
   ],
-  "notas": "Verificado por 2 revisores (19-oct). Cookies nombradas = las de medición que vieron ambos: _ga_5BK8MJCPVQ, _ga, _ga_YR69P5JYFC, _gcl_au. Sin aviso visible en ninguna captura (antes y despues del primer gesto). Medido desde IP de nube. Sin Consent Mode bloqueante (gcs=G100) en ninguna peticion. NO se afirma que Google/Meta 'reciban la visita' ni que el sitio 'no tenga politica'.",
+  "notas": "Verificado por 2 revisores (19-oct). Cookies nombradas = las de medición que vieron ambos: _ga_5BK8MJCPVQ, _ga, _ga_YR69P5JYFC, _gcl_au. Sin aviso visible en ninguna captura (antes y despues del primer gesto). Medido desde IP de nube. Sin Consent Mode bloqueante (gcs=G100) en ninguna peticion. NO se afirma que Google/Meta 'reciban la visita' ni que el sitio 'no tenga politica'. El formulario de la portada (V07) lo vieron el motor en 2 rondas, un revisor y la captura r1-B; ESTE SITIO SI TIENE politica de privacidad en el pie: el correo no habla de politica.",
   "tanda": 2,
-  "palabras": 103
+  "palabras": 127
  },
  {
   "id": "V111",
