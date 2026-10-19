@@ -1,4 +1,4 @@
-# Mecanismo de leads con el motor integrado (propuesta, 19-oct-2026)
+# Mecanismo de leads con el motor integrado (decidido por Ramón, 19-oct-2026)
 
 **Por qué existe:** el 16-19 oct la sesión del motor terminó haciendo parte del trabajo de la sesión de búsqueda de leads (armar la lista, cruzar exclusiones y Gmail, decidir a quién no escribir, redactar y dar seguimiento). Funcionó, pero quedó repartido en scripts sueltos y en la memoria de una sesión. Este documento propone dejarlo como **un embudo en el repo**, que cualquier sesión pueda correr, con un contrato entre etapas.
 
@@ -35,3 +35,9 @@ Del lote de 467 dominios que ya teníamos: 94 sin contacto previo, 11 borradores
 2. **Cómo se escribe a un buzón de rol.** Menos respuesta que a un decisor; hay que medirlo por separado (columna `tipo` del correo en la hoja de seguimiento).
 3. **Datos personales.** SpindleLab vende cumplimiento: cada correo lleva la fuente real y la baja, y no se guarda más de lo necesario. Un correo de persona sacado del sitio se trata igual que uno sacado de una base.
 4. **Trabajo sin subir.** La sesión de leads tiene 25 commits sin subir en el Mac de Ramón.
+
+## Decisiones de Ramón del 19-oct-2026
+1. Se adopta el embudo en el repo con roles (etapas 1 a 3 leads, 4 a 6 motor, documentos compartidos solo el troncal). Traspaso para la sesión nueva: `marketing/encargos-otras-sesiones/arranque-sesion-leads-con-motor-2026-10-19.md`.
+2. Se autorizan hasta 200 créditos de Vibe Prospecting en un piloto, **solo para empresas nuevas**: todo dominio ya analizado, contactado o usado se excluye antes de pagar (lista de exclusión de la cuenta + cruce posterior).
+3. Se acepta escribir a buzones de rol. La derivación "¿con quién lo hablo?" es obligatoria y la respuesta de los buzones de rol se mide aparte (columna `tipo`).
+4. El precio va sin "desde" en todo lo nuevo.
