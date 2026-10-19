@@ -61,3 +61,19 @@ Contactos que recibieron correos de SEO/ChatGPT entre julio y el 10-sep, sin res
 
 Regla anti duplicado: estas 15 direcciones ya tienen borrador. El Copiloto Verifica y Cumple salta direcciones con borrador sin enviar, pero detecta por `verifica.spindlelab.cl` los correos ya enviados; ver nota sobre toque 2 en la conversación.
 Revisión independiente: `borradores/revisiones-reactivacion-2026-10-17.json` (5 ok, 10 ajustar, 0 no enviar; todas las correcciones se aplicaron salvo el precio de la segunda ola).
+
+
+## Día 3 (lunes 19-oct-2026, 12:00 UTC): revisión de la primera ola y toque 2
+Los 5 hilos tienen 1 mensaje (el nuestro): **0 respuestas, 0 rebotes, 0 respuestas automáticas** (búsqueda de mailer-daemon y de remitentes de los 5 dominios en los últimos 5 días). Desde el viernes no se envió nada más desde hola@ (`in:sent newer_than:3d` devuelve solo los 5).
+Borradores del toque 2, como respuesta en el mismo hilo (`replyToMessageId` = mensaje enviado), sin enviar:
+
+| Id | Hilo | Para | Id del borrador |
+|---|---|---|---|
+| X24 | 1a1460f7fe460c2f | thernandez-hausdorf@lmabogados.cl | r6396356212174450138 |
+| X64 | 1a1460f814ba13b9 | lmorales@mgm-auditores.cl | r-1857429373216487557 |
+| X67 | 1a1460f84b25fa9b | contacto@grupoauditax.cl | r-8221770185354017101 |
+| X77 | 1a1460f87063e1ca | sergioperez@suizandina.com | r3854436661679243976 |
+| X78 | 1a1460f8800acced | carlos@almalodge.cl | r-4937705424514261349 |
+
+Cierre (toque 3, día 7, ~viernes 23-oct): texto en `borradores/borradores-toque3.json`, aún no creado.
+El Copiloto Verifica y Cumple corrió el 19-oct ~11:15 UTC y dejó 15 borradores de seguimiento propios (otra cohorte); ninguno es para estas 5 direcciones.
