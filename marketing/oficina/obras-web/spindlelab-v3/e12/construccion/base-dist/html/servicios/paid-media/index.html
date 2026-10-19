@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js): NO se carga hasta que haya consentimiento. Hasta el 22-sep se
+     cargaba siempre, con Consent Mode en denegado, y así igual le mandaba a Google un aviso
+     sin cookies de cada página vista a quien había dicho que no (medido en la red). Ahora el
+     archivo se pide recién cuando la persona acepta: __spindlelabInitGA, que también llama
+     /js/consent-banner.js al pulsar Aceptar. La función gtag() se define igual aunque no
+     haga nada, porque hay código que la llama directo (el generate_lead de /contacto/), y
+     sin ella lanzaría un error justo después de un envío exitoso. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var __spindlelabConsent = (function(){
+    try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
+  })();
+  function __spindlelabInitGA(){
+    if (window.__spindlelabGAInited) return;
+    window.__spindlelabGAInited = true;
+    // Lo que se haya encolado antes del permiso (un generate_lead, un chequeo_completado)
+    // se descarta: nada de lo que pasó antes de aceptar se manda después de aceptar.
+    window.dataLayer.length = 0;
+    gtag('consent', 'default', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-J40VW9E0TW');
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-J40VW9E0TW';
+    document.head.appendChild(s);
+  }
+  if (__spindlelabConsent === 'granted') { __spindlelabInitGA(); }
+</script>
+<!-- Meta Pixel Code — no tiene un "consent mode" propio, así que no se inicializa hasta
+     que haya consentimiento. Sin noscript: no se puede pedir consentimiento sin
+     JavaScript, así que tampoco se rastrea sin JavaScript. -->
+<script>
+function __spindlelabInitMeta(){
+  if(window.__spindlelabMetaInited) return;
+  window.__spindlelabMetaInited = true;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2885353628478565');
+  fbq('track', 'PageView');
+}
+if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
+</script>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paid Media (Google): Google Ads de alta intención · SpindleLab</title>
+<meta name="description" content="Manejo de Google Ads optimizado con agentes de IA: pauta de búsqueda de alta intención, con el presupuesto controlado, para empresas en Chile.">
+<link rel="canonical" href="https://spindlelab.cl/servicios/paid-media/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SpindleLab">
+<meta property="og:title" content="Paid Media (Google) · SpindleLab">
+<meta property="og:description" content="Manejo de Google Ads optimizado con agentes de IA, con el presupuesto siempre bajo control. Capturamos a quien ya está buscando lo que ofreces.">
+<meta property="og:url" content="https://spindlelab.cl/servicios/paid-media/">
+<meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=4">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="SpindleLab. SEO técnico y visibilidad en IA">
+<meta property="og:locale" content="es_CL">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://spindlelab.cl/#org",
+      "name": "SpindleLab",
+      "url": "https://spindlelab.cl/",
+      "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+      "email": "hola@spindlelab.cl",
+      "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
+      "areaServed": {"@type": "Country", "name": "Chile"},
+      "sameAs": ["https://www.linkedin.com/company/spindlelab/", "https://www.instagram.com/spindle.lab/"],
+      "founder": {"@id": "https://spindlelab.cl/#autor-ramon"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://spindlelab.cl/#autor-ramon",
+      "name": "Ramón Vallejos",
+      "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+      "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+      "url": "https://spindlelab.cl/nosotros/",
+      "worksFor": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
+      "@type": "Service",
+      "@id": "https://spindlelab.cl/servicios/paid-media/#service",
+      "name": "Paid Media (Google)",
+      "serviceType": "Gestión de campañas de Google Ads (búsqueda de alta intención)",
+      "provider": {"@id": "https://spindlelab.cl/#org"},
+      "areaServed": {"@type": "Country", "name": "Chile"},
+      "description": "Estrategia y manejo de cuenta de Google Ads optimizado con agentes de IA: pauta de búsqueda de alta intención con el presupuesto bajo control, integrada con el resto del motor de adquisición (SEO, redes y sitio).",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Planes de Paid Media (Google)",
+        "itemListElement": [
+          {"@type": "Offer", "name": "Gestión Esencial", "description": "Manejo de una campaña de búsqueda de alta intención: estrategia, estructura de cuenta, optimización con IA y reporte mensual. La inversión publicitaria va aparte.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 350000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "Gestión Pro", "description": "Varias campañas y objetivos con optimización avanzada, seguimiento de conversiones e integración con el resto del motor. La inversión publicitaria va aparte.", "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 550000, "priceCurrency": "CLP", "unitText": "MES", "valueAddedTaxIncluded": false}},
+          {"@type": "Offer", "name": "A medida", "description": "Cuentas grandes o multi-campaña: todo lo del Pro con volumen y objetivos a definir. Se cotiza tras una reunión."}
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
+        {"@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://spindlelab.cl/servicios/"},
+        {"@type": "ListItem", "position": 3, "name": "Paid Media (Google)", "item": "https://spindlelab.cl/servicios/paid-media/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "¿Manejan ustedes el presupuesto de pauta?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Nosotros definimos la estrategia y gestionamos la cuenta día a día, pero el presupuesto lo fijas tú y lo respetamos al peso. Nunca subimos la inversión sin tu confirmación: verás en todo momento cuánto se gasta y en qué."}},
+        {"@type": "Question", "name": "¿Y la publicidad en Instagram y Facebook?", "acceptedAnswer": {"@type": "Answer", "text": "La pauta en Instagram y Facebook vive junto a la gestión de tus redes, porque comparte contenido, audiencia y comunidad: la manejamos en Gestión de Redes Sociales. Esta pieza se enfoca en Google, donde capturamos a quien ya está buscando lo que ofreces: la intención de compra más alta."}},
+        {"@type": "Question", "name": "¿Cómo optimizan con IA?", "acceptedAnswer": {"@type": "Answer", "text": "Usamos agentes de IA para revisar el rendimiento a diario, detectar los ajustes que la plataforma activa contra el interés de tu cuenta y priorizar dónde mover el presupuesto. La IA acelera el análisis; las decisiones de inversión siempre pasan por criterio humano."}},
+        {"@type": "Question", "name": "¿Se integra con el SEO y la visibilidad en IA?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, y ahí está la diferencia. La pauta acelera un motor que ya gira con el orgánico: enviamos el tráfico pagado a páginas trabajadas para convertir y lo medimos todo junto. Si quieres ver el eje del motor, mira Visibilidad en IA."}},
+        {"@type": "Question", "name": "¿Cuánto cuesta?", "acceptedAnswer": {"@type": "Answer", "text": "El fee de gestión parte en 350.000 CLP/mes + IVA (Gestión Esencial) y 550.000 CLP/mes + IVA (Gestión Pro); el plan a medida se cotiza tras una reunión. Ese fee no incluye la inversión en pauta, que la defines tú y va a tu tarjeta."}}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/inter.css?v=1">
+<link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  .packs-grid{display:grid;gap:20px;grid-template-columns:repeat(3,1fr);align-items:stretch}
+  @media(max-width:860px){.packs-grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+  .pack{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+  .pack.featured{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+  .pack .tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+  .pack h3{font-family:var(--headline);font-size:20px;font-weight:600;color:var(--ink);letter-spacing:-.02em;margin:0}
+  .pack .tagline{font-size:13.5px;color:var(--ink-70);line-height:1.5;margin:8px 0 0}
+  .pack .price{margin:18px 0 2px;font-family:var(--headline)}
+  .pack .price .from{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-50);margin-bottom:2px}
+  .pack .price .amount{font-size:30px;font-weight:700;color:var(--paper);letter-spacing:-.02em}
+  .pack .price .iva{font-size:12px;color:var(--ink-50);font-weight:400}
+  .pack .price .quote{font-size:18px;font-weight:600;color:var(--paper)}
+  .pack ul{list-style:none;display:grid;gap:11px;margin:20px 0 24px;padding:20px 0 0;border-top:1px solid var(--line)}
+  .pack ul li{position:relative;padding-left:26px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+  .pack ul li::before{content:"";position:absolute;left:2px;top:5px;width:12px;height:7px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+  .pack .btn{margin-top:auto;justify-content:center;width:100%}
+  .pack-note{margin-top:26px;font-size:12.5px;color:var(--ink-50);line-height:1.75;max-width:760px}
+  .pack-note b{color:var(--ink-70);font-weight:600}
+  .pack-common{max-width:680px;margin:0 0 36px;color:var(--ink-70);font-size:14.5px;line-height:1.6}
+  .pack-common b{color:var(--paper);font-weight:600}
+  /* --- densidad: menos aire vertical y listas a 2 columnas en desktop --- */
+  .sec{padding:64px 0}
+  .band-navy{padding:64px 0}
+  .sec-head{margin-bottom:34px}
+  @media(min-width:900px){
+    .check-list{grid-template-columns:1fr 1fr;gap:16px 44px}
+    .check-list li{font-size:14px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="SpindleLab, inicio">SpindleLab<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span class="bars"></span></button>
+    <div class="nav-pill"><ul class="nav-links" id="nav-links">
+      <li><a href="/servicios/" aria-current="page">Soluciones</a></li>
+      <li><a href="/metodo/">Método</a></li>
+      <li><a href="/nosotros/">Nosotros</a></li>
+      <li><a href="/#evidencia">Evidencia</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+    <a class="btn gold small nav-cta" href="/diagnostico/">Chequea tu sitio</a></div>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero page-hero-video">
+    <video class="ph-bg" src="/video/servicios-oficina.mp4" poster="/video/servicios-oficina.jpg" muted loop playsinline preload="none" aria-hidden="true"></video>
+    <div class="ph-veil"></div>
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Miga de pan">
+        <ol>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/servicios/">Soluciones</a></li>
+          <li>Paid Media (Google)</li>
+        </ol>
+      </nav>
+      <h1>Paid Media <span style="color:var(--teal)">(Google)</span></h1>
+      <p class="lead">Publicidad para capturar a quien ya está buscando lo que ofreces, con la intención de compra más alta. Manejamos tu cuenta de Google Ads optimizada con agentes de IA, con el presupuesto siempre bajo control: la pieza que acelera cuando el motor orgánico ya gira.</p>
+      <div class="actions">
+        <a class="btn gold" href="#planes">Ver planes y precios →</a>
+        <span class="note">Gestión desde $350.000/mes · inversión aparte</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Qué incluye</span>
+        <h2>Todo lo que ponemos a trabajar</h2>
+      </div>
+      <ul class="check-list">
+        <li><b>Estrategia de campañas y objetivos</b>: qué buscas (leads, ventas, llamadas), con qué oferta y en qué orden. La estrategia primero, el gasto después.</li>
+        <li><b>Estructura de cuenta y segmentación</b>: campañas y audiencias ordenadas para llegar a quien puede comprarte, no a todo el mundo.</li>
+        <li><b>Optimización continua asistida con IA</b>: revisión diaria del rendimiento con agentes de IA para mover el presupuesto hacia lo que convierte.</li>
+        <li><b>Reportes claros de inversión y resultados</b>: cuánto se invirtió, en qué y qué generó, en lenguaje de negocio y sin letra chica.</li>
+        <li><b>Integración con el resto del motor (SEO, redes, sitio)</b>: la pauta aterriza en un <a href="/servicios/desarrollo-web/#planes">sitio o una Página de Campaña</a> trabajados para convertir y se mide junto a la <a href="/servicios/visibilidad-en-ia/">visibilidad orgánica</a>, el eje del motor.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="planes" aria-labelledby="planes-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Planes</span>
+        <h2 id="planes-title">Elige la cobertura</h2>
+      </div>
+      <p class="pack-common">El precio es el <b>fee de gestión</b>: estrategia, manejo de la cuenta, optimización con IA y reportes. <b>La inversión en pauta la pones tú y la respetamos al peso</b>, nunca la subimos sin tu confirmación. Mínimo 3 meses.</p>
+      <div class="packs-grid">
+        <div class="pack reveal">
+          <span class="tag">Esencial</span>
+          <h3>Gestión Esencial</h3>
+          <p class="tagline">Una campaña de búsqueda de alta intención, bien hecha.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$350.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Una campaña de búsqueda (Google Ads)</li>
+            <li>Estrategia y estructura de cuenta</li>
+            <li>Optimización con IA + reporte mensual</li>
+            <li>Inversión publicitaria aparte, bajo tu control</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+        <div class="pack featured reveal">
+          <span class="tag">Más elegido</span>
+          <h3>Gestión Pro</h3>
+          <p class="tagline">Varias campañas y optimización avanzada, integrada al motor.</p>
+          <div class="price"><span class="from">Desde</span><span class="amount">$550.000</span> <span class="iva">/mes + IVA</span></div>
+          <ul>
+            <li>Todo lo de la Esencial, y más</li>
+            <li>Varias campañas y objetivos</li>
+            <li>Seguimiento de conversiones y optimización avanzada</li>
+            <li>Integración con SEO, redes y sitio</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+        <div class="pack reveal">
+          <span class="tag">A medida</span>
+          <h3>A medida</h3>
+          <p class="tagline">Cuentas grandes o multi-campaña, con volumen alto.</p>
+          <div class="price"><span class="quote">Se cotiza tras una reunión</span></div>
+          <ul>
+            <li>Todo lo del Pro, y más</li>
+            <li>Volumen de campañas y objetivos a definir</li>
+            <li>Presupuestos de inversión mayores</li>
+            <li>Prioridad y reuniones acordadas</li>
+          </ul>
+          <a class="btn gold" href="/contacto/">Conversar mi caso</a>
+        </div>
+      </div>
+      <p class="pack-note"><b>Los precios son el fee de gestión y no incluyen IVA (19%)</b> ni la inversión en pauta (esa la defines tú y va a tu tarjeta). La pauta en Instagram y Facebook vive en <a href="/servicios/redes-sociales/">Gestión de Redes Sociales</a>; esta pieza es solo Google.</p>
+    </div>
+  </section>
+
+  <section class="band-navy" aria-labelledby="proceso-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow gold">Cómo trabajamos</span>
+        <h2 id="proceso-title">De la estrategia a la escala, con el gasto bajo control</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="num">A</span>
+          <h3>Estrategia y estructura</h3>
+          <p>Definimos objetivo, oferta y estructura de cuenta antes de gastar un peso. Qué buscamos, a quién y con qué mensaje.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">B</span>
+          <h3>Lanzamiento y segmentación</h3>
+          <p>Montamos las campañas y afinamos la segmentación hacia quien de verdad puede comprarte, no hacia todo el mundo.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">C</span>
+          <h3>Optimización con IA</h3>
+          <p>Revisamos el rendimiento a diario con agentes de IA: cortamos lo que no rinde, reforzamos lo que convierte y cazamos los defaults que juegan en contra de tu cuenta.</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">D</span>
+          <h3>Reporte y escala</h3>
+          <p>Reporte claro de inversión y resultados. Cuando un canal rinde, escalamos con cabeza; cuando no, lo ajustamos o lo apagamos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow teal">Preguntas frecuentes</span>
+        <h2 id="faq-title">Sobre la pauta</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>¿Manejan ustedes el presupuesto de pauta?</summary>
+          <p class="faq-a">Sí. Nosotros definimos la estrategia y gestionamos la cuenta día a día, pero el presupuesto lo fijas tú y lo respetamos al peso. Nunca subimos la inversión sin tu confirmación: verás en todo momento cuánto se gasta y en qué.</p>
+        </details>
+        <details>
+          <summary>¿Y la publicidad en Instagram y Facebook?</summary>
+          <p class="faq-a">La pauta en Instagram y Facebook vive junto a la gestión de tus redes, porque comparte contenido, audiencia y comunidad: la manejamos en <a href="/servicios/redes-sociales/">Gestión de Redes Sociales</a>. Esta pieza se enfoca en Google, donde capturamos a quien ya está buscando lo que ofreces: la intención de compra más alta.</p>
+        </details>
+        <details>
+          <summary>¿Cómo optimizan con IA?</summary>
+          <p class="faq-a">Usamos agentes de IA para revisar el rendimiento a diario, detectar los ajustes que la plataforma activa contra el interés de tu cuenta y priorizar dónde mover el presupuesto. La IA acelera el análisis; las decisiones de inversión siempre pasan por criterio humano.</p>
+        </details>
+        <details>
+          <summary>¿Se integra con el SEO y la visibilidad en IA?</summary>
+          <p class="faq-a">Sí, y ahí está la diferencia. La pauta acelera un motor que ya gira con el orgánico: enviamos el tráfico pagado a páginas trabajadas para convertir y lo medimos todo junto. Si quieres ver el eje del motor, mira <a href="/servicios/visibilidad-en-ia/">Visibilidad en IA</a>.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta?</summary>
+          <p class="faq-a">El fee de gestión parte en $350.000/mes + IVA (<a href="#planes">Gestión Esencial</a>) y $550.000/mes + IVA (Gestión Pro); el plan a medida se cotiza tras una reunión. Ese fee no incluye la inversión en pauta, que la defines tú y va a tu tarjeta.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="wrap">
+      <span class="eyebrow teal">Hablemos</span>
+      <h2 id="cta-title">¿Listo para acelerar el motor?</h2>
+      <p>Envíanos tu URL y en 24 horas tienes el mini-diagnóstico gratuito. Vemos dónde conviene invertir antes de que pongas un peso en pauta.</p>
+      <a class="btn gold" href="/contacto/">Agenda tu diagnóstico gratis</a>
+      <br>
+      <a class="email" href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="wordmark">SpindleLab<span>.</span></p>
+    <div class="cols">
+      <nav aria-label="Soluciones">
+        <h4>Soluciones</h4>
+        <ul>
+          <li><a href="/servicios/auditoria-seo-tecnica/">Auditoría SEO Técnica</a></li>
+          <li><a href="/servicios/visibilidad-en-ia/">Visibilidad en IA (AEO/GEO)</a></li>
+          <li><a href="/servicios/acompanamiento-mensual/">Acompañamiento Mensual</a></li>
+          <li><a href="/servicios/redes-sociales/">Gestión de Redes Sociales</a></li>
+          <li><a href="/servicios/paid-media/">Paid Media (Google)</a></li>
+          <li><a href="/servicios/desarrollo-web/">Desarrollo Web</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Sitio">
+        <h4>Sitio</h4>
+        <ul>
+          <li><a href="/metodo/">Nuestro Método</a></li><li><a href="/nosotros/">Nosotros</a></li>
+          <li><a href="/diagnostico/">Chequeo gratis</a></li>
+          <li><a href="/blog/">El Taller</a></li>
+          <li><a href="/contacto/">Contacto</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>Santiago, Chile</li>
+          <li><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 SpindleLab. Todos los derechos reservados.</span>
+      <nav><a href="/privacidad/">Política de privacidad</a></nav>
+      <span>SEO técnico · AEO/GEO · Chile</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),links=document.getElementById('nav-links');
+  if(btn){btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }else{
+    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+  }
+})();
+</script>
+<script src="/assets/js/hero-bg-video.js" defer></script>
+<script src="/assets/js/site-header.js" defer></script>
+<div id="cookie-banner" hidden>
+  <style>
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#161D26;border-top:1px solid rgba(247,245,240,.12);padding:18px 20px}
+    #cookie-banner .cb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:13.5px;color:rgba(242,239,232,.72);line-height:1.5;max-width:640px;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+    #cookie-banner a{color:#2FA99B;font-weight:600}
+    #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+    #cookie-banner button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.04em;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+    #cookie-reject{background:transparent;color:#F2EFE8;border-color:rgba(247,245,240,.35)}
+    #cookie-reject:hover{background:rgba(247,245,240,.08)}
+    #cookie-accept{background:#F4F6F3;color:#12201A;border-color:#F4F6F3}
+    #cookie-accept:hover{background:#FFFFFF}
+    #cookie-banner[hidden]{display:none}
+    @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+  </style>
+  <div class="cb-inner">
+    <p>Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+    <div class="cb-actions">
+      <button type="button" id="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="/js/consent-banner.js?v=3" defer></script>
+</body>
+</html>
