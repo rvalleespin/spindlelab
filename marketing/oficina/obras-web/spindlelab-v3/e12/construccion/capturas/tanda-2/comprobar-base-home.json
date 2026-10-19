@@ -1,0 +1,164 @@
+{
+ "ruta": "/v3/",
+ "cuando": "2026-10-19T17:37:36.238Z",
+ "html": {
+  "anclasSueltas": 0,
+  "bodyLenisPrevent": true,
+  "claseHtml": "lenis",
+  "sinJsQuitado": true
+ },
+ "rueda": {
+  "al90ms": 51,
+  "final": 100
+ },
+ "saltar": {
+  "clase": "saltar boton boton--claro",
+  "texto": "Saltar al contenido",
+  "href": "/v3/#contenido",
+  "visible": true
+ },
+ "encabezado": {
+  "plegada": true,
+  "opacidadPlaca": 1,
+  "top": 0,
+  "alto": 64,
+  "rellenoFila": "28px"
+ },
+ "cursor": {
+  "sobrePieza": {
+   "visible": true,
+   "texto": "Ver el caso",
+   "ancho": 88,
+   "centro": [
+    897,
+    445
+   ],
+   "teclado": false,
+   "cursorPieza": "none"
+  },
+  "puntero": [
+   897,
+   445
+  ],
+  "conTab": {
+   "visible": false,
+   "texto": "Ver el caso",
+   "ancho": 0,
+   "centro": [
+    897,
+    445
+   ],
+   "teclado": true,
+   "cursorPieza": "pointer"
+  },
+  "desplazadoBajoMouseQuieto": {
+   "visible": false,
+   "texto": "Ver el caso",
+   "ancho": 0,
+   "centro": [
+    897,
+    445
+   ],
+   "teclado": true,
+   "cursorPieza": "pointer"
+  },
+  "conMovimientoReal": {
+   "visible": true,
+   "texto": "Ver el caso",
+   "ancho": 88,
+   "centro": [
+    927,
+    858
+   ],
+   "teclado": false,
+   "cursorPieza": "none"
+  }
+ },
+ "videos1440": [
+  {
+   "fuente": "hilo-1920.webm",
+   "pausado": true,
+   "corriendo": true,
+   "pausaVisible": true,
+   "ariaPressed": "false",
+   "ariaLabel": "Pausar el video"
+  },
+  {
+   "fuente": "cinta.webm",
+   "pausado": false,
+   "corriendo": true,
+   "pausaVisible": true,
+   "ariaPressed": "false",
+   "ariaLabel": "Pausar el video"
+  }
+ ],
+ "pausaApretada": {
+  "fuente": "hilo-1920.webm",
+  "pausado": true,
+  "corriendo": true,
+  "pausaVisible": true,
+  "ariaPressed": "true",
+  "ariaLabel": "Seguir el video"
+ },
+ "pausaOtraVez": {
+  "fuente": "hilo-1920.webm",
+  "pausado": false,
+  "corriendo": true,
+  "pausaVisible": true,
+  "ariaPressed": "false",
+  "ariaLabel": "Pausar el video"
+ },
+ "errores1440": [],
+ "videos390": [
+  {
+   "fuente": "hilo-960.webm",
+   "pausado": true,
+   "corriendo": true,
+   "pausaVisible": true,
+   "ariaPressed": "false",
+   "ariaLabel": "Pausar el video"
+  },
+  {
+   "fuente": "cinta.webm",
+   "pausado": false,
+   "corriendo": true,
+   "pausaVisible": true,
+   "ariaPressed": "false",
+   "ariaLabel": "Pausar el video"
+  }
+ ],
+ "circulo390": false,
+ "errores390": [],
+ "reducido": {
+  "videos": [
+   {
+    "fuente": "",
+    "pausado": true,
+    "corriendo": false,
+    "pausaVisible": true,
+    "ariaPressed": "true",
+    "ariaLabel": "Seguir el video"
+   },
+   {
+    "fuente": "cinta.webm",
+    "pausado": true,
+    "corriendo": false,
+    "pausaVisible": true,
+    "ariaPressed": "true",
+    "ariaLabel": "Seguir el video"
+   }
+  ],
+  "circulo": "none",
+  "entradasConEstilo": 0,
+  "transiciones": "0s",
+  "trasApretarSeguir": {
+   "fuente": "hilo-1920.webm",
+   "pausado": false,
+   "corriendo": true,
+   "pausaVisible": true,
+   "ariaPressed": "false",
+   "ariaLabel": "Pausar el video"
+  }
+ },
+ "erroresReducido": []
+}

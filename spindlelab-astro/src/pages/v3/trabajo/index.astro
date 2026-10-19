@@ -100,7 +100,6 @@ const jsonLd = {
       description,
       inLanguage: 'es-CL',
       isPartOf: { '@id': 'https://spindlelab.cl/#website' },
-      about: { '@id': 'https://spindlelab.cl/#org' },
       breadcrumb: { '@id': `${URL_FINAL}#breadcrumb` },
       mainEntity: { '@id': `${URL_FINAL}#itemlist` },
     },
@@ -108,7 +107,6 @@ const jsonLd = {
       '@type': 'ItemList',
       '@id': `${URL_FINAL}#itemlist`,
       numberOfItems: entradas.length,
-      itemListOrder: 'https://schema.org/ItemListUnordered',
       itemListElement: entradas.map((e, i) =>
         final(e.destino)
           ? { '@type': 'ListItem', position: i + 1, name: nombreLista(e), url: final(e.destino) }

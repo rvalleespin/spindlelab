@@ -41,7 +41,10 @@ document.querySelectorAll('[data-video]').forEach((caja) => {
   function correr() {
     ponerFuentes();
     const p = v.play();
-    if (p && p.catch) p.catch(() => { quierePausa = true; estado(true); });
+    // Si el navegador no deja reproducir, el video queda en pausa y el botón lo dice. Un play() que interrumpe una pausa
+    // (AbortError: la persona pasó rápido por el video y salió de la vista antes de que arrancara) no es una elección
+    // suya: sin esto el video quedaba parado para siempre, con el botón en «Seguir el video» (medido, tanda 2).
+    if (p && p.catch) p.catch((e) => { if (!e || e.name !== 'AbortError') { quierePausa = true; estado(true); } });
   }
   v.addEventListener('playing', () => v.classList.add('corriendo'));
 

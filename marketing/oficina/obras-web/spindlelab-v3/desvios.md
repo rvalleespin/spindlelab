@@ -176,3 +176,187 @@ plegado a 1440; el aviso de cookies a 390) y `medidas.json`.
   transiciones son 0 s.
 - El chequeo, con una respuesta real de `/api/chequeo` servida al navegador de prueba: el resultado se pinta con el sistema
   de A; el error del campo vacío y el de un sitio que no abre salen en blanco bajo el campo; borde del campo `#707070`.
+
+---
+
+## Tanda 2 · La home (`/v3/`) y el índice de trabajo (`/v3/trabajo/`) (19-oct-2026, Diego)
+
+**Qué se construyó.** `src/pages/v3/index.astro` (la home de driftime se reemplaza entera) y `src/pages/v3/trabajo/index.astro`
+(sale de `src/pages/v3/trabajo.astro`, que se borra: la URL no cambia). Nuevos: `src/components/a/Pieza.astro` (una entrada
+del trabajo, para el índice corto y el muro), `src/scripts/archivo/cinta.mjs` y `muro.mjs`, `src/data/archivo/texto.mjs` y
+`texto/*.json` (el texto de Clara), `src/data/archivo/medios.json` (de dónde sale cada medio y su `alt`), 18 medios en
+`public/v3/medios/` y las dos imágenes al compartir en `public/assets/img/`. Compartido con la tanda 1, tocado:
+`archivo.css` (dos bloques nuevos, HOME e ÍNDICE, y una regla del chequeo, punto 9) y `video.mjs` (punto 13). Las
+herramientas, en `e12/construccion/herramientas/` (abajo, en cada punto).
+
+### 1. spindlelab.cl en el muro: la portada del prototipo es el hilo de oro
+
+**Qué dice la spec:** §2.2 y §3.3 ponen en el muro las diez portadas de `proto/a/medios/`, entre ellas `spindlelab-53.webp`
+(la portada de spindlelab.cl a 1440, 17-oct). **Y §6.8 prohíbe** «el hilo de oro en un marco de trabajo, en el índice»;
+la regla de la obra: el hilo de oro solo en la portada de la home. Esa captura **es** el video del hilo de oro detrás del
+titular del sitio publicado (mirada lado a lado con `public/video/hero-hilo-de-oro.jpg`). La spec choca consigo misma.
+
+**Lo que hice (la solución mínima):** la misma entrada, en la misma forma (5:3) y con el mismo método (sitio vivo, 1440,
+primera pantalla), de una página del mismo sitio sin el hilo: **`/privacidad/`**, con el aviso de cookies abierto como lo
+ve quien entra por primera vez. Las demás páginas publicadas llevan el hilo (blog, contacto) o videos e imágenes de banco
+(método, servicios), y `/diagnostico/` ya es la portada de «El chequeo de 21 señales». La privacidad es justo lo que
+cuenta la bajada de la entrada («… no cargan hasta que aceptas las cookies»). Herramienta:
+`capturar-spindlelab.mjs` (`public/v3/medios/spindlelab-privacidad-53.webp`, 32.912 bytes, HTTP 200, 19-oct 17:14Z). Su
+`alt` lo escribí mirándola. **Para Lucía:** si prefiere otra página, es una línea de `trabajo/index.astro` (`PORTADAS`).
+
+### 2. Praxi en «Cada pieza, con un dato medido»: la spec y el prototipo no usan la misma captura
+
+**Qué dice la spec:** §3.3, fila «Cada pieza, con su prueba»: «Praxi (sus números, con “datos de ejemplo”)». El prototipo
+ponía `praxi-reglas-169` («Debajo del chat hay reglas…»), y la diferencia no está en la lista de §0.4. **Manda la spec:**
+va `praxi-numeros-169` con el `alt` y el pie que Clara le escribió a esa misma captura en el caso
+(`texto-obra.json`, caso-praxi, medios de «Solución»: «Los números son de ejemplo: los escribimos para la portada de Praxi
+y no son de un usuario.»). La página los lee de la copia del caso y el build se cae si el `alt` de `medios.json` no es
+el de Clara. **Para Lucía:** el dato de esa fila (384 pruebas que pasaron el 16-oct) habla de las reglas; si prefiere la
+captura de las reglas, cambia una línea y el pie sale.
+
+### 3. El texto de Clara, tal cual, sin escribirlo a mano en la página
+
+La spec no dice cómo llega el texto al sitio. `texto-obra.json` vive en `marketing/`, fuera de `spindlelab-astro/` (el build
+no debe depender de eso, y `astro dev` lo bloquea). `extraer-texto.mjs` copia, sin cambiar una letra, el objeto de cada
+página pedida (home, trabajo, caso-praxi y «comun») a `src/data/archivo/texto/<id>.json`, con el sha256 del origen;
+`extraer-texto.mjs --comprobar` dice si alguna copia quedó atrás. Las páginas buscan cada texto por su id
+(`texto.mjs`), y **el build se cae** si un id no existe, si un precio o un nombre de servicio no es igual, como texto, al
+de `oferta-v3.json` y `servicios-v3.json` (los cuatro precios de la home, los nombres, los destinos, y los dos precios
+dentro de la frase de Paid Media y redes), si los conteos del filtro y el «(10)» no salen de las entradas, o si los
+ocho tramos de la cinta no son los mismos que los de `cinta.json`. Los `.json` no los lee Tailwind (tanda 1, punto 6).
+Para las tandas que siguen: `node e12/construccion/herramientas/extraer-texto.mjs <ids de sus páginas>`.
+
+### 4. Lo que la spec no fijaba de la home, y cómo lo resolví
+
+| Qué | Lo que hice | Por qué |
+|---|---|---|
+| El título de la sección 4 | «Cada pieza, con un dato medido. Y su fecha, para que lo revises tú.» (Clara) | Clara la renombró después de la spec (su pendiente para Lucía); la spec la nombra por el título viejo. Es la misma sección, con los mismos ids |
+| La imagen quieta de la portada | Se ve de entrada (`opacity: 1`), sin esperar al script que hace aparecer los otros medios en 167 ms | §3.1: «es lo primero que se pinta … y el candidato a LCP». Con la regla general esperaba a `base.mjs` |
+| El espacio entre rótulo, `h1` y entradilla de la portada | 16 px (el estudio usaba 14, fuera de la escala de §1.5) | La escala. Bajo 834 el botón del chequeo queda 4 px más abajo que en la tabla de §3.1: a 48 px del borde a 360 × 800 (spec: 52) y a 96 a 390 × 844 (spec: 100). Desde 834 no cambia nada: los bloques se apoyan abajo |
+| El velo y el puntero | El bloque del velo no recibe el puntero; el texto y el chequeo sí | Cuando la portada es baja, la rampa del velo pasa sobre la pausa (que vive en el medio, debajo) y la tapaba al clic |
+| La cinta bajo 1194 | El rótulo de placa arriba a la izquierda dice «nombre · tipo · año» (la ficha de Clara en una línea); la nota de personas generadas va en otra placa abajo a la izquierda, con ancho máximo para no tapar la pausa (100 % − 80 px) | §2.1 dice «la ficha va como rótulo sobre la cinta» y no dice dónde va la nota, que la regla de Praxi y Verifica y Cumple pide junto a la imagen |
+| La imagen quieta de la cinta | `alt=""` | La sección lleva el nombre que Clara le escribió (`aria-label`) y la ficha dice qué pieza pasa; el `alt` del cuadro repetiría el nombre |
+| El enlace de la ficha cuando el tramo es Verifica y Cumple | La flecha ↗ y el «(sitio aparte: verifica.spindlelab.cl)» oculto, como en el índice | §2.2 y `comun.externo` (Clara) |
+| El pie de la persona generada en el índice corto | Bajo la portada de Verifica y Cumple, a chico | Clara: «Junto a la portada de Verifica y Cumple» |
+| El índice corto | Con el círculo del cursor, sin acortarse ni velo | §4.2 pone el círculo sobre el índice corto; el acortarse y el velo son de «Pieza del índice» (§2.2, §4.1), como en el prototipo |
+| Las entradas con resorte (una por sección, §1.6) | El marco de la cinta, el marco de la primera pieza del índice corto, el medio de la primera fila de pruebas y el retrato. Ninguna en la portada, servicios ni contacto | «El medio o el abridor de una sección … nunca texto de lectura» |
+| La situación de cada servicio | A cuerpo, en gris, como el prototipo | Clara la marca «rotulo · situacion»: es su rol, no su letra; en mono y mayúsculas sería una frase en rótulo (lock §14: «nunca una frase») |
+| Los botones de servicios | Desarrollo web, botón claro; los otros tres, de placa (prototipo). De 834 a 1193, en c10–c12 (194 px a 834), los nombres largos parten en dos líneas dentro del botón | Las columnas de §2.1. Sin partir, «Ver Auditoría SEO técnica» se sale de la columna |
+| El chico del chequeo y la entradilla del índice | Con el tope de 493 de la caja | §1.3: «tope de 493 px en todos los anchos». A 768 la ayuda del chequeo corría a 736 px y la entradilla del índice, a 800 entre 834 y 1193 |
+
+### 5. El muro: el documento en el orden de Clara
+
+**Qué dice la spec:** «dos columnas de igual ancho con 8 px entre ellas … en el orden de Clara»; el prototipo lo hacía con
+dos contenedores de columna en el documento (1, 4, 5, 7, 9 | 2, 3, 6, 8, 10), y así lo recorría el teclado. Bajo 834,
+apiladas, se veían en ese orden y no en el de Clara.
+
+**Lo que hice:** el documento va en el orden de Clara y la retícula reparte (`muro.mjs`): cada pieza a la columna más corta
+y tantas filas de 1 px como mide, más los 32 de separación. Sin JS, cada pieza en la columna que le tocó en el build
+(`data-col`, con las alturas de su proporción) y las filas alineadas. Medido (`comprobar-tanda-2.mjs`): Tab recorre las
+piezas en el orden de Clara; las columnas son las del prototipo; 0 piezas pisadas con cada filtro; 32 px entre piezas.
+El reparto al cargar mueve el muro: CLS de 0 a 0,027 a 1440 (según si el navegador pintó antes del script) y 0,024 a
+834; bajo 0,1.
+
+### 6. El filtro y la línea mono
+
+- **El filtro**: un grupo con el nombre de Clara («Filtrar por tipo»); cada botón con `aria-pressed` y su nombre accesible
+  tal cual lo escribió Clara («Todo (10)»): el nombre va a cuerpo y el conteo en mono, con `aria-hidden` para no leerlo
+  dos veces. Sin JS no se muestra (no filtraría). Con puntero grueso tiene 44 de alto también desde 1194 (§4.3).
+- **La línea mono del muro es tipo · año, sin ingredientes** (Clara; la spec dice «hasta dos»: cero cabe).
+
+### 7. La barra lateral del índice
+
+Desde 1194 es pegajosa y, si es más alta que la pantalla, se desplaza adentro (`max-height` de §2.3 para el caso, el
+mismo criterio). El desplazamiento recortaba el contorno del foco de los botones del filtro, pegados al borde: lleva 8 px
+de relleno a los lados y el mismo margen negativo, y lo que se ve no se mueve. La miga («Inicio · Trabajo», Clara) va
+arriba de la barra.
+
+### 8. Las señales (Simón, `senales-obra.md` §2.1 y §2.2)
+
+`title` y `description` de Clara, que son los de Simón (55 y 156; 47 y 159); el build se cae si se salen de los largos de
+§1.2. JSON-LD por el slot `head`: la home, el `WebPage` de §2.1; `/trabajo/`, `CollectionPage` + `ItemList` (10, en el
+orden del muro, con los nombres de la tabla de Simón; spindlelab.cl como `CreativeWork` sin `url`; Verifica y Cumple con
+la del producto) + `BreadcrumbList` igual a la miga. **Las imágenes al compartir de §1.6**, hechas como dice Simón (HTML
+renderizado en la letra y el negro de A, nada generado, sin el hilo): `og-e12-marca.jpg` (50.825 bytes) y
+`og-e12-trabajo.jpg` (63.429 bytes), 1200 × 630, con `og-tanda-2.mjs`. En la de `/trabajo/` la portada de Sesenta va más
+grande que las otras dos para que su «CONCEPTO» se lea en la tarjeta (§1.3, regla 1); a la misma escala que las otras
+medía unos 13 × 4 px. Son archivos nuevos fuera de `v3/`: el comparador los lista y no cambian ninguna página publicada.
+
+### 9. El resultado vacío del chequeo no suma su separación
+
+`#chq-out` está vacío hasta que hay resultado (y en su lugar, para que el lector de pantalla anuncie lo que llegue), pero
+sumaba 20 px (la separación del grupo y su margen) bajo la ayuda, y el chequeo no quedaba apoyado en la misma línea que
+la frase (§2.1). Una regla en `archivo.css` (`.chequeo > #chq-out:empty`). Con ella, a 1440 × 900 el campo queda de 696 a
+740 y el botón de 748 a 792, lo mismo que la tabla de §3.1.
+
+### 10. La portada, medida sobre el video (§3.1: «si cambia el archivo, el velo o el texto, se mide de nuevo»)
+
+Con las herramientas de Lucía sobre la home construida: `portada-home.mjs` (es `e12/spec/herramientas/portada.mjs` con un
+cambio: abre el build y pone el blanco puro en la imagen quieta desde el navegador) y `contraste-portada.py` contra los
+121 cuadros de `hilo-1920.webm`. Datos: `e12/construccion/medicion-portada/`.
+
+| Tamaño | Líneas sobre el video | Bajo el mínimo | La peor (spec §3.1) | Sin velo | Borde del campo | Botón |
+|---|---|---|---|---|---|---|
+| 360 × 800 · 390 × 844 · 414 × 896 · 768 × 1024 | 0 (franja) | 0 | gris 7,02:1 | | 4,09 | a 48 · 96 · 176 · 135 px del borde (spec 52 · 100 · 180 · 139; punto 4) |
+| 834 × 1112 | 19 | 0 | 5,42:1 (5,43) | 1,21 | 3,29 | a 105 (105) |
+| 1024 × 768 | 15 | 0 | 5,38:1 (5,38) | 1,05 | 3,25 | a 87 (87) |
+| 1194 × 834 | 17 | 0 | 5,31:1 (5,31) | 1,04 | 3,24 | a 107 (107) |
+| 1280 × 800 | 18 | 0 | 5,32:1 (5,32) | 1,03 | 3,23 | a 107 (107) |
+| **1440 × 900** | 17 | 0 | 5,34:1 (5,34) | 1,11 | 3,27 | **a 108** (108) |
+| 1920 × 1080 | 15 | 0 | 5,50:1 (5,50) | 1,12 | 3,29 | a 89 (89) |
+
+A 375 × 667 el botón queda 93 px bajo el borde (spec: 89; fuera de los anchos de la obra, ya dicho en §4.4).
+
+### 11. Los techos de campo (§3.4), medidos
+
+`campos-tanda-2.mjs` (captura de página completa a 1440 y las cajas de cada medio) + `campos.py` del prototipo +
+`campos-cinta.py` (la cinta tramo por tramo). Datos: `e12/construccion/medicion-campos/`.
+
+- **Home: 10,3 %** con la cinta en su póster; **15,5 %** con la cinta en su tramo más claro (Ocelo, `#E8F8E8` en el 58 %
+  del marco) — techo 20 %. Campos seguidos, a lo más 2 (techo 2). La portada no es campo (dominante `#080808`).
+- **`/trabajo/`: 26,6 %** (5 portadas) — techo 35 %.
+- Negro fuera de los medios: 96,1 % y 96,3 %.
+
+### 12. Lo que queda para Lucía o para Ramón (no lo resolví a la fuerza)
+
+1. **El aviso de cookies tapa el chequeo en el teléfono la primera vez.** §4.3: «nada importante queda tapado por él en la
+   primera pantalla: se mide con el aviso abierto»; §4.4 pone el botón a 52 px del borde a 360 × 800 y a 100 a 390 × 844,
+   medidos sin el aviso. Con el aviso abierto (153 y 134 px de alto, tanda 1) tapa el campo y el botón: a 390 × 844 el
+   aviso empieza en 710 y el campo va de 704 a 748; a 360 × 800, el aviso en 647 y el campo de 708 a 752. A 1440 × 900 no
+   tapa nada (aviso en 831, botón hasta 792). Achicar el aviso no alcanza a 360 (el botón queda a 48 del borde). La salida
+   es de la spec: o el aviso arriba en A, o la portada del teléfono más baja, o se acepta hasta que la persona elige.
+2. **Los enlaces a los casos responden 404 hasta que los construyan las tandas que siguen**: `npm run verificar` da 0
+   páginas con hallazgos y 7 enlaces rotos, todos a `/v3/trabajo/combeau/` (#fotografia y #modelo), `praxi/`, `sesenta/`,
+   `ocelo/`, `doceavo/` y `tonela/`.
+3. **El error del chequeo vacío sigue diciendo «Escribe tu dominio para empezar.»**: vive en `v3-chequeo.js`, que esta obra
+   no toca; el cambio de Clara («Escribe la dirección de tu sitio para empezar.») espera su fila en la spec.
+4. **La portada de spindlelab.cl en el muro** (punto 1) y **la captura de Praxi en las pruebas** (punto 2).
+
+### 13. `video.mjs` (tanda 1): un video quedaba parado si se pasaba rápido por él
+
+Medido en esta tanda: si la persona pasa por un video y sale de la vista antes de que arranque, `play()` se interrumpe con
+la pausa (`AbortError`) y el script lo tomaba como «el navegador no deja reproducir»: el video quedaba parado para siempre
+y el botón decía «Seguir el video» sin que nadie lo hubiera pausado (reproducido: un desplazamiento rápido sobre la cinta
+la dejaba en el segundo 0). Ahora solo se queda en pausa si el error es otro. `comprobar-base.mjs` sobre la home, después
+del cambio: la pausa y el seguir, las fuentes por ancho y el movimiento reducido dan lo mismo que en la tanda 1.
+
+### 14. Lo verificado en esta tanda
+
+- `npm run build` + `comparar-produccion.mjs`: las 22 páginas publicadas y lo que sirven, iguales byte a byte. Nuevos fuera
+  de `v3/`: las dos imágenes al compartir (y las letras de la tanda 1).
+- `npm run verificar -- --prefijo /v3/` a 390, 768 y 1440 (y con `--sin-pildoras` a 1440): 0 páginas con hallazgos; los 7
+  enlaces del punto 12.2. A 1440, 8 nodos sobre el degradado del velo, medidos aparte (punto 10).
+- Render con Chromium a 360, 390, 768, 834, 1024, 1194, 1440 y 1920 de las dos páginas (`capturar.mjs`), mirado: desborde
+  0 también sin el `overflow-x: clip`, un `h1`, encabezado de 90 bajo 834 y de 64 desde 834, solo Google Sans Flex y DM
+  Mono, cero errores de consola. Capturas a 390 y 1440 en `e12/construccion/capturas/tanda-2/`, con la pieza del muro
+  bajo el mouse (`comprobar-tanda-2-trabajo-hover-1440.png`), el cursor y el encabezado plegado.
+- `comprobar-base.mjs` sobre las dos páginas: la rueda llega al 90 % en 44 y 45 ms; cero `a[href^="#"]`; saltar al
+  contenido con su ruta; encabezado plegado; el círculo aparece, se esconde con Tab y vuelve con un movimiento real; la
+  portada toma `hilo-1920.webm` a 1440 y `hilo-960.webm` a 390; con movimiento reducido ningún video corre.
+- `comprobar-tanda-2.mjs`: el filtro (10, 2, 4, 4, 10 piezas; `aria-pressed`); el orden con Tab; Verifica y Cumple con
+  «Ver el sitio» y «(sitio aparte: …)» en su nombre; spindlelab.cl sin enlace, círculo ni velo; al pasar el mouse, la
+  pieza recortada 24 px y las otras nueve con el velo en 1; la ficha de la cinta cambia cada 2 s (Praxi y Verifica y
+  Cumple con su nota; Verifica y Cumple con la flecha); en la portada, la pausa es el control que va antes del campo.
+- Área de toque a 390 (táctil): 0 controles bajo 44 × 44 en las dos páginas (`area-toque-390.js` del paso 2).
+- En el HTML de las dos páginas: cero «54 → 94», «36 → 73», `praxi.coach`, «en pausa», «fuera de línea», `Review`,
+  `VideoObject` y `<!--`; los precios a la vista son los seis de los JSON; ningún `alt` con medidas de Combeau.

@@ -355,6 +355,9 @@ body.a-body.a-sin-js .medio > img { opacity: 1; }
 .a-body #chq-error .chq-error-codigo { margin-top: 4px; font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-gris); }
 .a-body #chq-error a { color: var(--a-blanco); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .a-body #chq-out { margin-top: 8px; }
+/* Mientras no hay resultado, el contenedor (vacío, pero en su lugar para que el lector de pantalla anuncie lo que llegue)
+   no suma su separación: el chequeo de la portada se apoya en la misma línea de abajo que la frase (§2.1). Tanda 2. */
+.a-body .chequeo > #chq-out:empty { margin-top: -12px; }
 .a-body .chq-score {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; padding-bottom: 12px;
   border-bottom: 1px solid var(--a-linea-seccion);
@@ -488,6 +491,8 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom:
 .a-body .portada-v__decl { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; }
 .a-body .portada-v__decl .entradilla { max-width: var(--a-caja); }
 .a-body .portada-v__chequeo { grid-column: 1 / -1; }
+/* la caja del texto, también en el chico del chequeo: tope de 493 px en todos los anchos (§1.3); a 768 corría a 736 */
+.a-body .portada-v__chequeo .chico { max-width: var(--a-caja); }
 @media (min-width: 834px) {
   /* el video llena la portada (100svh menos el encabezado, que va antes sobre el lienzo); el texto, abajo y encima */
   .a-body .portada-v { display: flex; flex-direction: column; justify-content: flex-end; min-height: calc(100svh - 64px); }
@@ -627,6 +632,8 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom:
    los dos. Bajo 1194, el título, el conteo, la entradilla y el filtro arriba del muro. */
 .a-body .indice { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px var(--a-m); padding: 8px var(--a-m) 0; }
 .a-body .indice__lateral { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+/* la entradilla, con el tope de 493 de la caja del texto (§1.3): de 834 a 1193 corría a 800 px */
+.a-body .indice__lateral .chico { max-width: var(--a-caja); }
 @media (min-width: 1194px) {
   .a-body .indice { grid-template-columns: var(--a-lateral) minmax(0, 1fr); }
   /* si la barra es más alta que la pantalla, se desplaza adentro; el relleno de 8 a los lados (y el margen negativo que
