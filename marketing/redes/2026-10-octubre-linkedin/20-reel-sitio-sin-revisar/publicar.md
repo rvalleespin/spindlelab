@@ -7,22 +7,41 @@
 **Guion:** `practica-camara/GUION-APROBADO-ley-sitio-viejo.md` · **Overlays:**
 `2026-10-octubre-verifica/06-overlays-reel-ramon/`
 
-## Caption (copiar y pegar)
+## Caption de LinkedIn — corregido el 19-oct (copiar y pegar)
 
-Hay una pregunta que aparece siempre cuando sale el tema de la ley de datos personales, y no es sobre la ley.
+**Registro singular**, porque va en el perfil personal.
 
-A quién le preguntas, si el que te hizo el sitio ya no está.
+Hay una ley nueva en Chile que protege los datos de las personas. Si tu sitio tiene un formulario de contacto, te incluye, aunque tu empresa sea chica.
 
-Casi nunca hay que rehacerlo. Hay que mirarlo y saber qué le falta.
+Y no, casi nunca hay que rehacer el sitio. Hay que mirarlo y saber qué le falta.
 
-Cuarenta segundos, una toma, en mi living.
+Grabé cuarenta segundos contándolo. Una toma, en mi living.
 
-### Línea opcional
+El chequeo gratis va en el primer comentario.
+
+### Qué se corrigió y por qué
+
+La versión anterior abría con *"Hay una pregunta que aparece siempre cuando sale el tema de la ley
+de datos personales, y no es sobre la ley"*. **Es el mismo acertijo que Ramón rechazó en el caption
+de Instagram**: esconde en vez de decir, y obliga a abrir el "ver más" para entender de qué se
+habla. Se reemplazó por la misma apertura que sí funcionó allá, pasada a singular.
+
+### Línea opcional de cierre
 
 > Es la primera vez que salgo a cámara.
 
-**Tu decisión.** Es cierta y humaniza. En contra, pide indulgencia justo en la pieza que estrena
-tu cara. Si dudas, fuera.
+Decisión de Ramón. Es cierta y humaniza; en contra, pide indulgencia justo en la pieza que estrena
+su cara.
+
+## Primer comentario de LinkedIn (AL TIRO)
+
+El chequeo: https://verifica.spindlelab.cl
+
+Gratis, sin registro, y no guarda el dominio que revisas.
+
+Y si quieres que lo mire yo, escríbeme por acá y te mando una página con lo que encontré, gratis, en 24 horas.
+
+---
 
 ## Versión para Instagram (Reel en @spindlelab.cl)
 
