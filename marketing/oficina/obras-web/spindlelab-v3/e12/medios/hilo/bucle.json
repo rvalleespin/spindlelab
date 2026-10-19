@@ -109,6 +109,74 @@
         "salta": false
       }
     },
+    "hilo-960.webm": {
+      "codec": "vp9",
+      "perfil": "Profile 0",
+      "ancho": 960,
+      "alto": 540,
+      "fps": 24.0,
+      "cuadros": 121,
+      "pixeles": "yuv420p",
+      "duracion_s": 5.042,
+      "bytes": 382436,
+      "MB": 0.382,
+      "kbit_s": 607,
+      "audio": false,
+      "primerCuadroEsClave": true,
+      "ssimContraMaestro": 0.9904,
+      "bucle": {
+        "cuadros": 121,
+        "difSeguidos": {
+          "mediana": 6.33,
+          "p95": 12.05,
+          "max": 13.79
+        },
+        "corte": {
+          "dif": 3.1,
+          "ssim": 0.993,
+          "vecesLaMediana": 0.49,
+          "luzMediaUltimoPrimero": [
+            32.7,
+            32.6
+          ]
+        },
+        "salta": false
+      }
+    },
+    "hilo-960.mp4": {
+      "codec": "h264",
+      "perfil": "High",
+      "ancho": 960,
+      "alto": 540,
+      "fps": 24.0,
+      "cuadros": 121,
+      "pixeles": "yuv420p",
+      "duracion_s": 5.042,
+      "bytes": 499009,
+      "MB": 0.499,
+      "kbit_s": 792,
+      "audio": false,
+      "primerCuadroEsClave": true,
+      "ssimContraMaestro": 0.9683,
+      "bucle": {
+        "cuadros": 121,
+        "difSeguidos": {
+          "mediana": 6.34,
+          "p95": 11.92,
+          "max": 13.73
+        },
+        "corte": {
+          "dif": 3.15,
+          "ssim": 0.993,
+          "vecesLaMediana": 0.5,
+          "luzMediaUltimoPrimero": [
+            32.7,
+            32.6
+          ]
+        },
+        "salta": false
+      }
+    },
     "hilo-movil.webm": {
       "codec": "vp9",
       "perfil": "Profile 0",
@@ -181,6 +249,12 @@
       "ancho": 1920,
       "alto": 1080,
       "bytes": 34022,
+      "que": "el primer cuadro del bucle (el cuadro 24 del original)"
+    },
+    "hilo-960-poster.webp": {
+      "ancho": 960,
+      "alto": 540,
+      "bytes": 13790,
       "que": "el primer cuadro del bucle (el cuadro 24 del original)"
     },
     "hilo-movil-poster.webp": {
@@ -277,6 +351,94 @@
           "luzP95EnEseCuadro": 0.5474,
           "luzMediaPromedio": 0.0394,
           "contrasteBlancoContraLaMediaMax": 5.54
+        }
+      ]
+    },
+    "hilo-960.webm": {
+      "cuadroMasClaro": 97,
+      "segundo": 4.042,
+      "luzMediaMax": 0.1095,
+      "zonas": [
+        {
+          "zona": "arriba · izquierda",
+          "luzMediaMax": 0.0314,
+          "cuadro": 97,
+          "segundo": 4.042,
+          "luzP95EnEseCuadro": 0.2079,
+          "luzMediaPromedio": 0.0092,
+          "contrasteBlancoContraLaMediaMax": 12.9
+        },
+        {
+          "zona": "arriba · centro",
+          "luzMediaMax": 0.1109,
+          "cuadro": 92,
+          "segundo": 3.833,
+          "luzP95EnEseCuadro": 0.5773,
+          "luzMediaPromedio": 0.0492,
+          "contrasteBlancoContraLaMediaMax": 6.53
+        },
+        {
+          "zona": "arriba · derecha",
+          "luzMediaMax": 0.1086,
+          "cuadro": 2,
+          "segundo": 0.083,
+          "luzP95EnEseCuadro": 0.53,
+          "luzMediaPromedio": 0.0732,
+          "contrasteBlancoContraLaMediaMax": 6.62
+        },
+        {
+          "zona": "medio · izquierda",
+          "luzMediaMax": 0.1061,
+          "cuadro": 97,
+          "segundo": 4.042,
+          "luzP95EnEseCuadro": 0.6223,
+          "luzMediaPromedio": 0.0447,
+          "contrasteBlancoContraLaMediaMax": 6.73
+        },
+        {
+          "zona": "medio · centro",
+          "luzMediaMax": 0.1727,
+          "cuadro": 73,
+          "segundo": 3.042,
+          "luzP95EnEseCuadro": 0.6759,
+          "luzMediaPromedio": 0.1232,
+          "contrasteBlancoContraLaMediaMax": 4.72
+        },
+        {
+          "zona": "medio · derecha",
+          "luzMediaMax": 0.1485,
+          "cuadro": 97,
+          "segundo": 4.042,
+          "luzP95EnEseCuadro": 0.6574,
+          "luzMediaPromedio": 0.072,
+          "contrasteBlancoContraLaMediaMax": 5.29
+        },
+        {
+          "zona": "abajo · izquierda",
+          "luzMediaMax": 0.1607,
+          "cuadro": 80,
+          "segundo": 3.333,
+          "luzP95EnEseCuadro": 0.5111,
+          "luzMediaPromedio": 0.0978,
+          "contrasteBlancoContraLaMediaMax": 4.98
+        },
+        {
+          "zona": "abajo · centro",
+          "luzMediaMax": 0.165,
+          "cuadro": 97,
+          "segundo": 4.042,
+          "luzP95EnEseCuadro": 0.5971,
+          "luzMediaPromedio": 0.0562,
+          "contrasteBlancoContraLaMediaMax": 4.88
+        },
+        {
+          "zona": "abajo · derecha",
+          "luzMediaMax": 0.1388,
+          "cuadro": 97,
+          "segundo": 4.042,
+          "luzP95EnEseCuadro": 0.5468,
+          "luzMediaPromedio": 0.0389,
+          "contrasteBlancoContraLaMediaMax": 5.56
         }
       ]
     },

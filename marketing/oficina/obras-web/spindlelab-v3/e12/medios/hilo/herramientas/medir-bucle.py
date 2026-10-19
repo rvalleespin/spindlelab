@@ -1,7 +1,7 @@
 """E12 · portada de A · mide el hilo de oro: el corte del bucle, el peso, la calidad y la luz por zona.
 
 Uso (lo llama hacer-hilo.sh):
-  python3 -I medir-bucle.py <original.mp4> <maestro-1920.mkv> <maestro-movil.mkv> <dir-salida> <cuadros-de-fundido>
+  python3 -I medir-bucle.py <original.mp4> <maestro-1920.mkv> <maestro-movil.mkv> <dir-salida> <cuadros-de-fundido> <maestro-960.mkv>
 
 Escribe <dir-salida>/bucle.json. Cómo se mide el corte: cada cuadro se baja a gris, a un cuarto de su ancho, y se
 compara (diferencia absoluta media, en niveles de 0 a 255, y SSIM global) con el que le sigue. El corte del bucle es
@@ -19,7 +19,7 @@ import sys
 
 import numpy as np
 
-SRC, M1920, MMOVIL, OUT, D = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], int(sys.argv[5])
+SRC, M1920, MMOVIL, OUT, D, M960 = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], int(sys.argv[5]), sys.argv[6]
 
 
 def probe(ruta):
@@ -119,11 +119,12 @@ salida = {
     "archivos": {},
 }
 for nombre, maestro, (an, al) in (("hilo-1920.webm", M1920, (1920, 1080)), ("hilo-1920.mp4", M1920, (1920, 1080)),
+                                   ("hilo-960.webm", M960, (960, 540)), ("hilo-960.mp4", M960, (960, 540)),
                                    ("hilo-movil.webm", MMOVIL, (500, 1080)), ("hilo-movil.mp4", MMOVIL, (500, 1080))):
     ruta = os.path.join(OUT, nombre)
     salida["archivos"][nombre] = {**probe(ruta), "primerCuadroEsClave": primer_clave(ruta),
                                   "ssimContraMaestro": ssim_contra(ruta, maestro), "bucle": corte(ruta, an, al)}
-for p in ("hilo-1920-poster.webp", "hilo-movil-poster.webp"):
+for p in ("hilo-1920-poster.webp", "hilo-960-poster.webp", "hilo-movil-poster.webp"):
     ruta = os.path.join(OUT, p)
     r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=width,height", "-of", "csv=p=0", ruta],
                        capture_output=True, text=True, check=True)
@@ -132,6 +133,7 @@ for p in ("hilo-1920-poster.webp", "hilo-movil-poster.webp"):
                              "que": "el primer cuadro del bucle (el cuadro %d del original)" % D}
 salida["luz"] = {"nota": "luminancia relativa WCAG, de 0 (negro) a 1 (blanco), sin velo; «contrasteBlancoContraLaMediaMax» es el del blanco puro sobre la media de esa zona en su cuadro más claro, sin velo: es una cota, no la medida de la frase, que se hace con el velo puesto y sobre los píxeles detrás de cada letra",
                  "hilo-1920.webm": luz(os.path.join(OUT, "hilo-1920.webm"), 1920, 1080, 3, 3),
+                 "hilo-960.webm": luz(os.path.join(OUT, "hilo-960.webm"), 960, 540, 3, 3),
                  "hilo-movil.webm": luz(os.path.join(OUT, "hilo-movil.webm"), 500, 1080, 1, 3)}
 with open(os.path.join(OUT, "bucle.json"), "w") as fh:
     json.dump(salida, fh, ensure_ascii=False, indent=2)
