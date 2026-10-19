@@ -1,0 +1,577 @@
+{
+  "id": "AP17",
+  "dominio": "bloomycia.cl",
+  "motor": "v0",
+  "cuando": "2026-10-19T17:57:21.530Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://bloomycia.cl/",
+  "hallazgo": {
+    "id": "F1",
+    "nombre": "Un formulario que pide datos y no enlaza a ninguna política de privacidad",
+    "linea": "Verifica y Cumple",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, en 30 segundos",
+    "donde_mirar": "Mirar el formulario de la portada y el pie de página: buscar un enlace a \"política de privacidad\".",
+    "condiciones": {
+      "1": {
+        "v": "medias",
+        "razon": "La ausencia de un enlace se nota poco."
+      },
+      "2": {
+        "v": "si",
+        "razon": "El formulario ya trata datos personales hoy."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve mirando el formulario y el pie."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Cualquier chequeo gratis (incluido el de Verifica y Cumple) lo muestra: es capa 1."
+      }
+    },
+    "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+    "no_afirmable": [
+      "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+      "lo que la ley \"exige\""
+    ],
+    "advertencias": [],
+    "datos": {},
+    "propuesta": {
+      "en_castellano": "Tu formulario pide correo o teléfono y, en tu portada, no encontré ningún enlace a una política de privacidad.",
+      "problema_tecnico": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+      "donde_mirar": "Mirar el formulario de la portada y el pie de página: buscar un enlace a \"política de privacidad\".",
+      "se_vende": {
+        "linea": "Verifica y Cumple",
+        "producto": "Kit de implementación de Verifica y Cumple",
+        "alcance": "Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.",
+        "vehiculo_publicado": "Desde $149.000 + IVA, una vez (correos aprobados 23-sep y estrategia §1)",
+        "precio_en_el_correo": "Desde $149.000 + IVA, una vez",
+        "linea_de_precio": null,
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "fuerte",
+      "frase_de_arreglo": "Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.",
+      "apertura_a_reunion": "Vi otra cosa que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": "Gratis y sin registro: https://verifica.spindlelab.cl",
+      "estado_del_texto": "APROBADO: tomado de correos ya revisados.",
+      "por_definir": [],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F4",
+      "nombre": "No hay ninguna herramienta de medición instalada",
+      "linea": "Acompañamiento",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con acceso a su panel",
+      "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+      "condiciones": {
+        "1": {
+          "v": "no",
+          "razon": "No se ve, pero lo confirma cualquier extensión gratuita."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin medición no se sabe qué trae clientes."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con Tag Assistant."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Es capa 1."
+        }
+      },
+      "afirmable": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+      "no_afirmable": [
+        "que \"no mides nada\" (puede haber medición del lado del servidor o la propia de la plataforma)"
+      ],
+      "advertencias": [],
+      "datos": {
+        "plataforma": "WordPress"
+      },
+      "propuesta": {
+        "en_castellano": "No veo Google Analytics ni Tag Manager en tu sitio.",
+        "problema_tecnico": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+        "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+        "se_vende": {
+          "linea": "Acompañamiento",
+          "producto": "Acompañamiento Mensual, plan Esencial (foco en una capa)",
+          "alcance": "Instalar analítica y medir consultas, llamadas y WhatsApp.",
+          "vehiculo_publicado": "Desde $590.000 + IVA al mes (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Acompañamiento Mensual, plan Esencial (foco en una capa), desde $590.000 + IVA al mes (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla: dejo medido lo que importa, que te escriban, te llamen o te hablen por WhatsApp, para que veas qué trae clientes.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F4"
+  ],
+  "capa1": {
+    "consecuencia": [
+      "sin_analitica"
+    ],
+    "higiene": [
+      "sin_llms_txt",
+      "sin_meta_description"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 8,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "nginx",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": false,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "Organization"
+      ],
+      "org": [
+        {
+          "name": ""
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 36,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 36,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 2912264,
+      "al_abrir_bytes": 2798008,
+      "n_peticiones": 117,
+      "mas_pesados": [
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+          "bytes": 355638
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+          "bytes": 355223
+        },
+        {
+          "url": "https://bloomycia.cl/wp-content/uploads/2021/04/mujer_asesosia_legal.png",
+          "bytes": 283422
+        },
+        {
+          "url": "https://bloomycia.cl/wp-content/uploads/2022/02/WhatsApp-Image-2022-02-08-at-12.47.28-1.jpeg",
+          "bytes": 227960
+        }
+      ]
+    },
+    {
+      "total_bytes": 2918788,
+      "al_abrir_bytes": 2804577,
+      "n_peticiones": 117,
+      "mas_pesados": [
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsT8wRTp1lOoMFE/recaptcha__en.js",
+          "bytes": 358937
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsT8wRTp1lOoMFE/recaptcha__en.js",
+          "bytes": 358524
+        },
+        {
+          "url": "https://bloomycia.cl/wp-content/uploads/2021/04/mujer_asesosia_legal.png",
+          "bytes": 283413
+        },
+        {
+          "url": "https://bloomycia.cl/wp-content/uploads/2022/02/WhatsApp-Image-2022-02-08-at-12.47.28-1.jpeg",
+          "bytes": 227951
+        }
+      ]
+    },
+    {
+      "total_bytes": 2915367,
+      "al_abrir_bytes": 2801156,
+      "n_peticiones": 117,
+      "mas_pesados": [
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__es_419.js",
+          "bytes": 357020
+        },
+        {
+          "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__es_419.js",
+          "bytes": 356607
+        },
+        {
+          "url": "https://bloomycia.cl/wp-content/uploads/2021/04/mujer_asesosia_legal.png",
+          "bytes": 283413
+        },
+        {
+          "url": "https://bloomycia.cl/wp-content/uploads/2022/02/WhatsApp-Image-2022-02-08-at-12.47.28-1.jpeg",
+          "bytes": 227951
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": null,
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 260696
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260692,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260694,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260695,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260695,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260697,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 260693
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260695,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260695,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260694,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260691,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260695,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260692,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 260696,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [
+          {
+            "action": "https://bloomycia.cl/#wpcf7-f176-p13469-o1",
+            "estado": "no-evaluable",
+            "porque": "el envio lo maneja JavaScript o el CMS"
+          }
+        ],
+        "mails": [
+          {
+            "correo_dominio": "bloomycia.cl",
+            "dominio": "bloomycia.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [
+          {
+            "action": "https://bloomycia.cl/#wpcf7-f176-p13469-o1",
+            "estado": "no-evaluable",
+            "porque": "el envio lo maneja JavaScript o el CMS"
+          }
+        ],
+        "mails": [
+          {
+            "correo_dominio": "bloomycia.cl",
+            "dominio": "bloomycia.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Bloomfield &amp; Cía. Abogados"
+      },
+      {
+        "fuente": "title",
+        "valor": "Empresas"
+      },
+      {
+        "fuente": "title",
+        "valor": "Bloomfield &amp; Cía. Abogados"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 0,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

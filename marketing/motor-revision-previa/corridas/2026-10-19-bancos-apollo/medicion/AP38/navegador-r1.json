@@ -1,0 +1,162 @@
+{
+  "url": "https://budasis.com/",
+  "cuando": "2026-10-19T18:16:01.081Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://budasis.com/",
+      "titulo": "Mantenimiento programado",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [
+        {
+          "h": "https://www.facebook.com/cPanel",
+          "t": ""
+        },
+        {
+          "h": "https://x.com/cPanel",
+          "t": ""
+        },
+        {
+          "h": "https://instagram.com/cPanel",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 156,
+      "muestra": "El sitio web se encuentra en mantenimiento.\nLo sentimos por los problemas causados. ¡En breve volveremos a estar operativos!\nCon la tecnología de WP Toolkit",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 1,
+        "palabras": 25
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://budasis.com/",
+      "titulo": "Mantenimiento programado",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [
+        {
+          "h": "https://www.facebook.com/cPanel",
+          "t": ""
+        },
+        {
+          "h": "https://x.com/cPanel",
+          "t": ""
+        },
+        {
+          "h": "https://instagram.com/cPanel",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 156,
+      "muestra": "El sitio web se encuentra en mantenimiento.\nLo sentimos por los problemas causados. ¡En breve volveremos a estar operativos!\nCon la tecnología de WP Toolkit",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 1,
+        "palabras": 25
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://budasis.com/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://budasis.com/wp-content/maintenance/assets/styles.css?1779351937",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://budasis.com/wp-content/maintenance/assets/timer.js?1779351937",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://budasis.com/wp-content/maintenance/assets/images/facebook.svg?1779351937",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://budasis.com/wp-content/maintenance/assets/images/twitter.svg?1779351937",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://budasis.com/wp-content/maintenance/assets/images/instagram.svg?1779351937",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://budasis.com/wp-content/maintenance/assets/images/bg.jpg?1779351937",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://budasis.com/wp-content/maintenance/assets/fonts/open-sans-300.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://budasis.com/wp-content/uploads/2025/12/cropped-Group-28-32x32.png",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 2611418,
+    "al_abrir_bytes": 2611418,
+    "n_peticiones": 9,
+    "mas_pesados": [
+      {
+        "url": "https://budasis.com/wp-content/maintenance/assets/images/bg.jpg?1779351937",
+        "bytes": 2543363
+      },
+      {
+        "url": "https://budasis.com/wp-content/maintenance/assets/fonts/open-sans-300.woff2",
+        "bytes": 63268
+      },
+      {
+        "url": "https://budasis.com/wp-content/uploads/2025/12/cropped-Group-28-32x32.png",
+        "bytes": 1175
+      },
+      {
+        "url": "https://budasis.com/wp-content/maintenance/assets/styles.css?1779351937",
+        "bytes": 896
+      }
+    ]
+  },
+  "html_len": 2022
+}

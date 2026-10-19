@@ -1,0 +1,563 @@
+{
+  "id": "AP32",
+  "dominio": "trailup.cl",
+  "motor": "v0",
+  "cuando": "2026-10-19T18:10:11.738Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "http://trailup.cl/",
+  "hallazgo": {
+    "id": "F13",
+    "nombre": "La información de la portada está mal estructurada",
+    "linea": "Auditoría SEO Técnica",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, con el código de la página",
+    "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+    "condiciones": {
+      "1": {
+        "v": "si",
+        "razon": "La estructura del código no se ve."
+      },
+      "2": {
+        "v": "medias",
+        "razon": "Google y la IA usan esa estructura para entender de qué trata la página."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve en el código fuente."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Cualquier auditor SEO gratuito lo ve: es capa 1."
+      }
+    },
+    "afirmable": "La portada tiene solo 0 palabras de texto visible.",
+    "no_afirmable": [
+      "que el resto del sitio tenga el mismo problema",
+      "que tenga poco texto en total: solo se cuentan las palabras visibles al cargar la portada, no el texto oculto"
+    ],
+    "advertencias": [],
+    "datos": {
+      "tipos": [
+        "poco-texto"
+      ],
+      "h1": 0,
+      "palabras": 0
+    },
+    "propuesta": {
+      "en_castellano": "Tu portada tiene solo 0 palabras de texto visible.",
+      "problema_tecnico": "La portada tiene solo 0 palabras de texto visible.",
+      "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+      "se_vende": {
+        "linea": "Auditoría SEO Técnica",
+        "producto": "Auditoría SEO Técnica, Completa",
+        "alcance": "Ordenar la información de la portada: un título principal claro y el contenido que explica la oferta.",
+        "vehiculo_publicado": "Desde $490.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría SEO Técnica, Completa, desde $490.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "débil",
+      "frase_de_arreglo": "Eso lo arreglo yo: dejo la información ordenada, con un título que diga qué haces y para quién.",
+      "apertura_a_reunion": "Vi otra cosa que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F4",
+      "nombre": "No hay ninguna herramienta de medición instalada",
+      "linea": "Acompañamiento",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con acceso a su panel",
+      "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+      "condiciones": {
+        "1": {
+          "v": "no",
+          "razon": "No se ve, pero lo confirma cualquier extensión gratuita."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin medición no se sabe qué trae clientes."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con Tag Assistant."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Es capa 1."
+        }
+      },
+      "afirmable": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+      "no_afirmable": [
+        "que \"no mides nada\" (puede haber medición del lado del servidor o la propia de la plataforma)"
+      ],
+      "advertencias": [],
+      "datos": {
+        "plataforma": null
+      },
+      "propuesta": {
+        "en_castellano": "No veo Google Analytics ni Tag Manager en tu sitio.",
+        "problema_tecnico": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+        "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+        "se_vende": {
+          "linea": "Acompañamiento",
+          "producto": "Acompañamiento Mensual, plan Esencial (foco en una capa)",
+          "alcance": "Instalar analítica y medir consultas, llamadas y WhatsApp.",
+          "vehiculo_publicado": "Desde $590.000 + IVA al mes (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Acompañamiento Mensual, plan Esencial (foco en una capa), desde $590.000 + IVA al mes (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla: dejo medido lo que importa, que te escriban, te llamen o te hablen por WhatsApp, para que veas qué trae clientes.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F6",
+      "nombre": "El servidor rechaza a agentes de IA por su nombre (causa sin nombrar)",
+      "linea": "Visibilidad en IA",
+      "capa": 1,
+      "estado": "sospecha",
+      "quien_comprueba": "quien administra el sitio (con una línea de comandos)",
+      "donde_mirar": "curl -sI -A \"GPTBot\" <portada>, comparado con un navegador normal.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "El rechazo ocurre en el servidor."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Efecto no medido."
+        },
+        "3": {
+          "v": "medias",
+          "razon": "Solo quien administra el sitio."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Sin causa nombrada es capa 1."
+        }
+      },
+      "afirmable": "Al presentarse con el nombre GPTBot, ClaudeBot, el servidor respondió con un rechazo, y con un navegador normal responde bien.",
+      "no_afirmable": [
+        "que \"bloquea al bot real\""
+      ],
+      "advertencias": [],
+      "datos": {},
+      "tope": "Tope sospecha: el nombre del agente se presenta desde una IP que no es la oficial.",
+      "propuesta": {
+        "en_castellano": "SIN REDACTAR: todavía es una sospecha, no se usa en un correo.",
+        "problema_tecnico": "Al presentarse con el nombre GPTBot, ClaudeBot, el servidor respondió con un rechazo, y con un navegador normal responde bien.",
+        "donde_mirar": "curl -sI -A \"GPTBot\" <portada>, comparado con un navegador normal.",
+        "se_vende": {
+          "linea": "Visibilidad en IA",
+          "producto": "Auditoría de Visibilidad en IA",
+          "alcance": "Revisar la regla del servidor que rechaza a los agentes de IA.",
+          "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla en el servidor, no en tu sitio. Lo hago yo, con quien lo administra.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F4"
+  ],
+  "capa1": {
+    "consecuencia": [
+      "sin_analitica"
+    ],
+    "higiene": [
+      "sin_sitemap"
+    ]
+  },
+  "notas": [
+    "Hay rechazo por nombre de agente pero no se pudo nombrar la capa que lo causa: se queda en capa 1 (decisión D1)."
+  ],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "cloudflare",
+      "cloudflare": true,
+      "x_powered_by": null
+    },
+    "robots": {
+      "ausente": true
+    },
+    "llms_txt": true,
+    "sitemap": false,
+    "jsonld": {
+      "tipos": [
+        "LocalBusiness"
+      ],
+      "org": [
+        {
+          "name": "TrailUp"
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 16,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 16,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 13,
+      "al_abrir_bytes": 13,
+      "n_peticiones": 1,
+      "mas_pesados": [
+        {
+          "url": "https://trailup.cl/",
+          "bytes": 13
+        }
+      ]
+    },
+    {
+      "total_bytes": 13,
+      "al_abrir_bytes": 13,
+      "n_peticiones": 1,
+      "mas_pesados": [
+        {
+          "url": "https://trailup.cl/",
+          "bytes": 13
+        }
+      ]
+    },
+    {
+      "total_bytes": 1625991,
+      "al_abrir_bytes": 1618553,
+      "n_peticiones": 64,
+      "mas_pesados": [
+        {
+          "url": "https://img1.wsimg.com/isteam/ip/e27feb27-89a6-47d8-a5aa-c47d0cacd96e/TrailUp_trailUp_02.png/:/rs=w:1535,m",
+          "bytes": 351135
+        },
+        {
+          "url": "https://img1.wsimg.com/isteam/ip/e27feb27-89a6-47d8-a5aa-c47d0cacd96e/photo-1501854140801-50d01698950b.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1535,m",
+          "bytes": 251098
+        },
+        {
+          "url": "https://img1.wsimg.com/isteam/ip/e27feb27-89a6-47d8-a5aa-c47d0cacd96e/trailup_sendero.jpg/:/rs=w:1535,m",
+          "bytes": 229794
+        },
+        {
+          "url": "https://img1.wsimg.com/isteam/ip/e27feb27-89a6-47d8-a5aa-c47d0cacd96e/trailup_edificio.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1535,m",
+          "bytes": 176384
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": true,
+          "B": true,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": null,
+    "c3": {
+      "bloqueados": [
+        "GPTBot",
+        "ClaudeBot"
+      ],
+      "causa": null,
+      "discrepancia": false,
+      "normal_ok": true
+    }
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 150650
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 403,
+            "bytes": 25,
+            "bloqueado": true,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": false,
+            "bytes": 0,
+            "bloqueado": false,
+            "causa": null,
+            "error": "timeout"
+          },
+          "ChatGPT-User": {
+            "ok": false,
+            "bytes": 0,
+            "bloqueado": false,
+            "causa": null,
+            "error": "timeout"
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 403,
+            "bytes": 25,
+            "bloqueado": true,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 150650,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 150650,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 150650,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 150650
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 403,
+            "bytes": 25,
+            "bloqueado": true,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 150650,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 150650,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 403,
+            "bytes": 25,
+            "bloqueado": true,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 150650,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 150650,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 150650,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [
+      "GPTBot",
+      "ClaudeBot"
+    ],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": []
+      },
+      {
+        "forms": [],
+        "mails": []
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "TrailUp"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "TrailUp"
+      },
+      {
+        "fuente": "title",
+        "valor": "TrailUp"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 8,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

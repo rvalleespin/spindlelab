@@ -1,0 +1,558 @@
+{
+  "id": "AP33",
+  "dominio": "estudioserrano.cl",
+  "motor": "v0",
+  "cuando": "2026-10-19T18:12:02.366Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://www.estudioserrano.cl/",
+  "hallazgo": {
+    "id": "F10",
+    "nombre": "En la primera pantalla no hay cómo contactar, cotizar o comprar",
+    "linea": "Desarrollo Web",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, mirando la primera pantalla",
+    "donde_mirar": "Abrir el sitio y, sin bajar, buscar un botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+    "condiciones": {
+      "1": {
+        "v": "medias",
+        "razon": "El dueño ve su sitio todos los días y no ve lo que falta."
+      },
+      "2": {
+        "v": "si",
+        "razon": "Quien llega y no ve cómo seguir, se va."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve a simple vista."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Es capa 1."
+      }
+    },
+    "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+    "no_afirmable": [
+      "que no exista contacto más abajo en la página"
+    ],
+    "advertencias": [
+      "Mirar la captura del tramo A (escritorio) antes de usarlo: la heurística busca palabras de acción, y un botón con otro texto no cuenta."
+    ],
+    "datos": {},
+    "propuesta": {
+      "en_castellano": "En la primera pantalla de tu sitio no hay ningún botón para contactarte, cotizar o escribir por WhatsApp.",
+      "problema_tecnico": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+      "donde_mirar": "Abrir el sitio y, sin bajar, buscar un botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+      "se_vende": {
+        "linea": "Desarrollo Web",
+        "producto": "Desarrollo Web a medida",
+        "alcance": "Poner una acción de contacto visible en la primera pantalla, en escritorio y en celular.",
+        "vehiculo_publicado": "Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Desarrollo Web a medida, página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "fuerte",
+      "frase_de_arreglo": "Eso se arregla: dejo a la vista, desde la primera pantalla, la forma de escribirte y lo pruebo en el celular.",
+      "apertura_a_reunion": "Vi otra cosa que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F4",
+      "nombre": "No hay ninguna herramienta de medición instalada",
+      "linea": "Acompañamiento",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con acceso a su panel",
+      "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+      "condiciones": {
+        "1": {
+          "v": "no",
+          "razon": "No se ve, pero lo confirma cualquier extensión gratuita."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin medición no se sabe qué trae clientes."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con Tag Assistant."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Es capa 1."
+        }
+      },
+      "afirmable": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+      "no_afirmable": [
+        "que \"no mides nada\" (puede haber medición del lado del servidor o la propia de la plataforma)"
+      ],
+      "advertencias": [
+        "El sitio usa Wix, que trae analítica propia: lo único afirmable es que no hay Google Analytics ni Tag Manager."
+      ],
+      "datos": {
+        "plataforma": "Wix"
+      },
+      "propuesta": {
+        "en_castellano": "No veo Google Analytics ni Tag Manager en tu sitio.",
+        "problema_tecnico": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+        "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+        "se_vende": {
+          "linea": "Acompañamiento",
+          "producto": "Acompañamiento Mensual, plan Esencial (foco en una capa)",
+          "alcance": "Instalar analítica y medir consultas, llamadas y WhatsApp.",
+          "vehiculo_publicado": "Desde $590.000 + IVA al mes (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Acompañamiento Mensual, plan Esencial (foco en una capa), desde $590.000 + IVA al mes (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla: dejo medido lo que importa, que te escriban, te llamen o te hablen por WhatsApp, para que veas qué trae clientes.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F4"
+  ],
+  "capa1": {
+    "consecuencia": [
+      "sin_analitica"
+    ],
+    "higiene": []
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "Pepyaka",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": true,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "LocalBusiness",
+        "WebSite"
+      ],
+      "org": [
+        {
+          "name": "Estudio Serrano"
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": 12,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": 12,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 1701416,
+      "al_abrir_bytes": 1689049,
+      "n_peticiones": 200,
+      "mas_pesados": [
+        {
+          "url": "https://www.estudioserrano.cl/",
+          "bytes": 154368
+        },
+        {
+          "url": "https://static.parastorage.com/services/dbsm-viewer-app/1.9045.0/app.js",
+          "bytes": 84398
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.34f6665a.bundle.min.js",
+          "bytes": 58016
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_6.5f7b0030.chunk.min.js",
+          "bytes": 57824
+        }
+      ]
+    },
+    {
+      "total_bytes": 1700814,
+      "al_abrir_bytes": 1688423,
+      "n_peticiones": 197,
+      "mas_pesados": [
+        {
+          "url": "https://www.estudioserrano.cl/",
+          "bytes": 154360
+        },
+        {
+          "url": "https://static.parastorage.com/services/dbsm-viewer-app/1.9045.0/app.js",
+          "bytes": 83941
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.34f6665a.bundle.min.js",
+          "bytes": 57973
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_6.5f7b0030.chunk.min.js",
+          "bytes": 57791
+        }
+      ]
+    },
+    {
+      "total_bytes": 1700059,
+      "al_abrir_bytes": 1687733,
+      "n_peticiones": 218,
+      "mas_pesados": [
+        {
+          "url": "https://www.estudioserrano.cl/",
+          "bytes": 102093
+        },
+        {
+          "url": "https://static.parastorage.com/services/dbsm-viewer-app/1.9047.0/app.js",
+          "bytes": 84317
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/main.0ffe6eeb.bundle.min.js",
+          "bytes": 58148
+        },
+        {
+          "url": "https://static.parastorage.com/services/wix-thunderbolt/dist/group_6.5f7b0030.chunk.min.js",
+          "bytes": 57888
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": null,
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 600000
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 447105,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 447105,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 447105,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 448728,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 448728,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 448728,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 448728,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 600000
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 447105,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 447105,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 447105,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 447105,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 448728,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 447105,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 448728,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": []
+      },
+      {
+        "forms": [],
+        "mails": []
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Estudio Serrano"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Estudio Serrano"
+      },
+      {
+        "fuente": "title",
+        "valor": "Estudio Serrano"
+      },
+      {
+        "fuente": "title",
+        "valor": "Derecho Tributario y corporativo"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 9,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}
