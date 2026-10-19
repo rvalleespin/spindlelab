@@ -75,8 +75,28 @@ for id, v in ver.items():
     D.append(d)
 
 # ---- F1: formulario que pide correo/telefono y ningun enlace a politica de privacidad en la portada (redactado a mano desde lo que vieron los dos revisores)
+
+# Reescritura del 19-oct tras el primer lector independiente (V28): el F1 abre con la CONSECUENCIA que el dueño siente (quien deja sus datos no ve que se hace con ellos), no con el inventario de campos;
+# y no se manda al chequeo gratis de verifica.spindlelab.cl: nadie lo corrio sobre estos dominios, y si el dueño no ve lo mismo el correo queda desmentido. Se le dice donde mirar en SU portada.
+LUGAR = "ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad"
+HECHO_F1 = {
+ 'V06': f"Revisé la portada de cypauditores.cl: quien llena el formulario de contacto deja nombre, correo y celular, y no ve qué se hace con esos datos, porque {LUGAR}.",
+ 'V111': f"Revisé la portada de molinarios.cl: quien escribe por el formulario de la sección Contáctanos deja nombre y correo, y no ve qué se hace con ellos, porque {LUGAR} del estudio.",
+ 'V17': "Revisé la portada de finpartner.cl: quien deja su correo en los formularios, entre ellos el de Diagnóstico gratuito de la primera pantalla, no ve qué se hace con él, porque ni junto a los formularios, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.",
+ 'V20': "Revisé lcconsultores.cl: quien escribe por el formulario de la sección Contacto deja nombre y correo, y teléfono si quiere, y no ve qué se hace con esos datos, porque en la página, pie incluido, no encontré un enlace a una política de privacidad.",
+ 'V28': f"Revisé la portada de ulloaycia.cl: quien te escribe por el formulario de la sección Escríbenos no ve qué se hace con su correo, porque {LUGAR}.",
+ 'V30': "Revisé la portada de sbsolutions.cl: quien escribe por el formulario de la sección Contacto deja nombre y correo, y no ve qué se hace con ellos, porque ni junto al formulario ni en el pie encontré un enlace a una política de privacidad.",
+ 'V37': "Revisé la portada de bgconsultoria.cl: quien deja nombre, teléfono y correo en el formulario ¿Tienes alguna consulta? no ve qué se hace con ellos, porque ni en el menú ni en el pie encontré un enlace a una política de privacidad.",
+ 'V57': "Revisé la portada de reb-chile.cl: quien deja nombre, correo y teléfono en el formulario Vende con nosotros, al final de la página, no ve qué se hace con ellos, porque ni junto al formulario ni en el pie encontré un enlace a una política de privacidad.",
+ 'V65': "Revisé la portada de remax-start.cl: quien escribe por el formulario Escríbenos, al final de la página, deja nombre, correo y teléfono, y no ve qué se hace con ellos, porque ni cerca del formulario ni en el pie encontré un enlace a una política de privacidad.",
+ 'V67': "Revisé la portada de audiprop.com: quien escribe por el formulario de la sección Contáctanos, al final de la página, deja nombre, apellido y correo, y no ve qué se hace con ellos, porque ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad.",
+ 'V89': "Revisé la portada de medicinachina.cl: quien pide hora clínica por el formulario deja nombre y teléfono, y no ve qué se hace con esos datos, porque ni junto al formulario, ni en el menú, ni en el pie encontré un enlace a una política de privacidad de la escuela.",
+ 'V94': "Revisé la portada de trustdoc.cl: quien llena el formulario de contacto deja nombre, cargo, organización, correo y teléfono. Bajo el botón dice que los datos se tratarán conforme a la ley, pero ni ahí, ni en el menú, ni en el pie encontré un enlace a una política de privacidad que explique cómo.",
+}
 def f1(id, hecho, notas, precio=PRECIO_F1, verlo=VERLO_F1):
     dom = ver[id]['dominio']
+    hecho = HECHO_F1.get(id, hecho)
+    if verlo == CHEQUEO: verlo = VERLO_F1
     D.append(base(id, asunto='el formulario de ' + dom, peso=2,
                   cuerpo=[SALUDO.get(id, 'Hola:'), hecho, verlo, precio + ' ' + LLAMADA, DERIVA], notas='Verificado por 2 revisores (19-oct). ' + notas))
 f1('V06', "El formulario de contacto de la portada de cypauditores.cl pide nombre, correo y celular, y en la portada, pie incluido, no encontré un enlace a una política de privacidad que diga qué se hace con esos datos.",
