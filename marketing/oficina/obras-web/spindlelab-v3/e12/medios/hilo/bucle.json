@@ -1,0 +1,318 @@
+{
+  "fecha": "2026-10-19",
+  "hechoPor": "Bruno (dirección creativa)",
+  "original": {
+    "ruta": "spindlelab-astro/public/hero-hilo-de-oro.mp4",
+    "sha256": "8e36b4f87c407d0b996b23503bcd22d79ba2835c3e90325de93ffc51f1ba0f99",
+    "codec": "h264",
+    "perfil": "High",
+    "ancho": 1920,
+    "alto": 1080,
+    "fps": 24.0,
+    "cuadros": 145,
+    "pixeles": "yuv420p",
+    "duracion_s": 6.042,
+    "bytes": 5091275,
+    "MB": 5.091,
+    "kbit_s": 6742,
+    "audio": false,
+    "bucle": {
+      "cuadros": 145,
+      "difSeguidos": {
+        "mediana": 5.92,
+        "p95": 14.84,
+        "max": 24.98
+      },
+      "corte": {
+        "dif": 51.2,
+        "ssim": -0.029,
+        "vecesLaMediana": 8.65,
+        "luzMediaUltimoPrimero": [
+          53.1,
+          23.0
+        ]
+      },
+      "salta": true
+    }
+  },
+  "fundido": {
+    "cuadros": 24,
+    "segundos": 1.0,
+    "como": "el bucle empieza en el cuadro 24 del original; sus últimos 24 cuadros se funden (xfade fade) con los cuadros 0 a 23"
+  },
+  "archivos": {
+    "hilo-1920.webm": {
+      "codec": "vp9",
+      "perfil": "Profile 0",
+      "ancho": 1920,
+      "alto": 1080,
+      "fps": 24.0,
+      "cuadros": 121,
+      "pixeles": "yuv420p",
+      "duracion_s": 5.042,
+      "bytes": 1025719,
+      "MB": 1.026,
+      "kbit_s": 1627,
+      "audio": false,
+      "primerCuadroEsClave": true,
+      "ssimContraMaestro": 0.9933,
+      "bucle": {
+        "cuadros": 121,
+        "difSeguidos": {
+          "mediana": 6.51,
+          "p95": 12.52,
+          "max": 14.09
+        },
+        "corte": {
+          "dif": 3.16,
+          "ssim": 0.992,
+          "vecesLaMediana": 0.49,
+          "luzMediaUltimoPrimero": [
+            32.8,
+            32.6
+          ]
+        },
+        "salta": false
+      }
+    },
+    "hilo-1920.mp4": {
+      "codec": "h264",
+      "perfil": "High",
+      "ancho": 1920,
+      "alto": 1080,
+      "fps": 24.0,
+      "cuadros": 121,
+      "pixeles": "yuv420p",
+      "duracion_s": 5.042,
+      "bytes": 1404928,
+      "MB": 1.405,
+      "kbit_s": 2229,
+      "audio": false,
+      "primerCuadroEsClave": true,
+      "ssimContraMaestro": 0.9755,
+      "bucle": {
+        "cuadros": 121,
+        "difSeguidos": {
+          "mediana": 6.48,
+          "p95": 12.48,
+          "max": 14.07
+        },
+        "corte": {
+          "dif": 3.22,
+          "ssim": 0.992,
+          "vecesLaMediana": 0.5,
+          "luzMediaUltimoPrimero": [
+            32.7,
+            32.6
+          ]
+        },
+        "salta": false
+      }
+    },
+    "hilo-movil.webm": {
+      "codec": "vp9",
+      "perfil": "Profile 0",
+      "ancho": 500,
+      "alto": 1080,
+      "fps": 24.0,
+      "cuadros": 121,
+      "pixeles": "yuv420p",
+      "duracion_s": 5.042,
+      "bytes": 342937,
+      "MB": 0.343,
+      "kbit_s": 544,
+      "audio": false,
+      "primerCuadroEsClave": true,
+      "ssimContraMaestro": 0.9921,
+      "bucle": {
+        "cuadros": 121,
+        "difSeguidos": {
+          "mediana": 7.4,
+          "p95": 14.83,
+          "max": 23.65
+        },
+        "corte": {
+          "dif": 3.7,
+          "ssim": 0.988,
+          "vecesLaMediana": 0.5,
+          "luzMediaUltimoPrimero": [
+            31.1,
+            30.8
+          ]
+        },
+        "salta": false
+      }
+    },
+    "hilo-movil.mp4": {
+      "codec": "h264",
+      "perfil": "High",
+      "ancho": 500,
+      "alto": 1080,
+      "fps": 24.0,
+      "cuadros": 121,
+      "pixeles": "yuv420p",
+      "duracion_s": 5.042,
+      "bytes": 499908,
+      "MB": 0.5,
+      "kbit_s": 793,
+      "audio": false,
+      "primerCuadroEsClave": true,
+      "ssimContraMaestro": 0.9696,
+      "bucle": {
+        "cuadros": 121,
+        "difSeguidos": {
+          "mediana": 7.46,
+          "p95": 14.79,
+          "max": 23.65
+        },
+        "corte": {
+          "dif": 3.74,
+          "ssim": 0.988,
+          "vecesLaMediana": 0.5,
+          "luzMediaUltimoPrimero": [
+            31.1,
+            30.8
+          ]
+        },
+        "salta": false
+      }
+    },
+    "hilo-1920-poster.webp": {
+      "ancho": 1920,
+      "alto": 1080,
+      "bytes": 34022,
+      "que": "el primer cuadro del bucle (el cuadro 24 del original)"
+    },
+    "hilo-movil-poster.webp": {
+      "ancho": 500,
+      "alto": 1080,
+      "bytes": 12044,
+      "que": "el primer cuadro del bucle (el cuadro 24 del original)"
+    }
+  },
+  "luz": {
+    "nota": "luminancia relativa WCAG, de 0 (negro) a 1 (blanco), sin velo; «contrasteBlancoContraLaMediaMax» es el del blanco puro sobre la media de esa zona en su cuadro más claro, sin velo: es una cota, no la medida de la frase, que se hace con el velo puesto y sobre los píxeles detrás de cada letra",
+    "hilo-1920.webm": {
+      "cuadroMasClaro": 97,
+      "segundo": 4.042,
+      "luzMediaMax": 0.111,
+      "zonas": [
+        {
+          "zona": "arriba · izquierda",
+          "luzMediaMax": 0.0328,
+          "cuadro": 97,
+          "segundo": 4.042,
+          "luzP95EnEseCuadro": 0.2087,
+          "luzMediaPromedio": 0.0095,
+          "contrasteBlancoContraLaMediaMax": 12.68
+        },
+        {
+          "zona": "arriba · centro",
+          "luzMediaMax": 0.1128,
+          "cuadro": 91,
+          "segundo": 3.792,
+          "luzP95EnEseCuadro": 0.5964,
+          "luzMediaPromedio": 0.0499,
+          "contrasteBlancoContraLaMediaMax": 6.45
+        },
+        {
+          "zona": "arriba · derecha",
+          "luzMediaMax": 0.1088,
+          "cuadro": 15,
+          "segundo": 0.625,
+          "luzP95EnEseCuadro": 0.5748,
+          "luzMediaPromedio": 0.0738,
+          "contrasteBlancoContraLaMediaMax": 6.61
+        },
+        {
+          "zona": "medio · izquierda",
+          "luzMediaMax": 0.1083,
+          "cuadro": 97,
+          "segundo": 4.042,
+          "luzP95EnEseCuadro": 0.6452,
+          "luzMediaPromedio": 0.0453,
+          "contrasteBlancoContraLaMediaMax": 6.63
+        },
+        {
+          "zona": "medio · centro",
+          "luzMediaMax": 0.1743,
+          "cuadro": 73,
+          "segundo": 3.042,
+          "luzP95EnEseCuadro": 0.687,
+          "luzMediaPromedio": 0.125,
+          "contrasteBlancoContraLaMediaMax": 4.68
+        },
+        {
+          "zona": "medio · derecha",
+          "luzMediaMax": 0.1504,
+          "cuadro": 97,
+          "segundo": 4.042,
+          "luzP95EnEseCuadro": 0.6683,
+          "luzMediaPromedio": 0.0728,
+          "contrasteBlancoContraLaMediaMax": 5.24
+        },
+        {
+          "zona": "abajo · izquierda",
+          "luzMediaMax": 0.1623,
+          "cuadro": 79,
+          "segundo": 3.292,
+          "luzP95EnEseCuadro": 0.5177,
+          "luzMediaPromedio": 0.0983,
+          "contrasteBlancoContraLaMediaMax": 4.94
+        },
+        {
+          "zona": "abajo · centro",
+          "luzMediaMax": 0.1661,
+          "cuadro": 97,
+          "segundo": 4.042,
+          "luzP95EnEseCuadro": 0.6053,
+          "luzMediaPromedio": 0.0568,
+          "contrasteBlancoContraLaMediaMax": 4.86
+        },
+        {
+          "zona": "abajo · derecha",
+          "luzMediaMax": 0.1395,
+          "cuadro": 97,
+          "segundo": 4.042,
+          "luzP95EnEseCuadro": 0.5474,
+          "luzMediaPromedio": 0.0394,
+          "contrasteBlancoContraLaMediaMax": 5.54
+        }
+      ]
+    },
+    "hilo-movil.webm": {
+      "cuadroMasClaro": 95,
+      "segundo": 3.958,
+      "luzMediaMax": 0.1343,
+      "zonas": [
+        {
+          "zona": "arriba · todo el ancho",
+          "luzMediaMax": 0.0809,
+          "cuadro": 95,
+          "segundo": 3.958,
+          "luzP95EnEseCuadro": 0.49,
+          "luzMediaPromedio": 0.0264,
+          "contrasteBlancoContraLaMediaMax": 8.02
+        },
+        {
+          "zona": "medio · todo el ancho",
+          "luzMediaMax": 0.167,
+          "cuadro": 64,
+          "segundo": 2.667,
+          "luzP95EnEseCuadro": 0.7312,
+          "luzMediaPromedio": 0.1313,
+          "contrasteBlancoContraLaMediaMax": 4.84
+        },
+        {
+          "zona": "abajo · todo el ancho",
+          "luzMediaMax": 0.2144,
+          "cuadro": 96,
+          "segundo": 4.0,
+          "luzP95EnEseCuadro": 0.6341,
+          "luzMediaPromedio": 0.0754,
+          "contrasteBlancoContraLaMediaMax": 3.97
+        }
+      ]
+    }
+  }
+}
