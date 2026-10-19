@@ -1,0 +1,54 @@
+{
+ "herramienta": "e12/casos/combeau/herramientas/capturar-portadas.mjs",
+ "chromium": "141.0.7390.37",
+ "capturas": [
+  {
+   "id": "fotografia",
+   "url": "https://bernardocombeau.cl/",
+   "estado": 200,
+   "ancho": 1440,
+   "dpr": 2,
+   "altoCss": 900,
+   "lineaDeMedidasTop": null,
+   "corte": "viewport entero",
+   "archivo": "fotografia-1440-primera.png",
+   "cuandoUTC": "2026-10-19T13:14:20.718Z"
+  },
+  {
+   "id": "fotografia",
+   "url": "https://bernardocombeau.cl/",
+   "estado": 200,
+   "ancho": 390,
+   "dpr": 2,
+   "altoCss": 844,
+   "lineaDeMedidasTop": null,
+   "corte": "viewport entero",
+   "archivo": "fotografia-390-primera.png",
+   "cuandoUTC": "2026-10-19T13:14:24.913Z"
+  },
+  {
+   "id": "modelo",
+   "url": "https://bernardocombeau.cl/modelo/",
+   "estado": 200,
+   "ancho": 1440,
+   "dpr": 2,
+   "altoCss": 900,
+   "lineaDeMedidasTop": 916,
+   "corte": "viewport entero",
+   "archivo": "modelo-1440-primera.png",
+   "cuandoUTC": "2026-10-19T13:14:31.688Z"
+  },
+  {
+   "id": "modelo",
+   "url": "https://bernardocombeau.cl/modelo/",
+   "estado": 200,
+   "ancho": 390,
+   "dpr": 2,
+   "altoCss": 615,
+   "lineaDeMedidasTop": 623,
+   "corte": "8 px sobre la línea de medidas",
+   "archivo": "modelo-390-primera.png",
+   "cuandoUTC": "2026-10-19T13:14:45.192Z"
+  }
+ ]
+}

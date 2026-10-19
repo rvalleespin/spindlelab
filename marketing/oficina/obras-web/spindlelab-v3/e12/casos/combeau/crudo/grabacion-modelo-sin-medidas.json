@@ -1,0 +1,126 @@
+{
+ "herramienta": "e12/casos/combeau/herramientas/grabar-modelo-sin-medidas.mjs",
+ "url": "https://bernardocombeau.cl/modelo/",
+ "chromium": "141.0.7390.37",
+ "fps": 30,
+ "grabaciones": [
+  {
+   "ancho": 1440,
+   "alto": 810,
+   "dpr": 1,
+   "estado": 200,
+   "inicioUTC": "2026-10-19T13:09:51.912Z",
+   "finUTC": "2026-10-19T13:11:41.229Z",
+   "redQuietaAntesDeGrabar": true,
+   "elementosAnimadosAlScroll": 0,
+   "altoDocumento": 5985,
+   "lineaDeMedidas": {
+    "top": 881,
+    "bottom": 941,
+    "texto": "5 elementos .meta-item"
+   },
+   "secciones": {
+    "book": {
+     "top": 941,
+     "bottom": 2756
+    },
+    "reel": {
+     "top": 4929,
+     "bottom": 5111
+    },
+    "polaroids": {
+     "top": 5111,
+     "bottom": 5631
+    },
+    "details": {
+     "top": 5631,
+     "bottom": 5922
+    },
+    "booking": {
+     "top": 5631,
+     "bottom": 5985
+    }
+   },
+   "recorrido": {
+    "desdeScrollY": 953,
+    "hastaScrollY": 4107,
+    "segundos": 8,
+    "cuadros": 240,
+    "quietoSegundos": 0.6
+   },
+   "comprobacionPorCuadro": {
+    "cuadrosRevisados": 240,
+    "lineaDeMedidasVisible": 0,
+    "seccionesProhibidasVisibles": 0,
+    "enlacesDeContactoVisibles": 0,
+    "margenMinimoSobreLaLinea": 17,
+    "margenMinimoBajoReel": 12,
+    "regla": "la línea (.meta-item), #reel, #polaroids, #details, #compcard, #booking y los enlaces mailto/tel/WhatsApp fuera del viewport en cada cuadro"
+   },
+   "portada": {
+    "archivo": "modelo-1440-portada.png",
+    "alto": 810,
+    "nota": "viewport entero: la línea queda bajo el pliegue"
+   }
+  },
+  {
+   "ancho": 390,
+   "alto": 844,
+   "dpr": 2,
+   "estado": 200,
+   "inicioUTC": "2026-10-19T13:11:41.373Z",
+   "finUTC": "2026-10-19T13:13:31.683Z",
+   "redQuietaAntesDeGrabar": true,
+   "elementosAnimadosAlScroll": 0,
+   "altoDocumento": 5204,
+   "lineaDeMedidas": {
+    "top": 604,
+    "bottom": 673,
+    "texto": "5 elementos .meta-item"
+   },
+   "secciones": {
+    "book": {
+     "top": 673,
+     "bottom": 2600
+    },
+    "reel": {
+     "top": 3733,
+     "bottom": 3916
+    },
+    "polaroids": {
+     "top": 3916,
+     "bottom": 4393
+    },
+    "details": {
+     "top": 4393,
+     "bottom": 4713
+    },
+    "booking": {
+     "top": 4826,
+     "bottom": 5204
+    }
+   },
+   "recorrido": {
+    "desdeScrollY": 685,
+    "hastaScrollY": 2877,
+    "segundos": 8,
+    "cuadros": 240,
+    "quietoSegundos": 0.6
+   },
+   "comprobacionPorCuadro": {
+    "cuadrosRevisados": 240,
+    "lineaDeMedidasVisible": 0,
+    "seccionesProhibidasVisibles": 0,
+    "enlacesDeContactoVisibles": 0,
+    "margenMinimoSobreLaLinea": 43,
+    "margenMinimoBajoReel": 12,
+    "regla": "la línea (.meta-item), #reel, #polaroids, #details, #compcard, #booking y los enlaces mailto/tel/WhatsApp fuera del viewport en cada cuadro"
+   },
+   "portada": {
+    "archivo": "modelo-390-portada.png",
+    "alto": 596,
+    "nota": "cortada 8 px sobre la línea (y=604)"
+   }
+  }
+ ]
+}
