@@ -11,7 +11,7 @@
 import PaginaA from './PaginaA.astro';
 import Miga from './Miga.astro';
 import Video from './Video.astro';
-import MedioCaso from './MedioCaso.astro';
+import FilaCaso from './FilaCaso.astro';
 import Icono from './Icono.astro';
 import { modelo } from '../../data/archivo/casos.mjs';
 
@@ -90,46 +90,17 @@ const ruta = `/v3/trabajo/${m.caso}/`;
           </div>
           {s.filas.length > 0 && (
             <div class="filas">
-              {s.filas.map((f, j) => (
-                f.forma === 'hueco' ? (
-                  <div class="fila fila--hueco" data-entrada={j === 0 ? '' : undefined}>
-                    <div class="hueco p-169"><p class="chico">{s.hueco}</p></div>
-                  </div>
-                ) : (
-                  <figure class:list={['fila', `fila--${f.forma}`]} data-entrada={j === 0 ? '' : undefined}>
-                    <div class="fila__medios">
-                      {f.forma === '169' && <MedioCaso medio={f.medios[0]} clase="p-169" />}
-                      {f.forma === 'par' && <><MedioCaso medio={f.medios[0]} clase="p-45" /><MedioCaso medio={f.medios[1]} clase="p-45" /></>}
-                      {f.forma === '45-162' && <><MedioCaso medio={f.medios[0]} clase="p-45" /><div class="pila"><MedioCaso medio={f.medios[1]} /><MedioCaso medio={f.medios[2]} /></div></>}
-                      {f.forma === '162-45' && <><div class="pila"><MedioCaso medio={f.medios[0]} /><MedioCaso medio={f.medios[1]} /></div><MedioCaso medio={f.medios[2]} clase="p-45" /></>}
-                    </div>
-                    {(f.pie || f.enlace) && (
-                      <figcaption class="pie">
-                        {f.pie}
-                        {f.enlace && <> <a class="subrayado" href={f.enlace.destino}>{f.enlace.texto}<Icono nombre="fuera" /></a></>}
-                      </figcaption>
-                    )}
-                  </figure>
-                )
-              ))}
+              {s.filas.map((f, j) => <FilaCaso fila={f} hueco={s.hueco} entrada={j === 0} />)}
             </div>
           )}
-          {s.partes.map((parte) => (
+          {s.partes.map((parte, k) => (
             <div class="caso-parte" id={parte.ancla}>
               <div class="caso-sec caso-sec--parte">
                 <div class="caso-sec__izq"><h3>{parte.h3}</h3></div>
                 <div class="caso-sec__der">{parte.cuerpo.map((b) => <p class="cuerpo">{b.texto}</p>)}</div>
               </div>
               <div class="filas">
-                {parte.filas.map((f, j) => (
-                  <figure class:list={['fila', `fila--${f.forma}`]} data-entrada={j === 0 ? '' : undefined}>
-                    <div class="fila__medios">
-                      {f.forma === '169' && <MedioCaso medio={f.medios[0]} clase="p-169" />}
-                      {f.forma === 'par' && <><MedioCaso medio={f.medios[0]} clase="p-45" /><MedioCaso medio={f.medios[1]} clase="p-45" /></>}
-                    </div>
-                    {f.pie && <figcaption class="pie">{f.pie}</figcaption>}
-                  </figure>
-                ))}
+                {parte.filas.map((f, j) => <FilaCaso fila={f} entrada={s.filas.length === 0 && k === 0 && j === 0} />)}
               </div>
             </div>
           ))}
