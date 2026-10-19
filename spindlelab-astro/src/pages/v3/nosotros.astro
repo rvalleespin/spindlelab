@@ -1,238 +1,84 @@
 ---
-// NOSOTROS — plantilla EDITORIAL del sistema driftime (5-oct-2026).
+// NOSOTROS SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 5). Diego, 19-oct-2026.
 //
-// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md (§4, fila «Editorial»:
-// h1 60 px → imagen → secciones pegajosas). Molde de interna: v3/servicios/desarrollo-web.
+// Contrato: spindlelab-v3/spec-visual.md §2.4, fila «/v3/nosotros/»: cabecera; el retrato 3:4 de Ramón en c1–c5 junto
+// a la bio (c7–c14), como «Quién está detrás» de la home pero a la escala de la página; «Por qué un solo sistema» y
+// «Cómo trabajo» como secciones; el cierre. El texto de la bio, tal cual (R4). Sin franja: el retrato es la imagen.
+// Lo que la spec no cubría está en spindlelab-v3/desvios.md, tanda 5.
 //
-// El brief (Bloque 6) la marca como ventaja competitiva no obvia: las dos agencias
-// revisadas son «agencias» sin rostro. Una persona con nombre y trayectoria verificable es
-// justo lo que vende la marca, así que esta página no se toca en contenido, se traduce.
-//
-// EL TEXTO VA VERBATIM. Es la biografía real de Ramón, con empleadores y estudios
-// concretos: no es copy que se reescriba por gusto. Solo cambia el envase. En la versión
-// driftime el segundo párrafo (la trayectoria) se parte en filas, una oración por fila, sin
-// cambiarle una palabra; su primera oración pasa a ser la etiqueta pegajosa.
-//
-// LO QUE SÍ CAMBIA RESPECTO DE LA PÁGINA PUBLICADA (src/pages/nosotros.astro), todo aquí:
-//  1. La bajada del cierre («Te lo mostramos. Diagnóstico real, gratis, en 24 horas. Antes
-//     de que pagues nada.») se corta: el último párrafo de la bio, que va al lado, ya dice
-//     diagnóstico, gratis y 24 horas. Su idea queda en la línea chica de la etiqueta: «Te
-//     lo muestro antes de que pagues nada.». Ese singular no tiene respaldo y va al paquete
-//     de Ramón: ver el aviso ⚠️ bajo REGISTRO, más abajo.
-//  2. El botón del cierre («Agenda tu diagnóstico» → contacto) pasa a «Pedir el
-//     diagnóstico» (mismo destino, mismas palabras que /v3/diagnostico/) y se le suma
-//     «Correr el chequeo» → /v3/diagnostico/ como secundario.
-//  3. La cabecera suma dos botones que la publicada no tenía: «Correr el chequeo» →
-//     /v3/diagnostico/ y «Escríbenos» → contacto (la acción de contacto del nav, spec §3).
-//  4. Rótulo nuevo «Por qué un solo sistema», sacado de la bio («Conectamos las piezas en
-//     un solo sistema»), y el rótulo del bloque de puntos, «Cómo trabajo».
-//  5. El h2 del cierre es el titular publicado, entero: «¿Apareces cuando tus clientes
-//     preguntan?» (una pasada anterior lo había acortado a «cuando preguntan»).
-//  6. Tipografía, sin tocar palabras: «24 horas» con espacio duro y «E-commerce» sin
-//     partir en el guion (Manrope no trae el guion no separable U+2011; va en un span
-//     nowrap).
-//
-// QA 5-oct (bloqueante): una pasada anterior había cambiado «Lo primero es un diagnóstico»
-// por «Lo primero es un chequeo», y la meta «Diagnóstico gratis» por «Chequeo gratis», sin
-// declararlo. Era falso: el chequeo es automático, instantáneo y no mide si la IA te nombra
-// (FAQ de /v3/diagnostico/). Se restituyó la bio y la meta publicadas. «Chequeo» en esta
-// página nombra SOLO el automático, y sus botones van a /v3/diagnostico/ (spec §7), no a
-// /v3/#chequeo: con el nav fijo, el ancla de la home dejaba el campo bajo el módulo.
-//
-// LA FOTO: el retrato va grande y entero (3:4, el mismo formato del archivo, 896×1200), no
-// en avatar. En driftime la gente va a buen tamaño. La única otra imagen es ventana.jpg,
-// del pool honesto (spec §5), y va a su proporción nativa (2,39:1 = la de .d-sangre).
-// Ninguna pieza de obra: esta página no habla de desarrollo web.
-//
-// REGISTRO (manual de marca §08, persona híbrida): singular para lo observado y lo personal
-// («Soy Ramón», «Antes pasé», «Reviso tu sitio»), plural para lo que la empresa entrega
-// («Conectamos… las medimos»). La bio publicada usa los dos y con el §08 calza.
-//
-// ⚠️ «Nunca se mezclan en la misma pieza» es de la skill voz-spindlelab (SKILL.md:24), no del
-// manual, que no lo respalda: no la uses para «corregir» la bio. La bio va verbatim y se
-// decide con Ramón en un solo paquete (spec §7, «Reservado para Ramón»), que incluye «Te lo
-// muestro antes de que pagues nada.» (punto 1): lo pasó al singular la nota equivocada que
-// había aquí; la publicada dice «Te lo mostramos», y el §08 pone en plural lo que se entrega.
-//
-// ⚠️ PENDIENTE DE RAMÓN (QA 5-oct, menor, A4): «El objetivo no es solo que vendas. Es
-// que…» es la construcción «no solo X» del detector anti-slop. Es una frase de la bio
-// publicada; va verbatim y SIN destacarla (no es titular ni cita grande) hasta que Ramón
-// decida. Versión propuesta: «El objetivo es que cuando alguien pregunte por tu rubro, tu
-// nombre ya esté ahí.». Su decisión, sea cual sea, va a la spec §7.
-//
-// ⚠️ PENDIENTE DE RAMÓN (QA 5-oct, menor, A10): la fila 1 de «Cómo trabajo»
-// («Diagnóstico antes que contrato») y el párrafo del cierre dicen casi lo mismo, con
-// «Gratis, en 24 horas» en los dos. Son dos textos publicados; cuál se va no lo decide el
-// constructor. El pase de voz de Clara (E8, 14-oct) no lo tocó: lo dejó en el paquete de la
-// bio que decide Ramón (R4), con la variante del párrafo del cierre sin el «Gratis, en 24
-// horas» repetido (copy-secciones.md, anexo C).
-//
-// JSON-LD: AboutPage + BreadcrumbList, los mismos nodos e @id de antes. La Person
-// (#autor-ramon) la emite Layout.astro; acá solo se referencia, para no duplicar @id.
+// El texto lo arma nosotros() en interiores.mjs (lo de Clara y lo que queda tal cual). Señales de Simón,
+// senales-obra.md §2.10; el jobTitle de #autor-ramon lo pone el Layout con la prop de layout-a.ts.
 import Layout from '../../layouts/Layout.astro';
-import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../consts-v3';
-import NavV3 from '../../components/v3/NavV3.astro';
-import FooterV3 from '../../components/v3/FooterV3.astro';
-import Pieza from '../../components/v3/Pieza.astro';
-import Miga from '../../components/v3/Miga.astro';
-import '../../styles/driftime.css';
+import PaginaA from '../../components/a/PaginaA.astro';
+import Miga from '../../components/a/Miga.astro';
+import Imagen from '../../components/a/Imagen.astro';
+import Icono from '../../components/a/Icono.astro';
+import { LAYOUT_A } from '../../components/a/layout-a';
+import { nosotros } from '../../data/archivo/interiores.mjs';
+import medios from '../../data/archivo/medios.json';
 
-const url = 'https://spindlelab.cl/nosotros/';
-const NB = '\u00a0'; // «24 horas» no se parte entre líneas
-
-// La biografía publicada, párrafo por párrafo. No se edita aquí sin Ramón.
-const presentacion =
-  'Soy Ramón Vallejos. SpindleLab soy yo al frente, orquestando el motor, con agentes de IA a mi lado y partners para lo que no hacemos en casa.';
-
-// Segundo párrafo de la bio: la primera oración es la etiqueta (sin el punto final, como
-// todo título); el resto, una fila cada una.
-const trayectoriaEti = 'Antes pasé más de cinco años en agencias';
-const trayectoria = [
-  'Empecé en Universal McCann, coordinando la producción de piezas para ocho marcas nacionales.',
-  'En Graphene IPG trabajé la cuenta de LATAM Airlines, con campañas en Chile, Perú, Ecuador y Colombia.',
-  'Después vino la pauta de retail y B2B en Incrementa, y el contenido y el SEO de una cartera B2B en Maggiore.',
-  'Estudié Comunicación Publicitaria en la Universidad Andrés Bello y un máster en Marketing Digital y E-commerce en la Universidad de Barcelona.',
-];
-
-const porque = [
-  'En las empresas que reviso pasa casi siempre lo mismo. Uno hizo el sitio, otro lleva las redes, otro la pauta, y ninguno mira si la IA te nombra.',
-  'Te lo cuento porque con esa experiencia puedo hacerme cargo del eje de tu operación y poner el motor a funcionar entero, no por partes. Conectamos las piezas en un solo sistema y las medimos juntas, con el orgánico como eje, porque es lo que no se apaga cuando cortas el presupuesto.',
-  'El objetivo no es solo que vendas. Es que cuando alguien pregunte por tu rubro, tu nombre ya esté ahí.',
-];
-
-const primero =
-  `Lo primero es un diagnóstico. Reviso tu sitio, tu contenido y si la IA te nombra, y te entrego en una página qué te frena y qué mueve la aguja. Gratis, en 24${NB}horas. Con eso decides con información, no a ciegas.`;
-
-const puntos = [
-  { t: 'Diagnóstico antes que contrato', d: `Antes de cobrarte nada, reviso tu sitio y tu presencia en IA y te muestro los hallazgos en una página. Gratis, en 24${NB}horas.` },
-  { t: 'Arreglo lo técnico y lo legible', d: 'SEO técnico, datos estructurados y contenido que la IA pueda citar. No hay que rehacer tu sitio. Hay que hacerlo legible.' },
-  { t: 'Mido si te recomiendan', d: 'Registro si ChatGPT, Gemini y Perplexity te nombran ante las preguntas de tus clientes. Con fecha, no de memoria. Nada de métricas de vanidad.' },
-  { t: 'Sin humo', d: 'No prometo primeros lugares. Nadie puede garantizarlos. Te digo qué se puede mover y qué no, y me hago cargo de lo que sí.' },
-];
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'AboutPage',
-      '@id': `${url}#aboutpage`,
-      url,
-      name: 'Nosotros · SpindleLab',
-      mainEntity: { '@id': 'https://spindlelab.cl/#autor-ramon' },
-      about: { '@id': 'https://spindlelab.cl/#autor-ramon' },
-      isPartOf: { '@id': 'https://spindlelab.cl/#website' },
-    },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${url}#breadcrumb`,
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
-        { '@type': 'ListItem', position: 2, name: 'Nosotros' },
-      ],
-    },
-  ],
-};
+const m = nosotros();
+const retrato = medios.medios['ramon-vallejos-34'];
 ---
-
-<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt}
-  title="Ramón Vallejos, consultor de SEO técnico e IA · SpindleLab"
-  description="Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA, con evidencia antes que promesas. Diagnóstico gratis en 24 horas."
-  bodyClass="d-body"
->
+<Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
   <meta slot="head" name="robots" content="noindex, nofollow" />
-  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  <NavV3 />
-
-  {/* Plantilla «editorial» (spec §4). Sin display: las internas tienen cero usos de
-       Manrope 800 en mayúsculas. */}
-  <main>
-    <header class="d-cab">
-      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Nosotros' }]} />
-      <h1 class="d-h1 d-h1-nos">No te prometo. Te muestro.</h1>
-      <p class="d-linea">Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA.</p>
-      <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
-    </header>
-
-    {/* El retrato a buen tamaño, entero, y la presentación al lado (la «entrada» de la
-         plantilla de caso, con la foto en el lugar de la nota). */}
-    <div class="d-retrato-nos">
-      <Pieza src="/assets/img/ramon-vallejos.jpg" alt="Ramón Vallejos, consultor de SpindleLab, de camisa celeste sobre fondo oscuro" ancho={896} alto={1200} eager posicion="50% 30%" />
-      <div class="d-retrato-nos__txt">
-        <p class="d-guia">{presentacion}</p>
-        <p class="d-firma-nos"><span>Ramón Vallejos</span><span class="d-chico d-gris">Consultor de SEO técnico y visibilidad en IA · Chile</span></p>
-      </div>
-    </div>
-
-    <section class="d-sec" aria-labelledby="s-tra">
-      <div class="d-eti"><h2 class="d-h2" id="s-tra">{trayectoriaEti}</h2></div>
-      <div class="d-filas">{trayectoria.map((t) => { const [a, b] = t.split('E-commerce'); return <p class="d-guia">{a}{b !== undefined && <><span class="d-nobr-nos">E-commerce</span>{b}</>}</p>; })}</div>
-    </section>
-
-    {/* Prosa corta, no lista: la etiqueta no se pega (spec §7, .d-sec--quieta). */}
-    <section class="d-sec d-sec--quieta" aria-labelledby="s-por">
-      <div class="d-eti"><h2 class="d-h2" id="s-por">Por qué un solo sistema</h2></div>
-      <div class="d-texto-nos">
-        <p class="d-guia">{porque[0]}</p>
-        <p class="d-cuerpo">{porque[1]}</p>
-        <p class="d-cuerpo">{porque[2]}</p>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
+  <PaginaA>
+    {/* 1 · CABECERA (§2.4.1): el h1 de Ramón en una sola tinta (R4, Clara) */}
+    <section class="reticula int-cab" aria-labelledby="h-titulo">
+      <Miga items={[{ texto: m.miga[0], href: '/v3/' }, { texto: m.miga[1] }]} />
+      <h1 class="t-declaracion" id="h-titulo">{m.h1}</h1>
+      <p class="cuerpo caja">{m.linea}</p>
+      <div class="botones">
+        {m.botones.map((b) => <a class={`boton boton--${b.clase}`} href={b.href}>{b.texto}</a>)}
       </div>
     </section>
 
-    {/* srcset (QA final, técnica #8): en escritorio la foto llena la caja de 2,39; en celular
-         la caja es 4:3 y la foto se pinta a 1,79 veces su ancho. El retrato de arriba no lleva:
-         mide 896 de ancho, lo justo para la columna de 5/12 con DPR 2. */}
-    <figure class="d-sangre d-pausa-nos"><img src="/assets/img/d/ventana.jpg" srcset="/assets/img/d/ventana-800.jpg 800w, /assets/img/d/ventana.jpg 1600w" sizes="(max-width: 767px) calc((100vw - 40px) * 1.791), calc(100vw - 80px)" alt="Mesa de trabajo junto a una ventana con cortinas, con un cuaderno abierto y un laptop" width="1600" height="670" loading="lazy" decoding="async" /></figure>
-
-    <section class="d-sec d-faq" aria-labelledby="s-com">
-      <div class="d-eti"><h2 class="d-h2" id="s-com">Cómo trabajo</h2></div>
-      <div class="d-filas">
-        {puntos.map((p) => (<div><h3 class="d-h3">{p.t}</h3><p class="d-cuerpo">{p.d}</p></div>))}
+    {/* 2 · EL RETRATO Y LA BIO: el retrato 3:4 entero en c1–c5, la bio en c7–c14 apoyada abajo */}
+    <section class="seccion reticula quien" aria-labelledby="h-trayectoria">
+      <div class="quien__retrato" data-entrada>
+        <Imagen src={retrato.src} alt={m.alt} ancho={retrato.ancho} alto={retrato.alto} clase="p-34" primeraPantalla />
+      </div>
+      <div class="quien__txt">
+        <p class="cuerpo caja">{m.bio}</p>
+        <p class="chico caja"><span class="tinta">{m.firma.nombre}</span>{m.firma.resto}</p>
+        <h2 class="t-titulo quien__h2" id="h-trayectoria">{m.trayectoria.h2}</h2>
+        <ul class="int-lista quien__lista">
+          {m.trayectoria.lista.map((linea) => <li><p class="cuerpo">{linea.map((p) => (p.junto ? <span class="sin-corte">{p.texto}</span> : p.texto))}</p></li>)}
+        </ul>
       </div>
     </section>
 
-    {/* Cierre. El párrafo describe el DIAGNÓSTICO (a mano, 24 horas): el botón principal
-         lleva a pedirlo. El chequeo automático va de secundario, a /v3/diagnostico/. Corta,
-         así que quieta. */}
-    <section class="d-sec d-sec--quieta" aria-labelledby="s-apa">
-      <div class="d-eti"><h2 class="d-h2" id="s-apa">¿Apareces cuando tus clientes preguntan?</h2><p class="d-chico">Te lo muestro antes de que pagues nada.</p></div>
-      <div class="d-texto-nos">
-        <p class="d-guia">{primero}</p>
-        <div class="d-btns"><a class="d-btn" href={CONTACTO}>Pedir el diagnóstico</a><a class="d-btn d-btn--alt" href="/v3/diagnostico/">Correr el chequeo</a></div>
+    {/* 3 · POR QUÉ UN SOLO SISTEMA (c5–c12) */}
+    <section class="seccion reticula" aria-labelledby="h-sistema">
+      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-sistema">{m.sistema.h2}</h2></div>
+      <div class="int-sec__cuerpo">
+        {m.sistema.parrafos.map((p) => <p class="cuerpo caja">{p}</p>)}
       </div>
     </section>
 
-    <a class="d-siguiente" href="/v3/metodo/"><span class="d-chico d-gris">Siguiente</span><span class="d-h1">Método →</span></a>
-  </main>
+    {/* 4 · CÓMO TRABAJO (lista, c5–c12) */}
+    <section class="seccion reticula" aria-labelledby="h-como">
+      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-como">{m.como.h2}</h2></div>
+      <ul class="int-sec__cuerpo int-lista">
+        {m.como.lista.map((x) => <li><h3 class="int-lista__t tinta">{x.t}</h3><p class="cuerpo">{x.d}</p></li>)}
+      </ul>
+    </section>
 
-  <FooterV3 />
+    {/* 5 · CIERRE (§2.4.4) y «Siguiente · Método» */}
+    <section class="seccion reticula" aria-labelledby="h-cierre">
+      <div class="cierre">
+        <h2 class="t-declaracion" id="h-cierre">{m.cierre.h2}</h2>
+        <p class="chico">{m.cierre.bajada}</p>
+        <p class="cuerpo">{m.cierre.p}</p>
+        <div class="botones">
+          {m.cierre.botones.map((b, i) => <a class={`boton boton--${b.clase}`} href={b.href}>{b.texto}{i === 0 && <Icono nombre="flecha" />}</a>)}
+        </div>
+        <div class="int-siguiente">
+          <p class="rotulo">{m.cierre.siguiente.rotulo}</p>
+          <a class="t-titulo t-display subrayado" href={m.cierre.siguiente.href}>{m.cierre.siguiente.texto}<Icono nombre="flecha" /></a>
+        </div>
+      </div>
+    </section>
+  </PaginaA>
 </Layout>
-
-<style>
-  /* Retrato + presentación: 5/12 la foto, 7/12 el texto apoyado abajo, como la entrada de
-     un caso de driftime. Sin padding arriba: la foto sigue a la cabecera como .d-sangre. */
-  .d-retrato-nos { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); padding: 0 var(--d-m); align-items: end; }
-  .d-retrato-nos :global(.d-pieza) { aspect-ratio: 3 / 4; }
-  /* Sin sangría: el texto arranca en el mismo eje que la columna derecha de las secciones
-     pegajosas de abajo (misma grilla 5/7, mismo gutter). */
-  .d-retrato-nos__txt { display: flex; flex-direction: column; gap: 22px; }
-  .d-retrato-nos__txt .d-guia { max-width: 640px; }
-  .d-firma-nos { display: flex; flex-direction: column; gap: 2px; margin: 0; }
-  /* Columna de texto corrido de una sección pegajosa (sin filetes: es prosa, no lista). */
-  .d-texto-nos { display: flex; flex-direction: column; gap: 22px; }
-  .d-texto-nos .d-btns { margin-top: 6px; }
-  /* La imagen entre secciones respira lo mismo que una sección (.d-sec: 180 / 110 px). */
-  .d-pausa-nos { margin-top: 180px; }
-  /* En escritorio la foto va entera (2,39:1 nativo). En celular .d-sangre pasa a 4:3:
-     el encuadre se queda con el laptop, la taza y los papeles, que es la mesa de trabajo. */
-  .d-pausa-nos img { object-position: 88% 60%; }
-  /* «No te prometo. Te / muestro.» en celular: el titular se parte por la frase, no por
-     el ancho. */
-  .d-h1-nos { text-wrap: balance; }
-  /* «E-commerce» no se parte en el guion (a 390 quedaba «… y E-» / «commerce»). Manrope no
-     trae U+2011, así que el guion no separable caería a otra fuente: span nowrap. */
-  .d-nobr-nos { white-space: nowrap; }
-  @media (max-width: 767px) {
-    .d-retrato-nos { grid-template-columns: 1fr; gap: 28px; }
-    .d-pausa-nos { margin-top: 110px; }
-  }
-</style>

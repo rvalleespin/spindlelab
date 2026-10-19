@@ -13,6 +13,9 @@ interface Props {
   ejemplo?: string;
   boton?: string;
   ayuda?: string;
+  /** /v3/diagnostico/ (tanda 5): el h2 oculto «Resultado del chequeo», que se lee solo cuando hay resultado (sin él, el
+   *  resultado salta del h1 a sus h3). La página de driftime lo tenía; sin la prop, el marcado es el de siempre. */
+  tituloResultado?: string;
 }
 const {
   apilado = false,
@@ -22,6 +25,7 @@ const {
   ejemplo = 'tuempresa.cl',
   boton = 'Revisar mi sitio',
   ayuda = 'Mira 21 cosas de tu sitio, gratis y sin pedirte el correo. No guardamos la dirección que escribes. Si construimos tu sitio, le pasamos este chequeo antes de entregártelo.',
+  tituloResultado,
 } = Astro.props;
 ---
 <div class:list={['chequeo', { 'chequeo--apilado': apilado }]} role="group" aria-labelledby={rotulo ? 'chq-rotulo' : undefined}>
@@ -36,6 +40,7 @@ const {
     {ayuda && <p class="chico" id="chq-ayuda">{ayuda}</p>}
   </form>
   <div id="chq-error" role="alert" hidden></div>
+  {tituloResultado && <h2 class="solo-lector chequeo__titulo-res">{tituloResultado}</h2>}
   <div id="chq-out" aria-live="polite"></div>
 </div>
 <script is:inline src="/assets/js/v3-chequeo.js?v=3" defer></script>

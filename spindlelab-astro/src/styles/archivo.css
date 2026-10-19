@@ -978,6 +978,198 @@ body.a-body.a-sin-js .filtro { display: none; }
   .a-body .int-siguiente a { align-items: center; min-height: 44px; margin-block: -8px; }
 }
 
+/* ================================================================== TANDA 5: método, diagnóstico, nosotros, contacto
+   y el blog (spec §2.4 y §2.5) */
+/* Lo que estas páginas suman a la plantilla interior de la tanda 4; ninguna de estas clases aparece en las páginas de
+   las tandas anteriores. Los espacios, de la escala de §1.5. Lo que la spec no fijaba: desvios.md, tanda 5. */
+
+/* Una fila en la forma de las fases (método, los 21 chequeos, los dos caminos, qué pasa después): el título a Título y,
+   a la derecha, el cuerpo y sus datos */
+.a-body .fase__izq { display: flex; flex-direction: column; gap: 8px; }
+.a-body .fase__der { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+/* Los datos de cada fase del método: el rótulo mono y el valor en chico; desde 834, dos por fila y el precio entero */
+.a-body .datos-fase { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px var(--a-g); max-width: var(--a-caja); }
+@media (min-width: 834px) { .a-body .datos-fase { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.a-body .datos-fase__fila { display: flex; flex-direction: column; gap: 4px; }
+.a-body .datos-fase__fila--entera { grid-column: 1 / -1; }
+.a-body .datos-fase__linea { display: block; }
+.a-body .datos-fase a .icono-flecha { display: inline-block; margin-left: 4px; }
+/* Una lista de términos (método, «Lo que necesitamos de ti»): la misma fila de la lista, con su término */
+.a-body .int-lista > .int-lista__fila { padding: 12px 0; border-top: 1px solid var(--a-linea); }
+.a-body .int-lista__fila > .cuerpo { max-width: var(--a-caja); }
+/* Los botones al pie del contenido de una sección (dos caminos, la ley) */
+.a-body .int-botones { margin-top: 24px; }
+
+/* El chequeo de /v3/diagnostico/ (§2.4): bajo la cabecera, en c1–c8, con el resultado en la misma columna; el h2 oculto
+   «Resultado del chequeo» solo existe cuando hay resultado */
+.a-body .int-cab > .int-instr { margin-top: 16px; }
+@media (min-width: 834px) { .a-body .int-cab > .int-instr { grid-column: 1 / span 8; } }
+.a-body .chequeo:not(:has(#chq-out[style*='block'])) .chequeo__titulo-res { display: none; }
+
+/* /v3/nosotros/: la bio junto al retrato (las clases de «Quién está detrás» de la home), con la trayectoria en su lista */
+.a-body .quien__h2 { margin-top: 24px; }
+.a-body .quien__lista { align-self: stretch; max-width: var(--a-caja); }
+.a-body .sin-corte { white-space: nowrap; }
+
+/* /v3/contacto/: el formulario en c1–c8 (§2.4), 40 arriba y 12 entre campos (la cabecera es corta: el formulario entero
+   sobre el pliegue a 1440 × 900, también con el aviso de cookies abierto). Los campos de §4.1: placa, borde #707070, texto de 16 (sin zoom en iOS), 44 de alto, placeholder gris;
+   al pasar el mouse y con el foco, el borde gris, y el contorno blanco del foco de §4.3. */
+.a-body .form-sec { padding-top: 40px; }
+.a-body .form-zona { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+@media (min-width: 834px) { .a-body .form-zona { grid-column: 1 / span 8; } }
+.a-body .formulario { display: flex; flex-direction: column; gap: 12px; }
+.a-body .formulario[hidden], .a-body .formulario__listo[hidden] { display: none; }
+.a-body .formulario__par { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px var(--a-g); }
+@media (min-width: 834px) { .a-body .formulario__par { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.a-body .campo { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.a-body .campo .chico { max-width: var(--a-caja); }
+.a-body .campo input, .a-body .campo textarea {
+  width: 100%; margin: 0; height: 44px; padding: 0 12px; border-radius: 4px; border: 1px solid var(--a-borde-campo);
+  background: var(--a-placa); color: var(--a-blanco); font-size: 16px; font-weight: 370; line-height: var(--a-i-cuerpo);
+  transition: border-color var(--a-color);
+}
+.a-body .campo textarea { display: block; height: auto; min-height: 88px; padding: 12px; resize: vertical; }
+.a-body .campo input::placeholder, .a-body .campo textarea::placeholder { color: var(--a-gris); opacity: 1; }
+.a-body .campo input:hover, .a-body .campo textarea:hover,
+.a-body .campo input:focus, .a-body .campo textarea:focus { border-color: var(--a-gris); }
+/* el autocompletado de Chrome pinta el campo de otro color: se le devuelve la placa (un relleno, no una sombra) */
+.a-body .campo input:-webkit-autofill { -webkit-text-fill-color: var(--a-blanco); box-shadow: 0 0 0 1000px var(--a-placa) inset; caret-color: var(--a-blanco); }
+/* El consentimiento: la casilla de 16 px (vacía, el borde del campo; marcada, blanca) dentro de un área de 44 × 44 que no
+   mueve lo que se ve (§4.3), y la frase en chico con el enlace blanco */
+.a-body .consiento { display: flex; align-items: flex-start; gap: 12px; max-width: var(--a-caja); cursor: pointer; }
+.a-body .consiento input {
+  appearance: none; -webkit-appearance: none; flex: none; width: 44px; height: 44px; margin: -12px -14px;
+  border: 0; border-radius: 0; cursor: pointer;
+  background: center / 14px 14px no-repeat linear-gradient(var(--a-placa), var(--a-placa)),
+              center / 16px 16px no-repeat linear-gradient(var(--a-borde-campo), var(--a-borde-campo));
+}
+.a-body .consiento input:hover { background: center / 14px 14px no-repeat linear-gradient(var(--a-placa), var(--a-placa)),
+              center / 16px 16px no-repeat linear-gradient(var(--a-gris), var(--a-gris)); }
+.a-body .consiento input:checked { background: center / 16px 16px no-repeat linear-gradient(var(--a-blanco), var(--a-blanco)); }
+.a-body .consiento input:focus-visible { outline-offset: -11px; border-radius: 0; }
+.a-body .consiento a { color: var(--a-blanco); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgba(255, 255, 255, 0.45); }
+.a-body .formulario__envio { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+/* v3-contacto.js reescribe la clase de .form-status: se viste desde el padre. El error, en blanco y sin rojo (§4.1) */
+.a-body .formulario__envio .form-status { font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .formulario__envio .form-status.err { color: var(--a-blanco); }
+/* Lo que reemplaza al formulario cuando el envío sale bien: una fila con la línea de sección, sin caja (§1.5) */
+.a-body .formulario__listo { display: flex; flex-direction: column; gap: 8px; padding-top: 16px; border-top: 1px solid var(--a-linea-seccion); }
+.a-body .formulario__listo .cuerpo { max-width: var(--a-caja); }
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .formulario__directo a { display: inline-flex; align-items: center; min-height: 44px; margin-block: -13.5px; }
+}
+
+/* EL ÍNDICE DEL BLOG (§2.5): la barra lateral del índice de trabajo y, a la derecha, las filas: borde superior en la
+   línea, la fecha y el tema en dato mono en la mitad izquierda y el título a Título, enlazado, en la derecha (desde
+   1194; bajo 1194, uno sobre otro). Toda la fila lleva al artículo. Al final, el cierre del blog. */
+.a-body .blog__columna { min-width: 0; }
+.a-body .fila-blog {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px var(--a-g); padding: 12px 0 32px;
+  border-top: 1px solid var(--a-linea);
+}
+@media (min-width: 1194px) {
+  .a-body .indice--blog .indice__lateral { padding-top: 48px; }
+  .a-body .blog__columna { padding-top: 48px; }
+  .a-body .fila-blog { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding-inline: 24px; }
+}
+.a-body .fila-blog h2 { max-width: 20em; }
+.a-body .fila-blog h2 a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.a-body .fila-blog h2 .icono-flecha { display: inline-block; margin-left: 8px; }
+.a-body .fila-blog:hover a.subrayado { text-decoration-color: var(--a-blanco); }
+.a-body .blog-cierre .cuerpo + .cuerpo, .a-body .siguiente__contacto .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .blog-cierre {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 80px; padding-top: 24px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+@media (min-width: 834px) { .a-body .blog-cierre .cuerpo + .cuerpo, .a-body .siguiente__contacto .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .blog-cierre { margin-top: 120px; } }
+@media (min-width: 1194px) { .a-body .blog-cierre .cuerpo + .cuerpo, .a-body .siguiente__contacto .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .blog-cierre { padding-inline: 24px; } }
+
+/* EL ARTÍCULO (§2.5): la plantilla del caso con otro contenido. En la barra, la ficha, el autor (el retrato a 44 px,
+   radio 6) y el índice del artículo con su rótulo; en la columna, el cuerpo verbatim con tope de 493, partido en las
+   secciones del caso (el h2 a Título a la izquierda, el cuerpo a la derecha desde 1194). */
+.a-body .autor { display: flex; align-items: center; gap: 12px; }
+.a-body .autor img { width: 44px; height: 44px; border-radius: 6px; object-fit: cover; flex: none; }
+.a-body .autor .chico { display: flex; flex-direction: column; }
+.a-body .lateral__rot { margin-bottom: 8px; }
+/* sin medio principal: la columna abre con la entrada del artículo, en la mitad del cuerpo desde 1194 */
+.a-body .articulo__intro { display: flex; flex-direction: column; gap: 16px; padding-top: 16px; }
+@media (min-width: 1194px) {
+  .a-body .articulo__intro { padding: 48px 24px 0 calc(50% + 12px); }
+}
+.a-body .caso-sec--articulo > .prosa-tabla { grid-column: 1 / -1; }
+/* El cuerpo: Google Sans Flex a cuerpo, gris; lo marcado (strong, b) y los enlaces en blanco, sin negrita (§1.2) */
+.a-body .prosa { display: flex; flex-direction: column; gap: 16px; min-width: 0; font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .prosa > *, .a-body .prosa li { max-width: var(--a-caja); text-wrap: pretty; }
+.a-body .prosa > [hidden] { display: none; }
+.a-body .prosa strong, .a-body .prosa b { color: var(--a-blanco); }
+.a-body .prosa a {
+  color: var(--a-blanco); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.45); transition: text-decoration-color var(--a-color);
+}
+.a-body .prosa a:hover { text-decoration-color: var(--a-blanco); }
+.a-body .prosa h3 { margin-top: 8px; font-stretch: 100%; font-weight: 370; font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); }
+.a-body .prosa code { font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-blanco); overflow-wrap: anywhere; }
+.a-body .prosa li + li { margin-top: 8px; }
+.a-body .prosa ul > li { position: relative; padding-left: 16px; }
+.a-body .prosa ul > li::before { content: '·'; position: absolute; left: 0; color: var(--a-gris); }
+.a-body .prosa ol { counter-reset: art; }
+.a-body .prosa ol > li { position: relative; padding-left: 32px; counter-increment: art; }
+.a-body .prosa ol > li::before {
+  content: counter(art, decimal-leading-zero); position: absolute; left: 0; top: 2px;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-gris);
+}
+/* La cita, a Título en blanco, y la nota, con la línea entre filas arriba: ninguna en una caja (§1.5, §6.5) */
+.a-body .prosa blockquote {
+  padding-top: 16px; border-top: 1px solid var(--a-linea); font-stretch: 76%; font-weight: 300;
+  font-size: var(--a-t-titulo); line-height: 1.2; color: var(--a-blanco); text-wrap: balance;
+}
+.a-body .prosa .nota { padding-top: 12px; border-top: 1px solid var(--a-linea); }
+/* Las preguntas del artículo (details): filas con la línea de sección; «+» y «–» en mono */
+.a-body .prosa .faq { max-width: var(--a-caja); border-bottom: 1px solid var(--a-linea-seccion); }
+.a-body .prosa details { border-top: 1px solid var(--a-linea-seccion); }
+.a-body .prosa summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; padding: 8px 0;
+  color: var(--a-blanco); cursor: pointer; list-style: none;
+}
+.a-body .prosa summary::-webkit-details-marker { display: none; }
+.a-body .prosa summary::after { content: '+'; flex: none; font-family: var(--a-f-mono); font-weight: 500; font-size: 16px; color: var(--a-blanco); }
+.a-body .prosa details[open] > summary::after { content: '–'; }
+.a-body .prosa .faq-a { padding-bottom: 16px; }
+/* Las tablas: las dos mitades de la columna; filas con la línea entre filas, el encabezado en rótulo mono, el texto en
+   chico. Si no caben, se desplazan dentro de su caja (la página no). */
+.a-body .prosa-tabla { min-width: 0; margin-top: 8px; overflow-x: auto; }
+.a-body .prosa-tabla table { width: 100%; border-collapse: collapse; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .prosa-tabla th, .a-body .prosa-tabla td { padding: 12px 16px 12px 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--a-linea); }
+.a-body .prosa-tabla th {
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
+  text-transform: uppercase; color: var(--a-gris); white-space: nowrap; border-bottom-color: var(--a-linea-seccion);
+}
+.a-body .prosa-tabla td:first-child, .a-body .prosa-tabla strong { color: var(--a-blanco); }
+.a-body .prosa-tabla code { font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-blanco); }
+@media (max-width: 1023.98px) {
+  .a-body .prosa-tabla th, .a-body .prosa-tabla td { min-width: 152px; }
+  /* al desplazar la tabla, la primera columna (el nombre del chequeo) se queda: si no, a la tercera ya no sabes en qué
+     fila vas (la regla de driftime, QA del 5-oct) */
+  .a-body .prosa-tabla th:first-child, .a-body .prosa-tabla td:first-child { position: sticky; left: 0; z-index: 1; background: var(--a-lienzo); }
+}
+/* «Siguiente artículo»: el título del próximo a la escala de «Siguiente», enlazado */
+.a-body .articulo .siguiente__caso .t-siguiente { max-width: 16em; }
+.a-body .articulo .siguiente__caso .icono-flecha { display: inline-block; margin-left: 8px; }
+/* La barra flotante bajo 1194: la sección activa de un artículo es una frase, no un rótulo: va en chico, en una línea */
+.a-body .barra__activa--frase {
+  min-width: 0; flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-family: var(--a-f-letra); font-weight: 370; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo);
+  letter-spacing: 0; text-transform: none;
+}
+.a-body .barra--articulo summary > .rotulo { flex: none; }
+/* el artículo tiene pie: bajo 1194 la página deja el alto de la barra abajo para que no lo tape */
+@media (max-width: 1193.98px) {
+  .a-body .articulo { padding-bottom: 0; }
+  .a-body .a-pagina:has(.articulo) { padding-bottom: 96px; }
+}
+
 /* ------------------------------------------------------------------ movimiento reducido (§1.6) */
 /* Ningún resorte corre, el círculo no existe, todo está en su lugar y los cambios de color son instantáneos. */
 @media (prefers-reduced-motion: reduce) {

@@ -1,254 +1,52 @@
 ---
-// ÍNDICE DEL BLOG — sistema driftime (5-oct-2026).
+// EL ÍNDICE DEL BLOG SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 5). Diego, 19-oct-2026.
 //
-// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md, §4 plantilla «Índice»:
-// h1 60 px + entrada → filas editoriales (blog: fecha · título · flecha).
-// Implementación de referencia: v3/servicios/desarrollo-web.astro (cabecera, d-sec) y la
-// sección «El Taller» de v3/index.astro (las filas .d-indice salen de ahí, idénticas).
+// Contrato: spindlelab-v3/spec-visual.md §2.5: el /latest de Koto sin sus imágenes. Desde 1194, la barra lateral de
+// 320 px (miga, h1 en dos tintas, «(7)» y la línea de Clara); a la derecha, los siete como filas, del más reciente al
+// más antiguo, con borde superior: la fecha y el tema en dato mono en la mitad izquierda, el título a Título, enlazado y
+// con la flecha, en la derecha. Al final, el cierre del blog. Bajo 1194, una columna. Sin imágenes (§3.4: interiores).
 //
-// LO QUE CAMBIÓ RESPECTO DE LA VERSIÓN ANTERIOR, Y POR QUÉ:
-// · El h1 «Blog» iba en .palabra (Manrope 800 en mayúsculas). Las internas tienen CERO
-//   display: pasa a .d-h1 y dice lo mismo que la sección que trae al lector desde la home
-//   («Lo que escribimos sobre búsqueda e IA»), así el clic en «Ver todo» aterriza donde
-//   prometía. La miga y el <title> siguen diciendo «Blog», que es como lo nombra el menú.
-// · Las 7 tarjetas con foto en grilla de dos salen (tell B1), y con ellas las fotos: seis
-//   de las siete eran de la lista negra de §5 (hero-*, estrategia-mesa, evidencia-*).
-//   Queda UNA imagen del pool honesto, en la fila del artículo más reciente, que es la
-//   fila de novedades de driftime (imagen grande + título 30 px). El resto son filas.
-//   Es un desvío de §4 (que pide fecha · título · flecha) y está declarado en el §7 de la
-//   spec, no solo acá.
-// · El cierre navy con «El sitio es el eje.» en 800 sale: era display en una interna y
-//   su «Treinta segundos» no tiene fuente en el repo. El cierre ahora es una sección
-//   .d-sec con copy que sí la tiene (ver las fuentes al pie del frontmatter).
-//
-// LOS DATOS SALEN DE data/blog-v3/_indice.json, extraído de los posts publicados. Título,
-// bajada y fecha no se retipean acá: un índice escrito a mano termina diciendo algo
-// distinto al post.
+// Los datos los arma indiceBlog() en blog.mjs (títulos y fechas de data/blog-v3/_indice.json, el tema del byline de
+// cada artículo, el texto de Clara). Señales de Simón, senales-obra.md §2.9: el grafo de hoy queda.
 import Layout from '../../../layouts/Layout.astro';
-import NavV3 from '../../../components/v3/NavV3.astro';
-import FooterV3 from '../../../components/v3/FooterV3.astro';
-import Pieza from '../../../components/v3/Pieza.astro';
-import Miga from '../../../components/v3/Miga.astro';
-import '../../../styles/driftime.css';
-import indice from '../../../data/blog-v3/_indice.json';
-import paginas from '../../../data/paginas-v3.json';
-import { CONTACTO_V3 as CONTACTO, OG_V3 } from '../../../consts-v3';
+import PaginaA from '../../../components/a/PaginaA.astro';
+import Miga from '../../../components/a/Miga.astro';
+import Icono from '../../../components/a/Icono.astro';
+import { LAYOUT_A } from '../../../components/a/layout-a';
+import { indiceBlog } from '../../../data/archivo/blog.mjs';
 
-const url = 'https://spindlelab.cl/blog/';
-// El texto de la página (title, description, h1, línea y cierre) está en
-// paginas-v3.json#/blog desde E8 (paso 1, 14-oct); el cierre lo comparte blog/[slug].astro.
-const b = (paginas as Record<string, any>).blog;
-// Una sola fuente para la meta description y la del nodo CollectionPage: si se escriben
-// por separado, terminan diciendo cosas distintas.
-const DESCRIPCION: string = b.description;
-
-// Más nuevo primero. Por fecha y no por nombre de archivo: alfabético dejaba «21-chequeos»
-// arriba por casualidad y no por criterio. Empates (tres del 7-jul): el comparador nunca
-// devuelve 0, así que quedan al revés del JSON. Es el mismo comparador de antes y se deja
-// igual para que el ItemList del JSON-LD no cambie de orden.
-const posts = [...indice].sort((a, b) => (a.datePublished < b.datePublished ? 1 : -1));
-const [ultimo, ...resto] = posts;
-
-// Mismo formato que las filas de «El Taller» en la home. T12:00 para que ninguna zona
-// horaria corra la fecha al día anterior.
-const fecha = (iso: string) =>
-  new Date(iso + 'T12:00:00').toLocaleDateString('es-CL', { day: 'numeric', month: 'short', year: 'numeric' }).replace('.', '');
-
-// La imagen de la fila destacada es DECISIÓN EDITORIAL, no dato: los posts no traen imagen
-// propia. Sale del pool honesto (§5) y no afirma nada del artículo: una fila de fichas,
-// una detrás de otra, para el post de los 21 chequeos uno por uno.
-// srcset (QA final, técnica #8): versión de 800 px. La foto es cuadrada y su caja es más
-// ancha que alta, así que se pinta al ancho de la caja: la columna de 7fr de la fila
-// (120 px + 5fr + 7fr en 100vw − 80, con dos gutters de 16), la columna de texto entre 768 y
-// 1023, y todo el ancho en celular.
-const imgUltimo = {
-  src: '/assets/img/d/domino-curva.jpg',
-  srcset: '/assets/img/d/domino-curva-800.jpg 800w, /assets/img/d/domino-curva.jpg 1600w',
-  sizes: '(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) calc(100vw - 216px), calc((100vw - 232px) * 0.583)',
-  alt: 'Fichas de dominó de madera de pie en una fila curva, con luz cálida de costado',
-};
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'CollectionPage',
-      '@id': `${url}#collectionpage`,
-      url,
-      name: 'Blog · SpindleLab',
-      description: DESCRIPCION,
-      inLanguage: 'es-CL',
-      isPartOf: { '@id': 'https://spindlelab.cl/#website' },
-      // La lista ES el contenido de la página, y la miga es la suya (QA 5-oct, antislop C8).
-      mainEntity: { '@id': `${url}#itemlist` },
-      breadcrumb: { '@id': `${url}#breadcrumb` },
-    },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${url}#breadcrumb`,
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
-        { '@type': 'ListItem', position: 2, name: 'Blog' },
-      ],
-    },
-    {
-      '@type': 'ItemList',
-      '@id': `${url}#itemlist`,
-      itemListElement: posts.map((p, i) => ({
-        '@type': 'ListItem',
-        position: i + 1,
-        name: p.headline,
-        url: p.canonical,
-      })),
-    },
-  ],
-};
-
-// FUENTES DEL COPY (hoy en paginas-v3.json#/blog):
-// · h1: el h2 de la sección «El Taller» de v3/index.astro.
-// · Línea: la entrada de la versión anterior de esta página, con la serie de tres pasada a
-//   «desde… hasta…» (QA 5-oct, antislop A3). Cada artículo sigue teniendo su lugar en ella.
-// · «Leer ayuda; medir, más.»: el cierre del índice publicado (spindlelab-site/blog/index.html).
-// · «Pon tu dominio y ves en segundos si…»: el arranque de los cierres de /v3/servicios/ y
-//   /v3/trabajo/ («Pon tu dominio y ves en segundos si ChatGPT, Gemini y Perplexity…») con
-//   la tríada leer/entender/citar de la línea de /v3/diagnostico/ y del cierre anterior.
-// · «Es el mismo chequeo con el que partimos cada proyecto.»: la nota del chequeo de la home.
-// · Se borró «Automático, en segundos, sobre tu sitio.» (QA 5-oct, A3/A10): era la tercera
-//   serie de tres de la página y «en segundos» ya está en la guía.
+const m = indiceBlog();
 ---
-
-<Layout ogImage={OG_V3.imagen} ogImageAlt={OG_V3.alt}
-  title={b.title}
-  description={DESCRIPCION}
-  bodyClass="d-body"
->
-  <Fragment slot="head">
-    <meta name="robots" content="noindex, nofollow" />
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  </Fragment>
-
-  <NavV3 />
-
-  <main>
-    <header class="d-cab">
-      <Miga items={[{ label: 'Inicio', href: '/v3/' }, { label: 'Blog' }]} />
-      <h1 class="d-h1">{b.h1}</h1>
-      {/* Dos elementos, no tres (antislop A3: una sola serie de tres por página, y esa es
-           leer/entender/citar del cierre). «Desde… hasta…» cubre los artículos de en medio,
-           como el de costos, sin enumerarlos. Es la redacción final: Clara la dejó así en el
-           pase de voz (E8, 14-oct); pasa la lectura en voz alta y la segunda frase es un hecho
-           de la marca, no un remate. */}
-      <p class="d-linea">{b.linea}</p>
-    </header>
-
-    {/* Una sola lista, del más nuevo al más antiguo. La primera fila se abre: es la fila de
-         novedades de driftime (imagen grande, título 30 px, bajada). Las otras seis son las
-         filas de la home: fecha · título · flecha, todo el ancho clicable. */}
-    <section class="d-indice d-indice--blog" aria-label="Artículos, del más reciente al más antiguo">
-      <ol>
-        <li class="d-dest-blog">
-          <article class="d-dest-blog__fila">
-            <time datetime={ultimo.datePublished}>{fecha(ultimo.datePublished)}</time>
-            <div class="d-dest-blog__txt">
-              {/* El enlace se estira a toda la fila con ::after: la fila entera es clicable,
-                   pero el nombre del enlace es solo el título (no el alt de la foto). */}
-              <h2 class="d-h2"><a class="d-dest-blog__enlace" href={`/v3/blog/${ultimo.slug}/`}>{ultimo.headline}</a></h2>
-              <p class="d-cuerpo">{ultimo.description}</p>
-              <span class="d-btn" aria-hidden="true">Leer el artículo</span>
-            </div>
-            <Pieza src={imgUltimo.src} srcset={imgUltimo.srcset} sizes={imgUltimo.sizes} alt={imgUltimo.alt} clase="d-dest-blog__img" ancho={1600} alto={1600} eager posicion="50% 60%" />
-          </article>
-        </li>
-        {resto.map((p) => (
-          <li>
-            <a href={`/v3/blog/${p.slug}/`}>
-              <time datetime={p.datePublished}>{fecha(p.datePublished)}</time>
-              <h2 class="d-h3">{p.headline}</h2>
-              <span class="d-flecha" aria-hidden="true">→</span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </section>
-
-    {/* Cierre: lo que viene después de leer. Sección con etiqueta (.d-sec), no campo de
-         color: el campo lleva display y las internas no lo tienen. Sección corta:
-         .d-sec--quieta (spec §7), la etiqueta no se pega.
-         El botón va a /v3/diagnostico/ (spec §7, regla del 5-oct: un botón «chequeo» lleva
-         ahí, igual que servicios, trabajo y método). Antes iba a /v3/#chequeo y el módulo de
-         navegación tapaba el campo del dominio al llegar (QA 5-oct, bloqueante).
-         El texto describe el chequeo automático (tu dominio, en segundos), no a alguien que
-         «te dice»: la mezcla «Te decimos… / Automático» se contradecía (QA 5-oct).
-         Es el mismo cierre del artículo, botón por botón (spec §7, 5-oct: «mismas palabras»):
-         el segundo es «Escríbenos» → contacto, como en cada artículo, y no «Ver el método»,
-         que dejaba el cuerpo de /v3/blog/ sin un camino a contacto. Método sigue en el menú
-         y en el pie (rescate del v3 viejo, 13-oct). */}
-    <section class="d-sec d-sec--quieta" aria-labelledby="s-medir">
-      <div class="d-eti"><h2 class="d-h2" id="s-medir">{b.cierre.h2}</h2></div>
-      <div class="d-cierre-blog">
-        <p class="d-guia">{b.cierre.guia}</p>
-        <p class="d-cuerpo">{b.cierre.cuerpo}</p>
-        <div class="d-btns"><a class="d-btn" href="/v3/diagnostico/">Correr el chequeo</a><a class="d-btn d-btn--alt" href={CONTACTO}>Escríbenos</a></div>
+<Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
+  <PaginaA>
+    <div class="indice indice--blog">
+      <div class="indice__lateral">
+        <Miga items={[{ texto: m.miga[0], href: '/v3/' }, { texto: m.miga[1] }]} />
+        <h1 class="t-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
+        <p class="rotulo">{m.conteo}</p>
+        <p class="chico">{m.linea}</p>
       </div>
-    </section>
-  </main>
-
-  <FooterV3 />
+      <div class="blog__columna">
+        <ol class="filas-blog" aria-label="Artículos, del más reciente al más antiguo">
+          {m.filas.map((f) => (
+            <li class="fila-blog">
+              <p class="dato"><time datetime={f.iso}>{f.fecha}</time> · {f.tema}</p>
+              <h2 class="t-titulo"><a class="subrayado" href={f.href}>{f.titulo}<Icono nombre="flecha" /></a></h2>
+            </li>
+          ))}
+        </ol>
+        <section class="blog-cierre" aria-labelledby="h-cierre">
+          <h2 class="t-declaracion" id="h-cierre">{m.cierre.h2}</h2>
+          <p class="cuerpo caja">{m.cierre.guia}</p>
+          <p class="cuerpo caja">{m.cierre.cuerpo}</p>
+          <div class="botones">
+            <a class="boton boton--claro" href={m.cierre.botones[0].href}>{m.cierre.botones[0].texto}<Icono nombre="flecha" /></a>
+            <a class="boton boton--placa" href={m.cierre.botones[1].href}>{m.cierre.botones[1].texto}</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </PaginaA>
 </Layout>
-
-<style>
-  /* La lista termina y el cierre (.d-sec) ya trae sus 180 px de aire: sin esto se suman
-     los 160 de .d-indice y quedan 340 px de negro. */
-  .d-indice--blog { padding-bottom: 0; }
-
-  /* Fila destacada. Columnas: la fecha en los mismos 120 px de las filas de abajo, así el
-     título del destacado y los de la lista arrancan en la misma vertical. */
-  .d-dest-blog__fila {
-    position: relative;
-    display: grid;
-    grid-template-columns: 120px minmax(0, 5fr) minmax(0, 7fr);
-    gap: var(--d-g);
-    padding: 22px 0 40px;
-    border-bottom: 1px solid var(--d-filete);
-  }
-  .d-dest-blog__fila > time { align-self: baseline; }
-  .d-dest-blog__txt { align-self: baseline; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding-right: clamp(0px, 3vw, 48px); }
-  .d-dest-blog__txt .d-btn { margin-top: 12px; }
-  .d-dest-blog__enlace { text-decoration: none; }
-  /* z-index: la figura (.d-pieza) es posicionada y viene después en el DOM; sin esto la
-     imagen tapa el área del enlace y el clic sobre la foto no lleva a ninguna parte. */
-  .d-dest-blog__enlace::after { content: ''; position: absolute; inset: 0; z-index: 1; }
-  /* Foco: el contorno va en la fila entera, igual que en las filas de abajo (ahí el enlace
-     ES la fila). En el título solo quedaba un contorno partido en dos renglones. */
-  .d-dest-blog__enlace:focus-visible { outline: none; }
-  .d-dest-blog__enlace:focus-visible::after { outline: 2px solid var(--d-papel); outline-offset: 3px; }
-  .d-dest-blog__txt .d-h2 { text-wrap: balance; }
-  .d-dest-blog__fila:hover .d-dest-blog__enlace { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
-  :global(.d-dest-blog__img) { align-self: start; aspect-ratio: 3 / 2; }
-
-  /* El h1 tiene una sola palabra de más para la línea a 1440 («IA» quedaba sola abajo). */
-  .d-cab .d-h1 { text-wrap: balance; }
-
-  /* El cierre es corto: va con .d-sec--quieta del sistema (spec §7), no con una regla
-     propia que dijera lo mismo con otro nombre. */
-
-  .d-cierre-blog { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
-  .d-cierre-blog .d-btns { margin-top: 14px; }
-
-  /* Tableta: a 768 la columna de texto quedaba en ~200 px (bajada de siete líneas). La
-     imagen baja bajo el texto, en la misma columna de los títulos. */
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .d-dest-blog__fila { grid-template-columns: 120px minmax(0, 1fr); }
-    :global(.d-dest-blog__img) { grid-column: 2; aspect-ratio: 16 / 9; margin-top: 14px; }
-    .d-dest-blog__txt { padding-right: 0; }
-  }
-
-  /* Celular: la imagen va DESPUÉS del texto, como a 768. Delante empujaba la fecha y el
-     título fuera del primer pantallazo (texto desde y=956 con viewport de 844; QA 5-oct):
-     en un índice lo que se escanea es el título. */
-  @media (max-width: 767px) {
-    .d-dest-blog__fila { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 20px 0 32px; }
-    :global(.d-dest-blog__img) { aspect-ratio: 4 / 3; margin-top: 14px; }
-    .d-dest-blog__txt { gap: 10px; padding-right: 0; }
-  }
-</style>

@@ -1,0 +1,70 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
+ "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "id": "metodo",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "metodo",
+  "ruta": "/v3/metodo/",
+  "modo": "queda con ajustes",
+  "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
+  "title": "Método: SEO técnico y visibilidad en IA · SpindleLab",
+  "description": "Cómo trabajamos, en cuatro pasos medibles: revisamos qué le impide a Google y a la IA leer tu sitio, priorizamos, lo arreglamos y medimos el cambio.",
+  "senales": "Simón, e12/senales-obra.md §2.8",
+  "secciones": [
+   {
+    "id": "cabecera",
+    "nombre": "Cabecera",
+    "trabajo": "Decir para qué es este método, y adónde ir si el sitio hay que hacerlo de cero.",
+    "elementos": [
+     {
+      "id": "metodo.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Método",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "uso": "miga",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.h1",
+      "rol": "h1",
+      "tinta": "Cómo trabajamos.",
+      "gris": "Para que Google y la IA lean el sitio que ya tienes.",
+      "texto": "Cómo trabajamos. Para que Google y la IA lean el sitio que ya tienes.",
+      "antes": "Cómo trabajamos",
+      "origen": "spindlelab-astro/src/data/paginas-v3.json metodo.h1",
+      "por_que": "Con el giro, el estudio también diseña y programa; este método es el de un sitio que ya existe. La continuación lo dice. Lock §14: la continuación gris va de 6 a 13 palabras y la tinta hasta 8 (lo midió herramientas/comprobar-obra.py).",
+      "estado": "cambia"
+     },
+     {
+      "id": "metodo.linea",
+      "rol": "entradilla",
+      "texto": "Cuatro pasos medibles: revisamos qué le impide a Google y a la IA leer tu sitio, priorizamos, lo arreglamos y medimos el cambio.",
+      "origen": "spindlelab-astro/src/data/paginas-v3.json metodo.linea",
+      "estado": "cambia",
+      "antes": "Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo.",
+      "por_que": "Detector B8 y brief §2: «estrategia AEO/GEO» era la primera línea bajo el título y nadie la explicaba ahí. Son los mismos cuatro pasos, en las palabras de la description de Simón (senales-obra §2.8); los nombres de las fases siguen abajo, cada uno con su explicación."
+     },
+     {
+      "id": "metodo.puerta",
+      "rol": "parrafo",
+      "texto": "Si vamos a diseñar y programar tu sitio desde cero, el proceso es otro: cinco fases que apruebas una por una, en Desarrollo web.",
+      "enlaces": {
+       "Desarrollo web": "/v3/servicios/desarrollo-web/"
+      },
+      "por_que": "Brief §3: Desarrollo web es la puerta del estudio. Sin esta línea, quien llega por el menú lee que el estudio solo audita.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "metodo.resto",
+      "rol": "nota",
+      "texto": "Queda tal cual, desde su dato: el lead, «Del diagnóstico al monitoreo» (las cuatro fases con duración, entregable y costo), «Tres reglas que no negociamos», «Lo que necesitamos de ti» y el cierre «El primer paso es gratis.».",
+      "uso": "referencia",
+      "origen": "spindlelab-astro/src/data/paginas-v3.json metodo",
+      "estado": "queda"
+     }
+    ]
+   }
+  ]
+ }
+}

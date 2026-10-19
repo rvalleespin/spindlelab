@@ -10,4 +10,7 @@
 // Aquí queda cada palabra que se perdió así, con la página de la que venía. Se borra de esta lista solo el día que se
 // publique el v3 y se rehaga la línea base.
 //   · flex-grow: src/pages/v3/servicios/desarrollo-web.astro de driftime (un comentario de su galería), tanda 4.
-export const PALABRAS = ['flex-grow'];
+//   · border-collapse, collapse, italic, static: src/pages/v3/blog/[slug].astro de driftime (su <style>), tanda 5.
+//   · outline: src/pages/v3/blog/index.astro de driftime (su <style>), tanda 5.
+//   · text-wrap: los <style> de método, nosotros y el blog de driftime, tanda 5.
+export const PALABRAS = ['flex-grow', 'border-collapse', 'collapse', 'italic', 'static', 'outline', 'text-wrap'];
