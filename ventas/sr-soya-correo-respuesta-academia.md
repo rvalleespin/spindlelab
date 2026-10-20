@@ -4,13 +4,34 @@
   correo de las 20:10. **Sin enviar.**
 - **Para:** soyamusicbooking@gmail.com · **Borrador:** `r-8020764956492988034` ·
   **Hilo:** `1a0891b5676c7e7f`
-- **Adjuntar antes de enviar:** `ventas/anexos/SPL-NT-2026-002-srsoya-academia-vocal.pdf`
+- **Adjuntar antes de enviar:** la cotización `SPL-COT-2026-016` **y** el anexo `SPL-NT-2026-002`.
 - **Escrito para sostenerse solo:** punto de equilibrio, valor del alumno, aritmética de EEUU y los
   seis pasos del embudo están **en el cuerpo**. Si el adjunto falla, el correo sigue completo.
 - **Análisis y decisiones de Ramón:** `ventas/sr-soya-academia-vocal-analisis.md`
 - **Validación técnica con datos de plataforma:** `ventas/sr-soya-validacion-funnel-meta.md`
+- **Qué se vende y por qué hubo cotización nueva:** `ventas/sr-soya-que-estamos-vendiendo.md`
+- **Guión de la reunión:** `ventas/reunion-srsoya-academia-vocal.md`
 
-## Versión del 19-oct por la tarde: ahora compromete
+## Versión final del 19-oct: compromete, manda cotización nueva y propone reunión
+
+**Adjuntar antes de enviar, los dos:**
+
+1. `ventas/cotizaciones/SPL-COT-2026-016-srsoya-academia-vocal.pdf` ← **nueva, reemplaza a la 015**
+2. `ventas/anexos/SPL-NT-2026-002-srsoya-academia-vocal.pdf`
+
+Lo que agrega esta versión sobre la anterior:
+
+- **Separa lo que se construye de lo que se configura.** La página, el formulario y la medición
+  se construyen; la agenda y el cobro quedan configurados con herramientas de terceros a nombre de
+  Carlos. Evita que lea «embudo completo» como desarrollo de software.
+- **Explica por qué va una cotización nueva** sin que suene a enmienda: la anterior describe el
+  lanzamiento del disco, y el precio y el plazo no cambian.
+- **Propone media hora de reunión** para los riesgos, el material y los accesos. Guión completo en
+  `ventas/reunion-srsoya-academia-vocal.md`.
+- **Las tres preguntas pasan a ser preparación de la reunión**, y el cierre pide día en vez de
+  pedir el pago. El condicionamiento del arranque queda escrito en la cotización, donde pesa más.
+
+## Versión intermedia del 19-oct: el compromiso
 
 Ramón pidió **validar que el giro es posible** y **comprometer dos cosas**: la administración de las
 campañas en Meta y la elaboración del embudo de compra. El borrador se reescribió con eso al

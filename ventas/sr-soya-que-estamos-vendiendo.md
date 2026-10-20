@@ -4,6 +4,7 @@
   y si se ajusta de lo que él está solicitando»*.
 - **Fuentes:** `ventas/cotizaciones/SPL-COT-2026-015-srsoya-gestion-redes.html` (lo aceptado el
   15-sep) y el correo de Carlos del 19-oct 20:10 (lo pedido).
+- - **Estado:** ✅ resuelto. Ramón aprobó emitir cotización nueva el 19-oct.
 - **Respuesta corta:** calzan **cuatro de sus cinco puntos**. El que no calza es **el más
   importante del nuevo enfoque**, y además el cronograma que él firmó describe un proyecto que ya
   no se va a hacer.
@@ -130,7 +131,26 @@ que un cambio de enfoque posterior se cotiza aparte. Es la decisión 1 de
 `sr-soya-academia-vocal-analisis.md`, y una cotización nueva es el lugar natural para escribirla
 sin que suene a reproche.
 
-## 8. Lo que decide Ramón
+## 8. Decidido el 19-oct
+
+| # | Decisión | Resultado |
+|---|---|---|
+| 1 | ¿Cotización nueva o cuarto anexo? | ✅ **Cotización nueva.** Emitida como `SPL-COT-2026-016`, reemplaza a la 015 |
+| 2 | ¿Se aplica el reemplazo de «construcción del embudo entero»? | ✅ **Sí.** Aplicado en el correo y en la cotización: se separa lo que se construye de lo que se configura |
+| 3 | ¿La página sigue incluida? | ✅ **Sí, por única vez**, y queda escrito en la cotización con su valor a la vista |
+
+Ramón agregó que **los riesgos, el material y los accesos se conversan en reunión**, no solo por
+escrito. El guión quedó en `ventas/reunion-srsoya-academia-vocal.md`.
+
+## 9. Lo que quedó escrito en la cotización nueva
+
+Las tres cosas que estaban sueltas y ahora tienen línea propia:
+
+- **La agenda y el cobro existen como entregable**, cosa que la 015 no tenía en ninguna parte.
+- **La página va incluida por única vez**, y un embudo nuevo por cambio de enfoque se cotiza
+  aparte (servicio adicional, desde $290.000). Es la decisión 1 del análisis, escrita sin reproche.
+- **Los plazos corren desde el primer pago y los accesos.** Deja el arranque condicionado sin
+  tener que decirlo de forma dura en el correo.
 
 1. **¿Cotización nueva (recomendado) o un cuarto anexo?**
 2. **¿Se aplica el reemplazo del punto 6?** Son dos frases y evitan una expectativa de desarrollo

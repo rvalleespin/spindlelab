@@ -196,13 +196,38 @@ recurrentes cubren los $300.000 completos**. Detalle en `ventas/sr-soya-academia
 4. ⚠️ **Cobro en dólares desde Chile: el cuello de botella más probable.** Se verifica, no se afirma.
 5. Franjas horarias definidas antes de publicar disponibilidad.
 
+### Cotización nueva: SPL-COT-2026-016
+
+Al cruzar lo vendido contra lo pedido aparecieron tres desajustes: el **sistema de conversión** que
+Carlos pide no estaba vendido (en la 015 las palabras agenda, cobro, reserva y formulario aparecen
+**cero veces**), el **cronograma de 90 días describía el lanzamiento del disco**, y la página de
+$290.000 ya se había regalado una vez. Análisis en `ventas/sr-soya-que-estamos-vendiendo.md`.
+
+**Ramón aprobó emitir cotización nueva.** `SPL-COT-2026-016`, mismo precio y mismo plazo, con:
+
+| Lo que trae de nuevo |
+|---|
+| **Plan Academia** con siete líneas nombradas, entre ellas **agenda y cobro** y la **administración de campañas en Meta** |
+| Tabla que separa **lo que se construye de lo que se configura**, para no prometer desarrollo de software |
+| **La página incluida por única vez**, con su valor a la vista, y un embudo nuevo cotizado aparte si el enfoque vuelve a cambiar |
+| Sección de **riesgos** con qué se hace con cada uno |
+| Sección de **qué necesito de ti para partir**: accesos y material para las campañas |
+| **Los plazos corren desde el primer pago y los accesos** |
+
+### Reunión propuesta
+
+El correo propone **media hora** para repasar riesgos, material y accesos. Guión completo, con las
+preguntas de cada riesgo y las cinco decisiones que deben salir cerradas, en
+`ventas/reunion-srsoya-academia-vocal.md`.
+
 ## Próximo paso (al 19-oct-2026)
 
 **Borrador listo en el buzón** (`r-8020764956492988034`), **sin enviar**. Falta que Ramón:
 
 - [ ] Resuelva las cuatro decisiones de `ventas/sr-soya-academia-vocal-analisis.md` §1, más la
       quinta de la validación (cuenta publicitaria a nombre de Carlos: el borrador ya la propone así).
-- [ ] Adjunte `ventas/anexos/SPL-NT-2026-002-srsoya-academia-vocal.pdf` y envíe.
+- [ ] Adjunte **los dos PDF** (`SPL-COT-2026-016` y `SPL-NT-2026-002`) y envíe.
+- [ ] Agende la reunión cuando Carlos responda, con el guión de `ventas/reunion-srsoya-academia-vocal.md`.
 
 ## Próximo paso (al 24-sep-2026)
 
@@ -230,7 +255,10 @@ y el mes 1 depende de tener la oferta empaquetada antes de arrancar.
 | **Anexo al cliente, plan v2** | `ventas/anexos/SPL-NT-2026-002-srsoya-academia-vocal.html` / `.pdf` |
 | **Registro del correo de respuesta** | `ventas/sr-soya-correo-respuesta-academia.md` |
 | Alcance y precio del servicio | `marketing/paid-media/2026-09-spotify-landing-alcance-y-precio.md` |
-| Cotización vigente | `ventas/cotizaciones/SPL-COT-2026-015-srsoya-gestion-redes.html` |
+| **Cotización vigente (oct)** | `ventas/cotizaciones/SPL-COT-2026-016-srsoya-academia-vocal.html` / `.pdf` |
+| Cotización anterior, reemplazada | `ventas/cotizaciones/SPL-COT-2026-015-srsoya-gestion-redes.html` |
+| **Qué se vende vs. qué pide** | `ventas/sr-soya-que-estamos-vendiendo.md` |
+| **Guión de la reunión** | `ventas/reunion-srsoya-academia-vocal.md` |
 | Modelo de cobro y frases de venta | `ventas/sr-soya-modelo-de-cobro.md` |
 | Guion de reunión y resumen | `ventas/reunion-artista-spotify-2026-09-10.md` y su `-RESUMEN.md` |
 | Piezas de la reunión | `ventas/presentaciones/artista-spotify-2026-09-10/` |
