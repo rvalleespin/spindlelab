@@ -60,9 +60,9 @@ P1 = [  # el parrafo del dolor, en tres redacciones (mismos hechos)
  "Entré a {dom} sin tocar nada y en diez segundos mi navegador ya llevaba {ck}. El sitio no me preguntó si estaba de acuerdo.",
 ]
 P2 = [
- "Ese permiso se pide con un aviso de cookies, y en tu portada no vi ninguno. Puedes comprobarlo: abre tu sitio en una ventana de incógnito y mira si te pregunta algo.",
- "Lo normal es pedir ese permiso con un aviso de cookies, y en tu portada no vi ninguno. Puedes comprobarlo: abre tu sitio en una ventana de incógnito y mira si te pregunta algo.",
- "Ese permiso se pide con un aviso de cookies y en tu portada no vi ninguno. Para comprobarlo, abre tu sitio en una ventana de incógnito y mira si te pregunta algo antes de cargar.",
+ "Ese permiso se pide con un aviso de cookies, y en tu portada no vi ninguno. Puedes comprobarlo: abre tu sitio en una ventana de incógnito y mira si aparece un cuadro para aceptar o rechazar cookies.",
+ "Lo normal es pedir ese permiso con un aviso de cookies, y en tu portada no vi ninguno. Puedes comprobarlo: abre tu sitio en una ventana de incógnito y mira si aparece un cuadro para aceptar o rechazar cookies.",
+ "Ese permiso se pide con un aviso de cookies y en tu portada no vi ninguno. Para comprobarlo, abre tu sitio en una ventana de incógnito y mira si aparece un cuadro para aceptar o rechazar cookies.",
 ]
 FORM = "Más abajo hay un formulario de contacto, así que quien te escribe ya tiene esas cookies guardadas."
 EXTRA_C1 = {'V07': FORM, 'V29': FORM}   # formulario visto por el motor en 2-3 rondas, por un revisor y en la captura r1-B: la consecuencia que el dueño siente (criterio 3 de Ramon)
@@ -82,7 +82,7 @@ for id, v in ver.items():
     if id == 'V43':
         # Revision independiente: solo la cookie de publicidad se escribe en carga pasiva; las de medicion aparecen tras mover el mouse o hacer scroll.
         p1 = f"Entré a {dom} sin aceptar nada. Al cargar, el sitio guardó en mi navegador una cookie de publicidad de Google y, al navegar un poco, se sumaron otras. Nadie me preguntó si estaba de acuerdo."
-        p2 = "Ese permiso se pide con un aviso de cookies, y en tu portada no vi ninguno. Más abajo hay un formulario que pide nombre, teléfono y correo, y quien lo llena ya lleva esas cookies guardadas. Puedes comprobarlo abriendo tu sitio en incógnito."
+        p2 = "Ese permiso se pide con un aviso de cookies, y en tu portada no vi ninguno. Más abajo hay un formulario, y quien lo llena ya lleva esas cookies guardadas. Compruébalo en una ventana de incógnito: mira si aparece un cuadro para aceptar o rechazar cookies."
     else:
         p1 = P1[i].format(dom=dom, ck=ck)
         p2 = P2[i] + (' ' + EXTRA_C1[id] if id in EXTRA_C1 else '')
