@@ -1,5 +1,13 @@
 # Fundamento — Frente EE.UU. (AEO / AI-visibility para med spas y clínicas)
 
+> ⏹ **FRENTE CERRADO el 19-oct-2026 por decisión de Ramón. No ejecutar nada de esto.**
+> Estuvo 76 días en "día 0": sin lista de cuentas, sin audit piloto, sin un solo Loom enviado. La
+> evaluación de captación del 19-oct (`marketing/evaluacion-captacion-2026-10-19.md`) concluyó que
+> el cuello del embudo está en la conversión de los leads que ya responden, no en abrir mercados.
+> El criterio de corte de 4 semanas de este documento nunca llegó a correr. Se conserva el texto
+> como registro. Una idea sí sobrevive y se reusa en Chile: el video-audit corto (Loom) como
+> re-toque de un prospecto tibio que se enfrió.
+
 > **Documento de Dirección (Tomás/troncal).** Funda el frente antes de ejecutarlo, según el
 > protocolo de "abrir un frente nuevo" del `agente-troncal-marketing`. La persona que ejecuta
 > (`persona-frente-eeuu`, "Sam") toma su estrategia de acá — no la improvisa. Decidido con
