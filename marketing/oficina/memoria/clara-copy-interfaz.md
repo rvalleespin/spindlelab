@@ -5,6 +5,12 @@
 **Skill:** .claude/skills/web-copy-interfaz/SKILL.md
 
 ## Estado actual
+- **2026-10-23 · E12 (v3 sobre A · Archivo): el texto de toda la obra está en el sitio, tal cual.** Mi entregable es
+  `obras-web/spindlelab-v3/e12/texto/texto-obra.json` (y su lectura, `texto-obra.md`), escrito el 19-oct sobre el texto
+  del paso 2, que pasó dos lecturas frías (`e12/texto/lectura-fria.md`). Diego lo copia al sitio con su sha256 y el build
+  se cae si una copia queda atrás; Javiera midió 433 de 470 textos a la vista (435 en la vuelta 1: los dos de diferencia
+  son el alt y el pie de la franja de Auditoría, que salió). El defecto 8 de la QA (Title Case en tres `title`) lo cerré
+  el 23-oct (`d133e02`). Nada publicado.
 - **2026-10-14 · El pase de voz completo del v3 está hecho (frente E8, P0.3 de la lista de
   publicación).** 886 filas: las 851 ranuras abiertas del inventario (el 100 %) y 35 del
   encargo de la oferta de Marco. Cambian 141, se mantienen 690 (cada una con su motivo),
@@ -87,12 +93,30 @@
   el sitio habría dicho algo falso con nuestro propio instrumento como prueba. Lo que se adaptó
   quedó dicho en el documento, con la razón («Qué se adaptó, y por qué»).
 
+## Aprendido en E12 (spindlelab-v3 sobre A · Archivo, 17 al 23-oct-2026)
+- **La lectura fría decide entre versiones mejor que la preferencia de quien escribe.** En el paso 2, los tres lectores
+  (gerente de una industrial, dueña de una clínica, socio de un estudio) leyeron la frase de Ramón como «folleto puro» y
+  eligieron la versión 3, la que dice qué hacemos y qué te deja; Ramón eligió la 3 en la compuerta 2. El lector corre con
+  `claude -p` en un directorio vacío, sin herramientas y en una conversación nueva por vuelta (`lectura-fria.md`).
+- **El detector también va sobre lo que no se ve en la pantalla.** Tres `title` quedaron en Title Case porque eran los
+  de producción y la nota de señales los dejaba «queda» (defecto 8). `herramientas/comprobar-obra.py` ahora cuenta el Title Case de los
+  `title`.
+- **Si edito un documento de otro rol, pido su visto.** Para el defecto 8 cambié `senales-obra.md` §2.7, que es de Simón,
+  y lo dejé «para que Simón lo revise»: Javiera lo anotó como pendiente (nota 2 de la vuelta 2).
+- **«Tal cual» se mide, no se promete:** con el texto en un JSON con id por ranura y la copia con hash, Javiera pudo
+  contar qué textos están en el sitio y cuáles no.
+
 ## Con quién trabajo
 - Recibo el brief de **Mauro**; mi texto lo usa **Lucía** en el tablero y **Diego** en
   el código. El formato largo (artículos, guiones, email) es de **Renata**; las
   keywords y la estrategia de contenido, de **Simón**.
 
 ## Pendientes que dejé
+- [ ] **E12, antes de la lectura de aprobación de Ramón:** decir cuáles de las diez confirmaciones de
+      `e8/e8-antes-despues.md` y de los puntos de R7 siguen teniendo objeto sobre el texto de E12 (se escribieron sobre el
+      de driftime). Lo declarado que espera mi texto: los botones del chequeo con dos textos, `/nosotros/` sin preguntas y
+      el error del chequeo vacío («dominio», en `v3-chequeo.js`, protegido). Y el día del corte, la fecha de la Ley 21.719
+      en la entrada de Verifica y Cumple (`pendientes-traspaso-revisados.md` §0.2, puntos 12 y 15, y §0.3).
 - [ ] **v3, antes de la lectura de aprobación de Ramón (P0.4):** proponerle la frase de la
       prueba de Trabajo que tropieza en voz alta, «como si el aviso de cookies frena…» →
       «por ejemplo, si el aviso de cookies frena…» (acta E8, ronda 2, defecto 1; confirmación 9

@@ -6,6 +6,14 @@ Defino el "cómo se ve"; el "qué decir" es de Renata/Cata.
 **Skill:** .claude/skills/persona-director-creativo/SKILL.md
 
 ## Estado actual
+- 2026-10-19 — **SpindleLab, obra E12 del sitio v3: los conceptos, el logo final «El huso» y los medios de la
+  portada.** Cuatro piezas de concepto sin generación pagada (Tonela, Ocelo, Sesenta y Doceavo,
+  `marketing/portafolio/0[4-7]-*/`), tres caminos de logo para la compuerta 2 (Ramón eligió el 2), el dibujo final en tres
+  cortes con favicon, iconos, avatar y versión para documentos (`obras-web/spindlelab-v3/e12/logo/final/README.md`), y
+  los medios del hilo de oro para la portada (`e12/medios/hilo/`). Diego los construyó en `/v3/`; nada publicado.
+  **Ojo con lo de abajo:** el 16-oct Ramón dejó el manual de marca antiguo sin efecto en diseño (el oro `#C9A227`,
+  Gabarito e Inter no obligan en el sitio nuevo). Qué pasa con las piezas de redes que ya circulan, y cuándo rige la
+  identidad nueva, lo decide la troncal con Ramón (`encargos-otras-sesiones/encargo-manual-marca-e12.md`).
 - 2026-09-02 — **SpindleLab, sprint de dirección creativa con Ramón en vivo.** Concepto
   rector cerrado: **"el eje y el circuito"** — SpindleLab no es solo el eje del negocio,
   es el circuito que lo enciende; el argumento pasa de "no apareces en la IA" (territorio
@@ -158,7 +166,22 @@ el video confirma que Cloudflare resuelve dominio y DNS de una.
   3-sep). Si no hay tres reales y con permiso, la sección **se saca**, no se rellena con
   placeholders. Nunca se inventan.
 
+## Aprendido en E12 (sitio v3 de SpindleLab, 16 al 19-oct-2026)
+- **Un logo se prueba con lectores fríos antes de firmarlo.** 17 variantes de la tortera, 13 descartadas mirándolas y 4
+  llevadas a dos lectores cada una (`claude -p` en un directorio vacío, sin herramientas ni contexto). Ganó el disco con
+  canto: alfiler y cerradura salieron; la seta no. Lo que no se pudo sacar, se dijo, con la alternativa dibujada (v8).
+- **Un logo necesita cortes por tamaño, como la letra.** A 24 px el filete mide 0,4 px y ensucia; a 12 y 16 px la tortera
+  con punta se lee «†». Tres cortes (grande, menú, pequeño) y el favicon de 16 dibujado píxel a píxel, porque ningún
+  vector escalado se lee a ese tamaño.
+- **Los nombres inventados se comprueban antes de dibujar:** los de 01, 02 y 03 del portafolio ya eran de alguien
+  (`marketing/portafolio/plan-e12.md` §1).
+- **Ningún gasto sin el OK de Ramón, ni siquiera cotizado:** la pauta de los conceptos (9 fotos y 2 clips, USD 49 por un
+  mes de Higgsfield PLUS) quedó escrita y sin generar; los conceptos salieron con identidad, sitio y movimiento propios.
+
 ## Pendientes que dejé
+- [ ] **E12, cuando Ramón diga que hay plata:** la pauta de los conceptos (`plan-e12.md` §11).
+- [ ] **E12:** ver el favicon de El huso en Safari y en la pantalla de inicio de un iPhone real (con Ramón o una sesión
+      local del Mac); y, si la troncal lo encarga, la traducción de A a piezas de redes, con Lucía.
 - [ ] **Verificar qué permite la licencia de Motion Sites de Ramón antes del primer sitio
       cobrado.** El autor del video dice explícitamente que compró el **plan de agencia**
       "para tener los derechos de reventa y no meternos en ningún tipo de problema". Usar

@@ -5,6 +5,12 @@
 **Skill:** .claude/skills/web-qa-critico/SKILL.md
 
 ## Estado actual
+- **2026-10-23 · v3 sobre A · Archivo (E12), QA de obra: Con reparos en la vuelta 2.** Acta
+  `obras-web/spindlelab-v3/e12/acta-obra.md`: vuelta 1 Rechazado (cuatro mayores y cuatro menores, `714eb60`), vuelta 2
+  Con reparos (`f3044fc`), con los ocho cerrados y medidos con las mismas herramientas. Quedan dos menores nuevos que se
+  cierran antes de publicar, el 9 (Diego) y el 10 (Lucía), y los compruebo en exprés con `pie-cookies.mjs`, `foco.mjs` a
+  390 y `tambien.mjs`. Antes, en la misma obra: el paso 1 (`acta-paso-1.md`) y el paso 2 (`acta-paso-2.md`). El criterio
+  13 (lectores fríos sobre el sitio construido) quedó sin verificar en las dos vueltas.
 - **2026-10-14 · v3, QA del pase de voz (E8): aprobado en la ronda 2.** Acta en
   `obras-web/spindlelab-v3/e8/acta-qa-E8.md`. Quedan dos menores que no son del constructor:
   la frase de la prueba de Trabajo (Clara) y el descuadre de la fila de dos de Trabajo, que
@@ -70,11 +76,30 @@
   comparada con una extracción conocida (`migrado.json`), tenía que dar solo las 2 diferencias
   ya explicadas, y las dio. Una base equivocada aprueba cualquier cosa.
 
+## Aprendido en E12 (spindlelab-v3 sobre A · Archivo, 19 al 23-oct-2026)
+- **Una excepción se mide igual que la regla.** En la vuelta 1 dejé pasar «También: Paid Media…» como excepción al tope
+  de 493 sin contarle las líneas; contadas en la vuelta 2, corrían 4, 3 y 2 líneas desde 1194, unos 120 caracteres por
+  línea a 1920, y la spec se contradecía (§1.3 contra §2.1). El error de lectura fue mío, y Diego cumplió lo que yo
+  escribí: defecto 10. Lo que se deja pasar por escrito se mide antes de escribirlo.
+- **Una regla de una sola cubeta no ve un degradé.** La franja de Auditoría era un campo de color y la cubeta no la veía
+  porque el degradé repartía el azul en varias (defecto 3). Lucía lo cerró con la regla 2, que cuenta familias de color,
+  y en la vuelta 2 la importé (`es_campo`) en vez de copiarla.
+- **El instrumento real, corrido sobre el build local, encuentra lo que leer el JSON-LD no.** `chequeo-local.mjs` (el
+  `chequear()` de producción sin cambios) dio 79 contra 83 del 16-oct: a la home le faltaban `datePublished` y
+  `dateModified` (defecto 1).
+- **«Sin scroll» se mide entre los anchos de siempre.** «Concepto» fallaba a 768 × 1024 y 1024 × 768 (defecto 2), y el
+  aviso de cookies tapaba el chequeo a 834 × 1112, un tamaño que mi acta no midió (lo encontró Lucía al cerrar el defecto
+  4). Lo fijo en pantalla va en los ocho tamaños de la obra, con el aviso abierto y cerrado.
+- **Las herramientas del constructor no se usan aunque estén a mano.** En la vuelta 2 encontré en el scratchpad una copia
+  de mis herramientas que usó Diego para verificarse: no la usé. Si mido con lo suyo, audito su lectura.
+
 ## Con quién trabajo
 - Audito lo de **Diego** contra la spec de **Lucía** y el brief de **Mauro**; los
   defectos de copy los marco contra el detector y los arregla **Clara**. No arreglo yo
   lo que encuentro: si parcho, nadie audita mi parche.
 
 ## Pendientes que dejé
-- [ ] Dejar scripts listos (contraste, overflow medido en página, parseo de JSON-LD,
-      prioridad del hero por CDP) para no reescribirlos en cada acta.
+- [ ] **E12, antes de publicar:** la comprobación exprés del 9 y el 10, con las herramientas de la vuelta 2.
+- [ ] Llevar a un lugar común entre obras las herramientas de `e12/qa-obra/vuelta-2/herramientas/` (auditoría por ancho,
+      foco, solapes, aviso, campos, señales, chequeo local, concepto sin scroll). Hoy viven en la carpeta de la obra; el
+      contraste ya lo mide `npm run verificar`.

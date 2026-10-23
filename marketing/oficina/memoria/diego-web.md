@@ -5,6 +5,12 @@
 **Skill:** .claude/skills/persona-disenador-web/SKILL.md
 
 ## Estado actual
+- **2026-10-23 · v3 sobre A · Archivo (E12), construido y cerrado con reparos.** Cinco tandas el 19-oct (base, home e
+  índice, plantilla de caso y seis casos, servicios, y el resto con el barrido final) y los ocho defectos de la vuelta 1
+  el 23-oct (`f2fe7b4`). 27 rutas bajo `/v3/`, con `noindex`; producción igual byte a byte en cada tanda. Javiera: Con
+  reparos en la vuelta 2 (`e12/acta-obra.md`, `f3044fc`). Queda mío antes de publicar: el defecto 9, construir lo que
+  Lucía escriba para el 10 y rehacer y volver a ensayar la lista de publicación sobre E12
+  (`obras-web/spindlelab-v3/pendientes-traspaso-revisados.md` §0.2). Sin publicar.
 - **2026-10-14 · v3, pase de voz de Clara aplicado (E8).** 141 filas: por puntero en los JSON,
   con la aserción valor = texto de hoy, y por ancla que calzaba una vez en las plantillas
   (`3877e51`, `2dbaa09`, `eaa0c33`; arreglos de la QA en `f0d911c`). Javiera aprobó en la
@@ -143,6 +149,26 @@
   dos se mide en el par, no en su ficha, y a los tres anchos. Lo que no se midió no se afirma: se
   escribe «sin medir».
 
+## Aprendido en E12 (spindlelab-v3 sobre A · Archivo, 19 al 23-oct-2026)
+- **Tailwind lee todo `.astro`, comentarios incluidos: reemplazar una página puede cambiar el CSS de las publicadas.**
+  Al reemplazar driftime, `.flex-grow` desaparecía del CSS de `/` y `/nosotros/` porque la palabra vivía en un comentario
+  de la página vieja. Lo cazó `comparar-produccion.mjs` contra `e12/construccion/base-dist/`, corrido en cada tanda. El
+  arreglo: `src/data/archivo/guardia-tailwind.ts`, que nadie importa y Tailwind lee (`desvios.md`, tanda 4 §1 y tanda 5
+  §1). Sin la comparación byte a byte por tanda no se habría visto.
+- **Un arreglo de área de toque se mide en los vecinos, no solo en lo pedido.** El defecto 7 (logo y correo del pie se
+  pisaban) quedó al 100 %, pero «Cookies» creció 18 px hacia abajo y bajó sobre la hora: defecto 9 en la vuelta 2. El
+  área crece hacia donde hay vacío, y `solapes.mjs` va sobre todos los controles del bloque, a 360, 390 y 414.
+- **«Que no se cree» y «byte a byte» pueden chocar.** Lenis no se podía dejar de crear en `/v3/` sin tocar el script que
+  comparte producción; quedó inerte con `data-lenis-prevent` (tanda 1 §2). Se escribe como desvío, no se fuerza.
+- **Una fecha que «escribe el build» sale del reloj del build:** el HTML de `/v3/` cambia de un día a otro aunque la
+  página no cambie (defecto 1). Al comparar builds de días distintos, se descuenta esa línea.
+- **Sin `lazy` toda imagen que cae en la primera pantalla en algún tamaño** (defecto 6): se mide en los ocho anchos, no
+  solo en 390 y 1440.
+- **Las guardias que hacen caer el build** (precio distinto de `oferta-v3.json`, texto que no es el de Clara, largo de
+  señal fuera de rango) son lo que Javiera marcó como lo que sostiene la obra: el error sale al construir, no en la QA.
+- **`play()` interrumpido por una pausa da `AbortError`, y eso no es «el navegador no deja reproducir»** (tanda 2 §13):
+  con ese error tratado como bloqueo, un video quedaba parado para siempre si se pasaba rápido por él.
+
 ## Con quién trabajo
 - Copy me lo pasa **Renata** (marcado para revisión humana). SEO técnico me lo
   encarga **Simón** vía `marketing/encargos-otras-sesiones/`.
@@ -150,7 +176,11 @@
 ## Pendientes que dejé
 - [ ] meta description de `/servicios/visibilidad-en-ia/` aún dice "Optimización
   AEO/GEO" (metadata SEO, no rótulo visible); alinear si se quiere.
-- [ ] Slot de "caso real con datos" en la home, reservado hasta que un cliente dé permiso.
+- [x] Slot de "caso real con datos" en la home, reservado hasta que un cliente dé permiso. **Superado por E12**
+  (19-oct): Praxi y Combeau son casos reales con página, cada dato con su fila en el inventario.
+- [ ] **E12, antes de publicar:** el defecto 9 (el área de «Cookies» del pie bajo 834, sobre la hora); lo que Lucía
+  escriba para el 10; la lista de publicación rehecha sobre E12 y ensayada en un worktree desechable, con Simón en las
+  señales (`pendientes-traspaso-revisados.md` §0.2, puntos 1, 2 y 4).
 - [ ] Los 14 comentarios `<!-- -->` de la home y `/nosotros/` v2 (`Hero`, `Nav`, `Evidencia`,
   `Servicios`) se sirven en producción. No se tocaron el 13-oct (fuera del v3): se van con la
   publicación del v3 (decisión R1 de Ramón) o se pasan a `{/* */}` antes, si él lo pide.
