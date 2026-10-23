@@ -7,6 +7,10 @@ incluso a mano por correo. No son decisiones de programación y no dependen del 
 > Las tres salen de las dos revisiones del brief (la de esta sesión y la de Codex). Acá no hay
 > hallazgos nuevos: hay opciones y lo que implica elegir cada una.
 
+> **Corregido el 23-oct tras la corroboración de Codex** (`corroboracion-codex-tres-decisiones.md`),
+> que encontró tres errores en la primera versión de esta página. Los tres están marcados abajo con
+> ⚠️. Dos eran míos y uno cambiaba la recomendación de la decisión 2.
+
 ---
 
 ## Decisión 1 · Qué corrige el kit, con nombre y apellido
@@ -39,9 +43,27 @@ El chequeo mide siete señales. No son siete trabajos:
 **Cinco de las siete son un solo trabajo:** instalar un gestor de consentimiento y configurarlo
 para que **retenga** los rastreadores, no solo los anuncie. Eso es el kit.
 
-La de la política no la puedes cerrar: tú entregas una plantilla, su abogado la revisa, y **el
-cliente la publica**. Si la prometes como «señal en verde», quedas colgado de dos actos que no son
-tuyos, o publicas un texto legal sin revisión, que es justo el borde que este producto no cruza.
+**Dos no las cierra el kit, y son dos, no una.** ⚠️ *(La primera versión de esta página decía «cinco
+en verde y una pendiente». Son dos: la política y HTTPS. Lo pilló Codex.)*
+
+- **La política** no la puedes cerrar: tú entregas una plantilla, su abogado la revisa, y **el
+  cliente la publica**. Si la prometes como «señal en verde», quedas colgado de dos actos que no
+  son tuyos, o publicas un texto legal sin revisión, que es el borde que este producto no cruza.
+- **HTTPS** es de su hosting. Si el sitio no lo tiene, el kit no lo resuelve.
+
+### ⚠️ El límite que hay que escribir en la promesa
+
+El chequeo reconoce **16 rastreadores** (ga4, gtm, gads, meta, tiktok, clarity, hotjar, pinterest,
+segment, reddit, hubspot, matomo, bing, criteo, intercom, linkedin). El propio código lo dice:
+*«entradas, o dieciséis, nunca van a ser todos: el que no reconocemos deja su cookie acá»*.
+
+Entonces prometer **«nada se cargue, escriba ni envíe»** promete más de lo que el instrumento puede
+verificar. Es el **falso verde al revés**: el mismo error que costó cuatro arreglos en el chequeo,
+pero puesto en la promesa de venta en vez de en la medición.
+
+La promesa honesta se acota a lo que el gestor retiene y a lo que el chequeo vuelve a mirar. No es
+una letra chica: es la diferencia entre un informe final que se sostiene y uno que se cae cuando el
+cliente tiene algo que no estaba en el catálogo.
 
 ### Las opciones
 
@@ -93,11 +115,28 @@ vive bajo su marca.
 Alguien puede tener la portada limpia y tres subdominios cargando rastreadores. El informe que
 disparó la compra no los miró. El desajuste aparece durante la entrega, con la plata adentro.
 
+### ⚠️ Corrección: eran dos preguntas, no una
+
+La primera versión de esta página recomendaba *«el kit cubre la página que medimos»*. **Codex
+objetó que eso recorta el paquete**, y tiene razón: el brief vende «un dominio y el sitio principal
+asociado», y limitar la implementación a una URL es venderle menos al comprador, no aclararle algo.
+
+El error fue mío y era de encuadre: **mezclé qué se midió con qué se interviene.** Son dos cosas
+distintas, y un gestor de consentimiento instalado en un sitio **carga en todas sus páginas**, no
+en una.
+
+| | |
+|---|---|
+| **Lo que se midió** | la portada, y la política cuando se encuentra |
+| **Lo que se interviene** | el gestor, instalado para que cargue en el sitio |
+| **Lo que queda sin verificar** | rastreadores que solo viven en páginas que no se midieron |
+
 ### Las opciones
 
-**A · Decirlo: el kit cubre la página que medimos.**
-*Implica:* una línea en la oferta, hoy. Acota el riesgo a cero y es verdad. Lo que esté fuera es
-revisión de alcance.
+**A · Decir qué se midió, instalar en el sitio, y verificar sobre lo medido.**
+*Implica:* no recorta el paquete. La oferta nombra la URL que el chequeo devuelve en `revisado`,
+el gestor se instala para el sitio, y el informe final vuelve a medir la misma página. Lo que solo
+aparezca en otras páginas queda declarado como no verificado, no como incluido ni como excluido.
 
 **B · Ampliar el chequeo antes de vender.**
 *Implica:* trabajo real sobre el chequeo (recorrer más URLs, decidir cuáles, qué pasa con los
@@ -108,8 +147,9 @@ subdominios), y retrasa todo lo demás. Es lo correcto a futuro, no ahora.
 
 ### Lo que yo haría
 
-**A ahora, B el día que esto venda solo.** Y que la oferta nombre la URL exacta que se midió, que
-el chequeo ya devuelve en el campo `revisado`.
+**A**, con la corrección de arriba. Y **B el día que esto venda solo**: Codex opina que B merece
+quedarse como alternativa para recuperar alcance de sitio, y estoy de acuerdo, pero no tiene que
+preceder al primer cobro.
 
 ---
 
@@ -176,6 +216,16 @@ validar el precio: cuánto toma de verdad una entrega.
 
 | | La decisión | Mi recomendación | Qué necesitas averiguar |
 |---|---|---|---|
-| 1 | Qué corrige el kit | El gestor de consentimiento, y la política como borrador para su abogado | Qué gestor, de quién es la cuenta, en qué plataformas corre |
-| 2 | Qué página se vende | La que midió el chequeo, nombrándola | Nada |
+| 1 | Qué corrige el kit | El gestor de consentimiento, acotado a lo que retiene y a lo que el chequeo vuelve a mirar. La política, como borrador para su abogado. HTTPS queda fuera | Qué gestor, de quién es la cuenta, en qué plataformas corre |
+| 2 | Qué se mide y qué se interviene | Nombrar la URL medida, instalar el gestor para el sitio, verificar sobre lo medido. **No** recortar el kit a una página | Nada |
 | 3 | Si no se puede entregar | Se devuelve, con plazo escrito para el caso del acceso | Si MP devuelve su comisión · el retracto (abogado) |
+
+### Lo que la corroboración NO movió
+
+Codex confirmó que las tres decisiones **no rompen la compra directa** para el caso típico y que
+**ninguna borra la frontera** entre señal técnica y cumplimiento legal. También dio por bien
+descartadas las opciones C de las tres, y la B de la decisión 1 (prometer las siete en verde).
+
+Su única objeción que no tomé: dice que vender a mano tensiona el principio de comprar sin
+conversación previa. Es cierto en abstracto, pero la venta a mano acá no es el canal, es la forma
+de conseguir el dato de cuánto toma una entrega. El canal sigue siendo el de siempre.
