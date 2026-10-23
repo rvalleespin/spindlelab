@@ -1,0 +1,756 @@
+{
+ "casos": {
+  "praxi": {
+   "prohibidos": [],
+   "tipos": [
+    "ProfessionalService",
+    "WebSite",
+    "Person",
+    "WebPage",
+    "CreativeWork",
+    "SoftwareApplication",
+    "BreadcrumbList"
+   ],
+   "idsRepetidos": [],
+   "breadcrumb": [
+    "Inicio",
+    "Trabajo",
+    "Praxi"
+   ],
+   "app": {
+    "offers": false,
+    "url": false,
+    "sameAs": false
+   },
+   "a1440": {
+    "h1": 1,
+    "corchetes": 1,
+    "ficha": {
+     "texto": "Propio · 2026 · Sitio y app",
+     "arriba": 262,
+     "abajo": 275,
+     "libre": true
+    },
+    "miga": [
+     "Inicio",
+     "Trabajo",
+     "Praxi"
+    ],
+    "ids": [],
+    "cruces": 2,
+    "siguiente": {
+     "href": "/v3/trabajo/sesenta/",
+     "texto": "Sesenta. El plazo antes que el juicio."
+    },
+    "principal": "praxi-hero.webm",
+    "lateral": {
+     "posicion": "sticky",
+     "top": "80px",
+     "alto": 804,
+     "desborda": false
+    },
+    "barraVisible": false
+   },
+   "indice1440": {
+    "activa": "Solución",
+    "filaY": 72,
+    "puntoY": 72,
+    "barra": "Solución"
+   },
+   "errores1440": [],
+   "a1024": {
+    "cruces": 0,
+    "barra": true,
+    "indiceLateral": false,
+    "principal": [
+     992,
+     558
+    ]
+   },
+   "a390": {
+    "ficha": {
+     "arriba": 784,
+     "abajo": 798,
+     "libre": false
+    },
+    "principal": {
+     "caja": [
+      0,
+      390,
+      488
+     ],
+     "pausa": true
+    },
+    "barraArriba": 776,
+    "imagenQuieta": "praxi-hero-poster.webp",
+    "videoPrincipal": "praxi-hero.webm",
+    "area": {
+     "n": 0,
+     "menos24": [],
+     "muestra": []
+    }
+   },
+   "barra390": {
+    "abierta": true,
+    "cerradaDespues": true,
+    "hash": "#la-pieza",
+    "seccionArriba": 88,
+    "activa": "La pieza"
+   },
+   "a360": {
+    "ficha": {
+     "arriba": 746,
+     "abajo": 760,
+     "libre": false
+    },
+    "principal": {
+     "caja": [
+      0,
+      360,
+      450
+     ],
+     "pausa": true
+    },
+    "barraArriba": 732,
+    "imagenQuieta": "praxi-hero-poster.webp",
+    "videoPrincipal": "praxi-hero.webm"
+   }
+  },
+  "combeau": {
+   "prohibidos": [],
+   "contacto": [],
+   "tipos": [
+    "ProfessionalService",
+    "WebSite",
+    "Person",
+    "WebPage",
+    "CreativeWork",
+    "WebSite",
+    "BreadcrumbList"
+   ],
+   "idsRepetidos": [],
+   "breadcrumb": [
+    "Inicio",
+    "Trabajo",
+    "Bernardo Combeau"
+   ],
+   "a1440": {
+    "h1": 1,
+    "corchetes": 1,
+    "ficha": {
+     "texto": "Cliente · 2026",
+     "arriba": 290,
+     "abajo": 304,
+     "libre": true
+    },
+    "miga": [
+     "Inicio",
+     "Trabajo",
+     "Bernardo Combeau"
+    ],
+    "ids": [
+     "fotografia",
+     "modelo"
+    ],
+    "cruces": 2,
+    "siguiente": {
+     "href": "/v3/trabajo/praxi/",
+     "texto": "Praxi. Se acuerda de cada serie que hiciste."
+    },
+    "principal": "combeau-fotografia-recorrido-1440.webm",
+    "lateral": {
+     "posicion": "sticky",
+     "top": "80px",
+     "alto": 804,
+     "desborda": false
+    },
+    "barraVisible": false
+   },
+   "indice1440": {
+    "activa": "Solución",
+    "filaY": 72,
+    "puntoY": 72,
+    "barra": "Solución"
+   },
+   "errores1440": [],
+   "a1024": {
+    "cruces": 0,
+    "barra": true,
+    "indiceLateral": false,
+    "principal": [
+     992,
+     558
+    ]
+   },
+   "a390": {
+    "ficha": {
+     "arriba": 776,
+     "abajo": 790,
+     "libre": false
+    },
+    "principal": {
+     "caja": [
+      0,
+      390,
+      488
+     ],
+     "pausa": true
+    },
+    "barraArriba": 776,
+    "imagenQuieta": "combeau-fotografia-recorrido-390-poster.webp",
+    "videoPrincipal": "combeau-fotografia-recorrido-390.webm",
+    "area": {
+     "n": 0,
+     "menos24": [],
+     "muestra": []
+    }
+   },
+   "barra390": {
+    "abierta": true,
+    "cerradaDespues": true,
+    "hash": "#la-pieza",
+    "seccionArriba": 88,
+    "activa": "La pieza"
+   },
+   "a360": {
+    "ficha": {
+     "arriba": 739,
+     "abajo": 753,
+     "libre": false
+    },
+    "principal": {
+     "caja": [
+      0,
+      360,
+      450
+     ],
+     "pausa": true
+    },
+    "barraArriba": 732,
+    "imagenQuieta": "combeau-fotografia-recorrido-390-poster.webp",
+    "videoPrincipal": "combeau-fotografia-recorrido-390.webm"
+   }
+  },
+  "sesenta": {
+   "prohibidos": [],
+   "tipos": [
+    "ProfessionalService",
+    "WebSite",
+    "Person",
+    "WebPage",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "idsRepetidos": [],
+   "breadcrumb": [
+    "Inicio",
+    "Trabajo",
+    "Sesenta"
+   ],
+   "concepto": {
+    "title": true,
+    "description": true,
+    "disamb": true,
+    "genre": "Concepto"
+   },
+   "a1440": {
+    "h1": 1,
+    "corchetes": 1,
+    "ficha": {
+     "texto": "Concepto · 2026",
+     "arriba": 262,
+     "abajo": 275,
+     "libre": true
+    },
+    "miga": [
+     "Inicio",
+     "Trabajo",
+     "Sesenta"
+    ],
+    "ids": [],
+    "cruces": 2,
+    "siguiente": {
+     "href": "/v3/trabajo/ocelo/",
+     "texto": "Ocelo. La carta antes que la promesa."
+    },
+    "principal": "sesenta-recorrido.webm",
+    "lateral": {
+     "posicion": "sticky",
+     "top": "80px",
+     "alto": 804,
+     "desborda": false
+    },
+    "barraVisible": false
+   },
+   "indice1440": {
+    "activa": "Solución",
+    "filaY": 72,
+    "puntoY": 72,
+    "barra": "Solución"
+   },
+   "errores1440": [],
+   "a1024": {
+    "cruces": 0,
+    "barra": true,
+    "indiceLateral": false,
+    "principal": [
+     992,
+     558
+    ]
+   },
+   "a390": {
+    "ficha": {
+     "arriba": 721,
+     "abajo": 735,
+     "libre": true
+    },
+    "principal": {
+     "caja": [
+      0,
+      390,
+      488
+     ],
+     "pausa": false
+    },
+    "barraArriba": 776,
+    "imagenQuieta": "sesenta-movil-45.webp",
+    "videoPrincipal": "",
+    "area": {
+     "n": 0,
+     "menos24": [],
+     "muestra": []
+    }
+   },
+   "barra390": {
+    "abierta": true,
+    "cerradaDespues": true,
+    "hash": "#la-pieza",
+    "seccionArriba": 88,
+    "activa": "La pieza"
+   },
+   "a360": {
+    "ficha": {
+     "arriba": 684,
+     "abajo": 697,
+     "libre": true
+    },
+    "principal": {
+     "caja": [
+      0,
+      360,
+      450
+     ],
+     "pausa": false
+    },
+    "barraArriba": 732,
+    "imagenQuieta": "sesenta-movil-45.webp",
+    "videoPrincipal": ""
+   }
+  },
+  "ocelo": {
+   "prohibidos": [],
+   "tipos": [
+    "ProfessionalService",
+    "WebSite",
+    "Person",
+    "WebPage",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "idsRepetidos": [],
+   "breadcrumb": [
+    "Inicio",
+    "Trabajo",
+    "Ocelo"
+   ],
+   "concepto": {
+    "title": true,
+    "description": true,
+    "disamb": true,
+    "genre": "Concepto"
+   },
+   "a1440": {
+    "h1": 1,
+    "corchetes": 1,
+    "ficha": {
+     "texto": "Concepto · 2026",
+     "arriba": 262,
+     "abajo": 275,
+     "libre": true
+    },
+    "miga": [
+     "Inicio",
+     "Trabajo",
+     "Ocelo"
+    ],
+    "ids": [],
+    "cruces": 2,
+    "siguiente": {
+     "href": "/v3/trabajo/doceavo/",
+     "texto": "Doceavo. El año en doce, con lo que vence cada mes."
+    },
+    "principal": "ocelo-recorrido.webm",
+    "lateral": {
+     "posicion": "sticky",
+     "top": "80px",
+     "alto": 804,
+     "desborda": false
+    },
+    "barraVisible": false
+   },
+   "indice1440": {
+    "activa": "Solución",
+    "filaY": 72,
+    "puntoY": 72,
+    "barra": "Solución"
+   },
+   "errores1440": [],
+   "a1024": {
+    "cruces": 0,
+    "barra": true,
+    "indiceLateral": false,
+    "principal": [
+     992,
+     558
+    ]
+   },
+   "a390": {
+    "ficha": {
+     "arriba": 721,
+     "abajo": 735,
+     "libre": true
+    },
+    "principal": {
+     "caja": [
+      0,
+      390,
+      488
+     ],
+     "pausa": false
+    },
+    "barraArriba": 776,
+    "imagenQuieta": "ocelo-movil-45.webp",
+    "videoPrincipal": "",
+    "area": {
+     "n": 0,
+     "menos24": [],
+     "muestra": []
+    }
+   },
+   "barra390": {
+    "abierta": true,
+    "cerradaDespues": true,
+    "hash": "#la-pieza",
+    "seccionArriba": 88,
+    "activa": "La pieza"
+   },
+   "a360": {
+    "ficha": {
+     "arriba": 711,
+     "abajo": 725,
+     "libre": true
+    },
+    "principal": {
+     "caja": [
+      0,
+      360,
+      450
+     ],
+     "pausa": false
+    },
+    "barraArriba": 732,
+    "imagenQuieta": "ocelo-movil-45.webp",
+    "videoPrincipal": ""
+   }
+  },
+  "doceavo": {
+   "prohibidos": [],
+   "tipos": [
+    "ProfessionalService",
+    "WebSite",
+    "Person",
+    "WebPage",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "idsRepetidos": [],
+   "breadcrumb": [
+    "Inicio",
+    "Trabajo",
+    "Doceavo"
+   ],
+   "concepto": {
+    "title": true,
+    "description": true,
+    "disamb": true,
+    "genre": "Concepto"
+   },
+   "a1440": {
+    "h1": 1,
+    "corchetes": 1,
+    "ficha": {
+     "texto": "Concepto · 2026",
+     "arriba": 262,
+     "abajo": 275,
+     "libre": true
+    },
+    "miga": [
+     "Inicio",
+     "Trabajo",
+     "Doceavo"
+    ],
+    "ids": [],
+    "cruces": 2,
+    "siguiente": {
+     "href": "/v3/trabajo/tonela/",
+     "texto": "Tonela. El color de la eslinga es su capacidad."
+    },
+    "principal": "doceavo-recorrido.webm",
+    "lateral": {
+     "posicion": "sticky",
+     "top": "80px",
+     "alto": 804,
+     "desborda": false
+    },
+    "barraVisible": false
+   },
+   "indice1440": {
+    "activa": "Solución",
+    "filaY": 72,
+    "puntoY": 72,
+    "barra": "Solución"
+   },
+   "errores1440": [],
+   "a1024": {
+    "cruces": 0,
+    "barra": true,
+    "indiceLateral": false,
+    "principal": [
+     992,
+     558
+    ]
+   },
+   "a390": {
+    "ficha": {
+     "arriba": 749,
+     "abajo": 762,
+     "libre": true
+    },
+    "principal": {
+     "caja": [
+      0,
+      390,
+      488
+     ],
+     "pausa": false
+    },
+    "barraArriba": 776,
+    "imagenQuieta": "doceavo-movil-45.webp",
+    "videoPrincipal": "",
+    "area": {
+     "n": 0,
+     "menos24": [],
+     "muestra": []
+    }
+   },
+   "barra390": {
+    "abierta": true,
+    "cerradaDespues": true,
+    "hash": "#la-pieza",
+    "seccionArriba": 88,
+    "activa": "La pieza"
+   },
+   "a360": {
+    "ficha": {
+     "arriba": 711,
+     "abajo": 725,
+     "libre": true
+    },
+    "principal": {
+     "caja": [
+      0,
+      360,
+      450
+     ],
+     "pausa": false
+    },
+    "barraArriba": 732,
+    "imagenQuieta": "doceavo-movil-45.webp",
+    "videoPrincipal": ""
+   }
+  },
+  "tonela": {
+   "prohibidos": [],
+   "tipos": [
+    "ProfessionalService",
+    "WebSite",
+    "Person",
+    "WebPage",
+    "CreativeWork",
+    "BreadcrumbList"
+   ],
+   "idsRepetidos": [],
+   "breadcrumb": [
+    "Inicio",
+    "Trabajo",
+    "Tonela"
+   ],
+   "concepto": {
+    "title": true,
+    "description": true,
+    "disamb": true,
+    "genre": "Concepto"
+   },
+   "a1440": {
+    "h1": 1,
+    "corchetes": 1,
+    "ficha": {
+     "texto": "Concepto · 2026",
+     "arriba": 262,
+     "abajo": 275,
+     "libre": true
+    },
+    "miga": [
+     "Inicio",
+     "Trabajo",
+     "Tonela"
+    ],
+    "ids": [],
+    "cruces": 2,
+    "siguiente": {
+     "href": "/v3/trabajo/combeau/",
+     "texto": "Bernardo Combeau. Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos."
+    },
+    "principal": "tonela-recorrido.webm",
+    "lateral": {
+     "posicion": "sticky",
+     "top": "80px",
+     "alto": 804,
+     "desborda": false
+    },
+    "barraVisible": false
+   },
+   "indice1440": {
+    "activa": "Solución",
+    "filaY": 72,
+    "puntoY": 72,
+    "barra": "Solución"
+   },
+   "errores1440": [],
+   "a1024": {
+    "cruces": 0,
+    "barra": true,
+    "indiceLateral": false,
+    "principal": [
+     992,
+     558
+    ]
+   },
+   "a390": {
+    "ficha": {
+     "arriba": 749,
+     "abajo": 762,
+     "libre": true
+    },
+    "principal": {
+     "caja": [
+      0,
+      390,
+      488
+     ],
+     "pausa": false
+    },
+    "barraArriba": 776,
+    "imagenQuieta": "tonela-movil-45.webp",
+    "videoPrincipal": "",
+    "area": {
+     "n": 0,
+     "menos24": [],
+     "muestra": []
+    }
+   },
+   "barra390": {
+    "abierta": true,
+    "cerradaDespues": true,
+    "hash": "#la-pieza",
+    "seccionArriba": 88,
+    "activa": "La pieza"
+   },
+   "a360": {
+    "ficha": {
+     "arriba": 711,
+     "abajo": 725,
+     "libre": true
+    },
+    "principal": {
+     "caja": [
+      0,
+      360,
+      450
+     ],
+     "pausa": false
+    },
+    "barraArriba": 732,
+    "imagenQuieta": "tonela-movil-45.webp",
+    "videoPrincipal": ""
+   }
+  }
+ },
+ "enlaces": {
+  "/v3/": [
+   {
+    "href": "/v3/trabajo/combeau/#fotografia",
+    "estado": 200,
+    "fragmento": true
+   },
+   {
+    "href": "/v3/trabajo/praxi/",
+    "estado": 200,
+    "fragmento": null
+   },
+   {
+    "href": "/v3/trabajo/sesenta/",
+    "estado": 200,
+    "fragmento": null
+   }
+  ],
+  "/v3/trabajo/": [
+   {
+    "href": "/v3/trabajo/combeau/#fotografia",
+    "estado": 200,
+    "fragmento": true
+   },
+   {
+    "href": "/v3/trabajo/praxi/",
+    "estado": 200,
+    "fragmento": null
+   },
+   {
+    "href": "/v3/trabajo/sesenta/",
+    "estado": 200,
+    "fragmento": null
+   },
+   {
+    "href": "/v3/trabajo/ocelo/",
+    "estado": 200,
+    "fragmento": null
+   },
+   {
+    "href": "/v3/trabajo/combeau/#modelo",
+    "estado": 200,
+    "fragmento": true
+   },
+   {
+    "href": "/v3/trabajo/doceavo/",
+    "estado": 200,
+    "fragmento": null
+   },
+   {
+    "href": "/v3/trabajo/tonela/",
+    "estado": 200,
+    "fragmento": null
+   }
+  ]
+ },
+ "fallas": []
+}

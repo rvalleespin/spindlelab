@@ -999,3 +999,42 @@ en 833 (de 834 en adelante, 96 px, el de una fila).
 `extraer-texto.mjs auditoria-seo-tecnica acompanamiento-mensual redes-sociales`, como pidió Clara: en las copias cambian el
 `title` y la nota de señales (que no se pinta), y en `comun.json` solo el sha del origen. En el build cambian el `<title>`
 y el `og:title` de esas tres páginas; `extraer-texto.mjs --comprobar`: todas iguales a `texto-obra.json`.
+
+### 9. Lo verificado en esta vuelta
+
+Con las herramientas de Javiera (`e12/qa-obra/vuelta-1/herramientas/`) corridas desde una copia en mi scratchpad, para no
+pisar sus crudos ni las capturas que cita el acta, y con la de Lucía (`e12/spec/herramientas/obra-v1-defectos.mjs`, solo
+la variante «hoy», que sobre este build es la que ella midió como «spec»). Crudos y capturas en
+`e12/construccion/capturas/qa-vuelta-1/`.
+
+| Defecto | Cómo | Resultado |
+|---|---|---|
+| 1 | `chequeo-local.mjs`; `senales.py` | **Home 83** (acta: 79; 16-oct: 83); raíz de producción 85. `senales.py`: 43 de 43, con los 19 `title` y «home WebPage con dateModified» |
+| 2 | `obra-v1-defectos.mjs`, los cuatro conceptos × ocho tamaños × aviso abierto y cerrado | **«Concepto» del DOM a la vista y destapado en 64 de 64** (acta: 40); le sobran 41 px en la barra en el peor caso (Sesenta y Doceavo a 360), lo mismo que midió Lucía. Con el aviso abierto la barra termina 8 px sobre él (aviso desde 909 y barra hasta 901 a 768; 699 y 691 a 1024; 647 y 639 a 360) y al rechazarlo vuelve a 16, también en Praxi y en un artículo (`estados-vuelta-1.mjs`) |
+| 3 | El HTML de Auditoría; las capturas | 0 imágenes y 0 videos en `main`: 0 % de campo. Cabecera y secciones en los ocho anchos (`ocho-anchos-auditoria-seo-tecnica.jpg`) |
+| 4 | `obra-v1-defectos.mjs`, home, diagnóstico y contacto en los ocho tamaños con el aviso abierto | Campo y botón del chequeo de la home de **590 a 634 a 360 × 800** (aviso desde 647), **607 a 651 a 390 × 844** (desde 710), 767 a 811 a 768 (desde 909) y **963 a 1007 a 834 × 1112** (desde 1043, en una fila de 69): 0 tapados en los ocho. Diagnóstico, 0 tapados. Contacto, el botón bajo el aviso solo a 1024 × 768 y 1194 × 834, como §4.3 deja. 375 × 667, tapado mientras el aviso está abierto (fuera de los anchos, como §4.4) |
+| 5 | `auditar.mjs`, 27 rutas × 8 anchos | **Párrafos de `main` sobre 494: solo «También: Paid Media…» desde 1194** (577, 700 y 940 px), la excepción de §2.1 |
+| 6 | Lo mismo | **«lazy en la primera pantalla»: ninguno** |
+| 7 | `solapes.mjs` | **El 100 % del área es propia en los dos** (pie: 264 de 264, solape 97 × 0; la original: 396 de 396) |
+| 8 | `extraer-texto.mjs --comprobar`; `senales.py` | Las 21 copias iguales a `texto-obra.json`; los tres `title` en mayúscula inicial |
+
+Y lo que estaba bien, que no se rompió:
+
+- `npm run build` y `comparar-produccion.mjs`: **las 22 páginas publicadas y lo que sirven, iguales byte a byte.**
+- `npm run verificar -- --prefijo /v3/` a 360, 390, 768, 834, 1024, 1194, 1440 (también `--sin-pildoras`) y 1920: **27
+  páginas, sin hallazgos en los ocho**; y otra vez a 390 y 1440 sobre el build final. El barrido sin prefijo da solo los
+  hallazgos conocidos de producción (`/` y `/privacidad/`, CLAUDE.md), que esta obra no toca.
+- `auditar.mjs`, además: desborde 0 con y sin `overflow-x: clip`, un `h1` y un `main` en los 216 pares, 0 saltos de
+  encabezado, 0 nodos en negrita, 0 textos bajo 11 px, solo Google Sans Flex y DM Mono, encabezado de 90 bajo 834 y 64
+  desde 834, 0 controles bajo 44 en táctil, 0 errores de consola, 0 pedidos fallidos.
+- `comprobar-tanda-3.mjs`, `comprobar-tanda-4.mjs` (sin la franja de Auditoría), `comprobar-tanda-5.mjs` y
+  `barrido-final.mjs`: **sin fallas**. `comprobar-tanda-2.mjs`: el chequeo de la home a 166 px del borde de abajo a
+  360 × 800 y sin tapar con el aviso; el orden del Tab de la home, el mismo (la entradilla no tiene nada enfocable); CLS
+  con el aviso abierto, 0.
+- **Render mirado** (Chromium 1194, capturas de primera pantalla de las 27 rutas a los ocho anchos): la home bajo 834 lee
+  rótulo, `h1`, chequeo y entradilla, y desde 834 está igual que antes; Auditoría sin franja; el muro con sus cuatro
+  primeras portadas; diagnóstico con la ayuda en la caja; los conceptos con «NOMBRE · CONCEPTO» en la barra, sobre el aviso
+  abierto; el pie y la original de Combeau con las áreas separadas (`toque-pie-y-original-390.jpg`).
+- **Una nota sobre el build:** dos builds seguidos sin cambios en el código dan otro nombre (y otro contenido) al paquete
+  de scripts que cargan los seis casos (`hoisted.*.js`), como ya vio Javiera (acta, fila 1). Fuera de ese nombre, el HTML
+  de los casos sale igual; no toca producción.
