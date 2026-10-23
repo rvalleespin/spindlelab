@@ -1,0 +1,438 @@
+{
+ "titulos": [
+  {
+   "ruta": "/v3/",
+   "title_ok": true,
+   "title": "SpindleLab · Estudio de diseño y tecnología en Santiago",
+   "esperado_title": "SpindleLab · Estudio de diseño y tecnología en Santiago",
+   "desc_ok": true,
+   "description": "Diseñamos y programamos sitios y herramientas a medida, listos para que Google y ChatGPT puedan leerlos. Precios publicados y un chequeo gratis de tu sitio.",
+   "esperado_desc": "Diseñamos y programamos sitios y herramientas a medida, listos para que Google y ChatGPT puedan leerlos. Precios publicados y un chequeo gratis de tu sitio."
+  },
+  {
+   "ruta": "/v3/contacto/",
+   "title_ok": true,
+   "title": "Contacto: pide un sitio o un diagnóstico gratis · SpindleLab",
+   "esperado_title": "Contacto: pide un sitio o un diagnóstico gratis · SpindleLab",
+   "desc_ok": true,
+   "description": "Escríbenos a hola@spindlelab.cl. Si quieres un sitio, te contamos cómo lo haríamos; si ya tienes uno, en 24 horas te mandamos un mini-diagnóstico gratis.",
+   "esperado_desc": "Escríbenos a hola@spindlelab.cl. Si quieres un sitio, te contamos cómo lo haríamos; si ya tienes uno, en 24 horas te mandamos un mini-diagnóstico gratis."
+  },
+  {
+   "ruta": "/v3/diagnostico/",
+   "title_ok": true,
+   "title": "Chequeo gratis: ¿ChatGPT puede leer tu sitio? · SpindleLab",
+   "esperado_title": "Chequeo gratis: ¿ChatGPT puede leer tu sitio? · SpindleLab",
+   "desc_ok": true,
+   "description": "Escribe tu dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden leer, entender y citar tu sitio. Gratis, con las 21 señales y su peso publicados.",
+   "esperado_desc": "Escribe tu dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden leer, entender y citar tu sitio. Gratis, con las 21 señales y su peso publicados."
+  },
+  {
+   "ruta": "/v3/metodo/",
+   "title_ok": true,
+   "title": "Método: SEO técnico y visibilidad en IA · SpindleLab",
+   "esperado_title": "Método: SEO técnico y visibilidad en IA · SpindleLab",
+   "desc_ok": true,
+   "description": "Cómo trabajamos, en cuatro pasos medibles: revisamos qué le impide a Google y a la IA leer tu sitio, priorizamos, lo arreglamos y medimos el cambio.",
+   "esperado_desc": "Cómo trabajamos, en cuatro pasos medibles: revisamos qué le impide a Google y a la IA leer tu sitio, priorizamos, lo arreglamos y medimos el cambio."
+  },
+  {
+   "ruta": "/v3/nosotros/",
+   "title_ok": true,
+   "title": "Ramón Vallejos, quién está detrás · SpindleLab",
+   "esperado_title": "Ramón Vallejos, quién está detrás · SpindleLab",
+   "desc_ok": true,
+   "description": "Detrás de SpindleLab está Ramón Vallejos: diseña, programa con agentes de IA cuyo código él revisa, y deja cada sitio listo para que Google y la IA lo lean.",
+   "esperado_desc": "Detrás de SpindleLab está Ramón Vallejos: diseña, programa con agentes de IA cuyo código él revisa, y deja cada sitio listo para que Google y la IA lo lean."
+  },
+  {
+   "ruta": "/v3/servicios/",
+   "title_ok": true,
+   "title": "Servicios: desarrollo web, SEO técnico y visibilidad en IA",
+   "esperado_title": "Servicios: desarrollo web, SEO técnico y visibilidad en IA",
+   "desc_ok": true,
+   "description": "Desarrollo web a medida desde $390.000 + IVA, y SEO técnico y visibilidad en IA para que Google y ChatGPT puedan leer y citar tu sitio. Precios publicados.",
+   "esperado_desc": "Desarrollo web a medida desde $390.000 + IVA, y SEO técnico y visibilidad en IA para que Google y ChatGPT puedan leer y citar tu sitio. Precios publicados."
+  },
+  {
+   "ruta": "/v3/servicios/acompanamiento-mensual/",
+   "title_ok": true,
+   "title": "Acompañamiento mensual de SEO e IA · SpindleLab",
+   "esperado_title": "Acompañamiento mensual de SEO e IA · SpindleLab",
+   "desc_ok": true,
+   "description": "Cada mes arreglamos y medimos lo que hace que Google y la IA lean y citen tu sitio, con informes quincenales. Desde $590.000/mes + IVA, mínimo 3 meses.",
+   "esperado_desc": "Cada mes arreglamos y medimos lo que hace que Google y la IA lean y citen tu sitio, con informes quincenales. Desde $590.000/mes + IVA, mínimo 3 meses."
+  },
+  {
+   "ruta": "/v3/servicios/auditoria-seo-tecnica/",
+   "title_ok": true,
+   "title": "Auditoría SEO técnica para empresas · SpindleLab",
+   "esperado_title": "Auditoría SEO técnica para empresas · SpindleLab",
+   "desc_ok": true,
+   "description": "Encontramos qué le impide a Google rastrear, entender y confiar en tu sitio, y te lo entregamos ordenado por impacto. Desde $490.000 + IVA.",
+   "esperado_desc": "Encontramos qué le impide a Google rastrear, entender y confiar en tu sitio, y te lo entregamos ordenado por impacto. Desde $490.000 + IVA."
+  },
+  {
+   "ruta": "/v3/servicios/desarrollo-web/",
+   "title_ok": true,
+   "title": "Desarrollo web a medida, desde $390.000 + IVA · SpindleLab",
+   "esperado_title": "Desarrollo web a medida, desde $390.000 + IVA · SpindleLab",
+   "desc_ok": true,
+   "description": "Diseñamos y programamos tu sitio a medida, listo para que Google y la IA puedan leerlo. Cuatro planes, desde $390.000 + IVA.",
+   "esperado_desc": "Diseñamos y programamos tu sitio a medida, listo para que Google y la IA puedan leerlo. Cuatro planes, desde $390.000 + IVA."
+  },
+  {
+   "ruta": "/v3/servicios/paid-media/",
+   "title_ok": true,
+   "title": "Paid Media (Google): anuncios de búsqueda · SpindleLab",
+   "esperado_title": "Paid Media (Google): anuncios de búsqueda · SpindleLab",
+   "desc_ok": true,
+   "description": "Armamos y manejamos tu Google Ads para que tu anuncio salga cuando alguien busca lo que vendes, con el presupuesto bajo tu control. Desde $350.000/mes + IVA.",
+   "esperado_desc": "Armamos y manejamos tu Google Ads para que tu anuncio salga cuando alguien busca lo que vendes, con el presupuesto bajo tu control. Desde $350.000/mes + IVA."
+  },
+  {
+   "ruta": "/v3/servicios/redes-sociales/",
+   "title_ok": true,
+   "title": "Gestión de redes sociales para empresas · SpindleLab",
+   "esperado_title": "Gestión de redes sociales para empresas · SpindleLab",
+   "desc_ok": true,
+   "description": "Gestión de redes sociales para empresas en LinkedIn y Meta: estrategia, pauta, comunidad y reportes. El contenido creativo lo pones tú.",
+   "esperado_desc": "Gestión de redes sociales para empresas en LinkedIn y Meta: estrategia, pauta, comunidad y reportes. El contenido creativo lo pones tú."
+  },
+  {
+   "ruta": "/v3/servicios/visibilidad-en-ia/",
+   "title_ok": true,
+   "title": "Visibilidad en IA (AEO/GEO): que ChatGPT pueda citarte",
+   "esperado_title": "Visibilidad en IA (AEO/GEO): que ChatGPT pueda citarte",
+   "desc_ok": true,
+   "description": "Revisamos cómo te describen ChatGPT, Gemini y Perplexity y qué le falta a tu sitio para que puedan citarte, y nos ocupamos de eso. Desde $400.000 + IVA.",
+   "esperado_desc": "Revisamos cómo te describen ChatGPT, Gemini y Perplexity y qué le falta a tu sitio para que puedan citarte, y nos ocupamos de eso. Desde $400.000 + IVA."
+  },
+  {
+   "ruta": "/v3/trabajo/",
+   "title_ok": true,
+   "title": "Trabajo de diseño y desarrollo web · SpindleLab",
+   "esperado_title": "Trabajo de diseño y desarrollo web · SpindleLab",
+   "desc_ok": true,
+   "description": "Sitios, una app y herramientas que diseñamos y programamos, y cuatro marcas inventadas para rubros que atendemos. Cada entrada dice de quién es y qué se midió.",
+   "esperado_desc": "Sitios, una app y herramientas que diseñamos y programamos, y cuatro marcas inventadas para rubros que atendemos. Cada entrada dice de quién es y qué se midió."
+  },
+  {
+   "ruta": "/v3/trabajo/combeau/",
+   "title_ok": true,
+   "title": "Bernardo Combeau: fotografía y book de modelo · SpindleLab",
+   "esperado_title": "Bernardo Combeau: fotografía y book de modelo · SpindleLab",
+   "desc_ok": true,
+   "description": "Diseñamos y programamos los dos sitios de Bernardo Combeau, fotógrafo y modelo. Él carga sus series desde un panel, y el sitio entrega sus fotos livianas.",
+   "esperado_desc": "Diseñamos y programamos los dos sitios de Bernardo Combeau, fotógrafo y modelo. Él carga sus series desde un panel, y el sitio entrega sus fotos livianas."
+  },
+  {
+   "ruta": "/v3/trabajo/doceavo/",
+   "title_ok": true,
+   "title": "Concepto: Doceavo, estudio contable · SpindleLab",
+   "esperado_title": "Concepto: Doceavo, estudio contable · SpindleLab",
+   "desc_ok": true,
+   "description": "Concepto: Doceavo no existe. Un estudio contable inventado en Concepción, para mostrar un sitio que te dice qué vence este mes según el calendario del SII.",
+   "esperado_desc": "Concepto: Doceavo no existe. Un estudio contable inventado en Concepción, para mostrar un sitio que te dice qué vence este mes según el calendario del SII."
+  },
+  {
+   "ruta": "/v3/trabajo/ocelo/",
+   "title_ok": true,
+   "title": "Concepto: Ocelo, clínica de ojos · SpindleLab",
+   "esperado_title": "Concepto: Ocelo, clínica de ojos · SpindleLab",
+   "desc_ok": true,
+   "description": "Concepto: Ocelo no existe. Una clínica de ojos inventada, para mostrar cómo haríamos un sitio de salud que explica el examen en vez de prometer resultados.",
+   "esperado_desc": "Concepto: Ocelo no existe. Una clínica de ojos inventada, para mostrar cómo haríamos un sitio de salud que explica el examen en vez de prometer resultados."
+  },
+  {
+   "ruta": "/v3/trabajo/praxi/",
+   "title_ok": true,
+   "title": "Praxi: app de entrenamiento con un coach de IA · SpindleLab",
+   "esperado_title": "Praxi: app de entrenamiento con un coach de IA · SpindleLab",
+   "desc_ok": true,
+   "description": "Diseñamos y programamos Praxi con agentes de IA: una app de entrenamiento por chat. La IA conversa; cuándo subir el peso lo calcula código con pruebas.",
+   "esperado_desc": "Diseñamos y programamos Praxi con agentes de IA: una app de entrenamiento por chat. La IA conversa; cuándo subir el peso lo calcula código con pruebas."
+  },
+  {
+   "ruta": "/v3/trabajo/sesenta/",
+   "title_ok": true,
+   "title": "Concepto: Sesenta, estudio laboral · SpindleLab",
+   "esperado_title": "Concepto: Sesenta, estudio laboral · SpindleLab",
+   "desc_ok": true,
+   "description": "Concepto: Sesenta no existe. Un estudio laboral inventado, del lado del trabajador, para mostrar cómo haríamos un sitio legal que cuenta los días que te quedan.",
+   "esperado_desc": "Concepto: Sesenta no existe. Un estudio laboral inventado, del lado del trabajador, para mostrar cómo haríamos un sitio legal que cuenta los días que te quedan."
+  },
+  {
+   "ruta": "/v3/trabajo/tonela/",
+   "title_ok": true,
+   "title": "Concepto: Tonela, proveedor de izaje · SpindleLab",
+   "esperado_title": "Concepto: Tonela, proveedor de izaje · SpindleLab",
+   "desc_ok": true,
+   "description": "Concepto: Tonela no existe. Una marca inventada de eslingas en Antofagasta, para mostrar cómo diseñaríamos y programaríamos un sitio industrial B2B. Sin cifras.",
+   "esperado_desc": "Concepto: Tonela no existe. Una marca inventada de eslingas en Antofagasta, para mostrar cómo diseñaríamos y programaríamos un sitio industrial B2B. Sin cifras."
+  }
+ ],
+ "nodos": [
+  {
+   "que": "#org.description = §1.1",
+   "ok": true,
+   "valor": "Estudio de diseño y tecnología en Santiago: diseñamos y programamos sitios y herramientas a medida, y hacemos SEO técnico y visibilidad en motores de IA (AEO/GEO) para que Google y ChatGPT puedan leerlos."
+  },
+  {
+   "que": "#org.knowsAbout suma Diseño web y Desarrollo de aplicaciones web",
+   "ok": true,
+   "valor": [
+    "SEO técnico",
+    "AEO",
+    "GEO",
+    "Visibilidad en IA",
+    "E-E-A-T",
+    "Datos estructurados",
+    "Desarrollo web a medida",
+    "Diseño web",
+    "Desarrollo de aplicaciones web"
+   ]
+  },
+  {
+   "que": "#org.logo es el PNG de El huso ≥ 512",
+   "ok": true,
+   "valor": "https://spindlelab.cl/v3/marca/icon-512.png"
+  },
+  {
+   "que": "#autor-ramon.jobTitle = propuesta de §1.1",
+   "ok": true,
+   "valor": "Fundador de SpindleLab: diseño y desarrollo web, SEO técnico y visibilidad en IA"
+  },
+  {
+   "que": "home WebPage con isPartOf #website y about #org",
+   "ok": true,
+   "valor": null
+  },
+  {
+   "que": "home WebPage con dateModified (§1.2: «lo escribe el build»)",
+   "ok": true,
+   "valor": {
+    "datePublished": "2026-07-08",
+    "dateModified": "2026-10-23"
+   }
+  },
+  {
+   "que": "home WebPage datePublished 2026-07-08 (el de producción y el del 16-oct) y dateModified = el día del build en Chile",
+   "ok": true,
+   "valor": [
+    "2026-07-08",
+    "2026-10-23",
+    "2026-10-23"
+   ]
+  },
+  {
+   "que": "defecto 8: /v3/servicios/auditoria-seo-tecnica/ title y og:title en mayúscula inicial",
+   "ok": true,
+   "valor": [
+    "Auditoría SEO técnica para empresas · SpindleLab",
+    "Auditoría SEO técnica para empresas · SpindleLab"
+   ]
+  },
+  {
+   "que": "defecto 8: /v3/servicios/acompanamiento-mensual/ title y og:title en mayúscula inicial",
+   "ok": true,
+   "valor": [
+    "Acompañamiento mensual de SEO e IA · SpindleLab",
+    "Acompañamiento mensual de SEO e IA · SpindleLab"
+   ]
+  },
+  {
+   "que": "defecto 8: /v3/servicios/redes-sociales/ title y og:title en mayúscula inicial",
+   "ok": true,
+   "valor": [
+    "Gestión de redes sociales para empresas · SpindleLab",
+    "Gestión de redes sociales para empresas · SpindleLab"
+   ]
+  },
+  {
+   "que": "/trabajo/ ItemList numberOfItems 10",
+   "ok": true,
+   "valor": 10
+  },
+  {
+   "que": "/trabajo/ ItemList: nombres y destinos",
+   "ok": true,
+   "valor": [
+    [
+     "Bernardo Combeau, fotografía",
+     "https://spindlelab.cl/trabajo/combeau/#fotografia"
+    ],
+    [
+     "Praxi",
+     "https://spindlelab.cl/trabajo/praxi/"
+    ],
+    [
+     "Sesenta (concepto)",
+     "https://spindlelab.cl/trabajo/sesenta/"
+    ],
+    [
+     "Verifica y Cumple",
+     "https://verifica.spindlelab.cl/"
+    ],
+    [
+     "Ocelo (concepto)",
+     "https://spindlelab.cl/trabajo/ocelo/"
+    ],
+    [
+     "Bernardo Combeau, modelo",
+     "https://spindlelab.cl/trabajo/combeau/#modelo"
+    ],
+    [
+     "Doceavo (concepto)",
+     "https://spindlelab.cl/trabajo/doceavo/"
+    ],
+    [
+     "El chequeo de 21 señales",
+     "https://spindlelab.cl/diagnostico/"
+    ],
+    [
+     "Tonela (concepto)",
+     "https://spindlelab.cl/trabajo/tonela/"
+    ],
+    [
+     null,
+     "CreativeWork sin url"
+    ]
+   ]
+  },
+  {
+   "que": "Praxi #caso dateCreated 2026-07-21 y temporalCoverage",
+   "ok": true,
+   "valor": [
+    "2026-07-21",
+    "2026-07-21/2026-08-25"
+   ]
+  },
+  {
+   "que": "Praxi #app sin offers, url ni sameAs",
+   "ok": true,
+   "valor": [
+    "@id",
+    "@type",
+    "applicationCategory",
+    "author",
+    "description",
+    "inLanguage",
+    "name",
+    "operatingSystem"
+   ]
+  },
+  {
+   "que": "Praxi #app HealthApplication / Web",
+   "ok": true,
+   "valor": null
+  },
+  {
+   "que": "Combeau hasPart #fotografia y #modelo con sus url",
+   "ok": true,
+   "valor": [
+    [
+     "https://spindlelab.cl/trabajo/combeau/#fotografia",
+     "https://bernardocombeau.cl/"
+    ],
+    [
+     "https://spindlelab.cl/trabajo/combeau/#modelo",
+     "https://bernardocombeau.cl/modelo/"
+    ]
+   ]
+  },
+  {
+   "que": "Combeau datePublished 2026-07-24",
+   "ok": true,
+   "valor": "2026-07-24"
+  },
+  {
+   "que": "Combeau #sitio publisher bernardocombeau.cl/#persona",
+   "ok": true,
+   "valor": null
+  },
+  {
+   "que": "tonela: genre Concepto, disambiguating, about, dateCreated 2026-10-16",
+   "ok": true,
+   "valor": [
+    "Concepto",
+    "2026-10-16",
+    {
+     "@type": "Thing",
+     "name": "Izaje: eslingas, cadenas y grilletes"
+    }
+   ]
+  },
+  {
+   "que": "tonela: sin Organization/LocalBusiness/Medical/Legal/Accounting",
+   "ok": true,
+   "valor": null
+  },
+  {
+   "que": "ocelo: genre Concepto, disambiguating, about, dateCreated 2026-10-16",
+   "ok": true,
+   "valor": [
+    "Concepto",
+    "2026-10-16",
+    {
+     "@type": "Thing",
+     "name": "Cirugía refractiva y de cataratas"
+    }
+   ]
+  },
+  {
+   "que": "ocelo: sin Organization/LocalBusiness/Medical/Legal/Accounting",
+   "ok": true,
+   "valor": null
+  },
+  {
+   "que": "sesenta: genre Concepto, disambiguating, about, dateCreated 2026-10-16",
+   "ok": true,
+   "valor": [
+    "Concepto",
+    "2026-10-16",
+    {
+     "@type": "Thing",
+     "name": "Derecho laboral del lado del trabajador"
+    }
+   ]
+  },
+  {
+   "que": "sesenta: sin Organization/LocalBusiness/Medical/Legal/Accounting",
+   "ok": true,
+   "valor": null
+  },
+  {
+   "que": "doceavo: genre Concepto, disambiguating, about, dateCreated 2026-10-16",
+   "ok": true,
+   "valor": [
+    "Concepto",
+    "2026-10-16",
+    {
+     "@type": "Thing",
+     "name": "Contabilidad y tributación de pymes"
+    }
+   ]
+  },
+  {
+   "que": "doceavo: sin Organization/LocalBusiness/Medical/Legal/Accounting",
+   "ok": true,
+   "valor": null
+  },
+  {
+   "que": "diagnóstico WebApplication #chequeo como §2.6",
+   "ok": true,
+   "valor": {
+    "@type": "WebApplication",
+    "name": "Chequeo de 21 señales",
+    "applicationCategory": "BusinessApplication",
+    "isAccessibleForFree": true
+   }
+  },
+  {
+   "que": "contacto ContactPage about #org",
+   "ok": true,
+   "valor": null
+  }
+ ]
+}

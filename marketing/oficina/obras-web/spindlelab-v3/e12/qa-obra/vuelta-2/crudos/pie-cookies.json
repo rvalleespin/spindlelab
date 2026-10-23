@@ -1,0 +1,276 @@
+[
+ {
+  "w": 360,
+  "variante": "hoy",
+  "boton": {
+   "top": 767,
+   "bottom": 811,
+   "left": 151,
+   "right": 283
+  },
+  "texto": {
+   "top": 778,
+   "bottom": 792
+  },
+  "propio": "91 %",
+  "otros": {
+   "p.cab__hora.rotulo": 217,
+   "span.": 56
+  },
+  "vecinos": [
+   {
+    "e": "p.cab__hora.rotulo",
+    "txt": "Santiago 10:51 UTC-3",
+    "top": 806,
+    "bottom": 820,
+    "left": 205,
+    "right": 344
+   }
+  ]
+ },
+ {
+  "w": 360,
+  "variante": "antes",
+  "boton": {
+   "top": 761,
+   "bottom": 805,
+   "left": 151,
+   "right": 283
+  },
+  "texto": {
+   "top": 778,
+   "bottom": 792
+  },
+  "propio": "99 %",
+  "otros": {
+   "p.cab__hora.rotulo": 31,
+   "span.": 8
+  },
+  "vecinos": [
+   {
+    "e": "p.cab__hora.rotulo",
+    "txt": "Santiago 10:51 UTC-3",
+    "top": 806,
+    "bottom": 820,
+    "left": 205,
+    "right": 344
+   }
+  ]
+ },
+ {
+  "w": 390,
+  "variante": "hoy",
+  "boton": {
+   "top": 767,
+   "bottom": 811,
+   "left": 151,
+   "right": 283
+  },
+  "texto": {
+   "top": 778,
+   "bottom": 792
+  },
+  "propio": "94 %",
+  "otros": {
+   "p.cab__hora.rotulo": 168
+  },
+  "vecinos": [
+   {
+    "e": "p.cab__hora.rotulo",
+    "txt": "Santiago 10:51 UTC-3",
+    "top": 806,
+    "bottom": 820,
+    "left": 235,
+    "right": 374
+   }
+  ]
+ },
+ {
+  "w": 390,
+  "variante": "antes",
+  "boton": {
+   "top": 761,
+   "bottom": 805,
+   "left": 151,
+   "right": 283
+  },
+  "texto": {
+   "top": 778,
+   "bottom": 792
+  },
+  "propio": "99 %",
+  "otros": {
+   "p.cab__hora.rotulo": 24
+  },
+  "vecinos": [
+   {
+    "e": "p.cab__hora.rotulo",
+    "txt": "Santiago 10:51 UTC-3",
+    "top": 806,
+    "bottom": 820,
+    "left": 235,
+    "right": 374
+   }
+  ]
+ },
+ {
+  "w": 414,
+  "variante": "hoy",
+  "boton": {
+   "top": 767,
+   "bottom": 811,
+   "left": 151,
+   "right": 283
+  },
+  "texto": {
+   "top": 778,
+   "bottom": 792
+  },
+  "propio": "97 %",
+  "otros": {
+   "p.cab__hora.rotulo": 84
+  },
+  "vecinos": [
+   {
+    "e": "p.cab__hora.rotulo",
+    "txt": "Santiago 10:51 UTC-3",
+    "top": 806,
+    "bottom": 820,
+    "left": 259,
+    "right": 398
+   }
+  ]
+ },
+ {
+  "w": 414,
+  "variante": "antes",
+  "boton": {
+   "top": 761,
+   "bottom": 805,
+   "left": 151,
+   "right": 283
+  },
+  "texto": {
+   "top": 778,
+   "bottom": 792
+  },
+  "propio": "100 %",
+  "otros": {
+   "p.cab__hora.rotulo": 12
+  },
+  "vecinos": [
+   {
+    "e": "p.cab__hora.rotulo",
+    "txt": "Santiago 10:51 UTC-3",
+    "top": 806,
+    "bottom": 820,
+    "left": 259,
+    "right": 398
+   }
+  ]
+ },
+ {
+  "w": 600,
+  "variante": "hoy",
+  "boton": {
+   "top": 767,
+   "bottom": 811,
+   "left": 289,
+   "right": 420
+  },
+  "texto": {
+   "top": 778,
+   "bottom": 792
+  },
+  "propio": "100 %",
+  "otros": {},
+  "vecinos": [
+   {
+    "e": "p.cab__hora.rotulo",
+    "txt": "Santiago 10:51 UTC-3",
+    "top": 807,
+    "bottom": 820,
+    "left": 445,
+    "right": 584
+   }
+  ]
+ },
+ {
+  "w": 600,
+  "variante": "antes",
+  "boton": {
+   "top": 761,
+   "bottom": 805,
+   "left": 289,
+   "right": 420
+  },
+  "texto": {
+   "top": 778,
+   "bottom": 792
+  },
+  "propio": "100 %",
+  "otros": {},
+  "vecinos": [
+   {
+    "e": "p.cab__hora.rotulo",
+    "txt": "Santiago 10:51 UTC-3",
+    "top": 807,
+    "bottom": 820,
+    "left": 445,
+    "right": 584
+   }
+  ]
+ },
+ {
+  "w": 768,
+  "variante": "hoy",
+  "boton": {
+   "top": 792,
+   "bottom": 836,
+   "left": 289,
+   "right": 420
+  },
+  "texto": {
+   "top": 803,
+   "bottom": 817
+  },
+  "propio": "100 %",
+  "otros": {},
+  "vecinos": [
+   {
+    "e": "p.cab__hora.rotulo",
+    "txt": "Santiago 10:51 UTC-3",
+    "top": 802,
+    "bottom": 816,
+    "left": 613,
+    "right": 752
+   }
+  ]
+ },
+ {
+  "w": 768,
+  "variante": "antes",
+  "boton": {
+   "top": 786,
+   "bottom": 830,
+   "left": 289,
+   "right": 420
+  },
+  "texto": {
+   "top": 803,
+   "bottom": 817
+  },
+  "propio": "100 %",
+  "otros": {},
+  "vecinos": [
+   {
+    "e": "p.cab__hora.rotulo",
+    "txt": "Santiago 10:51 UTC-3",
+    "top": 802,
+    "bottom": 816,
+    "left": 613,
+    "right": 752
+   }
+  ]
+ }
+]

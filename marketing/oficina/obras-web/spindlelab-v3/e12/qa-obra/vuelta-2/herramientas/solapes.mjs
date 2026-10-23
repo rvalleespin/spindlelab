@@ -1,4 +1,5 @@
-// Javiera, QA de obra E12, vuelta 1. Lo que foco.mjs marcó como «tapado», medido de cerca: por cada par de controles
+// Javiera, QA de obra E12, vuelta 2 (la de la vuelta 1, con el pie y la original de Combeau también a 360 y 768,
+// y el correo y «Cookies» del pie). Lo que foco.mjs marcó como «tapado», medido de cerca: por cada par de controles
 // vecinos, la caja de cada uno (su área de toque) y cuánto se pisan, y qué elemento recibe el toque en cada punto del
 // área del primero (una grilla de 4 px). También la caja de los summary de las preguntas a 390 (foco.mjs: «fuera»).
 // Uso: node solapes.mjs
@@ -7,8 +8,13 @@ import { join } from 'node:path';
 import { QA, servir, lanzar } from './comun.mjs';
 const srv = await servir(); const nav = await lanzar(); const R = [];
 const CASOS = [
-  ['/v3/', 390, '.pie-sitio a[aria-label="SpindleLab"], .pie-sitio a:has(svg)', '.pie-sitio__correo'],
-  ['/v3/trabajo/combeau/', 390, 'a[href*="original"], figcaption a, .medio__pie a', null],
+  ...[360, 390, 768].flatMap((w) => [
+    ['/v3/', w, '.pie-sitio a[aria-label="SpindleLab"], .pie-sitio a:has(svg)', '.pie-sitio__correo'],
+    ['/v3/', w, '.pie-sitio__correo', '.pie-sitio a[aria-label="SpindleLab"], .pie-sitio a:has(svg)'],
+    ['/v3/', w, '#cookie-preferencias', '.pie-sitio__correo'],
+    ['/v3/metodo/', w, '.pie-sitio a[aria-label="SpindleLab"], .pie-sitio a:has(svg)', '.pie-sitio__correo'],
+    ['/v3/trabajo/combeau/', w, 'a[href*="original"], figcaption a, .medio__pie a', null],
+  ]),
   ['/v3/contacto/', 390, 'input[type="checkbox"]:not([name="botcheck"])', 'a[href="/privacidad/"]'],
   ['/v3/contacto/', 390, 'a[href="/privacidad/"]', 'button[type="submit"]'],
   ['/v3/contacto/', 1440, 'input[type="checkbox"]:not([name="botcheck"])', 'a[href="/privacidad/"]'],

@@ -1,4 +1,4 @@
-// Javiera, QA de obra E12, vuelta 1. Lo que se mueve, medido sobre el build servido (spec §1.6, §3.1, §3.5, §4.2,
+// Javiera, QA de obra E12, vuelta 2 (sin cambios de método desde la vuelta 1). Lo que se mueve, medido sobre el build servido (spec §1.6, §3.1, §3.5, §4.2,
 // §5.2; brief criterios 8, 9 y 14). Medición propia, sin las herramientas de Diego:
 //   A · cada video con movimiento normal a 1440: atributos (muted, loop, playsinline, preload=none, sin controls ni
 //       autoplay, aria-hidden), fuentes en orden VP9 → H.264 y la del ancho, que corre a la vista, y su pausa: se llega

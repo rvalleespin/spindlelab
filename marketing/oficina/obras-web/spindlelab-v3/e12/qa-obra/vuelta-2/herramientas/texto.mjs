@@ -1,4 +1,4 @@
-// Javiera, QA de obra E12, vuelta 1. El texto de Clara, «tal cual»: por cada elemento de texto-obra.json (salvo los de
+// Javiera, QA de obra E12, vuelta 2 (sin cambios de método desde la vuelta 1). El texto de Clara, «tal cual»: por cada elemento de texto-obra.json (salvo los de
 // uso «referencia», que son notas para el constructor) se busca su «texto» en la página construida: en el texto del
 // documento (textContent, espacios colapsados) o en un atributo (alt, aria-label, placeholder, content, value, title).
 // Lo que no aparece se lista para mirarlo uno por uno: puede ser un texto condicionado (estado de error, resultado del

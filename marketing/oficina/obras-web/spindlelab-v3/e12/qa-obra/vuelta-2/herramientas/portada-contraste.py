@@ -1,4 +1,4 @@
-"""Javiera, QA de obra E12, vuelta 1. La cuenta de portada-contraste.mjs: por cada tamaño y cada línea de texto de la
+"""Javiera, QA de obra E12, vuelta 2 (sin cambios de método desde la vuelta 1). La cuenta de portada-contraste.mjs: por cada tamaño y cada línea de texto de la
 portada, el píxel más claro bajo su caja en cada uno de los 121 cuadros (con el velo pintado por el navegador y el texto
 transparente), y el contraste WCAG 2.1 del color del texto contra ese píxel. Reporta la peor línea por tamaño, en qué
 cuadro, y cuántas quedan bajo 4,5 (texto normal) o 3 (grande: ≥ 24 px, o ≥ 18,66 px en negrita, que aquí no hay).

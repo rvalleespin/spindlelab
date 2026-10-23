@@ -1,4 +1,4 @@
-// Javiera, QA de obra E12, vuelta 1. Spec §3.1 y brief criterio 14: la frase de la portada pasa AA medida sobre el video,
+// Javiera, QA de obra E12, vuelta 2 (sin cambios de método desde la vuelta 1). Spec §3.1 y brief criterio 14: la frase de la portada pasa AA medida sobre el video,
 // en su cuadro más claro. Medición propia, sin las herramientas de Lucía ni de Diego: en el build servido, con
 // movimiento reducido (el video no corre y la imagen quieta queda debajo del velo), se pone en la imagen quieta cada uno
 // de los 121 cuadros de hilo-1920.webm, se vuelve transparente el texto de la portada (no el velo) y se captura la

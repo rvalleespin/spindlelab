@@ -1,0 +1,296 @@
+[
+ {
+  "w": 360,
+  "h": 800,
+  "cajas": {
+   "rotulo": {
+    "top": 317,
+    "bottom": 330,
+    "left": 16,
+    "w": 328
+   },
+   "h1": {
+    "top": 346,
+    "bottom": 450,
+    "left": 16,
+    "w": 328
+   },
+   "chequeo": {
+    "top": 474,
+    "bottom": 695,
+    "left": 16,
+    "w": 328
+   },
+   "entradilla": {
+    "top": 719,
+    "bottom": 820,
+    "left": 16,
+    "w": 328
+   }
+  },
+  "ordenVisual": [
+   "rotulo",
+   "h1",
+   "chequeo",
+   "entradilla"
+  ],
+  "ordenDom": [
+   "rotulo",
+   "h1",
+   "entradilla",
+   "chequeo"
+  ],
+  "huecos": {
+   "rotuloH1": 16,
+   "h1Chequeo": 24,
+   "chequeoEntradilla": 24
+  },
+  "enfocablesEnEntradilla": 0,
+  "rotuloTag": "P.rotulo"
+ },
+ {
+  "w": 390,
+  "h": 844,
+  "cajas": {
+   "rotulo": {
+    "top": 333,
+    "bottom": 347,
+    "left": 16,
+    "w": 358
+   },
+   "h1": {
+    "top": 363,
+    "bottom": 467,
+    "left": 16,
+    "w": 358
+   },
+   "chequeo": {
+    "top": 491,
+    "bottom": 712,
+    "left": 16,
+    "w": 358
+   },
+   "entradilla": {
+    "top": 736,
+    "bottom": 817,
+    "left": 16,
+    "w": 358
+   }
+  },
+  "ordenVisual": [
+   "rotulo",
+   "h1",
+   "chequeo",
+   "entradilla"
+  ],
+  "ordenDom": [
+   "rotulo",
+   "h1",
+   "entradilla",
+   "chequeo"
+  ],
+  "huecos": {
+   "rotuloH1": 16,
+   "h1Chequeo": 24,
+   "chequeoEntradilla": 24
+  },
+  "enfocablesEnEntradilla": 0,
+  "rotuloTag": "P.rotulo"
+ },
+ {
+  "w": 768,
+  "h": 1024,
+  "cajas": {
+   "rotulo": {
+    "top": 546,
+    "bottom": 560,
+    "left": 16,
+    "w": 736
+   },
+   "h1": {
+    "top": 576,
+    "bottom": 644,
+    "left": 16,
+    "w": 736
+   },
+   "chequeo": {
+    "top": 668,
+    "bottom": 873,
+    "left": 16,
+    "w": 736
+   },
+   "entradilla": {
+    "top": 897,
+    "bottom": 960,
+    "left": 16,
+    "w": 493
+   }
+  },
+  "ordenVisual": [
+   "rotulo",
+   "h1",
+   "chequeo",
+   "entradilla"
+  ],
+  "ordenDom": [
+   "rotulo",
+   "h1",
+   "entradilla",
+   "chequeo"
+  ],
+  "huecos": {
+   "rotuloH1": 16,
+   "h1Chequeo": 24,
+   "chequeoEntradilla": 24
+  },
+  "enfocablesEnEntradilla": 0,
+  "rotuloTag": "P.rotulo"
+ },
+ {
+  "w": 833,
+  "h": 1112,
+  "cajas": {
+   "rotulo": {
+    "top": 583,
+    "bottom": 596,
+    "left": 16,
+    "w": 801
+   },
+   "h1": {
+    "top": 612,
+    "bottom": 683,
+    "left": 16,
+    "w": 801
+   },
+   "chequeo": {
+    "top": 707,
+    "bottom": 913,
+    "left": 16,
+    "w": 801
+   },
+   "entradilla": {
+    "top": 937,
+    "bottom": 1000,
+    "left": 16,
+    "w": 493
+   }
+  },
+  "ordenVisual": [
+   "rotulo",
+   "h1",
+   "chequeo",
+   "entradilla"
+  ],
+  "ordenDom": [
+   "rotulo",
+   "h1",
+   "entradilla",
+   "chequeo"
+  ],
+  "huecos": {
+   "rotuloH1": 16,
+   "h1Chequeo": 24,
+   "chequeoEntradilla": 24
+  },
+  "enfocablesEnEntradilla": 0,
+  "rotuloTag": "P.rotulo"
+ },
+ {
+  "w": 834,
+  "h": 1112,
+  "cajas": {
+   "rotulo": {
+    "top": 818,
+    "bottom": 832,
+    "left": 16,
+    "w": 465
+   },
+   "h1": {
+    "top": 848,
+    "bottom": 989,
+    "left": 16,
+    "w": 465
+   },
+   "chequeo": {
+    "top": 846,
+    "bottom": 1088,
+    "left": 489,
+    "w": 330
+   },
+   "entradilla": {
+    "top": 1005,
+    "bottom": 1088,
+    "left": 16,
+    "w": 465
+   }
+  },
+  "ordenVisual": [
+   "rotulo",
+   "chequeo",
+   "h1",
+   "entradilla"
+  ],
+  "ordenDom": [
+   "rotulo",
+   "h1",
+   "entradilla",
+   "chequeo"
+  ],
+  "huecos": {
+   "rotuloH1": 16,
+   "h1Chequeo": -143,
+   "chequeoEntradilla": -83
+  },
+  "enfocablesEnEntradilla": 0,
+  "rotuloTag": "P.rotulo"
+ },
+ {
+  "w": 1440,
+  "h": 900,
+  "cajas": {
+   "rotulo": {
+    "top": 648,
+    "bottom": 662,
+    "left": 16,
+    "w": 1054
+   },
+   "h1": {
+    "top": 678,
+    "bottom": 774,
+    "left": 16,
+    "w": 1054
+   },
+   "chequeo": {
+    "top": 576,
+    "bottom": 876,
+    "left": 1078,
+    "w": 346
+   },
+   "entradilla": {
+    "top": 790,
+    "bottom": 876,
+    "left": 16,
+    "w": 493
+   }
+  },
+  "ordenVisual": [
+   "chequeo",
+   "rotulo",
+   "h1",
+   "entradilla"
+  ],
+  "ordenDom": [
+   "rotulo",
+   "h1",
+   "entradilla",
+   "chequeo"
+  ],
+  "huecos": {
+   "rotuloH1": 16,
+   "h1Chequeo": -198,
+   "chequeoEntradilla": -86
+  },
+  "enfocablesEnEntradilla": 0,
+  "rotuloTag": "P.rotulo"
+ }
+]

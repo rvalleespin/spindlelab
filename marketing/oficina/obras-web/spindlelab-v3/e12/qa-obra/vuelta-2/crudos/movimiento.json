@@ -1,0 +1,971 @@
+{
+ "videos": [
+  {
+   "ruta": "/v3/",
+   "i": 0,
+   "clase": "medio video portada-v__medio medio--sangre",
+   "src": "/v3/portada/hilo-1920.webm",
+   "fuentes": [
+    "video/webm /v3/portada/hilo-1920.webm",
+    "video/mp4 /v3/portada/hilo-1920.mp4"
+   ],
+   "paused": false,
+   "t": 2.12,
+   "dur": 5.04,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  },
+  {
+   "ruta": "/v3/",
+   "i": 1,
+   "clase": "medio video p-169",
+   "src": "/v3/cinta/cinta.webm",
+   "fuentes": [
+    "video/webm /v3/cinta/cinta.webm",
+    "video/mp4 /v3/cinta/cinta.mp4"
+   ],
+   "paused": false,
+   "t": 1.57,
+   "dur": 16,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  },
+  {
+   "ruta": "/v3/trabajo/praxi/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "/v3/trabajo/praxi/praxi-hero.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/praxi/praxi-hero.webm",
+    "video/mp4 /v3/trabajo/praxi/praxi-hero.mp4"
+   ],
+   "paused": false,
+   "t": 2.13,
+   "dur": 11.08,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  },
+  {
+   "ruta": "/v3/trabajo/praxi/",
+   "i": 1,
+   "clase": "medio video p-45",
+   "src": "/v3/trabajo/praxi/praxi-reel-45.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/praxi/praxi-reel-45.webm",
+    "video/mp4 /v3/trabajo/praxi/praxi-reel-45.mp4"
+   ],
+   "paused": false,
+   "t": 1.55,
+   "dur": 15.38,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  },
+  {
+   "ruta": "/v3/trabajo/combeau/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "/v3/trabajo/combeau/combeau-fotografia-recorrido-1440.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/combeau/combeau-fotografia-recorrido-1440.webm",
+    "video/mp4 /v3/trabajo/combeau/combeau-fotografia-recorrido-1440.mp4"
+   ],
+   "paused": false,
+   "t": 2.15,
+   "dur": 10,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  },
+  {
+   "ruta": "/v3/trabajo/combeau/",
+   "i": 1,
+   "clase": "medio video p-45",
+   "src": "/v3/trabajo/combeau/combeau-modelo-recorrido-390.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/combeau/combeau-modelo-recorrido-390.webm",
+    "video/mp4 /v3/trabajo/combeau/combeau-modelo-recorrido-390.mp4"
+   ],
+   "paused": false,
+   "t": 1.55,
+   "dur": 8,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  },
+  {
+   "ruta": "/v3/trabajo/combeau/",
+   "i": 2,
+   "clase": "medio video p-169",
+   "src": "/v3/trabajo/combeau/combeau-modelo-recorrido-1440.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/combeau/combeau-modelo-recorrido-1440.webm",
+    "video/mp4 /v3/trabajo/combeau/combeau-modelo-recorrido-1440.mp4"
+   ],
+   "paused": false,
+   "t": 1.52,
+   "dur": 8,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  },
+  {
+   "ruta": "/v3/trabajo/sesenta/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "/v3/trabajo/sesenta/sesenta-recorrido.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/sesenta/sesenta-recorrido.webm",
+    "video/mp4 /v3/trabajo/sesenta/sesenta-recorrido.mp4"
+   ],
+   "paused": false,
+   "t": 2.12,
+   "dur": 10,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  },
+  {
+   "ruta": "/v3/trabajo/ocelo/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "/v3/trabajo/ocelo/ocelo-recorrido.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/ocelo/ocelo-recorrido.webm",
+    "video/mp4 /v3/trabajo/ocelo/ocelo-recorrido.mp4"
+   ],
+   "paused": false,
+   "t": 2.12,
+   "dur": 10,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  },
+  {
+   "ruta": "/v3/trabajo/doceavo/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "/v3/trabajo/doceavo/doceavo-recorrido.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/doceavo/doceavo-recorrido.webm",
+    "video/mp4 /v3/trabajo/doceavo/doceavo-recorrido.mp4"
+   ],
+   "paused": false,
+   "t": 2.19,
+   "dur": 10,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  },
+  {
+   "ruta": "/v3/trabajo/tonela/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "/v3/trabajo/tonela/tonela-recorrido.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/tonela/tonela-recorrido.webm",
+    "video/mp4 /v3/trabajo/tonela/tonela-recorrido.mp4"
+   ],
+   "paused": false,
+   "t": 2.29,
+   "dur": 10,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Pausar el video",
+    "pressed": "false",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true,
+   "teclado": {
+    "foco": true,
+    "pausado": true,
+    "label1": "Seguir el video",
+    "pressed1": "true",
+    "sigue": true,
+    "label2": "Pausar el video",
+    "pressed2": "false"
+   },
+   "fueraDeVistaPausado": true
+  }
+ ],
+ "reducido": [
+  {
+   "ruta": "/v3/",
+   "i": 0,
+   "clase": "medio video portada-v__medio medio--sangre",
+   "src": "",
+   "fuentes": [],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/",
+   "i": 1,
+   "clase": "medio video p-169",
+   "src": "/v3/cinta/cinta.webm",
+   "fuentes": [
+    "video/webm /v3/cinta/cinta.webm",
+    "video/mp4 /v3/cinta/cinta.mp4"
+   ],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/",
+   "quietud": {
+    "entradas": 4,
+    "aMedioEntrar": 0,
+    "conTransicion": 0,
+    "conCirculo": false
+   }
+  },
+  {
+   "ruta": "/v3/trabajo/praxi/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "/v3/trabajo/praxi/praxi-hero.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/praxi/praxi-hero.webm",
+    "video/mp4 /v3/trabajo/praxi/praxi-hero.mp4"
+   ],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/trabajo/praxi/",
+   "i": 1,
+   "clase": "medio video p-45",
+   "src": "/v3/trabajo/praxi/praxi-reel-45.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/praxi/praxi-reel-45.webm",
+    "video/mp4 /v3/trabajo/praxi/praxi-reel-45.mp4"
+   ],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/trabajo/praxi/",
+   "quietud": {
+    "entradas": 5,
+    "aMedioEntrar": 0,
+    "conTransicion": 0,
+    "conCirculo": false
+   }
+  },
+  {
+   "ruta": "/v3/trabajo/combeau/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "",
+   "fuentes": [],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/trabajo/combeau/",
+   "i": 1,
+   "clase": "medio video p-45",
+   "src": "/v3/trabajo/combeau/combeau-modelo-recorrido-390.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/combeau/combeau-modelo-recorrido-390.webm",
+    "video/mp4 /v3/trabajo/combeau/combeau-modelo-recorrido-390.mp4"
+   ],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/trabajo/combeau/",
+   "i": 2,
+   "clase": "medio video p-169",
+   "src": "/v3/trabajo/combeau/combeau-modelo-recorrido-1440.webm",
+   "fuentes": [
+    "video/webm /v3/trabajo/combeau/combeau-modelo-recorrido-1440.webm",
+    "video/mp4 /v3/trabajo/combeau/combeau-modelo-recorrido-1440.mp4"
+   ],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/trabajo/combeau/",
+   "quietud": {
+    "entradas": 4,
+    "aMedioEntrar": 0,
+    "conTransicion": 0,
+    "conCirculo": false
+   }
+  },
+  {
+   "ruta": "/v3/trabajo/sesenta/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "",
+   "fuentes": [],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/trabajo/sesenta/",
+   "quietud": {
+    "entradas": 5,
+    "aMedioEntrar": 0,
+    "conTransicion": 0,
+    "conCirculo": false
+   }
+  },
+  {
+   "ruta": "/v3/trabajo/ocelo/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "",
+   "fuentes": [],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/trabajo/ocelo/",
+   "quietud": {
+    "entradas": 5,
+    "aMedioEntrar": 0,
+    "conTransicion": 0,
+    "conCirculo": false
+   }
+  },
+  {
+   "ruta": "/v3/trabajo/doceavo/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "",
+   "fuentes": [],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/trabajo/doceavo/",
+   "quietud": {
+    "entradas": 5,
+    "aMedioEntrar": 0,
+    "conTransicion": 0,
+    "conCirculo": false
+   }
+  },
+  {
+   "ruta": "/v3/trabajo/tonela/",
+   "i": 0,
+   "clase": "medio video p-169",
+   "src": "",
+   "fuentes": [],
+   "paused": true,
+   "t": 0,
+   "dur": 0,
+   "attrs": {
+    "muted": true,
+    "loop": true,
+    "playsinline": true,
+    "preload": "none",
+    "controls": false,
+    "autoplay": false,
+    "ariaHidden": "true"
+   },
+   "pausa": {
+    "hidden": false,
+    "label": "Seguir el video",
+    "pressed": "true",
+    "w": 44,
+    "h": 44
+   },
+   "visible": true
+  },
+  {
+   "ruta": "/v3/trabajo/tonela/",
+   "quietud": {
+    "entradas": 4,
+    "aMedioEntrar": 0,
+    "conTransicion": 0,
+    "conCirculo": false
+   }
+  }
+ ],
+ "cursor": [
+  {
+   "ruta": "/v3/trabajo/",
+   "ancho": 1440,
+   "media": {
+    "fino": true,
+    "conCirculo": true
+   },
+   "ir": "Ver el caso",
+   "sobre": {
+    "texto": "Ver el caso",
+    "fondo": "rgb(255, 255, 255)",
+    "color": "rgb(6, 6, 6)",
+    "w": 88,
+    "h": 88,
+    "borde": "1px solid rgb(6, 6, 6)",
+    "ariaHidden": "true",
+    "pe": "none",
+    "cursorPieza": "none"
+   },
+   "enMenu": {
+    "w": 0,
+    "h": 0
+   }
+  },
+  {
+   "ruta": "/v3/",
+   "ancho": 1440,
+   "media": {
+    "fino": true,
+    "conCirculo": true
+   },
+   "ir": "Ver el caso",
+   "sobre": {
+    "texto": "Ver el caso",
+    "fondo": "rgb(255, 255, 255)",
+    "color": "rgb(6, 6, 6)",
+    "w": 88,
+    "h": 88,
+    "borde": "1px solid rgb(6, 6, 6)",
+    "ariaHidden": "true",
+    "pe": "none",
+    "cursorPieza": "none"
+   },
+   "enMenu": {
+    "w": 0,
+    "h": 0
+   }
+  },
+  {
+   "ruta": "/v3/servicios/desarrollo-web/",
+   "ancho": 1440,
+   "media": {
+    "fino": true,
+    "conCirculo": true
+   },
+   "ir": "Ver el caso",
+   "sobre": {
+    "texto": "Ver el caso",
+    "fondo": "rgb(255, 255, 255)",
+    "color": "rgb(6, 6, 6)",
+    "w": 88,
+    "h": 88,
+    "borde": "1px solid rgb(6, 6, 6)",
+    "ariaHidden": "true",
+    "pe": "none",
+    "cursorPieza": "none"
+   },
+   "enMenu": {
+    "w": 0,
+    "h": 0
+   }
+  },
+  {
+   "ruta": "/v3/trabajo/praxi/",
+   "ancho": 1440,
+   "media": {
+    "fino": true,
+    "conCirculo": true
+   },
+   "ir": "Ver el concepto",
+   "sobre": {
+    "texto": "Ver el concepto",
+    "fondo": "rgb(255, 255, 255)",
+    "color": "rgb(6, 6, 6)",
+    "w": 88,
+    "h": 88,
+    "borde": "1px solid rgb(6, 6, 6)",
+    "ariaHidden": "true",
+    "pe": "none",
+    "cursorPieza": "none"
+   },
+   "enMenu": {
+    "w": 0,
+    "h": 0
+   }
+  },
+  {
+   "ruta": "/v3/trabajo/",
+   "ancho": 390,
+   "tactil": {
+    "fino": false,
+    "conCirculo": false,
+    "circulo": {
+     "display": "none",
+     "w": 0,
+     "h": 0
+    }
+   }
+  }
+ ],
+ "rueda": [
+  {
+   "ruta": "/v3/",
+   "t0": 1499,
+   "fin": 100,
+   "ms90": 19,
+   "lenisEnHtml": true,
+   "prevent": true,
+   "hashLinks": 0
+  },
+  {
+   "ruta": "/v3/trabajo/praxi/",
+   "t0": 1336,
+   "fin": 100,
+   "ms90": 19,
+   "lenisEnHtml": true,
+   "prevent": true,
+   "hashLinks": 0
+  },
+  {
+   "ruta": "/v3/servicios/desarrollo-web/",
+   "t0": 1316,
+   "fin": 100,
+   "ms90": 21,
+   "lenisEnHtml": true,
+   "prevent": true,
+   "hashLinks": 0
+  },
+  {
+   "ruta": "/v3/blog/21-chequeos-visibilidad-ia/",
+   "t0": 1348,
+   "fin": 100,
+   "ms90": 18,
+   "lenisEnHtml": true,
+   "prevent": true,
+   "hashLinks": 0
+  }
+ ],
+ "consola": []
+}

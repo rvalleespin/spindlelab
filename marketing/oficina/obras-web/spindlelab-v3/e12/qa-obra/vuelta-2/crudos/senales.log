@@ -1,0 +1,47 @@
+✓ /v3/  
+✓ /v3/contacto/  
+✓ /v3/diagnostico/  
+✓ /v3/metodo/  
+✓ /v3/nosotros/  
+✓ /v3/servicios/  
+✓ /v3/servicios/acompanamiento-mensual/  
+✓ /v3/servicios/auditoria-seo-tecnica/  
+✓ /v3/servicios/desarrollo-web/  
+✓ /v3/servicios/paid-media/  
+✓ /v3/servicios/redes-sociales/  
+✓ /v3/servicios/visibilidad-en-ia/  
+✓ /v3/trabajo/  
+✓ /v3/trabajo/combeau/  
+✓ /v3/trabajo/doceavo/  
+✓ /v3/trabajo/ocelo/  
+✓ /v3/trabajo/praxi/  
+✓ /v3/trabajo/sesenta/  
+✓ /v3/trabajo/tonela/  
+✓ #org.description = §1.1 
+✓ #org.knowsAbout suma Diseño web y Desarrollo de aplicaciones web 
+✓ #org.logo es el PNG de El huso ≥ 512 
+✓ #autor-ramon.jobTitle = propuesta de §1.1 
+✓ home WebPage con isPartOf #website y about #org 
+✓ home WebPage con dateModified (§1.2: «lo escribe el build») 
+✓ home WebPage datePublished 2026-07-08 (el de producción y el del 16-oct) y dateModified = el día del build en Chile 
+✓ defecto 8: /v3/servicios/auditoria-seo-tecnica/ title y og:title en mayúscula inicial 
+✓ defecto 8: /v3/servicios/acompanamiento-mensual/ title y og:title en mayúscula inicial 
+✓ defecto 8: /v3/servicios/redes-sociales/ title y og:title en mayúscula inicial 
+✓ /trabajo/ ItemList numberOfItems 10 
+✓ /trabajo/ ItemList: nombres y destinos [["Bernardo Combeau, fotografía", "https://spindlelab.cl/trabajo/combeau/#fotografia"], ["Praxi", "https://spindlelab.cl/trabajo/praxi/"], ["Sesenta (concepto)", "https://spindlelab.cl/trabajo/sesenta/"], ["Verifica y Cumple", "https://verifica.spindlelab.cl/"], ["Ocelo (concepto)", "https://spindlelab.cl/trabajo/ocelo/"], ["Bernardo Combeau, modelo", "https://spindlelab.cl/trabajo/combeau/#modelo
+✓ Praxi #caso dateCreated 2026-07-21 y temporalCoverage 
+✓ Praxi #app sin offers, url ni sameAs 
+✓ Praxi #app HealthApplication / Web 
+✓ Combeau hasPart #fotografia y #modelo con sus url 
+✓ Combeau datePublished 2026-07-24 
+✓ Combeau #sitio publisher bernardocombeau.cl/#persona 
+✓ tonela: genre Concepto, disambiguating, about, dateCreated 2026-10-16 
+✓ tonela: sin Organization/LocalBusiness/Medical/Legal/Accounting 
+✓ ocelo: genre Concepto, disambiguating, about, dateCreated 2026-10-16 
+✓ ocelo: sin Organization/LocalBusiness/Medical/Legal/Accounting 
+✓ sesenta: genre Concepto, disambiguating, about, dateCreated 2026-10-16 
+✓ sesenta: sin Organization/LocalBusiness/Medical/Legal/Accounting 
+✓ doceavo: genre Concepto, disambiguating, about, dateCreated 2026-10-16 
+✓ doceavo: sin Organization/LocalBusiness/Medical/Legal/Accounting 
+✓ diagnóstico WebApplication #chequeo como §2.6 
+✓ contacto ContactPage about #org 

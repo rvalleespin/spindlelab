@@ -1,0 +1,8337 @@
+[
+ {
+  "ruta": "/v3/",
+  "ancho": 390,
+  "aviso": true,
+  "paradas": 32,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 750,
+    "bottom": 794,
+    "tapado": [
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "a.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "a.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 750,
+    "bottom": 794,
+    "tapado": [
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el concepto",
+    "href": "/v3/trabajo/sesenta/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": 0,
+    "bottom": 201,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 106,
+    "bottom": 150,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa.pausa--arriba"
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 607,
+    "bottom": 651,
+    "tapado": [],
+    "id": "chq-dominio",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Revisar mi sitio",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 607,
+    "bottom": 651,
+    "tapado": [],
+    "id": "chq-btn",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 299,
+    "bottom": 343,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/combeau/#fotografia",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 465,
+    "bottom": 667,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/praxi/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 118,
+    "bottom": 566,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el sitio (sitio aparte: verifica.spi",
+    "href": "https://verifica.spindlelab.cl/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 118,
+    "bottom": 566,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el concepto",
+    "href": "/v3/trabajo/sesenta/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 241,
+    "bottom": 442,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 612,
+    "bottom": 656,
+    "tapado": [],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Desarrollo web",
+    "href": "/v3/servicios/desarrollo-web/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 320,
+    "bottom": 364,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Visibilidad en IA",
+    "href": "/v3/servicios/visibilidad-en-ia/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 320,
+    "bottom": 364,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Auditoría SEO técnica",
+    "href": "/v3/servicios/auditoria-seo-tecnica/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 618,
+    "bottom": 662,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Acompañamiento mensual",
+    "href": "/v3/servicios/acompanamiento-mensual/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 320,
+    "bottom": 364,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Paid Media (Google)",
+    "href": "/v3/servicios/paid-media/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 421,
+    "bottom": 439,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Gestión de redes sociales",
+    "href": "/v3/servicios/redes-sociales/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 482,
+    "bottom": 500,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Conocer a Ramón",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 320,
+    "bottom": 364,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 520,
+    "bottom": 564,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "O directo a hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 566,
+    "bottom": 610,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 750,
+    "bottom": 794,
+    "tapado": [
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "a.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 761,
+    "bottom": 779,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/",
+  "ancho": 768,
+  "aviso": true,
+  "paradas": 32,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/praxi/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": -16,
+    "bottom": 904,
+    "tapado": [
+     "fuera"
+    ],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el sitio (sitio aparte: verifica.spi",
+    "href": "https://verifica.spindlelab.cl/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": -16,
+    "bottom": 904,
+    "tapado": [
+     "fuera"
+    ],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 955,
+    "bottom": 999,
+    "tapado": [
+     "button.",
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "button.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "button.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 955,
+    "bottom": 999,
+    "tapado": [
+     "button.",
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el sitio (sitio aparte: verifica.spi",
+    "href": "https://verifica.spindlelab.cl/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": -16,
+    "bottom": 904,
+    "tapado": [
+     "fuera"
+    ],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/praxi/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": -16,
+    "bottom": 904,
+    "tapado": [
+     "fuera"
+    ],
+    "id": "",
+    "cls": "medio-enlace"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 106,
+    "bottom": 150,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa.pausa--arriba"
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [],
+    "id": "chq-dominio",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Revisar mi sitio",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [],
+    "id": "chq-btn",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 399,
+    "bottom": 443,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/combeau/#fotografia",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 454,
+    "bottom": 868,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/praxi/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": -16,
+    "bottom": 904,
+    "tapado": [
+     "fuera"
+    ],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el sitio (sitio aparte: verifica.spi",
+    "href": "https://verifica.spindlelab.cl/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": -16,
+    "bottom": 904,
+    "tapado": [
+     "fuera"
+    ],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el concepto",
+    "href": "/v3/trabajo/sesenta/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 237,
+    "bottom": 651,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 758,
+    "bottom": 802,
+    "tapado": [],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Desarrollo web",
+    "href": "/v3/servicios/desarrollo-web/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 422,
+    "bottom": 466,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Visibilidad en IA",
+    "href": "/v3/servicios/visibilidad-en-ia/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 422,
+    "bottom": 466,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Auditoría SEO técnica",
+    "href": "/v3/servicios/auditoria-seo-tecnica/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 703,
+    "bottom": 747,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Acompañamiento mensual",
+    "href": "/v3/servicios/acompanamiento-mensual/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 422,
+    "bottom": 466,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Paid Media (Google)",
+    "href": "/v3/servicios/paid-media/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 522,
+    "bottom": 541,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Gestión de redes sociales",
+    "href": "/v3/servicios/redes-sociales/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 563,
+    "bottom": 582,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Conocer a Ramón",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 422,
+    "bottom": 466,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 801,
+    "bottom": 845,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "O directo a hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 844,
+    "bottom": 888,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 955,
+    "bottom": 999,
+    "tapado": [
+     "button.",
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "button.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 941,
+    "bottom": 959,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/",
+  "ancho": 1024,
+  "aviso": true,
+  "paradas": 32,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 723,
+    "bottom": 743,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 728,
+    "bottom": 742,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 729,
+    "bottom": 743,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 729,
+    "bottom": 743,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 728,
+    "bottom": 742,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 723,
+    "bottom": 743,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 20,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 80,
+    "bottom": 124,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa.pausa--arriba"
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 628,
+    "bottom": 672,
+    "tapado": [],
+    "id": "chq-dominio",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Revisar mi sitio",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 628,
+    "bottom": 672,
+    "tapado": [],
+    "id": "chq-btn",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 332,
+    "bottom": 376,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/combeau/#fotografia",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 97,
+    "bottom": 655,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/praxi/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 69,
+    "bottom": 684,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el sitio (sitio aparte: verifica.spi",
+    "href": "https://verifica.spindlelab.cl/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 69,
+    "bottom": 684,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el concepto",
+    "href": "/v3/trabajo/sesenta/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 97,
+    "bottom": 655,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 354,
+    "bottom": 398,
+    "tapado": [],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Desarrollo web",
+    "href": "/v3/servicios/desarrollo-web/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 354,
+    "bottom": 398,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Visibilidad en IA",
+    "href": "/v3/servicios/visibilidad-en-ia/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 560,
+    "bottom": 604,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Auditoría SEO técnica",
+    "href": "/v3/servicios/auditoria-seo-tecnica/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 354,
+    "bottom": 398,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver Acompañamiento mensual",
+    "href": "/v3/servicios/acompanamiento-mensual/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 514,
+    "bottom": 558,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Paid Media (Google)",
+    "href": "/v3/servicios/paid-media/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 653,
+    "bottom": 672,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Gestión de redes sociales",
+    "href": "/v3/servicios/redes-sociales/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 366,
+    "bottom": 385,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Conocer a Ramón",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 354,
+    "bottom": 398,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 468,
+    "bottom": 512,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "O directo a hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 528,
+    "bottom": 545,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 723,
+    "bottom": 743,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 728,
+    "bottom": 742,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 729,
+    "bottom": 743,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 734,
+    "bottom": 752,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/trabajo/tonela/",
+  "ancho": 390,
+  "aviso": true,
+  "paradas": 17,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/trabajo/tonela/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 705,
+    "bottom": 749,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 704,
+    "bottom": 748,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/trabajo/tonela/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 285,
+    "bottom": 329,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 285,
+    "bottom": 329,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 288,
+    "bottom": 332,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/combeau/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 379,
+    "bottom": 581,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 705,
+    "bottom": 749,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "summary",
+    "txt": "Tonela ·Concepto Sin métrica + Ver las s",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 654,
+    "bottom": 698,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 761,
+    "bottom": 779,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/trabajo/tonela/",
+  "ancho": 768,
+  "aviso": true,
+  "paradas": 17,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/trabajo/tonela/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 886,
+    "bottom": 930,
+    "tapado": [
+     "nav.barra",
+     "summary.",
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 884,
+    "bottom": 928,
+    "tapado": [
+     "nav.barra",
+     "summary.",
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/trabajo/tonela/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 384,
+    "bottom": 428,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 384,
+    "bottom": 428,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 460,
+    "bottom": 504,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/combeau/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 548,
+    "bottom": 782,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 886,
+    "bottom": 930,
+    "tapado": [
+     "nav.barra",
+     "summary.",
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "summary",
+    "txt": "Tonela ·Concepto Sin métrica + Ver las s",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 853,
+    "bottom": 897,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 941,
+    "bottom": 959,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/trabajo/tonela/",
+  "ancho": 1024,
+  "aviso": true,
+  "paradas": 18,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/trabajo/tonela/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 629,
+    "bottom": 673,
+    "tapado": [
+     "summary."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 628,
+    "bottom": 672,
+    "tapado": [
+     "summary."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/trabajo/tonela/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 20,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 319,
+    "bottom": 363,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 319,
+    "bottom": 363,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 231,
+    "bottom": 275,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 351,
+    "bottom": 395,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/combeau/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 285,
+    "bottom": 519,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 629,
+    "bottom": 673,
+    "tapado": [
+     "summary."
+    ],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "summary",
+    "txt": "Tonela ·Concepto Sin métrica + Ver las s",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 643,
+    "bottom": 687,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 734,
+    "bottom": 752,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/trabajo/praxi/",
+  "ancho": 390,
+  "aviso": true,
+  "paradas": 19,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/trabajo/praxi/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 706,
+    "bottom": 750,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 704,
+    "bottom": 748,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/trabajo/praxi/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 285,
+    "bottom": 329,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 285,
+    "bottom": 329,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 162,
+    "bottom": 206,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 285,
+    "bottom": 329,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 345,
+    "bottom": 389,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el concepto",
+    "href": "/v3/trabajo/sesenta/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 434,
+    "bottom": 635,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 706,
+    "bottom": 750,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "summary",
+    "txt": "Praxi Sin métrica + Ver las secciones",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 654,
+    "bottom": 698,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 761,
+    "bottom": 779,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/trabajo/praxi/",
+  "ancho": 768,
+  "aviso": true,
+  "paradas": 19,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/trabajo/praxi/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 886,
+    "bottom": 930,
+    "tapado": [
+     "nav.barra",
+     "summary.",
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 884,
+    "bottom": 928,
+    "tapado": [
+     "nav.barra",
+     "summary.",
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/trabajo/praxi/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 384,
+    "bottom": 428,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 384,
+    "bottom": 428,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 278,
+    "bottom": 322,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 385,
+    "bottom": 429,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 492,
+    "bottom": 536,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el concepto",
+    "href": "/v3/trabajo/sesenta/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 579,
+    "bottom": 813,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 886,
+    "bottom": 930,
+    "tapado": [
+     "nav.barra",
+     "summary.",
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "summary",
+    "txt": "Praxi Sin métrica + Ver las secciones",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 853,
+    "bottom": 897,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 941,
+    "bottom": 959,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/trabajo/praxi/",
+  "ancho": 1024,
+  "aviso": true,
+  "paradas": 19,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/trabajo/praxi/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 629,
+    "bottom": 673,
+    "tapado": [
+     "summary."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 628,
+    "bottom": 672,
+    "tapado": [
+     "summary."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/trabajo/praxi/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 20,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 319,
+    "bottom": 363,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 319,
+    "bottom": 363,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 213,
+    "bottom": 257,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 320,
+    "bottom": 364,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 467,
+    "bottom": 511,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el concepto",
+    "href": "/v3/trabajo/sesenta/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 319,
+    "bottom": 553,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 629,
+    "bottom": 673,
+    "tapado": [
+     "summary."
+    ],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "summary",
+    "txt": "Praxi Sin métrica + Ver las secciones",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 643,
+    "bottom": 687,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 734,
+    "bottom": 752,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/trabajo/combeau/",
+  "ancho": 390,
+  "aviso": true,
+  "paradas": 21,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/trabajo/combeau/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 706,
+    "bottom": 750,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 704,
+    "bottom": 748,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/trabajo/combeau/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 285,
+    "bottom": 329,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 285,
+    "bottom": 329,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 197,
+    "bottom": 241,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver la original (805 kB)",
+    "href": "https://bernardocombeau.cl/uploads/beto3.jpg",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 285,
+    "bottom": 329,
+    "tapado": [],
+    "id": "",
+    "cls": "subrayado"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 285,
+    "bottom": 329,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 494,
+    "bottom": 538,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 319,
+    "bottom": 363,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/praxi/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 408,
+    "bottom": 609,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 706,
+    "bottom": 750,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "summary",
+    "txt": "Bernardo Combeau Sin métrica + Ver las s",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 654,
+    "bottom": 698,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 761,
+    "bottom": 779,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/trabajo/combeau/",
+  "ancho": 768,
+  "aviso": true,
+  "paradas": 21,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/trabajo/combeau/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 885,
+    "bottom": 929,
+    "tapado": [
+     "nav.barra",
+     "summary.",
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 884,
+    "bottom": 928,
+    "tapado": [
+     "nav.barra",
+     "summary.",
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": 0,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/trabajo/combeau/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 384,
+    "bottom": 428,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 384,
+    "bottom": 428,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 296,
+    "bottom": 340,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver la original (805 kB)",
+    "href": "https://bernardocombeau.cl/uploads/beto3.jpg",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 384,
+    "bottom": 428,
+    "tapado": [],
+    "id": "",
+    "cls": "subrayado"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 385,
+    "bottom": 429,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 769,
+    "bottom": 813,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 490,
+    "bottom": 534,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/praxi/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 577,
+    "bottom": 811,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 885,
+    "bottom": 929,
+    "tapado": [
+     "nav.barra",
+     "summary.",
+     "p."
+    ],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "summary",
+    "txt": "Bernardo Combeau Sin métrica + Ver las s",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 853,
+    "bottom": 897,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 941,
+    "bottom": 959,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/trabajo/combeau/",
+  "ancho": 1024,
+  "aviso": true,
+  "paradas": 21,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/trabajo/combeau/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 629,
+    "bottom": 673,
+    "tapado": [
+     "summary."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 628,
+    "bottom": 672,
+    "tapado": [
+     "summary."
+    ],
+    "id": "",
+    "cls": "corchete"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/trabajo/combeau/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 20,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 319,
+    "bottom": 363,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 319,
+    "bottom": 363,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 231,
+    "bottom": 275,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver la original (805 kB)",
+    "href": "https://bernardocombeau.cl/uploads/beto3.jpg",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 334,
+    "bottom": 351,
+    "tapado": [],
+    "id": "",
+    "cls": "subrayado"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 320,
+    "bottom": 364,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "button",
+    "txt": "Pausar el video",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 320,
+    "bottom": 364,
+    "tapado": [],
+    "id": "",
+    "cls": "pausa"
+   },
+   {
+    "tag": "a",
+    "txt": "Escribir a SpindleLab",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 387,
+    "bottom": 431,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Ver el caso",
+    "href": "/v3/trabajo/praxi/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 319,
+    "bottom": 553,
+    "tapado": [],
+    "id": "",
+    "cls": "medio-enlace"
+   },
+   {
+    "tag": "a",
+    "txt": "[ Todo el trabajo ] (10)",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 629,
+    "bottom": 673,
+    "tapado": [
+     "summary."
+    ],
+    "id": "",
+    "cls": "corchete"
+   },
+   {
+    "tag": "summary",
+    "txt": "Bernardo Combeau Sin métrica + Ver las s",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 643,
+    "bottom": 687,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 734,
+    "bottom": 752,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/blog/que-es-aeo-geo/",
+  "ancho": 390,
+  "aviso": true,
+  "paradas": 24,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/blog/que-es-aeo-geo/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 654,
+    "bottom": 698,
+    "tapado": [
+     "span.rotulo",
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 671,
+    "bottom": 715,
+    "tapado": [
+     "summary.",
+     "span.barra__activa.barra__activa--frase",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 671,
+    "bottom": 715,
+    "tapado": [
+     "summary.",
+     "span.barra__activa.barra__activa--frase",
+     "span.barra__mas",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 671,
+    "bottom": 715,
+    "tapado": [
+     "summary.",
+     "span.barra__activa.barra__activa--frase",
+     "span.barra__mas",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 671,
+    "bottom": 715,
+    "tapado": [
+     "summary.",
+     "span.barra__activa.barra__activa--frase",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 654,
+    "bottom": 698,
+    "tapado": [
+     "span.rotulo",
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "summary",
+    "txt": "¿Cuánto cuesta empezar?",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": 0,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/blog/que-es-aeo-geo/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 114,
+    "bottom": 158,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Blog",
+    "href": "/v3/blog/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 114,
+    "bottom": 158,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "nuestro método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 274,
+    "bottom": 340,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "summary",
+    "txt": "¿AEO reemplaza al SEO?",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 433,
+    "bottom": 477,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "summary",
+    "txt": "¿Esto aplica a empresas chilenas o es te",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 478,
+    "bottom": 535,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "summary",
+    "txt": "¿Cuánto cuesta empezar?",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 536,
+    "bottom": 580,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Correr el chequeo",
+    "href": "/v3/diagnostico/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 338,
+    "bottom": 382,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 338,
+    "bottom": 382,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "¿Cómo lograr que tu empresa aparezca en ",
+    "href": "/v3/blog/como-aparecer-en-chatgpt/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 448,
+    "bottom": 501,
+    "tapado": [],
+    "id": "",
+    "cls": "t-siguiente.t-display.subrayado"
+   },
+   {
+    "tag": "summary",
+    "txt": "En este artículo Preguntas frecuentes + ",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 654,
+    "bottom": 698,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 654,
+    "bottom": 698,
+    "tapado": [
+     "span.rotulo",
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 671,
+    "bottom": 715,
+    "tapado": [
+     "summary.",
+     "span.barra__activa.barra__activa--frase",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 671,
+    "bottom": 715,
+    "tapado": [
+     "summary.",
+     "span.barra__activa.barra__activa--frase",
+     "span.barra__mas",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 761,
+    "bottom": 779,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/blog/que-es-aeo-geo/",
+  "ancho": 768,
+  "aviso": true,
+  "paradas": 24,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/blog/que-es-aeo-geo/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 860,
+    "bottom": 904,
+    "tapado": [
+     "summary.",
+     "nav.barra.barra--articulo"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 877,
+    "bottom": 921,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 877,
+    "bottom": 921,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary.",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 877,
+    "bottom": 921,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary.",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 877,
+    "bottom": 921,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 860,
+    "bottom": 904,
+    "tapado": [
+     "summary.",
+     "nav.barra.barra--articulo"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "nuestro método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": 0,
+    "bottom": 47,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/blog/que-es-aeo-geo/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 114,
+    "bottom": 158,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Blog",
+    "href": "/v3/blog/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 114,
+    "bottom": 158,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "nuestro método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 383,
+    "bottom": 430,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "summary",
+    "txt": "¿AEO reemplaza al SEO?",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 544,
+    "bottom": 588,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "summary",
+    "txt": "¿Esto aplica a empresas chilenas o es te",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 589,
+    "bottom": 633,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "summary",
+    "txt": "¿Cuánto cuesta empezar?",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 634,
+    "bottom": 678,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Correr el chequeo",
+    "href": "/v3/diagnostico/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 537,
+    "bottom": 581,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 537,
+    "bottom": 581,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "¿Cómo lograr que tu empresa aparezca en ",
+    "href": "/v3/blog/como-aparecer-en-chatgpt/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 646,
+    "bottom": 707,
+    "tapado": [],
+    "id": "",
+    "cls": "t-siguiente.t-display.subrayado"
+   },
+   {
+    "tag": "summary",
+    "txt": "En este artículo Preguntas frecuentes + ",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 853,
+    "bottom": 897,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 860,
+    "bottom": 904,
+    "tapado": [
+     "summary.",
+     "nav.barra.barra--articulo"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 877,
+    "bottom": 921,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 877,
+    "bottom": 921,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary.",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 941,
+    "bottom": 959,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/blog/que-es-aeo-geo/",
+  "ancho": 1024,
+  "aviso": true,
+  "paradas": 24,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/blog/que-es-aeo-geo/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 627,
+    "bottom": 647,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 632,
+    "bottom": 646,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 633,
+    "bottom": 646,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 633,
+    "bottom": 646,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 632,
+    "bottom": 646,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 627,
+    "bottom": 647,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/blog/que-es-aeo-geo/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 20,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 88,
+    "bottom": 132,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Blog",
+    "href": "/v3/blog/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 88,
+    "bottom": 132,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "nuestro método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 332,
+    "bottom": 351,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "summary",
+    "txt": "¿AEO reemplaza al SEO?",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 480,
+    "bottom": 524,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "summary",
+    "txt": "¿Esto aplica a empresas chilenas o es te",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 525,
+    "bottom": 569,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "summary",
+    "txt": "¿Cuánto cuesta empezar?",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 559,
+    "bottom": 603,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Correr el chequeo",
+    "href": "/v3/diagnostico/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 434,
+    "bottom": 478,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 413,
+    "bottom": 457,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "¿Cómo lograr que tu empresa aparezca en ",
+    "href": "/v3/blog/como-aparecer-en-chatgpt/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 293,
+    "bottom": 359,
+    "tapado": [],
+    "id": "",
+    "cls": "t-siguiente.t-display.subrayado"
+   },
+   {
+    "tag": "summary",
+    "txt": "En este artículo Preguntas frecuentes + ",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -2px",
+    "dentro": true,
+    "top": 643,
+    "bottom": 687,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 627,
+    "bottom": 647,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 632,
+    "bottom": 646,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 633,
+    "bottom": 646,
+    "tapado": [
+     "nav.barra.barra--articulo",
+     "summary."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 734,
+    "bottom": 752,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/contacto/",
+  "ancho": 390,
+  "aviso": true,
+  "paradas": 23,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/contacto/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "input",
+    "txt": "on",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -11px",
+    "dentro": true,
+    "top": 409,
+    "bottom": 453,
+    "tapado": [
+     "span."
+    ],
+    "id": "f-consiento",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 424,
+    "bottom": 469,
+    "tapado": [
+     "button.boton.boton--claro",
+     "div.formulario__envio"
+    ],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 751,
+    "bottom": 795,
+    "tapado": [
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "a.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "a.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 751,
+    "bottom": 795,
+    "tapado": [
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 229,
+    "bottom": 274,
+    "tapado": [
+     "button.boton.boton--claro",
+     "div.formulario__envio"
+    ],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "on",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -11px",
+    "dentro": true,
+    "top": 214,
+    "bottom": 258,
+    "tapado": [
+     "span."
+    ],
+    "id": "f-consiento",
+    "cls": ""
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/contacto/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/#contacto-form",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 138,
+    "bottom": 182,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 458,
+    "bottom": 502,
+    "tapado": [],
+    "id": "f-nombre",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 535,
+    "bottom": 579,
+    "tapado": [],
+    "id": "f-email",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 613,
+    "bottom": 657,
+    "tapado": [],
+    "id": "f-sitio",
+    "cls": ""
+   },
+   {
+    "tag": "textarea",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 318,
+    "bottom": 409,
+    "tapado": [],
+    "id": "f-mensaje",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "on",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -11px",
+    "dentro": true,
+    "top": 409,
+    "bottom": 453,
+    "tapado": [
+     "span."
+    ],
+    "id": "f-consiento",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 424,
+    "bottom": 469,
+    "tapado": [
+     "button.boton.boton--claro",
+     "div.formulario__envio"
+    ],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Enviar mi mensaje",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 468,
+    "bottom": 512,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 515,
+    "bottom": 559,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 751,
+    "bottom": 795,
+    "tapado": [
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "a.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 761,
+    "bottom": 779,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/contacto/",
+  "ancho": 768,
+  "aviso": true,
+  "paradas": 23,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/contacto/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "input",
+    "txt": "on",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -11px",
+    "dentro": true,
+    "top": 799,
+    "bottom": 843,
+    "tapado": [
+     "a."
+    ],
+    "id": "f-consiento",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 956,
+    "bottom": 1000,
+    "tapado": [
+     "button.",
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "button.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "button.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 956,
+    "bottom": 1000,
+    "tapado": [
+     "button.",
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "input",
+    "txt": "on",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -11px",
+    "dentro": true,
+    "top": 315,
+    "bottom": 359,
+    "tapado": [
+     "a."
+    ],
+    "id": "f-consiento",
+    "cls": ""
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/contacto/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/#contacto-form",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 138,
+    "bottom": 182,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 449,
+    "bottom": 493,
+    "tapado": [],
+    "id": "f-nombre",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 527,
+    "bottom": 571,
+    "tapado": [],
+    "id": "f-email",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 604,
+    "bottom": 648,
+    "tapado": [],
+    "id": "f-sitio",
+    "cls": ""
+   },
+   {
+    "tag": "textarea",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 708,
+    "bottom": 799,
+    "tapado": [],
+    "id": "f-mensaje",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "on",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -11px",
+    "dentro": true,
+    "top": 799,
+    "bottom": 843,
+    "tapado": [
+     "a."
+    ],
+    "id": "f-consiento",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 797,
+    "bottom": 860,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Enviar mi mensaje",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 844,
+    "bottom": 888,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 422,
+    "bottom": 466,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 956,
+    "bottom": 1000,
+    "tapado": [
+     "button.",
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "button.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 941,
+    "bottom": 959,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/contacto/",
+  "ancho": 1024,
+  "aviso": true,
+  "paradas": 23,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/contacto/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "input",
+    "txt": "on",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -11px",
+    "dentro": true,
+    "top": 628,
+    "bottom": 672,
+    "tapado": [
+     "a."
+    ],
+    "id": "f-consiento",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 723,
+    "bottom": 743,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 727,
+    "bottom": 741,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 728,
+    "bottom": 742,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 728,
+    "bottom": 742,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 727,
+    "bottom": 741,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 723,
+    "bottom": 743,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "input",
+    "txt": "on",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -11px",
+    "dentro": true,
+    "top": 247,
+    "bottom": 291,
+    "tapado": [
+     "a."
+    ],
+    "id": "f-consiento",
+    "cls": ""
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/contacto/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 20,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/#contacto-form",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 112,
+    "bottom": 156,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 394,
+    "bottom": 438,
+    "tapado": [],
+    "id": "f-nombre",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 394,
+    "bottom": 438,
+    "tapado": [],
+    "id": "f-email",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 472,
+    "bottom": 516,
+    "tapado": [],
+    "id": "f-sitio",
+    "cls": ""
+   },
+   {
+    "tag": "textarea",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 576,
+    "bottom": 667,
+    "tapado": [],
+    "id": "f-mensaje",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "on",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off -11px",
+    "dentro": true,
+    "top": 628,
+    "bottom": 672,
+    "tapado": [
+     "a."
+    ],
+    "id": "f-consiento",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 655,
+    "bottom": 672,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Enviar mi mensaje",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 354,
+    "bottom": 398,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 414,
+    "bottom": 431,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 723,
+    "bottom": 743,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 727,
+    "bottom": 741,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 728,
+    "bottom": 742,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 734,
+    "bottom": 752,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/diagnostico/",
+  "ancho": 390,
+  "aviso": true,
+  "paradas": 21,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/diagnostico/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 750,
+    "bottom": 794,
+    "tapado": [
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "a.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "a.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 750,
+    "bottom": 794,
+    "tapado": [
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Volver al chequeo",
+    "href": "/v3/diagnostico/#chequeo",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": 0,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Pedir el diagnóstico",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": false,
+    "top": 0,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/diagnostico/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 138,
+    "bottom": 182,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 459,
+    "bottom": 503,
+    "tapado": [],
+    "id": "chq-dominio",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Revisar mi sitio",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 459,
+    "bottom": 503,
+    "tapado": [],
+    "id": "chq-btn",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Pedir el diagnóstico",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 320,
+    "bottom": 364,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Volver al chequeo",
+    "href": "/v3/diagnostico/#chequeo",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 320,
+    "bottom": 364,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Revisar mi sitio para la Ley 21.719 (sit",
+    "href": "https://verifica.spindlelab.cl/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 640,
+    "bottom": 684,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Pedir el diagnóstico",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 553,
+    "bottom": 597,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 750,
+    "bottom": 794,
+    "tapado": [
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "a.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 767,
+    "bottom": 811,
+    "tapado": [
+     "button.",
+     "p.",
+     "div.cb-actions"
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 761,
+    "bottom": 779,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 788,
+    "bottom": 832,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/diagnostico/",
+  "ancho": 768,
+  "aviso": true,
+  "paradas": 21,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/diagnostico/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 956,
+    "bottom": 1000,
+    "tapado": [
+     "button.",
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "button.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "button.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 956,
+    "bottom": 1000,
+    "tapado": [
+     "button.",
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/diagnostico/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 2,
+    "bottom": 46,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 46,
+    "bottom": 90,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 138,
+    "bottom": 182,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 421,
+    "bottom": 465,
+    "tapado": [],
+    "id": "chq-dominio",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Revisar mi sitio",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 421,
+    "bottom": 465,
+    "tapado": [],
+    "id": "chq-btn",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Pedir el diagnóstico",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 422,
+    "bottom": 466,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Volver al chequeo",
+    "href": "/v3/diagnostico/#chequeo",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 422,
+    "bottom": 466,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Revisar mi sitio para la Ley 21.719 (sit",
+    "href": "https://verifica.spindlelab.cl/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 740,
+    "bottom": 784,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Pedir el diagnóstico",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 758,
+    "bottom": 802,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 956,
+    "bottom": 1000,
+    "tapado": [
+     "button.",
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "button.",
+     "div."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 972,
+    "bottom": 1016,
+    "tapado": [
+     "div.cb-inner",
+     "div."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 941,
+    "bottom": 959,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 968,
+    "bottom": 1012,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ },
+ {
+  "ruta": "/v3/diagnostico/",
+  "ancho": 1024,
+  "aviso": true,
+  "paradas": 21,
+  "primero": {
+   "tag": "a",
+   "txt": "Saltar al contenido",
+   "href": "/v3/diagnostico/#contenido",
+   "contorno": true,
+   "outline": "solid 2px rgb(255, 255, 255) off 3px",
+   "dentro": true,
+   "top": 16,
+   "bottom": 60,
+   "tapado": [],
+   "id": "",
+   "cls": "saltar.boton.boton--claro"
+  },
+  "malosAdelante": [
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 724,
+    "bottom": 744,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 728,
+    "bottom": 742,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 729,
+    "bottom": 743,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   }
+  ],
+  "malosAtras": [
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 729,
+    "bottom": 743,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 728,
+    "bottom": 742,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 724,
+    "bottom": 744,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   }
+  ],
+  "adelante": [
+   {
+    "tag": "a",
+    "txt": "Saltar al contenido",
+    "href": "/v3/diagnostico/#contenido",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 16,
+    "bottom": 60,
+    "tapado": [],
+    "id": "",
+    "cls": "saltar.boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 20,
+    "bottom": 44,
+    "tapado": [],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "Trabajo",
+    "href": "/v3/trabajo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Servicios",
+    "href": "/v3/servicios/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Método",
+    "href": "/v3/metodo/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Nosotros",
+    "href": "/v3/nosotros/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Escríbenos",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 10,
+    "bottom": 54,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "Inicio",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 112,
+    "bottom": 156,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "input",
+    "txt": "",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 367,
+    "bottom": 411,
+    "tapado": [],
+    "id": "chq-dominio",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Revisar mi sitio",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 367,
+    "bottom": 411,
+    "tapado": [],
+    "id": "chq-btn",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Pedir el diagnóstico",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 354,
+    "bottom": 398,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "Volver al chequeo",
+    "href": "/v3/diagnostico/#chequeo",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 354,
+    "bottom": 398,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Revisar mi sitio para la Ley 21.719 (sit",
+    "href": "https://verifica.spindlelab.cl/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 354,
+    "bottom": 398,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--placa"
+   },
+   {
+    "tag": "a",
+    "txt": "Pedir el diagnóstico",
+    "href": "/v3/contacto/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 502,
+    "bottom": 546,
+    "tapado": [],
+    "id": "",
+    "cls": "boton.boton--claro"
+   },
+   {
+    "tag": "a",
+    "txt": "SpindleLab",
+    "href": "/v3/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 724,
+    "bottom": 744,
+    "tapado": [
+     "p."
+    ],
+    "id": "",
+    "cls": "cab__logo"
+   },
+   {
+    "tag": "a",
+    "txt": "hola@spindlelab.cl",
+    "href": "mailto:hola@spindlelab.cl",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 728,
+    "bottom": 742,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "",
+    "cls": "pie-sitio__correo.rotulo"
+   },
+   {
+    "tag": "button",
+    "txt": "Elegir si aceptas las cookies de medició",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(152, 152, 152) off 3px",
+    "dentro": true,
+    "top": 729,
+    "bottom": 743,
+    "tapado": [
+     "a.",
+     "p."
+    ],
+    "id": "cookie-preferencias",
+    "cls": ""
+   },
+   {
+    "tag": "a",
+    "txt": "política de privacidad",
+    "href": "/privacidad/",
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 734,
+    "bottom": 752,
+    "tapado": [],
+    "id": "",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Rechazar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-reject",
+    "cls": ""
+   },
+   {
+    "tag": "button",
+    "txt": "Aceptar",
+    "href": null,
+    "contorno": true,
+    "outline": "solid 2px rgb(255, 255, 255) off 3px",
+    "dentro": true,
+    "top": 712,
+    "bottom": 756,
+    "tapado": [],
+    "id": "cookie-accept",
+    "cls": ""
+   },
+   {
+    "tag": "body"
+   }
+  ]
+ }
+]

@@ -1,4 +1,4 @@
-// Javiera, QA de obra E12, vuelta 1. Spec §4.3: foco visible en todo, contorno blanco de 2 px, nunca tapado (encabezado
+// Javiera, QA de obra E12, vuelta 2 (sin cambios de método desde la vuelta 1). Spec §4.3: foco visible en todo, contorno blanco de 2 px, nunca tapado (encabezado
 // plegado, barra del caso, aviso de cookies); se mide con Tab hacia adelante y hacia atrás. Por cada parada: qué elemento,
 // si su contorno existe (outline ≥ 2 px o box-shadow), si queda dentro de la ventana y si algo fijo o pegajoso lo tapa
 // (elementsFromPoint en el centro y en las cuatro esquinas, 2 px hacia adentro).

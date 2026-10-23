@@ -1,0 +1,36 @@
+........................................................................................................................................................................................................................
+errores de medición: []
+desborde con clip > 0: []
+desborde sin clip > 0: []
+h1 ≠ 1: []  main ≠ 1: []  lang: [ 'es-CL' ]
+saltos de encabezado: []
+nodos en negrita: []
+texto < 11 px: []
+familias a la vista: [ 'DM Mono', 'Google Sans Flex' ]
+letras ajenas: []
+mayúsculas fuera de la mono: []
+letras cargadas: [ 'Google Sans Flex 100 1000 normal', 'DM Mono 500 normal' ] [
+  '/fonts/google-sans-flex-latin.woff2',
+  '/fonts/dm-mono-500-latin.woff2'
+]
+alto del encabezado por ancho: {
+  '360': [ 90 ],
+  '390': [ 90 ],
+  '768': [ 90 ],
+  '834': [ 64 ],
+  '1024': [ 64 ],
+  '1194': [ 64 ],
+  '1440': [ 64 ],
+  '1920': [ 64 ]
+}
+párrafos de main > 494 px: [
+  '/v3/@1194: 577 p.servicios__tambien.cuerpo: «También: Paid Media (Google), la gestión de tus an»',
+  '/v3/@1440: 700 p.servicios__tambien.cuerpo: «También: Paid Media (Google), la gestión de tus an»',
+  '/v3/@1920: 940 p.servicios__tambien.cuerpo: «También: Paid Media (Google), la gestión de tus an»'
+]
+img sin width/height: []  sin alt: []
+lazy en la primera pantalla: []
+toque < 44 (táctil): []
+consola: []
+pedidos fallidos: []
+404 del servidor: []

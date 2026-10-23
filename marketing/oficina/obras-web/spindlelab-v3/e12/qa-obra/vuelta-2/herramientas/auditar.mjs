@@ -1,4 +1,4 @@
-// Javiera, QA de obra E12, vuelta 1. Las 27 rutas × los 8 anchos de la spec §1.4 / §4.4, sobre el build servido en
+// Javiera, QA de obra E12, vuelta 2 (sin cambios de método desde la vuelta 1). Las 27 rutas × los 8 anchos de la spec §1.4 / §4.4, sobre el build servido en
 // local. Por cada par: desborde con y sin el overflow-x: clip de global.css, h1, landmarks, letras cargadas, nodos en
 // negrita, texto bajo 11 px, mayúsculas fuera de la mono, letras fuera de las dos, párrafos más anchos que 493, alto del
 // encabezado, errores de consola y pedidos fallidos, y la captura de la primera pantalla. Bajo 834 corre en un contexto

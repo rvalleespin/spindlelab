@@ -1,4 +1,5 @@
-"""Javiera, QA de obra E12, vuelta 1. El JSON-LD y los title/description de cada ruta, parseados del dist/ y comparados
+"""Javiera, QA de obra E12, vuelta 2 (la de la vuelta 1, más las fechas de la home y los tres title del defecto 8).
+El JSON-LD y los title/description de cada ruta, parseados del dist/ y comparados
 con lo que fija senales-obra.md (Simón): §1.1 (#org, #autor-ramon), §2.1 a §2.11 (title, description, nodos, @id y
 campos con valor escrito en la nota). Uso: python3 -I senales.py <dist> <senales-obra.md> <salida.json>"""
 import json, re, sys
@@ -47,6 +48,14 @@ ok('#org.logo es el PNG de El huso ≥ 512', 'icon-512' in json.dumps(org.get('l
 ok('#autor-ramon.jobTitle = propuesta de §1.1', autor.get('jobTitle') == 'Fundador de SpindleLab: diseño y desarrollo web, SEO técnico y visibilidad en IA', autor.get('jobTitle'))
 wp = g[f'{B}/#webpage']; ok('home WebPage con isPartOf #website y about #org', wp.get('isPartOf', {}).get('@id') == f'{B}/#website' and wp.get('about', {}).get('@id') == f'{B}/#org')
 ok('home WebPage con dateModified (§1.2: «lo escribe el build»)', 'dateModified' in wp, {k: v for k, v in wp.items() if 'date' in k})
+import datetime, zoneinfo
+hoy = datetime.datetime.now(zoneinfo.ZoneInfo('America/Santiago')).date().isoformat()
+ok('home WebPage datePublished 2026-07-08 (el de producción y el del 16-oct) y dateModified = el día del build en Chile', wp.get('datePublished') == '2026-07-08' and wp.get('dateModified') == hoy, [wp.get('datePublished'), wp.get('dateModified'), hoy])
+for r_, t_ in (('/v3/servicios/auditoria-seo-tecnica/', 'Auditoría SEO técnica para empresas · SpindleLab'), ('/v3/servicios/acompanamiento-mensual/', 'Acompañamiento mensual de SEO e IA · SpindleLab'), ('/v3/servicios/redes-sociales/', 'Gestión de redes sociales para empresas · SpindleLab')):
+    h_ = open(f'{dist}{r_}index.html', encoding='utf-8').read()
+    import html as H_
+    tt = H_.unescape(re.search(r'<title>(.*?)</title>', h_, re.S).group(1)); og = H_.unescape(re.search(r'<meta property="og:title" content="([^"]*)"', h_).group(1))
+    ok(f'defecto 8: {r_} title y og:title en mayúscula inicial', tt == t_ and og == t_, [tt, og])
 g, _, _ = grafo('/v3/trabajo/')
 il = next(n for n in g.values() if n.get('@type') == 'ItemList')
 ok('/trabajo/ ItemList numberOfItems 10', il.get('numberOfItems') == 10, il.get('numberOfItems'))

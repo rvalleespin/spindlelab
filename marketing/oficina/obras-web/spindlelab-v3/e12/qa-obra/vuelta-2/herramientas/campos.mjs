@@ -1,4 +1,4 @@
-// Javiera, QA de obra E12, vuelta 1. Spec §3.4, techos de campo, medidos sin las herramientas de Diego: captura de
+// Javiera, QA de obra E12, vuelta 2 (sin cambios desde la vuelta 1; la regla la pone campos.py). Spec §3.4, techos de campo, medidos sin las herramientas de Diego: captura de
 // página completa a 1440 con movimiento reducido (cada video en su póster) y la caja de cada medio (.medio) de main.
 // La cuenta la hace campos.py: la regla de la spec (campo-medios.py de Lucía, es_campo copiada sin cambios) y, al lado,
 // una lectura por tono (la parte del marco con saturación ≥ 0,45 y valor ≥ 0,35, o luminancia ≥ 0,45) para los medios

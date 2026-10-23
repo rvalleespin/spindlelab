@@ -1,0 +1,39 @@
+.....................
+470 textos de Clara buscados en 21 páginas; 433 aparecen tal cual; 37 no.
+✗ /v3/ comun.miga [rotulo · miga · queda] «Inicio · <página>»
+✗ /v3/ comun.cursor.chequeo [nota · cursor · nuevo] «Ir al chequeo»
+✗ /v3/ comun.secciones [nota · nombre accesible · queda] «Secciones»
+✗ /v3/ comun.secciones.barra [nota · nombre accesible · nuevo] «Ver las secciones»
+✗ /v3/ home.chequeo.error-vacio [nota · error · cambia · condición: Vive en v3-chequeo.js, que el brief protege (criterio 11: di] «Escribe la dirección de tu sitio para empezar.»
+✗ /v3/trabajo/ trabajo.miga [rotulo · miga · nuevo] «Inicio · Trabajo»
+✗ /v3/trabajo/praxi/ praxi.miga [rotulo · miga · nuevo] «Inicio · Trabajo · Praxi»
+✗ /v3/trabajo/combeau/ combeau.miga [rotulo · miga · nuevo] «Inicio · Trabajo · Bernardo Combeau»
+✗ /v3/trabajo/sesenta/ concepto.sesenta.miga [rotulo · miga · nuevo] «Inicio · Trabajo · Sesenta»
+✗ /v3/trabajo/ocelo/ concepto.ocelo.miga [rotulo · miga · nuevo] «Inicio · Trabajo · Ocelo»
+✗ /v3/trabajo/doceavo/ concepto.doceavo.miga [rotulo · miga · nuevo] «Inicio · Trabajo · Doceavo»
+✗ /v3/trabajo/tonela/ concepto.tonela.miga [rotulo · miga · nuevo] «Inicio · Trabajo · Tonela»
+✗ /v3/servicios/ servicios.miga [rotulo · miga · queda] «Inicio · Servicios»
+✗ /v3/servicios/desarrollo-web/ dw.planes.lista [nota · planes · queda] «Los cuatro planes van tal cual en oferta-v3.json momentos[0].planes: nombre, precio, línea y puntos, sin cambi»
+✗ /v3/servicios/desarrollo-web/ dw.siguiente [boton · queda] «Visibilidad en IA →»
+✗ /v3/servicios/visibilidad-en-ia/ visibilidad-en-ia.miga [rotulo · miga · queda] «Inicio · Servicios · Visibilidad en IA»
+✗ /v3/servicios/visibilidad-en-ia/ visibilidad-en-ia.franja.alt [nota · alt · nuevo] «El chequeo gratis de SpindleLab con el resultado de un sitio en pantalla.»
+✗ /v3/servicios/auditoria-seo-tecnica/ auditoria-seo-tecnica.miga [rotulo · miga · queda] «Inicio · Servicios · Auditoría SEO técnica»
+✗ /v3/servicios/auditoria-seo-tecnica/ auditoria-seo-tecnica.franja.alt [nota · alt · nuevo] «La portada de verifica.spindlelab.cl: «¿Estás seguro?» en letras enormes, blanco y lima sobre azul, y una pers»
+✗ /v3/servicios/auditoria-seo-tecnica/ auditoria-seo-tecnica.franja.pie [nota · pie · nuevo · condición: Solo si la franja sigue siendo la portada de Verifica y Cump] «La persona a caballo de esta portada está generada con IA.»
+✗ /v3/servicios/acompanamiento-mensual/ acompanamiento-mensual.miga [rotulo · miga · queda] «Inicio · Servicios · Acompañamiento mensual»
+✗ /v3/servicios/redes-sociales/ redes-sociales.miga [rotulo · miga · queda] «Inicio · Servicios · Gestión de redes sociales»
+✗ /v3/servicios/paid-media/ paid-media.miga [rotulo · miga · queda] «Inicio · Servicios · Paid Media (Google)»
+✗ /v3/metodo/ metodo.miga [rotulo · miga · queda] «Inicio · Método»
+✗ /v3/diagnostico/ diagnostico.miga [rotulo · miga · queda] «Inicio · Chequeo gratis»
+✗ /v3/diagnostico/ diagnostico.error-vacio [nota · error · cambia · condición: El mismo de la home: vive en v3-chequeo.js y pide su fila en] «Escribe la dirección de tu sitio para empezar.»
+✗ /v3/diagnostico/ diagnostico.ley.pie [nota · pie · nuevo · condición: Solo si la sección de la ley conserva la imagen de Verifica ] «La persona a caballo de esta portada está generada con IA.»
+✗ /v3/blog/ blog.miga [rotulo · miga · queda] «Inicio · Blog»
+✗ /v3/blog/ articulo.miga [rotulo · miga · queda] «Inicio · Blog · <nombre corto>»
+✗ /v3/blog/ articulo.autor [nota · autor · cambia · condición: Es su cargo (R5 del brief; senales-obra §1.1): lo confirma R] «Ramón Vallejos · Fundador de SpindleLab»
+✗ /v3/blog/ articulo.indice.rotulo [rotulo · nuevo] «En este artículo»
+✗ /v3/blog/ articulo.siguiente [rotulo · nuevo] «Siguiente artículo»
+✗ /v3/nosotros/ nosotros.miga [rotulo · miga · queda] «Inicio · Nosotros»
+✗ /v3/contacto/ contacto.miga [rotulo · miga · queda] «Inicio · Contacto»
+✗ /v3/contacto/ contacto.form.boton [boton · cambia] «Enviar mi mensaje →»
+✗ /v3/contacto/ contacto.form.enviando [nota · estado · queda] «Enviando…»
+✗ /v3/contacto/ contacto.form.error [nota · error · queda] «Algo falló al enviar. Escríbenos directo a hola@spindlelab.cl mientras lo revisamos.»

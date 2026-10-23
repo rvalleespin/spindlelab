@@ -1,0 +1,130 @@
+[
+ {
+  "c": "tonela",
+  "tipo": {
+   "texto": "Concepto",
+   "fuente": "\"DM Mono\"",
+   "tam": "11px",
+   "transform": "uppercase",
+   "color": "rgb(152, 152, 152)",
+   "fondo": "rgb(20, 20, 20)",
+   "ws": "nowrap",
+   "contraste": 6.39
+  },
+  "punto": {
+   "texto": "·",
+   "ariaHidden": "true"
+  },
+  "hijos": [
+   "rotulo:Tonela",
+   "rotulo:·(oculto)",
+   "rotulo barra__tipo:Concepto",
+   "barra__activa rotulo:Problema",
+   "barra__mas:+(oculto)",
+   "solo-lector:Ver las secciones"
+  ],
+  "aria": "- text: Tonela Concepto Problema Ver las secciones"
+ },
+ {
+  "c": "ocelo",
+  "tipo": {
+   "texto": "Concepto",
+   "fuente": "\"DM Mono\"",
+   "tam": "11px",
+   "transform": "uppercase",
+   "color": "rgb(152, 152, 152)",
+   "fondo": "rgb(20, 20, 20)",
+   "ws": "nowrap",
+   "contraste": 6.39
+  },
+  "punto": {
+   "texto": "·",
+   "ariaHidden": "true"
+  },
+  "hijos": [
+   "rotulo:Ocelo",
+   "rotulo:·(oculto)",
+   "rotulo barra__tipo:Concepto",
+   "barra__activa rotulo:Problema",
+   "barra__mas:+(oculto)",
+   "solo-lector:Ver las secciones"
+  ],
+  "aria": "- text: Ocelo Concepto Problema Ver las secciones"
+ },
+ {
+  "c": "sesenta",
+  "tipo": {
+   "texto": "Concepto",
+   "fuente": "\"DM Mono\"",
+   "tam": "11px",
+   "transform": "uppercase",
+   "color": "rgb(152, 152, 152)",
+   "fondo": "rgb(20, 20, 20)",
+   "ws": "nowrap",
+   "contraste": 6.39
+  },
+  "punto": {
+   "texto": "·",
+   "ariaHidden": "true"
+  },
+  "hijos": [
+   "rotulo:Sesenta",
+   "rotulo:·(oculto)",
+   "rotulo barra__tipo:Concepto",
+   "barra__activa rotulo:Problema",
+   "barra__mas:+(oculto)",
+   "solo-lector:Ver las secciones"
+  ],
+  "aria": "- text: Sesenta Concepto Problema Ver las secciones"
+ },
+ {
+  "c": "doceavo",
+  "tipo": {
+   "texto": "Concepto",
+   "fuente": "\"DM Mono\"",
+   "tam": "11px",
+   "transform": "uppercase",
+   "color": "rgb(152, 152, 152)",
+   "fondo": "rgb(20, 20, 20)",
+   "ws": "nowrap",
+   "contraste": 6.39
+  },
+  "punto": {
+   "texto": "·",
+   "ariaHidden": "true"
+  },
+  "hijos": [
+   "rotulo:Doceavo",
+   "rotulo:·(oculto)",
+   "rotulo barra__tipo:Concepto",
+   "barra__activa rotulo:Problema",
+   "barra__mas:+(oculto)",
+   "solo-lector:Ver las secciones"
+  ],
+  "aria": "- text: Doceavo Concepto Problema Ver las secciones"
+ },
+ {
+  "c": "praxi",
+  "tipo": null,
+  "punto": null,
+  "hijos": [
+   "rotulo:Praxi",
+   "barra__activa rotulo:Problema",
+   "barra__mas:+(oculto)",
+   "solo-lector:Ver las secciones"
+  ],
+  "aria": "- text: Praxi Problema Ver las secciones"
+ },
+ {
+  "c": "combeau",
+  "tipo": null,
+  "punto": null,
+  "hijos": [
+   "rotulo:Bernardo Combeau",
+   "barra__activa rotulo:Problema",
+   "barra__mas:+(oculto)",
+   "solo-lector:Ver las secciones"
+  ],
+  "aria": "- text: Bernardo Combeau Problema Ver las secciones"
+ }
+]

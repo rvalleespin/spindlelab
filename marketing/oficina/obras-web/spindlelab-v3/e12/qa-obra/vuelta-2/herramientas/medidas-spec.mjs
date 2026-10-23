@@ -1,4 +1,4 @@
-// Javiera, QA de obra E12, vuelta 1. Cotas de la spec medidas en el build (§1.3, §1.4, §2.1 a §2.4): el h1 de la
+// Javiera, QA de obra E12, vuelta 2 (sin cambios de método desde la vuelta 1). Cotas de la spec medidas en el build (§1.3, §1.4, §2.1 a §2.4): el h1 de la
 // portada, la cinta, la barra y el medio principal del caso, la barra del índice, el h2 pegajoso de una interior.
 // Uso: node medidas-spec.mjs
 import { writeFileSync } from 'node:fs';

@@ -1,4 +1,4 @@
-// Javiera, QA de obra E12, vuelta 1. Lo que se lee del contenido y las señales de las 27 rutas, sobre el build:
+// Javiera, QA de obra E12, vuelta 2 (sin cambios de método desde la vuelta 1). Lo que se lee del contenido y las señales de las 27 rutas, sobre el build:
 //   · head: title, description, canonical, robots, Open Graph, theme-color, iconos, precargas (senales-obra.md §1.2-1.3)
 //   · JSON-LD parseado: tipos, @id repetidos, los tres del Layout una vez, tipos vetados (§1.5), Praxi sin offers/url/
 //     sameAs, Combeau con #fotografia y #modelo, conceptos con genre y disambiguatingDescription, BreadcrumbList = miga
