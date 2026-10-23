@@ -194,17 +194,23 @@ recurrentes cubren los $300.000 completos**. Detalle en `ventas/sr-soya-academia
 **Por qué, y por qué no se absorbió el IVA:** con el embudo incluido, cobrar $200.000 brutos deja
 el honorario real en $168.067, **bajo el piso que fija `ventas/sr-soya-modelo-de-cobro.md`**.
 
-**Cómo se dice sin que suene a alza, y es verdad:** en el mes 1 la pauta casi no corre, porque las
-primeras semanas van en construir el embudo y la publicidad parte en la semana 3.
+**La pauta corre completa desde el mes 1.** Ramón lo decidió así el 23-oct: el presupuesto es del
+cliente y no se recorta por conveniencia de la cuenta.
 
-| | Mes 1 | Mes 2 y 3 |
-|---|---|---|
-| Honorario con IVA | $238.000 | $238.000 |
-| Pauta | ~$30.000 (parcial por diseño) | hasta $100.000 |
-| **Total** | **~$268.000** | **$338.000** |
+| | Todos los meses |
+|---|---|
+| Honorario con IVA | $238.000 |
+| Pauta | $100.000 |
+| **Total** | **$338.000** |
 
-**El mes 1 cabe en los $300.000 que Carlos tiene en la cabeza.** Del mes 2 en adelante ya debería
-haber alumnos pagando, que es el modelo que propuso él.
+**Son $38.000 por sobre el tope que Carlos declaró**, y se le dijo derecho en el correo del 23-oct.
+El amortiguador que se usó es verdadero y no es un descuento: **con dos alumnos semanales cubre los
+$338.000 completos.**
+
+**Y la respuesta a la objeción obvia**, la de en qué se gastan $100.000 si la página recién se está
+construyendo: se gastan en armar el público. El remarketing del mes 2 necesita gente que ya haya
+visto el contenido, y ese público se acumula, no se compra hecho. Criterio del oficio, el mismo que
+está escrito en la skill de Meta: una audiencia diminuta entrega mal.
 
 **El punto de equilibrio no se mueve:** dos alumnos semanales dejan unos $414.000 al mes contra
 $338.000 de costo. Siguen siendo dos.
@@ -247,6 +253,22 @@ $290.000 ya se había regalado una vez. Análisis en `ventas/sr-soya-que-estamos
 El correo propone **media hora** para repasar riesgos, material y accesos. Guión completo, con las
 preguntas de cada riesgo y las cinco decisiones que deben salir cerradas, en
 `ventas/reunion-srsoya-academia-vocal.md`.
+
+## Estado al 23-oct-2026
+
+**Correo enviado**, mensaje `1a16a35d15a872b7`, 23-oct 19:21 UTC, en el hilo. Es el que aterriza los
+pasos, porque el del 20-oct los dejó en el aire. Lo pedido:
+
+1. **Primer pago** y **accesos** (Instagram, cuenta publicitaria a su nombre con su tarjeta, correo
+   de avisos), que pasan el mismo día.
+2. **Fecha de partida propuesta: lunes 2 de noviembre.** Pregunta de sí o no.
+3. Dos horarios de reunión como alternativa: lunes 26 a las 12:00 o miércoles 28 a las 16:00.
+
+⚠️ **El PDF que Carlos tiene es el del 20-oct y lleva las cifras viejas** («los $300.000
+completos»). La versión del repo está corregida y dice $338.000. **No se remandó a propósito:**
+el correo del 23-oct ya pone el número que manda. Llevar la corregida a la reunión.
+
+**Sin respuesta de Carlos desde el 19-oct.**
 
 ## Próximo paso (al 19-oct-2026)
 

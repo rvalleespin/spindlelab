@@ -161,3 +161,33 @@ conversando.
 Eso baja el honorario real a $168.067 al mes. **Con el embudo incluido, ahí el arranque pasa a
 estar bajo el piso que fija `ventas/sr-soya-modelo-de-cobro.md`.** Queda anotado, la decisión es
 de Ramón.
+
+
+---
+
+## ✉️ ENVIADO el 23-oct, 19:21 UTC
+
+Mensaje `1a16a35d15a872b7`, en el hilo. Verificado con etiqueta `SENT`. Borrador eliminado para no
+dejar duplicado.
+
+**Dos correcciones de Ramón que cambiaron el correo respecto del borrador:**
+
+1. **El tono.** *«habla como si no había quedado claro los pasos a seguir en el otro correo, este
+   mensaje lo aterriza»*. Arranca con **«Releí mi correo del martes y me quedé con que no dejé
+   claros los pasos. Es cosa mía»**. Se hace cargo él, en vez de preguntarle a Carlos por qué no
+   contesta. Da motivo natural al seguimiento sin perseguir.
+2. **La pauta del mes 1 va completa, $100.000.** Esto tiró abajo el argumento del borrador (que el
+   mes 1 cabía en $300.000) y obligó a decir **$338.000 desde el primer mes**, derecho.
+
+**Cómo se sostiene ese número sin descuentos:**
+
+- **Contexto inmediato:** con dos alumnos semanales cubre los $338.000 completos.
+- **La objeción contestada antes de que la haga:** en qué se van $100.000 si la página recién se
+  construye. Se van en armar el público al que el mes 2 le vuelve a aparecer.
+
+**Estructura del correo:** los dos requisitos para partir (pago y accesos, el mismo día) → qué pasa
+esa misma semana, en cuatro puntos → el pago con números → la fecha propuesta, lunes 2 de noviembre
+→ los horarios de reunión como alternativa.
+
+**Nota menor:** el asunto quedó como «Re: Re: Reunión mañana a las 12:00», por cómo arma el asunto
+la herramienta de respuesta. No afecta el hilo ni la entrega.
