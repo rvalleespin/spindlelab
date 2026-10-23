@@ -895,3 +895,107 @@ interiores, 5 %); medios: 6,5 % en nosotros (el retrato), 0 a 0,1 % en las demá
 - **Las maquetas `a`, `b`, `c` y `maqueta-inicial` siguen fuera y con `noindex`:** ninguna página de A las enlaza, no están
   en el `sitemap.xml` (que no nombra ninguna ruta `/v3/`) y `verificar` las sigue dejando fuera.
 - Más lo de arriba: `verificar` a 390, 768, 1440 y 1920 sin hallazgos en las 27, y producción igual a la línea base.
+
+---
+
+## QA de obra, vuelta 1 · Los defectos del acta, en el código (23-oct-2026, Diego)
+
+**Qué se tocó, y por qué.** Javiera rechazó la obra en la vuelta 1 (`e12/acta-obra.md`, ocho defectos). Me tocaban el 1, el
+5, el 6 y el 7; y llevar al código lo que Lucía decidió en la spec para el 2, el 3 y el 4 (`84e2a43`: §0.3 puntos 9 y 10,
+§0.4 puntos 13 a 15, §2.1, §2.3, §2.4, §3.4, §4.3 y tres filas del 23-oct en §7) y lo que Clara cambió en el texto para
+el 8 (`a2d41b1`, `d133e02`). Bruno no cambió medios en esta vuelta (Lucía: «Bruno no rehace medios»). Lo que está bien según
+el acta no se tocó: producción, el `Layout`, las señales, la portada, el movimiento.
+
+Archivos: `src/pages/v3/index.astro` (1, 4 y 5), `src/pages/v3/trabajo/index.astro` y `src/components/a/Pieza.astro` (6),
+`src/pages/v3/blog/[slug].astro` (6), `src/pages/v3/servicios/[slug].astro` (3), `src/components/a/Caso.astro`,
+`src/data/archivo/casos.mjs` y `src/scripts/archivo/caso.mjs` (2 y 4), `src/styles/archivo.css` (2, 4, 5 y 7) y las copias
+de Clara de tres servicios (8). Lo que agregué a los archivos que lee Tailwind no trae ninguna palabra que sea una clase
+suya (desvíos de la tanda 1, punto 6): `comparar-produccion.mjs` da producción igual byte a byte. Mi herramienta
+`comprobar-tanda-4.mjs` dejó de esperar la franja de Auditoría (una línea, con la fecha).
+
+### 1. Las fechas de la home (defecto 1)
+
+El `WebPage` `#webpage` vuelve a llevar `datePublished: 2026-07-08` (el de la portada publicada, el mismo que traía la v3
+del 16-oct) y un `dateModified` que **escribe el build**, como pide `senales-obra.md` §1.2: el día en que se construye, en
+la hora de Chile (`Intl.DateTimeFormat` con `America/Santiago`), así que al publicar la v3 dice el día en que sale. El build
+se cae si no es una fecha ISO igual o posterior a `datePublished`. **Lo que la spec no decía:** de qué reloj sale la fecha.
+El del build es lo único que «escribe el build» sin que nadie la toque; la contracara es que el HTML de `/v3/` cambia de un
+día a otro aunque la página no cambie. No afecta a producción (vive en `dist/v3/`), y al publicar es lo que se quiere: la
+fecha del despliegue.
+
+`chequeo-local.mjs` de Javiera sobre el build: **la home saca 83** (79 en el acta; 83 el 16-oct), y la raíz de producción
+85, igual que antes. `senales.py`: «home WebPage con dateModified», ✓.
+
+### 2. El tope de 493 (defecto 5)
+
+- «Cada pieza, con un dato medido»: el párrafo de cada fila lleva la clase `caja` (la del tope).
+- La nota de los conceptos de la home, lo mismo.
+- La línea «También: Paid Media…»: con el tope **bajo 1194**. Desde 1194 sigue en una línea en c5–c12, como dice §2.1
+  (fila 5); es la excepción que el acta ya deja dicha.
+- La ayuda del chequeo de `/v3/diagnostico/`: una regla para el chico del chequeo (`.chequeo > .chico`,
+  `.chequeo__form > .chico`), sin tocar su marcado ni sus ids. En la home ya lo tenía (tanda 2, punto 4).
+
+### 3. Las imágenes de la primera pantalla (defecto 6)
+
+**Lo que la spec no cubre:** una imagen que cae en la primera pantalla en un ancho y no en otro. El HTML no sabe el ancho,
+así que va sin espera toda imagen que cae en la primera pantalla **en algún** tamaño de la obra. Medido sobre el build, en
+el muro de `/v3/trabajo/`: la primera portada de 360 a 768; las dos de arriba a 1024 × 768; las tres primeras a
+1920 × 1080; las cuatro primeras del documento a 834 × 1112, 1194 × 834 y 1440 × 900. Esas cuatro van con `loading="eager"` (una prop nueva de
+`Pieza`, `primeraPantalla`); las otras seis siguen esperando. Lo que cuesta en el teléfono: tres portadas que no se ven al
+cargar (4, 45 y 38 kB), que Chrome ya pedía casi de inmediato con `lazy` porque están a menos de una pantalla.
+
+El retrato del autor (44 px) de los siete artículos está en la barra lateral desde 1194 y arriba de la columna bajo 1194:
+en la primera pantalla siempre. Va con `loading="eager"`.
+
+### 4. Las áreas de toque que se pisaban (defecto 7)
+
+La regla es la de §4.3 y del prototipo (defecto 11): el área crece con margen negativo y lo que se ve no se mueve. Lo que
+no se previó es que bajo 834 el pie se parte en filas y el correo queda **bajo** el logo, con 12 px entre las dos filas; y
+que entre la foto servida de Combeau y la fila de abajo hay 52 px.
+
+- **El pie:** el logo crece solo hacia arriba (24 px, hacia los 160 vacíos que hay sobre el pie) con su dibujo apoyado
+  abajo; el correo y «Cookies» (el botón que cuelga `consent-banner.js`) crecen 12 arriba y 18 abajo, con el relleno
+  abajo en vez de arriba. Desde 834 con puntero grueso el pie va en una fila y no cambia nada que se pise.
+- **«Ver la original (805 kB)»:** el área crece 20 arriba y 6 abajo (antes, 13 y 13), y un relleno arriba de 14 deja el
+  texto donde estaba.
+
+Probado antes de escribirlo (CSS inyectado sobre el build) y medido después con `solapes.mjs` de Javiera: **el 100 % del
+área es propia en los dos** (el logo y el correo se cruzan 97 × 0, antes 97 × 13; la original, 100 % a 360, 390 y 768,
+antes 90 %). El dibujo del logo, el texto del correo, el de «Cookies» y el del enlace quedan en el mismo píxel, y la
+página mide lo mismo.
+
+### 5. «Concepto» en la barra y la barra sobre el aviso (defecto 2, de Lucía)
+
+Como §2.3: en los cuatro conceptos, después del nombre, un «·» (`aria-hidden`) y el «Tipo» de la ficha de Clara tal cual,
+en rótulo y en una línea: «TONELA · CONCEPTO». El texto lo saca `modelo()` (`casos.mjs`) del primer campo de la ficha, y
+**el build se cae** si ese campo no es «Tipo: Concepto»; Praxi y Combeau no lo llevan.
+
+La barra sube 8 px sobre el aviso de cookies mientras está abierto: `caso.mjs` lee el alto de `#cookie-banner` (un
+`MutationObserver` de su `hidden` y un `ResizeObserver`), lo deja en `html` como `--a-alto-aviso` y lo quita cuando la
+persona elige; `archivo.css` pone la barra en `bottom: calc(var(--a-alto-aviso) + 8px)` mientras el aviso está a la vista
+y suma ese alto al `scroll-padding-bottom` de las páginas con barra. Vale para los seis casos y los siete artículos (los
+artículos cargan el mismo `caso.mjs`). Sin animación. Del aviso no se toca nada.
+
+### 6. Auditoría SEO técnica sin franja (defecto 3, de Lucía)
+
+Sale la rama de Auditoría de la franja en `[slug].astro`: la página queda como Acompañamiento mensual, la cabecera y
+después las secciones. El alt y el pie que Clara le escribió a esa franja quedan sin uso (§2.4 lo dice); `texto.mjs` de
+Javiera los va a contar como «no está en la página», y es lo esperado. La imagen al compartir de Auditoría es solo texto
+(`og-e12-auditoria-seo-tecnica.jpg`): no cambia.
+
+### 7. El chequeo antes de la entradilla bajo 834, y el aviso en una fila desde 834 (defecto 4, de Lucía)
+
+El CSS de §2.1 y §4.3, el mismo que Lucía probó inyectado (`e12/spec/herramientas/obra-v1-defectos.mjs`): bajo 834 el
+bloque de la frase se abre en la retícula de la portada (`display: contents`), el chequeo va con `order: 1` y la
+entradilla con `order: 2`, y el `h1` sube 8 para que entre el rótulo y el `h1` sigan siendo 16. El DOM no cambia. Desde
+834, `.cb-inner` sin salto y su párrafo que se angosta.
+
+**Una consecuencia que la spec no nombra:** el relleno de abajo con el aviso abierto (`scroll-padding-bottom`) tenía un
+paso de 136 px hasta 899, porque el aviso medía 115 de 834 a unos 890. Ahora mide 69 desde 834, así que ese paso termina
+en 833 (de 834 en adelante, 96 px, el de una fila).
+
+### 8. Los tres `title` de Clara (defecto 8)
+
+`extraer-texto.mjs auditoria-seo-tecnica acompanamiento-mensual redes-sociales`, como pidió Clara: en las copias cambian el
+`title` y la nota de señales (que no se pinta), y en `comun.json` solo el sha del origen. En el build cambian el `<title>`
+y el `og:title` de esas tres páginas; `extraer-texto.mjs --comprobar`: todas iguales a `texto-obra.json`.

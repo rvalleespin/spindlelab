@@ -34,7 +34,8 @@ const i = process.argv.indexOf('--salida');
 const SALIDA = i > 0 ? process.argv[i + 1] : null;
 const SLUGS = ['desarrollo-web', 'visibilidad-en-ia', 'auditoria-seo-tecnica', 'acompanamiento-mensual', 'redes-sociales', 'paid-media'];
 const RUTAS = ['/v3/servicios/', ...SLUGS.map((s) => `/v3/servicios/${s}/`)];
-const CON_FRANJA = { 'desarrollo-web': 'combeau-fotografia-169', 'visibilidad-en-ia': 'chequeo-239', 'auditoria-seo-tecnica': 'verifica-y-cumple-239' };
+// Auditoría SEO técnica salió de esta lista el 23-oct: ya no lleva franja (spec §2.4; acta de la obra, vuelta 1, defecto 3)
+const CON_FRANJA = { 'desarrollo-web': 'combeau-fotografia-169', 'visibilidad-en-ia': 'chequeo-239' };
 
 // Los montos de los JSON, como texto
 const montos = (t) => t.match(/\$\d{1,3}(?:\.\d{3})*(?:\/mes)?/g) || [];
