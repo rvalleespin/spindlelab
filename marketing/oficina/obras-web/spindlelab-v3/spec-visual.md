@@ -82,6 +82,12 @@ Cada uno con su porqué. Un desvío que no está en esta lista es un defecto.
    techo de §3.4.
 8. **El borde del campo del chequeo es `#707070`**, no el `#4a4a4a` del prototipo: el del prototipo daba 2,29:1 contra el
    lienzo, bajo el 3:1 de WCAG 1.4.11. Koto no tiene un campo de texto medido.
+9. **La barra flotante de los conceptos dice «Concepto»** junto al nombre (§2.3; 23-oct): la de Koto lleva solo el nombre
+   del caso y la sección activa. Es lo único que está en la ventana a todo scroll bajo 1194, y la regla de la serie
+   (brief «Compuerta 1», punto 5) pide el rótulo a la vista sin scroll en cualquier tamaño.
+10. **Con el aviso de cookies abierto, la barra flotante sube y queda 8 px sobre él** (§4.3; 23-oct). Koto no tiene un
+    aviso que se cruce con su barra: el suyo es una placa de 430 × 42 en la esquina (`medicion/koto/medicion.json`,
+    `interaccion.avisoCookies`) y el nuestro no se puede achicar a eso sin tocar su HTML.
 
 ### 0.4 · Lo que cambia respecto del prototipo de A (lo construye Diego así, no como el prototipo)
 
@@ -101,6 +107,12 @@ Cada uno con su porqué. Un desvío que no está en esta lista es un defecto.
 10. **El borde del campo, `#707070`** (§0.3, punto 8).
 11. **Todo video lleva H.264 además de VP9** (§3.5); el prototipo tenía solo VP9 en los casos.
 12. **El logo es el dibujo final de Bruno** (`e12/logo/final/`, §5.4), no el provisorio del prototipo.
+13. **Bajo 834, la portada de la home lee el chequeo antes que la entradilla** (§2.1; 23-oct, defecto 4 del acta de la
+    obra): con el aviso de cookies abierto, el campo y el botón quedan sobre él a 360 × 800 y a 390 × 844.
+14. **Auditoría SEO técnica no lleva franja** (§2.4; 23-oct, defecto 3): todo medio de Verifica y Cumple es un campo de
+    color con la regla de §3.4.
+15. **«Concepto» en la barra flotante de los conceptos** y la barra sobre el aviso abierto (§2.3, §4.3; 23-oct, defectos
+    2 y 4).
 
 ### 0.5 · Preguntas abiertas (no se resuelven a la fuerza)
 
@@ -289,7 +301,7 @@ tensión y qué pasa en los cortes. Columnas: «c» es columna de la retícula d
 
 | # | Sección | Desde 1194 (16 c) | 834 a 1193 (12 c) | Bajo 834 (8 c) |
 |---|---|---|---|---|
-| 1 | **Portada** | El video del hilo de oro llena la sección: alto mínimo `100svh − 64` (el encabezado va antes, sobre el lienzo), a sangre, sin radio. Abajo y sobre el velo: **c1–c12** el rótulo «Estudio de diseño y tecnología», el `h1` a 48 en dos tintas (dos líneas a 1440) y la entradilla (tope 493); **c13–c16** el chequeo: rótulo «Chequeo gratis», su frase, la etiqueta, el campo y el botón **uno sobre otro** a todo el ancho de las 4 c, y la ayuda. Los dos bloques apoyados en la misma línea de abajo, a 24 px del borde. La pausa, arriba a la derecha (§3.1) | Igual, con **c1–c7** para la frase y **c8–c12** para el chequeo; campo y botón **en una fila** | **Franja 16:9 a sangre** con el video (§0.3, punto 2) y debajo, sobre el lienzo, una columna: rótulo, `h1` a 26, entradilla, el chequeo con campo y botón en una fila, la ayuda |
+| 1 | **Portada** | El video del hilo de oro llena la sección: alto mínimo `100svh − 64` (el encabezado va antes, sobre el lienzo), a sangre, sin radio. Abajo y sobre el velo: **c1–c12** el rótulo «Estudio de diseño y tecnología», el `h1` a 48 en dos tintas (dos líneas a 1440) y la entradilla (tope 493); **c13–c16** el chequeo: rótulo «Chequeo gratis», su frase, la etiqueta, el campo y el botón **uno sobre otro** a todo el ancho de las 4 c, y la ayuda. Los dos bloques apoyados en la misma línea de abajo, a 24 px del borde. La pausa, arriba a la derecha (§3.1) | Igual, con **c1–c7** para la frase y **c8–c12** para el chequeo; campo y botón **en una fila** | **Franja 16:9 a sangre** con el video (§0.3, punto 2) y debajo, sobre el lienzo, una columna: rótulo, `h1` a 26, **el chequeo** (su rótulo, su frase, la etiqueta, campo y botón en una fila, la ayuda) y **después la entradilla** (23-oct: ver «El chequeo bajo 834», abajo) |
 | 2 | **La cinta** | **c1–c12**: la cinta 16:9 exacta (a 1440, 1054 × 593), radio 6; **c13–c16**: la ficha de la pieza que está pasando (tipo · año en mono, el nombre a 24 enlazado a su caso, la bajada en chico; en el tramo de Praxi, la nota de personas generadas), apoyada abajo. Sin titular visible: la sección se nombra con `aria-label` (el de A, §2 del prototipo). La pausa, en la esquina de abajo a la derecha de la cinta | La cinta a las 12 c; la ficha va como rótulo sobre la cinta (`marca-medio`, arriba a la izquierda) | Igual que 834, a sangre y sin radio |
 | 3 | **Índice corto** (los destacados de Koto) | **c1–c4**, pegajoso a 88 px: el `h2` «Trabajo.» + su continuación gris. **c5–c16**: Combeau fotografía 16:9; un par 4:5 \| 4:5 (Praxi, Verifica y Cumple); Sesenta 16:9; bajo cada pieza, nombre en blanco y bajada en gris en una sola frase, y la línea mono **solo tipo · año** (Clara: sin herramientas en la home). Abajo, la nota de los conceptos y «[ Todo el trabajo ] (10)», el único corchete de la página | El `h2` arriba; las piezas a las 12 c | Una columna; el par se apila |
 | 4 | **Cada pieza, con su prueba** | `h2` en c1–c6. Tres filas sin caja, con borde superior `--a-linea`: el medio en **c5–c12** y lo que lo prueba, con su fecha, en **c13–c16**. **Verifica y Cumple muestra la alternativa de Clara** («Sin métrica de negocio…»), no el 54 → 94 (defecto 20) | Medio c1–c7, dato c8–c12 | Medio arriba, dato debajo |
@@ -303,6 +315,26 @@ tensión y qué pasa en los cortes. Columnas: «c» es columna de la retícula d
 - **El chequeo** es el de producción: mismos ids (`chq-form`, `chq-dominio`, `chq-btn`, `chq-out`, `chq-error`) y
   `v3-chequeo.js`; su resultado se pinta bajo el formulario, en la misma columna, con el sistema de A (prototipo
   `.res__*`). Donde lo pinta: dentro de la portada desde 834 (la portada crece; el velo crece con ella, §3.1).
+- **El chequeo bajo 834 va antes que la entradilla** (23-oct, defecto 4 del acta de la obra). El orden a la vista es
+  rótulo, `h1`, chequeo (rótulo «Chequeo gratis», su frase, la etiqueta, campo y botón, la ayuda) y entradilla. **Por
+  qué:** con el aviso de cookies abierto (la primera visita), en el orden anterior el campo y el botón quedaban bajo él a
+  360 × 800 y a 390 × 844; y la compuerta 1 (punto 1) pide «la declaración arriba y el chequeo en la misma pantalla,
+  como su prueba»: el chequeo pegado a la frase que prueba es esa lectura, y la entradilla («Para empresas, clínicas y
+  estudios profesionales…») es contexto que puede venir después. **Cómo:** solo el orden a la vista, bajo 834; el DOM
+  no cambia, así que el lector de pantalla sigue leyendo la entradilla antes del chequeo en todo ancho (el orden de
+  desde 834, donde los dos bloques van lado a lado: tiene sentido igual), y como la entradilla no tiene nada enfocable,
+  el orden del Tab tampoco cambia. Entre
+  el rótulo y el `h1`, 16 px, como hoy; entre el `h1` y el chequeo y entre el chequeo y la entradilla, 24. **Medido**
+  sobre el build con el cambio inyectado (`e12/spec/herramientas/obra-v1-defectos.mjs` → `datos/obra-v1-defectos.json`;
+  capturas `img/obra-v1-aviso-home-{360,390}-{hoy,spec}.jpg`), con el aviso abierto:
+
+  | Tamaño | Aviso desde | Campo y botón | Antes (orden de la tanda 2) |
+  |---|---|---|---|
+  | 360 × 800 | 647 | **590–634**, 13 px sobre el aviso | 708–752, tapados |
+  | 390 × 844 | 710 | **607–651**, 59 px sobre el aviso | 704–748, tapados |
+  | 414 × 896 | 762 | 579–623 | 676–720 |
+  | 768 × 1024 | 909 | 767–811 | 845–889 |
+  | 375 × 667 (fuera de los anchos de la obra) | 533 | 599–643, **tapados** hasta que la persona elige; sin el aviso entran (24 px del borde) | 716–760, bajo el pliegue |
 
 ### 2.2 · Índice de trabajo (`/v3/trabajo/`)
 
@@ -330,7 +362,8 @@ tensión y qué pasa en los cortes. Columnas: «c» es columna de la retícula d
 
 - **Desde 1194:** barra lateral pegajosa de 320 px (`top: 80px; height: calc(100svh − 96px)`), de arriba abajo: miga;
   el `h1` (nombre en blanco) y la bajada en gris, a 24, en dos tintas; la **ficha mono** (TIPO · AÑO; en los conceptos
-  «CONCEPTO · 2026», **a la vista sin scroll a 1440 y a 390**); el **índice de secciones** (cuerpo 16, filas de 36 px, la
+  «CONCEPTO · 2026», **a la vista sin scroll desde 1194**; bajo 1194 lo que se ve sin scroll es el «Concepto» de la
+  barra flotante, abajo); el **índice de secciones** (cuerpo 16, filas de 36 px, la
   activa en blanco con el punto de 3 px a su izquierda, que se mueve con el resorte **estado**); abajo, los **créditos**
   (quién hizo qué, en chico). A la derecha, la columna: el **medio principal 16:9** a todo el ancho de la columna (a 1440,
   1072 × 603), y después las cinco secciones.
@@ -354,6 +387,29 @@ tensión y qué pasa en los cortes. Columnas: «c» es columna de la retícula d
   mono gris, la sección activa en mono blanco sobre `--a-placa-activa`, «+» que abre la lista; un `details` con su
   `summary`). Las filas partidas mantienen su forma (a 390: pares de 175 px). La página deja 96 px abajo para que la
   barra no tape el final.
+- **En los conceptos, la barra dice «Concepto»** (23-oct, defecto 2 del acta de la obra). Bajo 1194 la ficha va
+  después del medio principal, y de 768 a 1193 cae bajo el pliegue (a 768 × 1024 en y = 1194, a 1024 × 768 en 766):
+  el «CONCEPTO» que se veía era solo el horneado en el medio, y fallaba en Tonela a 768 (al pie de su 4:5, bajo la
+  barra) y en el recorrido de Doceavo (una nota al margen de 6 px). La barra es lo único que está en la ventana a todo
+  scroll bajo 1194, así que el rótulo va ahí: después del nombre, un «·» (mono gris, `aria-hidden`) y el **«Tipo» de la
+  ficha de Clara, tal cual** (`texto-obra.json`, `<concepto>.ficha.campos[0].valor`: «Concepto»), en un `span` con la
+  clase de rótulo (mono 11, MAYÚSCULAS, gris), en una línea (`white-space: nowrap`). Se lee «TONELA · CONCEPTO». Sin el
+  año: con «Concepto · 2026», a 360 la línea pasaba a dos en Sesenta y Doceavo con «Sin métrica» activa; con
+  «Concepto», le sobran 41 px en el peor caso (Sesenta y Doceavo a 360). Praxi y Combeau no llevan tipo en la barra: en
+  un caso real no hay nada que el visitante no pueda perderse. No es una regla de Koto (§0.3, punto 9). **Medido**
+  sobre el build con el cambio inyectado (`obra-v1-defectos.mjs`), los cuatro conceptos en los ocho tamaños de la obra,
+  con el aviso de cookies abierto y cerrado: un «Concepto» del DOM entero en la ventana y sin nada encima en los 64
+  (de 360 a 1193 el de la barra; desde 1194 el de la ficha); en el build de hoy, 24 de 64 sin ninguno. Capturas:
+  `img/obra-v1-concepto-{tonela-768,doceavo-1024,sesenta-360}-{aviso,sin-aviso}.jpg`. Javiera lo comprueba con
+  `concepto-sin-scroll.mjs` aceptando el texto «Concepto» además de «Concepto · 2026», y corriéndolo también con el
+  aviso abierto (sin `spindlelab_consent` en `localStorage`).
+- **Con el aviso de cookies abierto, la barra va 8 px sobre él** (23-oct; §4.3): en toda página con barra flotante
+  (los seis casos y los artículos), bajo 1194. El script de la barra (`caso.mjs`) lee el alto de `#cookie-banner`
+  mientras está a la vista (`ResizeObserver` y un `MutationObserver` de su `hidden`), lo escribe en `html` como
+  `--a-alto-aviso`, y la barra queda en `bottom: calc(var(--a-alto-aviso, 0px) + 8px)` mientras el aviso está abierto y
+  en 16 px cuando no; el `scroll-padding-bottom` de esas páginas suma el mismo alto. Sin animación (lo dispara la
+  persona al elegir). Sin JS no hay aviso (lo muestra `consent-banner.js`), así que no hay nada que mover. Del aviso no
+  se toca nada: ni su HTML, ni sus ids, ni su lugar.
 
 **Lo propio de cada caso:**
 
@@ -388,7 +444,7 @@ prototipo como Desarrollo web:
 | `/v3/servicios/` | Cabecera («Qué hacemos»); **una sección por momento** de `oferta-v3.json` (`momentos`): a la izquierda el rótulo y el `h2` del momento, a la derecha sus servicios como filas enlazadas (nombre a Título, la línea de qué hace, el precio «desde … + IVA» en blanco, la flecha); «Lo que pones tú»; «Empieza por el chequeo». **Sin campo de color por servicio** (lo que Ramón rechazó de driftime) | Ninguna |
 | `/v3/servicios/desarrollo-web/` | Como el prototipo (vista 5): cabecera; franja; «Lo que va en todos los planes» (lista); «Sitios que construimos» (tres portadas 4:5 en c5–c16: Combeau, Praxi, Sesenta, con la línea corta de Clara, tipo y año); el glosario y los cuatro planes; «Cinco fases» (la fase a la vista pasa del gris al blanco en 167 ms, el único cambio de tinta atado a la vista que tiene Koto, en `/services`; con movimiento reducido, todas en blanco); preguntas; cierre | **Combeau fotografía** (`casos/combeau/medios/combeau-fotografia-169.webp`), no Doceavo (§3.4) |
 | `/v3/servicios/visibilidad-en-ia/` | Cabecera; franja; las secciones de hoy (incluye, planes, fases, preguntas, cierre) con la misma forma que Desarrollo web | **El chequeo** (`proto/a/medios/chequeo-43.webp`, recortado a 2,39 al centro): es lo que mide este servicio |
-| `/v3/servicios/auditoria-seo-tecnica/` | Ídem | **Verifica y Cumple** (`proto/a/medios/verifica-y-cumple-53.webp`): el producto propio al que se le aplicó (inventario §0.2), sin su puntaje |
+| `/v3/servicios/auditoria-seo-tecnica/` | Ídem | **Ninguna** (23-oct, defecto 3 del acta de la obra). Era Verifica y Cumple (`verifica-y-cumple-53` y su `-239`), el producto propio al que se le aplicó (inventario §0.2): su azul y su lima son un campo de color (42,4 % del marco en una familia de azul con la regla de §3.4), y lo son todas sus capturas (`-45`, `-53`, `-12-169`: de 41 a 96 %). Ninguna otra pieza del inventario muestra una auditoría aplicada, así que queda como Acompañamiento mensual: la cabecera y después las secciones. El alt y el pie de la franja de Clara (`auditoria-seo-tecnica.franja.alt` y `.pie`) quedan sin uso |
 | `/v3/servicios/acompanamiento-mensual/`, `/redes-sociales/`, `/paid-media/` | Ídem | Ninguna: ninguna pieza del inventario muestra ese servicio aplicado |
 | `/v3/metodo/` | Cabecera; «Del diagnóstico al monitoreo» como las fases de Desarrollo web; «Tres reglas que no negociamos» (lista); «Lo que necesitamos de ti»; cierre | Ninguna |
 | `/v3/nosotros/` | Cabecera; **el retrato 3:4** de Ramón en c1–c5 junto a la bio (c7–c14), como «Quién está detrás» de la home pero a la escala de la página; «Por qué un solo sistema», «Cómo trabajo» (secciones); preguntas; cierre. El texto de la bio, tal cual (R4) | Ninguna (el retrato es la imagen) |
@@ -464,7 +520,7 @@ cuadro** (la cota estricta), en 11 tamaños de 360 × 800 a 1920 × 1080:
 
 | Tamaño | Líneas sobre el video | Bajo el mínimo | La peor | Sin velo, la misma | Video sin velo | Botón del chequeo |
 |---|---|---|---|---|---|---|
-| 360 × 800 · 390 × 844 · 414 × 896 · 768 × 1024 | 0 (franja; el texto va en el lienzo) | 0 | gris 7,02:1 | | la franja entera (203 a 432 px) | a 52, 100, 180 y 139 px del borde de abajo |
+| 360 × 800 · 390 × 844 · 414 × 896 · 768 × 1024 | 0 (franja; el texto va en el lienzo) | 0 | gris 7,02:1 | | la franja entera (203 a 432 px) | a 166, 193, 273 y 213 px del borde de abajo, con el chequeo antes de la entradilla (§2.1, 23-oct; antes, a 52, 100, 180 y 139) |
 | 834 × 1112 | 19 | 0 | 5,43:1 (rótulo, cuadro 120) | 1,21:1 | 534 px | a 105 px |
 | 1024 × 768 | 15 | 0 | 5,38:1 (entradilla, cuadro 80) | 1,05:1 | 233 px | a 87 px |
 | 1194 × 834 | 17 | 0 | **5,31:1** (rótulo «Chequeo gratis», gris, cuadro 72) | 1,05:1 | 224 px | a 107 px |
@@ -511,7 +567,7 @@ salvo las de la primera pantalla, `decoding="async"`. **Los `alt` los escribe qu
 | Caso Praxi | Hero, reel, capturas de las páginas públicas, marca, carrusel, portada de Facebook, avatares | `e12/praxi/capturas/`, `e12/praxi/material/`, recortes de `proto/a/medios/praxi-*` | las cuatro formas de §2.3 | Pie de personas generadas en cada medio con personas; «datos de ejemplo» en cada uno con cifras; el hueco de las pantallas internas, **placeholder dirigido**: marco punteado `--a-hueco` del tamaño de una fila 16:9, con el texto de Clara que dice qué falta (Inicio, Coach, Registro, Progreso a 390, desde una cuenta de prueba) |
 | Caso Combeau | Recorridos, portadas, panel, foto servida | `casos/combeau/medios/` (y nada de `inventario/grabaciones/`, que trae sus medidas) | ídem | Pie con fecha y método en las capturas del panel |
 | Casos de concepto | Recorrido, placas, portadas, identidad | `marketing/portafolio/0N-*/` (Bruno) | ídem | Tal cual; solo se escalan y se pasan a WebP |
-| Franjas de interiores | §2.4 | Combeau fotografía, el chequeo, Verifica y Cumple | 2,39:1 desde 834 · 16:9 bajo 834 | Recortadas al centro; nunca un campo (§3.4) |
+| Franjas de interiores | §2.4 | Combeau fotografía (Desarrollo web) y el chequeo (Visibilidad en IA); Auditoría ya no lleva (23-oct) | 2,39:1 desde 834 · 16:9 bajo 834 | Recortadas al centro; nunca un campo (§3.4) |
 | Imágenes al compartir | Simón, `senales-obra.md` §1.6 | HTML renderizado en la letra y el negro de A | 1200 × 630 | Ninguna con el hilo de oro |
 
 **Faltan, y quedan nombrados sin rellenar:** las pantallas internas de Praxi (5a); las fotos y clips de la pauta de los
@@ -520,20 +576,38 @@ producción por dentro.
 
 ### 3.4 · Techos de campo por tipo de página (cierra el defecto 22)
 
-Un **campo** es un medio cuyo color dominante cubre el 30 % o más de su marco y es claro o de color (lock §20.1; la regla
-exacta está en `herramientas/campo-medios.py`, copiada de `proto/a/herramientas/campos.py`). Se cuenta en la página
-completa a 1440, como hace `campos.py`. **Ningún campo en la interfaz, en ninguna página.**
+Un **campo** es un medio cuyo color dominante cubre el 30 % o más de su marco y es claro o de color (lock §20.1). **La
+regla exacta es la 2 desde el 23-oct** (defecto 3 del acta de la obra, vuelta 1) y vive en `herramientas/campo-medios.py`
+(`es_campo`): un medio es campo si **la cubeta** de la regla 1 lo dice (el color más frecuente en cubetas de 16 niveles
+por canal, claro o de color, en el 30 % o más del marco: la regla del prototipo, `proto/a/herramientas/campos.py`) **o**
+si **una familia de color** llega al 30 %: los píxeles de color (saturación ≥ 0,45 y valor ≥ 0,35) que caen en una
+ventana de 40° de tono y 0,30 de valor. La cubeta sola no veía un degradé: la franja de Auditoría, azul de punta a punta,
+reparte su azul en varias cubetas y la mayor era el blanco de las letras (24,9 %); con la familia, 42,4 %. Las ventanas
+salen de probar once combinaciones sobre 614 medios de Koto y los de A (`herramientas/campo-regla2-ventanas.py` →
+`datos/campo-regla2-ventanas.json`): una familia de claros mete fotos (el estudio de Koto pasaba de 0 a 10,1 %), una
+ventana de 60° junta las seis eslingas de Tonela en un campo y una de valor 0,45 vuelve campo la foto de Combeau con su
+banda de luz verde. **Toda herramienta que cuente campos usa ese `es_campo`** (lo importa o lo copia sin cambios, como
+`campos.py` de Javiera y los `campos-tanda-*` de Diego). Se cuenta en la página completa a 1440, como hace `campos.py`.
+**Ningún campo en la interfaz, en ninguna página.**
+
+**Los techos salen de Koto contado con la misma regla.** Koto se recorrió de nuevo el 23-oct (las 22 páginas del paso 2
+a 1440, `recorrido.mjs` del paso 2 y `herramientas/koto-campos-regla2.py` → `datos/koto-campos-regla2.json`): con la
+regla 1 da lo mismo que el 16-oct (casos de 2,9 a 35,5 %, mediana 23,0; `/work` 21,7; home 4,8), y con la 2, casos de
+4,3 a 42,4 % (mediana 27,0; seguidos, mediana 4), `/work` 33,0 (seguidos 3), home 14,4 (seguidos 2), servicios 0,9,
+carreras 1,5, estudio, contacto y privacidad 0. Los techos de abajo no se mueven, salvo los seguidos de la home (3, uno
+más que Koto, como antes); A, contado con la regla 2 sobre el build del 19-oct (`datos/campos-paginas-regla2.json`):
 
 | Tipo de página | Techo (área de campos sobre el área de la página, a 1440) | Dónde puede haber campos | De dónde sale |
 |---|---|---|---|
-| **Caso** (real o concepto) | **Del 10 al 35 %**; seguidos, a lo más 4 | En las filas de medios | Lock §20.3 (Koto: 2,9 a 35,4 %, mediana 23). **Bajo el piso solo si el material real no da más, dicho en la spec:** Praxi (6,0 % medido en A), marca oscura de un solo acento que no se recolorea (lock §20.2, regla 3). Combeau se mide al construir y, si queda bajo 10 %, se declara aquí con su cifra |
-| **Índice** (`/trabajo/`) | **≤ 35 %** | Solo las portadas | Koto `/work`: 20 % de color, todo en portadas. A medido: 27,0 % |
-| **Home** | **≤ 20 %**, contando la cinta en su tramo más claro; seguidos, a lo más 2 | Solo en la cinta, el índice corto y «Cada pieza, con su prueba»; **la portada, servicios, quién y contacto, sin campos** | Koto `/work` (20 %): la home no juega más que el índice. A medido con la cinta en la primera pantalla: 16,6 %; la portada (no es campo: dominante `#080808`) solo lo baja. Desvío del lock §20.2, regla 4 (§0.3, punto 7) |
-| **Interiores** (servicios y sus seis, método, nosotros, diagnóstico, contacto, blog y artículos) | **≤ 5 %**, y **la franja nunca es un campo** | Solo en las portadas de una sección de piezas (las tres de «Sitios que construimos») | Koto: interiores de 0 a 0,9 % de campo claro y 0 de color; su home, 4,8 %. **La vista 5 del prototipo daba 13,3 %** (la franja de Doceavo, campo claro `#D8E8D8` en el 52 % del marco, más dos portadas): Doceavo sale de la franja y entra **Combeau fotografía**, que no es campo (dominante `#080808`, 18 % del marco a 2,39:1, `datos/campo-medios.json`). Con las tres portadas (Praxi y Sesenta son campo), Desarrollo web queda en unos 3,5 % (estimado con las cajas del prototipo: 2 × 346 × 433 sobre 1440 × 5911; se mide al construir) |
+| **Caso** (real o concepto) | **Del 10 al 35 %**; seguidos, a lo más 4 | En las filas de medios | Lock §20.3 (Koto: 2,9 a 35,4 %, mediana 23; con la regla 2, 4,3 a 42,4, mediana 27,0, y seguidos con mediana 4). **Bajo el piso solo si el material real no da más, dicho en la spec:** Praxi (6,0 % medido en A), marca oscura de un solo acento que no se recolorea (lock §20.2, regla 3). Combeau se mide al construir y, si queda bajo 10 %, se declara aquí con su cifra. **A con la regla 2:** Praxi 6,1, Ocelo 23,8, Combeau 24,2, Sesenta 25,3, Tonela 26,9, Doceavo 30,2; seguidos, a lo más 4 (Doceavo) |
+| **Índice** (`/trabajo/`) | **≤ 35 %** | Solo las portadas | Koto `/work`: 20 % de color, todo en portadas (con la regla 2, 33,0). A medido: 27,0 %; **con la regla 2, 30,1** (la portada 5:3 de Verifica y Cumple pasa a campo) |
+| **Home** | **≤ 20 %**, contando la cinta en su tramo más claro; seguidos, a lo más **3** (23-oct; eran 2 con la regla 1) | Solo en la cinta, el índice corto y «Cada pieza, con su prueba»; **la portada, servicios, quién y contacto, sin campos** | Koto `/work` (20 %): la home no juega más que el índice. A medido con la cinta en la primera pantalla: 16,6 %; la portada (no es campo: dominante `#080808`) solo lo baja. Desvío del lock §20.2, regla 4 (§0.3, punto 7). **Con la regla 2:** 13,1 % con la cinta en su póster y unos 18,3 con la cinta en su tramo más claro (el área de la cinta, 5,2 %, la midió Diego en la tanda 2); seguidos, 3: Praxi \| Verifica y Cumple (su 4:5 pasa a campo) y Sesenta, en el índice corto que Ramón vio en la compuerta 2. Lo que cambió fue el instrumento, no la página: Koto, contado con la misma regla, sube su home de 1 a 2 seguidos y su `/work` de 2 a 3, y el techo de la home sigue uno sobre la home de Koto, como con la regla 1 |
+| **Interiores** (servicios y sus seis, método, nosotros, diagnóstico, contacto, blog y artículos) | **≤ 5 %**, y **la franja nunca es un campo** | Solo en las portadas de una sección de piezas (las tres de «Sitios que construimos») | Koto: interiores de 0 a 0,9 % de campo claro y 0 de color; su home, 4,8 %. **La vista 5 del prototipo daba 13,3 %** (la franja de Doceavo, campo claro `#D8E8D8` en el 52 % del marco, más dos portadas): Doceavo sale de la franja y entra **Combeau fotografía**, que no es campo (dominante `#080808`, 18 % del marco a 2,39:1, `datos/campo-medios.json`). Con las tres portadas (Praxi y Sesenta son campo), Desarrollo web queda en unos 3,5 % (estimado con las cajas del prototipo: 2 × 346 × 433 sobre 1440 × 5911; se mide al construir). **Con la regla 2 (23-oct):** Desarrollo web 3,5 % (la franja de Combeau, 27,1 % de verde a 2,39: no es campo); **la franja de Auditoría, Verifica y Cumple, sí lo era** (42,4 % de azul, 13,2 % de la página): sale (§2.4) y la página queda en 0; Visibilidad en IA 0 (el chequeo, oscuro); las demás, 0 |
 
-**Antes de poner un medio en una franja**, se corre `campo-medios.py` sobre él: en `datos/campo-medios.json` están los 59
-medios de A, de Combeau y el póster de la portada. Las franjas de §2.4 salen de ahí (el chequeo, Verifica y Cumple y Combeau fotografía: los tres
-sin campo a 2,39:1).
+**Antes de poner un medio en una franja**, se corre `campo-medios.py` sobre él: en `datos/campo-medios.json` están, con
+la regla 2, los 59 medios de A, de Combeau y el póster de la portada, más las dos franjas a 1920 de la tanda 4
+(`chequeo-239`, `verifica-y-cumple-239`). Las franjas de §2.4 salen de ahí: el chequeo y Combeau fotografía, sin campo
+a 2,39:1 (familia de color de 0,02 y 0,27). Verifica y Cumple lo es en todas sus capturas (0,41 a 0,96) y ya no va.
 
 ### 3.5 · Video: formatos y reglas para todos
 
@@ -600,14 +674,38 @@ sin campo a 2,39:1).
 - **El aviso de cookies** (del `Layout`): A lo viste desde `archivo.css` como lo hizo driftime (`html body.a-body
   #cookie-banner …`: placa, borde `--a-linea-seccion`, texto gris en Google Sans Flex 14, enlace blanco subrayado,
   botones del sistema), **sin tocar su HTML ni sus ids** (`cookie-accept`, `cookie-reject`). Nada importante queda
-  tapado por él en la primera pantalla: se mide con el aviso abierto.
+  tapado por él en la primera pantalla: se mide con el aviso abierto. **Lo que eso quiere decir, desde el 23-oct**
+  (defecto 4 del acta de la obra, vuelta 1):
+  - **Dónde va: abajo y a todo el ancho, como hoy.** No arriba: ahí taparía el encabezado (el logo y el menú, que son
+    controles) en todas las páginas, y Koto lo pone abajo (una placa en la esquina de abajo a la derecha,
+    `medicion/koto/medicion.json`, `interaccion.avisoCookies`). Lo que se mueve es lo nuestro: el chequeo de la home bajo
+    834 va antes que la entradilla (§2.1) y la barra flotante sube sobre el aviso mientras está abierto (§2.3).
+  - **Desde 834, en una fila:** el texto (con su tope de 640 px, como hoy) se angosta lo que haga falta y los botones
+    quedan a su derecha (`flex-wrap: nowrap` en `.cb-inner` y `flex: 0 1 auto; min-width: 0` en su párrafo). Entre 834 y
+    unos 890 px los botones bajaban a una segunda fila y el aviso medía 115 px, no 69: a 834 × 1112 tapaba el campo y
+    el botón del chequeo de la home (aviso desde 997, chequeo de 963 a 1007; el acta no lo midió a 834). En una fila
+    mide 69 y empieza en 1043. Bajo 834 queda como está (115 px de 600 a 833, 134 a 390 y 414, 153 a 360).
+  - **Lo importante, que el aviso abierto nunca tapa** en la primera pantalla de los ocho tamaños de la obra (360 × 800,
+    390 × 844, 768 × 1024, 834 × 1112, 1024 × 768, 1194 × 834, 1440 × 900, 1920 × 1080): el campo y el botón del
+    chequeo en la home y en `/v3/diagnostico/`; el «Concepto» de los cuatro conceptos (§2.3); y el botón del
+    formulario de contacto a 1440 × 900, el único tamaño donde §2.4 lo pide sobre el pliegue. **Medido** sobre el build
+    con las tres decisiones inyectadas (`e12/spec/herramientas/obra-v1-defectos.mjs` → `datos/obra-v1-defectos.json`):
+    0 tapados (en el build de hoy: el chequeo de la home a 360, 390 y 834, y el «Concepto» en 24 de 64 casos).
+  - **Lo que sí puede quedar bajo el aviso hasta que la persona elige** (un toque): el resto de la página, que el
+    aviso tapa como tapa cualquier aviso; la miga de los casos a 1024 × 768 (ya la tapaba la barra); los últimos campos
+    del formulario de contacto bajo 1440 (a 1024 × 768 y 1194 × 834, el botón «Enviar mi mensaje» queda bajo el aviso,
+    como hoy: es el último control, después de nombre, correo, sitio, mensaje y el consentimiento, y a 1024 × 768 queda además 3 px bajo el pliegue
+    sin aviso); y la home a 375 × 667, fuera de los anchos de la obra (§4.4).
+  - **Cómo se mide en la QA:** `aviso.mjs` de Javiera sumando 834 × 1112, 1194 × 834 y 1920 × 1080 a sus cinco tamaños,
+    y `concepto-sin-scroll.mjs` corrido también sin elección guardada; o `obra-v1-defectos.mjs` sobre el build, que
+    mide todo lo de arriba (variante «hoy»).
 
 ### 4.4 · Breakpoints
 
 | Ancho | Columnas | Qué cambia | Por qué ahí |
 |---|---|---|---|
-| **360 a 833** | 8 | Encabezado de dos filas (90 px); portada en franja 16:9 y texto debajo; todo en una columna; caso con medio 4:5 a sangre y barra flotante; muro a una columna | Koto, corte de 834. **El chequeo entra en la pantalla a 360 × 800** (botón a 52 px del borde de abajo) y a 390 × 844 (a 100). A 375 × 667 no entra (89 px bajo el borde): fuera de los anchos de la obra, queda dicho |
-| **768** | 8 | Igual que 360, más ancho: la franja mide 768 × 432; el muro a una columna | Tableta vertical: botón a 139 px del borde |
+| **360 a 833** | 8 | Encabezado de dos filas (90 px); portada en franja 16:9 y texto debajo; todo en una columna; caso con medio 4:5 a sangre y barra flotante; muro a una columna | Koto, corte de 834. **El chequeo entra en la pantalla a 360 × 800** (botón a 166 px del borde de abajo) y a 390 × 844 (a 193), **también con el aviso de cookies abierto** (13 y 59 px sobre él), con el chequeo antes de la entradilla (§2.1, 23-oct; antes, a 52 y 100, y tapado por el aviso). A 375 × 667 entra sin el aviso (a 24 px) y queda tapado mientras está abierto: fuera de los anchos de la obra, queda dicho |
+| **768** | 8 | Igual que 360, más ancho: la franja mide 768 × 432; el muro a una columna | Tableta vertical: botón a 213 px del borde (antes, 139); el aviso abierto empieza en 909 |
 | **834 a 1193** | 12 | Encabezado de una fila (64), `sticky`, que se pliega; portada a pantalla con el texto sobre el velo (frase c1–c7, chequeo c8–c12); muro a dos columnas; caso todavía apilado con la barra flotante | Koto, corte de 834 |
 | **1024** | 12 | Nada nuevo: es un ancho de 834 a 1193. **Ya no es un corte** (cerrado en §1.4) | Medido en Koto: su barra aparece en 1194 |
 | **1194 en adelante** | 16 | Barras laterales de 320 (caso, índice, artículo, blog); portada con frase c1–c12 y chequeo c13–c16 (campo y botón uno sobre otro); cruz de registro; secciones de interior con el `h2` pegajoso a la izquierda | Koto, corte de 1194 |
@@ -615,7 +713,8 @@ sin campo a 2,39:1).
 | **1920** | 16 | Sin ancho máximo: la retícula crece; la caja del cuerpo sigue en 493 | Koto no tiene ancho máximo |
 
 **Medido en cada ancho, en la corrida 2:** desborde horizontal 0 (también con `overflow-x: clip` quitado); un `h1`;
-contraste; foco; el chequeo dentro de la pantalla a 1440 × 900, 390 × 844 y 360 × 800.
+contraste; foco; el chequeo dentro de la pantalla a 1440 × 900, 390 × 844 y 360 × 800. **Desde el 23-oct, con el aviso
+de cookies abierto y cerrado** (§4.3): lo importante de §4.3 sin tapar en los ocho tamaños.
 
 ---
 
@@ -732,8 +831,8 @@ página de Combeau.
     `e12/inventario/grabaciones/` o el `cinta.*` del prototipo.
 11. **Praxi:** enlace a praxi.coach; «en pausa» o «fuera de línea»; `offers` o `url` en su JSON-LD; las fotos de su
     landing sueltas; un nombre de modelo sin lo que hace; una persona generada sin su pie.
-12. **Conceptos:** sin «CONCEPTO» a la vista sin scroll; una cifra de resultado; un testimonio; una persona no dicha como
-    ficticia.
+12. **Conceptos:** sin «CONCEPTO» a la vista sin scroll (en los ocho tamaños, con el aviso de cookies abierto y
+    cerrado: §2.3); una cifra de resultado; un testimonio; una persona no dicha como ficticia.
 13. **«IA propietaria», «modelos RAG», «despliegue de modelos»**, telemetría decorativa, corchetes que no rodeen un enlace
     a un índice, más de un corchete por página.
 14. **Movimiento fuera de §1.6:** rebote, animación por línea, nada atado a la posición del scroll, entradas en texto de
@@ -930,3 +1029,6 @@ su landing.
 | 19-oct | **E12, compuerta 2: Ramón eligió A · Archivo** (19-oct, a eso de las 09:50, con el tablero `tableros/e12-direcciones/tablero.html` delante y el acta del paso 2 aprobada en la vuelta 2, `70d7c23`): Google Sans Flex con DM Mono 500 sobre el lienzo `#060606`, y el trabajo carga la pantalla; **logo: camino 2, «El huso»**, monocromo, en Google Sans Flex wght 600; **hero 3** («hero-sitio» de `e12/texto/texto-paso2.md`); **la portada de la home es el video del hilo de oro del sitio actual** (`spindlelab-astro/public/hero-hilo-de-oro.mp4`), en el lugar del showreel de Koto, como **desvío autorizado** de la regla de solo trabajo real, con versión VP9/WebM y un H.264 más liviano, botón de pausa, velo `#060606`, contraste de la frase medido sobre el video y quieto con movimiento reducido; ninguna generación pagada; Praxi y Combeau como casos reales. Por defecto (no contestó): los puntajes propios no se muestran, el círculo del cursor es blanco, ninguna interior con el lienzo claro y a Combeau se le recortan sus medidas personales. B · Banco queda como historia. **Consecuencia para esta spec:** Lucía la reescribe para E12 sobre A en esta misma corrida; desde ahí describe lo que se construye, y las filas anteriores de este §7 quedan como historia del build de driftime. Los defectos 22 y 23 del acta del paso 2 se cierran en ella. Registro: `e12/brief-de-obra.md`, sección «Compuerta 2»; textual: `e12/insumos-ramon-19oct.md` | **decisión** (Ramón) | Ramón; registra Mauro |
 | 19-oct | **E12: la spec se reescribe sobre A · Archivo** (§0 a §6; la de driftime pasa entera, sin cambios, a `spec-visual-driftime.md`). Lo que fija y el prototipo no tenía: la portada con el hilo de oro de Bruno, con un velo `#060606` que nace con el texto (0 → 0,88 en 160 px → `#060606` en el borde), medido contra los 121 cuadros del bucle en 11 tamaños: 0 líneas bajo el mínimo, la peor 5,31:1 (sin velo, 1,03:1); bajo 834, una franja 16:9 y el `h1` a 26, para que el chequeo entre a 360 × 800 (botón a 52 px del borde); la cinta como primera sección, 16:9 exacta y rehecha sin el tramo de Combeau con sus medidas; las barras laterales desde 1194 y no desde 1024 (Koto, medido entre cortes); el tope de 493 px del cuerpo en todos los anchos (el prototipo llegaba a 142 caracteres por línea a 1023); techos de campo por tipo de página (caso 10 a 35 %, índice ≤ 35, home ≤ 20, interiores ≤ 5 y la franja nunca es campo: cierra el defecto 22, y Desarrollo web cambia Doceavo por Combeau en la franja); el borde del campo `#707070` (1.4.11); H.264 en todo video; Motion 13.5.0 exacto; Lenis sin efecto con `data-lenis-prevent` y los enlaces internos con su ruta, sin tocar el `Layout` (medido: la rueda vuelve a 54 ms), y la pregunta a Ramón por una prop del `Layout`; el logo El huso, sin el giro de la tortera. Los defectos 20 y 21, aplicados; el 23, corregido en `direccion-a.md` §9.2. Herramientas y datos, en `e12/spec/` | **regla** (toda la spec) | Ramón, compuerta 2; escribe Lucía |
 | 19-oct | **Ramón aprobó la propuesta de §0.5** («Sí, agrégalas», textual en `e12/insumos-ramon-19oct.md` §5): cinco props opcionales en `Layout.astro` (Lenis, letras precargadas, `theme-color`, favicon, `#org`/`jobTitle`), con valor por defecto igual al de hoy, que solo pasa `/v3/`. Las páginas publicadas salen **iguales byte a byte** (`diff` del `dist/` de esas rutas antes y después); gtag, consentimiento y Pixel no se tocan. Con eso, en A Lenis no se crea, solo se precargan Google Sans Flex y DM Mono, `theme-color` es `#060606` y el favicon es El huso `?v=5`. Las reglas de §5.2 (`data-lenis-prevent` y enlaces con su ruta) quedan como resguardo. La prohibición de §6.16 sobre `Layout.astro` se lee con esta excepción, y nada más | **regla** | Ramón, a la pregunta de Lucía |
+| 23-oct | **El «Concepto» de los conceptos, de 360 a 1193, va en la barra flotante** (cierra el defecto 2 del acta de la obra, vuelta 1, mayor). Bajo 1194 la ficha «Concepto · 2026» va después del medio principal y de 768 a 1193 cae bajo el pliegue (768 × 1024: y = 1194; 1024 × 768: 766); quedaba solo el rótulo horneado en el medio, que falla en Tonela a 768 y en el recorrido de Doceavo. La barra es lo único que está en la ventana a todo scroll, así que lleva, después del nombre, «·» y el «Tipo» de la ficha de Clara tal cual («Concepto», `ficha.campos[0].valor`), en rótulo gris y en una línea: «TONELA · CONCEPTO» (sin el año, que a 360 partía la línea en dos). Solo en los conceptos. Y con el aviso de cookies abierto la barra sube 8 px sobre él (`--a-alto-aviso`, que escribe `caso.mjs`), en toda página con barra. Se descartó la ficha antes del medio (rompe el orden de Koto entre cortes, §1.4, y a 1024 × 768 sacaba de la primera pantalla el pie del medio principal: 64 de encabezado, unos 200 de miga, nombre, ficha y créditos, y 558 del 16:9) y el rótulo sobre el medio (tapaba el logo o la cabecera de cada pieza, que es donde está su propio «Concepto»). Medido sobre el build con el cambio inyectado: «Concepto» del DOM a la vista y destapado en los 4 conceptos × 8 tamaños × aviso abierto y cerrado (64 de 64; hoy, 40), le sobran 41 px en la barra en el peor caso. Diego: `Caso.astro`, `archivo.css` y `caso.mjs`. Bruno no rehace medios (§2.3, §0.3 puntos 9 y 10, §0.4 punto 15; `e12/spec/herramientas/obra-v1-defectos.mjs`, `datos/obra-v1-defectos.json`, `img/obra-v1-concepto-*.jpg`; los ocho tamaños en `img/obra-v1-ocho-anchos-{tonela,doceavo}.jpg`) | **regla** | Javiera, acta de la obra (vuelta 1); decide y escribe Lucía |
+| 23-oct | **La franja de Auditoría SEO técnica sale, y la regla de campo pasa a la 2** (cierra el defecto 3 del acta de la obra, vuelta 1, mayor). La franja (Verifica y Cumple, `verifica-y-cumple-239`) era un campo de color en la primera pantalla y la regla de la cubeta no lo veía: el degradé reparte el azul en varias cubetas. **Regla 2:** campo si la cubeta lo dice o si una familia de color (40° de tono × 0,30 de valor) llega al 30 % del marco; los claros, con la cubeta (`campo-medios.py`, `es_campo`; todas las herramientas que cuentan campos la usan). Las ventanas salen de once combinaciones probadas contra 614 medios de Koto recorrido de nuevo a 1440 y los de A: la franja de Auditoría es campo con todas (41,5 a 42,6 %); una familia de claros volvía campo las fotos de oficina de Koto, 60° juntaba las eslingas de Tonela, 0,45 de valor volvía campo la foto de Combeau. **Los techos se recalibran contra Koto contado con la misma regla** (casos 4,3 a 42,4 %, mediana 27; `/work` 33,0; home 14,4; interiores 0 a 1,5) y no se mueven, salvo los seguidos de la home, que pasan de 2 a 3 (Koto sube su home de 1 a 2 con la regla 2; la página de A no cambió). A con la regla 2: home 13,1 % (unos 18,3 con la cinta en su tramo más claro), `/trabajo/` 30,1, casos de 6,1 a 30,2, Desarrollo web 3,5, Auditoría 0 sin franja; dentro de todos los techos. Ninguna otra pieza muestra una auditoría aplicada y todo Verifica y Cumple es campo: **Auditoría queda sin franja**, como Acompañamiento mensual; el alt y el pie de su franja (Clara) quedan sin uso. Diego: `[slug].astro` (la rama de Auditoría) (§2.4, §3.3, §3.4, §0.4 punto 14; `herramientas/campo-medios.py`, `koto-campos-regla2.py`, `campo-regla2-ventanas.py`; `datos/campo-medios.json`, `koto-campos-regla2.json`, `campo-regla2-ventanas.json`, `campos-paginas-regla2.json`; la página sin franja en los ocho tamaños, `img/obra-v1-ocho-anchos-auditoria.jpg`) | **regla** | Javiera, acta de la obra (vuelta 1); decide y escribe Lucía |
+| 23-oct | **El aviso de cookies no tapa lo importante: el chequeo de la home bajo 834 va antes que la entradilla, y el aviso va en una fila desde 834** (cierra el defecto 4 del acta de la obra, vuelta 1, mayor). El aviso se queda abajo y a todo el ancho (arriba taparía el logo y el menú en toda página; Koto lo pone abajo). Bajo 834 la portada lee rótulo, `h1`, chequeo y entradilla, solo a la vista (el DOM no cambia): el chequeo pegado a la frase que prueba es la lectura de la compuerta 1, punto 1. Desde 834, `.cb-inner` sin salto de línea y su párrafo que se angosta: el aviso mide 69 px desde 834 (de 834 a ~890 medía 115 y tapaba el chequeo a 834 × 1112, un tamaño que el acta no midió). §4.3 escribe qué es «lo importante» que el aviso abierto nunca tapa (el chequeo de la home y de diagnóstico, el «Concepto», el botón de contacto a 1440 × 900) y qué sí puede tapar hasta que la persona elige (el botón de contacto a 1024 × 768 y 1194 × 834, como hoy; la home a 375 × 667, fuera de los anchos de la obra). Medido sobre el build con el cambio inyectado: con el aviso abierto, campo y botón de 590 a 634 a 360 × 800 (aviso desde 647) y de 607 a 651 a 390 × 844 (desde 710); a 834 × 1112, de 963 a 1007 con el aviso desde 1043; 0 tapados en los ocho tamaños. Diego: `index.astro` o `archivo.css` (el orden bajo 834) y `archivo.css` (el aviso desde 834) (§2.1, §3.1, §4.3, §4.4, §0.4 punto 13; `obra-v1-defectos.mjs`, `datos/obra-v1-defectos.json`, `img/obra-v1-aviso-home-*.jpg`; los ocho tamaños en `img/obra-v1-ocho-anchos-home.jpg`) | **regla** | Javiera, acta de la obra (vuelta 1); decide y escribe Lucía |
