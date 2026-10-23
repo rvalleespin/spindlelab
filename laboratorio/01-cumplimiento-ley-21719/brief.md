@@ -14,6 +14,17 @@ del brief, ver §3 y la fila de hoy) en `laboratorio/ley-21719`, **desde una ses
 clon bueno** (`~/Projects/spindlelab`), no desde esta copia de iCloud.
 **Fecha que manda todo:** **1 de diciembre de 2026** (entrada en plena vigencia)
 
+> ⚠️ **La fecha sigue siendo el 1-dic-2026 (verificado el 23-oct-2026).** Hay un proyecto del
+> Ejecutivo para moverla a 2027 — **Boletín 18.623-07**, ingresado el 1-sep-2026 con suma
+> urgencia — pero **no se ha aprobado ni publicado**. BCN lo lista como "Proyecto de
+> Modificación" en la ficha de la propia ley, y la cabecera sigue diciendo "Entra en vigencia
+> el 01-DIC-2026 / TIENE TEXTO DIFERIDO". El Senado lo muestra "En tramitación" con la columna
+> "Ley" vacía. Varios sitios del rubro ya titulan "Chile posterga al 2027": eso trata un
+> proyecto como si fuera ley, y acá no se repite. **Volver a verificar antes de publicar
+> cualquier pieza que nombre la fecha**, en la cabecera de
+> `bcn.cl/leychile/navegar?idNorma=1209272` (necesita navegador: carga con JavaScript).
+
+
 ---
 
 ## 1. La oportunidad, en una línea
