@@ -1,0 +1,2259 @@
+{
+  "url": "https://atfgroup.cl/",
+  "cuando": "2026-10-23T15:12:27.749Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "_ga_5BK8MJCPVQ",
+        "dominio": ".atfgroup.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".atfgroup.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_YR69P5JYFC",
+        "dominio": ".atfgroup.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".atfgroup.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://atfgroup.cl/",
+      "titulo": "Auditoría, Asesoría Tributaria, Legal y Consultoría | ATF Group",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "",
+          "accion_abs": "https://atfgroup.cl/",
+          "metodo": "post",
+          "campos": 8,
+          "requeridos": 4,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#content",
+          "t": "Ir al contenido"
+        },
+        {
+          "h": "https://cl.linkedin.com/company/atfgroup",
+          "t": "Linkedin"
+        },
+        {
+          "h": "https://wa.link/2e6xyh",
+          "t": "Whatsapp"
+        },
+        {
+          "h": "https://atfgroup.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://atfgroup.cl/",
+          "t": "Inicio"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/",
+          "t": "Servicios"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/",
+          "t": "Auditoría y Assurance"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/auditoria-de-estados-financieros/",
+          "t": "Auditoría de Estados Financieros"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/migracion-y-conversion-a-ifrs/",
+          "t": "Migración y Conversión a IFRS"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/procedimientos-acordados-sobre-informacion-financiera-y-procesos/",
+          "t": "Procedimientos Acordados sobre Información Financiera y Procesos"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/auditoria-interna-y-contraloria/",
+          "t": "Auditoría Interna y Contraloría"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/auditorias-y-revisiones-especializadas/",
+          "t": "Auditorías y Revisiones Especializadas"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/informes-periciales-y-experto-independiente/",
+          "t": "Informes Periciales y Experto Independiente"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/preparacion-y-orden-para-una-auditoria-futura/",
+          "t": "Preparación y Orden para una Auditoría Futura"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/",
+          "t": "Consultoría"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-tributaria/",
+          "t": "Asesoría Tributaria"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-tributaria/empresas-familiares-family-office/",
+          "t": "Empresas Familiares y Family Office"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-tributaria/precios-de-transferencia/",
+          "t": "Precios de Transferencia (Transfer Pricing)"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-tributaria/cumplimiento-tributario-especializado/",
+          "t": "Cumplimiento Tributario Especializado"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-tributaria/planificacion-tributaria/",
+          "t": "Planificación Tributaria"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-legal/",
+          "t": "Asesoría Legal"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-legal/derecho-corporativo/",
+          "t": "Derecho Corporativo"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-legal/derecho-laboral/",
+          "t": "Derecho Laboral"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-legal/compliance-corporativo-y-modelos-de-prevencion-de-delitos/",
+          "t": "Compliance Corporativo y Modelos de Prevención de Delitos"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/",
+          "t": "Finanzas Corporativas"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/valorizacion-de-empresas-y-activos/",
+          "t": "Valorización de Empresas y Activos"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/asesoria-en-transacciones-corporativas-ma/",
+          "t": "Asesoría en Transacciones Corporativas (M&A)"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/reorganizaciones-empresariales-y-estructuracion-financiera/",
+          "t": "Reorganizaciones Empresariales y Estructuración Financiera"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/asesoria-en-financiamiento-y-relacion-con-bancos/",
+          "t": "Asesoría en Financiamiento y Relación con Bancos"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/analisis-financiero-estrategico-y-soporte-a-decisiones/",
+          "t": "Análisis Financiero Estratégico y Soporte a Decisiones"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/expatriados-y-movilidad-internacional/",
+          "t": "Expatriados y Movilidad Internacional"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/expatriados-y-movilidad-internacional/asesoria-migratoria-y-tramitacion-de-visas/",
+          "t": "Asesoría Migratoria y Tramitación de Visas"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/expatriados-y-movilidad-internacional/servicios-laborales-para-expatriados/",
+          "t": "Servicios Laborales para Expatriados"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/expatriados-y-movilidad-internacional/asesoria-tributaria-para-expatriados/",
+          "t": "Asesoría Tributaria para Expatriados"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/international-desk/",
+          "t": "International Desk"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/international-desk/constitucion-y-puesta-en-marcha/",
+          "t": "Constitución y puesta en marcha"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/international-desk/representacion-legal-y-administrativa/",
+          "t": "Representación legal y administrativa"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/international-desk/backoffice-integral/",
+          "t": "Backoffice integral"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/",
+          "t": "Outsourcing & BSO"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/outsourcing-contable-tributario-y-reportes-financieros/",
+          "t": "Outsourcing Contable, Tributario y Reportes Financieros"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/outsourcing-contable-tributario-y-reportes-financieros/bookkeeping-contabilidad-operativa/",
+          "t": "Bookkeeping & Contabilidad Operativa"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/outsourcing-contable-tributario-y-reportes-financieros/cumplimiento-tributario/",
+          "t": "Cumplimiento Tributario"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/outsourcing-contable-tributario-y-reportes-financieros/reportes-financieros-y-de-gestion/",
+          "t": "Reportes Financieros y de Gestión"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/outsourcing-contable-tributario-y-reportes-financieros/supervision-control-y-servicios-especiales/",
+          "t": "Supervisión, Control y Servicios Especiales"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/payroll-outsourcing-de-remuneraciones/",
+          "t": "Payroll Outsourcing de Remuneraciones"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/payroll-outsourcing-de-remuneraciones/gestion-del-proceso-de-remuneraciones/",
+          "t": "Gestión del proceso de remuneraciones"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/payroll-outsourcing-de-remuneraciones/control-y-cumplimiento-laboral/",
+          "t": "Control y cumplimiento laboral"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/payroll-outsourcing-de-remuneraciones/informacion-y-reportes-de-payroll/",
+          "t": "Información y reportes de Payroll"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/payroll-outsourcing-de-remuneraciones/rol-privado-plana-ejecutiva-y-socios/",
+          "t": "Rol Privado – Plana Ejecutiva y Socios"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/gestion-financiera-tesoreria/",
+          "t": "Gestión Financiera y Tesorería"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/gestion-financiera-tesoreria/gestion-de-tesoreria-y-flujos-de-caja/",
+          "t": "Gestión de Tesorería y Flujos de Caja"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/gestion-financiera-tesoreria/control-financiero-y-seguimiento-de-resultados/",
+          "t": "Control Financiero y Seguimiento de Resultados"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/gestion-financiera-tesoreria/operacion-financiera-y-relacion-bancaria/",
+          "t": "Operación Financiera y Relación Bancaria"
+        },
+        {
+          "h": "https://atfgroup.cl/nosotros/",
+          "t": "Nosotros"
+        },
+        {
+          "h": "https://atfgroup.cl/sobre-nosotros/",
+          "t": "Sobre Nosotros"
+        },
+        {
+          "h": "https://atfgroup.cl/por-que-atf-group/",
+          "t": "Por qué ATF Group"
+        },
+        {
+          "h": "https://atfgroup.cl/equipo/",
+          "t": "Equipo"
+        },
+        {
+          "h": "https://atfgroup.cl/historia/",
+          "t": "Historia"
+        },
+        {
+          "h": "https://atfgroup.cl/blog/",
+          "t": "Blog ATF"
+        },
+        {
+          "h": "https://atfgroup.cl/contacto/",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://atfgroup.cl/wp-content-uploads-2026-03-reglamento-interno-atf-junio24-pdf/",
+          "t": "Reglamento Interno"
+        },
+        {
+          "h": "https://atfgroup.cl/contacto/",
+          "t": "Contactar"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/",
+          "t": "Servicios"
+        },
+        {
+          "h": "https://atfgroup.cl/contacto/",
+          "t": "Solicitar Asesoría"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/",
+          "t": "Ver más"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/",
+          "t": "Ver más"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/",
+          "t": "Ver más"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/29/https-atfgroup-cl-ifrs-18-y-el-nuevo-escenario-financiero-con-atfgroup/",
+          "t": ""
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/29/https-atfgroup-cl-ifrs-18-y-el-nuevo-escenario-financiero-con-atfgroup/",
+          "t": "IFRS 18 y el nuevo escenario financiero, con ATFGroup"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/29/https-atfgroup-cl-ifrs-18-y-el-nuevo-escenario-financiero-con-atfgroup/",
+          "t": "Leer más"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/23/www-atfgroup-cl-como-la-rebaja-del-impuesto-a-las-donaciones-protege-y-simplifica-tu-patrimonio-familiar/",
+          "t": ""
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/23/www-atfgroup-cl-como-la-rebaja-del-impuesto-a-las-donaciones-protege-y-simplifica-tu-patrimonio-familiar/",
+          "t": "La rebaja del impuesto a las donaciones protege tu patrimonio familiar"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/23/www-atfgroup-cl-como-la-rebaja-del-impuesto-a-las-donaciones-protege-y-simplifica-tu-patrimonio-familiar/",
+          "t": "Leer más"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/07/24/chile-lidera-el-ranking-de-prosperidad-imd-que-significa-para-el-escenario-empresarial/",
+          "t": ""
+        },
+        {
+          "h": "https://atfgroup.cl/2026/07/24/chile-lidera-el-ranking-de-prosperidad-imd-que-significa-para-el-escenario-empresarial/",
+          "t": "Chile lidera el Ranking de Prosperidad IMD: ¿Qué significa para el escenario emp"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/07/24/chile-lidera-el-ranking-de-prosperidad-imd-que-significa-para-el-escenario-empresarial/",
+          "t": "Leer más"
+        },
+        {
+          "h": "https://atfgroup.cl/blog/",
+          "t": "Ver más"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/",
+          "t": "Auditoría y Assurance"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/",
+          "t": "Consultoría"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/",
+          "t": "Outsourcing y BSO"
+        },
+        {
+          "h": "https://cl.linkedin.com/company/atfgroup",
+          "t": "Linkedin"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56993181432",
+          "t": "Whatsapp"
+        },
+        {
+          "h": "https://atfgroup.cl/politica-legal/",
+          "t": "Política Legal"
+        },
+        {
+          "h": "https://atfgroup.cl/politica-de-privacidad/",
+          "t": "Política de Privacidad"
+        },
+        {
+          "h": "https://atfgroup.cl/contacto/",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://cl.linkedin.com/company/atfgroup",
+          "t": "LinkedIn"
+        },
+        {
+          "h": "https://sobrenombre.cl/",
+          "t": ""
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://atfgroup.cl/politica-legal/",
+          "t": "Política Legal"
+        },
+        {
+          "h": "https://atfgroup.cl/politica-de-privacidad/",
+          "t": "Política de Privacidad"
+        }
+      ],
+      "largo_texto": 5366,
+      "muestra": "Ir al contenido\nMás de 30 años de consultoría profesional con profundidad técnica y visión de negocio.\nLinkedin\n \nWhatsapp\nInicio\nServicios\nNosotros\nBlog ATF\nContacto\nReglamento Interno\nContactar\nUn Partner para operar y decidir mejor\nAuditoría, Asesoría Legal y Tributaria y Consultoría Especializada para Empresas\n\nAcompañamos a empresas en auditoría, asesoría legal, tributaria y consultoría estratégica, integrando también el soporte operativo contable, tributario y payroll para quienes buscan u",
+      "cta_en_pantalla": [
+        {
+          "t": "whatsapp",
+          "h": "https://wa.link/2e6xyh"
+        },
+        {
+          "t": "contacto",
+          "h": "https://atfgroup.cl/contacto/"
+        },
+        {
+          "t": "contactar",
+          "h": "https://atfgroup.cl/contacto/"
+        },
+        {
+          "t": "solicitar asesoria",
+          "h": "https://atfgroup.cl/contacto/"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 14,
+        "palabras": 744
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "_ga_5BK8MJCPVQ",
+        "dominio": ".atfgroup.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".atfgroup.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_YR69P5JYFC",
+        "dominio": ".atfgroup.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".atfgroup.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://atfgroup.cl/",
+      "titulo": "Auditoría, Asesoría Tributaria, Legal y Consultoría | ATF Group",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "",
+          "accion_abs": "https://atfgroup.cl/",
+          "metodo": "post",
+          "campos": 8,
+          "requeridos": 4,
+          "visible": true,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#content",
+          "t": "Ir al contenido"
+        },
+        {
+          "h": "https://cl.linkedin.com/company/atfgroup",
+          "t": "Linkedin"
+        },
+        {
+          "h": "https://wa.link/2e6xyh",
+          "t": "Whatsapp"
+        },
+        {
+          "h": "https://atfgroup.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://atfgroup.cl/",
+          "t": "Inicio"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/",
+          "t": "Servicios"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/",
+          "t": "Auditoría y Assurance"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/auditoria-de-estados-financieros/",
+          "t": "Auditoría de Estados Financieros"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/migracion-y-conversion-a-ifrs/",
+          "t": "Migración y Conversión a IFRS"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/procedimientos-acordados-sobre-informacion-financiera-y-procesos/",
+          "t": "Procedimientos Acordados sobre Información Financiera y Procesos"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/auditoria-interna-y-contraloria/",
+          "t": "Auditoría Interna y Contraloría"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/auditorias-y-revisiones-especializadas/",
+          "t": "Auditorías y Revisiones Especializadas"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/informes-periciales-y-experto-independiente/",
+          "t": "Informes Periciales y Experto Independiente"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/preparacion-y-orden-para-una-auditoria-futura/",
+          "t": "Preparación y Orden para una Auditoría Futura"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/",
+          "t": "Consultoría"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-tributaria/",
+          "t": "Asesoría Tributaria"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-tributaria/empresas-familiares-family-office/",
+          "t": "Empresas Familiares y Family Office"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-tributaria/precios-de-transferencia/",
+          "t": "Precios de Transferencia (Transfer Pricing)"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-tributaria/cumplimiento-tributario-especializado/",
+          "t": "Cumplimiento Tributario Especializado"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-tributaria/planificacion-tributaria/",
+          "t": "Planificación Tributaria"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-legal/",
+          "t": "Asesoría Legal"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-legal/derecho-corporativo/",
+          "t": "Derecho Corporativo"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-legal/derecho-laboral/",
+          "t": "Derecho Laboral"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/asesoria-legal/compliance-corporativo-y-modelos-de-prevencion-de-delitos/",
+          "t": "Compliance Corporativo y Modelos de Prevención de Delitos"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/",
+          "t": "Finanzas Corporativas"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/valorizacion-de-empresas-y-activos/",
+          "t": "Valorización de Empresas y Activos"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/asesoria-en-transacciones-corporativas-ma/",
+          "t": "Asesoría en Transacciones Corporativas (M&A)"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/reorganizaciones-empresariales-y-estructuracion-financiera/",
+          "t": "Reorganizaciones Empresariales y Estructuración Financiera"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/asesoria-en-financiamiento-y-relacion-con-bancos/",
+          "t": "Asesoría en Financiamiento y Relación con Bancos"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/finanzas-corporativas/analisis-financiero-estrategico-y-soporte-a-decisiones/",
+          "t": "Análisis Financiero Estratégico y Soporte a Decisiones"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/expatriados-y-movilidad-internacional/",
+          "t": "Expatriados y Movilidad Internacional"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/expatriados-y-movilidad-internacional/asesoria-migratoria-y-tramitacion-de-visas/",
+          "t": "Asesoría Migratoria y Tramitación de Visas"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/expatriados-y-movilidad-internacional/servicios-laborales-para-expatriados/",
+          "t": "Servicios Laborales para Expatriados"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/expatriados-y-movilidad-internacional/asesoria-tributaria-para-expatriados/",
+          "t": "Asesoría Tributaria para Expatriados"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/international-desk/",
+          "t": "International Desk"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/international-desk/constitucion-y-puesta-en-marcha/",
+          "t": "Constitución y puesta en marcha"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/international-desk/representacion-legal-y-administrativa/",
+          "t": "Representación legal y administrativa"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/international-desk/backoffice-integral/",
+          "t": "Backoffice integral"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/",
+          "t": "Outsourcing & BSO"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/outsourcing-contable-tributario-y-reportes-financieros/",
+          "t": "Outsourcing Contable, Tributario y Reportes Financieros"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/outsourcing-contable-tributario-y-reportes-financieros/bookkeeping-contabilidad-operativa/",
+          "t": "Bookkeeping & Contabilidad Operativa"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/outsourcing-contable-tributario-y-reportes-financieros/cumplimiento-tributario/",
+          "t": "Cumplimiento Tributario"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/outsourcing-contable-tributario-y-reportes-financieros/reportes-financieros-y-de-gestion/",
+          "t": "Reportes Financieros y de Gestión"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/outsourcing-contable-tributario-y-reportes-financieros/supervision-control-y-servicios-especiales/",
+          "t": "Supervisión, Control y Servicios Especiales"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/payroll-outsourcing-de-remuneraciones/",
+          "t": "Payroll Outsourcing de Remuneraciones"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/payroll-outsourcing-de-remuneraciones/gestion-del-proceso-de-remuneraciones/",
+          "t": "Gestión del proceso de remuneraciones"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/payroll-outsourcing-de-remuneraciones/control-y-cumplimiento-laboral/",
+          "t": "Control y cumplimiento laboral"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/payroll-outsourcing-de-remuneraciones/informacion-y-reportes-de-payroll/",
+          "t": "Información y reportes de Payroll"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/payroll-outsourcing-de-remuneraciones/rol-privado-plana-ejecutiva-y-socios/",
+          "t": "Rol Privado – Plana Ejecutiva y Socios"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/gestion-financiera-tesoreria/",
+          "t": "Gestión Financiera y Tesorería"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/gestion-financiera-tesoreria/gestion-de-tesoreria-y-flujos-de-caja/",
+          "t": "Gestión de Tesorería y Flujos de Caja"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/gestion-financiera-tesoreria/control-financiero-y-seguimiento-de-resultados/",
+          "t": "Control Financiero y Seguimiento de Resultados"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/gestion-financiera-tesoreria/operacion-financiera-y-relacion-bancaria/",
+          "t": "Operación Financiera y Relación Bancaria"
+        },
+        {
+          "h": "https://atfgroup.cl/nosotros/",
+          "t": "Nosotros"
+        },
+        {
+          "h": "https://atfgroup.cl/sobre-nosotros/",
+          "t": "Sobre Nosotros"
+        },
+        {
+          "h": "https://atfgroup.cl/por-que-atf-group/",
+          "t": "Por qué ATF Group"
+        },
+        {
+          "h": "https://atfgroup.cl/equipo/",
+          "t": "Equipo"
+        },
+        {
+          "h": "https://atfgroup.cl/historia/",
+          "t": "Historia"
+        },
+        {
+          "h": "https://atfgroup.cl/blog/",
+          "t": "Blog ATF"
+        },
+        {
+          "h": "https://atfgroup.cl/contacto/",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://atfgroup.cl/wp-content-uploads-2026-03-reglamento-interno-atf-junio24-pdf/",
+          "t": "Reglamento Interno"
+        },
+        {
+          "h": "https://atfgroup.cl/contacto/",
+          "t": "Contactar"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/",
+          "t": "Servicios"
+        },
+        {
+          "h": "https://atfgroup.cl/contacto/",
+          "t": "Solicitar Asesoría"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/",
+          "t": "Ver más"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/",
+          "t": "Ver más"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/",
+          "t": "Ver más"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/29/https-atfgroup-cl-ifrs-18-y-el-nuevo-escenario-financiero-con-atfgroup/",
+          "t": ""
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/29/https-atfgroup-cl-ifrs-18-y-el-nuevo-escenario-financiero-con-atfgroup/",
+          "t": "IFRS 18 y el nuevo escenario financiero, con ATFGroup"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/29/https-atfgroup-cl-ifrs-18-y-el-nuevo-escenario-financiero-con-atfgroup/",
+          "t": "Leer más"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/23/www-atfgroup-cl-como-la-rebaja-del-impuesto-a-las-donaciones-protege-y-simplifica-tu-patrimonio-familiar/",
+          "t": ""
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/23/www-atfgroup-cl-como-la-rebaja-del-impuesto-a-las-donaciones-protege-y-simplifica-tu-patrimonio-familiar/",
+          "t": "La rebaja del impuesto a las donaciones protege tu patrimonio familiar"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/09/23/www-atfgroup-cl-como-la-rebaja-del-impuesto-a-las-donaciones-protege-y-simplifica-tu-patrimonio-familiar/",
+          "t": "Leer más"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/07/24/chile-lidera-el-ranking-de-prosperidad-imd-que-significa-para-el-escenario-empresarial/",
+          "t": ""
+        },
+        {
+          "h": "https://atfgroup.cl/2026/07/24/chile-lidera-el-ranking-de-prosperidad-imd-que-significa-para-el-escenario-empresarial/",
+          "t": "Chile lidera el Ranking de Prosperidad IMD: ¿Qué significa para el escenario emp"
+        },
+        {
+          "h": "https://atfgroup.cl/2026/07/24/chile-lidera-el-ranking-de-prosperidad-imd-que-significa-para-el-escenario-empresarial/",
+          "t": "Leer más"
+        },
+        {
+          "h": "https://atfgroup.cl/blog/",
+          "t": "Ver más"
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": "ATF Group"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_rebaja-transitoria-del-50-atf-group-activity-7514318369584746496-L5ce",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/atfgroup/",
+          "t": "#ATFGroup"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/consultoríaestratégica/",
+          "t": "#ConsultoríaEstratégica"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/auditoríafinanciera/",
+          "t": "#AuditoríaFinanciera"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/herencias/",
+          "t": "#Herencias"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/asesoríafiscal/",
+          "t": "#AsesoríaFiscal"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_rebaja-transitoria-del-50-atf-group-activity-7514318369584746496-L5ce",
+          "t": "6"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_rebaja-transitoria-del-50-atf-group-activity-7514318369584746496-L5ce",
+          "t": "0"
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": "ATF Group"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-contabilidadestrataezgica-ifrs18-activity-7511057105215270912-mWZW",
+          "t": ""
+        },
+        {
+          "h": "https://bit.ly/IFRS18ATF",
+          "t": "https://bit.ly/IFRS18ATF"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/atfgroup/",
+          "t": "#ATFGroup"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/contabilidadestratégica/",
+          "t": "#ContabilidadEstratégica"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/ifrs18/",
+          "t": "#IFRS18"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/estadosfinancieros/",
+          "t": "#EstadosFinancieros"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/asesoríafinanciera/",
+          "t": "#AsesoríaFinanciera"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-contabilidadestrataezgica-ifrs18-activity-7511057105215270912-mWZW",
+          "t": "13"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-contabilidadestrataezgica-ifrs18-activity-7511057105215270912-mWZW",
+          "t": "0"
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": "ATF Group"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_abogados-derechocorporativo-derechotributario-activity-7509348682081918976-iLET",
+          "t": ""
+        },
+        {
+          "h": "mailto:rrhh@atfgroup-chile.cl",
+          "t": "rrhh@atfgroup-chile.cl"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/abogados/",
+          "t": "#Abogados"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/derechocorporativo/",
+          "t": "#DerechoCorporativo"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/derechotributario/",
+          "t": "#DerechoTributario"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/ofertalaboral/",
+          "t": "#OfertaLaboral"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/legal/",
+          "t": "#Legal"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/atfgroup/",
+          "t": "#ATFGroup"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/santiago/",
+          "t": "#Santiago"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_abogados-derechocorporativo-derechotributario-activity-7509348682081918976-iLET",
+          "t": "14"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_abogados-derechocorporativo-derechotributario-activity-7509348682081918976-iLET",
+          "t": "0"
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": "ATF Group"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-fiestaspatrias-18deseptiembre-activity-7506721233825120256-1M4h",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/atfgroup/",
+          "t": "#ATFGroup"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/fiestaspatrias/",
+          "t": "#FiestasPatrias"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/18deseptiembre/",
+          "t": "#18deSeptiembre"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/chile/",
+          "t": "#Chile"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-fiestaspatrias-18deseptiembre-activity-7506721233825120256-1M4h",
+          "t": "15"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-fiestaspatrias-18deseptiembre-activity-7506721233825120256-1M4h",
+          "t": "0"
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": "ATF Group"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-consultoriaestrategica-asesoriatributaria-activity-7503819756303691776-Int_",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/atfgroup/",
+          "t": "#ATFGroup"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/consultoriaestrategica/",
+          "t": "#ConsultoriaEstrategica"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/asesoriatributaria/",
+          "t": "#AsesoriaTributaria"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/auditoria/",
+          "t": "#Auditoria"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/payrollchile/",
+          "t": "#PayrollChile"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/nuevostalentos/",
+          "t": "#NuevosTalentos"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-consultoriaestrategica-asesoriatributaria-activity-7503819756303691776-Int_",
+          "t": "42"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-consultoriaestrategica-asesoriatributaria-activity-7503819756303691776-Int_",
+          "t": "6"
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/company/atfgroup",
+          "t": "ATF Group"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-crecimientoprofesional-ascenso-activity-7502751491795869697-ZSm7",
+          "t": ""
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/atfgroup/",
+          "t": "#ATFGroup"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/crecimientoprofesional/",
+          "t": "#CrecimientoProfesional"
+        },
+        {
+          "h": "https://www.linkedin.com/feed/hashtag/ascenso/",
+          "t": "#Ascenso"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-crecimientoprofesional-ascenso-activity-7502751491795869697-ZSm7",
+          "t": "49"
+        },
+        {
+          "h": "https://www.linkedin.com/posts/atfgroup_atfgroup-crecimientoprofesional-ascenso-activity-7502751491795869697-ZSm7",
+          "t": "14"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/auditoria-y-assurance/",
+          "t": "Auditoría y Assurance"
+        },
+        {
+          "h": "https://atfgroup.cl/servicios/consultoria/",
+          "t": "Consultoría"
+        },
+        {
+          "h": "https://atfgroup.cl/outsourcing-bso/",
+          "t": "Outsourcing y BSO"
+        },
+        {
+          "h": "https://cl.linkedin.com/company/atfgroup",
+          "t": "Linkedin"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56993181432",
+          "t": "Whatsapp"
+        },
+        {
+          "h": "https://atfgroup.cl/politica-legal/",
+          "t": "Política Legal"
+        },
+        {
+          "h": "https://atfgroup.cl/politica-de-privacidad/",
+          "t": "Política de Privacidad"
+        },
+        {
+          "h": "https://atfgroup.cl/contacto/",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://cl.linkedin.com/company/atfgroup",
+          "t": "LinkedIn"
+        },
+        {
+          "h": "https://sobrenombre.cl/",
+          "t": ""
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://atfgroup.cl/politica-legal/",
+          "t": "Política Legal"
+        },
+        {
+          "h": "https://atfgroup.cl/politica-de-privacidad/",
+          "t": "Política de Privacidad"
+        }
+      ],
+      "largo_texto": 9676,
+      "muestra": "Ir al contenido\nMás de 30 años de consultoría profesional con profundidad técnica y visión de negocio.\nLinkedin\n \nWhatsapp\nInicio\nServicios\nNosotros\nBlog ATF\nContacto\nReglamento Interno\nContactar\nUn Partner para operar y decidir mejor\nAuditoría, Asesoría Legal y Tributaria y Consultoría Especializada para Empresas\n\nAcompañamos a empresas en auditoría, asesoría legal, tributaria y consultoría estratégica, integrando también el soporte operativo contable, tributario y payroll para quienes buscan u",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": true,
+      "estructura": {
+        "h1": 1,
+        "h2": 14,
+        "palabras": 1344
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/themes/hello-elementor/style.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=2.9.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1.7",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=2.9.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/themes/hello-elementor/assets/css/theme.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css?ver=6.8.7",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/essential-addons-elementor/eael-33.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/elementor/css/post-6.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInDown.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/animations/styles/fadeIn.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/animations/styles/e-animation-float.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/widget-video.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor-pro/assets/css/widget-form.min.css?ver=4.3.2",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/widget-testimonial.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/widget-image-carousel.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor-pro/assets/css/modules/motion-fx.min.css?ver=4.3.2",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/elementor/css/post-33.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/themes/hello-elementor/assets/css/reset.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/themes/hello-elementor/assets/css/header-footer.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/elementor/css/post-29.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/elementor/css/post-241.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.34.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/widget-icon-list.min.css?ver=3.24.3",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.24.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.css?ver=5.15.3",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.css?ver=5.15.3",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.css?ver=5.15.3",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor-pro/assets/css/widget-blockquote.min.css?ver=3.25.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor-pro/assets/css/widget-mega-menu.min.css?ver=3.26.2",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor-pro/assets/css/widget-nav-menu.min.css?ver=3.26.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=6.8.7",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=6.8.7",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/mailin/css/mailin-front.css?ver=7.1.3",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/elementor/google-fonts/css/montserrat.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/lastudio-element-kit/includes/extensions/elementor/assets/css/dlicon.css?ver=1.0.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/lastudio-element-kit/includes/extensions/elementor/assets/css/simple-line-icons.css?ver=1.0.0",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=GT-TQVFMFP3",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GT-TQVFMFP3"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/mailin/js/mailin-front.js?ver=1784305784",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/LOGO-WHT.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/09/Blog-IFRS-18-1464x1536.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://elfsightcdn.com/platform.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementskit-lite/modules/elementskit-icon-pack/assets/css/ekiticons.css?ver=4.0.9",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-includes/js/dist/hooks.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-includes/js/dist/i18n.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.7",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/contact-form-7/includes/js/index.js?ver=6.1.7",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=6.8.7",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-includes/js/imagesloaded.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/essential-addons-elementor/eael-33.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/lastudio-element-kit/assets/js/lib/swiper.min.js?ver=8.4.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/themes/hello-elementor/assets/js/hello-frontend.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/header-footer-elementor/inc/js/frontend.js?ver=2.9.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-contact-form-7-3ac287af84a753cfbaa5.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-content-events-90bacb156ab34fa090db.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api.js?render=explicit",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=4.3.2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=4.3.2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/lastudio-element-kit/assets/js/lib/anime.min.js?ver=1.6.3",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/lastudio-element-kit/assets/js/addons/floating-effects.min.js?ver=1.6.3",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtm.js?id=GTM-KTDDLQR8",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GTM-KTDDLQR8"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/Home-1-1024x501.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/07/Foto-Auditoria-Con-Karen-Pina-de-ATF-Group.jpg-1024x576.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/elementor/google-fonts/fonts/montserrat-49e242af.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/08/file01.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/home02-separator02.jpg.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/monitor.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/international-business-1.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/home02-separator01.jpg.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/Auditoria-Assurance-1.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/Servicios-Consultivos-y-Especializados-1.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/Servicios-Operativos-y-de-Soporte-1.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/BG-image-parallax-1.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/Gonzalo-2.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-regular-400.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/elementor/google-fonts/fonts/montserrat-76393105.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2?5.54.0",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-5BK8MJCPVQ&gtm=45Pe6al1v9235360910za208zd9235360910xf1&_p=1792768323758&gcd=13l3l3l3l1l1&npa=0&dma=0&gdid=dZTNiMT&ecid=2041295187&are=1&cid=1126935936.1792768324&ec_mode=a&frm=0&ngs=1&pscdl=&rcb=2&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=115938465",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-5BK8MJCPVQ"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/recaptcha__es_419.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-admin/admin-ajax.php",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/js/chunks/background-slideshow.min.js?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/js/chunks/background-video.min.js?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/js/chunks/section-stretched-section.min.js?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/js/chunks/text-editor.min.js?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/js/chunks/video.min.js?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/plugins/elementor/assets/js/chunks/image-carousel.min.js?ver=4.3.5",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-YR69P5JYFC&cx=c&gtm=4e6al1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-YR69P5JYFC"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/Vinventions-1.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/withpeople-300x85.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/wolf-1.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/Logo-cyd-1.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/activa-1.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/emo-trans-logo-1-300x101.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/farr-1-300x300.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/feifan-peru-1-300x60.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/Kpaz-1-300x86.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/monteverdi-1-300x300.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/redmat-1.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/04/top-1-300x300.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-YR69P5JYFC&gtm=45je6al1v9204829771za20ozb9204710744zd9204710744xf1&_p=1792768323758&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=837743490&_eu=AAAAAGAC&are=1&cid=1126935936.1792768324&ec_mode=a&frm=0&pscdl=&rcb=11&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=1&ta",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-YR69P5JYFC"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-YR69P5JYFC&cid=1126935936.1792768324&gtm=45je6al1v9204829771za20ozb9204710744zd9204710744xf1&rcb=11&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/16839546819/?random=1792768324731&cv=11&fst=1792768324731&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6al1v9204829771za20ozb9204710744zd9204710744xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~117227715~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fat",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/16839546819/?random=1792768324731&cv=11&fst=1792768324731&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6al1v9204829771za20ozb9204710744zd9204710744xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~117227715~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fatfgroup.cl%2F&rcb=11&frm",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=11&frm=0&apvc=1&auid=1314284905.1792768325&dt=Auditor%C3%ADa%2C%20Asesor%C3%ADa%20Tributaria%2C%20Legal%20y%20Consultor%C3%ADa%20%7C%20ATF%20Group&tid=AW-16839546819&en=page_view&dl=https%3A%2F%2Fatfgroup.cl%2F&scrsrc=www.googletagmanager.com&rnd=1653407034.1792768325&navt=n&npa=0&gtm=45je6al1v9204829771za20ozb9204710744zd9204710744xecxf1&gcd=13l3l3l3l1l1&dma",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ad.doubleclick.net/ccm/s/collect?auid=1314284905.1792768325&gtm=45je6al1v9204829771za20ozb9204710744zd9204710744xecxf1&fmt=8",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LcsxFEtAAAAADvIAcLL_ucMqDr4jQ5GYma6Kf5I&co=aHR0cHM6Ly9hdGZncm91cC5jbDo0NDM.&hl=es-419&type=v3&v=NhfdZHzre16wrc2m6BxEdu7J&size=invisible&badge=bottomright&sa=Form&anchor-ms=20000&execute-ms=30000&cb=9m1ztwe4wvmx",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/16839546819/?random=1792768324731&cv=11&fst=1792767600000&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45je6al1v9204829771za20ozb9204710744zd9204710744xecxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~117227715~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&u_w=800&u_h=600&url=https%3A%2F%2Fatfgroup.cl%2F&rcb=11&fr",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/styles__ltr.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/recaptcha__es_419.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/webworker.js?hl=es-419&v=NhfdZHzre16wrc2m6BxEdu7J",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/api2/logo_48.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/recaptcha__es_419.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/cdn-cgi/rum?",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/05/favicon-atf-150x150.png.webp",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://core.service.elfsight.com/p/boot/?page=https%3A%2F%2Fatfgroup.cl%2F&w=9f0f0423-4560-441d-8994-fc45e473ea6e",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://universe-static.elfsightcdn.com/app-releases/linkedin-feed/stable/v2.65.7/7d3536d315be3f167abedbb2833b57857a3cb5fd/widget/linkedinFeed.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://universe-static.elfsightcdn.com/app-releases/linkedin-feed/stable/v2.65.7/7d3536d315be3f167abedbb2833b57857a3cb5fd/widget/languages/en.json",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://widget-data.service.elfsight.com/api/posts?sources%5B%5D=%7B%22pid%22%3A%2255d86188-773b-4621-a5fe-050cb98b973b%22%2C%22filters%22%3A%5B%7B%22type%22%3A%22exclude%22%2C%22post_type%22%3A%22repost%22%7D%5D%7D&limit=100",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://widget-data.service.elfsight.com/api/posts?sources%5B%5D=%7B%22pid%22%3A%2255d86188-773b-4621-a5fe-050cb98b973b%22%2C%22filters%22%3A%5B%7B%22type%22%3A%22exclude%22%2C%22post_type%22%3A%22repost%22%7D%5D%7D&limit=100",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://widget-data.service.elfsight.com/api/linkedin/author?company=atfgroup",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://static.elfsight.com/icons/app-social-feed-sources-linkedin-multicolor.svg",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD4D1FAQH-MD-s9jBuLQ%2Ffeedshare-document-images_1920%2FB4DaEg4lVwHsAo-%2F1%2F1791553072242%3Fe%3D1792627200%26v%3Dbeta%26t%3Den2ExYwldlutQXyTnGjFi0A-88dR75cl9FPrKw8hDlk",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD4D22AQF8AFml8fjzug%2Ffeedshare-shrink_480%2FB4DaDyiorNJUAg-%2F0%2F1790775561186%3Fe%3D1792627200%26v%3Dbeta%26t%3DD_GHJPC7hopMfe15Nqr7iAqDJy-otwotPLig-lBeayM",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD4D22AQGPZLdXnGOdlA%2Ffeedshare-shrink_480%2FB4DaDaQ1J4JUAk-%2F0%2F1790368240604%3Fe%3D1792022400%26v%3Dbeta%26t%3De8IOF6SUmSWDF_6ObxYf_DEe7KjwhO2bMEkAQNF88b0",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD4E0BAQFHMgul2UUvHw%2Fcompany-logo_400_400%2Fcompany-logo_400_400%2F0%2F1727278888194%2Fatfgroup_logo%3Fe%3D1794441600%26v%3Dbeta%26t%3DI-RMJ2ZuGWVO_FFTQ4zvgHgreOE_-w-veN8rvxaoIwk",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD4E22AQG3jSyddbFK_g%2Ffeedshare-shrink_480%2FB4EaCvwvEeHQAg-%2F0%2F1789655183999%3Fe%3D1791417600%26v%3Dbeta%26t%3DIwVwS_UpNgjs4jqdDFRXpTdJnwlWVZluBsFY3CAFhoA",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD5622AQGrFwDCSs0K7w%2Ffeedshare-shrink_480%2FB56aCLsTuVHIAg-%2F0%2F1789050043555%3Fe%3D1790812800%26v%3Dbeta%26t%3D2wE2vJnD3e9zmtkrLxRH0hxcQDrNB0hMilYQfoQfom8",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD4D22AQGvfkw9Otkz8Q%2Ffeedshare-shrink_480%2FB4DaB8guXUJ8Ag-%2F0%2F1788795348781%3Fe%3D1790812800%26v%3Dbeta%26t%3DDHhblmb9opKRGrzythwZbuS2kFEVaredzQph7Spreiw",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/05/Frame-2-2-300x191.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/bizcorp-home01-box02-shape-img.jpg.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/05/Frame-3-2-300x191.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/05/Frame-4-1-300x191.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/05/Frame-5-1-300x191.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/separator01.jpg.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/left-quote.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://atfgroup.cl/wp-content/uploads/2026/02/Mask-group.png.webp",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    },
+    {
+      "fase": "B",
+      "nombre": "elfsight_viewed_recently",
+      "desde": "core.service.elfsight.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "_cfuvid",
+      "desde": "core.service.elfsight.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "__cf_bm",
+      "desde": "universe-static.elfsightcdn.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "__cf_bm",
+      "desde": "universe-static.elfsightcdn.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "_cfuvid",
+      "desde": "widget-data.service.elfsight.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "__cf_bm",
+      "desde": "static.elfsight.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "_cfuvid",
+      "desde": "static.elfsight.com"
+    }
+  ],
+  "peso": {
+    "total_bytes": 3716290,
+    "al_abrir_bytes": 2584387,
+    "n_peticiones": 153,
+    "mas_pesados": [
+      {
+        "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD4D1FAQH-MD-s9jBuLQ%2Ffeedshare-document-images_1920%2FB4DaEg4lVw",
+        "bytes": 499079
+      },
+      {
+        "url": "https://www.gstatic.com/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/recaptcha__es_419.js",
+        "bytes": 357735
+      },
+      {
+        "url": "https://www.gstatic.com/recaptcha/releases/NhfdZHzre16wrc2m6BxEdu7J/recaptcha__es_419.js",
+        "bytes": 357322
+      },
+      {
+        "url": "https://universe-static.elfsightcdn.com/app-releases/linkedin-feed/stable/v2.65.7/7d3536d315be3f167abedbb2833b57857a3cb5fd/widget/linkedinFeed.js",
+        "bytes": 319776
+      }
+    ]
+  },
+  "html_len": 270496
+}

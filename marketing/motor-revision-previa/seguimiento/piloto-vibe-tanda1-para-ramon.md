@@ -1,6 +1,6 @@
 # Piloto Vibe, tanda 1: borradores en Gmail (19-oct-2026)
 
-**Estado (23-oct):** 15 borradores en Gmail (hola@spindlelab.cl) con el **texto v2** (lenguaje llano, Verifica y Cumple con nombre, alcance y precio): 14 de cookies y V28 (ulloaycia.cl, formulario sin política). Los 15 pasaron por lectores independientes sobre el texto final. **Nada está enviado.**
+**Estado (23-oct):** los 15 salieron el 23-oct entre las 13:03 y las 13:04 UTC (Ramón), con el **texto v2** (lenguaje llano, Verifica y Cumple con nombre, alcance y precio): 14 de cookies y V28 (ulloaycia.cl, formulario sin política). **2 rebotaron:** V28 (gromero@ulloaycia.cl, la casilla no existe) y V44 (arriendos@iluminaservicios.cl, la organización rechaza la casilla). Ambos figuraban como "correo publicado en el sitio". Los otros 13, sin respuesta ni rebote a las 15:10 UTC. Toque 2 el lun 26-oct, toque 3 el vie 30-oct. Lo que sigue abajo es la hoja de verificación previa al envío, que ya no aplica.
 
 ## Antes de enviar cada uno (2 minutos)
 Mi medición salió de una IP de nube de EE.UU. y los correos dicen "entré" y "mi navegador": son tus palabras. Para cada uno:
