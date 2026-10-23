@@ -177,6 +177,45 @@ Verificado 3-sep-2026 contra BCN/Ley Chile (idNorma 1209272) y corregido 23-sep-
 
 ---
 
+### ⚠️ La postergación: hay un proyecto, NO hay una ley (verificado el 23-oct-2026)
+
+Varios sitios chilenos están publicando titulares del tipo **"Chile posterga al 2027 la Ley
+21.719"**. **Eso es falso hoy, o al menos prematuro**, y repetirlo sería exactamente el error
+que estas reglas prohíben: tratar un proyecto como si fuera texto vigente.
+
+Lo verificado el 23-oct-2026 contra BCN/Ley Chile (`idNorma=1209272`), que es el texto oficial:
+
+- La ficha de la ley dice, en su cabecera: **"Entra en vigencia el 01-DIC-2026"**, con la marca
+  **"TIENE TEXTO DIFERIDO"**. Versión: *Con Vigencia Diferida por Fecha - 01-DIC-2026*.
+- Última modificación registrada: **05-FEB-2026, Ley 21.806**. No es una postergación.
+- El **Boletín 18.623-07** aparece en esa misma ficha bajo **"Proyectos de Modificación"**, o
+  sea pendiente. En la lista del Senado figura **"En tramitación"**, con la columna "Ley"
+  **vacía**; otros boletines de esa lista sí muestran "Publicado" con su número de ley.
+
+**Qué propone ese proyecto** (ingresado por el Ejecutivo el 1-sep-2026, con suma urgencia):
+mover la vigencia al 1-dic-2027, ampliar el Consejo Directivo de la Agencia de tres a cinco
+miembros y ensanchar la amonestación por escrito del primer año.
+
+**La regla para el contenido, mientras esto no cambie:**
+
+- Se dice **"entra en vigencia el 1 de diciembre de 2026"**, porque es lo que dice el texto
+  oficial hoy. Al 23-oct son **39 días**.
+- **No** se dice "se postergó", "ahora es 2027" ni "tienes un año más". No es cierto todavía.
+- Si el tema aparece, se dice completo y en ese orden: *hay un proyecto del Gobierno para
+  moverla a 2027, está en el Senado, y mientras no se apruebe y se publique la fecha sigue
+  siendo el 1 de diciembre de 2026.*
+- **Esto hay que volver a verificarlo antes de publicar cualquier pieza que nombre la fecha.**
+  Puede cambiar de un día para otro, y una pieza que diga la fecha equivocada envejece mal y
+  en público. Se mira la cabecera de `bcn.cl/leychile/navegar?idNorma=1209272` — necesita
+  navegador, carga con JavaScript y el fetch directo devuelve una página de espera.
+
+Hay un ángulo de contenido legítimo acá, y es de los buenos: **medio mercado está diciendo que
+la ley se postergó cuando no se ha postergado.** Eso se puede contar sin nombrar a nadie, y
+encaja con lo único que diferencia a este producto, que es decir con precisión lo que se
+verificó y lo que no.
+
+---
+
 ## 6. Precios, como están publicados
 
 - **Kit de implementación: desde $149.000 + IVA**, una vez. Instala el gestor de
