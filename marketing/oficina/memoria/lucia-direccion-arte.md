@@ -80,7 +80,9 @@ tableros, spec)
 - [ ] **E12, declarado y abierto:** el `favicon.svg` contra el README de Bruno; los casos sin pie (y sin el botón de
       cookies) y el pie sin `/privacidad/`; la ficha bajo la barra a 390 en Praxi y Combeau; Tonela con la misma captura
       dos veces a 390; el alt y el recorte de la franja de Visibilidad; y la nota 1 de Javiera (con el aviso abierto, los
-      últimos controles quedan bajo el aviso y la barra) (`pendientes-traspaso-revisados.md` §0.3).
+      últimos controles quedan bajo el aviso y la barra) (`pendientes-traspaso-revisados.md` §0.3). Y, con Clara, qué
+      entradas lleva el índice corto de la home: en el criterio 13, dos de tres lectores no vieron su rubro (Tonela y
+      Ocelo existen, pero no están ahí; `e12/cierre/criterio-13/lectura.md`).
 - [ ] **Si la troncal lo encarga:** traducir A a piezas de redes a 1080, con Bruno (`encargo-manual-marca-e12.md` §6,
       punto 4).
 - [ ] Armar un `referencias.md` base del rubro (SEO técnico / AEO-GEO B2B) reutilizable

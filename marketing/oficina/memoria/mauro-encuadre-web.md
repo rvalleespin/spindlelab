@@ -67,9 +67,12 @@
   quedó describiendo un sitio que ya no existe cuando cambió la dirección; se marca con su commit y se re-ensaya.
 - **Al cierre, lo declarado y abierto se junta en una sola lista con dueño.** Estaba repartido en cinco tandas de
   `desvios.md` y en el acta; sin juntarlo, cada punto quedaba esperando a alguien que no sabía que lo esperaban.
-- **Un criterio que ninguna fase puede verificar rebota hasta el cierre.** El 13 (lectores fríos sobre el sitio
-  construido) no lo podía correr Javiera sin salirse de su método ni yo sin estar contaminado por el brief: el brief
-  tiene que decir quién lo corre y cuándo.
+- **Un criterio que ninguna fase tiene asignado rebota hasta el cierre.** El 13 (lectores fríos sobre el sitio
+  construido) no lo corrió nadie en la construcción ni en la QA, y llegó al cierre. Lo corrí con lectores en contexto
+  aparte (`claude -p`, sin herramientas ni contexto), donde yo solo armé la entrada desde el `dist/`: el lector es frío
+  aunque quien lo encarga no lo sea. Y encontró lo que nadie había visto, porque la lectura fría anterior era del texto, no
+  de la página: los tres lectores entienden qué hacemos, pero «SEO técnico» y «visibilidad en IA» se entienden recién en
+  Servicios. El brief tiene que decir quién corre cada criterio y en qué fase.
 - **La obra larga se respalda sola, otra vez:** E12 duró del 16 al 23-oct con cortes por el límite de uso (la vuelta 1 de
   la QA, del 19 al 23-oct; este mismo cierre, después de las capturas). Los commits «en avance» guardaron todo.
 
@@ -82,4 +85,6 @@
 - [x] Primera obra real pendiente: al cerrarla, anotar cuántas compuertas se
       respetaron y si hubo que volver a abrir algo aprobado. **E12 (23-oct): las dos, y nada se reabrió** (arriba).
 - [ ] **E12:** encuadrar la publicación del v3 cuando Ramón conteste R1: la lista rehecha sobre E12, con Diego y Simón
-      (`pendientes-traspaso-revisados.md` §0.2, punto 4). Y que alguien en contexto aparte corra el criterio 13.
+      (`pendientes-traspaso-revisados.md` §0.2, punto 4).
+- [x] **E12, criterio 13:** corrido en el cierre con tres lectores en contexto aparte (`e12/cierre/criterio-13/`). No se
+      cumple entero (tropiezan con términos sin explicar en la primera pantalla): va a Clara y a Ramón (§0.2, punto 10).

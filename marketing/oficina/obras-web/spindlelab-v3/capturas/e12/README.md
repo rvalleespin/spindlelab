@@ -44,3 +44,6 @@ a 390; la cinta como primera sección; el muro de dos columnas con «CONCEPTO» 
 técnica sin franja; el hueco nombrado de las pantallas internas de Praxi, punteado; Combeau sin su ficha de medidas; la
 foto de Ramón en Nosotros y en la home; el pie con «Cookies: rechazadas». Lo que no se ve en una captura (foco, áreas
 de toque, contraste, movimiento) está medido en el acta (`e12/acta-obra.md`).
+
+**Revisadas otra vez el 23-oct a las 17:00 (Chile)**, al retomar el cierre después del corte por el límite de uso: las tres
+hojas, la home entera a 1440 y Praxi entero a 1440. Siguen valiendo: `spindlelab-astro/` no cambió desde `f2fe7b4`.

@@ -117,6 +117,10 @@
       de driftime). Lo declarado que espera mi texto: los botones del chequeo con dos textos, `/nosotros/` sin preguntas y
       el error del chequeo vacío («dominio», en `v3-chequeo.js`, protegido). Y el día del corte, la fecha de la Ley 21.719
       en la entrada de Verifica y Cumple (`pendientes-traspaso-revisados.md` §0.2, puntos 12 y 15, y §0.3).
+- [ ] **E12, criterio 13 (antes de publicar):** los tropiezos de los tres lectores fríos sobre el sitio construido
+      (`obras-web/spindlelab-v3/e12/cierre/criterio-13/lectura.md`), la primera pantalla primero: «SEO técnico» y
+      «visibilidad en IA» sin explicar en la entradilla, qué es que Google o ChatGPT «lean» un sitio, «ESTUDIO DE DISEÑO Y
+      TECNOLOGÍA» y «Mira 21 cosas». Propongo; decide Ramón.
 - [ ] **v3, antes de la lectura de aprobación de Ramón (P0.4):** proponerle la frase de la
       prueba de Trabajo que tropieza en voz alta, «como si el aviso de cookies frena…» →
       «por ejemplo, si el aviso de cookies frena…» (acta E8, ronda 2, defecto 1; confirmación 9
