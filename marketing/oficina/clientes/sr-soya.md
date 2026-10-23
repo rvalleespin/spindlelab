@@ -186,6 +186,34 @@ anuncios optimizan hacia el paso 3**, la consulta, y la venta la cierra Carlos e
 **Lo que decide la rentabilidad es cuánto dura un alumno**, no el precio por clase. Y **dos alumnos
 recurrentes cubren los $300.000 completos**. Detalle en `ventas/sr-soya-academia-vocal-analisis.md`.
 
+### 💰 Decisión de precio canonizada (23-oct-2026)
+
+> **El honorario son $200.000 + IVA = $238.000 al mes.** Decidido por Ramón el 23-oct.
+> **Revisar:** al cuarto mes, junto con el resto del plan.
+
+**Por qué, y por qué no se absorbió el IVA:** con el embudo incluido, cobrar $200.000 brutos deja
+el honorario real en $168.067, **bajo el piso que fija `ventas/sr-soya-modelo-de-cobro.md`**.
+
+**Cómo se dice sin que suene a alza, y es verdad:** en el mes 1 la pauta casi no corre, porque las
+primeras semanas van en construir el embudo y la publicidad parte en la semana 3.
+
+| | Mes 1 | Mes 2 y 3 |
+|---|---|---|
+| Honorario con IVA | $238.000 | $238.000 |
+| Pauta | ~$30.000 (parcial por diseño) | hasta $100.000 |
+| **Total** | **~$268.000** | **$338.000** |
+
+**El mes 1 cabe en los $300.000 que Carlos tiene en la cabeza.** Del mes 2 en adelante ya debería
+haber alumnos pagando, que es el modelo que propuso él.
+
+**El punto de equilibrio no se mueve:** dos alumnos semanales dejan unos $414.000 al mes contra
+$338.000 de costo. Siguen siendo dos.
+
+⚠️ **El PDF que Carlos recibió el 20-oct decía «los $300.000 completos».** La cifra se corrigió en
+el repo el 23-oct y el PDF se re-renderizó. **La versión enviada quedó con la cifra vieja**, así que
+conviene llevar la corregida a la reunión. La parte contractual («$200.000 al mes» + «no incluyen
+IVA») siempre estuvo correcta; lo que estaba mal era una frase narrativa.
+
 ### Condiciones que quedaron escritas
 
 1. **La cuenta publicitaria y el píxel a nombre de Carlos**, con su tarjeta y acceso de socio para

@@ -20,7 +20,18 @@
 El commit tenía la versión anterior al pase editorial (297.770 bytes). Rescatado en `459d72b`.
 Es el mismo error de siempre: el reporte llegó, los datos no.
 
-## 1. ⚠️ El IVA: hay $38.000 al mes que Carlos no sabe que va a pagar
+## 1. ✅ RESUELTO el 23-oct: el IVA se cobra, y se dice derecho
+
+> **Ramón decidió mantener $200.000 + IVA.** Ninguna de las tres opciones de abajo: apareció una
+> cuarta al escribir el correo, y es la que se aplicó. **En el mes 1 la pauta casi no se gasta**,
+> porque las primeras semanas van en construir el embudo. Así el mes 1 queda en unos $268.000 y
+> cabe en los $300.000 de Carlos, sin que nadie resigne nada.
+>
+> Cifras corregidas en `SPL-COT-2026-016` y canonizado en la ficha del cliente.
+
+El diagnóstico original queda abajo, porque explica de dónde venía el problema.
+
+## 1-bis. El diagnóstico original: $38.000 al mes que Carlos no sabía que iba a pagar
 
 Es el hallazgo que más puede doler, y **no nació en esta semana: tiene seis semanas y ya se envió
 dos veces.**
