@@ -935,7 +935,7 @@ function marcasDe(re, html) {
 // rastreador escrito dentro de un <script type="text/plain"> retenido NO se carga hasta que
 // alguien acepta, y uno escrito como script normal parte solo. Sin distinguirlos, "hay un
 // gestor conocido" tapaba rastreadores que ya estaban corriendo (I2-1, abogadospyme.cl).
-function detectarProveedores(html, rangosRetenidos) {
+export function detectarProveedores(html, rangosRetenidos) {
   const dentroDeRetenido = (i) => rangosRetenidos.some(([a, b]) => i >= a && i < b);
   const vistos = new Map(); // nombre -> true si al menos una aparición es script normal
   for (const [re, nombre] of PROVEEDORES) {
@@ -988,7 +988,7 @@ function* comentarios(html) {
   }
 }
 
-function tramosRetenidos(html) {
+export function tramosRetenidos(html) {
   const tramos = [];
   const reCierre = /<\/script\s*>/gi;
   // Las dos listas van en orden, así que un solo cursor sobre los comentarios alcanza y el
@@ -1025,6 +1025,83 @@ function tramosRetenidos(html) {
     const corte = siguienteApertura !== -1 && siguienteApertura < cierre ? siguienteApertura : cierre;
     tramos.push([inicio, corte]);
     if (tramos.length >= MAX_RETENIDOS) break;
+  }
+  return tramos;
+}
+
+// El control de permiso hecho a mano, la tercera forma de retener un rastreador (23-oct-2026).
+//
+// Las otras dos son un gestor conocido o un <script type="text/plain"> con atributo de
+// categoría. Un sitio que escribe su propio aviso hace otra cosa: define una función que
+// carga el rastreador, lee el permiso guardado y solo la llama si dice 'granted'. Para el
+// navegador eso es un rastreador que espera; para este chequeo, que lee el código sin
+// ejecutarlo, era un Pixel de Meta suelto y ningún aviso de los que reconocemos: pendiente, y
+// con puntaje restado. Pasó con verifica.spindlelab.cl el 23-oct: la revisión con navegador
+// daba 100/100 y esta daba 75, por el mismo código.
+//
+// Se reconoce SOLO si se cumplen las cuatro, y cualquier duda lo deja como estaba (pendiente):
+//   1. el <script> lee de localStorage una clave que habla de permiso (consent, cookie,
+//      permiso);
+//   2. TODA aparición de un proveedor del script cae dentro de una función con nombre, o sea
+//      que no hay un rastreador suelto al nivel de arriba;
+//   3. esa función se llama al menos una vez, y
+//   4. TODAS sus llamadas van detrás de `if (… 'granted')`. Una sola llamada sin condición, y
+//      el rastreador parte solo.
+// Los corchetes se emparejan a mano y sin mirar comillas: si no cierran, la función no vale. Se
+// puede equivocar hacia "no lo reconozco", nunca hacia "lo reconozco" sin que el código lo diga.
+//
+// Lo que NO prueba, y el informe lo dice: que el aviso se muestre, que guarde lo que la persona
+// elige, o que otro archivo no cargue el rastreador por su lado. Por eso el ítem queda
+// 'sin-confirmar', como cuando se ve Google Consent Mode: ni suma ni resta.
+const MAX_SCRIPT_PUERTA = 20000;
+const RE_LEE_PERMISO = /localStorage\.getItem\(\s*['"][^'"]*(?:consent|cookie|permiso)[^'"]*['"]\s*\)/i;
+function funcionesConNombre(cuerpo) {
+  const funciones = [];
+  const re = /function\s+([A-Za-z_$][\w$]*)\s*\([^)]*\)\s*\{/g;
+  let m;
+  while ((m = re.exec(cuerpo)) && funciones.length < 50) {
+    let nivel = 1;
+    let i = re.lastIndex;
+    for (; i < cuerpo.length && nivel > 0; i++) {
+      if (cuerpo[i] === '{') nivel++;
+      else if (cuerpo[i] === '}') nivel--;
+    }
+    if (nivel === 0) funciones.push({ nombre: m[1], desde: m.index, hasta: i });
+  }
+  return funciones;
+}
+export function tramosConPuerta(html) {
+  const tramos = [];
+  const reCierre = /<\/script\s*>/gi;
+  let revisados = 0;
+  for (const [inicio, fin] of etiquetas(html, 'script')) {
+    if (++revisados > 200) break;
+    const tag = html.slice(inicio, Math.min(fin + 1, inicio + MAX_ETIQUETA));
+    if (/\ssrc\s*=/i.test(tag) || /\stype\s*=\s*["']?(?:text\/plain|application\/(?:ld\+)?json)/i.test(tag)) continue;
+    reCierre.lastIndex = fin + 1;
+    const c = reCierre.exec(html);
+    if (!c) break;
+    const cuerpo = html.slice(fin + 1, c.index);
+    if (cuerpo.length > MAX_SCRIPT_PUERTA || !RE_LEE_PERMISO.test(cuerpo)) continue;
+    const marcas = [];
+    for (const [re] of PROVEEDORES) for (const [i] of marcasDe(re, cuerpo)) marcas.push(i);
+    if (!marcas.length) continue;
+    const funciones = funcionesConNombre(cuerpo);
+    const duenas = new Set();
+    let todasDentro = true;
+    for (const i of marcas) {
+      const f = funciones.find((x) => i >= x.desde && i < x.hasta);
+      if (f) duenas.add(f.nombre);
+      else { todasDentro = false; break; }
+    }
+    if (!todasDentro) continue;
+    let valida = true;
+    for (const nombre of duenas) {
+      const llamadas = (cuerpo.match(new RegExp(`(?<![\\w$.])${nombre.replace(/\$/g, '\\$')}\\s*\\(`, 'g')) || []).length - 1;
+      const conPuerta = (cuerpo.match(new RegExp(`\\bif\\s*\\(\\s*[^()]{0,80}['"]granted['"]\\s*\\)\\s*\\{?\\s*${nombre.replace(/\$/g, '\\$')}\\s*\\(`, 'g')) || []).length;
+      if (llamadas < 1 || conPuerta !== llamadas) { valida = false; break; }
+    }
+    if (valida) tramos.push([inicio, c.index + c[0].length]);
   }
   return tramos;
 }
@@ -1293,7 +1370,8 @@ export async function chequear(entrada, fetchImpl = fetch) {
   const httpsOk = home.url.startsWith('https://');
   const lang = idiomaDeclarado(html);
   const cmp = detectarCmp(html);
-  const tramos = tramosRetenidos(html);
+  const tramosConPuertaPropia = tramosConPuerta(html);
+  const tramos = tramosRetenidos(html).concat(tramosConPuertaPropia);
   const { todos: proveedores, normales } = detectarProveedores(html, tramos);
   const consentModeInline = RE_CONSENT_MODE.test(html);
   const retenidos = tramos.length > 0;
@@ -1467,7 +1545,9 @@ export async function chequear(entrada, fetchImpl = fetch) {
     detalleCmp = `Encontramos ${lista} en tu página de inicio, y también ` +
       (consentModeInline
         ? 'la declaración de Google Consent Mode, que suele ir con un aviso de permiso hecho a medida. '
-        : `${normales.length ? 'algunos' : 'todos'} marcados para no cargar hasta que haya permiso. `) +
+        : tramosConPuertaPropia.length && !normales.length
+          ? 'y en el código se ve que se cargan solo después de leer un permiso guardado. '
+          : `${normales.length ? 'algunos' : 'todos'} marcados para no cargar hasta que haya permiso. `) +
       'Que eso los detenga hasta que la persona acepta no se puede comprobar leyendo el código. No lo ' +
       'contamos ni a favor ni en contra.';
     arregloCmp = `${conMayuscula(PRUEBA_INCOGNITO)} Y si aparece, falta saber si de verdad los frena. ` +
