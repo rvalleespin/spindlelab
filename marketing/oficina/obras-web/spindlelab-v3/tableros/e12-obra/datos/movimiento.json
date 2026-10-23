@@ -1,0 +1,357 @@
+{
+ "cuando": "2026-10-23T20:26:33.178Z",
+ "grabaciones": {
+  "portada-1440": {
+   "archivo": "video/portada-1440.webm",
+   "ruta": "/v3/",
+   "ventana": "1440 × 900",
+   "dpr": 1,
+   "tactil": false,
+   "cuadros": 251,
+   "duracion": 10.67,
+   "ancho": 1440,
+   "alto": 900,
+   "codec": "vp9",
+   "crf": 30,
+   "bytes": 1448989,
+   "errores": [],
+   "medidas": [
+    {
+     "momento": "al empezar",
+     "portada": {
+      "src": "/v3/portada/hilo-1920.webm",
+      "corre": true,
+      "t": 1.13,
+      "arriba": 64,
+      "abajo": 900,
+      "alto": 836,
+      "ancho": 1440
+     },
+     "cinta": {
+      "src": "/v3/cinta/cinta.webm",
+      "corre": false,
+      "t": 0,
+      "arriba": 1070,
+      "abajo": 1663,
+      "alto": 593,
+      "ancho": 1054
+     },
+     "fichaCinta": "Combeau, fotografía(sitio aparte: verifica.spindlelab.cl)",
+     "rotuloCinta": "Combeau, fotografía · Cliente · 2026",
+     "pausas": [
+      "Pausar el video"
+     ],
+     "aviso": false,
+     "reducido": false,
+     "punteroFino": true,
+     "scrollY": 0,
+     "t": 0
+    },
+    {
+     "momento": "a media grabación",
+     "portada": {
+      "src": "/v3/portada/hilo-1920.webm",
+      "corre": true,
+      "t": 1.28,
+      "arriba": 64,
+      "abajo": 900,
+      "alto": 836,
+      "ancho": 1440
+     },
+     "cinta": {
+      "src": "/v3/cinta/cinta.webm",
+      "corre": false,
+      "t": 0,
+      "arriba": 1070,
+      "abajo": 1663,
+      "alto": 593,
+      "ancho": 1054
+     },
+     "fichaCinta": "Combeau, fotografía(sitio aparte: verifica.spindlelab.cl)",
+     "rotuloCinta": "Combeau, fotografía · Cliente · 2026",
+     "pausas": [
+      "Pausar el video"
+     ],
+     "aviso": false,
+     "reducido": false,
+     "punteroFino": true,
+     "scrollY": 0,
+     "t": 5.2
+    },
+    {
+     "momento": "al terminar",
+     "portada": {
+      "src": "/v3/portada/hilo-1920.webm",
+      "corre": true,
+      "t": 1.53,
+      "arriba": 64,
+      "abajo": 900,
+      "alto": 836,
+      "ancho": 1440
+     },
+     "cinta": {
+      "src": "/v3/cinta/cinta.webm",
+      "corre": false,
+      "t": 0,
+      "arriba": 1070,
+      "abajo": 1663,
+      "alto": 593,
+      "ancho": 1054
+     },
+     "fichaCinta": "Combeau, fotografía(sitio aparte: verifica.spindlelab.cl)",
+     "rotuloCinta": "Combeau, fotografía · Cliente · 2026",
+     "pausas": [
+      "Pausar el video"
+     ],
+     "aviso": false,
+     "reducido": false,
+     "punteroFino": true,
+     "scrollY": 0,
+     "t": 10.5
+    }
+   ]
+  },
+  "cinta-1440": {
+   "archivo": "video/cinta-1440.webm",
+   "ruta": "/v3/",
+   "ventana": "1440 × 900",
+   "dpr": 1,
+   "tactil": false,
+   "cuadros": 499,
+   "duracion": 16.97,
+   "ancho": 1440,
+   "alto": 900,
+   "codec": "vp9",
+   "crf": 30,
+   "bytes": 1790216,
+   "errores": [],
+   "medidas": [
+    {
+     "momento": "al empezar",
+     "portada": {
+      "src": "/v3/portada/hilo-1920.webm",
+      "corre": false,
+      "t": 0.54,
+      "arriba": -820,
+      "abajo": 16,
+      "alto": 836,
+      "ancho": 1440
+     },
+     "cinta": {
+      "src": "/v3/cinta/cinta.webm",
+      "corre": true,
+      "t": 0.66,
+      "arriba": 136,
+      "abajo": 729,
+      "alto": 593,
+      "ancho": 1054
+     },
+     "fichaCinta": "Combeau, fotografía(sitio aparte: verifica.spindlelab.cl)",
+     "rotuloCinta": "Combeau, fotografía · Cliente · 2026",
+     "pausas": [
+      "Pausar el video"
+     ],
+     "aviso": false,
+     "reducido": false,
+     "punteroFino": true,
+     "scrollY": 884,
+     "t": 0
+    },
+    {
+     "momento": "al terminar",
+     "portada": {
+      "src": "/v3/portada/hilo-1920.webm",
+      "corre": false,
+      "t": 0.54,
+      "arriba": -820,
+      "abajo": 16,
+      "alto": 836,
+      "ancho": 1440
+     },
+     "cinta": {
+      "src": "/v3/cinta/cinta.webm",
+      "corre": true,
+      "t": 1.45,
+      "arriba": 136,
+      "abajo": 729,
+      "alto": 593,
+      "ancho": 1054
+     },
+     "fichaCinta": "Combeau, fotografía(sitio aparte: verifica.spindlelab.cl)",
+     "rotuloCinta": "Combeau, fotografía · Cliente · 2026",
+     "pausas": [
+      "Pausar el video"
+     ],
+     "aviso": false,
+     "reducido": false,
+     "punteroFino": true,
+     "scrollY": 884,
+     "t": 16.8
+    }
+   ],
+   "fichas": [
+    "Combeau, fotografía",
+    "Sesenta",
+    "Praxi",
+    "Tonela",
+    "Verifica y Cumple",
+    "Ocelo",
+    "Combeau, modelo",
+    "Doceavo",
+    "Combeau, fotografía"
+   ]
+  },
+  "telefono-390": {
+   "archivo": "video/telefono-390.webm",
+   "ruta": "/v3/",
+   "ventana": "390 × 844",
+   "dpr": 2,
+   "tactil": true,
+   "cuadros": 726,
+   "duracion": 24.83,
+   "ancho": 780,
+   "alto": 1688,
+   "codec": "vp9",
+   "crf": 34,
+   "bytes": 2552965,
+   "errores": [],
+   "medidas": [
+    {
+     "momento": "al empezar",
+     "portada": {
+      "src": "/v3/portada/hilo-960.webm",
+      "corre": true,
+      "t": 1.12,
+      "arriba": 90,
+      "abajo": 309,
+      "alto": 219,
+      "ancho": 390
+     },
+     "cinta": {
+      "src": "/v3/cinta/cinta.webm",
+      "corre": false,
+      "t": 0,
+      "arriba": 947,
+      "abajo": 1166,
+      "alto": 219,
+      "ancho": 390
+     },
+     "fichaCinta": "Combeau, fotografía(sitio aparte: verifica.spindlelab.cl)",
+     "rotuloCinta": "Combeau, fotografía · Cliente · 2026",
+     "pausas": [
+      "Pausar el video"
+     ],
+     "aviso": false,
+     "reducido": false,
+     "punteroFino": false,
+     "scrollY": 0,
+     "t": 0
+    },
+    {
+     "momento": "antes de deslizar",
+     "portada": {
+      "src": "/v3/portada/hilo-960.webm",
+      "corre": true,
+      "t": 1.31,
+      "arriba": 90,
+      "abajo": 309,
+      "alto": 219,
+      "ancho": 390
+     },
+     "cinta": {
+      "src": "/v3/cinta/cinta.webm",
+      "corre": false,
+      "t": 0,
+      "arriba": 947,
+      "abajo": 1166,
+      "alto": 219,
+      "ancho": 390
+     },
+     "fichaCinta": "Combeau, fotografía(sitio aparte: verifica.spindlelab.cl)",
+     "rotuloCinta": "Combeau, fotografía · Cliente · 2026",
+     "pausas": [
+      "Pausar el video"
+     ],
+     "aviso": false,
+     "reducido": false,
+     "punteroFino": false,
+     "scrollY": 0,
+     "t": 5.2
+    },
+    {
+     "momento": "en la cinta",
+     "portada": {
+      "src": "/v3/portada/hilo-960.webm",
+      "corre": false,
+      "t": 1.95,
+      "arriba": -559,
+      "abajo": -340,
+      "alto": 219,
+      "ancho": 390
+     },
+     "cinta": {
+      "src": "/v3/cinta/cinta.webm",
+      "corre": true,
+      "t": 2.3,
+      "arriba": 248,
+      "abajo": 467,
+      "alto": 219,
+      "ancho": 390
+     },
+     "fichaCinta": "Sesenta(sitio aparte: verifica.spindlelab.cl)",
+     "rotuloCinta": "Sesenta · Concepto · 2026",
+     "pausas": [
+      "Pausar el video"
+     ],
+     "aviso": false,
+     "reducido": false,
+     "punteroFino": false,
+     "scrollY": 649,
+     "t": 7.9
+    },
+    {
+     "momento": "al terminar",
+     "portada": {
+      "src": "/v3/portada/hilo-960.webm",
+      "corre": false,
+      "t": 1.95,
+      "arriba": -559,
+      "abajo": -340,
+      "alto": 219,
+      "ancho": 390
+     },
+     "cinta": {
+      "src": "/v3/cinta/cinta.webm",
+      "corre": true,
+      "t": 3.05,
+      "arriba": 248,
+      "abajo": 467,
+      "alto": 219,
+      "ancho": 390
+     },
+     "fichaCinta": "Sesenta(sitio aparte: verifica.spindlelab.cl)",
+     "rotuloCinta": "Sesenta · Concepto · 2026",
+     "pausas": [
+      "Pausar el video"
+     ],
+     "aviso": false,
+     "reducido": false,
+     "punteroFino": false,
+     "scrollY": 649,
+     "t": 24.6
+    }
+   ],
+   "fichas": [
+    "Sesenta",
+    "Praxi",
+    "Tonela",
+    "Verifica y Cumple",
+    "Ocelo",
+    "Combeau, modelo",
+    "Doceavo",
+    "Combeau, fotografía",
+    "Sesenta"
+   ]
+  }
+ }
+}
