@@ -13,6 +13,9 @@
  7. Compuerta 2: ni 54 → 94 ni 36 → 73; ni «en pausa» ni «fuera de línea»; ningún enlace a praxi.coach; Combeau sin
     medidas; cada nombre de modelo con lo que hace; los conceptos con «Concepto» en la ficha y «no existe» al cerrar.
  8. A lo más un corchete por página; ningún código de color a la vista; ningún alt vacío o de relleno.
+ 9. Sin Title Case en los title (antislop A6): en cada tramo del title, una palabra después de la primera va con
+    mayúscula solo si es una sigla o un nombre propio de la lista. Se sumó el 23-oct por el defecto 8 del acta de obra
+    (tres title de servicios que venían de producción con «SEO Técnica», «Mensual» y «Redes Sociales»).
 """
 import json
 import re
@@ -185,6 +188,17 @@ for p in d['paginas']:
             if len(a) < 12 or a.lower() in ('imagen', 'foto', '.'):
                 fallas.append(f"alt vacío o de relleno: {m['archivo']}")
 
+# 9 · sin Title Case en los title. El tramo empieza donde empieza el title, tras « · », tras «: », tras «(» o tras «¿».
+#     Las siglas (SEO, IA, AEO/GEO, IVA) van enteras en mayúscula y no cuentan
+PROPIOS = {'SpindleLab', 'ChatGPT', 'Google', 'Praxi', 'Bernardo', 'Combeau', 'Sesenta', 'Ocelo', 'Doceavo', 'Tonela',
+           'Santiago', 'Ramón', 'Vallejos', 'Paid', 'Media'}
+for p in d['paginas']:
+    for tramo in re.split(r' · |: |\(|¿', p.get('title', '')):
+        for w in re.findall(r'[\wÁÉÍÓÚÑáéíóúñü/]+', tramo)[1:]:
+            if w[0].isupper() and not w.isupper() and w not in PROPIOS:
+                fallas.append(f"{p['id']}: «{w}» con mayúscula en el title (antislop A6: mayúscula inicial y nombres "
+                              f"propios): {p['title']}")
+
 n = len(visibles)
 print(f'{n} textos visibles, {sum(len(t.split()) for _, t in visibles)} palabras, {len(d["paginas"])} páginas')
 for a in avisos:
@@ -193,4 +207,4 @@ if fallas:
     print('\n'.join(fallas))
     sys.exit(1)
 print('sin fallas: precios y nombres iguales a los JSON; cero rayas, voseo y vetadas; dos tintas en sus largos; '
-      'casos con sus largos; compuerta 2 cumplida en el texto')
+      'casos con sus largos; compuerta 2 cumplida en el texto; title sin Title Case')

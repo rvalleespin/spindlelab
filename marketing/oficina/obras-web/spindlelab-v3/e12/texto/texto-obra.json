@@ -4805,9 +4805,9 @@
   {
    "id": "auditoria-seo-tecnica",
    "ruta": "/v3/servicios/auditoria-seo-tecnica/",
-   "title": "Auditoría SEO Técnica para empresas · SpindleLab",
+   "title": "Auditoría SEO técnica para empresas · SpindleLab",
    "description": "Encontramos qué le impide a Google rastrear, entender y confiar en tu sitio, y te lo entregamos ordenado por impacto. Desde $490.000 + IVA.",
-   "senales": "Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json)",
+   "senales": "Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json). El title va en mayúscula inicial desde el 23-oct (antes «Auditoría SEO Técnica para empresas · SpindleLab»), con el nombre escrito como en el h1, la miga y oferta-v3.json: acta de obra, defecto 8; antislop A6",
    "modo": "queda con ajustes",
    "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
    "secciones": [
@@ -4866,9 +4866,9 @@
   {
    "id": "acompanamiento-mensual",
    "ruta": "/v3/servicios/acompanamiento-mensual/",
-   "title": "Acompañamiento Mensual de SEO e IA · SpindleLab",
+   "title": "Acompañamiento mensual de SEO e IA · SpindleLab",
    "description": "Cada mes arreglamos y medimos lo que hace que Google y la IA lean y citen tu sitio, con informes quincenales. Desde $590.000/mes + IVA, mínimo 3 meses.",
-   "senales": "Simón, e12/senales-obra.md §2.7 (copiado tal cual; en servicios-v3.json los aplica Diego con Clara). Ojo: la de Acompañamiento dice «con informes quincenales», que es R2 (ver pendientes de Simón)",
+   "senales": "Simón, e12/senales-obra.md §2.7 (copiado tal cual; en servicios-v3.json los aplica Diego con Clara). Ojo: la de Acompañamiento dice «con informes quincenales», que es R2 (ver pendientes de Simón). El title va en mayúscula inicial desde el 23-oct (antes «Acompañamiento Mensual de SEO e IA · SpindleLab»), con el nombre escrito como en el h1, la miga y oferta-v3.json: acta de obra, defecto 8; antislop A6",
    "modo": "queda con ajustes",
    "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
    "secciones": [
@@ -4911,9 +4911,9 @@
   {
    "id": "redes-sociales",
    "ruta": "/v3/servicios/redes-sociales/",
-   "title": "Gestión de Redes Sociales para empresas · SpindleLab",
+   "title": "Gestión de redes sociales para empresas · SpindleLab",
    "description": "Gestión de redes sociales para empresas en LinkedIn y Meta: estrategia, pauta, comunidad y reportes. El contenido creativo lo pones tú.",
-   "senales": "Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json)",
+   "senales": "Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json). El title va en mayúscula inicial desde el 23-oct (antes «Gestión de Redes Sociales para empresas · SpindleLab»), con el nombre escrito como en el h1, la miga y oferta-v3.json: acta de obra, defecto 8; antislop A6",
    "modo": "queda con ajustes",
    "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
    "secciones": [
@@ -5834,7 +5834,8 @@
   "Simón": [
    "La description de Acompañamiento mensual que propones dice «con informes quincenales»: la cadencia de informes es R2, abierta, y la home y /servicios/ ya no la prometen.",
    "El og:image:alt de Praxi («Debajo del chat hay reglas, no una corazonada.»): confirmado contra la captura (landing-1440-sec09, praxi-reglas-169).",
-   "Tu description de la home, de 156, queda; nombra ChatGPT como el h1."
+   "Tu description de la home, de 156, queda; nombra ChatGPT como el h1.",
+   "Los title de Auditoría SEO técnica, Acompañamiento mensual y Gestión de redes sociales pasan a mayúscula inicial (acta de obra, defecto 8). Lo dejé en tu §2.7, con su fila en Correcciones, para que lo revises: no cambia la consulta (Google no distingue mayúsculas), ni el largo, ni el grafo. El name del Service de esos tres sale de serviceName, en servicios-v3.json, y sigue en Title Case: no se ve en la página y es un dato que esta obra no toca. Si se alinea, es en el JSON y al publicar, con Ramón."
   ],
   "Ramón": [
    "Paid Media dice cuatro veces que optimiza «con agentes de IA» (servicios-v3.json paid-media) y no tiene fila en ningún inventario; el criterio 13 del paso 2 pedía que toda afirmación de IA remita a Praxi. No lo toqué porque no es del giro: lo decides tú (o se le pone fila).",
@@ -5862,6 +5863,11 @@
    "fecha": "19-oct-2026",
    "que": "Lectura fría (un dueño de pyme que no conoce SpindleLab): el título de la prueba, Visibilidad en IA en la home, precios con «una vez» y con lo que es cada uno, qué entrega Visibilidad en IA y quién arregla en la Auditoría, y siete aclaraciones en Praxi, Combeau, Doceavo y /trabajo/",
    "origen": "lectura-fria/obra-salida.txt"
+  },
+  {
+   "fecha": "23-oct-2026",
+   "que": "El title de Auditoría SEO técnica, Acompañamiento mensual y Gestión de redes sociales, en mayúscula inicial («técnica», «mensual», «redes sociales»), escrito como ya lo escriben el h1, la miga y oferta-v3.json. Venían de producción y senales-obra.md §2.7 los dejaba «queda»: ahí cambian también, con su fila en Correcciones. comprobar-obra.py suma la comprobación 9 (sin Title Case en los title)",
+   "origen": "acta-obra.md, vuelta 1, defecto 8 (Javiera); antislop A6"
   }
  ],
  "detectores": {
@@ -5890,7 +5896,7 @@
     },
     {
      "item": "A6 · Title Case",
-     "resultado": "Cero en titulares, botones y nav. Llevan mayúsculas los nombres propios: los planes de oferta-v3.json («Página de Campaña», «Sitio Esencial», «Sitio Completo», «Plataforma a Medida», que van idénticos al dato) y las letras de los conceptos (Atkinson Hyperlegible, Big Shoulders Stencil, Barlow Semi Condensed)."
+     "resultado": "Cero en titulares, botones y nav. Llevan mayúsculas los nombres propios: los planes de oferta-v3.json («Página de Campaña», «Sitio Esencial», «Sitio Completo», «Plataforma a Medida», que van idénticos al dato) y las letras de los conceptos (Atkinson Hyperlegible, Big Shoulders Stencil, Barlow Semi Condensed). La pasada del 19-oct no vio tres title de servicios que venían de producción («Auditoría SEO Técnica…», «Acompañamiento Mensual…», «Gestión de Redes Sociales…»). Los encontró Javiera (acta de obra, defecto 8) y van en mayúscula inicial desde el 23-oct; desde entonces comprobar-obra.py lo cuenta en cada title (comprobación 9)."
     },
     {
      "item": "A7 · castellano de acá, tuteo",

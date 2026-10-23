@@ -1536,9 +1536,9 @@
 ## /v3/servicios/auditoria-seo-tecnica/ · auditoria-seo-tecnica
 
 - *Modo:* queda con ajustes. Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.
-- `title` Auditoría SEO Técnica para empresas · SpindleLab
+- `title` Auditoría SEO técnica para empresas · SpindleLab
 - `description` Encontramos qué le impide a Google rastrear, entender y confiar en tu sitio, y te lo entregamos ordenado por impacto. Desde $490.000 + IVA.
-- <sub>Señales: Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json)</sub>
+- <sub>Señales: Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json). El title va en mayúscula inicial desde el 23-oct (antes «Auditoría SEO Técnica para empresas · SpindleLab»), con el nombre escrito como en el h1, la miga y oferta-v3.json: acta de obra, defecto 8; antislop A6</sub>
 
 ### Cabecera
 
@@ -1557,9 +1557,9 @@
 ## /v3/servicios/acompanamiento-mensual/ · acompanamiento-mensual
 
 - *Modo:* queda con ajustes. Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.
-- `title` Acompañamiento Mensual de SEO e IA · SpindleLab
+- `title` Acompañamiento mensual de SEO e IA · SpindleLab
 - `description` Cada mes arreglamos y medimos lo que hace que Google y la IA lean y citen tu sitio, con informes quincenales. Desde $590.000/mes + IVA, mínimo 3 meses.
-- <sub>Señales: Simón, e12/senales-obra.md §2.7 (copiado tal cual; en servicios-v3.json los aplica Diego con Clara). Ojo: la de Acompañamiento dice «con informes quincenales», que es R2 (ver pendientes de Simón)</sub>
+- <sub>Señales: Simón, e12/senales-obra.md §2.7 (copiado tal cual; en servicios-v3.json los aplica Diego con Clara). Ojo: la de Acompañamiento dice «con informes quincenales», que es R2 (ver pendientes de Simón). El title va en mayúscula inicial desde el 23-oct (antes «Acompañamiento Mensual de SEO e IA · SpindleLab»), con el nombre escrito como en el h1, la miga y oferta-v3.json: acta de obra, defecto 8; antislop A6</sub>
 
 ### Cabecera
 
@@ -1574,9 +1574,9 @@
 ## /v3/servicios/redes-sociales/ · redes-sociales
 
 - *Modo:* queda con ajustes. Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.
-- `title` Gestión de Redes Sociales para empresas · SpindleLab
+- `title` Gestión de redes sociales para empresas · SpindleLab
 - `description` Gestión de redes sociales para empresas en LinkedIn y Meta: estrategia, pauta, comunidad y reportes. El contenido creativo lo pones tú.
-- <sub>Señales: Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json)</sub>
+- <sub>Señales: Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json). El title va en mayúscula inicial desde el 23-oct (antes «Gestión de Redes Sociales para empresas · SpindleLab»), con el nombre escrito como en el h1, la miga y oferta-v3.json: acta de obra, defecto 8; antislop A6</sub>
 
 ### Cabecera
 
@@ -1886,6 +1886,7 @@
 - La description de Acompañamiento mensual que propones dice «con informes quincenales»: la cadencia de informes es R2, abierta, y la home y /servicios/ ya no la prometen.
 - El og:image:alt de Praxi («Debajo del chat hay reglas, no una corazonada.»): confirmado contra la captura (landing-1440-sec09, praxi-reglas-169).
 - Tu description de la home, de 156, queda; nombra ChatGPT como el h1.
+- Los title de Auditoría SEO técnica, Acompañamiento mensual y Gestión de redes sociales pasan a mayúscula inicial (acta de obra, defecto 8). Lo dejé en tu §2.7, con su fila en Correcciones, para que lo revises: no cambia la consulta (Google no distingue mayúsculas), ni el largo, ni el grafo. El name del Service de esos tres sale de serviceName, en servicios-v3.json, y sigue en Title Case: no se ve en la página y es un dato que esta obra no toca. Si se alinea, es en el JSON y al publicar, con Ramón.
 
 **Ramón**
 
@@ -1906,7 +1907,7 @@ Corridos enteros el 19-oct sobre el texto visible de las 20 páginas (813 textos
 | A3 · tricolon automático | Abierto en la home, con porqué: tiene tres series de tres. «empresas, clínicas y estudios profesionales» es el hero 3 tal como lo eligió Ramón; «lo que está bien, lo que lo frena y qué haríamos primero» son las tres partes reales del mini-diagnóstico; «los precios, el método y el chequeo» son tres páginas que existen. En las tres, borrar el tercero quita un hecho. En Ocelo, «la honestidad también es diseño» + tres decisiones era ritmo de remate: corregido. |
 | A4 · «no solo X, sino Y» | Cero. El de /diagnostico/ («y no solo el sitio») ya iba cambiado a «además del sitio». |
 | A5 · pregunta retórica, «¿Listo para…?» | Cero. Las únicas preguntas son títulos de preguntas frecuentes o citas entre «» (lo que alguien le pregunta a una IA, el «¿te despidieron?» de los estudios laborales). Lo comprueba comprobar-obra.py, regla 3. |
-| A6 · Title Case | Cero en titulares, botones y nav. Llevan mayúsculas los nombres propios: los planes de oferta-v3.json («Página de Campaña», «Sitio Esencial», «Sitio Completo», «Plataforma a Medida», que van idénticos al dato) y las letras de los conceptos (Atkinson Hyperlegible, Big Shoulders Stencil, Barlow Semi Condensed). |
+| A6 · Title Case | Cero en titulares, botones y nav. Llevan mayúsculas los nombres propios: los planes de oferta-v3.json («Página de Campaña», «Sitio Esencial», «Sitio Completo», «Plataforma a Medida», que van idénticos al dato) y las letras de los conceptos (Atkinson Hyperlegible, Big Shoulders Stencil, Barlow Semi Condensed). La pasada del 19-oct no vio tres title de servicios que venían de producción («Auditoría SEO Técnica…», «Acompañamiento Mensual…», «Gestión de Redes Sociales…»). Los encontró Javiera (acta de obra, defecto 8) y van en mayúscula inicial desde el 23-oct; desde entonces comprobar-obra.py lo cuenta en cada title (comprobación 9). |
 | A7 · castellano de acá, tuteo | Tuteo en todo el sitio; cero voseo, «móvil», «ordenador» o «coste». «Ustedes» solo en las preguntas frecuentes, en boca del visitante. «partners» queda en la bio de /nosotros/, que no se toca (brief §3, R4). |
 | A8 · raya como golpe | Cero rayas (— y –) en el texto visible. comprobar-obra.py, regla 2. |
 | A9 · prueba social sin respaldo | Cero. Cada cifra a la vista tiene fila en un inventario y su fecha (805 → 95 kB, 384 pruebas, 0,52 s, 219 y 218 cambios). Ni 54 → 94 ni 36 → 73. Las personas generadas con IA llevan su pie en cada medio donde se ven, incluida la de Verifica y Cumple, que no lo tenía. Los conceptos dicen en la ficha y al cerrar que no existen. |
@@ -1982,3 +1983,4 @@ Corrida el 19-oct con el CLI de Claude Code (`claude -p`, 2.1.303) en un directo
 | 19-oct-2026 | Lo que quedó sin commit en la corrida cortada: titulares de caso con punto en sus dos partes, nombres y precios de los servicios en /servicios/, un pie por medio en Praxi | Clara, corrida retomada |
 | 19-oct-2026 | Los dos detectores, enteros: «publicó solo» en Combeau; el «Sin métrica» de Ocelo, Doceavo y Tonela sin elogiar la pieza; Redes y Paid Media con nombre y precio en /servicios/; la primera línea de /metodo/ sin «estrategia AEO/GEO» | antislop-web.md y refero-design anti-ai-slop.md |
 | 19-oct-2026 | Lectura fría (un dueño de pyme que no conoce SpindleLab): el título de la prueba, Visibilidad en IA en la home, precios con «una vez» y con lo que es cada uno, qué entrega Visibilidad en IA y quién arregla en la Auditoría, y siete aclaraciones en Praxi, Combeau, Doceavo y /trabajo/ | lectura-fria/obra-salida.txt |
+| 23-oct-2026 | El title de Auditoría SEO técnica, Acompañamiento mensual y Gestión de redes sociales, en mayúscula inicial («técnica», «mensual», «redes sociales»), escrito como ya lo escriben el h1, la miga y oferta-v3.json. Venían de producción y senales-obra.md §2.7 los dejaba «queda»: ahí cambian también, con su fila en Correcciones. comprobar-obra.py suma la comprobación 9 (sin Title Case en los title) | acta-obra.md, vuelta 1, defecto 8 (Javiera); antislop A6 |
