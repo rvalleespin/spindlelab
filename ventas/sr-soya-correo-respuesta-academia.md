@@ -79,3 +79,33 @@ El anexo traía **cinco reencuadres del tipo «no es X, es Y»**, que es justo e
 la cotización del 10-sep y que quedó escrito como regla en `.claude/skills/voz-spindlelab/SKILL.md`.
 Se dejó **uno solo**, el del valor del alumno, que es la tesis del documento. Los otros cuatro se
 reescribieron en afirmativo. El correo se revisó con el mismo criterio.
+
+---
+
+## Seguimiento del viernes 23-oct
+
+**Verificado:** Carlos no ha respondido. El hilo termina en el correo de Ramón del 20-oct 21:51
+UTC. Van **3 días hábiles**.
+
+**Por qué se escribe hoy y no se espera más:** el correo del 20-oct cerraba preguntando *«¿Qué día
+y hora de esta semana te acomoda?»*. Hoy es viernes, así que **esa pregunta caduca sola** y el hilo
+queda sin próximo paso. Es exactamente como se cayó antes: el correo del 28-sep estuvo 21 días sin
+respuesta hasta que Ramón lo retomó.
+
+**El dato que manda, y está en el propio hilo:** Carlos no contesta solo, pero **contesta rápido
+cuando le escriben**. El 19-oct Ramón le escribió a las 15:20 y él respondió a las 20:10 el mismo
+día, con un correo larguísimo.
+
+**Borrador listo, sin enviar:** `r6165523561681689358`, en el hilo.
+
+Tres decisiones de redacción, por si se revisan después:
+
+1. **No dice «¿lo viste?».** Quien vende y persigue baja su propio precio, y acá hay un desbalance
+   que cuidar: tres propuestas entregadas, cero pesos recibidos.
+2. **Trae una pregunta que sirve de verdad:** si ya ha recibido pagos del extranjero. Es la del
+   guion de la reunión, y es la que más acorta el problema del cobro en dólares.
+3. **Propone dos horarios concretos** en vez de volver a preguntar cuál le acomoda. Calendario de
+   la semana del 26 verificado: sin eventos, los dos horarios están libres.
+
+⚠️ **El IVA no se menciona.** Un correo de seguimiento de cinco líneas es el peor lugar posible
+para una corrección de precio. Esa conversación es de la reunión.
