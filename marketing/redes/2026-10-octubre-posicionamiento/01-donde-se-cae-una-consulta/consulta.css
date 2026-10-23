@@ -1,0 +1,70 @@
+/* Carrusel "Dónde puede caerse una consulta" · octubre 2026 (posicionamiento nuevo)
+   Extiende base.css (copia de 2026-09-septiembre/_sistema/base.css). No redefine tokens: los usa.
+
+   FORMATO: 1080x1350 (4:5). base.css fija 1080x1080; acá se estira el lienzo. Razón: en el
+   perfil de Instagram la grilla recorta a 3:4, y un 4:5 solo pierde ~34px por lado (dentro del
+   margen de 80px), mientras que un cuadrado pierde ~135px por lado y se come el titular de la
+   portada. Además hay más aire para un texto que es de hechos.
+
+   SEMÁNTICA DE LA PIEZA (el mapa de cuatro lugares):
+     trazo SÓLIDO en verde petróleo  = se ve desde afuera (cuando te buscan, cuando entran)
+     trazo DISCONTINUO en crema      = se conversa (cuando escriben, cuando esperan)
+   Dorado #c9a227 = UN dato por lámina: la cifra en las láminas 2 y 3; el punto del wordmark
+   en 1, 4 y 5 (en 2 y 3 el punto va en crema). Verde petróleo solo en etiquetas y en el trazo. */
+
+html,body { height:1350px; }
+.post { height:1350px; }
+
+.top { display:flex; align-items:baseline; justify-content:space-between; gap:24px; }
+.pager { font-size:20px; font-weight:800; letter-spacing:2.6px; color:#9aa4b0; }
+
+/* ---------- ruta compacta (láminas 2 a 4): cuatro tramos, el de turno encendido ---------- */
+.ruta { display:flex; justify-content:space-between; margin-top:34px; }
+.ruta i { flex:0 0 216px; height:6px; border-radius:3px; background:rgba(247,245,240,0.14); }
+/* tramo discontinuo: 9 pasos de 24px (216px) con el trazo centrado, para que cierre parejo en los dos extremos */
+.ruta i.d { border-radius:0; background:repeating-linear-gradient(90deg, transparent 0 5px, rgba(247,245,240,0.20) 5px 19px, transparent 19px 24px); }
+.ruta i.on { background:#2fa99b; }
+.ruta i.d.on { background:repeating-linear-gradient(90deg, transparent 0 5px, #f2efe8 5px 19px, transparent 19px 24px); }
+
+/* ---------- mapa grande (portada) ---------- */
+.mapa { display:flex; gap:28px; margin-top:auto; }
+.mapa .grupo { flex:1; }
+.mapa .rot { display:block; font-size:21px; font-weight:800; letter-spacing:2.8px; text-transform:uppercase;
+  color:#2fa99b; padding-bottom:16px; }
+.mapa .grupo.d .rot { color:#f2efe8; }
+.mapa .trazo { display:flex; gap:14px; }
+.mapa .paso { flex:1; border-top:6px solid #2fa99b; padding-top:20px; }
+.mapa .grupo.d .paso { position:relative; border-top:0; padding-top:26px; }
+.mapa .grupo.d .paso::before { content:''; position:absolute; top:0; left:0; right:0; height:6px;
+  background:repeating-linear-gradient(90deg, transparent 0 5px, #f2efe8 5px 19px, transparent 19px 24px); }
+.mapa .paso b { display:block; font-family:'Gabarito'; font-weight:600; font-size:44px; line-height:1; color:#f2efe8; }
+.mapa .paso span { display:block; font-size:27px; line-height:1.3; font-weight:600; color:#f2efe8; margin-top:12px; }
+
+/* ---------- cuerpo de las láminas interiores ---------- */
+.cuerpo { flex:1; display:flex; flex-direction:column; padding-bottom:128px; }
+.h2 { font-family:'Gabarito'; font-weight:600; letter-spacing:-1.4px; line-height:1.13; color:#f2efe8;
+  font-size:68px; max-width:920px; margin-top:58px; min-height:154px; text-wrap:balance; }
+
+/* la cifra dominante: un dato verificado, Gabarito grande, glosa pegada debajo */
+.cifra { display:flex; align-items:baseline; gap:34px; margin-top:16px; }
+.cifra .n { font-family:'Gabarito'; font-weight:700; font-size:310px; line-height:.86; letter-spacing:-8px; color:#c9a227; }
+.cifra .u { font-family:'Gabarito'; font-weight:600; font-size:100px; line-height:1; letter-spacing:-2px; color:#f2efe8; }
+.glosa { font-family:'Gabarito'; font-weight:600; font-size:46px; line-height:1.24; letter-spacing:-0.9px;
+  color:#f2efe8; max-width:920px; margin-top:34px; }
+.nota { font-size:28px; line-height:1.5; color:#9aa4b0; max-width:900px; margin-top:30px; }
+.sello { font-size:21px; font-weight:800; letter-spacing:2.6px; text-transform:uppercase; color:#9aa4b0; margin-top:50px; }
+
+/* ---------- lámina 4: dos lugares que no se ven desde afuera ---------- */
+.fichas { margin-top:56px; display:flex; flex-direction:column; gap:24px; }
+.ficha { border:2px dashed rgba(242,239,232,0.38); border-radius:16px; padding:40px 44px; background:rgba(255,255,255,0.02); }
+.ficha .tag { font-size:20px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#9aa4b0; }
+.ficha .txt { font-family:'Gabarito'; font-weight:600; font-size:46px; line-height:1.18; letter-spacing:-1px;
+  color:#f2efe8; margin-top:14px; }
+
+/* ---------- lámina 5: cierre ---------- */
+.caja { margin-top:auto; background:rgba(255,255,255,0.02); border:1px solid rgba(247,245,240,0.10);
+  border-radius:16px; padding:44px 48px 50px; }
+.caja .tag { font-size:20px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#2fa99b; }
+.caja .url { font-family:'Gabarito'; font-weight:600; font-size:72px; letter-spacing:-1.6px; color:#f2efe8; margin-top:22px; }
+
+.h { text-wrap:balance; }
