@@ -133,6 +133,7 @@ const ruta = `/v3/trabajo/${m.caso}/`;
     <details>
       <summary>
         <span class="rotulo">{m.nombreCorto}</span>
+        {m.tipoBarra && <><span class="rotulo" aria-hidden="true">·</span><span class="rotulo barra__tipo">{m.tipoBarra}</span></>}
         <span class="barra__activa rotulo" data-barra-activa>{m.secciones[0].nombre}</span>
         <span class="barra__mas" aria-hidden="true">+</span>
         <span class="solo-lector">{m.nombreBarra}</span>

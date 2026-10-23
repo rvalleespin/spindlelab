@@ -4,9 +4,9 @@
 //
 // Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md §2.4: la plantilla interior, «las secciones de hoy
 // (incluye, planes, fases, preguntas, cierre) con la misma forma que Desarrollo web». La franja: el chequeo en
-// Visibilidad en IA (es lo que mide este servicio), Verifica y Cumple en Auditoría (el producto propio al que se le
-// aplicó, sin su puntaje) y ninguna en los otros tres (ninguna pieza del inventario muestra ese servicio aplicado). Lo
-// que la spec no cubría está en spindlelab-v3/desvios.md, tanda 4.
+// Visibilidad en IA (es lo que mide este servicio) y ninguna en los otros cuatro (ninguna pieza del inventario muestra
+// ese servicio aplicado; la de Auditoría, Verifica y Cumple, salió el 23-oct por ser un campo de color, abajo). Lo que
+// la spec no cubría está en spindlelab-v3/desvios.md, tanda 4 y vuelta 1 de la QA de obra.
 //
 // EL TEXTO. Clara cambia de cada uno la miga, el h1 (en dos tintas: el nombre del servicio y lo que le hace al cliente)
 // y el alt (y el pie) de la franja (src/data/archivo/texto/<slug>.json); lo demás «queda tal cual, desde su dato»: la
@@ -133,11 +133,11 @@ if (slug === 'visibilidad-en-ia') {
   // muestra: chequeo-43 es la primera pantalla del chequeo, sin resultado. Va el alt que se escribió mirando ese archivo
   // (medios.json, tanda 2). desvios.md, tanda 4.
   franja = { medio: m['chequeo-43'], ancha: m['chequeo-239'], alt: m['chequeo-43'].alt, pieza: entrada('chequeo') };
-} else if (slug === 'auditoria-seo-tecnica') {
-  // El alt y el pie de Clara: la franja sigue siendo la portada de Verifica y Cumple (spec §2.4), así que su condición se
-  // cumple y el pie va.
-  franja = { medio: m['verifica-y-cumple-53'], ancha: m['verifica-y-cumple-239'], alt: t(`${slug}.franja.alt`).texto, pieza: entrada('verifica-y-cumple'), pie: t(`${slug}.franja.pie`).texto };
 }
+// Auditoría SEO técnica no lleva franja desde el 23-oct (spec §2.4, §3.4 y §0.4, punto 14; acta de la obra, vuelta 1,
+// defecto 3): era Verifica y Cumple, y todas sus capturas son un campo de color con la regla 2 de §3.4 (la franja, 42,4 %
+// de azul). Queda como Acompañamiento mensual: la cabecera y después las secciones. El alt y el pie que Clara le escribió
+// a esa franja quedan sin uso.
 
 // ---- Los botones y «Siguiente». Los de la cabecera y del cierre son los de hoy (Clara: «quedan tal cual»): «Ver
 // planes» y «Correr el chequeo» solo existían en la página anterior; «Escríbenos», «Pedir el diagnóstico» y «Siguiente»

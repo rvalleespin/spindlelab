@@ -134,6 +134,16 @@ const description = pagina.description;
 if (title.length > 60 || description.length < 120 || description.length > 160) {
   throw new Error(`home: title (${title.length}) o description (${description.length}) fuera de los largos de senales-obra.md §1.2`);
 }
+// Las fechas del WebPage (acta de la obra, vuelta 1, defecto 1; senales-obra.md §1.2). datePublished es el de la portada
+// publicada (2026-07-08: estaba en línea ese día, plan-operativo-90-dias.md, semana 1; el mismo que llevaba la v3 del
+// 16-oct). dateModified lo escribe el build, nunca a mano: el día en que se construye, en la hora de Chile, así que al
+// publicar la v3 dice el día en que sale. Sin fecha, el chequeo de la casa (functions/api/chequeo.js, «fecha») le quita
+// 4 puntos a la home: 79 contra 83 del 16-oct (criterio 12 del brief).
+const PUBLICADA = '2026-07-08';
+const construida = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Santiago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+if (!/^\d{4}-\d{2}-\d{2}$/.test(construida) || construida < PUBLICADA) {
+  throw new Error(`home: dateModified «${construida}» no es una fecha ISO posterior a datePublished (${PUBLICADA})`);
+}
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -146,6 +156,8 @@ const jsonLd = {
       inLanguage: 'es-CL',
       isPartOf: { '@id': 'https://spindlelab.cl/#website' },
       about: { '@id': 'https://spindlelab.cl/#org' },
+      datePublished: PUBLICADA,
+      dateModified: construida,
     },
   ],
 };
@@ -223,7 +235,7 @@ const jsonLd = {
         <Pieza id={`d-${corto[3].id}`} nombre={corto[3].e.nombre} bajada={corto[3].e.bajada} linea={corto[3].e.linea} destino={corto[3].e.destino} cursor={corto[3].e.cursor} medio={corto[3].medio} forma={corto[3].forma} externo={externo} />
       </div>
       <div class="destacados__pie">
-        <p class="chico">{t('home.obra.concepto').texto}</p>
+        <p class="chico caja">{t('home.obra.concepto').texto}</p>
         <a class="corchete" href={t('home.obra.todo').destino}>{todo}</a>
       </div>
     </section>
@@ -242,7 +254,7 @@ const jsonLd = {
           </div>
           <div class="prueba__dato">
             <h3 class="t-titulo">{p.pieza}</h3>
-            <p class="cuerpo">{p.dato}</p>
+            <p class="cuerpo caja">{p.dato}</p>
             {p.ficha.map((f) => <p class="ficha-linea"><span class="rotulo">{f.rotulo}</span> <span class="dato tinta">{f.valor}</span></p>)}
           </div>
         </div>

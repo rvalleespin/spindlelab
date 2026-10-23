@@ -1,14 +1,14 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
- "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "sha256": "3a43f5489043ae38440fcce4130e787c9fb2870c7fe51b667fa49341d5997133",
  "id": "acompanamiento-mensual",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "acompanamiento-mensual",
   "ruta": "/v3/servicios/acompanamiento-mensual/",
-  "title": "Acompañamiento Mensual de SEO e IA · SpindleLab",
+  "title": "Acompañamiento mensual de SEO e IA · SpindleLab",
   "description": "Cada mes arreglamos y medimos lo que hace que Google y la IA lean y citen tu sitio, con informes quincenales. Desde $590.000/mes + IVA, mínimo 3 meses.",
-  "senales": "Simón, e12/senales-obra.md §2.7 (copiado tal cual; en servicios-v3.json los aplica Diego con Clara). Ojo: la de Acompañamiento dice «con informes quincenales», que es R2 (ver pendientes de Simón)",
+  "senales": "Simón, e12/senales-obra.md §2.7 (copiado tal cual; en servicios-v3.json los aplica Diego con Clara). Ojo: la de Acompañamiento dice «con informes quincenales», que es R2 (ver pendientes de Simón). El title va en mayúscula inicial desde el 23-oct (antes «Acompañamiento Mensual de SEO e IA · SpindleLab»), con el nombre escrito como en el h1, la miga y oferta-v3.json: acta de obra, defecto 8; antislop A6",
   "modo": "queda con ajustes",
   "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
   "secciones": [

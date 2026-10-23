@@ -12,6 +12,8 @@
 //   · pie: el aviso de persona generada, bajo la imagen (Clara).
 //   · columna: la columna del muro que le toca sin JS (la reparte muro.mjs al cargar y al filtrar).
 //   · entrada: el marco entra a la vista una vez con el resorte «entrada» (§1.6: el medio, nunca el texto de lectura).
+//   · primeraPantalla: la imagen cae en la primera pantalla en algún tamaño de la obra y no espera a acercarse (§3.3;
+//     acta de la obra, vuelta 1, defecto 6). Las demás, sí.
 import Icono from './Icono.astro';
 
 interface Medio {
@@ -37,10 +39,12 @@ interface Props {
   tipo?: string;
   columna?: number;
   entrada?: boolean;
+  primeraPantalla?: boolean;
 }
 const {
-  id, nombre, bajada, linea, medio, forma, destino, cursor, pie, externo, nivel = 'h3', indice = false, tipo, columna, entrada = false,
+  id, nombre, bajada, linea, medio, forma, destino, cursor, pie, externo, nivel = 'h3', indice = false, tipo, columna, entrada = false, primeraPantalla = false,
 } = Astro.props;
+const carga = primeraPantalla ? 'eager' : 'lazy';
 const Nombre = nivel;
 const fuera = !!destino && /^https?:/.test(destino);
 const idNombre = `p-${id}`;
@@ -50,7 +54,7 @@ const idFuera = `p-${id}-fuera`;
   {destino ? (
     <a class="medio-enlace" href={destino} data-ir={cursor} data-acortar={indice ? '' : undefined} data-entrada={entrada ? '' : undefined} aria-labelledby={fuera ? `${idNombre} ${idFuera}` : idNombre}>
       <div class:list={['medio', forma]}>
-        <img src={medio.src} alt={medio.alt} width={medio.ancho} height={medio.alto} loading="lazy" decoding="async" />
+        <img src={medio.src} alt={medio.alt} width={medio.ancho} height={medio.alto} loading={carga} decoding="async" />
         {indice && <span class="pieza__velo" />}
       </div>
       <span class="quieto rotulo" aria-hidden="true">{cursor}</span>
@@ -58,7 +62,7 @@ const idFuera = `p-${id}-fuera`;
     </a>
   ) : (
     <div class:list={['medio', forma]} data-entrada={entrada ? '' : undefined}>
-      <img src={medio.src} alt={medio.alt} width={medio.ancho} height={medio.alto} loading="lazy" decoding="async" />
+      <img src={medio.src} alt={medio.alt} width={medio.ancho} height={medio.alto} loading={carga} decoding="async" />
     </div>
   )}
   {pie && <p class="pie">{pie}</p>}

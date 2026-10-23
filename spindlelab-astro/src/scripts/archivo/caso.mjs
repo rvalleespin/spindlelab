@@ -60,3 +60,21 @@ if (secciones.length) {
     });
   });
 }
+
+// Con el aviso de cookies abierto, la barra flotante va 8 px sobre él (spec §2.3 y §4.3, 23-oct; acta de la obra,
+// vuelta 1, defectos 2 y 4). Mientras el aviso está a la vista, su alto queda en html como --a-alto-aviso: archivo.css
+// sube la barra a ese alto más 8 y lo suma al relleno de abajo de la página. Al elegir, consent-banner.js le pone
+// `hidden` y la variable se va: la barra vuelve a su lugar, sin animación. Del aviso no se toca nada (ni su HTML, ni
+// sus ids, ni su lugar). Sin JS no hay aviso, así que no hay nada que mover.
+const aviso = document.getElementById('cookie-banner');
+if (aviso && document.querySelector('.barra')) {
+  const raiz = document.documentElement;
+  const ajustar = () => {
+    const alto = aviso.hidden ? 0 : Math.ceil(aviso.getBoundingClientRect().height);
+    if (alto) raiz.style.setProperty('--a-alto-aviso', `${alto}px`);
+    else raiz.style.removeProperty('--a-alto-aviso');
+  };
+  new MutationObserver(ajustar).observe(aviso, { attributes: true, attributeFilter: ['hidden'] });
+  if ('ResizeObserver' in window) new ResizeObserver(ajustar).observe(aviso);
+  ajustar();
+}

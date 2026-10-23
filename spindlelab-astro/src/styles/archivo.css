@@ -263,6 +263,14 @@ body.a-body {
   html body.a-body .pie-sitio #cookie-preferencias {
     display: inline-flex !important; align-items: center; min-height: 44px; padding-top: 6px !important; margin-block: -18px -12px !important;
   }
+  /* Bajo 834 el pie se parte en filas y el correo queda bajo el logo: las dos áreas se pisaban 97 × 13 y el 27 % del
+     área del logo abría el correo (acta de la obra, vuelta 1, defecto 7). El logo crece solo hacia arriba (24 px, hacia
+     los 160 vacíos sobre el pie) y apoya su dibujo abajo; el correo y «Cookies» crecen 12 arriba y 18 abajo, con el
+     relleno abajo. Lo que se ve no se mueve (medido a 360, 390 y 768: el logo y los dos textos en el mismo píxel, la
+     página del mismo alto) y las áreas ya no se tocan */
+  .a-body .pie-sitio .cab__logo { margin-block: -24px 0; align-items: flex-end; }
+  .a-body .pie-sitio__correo { padding-top: 0; padding-bottom: 6px; margin-block: -12px -18px; }
+  html body.a-body .pie-sitio #cookie-preferencias { padding-top: 0 !important; padding-bottom: 6px !important; margin-block: -12px -18px !important; }
 }
 
 /* ------------------------------------------------------------------ medios (§3.3) */
@@ -421,6 +429,13 @@ html body.a-body #cookie-banner .cb-inner a {
   color: var(--a-blanco); font: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
 }
 html body.a-body #cookie-banner .cb-actions.cb-actions { gap: 8px; }
+/* Desde 834, en una fila (§4.3, 23-oct; acta de la obra, vuelta 1, defecto 4): el texto, con su tope de 640, se angosta
+   lo que haga falta y los botones quedan a su derecha. Entre 834 y unos 890 los botones bajaban a una segunda fila y el
+   aviso medía 115 px: a 834 × 1112 tapaba el campo y el botón del chequeo de la home. En una fila mide 69 */
+@media (min-width: 834px) {
+  html body.a-body #cookie-banner .cb-inner.cb-inner { flex-wrap: nowrap; }
+  html body.a-body #cookie-banner .cb-inner p { flex: 0 1 auto; min-width: 0; }
+}
 html body.a-body #cookie-banner .cb-actions button {
   min-height: 44px; padding: 0 16px; border: 0; border-radius: 4px;
   font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em; text-transform: uppercase;
@@ -460,10 +475,10 @@ html body.a-body #cookie-aviso button:last-child { background: var(--a-placa-act
 @media (min-width: 834px) {
   html:has(body.a-body):has(:focus-visible) { scroll-padding-top: 80px; }
 }
-/* El alto del aviso, medido en esta hoja (tanda 1): 69 px en una fila (desde ~850), 115 de 600 a 834, 134 de 390 a 414
-   y 153 a 360 y 320. El relleno es ese alto más unos 20 px. */
+/* El alto del aviso, medido en esta hoja (tanda 1): 69 px en una fila (desde 834 desde el 23-oct; antes, desde ~850),
+   115 de 600 a 833, 134 de 390 a 414 y 153 a 360 y 320. El relleno es ese alto más unos 20 px. */
 html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 96px; }
-@media (max-width: 899.98px) {
+@media (max-width: 833.98px) {
   html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 136px; }
 }
 @media (max-width: 599.98px) {
@@ -491,8 +506,22 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom:
 .a-body .portada-v__decl { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; }
 .a-body .portada-v__decl .entradilla { max-width: var(--a-caja); }
 .a-body .portada-v__chequeo { grid-column: 1 / -1; }
+/* Bajo 834, la portada lee rótulo, h1, chequeo y entradilla (§2.1, fila 1; §0.4, punto 13; 23-oct, acta de la obra,
+   vuelta 1, defecto 4): con el aviso de cookies abierto, el campo y el botón quedan sobre él a 360 × 800 y 390 × 844.
+   Solo el orden a la vista: el DOM no cambia (la entradilla no tiene nada enfocable, así que el Tab tampoco). El bloque
+   de la frase se abre en la retícula de la portada (row-gap 24): entre el rótulo y el h1, 16 como hoy (24 − 8); entre el
+   h1 y el chequeo y entre el chequeo y la entradilla, 24 */
+@media (max-width: 833.98px) {
+  .a-body .portada-v__decl { display: contents; }
+  .a-body .portada-v__decl > * { grid-column: 1 / -1; }
+  .a-body .portada-v__decl > h1 { margin-top: -8px; }
+  .a-body .portada-v__chequeo { order: 1; }
+  .a-body .portada-v__decl > .entradilla { order: 2; }
+}
 /* la caja del texto, también en el chico del chequeo: tope de 493 px en todos los anchos (§1.3); a 768 corría a 736 */
 .a-body .portada-v__chequeo .chico { max-width: var(--a-caja); }
+/* y en el de /v3/diagnostico/, donde la ayuda corría de 659 a 940 px desde 768 (acta de la obra, vuelta 1, defecto 5) */
+.a-body .chequeo > .chico, .a-body .chequeo__form > .chico { max-width: var(--a-caja); }
 @media (min-width: 834px) {
   /* el video llena la portada (100svh menos el encabezado, que va antes sobre el lienzo); el texto, abajo y encima */
   .a-body .portada-v { display: flex; flex-direction: column; justify-content: flex-end; min-height: calc(100svh - 64px); }
@@ -605,6 +634,9 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom:
   .a-body .servicio__precio { grid-column: 13 / -1; }
 }
 .a-body .servicios__tambien { grid-column: 1 / -1; padding-top: 16px; }
+/* bajo 1194 va a todo el ancho: con el tope de la caja (§1.3; corría de 736 a 992 px entre 768 y 1193, acta de la obra,
+   vuelta 1, defecto 5). Desde 1194, en una línea en c5–c12, como dice §2.1 (fila 5) */
+@media (max-width: 1193.98px) { .a-body .servicios__tambien { max-width: var(--a-caja); } }
 @media (min-width: 1194px) { .a-body .servicios__tambien { grid-column: 5 / span 8; } }
 
 /* 6 · Quién está detrás: el retrato 3:4 entero en c1–c5; el texto en c7–c14 (c6–c12 de 834 a 1193), apoyado abajo */
@@ -793,6 +825,11 @@ body.a-body.a-sin-js .filtro { display: none; }
    sin mover lo que se ve (como el correo suelto de la home) */
 @media (max-width: 833.98px), (pointer: coarse) {
   .a-body .fila .pie a { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; margin-block: -13px; }
+  /* Entre la foto y la fila siguiente hay 52 px y el área, pareja (13 arriba y 13 abajo), se metía 5 px en la fila de
+     abajo: el 9-10 % del área abría la imagen (acta de la obra, vuelta 1, defecto 7). Crece 20 arriba y 6 abajo, y el
+     relleno de arriba deja el texto donde estaba (medido a 360, 390 y 768: 100 % del área propia, el texto en el mismo
+     píxel, la página del mismo alto) */
+  .a-body .fila .pie a { margin-block: -20px -6px; padding-top: 14px; }
 }
 /* El hueco nombrado (§3.3): lo que falta, dicho, en un marco punteado del tamaño de una fila 16:9 */
 .a-body .hueco { border: 1px dashed var(--a-hueco); border-radius: 6px; padding: 16px; }
@@ -833,10 +870,18 @@ body.a-body.a-sin-js .filtro { display: none; }
 /* al pasar el mouse, solo con un puntero que pasa: en táctil el toque que abre la lista dejaba «hover» pegado en la fila
    que quedaba bajo el dedo */
 @media (hover: hover) { .a-body .barra ul a:hover { color: var(--a-blanco); } }
+/* En los conceptos, después del nombre, «·» y el «Tipo» de la ficha de Clara («Concepto»), en rótulo gris y en una línea
+   (§2.3, 23-oct; acta de la obra, vuelta 1, defecto 2): bajo 1194 es lo único que está en la ventana a todo scroll */
+.a-body .barra__tipo { white-space: nowrap; }
+/* Con el aviso de cookies abierto, la barra va 8 px sobre él (§2.3, §4.3, 23-oct): caso.mjs escribe su alto en
+   --a-alto-aviso mientras está a la vista; al elegir, la barra vuelve a su lugar, sin animación */
+html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a-alto-aviso, 0px) + 8px); }
 @media (min-width: 1194px) { .a-body .barra { display: none; } }
-/* La barra no tapa lo que recibe el foco (§4.3): el relleno de abajo del alto de la barra, bajo 1194 */
+/* La barra no tapa lo que recibe el foco (§4.3): el relleno de abajo del alto de la barra, bajo 1194; con el aviso
+   abierto, más su alto (la barra va sobre él) */
 @media (max-width: 1193.98px) {
   html:has(body.a-body .barra) { scroll-padding-bottom: 96px; }
+  html:has(body.a-body .barra):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: calc(var(--a-alto-aviso, 0px) + 96px); }
 }
 
 /* ================================================================== INTERIOR (spec §2.4) · tanda 4 */

@@ -34,7 +34,7 @@ const a = articulo(Astro.params.slug as string);
           {a.ficha.map((d) => (<><dt class="dato">{d.rotulo}</dt><dd class="dato">{d.iso ? <time datetime={d.iso}>{d.valor}</time> : d.valor}</dd></>))}
         </dl>
         <div class="autor">
-          <img src={a.autor.src} alt="" width="132" height="132" loading="lazy" decoding="async" />
+          <img src={a.autor.src} alt="" width="132" height="132" loading="eager" decoding="async" />
           <p class="chico"><span class="tinta">{a.autor.nombre}</span><span class="autor__rol">{a.autor.rol}</span></p>
         </div>
         <nav class="lateral__indice" aria-label={a.nombreSecciones} data-secciones>

@@ -458,6 +458,14 @@ export function modelo(caso) {
   const ficha = t(`${p}.ficha`);
   const enLinea = ficha.linea.split(' · ');
   const indice = t(`${p}.indice`).opciones;
+  // En los conceptos, la barra flotante lleva el «Tipo» de la ficha de Clara tal cual, junto al nombre (spec §2.3, 23-oct;
+  // acta de la obra, vuelta 1, defecto 2): bajo 1194 es lo único que está en la ventana a todo scroll. Los casos reales no.
+  let tipoBarra = '';
+  if (c.concepto) {
+    const tipo = ficha.campos[0];
+    if (!tipo || tipo.rotulo !== 'Tipo' || tipo.valor !== 'Concepto') throw new Error(`${c.texto}: el primer campo de la ficha no es «Tipo: Concepto»`);
+    tipoBarra = tipo.valor;
+  }
 
   // El medio principal: el póster y su alt (Clara: «póster del recorrido»); la descripción del video, para el lector de
   // pantalla, junto al pie (el video va con aria-hidden).
@@ -526,6 +534,7 @@ export function modelo(caso) {
     og: c.og,
     nombreCorto: c.corto,
     concepto: !!c.concepto,
+    tipoBarra,
     miga,
     h1,
     ficha: { linea: ficha.linea, datos: ficha.campos.filter((f) => !enLinea.includes(f.valor)) },

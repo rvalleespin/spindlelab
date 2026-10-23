@@ -123,6 +123,10 @@ const jsonLd = {
     },
   ],
 };
+// Las portadas que caen en la primera pantalla en algún tamaño de la obra (§3.3; acta de la obra, vuelta 1, defecto 6):
+// la primera de 360 a 768; las dos de arriba a 1024 × 768; las cuatro primeras del documento a 834 × 1112, 1194 × 834 y
+// 1440 × 900 (medido sobre el build). Esas van sin espera; las otras seis esperan a acercarse.
+const EN_PRIMERA = 4;
 const h1 = t('trabajo.h1') as { tinta: string; gris: string };
 const miga = (t('trabajo.miga').texto as string).split(' · ');
 ---
@@ -148,7 +152,7 @@ const miga = (t('trabajo.miga').texto as string).split(' · ');
       </div>
       {/* El muro: dos columnas desde 834, una bajo 834; en el documento, el orden de Clara. */}
       <div class="muro" data-muro>
-        {entradas.map((e) => (
+        {entradas.map((e, i) => (
           <Pieza
             id={e.id}
             nombre={e.nombre}
@@ -164,6 +168,7 @@ const miga = (t('trabajo.miga').texto as string).split(' · ');
             indice
             tipo={e.clave}
             columna={(e as { columna?: number }).columna}
+            primeraPantalla={i < EN_PRIMERA}
           />
         ))}
       </div>

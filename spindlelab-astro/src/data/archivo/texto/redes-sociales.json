@@ -1,14 +1,14 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
- "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "sha256": "3a43f5489043ae38440fcce4130e787c9fb2870c7fe51b667fa49341d5997133",
  "id": "redes-sociales",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "redes-sociales",
   "ruta": "/v3/servicios/redes-sociales/",
-  "title": "Gestión de Redes Sociales para empresas · SpindleLab",
+  "title": "Gestión de redes sociales para empresas · SpindleLab",
   "description": "Gestión de redes sociales para empresas en LinkedIn y Meta: estrategia, pauta, comunidad y reportes. El contenido creativo lo pones tú.",
-  "senales": "Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json)",
+  "senales": "Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json). El title va en mayúscula inicial desde el 23-oct (antes «Gestión de Redes Sociales para empresas · SpindleLab»), con el nombre escrito como en el h1, la miga y oferta-v3.json: acta de obra, defecto 8; antislop A6",
   "modo": "queda con ajustes",
   "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
   "secciones": [
