@@ -3,6 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Meta Pixel (23-oct-2026). NO se carga hasta que la persona acepta el aviso de cookies:
+     __spindlelabInitMeta la llama /js/consent-banner.js al pulsar Aceptar, o este mismo bloque
+     si el permiso ya estaba guardado al abrir la página. Sin permiso no se pide ni
+     fbevents.js, así que Meta no recibe nada de la visita. Sin <noscript>: no se puede pedir
+     consentimiento sin JavaScript, así que tampoco se rastrea sin él.
+     Solo se manda PageView. `autoConfig` en falso apaga los eventos automáticos del Pixel
+     (clics en botones y lectura de metadatos de la página), para que lo que se escribe en el
+     chequeo o en el formulario no viaje a Meta por una opción que nadie pidió.
+     El mismo Pixel (2885353628478565) que usa spindlelab.cl: es el de la cuenta de anuncios. -->
+<script>
+  var __spindlelabConsent = (function(){
+    try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
+  })();
+  function __spindlelabInitMeta(){
+    if(window.__spindlelabMetaInited) return;
+    window.__spindlelabMetaInited = true;
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('set', 'autoConfig', false, '2885353628478565');
+    fbq('init', '2885353628478565');
+    fbq('track', 'PageView');
+  }
+  if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
+</script>
 <title>Verifica y Cumple · Chequeo técnico Ley 21.719</title>
 <!-- La descripción se ancla en el sitio y no en la fecha a propósito: hay un proyecto en el
      Senado para mover la vigencia a 2027, y un "antes del 1 de diciembre de 2026" envejece
@@ -3064,5 +3094,30 @@
 </script>
 <!--/email_off-->
 
+<div id="cookie-banner" hidden>
+  <style>
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#17163a;border-top:1px solid rgba(255,255,255,.18);padding:18px 20px}
+    #cookie-banner .cb-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:14px;color:rgba(255,255,255,.88);line-height:1.5;max-width:660px}
+    #cookie-banner a{color:#d6ff3d;font-weight:700}
+    #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+    #cookie-banner button{font-family:inherit;font-size:13px;font-weight:700;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+    #cookie-reject{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+    #cookie-reject:hover{background:rgba(255,255,255,.1)}
+    #cookie-accept{background:#d6ff3d;color:#17163a;border-color:#d6ff3d}
+    #cookie-accept:hover{background:#e6ff7a}
+    #cookie-banner button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    #cookie-banner[hidden]{display:none}
+    @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+  </style>
+  <div class="cb-inner">
+    <p>Usamos el Pixel de Meta para saber si nuestros anuncios en Instagram y Facebook traen visitas a este sitio. Puedes aceptarlo o rechazarlo: el chequeo funciona igual. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+    <div class="cb-actions">
+      <button type="button" id="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="/js/consent-banner.js?v=1" defer></script>
 </body>
 </html>
