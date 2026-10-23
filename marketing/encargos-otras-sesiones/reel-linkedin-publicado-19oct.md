@@ -78,6 +78,24 @@ Respaldo de cada afirmación: las cinco cosas y "no pide registro ni guarda el d
 
 Para comparar, los dos posts de texto anteriores de la página: 15-oct, 12 impresiones; 13-oct, 60. La página tiene 13 seguidores y 8 de 50 créditos de invitación.
 
+## Lectura a los 4 días (viernes 23-oct, pedida por Ramón; la de las 48 h quedó agendada el 21-oct y no se pidió ese día)
+
+Fuentes: análisis de la página (tabla "Interacción con el contenido"), el perfil de Ramón (`/in/me/recent-activity/shares/`), notificaciones "Mis publicaciones" y análisis de seguidores.
+
+| Pieza | Línea base 19-oct 10:58 | 19-oct 11:32 | **23-oct** |
+|---|---|---|---|
+| Reel en la página: impresiones | 4 | 6 | **13** |
+| Reel en la página: visualizaciones | 6 | 10 | **29** |
+| Reel en la página: clics / reacciones / comentarios / compartidos | 0 / 0 / 1 / 1 | igual | **0 / 0 / 1 (el de la página) / 1 (el de Ramón)** |
+| Compartir de Ramón en su perfil: impresiones | 3 | 10 | **42** |
+
+- **Alcance sumado del reel (página + compartir): 55 impresiones.** Un post de texto del perfil de Ramón hace hoy entre 50 y 76 (13-oct: 61, 14-oct: 76, 15-oct: 50, 19-oct ChatGPT: 58). **El reel no superó a los posts de texto.**
+- **Cero reacciones y cero comentarios ajenos en todo lo publicado desde el 13-oct** (perfil y página: 8 piezas, el reel incluido). Las notificaciones "Mis publicaciones" solo muestran interacciones de hace 3 y 4 semanas.
+- **Página: 15 seguidores** (4 el 13-oct, 13 el 19-oct); 12 nuevos en 30 días. Los saltos coinciden con las invitaciones a seguir de los días 13 y 15-oct.
+- **Lo que NO se pudo medir:** clics al chequeo. La tabla de la página muestra 0 clics en el post (no cuenta los clics del enlace del primer comentario) y esta sesión no tiene acceso a Cloudflare (conector sin autorizar)
+  para ver si `verifica.spindlelab.cl` o `/diagnostico` corrieron más chequeos entre el 19 y el 23-oct. **Es lo que pedían las instrucciones ("si aparecieron revisiones de origen orgánico") y sigue pendiente.**
+- **Comparación de referencia:** el mejor post del perfil sigue siendo el del 5-oct sobre el cuarto mito de la ley (378 impresiones), texto de Ramón sin video.
+
 ## Lo que sigue pendiente (no es de esta sesión)
 
 - **El compartir de Ramón desde su perfil**, con comentario propio. La página tiene 13 seguidores; sin eso casi no llega a nadie. **Ramón aún no ha dicho si lo quiere** (el 25-sep rechazó un compartir). No se hizo.
