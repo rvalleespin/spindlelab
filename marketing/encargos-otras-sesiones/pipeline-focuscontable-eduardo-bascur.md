@@ -96,3 +96,41 @@ como "Perdido ✗ — silencio", revisar en ~1 mes o probar WhatsApp (+56 9 6167
 - **Recordatorio programado** (`send_later`, fire 20-oct 13:00 UTC, trigger `trig_01GNxs6rjLj1oWvdHTEn5PoL`):
   la sesión revisa el hilo; si no hubo respuesta, re-verifica el hallazgo y deja el toque 2 como borrador
   en Gmail para que Ramón lo mande. No se auto-envía.
+
+---
+
+## Actualización 23-oct (cotización enviada)
+
+- **Reunión del 22-oct 14:00:** se realizó. Resultado: Eduardo pidió cotización concreta,
+  confirmó cambio de enfoque (empresas de servicios y consultoras: arquitectura, tecnología,
+  ingeniería, salud) y pidió dejar los cursos para una segunda etapa.
+- **Decisiones de Ramón para la cotización** (en el detalle del archivo de insumos local
+  `marketing/oficina/obras-web/focus-contable-sitio/brief-de-obra.md`, no commiteado):
+  - Marca Focus se mantiene (logo, colores, tipografía). Diseño propio, sin look genérico de IA.
+  - NO WordPress. Stack: **Astro + Decap CMS**.
+  - Testimonios y logos solo con autorización escrita.
+  - Alcance: redirecciones 301 desde URL actuales + medición del envío del formulario.
+  - Línea de cursos actual (tienda y aula) se retira del sitio nuevo durante la obra.
+  - Dominio y hosting hoy: por confirmar con el cliente.
+  - **Pagos: 50% al iniciar + 50% contra entrega** (fraccionable en 2 cuotas de 25% a conveniencia).
+- **Cotización SPL-COT-2026-017 generada hoy** (23-oct):
+  - 5 páginas, wordmark tipográfico (sin PNG; el sitio no publica logo-imagen).
+  - 3 planes publicados del sitio: Esencial $690.000 / **Completo ★ $1.190.000 (recomendado)** /
+    Plataforma a Medida (se cotiza).
+  - 5 referentes de dirección creativa reescritos en modo "qué tomamos y hacia dónde lo llevamos"
+    (Say Briefly, Adcker, Earlydog, Composer, Daylit) — las frases ancla originales no se podían
+    verificar con WebFetch (solo markdown, sin CSS), así que se defendieron reencuadrándolas.
+  - PDF: `SPL-COT-2026-017_focus_contable.pdf`, 22 KB, generado en el scratchpad local
+    (`COTIZACIONES/` sigue sin existir en esta sesión cloud; el PDF se le pasó a Ramón vía
+    SendUserFile y lo descargó él para adjuntarlo).
+- **Correo enviado por Ramón 23-oct 10:44 UTC:**
+  - Asunto: "Cotización sitio web | SpindleLab"
+  - Para: eduardohb@hbcontadores.cl · cc: Danaesp@hbcontadores.cl
+  - threadId Gmail: `1a168f41cb965668` (hilo nuevo, no en el hilo del outbound original).
+  - **PDF adjunto confirmado por captura de Ramón** (sizeEstimate 35 KB engañó al principio
+    por lo chico del PDF; una captura de Gmail después mostró el adjunto en la vista enviada).
+- **Pipeline:** fila agregada a `ventas/pipeline.md`, etapa **4. Propuesta formal enviada**,
+  próximo paso: seguimiento ~mar 28-oct si no respondió.
+- **Recordatorio programado** (nuevo): `send_later` para 28-oct 13:00 UTC — revisar el hilo
+  y, si no hubo respuesta, dejar seguimiento 1 como borrador en Gmail para que Ramón lo mande.
+- **Trigger del recordatorio del 28-oct:** `trig_01WKMZEL6NT5Qq4mrBTqP7vL`.
