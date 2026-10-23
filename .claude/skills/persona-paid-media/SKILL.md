@@ -65,6 +65,84 @@ y corregir **siempre**:
 - **Confirmar "Guardar", no solo la edición:** editar un título/sitelink no basta;
   recargar y verificar que el valor quedó guardado antes de darlo por hecho.
 
+## Meta Ads por MCP y Ads Manager (aprendido 23-oct-2026, campaña VyC)
+Misma regla dura (leer libre, escribir con OK), más lo que solo se descubre operando:
+- **Primero la identidad del conector.** Puede figurar "conectado" y ver solo una cuenta
+  vacía (`ads_get_ad_accounts` devuelve una sola, sin negocio): se autorizó con el perfil
+  de Facebook equivocado. Reautorizar lo hace el usuario; al volver puede quedar
+  "disabled" y hay que reactivarlo. Antes de construir, comprobar que ve LA cuenta.
+- **Lo que crea la MCP es un BORRADOR de Ads Manager, no un objeto en pausa.** La API lo
+  lee `PAUSED` + entrega `off`, pero en Ads Manager aparece con lápiz verde y botón
+  **"Publicar"**, y publicar lo deja ACTIVO (con pago en la cuenta, gasta). Avisar siempre:
+  "no hagas clic en Publicar hasta revisar". Cada edición se autoguarda como "Cambios sin
+  publicar". **Nunca usar la tecla Escape en el editor**: abre "¿Publicar borradores?";
+  cerrar con la X.
+- **Presupuesto CBO:** monto en la unidad más chica (CLP sin decimales: `100000` =
+  $100.000). Con presupuesto lifetime, cada conjunto exige su propia `end_time`. El piso de
+  gasto por conjunto no se puede fijar por MCP (pide un límite total y falla).
+- **Promocionar un post existente:** creativo con `source_instagram_media_id` +
+  `instagram_user_id` + `call_to_action` con `link` + `url_tags` (UTM). Conserva likes y
+  comentarios. Las lecturas **no devuelven el link** de ese creativo: verificar destino y
+  UTM en Ads Manager antes de encender.
+- **No hay búsqueda de segmentación en la MCP y no se inventan IDs.** Un "conjunto por
+  rubro" armado solo con geografía no está segmentado: decirlo y cerrarlo en la interfaz.
+- **Segmentación detallada en el editor:** buscar en inglés y en una palabra ("dentist",
+  "restaurant owner", "nonprofit", "government employee"); con tildes o varias palabras cae
+  en comportamientos genéricos. Los tamaños del buscador son globales; el estimado real
+  para el país está en "Definición del público" (dos cargos de abogado dieron "Menos de
+  1.000" en Chile). Un cargo como límite duro apaga Advantage+ y dispara "Amplía el
+  público" (#2446395): marcar **"Usar como sugerencia"** lo resuelve (el rubro pasa a ser
+  pista, no filtro). El desplegable se reordena tras cada selección: un clic por búsqueda,
+  cerrar con clic en el fondo, verificar los chips; la casilla se pulsa por `ref`.
+- **Aviso #1870194 (tipo de segmentación por lugar): NO se arregla.** Todo conjunto creado
+  por la MCP trae `location_types ["frequently_in","home"]`, el editor lo marca como opción
+  eliminada y **bloquea Publicar**. Ni el editor (no tiene el selector) ni la API (Meta
+  re-guarda lo mismo con `home`, `recent` o sin el campo) lo quitan. Costó horas el 23-oct.
+  Un conjunto creado en el editor de Ads Manager NO lo trae.
+- **Revisión de Meta:** los anuncios pasan por "En revisión" aunque estén en pausa y uno
+  puede salir rechazado antes de gastar. El motivo no sale por API (`ads_get_errors` viene
+  vacío): se lee en Ads Manager. Los temas legales y de privacidad (ej. Ley 21.719) son
+  sensibles a la política: preparar una variante de gráfica por si hay rechazo.
+- **Chrome:** con la ventana en segundo plano los clics por CDP expiran (30 s);
+  `find`/`get_page_text` sí responden. El editor carga perezoso: esperar ~20 s tras
+  navegar y bajar con scroll en dos tandas.
+- **Diseño de test con presupuesto chico:** muchas audiencias × muchos anuncios diluye.
+  Con $100.000 y 9 conjuntos salen ~$290/día por conjunto y ~150 visitas por rubro: la
+  lectura por rubro es direccional, la de ángulos aguanta sumando cada anuncio entre
+  conjuntos. Incluir un conjunto **Control amplio** y fijar antes la regla del Juez: al día
+  7-10 apagar lo peor, concentrar y ampliar solo con ganadoras claras. Del método de
+  Cordero se adopta todo menos "sin aprobación humana": aquí nada se enciende ni sube de
+  presupuesto sin OK de Ramón.
+
+## Receta para montar una campaña de Meta (aprendida el 23-oct-2026, VyC; no repetir el rodeo)
+1. **Prueba de un solo conjunto antes de construir nada.** Crearlo EN EL EDITOR de Ads Manager
+   (Crear → Nuevo conjunto en la campaña), abrirlo y ver que no traiga errores. Solo si pasa,
+   se sigue. Se gastaron horas porque se armaron 9 conjuntos por MCP sin probar uno.
+2. **La MCP de Meta solo para: leer, crear la campaña, encender/apagar y borrar con OK.**
+   Los conjuntos y anuncios se arman en el editor: «Usar publicación existente» (pestaña
+   Instagram) para promocionar posts, destino y «Más información», y en Parámetros de URL
+   `utm_source=meta&utm_medium=paid&utm_campaign=…&utm_content={{ad.name}}&utm_term={{adset.name}}`
+   (los nombres se fijan al publicar; así no se editan los anuncios uno a uno).
+3. **Un prototipo completo (conjunto + 4 anuncios) y duplicar:** menú «…» → Duplicar, con
+   «Ubicaciones Advantage+» DESMARCADO (si no, pisa las manuales) y «activar copias» sin
+   marcar; nº de copias = los que falten. Luego, por copia: nombre y segmentación de rubro.
+4. **Jamás `ads_update_entity` con `targeting`:** reemplaza TODO el spec y escribe en el
+   objeto vivo (`is_draft=false`); borró sugerencias de segmentación hechas en la UI.
+5. **Borrado por API:** el clasificador lo bloquea sin la lista exacta de IDs confirmada por
+   el usuario. Pedir esa confirmación UNA vez, con los IDs. Los conjuntos borrados dejan
+   **borradores huérfanos** («ACTUALIZADO: Público» con error) en «Revisar y publicar»:
+   descartarlos uno a uno abriendo cada ID en el editor → «Descartar borrador» (descarta
+   solo ese objeto). El botón global «Descartar borradores» borra TODO: no usarlo.
+6. **Publicar con los interruptores apagados** manda a revisión de Meta SIN gasto (~5 min por
+   36 anuncios); aprobados quedan «Inactivo». Encender recién con OK explícito y de arriba
+   abajo: campaña → conjuntos → anuncios (`ads_activate_entity`, uno por uno). Verificar
+   leyendo `effective_status`.
+7. **Chrome:** la ventana debe estar al frente (si no, los clics se cuelgan); nunca Escape en
+   el editor; el id de pestaña cambia (`tabs_context_mcp`); tras navegar esperar ~20 s;
+   un `find` por texto devuelve a veces el nodo equivocado, confirmar con captura.
+8. **Presupuesto de intentos:** si una vía falla dos veces con la misma causa, parar, decir cuál
+   es la causa y cambiar de vía. No insistir con variantes.
+
 ## Criterios de calidad (bueno vs. aceptable)
 - **Diagnóstico con el número que lo respalda.** ⚠️ "conviene subir el presupuesto" sin
   el dato de CPL/conversión es opinión, no diagnóstico.
@@ -124,3 +202,7 @@ analítica), **no** escribo el estado compartido. Reporto al troncal.
 > ✅ **Principio:** *una campaña nueva muestra alarmas esperadas (sin conversiones, "apto
 > limitado") que son falta de datos, no fallas; no "arreglar" lo que está bien.*
 > **Respaldo:** SpindleLab, jul-2026 — falsas alarmas de los primeros días.
+
+> ✅ **Principio:** *lo que la API lee como "pausado" puede ser un borrador que se enciende con un clic; decirlo al usuario y no tocar Publicar.* **Respaldo:** SpindleLab, VyC, 23-oct-2026 — reporté "pausado y verificado" y era una verdad a medias.
+
+> ✅ **Principio:** *no digas "segmentado por rubro" si lo único que cargaste fue geografía; si la herramienta no tiene la capacidad, dilo como pendiente y no la rellenes con datos inventados.* **Respaldo:** SpindleLab, VyC, 23-oct-2026.
