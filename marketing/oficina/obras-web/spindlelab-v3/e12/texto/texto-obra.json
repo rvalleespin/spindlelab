@@ -5826,7 +5826,8 @@
   "Diego (construcción)": [
    "La ficha de cada tramo de la cinta («home.cinta.tramos») reemplaza la de cinta.json del prototipo.",
    "Las situaciones y líneas de /servicios/ son las de la home: van en la página o en oferta-v3.json, a tu elección, con nombres y precios en diff 0.",
-   "En /contacto/ cambia solo el texto visible: el name del campo sigue siendo «Sitio web»."
+   "En /contacto/ cambia solo el texto visible: el name del campo sigue siendo «Sitio web».",
+   "Defecto 8 del acta de obra: volver a sacar las copias de auditoria-seo-tecnica, acompanamiento-mensual y redes-sociales (node construccion/herramientas/extraer-texto.mjs auditoria-seo-tecnica acompanamiento-mensual redes-sociales) y construir. Cambian solo su <title> y su og:title; lo probé el 23-oct en un build aparte (texto/defecto-8/), y extraer-texto.mjs --comprobar da esas tres como DISTINTO hasta que se saquen."
   ],
   "Bruno": [
    "Tonela, fila 11 del caso.md («Lo que lee un motor»): la placa está pendiente; sin ella, «Sin métrica» va sin fila."
@@ -5866,7 +5867,7 @@
   },
   {
    "fecha": "23-oct-2026",
-   "que": "El title de Auditoría SEO técnica, Acompañamiento mensual y Gestión de redes sociales, en mayúscula inicial («técnica», «mensual», «redes sociales»), escrito como ya lo escriben el h1, la miga y oferta-v3.json. Venían de producción y senales-obra.md §2.7 los dejaba «queda»: ahí cambian también, con su fila en Correcciones. comprobar-obra.py suma la comprobación 9 (sin Title Case en los title)",
+   "que": "El title de Auditoría SEO técnica, Acompañamiento mensual y Gestión de redes sociales, en mayúscula inicial («técnica», «mensual», «redes sociales»), escrito como ya lo escriben el h1, la miga y oferta-v3.json. Venían de producción y senales-obra.md §2.7 los dejaba «queda»: ahí cambian también, con su fila en Correcciones. comprobar-obra.py suma la comprobación 9 (sin Title Case en los title). Probado en un build aparte (una copia del proyecto fuera del repo, con las tres copias del texto sacadas como lo hace extraer-texto.mjs): en todo el dist cambian solo el <title> y el og:title de esas tres páginas; senales.py, 19 de 19 rutas iguales a senales-obra.md; producción igual byte a byte; verificar sin hallazgos sobre /v3/ a 390 y a 1440; las tres renderizadas a los ocho anchos sin desborde (texto/defecto-8/)",
    "origen": "acta-obra.md, vuelta 1, defecto 8 (Javiera); antislop A6"
   }
  ],
