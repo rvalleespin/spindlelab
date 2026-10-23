@@ -1,0 +1,91 @@
+
+> spindlelab-astro@0.0.1 build
+> astro build
+
+22:51:57 [types] Generated 40ms
+22:51:57 [build] output: "static"
+22:51:57 [build] directory: /home/user/spindlelab/spindlelab-astro/dist/
+22:51:57 [build] Collecting build info...
+22:51:57 [build] ✓ Completed in 91ms.
+22:51:57 [build] Building static entrypoints...
+22:52:00 [vite] ✓ built in 2.70s
+22:52:00 [build] ✓ Completed in 2.73s.
+
+ building client (vite) 
+22:52:00 [vite] transforming...
+22:52:01 [vite] ✓ 320 modules transformed.
+22:52:01 [vite] rendering chunks...
+22:52:01 [vite] computing gzip size...
+22:52:01 [vite] dist/_astro/hoisted.DiAbklbU.js   0.12 kB │ gzip:  0.09 kB
+22:52:01 [vite] dist/_astro/hoisted.BsTZcJzB.js   0.66 kB │ gzip:  0.41 kB
+22:52:01 [vite] dist/_astro/hoisted.DFr-Rxi9.js   0.82 kB │ gzip:  0.39 kB
+22:52:01 [vite] dist/_astro/hoisted.CvG5eIMe.js   0.97 kB │ gzip:  0.53 kB
+22:52:01 [vite] dist/_astro/hoisted.DZGkT4xk.js   1.07 kB │ gzip:  0.47 kB
+22:52:01 [vite] dist/_astro/hoisted.CCogRr-n.js   1.12 kB │ gzip:  0.61 kB
+22:52:01 [vite] dist/_astro/video.J7YnQxQJ.js     1.27 kB │ gzip:  0.72 kB
+22:52:01 [vite] dist/_astro/hoisted.DiudkcO6.js   1.42 kB │ gzip:  0.71 kB
+22:52:01 [vite] dist/_astro/hoisted.Cwumj-KR.js   1.43 kB │ gzip:  0.76 kB
+22:52:01 [vite] dist/_astro/hoisted.Bkkmjuy0.js  20.03 kB │ gzip:  5.89 kB
+22:52:01 [vite] dist/_astro/hoisted.D0OiGOzM.js  58.06 kB │ gzip: 21.12 kB
+22:52:01 [vite] ✓ built in 542ms
+
+ generating static routes 
+22:52:01 ▶ src/pages/index.astro
+22:52:01   └─ /index.html (+13ms)
+22:52:01 ▶ src/pages/nosotros.astro
+22:52:01   └─ /nosotros/index.html (+3ms)
+22:52:01 ▶ src/pages/v3/a.astro
+22:52:01   └─ /v3/a/index.html (+2ms)
+22:52:01 ▶ src/pages/v3/b.astro
+22:52:01   └─ /v3/b/index.html (+2ms)
+22:52:01 ▶ src/pages/v3/blog/[slug].astro
+22:52:01   ├─ /v3/blog/21-chequeos-visibilidad-ia/index.html (+10ms)
+22:52:01   ├─ /v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/index.html (+4ms)
+22:52:01   ├─ /v3/blog/que-es-un-mini-diagnostico-seo/index.html (+4ms)
+22:52:01   ├─ /v3/blog/cuanto-cuesta-seo-tecnico-chile/index.html (+5ms)
+22:52:01   ├─ /v3/blog/seo-tecnico-fintechs-chile/index.html (+8ms)
+22:52:01   ├─ /v3/blog/que-es-aeo-geo/index.html (+3ms)
+22:52:01   └─ /v3/blog/como-aparecer-en-chatgpt/index.html (+6ms)
+22:52:01 ▶ src/pages/v3/blog/index.astro
+22:52:01   └─ /v3/blog/index.html (+3ms)
+22:52:01 ▶ src/pages/v3/c.astro
+22:52:01   └─ /v3/c/index.html (+2ms)
+22:52:01 ▶ src/pages/v3/contacto.astro
+22:52:01   └─ /v3/contacto/index.html (+3ms)
+22:52:01 ▶ src/pages/v3/diagnostico.astro
+22:52:01   └─ /v3/diagnostico/index.html (+3ms)
+22:52:01 ▶ src/pages/v3/index.astro
+22:52:01   └─ /v3/index.html (+8ms)
+22:52:01 ▶ src/pages/v3/maqueta-inicial.astro
+22:52:01   └─ /v3/maqueta-inicial/index.html (+1ms)
+22:52:01 ▶ src/pages/v3/metodo.astro
+22:52:01   └─ /v3/metodo/index.html (+4ms)
+22:52:01 ▶ src/pages/v3/nosotros.astro
+22:52:01   └─ /v3/nosotros/index.html (+3ms)
+22:52:01 ▶ src/pages/v3/servicios/[slug].astro
+22:52:01   ├─ /v3/servicios/visibilidad-en-ia/index.html (+5ms)
+22:52:01   ├─ /v3/servicios/auditoria-seo-tecnica/index.html (+2ms)
+22:52:01   ├─ /v3/servicios/acompanamiento-mensual/index.html (+2ms)
+22:52:01   ├─ /v3/servicios/redes-sociales/index.html (+2ms)
+22:52:01   └─ /v3/servicios/paid-media/index.html (+2ms)
+22:52:01 ▶ src/pages/v3/servicios/desarrollo-web.astro
+22:52:01   └─ /v3/servicios/desarrollo-web/index.html (+5ms)
+22:52:01 ▶ src/pages/v3/servicios/index.astro
+22:52:01   └─ /v3/servicios/index.html (+8ms)
+22:52:01 ▶ src/pages/v3/trabajo/[caso].astro
+22:52:01   ├─ /v3/trabajo/combeau/index.html (+9ms)
+22:52:01   ├─ /v3/trabajo/praxi/index.html (+5ms)
+22:52:01   ├─ /v3/trabajo/sesenta/index.html (+4ms)
+22:52:01   ├─ /v3/trabajo/ocelo/index.html (+4ms)
+22:52:01   ├─ /v3/trabajo/doceavo/index.html (+4ms)
+22:52:01   └─ /v3/trabajo/tonela/index.html (+4ms)
+22:52:01 ▶ src/pages/v3/trabajo/index.astro
+22:52:01   └─ /v3/trabajo/index.html (+4ms)
+22:52:01 ✓ Completed in 204ms.
+
+22:52:01 [build] 33 page(s) built in 3.71s
+22:52:01 [build] Complete!
+
+real	0m4.859s
+user	0m7.621s
+sys	0m0.765s

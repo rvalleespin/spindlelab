@@ -1,0 +1,108 @@
+........................................................................................................................................................................................................................
+errores de medición: []
+desborde con clip > 0: []
+desborde sin clip > 0: []
+h1 ≠ 1: []  main ≠ 1: []  lang: [ 'es-CL' ]
+saltos de encabezado: []
+nodos en negrita: []
+texto < 11 px: []
+familias a la vista: [ 'DM Mono', 'Google Sans Flex' ]
+letras ajenas: []
+mayúsculas fuera de la mono: []
+letras cargadas: [ 'Google Sans Flex 100 1000 normal', 'DM Mono 500 normal' ] [
+  '/fonts/google-sans-flex-latin.woff2',
+  '/fonts/dm-mono-500-latin.woff2'
+]
+alto del encabezado por ancho: {
+  '360': [ 90 ],
+  '390': [ 90 ],
+  '768': [ 90 ],
+  '834': [ 64 ],
+  '1024': [ 64 ],
+  '1194': [ 64 ],
+  '1440': [ 64 ],
+  '1920': [ 64 ]
+}
+párrafos de main > 494 px: [
+  '/v3/@768: 661 p.chico: «Las marcas rotuladas Concepto son inventadas: mues» | 736 p.cuerpo: «Él sube sus fotos tal como las tiene, sin achicarl»',
+  '/v3/@834: 664 p.chico: «Las marcas rotuladas Concepto son inventadas: mues» | 802 p.servicios__tambien.cuerpo: «También: Paid Media (Google), la gestión de tus an»',
+  '/v3/@1024: 673 p.chico: «Las marcas rotuladas Concepto son inventadas: mues» | 992 p.servicios__tambien.cuerpo: «También: Paid Media (Google), la gestión de tus an»',
+  '/v3/@1194: 682 p.chico: «Las marcas rotuladas Concepto son inventadas: mues» | 577 p.servicios__tambien.cuerpo: «También: Paid Media (Google), la gestión de tus an»',
+  '/v3/@1440: 693 p.chico: «Las marcas rotuladas Concepto son inventadas: mues» | 700 p.servicios__tambien.cuerpo: «También: Paid Media (Google), la gestión de tus an»',
+  '/v3/@1920: 693 p.chico: «Las marcas rotuladas Concepto son inventadas: mues» | 940 p.servicios__tambien.cuerpo: «También: Paid Media (Google), la gestión de tus an»',
+  '/v3/diagnostico/@768: 736 p.chico: «Gratis y sin dejar tu correo. Leemos solo páginas »',
+  '/v3/diagnostico/@1024: 659 p.chico: «Gratis y sin dejar tu correo. Leemos solo páginas »',
+  '/v3/diagnostico/@1440: 700 p.chico: «Gratis y sin dejar tu correo. Leemos solo páginas »',
+  '/v3/diagnostico/@1920: 940 p.chico: «Gratis y sin dejar tu correo. Leemos solo páginas »'
+]
+img sin width/height: []  sin alt: []
+lazy en la primera pantalla: [
+  '/v3/trabajo/@360: /v3/medios/combeau-fotografia-45.webp',
+  '/v3/trabajo/@390: /v3/medios/combeau-fotografia-45.webp',
+  '/v3/trabajo/@768: /v3/medios/combeau-fotografia-45.webp',
+  '/v3/trabajo/@834: /v3/medios/combeau-fotografia-45.webp, /v3/medios/praxi-43.webp, /v3/medios/sesenta-45.webp, /v3/medios/verifica-y-cumple-53.webp',
+  '/v3/trabajo/@1024: /v3/medios/combeau-fotografia-45.webp, /v3/medios/praxi-43.webp',
+  '/v3/trabajo/@1194: /v3/medios/combeau-fotografia-45.webp, /v3/medios/praxi-43.webp, /v3/medios/sesenta-45.webp, /v3/medios/verifica-y-cumple-53.webp',
+  '/v3/trabajo/@1440: /v3/medios/combeau-fotografia-45.webp, /v3/medios/praxi-43.webp, /v3/medios/sesenta-45.webp, /v3/medios/verifica-y-cumple-53.webp',
+  '/v3/trabajo/@1920: /v3/medios/combeau-fotografia-45.webp, /v3/medios/praxi-43.webp, /v3/medios/sesenta-45.webp',
+  '/v3/blog/21-chequeos-visibilidad-ia/@360: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/21-chequeos-visibilidad-ia/@390: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/21-chequeos-visibilidad-ia/@768: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/21-chequeos-visibilidad-ia/@834: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/21-chequeos-visibilidad-ia/@1024: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/21-chequeos-visibilidad-ia/@1194: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/21-chequeos-visibilidad-ia/@1440: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/21-chequeos-visibilidad-ia/@1920: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-aparecer-en-chatgpt/@360: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-aparecer-en-chatgpt/@390: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-aparecer-en-chatgpt/@768: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-aparecer-en-chatgpt/@834: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-aparecer-en-chatgpt/@1024: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-aparecer-en-chatgpt/@1194: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-aparecer-en-chatgpt/@1440: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-aparecer-en-chatgpt/@1920: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/@360: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/@390: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/@768: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/@834: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/@1024: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/@1194: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/@1440: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/@1920: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/cuanto-cuesta-seo-tecnico-chile/@360: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/cuanto-cuesta-seo-tecnico-chile/@390: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/cuanto-cuesta-seo-tecnico-chile/@768: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/cuanto-cuesta-seo-tecnico-chile/@834: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/cuanto-cuesta-seo-tecnico-chile/@1024: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/cuanto-cuesta-seo-tecnico-chile/@1194: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/cuanto-cuesta-seo-tecnico-chile/@1440: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/cuanto-cuesta-seo-tecnico-chile/@1920: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-aeo-geo/@360: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-aeo-geo/@390: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-aeo-geo/@768: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-aeo-geo/@834: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-aeo-geo/@1024: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-aeo-geo/@1194: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-aeo-geo/@1440: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-aeo-geo/@1920: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-un-mini-diagnostico-seo/@360: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-un-mini-diagnostico-seo/@390: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-un-mini-diagnostico-seo/@768: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-un-mini-diagnostico-seo/@834: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-un-mini-diagnostico-seo/@1024: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-un-mini-diagnostico-seo/@1194: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-un-mini-diagnostico-seo/@1440: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/que-es-un-mini-diagnostico-seo/@1920: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/seo-tecnico-fintechs-chile/@360: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/seo-tecnico-fintechs-chile/@390: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/seo-tecnico-fintechs-chile/@768: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/seo-tecnico-fintechs-chile/@834: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/seo-tecnico-fintechs-chile/@1024: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/seo-tecnico-fintechs-chile/@1194: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/seo-tecnico-fintechs-chile/@1440: /assets/img/ramon-vallejos-avatar.jpg',
+  '/v3/blog/seo-tecnico-fintechs-chile/@1920: /assets/img/ramon-vallejos-avatar.jpg'
+]
+toque < 44 (táctil): []
+consola: []
+pedidos fallidos: []
+404 del servidor: []
