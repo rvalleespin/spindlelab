@@ -9,7 +9,7 @@
 
 1. **El eje cambia, el respaldo no.** El sitio vivo dice «un motor de adquisición». Este documento pone «marketing y crecimiento con IA para empresas que ya venden». Pero hoy no existe un cliente medido con mejora de ventas, ni un diagnóstico pagado, ni una entrega de analítica o CRM. Por eso el sitio **promete método, entregables y plazos, nunca resultados**.
 2. **El mejor *reason why* que se puede sostener hoy es la transparencia que cualquiera verifica, más una sola persona responsable.** El *reason why* de resultados no existe todavía y no se inventa: se construye con el primer caso medido. Las dos lecturas en frío lo confirmaron: lo que les dio confianza fue la honestidad, no el servicio.
-3. **Publicar estos textos antes del 3-dic contradice una decisión ya tomada.** Ramón eligió el Camino A el 23-oct: probar el modelo sin cambiar el sitio ni el mensaje público hasta el corte del 3-dic. Escribir los textos no la contradice; publicarlos antes, sí, salvo que Ramón la revoque por escrito. Queda como **preparación** (decisión 0, sección 12).
+3. **El plazo lo fijó Ramón el 23-oct: el sitio sale en menos de un mes.** Eligió el Camino A (probar el modelo sin cambiar lo público hasta el corte del 3-dic) y horas después dijo que el sitio nuevo es para que salga pronto, en menos de un mes. Se toma lo segundo como la decisión vigente: la restricción de no tocar el sitio queda reemplazada. Los cortes del 19-nov y el 3-dic se mantienen como puntos de medición, y la consecuencia está en la decisión 0 (sección 12).
 4. **Hay frases del sitio actual que hoy no se sostienen** (por ejemplo «Más elegido» en planes sin comprador, «Muchos clientes nos usan…», la conversación simulada con una IA que nombra a SpindleLab). Se sacan con este eje o con cualquier otro. Lista en las secciones 11 y 13.
 
 ## 1. La base del mensaje
@@ -301,7 +301,7 @@ La página se mantiene: es la pieza más fuerte y verificable. Cambian estos pun
 
 ## 12. Decisiones de Ramón que cambian el texto
 
-0. **Cuándo se publica.** Ramón eligió el Camino A el 23-oct: no cambiar el sitio ni el mensaje público hasta el corte del 3-dic. Este texto es preparación y, publicado antes, contradice esa decisión. Si Ramón la revoca por escrito (el sitio nuevo ya está en construcción), el texto sale con todas las frases ya limpias de promesas.
+0. **Cuándo se publica. DECIDIDA el 23-oct por Ramón: en menos de un mes.** Reemplaza la parte «no tocar el sitio» del Camino A. Consecuencia que conviene tener presente: los cortes del 19-nov y del 3-dic ya no miden «el modelo nuevo sin cambiar lo público», sino el sitio nuevo más el proceso de seguimiento, juntos. Con tan pocas llamadas, un resultado bueno o malo no se podrá atribuir solo al sitio. La mitigación es que el texto conserva todos los servicios y precios publicados y promete solo método, entregables y plazos, así que si la hipótesis falla se retoca el mensaje sin rehacer la oferta.
 1. **«Revisión» en vez de «diagnóstico» para lo gratis.** Hay que coordinarlo con los correos de outbound, que dicen «diagnóstico gratis».
 2. **Plazo de la revisión:** 24 horas o «un día hábil». Este documento usa «un día hábil».
 3. **Botón principal de la navegación:** «Pedir la revisión» (a `/contacto/`, donde se mide `generate_lead`) o «Chequea tu sitio» (a la herramienta).

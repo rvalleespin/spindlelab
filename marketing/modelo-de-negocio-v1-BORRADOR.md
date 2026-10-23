@@ -3,7 +3,7 @@
 > ⚠️ **BORRADOR. No es una decisión, no se publica y no cambia ninguna otra pieza.**
 > Escrito por la troncal a partir del encargo de Ramón (23-oct), una lectura de `origin/main` y Gmail (19 al 22-oct). No modifica `pipeline.md`, el plan operativo, el sitio ni material público.
 > **Versión 1.1:** corregida tras la revisión de dos auditores independientes. La primera versión decía que la ruta «revisión gratis → proyecto» era la que había cerrado a los dos clientes; las fuentes dicen lo contrario y está corregido abajo.
-> **Actualización 23-oct (tarde):** Ramón eligió el **Camino A** (probar el modelo sin cambiar lo público). Paso 0 hecho: ver Anexo C. Eduardo ya recibió su cotización (SPL-COT-2026-017).
+> **Actualización 23-oct (tarde):** Ramón eligió el **Camino A** (probar el modelo sin cambiar lo público). **Después fijó que el sitio nuevo sale en menos de un mes**, lo que reemplaza la parte «sin tocar el sitio» (ver `sitio-nuevo-textos-v1-BORRADOR.md`, decisión 0). Paso 0 hecho: ver Anexo C. Eduardo ya recibió su cotización (SPL-COT-2026-017).
 > **Rótulos:** **[HECHO]** = venta o entrega verificable. **[DECLARADO]** = Ramón dice que puede hacerlo y ningún cliente lo ha comprado, o un pago sin comprobante. **[HIPÓTESIS]** = por probar. **[propuesta]** = número u opción de este borrador, no dato.
 > Los precios son los ya existentes en el repo, con su tipo (publicado, cotizado o vendido). No se inventó ninguno. Las cifras del sitio vivo las leyó un agente el 23-oct y no las re-verifiqué.
 
