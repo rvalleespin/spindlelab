@@ -1,20 +1,17 @@
 ---
-import Icon from './Icon.astro';
-import { CONTACTO } from '../consts';
-
-// Concreto: qué hace SpindleLab, no el tamaño del equipo.
+// Las tres reglas de trabajo de Ramón (mismo texto que /nosotros/).
 const PUNTOS = [
   {
-    titulo: 'Diagnóstico antes que contrato',
-    desc: 'Antes de cobrarte nada, reviso tu sitio y tu presencia en IA y te muestro los hallazgos en una página. Gratis, en 24 horas.',
+    titulo: 'Empiezo por mirar',
+    desc: 'Reviso tu sitio antes de cobrarte nada y te cuento lo que encontré.',
   },
   {
-    titulo: 'Arreglo lo técnico y lo legible',
-    desc: 'SEO técnico, datos estructurados y contenido que la IA pueda citar. No hay que rehacer tu sitio. Hay que hacerlo legible.',
+    titulo: 'Te digo qué se puede mover y qué no',
+    desc: '',
   },
   {
-    titulo: 'Mido si te recomiendan',
-    desc: 'Registro si ChatGPT, Gemini y Perplexity te nombran ante las preguntas de tus clientes. Con fecha, no de memoria.',
+    titulo: 'Lo dejo por escrito',
+    desc: 'Alcance, fases, plazos y precio, antes de empezar.',
   },
 ];
 ---
@@ -24,10 +21,10 @@ const PUNTOS = [
     <div data-reveal class="max-w-2xl">
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">Quiénes somos</p>
       <h2
-        class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg"
+        class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-balance text-fg"
         style="letter-spacing:-0.03em"
       >
-        No te prometo. Te muestro.
+        Quién está detrás
       </h2>
     </div>
 
@@ -42,54 +39,35 @@ const PUNTOS = [
           class="aspect-[3/4] w-full rounded-2xl border border-white/10 object-cover"
         />
         <p class="mt-4 text-sm font-semibold text-fg">Ramón Vallejos</p>
-        <p class="text-sm text-fg-muted">Consultor de SEO técnico y visibilidad en IA</p>
+        <p class="text-sm text-fg-muted">Consultor de marketing y crecimiento con IA</p>
       </div>
 
       <div data-reveal style="transition-delay:90ms">
         <p class="text-lg md:text-xl text-fg leading-relaxed">
-          Soy Ramón Vallejos. SpindleLab soy yo al frente, orquestando el motor, con agentes de IA a mi
-          lado y partners para lo que no hacemos en casa.
+          Soy Ramón Vallejos y SpindleLab soy yo. Uso agentes de IA para el trabajo que se repite y
+          reviso yo lo que te entrego. Como soy una persona, tomo pocos proyectos a la vez. Atiendo a
+          todo Chile por videollamada.
         </p>
         <p class="mt-5 text-base text-fg-muted leading-relaxed">
-          Antes pasé más de cinco años en agencias. Coordiné la producción de piezas para ocho marcas
-          nacionales en Universal McCann. Trabajé la cuenta de LATAM Airlines en Graphene IPG, con
-          campañas en cuatro países. Después vino la pauta de retail y B2B en Incrementa, y el contenido y
-          el SEO de una cartera B2B en Maggiore.
-        </p>
-        <p class="mt-5 text-base text-fg-muted leading-relaxed">
-          Te lo cuento porque con esa experiencia puedo hacerme cargo del eje de tu operación y poner el
-          motor a funcionar entero, no por partes.
-        </p>
-        <p class="mt-5 text-base text-fg-muted leading-relaxed">
-          El objetivo no es solo que vendas. Es que cuando alguien pregunte por tu rubro, tu nombre ya
-          esté ahí.
-        </p>
-        <p class="mt-5 text-base text-fg-muted leading-relaxed">
-          Lo primero es un diagnóstico. Reviso tu sitio, tu contenido y si la IA te nombra, y te entrego
-          en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas.
+          Antes trabajé en agencias. Coordiné la producción de piezas para ocho marcas nacionales en
+          Universal McCann y trabajé la cuenta de LATAM Airlines en Graphene IPG, con campañas en cuatro
+          países. Después hice pauta de retail y B2B en Incrementa, y contenido y SEO en Maggiore.
         </p>
 
         <div class="mt-10 grid sm:grid-cols-1 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
           {
             PUNTOS.map((p) => (
               <div class="bg-surface p-6 md:p-7">
-                <h3 class="text-base font-semibold text-fg mb-1.5">{p.titulo}</h3>
-                <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>
+                <h3 class={`text-base font-semibold text-fg${p.desc ? ' mb-1.5' : ''}`}>{p.titulo}</h3>
+                {p.desc && <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>}
               </div>
             ))
           }
         </div>
 
-        <div class="mt-10 flex flex-wrap items-center gap-5">
-          <a
-            href={CONTACTO}
-            class="inline-flex items-center gap-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-6 py-3 rounded-full transition-colors"
-          >
-            Agenda tu diagnóstico
-            <Icon name="arrowRight" />
-          </a>
+        <div class="mt-10">
           <a href="/nosotros/" class="text-sm font-semibold text-support hover:text-fg transition-colors">
-            Leer más →
+            Conocer más →
           </a>
         </div>
       </div>

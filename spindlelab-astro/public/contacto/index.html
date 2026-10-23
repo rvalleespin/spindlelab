@@ -58,19 +58,19 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
 </script>
 <!-- End Meta Pixel Code -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto: pide tu diagnóstico gratis · SpindleLab</title>
-<meta name="description" content="Escríbenos a hola@spindlelab.cl con la URL de tu sitio y en 24 horas recibes un mini-diagnóstico gratuito de SEO técnico y presencia en IA. Sin compromiso.">
+<title>Contacto: pide tu revisión gratis · SpindleLab</title>
+<meta name="description" content="Escríbenos la dirección de tu sitio y en un día hábil recibes una revisión de una página con lo más importante que encontramos.">
 <link rel="canonical" href="https://spindlelab.cl/contacto/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SpindleLab">
 <meta property="og:title" content="Contacto · SpindleLab">
-<meta property="og:description" content="Pide tu mini-diagnóstico gratuito: envíanos tu URL y en 24 horas tienes el informe.">
+<meta property="og:description" content="Escríbenos la dirección de tu sitio y en un día hábil recibes una revisión de una página con lo más importante que encontramos.">
 <meta property="og:url" content="https://spindlelab.cl/contacto/">
 <meta property="og:image" content="https://spindlelab.cl/assets/img/og-marca.jpg?v=4">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:alt" content="SpindleLab. SEO técnico y visibilidad en IA">
+<meta property="og:image:alt" content="SpindleLab. Marketing y crecimiento con IA">
 <meta property="og:locale" content="es_CL">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
@@ -85,17 +85,17 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
       "url": "https://spindlelab.cl/",
       "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
       "email": "hola@spindlelab.cl",
-      "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
+      "description": "Marketing y crecimiento con IA para empresas en Chile: revisión del sitio y de la presencia en IA, implementación por fases y acompañamiento mensual.",
       "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
       "areaServed": {"@type": "Country", "name": "Chile"},
-      "sameAs": ["https://www.linkedin.com/company/spindlelab/", "https://www.instagram.com/spindle.lab/"],
+      "sameAs": ["https://www.linkedin.com/company/spindlelab/", "https://www.instagram.com/spindlelab.cl/"],
       "founder": {"@id": "https://spindlelab.cl/#autor-ramon"}
     },
     {
       "@type": "Person",
       "@id": "https://spindlelab.cl/#autor-ramon",
       "name": "Ramón Vallejos",
-      "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
+      "jobTitle": "Consultor de marketing y crecimiento con IA",
       "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
       "url": "https://spindlelab.cl/nosotros/",
       "worksFor": {"@id": "https://spindlelab.cl/#org"}
@@ -117,9 +117,10 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     {
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "¿El diagnóstico es realmente gratis?", "acceptedAnswer": {"@type": "Answer", "text": "Sí: una página con los hallazgos más relevantes de tu sitio, en 24 horas, sin costo ni compromiso. Es nuestra forma de demostrar cómo trabajamos antes de que decidas nada."}},
-        {"@type": "Question", "name": "¿Qué información necesitan para empezar?", "acceptedAnswer": {"@type": "Answer", "text": "Solo la URL de tu sitio. Con eso generamos el mini-diagnóstico; si después quieres la auditoría completa, pediremos acceso de lectura a Search Console."}},
-        {"@type": "Question", "name": "¿Firman acuerdos de confidencialidad?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, sin problema. En sectores financieros es práctica habitual y estamos acostumbrados a trabajar bajo NDA."}}
+        {"@type": "Question", "name": "¿La revisión es gratis?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Es nuestra primera entrega y no te cobramos por ella."}},
+        {"@type": "Question", "name": "¿Qué información necesitan para empezar?", "acceptedAnswer": {"@type": "Answer", "text": "Solo la dirección de tu sitio. Si avanzamos, te vamos a pedir acceso de lectura a Search Console y a tu analítica."}},
+        {"@type": "Question", "name": "¿Firman acuerdos de confidencialidad?", "acceptedAnswer": {"@type": "Answer", "text": "Podemos firmar uno si lo necesitas."}},
+        {"@type": "Question", "name": "¿Atienden fuera de Santiago?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El trabajo es remoto y atendemos a todo Chile. Nos juntamos por videollamada, en horario de oficina."}}
       ]
     }
   ]
@@ -128,6 +129,17 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/inter.css?v=1">
 <link rel="stylesheet" href="/assets/css/style.css?v=29">
+<style>
+  /* Dos arreglos propios de esta página (obra spindlelab-posicionamiento-v1, correcciones del 23-oct).
+     1) La casilla de consentimiento no mostraba foco: ".contact-form input:focus" de style.css quita
+        el contorno y un borde teal no se ve en una casilla nativa. Se devuelve el anillo global.
+     2) "Qué pasa después": el estilo en línea de las tres columnas le ganaba a la regla de 680 px de
+        style.css y a 390 px quedaban tres columnas de 87 px. Ahora son tres columnas desde 681 px
+        y una sola en móvil. */
+  .contact-form input[type="checkbox"]:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+  .steps.steps-3{grid-template-columns:repeat(3,1fr)}
+  @media(max-width:680px){.steps.steps-3{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -143,7 +155,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/contacto/" aria-current="page">Contacto</a></li>
     </ul>
-    <a class="btn gold small nav-cta" href="#contacto-form">Diagnóstico gratis</a>
+    <a class="btn gold small nav-cta" href="#contacto-form">Pedir la revisión</a></div>
   </div>
 </header>
 
@@ -159,11 +171,11 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
           <li>Contacto</li>
         </ol>
       </nav>
-      <h1>Un correo. Tu URL. 24 horas.</h1>
-      <p class="lead">Así de simple es empezar: escríbenos con la dirección de tu sitio y en 24 horas tienes el mini-diagnóstico: una página con lo que está bien, lo que frena tu visibilidad y qué haríamos primero. Gratis y sin compromiso.</p>
+      <h1>Escríbenos la dirección de tu sitio y te respondemos con una revisión.</h1>
+      <p class="lead">Te respondemos con una página con lo más importante que encontramos. Es gratis y llega en un día hábil.</p>
       <div class="actions">
-        <a class="btn gold" href="#contacto-form">Completar formulario ↓</a>
-        <span class="note">O escríbenos directo a <a href="mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20" style="color:inherit">hola@spindlelab.cl</a></span>
+        <a class="btn gold" href="#contacto-form">Completar el formulario ↓</a>
+        <span class="note">O escríbenos directo a <a href="mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20" style="color:inherit">hola@spindlelab.cl</a></span>
       </div>
     </div>
   </section>
@@ -172,7 +184,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     <div class="wrap">
       <span class="eyebrow teal">El primer paso</span>
       <h2 id="cta-title">Cuéntanos de tu proyecto</h2>
-      <p>Completa el formulario y te escribimos dentro de 24 horas con el mini-diagnóstico o los siguientes pasos.</p>
+      <p>Con tu nombre, tu correo y la dirección de tu sitio ya podemos partir.</p>
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f">
         <input type="hidden" name="subject" value="Nuevo contacto desde spindlelab.cl">
@@ -194,7 +206,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
         </div>
         <div class="field">
           <label for="f-mensaje">Cuéntanos brevemente <span class="opt">(opcional)</span></label>
-          <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder="Qué hace tu empresa, qué te preocupa de tu sitio..."></textarea>
+          <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder="Qué vende tu empresa y cómo te llegan hoy las consultas"></textarea>
         </div>
         <input type="hidden" name="UTM Source" id="f-utm-source">
         <input type="hidden" name="UTM Medium" id="f-utm-medium">
@@ -205,38 +217,38 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
             <span>Acepto que estos datos se usen para responder mi solicitud, según la <a href="/privacidad/" target="_blank" rel="noopener">política de privacidad</a>.</span>
           </label>
         </div>
-        <button type="submit" class="btn gold">Enviar →</button>
+        <button type="submit" class="btn gold">Enviar la dirección</button>
         <p class="form-status" role="status" aria-live="polite"></p>
       </form>
       <div class="form-success" role="status" aria-live="polite" hidden>
         <h3>Listo.</h3>
-        <p>Te escribimos dentro de 24 horas con tu mini-diagnóstico.</p>
+        <p>Te escribimos dentro de un día hábil con tu revisión.</p>
       </div>
-      <p class="form-note">¿Prefieres ir directo? Escríbenos a <a href="mailto:hola@spindlelab.cl?subject=Diagn%C3%B3stico%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20">hola@spindlelab.cl</a></p>
+      <p class="form-note">¿Prefieres ir directo? Escríbenos a <a href="mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis&body=Hola%2C%20mi%20sitio%20es%3A%20">hola@spindlelab.cl</a></p>
     </div>
   </section>
 
   <section class="sec">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow teal">Qué pasa después de tu correo</span>
-        <h2>Tres pasos, cero fricción</h2>
+        <span class="eyebrow teal">Tres pasos</span>
+        <h2>Qué pasa después</h2>
       </div>
-      <div class="steps on-paper" style="grid-template-columns:repeat(3,1fr);display:grid;gap:32px">
+      <div class="steps steps-3 on-paper" style="display:grid;gap:32px">
         <div class="step reveal" style="border-top:1px solid var(--line)">
           <span class="num">01</span>
           <h3 style="color:var(--ink)">Nos escribes</h3>
-          <p style="color:var(--ink-70)">Un correo con tu URL basta. Si quieres, agrega contexto: qué vendes, quién es tu cliente, qué te preocupa.</p>
+          <p style="color:var(--ink-70)">Con la dirección de tu sitio basta. Si quieres, agrega qué vendes y cómo te llegan las consultas.</p>
         </div>
         <div class="step reveal" style="border-top:1px solid var(--line)">
           <span class="num">02</span>
-          <h3 style="color:var(--ink)">Recibes el diagnóstico</h3>
-          <p style="color:var(--ink-70)">En 24 horas: una página, en lenguaje claro, con los hallazgos que más importan y su prioridad.</p>
+          <h3 style="color:var(--ink)">Recibes la revisión</h3>
+          <p style="color:var(--ink-70)">Una página en lenguaje claro, con los hallazgos más importantes y por dónde partiríamos.</p>
         </div>
         <div class="step reveal" style="border-top:1px solid var(--line)">
           <span class="num">03</span>
-          <h3 style="color:var(--ink)">Decides con calma</h3>
-          <p style="color:var(--ink-70)">Si quieres avanzar, agendamos 20 minutos y te enviamos una propuesta cerrada. Si no, el diagnóstico queda contigo, sin seguimiento insistente.</p>
+          <h3 style="color:var(--ink)">Tú decides</h3>
+          <p style="color:var(--ink-70)">Si quieres avanzar, conversamos 20 minutos y te mandamos una propuesta por escrito. Si no, la revisión queda contigo.</p>
         </div>
       </div>
     </div>
@@ -250,20 +262,20 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
       </div>
       <div class="faq" style="background:transparent">
         <details>
-          <summary>¿El diagnóstico es realmente gratis?</summary>
-          <p class="faq-a">Sí: una página con los hallazgos más relevantes, en 24 horas, sin costo ni compromiso. Es nuestra forma de demostrar cómo trabajamos antes de que decidas nada.</p>
+          <summary>¿La revisión es gratis?</summary>
+          <p class="faq-a">Sí. Es nuestra primera entrega y no te cobramos por ella.</p>
         </details>
         <details>
           <summary>¿Qué información necesitan para empezar?</summary>
-          <p class="faq-a">Solo la URL de tu sitio. Para la auditoría completa (si decides avanzar) pediremos acceso de <em>lectura</em> a Google Search Console. Nunca solicitamos claves de administrador.</p>
+          <p class="faq-a">Solo la dirección de tu sitio. Si avanzamos, te vamos a pedir acceso de <em>lectura</em> a Search Console y a tu analítica.</p>
         </details>
         <details>
           <summary>¿Firman acuerdos de confidencialidad?</summary>
-          <p class="faq-a">Sí, sin problema. En sectores financieros es práctica habitual y trabajamos bajo NDA cuando el cliente lo requiere.</p>
+          <p class="faq-a">Podemos firmar uno si lo necesitas.</p>
         </details>
         <details>
           <summary>¿Atienden fuera de Santiago?</summary>
-          <p class="faq-a">Sí. El trabajo es 100% remoto y atendemos empresas de todo Chile. Las reuniones son por videollamada, en horario hábil de Chile continental.</p>
+          <p class="faq-a">Sí. El trabajo es remoto y atendemos a todo Chile. Nos juntamos por videollamada, en horario de oficina.</p>
         </details>
       </div>
     </div>
@@ -279,18 +291,18 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
       <nav aria-label="Soluciones">
         <h4>Soluciones</h4>
         <ul>
-          <li><a href="/servicios/auditoria-seo-tecnica/">Auditoría SEO Técnica</a></li>
-          <li><a href="/servicios/visibilidad-en-ia/">Visibilidad en IA (AEO/GEO)</a></li>
-          <li><a href="/servicios/acompanamiento-mensual/">Acompañamiento Mensual</a></li>
-          <li><a href="/servicios/redes-sociales/">Gestión de Redes Sociales</a></li>
-          <li><a href="/servicios/paid-media/">Paid Media (Google)</a></li>
-          <li><a href="/servicios/desarrollo-web/">Desarrollo Web</a></li>
+          <li><a href="/servicios/auditoria-seo-tecnica/">Auditoría SEO técnica</a></li>
+          <li><a href="/servicios/visibilidad-en-ia/">Visibilidad en IA</a></li>
+          <li><a href="/servicios/acompanamiento-mensual/">Acompañamiento mensual</a></li>
+          <li><a href="/servicios/redes-sociales/">Gestión de redes sociales</a></li>
+          <li><a href="/servicios/paid-media/">Paid media (Google)</a></li>
+          <li><a href="/servicios/desarrollo-web/">Desarrollo web</a></li>
         </ul>
       </nav>
       <nav aria-label="Sitio">
         <h4>Sitio</h4>
         <ul>
-          <li><a href="/metodo/">Nuestro Método</a></li><li><a href="/nosotros/">Nosotros</a></li>
+          <li><a href="/metodo/">Método</a></li><li><a href="/nosotros/">Nosotros</a></li>
           <li><a href="/diagnostico/">Chequeo gratis</a></li>
           <li><a href="/blog/">El Taller</a></li>
           <li><a href="/contacto/">Contacto</a></li>
@@ -300,14 +312,16 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
         <h4>Contacto</h4>
         <ul>
           <li>Santiago, Chile</li>
-          <li><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a></li>
+          <li><a href="mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis">hola@spindlelab.cl</a></li>
+          <li><a href="https://www.linkedin.com/company/spindlelab/" rel="me noopener" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/spindlelab.cl/" rel="me noopener" target="_blank">Instagram</a></li>
         </ul>
       </div>
     </div>
     <div class="base">
-      <span>© 2026 SpindleLab. Todos los derechos reservados.</span>
+      <span>© 2026 SpindleLab · Chile</span>
       <nav><a href="/privacidad/">Política de privacidad</a></nav>
-      <span>SEO técnico · AEO/GEO · Chile</span>
+      <span>Marketing y crecimiento con IA para empresas que ya venden.</span>
     </div>
   </div>
 </footer>
@@ -383,7 +397,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
     }).catch(function(){
       status.textContent='Algo falló al enviar. Escríbenos directo a hola@spindlelab.cl mientras lo revisamos.';
       status.className='form-status show err';
-      btn.disabled=false; btn.textContent='Enviar →';
+      btn.disabled=false; btn.textContent='Enviar la dirección';
     });
   });
 })();

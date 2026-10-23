@@ -1,22 +1,27 @@
 ---
-// FAQ de nivel-marca en el home: define la entidad y responde en formato citable
-// (el home es la primera URL que fetchea un motor de IA). Texto visible en el DOM + FAQPage.
+// FAQ de la home: cinco preguntas, en formato citable (el home es la primera URL que fetchea
+// un motor de IA). Texto visible en el DOM + FAQPage generado de este mismo arreglo, así que
+// el JSON-LD y lo que se ve no pueden diferir.
 const FAQS = [
   {
-    q: '¿Qué es SpindleLab?',
-    a: 'SpindleLab es una consultoría chilena de SEO técnico y visibilidad en motores de IA (AEO/GEO). Ayudamos a empresas B2B y de sectores donde la confianza pesa (finanzas, salud, legal) a que Google y los buscadores de IA como ChatGPT, Gemini y Perplexity las encuentren, las entiendan y las recomienden.',
+    q: '¿Cuánto cuesta?',
+    a: 'Cada solución publica su precio de partida, con lo que incluye, más IVA. Por ejemplo, desde $350.000 al mes la gestión de Google Ads, desde $390.000 una página web, desde $490.000 una auditoría SEO y desde $590.000 al mes el acompañamiento. La revisión de una página es gratis.',
   },
   {
-    q: '¿Qué es AEO/GEO y en qué se diferencia del SEO tradicional?',
-    a: 'El SEO clásico busca que rankees en la lista de resultados de Google. AEO/GEO (optimización para motores de respuesta y generativos) busca que la IA te cite como fuente cuando alguien pregunta. Son dos juegos distintos: rankear primero en Google no te mete en la respuesta de ChatGPT.',
+    q: '¿Qué necesitan de mí para partir?',
+    a: 'La dirección de tu sitio. Si avanzamos, te vamos a pedir acceso de lectura a tu analítica y a Search Console, y para implementar, un acceso acotado a tu sitio. Si hay que mirar tu proceso de ventas, también cómo registras las consultas y cuántas se cierran.',
   },
   {
-    q: '¿Cómo miden si la IA te recomienda?',
-    a: 'Con un protocolo repetible: hacemos las preguntas que haría tu cliente en los principales motores de IA y registramos, con fecha, si apareces, cómo te describen y a quién citan. Medimos antes y después, para que lo verifiques tú, no de memoria.',
+    q: '¿Y si el problema no es mi sitio?',
+    a: 'Entonces te lo decimos. La revisión puede mostrar que tu sitio está en orden, y en ese caso la conversación de 20 minutos sirve para ver dónde mirar.',
   },
   {
-    q: '¿Para qué tipo de empresas trabajan?',
-    a: 'Nos enfocamos en sectores donde la confianza es crítica (finanzas, salud, legal, B2B), porque ahí las exigencias de autoridad (E-E-A-T) son mayores y es donde más movemos la aguja. Si tu rubro es otro, el diagnóstico gratis nos dirá si podemos ayudarte.',
+    q: '¿Prometen resultados?',
+    a: 'No. Lo que dejamos por escrito es el método, los entregables y los plazos. Lo que responde una IA o lo que decide un cliente no lo controla nadie.',
+  },
+  {
+    q: '¿Hay contrato de permanencia?',
+    a: 'Un proyecto se paga por fases. El acompañamiento mensual tiene un mínimo de 3 meses y después sigue mes a mes, con aviso de 30 días.',
   },
 ];
 
@@ -36,7 +41,7 @@ const faqJsonLd = {
   <div class="max-w-3xl mx-auto">
     <div data-reveal class="max-w-2xl">
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">Preguntas frecuentes</p>
-      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg" style="letter-spacing:-0.03em">
+      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-balance text-fg" style="letter-spacing:-0.03em">
         Lo esencial, en claro.
       </h2>
     </div>

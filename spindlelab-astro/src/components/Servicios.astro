@@ -1,36 +1,45 @@
 ---
 import Icon from './Icon.astro';
-import { CONTACTO } from '../consts';
 
-// El motor de adquisición: el eje (Visibilidad SEO+IA) va destacado arriba;
-// las otras 3 piezas conectadas van en la fila de abajo.
-const PIEZAS = [
+// Las cuatro soluciones con su precio de partida publicado (siempre "desde" y más IVA).
+// Los precios salen de las páginas de cada servicio: si cambian allá, cambian acá.
+const SOLUCIONES = [
   {
-    icon: 'users',
-    titulo: 'Gestión de redes sociales',
-    desc: 'Presencia, comunidad y pauta social en LinkedIn y Meta: aparece y conversa donde tu cliente ya pasa el día. El diseño y el video los pones tú.',
-    href: '/servicios/redes-sociales/',
+    icon: 'scanSearch',
+    titulo: 'Búsqueda y visibilidad en IA',
+    desc: 'Revisamos si Google y las IA pueden leer tu sitio y entender a qué te dedicas, y te dejamos un plan ordenado por impacto. Que la IA pueda leerlo es el requisito para que un asistente como ChatGPT te entienda; no garantiza que te nombre.',
+    precio: 'Desde $400.000 + IVA.',
+    links: [
+      { label: 'Auditoría SEO técnica', href: '/servicios/auditoria-seo-tecnica/' },
+      { label: 'Visibilidad en IA', href: '/servicios/visibilidad-en-ia/' },
+    ],
   },
   {
     icon: 'target',
-    titulo: 'Paid media (Google)',
-    desc: 'Google Ads optimizado con IA: captura a quien ya está buscando lo que ofreces, con el presupuesto bajo control.',
-    href: '/servicios/paid-media/',
+    titulo: 'Anuncios en Google y redes',
+    desc: 'Anuncios para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.',
+    precio:
+      'Google Ads desde $350.000 al mes + IVA; redes desde $390.000 al mes + IVA. La inversión en pauta va aparte.',
+    links: [
+      { label: 'Paid media (Google)', href: '/servicios/paid-media/' },
+      { label: 'Gestión de redes', href: '/servicios/redes-sociales/' },
+    ],
   },
   {
     icon: 'code',
-    titulo: 'Desarrollo web',
-    desc: 'La base donde todo aterriza. Sitios a medida con panel de administración y SEO técnico desde el primer commit.',
-    href: '/servicios/desarrollo-web/',
+    titulo: 'Sitio web a medida',
+    desc: 'Con panel para que edites tú y SEO técnico desde el diseño. Desde una página de campaña hasta un sitio de doce páginas.',
+    precio: 'Desde $390.000 + IVA.',
+    links: [{ label: 'Desarrollo web', href: '/servicios/desarrollo-web/' }],
     id: 'desarrollo-web',
   },
-];
-
-const CIFRAS = [
-  { valor: '24 h', label: 'Entrega del diagnóstico inicial' },
-  { valor: '1 sitio', label: 'Para ser la referencia en tu nicho' },
-  { valor: '20 min', label: 'Reunión de alineación estratégica' },
-  { valor: '4 piezas', label: 'Un motor de adquisición conectado' },
+  {
+    icon: 'lineChart',
+    titulo: 'Acompañamiento mensual',
+    desc: 'Implementación y medición cada mes, con informe y reunión. Para quien ya hizo la primera parte y quiere sostenerla.',
+    precio: 'Desde $590.000 al mes + IVA.',
+    links: [{ label: 'Acompañamiento mensual', href: '/servicios/acompanamiento-mensual/' }],
+  },
 ];
 ---
 
@@ -52,111 +61,38 @@ const CIFRAS = [
   <div class="relative z-10 max-w-6xl mx-auto">
     <div data-reveal class="max-w-3xl">
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">
-        Motor de adquisición digital
+        Soluciones
       </p>
-      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg" style="letter-spacing:-0.03em">
-        El motor, pieza por pieza.
+      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-balance text-fg" style="letter-spacing:-0.03em">
+        Lo que podemos hacer por ti
       </h2>
       <p class="mt-5 text-fg-muted text-[15px] md:text-base leading-relaxed">
-        Somos una agencia de marketing con IA. Nuestro eje principal es el SEO técnico, la visibilidad
-        en motores de IA y el desarrollo web. Completamos la ruta con Google y Meta Ads para que tu
-        negocio sea aún más relevante. El contenido creativo lo entregas tú y nosotros lo hacemos
-        funcionar.
+        Cada solución tiene su página, con lo que incluye y su precio de partida (más IVA).
       </p>
     </div>
 
-    <!-- El eje: pieza destacada -->
-    <div data-reveal class="mt-12 md:mt-14">
-      <div class="rounded-2xl border border-support/40 bg-support/[0.07] p-7 md:p-9">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-support/12 text-support">
-            <Icon name="scanSearch" class="w-5 h-5" />
-          </span>
-          <span class="text-[10px] font-semibold uppercase tracking-wider text-bg bg-support rounded-full px-2.5 py-1">
-            El eje del motor
-          </span>
-        </div>
-        <h3 class="font-display text-xl md:text-2xl font-semibold text-fg" style="letter-spacing:-0.02em">
-          Visibilidad: SEO técnico + IA (AEO/GEO)
-        </h3>
-        <p class="mt-3 text-sm md:text-[15px] text-fg-muted leading-relaxed max-w-2xl">
-          Que te encuentren en Google y en las respuestas de ChatGPT, Gemini y Perplexity. Es donde
-          ganamos la pelea, y la puerta de entrada al resto del motor. Tres formas de trabajarla,
-          según tu momento.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2.5 text-sm font-semibold">
-          <a href="/servicios/auditoria-seo-tecnica/" class="text-support hover:text-support/80 transition-colors">Auditoría SEO Técnica →</a>
-          <a href="/servicios/visibilidad-en-ia/" class="text-support hover:text-support/80 transition-colors">Visibilidad en IA →</a>
-          <a href="/servicios/acompanamiento-mensual/" class="text-support hover:text-support/80 transition-colors">Acompañamiento mensual →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Las otras 3 piezas del motor -->
-    <div class="mt-5 grid sm:grid-cols-3 gap-5">
+    <div class="mt-12 md:mt-14 grid sm:grid-cols-2 gap-5">
       {
-        PIEZAS.map((p, i) => (
-          <div data-reveal id={p.id} class="scroll-mt-24" style={`transition-delay:${i * 90}ms`}>
-            <a
-              href={p.href}
-              class="group flex h-full flex-col rounded-2xl border border-white/10 bg-surface p-6 md:p-7 transition-colors duration-300 hover:border-support/40 hover:bg-white/[0.05]"
-            >
-              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-support/12 text-support mb-5">
-                <Icon name={p.icon} class="w-5 h-5" />
+        SOLUCIONES.map((s, i) => (
+          <div data-reveal id={s.id} class="scroll-mt-24" style={`transition-delay:${i * 90}ms`}>
+            <div class="flex h-full flex-col rounded-2xl border border-white/10 bg-surface p-6 md:p-7">
+              <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-support/10 text-support mb-5">
+                <Icon name={s.icon} class="w-5 h-5" />
               </span>
-              <h3 class="font-display text-lg font-semibold text-fg mb-2.5">{p.titulo}</h3>
-              <p class="text-sm text-fg-muted leading-relaxed flex-1">{p.desc}</p>
-              <span class="mt-4 text-sm font-semibold text-support">Ver detalle →</span>
-            </a>
+              <h3 class="font-display text-xl font-semibold text-fg mb-2.5" style="letter-spacing:-0.02em">{s.titulo}</h3>
+              <p class="text-sm text-fg-muted leading-relaxed">{s.desc}</p>
+              <p class="mt-4 text-sm font-semibold text-fg leading-relaxed flex-1">{s.precio}</p>
+              <div class="mt-5 flex flex-wrap gap-x-6 gap-y-2.5 text-sm font-semibold">
+                {s.links.map((l) => (
+                  <a href={l.href} class="text-support hover:text-support/80 transition-colors">
+                    {l.label} →
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         ))
       }
-    </div>
-
-    <div data-reveal style="transition-delay:120ms">
-      <div class="mt-12 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 rounded-2xl border border-white/10 bg-bg/60 px-6 py-8 md:py-10">
-        {
-          CIFRAS.map((c) => (
-            <div class="text-center">
-              <div
-                class:list={[
-                  'text-2xl md:text-3xl font-display font-semibold',
-                  c.valor === '1 sitio' ? 'text-gold' : 'text-fg',
-                ]}
-                style="letter-spacing:-0.02em"
-              >
-                {c.valor}
-              </div>
-              <div class="mt-1.5 text-xs text-fg-muted leading-snug max-w-[18ch] mx-auto">
-                {c.label}
-              </div>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-
-    <!-- Fuera de la cartera: el contenido creativo va con partners -->
-    <div data-reveal style="transition-delay:150ms">
-      <div class="mt-6 flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-5 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-5 md:px-7">
-        <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-xl bg-white/[0.05] text-fg-muted">
-          <Icon name="sparkles" class="w-5 h-5" />
-        </span>
-        <div class="flex-1">
-          <p class="text-sm font-semibold text-fg">El contenido creativo lo pones tú, y está bien.</p>
-          <p class="text-sm text-fg-muted leading-relaxed mt-1">
-            Las piezas gráficas y el video no los producimos: los pones tú, o si no los tienes, te
-            conectamos con partners de producción. Nosotros orquestamos el motor y hacemos que ese
-            contenido funcione en cada canal.
-          </p>
-        </div>
-        <a
-          href="/servicios/"
-          class="shrink-0 text-sm font-semibold text-support hover:text-support/80 transition-colors"
-        >
-          Ver el motor completo →
-        </a>
-      </div>
     </div>
   </div>
 </section>

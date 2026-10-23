@@ -14,6 +14,8 @@ const jsonLd = {
       '@id': `${url}#aboutpage`,
       url,
       name: 'Nosotros · SpindleLab',
+      description:
+        'Detrás de SpindleLab está Ramón Vallejos. Marketing y crecimiento con IA, con evidencia antes que promesas. Revisión gratis de una página.',
       mainEntity: { '@id': 'https://spindlelab.cl/#autor-ramon' },
       about: { '@id': 'https://spindlelab.cl/#autor-ramon' },
       isPartOf: { '@id': 'https://spindlelab.cl/#website' },
@@ -23,27 +25,23 @@ const jsonLd = {
 
 const PUNTOS = [
   {
-    titulo: 'Diagnóstico antes que contrato',
-    desc: 'Antes de cobrarte nada, reviso tu sitio y tu presencia en IA y te muestro los hallazgos en una página. Gratis, en 24 horas.',
+    titulo: 'Empiezo por mirar',
+    desc: 'Reviso tu sitio antes de cobrarte nada y te cuento lo que encontré.',
   },
   {
-    titulo: 'Arreglo lo técnico y lo legible',
-    desc: 'SEO técnico, datos estructurados y contenido que la IA pueda citar. No hay que rehacer tu sitio. Hay que hacerlo legible.',
+    titulo: 'Te digo qué se puede mover y qué no',
+    desc: '',
   },
   {
-    titulo: 'Mido si te recomiendan',
-    desc: 'Registro si ChatGPT, Gemini y Perplexity te nombran ante las preguntas de tus clientes. Con fecha, no de memoria. Nada de métricas de vanidad.',
-  },
-  {
-    titulo: 'Sin humo',
-    desc: 'No prometo primeros lugares. Nadie puede garantizarlos. Te digo qué se puede mover y qué no, y me hago cargo de lo que sí.',
+    titulo: 'Lo dejo por escrito',
+    desc: 'Alcance, fases, plazos y precio, antes de empezar.',
   },
 ];
 ---
 
 <Layout
-  title="Ramón Vallejos, consultor de SEO técnico e IA · SpindleLab"
-  description="Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA, con evidencia antes que promesas. Diagnóstico gratis en 24 horas."
+  title="Ramón Vallejos, consultor de marketing y crecimiento con IA · SpindleLab"
+  description="Detrás de SpindleLab está Ramón Vallejos. Marketing y crecimiento con IA, con evidencia antes que promesas. Revisión gratis de una página."
 >
   <Nav />
   <main>
@@ -74,49 +72,29 @@ const PUNTOS = [
           />
           <div>
             <p class="text-base font-semibold text-fg">Ramón Vallejos</p>
-            <p class="text-sm text-fg-muted">Consultor de SEO técnico y visibilidad en IA · Chile</p>
+            <p class="text-sm text-fg-muted">Consultor de marketing y crecimiento con IA · Chile</p>
           </div>
         </div>
 
         <div class="mt-10 space-y-5 text-fg-muted leading-relaxed text-[1.05rem]">
           <p class="text-fg text-lg">
-            Soy Ramón Vallejos. SpindleLab soy yo al frente, orquestando el motor, con agentes de IA a mi
-            lado y partners para lo que no hacemos en casa.
+            Soy Ramón Vallejos y SpindleLab soy yo. Uso agentes de IA para el trabajo que se repite y
+            reviso yo lo que te entrego. Como soy una persona, tomo pocos proyectos a la vez. Atiendo a
+            todo Chile por videollamada.
           </p>
           <p>
-            Antes pasé más de cinco años en agencias. Empecé en Universal McCann, coordinando la producción
-            de piezas para ocho marcas nacionales. En Graphene IPG trabajé la cuenta de LATAM Airlines, con
-            campañas en Chile, Perú, Ecuador y Colombia. Después vino la pauta de retail y B2B en
-            Incrementa, y el contenido y el SEO de una cartera B2B en Maggiore. Estudié Comunicación
-            Publicitaria en la Universidad Andrés Bello y un máster en Marketing Digital y E-commerce en la
-            Universidad de Barcelona.
-          </p>
-          <p>
-            En las empresas que reviso pasa casi siempre lo mismo. Uno hizo el sitio, otro lleva las redes,
-            otro la pauta, y ninguno mira si la IA te nombra.
-          </p>
-          <p>
-            Te lo cuento porque con esa experiencia puedo hacerme cargo del eje de tu operación y poner el
-            motor a funcionar entero, no por partes. Conectamos las piezas en un solo sistema y las medimos
-            juntas, con el orgánico como eje, porque es lo que no se apaga cuando cortas el presupuesto.
-          </p>
-          <p>
-            El objetivo no es solo que vendas. Es que cuando alguien pregunte por tu rubro, tu nombre ya
-            esté ahí.
-          </p>
-          <p>
-            Lo primero es un diagnóstico. Reviso tu sitio, tu contenido y si la IA te nombra, y te entrego
-            en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas. Con eso decides con
-            información, no a ciegas.
+            Antes trabajé en agencias. Coordiné la producción de piezas para ocho marcas nacionales en
+            Universal McCann y trabajé la cuenta de LATAM Airlines en Graphene IPG, con campañas en cuatro
+            países. Después hice pauta de retail y B2B en Incrementa, y contenido y SEO en Maggiore.
           </p>
         </div>
 
         <div class="mt-12 grid sm:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
           {
-            PUNTOS.map((p) => (
-              <div class="bg-surface p-6 md:p-7">
-                <h2 class="text-base font-semibold text-fg mb-1.5">{p.titulo}</h2>
-                <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>
+            PUNTOS.map((p, i) => (
+              <div class={`bg-surface p-6 md:p-7${PUNTOS.length % 2 === 1 && i === PUNTOS.length - 1 ? ' sm:col-span-2' : ''}`}>
+                <h2 class={`text-base font-semibold text-fg${p.desc ? ' mb-1.5' : ''}`}>{p.titulo}</h2>
+                {p.desc && <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>}
               </div>
             ))
           }
@@ -124,16 +102,16 @@ const PUNTOS = [
 
         <div class="mt-14 rounded-2xl border border-white/10 bg-surface-2 p-8 text-center">
           <p class="font-display text-2xl text-fg" style="letter-spacing:-0.02em">
-            ¿Apareces cuando tus clientes preguntan?
+            Escríbeme la dirección de tu sitio.
           </p>
           <p class="mt-2 text-sm text-fg-muted">
-            Te lo mostramos. Diagnóstico real, gratis, en 24 horas. Antes de que pagues nada.
+            Te respondo con la revisión.
           </p>
           <a
             href={CONTACTO}
             class="mt-6 inline-flex items-center gap-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-6 py-3 rounded-full transition-colors"
           >
-            Agenda tu diagnóstico
+            Escribirme
             <Icon name="arrowRight" />
           </a>
         </div>

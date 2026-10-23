@@ -1,22 +1,29 @@
 ---
 import Icon from './Icon.astro';
 
-// Cómo hacemos legible el rigor: qué se mide, de forma verificable. Nada inventado.
-const PRUEBAS = [
+// Lo que cualquiera puede revisar antes de contratar. Nada inventado: cada pieza
+// apunta a una página pública o a un hecho que se puede comprobar.
+const REVISABLES = [
   {
-    icon: 'bot',
-    titulo: 'El motor entero, medido',
-    desc: 'Menciones en IA, posiciones en Google, tráfico y contactos, medidos juntos y con fecha. La mayoría mide una sola pieza.',
+    icon: 'tag',
+    titulo: 'Precios publicados',
+    desc: 'Cada solución trae su precio de partida y lo que incluye, a la vista. El valor final se cierra por escrito después de la revisión.',
+    href: '/servicios/',
+    enlace: 'Ver los precios',
   },
   {
-    icon: 'lineChart',
-    titulo: 'Antes y después',
-    desc: 'Cada cambio parte de una línea base y se vuelve a medir. Reportamos si te recomiendan más, no métricas de vanidad.',
+    icon: 'fileText',
+    titulo: 'Método escrito',
+    desc: 'Las fases y lo que recibes en cada una están en la página del método, para que las leas antes de contratar.',
+    href: '/metodo/',
+    enlace: 'Leer el método',
   },
   {
     icon: 'scanSearch',
-    titulo: 'Lo ves tú primero',
-    desc: 'El diagnóstico inicial es tuyo antes de pagar nada: qué te frena hoy y qué mueve la aguja, en una página.',
+    titulo: 'Chequeo abierto',
+    desc: 'Escribes tu dominio y ves 21 señales, con lo que pesa cada bloque. Es gratis y sin registro. Mide si tu sitio está preparado para que la IA lo lea; no mide si hoy te citan.',
+    href: '/diagnostico/',
+    enlace: 'Hacer el chequeo',
   },
 ];
 ---
@@ -42,41 +49,55 @@ const PRUEBAS = [
   <div class="relative z-10 max-w-6xl mx-auto">
     <div data-reveal class="max-w-2xl">
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">Evidencia</p>
-      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg" style="letter-spacing:-0.03em">
-        Mostramos, no prometemos<span class="text-gold">.</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-balance text-fg" style="letter-spacing:-0.03em">
+        Lo que puedes revisar antes de contratar<span class="text-gold">.</span>
       </h2>
-      <p class="mt-6 text-fg-muted text-base md:text-lg leading-relaxed max-w-xl">
-        No pedimos que nos creas. Medimos el motor entero, no una pieza suelta, y de forma que puedas
-        verificarlo tú mismo desde el primer día.
-      </p>
     </div>
 
     <div class="mt-12 md:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {
-        PRUEBAS.map((p, i) => (
+        REVISABLES.map((p, i) => (
           <div data-reveal style={`transition-delay:${i * 90}ms`}>
-            <div class="h-full rounded-2xl border border-white/10 bg-surface p-6 md:p-7">
+            <a
+              href={p.href}
+              class="group flex h-full flex-col rounded-2xl border border-white/10 bg-surface p-6 md:p-7 transition-colors duration-300 hover:border-support/40 hover:bg-white/[0.05]"
+            >
               <span class="flex items-center justify-center w-11 h-11 rounded-xl bg-support/10 text-support mb-5">
                 <Icon name={p.icon} class="w-5 h-5" />
               </span>
               <h3 class="font-display text-lg font-semibold text-fg mb-2.5">{p.titulo}</h3>
-              <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>
-            </div>
+              <p class="text-sm text-fg-muted leading-relaxed flex-1">{p.desc}</p>
+              <span class="mt-4 text-sm font-semibold text-support">{p.enlace} →</span>
+            </a>
           </div>
         ))
       }
     </div>
 
-    <!-- Slot reservado para el primer caso real con datos (cuando haya permiso del cliente) -->
+    <!-- Lo probado en lo propio y el único caso público, con su alcance dicho tal cual -->
     <div data-reveal style="transition-delay:120ms">
-      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 rounded-2xl border border-dashed border-white/15 bg-surface px-6 py-5 md:px-7">
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 rounded-2xl border border-white/10 bg-surface px-6 py-5 md:px-7">
         <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-xl bg-support/10 text-support">
           <Icon name="sparkles" class="w-5 h-5" />
         </span>
         <p class="text-sm text-fg-muted leading-relaxed">
-          <span class="font-semibold text-fg">Caso real con datos, en camino.</span>
-          Publicaremos aquí el primero con cifras en cuanto un cliente nos dé permiso. Hasta
-          entonces, no verás testimonios ni resultados inventados.
+          <span class="font-semibold text-fg">Probado primero en lo nuestro.</span>
+          Antes de publicar el chequeo de la Ley 21.719 de datos personales, lo corrí sobre mi propio
+          sitio. Salió mal. Al arreglarlo encontré además un formulario que perdía mensajes sin avisar, y
+          lo corregí.
+        </p>
+      </div>
+    </div>
+
+    <div data-reveal style="transition-delay:150ms">
+      <div class="mt-5 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 rounded-2xl border border-white/10 bg-surface px-6 py-5 md:px-7">
+        <span class="flex items-center justify-center w-10 h-10 shrink-0 rounded-xl bg-support/10 text-support">
+          <Icon name="code" class="w-5 h-5" />
+        </span>
+        <p class="text-sm text-fg-muted leading-relaxed">
+          <span class="font-semibold text-fg">Un caso real: Bernardo Combeau, fotógrafo.</span>
+          Construimos su sitio con un panel para que él mismo edite textos y series, y hoy lo opera él.
+          Es un caso de sitio web, no de crecimiento de ventas.
         </p>
       </div>
     </div>

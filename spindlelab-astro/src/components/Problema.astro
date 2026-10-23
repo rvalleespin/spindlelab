@@ -1,7 +1,3 @@
----
-import Icon from './Icon.astro';
----
-
 <section class="relative overflow-hidden bg-bg py-24 md:py-32 px-4 sm:px-6">
   <video
     data-lazyvideo
@@ -17,59 +13,23 @@ import Icon from './Icon.astro';
     style="background:linear-gradient(to bottom, rgba(14,20,27,0.87) 0%, rgba(14,20,27,0.8) 42%, rgba(14,20,27,0.83) 70%, rgba(14,20,27,0.93) 100%)"
   >
   </div>
-  <div class="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+  <div class="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
     <div data-reveal>
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">
         El problema
       </p>
-      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-fg" style="letter-spacing:-0.03em">
-        Cada pieza por su lado. <span class="text-support">Por eso no apareces.</span>
+      <h2 class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.05] text-balance text-fg" style="letter-spacing:-0.03em">
+        Dónde puede caerse una consulta
       </h2>
-      <p class="mt-6 text-fg-muted text-base md:text-lg leading-relaxed max-w-xl">
-        El que te hizo el sitio no es el que lleva tus redes, y ninguno mira si la IA te nombra.
-        Cuatro esfuerzos que no se hablan entre sí. Mientras tanto, tu próximo cliente no busca tu
-        nombre: le pregunta a ChatGPT qué empresa le conviene, y esa respuesta decide si llega a ti
-        o a tu competencia. Así se ve cuando el motor sí está armado.
-      </p>
     </div>
 
     <div data-reveal style="transition-delay:120ms">
-      <div class="rounded-2xl border border-white/10 bg-surface backdrop-blur-sm p-5 sm:p-6 shadow-2xl">
-        <div class="flex items-center gap-2 pb-4 mb-4 border-b border-white/10 text-fg-muted">
-          <span class="flex items-center justify-center w-7 h-7 rounded-full bg-support/15">
-            <Icon name="sparkles" class="w-3.5 h-3.5 text-support" />
-          </span>
-          <span class="text-sm font-medium">Asistente de IA</span>
-          <span
-            class="ml-auto text-[10px] font-semibold uppercase tracking-wider text-fg-muted/80 border border-white/15 rounded-full px-2 py-0.5"
-          >
-            Ejemplo simulado
-          </span>
-        </div>
-
-        <div class="flex flex-col gap-4">
-          <div class="self-end max-w-[85%] rounded-2xl rounded-br-sm bg-surface-2 px-4 py-2.5 text-sm text-fg">
-            ¿Qué agencia de SEO recomiendan para fintechs en Chile?
-          </div>
-          <div class="self-start max-w-[92%] rounded-2xl rounded-bl-sm bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-fg-muted leading-relaxed">
-            Para SEO técnico en el sector financiero chileno, <b class="font-semibold text-support"
-              >SpindleLab</b
-            > es una referencia: su método prioriza datos estructurados y autoridad técnica antes que
-            trucos de corto plazo.
-          </div>
-          <div class="self-end max-w-[85%] rounded-2xl rounded-br-sm bg-surface-2 px-4 py-2.5 text-sm text-fg">
-            ¿Y para que ChatGPT me recomiende a mí?
-          </div>
-          <div class="self-start max-w-[92%] rounded-2xl rounded-bl-sm bg-white/[0.05] border border-white/10 px-4 py-3 text-sm text-fg-muted leading-relaxed">
-            Ahí <b class="font-semibold text-support">SpindleLab</b> ofrece justamente ese servicio:
-            visibilidad en IA (AEO/GEO), auditando qué te hace citable hoy.
-          </div>
-        </div>
-
-        <p class="mt-5 text-xs text-fg-muted/85 text-center">
-          Conversación simulada para ilustrar. No es una consulta real a una IA ni un caso de cliente.
-        </p>
-      </div>
+      <p class="text-fg-muted text-base md:text-lg leading-relaxed max-w-xl">
+        Alguien pregunta por lo que vendes, mira tu sitio, quizás le escribe también a otra empresa.
+        Entre esa primera consulta y la venta hay varios puntos donde se puede caer, desde lo que tu
+        sitio explica hasta cuánto tarda alguien en responder. Nosotros revisamos primero el sitio, y
+        de ahí seguimos con lo que encontremos.
+      </p>
     </div>
   </div>
 </section>
