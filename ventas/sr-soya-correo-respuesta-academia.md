@@ -82,7 +82,7 @@ reescribieron en afirmativo. El correo se revisó con el mismo criterio.
 
 ---
 
-## Seguimiento del viernes 23-oct
+## Seguimiento del viernes 23-oct (versión descartada)
 
 **Verificado:** Carlos no ha respondido. El hilo termina en el correo de Ramón del 20-oct 21:51
 UTC. Van **3 días hábiles**.
@@ -109,3 +109,55 @@ Tres decisiones de redacción, por si se revisan después:
 
 ⚠️ **El IVA no se menciona.** Un correo de seguimiento de cinco líneas es el peor lugar posible
 para una corrección de precio. Esa conversación es de la reunión.
+
+
+## La versión que queda: pedir fecha y cerrar el pago
+
+Ramón corrigió el enfoque: *«no entrega un seguimiento del mensaje anterior. busco que me responda
+con qué y cuando partimos. comenzar a concretar los temas de pago»*.
+
+**La consecuencia que eso tiene, y que obliga a decidir algo antes:** si el correo pide el pago,
+**tiene que decir el monto**. El IVA deja de poder esperar a la reunión. No se puede pedir una
+transferencia sin número.
+
+### La salida, y sale del propio plan
+
+Las tres opciones del 22-oct dejaban a alguien perdiendo: o Ramón resignaba $32.000 al mes, o
+Carlos se pasaba de su tope de $300.000. **Hay una cuarta que no cuesta nada, y es verdadera:**
+
+> **En el mes 1 la pauta casi no se gasta.** La propia cotización lo dice: las semanas 2 y 3 se van
+> en construir la página, conectar agenda y cobro e instalar la medición, y la publicidad recién
+> parte en la semana 3.
+
+Entonces el mes 1 es **$238.000 de honorario más lo poco que se alcance a gastar en pauta**, que
+cabe holgado en los $300.000 que Carlos tiene en la cabeza. Y del mes 2 en adelante, cuando la
+pauta corre completa, ya debería haber alumnos pagando. **Que es el modelo que propuso él.**
+
+Así el IVA se dice derecho, sin que suene a alza y sin que nadie resigne nada.
+
+### Qué hace el correo
+
+1. **Retoma el anterior** en la primera línea, que es lo que faltaba.
+2. **Nombra las dos cosas que faltan**: cuándo partimos y cómo se paga.
+3. **Da el número correcto**: $238.000 con IVA.
+4. **Propone fecha concreta de inicio: lunes 2 de noviembre.** Pregunta de sí o no, que es la más
+   fácil de contestar para alguien que posterga.
+5. **Dice qué pasa el día del pago**, para que la transferencia tenga una consecuencia visible.
+6. Los horarios de reunión quedan **subordinados**, por si prefiere verlo antes.
+
+**Borrador actualizado:** `r6165523561681689358`, en el hilo. **Sin enviar.**
+
+### Si Ramón prefiere absorber el IVA
+
+Reemplazar los dos párrafos del pago por:
+
+```
+Sobre el pago, para que esté dicho con números: son $300.000 al mes, de los
+cuales $200.000 son mi trabajo y $100.000 la inversión publicitaria, que va
+a tu tarjeta y sobre la que no cobro comisión. Es lo mismo que veníamos
+conversando.
+```
+
+Eso baja el honorario real a $168.067 al mes. **Con el embudo incluido, ahí el arranque pasa a
+estar bajo el piso que fija `ventas/sr-soya-modelo-de-cobro.md`.** Queda anotado, la decisión es
+de Ramón.
