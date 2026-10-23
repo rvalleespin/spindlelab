@@ -1,0 +1,87 @@
+
+> spindlelab-astro@0.0.1 build
+> astro build
+
+20:18:34 [types] Generated 1.18s
+20:18:34 [build] output: "static"
+20:18:34 [build] directory: /home/user/spindlelab/spindlelab-astro/dist/
+20:18:34 [build] Collecting build info...
+20:18:34 [build] ✓ Completed in 1.47s.
+20:18:35 [build] Building static entrypoints...
+20:18:50 [vite] ✓ built in 14.37s
+20:18:50 [build] ✓ Completed in 14.46s.
+
+ building client (vite) 
+20:18:50 [vite] transforming...
+20:18:51 [vite] ✓ 320 modules transformed.
+20:18:51 [vite] rendering chunks...
+20:18:51 [vite] computing gzip size...
+20:18:51 [vite] dist/_astro/hoisted.CixAUr5L.js   0.12 kB │ gzip:  0.09 kB
+20:18:51 [vite] dist/_astro/hoisted.BsTZcJzB.js   0.66 kB │ gzip:  0.41 kB
+20:18:51 [vite] dist/_astro/hoisted.DFr-Rxi9.js   0.82 kB │ gzip:  0.39 kB
+20:18:51 [vite] dist/_astro/hoisted.CvG5eIMe.js   0.97 kB │ gzip:  0.53 kB
+20:18:51 [vite] dist/_astro/hoisted.DZGkT4xk.js   1.07 kB │ gzip:  0.47 kB
+20:18:51 [vite] dist/_astro/hoisted.CCogRr-n.js   1.12 kB │ gzip:  0.61 kB
+20:18:51 [vite] dist/_astro/video.J7YnQxQJ.js     1.27 kB │ gzip:  0.72 kB
+20:18:51 [vite] dist/_astro/hoisted.Cwumj-KR.js   1.43 kB │ gzip:  0.76 kB
+20:18:51 [vite] dist/_astro/hoisted.DvLsvGDN.js   1.85 kB │ gzip:  0.88 kB
+20:18:51 [vite] dist/_astro/hoisted.Bkkmjuy0.js  20.03 kB │ gzip:  5.89 kB
+20:18:51 [vite] dist/_astro/hoisted.D0OiGOzM.js  58.06 kB │ gzip: 21.12 kB
+20:18:51 [vite] ✓ built in 1.22s
+
+ generating static routes 
+20:18:51 ▶ src/pages/index.astro
+20:18:51   └─ /index.html (+29ms)
+20:18:51 ▶ src/pages/nosotros.astro
+20:18:51   └─ /nosotros/index.html (+5ms)
+20:18:51 ▶ src/pages/v3/a.astro
+20:18:51   └─ /v3/a/index.html (+3ms)
+20:18:51 ▶ src/pages/v3/b.astro
+20:18:51   └─ /v3/b/index.html (+3ms)
+20:18:51 ▶ src/pages/v3/blog/[slug].astro
+20:18:51   ├─ /v3/blog/21-chequeos-visibilidad-ia/index.html (+18ms)
+20:18:51   ├─ /v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/index.html (+9ms)
+20:18:51   ├─ /v3/blog/que-es-un-mini-diagnostico-seo/index.html (+7ms)
+20:18:51   ├─ /v3/blog/cuanto-cuesta-seo-tecnico-chile/index.html (+7ms)
+20:18:51   ├─ /v3/blog/seo-tecnico-fintechs-chile/index.html (+11ms)
+20:18:51   ├─ /v3/blog/que-es-aeo-geo/index.html (+7ms)
+20:18:51   └─ /v3/blog/como-aparecer-en-chatgpt/index.html (+5ms)
+20:18:51 ▶ src/pages/v3/blog/index.astro
+20:18:51   └─ /v3/blog/index.html (+7ms)
+20:18:51 ▶ src/pages/v3/c.astro
+20:18:51   └─ /v3/c/index.html (+3ms)
+20:18:51 ▶ src/pages/v3/contacto.astro
+20:18:51   └─ /v3/contacto/index.html (+6ms)
+20:18:51 ▶ src/pages/v3/diagnostico.astro
+20:18:51   └─ /v3/diagnostico/index.html (+18ms)
+20:18:51 ▶ src/pages/v3/index.astro
+20:18:51   └─ /v3/index.html (+17ms)
+20:18:51 ▶ src/pages/v3/maqueta-inicial.astro
+20:18:51   └─ /v3/maqueta-inicial/index.html (+2ms)
+20:18:51 ▶ src/pages/v3/metodo.astro
+20:18:51   └─ /v3/metodo/index.html (+5ms)
+20:18:51 ▶ src/pages/v3/nosotros.astro
+20:18:51   └─ /v3/nosotros/index.html (+4ms)
+20:18:51 ▶ src/pages/v3/servicios/[slug].astro
+20:18:51   ├─ /v3/servicios/visibilidad-en-ia/index.html (+7ms)
+20:18:51   ├─ /v3/servicios/auditoria-seo-tecnica/index.html (+3ms)
+20:18:51   ├─ /v3/servicios/acompanamiento-mensual/index.html (+3ms)
+20:18:51   ├─ /v3/servicios/redes-sociales/index.html (+4ms)
+20:18:51   └─ /v3/servicios/paid-media/index.html (+3ms)
+20:18:51 ▶ src/pages/v3/servicios/desarrollo-web.astro
+20:18:51   └─ /v3/servicios/desarrollo-web/index.html (+7ms)
+20:18:51 ▶ src/pages/v3/servicios/index.astro
+20:18:51   └─ /v3/servicios/index.html (+5ms)
+20:18:51 ▶ src/pages/v3/trabajo/[caso].astro
+20:18:51   ├─ /v3/trabajo/combeau/index.html (+12ms)
+20:18:51   ├─ /v3/trabajo/praxi/index.html (+15ms)
+20:18:51   ├─ /v3/trabajo/sesenta/index.html (+7ms)
+20:18:51   ├─ /v3/trabajo/ocelo/index.html (+10ms)
+20:18:51   ├─ /v3/trabajo/doceavo/index.html (+10ms)
+20:18:51   └─ /v3/trabajo/tonela/index.html (+9ms)
+20:18:51 ▶ src/pages/v3/trabajo/index.astro
+20:18:51   └─ /v3/trabajo/index.html (+9ms)
+20:18:51 ✓ Completed in 362ms.
+
+20:18:51 [build] 33 page(s) built in 18.75s
+20:18:51 [build] Complete!

@@ -1,0 +1,1239 @@
+{
+ "pagina": "tablero.html",
+ "armadoPor": "herramientas/armar-tablero.py",
+ "rutas": [
+  "img/blog-1440-1de1.jpg",
+  "img/blog-390-1de1.jpg",
+  "img/blog_21-chequeos-visibilidad-ia-1440-1de3.jpg",
+  "img/blog_21-chequeos-visibilidad-ia-1440-2de3.jpg",
+  "img/blog_21-chequeos-visibilidad-ia-1440-3de3.jpg",
+  "img/blog_21-chequeos-visibilidad-ia-390-1de3.jpg",
+  "img/blog_21-chequeos-visibilidad-ia-390-2de3.jpg",
+  "img/blog_21-chequeos-visibilidad-ia-390-3de3.jpg",
+  "img/blog_como-aparecer-en-chatgpt-1440-1de2.jpg",
+  "img/blog_como-aparecer-en-chatgpt-1440-2de2.jpg",
+  "img/blog_como-aparecer-en-chatgpt-390-1de2.jpg",
+  "img/blog_como-aparecer-en-chatgpt-390-2de2.jpg",
+  "img/blog_como-elegir-verificar-agencia-aeo-geo-chile-1440-1de2.jpg",
+  "img/blog_como-elegir-verificar-agencia-aeo-geo-chile-1440-2de2.jpg",
+  "img/blog_como-elegir-verificar-agencia-aeo-geo-chile-390-1de2.jpg",
+  "img/blog_como-elegir-verificar-agencia-aeo-geo-chile-390-2de2.jpg",
+  "img/blog_cuanto-cuesta-seo-tecnico-chile-1440-1de1.jpg",
+  "img/blog_cuanto-cuesta-seo-tecnico-chile-390-1de1.jpg",
+  "img/blog_que-es-aeo-geo-1440-1de2.jpg",
+  "img/blog_que-es-aeo-geo-1440-2de2.jpg",
+  "img/blog_que-es-aeo-geo-390-1de1.jpg",
+  "img/blog_que-es-un-mini-diagnostico-seo-1440-1de1.jpg",
+  "img/blog_que-es-un-mini-diagnostico-seo-390-1de1.jpg",
+  "img/blog_seo-tecnico-fintechs-chile-1440-1de2.jpg",
+  "img/blog_seo-tecnico-fintechs-chile-1440-2de2.jpg",
+  "img/blog_seo-tecnico-fintechs-chile-390-1de2.jpg",
+  "img/blog_seo-tecnico-fintechs-chile-390-2de2.jpg",
+  "img/contacto-1440-1de1.jpg",
+  "img/contacto-390-1de1.jpg",
+  "img/diagnostico-1440-1de2.jpg",
+  "img/diagnostico-1440-2de2.jpg",
+  "img/diagnostico-390-1de2.jpg",
+  "img/diagnostico-390-2de2.jpg",
+  "img/home-1440-1de4.jpg",
+  "img/home-1440-2de4.jpg",
+  "img/home-1440-3de4.jpg",
+  "img/home-1440-4de4.jpg",
+  "img/home-390-1de3.jpg",
+  "img/home-390-2de3.jpg",
+  "img/home-390-3de3.jpg",
+  "img/metodo-1440-1de2.jpg",
+  "img/metodo-1440-2de2.jpg",
+  "img/metodo-390-1de1.jpg",
+  "img/nosotros-1440-1de1.jpg",
+  "img/nosotros-390-1de1.jpg",
+  "img/p-blog-1440.jpg",
+  "img/p-blog-390.jpg",
+  "img/p-blog_21-chequeos-visibilidad-ia-1440.jpg",
+  "img/p-blog_21-chequeos-visibilidad-ia-390.jpg",
+  "img/p-blog_como-aparecer-en-chatgpt-1440.jpg",
+  "img/p-blog_como-aparecer-en-chatgpt-390.jpg",
+  "img/p-blog_como-elegir-verificar-agencia-aeo-geo-chile-1440.jpg",
+  "img/p-blog_como-elegir-verificar-agencia-aeo-geo-chile-390.jpg",
+  "img/p-blog_cuanto-cuesta-seo-tecnico-chile-1440.jpg",
+  "img/p-blog_cuanto-cuesta-seo-tecnico-chile-390.jpg",
+  "img/p-blog_que-es-aeo-geo-1440.jpg",
+  "img/p-blog_que-es-aeo-geo-390.jpg",
+  "img/p-blog_que-es-un-mini-diagnostico-seo-1440.jpg",
+  "img/p-blog_que-es-un-mini-diagnostico-seo-390.jpg",
+  "img/p-blog_seo-tecnico-fintechs-chile-1440.jpg",
+  "img/p-blog_seo-tecnico-fintechs-chile-390.jpg",
+  "img/p-contacto-1440.jpg",
+  "img/p-contacto-390.jpg",
+  "img/p-diagnostico-1440.jpg",
+  "img/p-diagnostico-390.jpg",
+  "img/p-home-1440.jpg",
+  "img/p-home-390.jpg",
+  "img/p-metodo-1440.jpg",
+  "img/p-metodo-390.jpg",
+  "img/p-nosotros-1440.jpg",
+  "img/p-nosotros-390.jpg",
+  "img/p-servicios-1440.jpg",
+  "img/p-servicios-390.jpg",
+  "img/p-servicios_acompanamiento-mensual-1440.jpg",
+  "img/p-servicios_acompanamiento-mensual-390.jpg",
+  "img/p-servicios_auditoria-seo-tecnica-1440.jpg",
+  "img/p-servicios_auditoria-seo-tecnica-390.jpg",
+  "img/p-servicios_desarrollo-web-1440.jpg",
+  "img/p-servicios_desarrollo-web-390.jpg",
+  "img/p-servicios_paid-media-1440.jpg",
+  "img/p-servicios_paid-media-390.jpg",
+  "img/p-servicios_redes-sociales-1440.jpg",
+  "img/p-servicios_redes-sociales-390.jpg",
+  "img/p-servicios_visibilidad-en-ia-1440.jpg",
+  "img/p-servicios_visibilidad-en-ia-390.jpg",
+  "img/p-trabajo-1440.jpg",
+  "img/p-trabajo-390.jpg",
+  "img/p-trabajo_combeau-1440.jpg",
+  "img/p-trabajo_combeau-390.jpg",
+  "img/p-trabajo_doceavo-1440.jpg",
+  "img/p-trabajo_doceavo-390.jpg",
+  "img/p-trabajo_ocelo-1440.jpg",
+  "img/p-trabajo_ocelo-390.jpg",
+  "img/p-trabajo_praxi-1440.jpg",
+  "img/p-trabajo_praxi-390.jpg",
+  "img/p-trabajo_sesenta-1440.jpg",
+  "img/p-trabajo_sesenta-390.jpg",
+  "img/p-trabajo_tonela-1440.jpg",
+  "img/p-trabajo_tonela-390.jpg",
+  "img/servicios-1440-1de1.jpg",
+  "img/servicios-390-1de1.jpg",
+  "img/servicios_acompanamiento-mensual-1440-1de2.jpg",
+  "img/servicios_acompanamiento-mensual-1440-2de2.jpg",
+  "img/servicios_acompanamiento-mensual-390-1de2.jpg",
+  "img/servicios_acompanamiento-mensual-390-2de2.jpg",
+  "img/servicios_auditoria-seo-tecnica-1440-1de2.jpg",
+  "img/servicios_auditoria-seo-tecnica-1440-2de2.jpg",
+  "img/servicios_auditoria-seo-tecnica-390-1de2.jpg",
+  "img/servicios_auditoria-seo-tecnica-390-2de2.jpg",
+  "img/servicios_desarrollo-web-1440-1de3.jpg",
+  "img/servicios_desarrollo-web-1440-2de3.jpg",
+  "img/servicios_desarrollo-web-1440-3de3.jpg",
+  "img/servicios_desarrollo-web-390-1de2.jpg",
+  "img/servicios_desarrollo-web-390-2de2.jpg",
+  "img/servicios_paid-media-1440-1de2.jpg",
+  "img/servicios_paid-media-1440-2de2.jpg",
+  "img/servicios_paid-media-390-1de2.jpg",
+  "img/servicios_paid-media-390-2de2.jpg",
+  "img/servicios_redes-sociales-1440-1de2.jpg",
+  "img/servicios_redes-sociales-1440-2de2.jpg",
+  "img/servicios_redes-sociales-390-1de2.jpg",
+  "img/servicios_redes-sociales-390-2de2.jpg",
+  "img/servicios_visibilidad-en-ia-1440-1de2.jpg",
+  "img/servicios_visibilidad-en-ia-1440-2de2.jpg",
+  "img/servicios_visibilidad-en-ia-390-1de2.jpg",
+  "img/servicios_visibilidad-en-ia-390-2de2.jpg",
+  "img/trabajo-1440-1de2.jpg",
+  "img/trabajo-1440-2de2.jpg",
+  "img/trabajo-390-1de2.jpg",
+  "img/trabajo-390-2de2.jpg",
+  "img/trabajo_combeau-1440-1de4.jpg",
+  "img/trabajo_combeau-1440-2de4.jpg",
+  "img/trabajo_combeau-1440-3de4.jpg",
+  "img/trabajo_combeau-1440-4de4.jpg",
+  "img/trabajo_combeau-390-1de2.jpg",
+  "img/trabajo_combeau-390-2de2.jpg",
+  "img/trabajo_doceavo-1440-1de4.jpg",
+  "img/trabajo_doceavo-1440-2de4.jpg",
+  "img/trabajo_doceavo-1440-3de4.jpg",
+  "img/trabajo_doceavo-1440-4de4.jpg",
+  "img/trabajo_doceavo-390-1de2.jpg",
+  "img/trabajo_doceavo-390-2de2.jpg",
+  "img/trabajo_ocelo-1440-1de4.jpg",
+  "img/trabajo_ocelo-1440-2de4.jpg",
+  "img/trabajo_ocelo-1440-3de4.jpg",
+  "img/trabajo_ocelo-1440-4de4.jpg",
+  "img/trabajo_ocelo-390-1de2.jpg",
+  "img/trabajo_ocelo-390-2de2.jpg",
+  "img/trabajo_praxi-1440-1de4.jpg",
+  "img/trabajo_praxi-1440-2de4.jpg",
+  "img/trabajo_praxi-1440-3de4.jpg",
+  "img/trabajo_praxi-1440-4de4.jpg",
+  "img/trabajo_praxi-390-1de2.jpg",
+  "img/trabajo_praxi-390-2de2.jpg",
+  "img/trabajo_sesenta-1440-1de4.jpg",
+  "img/trabajo_sesenta-1440-2de4.jpg",
+  "img/trabajo_sesenta-1440-3de4.jpg",
+  "img/trabajo_sesenta-1440-4de4.jpg",
+  "img/trabajo_sesenta-390-1de2.jpg",
+  "img/trabajo_sesenta-390-2de2.jpg",
+  "img/trabajo_tonela-1440-1de4.jpg",
+  "img/trabajo_tonela-1440-2de4.jpg",
+  "img/trabajo_tonela-1440-3de4.jpg",
+  "img/trabajo_tonela-1440-4de4.jpg",
+  "img/trabajo_tonela-390-1de2.jpg",
+  "img/trabajo_tonela-390-2de2.jpg",
+  "img/v-cinta-1440.jpg",
+  "img/v-portada-1440.jpg",
+  "img/v-telefono-390.jpg",
+  "video/cinta-1440.mp4",
+  "video/cinta-1440.webm",
+  "video/portada-1440.mp4",
+  "video/portada-1440.webm",
+  "video/telefono-390.mp4",
+  "video/telefono-390.webm"
+ ],
+ "detalle": [
+  {
+   "ruta": "img/blog-1440-1de1.jpg",
+   "bytes": 102038,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1376)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog-390-1de1.jpg",
+   "bytes": 87177,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 1820)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_21-chequeos-visibilidad-ia-1440-1de3.jpg",
+   "bytes": 300186,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2318)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_21-chequeos-visibilidad-ia-1440-2de3.jpg",
+   "bytes": 274159,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 2318 a 4636)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_21-chequeos-visibilidad-ia-1440-3de3.jpg",
+   "bytes": 206144,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 4636 a 6949)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_21-chequeos-visibilidad-ia-390-1de3.jpg",
+   "bytes": 168504,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3180)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_21-chequeos-visibilidad-ia-390-2de3.jpg",
+   "bytes": 251510,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 3180 a 6360)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_21-chequeos-visibilidad-ia-390-3de3.jpg",
+   "bytes": 180356,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 6360 a 9538)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_como-aparecer-en-chatgpt-1440-1de2.jpg",
+   "bytes": 215164,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1796)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_como-aparecer-en-chatgpt-1440-2de2.jpg",
+   "bytes": 149725,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1796 a 3592)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_como-aparecer-en-chatgpt-390-1de2.jpg",
+   "bytes": 178858,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2346)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_como-aparecer-en-chatgpt-390-2de2.jpg",
+   "bytes": 133990,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2346 a 4692)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_como-elegir-verificar-agencia-aeo-geo-chile-1440-1de2.jpg",
+   "bytes": 319895,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2610)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_como-elegir-verificar-agencia-aeo-geo-chile-1440-2de2.jpg",
+   "bytes": 249641,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 2610 a 5218)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_como-elegir-verificar-agencia-aeo-geo-chile-390-1de2.jpg",
+   "bytes": 272267,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3282)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_como-elegir-verificar-agencia-aeo-geo-chile-390-2de2.jpg",
+   "bytes": 229205,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 3282 a 6564)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_cuanto-cuesta-seo-tecnico-chile-1440-1de1.jpg",
+   "bytes": 280424,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2680)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_cuanto-cuesta-seo-tecnico-chile-390-1de1.jpg",
+   "bytes": 243507,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3626)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_que-es-aeo-geo-1440-1de2.jpg",
+   "bytes": 175472,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1464)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_que-es-aeo-geo-1440-2de2.jpg",
+   "bytes": 116500,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1464 a 2925)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_que-es-aeo-geo-390-1de1.jpg",
+   "bytes": 250200,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3973)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_que-es-un-mini-diagnostico-seo-1440-1de1.jpg",
+   "bytes": 219520,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2205)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_que-es-un-mini-diagnostico-seo-390-1de1.jpg",
+   "bytes": 185319,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3199)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_seo-tecnico-fintechs-chile-1440-1de2.jpg",
+   "bytes": 211172,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1638)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_seo-tecnico-fintechs-chile-1440-2de2.jpg",
+   "bytes": 138915,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1638 a 3274)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/blog_seo-tecnico-fintechs-chile-390-1de2.jpg",
+   "bytes": 160896,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2276)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/blog_seo-tecnico-fintechs-chile-390-2de2.jpg",
+   "bytes": 131182,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2276 a 4551)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/contacto-1440-1de1.jpg",
+   "bytes": 131409,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1925)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/contacto-390-1de1.jpg",
+   "bytes": 109879,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2393)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/diagnostico-1440-1de2.jpg",
+   "bytes": 162718,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1740)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/diagnostico-1440-2de2.jpg",
+   "bytes": 134728,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1740 a 3480)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/diagnostico-390-1de2.jpg",
+   "bytes": 135806,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2186)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/diagnostico-390-2de2.jpg",
+   "bytes": 119036,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2186 a 4371)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/home-1440-1de4.jpg",
+   "bytes": 175502,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2092)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/home-1440-2de4.jpg",
+   "bytes": 198199,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 2092 a 4184)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/home-1440-3de4.jpg",
+   "bytes": 183041,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 4184 a 6276)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/home-1440-4de4.jpg",
+   "bytes": 186650,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 6276 a 8365)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/home-390-1de3.jpg",
+   "bytes": 142263,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2848)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/home-390-2de3.jpg",
+   "bytes": 147505,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2848 a 5696)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/home-390-3de3.jpg",
+   "bytes": 159313,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 5696 a 8540)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/metodo-1440-1de2.jpg",
+   "bytes": 138244,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1546)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/metodo-1440-2de2.jpg",
+   "bytes": 90338,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1546 a 3092)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/metodo-390-1de1.jpg",
+   "bytes": 195873,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3752)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/nosotros-1440-1de1.jpg",
+   "bytes": 195534,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2683)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/nosotros-390-1de1.jpg",
+   "bytes": 162684,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3303)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/p-blog-1440.jpg",
+   "bytes": 84081,
+   "origen": "../../capturas/e12/primera/blog-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog-390.jpg",
+   "bytes": 47385,
+   "origen": "../../capturas/e12/primera/blog-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_21-chequeos-visibilidad-ia-1440.jpg",
+   "bytes": 130258,
+   "origen": "../../capturas/e12/primera/blog_21-chequeos-visibilidad-ia-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_21-chequeos-visibilidad-ia-390.jpg",
+   "bytes": 58979,
+   "origen": "../../capturas/e12/primera/blog_21-chequeos-visibilidad-ia-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_como-aparecer-en-chatgpt-1440.jpg",
+   "bytes": 138006,
+   "origen": "../../capturas/e12/primera/blog_como-aparecer-en-chatgpt-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_como-aparecer-en-chatgpt-390.jpg",
+   "bytes": 54035,
+   "origen": "../../capturas/e12/primera/blog_como-aparecer-en-chatgpt-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_como-elegir-verificar-agencia-aeo-geo-chile-1440.jpg",
+   "bytes": 142737,
+   "origen": "../../capturas/e12/primera/blog_como-elegir-verificar-agencia-aeo-geo-chile-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_como-elegir-verificar-agencia-aeo-geo-chile-390.jpg",
+   "bytes": 56364,
+   "origen": "../../capturas/e12/primera/blog_como-elegir-verificar-agencia-aeo-geo-chile-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_cuanto-cuesta-seo-tecnico-chile-1440.jpg",
+   "bytes": 127552,
+   "origen": "../../capturas/e12/primera/blog_cuanto-cuesta-seo-tecnico-chile-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_cuanto-cuesta-seo-tecnico-chile-390.jpg",
+   "bytes": 57624,
+   "origen": "../../capturas/e12/primera/blog_cuanto-cuesta-seo-tecnico-chile-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_que-es-aeo-geo-1440.jpg",
+   "bytes": 123982,
+   "origen": "../../capturas/e12/primera/blog_que-es-aeo-geo-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_que-es-aeo-geo-390.jpg",
+   "bytes": 55523,
+   "origen": "../../capturas/e12/primera/blog_que-es-aeo-geo-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_que-es-un-mini-diagnostico-seo-1440.jpg",
+   "bytes": 134781,
+   "origen": "../../capturas/e12/primera/blog_que-es-un-mini-diagnostico-seo-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_que-es-un-mini-diagnostico-seo-390.jpg",
+   "bytes": 61819,
+   "origen": "../../capturas/e12/primera/blog_que-es-un-mini-diagnostico-seo-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_seo-tecnico-fintechs-chile-1440.jpg",
+   "bytes": 135084,
+   "origen": "../../capturas/e12/primera/blog_seo-tecnico-fintechs-chile-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-blog_seo-tecnico-fintechs-chile-390.jpg",
+   "bytes": 56055,
+   "origen": "../../capturas/e12/primera/blog_seo-tecnico-fintechs-chile-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-contacto-1440.jpg",
+   "bytes": 59453,
+   "origen": "../../capturas/e12/primera/contacto-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-contacto-390.jpg",
+   "bytes": 40068,
+   "origen": "../../capturas/e12/primera/contacto-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-diagnostico-1440.jpg",
+   "bytes": 96209,
+   "origen": "../../capturas/e12/primera/diagnostico-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-diagnostico-390.jpg",
+   "bytes": 44961,
+   "origen": "../../capturas/e12/primera/diagnostico-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-home-1440.jpg",
+   "bytes": 91404,
+   "origen": "../../capturas/e12/primera/home-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-home-390.jpg",
+   "bytes": 52330,
+   "origen": "../../capturas/e12/primera/home-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-metodo-1440.jpg",
+   "bytes": 82259,
+   "origen": "../../capturas/e12/primera/metodo-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-metodo-390.jpg",
+   "bytes": 47806,
+   "origen": "../../capturas/e12/primera/metodo-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-nosotros-1440.jpg",
+   "bytes": 74535,
+   "origen": "../../capturas/e12/primera/nosotros-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-nosotros-390.jpg",
+   "bytes": 33450,
+   "origen": "../../capturas/e12/primera/nosotros-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios-1440.jpg",
+   "bytes": 84658,
+   "origen": "../../capturas/e12/primera/servicios-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios-390.jpg",
+   "bytes": 48771,
+   "origen": "../../capturas/e12/primera/servicios-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_acompanamiento-mensual-1440.jpg",
+   "bytes": 78212,
+   "origen": "../../capturas/e12/primera/servicios_acompanamiento-mensual-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_acompanamiento-mensual-390.jpg",
+   "bytes": 49443,
+   "origen": "../../capturas/e12/primera/servicios_acompanamiento-mensual-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_auditoria-seo-tecnica-1440.jpg",
+   "bytes": 79836,
+   "origen": "../../capturas/e12/primera/servicios_auditoria-seo-tecnica-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_auditoria-seo-tecnica-390.jpg",
+   "bytes": 46274,
+   "origen": "../../capturas/e12/primera/servicios_auditoria-seo-tecnica-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_desarrollo-web-1440.jpg",
+   "bytes": 77544,
+   "origen": "../../capturas/e12/primera/servicios_desarrollo-web-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_desarrollo-web-390.jpg",
+   "bytes": 41544,
+   "origen": "../../capturas/e12/primera/servicios_desarrollo-web-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_paid-media-1440.jpg",
+   "bytes": 75146,
+   "origen": "../../capturas/e12/primera/servicios_paid-media-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_paid-media-390.jpg",
+   "bytes": 47398,
+   "origen": "../../capturas/e12/primera/servicios_paid-media-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_redes-sociales-1440.jpg",
+   "bytes": 80516,
+   "origen": "../../capturas/e12/primera/servicios_redes-sociales-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_redes-sociales-390.jpg",
+   "bytes": 48135,
+   "origen": "../../capturas/e12/primera/servicios_redes-sociales-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_visibilidad-en-ia-1440.jpg",
+   "bytes": 71980,
+   "origen": "../../capturas/e12/primera/servicios_visibilidad-en-ia-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-servicios_visibilidad-en-ia-390.jpg",
+   "bytes": 43168,
+   "origen": "../../capturas/e12/primera/servicios_visibilidad-en-ia-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo-1440.jpg",
+   "bytes": 108266,
+   "origen": "../../capturas/e12/primera/trabajo-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo-390.jpg",
+   "bytes": 43066,
+   "origen": "../../capturas/e12/primera/trabajo-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_combeau-1440.jpg",
+   "bytes": 96912,
+   "origen": "../../capturas/e12/primera/trabajo_combeau-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_combeau-390.jpg",
+   "bytes": 41004,
+   "origen": "../../capturas/e12/primera/trabajo_combeau-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_doceavo-1440.jpg",
+   "bytes": 139752,
+   "origen": "../../capturas/e12/primera/trabajo_doceavo-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_doceavo-390.jpg",
+   "bytes": 41166,
+   "origen": "../../capturas/e12/primera/trabajo_doceavo-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_ocelo-1440.jpg",
+   "bytes": 88010,
+   "origen": "../../capturas/e12/primera/trabajo_ocelo-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_ocelo-390.jpg",
+   "bytes": 29885,
+   "origen": "../../capturas/e12/primera/trabajo_ocelo-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_praxi-1440.jpg",
+   "bytes": 117937,
+   "origen": "../../capturas/e12/primera/trabajo_praxi-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_praxi-390.jpg",
+   "bytes": 41907,
+   "origen": "../../capturas/e12/primera/trabajo_praxi-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_sesenta-1440.jpg",
+   "bytes": 132590,
+   "origen": "../../capturas/e12/primera/trabajo_sesenta-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_sesenta-390.jpg",
+   "bytes": 34258,
+   "origen": "../../capturas/e12/primera/trabajo_sesenta-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_tonela-1440.jpg",
+   "bytes": 128354,
+   "origen": "../../capturas/e12/primera/trabajo_tonela-1440.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/p-trabajo_tonela-390.jpg",
+   "bytes": 52053,
+   "origen": "../../capturas/e12/primera/trabajo_tonela-390.jpg",
+   "nota": "copia exacta de la captura de cierre de Mauro"
+  },
+  {
+   "ruta": "img/servicios-1440-1de1.jpg",
+   "bytes": 194659,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2522)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios-390-1de1.jpg",
+   "bytes": 157944,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3377)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_acompanamiento-mensual-1440-1de2.jpg",
+   "bytes": 158146,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1930)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_acompanamiento-mensual-1440-2de2.jpg",
+   "bytes": 140632,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1930 a 3858)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_acompanamiento-mensual-390-1de2.jpg",
+   "bytes": 126879,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2348)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_acompanamiento-mensual-390-2de2.jpg",
+   "bytes": 125362,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2348 a 4694)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_auditoria-seo-tecnica-1440-1de2.jpg",
+   "bytes": 144639,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1838)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_auditoria-seo-tecnica-1440-2de2.jpg",
+   "bytes": 140297,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1838 a 3674)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_auditoria-seo-tecnica-390-1de2.jpg",
+   "bytes": 123859,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2270)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_auditoria-seo-tecnica-390-2de2.jpg",
+   "bytes": 117428,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2270 a 4537)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_desarrollo-web-1440-1de3.jpg",
+   "bytes": 152658,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1974)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_desarrollo-web-1440-2de3.jpg",
+   "bytes": 191944,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1974 a 3948)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_desarrollo-web-1440-3de3.jpg",
+   "bytes": 162962,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 3948 a 5921)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_desarrollo-web-390-1de2.jpg",
+   "bytes": 203930,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 4162)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_desarrollo-web-390-2de2.jpg",
+   "bytes": 215015,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 4162 a 8323)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_paid-media-1440-1de2.jpg",
+   "bytes": 128338,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1820)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_paid-media-1440-2de2.jpg",
+   "bytes": 146434,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1820 a 3639)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_paid-media-390-1de2.jpg",
+   "bytes": 108796,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2234)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_paid-media-390-2de2.jpg",
+   "bytes": 119309,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2234 a 4468)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_redes-sociales-1440-1de2.jpg",
+   "bytes": 137199,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1816)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_redes-sociales-1440-2de2.jpg",
+   "bytes": 137862,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1816 a 3631)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_redes-sociales-390-1de2.jpg",
+   "bytes": 113212,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2236)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_redes-sociales-390-2de2.jpg",
+   "bytes": 116654,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2236 a 4472)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_visibilidad-en-ia-1440-1de2.jpg",
+   "bytes": 178303,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2384)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_visibilidad-en-ia-1440-2de2.jpg",
+   "bytes": 195683,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 2384 a 4765)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/servicios_visibilidad-en-ia-390-1de2.jpg",
+   "bytes": 132856,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2600)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/servicios_visibilidad-en-ia-390-2de2.jpg",
+   "bytes": 151547,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2600 a 5199)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo-1440-1de2.jpg",
+   "bytes": 187585,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 1700)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo-1440-2de2.jpg",
+   "bytes": 184119,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 1700 a 3397)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo-390-1de2.jpg",
+   "bytes": 129257,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2776)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo-390-2de2.jpg",
+   "bytes": 131383,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2776 a 5550)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_combeau-1440-1de4.jpg",
+   "bytes": 164843,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2106)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_combeau-1440-2de4.jpg",
+   "bytes": 210957,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 2106 a 4212)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_combeau-1440-3de4.jpg",
+   "bytes": 140634,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 4212 a 6318)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_combeau-1440-4de4.jpg",
+   "bytes": 194870,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 6318 a 8424)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_combeau-390-1de2.jpg",
+   "bytes": 160862,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3012)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_combeau-390-2de2.jpg",
+   "bytes": 158935,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 3012 a 6022)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_doceavo-1440-1de4.jpg",
+   "bytes": 261094,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2098)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_doceavo-1440-2de4.jpg",
+   "bytes": 173992,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 2098 a 4196)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_doceavo-1440-3de4.jpg",
+   "bytes": 260476,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 4196 a 6294)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_doceavo-1440-4de4.jpg",
+   "bytes": 172851,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 6294 a 8388)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_doceavo-390-1de2.jpg",
+   "bytes": 152978,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2744)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_doceavo-390-2de2.jpg",
+   "bytes": 159092,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2744 a 5488)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_ocelo-1440-1de4.jpg",
+   "bytes": 195598,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2254)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_ocelo-1440-2de4.jpg",
+   "bytes": 140978,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 2254 a 4508)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_ocelo-1440-3de4.jpg",
+   "bytes": 210133,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 4508 a 6762)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_ocelo-1440-4de4.jpg",
+   "bytes": 175257,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 6762 a 9015)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_ocelo-390-1de2.jpg",
+   "bytes": 143117,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 2878)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_ocelo-390-2de2.jpg",
+   "bytes": 152657,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 2878 a 5753)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_praxi-1440-1de4.jpg",
+   "bytes": 262588,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2622)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_praxi-1440-2de4.jpg",
+   "bytes": 218059,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 2622 a 5244)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_praxi-1440-3de4.jpg",
+   "bytes": 162201,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 5244 a 7866)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_praxi-1440-4de4.jpg",
+   "bytes": 185893,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 7866 a 10486)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_praxi-390-1de2.jpg",
+   "bytes": 223854,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3684)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_praxi-390-2de2.jpg",
+   "bytes": 184844,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 3684 a 7366)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_sesenta-1440-1de4.jpg",
+   "bytes": 250130,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2572)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_sesenta-1440-2de4.jpg",
+   "bytes": 202819,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 2572 a 5144)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_sesenta-1440-3de4.jpg",
+   "bytes": 276835,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 5144 a 7716)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_sesenta-1440-4de4.jpg",
+   "bytes": 251477,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 7716 a 10281)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_sesenta-390-1de2.jpg",
+   "bytes": 157299,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3088)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_sesenta-390-2de2.jpg",
+   "bytes": 178613,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 3088 a 6175)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_tonela-1440-1de4.jpg",
+   "bytes": 246531,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 0 a 2352)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_tonela-1440-2de4.jpg",
+   "bytes": 190923,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 2352 a 4704)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_tonela-1440-3de4.jpg",
+   "bytes": 322827,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 4704 a 7056)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_tonela-1440-4de4.jpg",
+   "bytes": 206020,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 1440 (px 7056 a 9402)",
+   "nota": "tramo de la página entera, JPEG 74"
+  },
+  {
+   "ruta": "img/trabajo_tonela-390-1de2.jpg",
+   "bytes": 185338,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 0 a 3092)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/trabajo_tonela-390-2de2.jpg",
+   "bytes": 187371,
+   "origen": "herramientas/tramos.py, de la captura de página entera a 390 (px 3092 a 6184)",
+   "nota": "tramo de la página entera, JPEG 78"
+  },
+  {
+   "ruta": "img/v-cinta-1440.jpg",
+   "bytes": 75446,
+   "origen": "video/cinta-1440.webm (cuadro del segundo 2,3)",
+   "nota": "póster del video, 1440 × 900, JPEG 80"
+  },
+  {
+   "ruta": "img/v-portada-1440.jpg",
+   "bytes": 101382,
+   "origen": "video/portada-1440.webm (cuadro del segundo 2,0)",
+   "nota": "póster del video, 1440 × 900, JPEG 80"
+  },
+  {
+   "ruta": "img/v-telefono-390.jpg",
+   "bytes": 120798,
+   "origen": "video/telefono-390.webm (cuadro del segundo 12,0)",
+   "nota": "póster del video, 780 × 1688, JPEG 80"
+  },
+  {
+   "ruta": "video/cinta-1440.mp4",
+   "bytes": 1211809,
+   "origen": "video/cinta-1440.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 24)"
+  },
+  {
+   "ruta": "video/cinta-1440.webm",
+   "bytes": 1790216,
+   "origen": "herramientas/grabar-movimiento.mjs",
+   "nota": "grabado del build con el screencast de Chromium, VP9 crf 30; lo medido, en datos/movimiento.json"
+  },
+  {
+   "ruta": "video/portada-1440.mp4",
+   "bytes": 1640257,
+   "origen": "video/portada-1440.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 24)"
+  },
+  {
+   "ruta": "video/portada-1440.webm",
+   "bytes": 1448989,
+   "origen": "herramientas/grabar-movimiento.mjs",
+   "nota": "grabado del build con el screencast de Chromium, VP9 crf 30; lo medido, en datos/movimiento.json"
+  },
+  {
+   "ruta": "video/telefono-390.mp4",
+   "bytes": 1906395,
+   "origen": "video/telefono-390.webm",
+   "nota": "H.264 para Safari, hecho por el tablero con ffmpeg (libx264, crf 26)"
+  },
+  {
+   "ruta": "video/telefono-390.webm",
+   "bytes": 2552965,
+   "origen": "herramientas/grabar-movimiento.mjs",
+   "nota": "grabado del build con el screencast de Chromium, VP9 crf 34; lo medido, en datos/movimiento.json"
+  }
+ ],
+ "imagenes": 169,
+ "videos": 6,
+ "archivos": 176,
+ "bytesPagina": 138654,
+ "bytesTotal": 35019921,
+ "unidad": "bytes; kB = 1.000 y MB = 1.000.000"
+}

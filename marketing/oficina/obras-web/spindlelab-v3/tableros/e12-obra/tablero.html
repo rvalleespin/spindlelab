@@ -1,0 +1,800 @@
+<meta charset="utf-8">
+<title>Obra E12 construida</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wdth,wght@25..151,100..1000&family=DM+Mono:wght@500&display=swap">
+<style>
+  /* Tablero de la obra en el lenguaje de A · Archivo: el lienzo #060606, la interfaz en gris y chica, Google Sans Flex
+     liviana para lo grande y DM Mono 500 en mayúsculas para los rótulos; lo que ocupa la pantalla son las capturas.
+     Sin acento: la interfaz de A no tiene color (spec §1.1). Desde 1194 px cada sección lleva su título en una barra de
+     320 px, como el caso de Koto. Un solo tema a propósito: el sitio se juzga sobre su negro. Contraste AA medido
+     (blanco 20,26:1 y gris 7,02:1 sobre el lienzo, 6,39:1 sobre la placa). */
+  :root {
+    color-scheme: dark;
+    --lienzo: #060606;
+    --placa: #141414;
+    --placa-activa: #202020;
+    --blanco: #FFFFFF;
+    --gris: #989898;
+    --linea: rgba(255,255,255,.10);
+    --linea-seccion: #2D2D2D;
+    --borde: #707070;
+    --f-texto: 'Google Sans Flex', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    --f-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --lienzo: #060606;
+    --placa: #141414;
+    --placa-activa: #202020;
+    --blanco: #FFFFFF;
+    --gris: #989898;
+    --linea: rgba(255,255,255,.10);
+    --linea-seccion: #2D2D2D;
+    --borde: #707070;
+    --f-texto: 'Google Sans Flex', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    --f-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+  }
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+    color-scheme: dark;
+    --lienzo: #060606;
+    --placa: #141414;
+    --placa-activa: #202020;
+    --blanco: #FFFFFF;
+    --gris: #989898;
+    --linea: rgba(255,255,255,.10);
+    --linea-seccion: #2D2D2D;
+    --borde: #707070;
+    --f-texto: 'Google Sans Flex', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    --f-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+  }
+  }
+  :root[data-theme="dark"], :root[data-theme="light"] {
+    color-scheme: dark;
+    --lienzo: #060606;
+    --placa: #141414;
+    --placa-activa: #202020;
+    --blanco: #FFFFFF;
+    --gris: #989898;
+    --linea: rgba(255,255,255,.10);
+    --linea-seccion: #2D2D2D;
+    --borde: #707070;
+    --f-texto: 'Google Sans Flex', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    --f-mono: 'DM Mono', ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--lienzo); color: var(--blanco); font: 400 16px/1.45 var(--f-texto); -webkit-font-smoothing: antialiased; }
+  .marco { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 16px 64px; }
+  h1, h2, h3, h4 { font-weight: 400; margin: 0; text-wrap: balance; }
+  h1 { font-size: clamp(32px, 3.4vw, 48px); font-weight: 300; font-stretch: 76%; line-height: 1.04; letter-spacing: -.01em; max-width: 22ch; }
+  h2 { font-size: clamp(26px, 2.4vw, 34px); font-weight: 300; font-stretch: 76%; line-height: 1.08; letter-spacing: -.005em; }
+  h3 { font-size: clamp(20px, 1.6vw, 22px); line-height: 1.25; }
+  h4 { font-size: 17px; line-height: 1.3; }
+  p, ul, ol, dl, figure { margin: 0; }
+  a { color: var(--blanco); text-underline-offset: 3px; }
+  code { font-family: var(--f-mono); font-size: max(11px, .8em); letter-spacing: .01em; overflow-wrap: anywhere; }
+  strong { font-weight: 500; color: var(--blanco); }
+  em { font-style: italic; }
+  :focus-visible { outline: 2px solid var(--blanco); outline-offset: 3px; }
+  .rotulo { font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); }
+  .rotulo code { font-size: 1em; text-transform: none; }
+  .t1 { color: var(--blanco); }
+  .t2 { color: var(--gris); }
+  .intro { font-size: clamp(19px, 1.7vw, 23px); line-height: 1.3; max-width: 36em; text-wrap: pretty; }
+  .nota { color: var(--gris); max-width: 68ch; font-size: 15px; }
+  .nota strong, .nota code { color: var(--blanco); }
+  .bloque { display: grid; gap: 14px; }
+  .sello { display: inline-block; vertical-align: middle; border: 1px solid var(--blanco); border-radius: 2px; padding: 5px 8px; font: 500 11px/1 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--blanco); }
+
+  /* cabecera */
+  .cab { display: grid; gap: 20px; padding: 8px 0 40px; }
+  .cab__fila { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+  .cab h1 .t2 { color: var(--gris); }
+  .indice { display: flex; flex-wrap: wrap; gap: 0 20px; list-style: none; padding: 0; }
+  .indice a { font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--blanco); text-decoration: none; display: inline-block; padding: 14px 0; }
+  .indice a:hover { text-decoration: underline; }
+
+  /* secciones */
+  .seccion { position: relative; border-top: 1px solid var(--linea-seccion); padding: 20px 0 64px; display: grid; gap: 24px; }
+  .seccion__lado { display: grid; gap: 8px; align-content: start; }
+  .seccion__cuerpo { display: grid; gap: 32px; min-width: 0; }
+  @media (min-width: 1194px) {
+    .seccion { grid-template-columns: 320px minmax(0, 1fr); gap: 16px; }
+    .seccion__lado { position: sticky; top: 16px; align-self: start; padding-right: 24px; }
+  }
+
+  /* 1 · veredicto */
+  .veredicto { display: grid; gap: 14px; }
+  .hechos { list-style: none; padding: 0; border-top: 1px solid var(--linea-seccion); }
+  .hechos li { display: grid; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--linea); color: var(--gris); }
+  @media (min-width: 834px) { .hechos li { grid-template-columns: 140px minmax(0, 1fr); gap: 16px; } }
+  .hechos li > span:last-child { min-width: 0; }
+
+  /* figuras, pares y marcos */
+  .fig { display: grid; gap: 8px; align-content: start; min-width: 0; }
+  .fig img, .fig video { display: block; width: 100%; height: auto; border-radius: 6px; background: var(--placa); }
+  .fig figcaption { font-size: 14px; line-height: 1.45; color: var(--gris); max-width: 72ch; }
+  .fig figcaption code { color: var(--blanco); }
+  .par { display: grid; gap: 16px; align-items: start; }
+  @media (min-width: 834px) { .par { grid-template-columns: minmax(0, 3.3fr) minmax(0, 1fr); } }
+  .pantalla--tel, .visor-caja--tel { max-width: 300px; }
+  @media (min-width: 834px) { .pantalla--tel, .visor-caja--tel { max-width: none; } }
+  .visor-caja { display: grid; gap: 8px; min-width: 0; }
+  .visor { height: clamp(360px, 72vh, 820px); overflow-y: auto; overflow-x: hidden; border-radius: 6px; background: var(--placa); outline: 1px solid var(--linea); scrollbar-color: #4A4A4A var(--placa); }
+  .visor img { display: block; width: 100%; height: auto; }
+  .clip--tel { max-width: 300px; }
+  @media (min-width: 834px) {
+    .clip--tel { max-width: none; grid-template-columns: 300px minmax(0, 1fr); gap: 8px 20px; align-items: start; }
+  }
+
+  /* plegables */
+  .plegable { border-top: 1px solid var(--linea-seccion); }
+  .plegable > summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 8px 0; cursor: pointer; }
+  .plegable > summary::-webkit-details-marker { display: none; }
+  .plegable > summary:hover .ruta__titulo, .plegable > summary:hover h4 { text-decoration: underline; text-underline-offset: 4px; }
+  .mas { flex: none; width: 32px; height: 32px; border-radius: 4px; background: var(--placa); display: grid; place-items: center; }
+  .mas::before { content: "+"; font: 500 16px/1 var(--f-mono); color: var(--blanco); }
+  .plegable[open] > summary .mas::before { content: "\2212"; }
+  .plegable[open] { padding-bottom: 20px; }
+
+  /* 3 · casos */
+  .casos { list-style: none; padding: 0; display: grid; gap: 56px; }
+  .caso { display: grid; gap: 16px; padding-top: 16px; border-top: 1px solid var(--linea-seccion); min-width: 0; }
+  .caso__cab { display: grid; gap: 8px; max-width: 60em; }
+  .caso__h { font-size: clamp(26px, 2.6vw, 36px); font-weight: 300; font-stretch: 76%; line-height: 1.08; }
+  .valores { display: grid; border-top: 1px solid var(--linea-seccion); }
+  .valores div { display: grid; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--linea); }
+  .valores dt { font: 500 11px/1.4 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); }
+  .valores dd { margin: 0; color: var(--gris); max-width: 72ch; min-width: 0; }
+  .valores dd code { color: var(--blanco); }
+  @media (min-width: 834px) { .valores div { grid-template-columns: 180px minmax(0, 1fr); gap: 16px; } }
+  .valores--chico dd { font-size: 15px; }
+  .ir { display: inline-block; padding: 12px 0; font-size: 15px; }
+
+  /* 4 · rutas */
+  .grupo { display: grid; gap: 0; }
+  .grupo > h3 { padding-bottom: 12px; }
+  .cuenta { color: var(--gris); }
+  .ruta__cab { flex: 1 1 auto; display: grid; gap: 4px 16px; min-width: 0; }
+  @media (min-width: 834px) { .ruta__cab { grid-template-columns: minmax(0, 15em) minmax(0, 1fr) auto; align-items: baseline; } }
+  .ruta__path { font-size: 13px; color: var(--blanco); }
+  .ruta__titulo { color: var(--gris); font-size: 15px; min-width: 0; }
+  .ruta__cuerpo { display: grid; gap: 16px; }
+
+  /* 5 · desvíos */
+  .desvios { list-style: none; padding: 0; counter-reset: d; display: grid; border-top: 1px solid var(--linea-seccion); }
+  .desvios li { counter-increment: d; display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 4px 8px; padding: 14px 0; border-bottom: 1px solid var(--linea); }
+  .desvios li::before { content: counter(d); font: 500 11px/2 var(--f-mono); color: var(--gris); grid-row: span 2; }
+  .desvios .t1 { font-size: 17px; line-height: 1.35; }
+  .desvios .t2, .puntos .t2 { font-size: 15px; max-width: 72ch; }
+  .tanda > summary h4 { flex: 1 1 auto; min-width: 0; }
+  .tanda > summary .rotulo { flex: none; }
+  .puntos { list-style: none; padding: 0; display: grid; }
+  .puntos li { display: grid; gap: 6px; padding: 14px 0; border-top: 1px solid var(--linea); }
+  .punto__cab { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+  .punto__cab .t1 { flex: 1 1 24em; min-width: 0; }
+  .chip { flex: none; font: 500 11px/1 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); border: 1px solid var(--linea-seccion); border-radius: 2px; padding: 4px 6px; }
+  .chip--ve { color: var(--blanco); border-color: var(--borde); }
+
+  /* 6 · abierto */
+  .defectos { list-style: none; padding: 0; display: grid; gap: 16px; }
+  @media (min-width: 1194px) { .defectos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .defecto { display: grid; gap: 12px; align-content: start; padding: 16px; border-radius: 4px; background: var(--placa); min-width: 0; }
+  .defecto__cab { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+  .defecto .valores div { grid-template-columns: none; }
+  .cerrada { display: grid; gap: 8px; padding: 16px 0; border-top: 1px solid var(--linea-seccion); border-bottom: 1px solid var(--linea-seccion); color: var(--gris); max-width: 80ch; }
+  .dos-listas { display: grid; gap: 28px; }
+  @media (min-width: 1194px) { .dos-listas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .dos-listas > div { display: grid; gap: 12px; align-content: start; min-width: 0; }
+  .h3--sep { padding-top: 16px; }
+  .lista-larga { padding-left: 20px; display: grid; gap: 10px; color: var(--gris); max-width: 72ch; font-size: 15px; }
+  .lista-larga strong, .lista-larga code { color: var(--blanco); }
+
+  /* tablas */
+  .tabla-envuelta { max-width: 100%; }
+  .tabla { border-collapse: collapse; width: 100%; font-size: 15px; }
+  .tabla caption { text-align: left; padding-bottom: 10px; }
+  .tabla th, .tabla td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  .tabla thead th { font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); border-bottom: 1px solid var(--linea-seccion); }
+  .tabla tbody th { font: 500 13px/1.5 var(--f-mono); color: var(--blanco); width: 40px; }
+  .tabla td { color: var(--gris); }
+  .tabla td strong, .tabla td code { color: var(--blanco); }
+  @media (min-width: 834px) { .tabla--pend td:nth-child(3) { width: 180px; } .tabla--ocho td:last-child { width: 45%; } }
+  @media (max-width: 833px) {
+    .tabla thead { display: none; }
+    .tabla tr { display: grid; gap: 6px; padding: 12px 0; border-bottom: 1px solid var(--linea); }
+    .tabla th, .tabla td { border: 0; padding: 0; width: auto; }
+    .tabla td::before { content: attr(data-rotulo); display: block; font: 500 11px/1.3 var(--f-mono); letter-spacing: .03em; text-transform: uppercase; color: var(--gris); }
+  }
+  .pie { border-top: 1px solid var(--linea-seccion); padding-top: 16px; color: var(--gris); font-size: 14px; display: grid; gap: 6px; max-width: 90ch; }
+  .pie code { color: var(--blanco); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+<div class="marco">
+  <header class="cab">
+    <div class="cab__fila">
+      <p class="rotulo">SpindleLab v3 · E12 · la obra construida · 23 de octubre de 2026</p>
+      <p class="rotulo">Santiago <span class="reloj">--:--</span> <span class="huso">UTC-3</span></p>
+    </div>
+    <h1><span class="t1">A · Archivo, construida.</span> <span class="t2">Las 27 rutas de /v3/, como quedaron después de la QA.</span></h1>
+    <p class="intro"><span class="t1">Javiera cerró la QA con reparos: los ocho defectos de la primera vuelta están cerrados y quedan dos menores, el 9 y el 10, que se cierran antes de publicar.</span> <span class="t2">Todo lo que ves sale del build del 23-oct, en capturas y grabaciones sin retoque. Nada está publicado y /v3/ sigue con noindex.</span></p>
+    <nav aria-label="Secciones del tablero"><ul class="indice">
+      <li><a href="#veredicto">1 · El veredicto</a></li><li><a href="#movimiento">2 · En movimiento</a></li><li><a href="#casos">3 · Los seis casos</a></li>
+      <li><a href="#rutas">4 · Las 27 rutas</a></li><li><a href="#desvios">5 · Lo que se desvió</a></li><li><a href="#abierto">6 · Lo que queda abierto</a></li>
+    </ul></nav>
+  </header>
+  <main>
+    
+<section id="veredicto" class="seccion" aria-labelledby="t-veredicto">
+  <div class="seccion__lado"><p class="rotulo">1</p><h2 id="t-veredicto">El veredicto</h2></div>
+  <div class="seccion__cuerpo">
+    <div class="veredicto">
+      <p><span class="sello">Con reparos</span></p>
+      <p class="intro">Javiera revisó la obra en un contexto aparte, sin ver cómo se construyó. En la primera vuelta la rechazó, con cuatro defectos mayores y cuatro menores. En la segunda, el 23-oct, los ocho estaban cerrados y los midió con las mismas herramientas.</p>
+      <p class="nota">Quedan dos menores nuevos, el 9 y el 10. No impiden mostrarte <code>/v3/</code>, y se cierran antes de publicar con una comprobación exprés de Javiera, sin otra vuelta completa (sección 6). Producción sigue igual byte a byte y en <code>Layout.astro</code> están las cinco props que aprobaste, nada más. Acta completa: <code>e12/acta-obra.md</code>.</p>
+    </div>
+    <div class="tabla-envuelta">
+      <table class="tabla tabla--ocho">
+        <caption class="rotulo">Los ocho defectos de la primera vuelta</caption>
+        <thead><tr><th scope="col">#</th><th scope="col">Qué era</th><th scope="col">Cómo quedó en la segunda vuelta</th></tr></thead>
+        <tbody><tr><th scope="row" data-rotulo="Defecto">1</th><td data-rotulo="Qué era">La home sin <code>datePublished</code> ni <code>dateModified</code>; el chequeo local, 79 contra 83</td><td data-rotulo="Cómo quedó"><strong>Cerrado</strong></td></tr><tr><th scope="row" data-rotulo="Defecto">2</th><td data-rotulo="Qué era">«Concepto · 2026» bajo el pliegue de 768 a 1193; Tonela a 768 y Doceavo sin el rótulo</td><td data-rotulo="Cómo quedó"><strong>Cerrado</strong></td></tr><tr><th scope="row" data-rotulo="Defecto">3</th><td data-rotulo="Qué era">La franja de Auditoría, un campo de color que la regla de la cubeta no veía</td><td data-rotulo="Cómo quedó"><strong>Cerrado</strong></td></tr><tr><th scope="row" data-rotulo="Defecto">4</th><td data-rotulo="Qué era">El aviso de cookies tapaba el chequeo de la home a 390 × 844 y 360 × 800</td><td data-rotulo="Cómo quedó"><strong>Cerrado</strong></td></tr><tr><th scope="row" data-rotulo="Defecto">5</th><td data-rotulo="Qué era">Texto sobre el tope de 493 en la home y en diagnóstico</td><td data-rotulo="Cómo quedó"><strong>Cerrado</strong> (lo de Diego)</td></tr><tr><th scope="row" data-rotulo="Defecto">6</th><td data-rotulo="Qué era"><code>loading="lazy"</code> en imágenes de la primera pantalla</td><td data-rotulo="Cómo quedó"><strong>Cerrado</strong></td></tr><tr><th scope="row" data-rotulo="Defecto">7</th><td data-rotulo="Qué era">El logo y el correo del pie se pisaban 97 × 13; la original de Combeau, 9 % bajo la imagen</td><td data-rotulo="Cómo quedó"><strong>Cerrado</strong> (lo pedido)</td></tr><tr><th scope="row" data-rotulo="Defecto">8</th><td data-rotulo="Qué era">Title Case en tres <code>title</code></td><td data-rotulo="Cómo quedó"><strong>Cerrado</strong></td></tr></tbody>
+      </table>
+    </div>
+    <div class="bloque">
+      <h3>Lo que comprobé hoy, antes de armar este tablero</h3>
+      <ul class="hechos">
+        <li><span class="rotulo">Build</span><span><code>npm run build</code>: 33 páginas, sin error (las 27 de <code>/v3/</code>, las cuatro maquetas archivadas y las dos v2).</span></li>
+        <li><span class="rotulo">Verificar</span><span><code>npm run verificar -- --prefijo /v3/</code> a 390 y a 1440: 27 páginas, sin hallazgos.</span></li>
+        <li><span class="rotulo">Producción</span><span>Los 22 HTML de producción y sus 110 archivos, iguales byte a byte a la línea base que dejó la tanda 1.</span></li>
+      </ul>
+      <p class="nota">Las capturas y las grabaciones de este tablero salen de ese build. <code>spindlelab-astro/</code> no cambió desde <code>f2fe7b4</code>, la obra que Javiera auditó.</p>
+    </div>
+  </div>
+</section>
+    
+<section id="movimiento" class="seccion" aria-labelledby="t-movimiento">
+  <div class="seccion__lado"><p class="rotulo">2</p><h2 id="t-movimiento">La portada y la cinta, en movimiento</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="nota">Grabadas del navegador sobre el build, con el aviso de cookies ya contestado y sin tocar el mouse (por eso no aparece el círculo del cursor). Los videos esperan a que les des play y corre uno a la vez.</p>
+    <figure class="fig clip "><video controls preload="none" playsinline poster="img/v-portada-1440.jpg" width="1440" height="900" aria-label="La portada de la home a 1440, grabada"><source src="video/portada-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/portada-1440.webm" type="video/webm"></video><figcaption>La primera pantalla de <code>/v3/</code> a 1440 × 900, quieta, 10,7 s: dos vueltas del hilo de oro, un bucle de 5,04 s en VP9 de 1920 × 1080. Corre al empezar, a la mitad y al terminar la grabación, con su botón de pausa arriba a la derecha. La frase y el chequeo van encima, sobre el velo negro; el contraste lo midió Javiera sobre los 121 cuadros del video (la peor línea, 5,31:1).</figcaption></figure>
+    <figure class="fig clip "><video controls preload="none" playsinline poster="img/v-cinta-1440.jpg" width="1440" height="900" aria-label="La cinta de la home a 1440, grabada"><source src="video/cinta-1440.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/cinta-1440.webm" type="video/webm"></video><figcaption>La cinta, la primera sección después de la portada, a 1440 × 900, 17,0 s: un video de 16 s con ocho tramos de 2 s, y la ficha de al lado cambia con cada uno. Pasaron, en este orden: Combeau, fotografía, Sesenta, Praxi, Tonela, Verifica y Cumple, Ocelo, Combeau, modelo y Doceavo. Al bajar, el hilo de la portada se pausa solo.</figcaption></figure>
+    <figure class="fig clip clip--tel"><video controls preload="none" playsinline poster="img/v-telefono-390.jpg" width="780" height="1688" aria-label="La home en un teléfono, de la portada a la cinta, grabada"><source src="video/telefono-390.mp4" type='video/mp4; codecs="avc1.640028"'><source src="video/telefono-390.webm" type="video/webm"></video><figcaption><code>/v3/</code> en un teléfono, 390 × 844 con dpr 2 y el dedo, 24,8 s. La portada es una franja 16:9 con el hilo en su archivo de 960 px; debajo, la frase, el chequeo y la entradilla, en ese orden. Un deslizamiento con el dedo lleva a la cinta, que corre sus ocho tramos con el rótulo «nombre · tipo · año» encima.</figcaption></figure>
+  </div>
+</section>
+    
+<section id="casos" class="seccion" aria-labelledby="t-casos">
+  <div class="seccion__lado"><p class="rotulo">3</p><h2 id="t-casos">Los seis casos</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="intro"><span class="t1">Dos casos reales con página propia, Bernardo Combeau y Praxi, y cuatro conceptos rotulados.</span> <span class="t2">Van en el orden de «Siguiente» en el sitio. El texto de cada uno es el de Clara, tal cual.</span></p>
+    <ol class="casos">
+      <li class="caso" id="caso-combeau">
+        <div class="caso__cab">
+          <p class="rotulo">Cliente · 2026</p>
+          <h3 class="caso__h"><span class="t1">Bernardo Combeau.</span> <span class="t2">Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.</span></h3>
+          <p class="nota">Diseñamos y programamos los dos sitios de Bernardo Combeau, fotógrafo y modelo. Él carga sus series desde un panel, y el sitio entrega sus fotos livianas.</p>
+        </div>
+        <div class="par">
+          <figure class="fig pantalla"><img src="img/p-trabajo_combeau-1440.jpg" width="1440" height="900" alt="Bernardo Combeau, primera pantalla a 1440" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+          <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_combeau-390.jpg" width="390" height="844" alt="Bernardo Combeau, primera pantalla a 390" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+        </div>
+        <dl class="valores valores--chico"><div><dt>Qué es</dt><dd>Sitio de fotografía y book de modelo</dd></div><div><dt>En línea desde</dt><dd>24-jul-2026</dd></div><div><dt>Quién lo hizo</dt><dd>Diseño, programación y panel: SpindleLab. Las fotos y los textos los pone Bernardo.</dd></div><div><dt>Las reglas que cumple</dt><dd>Una página con dos partes, la fotografía y el book de modelo. Sin sus medidas personales en ninguna imagen ni texto alternativo (Javiera midió 0 en su HTML).</dd></div></dl>
+        <p><a class="ir" href="#r-trabajo_combeau">La página entera de Bernardo Combeau, a 1440 y a 390</a></p>
+      </li>
+      <li class="caso" id="caso-praxi">
+        <div class="caso__cab">
+          <p class="rotulo">Propio · 2026 · Sitio y app</p>
+          <h3 class="caso__h"><span class="t1">Praxi.</span> <span class="t2">Se acuerda de cada serie que hiciste.</span></h3>
+          <p class="nota">Diseñamos y programamos Praxi con agentes de IA: una app de entrenamiento por chat. La IA conversa; cuándo subir el peso lo calcula código con pruebas.</p>
+        </div>
+        <div class="par">
+          <figure class="fig pantalla"><img src="img/p-trabajo_praxi-1440.jpg" width="1440" height="900" alt="Praxi, primera pantalla a 1440" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+          <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_praxi-390.jpg" width="390" height="844" alt="Praxi, primera pantalla a 390" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+        </div>
+        <dl class="valores valores--chico"><div><dt>Qué es</dt><dd>Sitio y app</dd></div><div><dt>Hecho</dt><dd>21-jul a 25-ago-2026</dd></div><div><dt>Quién lo hizo</dt><dd>Marca, sitio, app y campaña: Ramón Vallejos, con agentes de IA.</dd></div><div><dt>Las reglas que cumple</dt><dd>Nombra sus dos modelos con lo que hace cada uno, como lo dice la página: «Claude Haiku 4.5, un modelo de IA de Anthropic, convierte esa frase en un registro ordenado» y «Esas cuentas le llegan hechas a Claude Sonnet 5, el modelo que conversa contigo como coach y te las explica». No enlaza a praxi.coach, no dice que está en pausa y su JSON-LD va sin <code>offers</code> ni <code>url</code>. Las pantallas internas van como hueco nombrado.</dd></div></dl>
+        <p><a class="ir" href="#r-trabajo_praxi">La página entera de Praxi, a 1440 y a 390</a></p>
+      </li>
+      <li class="caso" id="caso-sesenta">
+        <div class="caso__cab">
+          <p class="rotulo">Concepto · 2026</p>
+          <h3 class="caso__h"><span class="t1">Sesenta.</span> <span class="t2">El plazo antes que el juicio.</span></h3>
+          <p class="nota">Concepto: Sesenta no existe. Un estudio laboral inventado, del lado del trabajador, para mostrar cómo haríamos un sitio legal que cuenta los días que te quedan.</p>
+        </div>
+        <div class="par">
+          <figure class="fig pantalla"><img src="img/p-trabajo_sesenta-1440.jpg" width="1440" height="900" alt="Sesenta, primera pantalla a 1440" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+          <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_sesenta-390.jpg" width="390" height="844" alt="Sesenta, primera pantalla a 390" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+        </div>
+        <dl class="valores valores--chico"><div><dt>Rubro</dt><dd>Estudio de abogados laborales, del lado del trabajador</dd></div><div><dt>Lo hecho</dt><dd>Identidad, sitio (portada y una página interior) y un recorrido en video</dd></div><div><dt>Quién lo hizo</dt><dd>Identidad, sitio y recorrido: SpindleLab. La marca es inventada.</dd></div><div><dt>Las reglas que cumple</dt><dd>«Concepto» a la vista sin scroll en cualquier tamaño: Javiera lo midió en los cuatro conceptos a ocho anchos, con el aviso de cookies abierto y cerrado (64 de 64). Sin cifras de resultado ni testimonios; la marca es inventada y lo dice.</dd></div></dl>
+        <p><a class="ir" href="#r-trabajo_sesenta">La página entera de Sesenta, a 1440 y a 390</a></p>
+      </li>
+      <li class="caso" id="caso-ocelo">
+        <div class="caso__cab">
+          <p class="rotulo">Concepto · 2026</p>
+          <h3 class="caso__h"><span class="t1">Ocelo.</span> <span class="t2">La carta antes que la promesa.</span></h3>
+          <p class="nota">Concepto: Ocelo no existe. Una clínica de ojos inventada, para mostrar cómo haríamos un sitio de salud que explica el examen en vez de prometer resultados.</p>
+        </div>
+        <div class="par">
+          <figure class="fig pantalla"><img src="img/p-trabajo_ocelo-1440.jpg" width="1440" height="900" alt="Ocelo, primera pantalla a 1440" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+          <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_ocelo-390.jpg" width="390" height="844" alt="Ocelo, primera pantalla a 390" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+        </div>
+        <dl class="valores valores--chico"><div><dt>Rubro</dt><dd>Clínica de ojos: cirugía refractiva y de cataratas</dd></div><div><dt>Lo hecho</dt><dd>Identidad, sitio (portada y una página interior) y un recorrido en video</dd></div><div><dt>Quién lo hizo</dt><dd>Identidad, sitio y recorrido: SpindleLab. La marca es inventada.</dd></div><div><dt>Las reglas que cumple</dt><dd>«Concepto» a la vista sin scroll en cualquier tamaño: Javiera lo midió en los cuatro conceptos a ocho anchos, con el aviso de cookies abierto y cerrado (64 de 64). Sin cifras de resultado ni testimonios; la marca es inventada y lo dice.</dd></div></dl>
+        <p><a class="ir" href="#r-trabajo_ocelo">La página entera de Ocelo, a 1440 y a 390</a></p>
+      </li>
+      <li class="caso" id="caso-doceavo">
+        <div class="caso__cab">
+          <p class="rotulo">Concepto · 2026</p>
+          <h3 class="caso__h"><span class="t1">Doceavo.</span> <span class="t2">El año en doce, con lo que vence cada mes.</span></h3>
+          <p class="nota">Concepto: Doceavo no existe. Un estudio contable inventado en Concepción, para mostrar un sitio que te dice qué vence este mes según el calendario del SII.</p>
+        </div>
+        <div class="par">
+          <figure class="fig pantalla"><img src="img/p-trabajo_doceavo-1440.jpg" width="1440" height="900" alt="Doceavo, primera pantalla a 1440" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+          <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_doceavo-390.jpg" width="390" height="844" alt="Doceavo, primera pantalla a 390" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+        </div>
+        <dl class="valores valores--chico"><div><dt>Rubro</dt><dd>Estudio contable para pymes e independientes</dd></div><div><dt>Lo hecho</dt><dd>Identidad, sitio (portada y una página interior) y un recorrido en video</dd></div><div><dt>Quién lo hizo</dt><dd>Identidad, sitio y recorrido: SpindleLab. La marca es inventada.</dd></div><div><dt>Las reglas que cumple</dt><dd>«Concepto» a la vista sin scroll en cualquier tamaño: Javiera lo midió en los cuatro conceptos a ocho anchos, con el aviso de cookies abierto y cerrado (64 de 64). Sin cifras de resultado ni testimonios; la marca es inventada y lo dice.</dd></div></dl>
+        <p><a class="ir" href="#r-trabajo_doceavo">La página entera de Doceavo, a 1440 y a 390</a></p>
+      </li>
+      <li class="caso" id="caso-tonela">
+        <div class="caso__cab">
+          <p class="rotulo">Concepto · 2026</p>
+          <h3 class="caso__h"><span class="t1">Tonela.</span> <span class="t2">El color de la eslinga es su capacidad.</span></h3>
+          <p class="nota">Concepto: Tonela no existe. Una marca inventada de eslingas en Antofagasta, para mostrar cómo diseñaríamos y programaríamos un sitio industrial B2B. Sin cifras.</p>
+        </div>
+        <div class="par">
+          <figure class="fig pantalla"><img src="img/p-trabajo_tonela-1440.jpg" width="1440" height="900" alt="Tonela, primera pantalla a 1440" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+          <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_tonela-390.jpg" width="390" height="844" alt="Tonela, primera pantalla a 390" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+        </div>
+        <dl class="valores valores--chico"><div><dt>Rubro</dt><dd>Izaje: eslingas, cadenas y grilletes</dd></div><div><dt>Lo hecho</dt><dd>Identidad, sitio (portada y una página interior) y un recorrido en video</dd></div><div><dt>Quién lo hizo</dt><dd>Identidad, sitio y recorrido: SpindleLab. La marca es inventada.</dd></div><div><dt>Las reglas que cumple</dt><dd>«Concepto» a la vista sin scroll en cualquier tamaño: Javiera lo midió en los cuatro conceptos a ocho anchos, con el aviso de cookies abierto y cerrado (64 de 64). Sin cifras de resultado ni testimonios; la marca es inventada y lo dice.</dd></div></dl>
+        <p><a class="ir" href="#r-trabajo_tonela">La página entera de Tonela, a 1440 y a 390</a></p>
+      </li></ol>
+  </div>
+</section>
+    
+<section id="rutas" class="seccion" aria-labelledby="t-rutas">
+  <div class="seccion__lado"><p class="rotulo">4</p><h2 id="t-rutas">Las 27 rutas</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="nota">Cada ruta a 1440 y a 390. La primera pantalla es la captura de cierre de Mauro, a 1,2 s de cargada, con los videos corriendo. La página entera la tomé hoy de nuevo, esperando a que cargara cada imagen, y baja dentro de su marco. En los casos y los artículos, la barra flotante aparece una sola vez, donde estaba al tomar la captura; en el navegador va pegada al pie de la ventana. Abre una ruta para verla.</p>
+    <div class="grupo"><h3>La home y el índice de trabajo <span class="cuenta">(2)</span></h3>
+        <details class="ruta plegable" id="r-home">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/</code><span class="ruta__titulo">SpindleLab · Estudio de diseño y tecnología en Santiago</span><span class="rotulo">8.365 px a 1440 · 8.540 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-home-1440.jpg" width="1440" height="900" alt="/v3/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-home-390.jpg" width="390" height="844" alt="/v3/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/, página entera a 1440: baja dentro del marco"><img src="img/home-1440-1de4.jpg" width="1440" height="2092" alt="/v3/, página entera a 1440, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/home-1440-2de4.jpg" width="1440" height="2092" alt="/v3/, página entera a 1440, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/home-1440-3de4.jpg" width="1440" height="2092" alt="/v3/, página entera a 1440, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/home-1440-4de4.jpg" width="1440" height="2089" alt="/v3/, página entera a 1440, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/, página entera a 390: baja dentro del marco"><img src="img/home-390-1de3.jpg" width="390" height="2848" alt="/v3/, página entera a 390, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/home-390-2de3.jpg" width="390" height="2848" alt="/v3/, página entera a 390, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/home-390-3de3.jpg" width="390" height="2844" alt="/v3/, página entera a 390, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-trabajo">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/trabajo/</code><span class="ruta__titulo">Trabajo de diseño y desarrollo web · SpindleLab</span><span class="rotulo">3.397 px a 1440 · 5.550 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-trabajo-1440.jpg" width="1440" height="900" alt="/v3/trabajo/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo-390.jpg" width="390" height="844" alt="/v3/trabajo/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/trabajo/, página entera a 1440: baja dentro del marco"><img src="img/trabajo-1440-1de2.jpg" width="1440" height="1700" alt="/v3/trabajo/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/trabajo-1440-2de2.jpg" width="1440" height="1697" alt="/v3/trabajo/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/trabajo/, página entera a 390: baja dentro del marco"><img src="img/trabajo-390-1de2.jpg" width="390" height="2776" alt="/v3/trabajo/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/trabajo-390-2de2.jpg" width="390" height="2774" alt="/v3/trabajo/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details></div><div class="grupo"><h3>Los seis casos <span class="cuenta">(6)</span></h3>
+        <details class="ruta plegable" id="r-trabajo_praxi">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/trabajo/praxi/</code><span class="ruta__titulo">Praxi: app de entrenamiento con un coach de IA · SpindleLab</span><span class="rotulo">10.486 px a 1440 · 7.366 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-trabajo_praxi-1440.jpg" width="1440" height="900" alt="/v3/trabajo/praxi/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_praxi-390.jpg" width="390" height="844" alt="/v3/trabajo/praxi/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/trabajo/praxi/, página entera a 1440: baja dentro del marco"><img src="img/trabajo_praxi-1440-1de4.jpg" width="1440" height="2622" alt="/v3/trabajo/praxi/, página entera a 1440, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/trabajo_praxi-1440-2de4.jpg" width="1440" height="2622" alt="/v3/trabajo/praxi/, página entera a 1440, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/trabajo_praxi-1440-3de4.jpg" width="1440" height="2622" alt="/v3/trabajo/praxi/, página entera a 1440, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/trabajo_praxi-1440-4de4.jpg" width="1440" height="2620" alt="/v3/trabajo/praxi/, página entera a 1440, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/trabajo/praxi/, página entera a 390: baja dentro del marco"><img src="img/trabajo_praxi-390-1de2.jpg" width="390" height="3684" alt="/v3/trabajo/praxi/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/trabajo_praxi-390-2de2.jpg" width="390" height="3682" alt="/v3/trabajo/praxi/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-trabajo_combeau">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/trabajo/combeau/</code><span class="ruta__titulo">Bernardo Combeau: fotografía y book de modelo · SpindleLab</span><span class="rotulo">8.424 px a 1440 · 6.022 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-trabajo_combeau-1440.jpg" width="1440" height="900" alt="/v3/trabajo/combeau/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_combeau-390.jpg" width="390" height="844" alt="/v3/trabajo/combeau/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/trabajo/combeau/, página entera a 1440: baja dentro del marco"><img src="img/trabajo_combeau-1440-1de4.jpg" width="1440" height="2106" alt="/v3/trabajo/combeau/, página entera a 1440, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/trabajo_combeau-1440-2de4.jpg" width="1440" height="2106" alt="/v3/trabajo/combeau/, página entera a 1440, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/trabajo_combeau-1440-3de4.jpg" width="1440" height="2106" alt="/v3/trabajo/combeau/, página entera a 1440, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/trabajo_combeau-1440-4de4.jpg" width="1440" height="2106" alt="/v3/trabajo/combeau/, página entera a 1440, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/trabajo/combeau/, página entera a 390: baja dentro del marco"><img src="img/trabajo_combeau-390-1de2.jpg" width="390" height="3012" alt="/v3/trabajo/combeau/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/trabajo_combeau-390-2de2.jpg" width="390" height="3010" alt="/v3/trabajo/combeau/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-trabajo_sesenta">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/trabajo/sesenta/</code><span class="ruta__titulo">Concepto: Sesenta, estudio laboral · SpindleLab</span><span class="rotulo">10.281 px a 1440 · 6.175 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-trabajo_sesenta-1440.jpg" width="1440" height="900" alt="/v3/trabajo/sesenta/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_sesenta-390.jpg" width="390" height="844" alt="/v3/trabajo/sesenta/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/trabajo/sesenta/, página entera a 1440: baja dentro del marco"><img src="img/trabajo_sesenta-1440-1de4.jpg" width="1440" height="2572" alt="/v3/trabajo/sesenta/, página entera a 1440, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/trabajo_sesenta-1440-2de4.jpg" width="1440" height="2572" alt="/v3/trabajo/sesenta/, página entera a 1440, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/trabajo_sesenta-1440-3de4.jpg" width="1440" height="2572" alt="/v3/trabajo/sesenta/, página entera a 1440, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/trabajo_sesenta-1440-4de4.jpg" width="1440" height="2565" alt="/v3/trabajo/sesenta/, página entera a 1440, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/trabajo/sesenta/, página entera a 390: baja dentro del marco"><img src="img/trabajo_sesenta-390-1de2.jpg" width="390" height="3088" alt="/v3/trabajo/sesenta/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/trabajo_sesenta-390-2de2.jpg" width="390" height="3087" alt="/v3/trabajo/sesenta/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-trabajo_ocelo">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/trabajo/ocelo/</code><span class="ruta__titulo">Concepto: Ocelo, clínica de ojos · SpindleLab</span><span class="rotulo">9.015 px a 1440 · 5.753 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-trabajo_ocelo-1440.jpg" width="1440" height="900" alt="/v3/trabajo/ocelo/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_ocelo-390.jpg" width="390" height="844" alt="/v3/trabajo/ocelo/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/trabajo/ocelo/, página entera a 1440: baja dentro del marco"><img src="img/trabajo_ocelo-1440-1de4.jpg" width="1440" height="2254" alt="/v3/trabajo/ocelo/, página entera a 1440, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/trabajo_ocelo-1440-2de4.jpg" width="1440" height="2254" alt="/v3/trabajo/ocelo/, página entera a 1440, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/trabajo_ocelo-1440-3de4.jpg" width="1440" height="2254" alt="/v3/trabajo/ocelo/, página entera a 1440, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/trabajo_ocelo-1440-4de4.jpg" width="1440" height="2253" alt="/v3/trabajo/ocelo/, página entera a 1440, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/trabajo/ocelo/, página entera a 390: baja dentro del marco"><img src="img/trabajo_ocelo-390-1de2.jpg" width="390" height="2878" alt="/v3/trabajo/ocelo/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/trabajo_ocelo-390-2de2.jpg" width="390" height="2875" alt="/v3/trabajo/ocelo/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-trabajo_doceavo">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/trabajo/doceavo/</code><span class="ruta__titulo">Concepto: Doceavo, estudio contable · SpindleLab</span><span class="rotulo">8.388 px a 1440 · 5.488 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-trabajo_doceavo-1440.jpg" width="1440" height="900" alt="/v3/trabajo/doceavo/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_doceavo-390.jpg" width="390" height="844" alt="/v3/trabajo/doceavo/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/trabajo/doceavo/, página entera a 1440: baja dentro del marco"><img src="img/trabajo_doceavo-1440-1de4.jpg" width="1440" height="2098" alt="/v3/trabajo/doceavo/, página entera a 1440, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/trabajo_doceavo-1440-2de4.jpg" width="1440" height="2098" alt="/v3/trabajo/doceavo/, página entera a 1440, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/trabajo_doceavo-1440-3de4.jpg" width="1440" height="2098" alt="/v3/trabajo/doceavo/, página entera a 1440, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/trabajo_doceavo-1440-4de4.jpg" width="1440" height="2094" alt="/v3/trabajo/doceavo/, página entera a 1440, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/trabajo/doceavo/, página entera a 390: baja dentro del marco"><img src="img/trabajo_doceavo-390-1de2.jpg" width="390" height="2744" alt="/v3/trabajo/doceavo/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/trabajo_doceavo-390-2de2.jpg" width="390" height="2744" alt="/v3/trabajo/doceavo/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-trabajo_tonela">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/trabajo/tonela/</code><span class="ruta__titulo">Concepto: Tonela, proveedor de izaje · SpindleLab</span><span class="rotulo">9.402 px a 1440 · 6.184 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-trabajo_tonela-1440.jpg" width="1440" height="900" alt="/v3/trabajo/tonela/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-trabajo_tonela-390.jpg" width="390" height="844" alt="/v3/trabajo/tonela/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/trabajo/tonela/, página entera a 1440: baja dentro del marco"><img src="img/trabajo_tonela-1440-1de4.jpg" width="1440" height="2352" alt="/v3/trabajo/tonela/, página entera a 1440, tramo 1 de 4" loading="lazy" decoding="async"><img src="img/trabajo_tonela-1440-2de4.jpg" width="1440" height="2352" alt="/v3/trabajo/tonela/, página entera a 1440, tramo 2 de 4" loading="lazy" decoding="async"><img src="img/trabajo_tonela-1440-3de4.jpg" width="1440" height="2352" alt="/v3/trabajo/tonela/, página entera a 1440, tramo 3 de 4" loading="lazy" decoding="async"><img src="img/trabajo_tonela-1440-4de4.jpg" width="1440" height="2346" alt="/v3/trabajo/tonela/, página entera a 1440, tramo 4 de 4" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/trabajo/tonela/, página entera a 390: baja dentro del marco"><img src="img/trabajo_tonela-390-1de2.jpg" width="390" height="3092" alt="/v3/trabajo/tonela/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/trabajo_tonela-390-2de2.jpg" width="390" height="3092" alt="/v3/trabajo/tonela/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details></div><div class="grupo"><h3>El chequeo y los servicios <span class="cuenta">(8)</span></h3>
+        <details class="ruta plegable" id="r-diagnostico">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/diagnostico/</code><span class="ruta__titulo">Chequeo gratis: ¿ChatGPT puede leer tu sitio? · SpindleLab</span><span class="rotulo">3.480 px a 1440 · 4.371 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-diagnostico-1440.jpg" width="1440" height="900" alt="/v3/diagnostico/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-diagnostico-390.jpg" width="390" height="844" alt="/v3/diagnostico/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/diagnostico/, página entera a 1440: baja dentro del marco"><img src="img/diagnostico-1440-1de2.jpg" width="1440" height="1740" alt="/v3/diagnostico/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/diagnostico-1440-2de2.jpg" width="1440" height="1740" alt="/v3/diagnostico/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/diagnostico/, página entera a 390: baja dentro del marco"><img src="img/diagnostico-390-1de2.jpg" width="390" height="2186" alt="/v3/diagnostico/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/diagnostico-390-2de2.jpg" width="390" height="2185" alt="/v3/diagnostico/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-servicios">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/servicios/</code><span class="ruta__titulo">Servicios: desarrollo web, SEO técnico y visibilidad en IA</span><span class="rotulo">2.522 px a 1440 · 3.377 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-servicios-1440.jpg" width="1440" height="900" alt="/v3/servicios/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-servicios-390.jpg" width="390" height="844" alt="/v3/servicios/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/servicios/, página entera a 1440: baja dentro del marco"><img src="img/servicios-1440-1de1.jpg" width="1440" height="2522" alt="/v3/servicios/, página entera a 1440, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/servicios/, página entera a 390: baja dentro del marco"><img src="img/servicios-390-1de1.jpg" width="390" height="3377" alt="/v3/servicios/, página entera a 390, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-servicios_desarrollo-web">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/servicios/desarrollo-web/</code><span class="ruta__titulo">Desarrollo web a medida, desde $390.000 + IVA · SpindleLab</span><span class="rotulo">5.921 px a 1440 · 8.323 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-servicios_desarrollo-web-1440.jpg" width="1440" height="900" alt="/v3/servicios/desarrollo-web/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-servicios_desarrollo-web-390.jpg" width="390" height="844" alt="/v3/servicios/desarrollo-web/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/servicios/desarrollo-web/, página entera a 1440: baja dentro del marco"><img src="img/servicios_desarrollo-web-1440-1de3.jpg" width="1440" height="1974" alt="/v3/servicios/desarrollo-web/, página entera a 1440, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/servicios_desarrollo-web-1440-2de3.jpg" width="1440" height="1974" alt="/v3/servicios/desarrollo-web/, página entera a 1440, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/servicios_desarrollo-web-1440-3de3.jpg" width="1440" height="1973" alt="/v3/servicios/desarrollo-web/, página entera a 1440, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/servicios/desarrollo-web/, página entera a 390: baja dentro del marco"><img src="img/servicios_desarrollo-web-390-1de2.jpg" width="390" height="4162" alt="/v3/servicios/desarrollo-web/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_desarrollo-web-390-2de2.jpg" width="390" height="4161" alt="/v3/servicios/desarrollo-web/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-servicios_visibilidad-en-ia">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/servicios/visibilidad-en-ia/</code><span class="ruta__titulo">Visibilidad en IA (AEO/GEO): que ChatGPT pueda citarte</span><span class="rotulo">4.765 px a 1440 · 5.199 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-servicios_visibilidad-en-ia-1440.jpg" width="1440" height="900" alt="/v3/servicios/visibilidad-en-ia/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-servicios_visibilidad-en-ia-390.jpg" width="390" height="844" alt="/v3/servicios/visibilidad-en-ia/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/servicios/visibilidad-en-ia/, página entera a 1440: baja dentro del marco"><img src="img/servicios_visibilidad-en-ia-1440-1de2.jpg" width="1440" height="2384" alt="/v3/servicios/visibilidad-en-ia/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_visibilidad-en-ia-1440-2de2.jpg" width="1440" height="2381" alt="/v3/servicios/visibilidad-en-ia/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/servicios/visibilidad-en-ia/, página entera a 390: baja dentro del marco"><img src="img/servicios_visibilidad-en-ia-390-1de2.jpg" width="390" height="2600" alt="/v3/servicios/visibilidad-en-ia/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_visibilidad-en-ia-390-2de2.jpg" width="390" height="2599" alt="/v3/servicios/visibilidad-en-ia/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-servicios_auditoria-seo-tecnica">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/servicios/auditoria-seo-tecnica/</code><span class="ruta__titulo">Auditoría SEO técnica para empresas · SpindleLab</span><span class="rotulo">3.674 px a 1440 · 4.537 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-servicios_auditoria-seo-tecnica-1440.jpg" width="1440" height="900" alt="/v3/servicios/auditoria-seo-tecnica/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-servicios_auditoria-seo-tecnica-390.jpg" width="390" height="844" alt="/v3/servicios/auditoria-seo-tecnica/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/servicios/auditoria-seo-tecnica/, página entera a 1440: baja dentro del marco"><img src="img/servicios_auditoria-seo-tecnica-1440-1de2.jpg" width="1440" height="1838" alt="/v3/servicios/auditoria-seo-tecnica/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_auditoria-seo-tecnica-1440-2de2.jpg" width="1440" height="1836" alt="/v3/servicios/auditoria-seo-tecnica/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/servicios/auditoria-seo-tecnica/, página entera a 390: baja dentro del marco"><img src="img/servicios_auditoria-seo-tecnica-390-1de2.jpg" width="390" height="2270" alt="/v3/servicios/auditoria-seo-tecnica/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_auditoria-seo-tecnica-390-2de2.jpg" width="390" height="2267" alt="/v3/servicios/auditoria-seo-tecnica/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-servicios_acompanamiento-mensual">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/servicios/acompanamiento-mensual/</code><span class="ruta__titulo">Acompañamiento mensual de SEO e IA · SpindleLab</span><span class="rotulo">3.858 px a 1440 · 4.694 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-servicios_acompanamiento-mensual-1440.jpg" width="1440" height="900" alt="/v3/servicios/acompanamiento-mensual/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-servicios_acompanamiento-mensual-390.jpg" width="390" height="844" alt="/v3/servicios/acompanamiento-mensual/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/servicios/acompanamiento-mensual/, página entera a 1440: baja dentro del marco"><img src="img/servicios_acompanamiento-mensual-1440-1de2.jpg" width="1440" height="1930" alt="/v3/servicios/acompanamiento-mensual/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_acompanamiento-mensual-1440-2de2.jpg" width="1440" height="1928" alt="/v3/servicios/acompanamiento-mensual/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/servicios/acompanamiento-mensual/, página entera a 390: baja dentro del marco"><img src="img/servicios_acompanamiento-mensual-390-1de2.jpg" width="390" height="2348" alt="/v3/servicios/acompanamiento-mensual/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_acompanamiento-mensual-390-2de2.jpg" width="390" height="2346" alt="/v3/servicios/acompanamiento-mensual/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-servicios_redes-sociales">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/servicios/redes-sociales/</code><span class="ruta__titulo">Gestión de redes sociales para empresas · SpindleLab</span><span class="rotulo">3.631 px a 1440 · 4.472 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-servicios_redes-sociales-1440.jpg" width="1440" height="900" alt="/v3/servicios/redes-sociales/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-servicios_redes-sociales-390.jpg" width="390" height="844" alt="/v3/servicios/redes-sociales/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/servicios/redes-sociales/, página entera a 1440: baja dentro del marco"><img src="img/servicios_redes-sociales-1440-1de2.jpg" width="1440" height="1816" alt="/v3/servicios/redes-sociales/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_redes-sociales-1440-2de2.jpg" width="1440" height="1815" alt="/v3/servicios/redes-sociales/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/servicios/redes-sociales/, página entera a 390: baja dentro del marco"><img src="img/servicios_redes-sociales-390-1de2.jpg" width="390" height="2236" alt="/v3/servicios/redes-sociales/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_redes-sociales-390-2de2.jpg" width="390" height="2236" alt="/v3/servicios/redes-sociales/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-servicios_paid-media">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/servicios/paid-media/</code><span class="ruta__titulo">Paid Media (Google): anuncios de búsqueda · SpindleLab</span><span class="rotulo">3.639 px a 1440 · 4.468 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-servicios_paid-media-1440.jpg" width="1440" height="900" alt="/v3/servicios/paid-media/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-servicios_paid-media-390.jpg" width="390" height="844" alt="/v3/servicios/paid-media/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/servicios/paid-media/, página entera a 1440: baja dentro del marco"><img src="img/servicios_paid-media-1440-1de2.jpg" width="1440" height="1820" alt="/v3/servicios/paid-media/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_paid-media-1440-2de2.jpg" width="1440" height="1819" alt="/v3/servicios/paid-media/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/servicios/paid-media/, página entera a 390: baja dentro del marco"><img src="img/servicios_paid-media-390-1de2.jpg" width="390" height="2234" alt="/v3/servicios/paid-media/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/servicios_paid-media-390-2de2.jpg" width="390" height="2234" alt="/v3/servicios/paid-media/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details></div><div class="grupo"><h3>Método, nosotros y contacto <span class="cuenta">(3)</span></h3>
+        <details class="ruta plegable" id="r-metodo">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/metodo/</code><span class="ruta__titulo">Método: SEO técnico y visibilidad en IA · SpindleLab</span><span class="rotulo">3.092 px a 1440 · 3.752 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-metodo-1440.jpg" width="1440" height="900" alt="/v3/metodo/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-metodo-390.jpg" width="390" height="844" alt="/v3/metodo/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/metodo/, página entera a 1440: baja dentro del marco"><img src="img/metodo-1440-1de2.jpg" width="1440" height="1546" alt="/v3/metodo/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/metodo-1440-2de2.jpg" width="1440" height="1546" alt="/v3/metodo/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/metodo/, página entera a 390: baja dentro del marco"><img src="img/metodo-390-1de1.jpg" width="390" height="3752" alt="/v3/metodo/, página entera a 390, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-nosotros">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/nosotros/</code><span class="ruta__titulo">Ramón Vallejos, quién está detrás · SpindleLab</span><span class="rotulo">2.683 px a 1440 · 3.303 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-nosotros-1440.jpg" width="1440" height="900" alt="/v3/nosotros/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-nosotros-390.jpg" width="390" height="844" alt="/v3/nosotros/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/nosotros/, página entera a 1440: baja dentro del marco"><img src="img/nosotros-1440-1de1.jpg" width="1440" height="2683" alt="/v3/nosotros/, página entera a 1440, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/nosotros/, página entera a 390: baja dentro del marco"><img src="img/nosotros-390-1de1.jpg" width="390" height="3303" alt="/v3/nosotros/, página entera a 390, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-contacto">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/contacto/</code><span class="ruta__titulo">Contacto: pide un sitio o un diagnóstico gratis · SpindleLab</span><span class="rotulo">1.925 px a 1440 · 2.393 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-contacto-1440.jpg" width="1440" height="900" alt="/v3/contacto/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-contacto-390.jpg" width="390" height="844" alt="/v3/contacto/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/contacto/, página entera a 1440: baja dentro del marco"><img src="img/contacto-1440-1de1.jpg" width="1440" height="1925" alt="/v3/contacto/, página entera a 1440, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/contacto/, página entera a 390: baja dentro del marco"><img src="img/contacto-390-1de1.jpg" width="390" height="2393" alt="/v3/contacto/, página entera a 390, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details></div><div class="grupo"><h3>El blog y sus siete artículos <span class="cuenta">(8)</span></h3>
+        <details class="ruta plegable" id="r-blog">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/blog/</code><span class="ruta__titulo">Blog: SEO técnico y visibilidad en IA · SpindleLab</span><span class="rotulo">1.376 px a 1440 · 1.820 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-blog-1440.jpg" width="1440" height="900" alt="/v3/blog/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-blog-390.jpg" width="390" height="844" alt="/v3/blog/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/blog/, página entera a 1440: baja dentro del marco"><img src="img/blog-1440-1de1.jpg" width="1440" height="1376" alt="/v3/blog/, página entera a 1440, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/blog/, página entera a 390: baja dentro del marco"><img src="img/blog-390-1de1.jpg" width="390" height="1820" alt="/v3/blog/, página entera a 390, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-blog_21-chequeos-visibilidad-ia">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/blog/21-chequeos-visibilidad-ia/</code><span class="ruta__titulo">Los 21 chequeos de visibilidad en IA, explicados · SpindleLab</span><span class="rotulo">6.949 px a 1440 · 9.538 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-blog_21-chequeos-visibilidad-ia-1440.jpg" width="1440" height="900" alt="/v3/blog/21-chequeos-visibilidad-ia/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-blog_21-chequeos-visibilidad-ia-390.jpg" width="390" height="844" alt="/v3/blog/21-chequeos-visibilidad-ia/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/blog/21-chequeos-visibilidad-ia/, página entera a 1440: baja dentro del marco"><img src="img/blog_21-chequeos-visibilidad-ia-1440-1de3.jpg" width="1440" height="2318" alt="/v3/blog/21-chequeos-visibilidad-ia/, página entera a 1440, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/blog_21-chequeos-visibilidad-ia-1440-2de3.jpg" width="1440" height="2318" alt="/v3/blog/21-chequeos-visibilidad-ia/, página entera a 1440, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/blog_21-chequeos-visibilidad-ia-1440-3de3.jpg" width="1440" height="2313" alt="/v3/blog/21-chequeos-visibilidad-ia/, página entera a 1440, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/blog/21-chequeos-visibilidad-ia/, página entera a 390: baja dentro del marco"><img src="img/blog_21-chequeos-visibilidad-ia-390-1de3.jpg" width="390" height="3180" alt="/v3/blog/21-chequeos-visibilidad-ia/, página entera a 390, tramo 1 de 3" loading="lazy" decoding="async"><img src="img/blog_21-chequeos-visibilidad-ia-390-2de3.jpg" width="390" height="3180" alt="/v3/blog/21-chequeos-visibilidad-ia/, página entera a 390, tramo 2 de 3" loading="lazy" decoding="async"><img src="img/blog_21-chequeos-visibilidad-ia-390-3de3.jpg" width="390" height="3178" alt="/v3/blog/21-chequeos-visibilidad-ia/, página entera a 390, tramo 3 de 3" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-blog_como-aparecer-en-chatgpt">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/blog/como-aparecer-en-chatgpt/</code><span class="ruta__titulo">¿Cómo aparecer en las respuestas de ChatGPT? · SpindleLab</span><span class="rotulo">3.592 px a 1440 · 4.692 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-blog_como-aparecer-en-chatgpt-1440.jpg" width="1440" height="900" alt="/v3/blog/como-aparecer-en-chatgpt/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-blog_como-aparecer-en-chatgpt-390.jpg" width="390" height="844" alt="/v3/blog/como-aparecer-en-chatgpt/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/blog/como-aparecer-en-chatgpt/, página entera a 1440: baja dentro del marco"><img src="img/blog_como-aparecer-en-chatgpt-1440-1de2.jpg" width="1440" height="1796" alt="/v3/blog/como-aparecer-en-chatgpt/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/blog_como-aparecer-en-chatgpt-1440-2de2.jpg" width="1440" height="1796" alt="/v3/blog/como-aparecer-en-chatgpt/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/blog/como-aparecer-en-chatgpt/, página entera a 390: baja dentro del marco"><img src="img/blog_como-aparecer-en-chatgpt-390-1de2.jpg" width="390" height="2346" alt="/v3/blog/como-aparecer-en-chatgpt/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/blog_como-aparecer-en-chatgpt-390-2de2.jpg" width="390" height="2346" alt="/v3/blog/como-aparecer-en-chatgpt/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-blog_como-elegir-verificar-agencia-aeo-geo-chile">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/</code><span class="ruta__titulo">Cómo elegir (y verificar) una agencia de AEO/GEO en Chile · SpindleLab</span><span class="rotulo">5.218 px a 1440 · 6.564 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-blog_como-elegir-verificar-agencia-aeo-geo-chile-1440.jpg" width="1440" height="900" alt="/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-blog_como-elegir-verificar-agencia-aeo-geo-chile-390.jpg" width="390" height="844" alt="/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/, página entera a 1440: baja dentro del marco"><img src="img/blog_como-elegir-verificar-agencia-aeo-geo-chile-1440-1de2.jpg" width="1440" height="2610" alt="/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/blog_como-elegir-verificar-agencia-aeo-geo-chile-1440-2de2.jpg" width="1440" height="2608" alt="/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/, página entera a 390: baja dentro del marco"><img src="img/blog_como-elegir-verificar-agencia-aeo-geo-chile-390-1de2.jpg" width="390" height="3282" alt="/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/blog_como-elegir-verificar-agencia-aeo-geo-chile-390-2de2.jpg" width="390" height="3282" alt="/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-blog_cuanto-cuesta-seo-tecnico-chile">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/blog/cuanto-cuesta-seo-tecnico-chile/</code><span class="ruta__titulo">¿Cuánto cuesta el SEO técnico en Chile? · SpindleLab</span><span class="rotulo">2.680 px a 1440 · 3.626 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-blog_cuanto-cuesta-seo-tecnico-chile-1440.jpg" width="1440" height="900" alt="/v3/blog/cuanto-cuesta-seo-tecnico-chile/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-blog_cuanto-cuesta-seo-tecnico-chile-390.jpg" width="390" height="844" alt="/v3/blog/cuanto-cuesta-seo-tecnico-chile/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/blog/cuanto-cuesta-seo-tecnico-chile/, página entera a 1440: baja dentro del marco"><img src="img/blog_cuanto-cuesta-seo-tecnico-chile-1440-1de1.jpg" width="1440" height="2680" alt="/v3/blog/cuanto-cuesta-seo-tecnico-chile/, página entera a 1440, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/blog/cuanto-cuesta-seo-tecnico-chile/, página entera a 390: baja dentro del marco"><img src="img/blog_cuanto-cuesta-seo-tecnico-chile-390-1de1.jpg" width="390" height="3626" alt="/v3/blog/cuanto-cuesta-seo-tecnico-chile/, página entera a 390, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-blog_que-es-aeo-geo">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/blog/que-es-aeo-geo/</code><span class="ruta__titulo">AEO y GEO explicados para gerentes que no son técnicos · SpindleLab</span><span class="rotulo">2.925 px a 1440 · 3.973 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-blog_que-es-aeo-geo-1440.jpg" width="1440" height="900" alt="/v3/blog/que-es-aeo-geo/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-blog_que-es-aeo-geo-390.jpg" width="390" height="844" alt="/v3/blog/que-es-aeo-geo/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/blog/que-es-aeo-geo/, página entera a 1440: baja dentro del marco"><img src="img/blog_que-es-aeo-geo-1440-1de2.jpg" width="1440" height="1464" alt="/v3/blog/que-es-aeo-geo/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/blog_que-es-aeo-geo-1440-2de2.jpg" width="1440" height="1461" alt="/v3/blog/que-es-aeo-geo/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/blog/que-es-aeo-geo/, página entera a 390: baja dentro del marco"><img src="img/blog_que-es-aeo-geo-390-1de1.jpg" width="390" height="3973" alt="/v3/blog/que-es-aeo-geo/, página entera a 390, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-blog_que-es-un-mini-diagnostico-seo">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/blog/que-es-un-mini-diagnostico-seo/</code><span class="ruta__titulo">¿Qué es un mini-diagnóstico SEO? · SpindleLab</span><span class="rotulo">2.205 px a 1440 · 3.199 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-blog_que-es-un-mini-diagnostico-seo-1440.jpg" width="1440" height="900" alt="/v3/blog/que-es-un-mini-diagnostico-seo/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-blog_que-es-un-mini-diagnostico-seo-390.jpg" width="390" height="844" alt="/v3/blog/que-es-un-mini-diagnostico-seo/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/blog/que-es-un-mini-diagnostico-seo/, página entera a 1440: baja dentro del marco"><img src="img/blog_que-es-un-mini-diagnostico-seo-1440-1de1.jpg" width="1440" height="2205" alt="/v3/blog/que-es-un-mini-diagnostico-seo/, página entera a 1440, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/blog/que-es-un-mini-diagnostico-seo/, página entera a 390: baja dentro del marco"><img src="img/blog_que-es-un-mini-diagnostico-seo-390-1de1.jpg" width="390" height="3199" alt="/v3/blog/que-es-un-mini-diagnostico-seo/, página entera a 390, tramo 1 de 1" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details>
+        <details class="ruta plegable" id="r-blog_seo-tecnico-fintechs-chile">
+          <summary><span class="ruta__cab"><code class="ruta__path">/v3/blog/seo-tecnico-fintechs-chile/</code><span class="ruta__titulo">SEO técnico para fintechs chilenas · SpindleLab</span><span class="rotulo">3.274 px a 1440 · 4.551 a 390</span></span><span class="mas" aria-hidden="true"></span></summary>
+          <div class="ruta__cuerpo">
+            <div class="par">
+              <figure class="fig pantalla"><img src="img/p-blog_seo-tecnico-fintechs-chile-1440.jpg" width="1440" height="900" alt="/v3/blog/seo-tecnico-fintechs-chile/ a 1440: primera pantalla" loading="lazy" decoding="async"><figcaption>Primera pantalla a 1440 × 900</figcaption></figure>
+              <figure class="fig pantalla pantalla--tel"><img src="img/p-blog_seo-tecnico-fintechs-chile-390.jpg" width="390" height="844" alt="/v3/blog/seo-tecnico-fintechs-chile/ a 390: primera pantalla" loading="lazy" decoding="async"><figcaption>A 390 × 844</figcaption></figure>
+            </div>
+            <div class="par par--visor">
+              <div class="visor-caja"><p class="rotulo">Página entera a 1440 · baja dentro del marco</p><div class="visor visor--1440" tabindex="0" role="region" aria-label="/v3/blog/seo-tecnico-fintechs-chile/, página entera a 1440: baja dentro del marco"><img src="img/blog_seo-tecnico-fintechs-chile-1440-1de2.jpg" width="1440" height="1638" alt="/v3/blog/seo-tecnico-fintechs-chile/, página entera a 1440, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/blog_seo-tecnico-fintechs-chile-1440-2de2.jpg" width="1440" height="1636" alt="/v3/blog/seo-tecnico-fintechs-chile/, página entera a 1440, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+              <div class="visor-caja visor-caja--tel"><p class="rotulo">A 390</p><div class="visor visor--390" tabindex="0" role="region" aria-label="/v3/blog/seo-tecnico-fintechs-chile/, página entera a 390: baja dentro del marco"><img src="img/blog_seo-tecnico-fintechs-chile-390-1de2.jpg" width="390" height="2276" alt="/v3/blog/seo-tecnico-fintechs-chile/, página entera a 390, tramo 1 de 2" loading="lazy" decoding="async"><img src="img/blog_seo-tecnico-fintechs-chile-390-2de2.jpg" width="390" height="2275" alt="/v3/blog/seo-tecnico-fintechs-chile/, página entera a 390, tramo 2 de 2" loading="lazy" decoding="async"></div></div>
+            </div>
+          </div>
+        </details></div>
+  </div>
+</section>
+    
+<section id="desvios" class="seccion" aria-labelledby="t-desvios">
+  <div class="seccion__lado"><p class="rotulo">5</p><h2 id="t-desvios">Lo que se desvió</h2></div>
+  <div class="seccion__cuerpo">
+    <div class="bloque">
+      <h3>Los desvíos que registra la spec</h3>
+      <p class="nota">Diez decisiones que se apartan de Koto, del lock o del brief, cada una con su porqué (<code>spec-visual.md</code> §0.3). Un desvío que no está en esta lista es un defecto. El primero es el que autorizaste en la compuerta 2: el hilo de oro.</p>
+      <ol class="desvios"><li><p class="t1">La portada es un video de marca generado con IA</p><p class="t2">(Higgsfield, 1-ago), cuando el brief (§5, «Huecos»; §4, la fila de los clichés) y el lock §20.2 piden solo trabajo real. <strong>Autorizado por Ramón</strong> en la compuerta 2, punto 4. Es la única imagen generada de la obra y no abre la puerta a otra (brief §6.12). No va en un marco de trabajo: va a sangre, sin radio y sin rótulo de pieza, para que nadie lo lea como un proyecto.</p></li><li><p class="t1">Bajo 834 px la portada es una franja 16:9 a sangre y el texto va debajo, sobre el lienzo</p><p class="t2">no encima del video como en Koto a 390 (su reel ocupa la pantalla entera). Por qué: el chequeo tiene que entrar en la primera pantalla a 360 × 800 (§4.4). Con el video a pantalla completa y el texto encima, a 360 × 800 el texto tapaba el video entero (medido: la rampa del velo empezaba en el borde de arriba) y a 375 × 667 el botón quedaba 42 px bajo el borde.</p></li><li><p class="t1">Bajo 834 px el <code>h1</code> de la portada va a 26 px</p><p class="t2">el paso de la declaración de Koto, no a 36, el de su portada. Koto usa 36 a 390 para una frase de 3 palabras («We're Koto / The Creative Company») y 26 para una declaración larga (lock §2.1); la nuestra tiene 18 palabras. A 36 ocupaba 6 líneas a 360 (216 px) y el chequeo no entraba.</p></li><li><p class="t1">Entre 834 y 1193 px el muro del índice va en dos columnas</p><p class="t2">Koto, en una (medido el 19-oct, <code>datos/koto-entre-cortes.json</code>). Con diez entradas, una columna de 788 a 1147 px deja cada pieza 4:5 de 985 a 1434 px de alto, más de una pantalla por pieza. El prototipo lo construyó así y Javiera lo aprobó a 768 y 1024.</p></li><li><p class="t1">Problema lleva su rótulo mono</p><p class="t2">(Koto no lo pone en su introducción): lock §21.5, fila del 18-oct en su §19.</p></li><li><p class="t1">La cruz de registro</p><p class="t2">en el borde de sección de los casos: lock §10, desvío del brief de obra §4 ya registrado. Reversible en una regla de CSS.</p></li><li><p class="t1">La home tiene campos en más de una pieza</p><p class="t2">(el lock §20.2, regla 4, decía «en la home, a lo más la pieza destacada»): la home de A que Ramón eligió tiene un índice corto de cuatro piezas y la fila de pruebas. Lo acota el techo de §3.4.</p></li><li><p class="t1">El borde del campo del chequeo es <code>#707070</code></p><p class="t2">no el <code>#4a4a4a</code> del prototipo: el del prototipo daba 2,29:1 contra el lienzo, bajo el 3:1 de WCAG 1.4.11. Koto no tiene un campo de texto medido.</p></li><li><p class="t1">La barra flotante de los conceptos dice «Concepto»</p><p class="t2">junto al nombre (§2.3; 23-oct): la de Koto lleva solo el nombre del caso y la sección activa. Es lo único que está en la ventana a todo scroll bajo 1194, y la regla de la serie (brief «Compuerta 1», punto 5) pide el rótulo a la vista sin scroll en cualquier tamaño.</p></li><li><p class="t1">Con el aviso de cookies abierto, la barra flotante sube y queda 8 px sobre él</p><p class="t2">(§4.3; 23-oct). Koto no tiene un aviso que se cruce con su barra: el suyo es una placa de 430 × 42 en la esquina (<code>medicion/koto/medicion.json</code>, <code>interaccion.avisoCookies</code>) y el nuestro no se puede achicar a eso sin tocar su HTML.</p></li></ol>
+    </div>
+    <div class="bloque">
+      <h3>Lo que la construcción resolvió distinto, o la spec no cubría</h3>
+      <p class="nota">Diego lo dejó escrito en <code>desvios.md</code>, tanda por tanda, con su porqué y la solución mínima. Aquí van sus 50 puntos, en una línea cada uno; 35 se ven en el sitio y los demás son por dentro. Cada tanda cierra además con lo que verificó y lo que dejó para otros, que Mauro juntó en la sección 6.</p>
+      <details class="plegable tanda"><summary><h4>Tanda 1 · La base de A · 19-oct, Diego</h4><span class="rotulo">7 puntos</span><span class="mas" aria-hidden="true"></span></summary><ol class="puntos"><li><p class="punto__cab"><span class="rotulo">1</span><span class="t1"><code>Layout.astro</code>: las cinco props que aprobó Ramón (la excepción de §6.16)</span><span class="chip">Por dentro</span></p><p class="t2">Las cinco props del <code>Layout</code> que aprobaste, cada una con su valor de siempre por defecto: las páginas publicadas salieron iguales byte a byte. El cargo de Ramón en <code>#autor-ramon</code> es la propuesta de Simón y espera tu visto.</p></li><li><p class="punto__cab"><span class="rotulo">2</span><span class="t1">Lenis: «que no se cree» no se puede con las páginas publicadas byte a byte; queda inerte en toda la página</span><span class="chip">Por dentro</span></p><p class="t2">Lenis no se puede dejar de cargar sin cambiar un archivo que comparten las páginas publicadas: queda cargado pero inerte, y la rueda es la nativa en toda la página. Se resuelve al publicar.</p></li><li><p class="punto__cab"><span class="rotulo">3</span><span class="t1">Motion 13.5.0: su dependencia <code>framer-motion</code> quedó en 13.5.1</span><span class="chip">Por dentro</span></p><p class="t2">Motion queda fijo en 13.5.0; la librería que trae por dentro quedó en 13.5.1, fijada en el lock, así que el build se repite igual.</p></li><li><p class="punto__cab"><span class="rotulo">4</span><span class="t1">La cinta: VP9 a crf 36, y el tramo de Tonela sale del recorrido corregido</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">La cinta en VP9 a crf 36 para quedar bajo 1 MB, y el tramo de Tonela sale del recorrido que Bruno corrigió el 18-oct. Los dos tramos de Combeau, sin su línea de medidas.</p></li><li><p class="punto__cab"><span class="rotulo">5</span><span class="t1">El CSS que comparten las páginas publicadas cambia de nombre si un componente importa el <code>Layout</code></span><span class="chip">Por dentro</span></p><p class="t2">Ningún componente importa el <code>Layout</code>: si uno lo hace, el CSS de las páginas publicadas cambia de nombre. Cada página de A lo importa ella misma.</p></li><li><p class="punto__cab"><span class="rotulo">6</span><span class="t1">Tailwind lee los <code>.astro</code> de A: los scripts van en <code>.mjs</code></span><span class="chip">Por dentro</span></p><p class="t2">La lógica de A va en archivos que Tailwind no lee, para que ninguna palabra nueva sume una clase al CSS publicado.</p></li><li><p class="punto__cab"><span class="rotulo">7</span><span class="t1">Valores que la spec no fijaba y cómo los resolví</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Lo que la spec no fijaba (los espacios del encabezado, el anillo del cursor, la miga, la pausa, el aviso que confirma las cookies, que nada fijo tape el foco), resuelto con la escala de la spec y anotado uno por uno.</p></li></ol></details><details class="plegable tanda"><summary><h4>Tanda 2 · La home (<code>/v3/</code>) y el índice de trabajo (<code>/v3/trabajo/</code>) · 19-oct, Diego</h4><span class="rotulo">12 puntos</span><span class="mas" aria-hidden="true"></span></summary><ol class="puntos"><li><p class="punto__cab"><span class="rotulo">1</span><span class="t1">spindlelab.cl en el muro: la portada del prototipo es el hilo de oro</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">En el muro, la portada de spindlelab.cl es la página de privacidad y no la home: la home lleva el hilo de oro, y el hilo va solo en la portada de <code>/v3/</code>. Queda para mí (sección 6).</p></li><li><p class="punto__cab"><span class="rotulo">2</span><span class="t1">Praxi en «Cada pieza, con un dato medido»: la spec y el prototipo no usan la misma captura</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">En «Cada pieza, con un dato medido», Praxi va con la captura de sus números (de ejemplo, y lo dice el pie), como pide la spec; el prototipo usaba la de las reglas.</p></li><li><p class="punto__cab"><span class="rotulo">3</span><span class="t1">El texto de Clara, tal cual, sin escribirlo a mano en la página</span><span class="chip">Por dentro</span></p><p class="t2">El texto de Clara llega al sitio copiado por un script, sin una letra cambiada; el build se cae si un precio o un nombre no es igual al de los JSON de la oferta.</p></li><li><p class="punto__cab"><span class="rotulo">4</span><span class="t1">Lo que la spec no fijaba de la home, y cómo lo resolví</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Lo que la spec no fijaba de la home (el título de la sección 4, los espacios de la portada, dónde va la nota de la cinta bajo 1194, los botones de servicios), con su porqué.</p></li><li><p class="punto__cab"><span class="rotulo">5</span><span class="t1">El muro: el documento en el orden de Clara</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">El muro sigue el orden de Clara también con el teclado y en el teléfono; un script reparte las piezas en las dos columnas, y al cargar la página se mueve poco (CLS de 0,027 como mucho).</p></li><li><p class="punto__cab"><span class="rotulo">6</span><span class="t1">El filtro y la línea mono</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">El filtro con su conteo, y la línea mono del muro solo con tipo y año: los ingredientes no cabían.</p></li><li><p class="punto__cab"><span class="rotulo">7</span><span class="t1">La barra lateral del índice</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">La barra del índice, pegajosa desde 1194 y con la miga arriba; si no cabe, baja por dentro.</p></li><li><p class="punto__cab"><span class="rotulo">8</span><span class="t1">Las señales (Simón, <code>senales-obra.md</code> §2.1 y §2.2)</span><span class="chip">Por dentro</span></p><p class="t2">Title, description y JSON-LD de Simón. Las imágenes al compartir se hicieron en HTML con la letra y el negro de A, sin nada generado y sin el hilo.</p></li><li><p class="punto__cab"><span class="rotulo">9</span><span class="t1">El resultado vacío del chequeo no suma su separación</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">El resultado vacío del chequeo ya no empuja el campo: el chequeo queda apoyado en la misma línea que la frase.</p></li><li><p class="punto__cab"><span class="rotulo">10</span><span class="t1">La portada, medida sobre el video (§3.1: «si cambia el archivo, el velo o el texto, se mide de nuevo»)</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">La portada medida sobre los 121 cuadros del video en siete tamaños: ninguna línea bajo el mínimo, la peor a 5,31:1, y a 1440 × 900 el botón del chequeo queda a 108 px del borde.</p></li><li><p class="punto__cab"><span class="rotulo">11</span><span class="t1">Los techos de campo (§3.4), medidos</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Campos de color medidos: la home 10,3 % (techo 20) y <code>/trabajo/</code> 26,6 % (techo 35).</p></li><li><p class="punto__cab"><span class="rotulo">13</span><span class="t1"><code>video.mjs</code> (tanda 1): un video quedaba parado si se pasaba rápido por él</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Un video por el que se pasaba rápido quedaba parado para siempre; quedó arreglado y comprobado.</p></li></ol></details><details class="plegable tanda"><summary><h4>Tanda 3 · La plantilla de caso y sus seis páginas · 19-oct, Diego</h4><span class="rotulo">8 puntos</span><span class="mas" aria-hidden="true"></span></summary><ol class="puntos"><li><p class="punto__cab"><span class="rotulo">1</span><span class="t1">El medio principal bajo 834: una imagen quieta en los conceptos, y <code>Video</code> lo sabe hacer</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Bajo 834, el medio principal de los conceptos es una imagen quieta 4:5, la que eligió Bruno, sin video ni pausa; Combeau usa el recorrido del teléfono.</p></li><li><p class="punto__cab"><span class="rotulo">2</span><span class="t1">Praxi: las filas, con las reglas de §2.3 sobre la lista de Clara</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Las filas de Praxi, reordenadas para cumplir las dos reglas de la spec: cada sección abre con una 16:9 y dos filas partidas nunca van seguidas.</p></li><li><p class="punto__cab"><span class="rotulo">3</span><span class="t1">Combeau: la foto servida y las dos capturas del teléfono, en las formas de Koto</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Combeau en las cuatro formas de Koto: la foto servida va en 4:5 junto a la portada de su sitio en un celular. Si la prefieres en 1:1, es una línea.</p></li><li><p class="punto__cab"><span class="rotulo">4</span><span class="t1">Los conceptos: el orden de su <code>caso.md</code>, y lo que eso deja</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Los conceptos siguen el orden de su <code>caso.md</code>: Doceavo abre Solución con un par, y Tonela muestra a 390 la misma captura dos veces (sección 6).</p></li><li><p class="punto__cab"><span class="rotulo">5</span><span class="t1">«Siguiente»</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">«Siguiente» en el orden de la spec, con el póster del caso que sigue; el de Praxi es la captura de las reglas, porque su video tiene personas generadas.</p></li><li><p class="punto__cab"><span class="rotulo">6</span><span class="t1">Valores que la spec no fijaba y cómo los resolví</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">La ficha, «Con qué está hecho», el punto del índice que se mueve a la sección activa, la barra flotante y el hueco punteado de Praxi, resueltos y anotados.</p></li><li><p class="punto__cab"><span class="rotulo">7</span><span class="t1">Las señales (Simón, <code>senales-obra.md</code> §2.3 a §2.5)</span><span class="chip">Por dentro</span></p><p class="t2">El JSON-LD de Simón: Praxi sin <code>offers</code>, <code>url</code> ni <code>sameAs</code>; Combeau con sus dos partes; cada concepto con <code>genre</code> «Concepto».</p></li><li><p class="punto__cab"><span class="rotulo">8</span><span class="t1">Los techos de campo (§3.4), medidos</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Campos de color de 18,9 a 30,2 % en los conceptos y 24,2 % en Combeau. Praxi queda en 6,1 %, bajo el piso, como la spec ya admite: su marca es oscura y de un solo acento.</p></li></ol></details><details class="plegable tanda"><summary><h4>Tanda 4 · Los servicios: <code>/v3/servicios/</code>, Desarrollo web y los cinco de <code>[slug]</code> · 19-oct, Diego</h4><span class="rotulo">7 puntos</span><span class="mas" aria-hidden="true"></span></summary><ol class="puntos"><li><p class="punto__cab"><span class="rotulo">1</span><span class="t1">Al reemplazar una página de driftime, el CSS publicado perdía una clase</span><span class="chip">Por dentro</span></p><p class="t2">Al reemplazar una página vieja, el CSS publicado perdía una clase; un archivo de guardia la conserva y producción sale igual byte a byte.</p></li><li><p class="punto__cab"><span class="rotulo">2</span><span class="t1">Las franjas de Visibilidad en IA y de Auditoría, nítidas desde 834</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Las franjas de Visibilidad en IA y de Auditoría se veían borrosas a 1440; salen de la misma captura, a 1920 de ancho. Nada generado. (La de Auditoría salió después, en la QA.)</p></li><li><p class="punto__cab"><span class="rotulo">3</span><span class="t1">El alt de la franja de Visibilidad en IA no describía el archivo</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">El texto alternativo de la franja de Visibilidad en IA describe lo que la imagen muestra, el chequeo con el campo vacío, y no un resultado que no está.</p></li><li><p class="punto__cab"><span class="rotulo">4</span><span class="t1">Lo que la spec no fijaba de la plantilla interior, y cómo lo resolví</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Lo que la spec no fijaba de la plantilla interior (el pie de la franja, las filas de <code>/servicios/</code>, la fase a la vista en Desarrollo web), con su porqué.</p></li><li><p class="punto__cab"><span class="rotulo">5</span><span class="t1">Los cinco servicios: «queda tal cual, desde su dato», sobre A</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Los cinco servicios quedan con su texto de hoy, en la forma de A; cambia solo lo que Clara cambió.</p></li><li><p class="punto__cab"><span class="rotulo">6</span><span class="t1">Las señales (Simón, <code>senales-obra.md</code> §2.7)</span><span class="chip">Por dentro</span></p><p class="t2">Title y description desde la copia de Clara; el grafo de hoy queda, y la FAQ de Desarrollo web marca solo las preguntas que se ven.</p></li><li><p class="punto__cab"><span class="rotulo">7</span><span class="t1">Los techos de campo (§3.4), medidos</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Interiores: Desarrollo web con 3,5 % de campo (techo 5); las demás, 0 %.</p></li></ol></details><details class="plegable tanda"><summary><h4>Tanda 5 · Método, diagnóstico, nosotros, contacto, el blog y sus siete artículos, y el barrido final · 19-oct, Diego</h4><span class="rotulo">8 puntos</span><span class="mas" aria-hidden="true"></span></summary><ol class="puntos"><li><p class="punto__cab"><span class="rotulo">1</span><span class="t1">Al reemplazar las páginas de driftime, el CSS publicado perdía seis clases</span><span class="chip">Por dentro</span></p><p class="t2">Lo mismo que en la tanda 4, con seis clases; la guardia las conserva.</p></li><li><p class="punto__cab"><span class="rotulo">2</span><span class="t1">Las cuatro interiores: «queda con ajustes», desde su dato</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Método, diagnóstico, nosotros y contacto: cambia lo que Clara listó y lo demás queda letra por letra. Los textos en primera persona de <code>/nosotros/</code> esperan tu lectura.</p></li><li><p class="punto__cab"><span class="rotulo">3</span><span class="t1">Lo que la spec no fijaba, y cómo lo resolví</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Lo que la spec no fijaba en esas páginas (el orden de la cabecera del método, la nota de la fase 01, los datos de cada fase, los botones), con su porqué.</p></li><li><p class="punto__cab"><span class="rotulo">4</span><span class="t1"><code>caso.mjs</code>: la línea de la sección activa, por página</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">En los artículos, el índice marca la sección que pasó los 120 px de arriba.</p></li><li><p class="punto__cab"><span class="rotulo">5</span><span class="t1">Los precios y los nombres</span><span class="chip">Por dentro</span></p><p class="t2">Cada precio a la vista está, como texto, en los JSON de la oferta; los artículos van tal cual, con los precios de terceros que citan.</p></li><li><p class="punto__cab"><span class="rotulo">6</span><span class="t1">Las señales (Simón, <code>senales-obra.md</code> §2.6, §2.8 a §2.11)</span><span class="chip">Por dentro</span></p><p class="t2">Las señales de Simón en las doce rutas; ninguna FAQ marca una pregunta que no se vea.</p></li><li><p class="punto__cab"><span class="rotulo">7</span><span class="t1">Los techos de campo (§3.4), medidos</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Las doce páginas, con 0 % de campo.</p></li><li><p class="punto__cab"><span class="rotulo">10</span><span class="t1">El barrido final de toda la obra</span><span class="chip">Por dentro</span></p><p class="t2">El barrido final: las 27 rutas, ningún enlace roto entre ellas, ningún comentario servido, ninguna página con el CSS viejo y las maquetas fuera, con <code>noindex</code>.</p></li></ol></details><details class="plegable tanda"><summary><h4>QA de obra, vuelta 1 · Los defectos del acta, en el código · 23-oct, Diego</h4><span class="rotulo">8 puntos</span><span class="mas" aria-hidden="true"></span></summary><ol class="puntos"><li><p class="punto__cab"><span class="rotulo">1</span><span class="t1">Las fechas de la home (defecto 1)</span><span class="chip">Por dentro</span></p><p class="t2">La home vuelve a llevar sus fechas; <code>dateModified</code> la escribe el build, así que el HTML de <code>/v3/</code> cambia cada día aunque la página no cambie.</p></li><li><p class="punto__cab"><span class="rotulo">2</span><span class="t1">El tope de 493 (defecto 5)</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">El tope de 493 px del texto, también en las filas de «Cada pieza» y la ayuda del chequeo. La línea «También: Paid Media…» lo pasa desde 1194: es el defecto 10.</p></li><li><p class="punto__cab"><span class="rotulo">3</span><span class="t1">Las imágenes de la primera pantalla (defecto 6)</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Sin espera toda imagen que cae en la primera pantalla en algún tamaño: las cuatro primeras portadas del muro y el retrato del autor.</p></li><li><p class="punto__cab"><span class="rotulo">4</span><span class="t1">Las áreas de toque que se pisaban (defecto 7)</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Las áreas de toque del pie y de «Ver la original» sin pisarse. El arreglo corrió la de «Cookies» sobre la hora: es el defecto 9.</p></li><li><p class="punto__cab"><span class="rotulo">5</span><span class="t1">«Concepto» en la barra y la barra sobre el aviso (defecto 2, de Lucía)</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">«TONELA · CONCEPTO» en la barra flotante de los conceptos, y la barra sube 8 px sobre el aviso de cookies mientras está abierto.</p></li><li><p class="punto__cab"><span class="rotulo">6</span><span class="t1">Auditoría SEO técnica sin franja (defecto 3, de Lucía)</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Auditoría SEO técnica sin franja: queda como Acompañamiento mensual.</p></li><li><p class="punto__cab"><span class="rotulo">7</span><span class="t1">El chequeo antes de la entradilla bajo 834, y el aviso en una fila desde 834 (defecto 4, de Lucía)</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Bajo 834 la portada se lee rótulo, frase, chequeo y entradilla; desde 834 el aviso de cookies va en una fila de 69 px.</p></li><li><p class="punto__cab"><span class="rotulo">8</span><span class="t1">Los tres <code>title</code> de Clara (defecto 8)</span><span class="chip chip--ve">Se ve en el sitio</span></p><p class="t2">Los tres <code>title</code> de Clara, en mayúscula inicial.</p></li></ol></details>
+    </div>
+  </div>
+</section>
+    
+<section id="abierto" class="seccion" aria-labelledby="t-abierto">
+  <div class="seccion__lado"><p class="rotulo">6</p><h2 id="t-abierto">Lo que queda abierto</h2></div>
+  <div class="seccion__cuerpo">
+    <p class="intro"><span class="t1">Primero, antes de publicar: los dos menores de Javiera.</span> <span class="t2">El 9 es de Diego. El 10 es mío: la spec se contradice y tengo que escribir cuál de las dos reglas manda.</span></p>
+    <ol class="defectos"><li class="defecto"><p class="defecto__cab"><span class="sello">Defecto 9</span><span class="rotulo">Menor · Diego</span></p><dl class="valores valores--chico"><div><dt>Dónde</dt><dd>El pie bajo 834, en las 27 rutas: el botón «Cookies» (<code>#cookie-preferencias</code>)</dd></div><div><dt>Qué está mal</dt><dd>El arreglo del defecto 7 hizo crecer su área 12 px arriba y <strong>18 abajo</strong> (antes 18 y 12), y ahora baja sobre la línea de la hora («Santiago 10:51 UTC-3», <code>p.cab__hora</code>, de 806 a 820, que va encima): <strong>el 9 % del área no responde a 360, el 6 % a 390 y el 3 % a 414</strong> (antes 1, 1 y 0 %), y <strong>el contorno de foco cruza el texto de la hora</strong> a 360 y 390 (<code>capturas/d9-cookies-foco-hoja.jpg</code>, antes y hoy). <code>foco.mjs</code> lo marca en las 27 rutas a 390</dd></div><div><dt>Contra qué</dt><dd>Spec §4.3 (área de 44 × 44 propia; foco nunca tapado)</dd></div><div><dt>Cómo se cierra</dt><dd>«Cookies» crece hacia arriba como antes (no tiene nada encima: el logo termina en x = 113 y él empieza en 151), o la hora baja lo que haga falta. <code>pie-cookies.mjs</code> con el 100 % propio a 360, 390 y 414, y <code>foco.mjs</code> a 390 sin «tapado p.cab__hora»</dd></div></dl></li><li class="defecto"><p class="defecto__cab"><span class="sello">Defecto 10</span><span class="rotulo">Menor · Lucía</span></p><dl class="valores valores--chico"><div><dt>Dónde</dt><dd><code>/v3/</code>, la línea «También: Paid Media…», desde 1194</dd></div><div><dt>Qué está mal</dt><dd>La spec se contradice: §2.1, fila 5, la pone «en una línea de cuerpo con sus precios, en c5–c12», y §1.3 pone el tope de 493 «en todos los anchos». Son 239 caracteres: desde 1194 corren <strong>567, 676 y 911 px en 4, 3 y 2 líneas</strong> (unos 120 caracteres por línea a 1920, lo que el tope existe para evitar). En la vuelta 1 dejé esta línea como excepción sin contarle las líneas: el error de lectura fue mío, y Diego cumplió lo que yo escribí (<code>crudos/tambien.log</code>)</dd></div><div><dt>Contra qué</dt><dd>Spec §1.3 contra §2.1, fila 5</dd></div><div><dt>Cómo se cierra</dt><dd>Lucía escribe cuál manda (el tope también desde 1194, dentro de c5–c12; o la excepción en §0.3 con su porqué) y Diego construye lo que cambie. <code>tambien.mjs</code> con el ancho que la spec diga</dd></div></dl></li></ol>
+    <p class="nota">Javiera comprueba los dos en exprés: con sus herramientas de <code>e12/qa-obra/vuelta-2/herramientas/</code>, sin otra vuelta completa (acta, vuelta 2, veredicto).</p>
+    <div class="cerrada">
+      <p class="rotulo">Ya contestada</p>
+      <p><strong>La pregunta del <code>Layout</code>: sí, el 19-oct a las 11:44.</strong> Respondiste «Sí, agrégalas»: cinco props opcionales que solo pasa <code>/v3/</code> (Lenis, letras precargadas, <code>theme-color</code>, favicon y <code>#org</code>/<code>jobTitle</code>), cada una con el valor de antes por defecto. Las páginas publicadas salieron iguales byte a byte en cada tanda y en las dos vueltas de la QA, y gtag, el consentimiento y el Pixel no cambiaron. Registro: <code>spec-visual.md</code> §7, fila del 19-oct.</p>
+    </div>
+    <div class="tabla-envuelta">
+      <table class="tabla tabla--pend">
+        <caption class="rotulo">El resto de lo que va antes de publicar, cada uno con su dueño (Mauro, pendientes §0.2)</caption>
+        <thead><tr><th scope="col">#</th><th scope="col">Qué</th><th scope="col">Quién</th><th scope="col">Cómo se da por cerrado</th></tr></thead>
+        <tbody><tr><th scope="row" data-rotulo="#">3</th><td data-rotulo="Qué"><strong>R1, la ruta de publicación</strong> (raíz o prefijo, qué pasa con las rutas v2 y cuándo)</td><td data-rotulo="Quién"><strong>Ramón</strong></td><td data-rotulo="Cómo se da por cerrado">Su respuesta escrita. Frena publicar, no frenó construir</td></tr><tr><th scope="row" data-rotulo="#">4</th><td data-rotulo="Qué"><strong>La lista de publicación, rehecha sobre E12.</strong> <code>lista-publicacion.md</code> (13-oct) describe el v3 de driftime (11 plantillas, 21 rutas, ensayada sobre <code>1b064bf</code>) y <strong>no se ejecuta tal cual</strong>. Lo que cambió, medido hoy en el build: 12 plantillas (se suma <code>trabajo/[caso].astro</code>); 27 rutas (se suman <code>/trabajo/</code> y sus seis casos); las cuatro maquetas (<code>a</code>, <code>b</code>, <code>c</code>, <code>maqueta-inicial</code>) siguen en el build, con <code>noindex</code> (33 páginas = 27 + 4 + las 2 v2); <code>public/v3/</code> pesa 27 MB en 156 archivos (los videos del hilo y de los casos, y <code>/v3/marca/</code> con El huso); las cinco props del <code>Layout</code>; <code>driftime.css</code>, <code>components/v3/</code> y <code>consts-v3.ts</code>, que se van al publicar y cambian el CSS de las páginas publicadas, así que la línea base <code>e12/construccion/base-dist/</code> se rehace; el <code>sitemap.xml</code> (20 URL hoy, ninguna de <code>/trabajo/</code>); <code>llms.txt</code>, que todavía presenta la casa como «agencia de marketing con IA»; y el <code>dateModified</code> de la home, que sale del reloj del build</td><td data-rotulo="Quién"><strong>Diego</strong> la reescribe y la vuelve a ensayar en un worktree desechable, como el 13-oct; <strong>Simón</strong>, las señales del corte (sitemap, <code>llms.txt</code>, canonical); <strong>Mauro</strong> la encuadra</td><td data-rotulo="Cómo se da por cerrado">El ensayo de punta a punta, con lo que no se pudo ensayar marcado, y <code>npm run verificar</code> sin hallazgos sobre el resultado</td></tr><tr><th scope="row" data-rotulo="#">5</th><td data-rotulo="Qué"><strong>El cargo de Ramón.</strong> En <code>/v3/</code>, el <code>jobTitle</code> de <code>#autor-ramon</code> es la propuesta de Simón, «Fundador de SpindleLab: diseño y desarrollo web, SEO técnico y visibilidad en IA», y la firma de los artículos espera lo mismo (<code>desvios.md</code>, tanda 1 §1 y tanda 5 §8.3). Si cambia, cambia en la home, en Nosotros y en la firma de los siete artículos</td><td data-rotulo="Quién"><strong>Ramón</strong> confirma</td><td data-rotulo="Cómo se da por cerrado">Su respuesta; Diego la aplica en <code>layout-a.ts</code> y en la firma</td></tr><tr><th scope="row" data-rotulo="#">6</th><td data-rotulo="Qué"><strong>Los textos en primera persona de <code>/nosotros/</code></strong> y la bio (lo que era R4)</td><td data-rotulo="Quién"><strong>Ramón</strong></td><td data-rotulo="Cómo se da por cerrado">Su lectura; Clara aplica</td></tr><tr><th scope="row" data-rotulo="#">7</th><td data-rotulo="Qué"><strong>«Con agentes de IA» en Paid Media</strong>, cuatro veces, sin fila en el inventario (<code>desvios.md</code>, tanda 4 §8.5)</td><td data-rotulo="Quién"><strong>Ramón</strong> (si es verdad, Diego le abre la fila; si no, Clara lo saca)</td><td data-rotulo="Cómo se da por cerrado">Fila en el inventario o el texto fuera</td></tr><tr><th scope="row" data-rotulo="#">8</th><td data-rotulo="Qué"><strong>R2, el monitoreo y su cadencia</strong>, sigue a la vista en <code>/v3/</code>: «Informes quincenales» en <code>/v3/metodo/</code>, «quincenal» en el JSON-LD de Redes sociales y en la página de Acompañamiento mensual, desde <code>servicios-v3.json</code> y <code>oferta-v3.json</code> (medido hoy en el <code>dist/</code>)</td><td data-rotulo="Quién"><strong>Ramón</strong></td><td data-rotulo="Cómo se da por cerrado">Su respuesta; el anexo A de <code>e8/copy-secciones.md</code> trae el texto de cada lugar para cada respuesta</td></tr><tr><th scope="row" data-rotulo="#">9</th><td data-rotulo="Qué"><strong>R9, ahora los cuatro conceptos</strong> (Tonela, Ocelo, Sesenta y Doceavo)</td><td data-rotulo="Quién"><strong>Ramón</strong> los revisa antes de que <code>/v3/</code> le llegue a un prospecto</td><td data-rotulo="Cómo se da por cerrado">Su visto, escrito</td></tr><tr><th scope="row" data-rotulo="#">10</th><td data-rotulo="Qué"><strong>El criterio 13 del brief, corrido en este cierre sobre el sitio construido</strong> (<code>e12/cierre/criterio-13/lectura.md</code>): tres lectores fríos de E11, cada uno en su conversación aparte, leyeron la home y el caso de Praxi sacados del <code>dist/</code>. <strong>No se cumple entero:</strong> los tres dicen qué hacemos y para quién, entienden que también hacemos SEO técnico y visibilidad en IA (pero recién en Servicios, no en la primera pantalla) y los tres probarían el chequeo; <strong>los tres tropiezan</strong> con términos sin explicar, sobre todo arriba: «SEO técnico» y «visibilidad en IA» en la entradilla, qué es que Google o ChatGPT «lean» un sitio, «ESTUDIO DE DISEÑO Y TECNOLOGÍA» y «Mira 21 cosas». No es defecto de construcción: el sitio lleva el texto de Clara tal cual</td><td data-rotulo="Quién"><strong>Clara</strong> propone (los puntos 1 a 13 de la lectura, la primera pantalla primero); <strong>Ramón</strong> decide en su lectura de aprobación; <strong>Lucía y Clara</strong>, qué entradas lleva el índice corto de la home (dos de tres no vieron su rubro)</td><td data-rotulo="Cómo se da por cerrado">El texto corregido en el JSON, Diego lo vuelve a sacar, Javiera lo comprueba en exprés y, si cambió la primera pantalla, se vuelve a correr la lectura con <code>criterio13-texto.mjs</code> y <code>criterio13-lector.py</code></td></tr><tr><th scope="row" data-rotulo="#">11</th><td data-rotulo="Qué"><strong>El visto de Simón a <code>senales-obra.md</code> §2.7</strong>, que Clara editó el 23-oct (solo la mayúscula de tres <code>title</code>; los largos no cambian)</td><td data-rotulo="Quién"><strong>Simón</strong></td><td data-rotulo="Cómo se da por cerrado">Su visto en la fila del 23-oct de <code>senales-obra.md</code></td></tr><tr><th scope="row" data-rotulo="#">12</th><td data-rotulo="Qué"><strong>Las confirmaciones de E8 y R7, re-ubicadas.</strong> Las diez de <code>e8/e8-antes-despues.md</code> y los puntos de R7 se escribieron sobre el texto de driftime; el de E12 es otro (<code>e12/texto/texto-obra.json</code>). No las re-verifiqué una por una</td><td data-rotulo="Quién"><strong>Clara</strong> dice cuáles siguen teniendo objeto antes de la lectura de aprobación de Ramón</td><td data-rotulo="Cómo se da por cerrado">Una lista corta, con cada punto en su lugar nuevo o marcado sin objeto</td></tr><tr><th scope="row" data-rotulo="#">13</th><td data-rotulo="Qué"><strong>Lo que la QA no midió:</strong> el muro al pasar el mouse, el filtro del índice, las fuentes de 960 px y el CLS del muro (acta, vueltas 1 y 2)</td><td data-rotulo="Quién"><strong>Javiera</strong> o <strong>Diego</strong>, en la verificación antes del merge</td><td data-rotulo="Cómo se da por cerrado">Medido y anotado</td></tr><tr><th scope="row" data-rotulo="#">14</th><td data-rotulo="Qué"><strong>El favicon en Safari y en la pantalla de inicio de un iPhone real</strong>, que no se vio (<code>e12/logo/final/README.md</code>)</td><td data-rotulo="Quién"><strong>Ramón</strong> con su teléfono, o una sesión local del Mac</td><td data-rotulo="Cómo se da por cerrado">Una captura</td></tr><tr><th scope="row" data-rotulo="#">15</th><td data-rotulo="Qué"><strong>La fecha de la Ley 21.719 el día del corte.</strong> La portada de Verifica y Cumple que muestra el muro dice que se aplica desde el 1-dic-2026: si se publica después, la entrada queda en pasado</td><td data-rotulo="Quién"><strong>Clara</strong> y <strong>Diego</strong></td><td data-rotulo="Cómo se da por cerrado">Mirado el día del corte</td></tr><tr><th scope="row" data-rotulo="#">16</th><td data-rotulo="Qué"><strong>R8, <code>/privacidad/</code></strong> (dos <code>h1</code> y dos textos bajo AA, en producción). <code>/v3/</code> la enlaza desde el aviso de cookies y no tiene versión propia; en esta obra no se tocó porque estaba protegida</td><td data-rotulo="Quién"><strong>Ramón</strong> autoriza el arreglo de marcado (sin tocar el texto legal)</td><td data-rotulo="Cómo se da por cerrado"><code>npm run verificar</code> limpio en <code>/privacidad/</code></td></tr></tbody>
+      </table>
+    </div>
+    <div class="dos-listas">
+      <div><h3>Declarado y abierto, no frena publicar</h3><p class="nota">Casos que la spec no cubría y que Diego resolvió con la solución mínima. Esperan a Clara o a mí.</p><ul class="lista-larga"><li><strong>Lucía:</strong> el <code>favicon.svg</code> declarado (spec §5.4) contra el README de Bruno, que recomienda no declararlo (a 16 px pinta 26 píxeles grises contra 10 del dibujado a mano); los casos sin pie y por eso sin el botón de cookies, y el pie de A sin enlace a <code>/privacidad/</code>; la portada de spindlelab.cl en el muro (va <code>/privacidad/</code>, porque la de la home es el hilo de oro) y la captura de Praxi en «Cada pieza» (van sus números, como dice la spec); en Praxi y Combeau a 390, la ficha bajo la barra flotante; Tonela con la misma captura dos veces a 390 y la foto en 4:5; el alt y el recorte de la franja de Visibilidad en IA; y la nota 1 de Javiera: con el aviso abierto, los últimos controles de algunas páginas quedan bajo el aviso y la barra hasta que la persona elige (se cierra, si lo quiere, con <code>--a-alto-aviso</code> en el relleno de abajo).</li><li><strong>Clara:</strong> los botones del chequeo con dos textos («Revisar mi sitio gratis» y «Correr el chequeo»); <code>/nosotros/</code> sin preguntas (no hay dato); y el error del chequeo vacío, que dice «Escribe tu dominio para empezar.» porque vive en <code>v3-chequeo.js</code>, protegido en esta obra (el cambio necesita su fila en la spec y el permiso de tocar ese archivo).</li><li><strong>Al publicar:</strong> Lenis queda inerte en <code>/v3/</code> y no «sin crearse», porque con las publicadas byte a byte no se podía (<code>desvios.md</code>, tanda 1 §2); cuando el <code>Layout</code> deje de servir a las páginas v2, se resuelve. El video del inicio de Praxi mide 568 × 320 y a 390 se ve blando: no hay otro.</li><li><strong>Para quien compare builds</strong> (nota 3 de Javiera): el HTML de <code>/v3/</code> cambia cada día por el <code>dateModified</code> del build.</li></ul></div>
+      <div><h3>Cuando haya plata o material</h3><p class="nota">No frenan nada. Nada se genera sin tu OK.</p><ul class="lista-larga"><li><strong>La generación para los conceptos:</strong> 9 fotos y 2 clips (<code>marketing/portafolio/plan-e12.md</code> §11), unos 75 créditos; el costo lo pone el plan, <strong>USD 49 por un mes de Higgsfield PLUS</strong>. Ramón: «cuando tenga plata vamos con lo faltante». Nada se genera sin su OK. Lo hace Bruno con su pauta.</li><li><strong>Las pantallas internas de Praxi:</strong> el caso las muestra como hueco nombrado, punteado, porque en los repos no hay capturas de la app con sesión iniciada. Entran si Ramón sube las de su carpeta «PRAXI siembra» de iCloud; Diego las recorta con las reglas del caso (sin datos de una persona) y Clara les escribe el pie.</li><li><strong>Lo propuesto que no entró:</strong> el giro de la tortera (Bruno, <code>e12/logo/final/movimiento/</code>) y la variante v8 del huso, por si Ramón prefiere que nunca se lea seta aunque se lea daga.</li></ul>
+      <h3 class="h3--sep">Para la troncal</h3><ul class="lista-larga"><li><strong>El manual de marca nuevo:</strong> <code>marketing/encargos-otras-sesiones/encargo-manual-marca-e12.md</code> (la letra, los colores con su rol y contraste, El huso con sus archivos y cortes, lo que dejó de regir y lo que decide con Ramón).</li><li><strong>El giro sigue abierto en sus documentos</strong> (estrategia, fichas, bios, outbound, la ficha de Bernardo y la de Praxi): <code>marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md</code>.</li><li><strong>D43, B26 y B27</strong> (§3): sin cambios desde el 11-oct; no los re-verifiqué.</li></ul></div>
+    </div>
+  </div>
+</section>
+  </main>
+  <footer class="pie">
+    <p>Armado por <code>tableros/e12-obra/herramientas/armar-tablero.py</code> desde el acta de Javiera, los pendientes de cierre de Mauro, la spec (§0.3 y §7), <code>desvios.md</code>, el texto de Clara y las capturas y grabaciones de la obra. Verificado con <code>herramientas/verificar.mjs</code> a 360, 390, 768 y 1440.</p>
+    <p>Las primeras pantallas son las de cierre de Mauro (<code>capturas/e12/primera/</code>), tal cual. Las páginas enteras las tomé de nuevo (<code>herramientas/capturar-completa.mjs</code>, su método más la espera a que cargue cada imagen): las suyas a 1440 están a la mitad del ancho, y en la de Sesenta a 390 una imagen no alcanzó a cargar (una placa vacía de 390 × 224 a los 4.480 px). Lo demás coincide, salvo los cuadros de los videos.</p>
+    <p>Un solo tema, a propósito: el tablero va en negro también si tu visor está en claro, porque el sitio se juzga sobre su lienzo.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  // La hora de Santiago con su huso, calculada en tu navegador: el mismo dato que lleva el encabezado del sitio
+  function hora() {
+    var ahora = new Date();
+    var h = new Intl.DateTimeFormat('es-CL', { timeZone: 'America/Santiago', hour: '2-digit', minute: '2-digit', hour12: false }).format(ahora);
+    var huso = '';
+    try {
+      new Intl.DateTimeFormat('en-US', { timeZone: 'America/Santiago', timeZoneName: 'shortOffset' }).formatToParts(ahora)
+        .forEach(function (x) { if (x.type === 'timeZoneName') huso = x.value.replace('GMT', 'UTC'); });
+    } catch (err) { huso = ''; }
+    document.querySelectorAll('.reloj').forEach(function (n) { n.textContent = h; });
+    if (huso) document.querySelectorAll('.huso').forEach(function (n) { n.textContent = huso; });
+  }
+  hora();
+  setInterval(hora, 15000);
+  // Un video a la vez: al dar play a uno, los demás se pausan
+  var videos = [].slice.call(document.querySelectorAll('video'));
+  videos.forEach(function (v) {
+    v.addEventListener('play', function () { videos.forEach(function (o) { if (o !== v && !o.paused) o.pause(); }); });
+  });
+  // Un enlace a una ruta abre su plegable
+  function abrir() {
+    var id = decodeURIComponent((location.hash || '').slice(1));
+    var d = id && document.getElementById(id);
+    if (d && d.tagName === 'DETAILS') d.open = true;
+  }
+  window.addEventListener('hashchange', abrir);
+  document.querySelectorAll('a.ir').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var d = document.getElementById(a.getAttribute('href').slice(1));
+      if (d) d.open = true;
+    });
+  });
+  abrir();
+})();
+</script>
