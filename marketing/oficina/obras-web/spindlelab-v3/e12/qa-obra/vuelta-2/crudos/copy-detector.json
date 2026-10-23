@@ -1,0 +1,230 @@
+[
+ {
+  "ruta": "/v3/",
+  "articulo": false,
+  "preguntas": 0,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/trabajo/",
+  "articulo": false,
+  "preguntas": 0,
+  "hallazgos": {},
+  "titleCase": [
+   "h2: «Una clínica de ojos que no existe, en Providencia. En vez de prometer que vas a » (Providencia)",
+   "h2: «Un estudio contable que no existe, en Concepción. Su portada te dice cuándo venc» (Concepción)"
+  ]
+ },
+ {
+  "ruta": "/v3/trabajo/praxi/",
+  "articulo": false,
+  "preguntas": 0,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/trabajo/combeau/",
+  "articulo": false,
+  "preguntas": 0,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/trabajo/sesenta/",
+  "articulo": false,
+  "preguntas": 2,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/trabajo/ocelo/",
+  "articulo": false,
+  "preguntas": 1,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/trabajo/doceavo/",
+  "articulo": false,
+  "preguntas": 0,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/trabajo/tonela/",
+  "articulo": false,
+  "preguntas": 1,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/diagnostico/",
+  "articulo": false,
+  "preguntas": 9,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/servicios/",
+  "articulo": false,
+  "preguntas": 0,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/servicios/desarrollo-web/",
+  "articulo": false,
+  "preguntas": 6,
+  "hallazgos": {
+   "A7 usted/vos": [
+    "ustedes"
+   ]
+  },
+  "titleCase": [
+   "h3: «Plataforma a Medida» (Medida)",
+   "h3: «¿Usan plantillas o WordPress?» (WordPress)"
+  ]
+ },
+ {
+  "ruta": "/v3/servicios/visibilidad-en-ia/",
+  "articulo": false,
+  "preguntas": 5,
+  "hallazgos": {},
+  "titleCase": [
+   "h3: «Auditoría de Visibilidad» (Visibilidad)",
+   "h3: «Acompañamiento Pro» (Pro)"
+  ]
+ },
+ {
+  "ruta": "/v3/servicios/auditoria-seo-tecnica/",
+  "articulo": false,
+  "preguntas": 5,
+  "hallazgos": {},
+  "titleCase": [
+   "h3: «Auditoría Completa» (Completa)",
+   "h3: «Auditoría + Visibilidad en IA» (Visibilidad)"
+  ]
+ },
+ {
+  "ruta": "/v3/servicios/acompanamiento-mensual/",
+  "articulo": false,
+  "preguntas": 5,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/servicios/redes-sociales/",
+  "articulo": false,
+  "preguntas": 5,
+  "hallazgos": {
+   "A7 usted/vos": [
+    "ustedes"
+   ]
+  },
+  "titleCase": [
+   "h3: «Gestión de la pauta social, desde el plan Orgánico + Pauta» (Orgánico)",
+   "h3: «Orgánico + Pauta» (Pauta)"
+  ]
+ },
+ {
+  "ruta": "/v3/servicios/paid-media/",
+  "articulo": false,
+  "preguntas": 5,
+  "hallazgos": {
+   "A7 usted/vos": [
+    "ustedes"
+   ]
+  },
+  "titleCase": [
+   "h3: «Gestión Pro» (Pro)"
+  ]
+ },
+ {
+  "ruta": "/v3/metodo/",
+  "articulo": false,
+  "preguntas": 0,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/nosotros/",
+  "articulo": false,
+  "preguntas": 1,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/contacto/",
+  "articulo": false,
+  "preguntas": 3,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/blog/",
+  "articulo": false,
+  "preguntas": 3,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/blog/21-chequeos-visibilidad-ia/",
+  "articulo": true,
+  "preguntas": 34,
+  "hallazgos": {},
+  "titleCase": [
+   "summary: «¿Bloquear a GPTBot protege mi contenido?» (GPTBot)"
+  ]
+ },
+ {
+  "ruta": "/v3/blog/como-aparecer-en-chatgpt/",
+  "articulo": true,
+  "preguntas": 8,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/blog/como-elegir-verificar-agencia-aeo-geo-chile/",
+  "articulo": true,
+  "preguntas": 14,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/blog/cuanto-cuesta-seo-tecnico-chile/",
+  "articulo": true,
+  "preguntas": 5,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/blog/que-es-aeo-geo/",
+  "articulo": true,
+  "preguntas": 17,
+  "hallazgos": {},
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/blog/que-es-un-mini-diagnostico-seo/",
+  "articulo": true,
+  "preguntas": 15,
+  "hallazgos": {
+   "A7 españa": [
+    "móvil"
+   ]
+  },
+  "titleCase": []
+ },
+ {
+  "ruta": "/v3/blog/seo-tecnico-fintechs-chile/",
+  "articulo": true,
+  "preguntas": 6,
+  "hallazgos": {
+   "A7 españa": [
+    "móvil"
+   ]
+  },
+  "titleCase": []
+ }
+]

@@ -228,3 +228,200 @@ las mismas herramientas, desde `spindlelab-astro/` construido: `chequeo-local.mj
 `campos.mjs` + `campos.py` (3), `aviso.mjs` (4), `auditar.mjs` (5, 6), `solapes.mjs` (7), `senales.py` (8), más
 `verificar` a 390 y 1440, `comparar-dist.mjs` y `movimiento.mjs` para que lo arreglado no rompa lo que estaba bien.
 Es la vuelta 2 de 2: si un defecto sigue vivo ahí, va a Ramón con su diagnóstico.
+
+---
+
+## Vuelta 2 (Javiera)
+
+**23-oct-2026, de 10:33 a 11:14 (Chile; reloj del contenedor en UTC, 13:33 a 14:14).** Contexto limpio otra vez: leí el
+brief («Compuerta 2», «Compuerta 1» y §7), la spec con sus filas del 23-oct (§0.3 puntos 9 y 10, §0.4 puntos 13 a 15,
+§2.1, §2.3, §2.4, §3.4, §4.3, §4.4 y tres filas de §7), `desvios.md` (la sección «QA de obra, vuelta 1» de Diego),
+`senales-obra.md` (§1.2 y la fila del 23-oct), el diff del texto de Clara y el del código; no vi las conversaciones donde
+se arregló. **Obra auditada: `f2fe7b4`** (el último commit de Diego, 23-oct 13:34 UTC); después de él solo hay commits
+míos en `qa-obra/vuelta-2/`. Herramientas, crudos y capturas: `e12/qa-obra/vuelta-2/`. Son las de la vuelta 1 con el
+mismo método, ampliadas donde la spec del 23-oct pide medir más (`concepto-sin-scroll.mjs` con «Concepto» y con el aviso
+abierto y cerrado; `aviso.mjs` en los ocho tamaños y 375 × 667; `campos.py` importando el `es_campo` de la regla 2;
+`senales.py` con las fechas y los tres `title`), más ocho nuevas: `orden-portada.mjs`, `barra-aviso.mjs`,
+`barra-tipo.mjs`, `tambien.mjs`, `pie-cookies.mjs`, `foco-cookies.mjs`, `copy-detector.mjs` y `hoja.py`. Chromium 1194
+con el Playwright de `spindlelab-astro/node_modules`, sobre el `dist/` servido en local por `comun.mjs` (puerto libre,
+apagado al terminar). Una copia de mis herramientas que encontré en el scratchpad (`qa/`, de 13:13 a 13:27 UTC) es de
+Diego, para su verificación: no la usé.
+
+### Veredicto: **CON REPAROS**
+
+**Los ocho defectos de la vuelta 1 están cerrados**, medidos con las mismas herramientas: el chequeo sobre el build local
+saca 83, igual que el 16-oct; «Concepto» está a la vista sin scroll en los 64 casos (4 conceptos × 8 tamaños × aviso
+abierto y cerrado); Auditoría no tiene franja y ninguna página pasa su techo de campo con la regla 2; el aviso abierto
+no tapa el chequeo en ningún tamaño de la obra; cero párrafos sobre el tope fuera de la excepción, cero `lazy` en la
+primera pantalla, el logo y el correo del pie y la original de Combeau con el 100 % de su área, y los tres `title` en
+mayúscula inicial. Producción sigue igual byte a byte, `Layout.astro` sin cambios desde la vuelta 1, y lo que estaba bien
+sigue bien.
+
+**Quedan dos menores nuevos**, ninguno bloquea mostrar `/v3/` a Ramón: el arreglo del defecto 7 corrió el área de
+«Cookies» del pie sobre la línea de la hora (defecto 9, Diego), y la línea «También: Paid Media…» desde 1194 corre más
+ancha que el tope porque la spec se contradice (defecto 10, Lucía; en la vuelta 1 yo la dejé pasar sin contarle las
+líneas). **Reparo, con plazo:** los dos se cierran antes de publicar la v3, en la tanda de publicación, y se comprueban
+en exprés con `pie-cookies.mjs`, `foco.mjs` a 390 y `tambien.mjs`, sin otra vuelta completa.
+
+### Los ocho defectos de la vuelta 1
+
+| # | Qué era | Cómo lo medí hoy | Resultado | Estado |
+|---|---|---|---|---|
+| 1 | La home sin `datePublished` ni `dateModified`; el chequeo local, 79 contra 83 | `chequeo-local.mjs` (el `chequear()` de `functions/api/chequeo.js` sin cambios, sobre el build de hoy y el del 16-oct, `947e6e1`); `senales.py` | **Home v3: 83 hoy y 83 el 16-oct**, 0 ítems distintos; raíz de producción 85 y 85. `WebPage #webpage`: `datePublished` 2026-07-08 y `dateModified` 2026-10-23, el día del build en la hora de Chile (`crudos/chequeo-local.log`, `crudos/senales.log`) | **Cerrado** |
+| 2 | «Concepto · 2026» bajo el pliegue de 768 a 1193; Tonela a 768 y Doceavo sin el rótulo | `concepto-sin-scroll.mjs`: cada nodo del DOM que dice «Concepto» o «Concepto · 2026», entero en la ventana y sin nada encima en su centro y sus extremos | **64 de 64.** De 360 a 1193, «TONELA · CONCEPTO» (y los otros tres) en la barra; desde 1194, la ficha a 261–275. Con el aviso abierto la barra queda **8 px sobre él** en los cinco tamaños bajo 1194; en una línea (`summary` de 44 px). Estilo: DM Mono 11, mayúsculas, `#989898` sobre la placa `#141414`, **6,39:1**; el «·» con `aria-hidden`; el lector lee «Tonela Concepto Problema Ver las secciones»; Praxi y Combeau sin tipo (`crudos/concepto-sin-scroll.log`, `crudos/barra-tipo.log`, `capturas/hoja-concepto-aviso-abierto.jpg`, `capturas/d2-barra-sobre-aviso-tonela768-doceavo1024.jpg`) | **Cerrado** |
+| 3 | La franja de Auditoría, un campo de color que la regla de la cubeta no veía | `campos.mjs` + `campos.py`, con el `es_campo` de `spec/herramientas/campo-medios.py` **importado** (regla 2), página entera a 1440 | Auditoría: **0 medios, 0 %**; ni una referencia a `verifica-y-cumple` en su HTML (precargas, JSON-LD u OG). Con la regla 2: home 13,1 % (con la cinta contada entera, 18,3; techo 20), seguidos 3 (techo 3); `/trabajo/` 30,1 (≤ 35); casos de 6,1 (Praxi, el piso declarado) a 30,2 % (Doceavo), seguidos 4 como máximo; Desarrollo web 3,5 (≤ 5), su franja de Combeau no es campo (familia 0,27); Visibilidad en IA 0; las demás interiores 0. Lo mismo que escribe la spec §3.4 (`crudos/campos.log`) | **Cerrado** |
+| 4 | El aviso de cookies tapaba el chequeo de la home a 390 × 844 y 360 × 800 | `aviso.mjs` en los ocho tamaños y 375 × 667, primera visita; `orden-portada.mjs` | Campo y botón **sobre el aviso en los ocho**: 590–634 con el aviso desde 647 (360 × 800), 607–651 / 710 (390 × 844), 767–811 / 909 (768), 963–1007 / 1043 (834 × 1112, aviso en una fila de 69 px desde 834), y desde 1024 igual que antes; en el centro de cada control, el control. Diagnóstico, 0 tapados. Contacto: el botón bajo el aviso solo a 1024 × 768 y 1194 × 834, y la home a 375 × 667, las tres que §4.3 y §4.4 dejan escritas. Bajo 834 la portada se lee rótulo, `h1`, chequeo, entradilla, con 16, 24 y 24 px; el DOM no cambia, la entradilla no tiene nada enfocable y `.portada-v__decl` (el que pasa a `display: contents`) es un `div` sin papel (`crudos/aviso.log`, `crudos/orden-portada.log`, `capturas/citadas/home-390x844.jpg`, `capturas/d4-home-834-aviso-una-fila.jpg`) | **Cerrado** |
+| 5 | Texto sobre el tope de 493 en la home y en diagnóstico | `auditar.mjs`, 27 rutas × 8 anchos | Párrafos de `main` sobre 494: **solo «También: Paid Media…» desde 1194** (577, 700 y 940 px), la excepción que mi cierre dejaba. Los otros tres, dentro del tope. Pero ver el defecto 10 | **Cerrado** (lo de Diego) |
+| 6 | `loading="lazy"` en imágenes de la primera pantalla | `auditar.mjs` | **Ninguna** en los 216 pares | **Cerrado** |
+| 7 | El logo y el correo del pie se pisaban 97 × 13; la original de Combeau, 9 % bajo la imagen | `solapes.mjs` a 360, 390 y 768 | Logo y correo: **97 × 0**, el 100 % del área propia en los dos sentidos; la original: 100 % en los tres anchos. Pero el arreglo movió el cruce: ver el defecto 9 | **Cerrado** (lo pedido) |
+| 8 | Title Case en tres `title` | `senales.py`; `copy-detector.mjs` | «Auditoría SEO técnica para empresas · SpindleLab», «Acompañamiento mensual de SEO e IA · SpindleLab», «Gestión de redes sociales para empresas · SpindleLab», iguales en `<title>` y `og:title`; las 19 rutas de `senales-obra.md` §2, iguales | **Cerrado** |
+
+### Lo medido
+
+| # | Qué | Cómo | Resultado | Evidencia |
+|---|---|---|---|---|
+| 1 | Build | `npm run build` sobre `f2fe7b4` | 33 páginas, exit 0, 6,3 s | `crudos/build.log` |
+| 2 | `npm run verificar -- --prefijo /v3/` | a 390 y 1440, y también a 360, 768, 834, 1024, 1194, 1920 y 1440 con `--sin-pildoras` | **27 páginas, sin hallazgos en los ocho anchos**; los 8 nodos «sobre imagen o degradado» desde 834 son la portada (fila 13) | `crudos/verificar-*.log` |
+| 3 | Producción igual byte a byte | `comparar-dist.mjs` contra el `dist/` de `03d1bb3`; `construccion/comparar-produccion.mjs` (Diego) contra `construccion/base-dist/` | 114 archivos fuera de `v3/`: **0 distintos**; los 3 de `_astro/` que cargan las publicadas, iguales; en `_astro/` solo cambian los paquetes que carga la v3 (los de los casos, por `caso.mjs` y `archivo.css`). Diego: «Iguales byte a byte» | `crudos/comparar-dist.json`, `crudos/comparar-produccion.log` |
+| 4 | Protegidos | `git diff 03d1bb3 HEAD` | **Vacío** en `global.css`, `tailwind.config.mjs`, `functions/`, `public/assets/js/`, `spindlelab-site/`, `public/privacidad/`, los tres JSON de oferta, `sitemap.xml`, `_headers`, `robots.txt`, `llms.txt`, `pages/index.astro` y `nosotros.astro` | `crudos/protegidos.log` (vacío) |
+| 5 | `Layout.astro` | `git diff 6739bab HEAD` y `03d1bb3 HEAD` | **0 líneas desde la vuelta 1**; contra la base, las cinco props aprobadas el 19-oct con su valor por defecto de antes, y nada más | `crudos/layout.diff` |
+| 6 | Motion | `package.json`, lock, `node_modules` | `"motion": "13.5.0"` exacto, integridad igual a §5.1; sin cambios desde la vuelta 1 | |
+| 7 | Lenis sin actuar | `movimiento.mjs`, una muesca de 100 px | **90 % en 18 a 21 ms** en cuatro páginas (techo 100) | `crudos/movimiento.log` |
+| 8 | `a[href^="#"]` y `<!-- -->` servidos | `contenido.mjs`, las 27 | **0 y 0** | `crudos/contenido.json` |
+| 9 | Desborde, `h1`, landmarks, letras | `auditar.mjs`, 216 pares | Desborde **0 con y sin** `overflow-x: clip`; un `h1` y un `main` en los 216; `es-CL`; 0 saltos de encabezado; **solo Google Sans Flex y DM Mono 500** cargadas (sus dos `woff2`); 0 nodos en negrita; 0 textos bajo 11 px; 0 mayúsculas fuera de la mono; encabezado de 90 bajo 834 y 64 desde 834; 0 errores de consola, 0 pedidos fallidos, 0 404 | `crudos/auditar.log` |
+| 10 | Áreas de toque bajo 834 | `area-toque-390.js` del paso 2 en contexto táctil (en `auditar.mjs`); `solapes.mjs`; `pie-cookies.mjs` | 0 controles bajo 44 × 44; logo, correo y original al 100 %; **«Cookies» del pie, 91 % a 360, 94 % a 390 y 97 % a 414** (defecto 9) | `crudos/solapes.log`, `crudos/pie-cookies.log` |
+| 11 | Foco | `foco.mjs`, Tab adelante y atrás, 27 rutas a 1440 y 390; y con el aviso abierto, 7 rutas a 390, 768 y 1024 | Primera parada «Saltar al contenido» con su ruta en las 54; contorno en todas. Lo marcado: «Cookies» con la hora encima en las 27 a 390 (59 paradas, defecto 9); el solape del pie de la vuelta 1, 0 (eran 42); el resto, lo mismo que la vuelta 1 (paradas al borde exacto de la ventana o la cruz de registro rozando una fila). Con el aviso abierto: ver la nota 1 | `crudos/foco.log`, `crudos/foco-aviso.log`, `capturas/d9-cookies-foco-hoja.jpg` |
+| 12 | La barra sobre el aviso | `barra-aviso.mjs`: Praxi, Combeau, Tonela, Sesenta y dos artículos, a 360, 390, 768, 834 y 1024 | Con el aviso abierto, **8 px sobre él** en los 30; `--a-alto-aviso` igual al alto del aviso (153, 134, 115, 69); la lista abierta entera en la ventana y bajo el encabezado; al rechazar, a 16 px del borde y sin la variable; sin transición | `crudos/barra-aviso.log`, `capturas/citadas/tonela-360-lista-aviso.jpg` |
+| 13 | Contraste de la portada sobre el video | `portada-contraste.mjs` + `.py`, los 121 cuadros de `hilo-1920.webm` en 6 tamaños | **0 líneas bajo el mínimo** en 101; la peor, **5,31:1** («Chequeo gratis», 1194 × 834, cuadro 73), lo mismo que la vuelta 1 y la spec §3.1 | `crudos/portada-contraste.log` |
+| 14 | Videos, movimiento reducido, cursor | `movimiento.mjs` | Igual que la vuelta 1: los 11 videos con sus atributos, VP9 → H.264, pausa de 44 que Enter para y sigue y dice su estado, fuera de la vista se pausan; con `reduce`, quietos en t = 0 y sin bloques a medio entrar; círculo blanco de 88 px solo con puntero fino, `display: none` en táctil | `crudos/movimiento.log` |
+| 15 | Pesos de video | `ffprobe` sobre `public/v3/` (sin cambios desde la vuelta 1) | Los mismos 26 archivos y bytes; todos bajo su techo de §3.1 y §3.5; ninguno con audio | `crudos/videos.tsv` |
+| 16 | Texto de Clara tal cual | `texto.mjs` | **433 de 470** (435 en la vuelta 1): los dos que faltan de más son el alt y el pie de la franja de Auditoría, que §2.4 deja sin uso. `texto-obra.json` cambió solo en los tres `title` y sus notas | `crudos/texto.log` |
+| 17 | Señales contra Simón | `senales.py` | Las 19 rutas de §2, iguales; `#org`, `jobTitle`, `ItemList` de 10, Praxi sin `offers`, `url` ni `sameAs`, Combeau, los cuatro conceptos, `#chequeo`, `ContactPage`: todos ✓, y las fechas de la home. En las 27: JSON-LD que parsea, 0 `@id` repetidos, los tres del `Layout` una vez, 0 tipos vetados, miga igual al `BreadcrumbList`, canonical a su URL `/v3/`, `noindex, nofollow`, `theme-color` `#060606`, favicon `?v=5`, `og:image` JPEG 1200 × 630 de 24 a 67 kB | `crudos/senales.log`, `crudos/contenido.json` |
+| 18 | Precios, vetados, Praxi y Combeau | `contenido.mjs`; `grep` | Cada «$…» está en los JSON (los artículos, verbatim); 0 «54 → 94», «36 → 73», `praxi.coach`, «en pausa», «fuera de línea»; el «40 %» de «21 chequeos» es el peso del bloque, con fila (como en la vuelta 1); Combeau, 0 medidas en su HTML y sus `alt`; `public/` sin cambios desde la vuelta 1, así que los medios son los mismos que miré entonces | `crudos/contenido.json` |
+| 19 | Chequeo y formulario | `grep` en el `dist/` | Los `chq-*` en la home y en diagnóstico con `v3-chequeo.js?v=3`; el formulario de `/v3/contacto/` con `class="contact-form"`, la misma `action` y los **12 campos con nombre iguales a los de producción**, `#f-utm-*`, `.form-status`, `.form-success`, `generate_lead`, `v3-contacto.js?v=2` | |
+| 20 | El hilo de oro | `grep` de `hilo-` en las 27 | Solo en `/v3/` | |
+| 21 | Copy (antislop §A) | `copy-detector.mjs`, texto a la vista de las 27 desde el navegador | 0 verbos de folleto, relleno, «no solo… sino», «¿Listo…?», raya, voseo, prueba social; la home sin preguntas. Mayúsculas dentro de un título: solo nombres propios (Providencia, Concepción, WordPress, GPTBot) y los nombres de plan de `oferta-v3.json`, que van tal cual. «Ustedes» como plural de tú en tres preguntas; «móvil» en dos artículos verbatim | `crudos/copy-detector.log` |
+| 22 | Cotas de la spec | `medidas-spec.mjs` | Igual que la vuelta 1, salvo la portada a 390: 727 px de alto (719 antes), los 8 px de los dos espacios de 24 de §2.1 | `crudos/medidas-spec.log` |
+| 23 | Render mirado | capturas de primera pantalla de las 27 rutas en los ocho anchos (`auditar.mjs`) y de página entera a 390 y 1440 | Nada roto: la home bajo 834 con el chequeo antes de la entradilla, Auditoría sin franja, el muro con sus portadas, «NOMBRE · CONCEPTO» en la barra | `capturas/hoja-primera-1440-27.jpg`, `capturas/hoja-primera-360-27.jpg`, `capturas/hoja-primera-cambios.jpg` |
+| 24 | El CSS nuevo | `git diff 714eb60 HEAD -- archivo.css` | Sin colores, radios, sombras, transiciones ni letras nuevas: solo márgenes, rellenos, `order`, `display: contents`, topes con `var(--a-caja)` y la variable del aviso | este diff |
+
+**No medido en esta vuelta:** lo mismo que en la vuelta 1 (el muro al pasar el mouse, el filtro del índice, las fuentes de
+960 px y el CLS del muro; no cambiaron) y **el criterio 13**, los lectores fríos sobre el sitio construido.
+
+### Defectos nuevos
+
+| # | Severidad | Dueño | Dónde | Qué está mal | Contra qué | Cierre |
+|---|---|---|---|---|---|---|
+| 9 | Menor | Diego | El pie bajo 834, en las 27 rutas: el botón «Cookies» (`#cookie-preferencias`) | El arreglo del defecto 7 hizo crecer su área 12 px arriba y **18 abajo** (antes 18 y 12), y ahora baja sobre la línea de la hora («Santiago 10:51 UTC-3», `p.cab__hora`, de 806 a 820, que va encima): **el 9 % del área no responde a 360, el 6 % a 390 y el 3 % a 414** (antes 1, 1 y 0 %), y **el contorno de foco cruza el texto de la hora** a 360 y 390 (`capturas/d9-cookies-foco-hoja.jpg`, antes y hoy). `foco.mjs` lo marca en las 27 rutas a 390 | Spec §4.3 (área de 44 × 44 propia; foco nunca tapado) | «Cookies» crece hacia arriba como antes (no tiene nada encima: el logo termina en x = 113 y él empieza en 151), o la hora baja lo que haga falta. `pie-cookies.mjs` con el 100 % propio a 360, 390 y 414, y `foco.mjs` a 390 sin «tapado p.cab__hora» |
+| 10 | Menor | Lucía | `/v3/`, la línea «También: Paid Media…», desde 1194 | La spec se contradice: §2.1, fila 5, la pone «en una línea de cuerpo con sus precios, en c5–c12», y §1.3 pone el tope de 493 «en todos los anchos». Son 239 caracteres: desde 1194 corren **567, 676 y 911 px en 4, 3 y 2 líneas** (unos 120 caracteres por línea a 1920, lo que el tope existe para evitar). En la vuelta 1 dejé esta línea como excepción sin contarle las líneas: el error de lectura fue mío, y Diego cumplió lo que yo escribí (`crudos/tambien.log`) | Spec §1.3 contra §2.1, fila 5 | Lucía escribe cuál manda (el tope también desde 1194, dentro de c5–c12; o la excepción en §0.3 con su porqué) y Diego construye lo que cambie. `tambien.mjs` con el ancho que la spec diga |
+
+### Cumplimiento del brief (§7, construcción)
+
+| Criterio | Resultado |
+|---|---|
+| 8 · Motion fijo; con movimiento reducido ni resortes ni cursor | **Cumple** (filas 6, 14) |
+| 9 · Cursor solo con puntero fino; foco visible; nada solo con hover | **Cumple** (filas 11, 14), con el reparo del defecto 9 en el foco de «Cookies» |
+| 10 · `verificar` sin hallazgos a 390, 768 y 1440 | **Cumple**, en los ocho anchos (fila 2) |
+| 11 · `generate_lead`, formulario, `chq-*`, `v3-chequeo.js`, `functions/api/chequeo.js` en diff 0; las 20 URL; `noindex` | **Cumple** (filas 3, 4, 17, 19) |
+| 12 · El chequeo sobre el build local saca lo mismo o más que el 16-oct | **Cumple: 83 y 83** (defecto 1) |
+| 13 · Lectores fríos | **No verificado sobre el build** (igual que en la vuelta 1: la lectura fría es del texto de Clara, que el sitio lleva tal cual) |
+| 14 · La portada | **Cumple** (filas 13, 14, 15; defecto 4 para el chequeo con el aviso abierto) |
+| 15 · Los casos | **Cumple** (filas 17, 18) |
+| 1 a 7 (compuerta 2) | Cumplidos en `acta-paso-2.md`; no se re-auditan |
+
+Reglas que no se negocian (spec §6, brief §6): todas cumplidas, medidas en las filas 3 a 8, 15 a 20 y en los defectos 2 y 3.
+
+### Cumplimiento de la spec
+
+**Desvíos no declarados: ninguno.** Todo lo que cambió en `src/` desde `714eb60` está en la sección «QA de obra, vuelta 1»
+de `desvios.md`, con su porqué, incluidas las tres cosas que la spec no cubría: que `dateModified` sale del reloj del
+build (y el HTML de `/v3/` cambia de un día a otro aunque la página no cambie; no toca producción), que va sin espera
+toda imagen que cae en la primera pantalla en algún tamaño, y el paso del relleno de abajo con el aviso que pasó de 899
+a 833. Lo de Lucía (§0.3 puntos 9 y 10, §0.4 puntos 13 a 15) está construido como dice la spec.
+
+### Detector anti-slop
+
+`estudio-web/antislop-web.md` §E:
+
+```
+COPY            ■ sin verbos de folleto  ■ sin relleno de apertura
+                ■ sin tricolon automático  ■ sin "no solo X sino Y"
+                ■ sin pregunta retórica ni "¿Listo para…?"
+                ■ sin Title Case  ■ registro es-CL consistente (tú/usted)
+                ■ sin raya como remate  ■ cero prueba social sin respaldo
+                □ borrar 30% no mejora la página
+ESTRUCTURA      ■ sin tres tarjetas idénticas injustificadas
+                ■ sin "¿por qué elegirnos?" genérico  ■ FAQ con preguntas reales
+                ■ sin fila de métricas inventadas  ■ formulario mínimo
+                □ hero no es 100vh centrado vacío  ■ orden de secciones justificado
+CÓDIGO          ■ landmarks + un h1 + jerarquía sin saltos
+                ■ cero valores por defecto sin justificar (color, radio, sombra, fuente)
+                ■ sin degradé-mancha ni glass injustificados  ■ cero emoji de icono
+                ■ alt reales  □ foco visible, contraste AA, labels
+                ■ imágenes dimensionadas, hero eager, font-display
+                ■ JSON-LD + canonical + OG + title propio
+                ■ índice y sitemap al día  ■ ?v=N subido si se sobrescribió un asset
+VISUAL          ■ detector de refero-design corrido entero
+PRUEBAS         ■ logo tapado  ■ rubro cambiado  ■ leído en voz alta
+```
+
+Lo que cambió desde la vuelta 1: **Title Case** se cierra (defecto 8; lo que queda con mayúscula son nombres propios y
+los nombres de plan de `oferta-v3.json`, que no se tocan); **hero eager** se cierra (defecto 6); **JSON-LD** se cierra
+(defecto 1). **Foco visible** queda abierto por el defecto 9 (el contorno de «Cookies» cruza la hora bajo 834; el
+contraste AA y los `label`, cumplidos: filas 2 y 19). Siguen abiertos, con el mismo porqué de la vuelta 1: **borrar
+30 %**, que no puedo afirmar sin lectores (criterio 13), y **el hero a pantalla**, que no es centrado ni vacío y lo fija la
+spec en el lugar del showreel de Koto. Sin cambios en los demás cerrados: ningún color, radio, sombra ni letra nueva
+(fila 24); la página no se publica, `/v3/` sigue con `noindex` y fuera del `sitemap.xml`.
+
+`refero-design/references/anti-ai-slop.md`: los 18 ítems, igual que en la vuelta 1 (sin acento índigo, 0 tarjetas, 0
+franjas laterales, 0 emoji, negro porque el brief lo pide, sin serif ni tierra, las dos tintas medidas en Koto, rasgos y
+roles de Koto conservados, medios reales y el hueco de Praxi dirigido, mayúsculas solo en la mono con `.03em`, letras y
+colores de la compuerta 2). Lo que movió esta vuelta lo refuerza: el rol de los medios ahora lo cuenta la regla 2 y la
+franja de Auditoría, que hacía de campo de color, salió (antes «ver defecto 3»). El rasgo de IA a conciencia sigue
+siendo uno, el hilo de oro de la portada (desvío autorizado), y solo en la home (fila 20).
+
+### Pruebas de fuego
+
+- **Logo tapado** (`capturas/hoja-primera-1440-27.jpg`, `capturas/citadas/home-390x844.jpg`): pasa; a 390 ahora el
+  chequeo va pegado a la frase, y es la pieza que no tiene nadie del rubro.
+- **Rubro cambiado:** pasa por lo mismo que en la vuelta 1: el chequeo sobre tu dominio y los precios publicados no
+  calzan en otro negocio.
+- **Leído en voz alta:** «Diseñamos y programamos sitios a medida. Y los dejamos listos para que Google y ChatGPT puedan
+  leerlos.» Y debajo, «Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden
+  leerlo». Suena a alguien explicando qué hace y ofreciendo probarlo. Pasa.
+
+### Lo que está bien (y no hay que tocar al cerrar el 9 y el 10)
+
+1. **Los arreglos de la vuelta 1, medidos uno por uno** (tabla de arriba), y lo que estaba bien: producción igual byte a
+   byte, `Layout` sin cambios, protegidos en diff 0, Motion fijo, la rueda nativa, la portada sobre los 121 cuadros, los
+   videos, el cursor, las señales y el texto de Clara.
+2. **La barra de los casos sobre el aviso**: un solo mecanismo (`--a-alto-aviso`) que sirve a los seis casos y a los
+   siete artículos, que vuelve a su lugar al elegir y cuya lista abierta entra entera en la ventana (fila 12).
+3. **El orden de la portada bajo 834**: solo visual, el DOM y el Tab intactos, con los espacios que pide la spec al píxel
+   (defecto 4).
+
+### Notas (no son defectos)
+
+1. **Con el aviso abierto, los últimos controles de algunas páginas quedan bajo el aviso y la barra hasta que la persona
+   elige** (`crudos/foco-aviso.log`): el pie en los artículos y «[ Todo el trabajo ]» en los casos a 768 y 1024, porque la
+   página ya no puede subir más. Antes del 23-oct quedaban bajo el aviso solo; es «el resto de la página» que §4.3 acepta
+   hasta el primer toque. Si Lucía quiere cerrarlo del todo, el relleno de abajo de las páginas con barra puede crecer con
+   `--a-alto-aviso` mientras el aviso está abierto.
+2. **`senales-obra.md` §2.7 lo editó Clara** («para que Simón lo revise», su fila del 23-oct): el cambio es solo la
+   mayúscula de tres `title` y los largos no cambian, pero falta el visto de Simón.
+3. **El HTML de `/v3/` cambia cada día** por el `dateModified` del build (declarado por Diego). Para comparar dos builds
+   de la v3 de días distintos hay que descontar esa línea.
+
+### Qué dejé fuera del repo
+
+Entraron las herramientas, los crudos (1,6 MB) y 20 capturas (1,9 MB): siete hojas y recortes que cita el acta y 13
+capturas sueltas en `capturas/citadas/`. **Quedaron fuera**, en el scratchpad de la sesión
+(`qa-v2-capturas-fuera/`), las 216 de primera pantalla, las 54 de página entera, las 64 de los conceptos, las 9 del aviso
+y las 12 de la barra (unos 37 MB), y las 27 páginas enteras de `campos.mjs` (`qa-v2-campos/`); se rehacen con los mismos
+comandos.
+
+### Para el cierre
+
+Es la vuelta 2 de 2 y no queda ningún defecto de la vuelta 1 vivo, así que no hay nada que escalar a Ramón. Los dos
+menores nuevos (9, Diego; 10, Lucía) se cierran antes de publicar, con la comprobación exprés de arriba. El criterio 13
+(lectores fríos sobre el sitio construido) queda para el cierre de Mauro.
