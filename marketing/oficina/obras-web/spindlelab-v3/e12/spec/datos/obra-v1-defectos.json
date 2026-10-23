@@ -1,0 +1,6190 @@
+{
+ "fecha": "2026-10-23",
+ "propuestaCss": "/* §4.3 · desde 834, el aviso de cookies va en una fila: el texto (tope de 640 px, como hoy) se angosta lo que haga falta\n   y los botones quedan a su derecha (entre 834 y ~890 bajaban a una segunda fila y el aviso medía 115 px: tapaba el\n   chequeo a 834 × 1112) */\n@media (min-width: 834px) {\n  html body.a-body #cookie-banner .cb-inner.cb-inner { flex-wrap: nowrap; }\n  html body.a-body #cookie-banner .cb-inner p { flex: 0 1 auto; min-width: 0; }\n}\n/* §2.1, fila 1 · bajo 834 la portada lee rótulo, h1, chequeo y entradilla (solo el orden a la vista; el DOM no cambia) */\n@media (max-width: 833.98px) {\n  .a-body .portada-v__decl { display: contents; }\n  .a-body .portada-v__decl > * { grid-column: 1 / -1; }\n  .a-body .portada-v__decl > h1 { margin-top: -8px; }\n  .a-body .portada-v__chequeo { order: 1; }\n  .a-body .portada-v__decl > .entradilla { order: 2; }\n}\n/* §2.3 · la etiqueta del tipo en la barra: mono, gris, en una línea */\n.a-body .barra__tipo { white-space: nowrap; }",
+ "aviso": [
+  {
+   "variante": "hoy",
+   "ruta": "/v3/",
+   "w": 360,
+   "h": 800,
+   "aviso": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "tapados": [
+    "input#chq-dominio «tuempresa.cl» 708–752",
+    "button#chq-btn «Revisar mi sitio» 708–752"
+   ],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 708,
+     "bottom": 752
+    },
+    {
+     "s": "#chq-btn",
+     "top": 708,
+     "bottom": 752
+    }
+   ],
+   "chequeoTapado": [
+    "#chq-dominio",
+    "#chq-btn"
+   ],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/",
+   "w": 390,
+   "h": 844,
+   "aviso": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "tapados": [
+    "input#chq-dominio «tuempresa.cl» 704–748",
+    "button#chq-btn «Revisar mi sitio» 704–748"
+   ],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 704,
+     "bottom": 748
+    },
+    {
+     "s": "#chq-btn",
+     "top": 704,
+     "bottom": 748
+    }
+   ],
+   "chequeoTapado": [
+    "#chq-dominio",
+    "#chq-btn"
+   ],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/",
+   "w": 768,
+   "h": 1024,
+   "aviso": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 845,
+     "bottom": 889
+    },
+    {
+     "s": "#chq-btn",
+     "top": 845,
+     "bottom": 889
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/",
+   "w": 834,
+   "h": 1112,
+   "aviso": {
+    "top": 997,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 115
+   },
+   "tapados": [
+    "input#chq-dominio «tuempresa.cl» 963–1007",
+    "button#chq-btn «Revisar mi sitio» 963–1007"
+   ],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 963,
+     "bottom": 1007
+    },
+    {
+     "s": "#chq-btn",
+     "top": 963,
+     "bottom": 1007
+    }
+   ],
+   "chequeoTapado": [
+    "#chq-dominio",
+    "#chq-btn"
+   ],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/",
+   "w": 1024,
+   "h": 768,
+   "aviso": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 637,
+     "bottom": 681
+    },
+    {
+     "s": "#chq-btn",
+     "top": 637,
+     "bottom": 681
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/",
+   "w": 1194,
+   "h": 834,
+   "aviso": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 632,
+     "bottom": 676
+    },
+    {
+     "s": "#chq-btn",
+     "top": 684,
+     "bottom": 728
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/",
+   "w": 1440,
+   "h": 900,
+   "aviso": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 696,
+     "bottom": 740
+    },
+    {
+     "s": "#chq-btn",
+     "top": 748,
+     "bottom": 792
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/",
+   "w": 1920,
+   "h": 1080,
+   "aviso": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 895,
+     "bottom": 939
+    },
+    {
+     "s": "#chq-btn",
+     "top": 947,
+     "bottom": 991
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/",
+   "w": 375,
+   "h": 667,
+   "aviso": {
+    "top": 533,
+    "bottom": 667,
+    "left": 0,
+    "right": 375,
+    "alto": 134
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 716,
+     "bottom": 760
+    },
+    {
+     "s": "#chq-btn",
+     "top": 716,
+     "bottom": 760
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": false
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/",
+   "w": 414,
+   "h": 896,
+   "aviso": {
+    "top": 762,
+    "bottom": 896,
+    "left": 0,
+    "right": 414,
+    "alto": 134
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 676,
+     "bottom": 720
+    },
+    {
+     "s": "#chq-btn",
+     "top": 676,
+     "bottom": 720
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/diagnostico/",
+   "w": 360,
+   "h": 800,
+   "aviso": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 459,
+     "bottom": 503
+    },
+    {
+     "s": "#chq-btn",
+     "top": 459,
+     "bottom": 503
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/diagnostico/",
+   "w": 390,
+   "h": 844,
+   "aviso": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 459,
+     "bottom": 503
+    },
+    {
+     "s": "#chq-btn",
+     "top": 459,
+     "bottom": 503
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/diagnostico/",
+   "w": 768,
+   "h": 1024,
+   "aviso": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 421,
+     "bottom": 465
+    },
+    {
+     "s": "#chq-btn",
+     "top": 421,
+     "bottom": 465
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/diagnostico/",
+   "w": 834,
+   "h": 1112,
+   "aviso": {
+    "top": 997,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 115
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 397,
+     "bottom": 441
+    },
+    {
+     "s": "#chq-btn",
+     "top": 397,
+     "bottom": 441
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/diagnostico/",
+   "w": 1024,
+   "h": 768,
+   "aviso": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 367,
+     "bottom": 411
+    },
+    {
+     "s": "#chq-btn",
+     "top": 367,
+     "bottom": 411
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/diagnostico/",
+   "w": 1194,
+   "h": 834,
+   "aviso": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 409,
+     "bottom": 453
+    },
+    {
+     "s": "#chq-btn",
+     "top": 409,
+     "bottom": 453
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/diagnostico/",
+   "w": 1440,
+   "h": 900,
+   "aviso": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 416,
+     "bottom": 460
+    },
+    {
+     "s": "#chq-btn",
+     "top": 416,
+     "bottom": 460
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/diagnostico/",
+   "w": 1920,
+   "h": 1080,
+   "aviso": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 374,
+     "bottom": 418
+    },
+    {
+     "s": "#chq-btn",
+     "top": 374,
+     "bottom": 418
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/contacto/",
+   "w": 360,
+   "h": 800,
+   "aviso": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "tapados": [
+    "input#f-sitio «tuempresa.cl» 662–706",
+    "textarea#f-mensaje «Qué hace tu empresa y qué nece» 783–874"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 933,
+     "bottom": 977
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": false
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/contacto/",
+   "w": 390,
+   "h": 844,
+   "aviso": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "tapados": [
+    "textarea#f-mensaje «Qué hace tu empresa y qué nece» 734–825",
+    "input#f-consiento «» 825–869",
+    "a «política de privacidad» 840–885"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 884,
+     "bottom": 928
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": false
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/contacto/",
+   "w": 768,
+   "h": 1024,
+   "aviso": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "tapados": [
+    "a «hola@spindlelab.cl» 906–950"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 859,
+     "bottom": 903
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/contacto/",
+   "w": 834,
+   "h": 1112,
+   "aviso": {
+    "top": 997,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 115
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 757,
+     "bottom": 801
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/contacto/",
+   "w": 1024,
+   "h": 768,
+   "aviso": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "tapados": [
+    "input#f-consiento «» 667–711",
+    "a «política de privacidad» 697–714",
+    "button «Enviar mi mensaje» 727–771"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 727,
+     "bottom": 771
+    }
+   ],
+   "chequeoTapado": [
+    ".contact-form button[type=\"submit\"]"
+   ],
+   "chequeoEnPantalla": false
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/contacto/",
+   "w": 1194,
+   "h": 834,
+   "aviso": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "tapados": [
+    "button «Enviar mi mensaje» 770–814",
+    "a «hola@spindlelab.cl» 830–847"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 770,
+     "bottom": 814
+    }
+   ],
+   "chequeoTapado": [
+    ".contact-form button[type=\"submit\"]"
+   ],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/contacto/",
+   "w": 1440,
+   "h": 900,
+   "aviso": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "tapados": [
+    "a «hola@spindlelab.cl» 838–856"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 778,
+     "bottom": 822
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "hoy",
+   "ruta": "/v3/contacto/",
+   "w": 1920,
+   "h": 1080,
+   "aviso": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 736,
+     "bottom": 780
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/",
+   "w": 360,
+   "h": 800,
+   "aviso": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 590,
+     "bottom": 634
+    },
+    {
+     "s": "#chq-btn",
+     "top": 590,
+     "bottom": 634
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/",
+   "w": 390,
+   "h": 844,
+   "aviso": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 607,
+     "bottom": 651
+    },
+    {
+     "s": "#chq-btn",
+     "top": 607,
+     "bottom": 651
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/",
+   "w": 768,
+   "h": 1024,
+   "aviso": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 767,
+     "bottom": 811
+    },
+    {
+     "s": "#chq-btn",
+     "top": 767,
+     "bottom": 811
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/",
+   "w": 834,
+   "h": 1112,
+   "aviso": {
+    "top": 1043,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 963,
+     "bottom": 1007
+    },
+    {
+     "s": "#chq-btn",
+     "top": 963,
+     "bottom": 1007
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/",
+   "w": 1024,
+   "h": 768,
+   "aviso": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 637,
+     "bottom": 681
+    },
+    {
+     "s": "#chq-btn",
+     "top": 637,
+     "bottom": 681
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/",
+   "w": 1194,
+   "h": 834,
+   "aviso": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 632,
+     "bottom": 676
+    },
+    {
+     "s": "#chq-btn",
+     "top": 684,
+     "bottom": 728
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/",
+   "w": 1440,
+   "h": 900,
+   "aviso": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 696,
+     "bottom": 740
+    },
+    {
+     "s": "#chq-btn",
+     "top": 748,
+     "bottom": 792
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/",
+   "w": 1920,
+   "h": 1080,
+   "aviso": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 895,
+     "bottom": 939
+    },
+    {
+     "s": "#chq-btn",
+     "top": 947,
+     "bottom": 991
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/",
+   "w": 375,
+   "h": 667,
+   "aviso": {
+    "top": 533,
+    "bottom": 667,
+    "left": 0,
+    "right": 375,
+    "alto": 134
+   },
+   "tapados": [
+    "input#chq-dominio «tuempresa.cl» 599–643",
+    "button#chq-btn «Revisar mi sitio» 599–643"
+   ],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 599,
+     "bottom": 643
+    },
+    {
+     "s": "#chq-btn",
+     "top": 599,
+     "bottom": 643
+    }
+   ],
+   "chequeoTapado": [
+    "#chq-dominio",
+    "#chq-btn"
+   ],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/",
+   "w": 414,
+   "h": 896,
+   "aviso": {
+    "top": 762,
+    "bottom": 896,
+    "left": 0,
+    "right": 414,
+    "alto": 134
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 579,
+     "bottom": 623
+    },
+    {
+     "s": "#chq-btn",
+     "top": 579,
+     "bottom": 623
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/diagnostico/",
+   "w": 360,
+   "h": 800,
+   "aviso": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 459,
+     "bottom": 503
+    },
+    {
+     "s": "#chq-btn",
+     "top": 459,
+     "bottom": 503
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/diagnostico/",
+   "w": 390,
+   "h": 844,
+   "aviso": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 459,
+     "bottom": 503
+    },
+    {
+     "s": "#chq-btn",
+     "top": 459,
+     "bottom": 503
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/diagnostico/",
+   "w": 768,
+   "h": 1024,
+   "aviso": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 421,
+     "bottom": 465
+    },
+    {
+     "s": "#chq-btn",
+     "top": 421,
+     "bottom": 465
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/diagnostico/",
+   "w": 834,
+   "h": 1112,
+   "aviso": {
+    "top": 1043,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 397,
+     "bottom": 441
+    },
+    {
+     "s": "#chq-btn",
+     "top": 397,
+     "bottom": 441
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/diagnostico/",
+   "w": 1024,
+   "h": 768,
+   "aviso": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 367,
+     "bottom": 411
+    },
+    {
+     "s": "#chq-btn",
+     "top": 367,
+     "bottom": 411
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/diagnostico/",
+   "w": 1194,
+   "h": 834,
+   "aviso": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 409,
+     "bottom": 453
+    },
+    {
+     "s": "#chq-btn",
+     "top": 409,
+     "bottom": 453
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/diagnostico/",
+   "w": 1440,
+   "h": 900,
+   "aviso": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 416,
+     "bottom": 460
+    },
+    {
+     "s": "#chq-btn",
+     "top": 416,
+     "bottom": 460
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/diagnostico/",
+   "w": 1920,
+   "h": 1080,
+   "aviso": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": "#chq-dominio",
+     "top": 374,
+     "bottom": 418
+    },
+    {
+     "s": "#chq-btn",
+     "top": 374,
+     "bottom": 418
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/contacto/",
+   "w": 360,
+   "h": 800,
+   "aviso": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "tapados": [
+    "input#f-sitio «tuempresa.cl» 662–706",
+    "textarea#f-mensaje «Qué hace tu empresa y qué nece» 783–874"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 933,
+     "bottom": 977
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": false
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/contacto/",
+   "w": 390,
+   "h": 844,
+   "aviso": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "tapados": [
+    "textarea#f-mensaje «Qué hace tu empresa y qué nece» 734–825",
+    "input#f-consiento «» 825–869",
+    "a «política de privacidad» 840–885"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 884,
+     "bottom": 928
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": false
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/contacto/",
+   "w": 768,
+   "h": 1024,
+   "aviso": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "tapados": [
+    "a «hola@spindlelab.cl» 906–950"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 859,
+     "bottom": 903
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/contacto/",
+   "w": 834,
+   "h": 1112,
+   "aviso": {
+    "top": 1043,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 757,
+     "bottom": 801
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/contacto/",
+   "w": 1024,
+   "h": 768,
+   "aviso": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "tapados": [
+    "input#f-consiento «» 667–711",
+    "a «política de privacidad» 697–714",
+    "button «Enviar mi mensaje» 727–771"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 727,
+     "bottom": 771
+    }
+   ],
+   "chequeoTapado": [
+    ".contact-form button[type=\"submit\"]"
+   ],
+   "chequeoEnPantalla": false
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/contacto/",
+   "w": 1194,
+   "h": 834,
+   "aviso": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "tapados": [
+    "button «Enviar mi mensaje» 770–814",
+    "a «hola@spindlelab.cl» 830–847"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 770,
+     "bottom": 814
+    }
+   ],
+   "chequeoTapado": [
+    ".contact-form button[type=\"submit\"]"
+   ],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/contacto/",
+   "w": 1440,
+   "h": 900,
+   "aviso": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "tapados": [
+    "a «hola@spindlelab.cl» 838–856"
+   ],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 778,
+     "bottom": 822
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  },
+  {
+   "variante": "spec",
+   "ruta": "/v3/contacto/",
+   "w": 1920,
+   "h": 1080,
+   "aviso": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "tapados": [],
+   "controles": [
+    {
+     "s": ".contact-form button[type=\"submit\"]",
+     "top": 736,
+     "bottom": 780
+    }
+   ],
+   "chequeoTapado": [],
+   "chequeoEnPantalla": true
+  }
+ ],
+ "conceptos": [
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 360,
+   "h": 800,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 126,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 360,
+   "h": 800,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 126,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": false,
+     "tapa": [
+      "a.",
+      "p."
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "bajoAviso": [
+    "summary «Tonela Problema + Ver las secc» 736–780"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 390,
+   "h": 844,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 156,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 749,
+     "bottom": 762,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 390,
+   "h": 844,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 156,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 749,
+     "bottom": 762,
+     "aLaVista": false,
+     "tapa": [
+      "p."
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "bajoAviso": [
+    "summary «Tonela Problema + Ver las secc» 780–824"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 768,
+   "h": 1024,
+   "aviso": false,
+   "aLaVista": [],
+   "holguraBarra": 534,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 768,
+   "h": 1024,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 534,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "bajoAviso": [
+    "summary «Tonela Problema + Ver las secc» 960–1004"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 834,
+   "h": 1112,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 600,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 834,
+   "h": 1112,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 600,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 997,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 115
+   },
+   "bajoAviso": [
+    "summary «Tonela Problema + Ver las secc» 1048–1092"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 1024,
+   "h": 768,
+   "aviso": false,
+   "aLaVista": [],
+   "holguraBarra": 790,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 1024,
+   "h": 768,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 790,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "bajoAviso": [
+    "a «Inicio» 662–706",
+    "a «Trabajo» 662–706",
+    "summary «Tonela Problema + Ver las secc» 704–748"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 1194,
+   "h": 834,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 1194,
+   "h": 834,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 1440,
+   "h": 900,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 1440,
+   "h": 900,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 1920,
+   "h": 1080,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "tonela",
+   "w": 1920,
+   "h": 1080,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 360,
+   "h": 800,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 133,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5527,
+     "bottom": 5541,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 360,
+   "h": 800,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 133,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": false,
+     "tapa": [
+      "a.",
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5527,
+     "bottom": 5541,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "bajoAviso": [
+    "summary «Ocelo Problema + Ver las secci» 736–780"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 390,
+   "h": 844,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 163,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 721,
+     "bottom": 735,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5588,
+     "bottom": 5601,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 390,
+   "h": 844,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 163,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 721,
+     "bottom": 735,
+     "aLaVista": false,
+     "tapa": [
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5588,
+     "bottom": 5601,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "bajoAviso": [
+    "summary «Ocelo Problema + Ver las secci» 780–824"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 768,
+   "h": 1024,
+   "aviso": false,
+   "aLaVista": [],
+   "holguraBarra": 541,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7903,
+     "bottom": 7917,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 768,
+   "h": 1024,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 541,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7903,
+     "bottom": 7917,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "bajoAviso": [
+    "summary «Ocelo Problema + Ver las secci» 960–1004"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 834,
+   "h": 1112,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 607,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7659,
+     "bottom": 7673,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 834,
+   "h": 1112,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 607,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7659,
+     "bottom": 7673,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 997,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 115
+   },
+   "bajoAviso": [
+    "summary «Ocelo Problema + Ver las secci» 1048–1092"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 1024,
+   "h": 768,
+   "aviso": false,
+   "aLaVista": [],
+   "holguraBarra": 797,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8911,
+     "bottom": 8925,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 1024,
+   "h": 768,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 797,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8911,
+     "bottom": 8925,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "bajoAviso": [
+    "a «Inicio» 662–706",
+    "a «Trabajo» 662–706",
+    "summary «Ocelo Problema + Ver las secci» 704–748"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 1194,
+   "h": 834,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7544,
+     "bottom": 7558,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 1194,
+   "h": 834,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7544,
+     "bottom": 7558,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 1440,
+   "h": 900,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8865,
+     "bottom": 8879,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 1440,
+   "h": 900,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8865,
+     "bottom": 8879,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 1920,
+   "h": 1080,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 11918,
+     "bottom": 11932,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "ocelo",
+   "w": 1920,
+   "h": 1080,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 11918,
+     "bottom": 11932,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 360,
+   "h": 800,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 119,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 684,
+     "bottom": 697,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5893,
+     "bottom": 5907,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 360,
+   "h": 800,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 119,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 684,
+     "bottom": 697,
+     "aLaVista": false,
+     "tapa": [
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5893,
+     "bottom": 5907,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "bajoAviso": [
+    "summary «Sesenta Problema + Ver las sec» 736–780"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 390,
+   "h": 844,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 149,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 721,
+     "bottom": 735,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 6009,
+     "bottom": 6023,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 390,
+   "h": 844,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 149,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 721,
+     "bottom": 735,
+     "aLaVista": false,
+     "tapa": [
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 6009,
+     "bottom": 6023,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "bajoAviso": [
+    "summary «Sesenta Problema + Ver las sec» 780–824"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 768,
+   "h": 1024,
+   "aviso": false,
+   "aLaVista": [],
+   "holguraBarra": 527,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8804,
+     "bottom": 8818,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 768,
+   "h": 1024,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 527,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8804,
+     "bottom": 8818,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "bajoAviso": [
+    "summary «Sesenta Problema + Ver las sec» 960–1004"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 834,
+   "h": 1112,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 593,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8604,
+     "bottom": 8618,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 834,
+   "h": 1112,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 593,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8604,
+     "bottom": 8618,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 997,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 115
+   },
+   "bajoAviso": [
+    "summary «Sesenta Problema + Ver las sec» 1048–1092"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 1024,
+   "h": 768,
+   "aviso": false,
+   "aLaVista": [],
+   "holguraBarra": 783,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 10111,
+     "bottom": 10124,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 1024,
+   "h": 768,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 783,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 10111,
+     "bottom": 10124,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "bajoAviso": [
+    "a «Inicio» 662–706",
+    "a «Trabajo» 662–706",
+    "summary «Sesenta Problema + Ver las sec» 704–748"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 1194,
+   "h": 834,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8548,
+     "bottom": 8561,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 1194,
+   "h": 834,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8548,
+     "bottom": 8561,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 1440,
+   "h": 900,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 10131,
+     "bottom": 10145,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 1440,
+   "h": 900,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 10131,
+     "bottom": 10145,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 1920,
+   "h": 1080,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 13761,
+     "bottom": 13775,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "sesenta",
+   "w": 1920,
+   "h": 1080,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 13761,
+     "bottom": 13775,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 360,
+   "h": 800,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 119,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5190,
+     "bottom": 5203,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 360,
+   "h": 800,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 119,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": false,
+     "tapa": [
+      "a.",
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5190,
+     "bottom": 5203,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "bajoAviso": [
+    "summary «Doceavo Problema + Ver las sec» 736–780"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 390,
+   "h": 844,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 149,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 749,
+     "bottom": 762,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5322,
+     "bottom": 5336,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 390,
+   "h": 844,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 149,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 749,
+     "bottom": 762,
+     "aLaVista": false,
+     "tapa": [
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5322,
+     "bottom": 5336,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "bajoAviso": [
+    "summary «Doceavo Problema + Ver las sec» 780–824"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 768,
+   "h": 1024,
+   "aviso": false,
+   "aLaVista": [],
+   "holguraBarra": 527,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7465,
+     "bottom": 7479,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 768,
+   "h": 1024,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 527,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7465,
+     "bottom": 7479,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "bajoAviso": [
+    "summary «Doceavo Problema + Ver las sec» 960–1004"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 834,
+   "h": 1112,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 593,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7205,
+     "bottom": 7218,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 834,
+   "h": 1112,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": 593,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7205,
+     "bottom": 7218,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 997,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 115
+   },
+   "bajoAviso": [
+    "summary «Doceavo Problema + Ver las sec» 1048–1092"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 1024,
+   "h": 768,
+   "aviso": false,
+   "aLaVista": [],
+   "holguraBarra": 783,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8350,
+     "bottom": 8364,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 1024,
+   "h": 768,
+   "aviso": true,
+   "aLaVista": [],
+   "holguraBarra": 783,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8350,
+     "bottom": 8364,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "bajoAviso": [
+    "a «Inicio» 662–706",
+    "a «Trabajo» 662–706",
+    "summary «Doceavo Problema + Ver las sec» 704–748"
+   ]
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 1194,
+   "h": 834,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7013,
+     "bottom": 7026,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 1194,
+   "h": 834,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7013,
+     "bottom": 7026,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 1440,
+   "h": 900,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8238,
+     "bottom": 8252,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 1440,
+   "h": 900,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8238,
+     "bottom": 8252,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 1920,
+   "h": 1080,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 11021,
+     "bottom": 11035,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "hoy",
+   "concepto": "doceavo",
+   "w": 1920,
+   "h": 1080,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 11021,
+     "bottom": 11035,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 360,
+   "h": 800,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 48,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 751,
+     "bottom": 765,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 360,
+   "h": 800,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 48,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": false,
+     "tapa": [
+      "a.",
+      "p."
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 607,
+     "bottom": 620,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 390,
+   "h": 844,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 78,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 749,
+     "bottom": 762,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 795,
+     "bottom": 809,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 390,
+   "h": 844,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 78,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 749,
+     "bottom": 762,
+     "aLaVista": false,
+     "tapa": [
+      "p."
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 669,
+     "bottom": 683,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 768,
+   "h": 1024,
+   "aviso": false,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 456,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 975,
+     "bottom": 989,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 768,
+   "h": 1024,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 456,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 868,
+     "bottom": 882,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 834,
+   "h": 1112,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 522,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 1063,
+     "bottom": 1077,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 834,
+   "h": 1112,
+   "aviso": true,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 522,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 1002,
+     "bottom": 1016,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 1043,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 1024,
+   "h": 768,
+   "aviso": false,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 712,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 719,
+     "bottom": 733,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 1024,
+   "h": 768,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 712,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 658,
+     "bottom": 672,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "bajoAviso": [
+    "a «Inicio» 662–706",
+    "a «Trabajo» 662–706"
+   ]
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 1194,
+   "h": 834,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 1194,
+   "h": 834,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 1440,
+   "h": 900,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 1440,
+   "h": 900,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 1920,
+   "h": 1080,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "tonela",
+   "w": 1920,
+   "h": 1080,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 360,
+   "h": 800,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 55,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5527,
+     "bottom": 5541,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 751,
+     "bottom": 765,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 360,
+   "h": 800,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 55,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": false,
+     "tapa": [
+      "a.",
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5527,
+     "bottom": 5541,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 607,
+     "bottom": 620,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 390,
+   "h": 844,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 85,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 721,
+     "bottom": 735,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5588,
+     "bottom": 5601,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 795,
+     "bottom": 809,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 390,
+   "h": 844,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 85,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 721,
+     "bottom": 735,
+     "aLaVista": false,
+     "tapa": [
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5588,
+     "bottom": 5601,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 669,
+     "bottom": 683,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 768,
+   "h": 1024,
+   "aviso": false,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 463,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7903,
+     "bottom": 7917,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 975,
+     "bottom": 989,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 768,
+   "h": 1024,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 463,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7903,
+     "bottom": 7917,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 868,
+     "bottom": 882,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 834,
+   "h": 1112,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 529,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7659,
+     "bottom": 7673,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 1063,
+     "bottom": 1077,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 834,
+   "h": 1112,
+   "aviso": true,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 529,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7659,
+     "bottom": 7673,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 1002,
+     "bottom": 1016,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 1043,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 1024,
+   "h": 768,
+   "aviso": false,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 719,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8911,
+     "bottom": 8925,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 719,
+     "bottom": 733,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 1024,
+   "h": 768,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 719,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8911,
+     "bottom": 8925,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 658,
+     "bottom": 672,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "bajoAviso": [
+    "a «Inicio» 662–706",
+    "a «Trabajo» 662–706"
+   ]
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 1194,
+   "h": 834,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7544,
+     "bottom": 7558,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 1194,
+   "h": 834,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7544,
+     "bottom": 7558,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 1440,
+   "h": 900,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8865,
+     "bottom": 8879,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 1440,
+   "h": 900,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8865,
+     "bottom": 8879,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 1920,
+   "h": 1080,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 11918,
+     "bottom": 11932,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "ocelo",
+   "w": 1920,
+   "h": 1080,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 11918,
+     "bottom": 11932,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 360,
+   "h": 800,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 41,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 684,
+     "bottom": 697,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5893,
+     "bottom": 5907,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 751,
+     "bottom": 765,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 360,
+   "h": 800,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 41,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 684,
+     "bottom": 697,
+     "aLaVista": false,
+     "tapa": [
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5893,
+     "bottom": 5907,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 607,
+     "bottom": 620,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 390,
+   "h": 844,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 71,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 721,
+     "bottom": 735,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 6009,
+     "bottom": 6023,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 795,
+     "bottom": 809,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 390,
+   "h": 844,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 71,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 721,
+     "bottom": 735,
+     "aLaVista": false,
+     "tapa": [
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 6009,
+     "bottom": 6023,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 669,
+     "bottom": 683,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 768,
+   "h": 1024,
+   "aviso": false,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 449,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8804,
+     "bottom": 8818,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 975,
+     "bottom": 989,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 768,
+   "h": 1024,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 449,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8804,
+     "bottom": 8818,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 868,
+     "bottom": 882,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 834,
+   "h": 1112,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 515,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8604,
+     "bottom": 8618,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 1063,
+     "bottom": 1077,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 834,
+   "h": 1112,
+   "aviso": true,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 515,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8604,
+     "bottom": 8618,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 1002,
+     "bottom": 1016,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 1043,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 1024,
+   "h": 768,
+   "aviso": false,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 705,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 10111,
+     "bottom": 10124,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 719,
+     "bottom": 733,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 1024,
+   "h": 768,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 705,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 10111,
+     "bottom": 10124,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 658,
+     "bottom": 672,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "bajoAviso": [
+    "a «Inicio» 662–706",
+    "a «Trabajo» 662–706"
+   ]
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 1194,
+   "h": 834,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8548,
+     "bottom": 8561,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 1194,
+   "h": 834,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8548,
+     "bottom": 8561,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 1440,
+   "h": 900,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 10131,
+     "bottom": 10145,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 1440,
+   "h": 900,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 10131,
+     "bottom": 10145,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 1920,
+   "h": 1080,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 13761,
+     "bottom": 13775,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "sesenta",
+   "w": 1920,
+   "h": 1080,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 13761,
+     "bottom": 13775,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 360,
+   "h": 800,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 41,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5190,
+     "bottom": 5203,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 751,
+     "bottom": 765,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 360,
+   "h": 800,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 41,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 711,
+     "bottom": 725,
+     "aLaVista": false,
+     "tapa": [
+      "a.",
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5190,
+     "bottom": 5203,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 607,
+     "bottom": 620,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 647,
+    "bottom": 800,
+    "left": 0,
+    "right": 360,
+    "alto": 153
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 390,
+   "h": 844,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 71,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 749,
+     "bottom": 762,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5322,
+     "bottom": 5336,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 795,
+     "bottom": 809,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 390,
+   "h": 844,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 71,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 749,
+     "bottom": 762,
+     "aLaVista": false,
+     "tapa": [
+      "p."
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 5322,
+     "bottom": 5336,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 669,
+     "bottom": 683,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 710,
+    "bottom": 844,
+    "left": 0,
+    "right": 390,
+    "alto": 134
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 768,
+   "h": 1024,
+   "aviso": false,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 449,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7465,
+     "bottom": 7479,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 975,
+     "bottom": 989,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 768,
+   "h": 1024,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 449,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 1194,
+     "bottom": 1208,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7465,
+     "bottom": 7479,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 868,
+     "bottom": 882,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 909,
+    "bottom": 1024,
+    "left": 0,
+    "right": 768,
+    "alto": 115
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 834,
+   "h": 1112,
+   "aviso": false,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 515,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7205,
+     "bottom": 7218,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 1063,
+     "bottom": 1077,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 834,
+   "h": 1112,
+   "aviso": true,
+   "aLaVista": [
+    "ficha",
+    "barra"
+   ],
+   "holguraBarra": 515,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 659,
+     "bottom": 673,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7205,
+     "bottom": 7218,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 1002,
+     "bottom": 1016,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 1043,
+    "bottom": 1112,
+    "left": 0,
+    "right": 834,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 1024,
+   "h": 768,
+   "aviso": false,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 705,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8350,
+     "bottom": 8364,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 719,
+     "bottom": 733,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 1024,
+   "h": 768,
+   "aviso": true,
+   "aLaVista": [
+    "barra"
+   ],
+   "holguraBarra": 705,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 766,
+     "bottom": 780,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8350,
+     "bottom": 8364,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    },
+    {
+     "donde": "barra",
+     "texto": "Concepto",
+     "top": 658,
+     "bottom": 672,
+     "aLaVista": true,
+     "tapa": []
+    }
+   ],
+   "avisoCaja": {
+    "top": 699,
+    "bottom": 768,
+    "left": 0,
+    "right": 1024,
+    "alto": 69
+   },
+   "bajoAviso": [
+    "a «Inicio» 662–706",
+    "a «Trabajo» 662–706"
+   ]
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 1194,
+   "h": 834,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7013,
+     "bottom": 7026,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 1194,
+   "h": 834,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 261,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 7013,
+     "bottom": 7026,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 765,
+    "bottom": 834,
+    "left": 0,
+    "right": 1194,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 1440,
+   "h": 900,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8238,
+     "bottom": 8252,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 1440,
+   "h": 900,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 8238,
+     "bottom": 8252,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 831,
+    "bottom": 900,
+    "left": 0,
+    "right": 1440,
+    "alto": 69
+   },
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 1920,
+   "h": 1080,
+   "aviso": false,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 11021,
+     "bottom": 11035,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": null,
+   "bajoAviso": []
+  },
+  {
+   "variante": "spec",
+   "concepto": "doceavo",
+   "w": 1920,
+   "h": 1080,
+   "aviso": true,
+   "aLaVista": [
+    "ficha"
+   ],
+   "holguraBarra": null,
+   "rotulos": [
+    {
+     "donde": "ficha",
+     "texto": "Concepto · 2026",
+     "top": 262,
+     "bottom": 275,
+     "aLaVista": true,
+     "tapa": []
+    },
+    {
+     "donde": "otro",
+     "texto": "Concepto · 2026",
+     "top": 11021,
+     "bottom": 11035,
+     "aLaVista": false,
+     "tapa": [
+      "fuera de la ventana"
+     ]
+    }
+   ],
+   "avisoCaja": {
+    "top": 1011,
+    "bottom": 1080,
+    "left": 0,
+    "right": 1920,
+    "alto": 69
+   },
+   "bajoAviso": []
+  }
+ ]
+}

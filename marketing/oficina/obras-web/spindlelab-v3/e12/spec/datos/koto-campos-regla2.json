@@ -1,0 +1,5933 @@
+{
+ "fecha": "2026-10-23",
+ "fuente": "koto.com, recorrido.mjs a 1440 (22 páginas)",
+ "paginas": {
+  "amazon-1440": {
+   "url": "https://koto.com/projects/amazon",
+   "altoPx": 39589,
+   "mediosPct": 62.4,
+   "campoRegla1Pct": 24.5,
+   "campoRegla2Pct": 29.6,
+   "medios": [
+    {
+     "src": "12a908245b63ed0a3f8a28b4c32e6496c0a39a6631c-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#f65a06",
+     "parte": 0.234,
+     "regla2": "color",
+     "familiaDeColor": 0.367
+    },
+    {
+     "src": "4686cca1fc7fdeefc52c58facefe4eff0e-4432x2493.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#fbfbfa",
+     "parte": 0.106,
+     "regla2": null,
+     "familiaDeColor": 0.106
+    },
+    {
+     "src": "548ec0f46d81c150a2e9eedc9d7bcfa1055c3e1cbf4-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#04070c",
+     "parte": 0.971,
+     "regla2": null,
+     "familiaDeColor": 0.024
+    },
+    {
+     "src": "75c046471acbe2215915a85be376b7583e-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#f45b04",
+     "parte": 0.209,
+     "regla2": "color",
+     "familiaDeColor": 0.366
+    },
+    {
+     "src": "23ecff0216d7799e6614932457c9dd90774-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#485365",
+     "parte": 0.153,
+     "regla2": null,
+     "familiaDeColor": 0.191
+    },
+    {
+     "src": "61206ecc96e373f53336f3ef5514fcffa0c-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fdfcfa",
+     "parte": 0.24,
+     "regla2": null,
+     "familiaDeColor": 0.237
+    },
+    {
+     "src": "5ea7c8edfedb90ab112fefa6bf81167a691-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#000001",
+     "parte": 0.3,
+     "regla2": null,
+     "familiaDeColor": 0.143
+    },
+    {
+     "src": "793e9637b3a1ad2467b07684bd1b6a8277-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#547b9d",
+     "parte": 0.063,
+     "regla2": null,
+     "familiaDeColor": 0.117
+    },
+    {
+     "src": "394753f1ccf162b186d394c48fbbe1c9b2e9aba8f99-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#09101a",
+     "parte": 0.657,
+     "regla2": null,
+     "familiaDeColor": 0.026
+    },
+    {
+     "src": "6d2a458b1e8eb21136768e0b7e7f1bccf61b72089b5-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#0071fe",
+     "parte": 0.843,
+     "regla2": "de color",
+     "familiaDeColor": 0.844
+    },
+    {
+     "src": "5770b7f9c35e396b6ceb7b7ea569cec045-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.891,
+     "regla2": "claro",
+     "familiaDeColor": 0.001
+    },
+    {
+     "src": "d758bcbc34eea6483f82f566fff8648cbe00cc30e89-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#04070c",
+     "parte": 0.969,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "138bb51412422ce5eb8b819b4b909448b19-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#060505",
+     "parte": 0.106,
+     "regla2": null,
+     "familiaDeColor": 0.087
+    },
+    {
+     "src": "d0bba64c10c845075edd59f3dfb6313218af6fa878c-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ee",
+     "parte": 0.772,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "3f5a81407a992b50a94cc30f8de4ad222b852773991-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#050200",
+     "parte": 0.085,
+     "regla2": "color",
+     "familiaDeColor": 0.464
+    },
+    {
+     "src": "4e04dc5cf3db0238fec68d2c51e7b6b8b373210fd40-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#fe9401",
+     "parte": 0.943,
+     "regla2": "de color",
+     "familiaDeColor": 0.939
+    },
+    {
+     "src": "c93e3731a91c2e2a7c3be79a3552d1c9dc4063d3e71-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#0494fb",
+     "parte": 0.955,
+     "regla2": "de color",
+     "familiaDeColor": 0.964
+    },
+    {
+     "src": "b08dcc241cf081fa69bd8e83311bd0483c12f7be0e8-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#04070c",
+     "parte": 0.905,
+     "regla2": null,
+     "familiaDeColor": 0.005
+    },
+    {
+     "src": "689242b6f4537666c56b738152f585c647f806a2db5-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fefefe",
+     "parte": 0.273,
+     "regla2": null,
+     "familiaDeColor": 0.275
+    },
+    {
+     "src": "a5cc544521938d8911f0c25045ed42727f0-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fdfcfc",
+     "parte": 0.202,
+     "regla2": null,
+     "familiaDeColor": 0.137
+    },
+    {
+     "src": "244a6d80330a8b367db45c879733152922-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ef",
+     "parte": 0.436,
+     "regla2": "claro",
+     "familiaDeColor": 0.007
+    },
+    {
+     "src": "25b454886bbc2b1642722521b6d96ec9773c839df73-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#fe5a00",
+     "parte": 0.84,
+     "regla2": "de color",
+     "familiaDeColor": 0.845
+    },
+    {
+     "src": "d12d0b3e4d9bf8e2d61b44cf7c6eecd636-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#e3e5eb",
+     "parte": 0.167,
+     "regla2": null,
+     "familiaDeColor": 0.166
+    },
+    {
+     "src": "ba1cd854c538b8b9a5a673220260f994ac8fee7f43b-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#fe5a00",
+     "parte": 0.715,
+     "regla2": "de color",
+     "familiaDeColor": 0.738
+    },
+    {
+     "src": "1d7f094bf5d0f3b938827d7260dfc366176-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ef",
+     "parte": 0.446,
+     "regla2": "claro",
+     "familiaDeColor": 0.007
+    },
+    {
+     "src": "63246329221f11d5b803434056b7bb7ae970491a16a-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#fffffe",
+     "parte": 0.439,
+     "regla2": "claro",
+     "familiaDeColor": 0.146
+    },
+    {
+     "src": "d190b14071210dc7144262168bf98e284f-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ef",
+     "parte": 0.483,
+     "regla2": "claro",
+     "familiaDeColor": 0.005
+    },
+    {
+     "src": "461f4dea291bcd0882727b75237199f5327-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#fefefe",
+     "parte": 0.48,
+     "regla2": "claro",
+     "familiaDeColor": 0.333
+    },
+    {
+     "src": "a65ed4f4a6959840e46a89a59b6158f5be9267374f2-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#fefffe",
+     "parte": 0.706,
+     "regla2": "claro",
+     "familiaDeColor": 0.008
+    },
+    {
+     "src": "35057975376ac17c1358b07633329c61891da3d90a3-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ee",
+     "parte": 0.654,
+     "regla2": "claro",
+     "familiaDeColor": 0.011
+    },
+    {
+     "src": "e20816a90efb3c9920b38ae81ff84a127361fba6551-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#991a1d",
+     "parte": 0.24,
+     "regla2": "color",
+     "familiaDeColor": 0.552
+    },
+    {
+     "src": "4c8bf2d932716b1850f57a9c85d1b38b2c-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#0d141b",
+     "parte": 0.508,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "5bbaf444bde06ecc28f1499393794a41b44-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#0d141c",
+     "parte": 0.616,
+     "regla2": null,
+     "familiaDeColor": 0.1
+    },
+    {
+     "src": "2593d83d830b2fa0426070ea2dcc0cea5ef-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#ff5100",
+     "parte": 0.327,
+     "regla2": "de color",
+     "familiaDeColor": 0.436
+    },
+    {
+     "src": "f3c852023c1d50b818f697ea2c2db97a849-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ef",
+     "parte": 0.509,
+     "regla2": "claro",
+     "familiaDeColor": 0.004
+    },
+    {
+     "src": "7f9b035a6d07dd5d1609a245e583ad01eac-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#ff5100",
+     "parte": 0.378,
+     "regla2": "de color",
+     "familiaDeColor": 0.409
+    },
+    {
+     "src": "4e694ef8611cecba23efdd581a8c27f0f28-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#fefefe",
+     "parte": 0.589,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "d754992b8254e53d5fc14ffbe7027c131734db02203-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#04070c",
+     "parte": 0.941,
+     "regla2": null,
+     "familiaDeColor": 0.002
+    },
+    {
+     "src": "5f0a012f2eebbc85de6dde70a99924fc00-8864x4986.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#feffff",
+     "parte": 0.345,
+     "regla2": "claro",
+     "familiaDeColor": 0.263
+    },
+    {
+     "src": "281e8cb053ea4b142322073391963a106c-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#151d28",
+     "parte": 0.16,
+     "regla2": null,
+     "familiaDeColor": 0.08
+    },
+    {
+     "src": "5b7e528e9274f62ee13a1e14f600a02a8150ef73705-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#080402",
+     "parte": 0.134,
+     "regla2": null,
+     "familiaDeColor": 0.12
+    },
+    {
+     "src": "b477da96e7e01b736f1d515dad0da12c0cde88f9fcc-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ee",
+     "parte": 0.872,
+     "regla2": "claro",
+     "familiaDeColor": 0.031
+    },
+    {
+     "src": "5491a036a7ed838a018bbab56332f63dfdf-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#c6e6ff",
+     "parte": 0.564,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "78e991768724a943f3dc940972043c12ba3918f8abe-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#d2f0d4",
+     "parte": 0.503,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "8a1bac9acb41a53c6f4d9854c427ede1bc-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ef",
+     "parte": 0.431,
+     "regla2": "claro",
+     "familiaDeColor": 0.035
+    },
+    {
+     "src": "29b325aa6443750746f6e31c4c6210ceb4-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#78796a",
+     "parte": 0.146,
+     "regla2": null,
+     "familiaDeColor": 0.11
+    },
+    {
+     "src": "ce9d59ad581ec4f9082748b7d246d03b05e5bec3e8c-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#0071fe",
+     "parte": 0.81,
+     "regla2": "de color",
+     "familiaDeColor": 0.831
+    },
+    {
+     "src": "391539199a2f38dc6e7c3a9481cc0147023-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#e8d5c7",
+     "parte": 0.357,
+     "regla2": "claro",
+     "familiaDeColor": 0.074
+    },
+    {
+     "src": "2d1e25b4330580f7ca3b71bbf9cb0281c65-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#180803",
+     "parte": 0.09,
+     "regla2": null,
+     "familiaDeColor": 0.094
+    },
+    {
+     "src": "710d10f2635d2b907f5cbb7678dfb0d6330-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#022a77",
+     "parte": 0.082,
+     "regla2": null,
+     "familiaDeColor": 0.238
+    },
+    {
+     "src": "f2a585245897dcf2386896a7211afdf9c9-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#060509",
+     "parte": 0.065,
+     "regla2": null,
+     "familiaDeColor": 0.108
+    },
+    {
+     "src": "8f28bf35690f5ec4f1dc9e2258daa5b33df70ed50f4-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#050609",
+     "parte": 0.264,
+     "regla2": null,
+     "familiaDeColor": 0.098
+    },
+    {
+     "src": "98747ad28e411827085660874170c3c7161dccacf10-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#000304",
+     "parte": 0.882,
+     "regla2": null,
+     "familiaDeColor": 0.03
+    },
+    {
+     "src": "0b03fccfe76a8525a5f5db55707705daab5-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#151719",
+     "parte": 0.048,
+     "regla2": null,
+     "familiaDeColor": 0.043
+    },
+    {
+     "src": "8a31114ef5b42f55e93cfa67d5019d92a17-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#0274f7",
+     "parte": 0.062,
+     "regla2": null,
+     "familiaDeColor": 0.149
+    },
+    {
+     "src": "c267ecd9922a4aef8e58bfb336e52ba86457f450b50-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#371a14",
+     "parte": 0.038,
+     "regla2": null,
+     "familiaDeColor": 0.198
+    },
+    {
+     "src": "265cc1fd52cef7cbf2867255d6ec26f409ecbfd9e38-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ee",
+     "parte": 0.508,
+     "regla2": "claro",
+     "familiaDeColor": 0.274
+    },
+    {
+     "src": "5838d5c6e3fc46e450f94a7406f6a1c928b-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro de color",
+     "dominante": "#002b00",
+     "parte": 0.461,
+     "regla2": null,
+     "familiaDeColor": 0.069
+    },
+    {
+     "src": "78a60b3706629bb537c2ec68e5675a7e62b-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ef",
+     "parte": 0.501,
+     "regla2": "claro",
+     "familiaDeColor": 0.135
+    },
+    {
+     "src": "ecd73cb89829ddabafa14d139aaa4755e3e2c98bc46-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#010d02",
+     "parte": 0.359,
+     "regla2": "color",
+     "familiaDeColor": 0.325
+    },
+    {
+     "src": "170713368e033ecae1c2abe0d4241b5421-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#2a4929",
+     "parte": 0.083,
+     "regla2": null,
+     "familiaDeColor": 0.291
+    },
+    {
+     "src": "635aa5153c4fa458fb487234c8f152eb2b0530c787e-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ee",
+     "parte": 0.362,
+     "regla2": "claro",
+     "familiaDeColor": 0.228
+    },
+    {
+     "src": "14f3d693d0a172507997e74cb7dc31e6e62-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fefefd",
+     "parte": 0.292,
+     "regla2": null,
+     "familiaDeColor": 0.098
+    },
+    {
+     "src": "277481a8d7b5415db8bd9f5be04b1a4a21-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#e9e9e5",
+     "parte": 0.547,
+     "regla2": "claro",
+     "familiaDeColor": 0.05
+    },
+    {
+     "src": "006f288729f024bfdb262f9face6fd5c642-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#05c903",
+     "parte": 0.36,
+     "regla2": "de color",
+     "familiaDeColor": 0.523
+    },
+    {
+     "src": "8675edc992e545ee993b33becb711c3f385-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro de color",
+     "dominante": "#002b00",
+     "parte": 0.434,
+     "regla2": null,
+     "familiaDeColor": 0.094
+    },
+    {
+     "src": "a522185af86721a8b9d2eae83ed2102b439-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#e7d806",
+     "parte": 0.081,
+     "regla2": null,
+     "familiaDeColor": 0.212
+    },
+    {
+     "src": "cbefa6b80ad7929667bba8a2775197c10dc57d372d5-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#00c7fd",
+     "parte": 0.94,
+     "regla2": "de color",
+     "familiaDeColor": 0.948
+    },
+    {
+     "src": "4c9e10a3ca36e572cfc00b0d05298070346-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#171415",
+     "parte": 0.046,
+     "regla2": "color",
+     "familiaDeColor": 0.326
+    },
+    {
+     "src": "124b0114ab25d09d50ae17beadd999bb13432cc0092-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.598,
+     "regla2": "claro",
+     "familiaDeColor": 0.109
+    },
+    {
+     "src": "5a15825b67e25da23a26f9cc7789654ab8-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#bda49a",
+     "parte": 0.136,
+     "regla2": null,
+     "familiaDeColor": 0.05
+    },
+    {
+     "src": "479cff5a43b757c7b29121626e7fe12fed3989c2370-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.741,
+     "regla2": "claro",
+     "familiaDeColor": 0.109
+    },
+    {
+     "src": "b0a247ede48ea12a917da3ccca15f762082-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#5b1401",
+     "parte": 0.169,
+     "regla2": "color",
+     "familiaDeColor": 0.43
+    },
+    {
+     "src": "a35eaba68b729af7770d36925c27546547a-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#37383a",
+     "parte": 0.086,
+     "regla2": null,
+     "familiaDeColor": 0.262
+    },
+    {
+     "src": "fc266c4458bd94d8ea4d8b4092b638c348d42e6e08d-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#feffff",
+     "parte": 0.241,
+     "regla2": null,
+     "familiaDeColor": 0.093
+    },
+    {
+     "src": "6bf3d72b26e3cf99a4e57d5a91ec13309a-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#2c2c2c",
+     "parte": 0.19,
+     "regla2": null,
+     "familiaDeColor": 0.186
+    },
+    {
+     "src": "189acf1e10c2a0884f05ff426f07b9fd2d61c9e67aa-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#00c2a2",
+     "parte": 0.965,
+     "regla2": "de color",
+     "familiaDeColor": 0.97
+    },
+    {
+     "src": "ee66ee2892ed0351aeed82f3ef3b18b5c1-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#fefefd",
+     "parte": 0.077,
+     "regla2": null,
+     "familiaDeColor": 0.105
+    },
+    {
+     "src": "698c90b2cc5d3f27c6b779b641dc2e663ebe916473a-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#00c2a2",
+     "parte": 0.537,
+     "regla2": "de color",
+     "familiaDeColor": 0.567
+    },
+    {
+     "src": "caa4208a671196ca8166155df42319434e7-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#c4ab87",
+     "parte": 0.09,
+     "regla2": null,
+     "familiaDeColor": 0.082
+    },
+    {
+     "src": "4e31a8c350c7b7d004fd09223703640212b-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#b9b7b8",
+     "parte": 0.105,
+     "regla2": null,
+     "familiaDeColor": 0.212
+    },
+    {
+     "src": "ef6a11ac36880e85e4e4731181f1bf6f0e-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro de color",
+     "dominante": "#002935",
+     "parte": 0.659,
+     "regla2": null,
+     "familiaDeColor": 0.062
+    },
+    {
+     "src": "ccf681e27de6cb0d6d778f58f7b39898007-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#666966",
+     "parte": 0.042,
+     "regla2": null,
+     "familiaDeColor": 0.123
+    },
+    {
+     "src": "34b67f154eadffbe1f87c69f7eabf53bd94e041cc87-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#fbf8f1",
+     "parte": 0.879,
+     "regla2": "claro",
+     "familiaDeColor": 0.068
+    },
+    {
+     "src": "4a40c1037ed994b91cb770daf8430c9e68f-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#e7e7e5",
+     "parte": 0.388,
+     "regla2": "claro",
+     "familiaDeColor": 0.025
+    },
+    {
+     "src": "142a07760035918eb87688836fc2c0872b-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#f9f8f7",
+     "parte": 0.081,
+     "regla2": null,
+     "familiaDeColor": 0.066
+    },
+    {
+     "src": "a6531643950e0dc45b0f751fb022750d8d8-2160x1332.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#f4f3ef",
+     "parte": 0.846,
+     "regla2": "claro",
+     "familiaDeColor": 0.001
+    },
+    {
+     "src": "3d9de83c2f14c9102066a071fdeb98fa69b-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#d4d3d0",
+     "parte": 0.418,
+     "regla2": "claro",
+     "familiaDeColor": 0.305
+    },
+    {
+     "src": "5ac2d2c28022a71b474c9160a23fa947bd0-2160x1332.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#d4d3d0",
+     "parte": 0.647,
+     "regla2": "claro",
+     "familiaDeColor": 0.102
+    },
+    {
+     "src": "60904d5a1bfcaeadfd5ef2612ed92a43fc7e56d4c86ae04e172e35617d53",
+     "w": 416,
+     "h": 234,
+     "tipo": "imagen",
+     "dominante": "#fdfdfc",
+     "parte": 0.122,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    }
+   ]
+  },
+  "articulo-1440": {
+   "url": "https://koto.com/latest/koto-introduces-new-wordmark-for-instagram",
+   "altoPx": 4039,
+   "mediosPct": 54.5,
+   "campoRegla1Pct": 0.0,
+   "campoRegla2Pct": 0.0,
+   "medios": [
+    {
+     "src": "540940e4fcfcc36841d47761d3155a1f795-6534x4356.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.765,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "b1dfeed685c969caf8fcc1bab03eec8d125-3840x2160.jpg&w=750&q=75",
+     "w": 664,
+     "h": 374,
+     "tipo": "imagen",
+     "dominante": "#171707",
+     "parte": 0.058,
+     "regla2": null,
+     "familiaDeColor": 0.079
+    },
+    {
+     "src": "b1dfeed685c969caf8fcc1bab03eec8d125-3840x2160.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#141414",
+     "parte": 0.231,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "e412164d9de305b68f2bb6d88678c145c38-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo oscuro",
+     "dominante": "#191705",
+     "parte": 0.413,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "5428159db8acb761efb3b265c5477e60d81-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#394a54",
+     "parte": 0.099,
+     "regla2": null,
+     "familiaDeColor": 0.028
+    },
+    {
+     "src": "32335d297ba3d2a23a68c39c122b480b4e8-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo neutro medio",
+     "dominante": "#373328",
+     "parte": 0.369,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "1152bf9520037a24c456c6112a78dccb6e7-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#b3b3b5",
+     "parte": 0.089,
+     "regla2": null,
+     "familiaDeColor": 0.055
+    },
+    {
+     "src": "c92980622e6a8e91a8c3851a97e9d50dfc4-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo oscuro",
+     "dominante": "#0b0b0a",
+     "parte": 0.413,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2446659989edca8021ea49682949576793b-3648x2052.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.849,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2ac3ca06d790e8e05faf23f8e8e58c9a2ef-3840x2160.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#191815",
+     "parte": 0.3,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "7c8a33a53f5836f641434bf0d083c14827d-1888x1416.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.602,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "6dad6b813a75085f5b3c085ddf6a9ce319776-665x436.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo oscuro",
+     "dominante": "#262626",
+     "parte": 0.671,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "56e0c535e376e03cf596f38207400a5445ee5e957bb-d_1280?region=us",
+     "w": 342,
+     "h": 256,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.441,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "d2420f40319f8595a698358d8eec988be8fedf533d7-d_1280?region=us",
+     "w": 342,
+     "h": 257,
+     "tipo": "campo oscuro de color",
+     "dominante": "#2a2707",
+     "parte": 0.666,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "02308489a32c4cdb775f863e2754d2b281d28a8a19f-d_1280?region=us",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#141414",
+     "parte": 0.251,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "01a8503238ef090956b788313658788bd42-3200x2400.jpg&w=384&q=75",
+     "w": 342,
+     "h": 256,
+     "tipo": "imagen",
+     "dominante": "#261b13",
+     "parte": 0.293,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "f4d3b309348dc57fb4e09be6c6abcecdd113cd9e2d9-d_1280?region=us",
+     "w": 342,
+     "h": 256,
+     "tipo": "imagen",
+     "dominante": "#141414",
+     "parte": 0.169,
+     "regla2": null,
+     "familiaDeColor": 0.009
+    },
+    {
+     "src": "34f4956fc0a3944fbc0e0eb5c6bf31bbabf-2454x1472.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo oscuro",
+     "dominante": "#272405",
+     "parte": 0.424,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "d6b7cb96ee9da10a5f2d88168ca74b48c7b23787399-d_1280?region=us",
+     "w": 342,
+     "h": 256,
+     "tipo": "imagen",
+     "dominante": "#141515",
+     "parte": 0.089,
+     "regla2": null,
+     "familiaDeColor": 0.017
+    },
+    {
+     "src": "49e53d8bc387fe1e46c4dcac21936c804d5-2000x1234.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo oscuro",
+     "dominante": "#252425",
+     "parte": 0.353,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    }
+   ]
+  },
+  "call-of-duty-1440": {
+   "url": "https://koto.com/projects/call-of-duty",
+   "altoPx": 17455,
+   "mediosPct": 64.4,
+   "campoRegla1Pct": 2.9,
+   "campoRegla2Pct": 4.3,
+   "medios": [
+    {
+     "src": "7c87e9138bf59a74c6c0278c14d84520f7-2160x1296.png&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.819,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "5b6f00387efab00229b0d89599cfc78797f7d922a16-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#010103",
+     "parte": 0.518,
+     "regla2": null,
+     "familiaDeColor": 0.035
+    },
+    {
+     "src": "b8b0f4a1f8010199a2e3fd4b7fb7c63ea4ea52667f5-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#ff0000",
+     "parte": 0.358,
+     "regla2": "de color",
+     "familiaDeColor": 0.369
+    },
+    {
+     "src": "66114757b9e41aab59bf76e0d755fbc55fc845-640x640.png&w=96&q=75",
+     "w": 96,
+     "h": 96,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.719,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "70a0a35c47323e4bde7e990efd418a59aed466370a4-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#060606",
+     "parte": 0.469,
+     "regla2": null,
+     "familiaDeColor": 0.087
+    },
+    {
+     "src": "95ff4c13081a5dafb56e49b3d03524c01c5f2362ce0-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#080808",
+     "parte": 0.901,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "4995f520f57f955c85e65d569aa47a3285666c12ef1-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#070707",
+     "parte": 0.57,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "b1487b3301aa33234c74c6df915e7603cc4c27c4650-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#a8bac8",
+     "parte": 0.062,
+     "regla2": null,
+     "familiaDeColor": 0.032
+    },
+    {
+     "src": "467ba848e52e65159fc636579eecf32e6c83e501827-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#000303",
+     "parte": 0.585,
+     "regla2": null,
+     "familiaDeColor": 0.001
+    },
+    {
+     "src": "c583b403503cb52af434ffd5507db76094e4270c842-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#060401",
+     "parte": 0.48,
+     "regla2": null,
+     "familiaDeColor": 0.002
+    },
+    {
+     "src": "bbfab39a64741f600bb7fed3c6d9dd7583414706deb-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#030508",
+     "parte": 0.131,
+     "regla2": null,
+     "familiaDeColor": 0.02
+    },
+    {
+     "src": "481dd25c951302203005302521bc42f7b6994315eb6-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#070707",
+     "parte": 0.886,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "f8024b681e61fefa8a6cac12b8d5eff45f9-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fefefe",
+     "parte": 0.156,
+     "regla2": null,
+     "familiaDeColor": 0.124
+    },
+    {
+     "src": "783414da023eda520771f30a0ead805ac1a1ad694a5-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#050101",
+     "parte": 0.189,
+     "regla2": null,
+     "familiaDeColor": 0.201
+    },
+    {
+     "src": "bc73f0055d2b222e98678055a983d174130a88e7902-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#090907",
+     "parte": 0.172,
+     "regla2": null,
+     "familiaDeColor": 0.158
+    },
+    {
+     "src": "c6f4c22ad4b0ebda748755f5bcfa3e95a55-2098x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.52,
+     "regla2": null,
+     "familiaDeColor": 0.094
+    },
+    {
+     "src": "821349eb4e934f60d138024282fa31139089f1570a1-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#070707",
+     "parte": 0.46,
+     "regla2": null,
+     "familiaDeColor": 0.028
+    },
+    {
+     "src": "e31c125bc020f03a4bfe707f517f63e44d-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#0a0b06",
+     "parte": 0.125,
+     "regla2": null,
+     "familiaDeColor": 0.028
+    },
+    {
+     "src": "48aa39089d1f9f44fcad8d6d91687234f471a623b26-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.836,
+     "regla2": null,
+     "familiaDeColor": 0.091
+    },
+    {
+     "src": "888422d3ef1d6b5e1fcabec8f340dfbfb9c-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#141612",
+     "parte": 0.25,
+     "regla2": null,
+     "familiaDeColor": 0.026
+    },
+    {
+     "src": "7a7dfdfa5e462c52bfa8996ca61971b4cbd0bd90a02-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#a6b5bc",
+     "parte": 0.089,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2598c19d344ec4e683d4daa10a138f998a2-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#0a0909",
+     "parte": 0.202,
+     "regla2": null,
+     "familiaDeColor": 0.046
+    },
+    {
+     "src": "913ebbf458a350888d26c7d27a6a357f26cf4675305-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#151515",
+     "parte": 0.796,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "5017d5e1ffc3d93653a67f601ff871e819aec6570eb-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#050403",
+     "parte": 0.35,
+     "regla2": null,
+     "familiaDeColor": 0.246
+    },
+    {
+     "src": "4f84ccaa4817d82f9eddfb2985f790deac-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#070505",
+     "parte": 0.093,
+     "regla2": null,
+     "familiaDeColor": 0.038
+    },
+    {
+     "src": "63584f5c2dfc1971c5ee1c7e1e0d2b370b0-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fffefe",
+     "parte": 0.18,
+     "regla2": null,
+     "familiaDeColor": 0.086
+    },
+    {
+     "src": "d3d9c74ddd58a431621dd7c89024856fb5dc528477f-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.831,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "00b9e15588a51cfcf417cba0b0f88e15931-2098x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#070506",
+     "parte": 0.072,
+     "regla2": null,
+     "familiaDeColor": 0.256
+    },
+    {
+     "src": "7d5ee6948ce4a18913ef8d8cdcd8af5529-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#fefefe",
+     "parte": 0.207,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "8052972d0448564d5e0b1765c943bc59b7caff194d7-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#070604",
+     "parte": 0.508,
+     "regla2": null,
+     "familiaDeColor": 0.035
+    },
+    {
+     "src": "0a7e20f262a3d90193e3fd8461a6f174bac33fd430b-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.802,
+     "regla2": null,
+     "familiaDeColor": 0.02
+    },
+    {
+     "src": "1a0c06276060a563a7d9a2af4a9352edb9-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#232c36",
+     "parte": 0.08,
+     "regla2": null,
+     "familiaDeColor": 0.044
+    },
+    {
+     "src": "6a80459cdaca8a8e984d7244443847c8f6e128dee2b-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#839ca6",
+     "parte": 0.163,
+     "regla2": null,
+     "familiaDeColor": 0.016
+    },
+    {
+     "src": "69fcc3845044b3c672d0674323fb9f024a66fb7d629-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#040303",
+     "parte": 0.712,
+     "regla2": null,
+     "familiaDeColor": 0.081
+    },
+    {
+     "src": "9d26e8eae8250706cdd571e5804ebd83b9ca9faf20d-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#070707",
+     "parte": 0.924,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "a7aad288f0ab1f33990482bd81d6779725-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#0a0a26",
+     "parte": 0.076,
+     "regla2": null,
+     "familiaDeColor": 0.238
+    },
+    {
+     "src": "ff5acc2bb68785d76f8516fce6d237dc8cc-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#a80406",
+     "parte": 0.103,
+     "regla2": "color",
+     "familiaDeColor": 0.479
+    },
+    {
+     "src": "a70faf69904c8153775dcb2adf99d6e897f2c805ace-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.492,
+     "regla2": null,
+     "familiaDeColor": 0.253
+    },
+    {
+     "src": "34dd297b46c8ff16b423fdc2d1daabe313569326361-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#060606",
+     "parte": 0.541,
+     "regla2": null,
+     "familiaDeColor": 0.024
+    },
+    {
+     "src": "76a606a0e6f48e75fc93fd2ebe887d6573-3840x2160.png&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#111111",
+     "parte": 0.735,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "02255481ce9e273f7f8bfff4015c97eadf6d7691fd9f0aec96156c636bb1",
+     "w": 416,
+     "h": 234,
+     "tipo": "campo de color",
+     "dominante": "#a339fe",
+     "parte": 0.903,
+     "regla2": "de color",
+     "familiaDeColor": 0.893
+    }
+   ]
+  },
+  "carreras-1440": {
+   "url": "https://koto.com/careers",
+   "altoPx": 5909,
+   "mediosPct": 10.2,
+   "campoRegla1Pct": 0.0,
+   "campoRegla2Pct": 1.5,
+   "medios": [
+    {
+     "src": "ce28b02081603b031b5388375d4922eb5db75-580x580.jpg&w=640&q=75",
+     "w": 400,
+     "h": 400,
+     "tipo": "imagen",
+     "dominante": "#c9c8c7",
+     "parte": 0.139,
+     "regla2": null,
+     "familiaDeColor": 0.14
+    },
+    {
+     "src": "92db0d86ce044a0ff1e07889f2fb4ba7be701-728x910.jpg&w=640&q=75",
+     "w": 320,
+     "h": 400,
+     "tipo": "imagen",
+     "dominante": "#dbd8c6",
+     "parte": 0.165,
+     "regla2": "color",
+     "familiaDeColor": 0.397
+    },
+    {
+     "src": "1dea39fd76eff7815caaa3c32ba62dcc2c25-1100x680.jpg&w=640&q=75",
+     "w": 647,
+     "h": 400,
+     "tipo": "imagen",
+     "dominante": "#241c18",
+     "parte": 0.074,
+     "regla2": null,
+     "familiaDeColor": 0.194
+    },
+    {
+     "src": "4f5df351e78621a0d19704f99b7a19fd20a76a60a78-d_1280?region=us",
+     "w": 320,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#161a14",
+     "parte": 0.058,
+     "regla2": null,
+     "familiaDeColor": 0.022
+    },
+    {
+     "src": "9c317d65e7748f987ce465cd96a8a19bed2-1920x1080.jpg&w=640&q=75",
+     "w": 202,
+     "h": 152,
+     "tipo": "imagen",
+     "dominante": "#e6e7e7",
+     "parte": 0.063,
+     "regla2": null,
+     "familiaDeColor": 0.152
+    },
+    {
+     "src": "390f561fc8c4fbbb5f288495f415aff368d-1920x1080.jpg&w=640&q=75",
+     "w": 202,
+     "h": 152,
+     "tipo": "imagen",
+     "dominante": "#e8dac8",
+     "parte": 0.056,
+     "regla2": null,
+     "familiaDeColor": 0.116
+    },
+    {
+     "src": "7a0949c37ed80cc5aac3d29ef87ff5ce7ee-1920x1080.jpg&w=640&q=75",
+     "w": 202,
+     "h": 152,
+     "tipo": "imagen",
+     "dominante": "#d9cbc3",
+     "parte": 0.057,
+     "regla2": null,
+     "familiaDeColor": 0.029
+    },
+    {
+     "src": "0f78e40dd96ca6ec0a0d4152f112eab2704-1920x1080.jpg&w=640&q=75",
+     "w": 202,
+     "h": 152,
+     "tipo": "imagen",
+     "dominante": "#e7e9e6",
+     "parte": 0.071,
+     "regla2": null,
+     "familiaDeColor": 0.154
+    },
+    {
+     "src": "ba09a4d289ee0e1a0e96a804f8e787d7239-4215x3295.jpg&w=640&q=75",
+     "w": 202,
+     "h": 152,
+     "tipo": "imagen",
+     "dominante": "#050506",
+     "parte": 0.101,
+     "regla2": null,
+     "familiaDeColor": 0.046
+    },
+    {
+     "src": "390f561fc8c4fbbb5f288495f415aff368d-1920x1080.jpg&w=384&q=75",
+     "w": 366,
+     "h": 220,
+     "tipo": "imagen",
+     "dominante": "#090806",
+     "parte": 0.036,
+     "regla2": null,
+     "familiaDeColor": 0.1
+    }
+   ]
+  },
+  "contacto-1440": {
+   "url": "https://koto.com/contact",
+   "altoPx": 2275,
+   "mediosPct": 2.3,
+   "campoRegla1Pct": 0.0,
+   "campoRegla2Pct": 0.0,
+   "medios": [
+    {
+     "src": "390f561fc8c4fbbb5f288495f415aff368d-1920x1080.jpg&w=384&q=75",
+     "w": 350,
+     "h": 210,
+     "tipo": "imagen",
+     "dominante": "#867a6b",
+     "parte": 0.033,
+     "regla2": null,
+     "familiaDeColor": 0.103
+    }
+   ]
+  },
+  "de-extinction-1440": {
+   "url": "https://koto.com/projects/de-extinction",
+   "altoPx": 11953,
+   "mediosPct": 63.1,
+   "campoRegla1Pct": 32.6,
+   "campoRegla2Pct": 32.6,
+   "medios": [
+    {
+     "src": "0617dab31da04a1d69a33b54beecaa0e8d-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#130703",
+     "parte": 0.456,
+     "regla2": null,
+     "familiaDeColor": 0.051
+    },
+    {
+     "src": "b77dd62b3d8e66b8f564bf12aa7fa22c693-2475x1605.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#00de01",
+     "parte": 0.75,
+     "regla2": "de color",
+     "familiaDeColor": 0.75
+    },
+    {
+     "src": "e6c71f4774a1cafe319f334f09c23f6f6f3-2475x3300.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#2a2a2a",
+     "parte": 0.198,
+     "regla2": null,
+     "familiaDeColor": 0.063
+    },
+    {
+     "src": "f60944139cb7528f42ae65b3498e36600a45393cb04-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.499,
+     "regla2": "claro",
+     "familiaDeColor": 0.356
+    },
+    {
+     "src": "7a182a051d1c6c90a54610cc9b20c5d37d03eec10c6-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.945,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "8cd98bf91791128b929a6811e836448e49-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#090c15",
+     "parte": 0.062,
+     "regla2": null,
+     "familiaDeColor": 0.097
+    },
+    {
+     "src": "72b16ef17a521bca456796b3c4a4e038251619df524-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.912,
+     "regla2": "claro",
+     "familiaDeColor": 0.063
+    },
+    {
+     "src": "e342939484f3016d857b3362a7cc183f11d-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.551,
+     "regla2": "claro",
+     "familiaDeColor": 0.012
+    },
+    {
+     "src": "5488186b5787a1d114b4dc6476796979959216d1c57-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#00d900",
+     "parte": 0.755,
+     "regla2": "de color",
+     "familiaDeColor": 0.753
+    },
+    {
+     "src": "7ed24f8bf5baa0b054f66a9b407a60928bf63424de0-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.863,
+     "regla2": "claro",
+     "familiaDeColor": 0.08
+    },
+    {
+     "src": "a400774c75ae2789627af1f62eb69342bad6a7e11f5-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#00d900",
+     "parte": 0.723,
+     "regla2": "de color",
+     "familiaDeColor": 0.708
+    },
+    {
+     "src": "7939aa053a269f17f8178d158a50d5c9b13-2475x3300.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#141606",
+     "parte": 0.04,
+     "regla2": null,
+     "familiaDeColor": 0.144
+    },
+    {
+     "src": "c3c477c8ccbff8d96ebc37b2bde9aee887-5760x3240.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#01c601",
+     "parte": 0.124,
+     "regla2": null,
+     "familiaDeColor": 0.224
+    },
+    {
+     "src": "6442a9305915106d24dee63f45877337cc6dd8fa356-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.585,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "333ef9e3cb16a10502c667c2c91624c4d9a-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.538,
+     "regla2": "claro",
+     "familiaDeColor": 0.118
+    },
+    {
+     "src": "73f9f54b20f1206990a023fcee1183b44a-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#040303",
+     "parte": 0.065,
+     "regla2": null,
+     "familiaDeColor": 0.101
+    },
+    {
+     "src": "b89bb0fb361dd6c2a7c988202b80ecb5e4f3193bb4e-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo neutro medio",
+     "dominante": "#bac7b5",
+     "parte": 0.429,
+     "regla2": null,
+     "familiaDeColor": 0.031
+    },
+    {
+     "src": "8d88f923769ac5dc2ec1edd7445ef103e58-2475x3300.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.431,
+     "regla2": "claro",
+     "familiaDeColor": 0.405
+    },
+    {
+     "src": "162c29d9ca1e65610c6c035272db725a105b9a69f82-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.932,
+     "regla2": "claro",
+     "familiaDeColor": 0.015
+    },
+    {
+     "src": "01d528d0247799331740fe77fd9bef8941bf2197d97-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#df4ff3",
+     "parte": 0.851,
+     "regla2": "de color",
+     "familiaDeColor": 0.843
+    },
+    {
+     "src": "330847e2161b3d9085817bda58a567defb-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.51,
+     "regla2": "claro",
+     "familiaDeColor": 0.165
+    },
+    {
+     "src": "d4b43e9739c2b2c498b897fded66142e2227629ff2d-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#eaf1ea",
+     "parte": 0.836,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "7c9c6af6812576ed56f11d8adf4ee92a609-2475x3300.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#161607",
+     "parte": 0.049,
+     "regla2": null,
+     "familiaDeColor": 0.188
+    },
+    {
+     "src": "9e0a6bd71bb6ab09db37d8412a53e2b153-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#f53dfb",
+     "parte": 0.709,
+     "regla2": "de color",
+     "familiaDeColor": 0.696
+    },
+    {
+     "src": "742ab4aa04d68cb748dde2887609fc9c7d-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#040504",
+     "parte": 0.347,
+     "regla2": null,
+     "familiaDeColor": 0.054
+    },
+    {
+     "src": "ed2343f85fdee83499d9b29d4dd602ef941f15938477e53cdc48bb5299b0",
+     "w": 416,
+     "h": 234,
+     "tipo": "imagen",
+     "dominante": "#f9f5ea",
+     "parte": 0.22,
+     "regla2": null,
+     "familiaDeColor": 0.07
+    }
+   ]
+  },
+  "deezer-1440": {
+   "url": "https://koto.com/projects/deezer",
+   "altoPx": 10930,
+   "mediosPct": 60.0,
+   "campoRegla1Pct": 26.9,
+   "campoRegla2Pct": 29.1,
+   "medios": [
+    {
+     "src": "c380aabc707b965cb9fefb035529e21bf544647e630-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#a339fe",
+     "parte": 0.907,
+     "regla2": "de color",
+     "familiaDeColor": 0.904
+    },
+    {
+     "src": "4c9e4d89ecfb639de9fbf718477fcf605e02124dc79-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.666,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "9cf36df27193d47b8b1a48edf0299cf104bbf00c1c3-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#090909",
+     "parte": 0.182,
+     "regla2": "color",
+     "familiaDeColor": 0.35
+    },
+    {
+     "src": "f83fcc5da2ec8c6fc63f25e523b983c7181ac3e6c80-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#9e2dff",
+     "parte": 0.91,
+     "regla2": "de color",
+     "familiaDeColor": 0.908
+    },
+    {
+     "src": "985c6f91fc8df9117498086b71272a55b831d87c4b1-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.835,
+     "regla2": null,
+     "familiaDeColor": 0.136
+    },
+    {
+     "src": "3421c62cafa46d49dd6aa2a34a98b9349653c0fcaa4-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#a23bfe",
+     "parte": 0.572,
+     "regla2": "de color",
+     "familiaDeColor": 0.572
+    },
+    {
+     "src": "f95ea61e856b30123e3bf99d2723cfec74758b0519a-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.863,
+     "regla2": "claro",
+     "familiaDeColor": 0.019
+    },
+    {
+     "src": "68b5bb05831399f225e381d38c750e2be4878074145-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#fbff5f",
+     "parte": 0.389,
+     "regla2": "de color",
+     "familiaDeColor": 0.453
+    },
+    {
+     "src": "cf9f5c6f4df065dbc256223ab217193d55aac9825d2-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#a339fe",
+     "parte": 0.902,
+     "regla2": "de color",
+     "familiaDeColor": 0.902
+    },
+    {
+     "src": "8ebffa9bdc34b0e98d66b8b265542d9f8ef9fec8f38-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#000000",
+     "parte": 0.075,
+     "regla2": null,
+     "familiaDeColor": 0.262
+    },
+    {
+     "src": "56d9b85e76b56f072e633d6e9d69f488e5ec4cd96bc-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#010101",
+     "parte": 0.129,
+     "regla2": null,
+     "familiaDeColor": 0.07
+    },
+    {
+     "src": "5e501a5e4d5fc1aedbdb410a73a284848cad7b4090c-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.856,
+     "regla2": null,
+     "familiaDeColor": 0.087
+    },
+    {
+     "src": "d47326a9d83b0ff6f2dcc5dc93af9f81c7f981bad13-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#a339fe",
+     "parte": 0.68,
+     "regla2": "de color",
+     "familiaDeColor": 0.674
+    },
+    {
+     "src": "41f6127a1333d2b44cdee98e4222f569b39aa67317b-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#080908",
+     "parte": 0.225,
+     "regla2": null,
+     "familiaDeColor": 0.197
+    },
+    {
+     "src": "1ab29f0bc05ebd023c84cda6609ff0ff1c028de9d7f-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#060706",
+     "parte": 0.289,
+     "regla2": null,
+     "familiaDeColor": 0.083
+    },
+    {
+     "src": "563b1a79103ce8f9b22f4e749aa78d640f3345b8d3d-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.955,
+     "regla2": null,
+     "familiaDeColor": 0.03
+    },
+    {
+     "src": "6cdb84e81f0350f3d1f01d4591868ff80055a8339f1-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.774,
+     "regla2": null,
+     "familiaDeColor": 0.109
+    },
+    {
+     "src": "7806f2a023edb9ad4a5926c560ff295430a127f85cf-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#a03ffd",
+     "parte": 0.333,
+     "regla2": "de color",
+     "familiaDeColor": 0.355
+    },
+    {
+     "src": "010fbc12235cb3b6e16266d5c4789c40b00dd64a95b-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro de color",
+     "dominante": "#271441",
+     "parte": 0.635,
+     "regla2": null,
+     "familiaDeColor": 0.102
+    },
+    {
+     "src": "663029c4ab7ce5cabe239129a4b088f0cc79e6a9d5e-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.893,
+     "regla2": null,
+     "familiaDeColor": 0.011
+    },
+    {
+     "src": "b1122f1a4a0ff40bef20095badd262cd5e9ab737d37-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#030303",
+     "parte": 0.379,
+     "regla2": null,
+     "familiaDeColor": 0.051
+    },
+    {
+     "src": "5ed79c32108a11131682a089a9d14465572-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#d3d3d5",
+     "parte": 0.169,
+     "regla2": null,
+     "familiaDeColor": 0.039
+    },
+    {
+     "src": "734c1d3781388199f4053d1134f6112b2a5b9359da5-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#866ac7",
+     "parte": 0.341,
+     "regla2": "de color",
+     "familiaDeColor": 0.571
+    },
+    {
+     "src": "06d220fe0a17a82ff5a4472ccbbb36a9fe2e683a258-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#070707",
+     "parte": 0.185,
+     "regla2": null,
+     "familiaDeColor": 0.018
+    },
+    {
+     "src": "2ad3cb3651d32ae7dfc18c8024517b32dde-2160x1334.png&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#9e35f9",
+     "parte": 0.908,
+     "regla2": "de color",
+     "familiaDeColor": 0.926
+    },
+    {
+     "src": "dbe403075ee4871deb85fe24d08642954c2-2160x1296.png&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#9e35f9",
+     "parte": 0.942,
+     "regla2": "de color",
+     "familiaDeColor": 0.952
+    },
+    {
+     "src": "01f12ef4ace66e88b965e640da6e1f9c9eed3dd251da19d0a5d2f8f274bf",
+     "w": 416,
+     "h": 234,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.982,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    }
+   ]
+  },
+  "estudio-1440": {
+   "url": "https://koto.com/about",
+   "altoPx": 6690,
+   "mediosPct": 37.1,
+   "campoRegla1Pct": 0.0,
+   "campoRegla2Pct": 0.0,
+   "medios": [
+    {
+     "src": "7de8727a4eb4e4d27ed506d4ac58269333-3840x2160.jpg&w=1920&q=75",
+     "w": 1393,
+     "h": 836,
+     "tipo": "campo oscuro",
+     "dominante": "#060606",
+     "parte": 0.763,
+     "regla2": null,
+     "familiaDeColor": 0.071
+    },
+    {
+     "src": "",
+     "w": 448,
+     "h": 336,
+     "tipo": "campo oscuro",
+     "dominante": "#040403",
+     "parte": 0.734,
+     "regla2": null,
+     "familiaDeColor": 0.056
+    },
+    {
+     "src": "390f561fc8c4fbbb5f288495f415aff368d-1920x1080.jpg&w=640&q=75",
+     "w": 555,
+     "h": 416,
+     "tipo": "imagen",
+     "dominante": "#d9c9b5",
+     "parte": 0.057,
+     "regla2": null,
+     "familiaDeColor": 0.128
+    },
+    {
+     "src": "9c317d65e7748f987ce465cd96a8a19bed2-1920x1080.jpg&w=640&q=75",
+     "w": 555,
+     "h": 416,
+     "tipo": "imagen",
+     "dominante": "#030305",
+     "parte": 0.067,
+     "regla2": null,
+     "familiaDeColor": 0.196
+    },
+    {
+     "src": "7a0949c37ed80cc5aac3d29ef87ff5ce7ee-1920x1080.jpg&w=640&q=75",
+     "w": 555,
+     "h": 416,
+     "tipo": "imagen",
+     "dominante": "#d9cbc3",
+     "parte": 0.056,
+     "regla2": null,
+     "familiaDeColor": 0.021
+    },
+    {
+     "src": "0f78e40dd96ca6ec0a0d4152f112eab2704-1920x1080.jpg&w=640&q=75",
+     "w": 555,
+     "h": 416,
+     "tipo": "imagen",
+     "dominante": "#e7e8e6",
+     "parte": 0.071,
+     "regla2": null,
+     "familiaDeColor": 0.154
+    },
+    {
+     "src": "ba09a4d289ee0e1a0e96a804f8e787d7239-4215x3295.jpg&w=640&q=75",
+     "w": 555,
+     "h": 416,
+     "tipo": "imagen",
+     "dominante": "#050506",
+     "parte": 0.109,
+     "regla2": null,
+     "familiaDeColor": 0.04
+    },
+    {
+     "src": "6dad6b813a75085f5b3c085ddf6a9ce319776-665x436.jpg&w=750&q=75",
+     "w": 592,
+     "h": 333,
+     "tipo": "campo neutro medio",
+     "dominante": "#b6b6b6",
+     "parte": 0.433,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2bd131acf8de0f98b2a3dd5af9148054769-2160x1269.jpg&w=384&q=75",
+     "w": 376,
+     "h": 212,
+     "tipo": "imagen",
+     "dominante": "#645b5b",
+     "parte": 0.047,
+     "regla2": null,
+     "familiaDeColor": 0.154
+    },
+    {
+     "src": "540940e4fcfcc36841d47761d3155a1f795-6534x4356.jpg&w=384&q=75",
+     "w": 376,
+     "h": 212,
+     "tipo": "imagen",
+     "dominante": "#e7e6ea",
+     "parte": 0.279,
+     "regla2": null,
+     "familiaDeColor": 0.052
+    }
+   ]
+  },
+  "gofundme-1440": {
+   "url": "https://koto.com/projects/gofundme",
+   "altoPx": 15470,
+   "mediosPct": 63.9,
+   "campoRegla1Pct": 35.5,
+   "campoRegla2Pct": 38.7,
+   "medios": [
+    {
+     "src": "60fee7e22d26176a2f8f26030f9f1cc035183d191b8-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#fefefe",
+     "parte": 0.998,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "32a05f34543388d1404aeed7fd247614adda4f81652-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#fefefe",
+     "parte": 0.676,
+     "regla2": "claro",
+     "familiaDeColor": 0.085
+    },
+    {
+     "src": "192f067531e62f0b8c07d26ec41d56da3e451c32405-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro de color",
+     "dominante": "#264a34",
+     "parte": 0.941,
+     "regla2": null,
+     "familiaDeColor": 0.023
+    },
+    {
+     "src": "1845739c8f17faf5070b7aaec4385e7b55-3840x2161.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro de color",
+     "dominante": "#264a34",
+     "parte": 0.458,
+     "regla2": "color",
+     "familiaDeColor": 0.455
+    },
+    {
+     "src": "f203fddedc37fa99805751a697baafffdd0c6c4cc3d-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#e8fccb",
+     "parte": 0.961,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "c76339e8c70398baf0aab070d27701dd5784c76b0e1-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#a1ec6b",
+     "parte": 0.894,
+     "regla2": "de color",
+     "familiaDeColor": 0.887
+    },
+    {
+     "src": "b89a6e94300d55e55a8cc8ced2932de2113b20005ab-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#f5fafd",
+     "parte": 0.147,
+     "regla2": null,
+     "familiaDeColor": 0.153
+    },
+    {
+     "src": "7325cfb5bccf203bd69870c7b0e98140b83-2160x2700.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#fefefe",
+     "parte": 0.709,
+     "regla2": "claro",
+     "familiaDeColor": 0.007
+    },
+    {
+     "src": "a5ad336fcd43999f12c6fc6db57d6c2a905670c17c0-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f7fbfe",
+     "parte": 0.928,
+     "regla2": "claro",
+     "familiaDeColor": 0.062
+    },
+    {
+     "src": "bcf6cf7d216780bff804de7d0958838fb4a-2160x2700.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fefdfc",
+     "parte": 0.051,
+     "regla2": null,
+     "familiaDeColor": 0.166
+    },
+    {
+     "src": "fa66340109d8e1c064128214df35e68ee26-2160x2700.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#e9fcce",
+     "parte": 0.68,
+     "regla2": "claro",
+     "familiaDeColor": 0.161
+    },
+    {
+     "src": "deeb9eb0c5fc433eed4a5946dc2b2bd99802c5a4cec-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#e8fccb",
+     "parte": 0.994,
+     "regla2": "claro",
+     "familiaDeColor": 0.001
+    },
+    {
+     "src": "394a1917bd7ee0c9313ab1ebfe55ea706c5169e4231-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.797,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2a5034a0a4a8ba5e3ea7b8f92846b59e12fe5870ea5-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#3b3327",
+     "parte": 0.166,
+     "regla2": null,
+     "familiaDeColor": 0.078
+    },
+    {
+     "src": "84991ed63156b4df17244c24c02dea5029-3840x2160.png&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#94cef6",
+     "parte": 0.114,
+     "regla2": null,
+     "familiaDeColor": 0.158
+    },
+    {
+     "src": "fe96d2f45f9d57a8742b1bfe2d816b720eae8fc9505-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo neutro medio",
+     "dominante": "#caf88d",
+     "parte": 0.671,
+     "regla2": null,
+     "familiaDeColor": 0.045
+    },
+    {
+     "src": "02a6a12da410cabe403fc7348f2a375f543-2160x2700.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#ffd763",
+     "parte": 0.519,
+     "regla2": "de color",
+     "familiaDeColor": 0.576
+    },
+    {
+     "src": "",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.658,
+     "regla2": "claro",
+     "familiaDeColor": 0.054
+    },
+    {
+     "src": "4511c6bc8b752abea37d714be1f619ea95-3840x2162.png&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#4a9d45",
+     "parte": 0.684,
+     "regla2": "de color",
+     "familiaDeColor": 0.845
+    },
+    {
+     "src": "1ff4fb202dec8780ead6fb91394794bb60d3ac6103b-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#070604",
+     "parte": 0.138,
+     "regla2": null,
+     "familiaDeColor": 0.001
+    },
+    {
+     "src": "5a50eba48532a359e2523199213299acfe7b-1080x648.png&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.945,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2bb42b63eff491e67a862702f80d6f97304f-1080x648.png&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#fff5d9",
+     "parte": 0.854,
+     "regla2": "claro",
+     "familiaDeColor": 0.006
+    },
+    {
+     "src": "3f8df274a1366755d5ea46f0bbd25bb88b5366f96ac-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.498,
+     "regla2": "claro",
+     "familiaDeColor": 0.002
+    },
+    {
+     "src": "540b9d0ff08cc2a3bc509417cf48d4c037a-2160x2700.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#e9fcce",
+     "parte": 0.774,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "590b1f40846b6fe3bfb2f71f14b47e65b12957843d4-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#499e41",
+     "parte": 0.853,
+     "regla2": "de color",
+     "familiaDeColor": 0.857
+    },
+    {
+     "src": "992e4976d960dbec2061e58b0005311adb41b3ee81b-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#232323",
+     "parte": 0.594,
+     "regla2": null,
+     "familiaDeColor": 0.021
+    },
+    {
+     "src": "8ad395e8457eec448a0fc99af6a376d38ee561cf1a0-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#092a19",
+     "parte": 0.298,
+     "regla2": null,
+     "familiaDeColor": 0.004
+    },
+    {
+     "src": "370e32c71013cee3cf5e1f7448188efaf290353ce90-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.686,
+     "regla2": "claro",
+     "familiaDeColor": 0.01
+    },
+    {
+     "src": "e1d2b5f3046e9bd03dda01180fe2e72cf7d-2160x2700.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fcfcfd",
+     "parte": 0.244,
+     "regla2": null,
+     "familiaDeColor": 0.026
+    },
+    {
+     "src": "d77f16cfe186faac4f93416a3357bc6f8ac034dea25-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.762,
+     "regla2": "claro",
+     "familiaDeColor": 0.196
+    },
+    {
+     "src": "67b4a4e9e05df2f6b6e604f04d92dbae284e561c9c2-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#e0f6f4",
+     "parte": 0.962,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "a47e4a8e5a37ed624f5f2908315fa33cf16c8588205-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#0a0a04",
+     "parte": 0.076,
+     "regla2": null,
+     "familiaDeColor": 0.053
+    },
+    {
+     "src": "4739374c39b4713c9fa263890a501c1ff48e66de95d-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#0f2719",
+     "parte": 0.655,
+     "regla2": null,
+     "familiaDeColor": 0.063
+    },
+    {
+     "src": "89b455581f56f57af22602c90fb42f537d9929b7712674790f636f45040b",
+     "w": 416,
+     "h": 234,
+     "tipo": "imagen",
+     "dominante": "#00163a",
+     "parte": 0.131,
+     "regla2": "color",
+     "familiaDeColor": 0.304
+    }
+   ]
+  },
+  "home-1440": {
+   "url": "https://koto.com/",
+   "altoPx": 6136,
+   "mediosPct": 52.7,
+   "campoRegla1Pct": 4.8,
+   "campoRegla2Pct": 14.4,
+   "medios": [
+    {
+     "src": "229ad4bdd5baf90784103a7c9abaf2f1c4e9b7c9309-d_1280?region=us",
+     "w": 1441,
+     "h": 901,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.994,
+     "regla2": null,
+     "familiaDeColor": 0.001
+    },
+    {
+     "src": "c873c9028a2f194db7f90dc8f6bc1c4cd3dec18c960ec498f93b0684c712",
+     "w": 868,
+     "h": 488,
+     "tipo": "imagen",
+     "dominante": "#585555",
+     "parte": 0.075,
+     "regla2": null,
+     "familiaDeColor": 0.143
+    },
+    {
+     "src": "97468b0611ca6708e29c570510b7e6d39ac28971e8b41c78007be6d3ed9c",
+     "w": 868,
+     "h": 488,
+     "tipo": "imagen",
+     "dominante": "#f65a06",
+     "parte": 0.237,
+     "regla2": "color",
+     "familiaDeColor": 0.363
+    },
+    {
+     "src": "3a8eb12c89ee971e020735152198fb69e0f1c404cc7a6f60d8dd7d3da3ce",
+     "w": 868,
+     "h": 488,
+     "tipo": "imagen",
+     "dominante": "#ca8869",
+     "parte": 0.146,
+     "regla2": "color",
+     "familiaDeColor": 0.358
+    },
+    {
+     "src": "e00d50924d22d13dc2ec8f6de8214dd210a0a17bf21cf37f56980d443921",
+     "w": 868,
+     "h": 488,
+     "tipo": "imagen",
+     "dominante": "#000000",
+     "parte": 0.061,
+     "regla2": null,
+     "familiaDeColor": 0.235
+    },
+    {
+     "src": "763ac0fc03abd98361776efc637a5698b50f2c6afb1dbf15ece8db064ec4",
+     "w": 868,
+     "h": 488,
+     "tipo": "campo de color",
+     "dominante": "#00eb4f",
+     "parte": 0.951,
+     "regla2": "de color",
+     "familiaDeColor": 0.959
+    },
+    {
+     "src": "6dad6b813a75085f5b3c085ddf6a9ce319776-665x436.jpg&w=750&q=75",
+     "w": 592,
+     "h": 333,
+     "tipo": "campo neutro medio",
+     "dominante": "#b6b6b6",
+     "parte": 0.433,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2bd131acf8de0f98b2a3dd5af9148054769-2160x1269.jpg&w=384&q=75",
+     "w": 376,
+     "h": 212,
+     "tipo": "imagen",
+     "dominante": "#645b5b",
+     "parte": 0.047,
+     "regla2": null,
+     "familiaDeColor": 0.154
+    },
+    {
+     "src": "540940e4fcfcc36841d47761d3155a1f795-6534x4356.jpg&w=384&q=75",
+     "w": 376,
+     "h": 212,
+     "tipo": "imagen",
+     "dominante": "#e7e6ea",
+     "parte": 0.282,
+     "regla2": null,
+     "familiaDeColor": 0.054
+    },
+    {
+     "src": "390f561fc8c4fbbb5f288495f415aff368d-1920x1080.jpg&w=384&q=75",
+     "w": 366,
+     "h": 220,
+     "tipo": "imagen",
+     "dominante": "#090806",
+     "parte": 0.036,
+     "regla2": null,
+     "familiaDeColor": 0.1
+    }
+   ]
+  },
+  "instagram-1440": {
+   "url": "https://koto.com/projects/instagram",
+   "altoPx": 12903,
+   "mediosPct": 56.5,
+   "campoRegla1Pct": 11.4,
+   "campoRegla2Pct": 14.7,
+   "medios": [
+    {
+     "src": "e643138350cd7aff16924e9c14e76faebfee50e2454-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#585555",
+     "parte": 0.075,
+     "regla2": null,
+     "familiaDeColor": 0.144
+    },
+    {
+     "src": "f7aabf7eb84e9bac79dc942913afd31466b83e85e8a-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#111111",
+     "parte": 0.656,
+     "regla2": null,
+     "familiaDeColor": 0.023
+    },
+    {
+     "src": "b0d8f8f8bdbfcc3199c2633fb923bde8704-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#f4f3f3",
+     "parte": 0.574,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "770662460c8fa26e2ec3b5647dcaca4b3e9b41dda08-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#e5e5e5",
+     "parte": 0.165,
+     "regla2": null,
+     "familiaDeColor": 0.034
+    },
+    {
+     "src": "e2ad66d2fd5e3e261cf97fa756bc974bd4478b5d8e3-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#e50419",
+     "parte": 0.169,
+     "regla2": "color",
+     "familiaDeColor": 0.721
+    },
+    {
+     "src": "7a94688bf4f58631c57fd444a377a93221-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#fef9f2",
+     "parte": 0.901,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "474d509fec308d02ebb28713a8d18c8a43105920210-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#010101",
+     "parte": 0.697,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "9262f59d5dce6025ab7ecbd0c26aae4f836a36cdea0-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#cdcac2",
+     "parte": 0.252,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "7354e1e685c78df0e24ddf05a96903361c6-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#313131",
+     "parte": 0.566,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "5a9276a0944c7bf0411926301b846dd9df5-2160x1326.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#fdfdfc",
+     "parte": 0.504,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "deeeca9299e51f42484360cc5564991bdb-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#181519",
+     "parte": 0.487,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "47e76748520d03aae19fd78362eebcab47ffd70a79b-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#ecebe2",
+     "parte": 0.442,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "69bb9f3ac395dde0000d796e85260d17c9c-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#fefdf8",
+     "parte": 0.867,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "71fbd0ef06d1fc451ddf45d3a25364f171f-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#242424",
+     "parte": 0.547,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "7efb763ba839bc007974ae65b6cf2d31c8e5-1590x1590.jpg&w=96&q=75",
+     "w": 96,
+     "h": 96,
+     "tipo": "imagen",
+     "dominante": "#fefcfb",
+     "parte": 0.295,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "1dfeed685c969caf8fcc1bab03eec8d125-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#171707",
+     "parte": 0.059,
+     "regla2": null,
+     "familiaDeColor": 0.081
+    },
+    {
+     "src": "cf0b08a0fcdb837453e10e018cf58696281562969ab-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.411,
+     "regla2": "claro",
+     "familiaDeColor": 0.018
+    },
+    {
+     "src": "0bcbbecd36865031275c2b45d786fd425b-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#050504",
+     "parte": 0.109,
+     "regla2": null,
+     "familiaDeColor": 0.05
+    },
+    {
+     "src": "0f71b52494cb7a578826a4e268a448bb286-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fefefe",
+     "parte": 0.153,
+     "regla2": null,
+     "familiaDeColor": 0.038
+    },
+    {
+     "src": "dc4873d906a0ffb5a473ae06cf996085c20-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#1b1515",
+     "parte": 0.032,
+     "regla2": "color",
+     "familiaDeColor": 0.339
+    },
+    {
+     "src": "f8b92b34b09b108148517ab60563d9304b3f6d5ea3f-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.979,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2c5565ac53ace2afe9377998ea169d71070-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#a6796a",
+     "parte": 0.044,
+     "regla2": null,
+     "familiaDeColor": 0.041
+    },
+    {
+     "src": "80a3f145e3e3d00ba25fd7d9abadb4034d7-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#0a0b07",
+     "parte": 0.08,
+     "regla2": null,
+     "familiaDeColor": 0.037
+    },
+    {
+     "src": "ef8e2005c23ac74f82001e2db5404fdfa98296c23a2-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#0a0d13",
+     "parte": 0.182,
+     "regla2": null,
+     "familiaDeColor": 0.028
+    },
+    {
+     "src": "0c31086d2e5dfcb3a70b89417b28519b797ef7e87a4cc659b3b87ef74449",
+     "w": 416,
+     "h": 234,
+     "tipo": "imagen",
+     "dominante": "#773c2c",
+     "parte": 0.076,
+     "regla2": "color",
+     "familiaDeColor": 0.525
+    }
+   ]
+  },
+  "lyft-1440": {
+   "url": "https://koto.com/projects/lyft",
+   "altoPx": 11912,
+   "mediosPct": 61.4,
+   "campoRegla1Pct": 23.3,
+   "campoRegla2Pct": 27.0,
+   "medios": [
+    {
+     "src": "1f7d886d93983f3069d1065aeb33df42be-3840x2160.png&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#ff00c4",
+     "parte": 0.93,
+     "regla2": "de color",
+     "familiaDeColor": 0.936
+    },
+    {
+     "src": "f1cfbc52dc4c6ea34b6df70fe2e5a859e094fe1bd5a-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f1f0eb",
+     "parte": 0.956,
+     "regla2": "claro",
+     "familiaDeColor": 0.005
+    },
+    {
+     "src": "d36f1528973c3632a4d902920a2e3213bb27c60464e-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro de color",
+     "dominante": "#490a37",
+     "parte": 0.6,
+     "regla2": null,
+     "familiaDeColor": 0.008
+    },
+    {
+     "src": "761d36e985bad153f776623a4b90506cd4-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#dbd9d6",
+     "parte": 0.139,
+     "regla2": null,
+     "familiaDeColor": 0.078
+    },
+    {
+     "src": "8619d044d7fabee13a801ba987c8b521ba80627ad34-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#fe00be",
+     "parte": 0.582,
+     "regla2": "de color",
+     "familiaDeColor": 0.633
+    },
+    {
+     "src": "b6305bee43a71080868f672cea2401b4a58-2160x2700.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#f1f0ec",
+     "parte": 0.789,
+     "regla2": "claro",
+     "familiaDeColor": 0.05
+    },
+    {
+     "src": "6ce8e369019ea656bec7868421d51836d94f4555518-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#1c0c16",
+     "parte": 0.958,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "5c30af1ca586e17f1eb3e35c1842c6c449-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#a8b7b5",
+     "parte": 0.044,
+     "regla2": null,
+     "familiaDeColor": 0.141
+    },
+    {
+     "src": "fa8e89dad91d46bd5e977ebeaaa614e277fad53f24f-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#fe00be",
+     "parte": 0.505,
+     "regla2": "de color",
+     "familiaDeColor": 0.502
+    },
+    {
+     "src": "f727b7850edae734428f152f57275b4a8a493e831ae-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f1f0eb",
+     "parte": 0.836,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "e15b8f14395cc95890a1f1da2d0484d137a7f9ea2ad-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#1c0c16",
+     "parte": 0.764,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "0984ee570ffe02febdd8d9bf6691f9608de-2160x1296.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#021312",
+     "parte": 0.203,
+     "regla2": null,
+     "familiaDeColor": 0.2
+    },
+    {
+     "src": "a12961a4f2b18ed40159f5a931222478712f293a152-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo neutro medio",
+     "dominante": "#989196",
+     "parte": 0.364,
+     "regla2": null,
+     "familiaDeColor": 0.001
+    },
+    {
+     "src": "312f80444b7c6540481caf66653c245406-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#018cd8",
+     "parte": 0.084,
+     "regla2": "color",
+     "familiaDeColor": 0.366
+    },
+    {
+     "src": "e918675f0ce285b90f18689c36b0dc6cc7b6229e246-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.433,
+     "regla2": "claro",
+     "familiaDeColor": 0.313
+    },
+    {
+     "src": "f4bf8f5a86945a9e5902504f4cf1720bbf9-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#200a17",
+     "parte": 0.721,
+     "regla2": null,
+     "familiaDeColor": 0.012
+    },
+    {
+     "src": "b0a31556b6ee6e68a0a23d2baf9fcbc1b9facf52ef6-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#030502",
+     "parte": 0.15,
+     "regla2": null,
+     "familiaDeColor": 0.17
+    },
+    {
+     "src": "0a6932ff0f7a158aea4ecaf5200c690b96d-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#23151b",
+     "parte": 0.116,
+     "regla2": null,
+     "familiaDeColor": 0.119
+    },
+    {
+     "src": "89395fe407a206a56f0487863a687b3d2aa-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#040707",
+     "parte": 0.178,
+     "regla2": null,
+     "familiaDeColor": 0.084
+    },
+    {
+     "src": "3eb1637e2f70976847c51c3a21487b92f3-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f1f0ec",
+     "parte": 0.438,
+     "regla2": "claro",
+     "familiaDeColor": 0.006
+    },
+    {
+     "src": "a22590d80ae450e0f2078f4dd3560de41a001d304dd-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#d6bba8",
+     "parte": 0.084,
+     "regla2": null,
+     "familiaDeColor": 0.286
+    },
+    {
+     "src": "6a0031f61dffc62d17f9d84a91064cb0d31-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#2d2227",
+     "parte": 0.111,
+     "regla2": null,
+     "familiaDeColor": 0.1
+    },
+    {
+     "src": "3cbfe091916636bf8d260865b55b184e465a23b3231-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#1c0c16",
+     "parte": 0.688,
+     "regla2": null,
+     "familiaDeColor": 0.014
+    },
+    {
+     "src": "https://koto.com/projects/lyft",
+     "w": 416,
+     "h": 234,
+     "tipo": "imagen",
+     "dominante": "#ffffff",
+     "parte": 0.118,
+     "regla2": null,
+     "familiaDeColor": 0.19
+    }
+   ]
+  },
+  "machinex-1440": {
+   "url": "https://koto.com/projects/machinex",
+   "altoPx": 12737,
+   "mediosPct": 61.8,
+   "campoRegla1Pct": 9.6,
+   "campoRegla2Pct": 23.0,
+   "medios": [
+    {
+     "src": "e50f0d89780a4a7b90c03e4e132acc59c03b71c1267-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#ffffff",
+     "parte": 0.127,
+     "regla2": null,
+     "familiaDeColor": 0.202
+    },
+    {
+     "src": "36437fee4bb1445d7b7198f437a653090d72b238918-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#f8f6e7",
+     "parte": 0.372,
+     "regla2": "claro",
+     "familiaDeColor": 0.074
+    },
+    {
+     "src": "6d0fb96091d38a970d16e861d53d3abf144aca459e6-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#dd5a84",
+     "parte": 0.096,
+     "regla2": null,
+     "familiaDeColor": 0.253
+    },
+    {
+     "src": "5c81855a32e9385bd5aa6ffd21f95965eeef8556160-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#161616",
+     "parte": 0.483,
+     "regla2": null,
+     "familiaDeColor": 0.11
+    },
+    {
+     "src": "53fc20f5f25c124a5af3925c88790e4364f-2160x2697.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#151714",
+     "parte": 0.827,
+     "regla2": null,
+     "familiaDeColor": 0.004
+    },
+    {
+     "src": "ca206845eebd7b73c3e82e50d43e08a18d3e7e85b32-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#feffff",
+     "parte": 0.138,
+     "regla2": null,
+     "familiaDeColor": 0.161
+    },
+    {
+     "src": "187d3b17a3db94b6368118f0267729907eeb2004132-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#f7f5e6",
+     "parte": 0.377,
+     "regla2": "claro",
+     "familiaDeColor": 0.056
+    },
+    {
+     "src": "dc47c40058796de414d47fd8e4a7d961146d289ff86-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#dddcd7",
+     "parte": 0.679,
+     "regla2": "claro",
+     "familiaDeColor": 0.08
+    },
+    {
+     "src": "5f482ba496e9f55a8091134814f2f572cbfe64b9778-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f8f6e7",
+     "parte": 0.519,
+     "regla2": "claro",
+     "familiaDeColor": 0.081
+    },
+    {
+     "src": "595ffa162051ae721fb0180334877d6742a6ff42956-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#131713",
+     "parte": 0.174,
+     "regla2": null,
+     "familiaDeColor": 0.099
+    },
+    {
+     "src": "58a71d8e573a70c4aeee9b01a49091dbd34fe492c01-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#131814",
+     "parte": 0.857,
+     "regla2": null,
+     "familiaDeColor": 0.003
+    },
+    {
+     "src": "3a4b5eb9df3ae38d19a4c2954abd26df0186df9d87d-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#131814",
+     "parte": 0.725,
+     "regla2": null,
+     "familiaDeColor": 0.057
+    },
+    {
+     "src": "047e41f3fd368baa1c9c48f9727b0435406-2160x2697.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#f87a02",
+     "parte": 0.137,
+     "regla2": "color",
+     "familiaDeColor": 0.397
+    },
+    {
+     "src": "a406e5ee33e2738d9d12214ee75e1bf7e083e3c6914-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#f87a08",
+     "parte": 0.089,
+     "regla2": null,
+     "familiaDeColor": 0.259
+    },
+    {
+     "src": "1568a15c74a764cdaac97fa1ef3ea11559aa0f0749b-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#070707",
+     "parte": 0.455,
+     "regla2": null,
+     "familiaDeColor": 0.041
+    },
+    {
+     "src": "0474f2010a89d6c269344756d19c3dd534-3840x2155.png&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#f8f4e8",
+     "parte": 0.246,
+     "regla2": null,
+     "familiaDeColor": 0.059
+    },
+    {
+     "src": "29ca4d69610baaef6cb193ad691d48ce11077a4901a-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#048ae3",
+     "parte": 0.206,
+     "regla2": "color",
+     "familiaDeColor": 0.698
+    },
+    {
+     "src": "1eb0882f1f07f2a24058274ffae627108f6004b7f1a-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#fb8816",
+     "parte": 0.296,
+     "regla2": "color",
+     "familiaDeColor": 0.471
+    },
+    {
+     "src": "7d8de8ee5592ebcd6cb38a138b9150a8190f23d4e56-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#f87847",
+     "parte": 0.16,
+     "regla2": "color",
+     "familiaDeColor": 0.851
+    },
+    {
+     "src": "59545b931c299c380f0f7c71b4da17625e0-2160x2700.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#273647",
+     "parte": 0.148,
+     "regla2": "color",
+     "familiaDeColor": 0.423
+    },
+    {
+     "src": "0e709ef0a9de4a9573f8d4571a39927392a127ee3a2-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#131814",
+     "parte": 0.925,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "a0a1ea1b7b5135c06701daf66ad21c5743d-2160x2697.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#e65897",
+     "parte": 0.08,
+     "regla2": "color",
+     "familiaDeColor": 0.385
+    },
+    {
+     "src": "089a12a25f4878d604bca80092df1c385876-1080x666.png&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#151714",
+     "parte": 0.822,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "20197d720af3c13ff34e33bf774488b0151c-1080x667.png&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#f7f4e5",
+     "parte": 0.057,
+     "regla2": null,
+     "familiaDeColor": 0.219
+    },
+    {
+     "src": "946b46a425072ed893c9effad56f01aaa78baf95e12-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#131814",
+     "parte": 0.642,
+     "regla2": null,
+     "familiaDeColor": 0.183
+    },
+    {
+     "src": "fe44a7b12d31b615d50e7196823addf62d-3840x2155.png&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#141613",
+     "parte": 0.913,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "763ac0fc03abd98361776efc637a5698b50f2c6afb1dbf15ece8db064ec4",
+     "w": 416,
+     "h": 234,
+     "tipo": "campo de color",
+     "dominante": "#00eb4f",
+     "parte": 0.948,
+     "regla2": "de color",
+     "familiaDeColor": 0.956
+    }
+   ]
+  },
+  "norton-1440": {
+   "url": "https://koto.com/projects/the-norton-museum-of-art",
+   "altoPx": 20346,
+   "mediosPct": 62.1,
+   "campoRegla1Pct": 13.2,
+   "campoRegla2Pct": 19.3,
+   "medios": [
+    {
+     "src": "362e1a2a94c700fda80671dfdd1e73e91bdc20e95b0-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#ebe6d2",
+     "parte": 0.08,
+     "regla2": "color",
+     "familiaDeColor": 0.532
+    },
+    {
+     "src": "655d62425317d56a0a3941f90261b1782d-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#69a7c8",
+     "parte": 0.112,
+     "regla2": "color",
+     "familiaDeColor": 0.35
+    },
+    {
+     "src": "0589ce171c4f9350c8566ef32e65a28e16b98d729bd-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#5693fe",
+     "parte": 0.783,
+     "regla2": "de color",
+     "familiaDeColor": 0.778
+    },
+    {
+     "src": "91451efa9a5f8a9e5334d8dd09f5ac8bdd-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#040606",
+     "parte": 0.079,
+     "regla2": null,
+     "familiaDeColor": 0.177
+    },
+    {
+     "src": "33f4ebe4ee3795a87093788777db4c2374d78b58a21-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#e3d4ab",
+     "parte": 0.25,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "4816830b612c1aa888b371cb9becbf1361-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#1b2734",
+     "parte": 0.045,
+     "regla2": null,
+     "familiaDeColor": 0.144
+    },
+    {
+     "src": "406e83c1c820dfd550890c5b0f70307170-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#271e17",
+     "parte": 0.464,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "c88522a5ab481ed1bdbda758f9790d293c399db486f-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#b60101",
+     "parte": 0.113,
+     "regla2": null,
+     "familiaDeColor": 0.228
+    },
+    {
+     "src": "199a4ed5fde266f0dbeefde076ae81b93b2-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#a7a4a7",
+     "parte": 0.101,
+     "regla2": null,
+     "familiaDeColor": 0.118
+    },
+    {
+     "src": "eb0907cbea9cb3ea2e03970828e442989c97-2160x2700.jpg&w=96&q=75",
+     "w": 96,
+     "h": 120,
+     "tipo": "imagen",
+     "dominante": "#060606",
+     "parte": 0.135,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2f0e2db4792eeaa80829795d9facce0e47537efbaba-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f2ecd9",
+     "parte": 0.677,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "e15c1d072d5c3df32846d8c3c3831a71503-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#ddd8c5",
+     "parte": 0.115,
+     "regla2": null,
+     "familiaDeColor": 0.203
+    },
+    {
+     "src": "26a8f8e848b2696335d06a5fb442823a818-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#beaa8a",
+     "parte": 0.136,
+     "regla2": null,
+     "familiaDeColor": 0.245
+    },
+    {
+     "src": "52a0b5a8355c60d7e6e39b3beee4a9e91d-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#382c23",
+     "parte": 0.182,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "0b5d0954b965fe125f56e7243fda6f4440c-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#d5dae3",
+     "parte": 0.085,
+     "regla2": null,
+     "familiaDeColor": 0.082
+    },
+    {
+     "src": "a66d820b671c5842351b492715a2af06313-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#eee6d1",
+     "parte": 0.316,
+     "regla2": "claro",
+     "familiaDeColor": 0.031
+    },
+    {
+     "src": "5cd45b418689570824d437bc723e1bc5480b24d24dc-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#d4d4d4",
+     "parte": 0.897,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "180589e6631713a4ba653fbdc1edaf91160833388a3-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#dcf7f9",
+     "parte": 0.048,
+     "regla2": null,
+     "familiaDeColor": 0.083
+    },
+    {
+     "src": "20ba476eb8851d07764fd236c94be1c18e87169a38c-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#eae5cf",
+     "parte": 0.413,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "739c54add996a484fa4dcff8c58e61f9b411ed9d705-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#242017",
+     "parte": 0.191,
+     "regla2": null,
+     "familiaDeColor": 0.089
+    },
+    {
+     "src": "ed635740dfcd5aa11bba91487313782ea56-1900x1168.jpg&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#eee6d1",
+     "parte": 0.908,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "6bda181ad8902edc86f0caa39886a76e626-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#e6e5d3",
+     "parte": 0.277,
+     "regla2": null,
+     "familiaDeColor": 0.136
+    },
+    {
+     "src": "2f4fb924c939ed1cf3ba87b76d559251e8068234b78-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#ebe6d2",
+     "parte": 0.215,
+     "regla2": null,
+     "familiaDeColor": 0.175
+    },
+    {
+     "src": "dd862932c762e4c84d498fa5647827c5861a923cd48-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#030100",
+     "parte": 0.274,
+     "regla2": null,
+     "familiaDeColor": 0.235
+    },
+    {
+     "src": "0f905573dff5b3214e37afcbf00ab4a324b-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#791507",
+     "parte": 0.06,
+     "regla2": "color",
+     "familiaDeColor": 0.432
+    },
+    {
+     "src": "3b415a63cdfab013177ce2a992101657da8-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#f3f3f3",
+     "parte": 0.312,
+     "regla2": "claro",
+     "familiaDeColor": 0.072
+    },
+    {
+     "src": "82ddbf4e6b90b5f90d8d6c0c07a3820a108bdb6b5c2-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#aa1810",
+     "parte": 0.678,
+     "regla2": "de color",
+     "familiaDeColor": 0.778
+    },
+    {
+     "src": "cd715debedd597cd34707da4b76de27de2e0cf25762-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#225078",
+     "parte": 0.398,
+     "regla2": "de color",
+     "familiaDeColor": 0.405
+    },
+    {
+     "src": "15cb2b10764595e4383c2b08514ee7d59eb8e08c2e3-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#eae5cf",
+     "parte": 0.967,
+     "regla2": "claro",
+     "familiaDeColor": 0.002
+    },
+    {
+     "src": "badcc992a6eb6241af54945b6a3afa0e4a8451851baf-d_960?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#d7a867",
+     "parte": 0.084,
+     "regla2": "color",
+     "familiaDeColor": 0.518
+    },
+    {
+     "src": "96a7a38e8dae0931143a23b7567e6abaa8c47d52f60-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro de color",
+     "dominante": "#25370f",
+     "parte": 0.497,
+     "regla2": null,
+     "familiaDeColor": 0.127
+    },
+    {
+     "src": "d4ee3f2e1013582e3a52569a9428071672-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#271e17",
+     "parte": 0.146,
+     "regla2": null,
+     "familiaDeColor": 0.09
+    },
+    {
+     "src": "04d1a691dd770765cdb87d40ba6ae290141-1080x1350.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#adb3ab",
+     "parte": 0.159,
+     "regla2": null,
+     "familiaDeColor": 0.147
+    },
+    {
+     "src": "8c43f858e4ed59ee2e954eb4b5d3343d340-1080x1350.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fa9803",
+     "parte": 0.037,
+     "regla2": null,
+     "familiaDeColor": 0.259
+    },
+    {
+     "src": "5ddadd71aeecd8ef5e7e721df1e9c18c2be31339927-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#241e18",
+     "parte": 0.299,
+     "regla2": null,
+     "familiaDeColor": 0.154
+    },
+    {
+     "src": "bb11fe045d1299b4417784333373a62c839-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#0c0c13",
+     "parte": 0.176,
+     "regla2": null,
+     "familiaDeColor": 0.087
+    },
+    {
+     "src": "d454c61806991c0f0624d400168567f7cae-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#a9bcfc",
+     "parte": 0.076,
+     "regla2": null,
+     "familiaDeColor": 0.159
+    },
+    {
+     "src": "224d0c7d9c446e1d19fc64f6709e4b3249-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#e4d2b8",
+     "parte": 0.168,
+     "regla2": null,
+     "familiaDeColor": 0.246
+    },
+    {
+     "src": "516c65d356d8fbeb37d3b5a16eb987c4dfd-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#091418",
+     "parte": 0.045,
+     "regla2": null,
+     "familiaDeColor": 0.219
+    },
+    {
+     "src": "5ed5f866c93d1ecdf7dab00dbb2240cd3c1f0511845-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#0a0905",
+     "parte": 0.521,
+     "regla2": null,
+     "familiaDeColor": 0.016
+    },
+    {
+     "src": "be0cc433734438b7f8cd4cf95160ee06e1-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#0c0803",
+     "parte": 0.113,
+     "regla2": null,
+     "familiaDeColor": 0.117
+    },
+    {
+     "src": "9851e7880b968242cda0360b696bbdd68699c7e3344a5622820759263240",
+     "w": 416,
+     "h": 234,
+     "tipo": "campo de color",
+     "dominante": "#ff0001",
+     "parte": 0.986,
+     "regla2": "de color",
+     "familiaDeColor": 0.991
+    }
+   ]
+  },
+  "noticias-1440": {
+   "url": "https://koto.com/latest",
+   "altoPx": 4039,
+   "mediosPct": 38.7,
+   "campoRegla1Pct": 7.9,
+   "campoRegla2Pct": 20.0,
+   "medios": [
+    {
+     "src": "2bd131acf8de0f98b2a3dd5af9148054769-2160x1269.jpg&w=750&q=75",
+     "w": 699,
+     "h": 393,
+     "tipo": "imagen",
+     "dominante": "#645b5b",
+     "parte": 0.05,
+     "regla2": null,
+     "familiaDeColor": 0.156
+    },
+    {
+     "src": "540940e4fcfcc36841d47761d3155a1f795-6534x4356.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#e7e6ea",
+     "parte": 0.28,
+     "regla2": null,
+     "familiaDeColor": 0.061
+    },
+    {
+     "src": "b1dfeed685c969caf8fcc1bab03eec8d125-3840x2160.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#171707",
+     "parte": 0.057,
+     "regla2": null,
+     "familiaDeColor": 0.076
+    },
+    {
+     "src": "26b56a6e09a1021d6b075daa3a2a91bfe82-1920x1080.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo oscuro",
+     "dominante": "#1a1a1a",
+     "parte": 0.76,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "e412164d9de305b68f2bb6d88678c145c38-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#070602",
+     "parte": 0.178,
+     "regla2": "color",
+     "familiaDeColor": 0.394
+    },
+    {
+     "src": "5428159db8acb761efb3b265c5477e60d81-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#ead603",
+     "parte": 0.275,
+     "regla2": "color",
+     "familiaDeColor": 0.72
+    },
+    {
+     "src": "62410fbb728cca416da45b111774f4891b6-1936x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#676767",
+     "parte": 0.098,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "32335d297ba3d2a23a68c39c122b480b4e8-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#fbfafb",
+     "parte": 0.167,
+     "regla2": "color",
+     "familiaDeColor": 0.344
+    },
+    {
+     "src": "1152bf9520037a24c456c6112a78dccb6e7-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#0b0b02",
+     "parte": 0.199,
+     "regla2": "color",
+     "familiaDeColor": 0.624
+    },
+    {
+     "src": "c2991fba78471c2cd9efc1686703d1d25d7-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo claro",
+     "dominante": "#f2f5e4",
+     "parte": 0.525,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "c92980622e6a8e91a8c3851a97e9d50dfc4-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo oscuro",
+     "dominante": "#1a1a1a",
+     "parte": 0.64,
+     "regla2": null,
+     "familiaDeColor": 0.132
+    },
+    {
+     "src": "2446659989edca8021ea49682949576793b-3648x2052.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#c7dae8",
+     "parte": 0.058,
+     "regla2": null,
+     "familiaDeColor": 0.163
+    },
+    {
+     "src": "a0ef1dde34eb51bd390bf85df4e30838c2-1356x1048.webp&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo de color",
+     "dominante": "#fce704",
+     "parte": 0.519,
+     "regla2": "de color",
+     "familiaDeColor": 0.71
+    },
+    {
+     "src": "2ac3ca06d790e8e05faf23f8e8e58c9a2ef-3840x2160.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#fd9702",
+     "parte": 0.077,
+     "regla2": null,
+     "familiaDeColor": 0.272
+    },
+    {
+     "src": "7c8a33a53f5836f641434bf0d083c14827d-1888x1416.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#c7b39b",
+     "parte": 0.05,
+     "regla2": null,
+     "familiaDeColor": 0.24
+    },
+    {
+     "src": "72bef78cff20318d826b1eb5c84e30c3736-5640x3172.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#0b648a",
+     "parte": 0.103,
+     "regla2": "color",
+     "familiaDeColor": 0.759
+    },
+    {
+     "src": "6dad6b813a75085f5b3c085ddf6a9ce319776-665x436.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo neutro medio",
+     "dominante": "#b6b6b6",
+     "parte": 0.429,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "56e0c535e376e03cf596f38207400a5445ee5e957bb-d_1280?region=us",
+     "w": 342,
+     "h": 256,
+     "tipo": "campo de color",
+     "dominante": "#fde702",
+     "parte": 0.565,
+     "regla2": "de color",
+     "familiaDeColor": 0.758
+    },
+    {
+     "src": "cf064a5e0bd5276faf373b8f61ccae70539-2160x1620.jpg&w=384&q=75",
+     "w": 342,
+     "h": 256,
+     "tipo": "imagen",
+     "dominante": "#292725",
+     "parte": 0.074,
+     "regla2": null,
+     "familiaDeColor": 0.065
+    },
+    {
+     "src": "d2420f40319f8595a698358d8eec988be8fedf533d7-d_1280?region=us",
+     "w": 342,
+     "h": 257,
+     "tipo": "imagen",
+     "dominante": "#f9e405",
+     "parte": 0.206,
+     "regla2": "color",
+     "familiaDeColor": 0.673
+    },
+    {
+     "src": "02308489a32c4cdb775f863e2754d2b281d28a8a19f-d_1280?region=us",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#7aa7bc",
+     "parte": 0.164,
+     "regla2": "color",
+     "familiaDeColor": 0.306
+    },
+    {
+     "src": "d02ab461feffadc8a20c4079268ce6c645d-1920x1080.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#060501",
+     "parte": 0.157,
+     "regla2": "color",
+     "familiaDeColor": 0.438
+    },
+    {
+     "src": "01a8503238ef090956b788313658788bd42-3200x2400.jpg&w=384&q=75",
+     "w": 342,
+     "h": 256,
+     "tipo": "imagen",
+     "dominante": "#c2e5ea",
+     "parte": 0.035,
+     "regla2": "color",
+     "familiaDeColor": 0.336
+    },
+    {
+     "src": "f4d3b309348dc57fb4e09be6c6abcecdd113cd9e2d9-d_1280?region=us",
+     "w": 342,
+     "h": 256,
+     "tipo": "campo de color",
+     "dominante": "#fde702",
+     "parte": 0.673,
+     "regla2": "de color",
+     "familiaDeColor": 0.788
+    },
+    {
+     "src": "bb3a4499c986c9d299472e1b8fd5cb9324ec2de039c-d_1280?region=us",
+     "w": 342,
+     "h": 192,
+     "tipo": "campo de color",
+     "dominante": "#00eb4f",
+     "parte": 0.864,
+     "regla2": "de color",
+     "familiaDeColor": 0.859
+    },
+    {
+     "src": "34f4956fc0a3944fbc0e0eb5c6bf31bbabf-2454x1472.png&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#030201",
+     "parte": 0.213,
+     "regla2": "color",
+     "familiaDeColor": 0.582
+    },
+    {
+     "src": "d6b7cb96ee9da10a5f2d88168ca74b48c7b23787399-d_1280?region=us",
+     "w": 342,
+     "h": 256,
+     "tipo": "campo de color",
+     "dominante": "#fce701",
+     "parte": 0.586,
+     "regla2": "de color",
+     "familiaDeColor": 0.66
+    },
+    {
+     "src": "e969c7e60ab6683a22b7cc01165235eee60-2160x1296.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#150c07",
+     "parte": 0.172,
+     "regla2": null,
+     "familiaDeColor": 0.029
+    },
+    {
+     "src": "49e53d8bc387fe1e46c4dcac21936c804d5-2000x1234.jpg&w=384&q=75",
+     "w": 342,
+     "h": 192,
+     "tipo": "imagen",
+     "dominante": "#e3e5eb",
+     "parte": 0.133,
+     "regla2": null,
+     "familiaDeColor": 0.144
+    }
+   ]
+  },
+  "privacidad-1440": {
+   "url": "https://koto.com/privacy-policy",
+   "altoPx": 5239,
+   "mediosPct": 0.0,
+   "campoRegla1Pct": 0.0,
+   "campoRegla2Pct": 0.0,
+   "medios": []
+  },
+  "rakbank-1440": {
+   "url": "https://koto.com/projects/rakbank",
+   "altoPx": 18844,
+   "mediosPct": 60.4,
+   "campoRegla1Pct": 20.9,
+   "campoRegla2Pct": 20.9,
+   "medios": [
+    {
+     "src": "2b8d484f24b7e43f8d495c0501b20655e81e23484f1-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#fdfdfc",
+     "parte": 0.124,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "61ce66113e8ae3ffaa83aef09b66037b8c48488b79d-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#e5dcdb",
+     "parte": 0.963,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "40eac5a11a248c640e2895678b8491e3d5ec2f7cecc-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#e5dcd7",
+     "parte": 0.651,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "437f593670b41041dae716ac1e8ea7253f9-2090x1296.png&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#77b8c4",
+     "parte": 0.058,
+     "regla2": null,
+     "familiaDeColor": 0.067
+    },
+    {
+     "src": "a384f5b80306ecd773d751461eff7ae8802ec4fcadc-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f5f5f5",
+     "parte": 1.0,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "25ed85dbc9ef98c6e5df9f492d22cf9cb9b5cb9524a-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#fdfdfd",
+     "parte": 0.933,
+     "regla2": "claro",
+     "familiaDeColor": 0.012
+    },
+    {
+     "src": "09d7c81340d1ca6d5227b7164021b5c27e0f82a3d96-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#272119",
+     "parte": 0.89,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "17e7e32f2acfda63998f0e668d5781b37ca52d35314-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#fdfdfd",
+     "parte": 0.995,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "353b21f1657ae60af5cee55b6244cedc6a30b83c2e3-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#18191a",
+     "parte": 0.366,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2dfe9831e64a4523ac2fc329bb8ecbdaf5c03f557b9-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#d5cab7",
+     "parte": 0.079,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "437627af68fda5698dd4479613e92cf8ce27396cbac-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.999,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "9d095fc55e9057ad87e971915acb60e9b4a043ad495-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.934,
+     "regla2": null,
+     "familiaDeColor": 0.036
+    },
+    {
+     "src": "895877fbc0b3eaebe74f0ff12e82bead2aa55f4e7a3-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#2c241a",
+     "parte": 0.94,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "239251a40b27ecc3cecb3f864468e70fe3a9eb0e560-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#fef6f3",
+     "parte": 0.368,
+     "regla2": "claro",
+     "familiaDeColor": 0.368
+    },
+    {
+     "src": "ne.design/rakbankcardoptimisedcopy-ED8M0ywFcfC6aLRvMnLDOFMF/",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#29221a",
+     "parte": 0.991,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "e24dfd185d2b4fbb3afdf7e28855ea3c98c481ae42e-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#573728",
+     "parte": 0.075,
+     "regla2": null,
+     "familiaDeColor": 0.152
+    },
+    {
+     "src": "a423366b7cda3f9fac348b35dfabc3967c472a07d69-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#dedede",
+     "parte": 0.771,
+     "regla2": "claro",
+     "familiaDeColor": 0.078
+    },
+    {
+     "src": "6a036c9ffe3dbf99460af6331c23626b78173f8c792-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#9e1200",
+     "parte": 0.113,
+     "regla2": null,
+     "familiaDeColor": 0.116
+    },
+    {
+     "src": "85ce92053fd573e14923fcc46e1de80d8a84295909e-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.412,
+     "regla2": null,
+     "familiaDeColor": 0.177
+    },
+    {
+     "src": "22693b712e116d0323b54ef7330ff1e00a2f63012ee-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo neutro medio",
+     "dominante": "#bab7a9",
+     "parte": 0.34,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "81b8efa3b89b7453e8ff7518a65c8fecb97ba774d6f-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#fef6f3",
+     "parte": 0.972,
+     "regla2": "claro",
+     "familiaDeColor": 0.02
+    },
+    {
+     "src": "69439c2de0e55ab73851e54c617d9276015f82960a8-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#ff2e02",
+     "parte": 0.892,
+     "regla2": "de color",
+     "familiaDeColor": 0.945
+    },
+    {
+     "src": "https://rakbank-typefaceslider.vercel.app/",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#fff6f4",
+     "parte": 0.937,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "04e48c9e0b849d13311bb4b26be099bc63d75fc5996-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#0d0d0d",
+     "parte": 0.18,
+     "regla2": null,
+     "familiaDeColor": 0.182
+    },
+    {
+     "src": "6cad957afb8f883604b99ee6addcd72c17-3841x2160.png&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#fdfbfc",
+     "parte": 0.091,
+     "regla2": null,
+     "familiaDeColor": 0.156
+    },
+    {
+     "src": "e22675089b9ba5b397aa8126c53b0e61764bfa031cc-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#282219",
+     "parte": 0.604,
+     "regla2": null,
+     "familiaDeColor": 0.164
+    },
+    {
+     "src": "99eda877130567c2b0d1eea88490d3f540115d65af1-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#ff2e02",
+     "parte": 0.874,
+     "regla2": "de color",
+     "familiaDeColor": 0.927
+    },
+    {
+     "src": "cf6117370c895d11e22830e674996ffac0eec6283cc-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#141714",
+     "parte": 0.122,
+     "regla2": null,
+     "familiaDeColor": 0.007
+    },
+    {
+     "src": "ed56695e363a6322b125452d16b1738cf0bc9fe1f39-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#090805",
+     "parte": 0.123,
+     "regla2": null,
+     "familiaDeColor": 0.007
+    },
+    {
+     "src": "7545193afe7ed8925cb5a8dc470129e0861506ce56c-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#c7d9d9",
+     "parte": 0.075,
+     "regla2": null,
+     "familiaDeColor": 0.029
+    },
+    {
+     "src": "ef5c68d5c669103a8de429cd8643a8c9922add20beb-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#040302",
+     "parte": 0.508,
+     "regla2": null,
+     "familiaDeColor": 0.009
+    },
+    {
+     "src": "3c7dc9cbae06833c4623dd4b40aa556a5c84929a172-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "imagen",
+     "dominante": "#010102",
+     "parte": 0.293,
+     "regla2": null,
+     "familiaDeColor": 0.002
+    },
+    {
+     "src": "959be90aace684ddcac7bd3f5bb6e1f5b1e11eca873-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#141414",
+     "parte": 0.972,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "38f48220d72a2fcca6729ad6f8cbde4ac58-1730x2160.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#09080d",
+     "parte": 0.135,
+     "regla2": null,
+     "familiaDeColor": 0.244
+    },
+    {
+     "src": "e18db56565bcc1d0fca5eda6cffa5e520ca-1730x2160.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#fdfbfc",
+     "parte": 0.913,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "a473ba2f8c32846cf1dacec961d14a94992da7a5791-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#0d0d0d",
+     "parte": 0.418,
+     "regla2": null,
+     "familiaDeColor": 0.014
+    },
+    {
+     "src": "9a9daca4f260d609f39f0a2b6cf3d3dd046b5f7c8df-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#f0f0ee",
+     "parte": 0.795,
+     "regla2": "claro",
+     "familiaDeColor": 0.185
+    },
+    {
+     "src": "a745a939539357d19a76963206916c1c624e3dbf12c-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.988,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "d5167d9fd773177a4a0a99596aa7bf0c87012279a5d-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#fdfdfd",
+     "parte": 0.603,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "66503bfd92ebf5ad6d1c81584f1e2b1bed4c45857dd-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#f0f0ee",
+     "parte": 0.969,
+     "regla2": "claro",
+     "familiaDeColor": 0.01
+    },
+    {
+     "src": "448a373ce37d95272c208706ef90dcbac8a968fcd2e-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#27231a",
+     "parte": 0.656,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "85e3877f8464e82b3c30425c45469bcaa72ef975a5b-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#f0f0ee",
+     "parte": 0.629,
+     "regla2": "claro",
+     "familiaDeColor": 0.003
+    },
+    {
+     "src": "5a52df5afff42eda1b595424297d0dfed4ea0f3e0d9-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#ff2e02",
+     "parte": 0.15,
+     "regla2": null,
+     "familiaDeColor": 0.174
+    },
+    {
+     "src": "c873c9028a2f194db7f90dc8f6bc1c4cd3dec18c960ec498f93b0684c712",
+     "w": 416,
+     "h": 234,
+     "tipo": "imagen",
+     "dominante": "#585555",
+     "parte": 0.074,
+     "regla2": null,
+     "familiaDeColor": 0.137
+    }
+   ]
+  },
+  "servicios-1440": {
+   "url": "https://koto.com/services",
+   "altoPx": 5684,
+   "mediosPct": 25.6,
+   "campoRegla1Pct": 0.9,
+   "campoRegla2Pct": 0.9,
+   "medios": [
+    {
+     "src": "f7ef4b5d04dbfc26fdd973b5e3811b48a4ee8dcebca-d_1280?region=us",
+     "w": 1394,
+     "h": 837,
+     "tipo": "campo oscuro",
+     "dominante": "#060606",
+     "parte": 0.714,
+     "regla2": null,
+     "familiaDeColor": 0.084
+    },
+    {
+     "src": "f22892fc69e3acc8a7897d293f1f222517c26bd2372-d_1280?region=us",
+     "w": 343,
+     "h": 206,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.697,
+     "regla2": null,
+     "familiaDeColor": 0.086
+    },
+    {
+     "src": "0e51f8c2abc94b2410725eec3a6b9ba45bc726784c7-d_1280?region=us",
+     "w": 343,
+     "h": 206,
+     "tipo": "campo claro",
+     "dominante": "#e7e7e7",
+     "parte": 0.63,
+     "regla2": "claro",
+     "familiaDeColor": 0.36
+    },
+    {
+     "src": "d7fe54434ce914da5734888fa16861bb0b1efe7995c-d_1280?region=us",
+     "w": 343,
+     "h": 206,
+     "tipo": "campo oscuro",
+     "dominante": "#112315",
+     "parte": 0.783,
+     "regla2": null,
+     "familiaDeColor": 0.13
+    },
+    {
+     "src": "167cacf922847c198f2984336c32b9d3523eb515f45-d_1280?region=us",
+     "w": 343,
+     "h": 206,
+     "tipo": "imagen",
+     "dominante": "#f5c8a9",
+     "parte": 0.076,
+     "regla2": null,
+     "familiaDeColor": 0.165
+    },
+    {
+     "src": "duction/776a7f6e19a8a705f71dfedeb767a3adddea56a8-240x120.svg",
+     "w": 268,
+     "h": 134,
+     "tipo": "campo oscuro",
+     "dominante": "#0e0e0e",
+     "parte": 0.962,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "duction/4fd96fc71e5e12f98a9952924c4cbcda07d837bb-240x120.svg",
+     "w": 268,
+     "h": 134,
+     "tipo": "campo oscuro",
+     "dominante": "#0e0e0e",
+     "parte": 0.955,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "duction/e3bb3e16567aa59660d8bd6f4af125f8d17c9deb-240x120.svg",
+     "w": 268,
+     "h": 134,
+     "tipo": "campo oscuro",
+     "dominante": "#0d0d0d",
+     "parte": 0.952,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "duction/065b42dd828f62cdb46634b576c9cb2bc41296ba-240x120.svg",
+     "w": 268,
+     "h": 134,
+     "tipo": "campo oscuro",
+     "dominante": "#0e0e0e",
+     "parte": 0.955,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "duction/b81e4e8763a9c87a4cb738199ec336e644c6e16c-240x120.svg",
+     "w": 268,
+     "h": 134,
+     "tipo": "campo oscuro",
+     "dominante": "#0d0d0d",
+     "parte": 0.96,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "2598c19d344ec4e683d4daa10a138f998a2-2160x2700.jpg&w=640&q=75",
+     "w": 342,
+     "h": 428,
+     "tipo": "imagen",
+     "dominante": "#0a0a0a",
+     "parte": 0.298,
+     "regla2": null,
+     "familiaDeColor": 0.027
+    },
+    {
+     "src": "390f561fc8c4fbbb5f288495f415aff368d-1920x1080.jpg&w=384&q=75",
+     "w": 366,
+     "h": 220,
+     "tipo": "imagen",
+     "dominante": "#87796b",
+     "parte": 0.033,
+     "regla2": null,
+     "familiaDeColor": 0.1
+    }
+   ]
+  },
+  "stack-overflow-1440": {
+   "url": "https://koto.com/projects/stack-overflow",
+   "altoPx": 14514,
+   "mediosPct": 57.2,
+   "campoRegla1Pct": 23.0,
+   "campoRegla2Pct": 26.0,
+   "medios": [
+    {
+     "src": "6c13bf6c59fd180e5d3a7485e4f30ad54b9d7e4caee-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.999,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "6266ea45751d7fca82c583a7d3e0ef57641b107a8b7-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#ff5d00",
+     "parte": 0.93,
+     "regla2": "de color",
+     "familiaDeColor": 0.929
+    },
+    {
+     "src": "dc94682862a163d20579665a52ac09279b9d8b9fce0-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.982,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "1ad275c202168872065ac3a6f0f1e69b9adaa625da7-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.301,
+     "regla2": "claro",
+     "familiaDeColor": 0.186
+    },
+    {
+     "src": "09bf6af20a2760b7f4e7390f3defcdb03833ca54a7f-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.998,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "fac50edc051f0fe04f5c4a8176e0f56e2e1-2400x3000.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#e6e6e5",
+     "parte": 0.118,
+     "regla2": null,
+     "familiaDeColor": 0.095
+    },
+    {
+     "src": "https://stack-cs-tool-k2oa.vercel.app/",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#201c1d",
+     "parte": 0.749,
+     "regla2": null,
+     "familiaDeColor": 0.101
+    },
+    {
+     "src": "2b0c67d173e492382b7f9d80a2a9b65f6e199718a4f-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#121212",
+     "parte": 0.502,
+     "regla2": null,
+     "familiaDeColor": 0.092
+    },
+    {
+     "src": "c05da0694c4c3afcf4ac964333806bf941a93a32b3b-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#211d1c",
+     "parte": 0.747,
+     "regla2": null,
+     "familiaDeColor": 0.225
+    },
+    {
+     "src": "782968061f512f4f2205bae14eaeb1f432b-1920x1186.png&w=640&q=75",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#6e1527",
+     "parte": 0.451,
+     "regla2": "de color",
+     "familiaDeColor": 0.46
+    },
+    {
+     "src": "afbdf7d674d87e4faaa0d752b7e97b336bc8813d595-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo oscuro",
+     "dominante": "#211d1c",
+     "parte": 0.598,
+     "regla2": null,
+     "familiaDeColor": 0.013
+    },
+    {
+     "src": "fcb7de89c4975d2710c94fc80745130076a7-1080x1080.png&w=96&q=75",
+     "w": 96,
+     "h": 96,
+     "tipo": "campo oscuro",
+     "dominante": "#050101",
+     "parte": 0.633,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#ff5e00",
+     "parte": 0.858,
+     "regla2": "de color",
+     "familiaDeColor": 0.847
+    },
+    {
+     "src": "df1637e107b74895cbb8e6dab2c19de1bbcd876c693-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#211d1c",
+     "parte": 0.994,
+     "regla2": null,
+     "familiaDeColor": 0.002
+    },
+    {
+     "src": "9492d5727307b25104084a5df66af25b5ce9424bbac-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#c5d1df",
+     "parte": 0.866,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "52926d9654b2236a09fac4b458ec27951ed68b106e7-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo neutro medio",
+     "dominante": "#f39ffd",
+     "parte": 0.379,
+     "regla2": "color",
+     "familiaDeColor": 0.454
+    },
+    {
+     "src": "c4bff3f6e8664ff4c3a9f2bff3056f1ba8953285d45-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo de color",
+     "dominante": "#ff5d00",
+     "parte": 0.888,
+     "regla2": "de color",
+     "familiaDeColor": 0.892
+    },
+    {
+     "src": "050d41df55577ce50b9fc9d553f9c32910572bedc04-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#211d1c",
+     "parte": 0.688,
+     "regla2": null,
+     "familiaDeColor": 0.012
+    },
+    {
+     "src": "08da05d4cc86d97a3badf7defc9357dc4c3e0c9676a-d_1280?region=us",
+     "w": 525,
+     "h": 324,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.951,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "955a9977cacaf0efffce9a271481318619f20326738-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#211d1c",
+     "parte": 0.885,
+     "regla2": null,
+     "familiaDeColor": 0.015
+    },
+    {
+     "src": "bc181fd45df874ac49df5bc03b6f2c410b804142d1d-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo neutro medio",
+     "dominante": "#988a79",
+     "parte": 0.876,
+     "regla2": null,
+     "familiaDeColor": 0.032
+    },
+    {
+     "src": "10c9633afaf2d696a39d1037e15fd50e77dc231f52f-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.524,
+     "regla2": "claro",
+     "familiaDeColor": 0.29
+    },
+    {
+     "src": "ead355ca0fb5fbf76ed4162de80af6f8c2-3840x2160.png&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#181818",
+     "parte": 0.832,
+     "regla2": null,
+     "familiaDeColor": 0.009
+    },
+    {
+     "src": "a03e7665cf0f9a2bacd1c9fa0d66f19a40b-1906x2382.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#c6d2e2",
+     "parte": 0.405,
+     "regla2": "claro",
+     "familiaDeColor": 0.244
+    },
+    {
+     "src": "6e47776a850baf6e3651fcd5696874ed92c-1909x2386.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#201c1d",
+     "parte": 0.289,
+     "regla2": null,
+     "familiaDeColor": 0.106
+    },
+    {
+     "src": "85debc50bccc6760242b7e2bbbeed6df3b60358850e-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#c8c8c8",
+     "parte": 0.16,
+     "regla2": null,
+     "familiaDeColor": 0.015
+    },
+    {
+     "src": "6808ccd9297c264907f61a5ca4eec30aa6e37e213bc-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#211d1c",
+     "parte": 0.595,
+     "regla2": null,
+     "familiaDeColor": 0.039
+    },
+    {
+     "src": "762f3bad6f662af032ccbfdb25d037ca2d29e720274-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#ff5d00",
+     "parte": 0.549,
+     "regla2": "de color",
+     "familiaDeColor": 0.605
+    },
+    {
+     "src": "a971cdd17c5bd7dcf7e44a5492ad49a2cb6-1906x2382.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#bfcada",
+     "parte": 0.768,
+     "regla2": "claro",
+     "familiaDeColor": 0.002
+    },
+    {
+     "src": "a469a7f468baed10b5b308c559c9ea07379-1906x2382.png&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#1c1a1a",
+     "parte": 0.572,
+     "regla2": null,
+     "familiaDeColor": 0.034
+    },
+    {
+     "src": "e2d0ce34d95ff13534780da701233894bb112563690c22506595ed166de2",
+     "w": 416,
+     "h": 234,
+     "tipo": "imagen",
+     "dominante": "#190400",
+     "parte": 0.266,
+     "regla2": null,
+     "familiaDeColor": 0.202
+    }
+   ]
+  },
+  "trabajo-1440": {
+   "url": "https://koto.com/work",
+   "altoPx": 8959,
+   "mediosPct": 70.8,
+   "campoRegla1Pct": 21.7,
+   "campoRegla2Pct": 33.0,
+   "medios": [
+    {
+     "src": "fd7c7a59a33cf0153b32eb8891528a632ef25c72bdc-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#f75b06",
+     "parte": 0.257,
+     "regla2": "color",
+     "familiaDeColor": 0.371
+    },
+    {
+     "src": "479906ec7a27e47661ec8bf1c571fcb4a72-2160x1296.png&w=640&q=75",
+     "w": 566,
+     "h": 315,
+     "tipo": "campo de color",
+     "dominante": "#ff2d01",
+     "parte": 0.73,
+     "regla2": "de color",
+     "familiaDeColor": 0.773
+    },
+    {
+     "src": "8e94ee7df6607ed713f88a7db58b59b78b5087a960b-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#964628",
+     "parte": 0.074,
+     "regla2": "color",
+     "familiaDeColor": 0.558
+    },
+    {
+     "src": "1368b8d6f0343bda20183a9ece1389b6f5f-2160x1296.jpg&w=640&q=75",
+     "w": 556,
+     "h": 393,
+     "tipo": "imagen",
+     "dominante": "#080705",
+     "parte": 0.076,
+     "regla2": null,
+     "familiaDeColor": 0.068
+    },
+    {
+     "src": "b7ecbf23b88253c879ca62826ce83a534cdfb7eb76a-d_1280?region=us",
+     "w": 566,
+     "h": 315,
+     "tipo": "imagen",
+     "dominante": "#fcbac8",
+     "parte": 0.142,
+     "regla2": null,
+     "familiaDeColor": 0.041
+    },
+    {
+     "src": "e3f3ab354cf3d7d64da1f6b939091a955a80f96476e-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#ff0100",
+     "parte": 0.964,
+     "regla2": "de color",
+     "familiaDeColor": 0.966
+    },
+    {
+     "src": "0f7ddfe4791abc91ef2ebd9504497341789-2160x2700.png&w=640&q=75",
+     "w": 543,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#f66701",
+     "parte": 0.293,
+     "regla2": "color",
+     "familiaDeColor": 0.597
+    },
+    {
+     "src": "fd497242ced4f353c8b1e005de75a3ab299a22120ca-d_1280?region=us",
+     "w": 566,
+     "h": 315,
+     "tipo": "imagen",
+     "dominante": "#060707",
+     "parte": 0.068,
+     "regla2": null,
+     "familiaDeColor": 0.047
+    },
+    {
+     "src": "e7cfdacf68d7d79e75829fe2ebb1c60badfcb7b9de5-d_1280?region=us",
+     "w": 556,
+     "h": 394,
+     "tipo": "campo de color",
+     "dominante": "#ffe601",
+     "parte": 0.872,
+     "regla2": "de color",
+     "familiaDeColor": 0.865
+    },
+    {
+     "src": "47e65d453e86c12f88bc111f0cdb9897b2b-2160x1620.png&w=640&q=75",
+     "w": 556,
+     "h": 393,
+     "tipo": "campo oscuro",
+     "dominante": "#180400",
+     "parte": 0.442,
+     "regla2": null,
+     "familiaDeColor": 0.156
+    },
+    {
+     "src": "88f4442f8610d55a7f2532cd5ecec34bbb7c0d1f7de-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#22f550",
+     "parte": 0.694,
+     "regla2": "de color",
+     "familiaDeColor": 0.738
+    },
+    {
+     "src": "6fbd01c0e9a92b0bfba466aede177a5e8e98c4e4587-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#002ffc",
+     "parte": 0.453,
+     "regla2": "de color",
+     "familiaDeColor": 0.731
+    },
+    {
+     "src": "5a3f14d5ea1de6c2826b8d738383503ce25c8381fcc-d_1280?region=us",
+     "w": 556,
+     "h": 394,
+     "tipo": "campo oscuro",
+     "dominante": "#1c0c16",
+     "parte": 0.629,
+     "regla2": null,
+     "familiaDeColor": 0.013
+    },
+    {
+     "src": "632d45abfaeca89be9dfa9718a0776e5593-2160x1296.png&w=640&q=75",
+     "w": 566,
+     "h": 315,
+     "tipo": "campo oscuro",
+     "dominante": "#181617",
+     "parte": 0.749,
+     "regla2": null,
+     "familiaDeColor": 0.016
+    },
+    {
+     "src": "14363cbcbfeae396c8282574fd97caf5feb76fefaad-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#fefefe",
+     "parte": 0.069,
+     "regla2": null,
+     "familiaDeColor": 0.275
+    },
+    {
+     "src": "bb3a4499c986c9d299472e1b8fd5cb9324ec2de039c-d_1280?region=us",
+     "w": 566,
+     "h": 315,
+     "tipo": "campo de color",
+     "dominante": "#00eb4f",
+     "parte": 0.787,
+     "regla2": "de color",
+     "familiaDeColor": 0.779
+    },
+    {
+     "src": "69efe921e691a8caecd43228b5d5a94844517ba262f-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#040201",
+     "parte": 0.137,
+     "regla2": null,
+     "familiaDeColor": 0.217
+    },
+    {
+     "src": "91708fb6e5cd285a57ae4c9fd1df5f740d8-3840x2160.jpg&w=640&q=75",
+     "w": 556,
+     "h": 393,
+     "tipo": "imagen",
+     "dominante": "#b49879",
+     "parte": 0.147,
+     "regla2": null,
+     "familiaDeColor": 0.054
+    },
+    {
+     "src": "64de6d8fa75b9197a71f244086e825e4aee868249c2-d_1280?region=us",
+     "w": 566,
+     "h": 315,
+     "tipo": "campo oscuro de color",
+     "dominante": "#1b3325",
+     "parte": 0.835,
+     "regla2": null,
+     "familiaDeColor": 0.011
+    },
+    {
+     "src": "4d69e5c72bba945fb37ae2fa1d0c6026eef-1080x1350.png&w=640&q=75",
+     "w": 543,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#ff4d00",
+     "parte": 0.862,
+     "regla2": "de color",
+     "familiaDeColor": 0.854
+    },
+    {
+     "src": "27e9bcbb0950a1ca14129b5bafdc9e3bcd7c4ed5273-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.91,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "856c62a0aa480f9879361c1311667cd049d5e5ae2ed-d_1280?region=us",
+     "w": 566,
+     "h": 315,
+     "tipo": "imagen",
+     "dominante": "#001539",
+     "parte": 0.223,
+     "regla2": null,
+     "familiaDeColor": 0.214
+    },
+    {
+     "src": "7e736a260131a0a3d453478d0b9b60b5adf57d72172-d_1280?region=us",
+     "w": 556,
+     "h": 394,
+     "tipo": "campo oscuro",
+     "dominante": "#000000",
+     "parte": 0.946,
+     "regla2": null,
+     "familiaDeColor": 0.001
+    },
+    {
+     "src": "fe772d3c66b9dc270f728010888a8205bdf692da4a6-d_1280?region=us",
+     "w": 556,
+     "h": 394,
+     "tipo": "campo oscuro",
+     "dominante": "#010102",
+     "parte": 0.377,
+     "regla2": "color",
+     "familiaDeColor": 0.544
+    },
+    {
+     "src": "9ef9cef09f62d56d69ea4ecd0f953cfff96-2160x2700.jpg&w=640&q=75",
+     "w": 543,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#57b7fd",
+     "parte": 0.083,
+     "regla2": null,
+     "familiaDeColor": 0.259
+    },
+    {
+     "src": "f7ef4b5d04dbfc26fdd973b5e3811b48a4ee8dcebca-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#966a17",
+     "parte": 0.063,
+     "regla2": null,
+     "familiaDeColor": 0.265
+    },
+    {
+     "src": "326de348dc336309ebb93c76e09bdb1dc29-2560x1920.png&w=640&q=75",
+     "w": 556,
+     "h": 393,
+     "tipo": "campo de color",
+     "dominante": "#e1ff02",
+     "parte": 0.7,
+     "regla2": "de color",
+     "familiaDeColor": 0.698
+    },
+    {
+     "src": "99b190bf660d357b68d988ca89d00573e512cd483ab-d_1280?region=us",
+     "w": 566,
+     "h": 315,
+     "tipo": "campo oscuro",
+     "dominante": "#191919",
+     "parte": 0.916,
+     "regla2": null,
+     "familiaDeColor": 0.014
+    },
+    {
+     "src": "7efa3a66f6271eeaaf73512feb45067016036888ea0-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#040303",
+     "parte": 0.067,
+     "regla2": null,
+     "familiaDeColor": 0.235
+    },
+    {
+     "src": "b5f5f4f596188ef92d1d309e40a72c7a2a39cc0bdae-d_1280?region=us",
+     "w": 566,
+     "h": 315,
+     "tipo": "imagen",
+     "dominante": "#f9fbfd",
+     "parte": 0.157,
+     "regla2": null,
+     "familiaDeColor": 0.246
+    },
+    {
+     "src": "159d3146f0fc4e731e67d75f8ca6f69996a-2928x3660.jpg&w=640&q=75",
+     "w": 543,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#080807",
+     "parte": 0.063,
+     "regla2": null,
+     "familiaDeColor": 0.068
+    },
+    {
+     "src": "b1e6f5a6c960d2be93120778eb1e4f60c6508089f77-d_1280?region=us",
+     "w": 556,
+     "h": 394,
+     "tipo": "campo claro",
+     "dominante": "#fee1f3",
+     "parte": 0.661,
+     "regla2": "claro",
+     "familiaDeColor": 0.015
+    },
+    {
+     "src": "67356a4dc31a80b25603583902a92770871d9406dc1-d_1280?region=us",
+     "w": 566,
+     "h": 315,
+     "tipo": "campo oscuro",
+     "dominante": "#010302",
+     "parte": 0.602,
+     "regla2": "color",
+     "familiaDeColor": 0.354
+    },
+    {
+     "src": "449db9dcfdf1fae9f92813c6da48586e5efa95c1139-d_1280?region=us",
+     "w": 543,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#18d25d",
+     "parte": 0.683,
+     "regla2": "de color",
+     "familiaDeColor": 0.702
+    },
+    {
+     "src": "5492e5eef86792e0bddf3322141d898798981c57d5c-d_1280?region=us",
+     "w": 566,
+     "h": 315,
+     "tipo": "campo oscuro",
+     "dominante": "#040404",
+     "parte": 0.365,
+     "regla2": null,
+     "familiaDeColor": 0.0
+    }
+   ]
+  },
+  "washington-post-1440": {
+   "url": "https://koto.com/projects/washington-post",
+   "altoPx": 10038,
+   "mediosPct": 65.7,
+   "campoRegla1Pct": 33.7,
+   "campoRegla2Pct": 42.4,
+   "medios": [
+    {
+     "src": "d93e31bd4b3ec1073ae6ce2701b3d499175e3bbe6a5-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#fffffe",
+     "parte": 0.911,
+     "regla2": "claro",
+     "familiaDeColor": 0.016
+    },
+    {
+     "src": "e5cb83224560e852ca17b3985f022606cd-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#170305",
+     "parte": 0.14,
+     "regla2": null,
+     "familiaDeColor": 0.067
+    },
+    {
+     "src": "1c36eea35e2cfbe8ad65e37fe1d4747dd7-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#fbfdf4",
+     "parte": 0.28,
+     "regla2": "color",
+     "familiaDeColor": 0.339
+    },
+    {
+     "src": "fdfeab6e12a068f185e24af3038153c65287583fc03-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo de color",
+     "dominante": "#ffff82",
+     "parte": 0.843,
+     "regla2": "de color",
+     "familiaDeColor": 0.835
+    },
+    {
+     "src": "a646ce3907915886ff0cd849b5c3597f5b27f69bc3f-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#f9fff1",
+     "parte": 0.802,
+     "regla2": "claro",
+     "familiaDeColor": 0.008
+    },
+    {
+     "src": "779b51b65f30041e0bc8735a2a453c31cb85d433aad-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#daeaf7",
+     "parte": 0.687,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "72e4bfb78cf02ca6904d616cf58853344c7181362b2-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.941,
+     "regla2": "claro",
+     "familiaDeColor": 0.046
+    },
+    {
+     "src": "b1e6f5a6c960d2be93120778eb1e4f60c6508089f77-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#fee1f3",
+     "parte": 0.797,
+     "regla2": "claro",
+     "familiaDeColor": 0.012
+    },
+    {
+     "src": "ac2b9abd4e18456e42e56b3f5d21be7125-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#0b0302",
+     "parte": 0.192,
+     "regla2": null,
+     "familiaDeColor": 0.041
+    },
+    {
+     "src": "2fa6bf59359589e04b27bd59de80b2f4f6259e55b0d-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#77e1fd",
+     "parte": 0.161,
+     "regla2": "color",
+     "familiaDeColor": 0.79
+    },
+    {
+     "src": "56e0b953d7ff28c66104e5c5567b6db098dacc7e522-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#fcfff2",
+     "parte": 0.779,
+     "regla2": "claro",
+     "familiaDeColor": 0.037
+    },
+    {
+     "src": "245e8936671e03eb688604e62765f130ecc975d88b1-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#daeaf7",
+     "parte": 0.721,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "71c4e30537fe546a130be5768e671d253b7-2475x3300.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#b1def7",
+     "parte": 0.048,
+     "regla2": null,
+     "familiaDeColor": 0.098
+    },
+    {
+     "src": "8d81f9862d756f8c402f8d3c0efcdf528a-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#050707",
+     "parte": 0.166,
+     "regla2": null,
+     "familiaDeColor": 0.107
+    },
+    {
+     "src": "7440670a072b042a905287fe5462b400e517584259b-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#ffff82",
+     "parte": 0.82,
+     "regla2": "de color",
+     "familiaDeColor": 0.821
+    },
+    {
+     "src": "68a33bb55d9794ccf3ddda39af47ee5f7d2c82f5bc5-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#d7f8db",
+     "parte": 0.46,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "f2aac02026956fedd06c9a58bfc08f62e8625df648f-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#e6e8e9",
+     "parte": 0.155,
+     "regla2": null,
+     "familiaDeColor": 0.048
+    },
+    {
+     "src": "cb9a73ef13970d596fa47d3efc3455d57d1ba109553-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#008ae4",
+     "parte": 0.061,
+     "regla2": null,
+     "familiaDeColor": 0.193
+    },
+    {
+     "src": "0617dab31da04a1d69a33b54beecaa0e8d-3840x2160.jpg&w=1080&q=75",
+     "w": 416,
+     "h": 234,
+     "tipo": "campo oscuro",
+     "dominante": "#130703",
+     "parte": 0.449,
+     "regla2": null,
+     "familiaDeColor": 0.057
+    }
+   ]
+  },
+  "whatsapp-1440": {
+   "url": "https://koto.com/projects/whatsapp",
+   "altoPx": 9078,
+   "mediosPct": 56.3,
+   "campoRegla1Pct": 20.6,
+   "campoRegla2Pct": 28.8,
+   "medios": [
+    {
+     "src": "f9029338e255fdd332d06145a08c89d5d361f60962e-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#faf6ea",
+     "parte": 0.23,
+     "regla2": null,
+     "familiaDeColor": 0.072
+    },
+    {
+     "src": "66cd003ad5e3f9e62e0755305045caa23c47ef48c98-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#051016",
+     "parte": 0.829,
+     "regla2": null,
+     "familiaDeColor": 0.002
+    },
+    {
+     "src": "36a1235623ae618be41898364ef784bef5d77915f11-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo oscuro",
+     "dominante": "#081213",
+     "parte": 0.634,
+     "regla2": null,
+     "familiaDeColor": 0.015
+    },
+    {
+     "src": "a4d0c96be8fec5da883d6b75728a1e49114257369e8-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#18d25d",
+     "parte": 0.18,
+     "regla2": null,
+     "familiaDeColor": 0.21
+    },
+    {
+     "src": "241051a7dfde3c812c50c30e726cf99169665dc3e14-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#faf6ea",
+     "parte": 0.966,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "449db9dcfdf1fae9f92813c6da48586e5efa95c1139-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo de color",
+     "dominante": "#18d25d",
+     "parte": 0.668,
+     "regla2": "de color",
+     "familiaDeColor": 0.685
+    },
+    {
+     "src": "e2db61095578d6ed3ab08f25a73e0478eaac918fca0-d_1280?region=us",
+     "w": 1058,
+     "h": 595,
+     "tipo": "campo claro",
+     "dominante": "#ffffff",
+     "parte": 0.836,
+     "regla2": "claro",
+     "familiaDeColor": 0.002
+    },
+    {
+     "src": "37703d0f216668ecdd489232edc093dd9fdba58fdbb-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#fbf7ec",
+     "parte": 0.712,
+     "regla2": "claro",
+     "familiaDeColor": 0.001
+    },
+    {
+     "src": "19e4e840078efe3b6bec496fdb1c05dc70d231512fd-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#faf6ea",
+     "parte": 0.925,
+     "regla2": "claro",
+     "familiaDeColor": 0.062
+    },
+    {
+     "src": "640250d16718a6271bcded61c0fd6b4b2b90af39435-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#e5ffd7",
+     "parte": 0.907,
+     "regla2": "claro",
+     "familiaDeColor": 0.065
+    },
+    {
+     "src": "cde0f9693830aba06ada4acf8665c3e3833d4ff5115-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo claro",
+     "dominante": "#fbf7ec",
+     "parte": 0.971,
+     "regla2": "claro",
+     "familiaDeColor": 0.0
+    },
+    {
+     "src": "870676569a36c353db374527f57825abf2-2160x1296.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#f8e7db",
+     "parte": 0.17,
+     "regla2": null,
+     "familiaDeColor": 0.04
+    },
+    {
+     "src": "be8e7d0a959c919b85345b059abf47f7205-2160x2700.jpg&w=640&q=75",
+     "w": 525,
+     "h": 656,
+     "tipo": "campo neutro medio",
+     "dominante": "#a8b9a7",
+     "parte": 0.507,
+     "regla2": null,
+     "familiaDeColor": 0.064
+    },
+    {
+     "src": "5e5abdb29ffc9b08a7f14492ef9b79168da9234b0e8-d_1280?region=us",
+     "w": 525,
+     "h": 656,
+     "tipo": "imagen",
+     "dominante": "#e5e3e6",
+     "parte": 0.055,
+     "regla2": "color",
+     "familiaDeColor": 0.523
+    },
+    {
+     "src": "9aec370a41c80f5ed9b5c4723c0a9d371e-3840x2160.jpg&w=1080&q=75",
+     "w": 1057,
+     "h": 595,
+     "tipo": "imagen",
+     "dominante": "#578a57",
+     "parte": 0.179,
+     "regla2": "color",
+     "familiaDeColor": 0.34
+    },
+    {
+     "src": "344224cc2c77119162cd53b23d1aaa251893af7bd71fb9aab7d463852986",
+     "w": 416,
+     "h": 234,
+     "tipo": "campo oscuro",
+     "dominante": "#010302",
+     "parte": 0.608,
+     "regla2": "color",
+     "familiaDeColor": 0.369
+    }
+   ]
+  }
+ }
+}
