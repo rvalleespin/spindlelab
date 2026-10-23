@@ -1,0 +1,270 @@
+[
+ {
+  "ruta": "/v3/",
+  "w": 360,
+  "h": 800,
+  "aviso": 647,
+  "controles": [
+   {
+    "s": "#chq-dominio",
+    "top": 708,
+    "bottom": 752
+   },
+   {
+    "s": "#chq-btn",
+    "top": 708,
+    "bottom": 752
+   }
+  ],
+  "tapados": [
+   "#chq-dominio",
+   "#chq-btn"
+  ]
+ },
+ {
+  "ruta": "/v3/",
+  "w": 390,
+  "h": 844,
+  "aviso": 710,
+  "controles": [
+   {
+    "s": "#chq-dominio",
+    "top": 704,
+    "bottom": 748
+   },
+   {
+    "s": "#chq-btn",
+    "top": 704,
+    "bottom": 748
+   }
+  ],
+  "tapados": [
+   "#chq-dominio",
+   "#chq-btn"
+  ]
+ },
+ {
+  "ruta": "/v3/",
+  "w": 768,
+  "h": 1024,
+  "aviso": 909,
+  "controles": [
+   {
+    "s": "#chq-dominio",
+    "top": 845,
+    "bottom": 889
+   },
+   {
+    "s": "#chq-btn",
+    "top": 845,
+    "bottom": 889
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/",
+  "w": 1024,
+  "h": 768,
+  "aviso": 699,
+  "controles": [
+   {
+    "s": "#chq-dominio",
+    "top": 637,
+    "bottom": 681
+   },
+   {
+    "s": "#chq-btn",
+    "top": 637,
+    "bottom": 681
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/",
+  "w": 1440,
+  "h": 900,
+  "aviso": 831,
+  "controles": [
+   {
+    "s": "#chq-dominio",
+    "top": 696,
+    "bottom": 740
+   },
+   {
+    "s": "#chq-btn",
+    "top": 748,
+    "bottom": 792
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/diagnostico/",
+  "w": 360,
+  "h": 800,
+  "aviso": 647,
+  "controles": [
+   {
+    "s": "#chq-dominio",
+    "top": 459,
+    "bottom": 503
+   },
+   {
+    "s": "#chq-btn",
+    "top": 459,
+    "bottom": 503
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/diagnostico/",
+  "w": 390,
+  "h": 844,
+  "aviso": 710,
+  "controles": [
+   {
+    "s": "#chq-dominio",
+    "top": 459,
+    "bottom": 503
+   },
+   {
+    "s": "#chq-btn",
+    "top": 459,
+    "bottom": 503
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/diagnostico/",
+  "w": 768,
+  "h": 1024,
+  "aviso": 909,
+  "controles": [
+   {
+    "s": "#chq-dominio",
+    "top": 421,
+    "bottom": 465
+   },
+   {
+    "s": "#chq-btn",
+    "top": 421,
+    "bottom": 465
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/diagnostico/",
+  "w": 1024,
+  "h": 768,
+  "aviso": 699,
+  "controles": [
+   {
+    "s": "#chq-dominio",
+    "top": 367,
+    "bottom": 411
+   },
+   {
+    "s": "#chq-btn",
+    "top": 367,
+    "bottom": 411
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/diagnostico/",
+  "w": 1440,
+  "h": 900,
+  "aviso": 831,
+  "controles": [
+   {
+    "s": "#chq-dominio",
+    "top": 416,
+    "bottom": 460
+   },
+   {
+    "s": "#chq-btn",
+    "top": 416,
+    "bottom": 460
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/contacto/",
+  "w": 360,
+  "h": 800,
+  "aviso": 647,
+  "controles": [
+   {
+    "s": ".contact-form button[type=\"submit\"]",
+    "top": 933,
+    "bottom": 977
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/contacto/",
+  "w": 390,
+  "h": 844,
+  "aviso": 710,
+  "controles": [
+   {
+    "s": ".contact-form button[type=\"submit\"]",
+    "top": 884,
+    "bottom": 928
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/contacto/",
+  "w": 768,
+  "h": 1024,
+  "aviso": 909,
+  "controles": [
+   {
+    "s": ".contact-form button[type=\"submit\"]",
+    "top": 859,
+    "bottom": 903
+   }
+  ],
+  "tapados": []
+ },
+ {
+  "ruta": "/v3/contacto/",
+  "w": 1024,
+  "h": 768,
+  "aviso": 699,
+  "controles": [
+   {
+    "s": ".contact-form button[type=\"submit\"]",
+    "top": 727,
+    "bottom": 771
+   }
+  ],
+  "tapados": [
+   ".contact-form button[type=\"submit\"]"
+  ]
+ },
+ {
+  "ruta": "/v3/contacto/",
+  "w": 1440,
+  "h": 900,
+  "aviso": 831,
+  "controles": [
+   {
+    "s": ".contact-form button[type=\"submit\"]",
+    "top": 778,
+    "bottom": 822
+   }
+  ],
+  "tapados": []
+ }
+]
