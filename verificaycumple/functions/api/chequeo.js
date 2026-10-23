@@ -1546,7 +1546,7 @@ export async function chequear(entrada, fetchImpl = fetch) {
       (consentModeInline
         ? 'la declaración de Google Consent Mode, que suele ir con un aviso de permiso hecho a medida. '
         : tramosConPuertaPropia.length && !normales.length
-          ? 'y en el código se ve que se cargan solo después de leer un permiso guardado. '
+          ? 'vimos en el código que se cargan solo después de leer un permiso guardado. '
           : `${normales.length ? 'algunos' : 'todos'} marcados para no cargar hasta que haya permiso. `) +
       'Que eso los detenga hasta que la persona acepta no se puede comprobar leyendo el código. No lo ' +
       'contamos ni a favor ni en contra.';
