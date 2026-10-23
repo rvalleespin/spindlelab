@@ -4,6 +4,101 @@
 **Pedido de Ramón:** *«queda el actual, trae los documentos y revisa los pendientes»*, y después
 *«te paso lo de la sesión antigua por si hay algo del trabajo que se pueda rescatar»*.
 **Detalle ítem por ítem, con evidencia:** `pendientes-traspaso-detalle.md` (misma carpeta).
+**Al día desde el 23-oct-2026:** el estado al cierre de la obra E12 y lo que queda está en §0, justo abajo. Lo de §1 a
+§4 es la revisión del 10 y 11-oct, con sus «Estado al…» de cada fecha; donde choque con §0, manda §0.
+
+## 0 · Al cierre de E12 (23-oct-2026, 17:00 Chile · Mauro): el estado y lo que queda
+
+**La obra E12 está cerrada con reparos.** El sitio v3 sobre **A · Archivo** está construido en `spindlelab-astro/`
+(27 rutas bajo `/v3/`, con `noindex`, rama `claude/magical-franklin-ckfki2`, último cambio de código en `f2fe7b4`).
+La QA de obra la hizo Javiera en contexto limpio (`e12/acta-obra.md`): **vuelta 1 Rechazado** (cuatro mayores y cuatro
+menores) y **vuelta 2 Con reparos** (`f3044fc`): los ocho cerrados y medidos con las mismas herramientas, y dos menores
+nuevos, el 9 y el 10, que se cierran antes de publicar. Las dos compuertas quedaron por escrito (16 y 19-oct) y **nada
+aprobado se reabrió**. Las capturas de cierre, 27 rutas a 390, 768 y 1440 desde el build, están en `capturas/e12/`
+(`3ae1b8b`; revisadas de nuevo hoy: las tres hojas, la home entera a 1440 y Praxi entero a 1440, sin nada roto). Nada se
+publicó y nada fue a `main`. Registro: la fila del 23-oct (cierre) en el §7 de `spec-visual.md`.
+
+### 0.1 · Lo que E12 cerró (no se vuelve a abrir)
+
+| Qué | Cómo quedó | Dónde está |
+|---|---|---|
+| **La pregunta del `Layout`** (spec §0.5) | **Cerrada el 19-oct, 11:44:** Ramón contestó «Sí, agrégalas». Cinco props opcionales (Lenis, letras precargadas, `theme-color`, favicon, `#org`/`jobTitle`), con el valor por defecto de antes y solo para `/v3/`. Las páginas publicadas salieron iguales byte a byte en cada tanda y en las dos vueltas de la QA; gtag, consentimiento y Pixel, sin cambios. El texto de §0.5 es anterior a la respuesta: manda la fila del 19-oct del §7 | `0cb13d5`; `e12/insumos-ramon-19oct.md` §5; `desvios.md`, tanda 1 §1; acta, vuelta 2, fila 5 |
+| **R5, en lo que tocaba el `Layout`** | En `/v3/` se precargan solo Google Sans Flex y DM Mono (Inter, Gabarito y Manrope ya no); `theme-color` `#060606`; favicon El huso con `?v=5`; `#org` con lo de Simón. Queda el cargo de Ramón (0.2, punto 5) | `src/components/a/layout-a.ts` |
+| **R6, el paquete del hero de driftime** | **Sin objeto:** la home es otra (hero 3, la portada del hilo de oro, la cinta y el muro, con cada entrada enlazada a su caso) | brief, «Compuerta 2», punto 3 |
+| **R9, Raigal** | Salió del índice y pasó a archivo con Aplomo y Deslinde. Lo que queda de R9 son los cuatro conceptos (0.2, punto 9) | `insumos-ramon-19oct.md` §3 |
+| **Los ocho defectos de la vuelta 1** | Cerrados y medidos en la vuelta 2: el chequeo local da 83 como el 16-oct, «Concepto» a la vista sin scroll en 64 de 64, Auditoría sin franja, el aviso de cookies sin tapar el chequeo en ningún tamaño, el tope de 493, cero `lazy` en la primera pantalla, las áreas de toque del pie y los tres `title` | acta, vuelta 2 |
+| **Lo declarado por Diego que se resolvió después** | El aviso que tapaba el chequeo en el teléfono (tandas 2 y 3) es el defecto 4; la franja de Auditoría (tanda 4 §8.2), el defecto 3; los enlaces a casos que daban 404 (tanda 2 §12.2), construidos en la tanda 3 | `desvios.md`; filas del 23-oct del §7 |
+
+### 0.2 · Antes de publicar (cada uno con su dueño; sin esto no hay corte)
+
+| # | Qué | Dueño | Cómo se da por cerrado |
+|---|---|---|---|
+| 1 | **Defecto 9 (menor):** bajo 834, el área de toque de «Cookies» del pie (`#cookie-preferencias`) baja sobre la línea de la hora: el 9 % del área no responde a 360, el 6 % a 390 y el 3 % a 414, y el contorno de foco cruza el texto de la hora | **Diego** | «Cookies» crece hacia arriba como antes, o la hora baja. `pie-cookies.mjs` con el 100 % propio a 360, 390 y 414, y `foco.mjs` a 390 sin «tapado p.cab__hora» |
+| 2 | **Defecto 10 (menor):** la línea «También: Paid Media…» de la home corre desde 1194 más ancha que el tope (567, 676 y 911 px; unos 120 caracteres por línea a 1920) porque **la spec se contradice**: §1.3 pone el tope de 493 «en todos los anchos» y §2.1, fila 5, la pone «en una línea de cuerpo con sus precios, en c5–c12» | **Lucía** escribe cuál manda (el tope también desde 1194, o la excepción en §0.3 con su porqué) y su fila en §7; **Diego** construye lo que cambie | `tambien.mjs` con el ancho que diga la spec |
+| | *Los dos se comprueban en exprés* | **Javiera** | Con sus herramientas de `e12/qa-obra/vuelta-2/herramientas/`, sin otra vuelta completa (acta, vuelta 2, veredicto) |
+| 3 | **R1, la ruta de publicación** (raíz o prefijo, qué pasa con las rutas v2 y cuándo) | **Ramón** | Su respuesta escrita. Frena publicar, no frenó construir |
+| 4 | **La lista de publicación, rehecha sobre E12.** `lista-publicacion.md` (13-oct) describe el v3 de driftime (11 plantillas, 21 rutas, ensayada sobre `1b064bf`) y **no se ejecuta tal cual**. Lo que cambió, medido hoy en el build: 12 plantillas (se suma `trabajo/[caso].astro`); 27 rutas (se suman `/trabajo/` y sus seis casos); las cuatro maquetas (`a`, `b`, `c`, `maqueta-inicial`) siguen en el build, con `noindex` (33 páginas = 27 + 4 + las 2 v2); `public/v3/` pesa 27 MB en 156 archivos (los videos del hilo y de los casos, y `/v3/marca/` con El huso); las cinco props del `Layout`; `driftime.css`, `components/v3/` y `consts-v3.ts`, que se van al publicar y cambian el CSS de las páginas publicadas, así que la línea base `e12/construccion/base-dist/` se rehace; el `sitemap.xml` (20 URL hoy, ninguna de `/trabajo/`); `llms.txt`, que todavía presenta la casa como «agencia de marketing con IA»; y el `dateModified` de la home, que sale del reloj del build | **Diego** la reescribe y la vuelve a ensayar en un worktree desechable, como el 13-oct; **Simón**, las señales del corte (sitemap, `llms.txt`, canonical); **Mauro** la encuadra | El ensayo de punta a punta, con lo que no se pudo ensayar marcado, y `npm run verificar` sin hallazgos sobre el resultado |
+| 5 | **El cargo de Ramón.** En `/v3/`, el `jobTitle` de `#autor-ramon` es la propuesta de Simón, «Fundador de SpindleLab: diseño y desarrollo web, SEO técnico y visibilidad en IA», y la firma de los artículos espera lo mismo (`desvios.md`, tanda 1 §1 y tanda 5 §8.3). Si cambia, cambia en la home, en Nosotros y en la firma de los siete artículos | **Ramón** confirma | Su respuesta; Diego la aplica en `layout-a.ts` y en la firma |
+| 6 | **Los textos en primera persona de `/nosotros/`** y la bio (lo que era R4) | **Ramón** | Su lectura; Clara aplica |
+| 7 | **«Con agentes de IA» en Paid Media**, cuatro veces, sin fila en el inventario (`desvios.md`, tanda 4 §8.5) | **Ramón** (si es verdad, Diego le abre la fila; si no, Clara lo saca) | Fila en el inventario o el texto fuera |
+| 8 | **R2, el monitoreo y su cadencia**, sigue a la vista en `/v3/`: «Informes quincenales» en `/v3/metodo/`, «quincenal» en el JSON-LD de Redes sociales y en la página de Acompañamiento mensual, desde `servicios-v3.json` y `oferta-v3.json` (medido hoy en el `dist/`) | **Ramón** | Su respuesta; el anexo A de `e8/copy-secciones.md` trae el texto de cada lugar para cada respuesta |
+| 9 | **R9, ahora los cuatro conceptos** (Tonela, Ocelo, Sesenta y Doceavo) | **Ramón** los revisa antes de que `/v3/` le llegue a un prospecto | Su visto, escrito |
+| 10 | **El criterio 13 del brief, sobre el sitio construido:** lectores fríos (los tres perfiles de E11) leen la home y un caso y escriben qué hacemos, que también hacemos SEO técnico y visibilidad en IA, y qué harían ahora. Javiera lo dejó sin verificar en las dos vueltas: la lectura fría que existe es la del texto de Clara (19-oct), que el sitio lleva tal cual | **La sesión que orquesta**, con lectores en contexto aparte (`claude -p` en un directorio vacío, como `e12/texto/lectura-fria.md`) | Las tres lecturas guardadas, y lo que tropiece, a Clara |
+| 11 | **El visto de Simón a `senales-obra.md` §2.7**, que Clara editó el 23-oct (solo la mayúscula de tres `title`; los largos no cambian) | **Simón** | Su visto en la fila del 23-oct de `senales-obra.md` |
+| 12 | **Las confirmaciones de E8 y R7, re-ubicadas.** Las diez de `e8/e8-antes-despues.md` y los puntos de R7 se escribieron sobre el texto de driftime; el de E12 es otro (`e12/texto/texto-obra.json`). No las re-verifiqué una por una | **Clara** dice cuáles siguen teniendo objeto antes de la lectura de aprobación de Ramón | Una lista corta, con cada punto en su lugar nuevo o marcado sin objeto |
+| 13 | **Lo que la QA no midió:** el muro al pasar el mouse, el filtro del índice, las fuentes de 960 px y el CLS del muro (acta, vueltas 1 y 2) | **Javiera** o **Diego**, en la verificación antes del merge | Medido y anotado |
+| 14 | **El favicon en Safari y en la pantalla de inicio de un iPhone real**, que no se vio (`e12/logo/final/README.md`) | **Ramón** con su teléfono, o una sesión local del Mac | Una captura |
+| 15 | **La fecha de la Ley 21.719 el día del corte.** La portada de Verifica y Cumple que muestra el muro dice que se aplica desde el 1-dic-2026: si se publica después, la entrada queda en pasado | **Clara** y **Diego** | Mirado el día del corte |
+| 16 | **R8, `/privacidad/`** (dos `h1` y dos textos bajo AA, en producción). `/v3/` la enlaza desde el aviso de cookies y no tiene versión propia; en esta obra no se tocó porque estaba protegida | **Ramón** autoriza el arreglo de marcado (sin tocar el texto legal) | `npm run verificar` limpio en `/privacidad/` |
+
+### 0.3 · Declarado y abierto, que espera a Lucía o a Clara (no bloquea publicar)
+
+Lo dejó escrito Diego en `desvios.md` y Javiera lo listó en el acta (vuelta 1, «Cumplimiento de la spec») para que no se
+perdiera. No son defectos: son casos que la spec no cubría y que Diego resolvió con la solución mínima.
+
+- **Lucía:** el `favicon.svg` declarado (spec §5.4) contra el README de Bruno, que recomienda no declararlo (a 16 px pinta
+  26 píxeles grises contra 10 del dibujado a mano); los casos sin pie y por eso sin el botón de cookies, y el pie de A sin
+  enlace a `/privacidad/`; la portada de spindlelab.cl en el muro (va `/privacidad/`, porque la de la home es el hilo de
+  oro) y la captura de Praxi en «Cada pieza» (van sus números, como dice la spec); en Praxi y Combeau a 390, la ficha
+  bajo la barra flotante; Tonela con la misma captura dos veces a 390 y la foto en 4:5; el alt y el recorte de la franja
+  de Visibilidad en IA; y la nota 1 de Javiera: con el aviso abierto, los últimos controles de algunas páginas quedan
+  bajo el aviso y la barra hasta que la persona elige (se cierra, si lo quiere, con `--a-alto-aviso` en el relleno de
+  abajo).
+- **Clara:** los botones del chequeo con dos textos («Revisar mi sitio gratis» y «Correr el chequeo»); `/nosotros/` sin
+  preguntas (no hay dato); y el error del chequeo vacío, que dice «Escribe tu dominio para empezar.» porque vive en
+  `v3-chequeo.js`, protegido en esta obra (el cambio necesita su fila en la spec y el permiso de tocar ese archivo).
+- **Al publicar:** Lenis queda inerte en `/v3/` y no «sin crearse», porque con las publicadas byte a byte no se podía
+  (`desvios.md`, tanda 1 §2); cuando el `Layout` deje de servir a las páginas v2, se resuelve. El video del inicio de
+  Praxi mide 568 × 320 y a 390 se ve blando: no hay otro.
+- **Para quien compare builds** (nota 3 de Javiera): el HTML de `/v3/` cambia cada día por el `dateModified` del build.
+
+### 0.4 · Cuando haya plata o material (no frenan nada)
+
+- **La generación para los conceptos:** 9 fotos y 2 clips (`marketing/portafolio/plan-e12.md` §11), unos 75 créditos;
+  el costo lo pone el plan, **USD 49 por un mes de Higgsfield PLUS**. Ramón: «cuando tenga plata vamos con lo faltante».
+  Nada se genera sin su OK. Lo hace Bruno con su pauta.
+- **Las pantallas internas de Praxi:** el caso las muestra como hueco nombrado, punteado, porque en los repos no hay
+  capturas de la app con sesión iniciada. Entran si Ramón sube las de su carpeta «PRAXI siembra» de iCloud; Diego las
+  recorta con las reglas del caso (sin datos de una persona) y Clara les escribe el pie.
+- **Lo propuesto que no entró:** el giro de la tortera (Bruno, `e12/logo/final/movimiento/`) y la variante v8 del huso,
+  por si Ramón prefiere que nunca se lea seta aunque se lea daga.
+
+### 0.5 · Para la troncal
+
+- **El manual de marca nuevo:** `marketing/encargos-otras-sesiones/encargo-manual-marca-e12.md` (la letra, los colores
+  con su rol y contraste, El huso con sus archivos y cortes, lo que dejó de regir y lo que decide con Ramón).
+- **El giro sigue abierto en sus documentos** (estrategia, fichas, bios, outbound, la ficha de Bernardo y la de Praxi):
+  `marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md`.
+- **D43, B26 y B27** (§3): sin cambios desde el 11-oct; no los re-verifiqué.
+
+### 0.6 · Lo que esto le hace al resto de este documento
+
+- **§1:** R1 sigue abierta y frena publicar. R5 quedó cerrada en lo que tocaba el `Layout` y abierta en el cargo. R6 sin
+  objeto. R9 pasó a los cuatro conceptos. R2 sigue a la vista (medido hoy). R3, R4, R7 y R8 no cambiaron de fondo y **no
+  las re-verifiqué ítem por ítem** en este cierre: antes de tomar cualquiera, se comprueba contra el build de ese día (la
+  lección del 10-oct: tres «pendientes» estaban hechos hacía rato).
+- **§2:** E1 a E8 se cerraron sobre el build de driftime, que E12 reemplazó en todas las rutas de `/v3/`. Lo que sigue
+  vivo de ellos está en 0.2 y 0.3; E7, la lista de publicación, se rehace (0.2, punto 4).
 
 ## Qué se revisó y cómo
 
@@ -249,6 +344,11 @@ quedó fuera el 5-oct.
 > igual. **Para la troncal:** la dirección elegida está en
 > `marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md` §6; el encargo del manual nuevo llega al cierre
 > de la obra. Registro: fila del 19-oct (compuerta 2 de E12) en el §7 de `spec-visual.md`.
+>
+> **Estado al 23-oct, 17:00 (E12 cerrada con reparos):** construida A en `spindlelab-astro/` (27 rutas bajo `/v3/`), QA de
+> obra de Javiera con reparos en la vuelta 2 (`e12/acta-obra.md`, `f3044fc`) y capturas de cierre en `capturas/e12/`. El
+> estado y lo que queda, con su dueño, está en **§0** al principio de este documento. Registro: fila del 23-oct (cierre)
+> en el §7 de `spec-visual.md`.
 
 No necesita decisión. Se hace en esta rama, se mide y queda anotado en el §7 de la spec.
 
