@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu pedido · Verifica y Cumple</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://verifica.spindlelab.cl/pedido/">
+<meta name="description" content="El estado de tu pedido del kit de implementación de Verifica y Cumple.">
+
+<!--
+  LA PANTALLA DEL PEDIDO.
+
+  Se entra con el enlace y nada más: el id son 32 caracteres hexadecimales de azar, así que la
+  URL es la llave. Sin cuenta, sin contraseña, sin registro. Es coherente con el chequeo
+  gratuito, que tampoco pide correo, y era el hueco que marcó la revisión externa: el brief
+  creaba un «espacio privado» sin decir nunca cómo se entra.
+
+  `noindex` porque es una página personal: no tiene por qué estar en un buscador.
+
+  Lo que esta pantalla NO hace, a propósito:
+   - No muestra una barra de seis pasos. El sistema sabe cinco etapas y cada una sale de un
+     dato guardado. Fingir que sabe más sería teatro, y este producto declina en vez de
+     inventar en todas sus otras partes.
+   - No pide nada cuando no le toca al cliente. Una pantalla que siempre pide algo entrena a
+     la persona a ignorarla.
+   - No se refresca sola salvo mientras se confirma el pago, que es lo único que se mueve sin
+     que nadie haga nada.
+-->
+
+<style>
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: swap;
+    src: url("/assets/fonts/archivo-black-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+      U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+      U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: swap;
+    src: url("/assets/fonts/archivo-black-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+      U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+      U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  :root {
+    --azul-600: #2e5bff; --lima-400: #d6ff3d; --rosa-500: #ff3ea0;
+    --tinta-900: #17163a; --tinta-500: #56547a;
+    --crema-50: #fffdf9; --crema-100: #fffaf0; --crema-200: #f7f2ea;
+    --arena-300: #e2d6bf; --blanco: #fff;
+    --verde-700: #0d6d61; --verde-100: #e2f1ed;
+    --ambar-700: #a8560f; --ambar-100: #fbe8d6;
+    --display: "Archivo Black", Impact, Georgia, serif;
+    --cuerpo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--crema-100); color: var(--tinta-900);
+    font-family: var(--cuerpo); font-size: 17px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .envoltura { max-width: 680px; margin: 0 auto; padding: 32px 20px 80px; }
+
+  .marca { font-family: var(--display); font-size: 20px; letter-spacing: -.02em; margin: 0 0 32px; }
+  .marca a { color: var(--tinta-900); text-decoration: none; }
+  .marca .punto { color: var(--azul-600); }
+
+  .tarjeta {
+    background: var(--blanco); border: 1px solid var(--arena-300);
+    border-radius: 18px; padding: 28px 24px; margin: 0 0 20px;
+  }
+  .etiqueta {
+    font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--tinta-500); margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--display); font-size: 29px; line-height: 1.15; letter-spacing: -.02em;
+    margin: 0 0 14px;
+  }
+  .detalle { margin: 0 0 4px; color: var(--tinta-900); }
+  .sigue { margin: 16px 0 0; color: var(--tinta-500); font-size: 15.5px; }
+
+  /* Lo que le toca hacer al cliente. Es lo único con color fuerte en la página: si hay una
+     acción pendiente, tiene que ser lo primero que se vea. */
+  .te-toca {
+    margin: 20px 0 0; padding: 18px 18px; border-radius: 14px;
+    background: var(--ambar-100); border: 1px solid #e8c49b;
+  }
+  .te-toca .etiqueta { color: var(--ambar-700); }
+  .te-toca p { margin: 0; }
+  .te-toca .boton {
+    display: inline-block; margin: 14px 0 0; padding: 12px 20px; border-radius: 999px;
+    background: var(--tinta-900); color: var(--blanco); text-decoration: none;
+    font-weight: 700; font-size: 15.5px;
+  }
+  .te-toca .boton:hover { background: var(--azul-600); }
+
+  .listo { background: var(--verde-100); border-color: #b9dcd4; }
+  .listo .etiqueta { color: var(--verde-700); }
+
+  .dato { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0;
+          border-bottom: 1px solid var(--crema-200); font-size: 15.5px; }
+  .dato:last-child { border-bottom: 0; }
+  .dato span:first-child { color: var(--tinta-500); }
+  .dato span:last-child { text-align: right; font-weight: 600; }
+
+  ul.senales { list-style: none; padding: 0; margin: 10px 0 0; }
+  ul.senales li { padding: 7px 0 7px 26px; position: relative; font-size: 15.5px; }
+  ul.senales li::before {
+    content: ""; position: absolute; left: 0; top: 14px;
+    width: 14px; height: 2px; border-radius: 2px; background: var(--azul-600);
+  }
+  ul.senales.fuera li::before { background: var(--arena-300); }
+  .nota { font-size: 14.5px; color: var(--tinta-500); margin: 12px 0 0; }
+
+  .cargando, .error { text-align: center; padding: 50px 0; color: var(--tinta-500); }
+  .pie { margin: 36px 0 0; font-size: 14.5px; color: var(--tinta-500); text-align: center; }
+  .pie a { color: var(--tinta-500); }
+
+  @media (max-width: 520px) {
+    .envoltura { padding: 24px 16px 60px; }
+    h1 { font-size: 25px; }
+    .dato { flex-direction: column; gap: 2px; }
+    .dato span:last-child { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="envoltura">
+  <p class="marca"><a href="/">Verifica y Cumple<span class="punto">.</span></a></p>
+  <div id="contenido"><p class="cargando">Buscando tu pedido…</p></div>
+  <p class="pie">
+    ¿Algo no calza? Escríbenos a
+    <a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a> con este enlace.
+  </p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var contenido = document.getElementById('contenido');
+
+  function escapar(t) {
+    return String(t == null ? '' : t)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function pesos(n) {
+    if (typeof n !== 'number' || !isFinite(n)) return '';
+    return '$' + n.toLocaleString('es-CL');
+  }
+
+  function fecha(iso) {
+    if (!iso) return '';
+    try {
+      return new Date(iso).toLocaleDateString('es-CL', { day: 'numeric', month: 'long', year: 'numeric' });
+    } catch (e) { return ''; }
+  }
+
+  // El id sale de la ruta (/pedido/vyc_abc) o del query (?id=vyc_abc). Las dos formas, porque
+  // el enlace del correo puede quedar de cualquiera de las dos maneras.
+  function idDelPedido() {
+    var porQuery = new URLSearchParams(location.search).get('id');
+    if (porQuery) return porQuery;
+    var m = location.pathname.match(/\/pedido\/(vyc_[0-9a-f]+)\/?$/i);
+    return m ? m[1] : null;
+  }
+
+  function noEncontrado() {
+    contenido.innerHTML =
+      '<div class="tarjeta">' +
+        '<h1>No encontramos este pedido</h1>' +
+        '<p class="detalle">El enlace puede estar incompleto. Fíjate que lo hayas copiado entero, ' +
+        'incluyendo todo lo que va después de la última barra.</p>' +
+        '<p class="sigue">Si lo copiaste bien y aun así no aparece, escríbenos y lo buscamos.</p>' +
+      '</div>';
+  }
+
+  function dibujar(data) {
+    var e = data.etapa, p = data.pedido, s = data.señales || data.senales || { incluidas: [], fuera: [] };
+    var html = '';
+
+    html += '<div class="tarjeta">';
+    html += '<p class="etiqueta">Tu pedido</p>';
+    html += '<h1>' + escapar(e.titulo) + '</h1>';
+    html += '<p class="detalle">' + escapar(e.detalle) + '</p>';
+    if (e.loQueSigue) html += '<p class="sigue">' + escapar(e.loQueSigue) + '</p>';
+
+    // Lo que le toca al cliente. Solo aparece si de verdad le toca.
+    if (e.queHacer) {
+      html += '<div class="te-toca' + (e.terminado ? '' : '') + '">';
+      html += '<p class="etiqueta">Te toca a ti</p>';
+      html += '<p>' + escapar(e.queHacer) + '</p>';
+      html += '<a class="boton" href="mailto:hola@spindlelab.cl' +
+        '?subject=' + encodeURIComponent('Pedido ' + p.id) +
+        '&body=' + encodeURIComponent('Hola, sobre mi pedido ' + p.id + ' en ' + (p.dominio || '') + ':\n\n') +
+        '">Escríbenos</a>';
+      html += '</div>';
+    }
+    html += '</div>';
+
+    // Qué se compró. Del contrato congelado, no del chequeo de hoy.
+    html += '<div class="tarjeta">';
+    html += '<p class="etiqueta">Qué compraste</p>';
+    html += '<div class="dato"><span>Sitio</span><span>' + escapar(p.dominio || '') + '</span></div>';
+    if (p.url_medida) {
+      html += '<div class="dato"><span>Página que medimos</span><span>' + escapar(p.url_medida) + '</span></div>';
+    }
+    html += '<div class="dato"><span>Total</span><span>' + pesos(p.monto_total) + '</span></div>';
+    if (p.pagado_en) {
+      html += '<div class="dato"><span>Pagado el</span><span>' + escapar(fecha(p.pagado_en)) + '</span></div>';
+    }
+    if (p.entregado_en) {
+      html += '<div class="dato"><span>Entregado el</span><span>' + escapar(fecha(p.entregado_en)) + '</span></div>';
+    }
+
+    if (s.incluidas.length) {
+      // El tiempo verbal depende del estado. «Lo que dejamos hecho» en un pedido que todavía
+      // espera el acceso es falso, y se ve en la pantalla: no hemos hecho nada.
+      var rotulo = (p.estado === 'entregado') ? 'Lo que dejamos hecho' : 'Lo que incluye tu kit';
+      html += '<p class="etiqueta" style="margin-top:22px">' + rotulo + '</p>';
+      html += '<ul class="senales">';
+      s.incluidas.forEach(function (i) { html += '<li>' + escapar(i.titulo) + '</li>'; });
+      html += '</ul>';
+    }
+    if (s.fuera.length) {
+      html += '<p class="etiqueta" style="margin-top:22px">Lo que queda fuera del kit</p>';
+      html += '<ul class="senales fuera">';
+      s.fuera.forEach(function (i) { html += '<li>' + escapar(i.titulo) + '</li>'; });
+      html += '</ul>';
+      // Se dice acá y no solo en la oferta: es el punto donde alguien podría pensar que se le
+      // entregó de menos.
+      html += '<p class="nota">Esto no lo cierra el kit y no estaba incluido en el precio. ' +
+        'El texto final de tu política lo revisa tu abogado.</p>';
+    }
+    html += '</div>';
+
+    html += '<p class="nota" style="text-align:center">Guarda este enlace. Es la forma de volver ' +
+      'a esta página, y no hace falta ninguna cuenta.</p>';
+
+    contenido.innerHTML = html;
+  }
+
+  var reintentos = 0;
+
+  function pedir() {
+    var id = idDelPedido();
+    if (!id) { noEncontrado(); return; }
+
+    fetch('/api/pedido?id=' + encodeURIComponent(id), { headers: { Accept: 'application/json' } })
+      .then(function (r) { return r.json().then(function (j) { return { estado: r.status, j: j }; }); })
+      .then(function (res) {
+        if (res.estado === 404) { noEncontrado(); return; }
+        if (!res.j || !res.j.ok) {
+          contenido.innerHTML =
+            '<div class="tarjeta"><h1>No pudimos cargar tu pedido</h1>' +
+            '<p class="detalle">Fue un problema nuestro, no tuyo. Vuelve a intentarlo en un minuto.</p>' +
+            '<p class="sigue">Si sigue pasando, escríbenos con este enlace.</p></div>';
+          return;
+        }
+        dibujar(res.j);
+
+        // Se vuelve a preguntar SOLO mientras el pago se confirma, que es lo único que cambia
+        // sin que nadie haga nada. Y con un tope: si a los dos minutos no llegó, refrescar más
+        // no va a ayudar y lo honesto es decirlo.
+        if (res.j.refrescar && reintentos < 24) {
+          reintentos++;
+          setTimeout(pedir, 5000);
+        }
+      })
+      .catch(function () {
+        contenido.innerHTML =
+          '<div class="tarjeta"><h1>No pudimos conectarnos</h1>' +
+          '<p class="detalle">Revisa tu conexión y vuelve a cargar la página.</p></div>';
+      });
+  }
+
+  pedir();
+})();
+</script>
+</body>
+</html>
