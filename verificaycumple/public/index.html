@@ -3105,6 +3105,24 @@
    * eso por su cuenta, así que mandarlos desde acá sería darle al navegador un voto que no le
    * corresponde. Lo único que viaja es el dominio, el correo y el consentimiento.
    */
+  /* Los parámetros de campaña, capturados AL CARGAR.
+   *
+   * Se leen acá y no al momento de comprar porque la página cambia su propia URL mientras la
+   * persona la usa, y si se leyeran tarde podrían haberse perdido. Viajan en el cuerpo del POST
+   * porque la petición va a `/api/pedido`, que nunca los lleva: sin esto, ninguna venta se
+   * puede atribuir a la campaña que la trajo. */
+  const UTMS = (function () {
+    const out = {};
+    try {
+      const p = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (c) {
+        const v = p.get(c);
+        if (v) out[c] = v.slice(0, 200);
+      });
+    } catch {}
+    return out;
+  })();
+
   const panelCompra = document.getElementById('compra');
   const estadoCompra = panelCompra && panelCompra.querySelector('.pedir-estado');
   let dominioCompra = '';
@@ -3181,6 +3199,7 @@
           dominio: dominioCompra,
           correo: panelCompra.querySelector('input[name="correo"]').value.trim(),
           consiento: panelCompra.querySelector('input[name="consiento"]').checked === true,
+          utms: UTMS,
         }),
         signal: AbortSignal.timeout(30000),
       });

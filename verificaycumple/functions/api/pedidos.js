@@ -131,14 +131,37 @@ export const ID_VALIDO_MP = /^[A-Za-z0-9_-]{1,64}$/;
 export const CAMPOS_UTM = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 
 export function utmsDe(url) {
-  const out = {};
   let params;
-  try { params = new URL(url).searchParams; } catch { return out; }
+  try { params = new URL(url).searchParams; } catch { return {}; }
+  return limpiarUtms(Object.fromEntries(CAMPOS_UTM.map((c) => [c, params.get(c)])));
+}
+
+/**
+ * Los parámetros de campaña que manda el navegador, acotados.
+ *
+ * ── POR QUÉ ESTO EXISTE, Y POR QUÉ ACÁ SÍ SE LE CREE AL NAVEGADOR ────────────────────────
+ *
+ * El checkout usaba `utmsDe(request.url)`, y esa URL es la del POST: `/api/pedido`, que nunca
+ * lleva parámetros. O sea que TODAS las ventas se guardaban sin atribución, y con una campaña
+ * pagada corriendo eso significa no poder decir qué anuncio trajo qué venta. Lo encontró una
+ * revisión externa y se comprobó: `utmsDe('https://.../api/pedido')` devuelve `{}` siempre.
+ *
+ * Los parámetros viven en la URL de la PÁGINA, así que tiene que mandarlos el navegador. Y acá
+ * creerle está bien, a diferencia del monto o de las señales: lo peor que puede hacer alguien
+ * mintiendo es atribuirse mal su propia visita. No toca el precio, ni la elegibilidad, ni lo
+ * que se promete. Lo único que hay que impedir es que meta un texto enorme o campos que no son.
+ */
+export function limpiarUtms(obj) {
+  const out = {};
+  if (!obj || typeof obj !== 'object') return out;
   for (const c of CAMPOS_UTM) {
-    const v = params.get(c);
-    // Se recorta a 200 para que nadie meta un texto enorme por la URL, y se guarda tal cual
+    const v = obj[c];
+    if (typeof v !== 'string') continue;
+    // Se limpian los caracteres de control y se recorta a 200. Dentro de eso se guarda tal cual
     // llega: es un dato de campaña, no se normaliza ni se mete en una lista cerrada.
-    if (v) out[c] = v.slice(0, 200);
+    // eslint-disable-next-line no-control-regex
+    const limpio = v.replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, 200);
+    if (limpio) out[c] = limpio;
   }
   return out;
 }

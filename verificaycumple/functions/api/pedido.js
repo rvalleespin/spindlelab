@@ -38,7 +38,7 @@ import { chequear, normalizarDominio } from './chequeo.js';
 import { clavesDeTope, contar } from './profundo.js';
 import { elegibilidad } from './elegibilidad.js';
 import {
-  ESTADOS, nuevoIdPedido, congelarContrato, armarOrdenMP, utmsDe, VIGENCIA_ORDEN_HORAS,
+  ESTADOS, nuevoIdPedido, congelarContrato, armarOrdenMP, limpiarUtms, VIGENCIA_ORDEN_HORAS,
 } from './pedidos.js';
 import { crearOrdenMP } from './cobro.js';
 
@@ -335,7 +335,11 @@ export async function onRequestPost(contexto) {
         dominio,
         correo,
         ...contrato,
-        ...utmsDe(request.url),
+        // ⚠️ De `cuerpo.utms`, NO de `request.url`. La URL de esta petición es `/api/pedido` y
+        // nunca lleva parámetros de campaña: con `utmsDe(request.url)` todas las ventas se
+        // guardaban sin atribución. Los parámetros viven en la URL de la página, así que los
+        // manda el navegador, y acá creerle es inofensivo (ver la nota de `limpiarUtms`).
+        ...limpiarUtms(cuerpo.utms),
       });
     } catch {
       return jsonPost({ ok: false, motivo: 'no-se-pudo-guardar',
@@ -423,8 +427,19 @@ export async function onRequestPost(contexto) {
       // puede llamar a Mercado Pago en nuestro nombre— y convierte un callejón sin salida en un
       // diagnóstico: `http-401` es un problema de credenciales y `http-400` es el cuerpo.
       codigo: creada.error || null,
-      detalle: 'No pudimos abrir el pago en Mercado Pago. No se te cobró nada. Vuelve a ' +
-        'intentarlo en un momento, y si te pasa de nuevo escríbenos con este enlace.',
+      // ⚠️ EL TEXTO DEPENDE DE SI SABEMOS O NO. Decir «no se te cobró nada» es una afirmación
+      // sobre la plata de alguien, y hay un caso en que no la podemos sostener: si la petición a
+      // Mercado Pago se cortó por tiempo o por red, la orden PUEDE haberse creado del otro lado
+      // y nosotros no llegamos a leer la respuesta. Ahí lo honesto es decir que no alcanzamos a
+      // confirmarlo, no tranquilizar a alguien con algo que no sabemos.
+      //
+      // Cuando Mercado Pago sí contestó con un error (un 4xx), la orden no se creó y la frase
+      // tranquilizadora es cierta.
+      detalle: creada.estadoHttp > 0
+        ? 'No pudimos abrir el pago en Mercado Pago. No se te cobró nada. Vuelve a intentarlo ' +
+          'en un momento, y si te pasa de nuevo escríbenos con este enlace.'
+        : 'No alcanzamos a confirmar el pago con Mercado Pago. Si ves un cargo, escríbenos con ' +
+          'este enlace y lo revisamos de inmediato; si no ves nada, puedes volver a intentarlo.',
     // ⚠️ 409 Y NO 502, Y NO ES UN CAPRICHO.
     //
     // Cloudflare INTERCEPTA las respuestas 5xx que salen de una Function y las reemplaza por su
