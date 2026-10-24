@@ -241,18 +241,52 @@ console.log('=== 5. LA QUE MÁS IMPORTA: si la API falla, el evento se SUELTA ==
 }
 
 /* ================================================================== */
-console.log('=== 6. un 404 de Mercado Pago NO se reintenta ===');
+console.log('=== 6. un 404 solo se cierra cuando se sabe de qué pedido se trata ===');
 {
-  // Esa orden no existe o no es nuestra. Reintentar ocho veces no la va a hacer aparecer.
-  const { db, crudo } = baseNueva();
-  await unPedido(db);
-  const soltar = conFetch(respondeCon({ message: 'not found' }, 404));
-  const r = await W.onRequestPost({ request: await peticion(), env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
-  soltar();
-  eq('contesta 200, no 503', r.status, 200);
-  eq('y lo ignora', (await r.json()).motivo, 'orden-inexistente');
-  // El evento se queda reclamado a propósito: no hay nada que reintentar.
-  eq('el evento queda registrado', eventos(crudo).length, 1);
+  // ⚠️ ESTA PRUEBA CAMBIÓ DE CONTRATO EL 24-OCT, a propósito. Antes afirmaba que CUALQUIER 404
+  // se cerraba de inmediato, con el argumento de que «esa orden no existe o no es nuestra, y
+  // reintentar no la va a hacer aparecer».
+  //
+  // El argumento falla en un caso que esta integración ya vivió: si el token apunta a una
+  // aplicación distinta de la que tiene el webhook configurado, TODAS las órdenes dan 404
+  // aunque existan. Ese desajuste pasó hoy con el otro secreto y se puede repetir al cargar las
+  // credenciales de producción. Y cerrar es irreversible —el rescate del reclamo abandonado
+  // exige `resultado IS NULL`—, así que cerrar de más cuesta pagos y reintentar de más cuesta
+  // ruido, y los reintentos de Mercado Pago son finitos.
+  //
+  // Por eso ahora se cierra solo cuando se SABE de qué pedido se trata: con
+  // `data.external_reference` en la URL, y pasada su ventana.
+
+  // (a) Sin el parámetro: no se puede saber, no se cierra.
+  {
+    const { db, crudo } = baseNueva();
+    await unPedido(db);
+    const soltar = conFetch(respondeCon({ message: 'not found' }, 404));
+    const r = await W.onRequestPost({ request: await peticion(),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+    soltar();
+    eq('pide reintento', r.status, 503);
+    // Lo decisivo: el evento NO queda cerrado, que es lo único que permite reprocesarlo.
+    eq('y el evento no queda cerrado', eventos(crudo).filter((e) => e.resultado !== null).length, 0);
+  }
+
+  // (b) Con el parámetro, y la referencia no es de ningún pedido nuestro: ahí sí se cierra.
+  {
+    const { db, crudo } = baseNueva();
+    await unPedido(db);
+    const soltar = conFetch(respondeCon({ message: 'not found' }, 404));
+    const req = await peticion();
+    const url = new URL(req.url);
+    url.searchParams.set('data.external_reference', 'vyc_' + '0'.repeat(32));
+    const r = await W.onRequestPost({
+      request: new Request(url, { method: 'POST', headers: req.headers, body: await req.text() }),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+    });
+    soltar();
+    eq('contesta 200, no 503', r.status, 200);
+    eq('y lo ignora', (await r.json()).motivo, 'orden-inexistente');
+    eq('el evento queda registrado', eventos(crudo).length, 1);
+  }
 }
 
 /* ================================================================== */
@@ -714,6 +748,25 @@ console.log('=== 18. la entrega que pierde con información VIEJA no puede queda
   const f = crudo.prepare('SELECT * FROM pedidos WHERE id = ?').get(ID);
   eq('el pedido se queda pagado', f.estado, 'pagado');
   cierto('con su fecha de pago intacta', Boolean(f.pagado_en));
+
+  // ── EL TESTIGO ────────────────────────────────────────────────────────────────────────
+  //
+  // Sin esto, la 18 pasaría igual con la barrera invertida, o sea ejerciendo el escenario de la
+  // 17 y no el suyo. Lo que distingue a esta prueba es que acá NADIE alcanza nada: la que
+  // pierde traía información vieja.
+  const evs = crudo.prepare('SELECT * FROM eventos_mp').all();
+  const notas = evs.map((e) => String(e.resultado || '')).join(' | ');
+  falso('acá nadie alcanzó nada', /se alcanzó/.test(notas));
+  cierto('y una entrega deja dicho que perdió', /perdió la carrera/.test(notas));
+
+  // ── Y LA NOTA TIENE QUE DECIR LA VERDAD ───────────────────────────────────────────────
+  //
+  // La primera versión escribía el estado que ESTA entrega quería (`pendiente`), que el pedido
+  // no tiene. Un registro que miente es peor que uno vacío, porque se audita con él.
+  const perdedora = evs.map((e) => String(e.resultado || '')).find((t) => /perdió la carrera/.test(t));
+  cierto('la nota dice dónde quedó el pedido de verdad', /pagado/.test(perdedora));
+  cierto('y por qué no se pudo alcanzar', /transicion-invalida/.test(perdedora));
+  falso('y NO afirma el estado que esta entrega quería', /a pendiente/.test(perdedora));
 }
 
 console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave débil ===');
@@ -798,6 +851,58 @@ console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave 
       ev.some((e) => String(e.resultado || '').includes('clave no exacta')));
     eq('el pedido no se tocó', crudo.prepare('SELECT * FROM pedidos WHERE id = ?').get(ID).estado, 'creado');
   }
+}
+
+console.log('=== 20. si otra entrega ya lo dejó donde esta quería, no es un error ===');
+{
+  // El segundo intento del rescate también puede no mover la fila, porque entre la relectura y
+  // el UPDATE entró una TERCERA entrega. La primera versión contestaba 503 sin mirar, y eso
+  // tiene dos costos: le avisa a Mercado Pago de un error que no existe, y suelta el evento,
+  // que es el único rastro que queda de esta entrega.
+  //
+  // Se monta forzando exactamente eso: justo antes del segundo UPDATE, la fila se mueve por
+  // fuera al estado que esta entrega quería.
+
+  const { db: cruda, crudo } = baseNueva();
+  const ID = 'vyc_' + '6'.repeat(32);
+  crudo.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
+     VALUES (?, ?, 'pendiente', 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
+      '{}', 149000, 177310, 'c@clinicaejemplo.cl', ?)`,
+  ).run(ID, new Date().toISOString(), ID_ORDEN);
+
+  let updates = 0;
+  const db = {
+    prepare(sql) {
+      const st = cruda.prepare(sql);
+      if (/UPDATE pedidos SET/.test(sql)) {
+        return { bind: (...a) => ({ run: async () => {
+          updates++;
+          // El PRIMER UPDATE lo hacemos fallar moviendo la fila por fuera a otro estado, para
+          // que el rescate entre. El SEGUNDO también falla, pero porque alguien ya la dejó
+          // justo en `pagado`, que es lo que esta entrega quería.
+          if (updates === 1) crudo.prepare('UPDATE pedidos SET estado = ? WHERE id = ?').run('creado', ID);
+          if (updates === 2) crudo.prepare("UPDATE pedidos SET estado = 'pagado', pagado_en = ? WHERE id = ?").run(new Date().toISOString(), ID);
+          return st.bind(...a).run();
+        } }) };
+      }
+      return st;
+    },
+  };
+
+  const soltar = conFetch(respondeCon(ORDEN(ID)));
+  const r = await W.onRequestPost({ request: await peticion({
+    cuerpo: { type: 'order', action: 'order.processed', data: { id: ID_ORDEN } } }),
+    env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+  soltar();
+
+  eq('contesta 200, no 503', r.status, 200);
+  eq('el pedido quedó pagado', crudo.prepare('SELECT * FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
+  const evs = crudo.prepare('SELECT * FROM eventos_mp').all();
+  eq('y el evento NO se soltó: queda su rastro', evs.filter((e) => e.resultado !== null).length, 1);
+  cierto('diciendo que lo alcanzó otra entrega',
+    evs.some((e) => /lo alcanzó otra entrega/.test(String(e.resultado || ''))));
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);

@@ -67,7 +67,11 @@ function kvNuevo(entradas = {}) {
   return {
     almacen: m,
     async get(k, o) { const v = m.get(k); if (v === undefined) return null; return (o && o.type === 'json') ? JSON.parse(v) : v; },
-    async put(k, v) { m.set(k, String(v)); },
+    // Las opciones se guardan aparte: el `expirationTtl` del freno de la reconciliación es
+    // justamente lo que hace que la red de seguridad vuelva a encenderse. Sin él la marca sería
+    // eterna y la red se apagaría para siempre, en silencio.
+    opciones: new Map(),
+    async put(k, v, o) { m.set(k, String(v)); this.opciones.set(k, o || null); },
   };
 }
 
@@ -115,14 +119,26 @@ const ORDEN_MP = (ref) => ({
  * Reemplaza el fetch global, que es lo que usan POR DENTRO tanto `chequear` como `crearOrdenMP`.
  * Enruta por destino: lo de Mercado Pago va a la orden, lo demás al sitio.
  */
-function conRed({ sitio = PORTADA, mp = null, mpEstado = 201, caeMP = false } = {}) {
+function conRed({ sitio = PORTADA, mp = null, mpEstado = 201, caeMP = false,
+  // Desde el 24-oct el POST también LEE una orden (GET /v1/orders/…) antes de cerrar una compra
+  // abierta vieja, así que el molde tiene que saber contestar las dos cosas. `leida` es lo que
+  // devuelve esa lectura; `leidaEstado` su código HTTP; `caeLeida` simula que no se puede
+  // preguntar.
+  leida = null, leidaEstado = 200, caeLeida = false } = {}) {
   const antes = globalThis.fetch;
-  const llamadas = { sitio: 0, mp: 0, cuerposMP: [], cabecerasMP: [] };
+  const llamadas = { sitio: 0, mp: 0, lecturas: 0, cuerposMP: [], cabecerasMP: [] };
   globalThis.fetch = async (u, o = {}) => {
     const url = String(u && u.url ? u.url : u);
     if (url.includes('api.mercadopago.com')) {
+      // Una lectura de orden es un GET sin cuerpo; crear es un POST con cuerpo.
+      if (!o.body) {
+        llamadas.lecturas++;
+        if (caeLeida) throw new Error('ECONNRESET');
+        return { ok: leidaEstado >= 200 && leidaEstado < 300, status: leidaEstado,
+          json: async () => leida };
+      }
       llamadas.mp++;
-      llamadas.cuerposMP.push(o.body ? JSON.parse(o.body) : null);
+      llamadas.cuerposMP.push(JSON.parse(o.body));
       llamadas.cabecerasMP.push(o.headers || {});
       if (caeMP) throw new Error('ECONNRESET');
       const cuerpo = mp === null ? ORDEN_MP(JSON.parse(o.body).external_reference) : mp;
@@ -901,92 +917,156 @@ console.log('=== 22. hasta cuándo una medición sirve para vender ===');
   eq('y tampoco deja pedido', filas(c3).length, 0);
 }
 
-console.log('=== 23. una compra abierta vencida no puede encerrar a nadie ===');
+console.log('=== 23. una compra abierta vieja: se cierra solo con evidencia de que murió ===');
 {
-  // EL DEFECTO, encontrado el 24-oct por una revisión adversaria y verificado línea por línea:
-  // el índice `idx_pedidos_compra_abierta` garantiza UNA compra abierta por (dominio, correo)
-  // SIN mirar su edad, pero `buscarPedidoReciente` solo mira las últimas VIGENCIA_ORDEN_HORAS.
-  // En el hueco entre los dos, una fila vieja atascada en `creado` bloqueaba el INSERT y nadie
-  // podía encontrarla: cada intento daba 409 «no se te cobró nada, vuelve a intentarlo», para
-  // siempre. Determinista, no una carrera.
+  // EL DEFECTO ORIGINAL: el índice `idx_pedidos_compra_abierta` garantiza UNA compra abierta por
+  // (dominio, correo) sin mirar su edad, pero `buscarPedidoReciente` solo mira las últimas
+  // VIGENCIA_ORDEN_HORAS. En el hueco, esa pareja quedaba encerrada para siempre.
   //
-  // Y hoy ninguna fila sale de `creado` sola: la única salida era el webhook.
+  // Y EL DEFECTO DEL PRIMER ARREGLO, que encontró una revisión adversaria el mismo día: cerraba
+  // la fila vieja DEDUCIENDO que su orden había vencido, porque la ventana sale de la misma
+  // constante que el `expiration_time`. El razonamiento es elegante y falso: `creado_en` es
+  // cuándo nació la FILA, no la ORDEN. Si el primer intento no logró abrir el pago, la fila
+  // queda sin orden; si la persona vuelve dentro de la ventana, se reusa esa fila vieja y se le
+  // abre una orden NUEVA que vive 24 horas desde ESE momento. Cerrar por la fecha de la fila
+  // habría matado un enlace de pago vivo.
 
-  const { db, crudo } = baseNueva();
-  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
-
-  // Una compra abierta de hace más de un día, de la MISMA pareja: su orden en Mercado Pago ya
-  // venció (se abrió con expiration_time = VIGENCIA_ORDEN_HORAS), pero sigue tomando el índice.
-  const idViejo = 'vyc_' + 'b'.repeat(32);
   const haceMucho = new Date(Date.now() - (P.VIGENCIA_ORDEN_HORAS + 2) * 60 * 60 * 1000).toISOString();
-  crudo.prepare(
-    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
-      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
-     VALUES (?, ?, 'creado', 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
-      '{}', 149000, 177310, 'contacto@clinicaejemplo.cl', 'ORD_VENCIDA')`,
-  ).run(idViejo, haceMucho);
-
-  const red = conRed();
-  const r = await E.onRequestPost({ request: pedir(BIEN), env });
-  const j = await r.json();
-  red.soltar();
-
-  eq('ahora sí se puede comprar', r.status, 200);
-  cierto('con un pedido nuevo', /^vyc_[0-9a-f]{32}$/.test(j.id));
-  falso('que no es el viejo', j.id === idViejo);
-
-  const todas = filas(crudo);
-  eq('quedan dos filas: la vieja cerrada y la nueva', todas.length, 2);
-  eq('la vieja queda rechazada, no en creado', todas.find((f) => f.id === idViejo).estado, 'rechazado');
-  eq('y la nueva queda abierta', todas.find((f) => f.id === j.id).estado, 'creado');
-
-  // El enlace de pago tiene que ser el de la orden NUEVA. Reusar el id de la fila vieja habría
-  // mandado a la persona a un enlace muerto, que es peor que el 409: cree que va a pagar.
-  eq('se abrió una orden nueva en Mercado Pago', red.llamadas.mp, 1);
-  eq('con la clave de idempotencia del pedido nuevo', red.llamadas.cabecerasMP[0]['X-Idempotency-Key'], j.id);
-  eq('y la referencia externa del pedido nuevo', red.llamadas.cuerposMP[0].external_reference, j.id);
-
-  // ── Y lo que NO puede pasar: que la búsqueda sin fecha agarre un pedido ajeno ─────────
-  //
-  // ⚠️ LA PRIMERA VERSIÓN DE ESTE TRAMO NO PROBABA NADA. Ponía una fila `pagado` sola y
-  // afirmaba que no se tocaba. Pero el índice parcial SOLO cubre las filas en `creado`, así
-  // que con una `pagado` sola el INSERT entra sin chocar, el rescate nunca corre y
-  // `buscarCompraAbierta` ni se llama. Se descubrió rompiendo el filtro de estado a propósito:
-  // la prueba siguió verde. Una prueba que pasa con el código roto es peor que ninguna.
-  //
-  // Para ejercerlo de verdad hacen falta las DOS filas: una `creado` vieja que bloquee el
-  // índice —y obligue a entrar al rescate— y una `pagado` MÁS NUEVA de la misma pareja. Con el
-  // filtro puesto, la búsqueda devuelve la vieja en `creado` y todo sale bien. Sin el filtro,
-  // el `ORDER BY creado_en DESC` devuelve la PAGADA, que no se puede cerrar, y la compra muere.
-  const { db: db2, crudo: c2 } = baseNueva();
-  const kv2 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
   const meter = (crudo, id, estado, cuando, orden) => crudo.prepare(
     `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
       senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
      VALUES (?, ?, ?, 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
       '{}', 149000, 177310, 'contacto@clinicaejemplo.cl', ?)`,
   ).run(id, cuando, estado, orden);
+  const kvCon = () => kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const env = (db) => ({ VYC_PEDIDOS: db, VYC_TOPES: kvCon(), MP_ACCESS_TOKEN: 'TEST-tok' });
 
-  const idBloquea = 'vyc_' + 'd'.repeat(32);
-  const idPagadoNuevo = 'vyc_' + 'c'.repeat(32);
-  meter(c2, idBloquea, 'creado', haceMucho, 'ORD_VIEJA');
-  // Más nueva que la que bloquea: es la que agarraría el ORDER BY si no estuviera el filtro.
-  meter(c2, idPagadoNuevo, 'pagado', new Date().toISOString(), 'ORD_AJENA');
+  // ── Una fila vieja que NUNCA llegó a tener orden: no hay nada que matar ───────────────
+  {
+    const { db, crudo } = baseNueva();
+    const idViejo = 'vyc_' + 'b'.repeat(32);
+    meter(crudo, idViejo, 'creado', haceMucho, null);
+    const red = conRed();
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: env(db) });
+    const j = await r.json();
+    red.soltar();
 
-  const red2 = conRed();
-  const r2 = await E.onRequestPost({
-    request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'TEST-tok' },
-  });
-  const j2 = await r2.json();
-  red2.soltar();
+    eq('se puede comprar', r.status, 200);
+    falso('con un pedido nuevo', j.id === idViejo);
+    eq('no se le preguntó nada a Mercado Pago', red.llamadas.lecturas, 0);
+    eq('quedan dos filas', filas(crudo).length, 2);
+    eq('la vieja queda rechazada', filas(crudo).find((f) => f.id === idViejo).estado, 'rechazado');
+  }
 
-  eq('con una pagada más nueva al lado, igual se compra', r2.status, 200);
-  falso('y NUNCA se devuelve el id del pedido ajeno', j2.id === idPagadoNuevo);
-  const ajeno = filas(c2).find((f) => f.id === idPagadoNuevo);
-  eq('el pedido pagado no se tocó', ajeno.estado, 'pagado');
-  eq('ni se le cambió la orden', ajeno.mp_order_id, 'ORD_AJENA');
-  eq('la que se cerró es la que bloqueaba', filas(c2).find((f) => f.id === idBloquea).estado, 'rechazado');
+  // ── Una fila vieja con la orden VENCIDA: se cierra y se rehace ────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    const idViejo = 'vyc_' + 'b'.repeat(32);
+    meter(crudo, idViejo, 'creado', haceMucho, 'ORD_VIEJA');
+    const red = conRed({ leida: { id: 'ORD_VIEJA', status: 'expired' } });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: env(db) });
+    const j = await r.json();
+    red.soltar();
+
+    eq('se preguntó por la orden antes de cerrarla', red.llamadas.lecturas, 1);
+    eq('se puede comprar', r.status, 200);
+    falso('con un pedido nuevo', j.id === idViejo);
+    eq('la vencida queda rechazada', filas(crudo).find((f) => f.id === idViejo).estado, 'rechazado');
+    eq('y se abrió una orden nueva', red.llamadas.cuerposMP[0].external_reference, j.id);
+  }
+
+  // ── Una fila vieja con la orden VIVA: NO se cierra, se reusa ──────────────────────────
+  //
+  // Es el caso que el primer arreglo rompía. Su enlace de pago sirve, así que lo correcto es
+  // mandar a la persona a ese y no matarlo.
+  {
+    const { db, crudo } = baseNueva();
+    const idViejo = 'vyc_' + 'b'.repeat(32);
+    meter(crudo, idViejo, 'creado', haceMucho, 'ORD_VIVA');
+    const red = conRed({ leida: { id: 'ORD_VIVA', status: 'created' } });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: env(db) });
+    const j = await r.json();
+    red.soltar();
+
+    eq('se puede comprar', r.status, 200);
+    eq('y se devuelve el MISMO pedido, no uno nuevo', j.id, idViejo);
+    eq('la fila sigue abierta', filas(crudo).find((f) => f.id === idViejo).estado, 'creado');
+    eq('no se creó otra fila', filas(crudo).length, 1);
+    // La clave de idempotencia es la del pedido viejo: Mercado Pago devuelve SU orden.
+    eq('con la clave del pedido viejo', red.llamadas.cabecerasMP[0]['X-Idempotency-Key'], idViejo);
+  }
+
+  // ── Un estado de orden que no conocemos se trata como VIVA ────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    const idViejo = 'vyc_' + 'b'.repeat(32);
+    meter(crudo, idViejo, 'creado', haceMucho, 'ORD_RARA');
+    const red = conRed({ leida: { id: 'ORD_RARA', status: 'un_estado_nuevo_de_mercadopago' } });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: env(db) });
+    red.soltar();
+    eq('contesta 200', r.status, 200);
+    eq('y NO la cierra', filas(crudo).find((f) => f.id === idViejo).estado, 'creado');
+  }
+
+  // ── Si no se puede preguntar, no se mata nada ─────────────────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    const idViejo = 'vyc_' + 'b'.repeat(32);
+    meter(crudo, idViejo, 'creado', haceMucho, 'ORD_VIEJA');
+    const red = conRed({ caeLeida: true });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: env(db) });
+    const j = await r.json();
+    red.soltar();
+
+    eq('contesta 409', r.status, 409);
+    eq('diciendo que no pudo comprobarlo', j.motivo, 'no-se-pudo-consultar');
+    eq('la fila vieja sigue intacta', filas(crudo).find((f) => f.id === idViejo).estado, 'creado');
+    eq('y no se abrió ninguna orden', red.llamadas.mp, 0);
+  }
+
+  // ── Y la defensa que no se puede perder: no entregar un pedido ajeno ──────────────────
+  //
+  // `buscarCompraAbierta` no filtra por fecha hacia arriba, así que el filtro `estado='creado'`
+  // sigue siendo lo que impide devolver el pedido PAGADO de alguien con la misma pareja.
+  {
+    const { db, crudo } = baseNueva();
+    const idBloquea = 'vyc_' + 'd'.repeat(32);
+    const idPagadoNuevo = 'vyc_' + 'c'.repeat(32);
+    meter(crudo, idBloquea, 'creado', haceMucho, null);
+    meter(crudo, idPagadoNuevo, 'pagado', new Date().toISOString(), 'ORD_AJENA');
+    const red = conRed();
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: env(db) });
+    const j = await r.json();
+    red.soltar();
+
+    eq('se compra igual', r.status, 200);
+    falso('y NUNCA se devuelve el id del pedido ajeno', j.id === idPagadoNuevo);
+    const ajeno = filas(crudo).find((f) => f.id === idPagadoNuevo);
+    eq('el pagado no se tocó', ajeno.estado, 'pagado');
+    eq('ni se le cambió la orden', ajeno.mp_order_id, 'ORD_AJENA');
+    eq('la que se cerró es la que bloqueaba', filas(crudo).find((f) => f.id === idBloquea).estado, 'rechazado');
+  }
+
+  // ── Una compra RECIENTE se reusa sin molestar a Mercado Pago ─────────────────────────
+  //
+  // Ojo con lo que esto prueba y lo que no: acá `buscarPedidoReciente` la encuentra y el camino
+  // del rescate NUNCA se ejecuta, así que esto NO prueba el piso de tiempo de
+  // `buscarCompraAbierta`. Eso se prueba como unidad en prueba-almacen.mjs, porque llegar hasta
+  // ahí por el endpoint exige una carrera que esta prueba no monta. Lo que sí fija es que el
+  // antidoble clic sigue siendo gratis: no gasta una llamada saliente.
+  {
+    const { db, crudo } = baseNueva();
+    const idNuevo = 'vyc_' + 'a'.repeat(32);
+    meter(crudo, idNuevo, 'creado', new Date().toISOString(), 'ORD_RECIEN');
+    const red = conRed();
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: env(db) });
+    const j = await r.json();
+    red.soltar();
+    // La encuentra `buscarPedidoReciente`, así que la reusa y jamás llega al rescate.
+    eq('la reusa', j.id, idNuevo);
+    eq('sin preguntarle nada a Mercado Pago sobre ella', red.llamadas.lecturas, 0);
+    eq('y sigue abierta', filas(crudo).find((f) => f.id === idNuevo).estado, 'creado');
+  }
 }
 
 console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado Pago ===');
@@ -1172,6 +1252,60 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const f = filas(base.crudo).find((x) => x.id === ID);
     eq('sigue pendiente', f.estado, 'pendiente');
     eq('y NO se le pisó la orden guardada', f.mp_order_id, 'ORDTST01');
+  }
+
+  // ── La carrera contra el webhook, los dos lados ───────────────────────────────────────
+  //
+  // Entre que se lee el pedido y que vuelve Mercado Pago pasan hasta diez segundos, y ahí cabe
+  // la notificación. Si mueve la fila, el UPDATE de la reconciliación ya no la encuentra en el
+  // estado que esperaba. La primera versión de `reconciliar` abandonaba ahí en silencio.
+  //
+  // El caso que obliga a arreglarlo no es el obvio. Con `pendiente` esto se recupera solo en el
+  // GET siguiente. Con `rechazado` —el camino NORMAL de quien reintenta con otra tarjeta—
+  // `convieneRefrescar` deja de ser cierto y la red de seguridad NO VUELVE A CORRER NUNCA.
+  for (const [ganador, nota] of [['pendiente', 'se recupera al ciclo siguiente'],
+                                 ['rechazado', 'NO vuelve a correr nunca']]) {
+    const base = baseNueva();
+    sembrar(base.crudo, ID, 'creado', 'ORDTST01');
+    let movida = false;
+    const red = conMP(null);
+    // Se reemplaza el fetch para que, justo antes de contestar la orden, «llegue» la
+    // notificación y mueva la fila. Es la carrera, forzada.
+    const antes = globalThis.fetch;
+    globalThis.fetch = async (u) => {
+      if (!movida) {
+        base.crudo.prepare('UPDATE pedidos SET estado = ? WHERE id = ?').run(ganador, ID);
+        movida = true;
+      }
+      return { ok: true, status: 200, json: async () => ORDEN_PAGADA(ID) };
+    };
+    await E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+    });
+    globalThis.fetch = antes; red.soltar();
+
+    const f = filas(base.crudo).find((x) => x.id === ID);
+    eq(`perdiendo contra ${ganador} (${nota}), igual termina pagado`, f.estado, 'pagado');
+    cierto(`y con su fecha de pago (${ganador})`, Boolean(f.pagado_en));
+  }
+
+  // ── El freno tiene que caducar, o la red se apaga para siempre ────────────────────────
+  {
+    const base = baseNueva();
+    sembrar(base.crudo, ID, 'creado', 'ORDTST01');
+    const kv = kvNuevo();
+    const red = conMP({ ...ORDEN_PAGADA(ID), status: 'created', transactions: { payments: [] } });
+    await E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' },
+    });
+    red.soltar();
+    const o = kv.opciones.get(`mp:visto:${ID}`);
+    cierto('la marca del freno se escribió con caducidad', Boolean(o && o.expirationTtl));
+    eq('y es exactamente la espera declarada', o.expirationTtl, E.ESPERA_RECONCILIAR_S);
+    // KV no admite menos de 60 s. Una espera menor se guardaría como 60 sin avisar, o fallaría.
+    cierto('que no baja del mínimo que KV admite', E.ESPERA_RECONCILIAR_S >= 60);
   }
 
   // ── El presupuesto, que vive en dos archivos distintos ────────────────────────────────

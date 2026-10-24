@@ -319,5 +319,45 @@ console.log('=== 9. el recorrido entero, como pasaría de verdad ===');
   eq('y lo que se vendió sigue congelado', fin.senales_contratadas, ['carga', 'cookies']);
 }
 
+console.log('=== buscarCompraAbierta: el piso de tiempo ===');
+{
+  // SIN PISO, dos peticiones simultáneas de la misma pareja (dominio, correo) podían terminar
+  // con la segunda CERRANDO la fila que la primera acababa de crear: la segunda choca contra el
+  // índice parcial, su `buscarPedidoReciente` corre antes de que la primera confirme el INSERT
+  // y no encuentra a nadie, y entonces esta consulta le devolvía esa fila nueva como si fuera
+  // una compra vieja y abandonada.
+  //
+  // Se prueba acá como unidad y no por el endpoint a propósito: llegar a ese camino desde fuera
+  // exige montar esa carrera exacta, y una prueba que CREE montarla sin lograrlo pasaría verde
+  // con el código roto. Esto mide la propiedad directamente.
+
+  const db = baseNueva();
+  const meter = (id, cuando) => db.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo)
+     VALUES (?, ?, 'creado', 'sitio.cl', 'https://sitio.cl/', '[]', '[]', '{}', 149000, 177310,
+      'uno@sitio.cl')`,
+  ).bind(id, cuando).run();
+
+  const corte = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+  const recien = 'vyc_' + '1'.repeat(32);
+  meter(recien, new Date().toISOString());
+
+  eq('una fila recién creada NO se devuelve como compra vieja',
+    await A.buscarCompraAbierta(db, { dominio: 'sitio.cl', correo: 'uno@sitio.cl', hastaIso: corte }), null);
+
+  // Y la que de verdad es vieja sí, que es para lo que existe la función.
+  await db.prepare('DELETE FROM pedidos').bind().run();
+  const vieja = 'vyc_' + '2'.repeat(32);
+  meter(vieja, new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString());
+  const hallada = await A.buscarCompraAbierta(db, { dominio: 'sitio.cl', correo: 'uno@sitio.cl', hastaIso: corte });
+  eq('una fila vieja sí se devuelve', hallada && hallada.id, vieja);
+
+  // Sin el corte no contesta: pedirle «la compra abierta» sin decir desde cuándo es justo el
+  // error que la dejaba agarrar filas nuevas.
+  eq('sin corte no devuelve nada',
+    await A.buscarCompraAbierta(db, { dominio: 'sitio.cl', correo: 'uno@sitio.cl' }), null);
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
