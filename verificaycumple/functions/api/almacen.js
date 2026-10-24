@@ -104,6 +104,39 @@ const EXTRA_PERMITIDO = new Set([
   'mp_payment_id', 'mp_order_id', 'pagado_en', 'entregado_en', 'informe_final_json',
 ]);
 
+/**
+ * El pedido en `creado` más nuevo de una pareja (dominio, correo), dentro de una ventana.
+ *
+ * ── POR QUÉ HACE FALTA ───────────────────────────────────────────────────────────────────
+ *
+ * Es la defensa contra el doble clic, y hace falta porque la clave de idempotencia de Mercado
+ * Pago **no alcanza sola**. Esa clave protege contra que repitamos la MISMA petición; un doble
+ * clic manda DOS, y si cada una generara su propio id de pedido, cada una traería su propia
+ * clave y Mercado Pago crearía dos órdenes. Dos cobros posibles por el mismo kit.
+ *
+ * Deshabilitar el botón en el navegador no sirve como defensa: el navegador puede mentir, o
+ * simplemente la segunda petición ya salió. La defensa tiene que estar de este lado.
+ *
+ * Con esto, la segunda petición encuentra el pedido de la primera y **reusa su id** como clave,
+ * y ahí sí la idempotencia hace su trabajo: Mercado Pago devuelve la orden que ya existía.
+ *
+ * `desdeIso` acota la ventana. No se busca «cualquier pedido en creado de esta persona» porque
+ * entonces alguien que lo intentó la semana pasada y abandonó nunca podría volver a comprar:
+ * quedaría reusando para siempre una orden vencida.
+ *
+ * El filtro va sobre `estado` y `creado_en`, que es justo el índice que ya existe
+ * (`idx_pedidos_estado`). El `dominio` y el `correo` se comparan sobre el resultado.
+ */
+export async function buscarPedidoReciente(db, { dominio, correo, desdeIso } = {}) {
+  if (!dominio || !correo || !desdeIso) return null;
+  const f = await db.prepare(
+    `SELECT * FROM pedidos
+      WHERE estado = ? AND creado_en >= ? AND dominio = ? AND correo = ?
+      ORDER BY creado_en DESC LIMIT 1`,
+  ).bind(ESTADOS.CREADO, desdeIso, String(dominio), String(correo)).first();
+  return f ? hidratar(f) : null;
+}
+
 export async function marcarEstado(db, id, desde, hasta, extra = {}) {
   if (!transicionValida(desde, hasta)) {
     return { movido: false, motivo: 'transicion-invalida' };

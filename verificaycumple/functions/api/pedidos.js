@@ -32,11 +32,24 @@
 /** Los estados por los que pasa un pedido, y nada más. */
 export const ESTADOS = {
   CREADO: 'creado',        // existe el pedido y la orden en Mercado Pago; nadie pagó todavía
+  PENDIENTE: 'pendiente',  // está pagando con un medio que no acredita al instante
   PAGADO: 'pagado',        // confirmado CONTRA LA API, no por la vuelta del navegador
   RECHAZADO: 'rechazado',  // Mercado Pago lo rechazó
   DEVUELTO: 'devuelto',    // se devolvió la plata
   ENTREGADO: 'entregado',  // el trabajo está hecho y verificado
 };
+
+/*
+ * POR QUÉ EXISTE `pendiente` (24-oct-2026)
+ *
+ * Sin él, un pago que no acredita al instante —un medio en proceso, o una orden autorizada sin
+ * capturar— dejaba el pedido en `creado`, que es el mismo estado de quien nunca volvió de
+ * Mercado Pago. La persona veía «esperando que Mercado Pago avise» sin saber si su plata salió.
+ *
+ * La alternativa era guardar el estado de la orden en una columna nueva, o sea un ALTER TABLE
+ * sobre una base que ya está en producción. No hace falta: el pedido ESTÁ pendiente, así que
+ * corresponde un estado, y la columna `estado` es TEXT y no cambia.
+ */
 
 /**
  * Qué transiciones existen. Todo lo que no esté acá no pasa.
@@ -49,14 +62,19 @@ export const ESTADOS = {
  * posterior que diga otra cosa no degrada el pedido sola: eso se mira a mano.
  */
 const TRANSICIONES = {
-  [ESTADOS.CREADO]: [ESTADOS.CREADO, ESTADOS.PAGADO, ESTADOS.RECHAZADO, ESTADOS.DEVUELTO],
+  [ESTADOS.CREADO]: [ESTADOS.CREADO, ESTADOS.PENDIENTE, ESTADOS.PAGADO, ESTADOS.RECHAZADO,
+    ESTADOS.DEVUELTO],
+  // Un pendiente puede terminar en cualquiera de las tres puntas, y puede llegar dos veces
+  // (Mercado Pago avisa cada cambio del medio de pago), así que se admite a sí mismo.
+  [ESTADOS.PENDIENTE]: [ESTADOS.PENDIENTE, ESTADOS.PAGADO, ESTADOS.RECHAZADO,
+    ESTADOS.DEVUELTO],
   [ESTADOS.PAGADO]: [ESTADOS.PAGADO, ESTADOS.ENTREGADO, ESTADOS.DEVUELTO],
   // PAGADO entra acá porque un rechazo seguido de un pago es el camino NORMAL de un
   // reintento, no una anomalía: `failed` no es un estado terminal en la Orders API, y la
   // persona puede volver a intentar con otra tarjeta sobre la misma orden. Sin esta
   // transición, esa segunda vuelta caía en `transicion-invalida`, el handler contestaba 200
   // y el pedido se quedaba en `rechazado` con la plata ya cobrada.
-  [ESTADOS.RECHAZADO]: [ESTADOS.RECHAZADO, ESTADOS.CREADO, ESTADOS.PAGADO],
+  [ESTADOS.RECHAZADO]: [ESTADOS.RECHAZADO, ESTADOS.CREADO, ESTADOS.PENDIENTE, ESTADOS.PAGADO],
   [ESTADOS.DEVUELTO]: [ESTADOS.DEVUELTO],
   [ESTADOS.ENTREGADO]: [ESTADOS.ENTREGADO, ESTADOS.DEVUELTO],
 };
@@ -179,8 +197,16 @@ export function armarOrdenMP({ idPedido, correo, montoTotal, titulo, urls }) {
         success_url: urls.exito,
         pending_url: urls.pendiente,
         failure_url: urls.rechazo,
+        // Sin `auto_return`, la persona paga y se queda en Mercado Pago en vez de aterrizar en
+        // su pantalla del pedido. `approved` la devuelve solo cuando el pago se aprobó; exige
+        // `success_url`, que ya va arriba.
+        auto_return: 'approved',
       },
     },
+    // Sin vencimiento, un pedido que nadie paga se queda en `creado` para siempre. Con un día,
+    // Mercado Pago lo pasa a `expired`, que el webhook ya sabe tratar como rechazo. Es duración
+    // ISO 8601, no una fecha.
+    expiration_time: 'P1D',
   };
 }
 

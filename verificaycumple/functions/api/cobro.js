@@ -287,10 +287,35 @@ const MAPA_ORDEN = {
   expired: ESTADOS.RECHAZADO,
   refunded: ESTADOS.DEVUELTO,
   charged_back: ESTADOS.DEVUELTO,
+  // `created` se queda en null a propósito: la orden existe en Mercado Pago y el pedido ya está
+  // en `creado`, así que no hay nada que mover.
   created: null,
-  processing: null,
-  action_required: null,   // autorizado sin capturar: NO es cobrado
+  // `processing` SÍ mueve el pedido, desde el 24-oct: la persona está en medio de pagar con un
+  // medio que no acredita al instante, y eso merece su propio estado. Antes caía en null y el
+  // pedido se quedaba en `creado`, indistinguible de quien nunca volvió de Mercado Pago.
+  processing: ESTADOS.PENDIENTE,
+  // `action_required` NO lo mueve, y la diferencia con el de arriba es el punto entero.
+  //
+  // La primera versión de este cambio lo mandaba a `pendiente` junto con `processing`, y eso
+  // habría dicho en pantalla «tu pago está en camino, no tienes que hacer nada» cuando el que
+  // tiene que hacer algo SOMOS NOSOTROS: la doc lo define como «Integrator action is required
+  // to complete processing. For example, the capture of an authorized payment». Si nadie
+  // captura, la autorización vence, y la persona habría esperado mirando una frase tranquila.
+  //
+  // Mentirle a alguien sobre de quién depende su plata es peor que no decirle nada, así que se
+  // queda en null y se trata como algo que hay que REVISAR (ver abajo).
+  action_required: null,
 };
+
+/**
+ * Los estados de orden en que el que tiene que actuar somos nosotros.
+ *
+ * Caen en `null` arriba, o sea que no mueven el pedido. Pero salir con `NADA` los volvería
+ * invisibles: quedaría una nota en `eventos_mp.resultado` que nadie lee hasta que alguien
+ * pregunta por qué no le llegó su kit. `REVISAR` es el vocabulario que este módulo ya tiene
+ * para «esto no se resuelve solo».
+ */
+const REQUIEREN_ACCION_NUESTRA = new Set(['action_required']);
 
 /** Los montos de la orden vienen como string. Se convierten acá y en un solo lugar. */
 function montoDe(v) {
@@ -345,7 +370,9 @@ export function decidirDesdeOrden({ pedido, orden }) {
   const destino = MAPA_ORDEN[estadoOrden];
   if (destino === null) {
     return {
-      accion: ACCIONES.NADA, estado: pedido.estado, motivo: `orden-${estadoOrden}`,
+      accion: REQUIEREN_ACCION_NUESTRA.has(estadoOrden) ? ACCIONES.REVISAR : ACCIONES.NADA,
+      estado: pedido.estado,
+      motivo: `orden-${estadoOrden}`,
       detalle: ESTADOS_ORDEN[estadoOrden],
     };
   }
@@ -402,6 +429,75 @@ export function pagoDeLaOrden(orden) {
  * GET https://api.mercadopago.com/v1/orders/{order_id}
  */
 export const MS_LECTURA_ORDEN = 10000;
+
+/**
+ * Crea la orden en Mercado Pago y devuelve a dónde mandar al comprador.
+ *
+ * `POST /v1/orders` en modo `manual`, que es el de Checkout Pro. En caso de éxito contesta 201
+ * con un `checkout_url` de primer nivel, que es la URL del flujo de pago. **No es `init_point`**:
+ * ese nombre es de la API vieja de Preferences y no aparece en esta respuesta.
+ *
+ * ── LA CLAVE DE IDEMPOTENCIA ─────────────────────────────────────────────────────────────
+ *
+ * `X-Idempotency-Key` es OBLIGATORIA en este endpoint, no opcional: sin ella la llamada falla.
+ * Acá va el id del pedido, y eso hace dos cosas a la vez.
+ *
+ * La primera es la obvia: si esta misma petición se repite —un reintento nuestro, un hipo de
+ * red— Mercado Pago devuelve la orden que ya creó en vez de crear una segunda.
+ *
+ * La segunda es la que importa de verdad. Un doble clic en el navegador manda dos peticiones
+ * distintas, y si cada una generara su propio id de pedido, cada una traería su propia clave y
+ * habría DOS órdenes, o sea dos cobros posibles por el mismo kit. Por eso quien llama busca
+ * primero un pedido reciente de la misma pareja (dominio, correo) y reusa SU id: ahí las dos
+ * peticiones traen la misma clave y la idempotencia hace su trabajo.
+ *
+ * ⚠️ Para que devuelva la orden en vez de `idempotency_key_already_used`, el cuerpo tiene que
+ * ser idéntico. Lo es porque sale del contrato ya congelado en D1, no de lo que mande el
+ * navegador.
+ */
+export async function crearOrdenMP(cuerpo, idempotencia, token, fetchImpl = fetch) {
+  if (!token) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-token' };
+  if (!idempotencia) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-idempotencia' };
+  let r;
+  try {
+    r = await fetchImpl('https://api.mercadopago.com/v1/orders', {
+      method: 'POST',
+      // Mismo corte de tiempo que la lectura, y por la misma razón: una conexión colgada no
+      // rechaza sola, y acá además hay una persona esperando en la pantalla.
+      signal: AbortSignal.timeout(MS_LECTURA_ORDEN),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+        'X-Idempotency-Key': idempotencia,
+      },
+      body: JSON.stringify(cuerpo),
+    });
+  } catch (e) {
+    return { ok: false, orden: null, estadoHttp: 0, error: `red: ${e && e.message}` };
+  }
+  if (!r.ok) {
+    // El cuerpo del error trae el motivo de Mercado Pago, y sin él un 400 es imposible de
+    // depurar. Se lee con cuidado porque un error también puede venir sin JSON.
+    let detalle = null;
+    try { detalle = await r.json(); } catch {}
+    return {
+      ok: false, orden: null, estadoHttp: r.status,
+      error: `http-${r.status}`,
+      detalleMP: detalle,
+    };
+  }
+  let orden;
+  try { orden = await r.json(); } catch {
+    return { ok: false, orden: null, estadoHttp: r.status, error: 'json-invalido' };
+  }
+  if (!orden || !orden.checkout_url) {
+    // Sin `checkout_url` no hay a dónde mandar a la persona. La orden puede haber quedado
+    // creada, así que esto NO es «no pasó nada»: se informa aparte para no tratarlo como un
+    // fallo de red.
+    return { ok: false, orden, estadoHttp: r.status, error: 'sin-checkout-url' };
+  }
+  return { ok: true, orden, estadoHttp: r.status, error: null };
+}
 
 export async function leerOrdenMP(idOrden, token, fetchImpl = fetch) {
   if (!token) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-token' };
