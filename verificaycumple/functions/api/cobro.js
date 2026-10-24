@@ -219,6 +219,190 @@ export async function leerPagoMP(idPago, token, fetchImpl = fetch) {
   }
 }
 
+/* ================================================================== *
+ * EL CAMINO DE LAS ÓRDENES                                           *
+ *                                                                     *
+ * La configuración real de la cuenta quedó con el evento «Order       *
+ * (Mercado Pago)», tópico `orders`, no `payment`. Lo de arriba quedó  *
+ * escrito para `payment`, y NO sirve tal cual acá: el mundo de las    *
+ * órdenes usa OTRO enum.                                              *
+ *                                                                     *
+ * No es un matiz. El de pagos es approved / rejected / authorized /   *
+ * pending / in_process / in_mediation / cancelled / refunded /        *
+ * charged_back. El de órdenes es created / processed /                *
+ * action_required / processing / failed / canceled / expired /        *
+ * refunded / charged_back. Ni un valor de «pagado» en común:          *
+ * `approved` no existe acá, y lo que vale es `processed`.             *
+ *                                                                     *
+ * Las dos trampas, confirmadas en la referencia el 23-oct-2026:       *
+ *                                                                     *
+ *  - `action_required` es el `authorized` de este mundo. La doc lo    *
+ *    dice literal: «Integrator action is required to complete         *
+ *    processing. For example, the capture of an authorized payment».  *
+ *    Hay autorización, no hay plata. No habilita el trabajo.          *
+ *                                                                     *
+ *  - `total_amount` y `transactions.payments[].amount` vienen como    *
+ *    STRING, no como número. Compararlos sin convertir da falso       *
+ *    siempre, y compararlos con `==` daría verdadero donde no debe.   *
+ *                                                                     *
+ * Se deja el camino de `payment` escrito y probado: la cuenta ofrece  *
+ * también «Pagos (legacy)», y si algún día se activa, ya está.        *
+ * ================================================================== */
+
+/** El enum literal de `status` de una ORDEN, con lo que significa cada uno. */
+export const ESTADOS_ORDEN = {
+  created: 'La orden se creó, nadie pagó todavía',
+  processed: 'Todas las transacciones se procesaron: está pagada',
+  action_required: 'Falta una acción nuestra, por ejemplo capturar un pago autorizado. NO hay plata',
+  processing: 'Se está procesando, sin que haya que hacer nada',
+  failed: 'Falló el procesamiento: datos incorrectos, riesgo de fraude o rechazo del emisor',
+  refunded: 'Se devolvió',
+  canceled: 'Se canceló',
+  expired: 'Expiró sin que nadie pagara',
+  charged_back: 'Hubo un contracargo',
+};
+
+const MAPA_ORDEN = {
+  processed: ESTADOS.PAGADO,
+  failed: ESTADOS.RECHAZADO,
+  canceled: ESTADOS.RECHAZADO,
+  expired: ESTADOS.RECHAZADO,
+  refunded: ESTADOS.DEVUELTO,
+  charged_back: ESTADOS.DEVUELTO,
+  created: null,
+  processing: null,
+  action_required: null,   // autorizado sin capturar: NO es cobrado
+};
+
+/** Los montos de la orden vienen como string. Se convierten acá y en un solo lugar. */
+function montoDe(v) {
+  if (v === null || v === undefined || v === '') return null;
+  const n = Number(v);
+  return Number.isFinite(n) ? Math.round(n) : null;
+}
+
+/**
+ * Decide qué hacer con un pedido dada la relectura de la ORDEN.
+ *
+ * Misma forma de respuesta que `decidirDesdeNotificacion`, y las mismas tres comprobaciones
+ * antes de mirar el estado: que la orden sea de este pedido, que el monto calce, y que la
+ * transición exista.
+ */
+export function decidirDesdeOrden({ pedido, orden }) {
+  if (!pedido) {
+    return {
+      accion: ACCIONES.IGNORAR, estado: null, motivo: 'pedido-desconocido',
+      detalle: 'La notificación no corresponde a ningún pedido nuestro.',
+    };
+  }
+  if (!orden || typeof orden !== 'object') {
+    return {
+      accion: ACCIONES.REVISAR, estado: null, motivo: 'sin-pago',
+      detalle: 'No se pudo releer la orden contra la API. No se toca el pedido.',
+    };
+  }
+  if (orden.external_reference !== pedido.id) {
+    return {
+      accion: ACCIONES.REVISAR, estado: null, motivo: 'referencia-no-calza',
+      detalle: `La orden dice ser del pedido ${orden.external_reference} y se buscó ${pedido.id}.`,
+    };
+  }
+
+  const total = montoDe(orden.total_amount);
+  if (total === null || total !== Math.round(Number(pedido.monto_total))) {
+    return {
+      accion: ACCIONES.REVISAR, estado: null, motivo: 'monto-no-calza',
+      detalle: `Se vendió en ${pedido.monto_total} y la orden dice ${orden.total_amount}.`,
+    };
+  }
+
+  const estadoOrden = orden.status;
+  if (!(estadoOrden in MAPA_ORDEN)) {
+    return {
+      accion: ACCIONES.REVISAR, estado: null, motivo: 'estado-desconocido',
+      detalle: `Mercado Pago devolvió un estado de orden que no conocemos: ${estadoOrden}.`,
+    };
+  }
+
+  const destino = MAPA_ORDEN[estadoOrden];
+  if (destino === null) {
+    return {
+      accion: ACCIONES.NADA, estado: pedido.estado, motivo: `orden-${estadoOrden}`,
+      detalle: ESTADOS_ORDEN[estadoOrden],
+    };
+  }
+
+  // Si la orden dice pagada, lo que de verdad se cobró tiene que calzar también. La doc
+  // describe `total_paid_amount` como «la suma de todos los paid_amount de la transacción»,
+  // así que una orden `processed` con un pagado menor es algo que se mira a mano.
+  if (destino === ESTADOS.PAGADO) {
+    const pagado = montoDe(orden.total_paid_amount);
+    if (pagado !== null && pagado !== total) {
+      return {
+        accion: ACCIONES.REVISAR, estado: null, motivo: 'pagado-no-calza',
+        detalle: `La orden dice procesada pero se pagaron ${orden.total_paid_amount} de ${orden.total_amount}.`,
+      };
+    }
+  }
+
+  if (pedido.estado === destino) {
+    return {
+      accion: ACCIONES.NADA, estado: destino, motivo: 'ya-estaba',
+      detalle: `El pedido ya estaba en ${destino}. La notificación se repitió, que es normal.`,
+    };
+  }
+  if (!transicionValida(pedido.estado, destino)) {
+    return {
+      accion: ACCIONES.REVISAR, estado: null, motivo: 'transicion-invalida',
+      detalle: `No se pasa de ${pedido.estado} a ${destino} solo. La orden dice ${estadoOrden}.`,
+    };
+  }
+
+  return {
+    accion: ACCIONES.MARCAR, estado: destino, motivo: `orden-${estadoOrden}`,
+    detalle: ESTADOS_ORDEN[estadoOrden],
+  };
+}
+
+/** ¿La orden habilita el trabajo? Solo `processed`, igual que `approved` del otro camino. */
+export function ordenHabilitaTrabajo(orden) {
+  return Boolean(orden && orden.status === 'processed');
+}
+
+/** El id del pago que quedó dentro de la orden, para poder guardarlo. Puede no haber. */
+export function pagoDeLaOrden(orden) {
+  const pagos = orden && orden.transactions && orden.transactions.payments;
+  if (!Array.isArray(pagos) || !pagos.length) return null;
+  // El que quedó procesado manda; si no hay ninguno, el primero sirve para dejar rastro.
+  const procesado = pagos.find((p) => p && p.status === 'processed');
+  const p = procesado || pagos[0];
+  return { id: p.id ?? null, estado: p.status ?? null, monto: montoDe(p.amount) };
+}
+
+/**
+ * Lee una ORDEN de la API de Mercado Pago.
+ * GET https://api.mercadopago.com/v1/orders/{order_id}
+ */
+export async function leerOrdenMP(idOrden, token, fetchImpl = fetch) {
+  if (!token) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-token' };
+  if (!idOrden) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-id' };
+  let r;
+  try {
+    r = await fetchImpl(`https://api.mercadopago.com/v1/orders/${encodeURIComponent(idOrden)}`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+    });
+  } catch (e) {
+    return { ok: false, orden: null, estadoHttp: 0, error: `red: ${e && e.message}` };
+  }
+  if (!r.ok) return { ok: false, orden: null, estadoHttp: r.status, error: `http-${r.status}` };
+  try {
+    return { ok: true, orden: await r.json(), estadoHttp: r.status, error: null };
+  } catch {
+    return { ok: false, orden: null, estadoHttp: r.status, error: 'json-invalido' };
+  }
+}
+
 /**
  * Qué contestarle a Mercado Pago.
  *
