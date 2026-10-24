@@ -335,6 +335,41 @@ respuestas se arma el plan del trimestre con números y umbral de corte, y se ci
 de esa fecha. Si no responde en unos días, conviene escribirle, porque quedan tres semanas
 y el mes 1 depende de tener la oferta empaquetada antes de arrancar.
 
+## Historial de correspondencia (verificado en Gmail el 24-oct-2026)
+
+Todo vive en un solo hilo, `1a0891b5676c7e7f`, asunto «Reunión mañana a las 12:00».
+**8 enviados por Ramón, 4 respuestas de Carlos.**
+
+| # | Fecha (UTC) | Quién | Qué | Adjunto |
+|---|---|---|---|---|
+| 1 | 10-sep 02:18 | **Ramón** | Cierra la reunión del día siguiente a las 12:00, con enlace de Meet | — |
+| 2 | 10-sep 17:01 | **Ramón** | **La propuesta.** Abre con el hallazgo de que srsoya.com no tiene ninguna medición instalada | **Sí** (`SPL-COT-2026-015`) |
+| 3 | 15-sep 22:17 | Carlos | **Acepta.** «Confío netamente en ti». Ofrece primer depósito de $300.000 el 12-oct por 3 meses | — |
+| 4 | 21-sep 12:53 | **Ramón** | Confirma el Plan Arranque en marcha con el depósito del 12-oct | — |
+| 5 | 21-sep 19:58 | Carlos | **Primer giro:** usar el mes 1 para validar Terapias 5D en Estados Unidos | — |
+| 6 | 21-sep 21:21 | **Ramón** | Responde al giro: la aritmética de EEUU no da con $100.000, modelo autofinanciado, vender programa y no sesiones | — ⚠️ |
+| 7 | 23-sep 20:52 | Carlos | Manda el programa completo: EL MILAGRO INTERIOR, 4 sesiones, $119.000 / $159.000, sin infraestructura | — |
+| 8 | 28-sep 13:15 | **Ramón** | Precio correcto para Chile y bajo para EEUU, dos listas de precio, partir en Chile, el nombre «Terapias» es riesgoso allá | — |
+| 9 | 19-oct 15:20 | **Ramón** | Retoma las dos preguntas sin responder en 21 días | — |
+| 10 | 19-oct 20:10 | Carlos | **Segundo giro:** academia vocal online, US$45 la clase, EEUU desde el principio | — |
+| 11 | 20-oct 21:51 | **Ramón** | **La propuesta nueva.** Explica por qué hay cotización nueva y separa construir de configurar | **Sí** (`SPL-COT-2026-016` + `SPL-NT-2026-002`) |
+| 12 | 23-oct 19:21 | **Ramón** | Aterriza los pasos: pago y accesos el mismo día, qué pasa esa semana, el pago con números, fecha del 2-nov | — |
+
+⚠️ **El correo 6 (21-sep) mencionaba un anexo que no salió adjunto.** Ramón reportó haberlo mandado
+después; **nunca apareció en el hilo**. Queda como reportado y no confirmado.
+
+**Lo que dice el ritmo:**
+
+- **Carlos nunca ha escrito primero para avanzar.** Sus cuatro correos son respuestas, y dos de
+  ellos son cambios de rumbo.
+- **Cuando Ramón escribe, Carlos contesta rápido.** El 19-oct: Ramón a las 15:20, Carlos a las
+  20:10 el mismo día.
+- **Cuando Ramón no escribe, el hilo se cae.** Entre el 28-sep y el 19-oct pasaron 21 días de
+  silencio.
+- ⚠️ **Van dos correos seguidos de Ramón sin respuesta** (20-oct y 23-oct). El borrador de
+  corrección sería el tercero. Se justifica porque arregla una cifra a favor de Carlos, pero
+  **después de ese conviene esperar.**
+
 ## Documentos relacionados
 
 | Qué | Dónde |
