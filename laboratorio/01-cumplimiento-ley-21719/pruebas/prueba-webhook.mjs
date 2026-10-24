@@ -542,5 +542,263 @@ console.log('=== 16. una firma rechazada deja rastro, y no filtra nada ===');
   falso('ni el texto ajeno tal cual', todo.includes('pedido-de-otro-sistema'));
 }
 
+console.log('=== 17. dos entregas que se cruzan: la que pierde no puede tirar lo que traía ===');
+{
+  // NINGUNA PRUEBA DE ESTE ARCHIVO EJERCÍA LA CARRERA. La 3 llama ocho veces a la MISMA
+  // petición y las encadena con `await`, o sea que solo prueba la deduplicación por clave
+  // idéntica. La 13 usa dos avisos distintos pero estrictamente en serie, que es justo el caso
+  // que funciona. Las 15 pruebas pasaban sobre un handler que perdía el pago en el solape.
+  //
+  // El defecto: dos avisos con información DISTINTA llegan juntos. Los dos leen el pedido en
+  // `creado`. El primero lo mueve a `pendiente`; el segundo traía `pagado` y su UPDATE no
+  // encuentra la fila en el estado que esperaba. Antes eso se daba por bueno con un 200, así
+  // que Mercado Pago no volvía a avisar y el pedido se quedaba en `pendiente` CON LA PLATA
+  // COBRADA.
+  //
+  // La barrera es la misma técnica que ya está en prueba-crear-pedido.mjs: ninguna escribe
+  // hasta que las dos leyeron, y además se fuerza el peor orden —que gane la menos avanzada—
+  // para que el resultado no dependa del azar.
+
+  const { db: cruda, crudo } = baseNueva();
+  const ID = 'vyc_' + '7'.repeat(32);
+  crudo.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
+     VALUES (?, ?, 'creado', 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
+      '{}', 149000, 177310, 'c@clinicaejemplo.cl', ?)`,
+  ).run(ID, new Date().toISOString(), ID_ORDEN);
+
+  let leyeron = 0, abrir;
+  const puerta = new Promise((r) => { abrir = r; });
+  let yaPaso, pasoPendiente;
+  const esperaPendiente = new Promise((r) => { yaPaso = r; });
+
+  const db = {
+    prepare(sql) {
+      const st = cruda.prepare(sql);
+      if (/SELECT \* FROM pedidos WHERE id = \?/.test(sql)) {
+        return { bind: (...a) => ({ first: async () => {
+          const r = await st.bind(...a).first();
+          // Solo las DOS primeras lecturas son las de la carrera; la tercera es la relectura
+          // del que perdió, y esa no puede quedarse esperando una puerta ya abierta.
+          if (++leyeron === 2) abrir();
+          return r;
+        } }) };
+      }
+      if (/UPDATE pedidos SET/.test(sql)) {
+        return { bind: (...a) => ({ run: async () => {
+          await puerta;
+          // El peor orden posible: la entrega que lleva `pagado` espera a que la de
+          // `pendiente` haya escrito. Sin esto el resultado dependería de quién llegue antes.
+          if (a[0] === 'pagado' && !pasoPendiente) await esperaPendiente;
+          const r = await st.bind(...a).run();
+          if (a[0] === 'pendiente') { pasoPendiente = true; yaPaso(); }
+          return r;
+        } }) };
+      }
+      return st;
+    },
+  };
+
+  // Cada entrega trae su propio `action`, así que son claves de evento distintas y las dos
+  // pasan la compuerta. Es el caso real: Mercado Pago avisa cada cambio de la orden.
+  const ordenes = {
+    'order.updated': ORDEN(ID, { status: 'processing', status_detail: null, transactions: { payments: [] } }),
+    'order.processed': ORDEN(ID),
+  };
+  let cual = 0;
+  const soltarFetch = conFetch(async () => {
+    // Las dos entregas leen la MISMA orden por la misma URL, así que se reparten por turno:
+    // la primera lectura ve `processing` y la segunda `processed`.
+    const cuerpo = cual++ === 0 ? ordenes['order.updated'] : ordenes['order.processed'];
+    return { ok: true, status: 200, json: async () => cuerpo };
+  });
+
+  const env = { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN };
+  const [a, b] = await Promise.all([
+    W.onRequestPost({ request: await peticion({
+      requestId: '3ff28d90-b859-4008-984e-d3a09843a6a9',
+      cuerpo: { type: 'order', action: 'order.updated', data: { id: ID_ORDEN } } }), env }),
+    W.onRequestPost({ request: await peticion({
+      requestId: 'bf373833-95f1-4b60-bce7-5b4a9927d3d5',
+      cuerpo: { type: 'order', action: 'order.processed', data: { id: ID_ORDEN } } }), env }),
+  ]);
+  soltarFetch();
+
+  eq('las dos entregas leyeron antes de que ninguna escribiera', leyeron >= 2, true);
+  eq('las dos contestan 200', [a.status, b.status], [200, 200]);
+
+  const f = crudo.prepare('SELECT * FROM pedidos WHERE id = ?').get(ID);
+  eq('EL PEDIDO TERMINA PAGADO, no atascado en pendiente', f.estado, 'pagado');
+  cierto('y con su fecha de pago', Boolean(f.pagado_en));
+
+  // Las dos entregas quedan anotadas: son dos avisos distintos, no uno repetido.
+  const evs = crudo.prepare('SELECT * FROM eventos_mp').all();
+  eq('quedaron los dos eventos', evs.length, 2);
+  cierto('y uno deja dicho que perdió la carrera',
+    evs.some((e) => String(e.resultado || '').includes('perdió la carrera')));
+}
+
+console.log('=== 18. la entrega que pierde con información VIEJA no puede quedarse reintentando ===');
+{
+  // EL OTRO LADO DE LA CARRERA, y el que evita un bucle. Si la que pierde traía información más
+  // nueva, hay que alcanzarla (prueba 17). Si traía información VIEJA, no: el pedido ya está
+  // más adelante y no hay nada que aportar. Tratar los dos casos igual —volver a intentar el
+  // estado que traía esta entrega, a ciegas— significaría pedirle a Mercado Pago que reintente
+  // algo que nunca va a poder aplicarse, y un aviso viejo reintentaría para siempre.
+  //
+  // Por eso el rescate no reusa la decisión original: vuelve a preguntar con el pedido como
+  // quedó. `decidirDesdeOrden` contesta «no se pasa de pagado a pendiente solo», que no es
+  // MARCAR, y ahí el 200 sí corresponde.
+
+  const { db: cruda, crudo } = baseNueva();
+  const ID = 'vyc_' + '8'.repeat(32);
+  crudo.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
+     VALUES (?, ?, 'creado', 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
+      '{}', 149000, 177310, 'c@clinicaejemplo.cl', ?)`,
+  ).run(ID, new Date().toISOString(), ID_ORDEN);
+
+  let leyeron = 0, abrir;
+  const puerta = new Promise((r) => { abrir = r; });
+  let pasoPagado, yaPaso;
+  const esperaPagado = new Promise((r) => { yaPaso = r; });
+
+  const db = {
+    prepare(sql) {
+      const st = cruda.prepare(sql);
+      if (/SELECT \* FROM pedidos WHERE id = \?/.test(sql)) {
+        return { bind: (...a) => ({ first: async () => {
+          const r = await st.bind(...a).first();
+          if (++leyeron === 2) abrir();
+          return r;
+        } }) };
+      }
+      if (/UPDATE pedidos SET/.test(sql)) {
+        return { bind: (...a) => ({ run: async () => {
+          await puerta;
+          // Acá gana la MÁS avanzada: la que lleva `pendiente` espera. Así la perdedora es la
+          // que trae información vieja, que es el caso que esta prueba cuida.
+          if (a[0] === 'pendiente' && !pasoPagado) await esperaPagado;
+          const r = await st.bind(...a).run();
+          if (a[0] === 'pagado') { pasoPagado = true; yaPaso(); }
+          return r;
+        } }) };
+      }
+      return st;
+    },
+  };
+
+  let cual = 0;
+  const soltarFetch = conFetch(async () => {
+    const cuerpo = cual++ === 0
+      ? ORDEN(ID, { status: 'processing', status_detail: null, transactions: { payments: [] } })
+      : ORDEN(ID);
+    return { ok: true, status: 200, json: async () => cuerpo };
+  });
+
+  const env = { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN };
+  const [a, b] = await Promise.all([
+    W.onRequestPost({ request: await peticion({
+      requestId: '11111111-1111-4111-8111-111111111111',
+      cuerpo: { type: 'order', action: 'order.updated', data: { id: ID_ORDEN } } }), env }),
+    W.onRequestPost({ request: await peticion({
+      requestId: '22222222-2222-4222-8222-222222222222',
+      cuerpo: { type: 'order', action: 'order.processed', data: { id: ID_ORDEN } } }), env }),
+  ]);
+  soltarFetch();
+
+  // Ninguna pide reintento: un 503 acá sería un aviso viejo golpeando para siempre.
+  eq('las dos contestan 200, ninguna pide reintento', [a.status, b.status], [200, 200]);
+  const f = crudo.prepare('SELECT * FROM pedidos WHERE id = ?').get(ID);
+  eq('el pedido se queda pagado', f.estado, 'pagado');
+  cierto('con su fecha de pago intacta', Boolean(f.pagado_en));
+}
+
+console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave débil ===');
+{
+  const SIN_ID = { type: 'order', action: 'order.processed', data: { id: ID_ORDEN } };
+  const sembrar = (crudo, id, cuando) => crudo.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
+     VALUES (?, ?, 'creado', 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
+      '{}', 149000, 177310, 'c@clinicaejemplo.cl', ?)`,
+  ).run(id, cuando, ID_ORDEN);
+  const ID = 'vyc_' + '9'.repeat(32);
+
+  // ── Un tópico que no atendemos no puede quemar la clave de una orden ──────────────────
+  {
+    const { db, crudo } = baseNueva();
+    const req = await peticion({ cuerpo: SIN_ID });
+    const url = new URL(req.url); url.searchParams.set('type', 'payment');
+    const r = await W.onRequestPost({
+      request: new Request(url, { method: 'POST', headers: req.headers, body: JSON.stringify(SIN_ID) }),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+    });
+    eq('contesta 200', r.status, 200);
+    eq('diciendo que no lo atiende', (await r.json()).motivo, 'tipo-no-atendido:payment');
+    eq('y NO reclama ningún evento', crudo.prepare('SELECT * FROM eventos_mp').all().length, 0);
+  }
+
+  // ── 404 con el pedido recién creado: se pide reintento, no se cierra ──────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo, ID, new Date().toISOString());
+    const soltar = conFetch(async () => ({ ok: false, status: 404, json: async () => ({}) }));
+    const req = await peticion({ cuerpo: SIN_ID });
+    const url = new URL(req.url); url.searchParams.set('data.external_reference', ID);
+    const r = await W.onRequestPost({
+      request: new Request(url, { method: 'POST', headers: req.headers, body: JSON.stringify(SIN_ID) }),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+    });
+    soltar();
+    eq('pide reintento con 503', r.status, 503);
+    // Lo decisivo: que el evento quede SIN resultado, que es lo único que permite reprocesarlo.
+    const ev = crudo.prepare('SELECT * FROM eventos_mp').all();
+    eq('y no deja el evento cerrado', ev.filter((e) => e.resultado !== null).length, 0);
+  }
+
+  // ── 404 con un pedido viejo: ahí sí es definitivo ─────────────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo, ID, new Date(Date.now() - 60 * 60 * 1000).toISOString());
+    const soltar = conFetch(async () => ({ ok: false, status: 404, json: async () => ({}) }));
+    const req = await peticion({ cuerpo: SIN_ID });
+    const url = new URL(req.url); url.searchParams.set('data.external_reference', ID);
+    const r = await W.onRequestPost({
+      request: new Request(url, { method: 'POST', headers: req.headers, body: JSON.stringify(SIN_ID) }),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+    });
+    soltar();
+    eq('se cierra con 200', r.status, 200);
+    eq('como orden inexistente', (await r.json()).motivo, 'orden-inexistente');
+    const ev = crudo.prepare('SELECT * FROM eventos_mp').all();
+    cierto('y queda anotado', ev.some((e) => String(e.resultado || '').includes('404')));
+    // El rastro de la clave débil, que antes solo se escribía en la salida que marcaba.
+    cierto('diciendo que la clave no era exacta',
+      ev.some((e) => String(e.resultado || '').includes('clave no exacta')));
+  }
+
+  // ── Una salida REVISAR también deja ese rastro ────────────────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo, ID, new Date().toISOString());
+    // Monto que no calza: `decidirDesdeOrden` contesta REVISAR.
+    const soltar = conFetch(async () => ({
+      ok: true, status: 200, json: async () => ORDEN(ID, { total_amount: '999' }),
+    }));
+    const r = await W.onRequestPost({ request: await peticion({ cuerpo: SIN_ID }),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+    soltar();
+    eq('contesta 200', r.status, 200);
+    const ev = crudo.prepare('SELECT * FROM eventos_mp').all();
+    cierto('anota que hay que revisarlo', ev.some((e) => String(e.resultado || '').includes('revisar')));
+    cierto('y que la clave no era exacta',
+      ev.some((e) => String(e.resultado || '').includes('clave no exacta')));
+    eq('el pedido no se tocó', crudo.prepare('SELECT * FROM pedidos WHERE id = ?').get(ID).estado, 'creado');
+  }
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
