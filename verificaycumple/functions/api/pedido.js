@@ -41,7 +41,9 @@ import { elegibilidad } from './elegibilidad.js';
 import {
   ESTADOS, nuevoIdPedido, congelarContrato, armarOrdenMP, limpiarUtms, VIGENCIA_ORDEN_HORAS,
 } from './pedidos.js';
-import { crearOrdenMP } from './cobro.js';
+import {
+  crearOrdenMP, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES,
+} from './cobro.js';
 
 
 const NO_EXISTE = { ok: false, motivo: 'no-existe' };
@@ -55,6 +57,95 @@ function json(cuerpo, estado = 200) {
       'Cache-Control': 'no-store',
     },
   });
+}
+
+/**
+ * Cada cuánto, como mucho, se le vuelve a preguntar a Mercado Pago por una orden.
+ *
+ * NO es un número elegido: 60 segundos es el mínimo que admite `expirationTtl` en KV. Si se
+ * pudiera menos, tampoco haría falta.
+ *
+ * La pantalla del pedido se repregunta sola cada 5 segundos y se rinde a las 24 veces, o sea a
+ * los 2 minutos (public/pedido/index.html). Con este piso, una sesión completa de esa pantalla
+ * cuesta 2 llamadas a Mercado Pago en vez de 24, y una pestaña olvidada abierta una hora cuesta
+ * 60 en vez de 720. Hay una prueba que compara las dos cosas, porque viven en archivos
+ * distintos y es justo el tipo de pareja que se separa sin que nadie lo note.
+ */
+export const ESPERA_RECONCILIAR_S = 60;
+
+/**
+ * Preguntarle a Mercado Pago por una orden que nuestra base todavía no da por resuelta.
+ *
+ * POR QUÉ EXISTE. Hasta hoy el estado de un pedido dependía POR COMPLETO de que llegara y
+ * validara la notificación: `leerOrdenMP` tenía un solo llamador, el webhook. Si esa
+ * notificación se perdía o se rechazaba, la persona pagaba, Mercado Pago le decía «listo», y su
+ * pantalla se quedaba en «estamos confirmando tu pago» para siempre — y peor, dejaba de
+ * refrescar a los dos minutos, así que la frase «esta página se actualiza sola» se volvía
+ * falsa. Pasó de verdad el 24-oct con un pago real: lo salvó un reintento de Mercado Pago una
+ * hora después, pero los reintentos se acaban.
+ *
+ * NO REIMPLEMENTA NADA. Usa el mismo `leerOrdenMP`, el mismo `decidirDesdeOrden` y el mismo
+ * `marcarEstado` que el webhook, que ya están probados. De ahí salen gratis las dos defensas
+ * que importan: `decidirDesdeOrden` rechaza una orden cuya `external_reference` no calce con
+ * este pedido, y rechaza una cuyo monto no sea el que se vendió.
+ *
+ * SI ALGO FALLA, NO PASA NADA. Toda salida devuelve el pedido tal como estaba: esto es una red
+ * de seguridad sobre la lectura de una pantalla, no puede romperla. El webhook sigue siendo el
+ * camino principal.
+ */
+async function reconciliar(env, pedido) {
+  // Solo donde Mercado Pago puede saber algo que nosotros no. `convieneRefrescar` ya define
+  // exactamente eso —`pendiente`, o `creado` con orden abierta— y es la misma regla que decide
+  // si la pantalla se repregunta. Que sean la misma no es casualidad: preguntar cuando la
+  // pantalla ya no espera nada sería gastar llamadas sin que nadie las mire.
+  if (!convieneRefrescar(pedido) || !pedido.mp_order_id || !env.MP_ACCESS_TOKEN) return pedido;
+
+  // Sin KV no hay freno, y sin freno cada repregunta de la pantalla sería una llamada saliente
+  // —y el enlace del pedido lo abren también los clientes de correo, que precargan—. Acá se
+  // falla CERRADO a propósito: lo que se pierde es la red de seguridad, no la pantalla.
+  const kv = env.VYC_TOPES;
+  if (!kv) return pedido;
+  const clave = `mp:visto:${pedido.id}`;
+  try {
+    if (await kv.get(clave)) return pedido;
+    await kv.put(clave, '1', { expirationTtl: ESPERA_RECONCILIAR_S });
+  } catch {
+    return pedido;
+  }
+
+  const lectura = await leerOrdenMP(pedido.mp_order_id, env.MP_ACCESS_TOKEN);
+  if (!lectura.ok) {
+    console.log(`[pedido] no se pudo releer la orden de ${pedido.id}: ${lectura.error}`);
+    return pedido;
+  }
+
+  const decision = decidirDesdeOrden({ pedido, orden: lectura.orden });
+  if (decision.accion !== ACCIONES.MARCAR) {
+    // REVISAR es el caso que hay que poder ver: significa que la orden dice algo que no calza
+    // con lo que vendimos, y eso lo tiene que mirar una persona.
+    if (decision.accion === ACCIONES.REVISAR) {
+      console.log(`[pedido] ${pedido.id} necesita revisión: ${decision.motivo}`);
+    }
+    return pedido;
+  }
+
+  const extra = { mp_order_id: lectura.orden.id || pedido.mp_order_id };
+  const pago = pagoDeLaOrden(lectura.orden);
+  if (pago && pago.id) extra.mp_payment_id = String(pago.id);
+  if (decision.estado === ESTADOS.PAGADO) extra.pagado_en = new Date().toISOString();
+
+  let movido;
+  try {
+    movido = await marcarEstado(env.VYC_PEDIDOS, pedido.id, pedido.estado, decision.estado, extra);
+  } catch {
+    return pedido;
+  }
+  if (!movido.movido) return pedido;
+
+  console.log(`[pedido] reconciliado ${pedido.id}: ${pedido.estado} → ${decision.estado}`);
+  // Se relee para que la pantalla dibuje el pedido entero y no una mezcla del viejo con el
+  // estado nuevo. Si la relectura falla, el de antes sigue siendo cierto.
+  try { return (await leerPedido(env.VYC_PEDIDOS, pedido.id)) || pedido; } catch { return pedido; }
 }
 
 export async function onRequestGet(contexto) {
@@ -74,6 +165,10 @@ export async function onRequestGet(contexto) {
     return json({ ok: false, motivo: 'error-de-lectura' }, 409);
   }
   if (!pedido) return json(NO_EXISTE, 404);
+
+  // La red de seguridad: si la notificación no llegó, acá se le pregunta a Mercado Pago. Nunca
+  // falla hacia afuera — si no se puede, devuelve el pedido tal como estaba.
+  pedido = await reconciliar(env, pedido);
 
   return json({
     ok: true,
