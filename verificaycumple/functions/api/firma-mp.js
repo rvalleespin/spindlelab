@@ -166,7 +166,14 @@ export async function verificarFirma({
   toleranciaMs = 0,
   ahoraMs = null,
 }) {
-  if (!secreto) return { valida: false, motivo: MOTIVOS.SIN_SECRETO };
+  // El secreto se limpia antes de usarlo. Un secreto pegado desde el panel con un espacio o
+  // un salto de línea al final se ve CARGADO —el panel lo muestra como «Value Encrypted»— y
+  // produce un HMAC distinto, así que el síntoma es que TODAS las notificaciones devuelven
+  // 401 con «no coincide», que es exactamente lo que se ve con el secreto equivocado. Son
+  // dos causas muy distintas con el mismo síntoma, y la de los espacios no se puede ver
+  // desde afuera porque nadie puede leer el valor cargado. Limpiarlo acá cierra esa rama.
+  const clave = typeof secreto === 'string' ? secreto.trim() : secreto;
+  if (!clave) return { valida: false, motivo: MOTIVOS.SIN_SECRETO };
   if (!cabeceraFirma) return { valida: false, motivo: MOTIVOS.SIN_CABECERA };
 
   const partes = partirFirma(cabeceraFirma);
@@ -187,7 +194,7 @@ export async function verificarFirma({
   }
 
   const manifiesto = armarManifiesto({ dataId, requestId, ts: partes.ts });
-  const calculada = await hmacHex(secreto, manifiesto);
+  const calculada = await hmacHex(clave, manifiesto);
 
   return igualesEnTiempoConstante(calculada, partes.v1.toLowerCase())
     ? { valida: true, motivo: MOTIVOS.VALIDA }
