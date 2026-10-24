@@ -19,32 +19,13 @@
 import {
   leerPedido, vistaPublica, crearPedido, buscarPedidoReciente, marcarEstado,
 } from './almacen.js';
-import { etapaDelPedido, señalesDelPedido, convieneRefrescar } from './etapas.js';
+import { etapaDelPedido, señalesDelPedido, convieneRefrescar, TITULOS } from './etapas.js';
 import { chequear, normalizarDominio } from './chequeo.js';
 import { clavesDeTope, contar } from './profundo.js';
 import { elegibilidad } from './elegibilidad.js';
 import { ESTADOS, nuevoIdPedido, congelarContrato, armarOrdenMP, utmsDe } from './pedidos.js';
 import { crearOrdenMP } from './cobro.js';
 
-/**
- * Los nombres de las señales, con las mismas palabras que la persona vio en su chequeo.
- *
- * Están acá y no se leen del chequeo a propósito: el pedido guarda ids congelados, y si mañana
- * el catálogo cambia, lo que la persona ve sigue siendo lo que compró. Un id que no esté en
- * esta tabla se muestra tal cual en vez de inventarle un nombre.
- */
-const TITULOS = {
-  cmp: 'Permiso antes de cargar rastreadores',
-  carga: 'Rastreadores que parten solos',
-  cookies: 'Cookies escritas sin permiso',
-  envio: 'Datos que ya salieron de tu sitio',
-  aviso: 'Si aparece un aviso al entrar',
-  politica: 'Enlace a tu política de privacidad',
-  https: 'Conexión cifrada (HTTPS)',
-  // Faltaba, y es una señal real del chequeo rápido: un pedido cuyo `senales_fuera` la incluyera
-  // habría mostrado el id crudo «casilla» en la pantalla del cliente.
-  casilla: 'Casilla de consentimiento en tu formulario',
-};
 
 const NO_EXISTE = { ok: false, motivo: 'no-existe' };
 

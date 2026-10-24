@@ -164,9 +164,13 @@ export function etapaDelPedido(pedido) {
     return {
       etapa: ETAPAS.FALTA_DATOS,
       titulo: 'Tu pago está confirmado. Cuéntanos de tu empresa',
+      // ⚠️ Esta frase tiene que nombrar EXACTAMENTE los campos que el formulario pide. La
+      // primera versión prometía «a qué correo quieres que te escriban por temas de datos» y el
+      // formulario no lo pedía: una pantalla que anuncia cinco datos y muestra cuatro campos
+      // hace dudar de si falta algo. Para ese correo usamos el del pedido, y se dice.
       detalle: 'Para armar el borrador de tu política necesitamos los datos que la ley pide ' +
-        'publicar: razón social, RUT, dirección y a qué correo quieres que te escriban por ' +
-        'temas de datos.',
+        'publicar: razón social, RUT, giro y dirección. Para el correo de contacto por temas de ' +
+        'datos usamos el mismo de tu pedido, salvo que nos digas otro.',
       quienActua: ACTUA.CLIENTE,
       queHacer: 'Completa el formulario de esta página. Son cuatro datos y no te vamos a pedir ' +
         'ninguna contraseña.',
@@ -195,14 +199,42 @@ export function etapaDelPedido(pedido) {
   return {
     etapa: ETAPAS.EN_CURSO,
     titulo: 'Estamos trabajando en tu sitio',
-    detalle: 'Recibimos el acceso. Estamos instalando el gestor de consentimiento y dejando que ' +
-      'nada se cargue antes de que la persona acepte.',
+    // ⚠️ Esta frase decía «Recibimos el acceso. Estamos instalando…», y afirmaba de más: el
+    // dato que la dispara es que el CLIENTE dijo que el acceso está, no que el acceso entre. Si
+    // no entra, la pantalla aseguraba que el trabajo iba en marcha cuando no, que es justo el
+    // tipo de afirmación que este producto le marca en rojo a otros sitios.
+    detalle: 'Nos dijiste que el acceso ya está. Lo estamos probando y partimos con la ' +
+      'instalación: que nada se cargue antes de que la persona acepte. Si algo no nos deja ' +
+      'entrar, te escribimos.',
     quienActua: ACTUA.NOSOTROS,
     queHacer: null,
     loQueSigue: 'Cuando terminemos, volvemos a correr el chequeo y te mandamos el antes y el después.',
     terminado: false,
   };
 }
+
+/**
+ * Los nombres de las señales
+ *
+ * Vivían en `pedido.js` sin exportar. Desde que el intake también devuelve las señales, viven
+ * acá, al lado de `señalesDelPedido`, que es la función que los consume, con las mismas palabras que la persona vio en su chequeo.
+ *
+ * Están acá y no se leen del chequeo a propósito: el pedido guarda ids congelados, y si mañana
+ * el catálogo cambia, lo que la persona ve sigue siendo lo que compró. Un id que no esté en
+ * esta tabla se muestra tal cual en vez de inventarle un nombre.
+ */
+export const TITULOS = {
+  cmp: 'Permiso antes de cargar rastreadores',
+  carga: 'Rastreadores que parten solos',
+  cookies: 'Cookies escritas sin permiso',
+  envio: 'Datos que ya salieron de tu sitio',
+  aviso: 'Si aparece un aviso al entrar',
+  politica: 'Enlace a tu política de privacidad',
+  https: 'Conexión cifrada (HTTPS)',
+  // Faltaba, y es una señal real del chequeo rápido: un pedido cuyo `senales_fuera` la incluyera
+  // habría mostrado el id crudo «casilla» en la pantalla del cliente.
+  casilla: 'Casilla de consentimiento en tu formulario',
+};
 
 /**
  * Las señales del pedido, con su nombre y de quién es cada una.

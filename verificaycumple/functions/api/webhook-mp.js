@@ -29,7 +29,7 @@ import { claveDeEvento, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES 
 import {
   registrarEvento, liberarEvento, anotarResultado, leerPedido, marcarEstado,
 } from './almacen.js';
-import { ESTADOS } from './pedidos.js';
+import { ESTADOS, ID_PEDIDO_NUESTRO } from './pedidos.js';
 
 function responder(estado, cuerpo) {
   return new Response(JSON.stringify(cuerpo), {
@@ -128,7 +128,7 @@ export async function onRequestPost(contexto) {
     //
     // Si no tiene nuestra forma, es de otra integración de la misma cuenta y reintentar no va
     // a cambiarlo nunca.
-    if (typeof idPedido === 'string' && /^vyc_[0-9a-f]{32}$/.test(idPedido)) {
+    if (typeof idPedido === 'string' && ID_PEDIDO_NUESTRO.test(idPedido)) {
       return soltarYReintentar('pedido-todavia-no-esta');
     }
     await anotarResultado(env.VYC_PEDIDOS, clave, `referencia ajena: ${idPedido}`);

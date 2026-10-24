@@ -101,6 +101,16 @@ export function nuevoIdPedido(uuid = null) {
 }
 
 /** La regla de Mercado Pago, para poder comprobarla en las pruebas y antes de mandar. */
+/**
+ * La forma de NUESTROS ids, para reconocerlos entre los ajenos.
+ *
+ * Vivía escrita en línea dentro de `webhook-mp.js`, que la usa para distinguir «el pedido
+ * todavía no aterrizó» de «esta referencia es de otra integración de la misma cuenta». Ahora que
+ * además la necesita el intake, se exporta desde acá, al lado de la función que genera el id:
+ * una segunda copia es una segunda cosa que se desincroniza.
+ */
+export const ID_PEDIDO_NUESTRO = /^vyc_[0-9a-f]{32}$/;
+
 export const ID_VALIDO_MP = /^[A-Za-z0-9_-]{1,64}$/;
 
 /**

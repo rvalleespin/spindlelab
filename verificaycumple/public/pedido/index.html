@@ -88,6 +88,14 @@
   }
   .te-toca .etiqueta { color: var(--ambar-700); }
   .te-toca p { margin: 0; }
+  .intake { margin: 14px 0 12px; display: grid; gap: 10px; }
+  .intake label { display: block; font-size: .92rem; }
+  .intake input, .intake select { display: block; width: 100%; margin-top: 5px; padding: 9px 11px;
+            font: inherit; border-radius: 9px; border: 1px solid rgba(0,0,0,.22); background: #fff; }
+  .intake button[disabled] { opacity: .6; cursor: progress; }
+  .intake-estado { margin: 2px 0 0; font-size: .88rem; }
+  .intake-estado:empty { display: none; }
+  .boton.secundario { background: none; border: 1px solid currentColor; }
   .te-toca .boton {
     display: inline-block; margin: 14px 0 0; padding: 12px 20px; border-radius: 999px;
     background: var(--tinta-900); color: var(--blanco); text-decoration: none;
@@ -178,6 +186,85 @@
       '</div>';
   }
 
+  /* ── Los datos de la empresa ──────────────────────────────────────────────────────────
+   *
+   * Son los cuatro que la ley pide publicar en una política, más en qué plataforma está el
+   * sitio, que es lo que nos deja decirle dónde crear la invitación.
+   *
+   * No pide contraseña ni crea una cuenta: la llave es este enlace. Y no pide el acceso por acá,
+   * porque un acceso no se manda por un formulario — se crea una invitación en su plataforma y
+   * nosotros comprobamos que entra.
+   */
+  var PLATAFORMAS = [
+    ['wordpress', 'WordPress'], ['webflow', 'Webflow'], ['wix', 'Wix'],
+    ['squarespace', 'Squarespace'], ['shopify', 'Shopify'], ['jimdo', 'Jimdo'],
+    ['a-medida', 'Hecho a medida'], ['no-se', 'No sé'], ['otro', 'Otra'],
+  ];
+
+  function montarIntake(data) {
+    var hueco = contenido.querySelector('[data-form-intake]');
+    if (!hueco) return;
+    var id = data.pedido.id;
+
+    var opciones = PLATAFORMAS.map(function (o) {
+      return '<option value="' + o[0] + '">' + escapar(o[1]) + '</option>';
+    }).join('');
+
+    var f = document.createElement('form');
+    f.className = 'intake';
+    f.innerHTML =
+      '<label>Razón social <input name="razon_social" required maxlength="200" autocomplete="organization"></label>' +
+      '<label>RUT de la empresa <input name="rut" required maxlength="12" placeholder="76.086.428-5" inputmode="text"></label>' +
+      '<label>Giro <input name="giro" required maxlength="200"></label>' +
+      '<label>Dirección <input name="direccion" required maxlength="200" autocomplete="street-address"></label>' +
+      '<label>¿En qué está hecho tu sitio? <select name="plataforma" required>' +
+        '<option value="" selected disabled>Elige una</option>' + opciones +
+      '</select></label>' +
+      '<button type="submit" class="boton">Enviar mis datos</button>' +
+      '<p class="intake-estado" role="status"></p>';
+    hueco.replaceWith(f);
+
+    var estado = f.querySelector('.intake-estado');
+    f.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (!f.reportValidity()) return;
+      var b = f.querySelector('button');
+      b.disabled = true;
+      b.textContent = 'Enviando…';
+      estado.textContent = '';
+
+      var cuerpo = { id: id };
+      ['razon_social', 'rut', 'giro', 'direccion', 'plataforma'].forEach(function (c) {
+        cuerpo[c] = f.elements[c].value.trim();
+      });
+
+      fetch('/api/intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(cuerpo),
+      })
+        .then(function (r) { return r.json().then(function (j) { return { estado: r.status, j: j }; }); })
+        .then(function (res) {
+          if (res.j && res.j.ok) {
+            // Se repinta con el estado NUEVO que el propio endpoint devolvió, para que no haya
+            // forma de quedar mirando el estado viejo después de haber escrito.
+            dibujar(res.j);
+            montarIntake(res.j);
+            return;
+          }
+          b.disabled = false;
+          b.textContent = 'Enviar mis datos';
+          estado.textContent = (res.j && res.j.detalle) ||
+            'No pudimos guardar tus datos. Vuelve a intentarlo, o escríbenos con este enlace.';
+        })
+        .catch(function () {
+          b.disabled = false;
+          b.textContent = 'Enviar mis datos';
+          estado.textContent = 'No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo.';
+        });
+    });
+  }
+
   function dibujar(data) {
     var e = data.etapa, p = data.pedido, s = data.señales || data.senales || { incluidas: [], fuera: [] };
     var html = '';
@@ -193,7 +280,11 @@
       html += '<div class="te-toca' + (e.terminado ? '' : '') + '">';
       html += '<p class="etiqueta">Te toca a ti</p>';
       html += '<p>' + escapar(e.queHacer) + '</p>';
-      html += '<a class="boton" href="mailto:hola@spindlelab.cl' +
+      // En la etapa de los datos, el botón no puede ser solo un «escríbenos»: lo que falta son
+      // cuatro campos, y pedirlos por correo convierte en una conversación lo que cabe en un
+      // formulario. El mailto se queda abajo como salida si algo no funciona.
+      if (e.etapa === 'falta-datos') html += '<p class="te-toca-form" data-form-intake></p>';
+      html += '<a class="boton' + (e.etapa === 'falta-datos' ? ' secundario' : '') + '" href="mailto:hola@spindlelab.cl' +
         '?subject=' + encodeURIComponent('Pedido ' + p.id) +
         '&body=' + encodeURIComponent('Hola, sobre mi pedido ' + p.id + ' en ' + (p.dominio || '') + ':\n\n') +
         '">Escríbenos</a>';
@@ -261,6 +352,7 @@
           return;
         }
         dibujar(res.j);
+        montarIntake(res.j);
 
         // Se vuelve a preguntar SOLO mientras el pago se confirma, que es lo único que cambia
         // sin que nadie haga nada. Y con un tope: si a los dos minutos no llegó, refrescar más
