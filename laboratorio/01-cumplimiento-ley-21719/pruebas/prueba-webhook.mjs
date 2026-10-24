@@ -21,6 +21,7 @@ const F = await import(rutaEnElRepo('verificaycumple/functions/api/firma-mp.js',
 const A = await import(rutaEnElRepo('verificaycumple/functions/api/almacen.js', 'ALMACEN_JS'));
 const P = await import(rutaEnElRepo('verificaycumple/functions/api/pedidos.js', 'PEDIDOS_JS'));
 const C = await import(rutaEnElRepo('verificaycumple/functions/api/cobro.js', 'COBRO_JS'));
+const AV = await import(rutaEnElRepo('verificaycumple/functions/api/aviso.js', 'AVISO_JS'));
 
 let ok = 0, malo = 0;
 const eq = (n, r, e) => {
@@ -169,7 +170,13 @@ console.log('=== 3. la notificación repetida no hace el trabajo dos veces ===')
   const { db, crudo } = baseNueva();
   const id = await unPedido(db);
   let llamadas = 0;
-  const soltar = conFetch(async () => { llamadas++; return respondeCon(ORDEN(id))(); });
+  // Se cuentan SOLO las lecturas de la orden. Desde el 24-oct una venta dispara además un aviso
+  // a Web3Forms, que es otra llamada de red y no tiene nada que ver con lo que esta prueba mide.
+  const soltar = conFetch(async (u) => {
+    if (String(u && u.url ? u.url : u).includes('web3forms')) return { ok: true, status: 200, json: async () => ({ success: true }) };
+    llamadas++;
+    return respondeCon(ORDEN(id))();
+  });
   const env = { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN };
 
   const primera = await W.onRequestPost({ request: await peticion(), env });
@@ -903,6 +910,145 @@ console.log('=== 20. si otra entrega ya lo dejó donde esta quería, no es un er
   eq('y el evento NO se soltó: queda su rastro', evs.filter((e) => e.resultado !== null).length, 1);
   cierto('diciendo que lo alcanzó otra entrega',
     evs.some((e) => /lo alcanzó otra entrega/.test(String(e.resultado || ''))));
+}
+
+console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de más ===');
+{
+  // Hasta el 24-oct entraba un pago, el pedido quedaba en `pagado`, y NADIE se enteraba. Ramón
+  // lo descubrió probando a mano: pagó y no pasó nada. Con una campaña corriendo, eso es una
+  // venta esperando sin que nadie la mire.
+
+  const ID = 'vyc_' + '5'.repeat(32);
+  const sembrar = (crudo) => crudo.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
+     VALUES (?, ?, 'creado', 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
+      '{}', 149000, 177310, 'persona@clinicaejemplo.cl', ?)`,
+  ).run(ID, new Date().toISOString(), ID_ORDEN);
+
+  // Un fetch que separa las dos salidas: la lectura de la orden y el aviso.
+  const conDos = ({ avisoCae = false, avisoEstado = 200 } = {}) => {
+    const antes = globalThis.fetch;
+    const visto = { avisos: 0, cuerpos: [] };
+    globalThis.fetch = async (u, o = {}) => {
+      if (String(u && u.url ? u.url : u).includes('web3forms')) {
+        visto.avisos++;
+        visto.cuerpos.push(o.body ? JSON.parse(o.body) : null);
+        if (avisoCae) throw new Error('ECONNRESET');
+        return { ok: avisoEstado < 300, status: avisoEstado, json: async () => ({ success: true }) };
+      }
+      return { ok: true, status: 200, json: async () => ORDEN(ID) };
+    };
+    return { visto, soltar: () => { globalThis.fetch = antes; } };
+  };
+
+  // ── Entra el pago: sale el aviso ──────────────────────────────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo);
+    const red = conDos();
+    const r = await W.onRequestPost({ request: await peticion(),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+    red.soltar();
+
+    eq('el pedido quedó pagado', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
+    eq('y salió UN aviso', red.visto.avisos, 1);
+    eq('sin romper la respuesta a Mercado Pago', r.status, 200);
+
+    const texto = JSON.stringify(red.visto.cuerpos[0]);
+    // ── LO QUE EL AVISO NO PUEDE LLEVAR ────────────────────────────────────────────────
+    //
+    // Web3Forms guarda una copia de lo que recibe. El correo del comprador no va porque la
+    // política dice que la base de pedidos no la comparte nadie más; el id completo no va
+    // porque esos 32 hex son la ÚNICA credencial de su pantalla privada, y dejarlos guardados
+    // en un tercero es dejar una llave puesta.
+    falso('NUNCA el correo del comprador', texto.includes('persona@clinicaejemplo.cl'));
+    falso('NUNCA el id completo del pedido', texto.includes(ID));
+    // Y lo que sí tiene que llevar, o el aviso no sirve para nada.
+    cierto('dice de qué sitio es', texto.includes('clinicaejemplo.cl'));
+    cierto('y por cuánto', texto.includes('177'));
+    cierto('con un prefijo para poder encontrarlo', texto.includes(ID.slice(0, AV.LARGO_PREFIJO)));
+  }
+
+  // ── Las notificaciones repetidas no avisan de nuevo ───────────────────────────────────
+  //
+  // Mercado Pago entrega la misma orden más de una vez. Dos avisos por una venta se leen como
+  // dos ventas.
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo);
+    const red = conDos();
+    const env = { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN };
+    for (let k = 0; k < 4; k++) await W.onRequestPost({ request: await peticion(), env });
+    red.soltar();
+    eq('cuatro entregas, un solo aviso', red.visto.avisos, 1);
+  }
+
+  // ── Si el aviso falla, el cobro NO se cae ─────────────────────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo);
+    const red = conDos({ avisoCae: true });
+    // Se captura a propósito: si el handler dejara escapar el error, esta prueba REVENTARÍA en
+    // vez de ponerse roja, y en una batería de cientos de aserciones un archivo que se cae sin
+    // línea de cierre se confunde con otra cosa. Acá el fallo se cuenta como fallo.
+    let r = null, lanzo = false;
+    try {
+      r = await W.onRequestPost({ request: await peticion(),
+        env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+    } catch { lanzo = true; }
+    red.soltar();
+    falso('el handler no deja escapar el fallo del aviso', lanzo);
+    eq('la respuesta sigue siendo 200', r && r.status, 200);
+    eq('y el pedido queda pagado igual', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
+  }
+
+  // ── Y un estado que no es «pagado» no avisa ───────────────────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo);
+    const antes = globalThis.fetch;
+    let avisos = 0;
+    globalThis.fetch = async (u) => {
+      if (String(u && u.url ? u.url : u).includes('web3forms')) { avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
+      return { ok: true, status: 200, json: async () => ORDEN(ID, { status: 'processing', status_detail: null, transactions: { payments: [] } }) };
+    };
+    await W.onRequestPost({ request: await peticion(),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+    globalThis.fetch = antes;
+    eq('un pago pendiente no se anuncia como venta', avisos, 0);
+    eq('el pedido queda pendiente', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pendiente');
+  }
+
+  // ── El cuerpo del aviso, como unidad ──────────────────────────────────────────────────
+  {
+    const c = AV.cuerpoDelAviso({ id: ID, dominio: 'otro.cl', monto_total: 177310,
+      correo: 'secreto@otro.cl', pagado_en: '2026-10-24T16:17:21.765Z' });
+    eq('lleva la clave pública del formulario', c.access_key, AV.CLAVE_WEB3FORMS);
+    cierto('el asunto dice de qué sitio', c.subject.includes('otro.cl'));
+    falso('y en ningún campo va el correo', JSON.stringify(c).includes('secreto@otro.cl'));
+    eq('el prefijo tiene el largo declarado', c['Pedido (prefijo)'], ID.slice(0, AV.LARGO_PREFIJO) + '…');
+    cierto('que es más corto que el id', AV.LARGO_PREFIJO < 36);
+
+    // ── QUE NUNCA LANCE, AFIRMADO DIRECTAMENTE ────────────────────────────────────────
+    //
+    // Antes esto se «probaba» viendo que el webhook seguía contestando 200. Pero al romper el
+    // catch a propósito, la prueba no se ponía roja: REVENTABA, sin línea de cierre. Una
+    // prueba que se cae no está diciendo lo mismo que una que falla, y en una batería de
+    // cientos la diferencia se pierde. Acá se afirma la propiedad donde vive.
+    let lanzo = false, resultado = null;
+    try {
+      resultado = await AV.avisarVenta({ id: ID, dominio: 'otro.cl', monto_total: 177310 },
+        async () => { throw new Error('la red se cayó'); });
+    } catch { lanzo = true; }
+    falso('avisarVenta NUNCA lanza, pase lo que pase', lanzo);
+    eq('y dice que no pudo', resultado, false);
+
+    // Lo mismo si Web3Forms contesta mal en vez de caerse.
+    const conError = await AV.avisarVenta({ id: ID, dominio: 'otro.cl', monto_total: 1 },
+      async () => ({ ok: false, status: 500, json: async () => ({}) }));
+    eq('un error del servicio tampoco lanza', conError, false);
+  }
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
