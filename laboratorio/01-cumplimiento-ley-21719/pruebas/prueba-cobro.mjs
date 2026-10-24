@@ -226,5 +226,107 @@ console.log('=== 11. leer el pago contra la API, sin tocar la red ===');
   cierto('y dice que fue la red', /red:/.test(caido.error));
 }
 
+/* ================================================================== */
+console.log('=== 12. EL CAMINO DE LAS ORDENES, que es el que quedo configurado ===');
+{
+  // La cuenta quedo con el evento «Order (Mercado Pago)», topico `orders`. Ese mundo usa OTRO
+  // enum: ni un valor de «pagado» en comun con el de pagos. `approved` no existe aca.
+  const ORD = (extra = {}) => ({
+    id: 'ORD01ABC', external_reference: 'vyc_abc123',
+    total_amount: '177310', total_paid_amount: '177310',
+    status: 'processed', status_detail: 'accredited',
+    transactions: { payments: [{ id: 'PAY01', amount: '177310', status: 'processed' }] },
+    ...extra,
+  });
+
+  const feliz = m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD() });
+  eq('processed marca pagado', feliz.accion, m.ACCIONES.MARCAR);
+  eq('y el estado', feliz.estado, P.ESTADOS.PAGADO);
+
+  // Los nueve estados de orden, uno por uno.
+  const esperado = {
+    processed:       [m.ACCIONES.MARCAR, P.ESTADOS.PAGADO],
+    failed:          [m.ACCIONES.MARCAR, P.ESTADOS.RECHAZADO],
+    canceled:        [m.ACCIONES.MARCAR, P.ESTADOS.RECHAZADO],
+    expired:         [m.ACCIONES.MARCAR, P.ESTADOS.RECHAZADO],
+    refunded:        [m.ACCIONES.MARCAR, P.ESTADOS.DEVUELTO],
+    charged_back:    [m.ACCIONES.MARCAR, P.ESTADOS.DEVUELTO],
+    created:         [m.ACCIONES.NADA,   P.ESTADOS.CREADO],
+    processing:      [m.ACCIONES.NADA,   P.ESTADOS.CREADO],
+    action_required: [m.ACCIONES.NADA,   P.ESTADOS.CREADO],
+  };
+  for (const [est, [accion, estado]] of Object.entries(esperado)) {
+    const d = m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status: est }) });
+    eq(`orden ${est}: la accion`, d.accion, accion);
+    eq(`orden ${est}: el estado`, d.estado, estado);
+  }
+  eq('los nueve en el catalogo', Object.keys(m.ESTADOS_ORDEN).length, 9);
+
+  // EL TRAICIONERO DE ESTE MUNDO. La doc: «Integrator action is required... For example, the
+  // capture of an authorized payment». Hay autorizacion, no hay plata.
+  const auth = m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status: 'action_required' }) });
+  falso('action_required NO es pagado', auth.estado === P.ESTADOS.PAGADO);
+  falso('ni habilita el trabajo', m.ordenHabilitaTrabajo(ORD({ status: 'action_required' })));
+  cierto('y el texto dice que no hay plata', /NO hay plata/i.test(auth.detalle));
+  cierto('processed si habilita', m.ordenHabilitaTrabajo(ORD()));
+
+  // LOS MONTOS SON STRING. Compararlos sin convertir falla siempre.
+  cierto('un monto string igual calza', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD() }).accion === m.ACCIONES.MARCAR);
+  eq('uno distinto no', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_amount: '1000', total_paid_amount: '1000' }) }).motivo, 'monto-no-calza');
+  eq('y uno vacio tampoco', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_amount: '' }) }).motivo, 'monto-no-calza');
+
+  // Procesada pero pagada de menos: se mira a mano, no se marca.
+  const corta = m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_paid_amount: '1000' }) });
+  eq('procesada con menos pagado se revisa', corta.accion, m.ACCIONES.REVISAR);
+  eq('y lo dice', corta.motivo, 'pagado-no-calza');
+
+  // Las mismas defensas que el otro camino.
+  eq('otra referencia', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ external_reference: 'otro' }) }).motivo, 'referencia-no-calza');
+  eq('estado nuevo', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status: 'inventado' }) }).motivo, 'estado-desconocido');
+  eq('repetida', m.decidirDesdeOrden({ pedido: { ...PEDIDO, estado: P.ESTADOS.PAGADO }, orden: ORD() }).motivo, 'ya-estaba');
+  eq('sin orden', m.decidirDesdeOrden({ pedido: PEDIDO, orden: null }).motivo, 'sin-pago');
+  eq('sin pedido', m.decidirDesdeOrden({ pedido: null, orden: ORD() }).accion, m.ACCIONES.IGNORAR);
+
+  // LOS DOS ENUM NO SE MEZCLAN. Un estado del mundo de los pagos no vale en una orden.
+  eq('approved no existe en una orden', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status: 'approved' }) }).motivo, 'estado-desconocido');
+  eq('ni rejected', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status: 'rejected' }) }).motivo, 'estado-desconocido');
+  // Y al reves: un estado de orden no vale en un pago.
+  eq('processed no existe en un pago', m.decidirDesdeNotificacion({ pedido: PEDIDO, pago: pago({ status: 'processed' }) }).motivo, 'estado-desconocido');
+}
+
+/* ================================================================== */
+console.log('=== 13. el pago que quedo dentro de la orden ===');
+{
+  const conDos = { transactions: { payments: [
+    { id: 'A', amount: '177310', status: 'failed' },
+    { id: 'B', amount: '177310', status: 'processed' },
+  ] } };
+  eq('toma el procesado, no el primero', m.pagoDeLaOrden(conDos).id, 'B');
+  eq('con su monto convertido a numero', m.pagoDeLaOrden(conDos).monto, 177310);
+
+  const soloFallido = { transactions: { payments: [{ id: 'A', amount: '1', status: 'failed' }] } };
+  eq('si no hay procesado, deja rastro del que hay', m.pagoDeLaOrden(soloFallido).id, 'A');
+
+  eq('sin pagos, null', m.pagoDeLaOrden({ transactions: { payments: [] } }), null);
+  eq('sin transactions, null', m.pagoDeLaOrden({}), null);
+  eq('sin orden, null', m.pagoDeLaOrden(null), null);
+}
+
+/* ================================================================== */
+console.log('=== 14. leer la orden contra la API ===');
+{
+  let pedida = null;
+  const fingido = async (url, opts) => { pedida = { url, opts };
+    return { ok: true, status: 200, json: async () => ({ id: 'ORD01', status: 'processed' }) }; };
+  const r = await m.leerOrdenMP('ORD01ABC', 'TOKEN', fingido);
+  cierto('ok', r.ok);
+  eq('el endpoint es el de ordenes', pedida.url, 'https://api.mercadopago.com/v1/orders/ORD01ABC');
+  eq('Bearer', pedida.opts.headers.Authorization, 'Bearer TOKEN');
+  eq('sin token', (await m.leerOrdenMP('1', null, fingido)).error, 'sin-token');
+  eq('404', (await m.leerOrdenMP('1', 'T', async () => ({ ok: false, status: 404 }))).error, 'http-404');
+  const caido = await m.leerOrdenMP('1', 'T', async () => { throw new Error('x'); });
+  falso('la red caida no lanza', caido.ok);
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
