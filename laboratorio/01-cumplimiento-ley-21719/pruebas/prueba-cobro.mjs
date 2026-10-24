@@ -57,7 +57,10 @@ console.log('=== 2. los nueve estados de Mercado Pago, uno por uno ===');
     rejected:     [m.ACCIONES.MARCAR, P.ESTADOS.RECHAZADO],
     cancelled:    [m.ACCIONES.MARCAR, P.ESTADOS.RECHAZADO],
     refunded:     [m.ACCIONES.MARCAR, P.ESTADOS.DEVUELTO],
-    charged_back: [m.ACCIONES.MARCAR, P.ESTADOS.DEVUELTO],
+    // CAMBIÓ EL 24-OCT: un contracargo lo revierte el emisor tras una disputa, no nosotros.
+    // Compartir estado con `refunded` hacía que la pantalla dijera «te devolvimos el dinero»,
+    // que es atribuirse una acción que el registro no acredita.
+    charged_back: [m.ACCIONES.MARCAR, P.ESTADOS.CONTRACARGADO],
     pending:      [m.ACCIONES.NADA,   P.ESTADOS.CREADO],
     in_process:   [m.ACCIONES.NADA,   P.ESTADOS.CREADO],
     authorized:   [m.ACCIONES.NADA,   P.ESTADOS.CREADO],
@@ -138,9 +141,11 @@ console.log('=== 7. lo que NO puede degradarse solo ===');
   eq('el motivo', d.motivo, 'transicion-invalida');
   falso('y no propone un estado', d.estado);
 
-  // Un contracargo sí lo mueve, porque pagado → devuelto es una transición válida.
+  // Un contracargo sí mueve el pedido, pero a SU estado, no al de una devolución nuestra.
   const cb = m.decidirDesdeNotificacion({ pedido: pagado, pago: pago({ status: 'charged_back' }) });
-  eq('un contracargo sí lo mueve a devuelto', cb.estado, P.ESTADOS.DEVUELTO);
+  eq('un contracargo lo mueve a contracargado', cb.estado, P.ESTADOS.CONTRACARGADO);
+  falso('y NO al de devuelto, que es el que decimos haber hecho nosotros',
+    cb.estado === P.ESTADOS.DEVUELTO);
 }
 
 /* ================================================================== */
@@ -274,7 +279,7 @@ console.log('=== 12. EL CAMINO DE LAS ORDENES, que es el que quedo configurado =
     canceled:        [m.ACCIONES.MARCAR, P.ESTADOS.RECHAZADO],
     expired:         [m.ACCIONES.MARCAR, P.ESTADOS.RECHAZADO],
     refunded:        [m.ACCIONES.MARCAR, P.ESTADOS.DEVUELTO],
-    charged_back:    [m.ACCIONES.MARCAR, P.ESTADOS.DEVUELTO],
+    charged_back:    [m.ACCIONES.MARCAR, P.ESTADOS.CONTRACARGADO],
     created:         [m.ACCIONES.NADA,    P.ESTADOS.CREADO],
     // CAMBIÓ EL 24-OCT, y los dos de abajo cambiaron en direcciones opuestas a propósito.
     //

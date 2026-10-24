@@ -163,7 +163,16 @@ console.log('=== 6. el precio quedó cerrado en toda la página ===');
     .replace(/\/\*[\s\S]*?\*\//g, '')
     .replace(/^\s*\/\/.*$/gm, '');
   falso('no queda ningún «Desde $149.000» a la vista', /Desde \$149\.000/.test(sinComentarios));
+  // ⚠️ `includes('177.310')` pasaba también con «$1.177.310», que es un precio distinto. Lo
+  // señaló una revisión externa. Ahora se mira el nodo del precio de la tarjeta del kit y se
+  // exige que el número que lo rodea sea exactamente ese.
   cierto('aparece el total con IVA', sinComentarios.includes('177.310'));
+  const tarjeta = sinComentarios.match(/<p class="kit-monto">([\s\S]*?)<\/p>/);
+  cierto('la tarjeta del kit tiene su monto', Boolean(tarjeta));
+  if (tarjeta) {
+    const numeros = (tarjeta[1].match(/\$[\d.]+/g) || []).map((x) => x.replace(/[^\d]/g, ''));
+    eq('y sus cifras son exactamente el neto y el total', numeros.sort(), ['149000', '177310']);
+  }
 
   // El FAQ del schema y el visible tienen que decir lo mismo: el propio archivo lo pide con un
   // ⚠️, y hasta ahora nada lo hacía cumplir.

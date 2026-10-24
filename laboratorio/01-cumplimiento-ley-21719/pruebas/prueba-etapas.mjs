@@ -62,6 +62,7 @@ console.log('=== 1. los cinco estados del pedido dan cinco etapas distintas ==='
     [{ estado: P.ESTADOS.ENTREGADO }, E.ETAPAS.ENTREGADO],
     [{ estado: P.ESTADOS.RECHAZADO }, E.ETAPAS.SIN_PAGO],
     [{ estado: P.ESTADOS.DEVUELTO }, E.ETAPAS.DEVUELTO],
+    [{ estado: P.ESTADOS.CONTRACARGADO }, E.ETAPAS.CONTRACARGADO],
   ];
   for (const [extra, esperada] of casos) {
     eq(`${extra.estado}${extra.acceso_recibido_en ? ' con acceso' : ''}`,
@@ -167,7 +168,7 @@ console.log('=== 6. NO se inventan etapas que el sistema no sabe ===');
   // Nueve desde el 24-oct: entraron `sin-orden`, `pago-pendiente` y `falta-datos`. El
   // número se fija a propósito para que agregar una etapa obligue a pasar por acá y a
   // decidir si de verdad hace falta otra pantalla distinta.
-  eq('son nueve etapas, y ni una más', etapas.length, 9);
+  eq('son diez etapas, y ni una más', etapas.length, 10);
   falso('no existe «revisión del alcance»', etapas.some((e) => /alcance/i.test(e)));
   falso('no existe «verificación final»', etapas.some((e) => /verificacion|verificación/i.test(e)));
 
@@ -228,6 +229,22 @@ console.log('=== 9. lo que una etapa promete tiene que existir ===');
   falso('y no promete elegir un correo que no se pide',
     /a qué correo quieres/i.test(datos.detalle));
   cierto('explica qué correo se usa', /mismo de tu pedido/i.test(datos.detalle));
+}
+
+console.log('=== 10. un contracargo no se presenta como una devolución nuestra ===');
+{
+  // Lo encontró una revisión externa. `charged_back` caía en el mismo estado que `refunded`, así
+  // que la pantalla decía «Te devolvimos el dinero» y «el pago volvió a tu medio de pago». Un
+  // contracargo lo revierte el emisor de la tarjeta tras una disputa: nosotros no emitimos nada.
+  const c = E.etapaDelPedido(ped({ estado: P.ESTADOS.CONTRACARGADO }));
+  const d = E.etapaDelPedido(ped({ estado: P.ESTADOS.DEVUELTO }));
+
+  falso('no son la misma etapa', c.etapa === d.etapa);
+  falso('no dice que nosotros devolvimos', /te devolvimos|devolvimos el dinero/i.test(c.titulo + ' ' + c.detalle));
+  cierto('nombra a quien de verdad lo hizo', /emisor|banco/i.test(c.titulo + ' ' + c.detalle));
+  cierto('y dice explícitamente que no fuimos nosotros', /no emitimos/i.test(c.detalle));
+  // La devolución de verdad sí puede decirlo, porque esa sí la hacemos nosotros.
+  cierto('la devolución real sí lo dice', /devolvimos/i.test(d.titulo + ' ' + d.detalle));
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);

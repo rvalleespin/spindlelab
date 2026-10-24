@@ -401,7 +401,15 @@ console.log('=== 12. la clave del evento sale de material FIRMADO ===');
   cierto('pero igual separa recursos', s1.clave !== s2.clave);
 
   // El reintento legítimo —mismo recurso, mismo aviso— sigue dando la MISMA clave.
-  eq('el reintento legítimo no cambia de clave',
+  //
+  // ⚠️ La versión anterior de esto comparaba `claveDeEvento(X).clave` con `claveDeEvento(X).clave`,
+  // o sea la función consigo misma. Eso solo demuestra que es determinista: una implementación
+  // que devolviera siempre la misma constante, ignorando el recurso y el aviso, pasaba igual. Lo
+  // encontró una revisión externa. Ahora la expectativa es independiente: se escribe la clave que
+  // el contrato dice que tiene que salir.
+  eq('el reintento legítimo da la clave esperada',
+    C.claveDeEvento({ id: 991199 }, 'ORD_X').clave, 'ev_ord_x_991199');
+  eq('y dos llamadas idénticas coinciden',
     C.claveDeEvento({ id: 991199 }, 'ORD_X').clave, C.claveDeEvento({ id: 991199 }, 'ORD_X').clave);
 }
 

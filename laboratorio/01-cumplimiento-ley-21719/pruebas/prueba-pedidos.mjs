@@ -82,11 +82,18 @@ console.log('=== 2. lo vendido queda congelado, no referenciado ===');
   // Una prueba que muere se ve, en la corrida de la batería, como «sin línea de cierre», que
   // es fácil de confundir con otra cosa. Mejor que falle y diga qué pasó.
   eq('el informe se guarda como TEXTO, no como objeto', typeof c.informe_json, 'string');
-  const guardado = typeof c.informe_json === 'string' ? JSON.parse(c.informe_json) : {};
+  // ⚠️ Comprobar que es una CADENA no alcanza, y lo señaló una revisión externa: `'{'` también
+  // es una cadena, y ahí el JSON.parse de abajo lanza fuera de toda captura. La prueba moriría
+  // sin total ni línea de cierre, que es exactamente el síntoma que estos comentarios dicen
+  // querer distinguir. La comprobación del tipo arreglaba un caso y dejaba el vecino abierto.
+  const parsear = (t) => { try { return { ok: true, v: JSON.parse(t) }; } catch { return { ok: false, v: {} }; } };
+  const intento = parsear(c.informe_json);
+  cierto('y ese texto es JSON válido', intento.ok);
+  const guardado = intento.v;
   eq('el informe se guardó entero', guardado.puntaje, 30);
   informe.puntaje = 100;
   informe.items.push(item('inventado', 'algo que no estaba'));
-  const releer = () => (typeof c.informe_json === 'string' ? JSON.parse(c.informe_json) : {});
+  const releer = () => parsear(c.informe_json).v;
   eq('mutar el original NO toca el pedido', releer().puntaje, 30);
   eq('ni le agrega señales', (releer().items || []).length, 1);
 
@@ -134,7 +141,10 @@ console.log('=== 4. el cuerpo de la orden es el que Mercado Pago espera ===');
   // Y el vencimiento, que va al lado de `config`, no adentro: sin él un pedido que nadie paga
   // se queda en `creado` para siempre, y con él Mercado Pago lo pasa a `expired`, que el
   // webhook ya sabe tratar como rechazo.
-  eq('la orden vence en un día', cuerpo.expiration_time, 'P1D');
+  // El literal SALE de la constante, no de la salida: la prueba que de verdad importa es la de
+  // abajo, que comprueba que la ventana del antidoble clic no sea más corta que esto.
+  eq('la orden vence según la vigencia declarada', cuerpo.expiration_time,
+    `PT${m.VIGENCIA_ORDEN_HORAS}H`);
 
   // NO existe campo de moneda en Orders: el CLP sale de la cuenta del vendedor. Mandar uno
   // sería inventar un campo.

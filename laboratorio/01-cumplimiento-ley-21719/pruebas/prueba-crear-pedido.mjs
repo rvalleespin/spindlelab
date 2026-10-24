@@ -312,7 +312,8 @@ console.log('=== 7. el cuerpo que se le manda a Mercado Pago ===');
   eq('el monto es el del servidor', c.total_amount, '177310');
   eq('en modo manual, que es el de Checkout Pro', c.processing_mode, 'manual');
   eq('con la vuelta automática al sitio', c.config.online.auto_return, 'approved');
-  eq('y vencimiento, para no dejar pedidos colgados', c.expiration_time, 'P1D');
+  eq('y vencimiento, para no dejar pedidos colgados', c.expiration_time,
+    `PT${P.VIGENCIA_ORDEN_HORAS}H`);
   cierto('las URLs de vuelta apuntan a la pantalla del pedido',
     String(c.config.online.success_url).includes('/pedido/?id=vyc_'));
   eq('la referencia externa es el id del pedido', c.external_reference, c.external_reference);
@@ -493,6 +494,100 @@ console.log('=== 14. el antidoble clic NO puede entregar el pedido de alguien qu
   const pagado = filas(crudo).find((f) => f.id === idPagado);
   eq('el pedido pagado no se tocó', pagado.estado, 'pagado');
   eq('ni se le cambió la orden', pagado.mp_order_id, 'ORD_DE_OTRO');
+}
+
+console.log('=== 15. NUNCA dos órdenes pagables para el mismo sitio y correo ===');
+{
+  // El defecto que esto vigila lo encontró una revisión externa, y era mío: la ventana del
+  // antidoble clic estaba en 30 minutos y la orden vivía un día. Durante 23 horas y media,
+  // alguien que había abierto un pago y no lo había completado volvía, no era reconocido como el
+  // mismo, y recibía una SEGUNDA orden mientras la primera seguía pagable. Pagar las dos era
+  // pagar dos veces el mismo kit.
+  //
+  // La aserción no mira los números: mira la RELACIÓN entre los dos, que es el invariante.
+  eq('la ventana dura al menos lo que dura la orden',
+    E.VENTANA_DOBLE_CLIC_MS >= P.VIGENCIA_ORDEN_HORAS * 60 * 60 * 1000, true);
+
+  // Y se comprueba en el comportamiento, no solo en la aritmética: pasada media hora —que era la
+  // ventana vieja— el segundo intento tiene que seguir reusando el mismo pedido.
+  const { db, crudo } = baseNueva();
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+  const red = conRed();
+  const primera = await (await E.onRequestPost({ request: pedir(BIEN), env })).json();
+
+  // Se envejece el pedido 45 minutos: más que la ventana vieja, mucho menos que la vigencia.
+  crudo.prepare('UPDATE pedidos SET creado_en = ?')
+    .run(new Date(Date.now() - 45 * 60 * 1000).toISOString());
+
+  const segunda = await (await E.onRequestPost({ request: pedir(BIEN), env })).json();
+  red.soltar();
+
+  eq('45 minutos después sigue siendo el MISMO pedido', segunda.id, primera.id);
+  eq('y queda uno solo', filas(crudo).length, 1);
+}
+
+console.log('=== 16. LA CARRERA DE VERDAD: dos peticiones a la vez, no una tras otra ===');
+{
+  // La prueba 5 hacía `await` de la primera antes de lanzar la segunda, así que la segunda
+  // SIEMPRE veía el pedido ya insertado. Pasaba con una implementación que abre dos órdenes al
+  // recibir los dos clics juntos — lo señaló una revisión externa, y tenía razón.
+  //
+  // Acá las dos se solapan y además se fuerza el peor orden posible con una barrera: ninguna
+  // puede insertar hasta que las DOS hayan terminado de buscar. Ese es el instante en que las
+  // dos se creen la primera.
+  const { db, crudo } = baseNueva();
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+
+  let buscaron = 0;
+  let abrirPuerta;
+  const puerta = new Promise((r) => { abrirPuerta = r; });
+  const dbConBarrera = {
+    prepare(sql) {
+      const st = db.prepare(sql);
+      if (/ORDER BY creado_en DESC/.test(sql)) {
+        // La búsqueda del antidoble clic: se deja terminar, y cuando las dos llegaron se abre
+        // la puerta para que recién ahí puedan insertar.
+        return {
+          bind: (...a) => ({
+            first: async () => {
+              const r = await st.bind(...a).first();
+              if (++buscaron === 2) abrirPuerta();
+              return r;
+            },
+          }),
+        };
+      }
+      if (/INSERT OR IGNORE INTO pedidos|INSERT INTO pedidos/.test(sql)) {
+        return { bind: (...a) => ({ run: async () => { await puerta; return st.bind(...a).run(); } }) };
+      }
+      return st;
+    },
+  };
+
+  const env = { VYC_PEDIDOS: dbConBarrera, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+  const red = conRed();
+  const [a, b] = await Promise.all([
+    E.onRequestPost({ request: pedir(BIEN), env }),
+    E.onRequestPost({ request: pedir(BIEN), env }),
+  ]);
+  const ja = await a.json(), jb = await b.json();
+  red.soltar();
+
+  // Son TRES búsquedas y no dos, y la tercera es la señal de que la defensa actuó: las dos
+  // primeras son las peticiones creyéndose cada una la primera, y la tercera es la que perdió la
+  // carrera releyendo para quedarse con el id de la que ganó. Si fueran solo dos, significaría
+  // que nadie perdió, o sea que las dos insertaron.
+  cierto('las dos buscaron antes de que ninguna insertara', buscaron >= 2);
+  eq('y una tuvo que releer tras perder la carrera', buscaron, 3);
+  eq('las dos contestan 200', [a.status, b.status], [200, 200]);
+  eq('queda UN solo pedido', filas(crudo).length, 1);
+  eq('y las dos devuelven el MISMO id', ja.id, jb.id);
+
+  // Lo que de verdad evita el doble cobro: que Mercado Pago reciba una sola clave efectiva.
+  const claves = red.llamadas.cabecerasMP.map((h) => h['X-Idempotency-Key']);
+  eq('Mercado Pago recibe una sola clave', new Set(claves).size, 1);
+  eq('y es la del pedido que quedó', claves[0], ja.id);
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
