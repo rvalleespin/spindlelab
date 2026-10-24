@@ -210,6 +210,34 @@ console.log('=== 6. la facturación solo se guarda sobre un pedido PAGADO ===');
 
   eq('sin campos válidos no hace nada',
     (await A.guardarIntake(db, d.id, { loquesea: 1 })).motivo, 'sin-campos');
+
+  // LA LISTA BLANCA, MEZCLADA CON CAMPOS LEGÍTIMOS.
+  //
+  // Agregado el 24-oct, y vale aclarar por qué, porque la primera versión de este comentario
+  // decía algo falso. Al mutar `guardarIntake` quitándole la lista blanca, la prueba del
+  // ENDPOINT del intake siguió verde —el endpoint filtra por su cuenta y nunca le pasa un campo
+  // ajeno—, y de ahí salió la conclusión apresurada de que la defensa no estaba cubierta. No es
+  // cierto: las aserciones de más arriba de este mismo archivo sí la pillan. Lo que había
+  // pasado es que se mutó un archivo y se corrió la prueba de otro.
+  //
+  // Lo que esto suma de verdad es el caso de campos buenos y malos MEZCLADOS en una sola
+  // llamada, que es como llegaría un intento real: un `{loquesea: 1}` a secas cae en «sin
+  // campos» por otro motivo y no ejercita el filtro.
+  const antesDeColar = await A.leerPedido(db, d.id);
+  const colado = await A.guardarIntake(db, d.id, {
+    giro: 'Servicios médicos',
+    monto_total: 1, monto_neto: 1, estado: 'entregado', correo: 'otro@sitio.cl',
+    informe_json: '{}', mp_order_id: 'ORD_FALSA', id: 'otro_id',
+  });
+  cierto('guarda lo legítimo', colado.guardado);
+  eq('y SOLO lo legítimo', colado.campos, ['giro']);
+  const despuesDeColar = await A.leerPedido(db, d.id);
+  eq('el giro entró', despuesDeColar.giro, 'Servicios médicos');
+  eq('el monto no se movió', despuesDeColar.monto_total, antesDeColar.monto_total);
+  eq('ni el estado', despuesDeColar.estado, antesDeColar.estado);
+  eq('ni el correo', despuesDeColar.correo, antesDeColar.correo);
+  eq('ni el informe', despuesDeColar.informe_json, antesDeColar.informe_json);
+  eq('ni el id', despuesDeColar.id, d.id);
 }
 
 /* ================================================================== */

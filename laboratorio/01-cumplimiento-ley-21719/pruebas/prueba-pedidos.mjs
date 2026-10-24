@@ -124,8 +124,17 @@ console.log('=== 4. el cuerpo de la orden es el que Mercado Pago espera ===');
   eq('un item', cuerpo.items.length, 1);
   eq('unit_price también string', typeof cuerpo.items[0].unit_price, 'string');
   eq('quantity entero', cuerpo.items[0].quantity, 1);
-  eq('las urls de vuelta van en config.online', Object.keys(cuerpo.config.online).sort(),
-    ['failure_url', 'pending_url', 'success_url']);
+  eq('las urls de vuelta van en config.online, con la vuelta automática',
+    Object.keys(cuerpo.config.online).sort(),
+    ['auto_return', 'failure_url', 'pending_url', 'success_url']);
+  // `auto_return: 'approved'` entró el 24-oct. Sin él, la persona paga y se queda en Mercado
+  // Pago en vez de aterrizar en la pantalla de su pedido. `approved` la devuelve solo cuando el
+  // pago se aprobó, y exige que `success_url` esté definida, que lo está.
+  eq('la vuelta automática es approved', cuerpo.config.online.auto_return, 'approved');
+  // Y el vencimiento, que va al lado de `config`, no adentro: sin él un pedido que nadie paga
+  // se queda en `creado` para siempre, y con él Mercado Pago lo pasa a `expired`, que el
+  // webhook ya sabe tratar como rechazo.
+  eq('la orden vence en un día', cuerpo.expiration_time, 'P1D');
 
   // NO existe campo de moneda en Orders: el CLP sale de la cuenta del vendedor. Mandar uno
   // sería inventar un campo.

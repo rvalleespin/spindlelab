@@ -20,6 +20,7 @@ const W = await import(rutaEnElRepo('verificaycumple/functions/api/webhook-mp.js
 const F = await import(rutaEnElRepo('verificaycumple/functions/api/firma-mp.js', 'FIRMA_MP_JS'));
 const A = await import(rutaEnElRepo('verificaycumple/functions/api/almacen.js', 'ALMACEN_JS'));
 const P = await import(rutaEnElRepo('verificaycumple/functions/api/pedidos.js', 'PEDIDOS_JS'));
+const C = await import(rutaEnElRepo('verificaycumple/functions/api/cobro.js', 'COBRO_JS'));
 
 let ok = 0, malo = 0;
 const eq = (n, r, e) => {
@@ -183,14 +184,20 @@ console.log('=== 3. la notificación repetida no hace el trabajo dos veces ===')
 /* ================================================================== */
 console.log('=== 4. action_required NO paga, aunque la firma sea buena ===');
 {
-  const { db } = baseNueva();
+  const { db, crudo } = baseNueva();
   const id = await unPedido(db);
   const soltar = conFetch(respondeCon(ORDEN(id, { status: 'action_required', total_paid_amount: '0' })));
   const r = await W.onRequestPost({ request: await peticion(), env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
   soltar();
   eq('contesta 200', r.status, 200);
-  eq('pero no marca', (await r.json()).accion, 'nada');
+  // «revisar» y no «nada»: `action_required` es falta una acción NUESTRA —capturar un pago
+  // autorizado—, así que no mueve el pedido pero tampoco puede quedar invisible. Si saliera como
+  // «nada», la única señal sería una nota en eventos_mp que nadie lee hasta que el cliente
+  // pregunta por qué no le llegó el kit.
+  eq('pero no marca: pide que alguien lo mire', (await r.json()).accion, 'revisar');
   eq('y el pedido sigue en creado', (await A.leerPedido(db, id)).estado, P.ESTADOS.CREADO);
+  cierto('con el motivo escrito en el evento',
+    String(eventos(crudo)[0].resultado).includes('action_required'));
 }
 
 /* ================================================================== */
@@ -303,6 +310,169 @@ console.log('=== 10. solo POST ===');
   const r = await W.onRequest({ request: get, env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO } });
   eq('un GET da 405', r.status, 405);
   eq('y dice qué se permite', r.headers.get('Allow'), 'POST');
+}
+
+console.log('=== 11. EL RECLAMO ABANDONADO: la base falla, el reclamo queda, y el reintento lo rescata ===');
+{
+  // Este es el agujero que tenía el arreglo de la prueba 5, y es peor que el defecto original
+  // porque PARECÍA resuelto. `soltarYReintentar` suelta el reclamo con un DELETE contra la
+  // misma base cuyo fallo disparó la liberación: en el caso típico —D1 con un hipo— el DELETE
+  // falla también. Antes el error se tragaba en silencio y el handler contestaba 503 creyendo
+  // que había soltado; el reintento veía el evento registrado, decía «repetido» y se iba. El
+  // cliente pagaba y el pedido se quedaba en `creado` para siempre.
+  //
+  // La prueba 5 no lo veía porque su base fingida funcionaba: fallaba la API, no D1, y
+  // entonces el DELETE sí corría. La prueba y el arreglo salieron del mismo supuesto.
+  const { db, crudo } = baseNueva();
+  const id = await unPedido(db);
+  const env = { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN };
+
+  // Una base que deja reclamar y después se cae en TODO lo demás, que es el caso real.
+  let caida = false;
+  const dbCaida = {
+    prepare(sql) {
+      if (caida && !/INSERT OR IGNORE INTO eventos_mp/.test(sql)) {
+        return { bind: () => ({ run: async () => { throw new Error('D1_ERROR'); },
+                                first: async () => { throw new Error('D1_ERROR'); },
+                                all: async () => { throw new Error('D1_ERROR'); } }) };
+      }
+      return db.prepare(sql);
+    },
+  };
+
+  caida = true;
+  const r1 = await W.onRequestPost({ request: await peticion(), env: { ...env, VYC_PEDIDOS: dbCaida } });
+  const j1 = await r1.json();
+  caida = false;
+
+  eq('contesta 503', r1.status, 503);
+  // El motivo ya no miente: dice que la liberación no salió.
+  cierto('y el motivo avisa que el reclamo no se soltó', String(j1.motivo).includes('reclamo-vence-solo'));
+  eq('el reclamo QUEDÓ puesto (el DELETE falló)', eventos(crudo).length, 1);
+  eq('y sin resultado, que es la marca del reclamo abandonado', eventos(crudo)[0].resultado, null);
+
+  // El reintento inmediato NO lo rescata: dentro de la ventana se respeta el reclamo, por si
+  // el primer intento sigue en vuelo.
+  const soltar1 = conFetch(respondeCon(ORDEN(id)));
+  const pronto = await W.onRequestPost({ request: await peticion(), env });
+  soltar1();
+  eq('un reintento inmediato respeta el reclamo', (await pronto.json()).motivo, 'repetido');
+  eq('el pedido sigue sin pagar', (await A.leerPedido(db, id)).estado, P.ESTADOS.CREADO);
+
+  // Pasada la ventana (el reintento de los 15 minutos de Mercado Pago), sí lo rescata.
+  const viejo = new Date(Date.now() - A.VENTANA_RECLAMO_MS - 60000).toISOString();
+  crudo.prepare('UPDATE eventos_mp SET recibido_en = ?').run(viejo);
+
+  const soltar2 = conFetch(respondeCon(ORDEN(id)));
+  const rescate = await W.onRequestPost({ request: await peticion(), env });
+  soltar2();
+  eq('pasada la ventana, el reintento SÍ rescata y marca', (await rescate.json()).accion, 'marcar');
+  eq('y el pedido queda pagado', (await A.leerPedido(db, id)).estado, P.ESTADOS.PAGADO);
+  eq('sigue habiendo un solo evento', eventos(crudo).length, 1);
+  cierto('ahora con resultado escrito', Boolean(eventos(crudo)[0].resultado));
+
+  // Y un evento YA TERMINADO no se vuelve a reclamar nunca, por viejo que sea.
+  crudo.prepare('UPDATE eventos_mp SET recibido_en = ?').run('2020-01-01T00:00:00.000Z');
+  const terminado = await W.onRequestPost({ request: await peticion(), env });
+  eq('un evento ya terminado no se reclama aunque sea antiquísimo', (await terminado.json()).motivo, 'repetido');
+}
+
+console.log('=== 12. la clave del evento sale de material FIRMADO ===');
+{
+  // La firma cubre data.id, x-request-id y ts. El cuerpo NO. Antes la clave era solo
+  // `ev_<cuerpo.id>`, así que con una firma capturada se podía mandar cualquier cuerpo y
+  // quemar la clave de CUALQUIER pedido, incluido uno nunca visto.
+  const a = C.claveDeEvento({ id: 7 }, 'ORD_A');
+  const b = C.claveDeEvento({ id: 7 }, 'ORD_B');
+  cierto('dos recursos distintos con el mismo id de cuerpo NO comparten clave', a.clave !== b.clave);
+  cierto('la clave lleva el recurso', a.clave.includes('ord_a'));
+  cierto('y sigue llevando el id del aviso', a.clave.includes('7'));
+  eq('sigue siendo exacta', a.exacta, true);
+
+  // El data.id llega con mayúsculas (capturado del panel el 24-oct); dos cajas del mismo
+  // recurso tienen que ser el mismo recurso.
+  eq('la caja del data.id no crea recursos distintos',
+    C.claveDeEvento({ id: 7 }, 'ORD_A').clave, C.claveDeEvento({ id: 7 }, 'ord_a').clave);
+
+  // Y el camino de reserva, cuando el cuerpo no se puede leer.
+  const s1 = C.claveDeEvento(null, 'ORD_A');
+  const s2 = C.claveDeEvento(null, 'ORD_B');
+  eq('sin cuerpo no es exacta', s1.exacta, false);
+  cierto('pero igual separa recursos', s1.clave !== s2.clave);
+
+  // El reintento legítimo —mismo recurso, mismo aviso— sigue dando la MISMA clave.
+  eq('el reintento legítimo no cambia de clave',
+    C.claveDeEvento({ id: 991199 }, 'ORD_X').clave, C.claveDeEvento({ id: 991199 }, 'ORD_X').clave);
+}
+
+console.log('=== 13. un rechazo seguido de un pago es el reintento normal ===');
+{
+  // `failed` no es terminal en la Orders API: la persona puede reintentar con otra tarjeta
+  // sobre la misma orden. Antes el pedido quedaba atrapado en `rechazado` con la plata cobrada.
+  const { db } = baseNueva();
+  const id = await unPedido(db);
+  const env = { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN };
+
+  const s1 = conFetch(respondeCon(ORDEN(id, { status: 'failed', total_paid_amount: '0' })));
+  await W.onRequestPost({ request: await peticion(), env });
+  s1();
+  eq('la orden fallida deja el pedido rechazado', (await A.leerPedido(db, id)).estado, P.ESTADOS.RECHAZADO);
+
+  // Segundo intento, con otra tarjeta: la misma orden pasa a processed. Es un aviso DISTINTO,
+  // así que trae otro id de notificación en el cuerpo — por eso no es «repetido».
+  const s2 = conFetch(respondeCon(ORDEN(id)));
+  const r = await W.onRequestPost({
+    request: await peticion({
+      requestId: 'req-segundo-intento',
+      cuerpo: { id: 991200, type: 'order', action: 'order.processed', data: { id: ID_ORDEN } },
+    }), env,
+  });
+  s2();
+  eq('el segundo intento SÍ marca', (await r.json()).accion, 'marcar');
+  eq('y el pedido pasa a pagado', (await A.leerPedido(db, id)).estado, P.ESTADOS.PAGADO);
+}
+
+console.log('=== 14. anotarResultado no puede tumbar la respuesta ===');
+{
+  // La nota de auditoría se escribe DESPUÉS de mover el pedido y fuera de todo try. Un hipo de
+  // D1 ahí convertía el camino feliz —con el pedido ya pagado— en un 500, y Mercado Pago lo
+  // reintentaba ocho veces sobre un trabajo ya hecho.
+  const { db } = baseNueva();
+  const id = await unPedido(db);
+  const dbSinNota = {
+    prepare(sql) {
+      if (/UPDATE eventos_mp SET resultado/.test(sql)) {
+        return { bind: () => ({ run: async () => { throw new Error('D1_ERROR'); } }) };
+      }
+      return db.prepare(sql);
+    },
+  };
+  const soltar = conFetch(respondeCon(ORDEN(id)));
+  let r, lanzo = false;
+  try {
+    r = await W.onRequestPost({
+      request: await peticion(),
+      env: { VYC_PEDIDOS: dbSinNota, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+    });
+  } catch (e) { lanzo = true; }
+  soltar();
+  falso('el handler NO lanza', lanzo);
+  eq('contesta 200', r && r.status, 200);
+  eq('y el pedido quedó pagado igual', (await A.leerPedido(db, id)).estado, P.ESTADOS.PAGADO);
+}
+
+console.log('=== 15. la lectura de la orden tiene corte de tiempo ===');
+{
+  // Sin `signal`, una conexión colgada nunca rechaza: el catch no se despierta, el evento queda
+  // reclamado y la invocación muere esperando.
+  cierto('hay un tope declarado', Number.isInteger(C.MS_LECTURA_ORDEN) && C.MS_LECTURA_ORDEN > 0);
+  cierto('y cabe dentro de los 22 s que anuncia Mercado Pago', C.MS_LECTURA_ORDEN < 22000);
+  let vioSignal = false;
+  await C.leerOrdenMP('ORD1', 'tok', async (_u, o) => {
+    vioSignal = Boolean(o && o.signal);
+    return { ok: true, status: 200, json: async () => ({ id: 'ORD1' }) };
+  });
+  cierto('el fetch se hace con un signal de aborto', vioSignal);
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);

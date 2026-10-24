@@ -28,10 +28,19 @@ const eq = (n, r, e) => {
 const cierto = (n, v) => eq(n, Boolean(v), true);
 const falso = (n, v) => eq(n, Boolean(v), false);
 
+/**
+ * Un pedido normal.
+ *
+ * ⚠️ `mp_order_id` y `razon_social` entran al molde el 24-oct, y no es cosmético: desde esa
+ * fecha son justamente los dos datos que parten etapas. Un pedido `creado` SIN orden en Mercado
+ * Pago no está esperando un aviso —nunca hubo dónde pagar— y un pedido pagado SIN razón social
+ * todavía no mandó sus datos. Dejarlos fuera del molde haría que cada caso de abajo cayera en
+ * la etapa de «falta algo» sin que esa fuera la intención de la prueba.
+ */
 const ped = (extra = {}) => ({
-  id: 'vyc_abc', estado: P.ESTADOS.CREADO,
+  id: 'vyc_abc', estado: P.ESTADOS.CREADO, mp_order_id: 'ORD01PRUEBA',
   senales_contratadas: ['carga', 'cookies'], senales_fuera: ['politica'],
-  acceso_recibido_en: null, ...extra,
+  razon_social: 'Ejemplo SpA', acceso_recibido_en: null, ...extra,
 });
 
 /* ================================================================== */
@@ -39,6 +48,15 @@ console.log('=== 1. los cinco estados del pedido dan cinco etapas distintas ==='
 {
   const casos = [
     [{ estado: P.ESTADOS.CREADO }, E.ETAPAS.CONFIRMANDO],
+    // Mismo estado, sin orden en Mercado Pago: nadie pudo pagar porque nunca hubo dónde, así
+    // que decirle «estamos confirmando tu pago» sería falso y la pantalla se quedaría
+    // actualizándose sola para siempre esperando un aviso que nadie va a mandar.
+    [{ estado: P.ESTADOS.CREADO, mp_order_id: null }, E.ETAPAS.SIN_ORDEN],
+    // Pagando con un medio que no acredita al instante.
+    [{ estado: P.ESTADOS.PENDIENTE }, E.ETAPAS.PAGO_PENDIENTE],
+    // Pagó, pero todavía no mandó los datos de su empresa. Antes esto caía en «falta el
+    // acceso», o sea que se le pedía de nuevo algo que ya había entregado.
+    [{ estado: P.ESTADOS.PAGADO, razon_social: null }, E.ETAPAS.FALTA_DATOS],
     [{ estado: P.ESTADOS.PAGADO, acceso_recibido_en: null }, E.ETAPAS.FALTA_ACCESO],
     [{ estado: P.ESTADOS.PAGADO, acceso_recibido_en: '2026-10-23T12:00:00Z' }, E.ETAPAS.EN_CURSO],
     [{ estado: P.ESTADOS.ENTREGADO }, E.ETAPAS.ENTREGADO],
@@ -57,6 +75,9 @@ console.log('=== 2. cada etapa dice quién actúa, y nunca queda en voz pasiva =
 {
   const todos = [
     { estado: P.ESTADOS.CREADO },
+    { estado: P.ESTADOS.CREADO, mp_order_id: null },
+    { estado: P.ESTADOS.PENDIENTE },
+    { estado: P.ESTADOS.PAGADO, razon_social: null },
     { estado: P.ESTADOS.PAGADO, acceso_recibido_en: null },
     { estado: P.ESTADOS.PAGADO, acceso_recibido_en: 'x' },
     { estado: P.ESTADOS.ENTREGADO },
@@ -101,6 +122,9 @@ console.log('=== 4. cuando NO le toca, no se le pide nada ===');
   // Una pantalla que siempre pide algo entrena a la persona a ignorarla.
   for (const extra of [
     { estado: P.ESTADOS.CREADO },
+    // El pago pendiente entra acá: Mercado Pago va a avisar solo y no hay nada que pedirle.
+    // `sin-orden` y `falta-datos` NO entran, y es correcto: en esos dos sí le toca al cliente.
+    { estado: P.ESTADOS.PENDIENTE },
     { estado: P.ESTADOS.PAGADO, acceso_recibido_en: 'x' },
     { estado: P.ESTADOS.ENTREGADO },
     { estado: P.ESTADOS.DEVUELTO },
@@ -116,6 +140,9 @@ console.log('=== 5. las etapas que siguen dicen qué viene, y las finales no ===
 {
   const enCurso = [
     { estado: P.ESTADOS.CREADO },
+    { estado: P.ESTADOS.CREADO, mp_order_id: null },
+    { estado: P.ESTADOS.PENDIENTE },
+    { estado: P.ESTADOS.PAGADO, razon_social: null },
     { estado: P.ESTADOS.PAGADO, acceso_recibido_en: null },
     { estado: P.ESTADOS.PAGADO, acceso_recibido_en: 'x' },
   ];
@@ -137,7 +164,10 @@ console.log('=== 6. NO se inventan etapas que el sistema no sabe ===');
   // El brief proponía «revisión del alcance» y «verificación final». Ninguna de las dos tiene
   // un dato detrás: ocurren en la cabeza de quien entrega. Mostrarlas sería teatro.
   const etapas = Object.values(E.ETAPAS);
-  eq('son seis etapas, no las seis del brief', etapas.length, 6);
+  // Nueve desde el 24-oct: entraron `sin-orden`, `pago-pendiente` y `falta-datos`. El
+  // número se fija a propósito para que agregar una etapa obligue a pasar por acá y a
+  // decidir si de verdad hace falta otra pantalla distinta.
+  eq('son nueve etapas, y ni una más', etapas.length, 9);
   falso('no existe «revisión del alcance»', etapas.some((e) => /alcance/i.test(e)));
   falso('no existe «verificación final»', etapas.some((e) => /verificacion|verificación/i.test(e)));
 
@@ -173,12 +203,31 @@ console.log('=== 7. las señales salen del contrato CONGELADO ===');
 console.log('=== 8. solo se refresca cuando el pedido se puede mover solo ===');
 {
   cierto('esperando el pago, sí', E.convieneRefrescar(ped({ estado: P.ESTADOS.CREADO })));
+  // Un pago que no acredita al instante también se mueve solo: Mercado Pago va a avisar.
+  cierto('pago pendiente, sí', E.convieneRefrescar(ped({ estado: P.ESTADOS.PENDIENTE })));
+  // Pero si la orden nunca llegó a existir, NO hay ningún aviso en camino. Refrescar ahí es
+  // esperar para siempre algo que nadie va a mandar, con la pantalla fingiendo que progresa.
+  falso('creado sin orden en Mercado Pago, no',
+    E.convieneRefrescar(ped({ estado: P.ESTADOS.CREADO, mp_order_id: null })));
   // En «falta el acceso» el que mueve es el cliente: refrescar cada pocos segundos gasta
   // batería y da la impresión de que algo pasa cuando no.
   falso('esperando el acceso, no', E.convieneRefrescar(ped({ estado: P.ESTADOS.PAGADO })));
   falso('trabajando, no', E.convieneRefrescar(ped({ estado: P.ESTADOS.PAGADO, acceso_recibido_en: 'x' })));
   falso('entregado, no', E.convieneRefrescar(ped({ estado: P.ESTADOS.ENTREGADO })));
   falso('sin pedido, no', E.convieneRefrescar(null));
+}
+
+console.log('=== 9. lo que una etapa promete tiene que existir ===');
+{
+  // Una pantalla que anuncia cinco datos y muestra cuatro campos hace dudar de si falta algo. El
+  // detalle de `falta-datos` prometía un campo de correo que el formulario no pide.
+  const datos = E.etapaDelPedido(ped({ estado: P.ESTADOS.PAGADO, razon_social: null }));
+  for (const campo of ['razón social', 'RUT', 'giro', 'dirección']) {
+    cierto(`nombra ${campo}`, datos.detalle.toLowerCase().includes(campo.toLowerCase()));
+  }
+  falso('y no promete elegir un correo que no se pide',
+    /a qué correo quieres/i.test(datos.detalle));
+  cierto('explica qué correo se usa', /mismo de tu pedido/i.test(datos.detalle));
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);

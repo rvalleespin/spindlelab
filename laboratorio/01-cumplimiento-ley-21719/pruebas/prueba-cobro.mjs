@@ -159,16 +159,40 @@ console.log('=== 8. lo que no se entiende no se toca ===');
 /* ================================================================== */
 console.log('=== 9. la clave del evento, para no procesar dos veces ===');
 {
+  // ⚠️ ESTE BLOQUE CAMBIÓ EL 24-OCT-2026, Y VALE LA PENA SABER POR QUÉ.
+  //
+  // Las tres aserciones de abajo esperaban `ev_123456`, `rec_payment_payment.updated_999` y
+  // `rec_sin-tipo_sin-accion_999`: o sea, FIJABAN que el `data.id` se descartaba. Pasaban en
+  // verde con el defecto puesto, porque una aserción que copia lo que el código hace no
+  // protege nada — lo clava. El defecto era serio: la firma no cubre el cuerpo, así que con
+  // una firma capturada se podía mandar cualquier cuerpo y quemar la clave de CUALQUIER
+  // pedido, incluido uno nunca visto, y dejar sin marcar un cobro futuro.
+  //
+  // La forma de no repetirlo no es «escribir mejores aserciones»: es preguntarse, por cada una
+  // que compara contra un literal, si ese literal se eligió por una razón o se copió de la
+  // salida. Las de abajo ahora sí tienen razón escrita.
   const c = m.claveDeEvento({ id: 123456, type: 'payment', action: 'payment.updated' }, '999');
-  eq('usa el id del evento', c.clave, 'ev_123456');
+  eq('lleva el recurso firmado Y el id del aviso', c.clave, 'ev_999_123456');
   cierto('y dice que es exacta', c.exacta);
+
+  // Lo que el literal de arriba protege: el recurso tiene que estar.
+  cierto('dos recursos distintos con el mismo id de aviso NO colisionan',
+    m.claveDeEvento({ id: 123456 }, 'ORD_A').clave !== m.claveDeEvento({ id: 123456 }, 'ORD_B').clave);
+  // Y el reintento legítimo del MISMO aviso tiene que seguir colisionando, que es su trabajo.
+  eq('el mismo aviso del mismo recurso da la misma clave',
+    m.claveDeEvento({ id: 123456 }, 'ORD_A').clave, m.claveDeEvento({ id: 123456 }, 'ORD_A').clave);
+  // El data.id llega con mayúsculas desde Mercado Pago; la caja no puede crear recursos nuevos.
+  eq('la caja del data.id no cuenta',
+    m.claveDeEvento({ id: 1 }, 'ORD_A').clave, m.claveDeEvento({ id: 1 }, 'ord_a').clave);
 
   // Sin id, se cae a una clave compuesta. Es peor y hay que saberlo.
   const sin = m.claveDeEvento({ type: 'payment', action: 'payment.updated' }, '999');
-  eq('sin id, clave compuesta', sin.clave, 'rec_payment_payment.updated_999');
+  eq('sin id, clave compuesta', sin.clave, 'rec_999_payment_payment.updated');
   falso('y avisa que NO es exacta', sin.exacta);
+  cierto('la de reserva también separa recursos',
+    m.claveDeEvento({ type: 'payment' }, 'ORD_A').clave !== m.claveDeEvento({ type: 'payment' }, 'ORD_B').clave);
 
-  eq('sin cuerpo tampoco revienta', m.claveDeEvento(null, '999').clave, 'rec_sin-tipo_sin-accion_999');
+  eq('sin cuerpo tampoco revienta', m.claveDeEvento(null, '999').clave, 'rec_999_sin-tipo_sin-accion');
   // Dos eventos distintos del mismo pago comparten clave compuesta: es la limitación conocida.
   eq('dos acciones distintas dan claves distintas',
     m.claveDeEvento({ type: 'payment', action: 'payment.created' }, '9').clave !==
@@ -251,9 +275,18 @@ console.log('=== 12. EL CAMINO DE LAS ORDENES, que es el que quedo configurado =
     expired:         [m.ACCIONES.MARCAR, P.ESTADOS.RECHAZADO],
     refunded:        [m.ACCIONES.MARCAR, P.ESTADOS.DEVUELTO],
     charged_back:    [m.ACCIONES.MARCAR, P.ESTADOS.DEVUELTO],
-    created:         [m.ACCIONES.NADA,   P.ESTADOS.CREADO],
-    processing:      [m.ACCIONES.NADA,   P.ESTADOS.CREADO],
-    action_required: [m.ACCIONES.NADA,   P.ESTADOS.CREADO],
+    created:         [m.ACCIONES.NADA,    P.ESTADOS.CREADO],
+    // CAMBIÓ EL 24-OCT, y los dos de abajo cambiaron en direcciones opuestas a propósito.
+    //
+    // `processing` mueve el pedido a `pendiente`: la persona está pagando con un medio que no
+    // acredita al instante, y antes eso se veía igual que no haber vuelto nunca de Mercado Pago.
+    processing:      [m.ACCIONES.MARCAR,  P.ESTADOS.PENDIENTE],
+    // `action_required` NO lo mueve, y además sale como REVISAR en vez de NADA. Es «falta una
+    // acción NUESTRA, por ejemplo capturar un pago autorizado»: si saliera como `pendiente`, la
+    // pantalla diría «tu pago está en camino, no tienes que hacer nada» cuando el que tiene que
+    // hacer algo somos nosotros, y la autorización vencería mientras la persona espera tranquila.
+    // Y si saliera como NADA quedaría invisible hasta que alguien pregunte por qué no le llegó.
+    action_required: [m.ACCIONES.REVISAR, P.ESTADOS.CREADO],
   };
   for (const [est, [accion, estado]] of Object.entries(esperado)) {
     const d = m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status: est }) });
@@ -268,6 +301,10 @@ console.log('=== 12. EL CAMINO DE LAS ORDENES, que es el que quedo configurado =
   falso('action_required NO es pagado', auth.estado === P.ESTADOS.PAGADO);
   falso('ni habilita el trabajo', m.ordenHabilitaTrabajo(ORD({ status: 'action_required' })));
   cierto('y el texto dice que no hay plata', /NO hay plata/i.test(auth.detalle));
+  // Y tampoco se lo trata como «pendiente», que sería la forma elegante de perderlo: deja de
+  // parecer un problema y pasa a parecer un trámite en curso.
+  falso('no lo manda a pendiente', auth.estado === P.ESTADOS.PENDIENTE);
+  eq('pide que alguien lo mire', auth.accion, m.ACCIONES.REVISAR);
   cierto('processed si habilita', m.ordenHabilitaTrabajo(ORD()));
 
   // LOS MONTOS SON STRING. Compararlos sin convertir falla siempre.
