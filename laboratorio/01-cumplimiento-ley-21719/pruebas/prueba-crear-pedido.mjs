@@ -21,6 +21,7 @@ for (const [v, f] of [
 ]) process.env[v] = `${RAIZ}/${f}`;
 
 import { DatabaseSync } from 'node:sqlite';
+import { readFileSync } from 'node:fs';
 import { rutaEnElRepo } from './rutas.mjs';
 
 const E = await import(rutaEnElRepo('verificaycumple/functions/api/pedido.js', 'PEDIDO_JS'));
@@ -986,6 +987,209 @@ console.log('=== 23. una compra abierta vencida no puede encerrar a nadie ===');
   eq('el pedido pagado no se tocó', ajeno.estado, 'pagado');
   eq('ni se le cambió la orden', ajeno.mp_order_id, 'ORD_AJENA');
   eq('la que se cerró es la que bloqueaba', filas(c2).find((f) => f.id === idBloquea).estado, 'rechazado');
+}
+
+console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado Pago ===');
+{
+  // LO QUE PASÓ DE VERDAD EL 24-OCT: alguien pagó $177.310, Mercado Pago le dijo «listo», y la
+  // notificación se rechazó porque el secreto cargado era el de otra aplicación. El pedido se
+  // quedó en `creado` y la pantalla decía «estamos confirmando tu pago, esta página se
+  // actualiza sola» — y encima deja de refrescar a los 2 minutos, así que esa frase se vuelve
+  // falsa. `leerOrdenMP` tenía UN solo llamador, el webhook. Si la notificación no llegaba, no
+  // había nada más que mirara.
+  //
+  // Lo salvó un reintento de Mercado Pago una hora después. Los reintentos se acaban.
+
+  const ORDEN_PAGADA = (ref) => ({
+    id: 'ORDTST01', external_reference: ref,
+    total_amount: '177310', total_paid_amount: '177310',
+    status: 'processed', status_detail: 'accredited',
+    transactions: { payments: [{ id: 'PAY-77', amount: '177310', status: 'processed' }] },
+  });
+
+  const conMP = (orden, { estado = 200 } = {}) => {
+    const antes = globalThis.fetch;
+    const llamadas = { mp: 0, urls: [] };
+    globalThis.fetch = async (u) => {
+      const url = String(u && u.url ? u.url : u);
+      if (url.includes('api.mercadopago.com')) {
+        llamadas.mp++; llamadas.urls.push(url);
+        return { ok: estado >= 200 && estado < 300, status: estado, json: async () => orden };
+      }
+      throw new Error('no deberia salir a otro lado');
+    };
+    return { llamadas, soltar: () => { globalThis.fetch = antes; } };
+  };
+
+  const sembrar = (crudo, id, estado, orden) => crudo.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
+     VALUES (?, ?, ?, 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
+      '{}', 149000, 177310, 'contacto@clinicaejemplo.cl', ?)`,
+  ).run(id, new Date().toISOString(), estado, orden);
+
+  const ID = 'vyc_' + 'e'.repeat(32);
+
+  // ── El caso: pagó allá, acá figura en creado ──────────────────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo, ID, 'creado', 'ORDTST01');
+    const kv = kvNuevo();
+    const red = conMP(ORDEN_PAGADA(ID));
+    const r = await E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
+      env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' },
+    });
+    const j = await r.json();
+    red.soltar();
+
+    eq('se le preguntó a Mercado Pago', red.llamadas.mp, 1);
+    cierto('por la orden que guardamos', red.llamadas.urls[0].includes('ORDTST01'));
+    eq('el pedido quedó pagado en la base', filas(crudo).find((f) => f.id === ID).estado, 'pagado');
+    eq('y la respuesta ya lo dice', j.pedido.estado, 'pagado');
+    cierto('con su fecha de pago', Boolean(filas(crudo).find((f) => f.id === ID).pagado_en));
+    eq('y guardó el id del pago', filas(crudo).find((f) => f.id === ID).mp_payment_id, 'PAY-77');
+    falso('ya no hay nada que refrescar', j.refrescar);
+  }
+
+  // ── El freno: no se le pregunta a Mercado Pago en cada recarga ────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo, ID, 'creado', 'ORDTST01');
+    // Una orden que todavía no se pagó: el pedido no se mueve, así que las dos lecturas
+    // seguidas son el caso real de alguien mirando la pantalla mientras espera.
+    const red = conMP({ ...ORDEN_PAGADA(ID), status: 'created', status_detail: null,
+      transactions: { payments: [] } });
+    const kv = kvNuevo();
+    const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' };
+    const pedir = () => E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`), env,
+    });
+    await pedir(); await pedir(); await pedir();
+    red.soltar();
+    eq('tres recargas seguidas cuestan UNA llamada', red.llamadas.mp, 1);
+    cierto('y queda la marca en KV', kv.almacen.has(`mp:visto:${ID}`));
+    eq('el pedido no se movió', filas(crudo).find((f) => f.id === ID).estado, 'creado');
+  }
+
+  // ── Sin KV no hay freno, así que tampoco se pregunta ──────────────────────────────────
+  {
+    const { db } = baseNueva();
+    const { crudo } = { crudo: null };
+    const base = baseNueva();
+    sembrar(base.crudo, ID, 'creado', 'ORDTST01');
+    const red = conMP(ORDEN_PAGADA(ID));
+    const r = await E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
+      env: { VYC_PEDIDOS: base.db, MP_ACCESS_TOKEN: 'tok' },
+    });
+    red.soltar();
+    eq('sin KV no se sale a Mercado Pago', red.llamadas.mp, 0);
+    eq('pero la pantalla igual responde', r.status, 200);
+  }
+
+  // ── Si Mercado Pago no contesta, la pantalla no se rompe ──────────────────────────────
+  {
+    const base = baseNueva();
+    sembrar(base.crudo, ID, 'creado', 'ORDTST01');
+    const red = conMP(null, { estado: 500 });
+    const r = await E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+    });
+    const j = await r.json();
+    red.soltar();
+    eq('contesta igual', r.status, 200);
+    eq('con el pedido como estaba', j.pedido.estado, 'creado');
+    eq('y la base intacta', filas(base.crudo).find((f) => f.id === ID).estado, 'creado');
+  }
+
+  // ── Una orden que dice ser de OTRO pedido no mueve nada ───────────────────────────────
+  //
+  // No hace falta una guarda nueva: `decidirDesdeOrden` ya compara `external_reference` con el
+  // id del pedido, y el monto con el que se vendió. Reusarlo es lo que da esas dos defensas.
+  {
+    const base = baseNueva();
+    sembrar(base.crudo, ID, 'creado', 'ORDTST01');
+    const red = conMP(ORDEN_PAGADA('vyc_' + 'f'.repeat(32)));
+    await E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+    });
+    red.soltar();
+    eq('una orden ajena no lo mueve', filas(base.crudo).find((f) => f.id === ID).estado, 'creado');
+  }
+
+  // ── Y una orden por el monto equivocado tampoco ───────────────────────────────────────
+  {
+    const base = baseNueva();
+    sembrar(base.crudo, ID, 'creado', 'ORDTST01');
+    const red = conMP({ ...ORDEN_PAGADA(ID), total_amount: '1000' });
+    await E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+    });
+    red.soltar();
+    eq('un monto que no calza no lo mueve', filas(base.crudo).find((f) => f.id === ID).estado, 'creado');
+  }
+
+  // ── Un pedido ya resuelto no se consulta: nadie espera nada ───────────────────────────
+  {
+    const base = baseNueva();
+    sembrar(base.crudo, ID, 'pagado', 'ORDTST01');
+    const red = conMP(ORDEN_PAGADA(ID));
+    await E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+    });
+    red.soltar();
+    eq('un pedido pagado no gasta una llamada', red.llamadas.mp, 0);
+  }
+
+  // ── Si la decisión NO es «marcar», no se escribe nada ─────────────────────────────────
+  //
+  // Esta aserción existe porque una mutación no se puso roja y casi la doy por equivalente.
+  // Quitar la guarda `decision.accion !== MARCAR` parecía inofensivo, porque casi todos los
+  // caminos que no marcan devuelven `estado: null` y `marcarEstado` los rechaza por transición
+  // inválida. Pero hay uno que NO: la decisión `NADA` lleva estado, el mismo que el pedido ya
+  // tiene, y `creado → creado` y `pendiente → pendiente` son transiciones válidas. Sin la
+  // guarda, ese camino SÍ escribe.
+  //
+  // Se detecta con el `id` de la orden: Mercado Pago devuelve una orden cuyo `id` es distinto
+  // del que tenemos guardado. Si algo escribe, lo pisa.
+  {
+    const base = baseNueva();
+    sembrar(base.crudo, ID, 'pendiente', 'ORDTST01');
+    const red = conMP({
+      id: 'ORD-OTRO-ID', external_reference: ID, total_amount: '177310',
+      status: 'processing', status_detail: null, transactions: { payments: [] },
+    });
+    await E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+    });
+    red.soltar();
+    const f = filas(base.crudo).find((x) => x.id === ID);
+    eq('sigue pendiente', f.estado, 'pendiente');
+    eq('y NO se le pisó la orden guardada', f.mp_order_id, 'ORDTST01');
+  }
+
+  // ── El presupuesto, que vive en dos archivos distintos ────────────────────────────────
+  //
+  // La pantalla se repregunta cada 5 s y se rinde a las 24 veces. El freno es el mínimo que
+  // admite KV. Lo que hay que proteger es la RELACIÓN: que una sesión completa de esa pantalla
+  // no cueste más de un puñado de llamadas. Si alguien baja el intervalo o sube los reintentos
+  // en el front, esta prueba lo dice.
+  {
+    const frontRuta = '/Users/ramon/vyc-ley21719/verificaycumple/public/pedido/index.html';
+    const front = readFileSync(frontRuta, 'utf8');
+    const cadaMs = Number((front.match(/setTimeout\(pedir,\s*(\d+)\)/) || [])[1]);
+    const veces = Number((front.match(/reintentos\s*<\s*(\d+)/) || [])[1]);
+    cierto('se pudieron leer los dos números del front', Number.isFinite(cadaMs) && Number.isFinite(veces));
+    const sesionS = (cadaMs / 1000) * veces;
+    const llamadas = Math.ceil(sesionS / E.ESPERA_RECONCILIAR_S);
+    cierto(`una sesión entera (${sesionS}s) cuesta ${llamadas} llamadas, no más de 4`, llamadas <= 4);
+  }
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
