@@ -48,6 +48,11 @@
 export const CABECERA_FIRMA = 'x-signature';
 export const CABECERA_REQUEST_ID = 'x-request-id';
 export const PARAM_DATA_ID = 'data.id';
+// `type` y `data.external_reference` llegan también en la URL (capturado el 24-oct de una
+// notificación real). Ninguno está firmado —el manifiesto solo cubre `data.id`, `x-request-id`
+// y `ts`— así que lo que digan NO decide nada; sirven para descartar temprano y para registrar.
+export const PARAM_TIPO = 'type';
+export const PARAM_REF_EXTERNA = 'data.external_reference';
 
 export const MOTIVOS = {
   VALIDA: 'valida',

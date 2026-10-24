@@ -24,10 +24,13 @@
  * reintentar no cambiaría nada y lo único que se consigue son ocho copias del mismo problema.
  */
 
-import { verificarFirma, CABECERA_FIRMA, CABECERA_REQUEST_ID, PARAM_DATA_ID } from './firma-mp.js';
+import {
+  verificarFirma, CABECERA_FIRMA, CABECERA_REQUEST_ID, PARAM_DATA_ID, PARAM_TIPO,
+  PARAM_REF_EXTERNA,
+} from './firma-mp.js';
 import { claveDeEvento, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES } from './cobro.js';
 import {
-  registrarEvento, liberarEvento, anotarResultado, leerPedido, marcarEstado,
+  registrarEvento, liberarEvento, anotarResultado, leerPedido, marcarEstado, VENTANA_RECLAMO_MS,
 } from './almacen.js';
 import { ESTADOS, ID_PEDIDO_NUESTRO } from './pedidos.js';
 
@@ -62,12 +65,27 @@ export async function onRequestPost(contexto) {
     // `ts` de la firma, nunca el cuerpo, y nunca el valor de un parámetro que elige quien
     // llama: solo si venían, y si la referencia externa tiene la forma de un id nuestro. Esa
     // última es la que separa las dos hipótesis, porque un escaneo no conoce ningún id nuestro.
-    const refExterna = url.searchParams.get('data.external_reference');
+    const refExterna = url.searchParams.get(PARAM_REF_EXTERNA);
     console.log('[webhook] firma rechazada: ' + firma.motivo +
       ` · data.id:${dataId ? 'sí' : 'no'}` +
       ` · request-id:${requestId ? 'sí' : 'no'}` +
       ` · referencia nuestra:${ID_PEDIDO_NUESTRO.test(String(refExterna || '')) ? 'sí' : 'no'}`);
     return responder(401, { ok: false, motivo: firma.motivo });
+  }
+
+  // ── Un tópico que no atendemos se descarta ANTES de reclamar nada ──────────────────────
+  //
+  // La URL real trae `type=order` (capturado el 24-oct). Hoy la cuenta solo tiene suscrito
+  // «Order (Mercado Pago)», así que este camino no se usa; existe para el día que se sume otro
+  // tópico, que es cuando dejaría de ser inofensivo: sin esto, un aviso de otra cosa se trataría
+  // como orden, se le pediría a Mercado Pago una orden con un id que no es de orden, y de paso
+  // QUEMARÍA la clave del evento de esa orden.
+  //
+  // Va antes de `registrarEvento` justo por eso. Un `type` ausente se deja pasar: no está
+  // firmado, y negar por su ausencia sería dejar que quien llama decida que no lo atendamos.
+  const tipoUrl = url.searchParams.get(PARAM_TIPO);
+  if (tipoUrl && tipoUrl !== 'order') {
+    return responder(200, { ok: true, accion: ACCIONES.NADA, motivo: `tipo-no-atendido:${tipoUrl}` });
   }
 
   if (!env.VYC_PEDIDOS) {
@@ -127,7 +145,33 @@ export async function onRequestPost(contexto) {
     // Un 404 de Mercado Pago no se arregla reintentando: esa orden no existe o no es nuestra.
     // Todo lo demás —red caída, 5xx, token vencido— sí.
     if (lectura.estadoHttp === 404) {
-      await anotarResultado(env.VYC_PEDIDOS, clave, 'orden inexistente (404)');
+      // ── UN 404 NO SIEMPRE ES DEFINITIVO ─────────────────────────────────────────────────
+      //
+      // Antes se cerraba de inmediato, y cerrar quiere decir ESCRIBIR el resultado del evento,
+      // que es irreversible: el rescate del reclamo abandonado exige `resultado IS NULL`, así
+      // que ni el reintento de Mercado Pago ni un reenvío manual desde el panel vuelven a
+      // procesarlo. Con la plata ya cobrada.
+      //
+      // Y hay un 404 que no es definitivo: el token puede estar apuntando a una aplicación
+      // distinta de la que tiene el webhook configurado. Ese desajuste no es hipotético, esta
+      // integración ya lo cometió el 24-oct con el OTRO secreto, y se puede repetir al cargar
+      // las credenciales de producción. También puede serlo si la orden todavía no es visible
+      // en la API cuando el aviso llega.
+      //
+      // La ventana se toma prestada de `VENTANA_RECLAMO_MS`, que ya es el horizonte en que este
+      // sistema considera que un evento sigue en vuelo. Pasada, el 404 sí es definitivo: esa
+      // orden no es nuestra y reintentar no lo va a cambiar nunca.
+      let reciente = false;
+      try {
+        const posible = await leerPedido(env.VYC_PEDIDOS, url.searchParams.get(PARAM_REF_EXTERNA));
+        reciente = Boolean(posible && posible.creado_en &&
+          Date.now() - Date.parse(posible.creado_en) < VENTANA_RECLAMO_MS);
+      } catch { reciente = false; }
+
+      if (reciente) return soltarYReintentar('orden-todavia-no-esta');
+
+      await anotarResultado(env.VYC_PEDIDOS, clave,
+        `orden inexistente (404)${exacta ? '' : ' (clave no exacta)'}`);
       return responder(200, { ok: true, accion: ACCIONES.IGNORAR, motivo: 'orden-inexistente' });
     }
     return soltarYReintentar(`no-se-pudo-leer:${lectura.error}`);
@@ -156,7 +200,8 @@ export async function onRequestPost(contexto) {
     if (typeof idPedido === 'string' && ID_PEDIDO_NUESTRO.test(idPedido)) {
       return soltarYReintentar('pedido-todavia-no-esta');
     }
-    await anotarResultado(env.VYC_PEDIDOS, clave, `referencia ajena: ${idPedido}`);
+    await anotarResultado(env.VYC_PEDIDOS, clave,
+      `referencia ajena: ${idPedido}${exacta ? '' : ' (clave no exacta)'}`);
     return responder(200, { ok: true, accion: ACCIONES.IGNORAR, motivo: 'pedido-desconocido' });
   }
 
@@ -164,7 +209,13 @@ export async function onRequestPost(contexto) {
   const decision = decidirDesdeOrden({ pedido, orden });
 
   if (decision.accion !== ACCIONES.MARCAR) {
-    await anotarResultado(env.VYC_PEDIDOS, clave, `${decision.accion}: ${decision.motivo}`);
+    // REVISAR significa que la orden dice algo que no calza con lo que vendimos, y eso lo tiene
+    // que mirar una persona. Hasta ahora la nota moría en una columna que nadie consulta.
+    if (decision.accion === ACCIONES.REVISAR) {
+      console.log(`[webhook] REVISAR ${pedido.id}: ${decision.motivo}`);
+    }
+    await anotarResultado(env.VYC_PEDIDOS, clave,
+      `${decision.accion}: ${decision.motivo}${exacta ? '' : ' (clave no exacta)'}`);
     return responder(200, { ok: true, accion: decision.accion, motivo: decision.motivo });
   }
 
@@ -174,18 +225,65 @@ export async function onRequestPost(contexto) {
   if (pago && pago.id) extra.mp_payment_id = String(pago.id);
   if (decision.estado === ESTADOS.PAGADO) extra.pagado_en = new Date().toISOString();
 
+  let estadoFinal = decision.estado;
+  let nota = '';
   let movido;
   try {
-    movido = await marcarEstado(env.VYC_PEDIDOS, pedido.id, pedido.estado, decision.estado, extra);
+    movido = await marcarEstado(env.VYC_PEDIDOS, pedido.id, pedido.estado, estadoFinal, extra);
   } catch {
     return soltarYReintentar('base-no-responde');
   }
 
-  // Que no se haya movido acá no es un error: significa que otro proceso llegó primero y ya
-  // lo dejó donde tenía que quedar. El evento igual se dio por procesado.
+  // ── QUE NO SE HAYA MOVIDO SON DOS COSAS DISTINTAS, Y SE TRATABAN IGUAL ─────────────────
+  //
+  // El comentario que estaba acá decía que otro proceso «ya lo dejó donde tenía que quedar», y
+  // daba el 200 por bueno. Eso es cierto en un caso y falso en el otro, y el falso pierde plata:
+  //
+  //   benigno — dos avisos que dicen LO MISMO se cruzan. El que pierde no tiene nada que
+  //             aportar y el 200 corresponde.
+  //   grave   — dos avisos con información DISTINTA se cruzan. Los dos leen el pedido en
+  //             `creado`; el primero lo mueve a `pendiente`, el segundo traía `pagado` y su
+  //             UPDATE no encuentra la fila en el estado que esperaba. Con el 200 de antes, esa
+  //             entrega se daba por procesada y Mercado Pago no volvía a avisar: el pedido se
+  //             quedaba en `pendiente` con la plata cobrada. La variante `rechazado` + `pagado`
+  //             es peor todavía, y es el camino normal de quien reintenta con otra tarjeta.
+  //
+  // Para distinguirlos no hace falta criterio nuevo: se relee el pedido como quedó y se vuelve
+  // a preguntar lo mismo. `decidirDesdeOrden` ya sabe contestar «ya estaba» cuando esta entrega
+  // traía información vieja, y «no se pasa de X a Y solo» cuando no hay camino. Solo si vuelve
+  // a decir MARCAR es que esta entrega traía algo que el pedido todavía no refleja.
+  //
+  // Por eso tampoco se puede quedar pegado reintentando: una entrega vieja nunca vuelve a dar
+  // MARCAR.
+  if (!movido.movido) {
+    let actual = null;
+    try { actual = await leerPedido(env.VYC_PEDIDOS, pedido.id); } catch { actual = null; }
+    if (!actual) return soltarYReintentar('base-no-responde');
+
+    const reintento = decidirDesdeOrden({ pedido: actual, orden });
+    if (reintento.accion === ACCIONES.MARCAR) {
+      const extra2 = { ...extra };
+      if (reintento.estado === ESTADOS.PAGADO) extra2.pagado_en = new Date().toISOString();
+      else delete extra2.pagado_en;
+      try {
+        movido = await marcarEstado(env.VYC_PEDIDOS, actual.id, actual.estado, reintento.estado, extra2);
+      } catch {
+        return soltarYReintentar('base-no-responde');
+      }
+      if (!movido.movido) {
+        // Otra entrega volvió a ganar en el mismo instante. Antes que afirmar que está hecho,
+        // se pide reintento: Mercado Pago relee la orden y converge.
+        return soltarYReintentar(`no-se-pudo-alcanzar:${reintento.estado}`);
+      }
+      estadoFinal = reintento.estado;
+      nota = ` (perdió la carrera contra ${actual.estado} y se alcanzó)`;
+      console.log(`[webhook] ${pedido.id}: carrera perdida contra ${actual.estado}, alcanzado a ${estadoFinal}`);
+    }
+  }
+
   await anotarResultado(
     env.VYC_PEDIDOS, clave,
-    `${movido.movido ? 'movido' : movido.motivo} a ${decision.estado}${exacta ? '' : ' (clave no exacta)'}`,
+    `${movido.movido ? 'movido' : movido.motivo} a ${estadoFinal}${nota}${exacta ? '' : ' (clave no exacta)'}`,
   );
 
   return responder(200, {
