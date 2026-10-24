@@ -22,6 +22,7 @@ const A = await import(rutaEnElRepo('verificaycumple/functions/api/almacen.js', 
 const P = await import(rutaEnElRepo('verificaycumple/functions/api/pedidos.js', 'PEDIDOS_JS'));
 const C = await import(rutaEnElRepo('verificaycumple/functions/api/cobro.js', 'COBRO_JS'));
 const AV = await import(rutaEnElRepo('verificaycumple/functions/api/aviso.js', 'AVISO_JS'));
+const CO = await import(rutaEnElRepo('verificaycumple/functions/api/correo.js', 'CORREO_JS'));
 
 let ok = 0, malo = 0;
 const eq = (n, r, e) => {
@@ -1048,6 +1049,131 @@ console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de m�
     const conError = await AV.avisarVenta({ id: ID, dominio: 'otro.cl', monto_total: 1 },
       async () => ({ ok: false, status: 500, json: async () => ({}) }));
     eq('un error del servicio tampoco lanza', conError, false);
+  }
+}
+
+console.log('=== 22. al comprador le llega su enlace, que es su única credencial ===');
+{
+  // El id del pedido son 32 hex en la URL y no hay cuenta ni contraseña. Hasta hoy ese enlace
+  // existía SOLO en la pestaña a la que Mercado Pago devolvía a la persona: quien la cerrara
+  // perdía el acceso a su propio pedido, y nosotros no teníamos cómo mandárselo.
+
+  const ID = 'vyc_' + '4'.repeat(32);
+  const CORREO = 'persona@clinicaejemplo.cl';
+  const sembrar = (crudo) => crudo.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
+     VALUES (?, ?, 'creado', 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
+      '{}', 149000, 177310, ?, ?)`,
+  ).run(ID, new Date().toISOString(), CORREO, ID_ORDEN);
+
+  const conTres = ({ correoCae = false, correoEstado = 200 } = {}) => {
+    const antes = globalThis.fetch;
+    const visto = { correos: 0, cuerpos: [], cabeceras: [], avisos: 0 };
+    globalThis.fetch = async (u, o = {}) => {
+      const url = String(u && u.url ? u.url : u);
+      if (url.includes('web3forms')) { visto.avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
+      if (url.includes('api.resend.com')) {
+        visto.correos++;
+        visto.cuerpos.push(o.body ? JSON.parse(o.body) : null);
+        visto.cabeceras.push(o.headers || {});
+        if (correoCae) throw new Error('ECONNRESET');
+        return { ok: correoEstado < 300, status: correoEstado, json: async () => ({ id: 'em_1' }) };
+      }
+      return { ok: true, status: 200, json: async () => ORDEN(ID) };
+    };
+    return { visto, soltar: () => { globalThis.fetch = antes; } };
+  };
+
+  // ── Entra el pago: sale el correo, con su enlace ──────────────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo);
+    const red = conTres();
+    await W.onRequestPost({ request: await peticion(),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN,
+             RESEND_API_KEY: 're_clave_de_prueba' } });
+    red.soltar();
+
+    eq('salió UN correo', red.visto.correos, 1);
+    const c = red.visto.cuerpos[0];
+    eq('al comprador, no a otro lado', c.to, [CORREO]);
+    eq('desde el subdominio de envíos', c.from, CO.REMITENTE);
+    // Sin esto, una respuesta del cliente caería en una casilla que no existe.
+    eq('con respuesta a la casilla de verdad', c.reply_to, CO.RESPONDER_A);
+
+    // LO QUE EL CORREO TIENE QUE LLEVAR SÍ O SÍ: su enlace, en las dos versiones.
+    const enlace = CO.enlaceDelPedido(ID);
+    cierto('el texto lleva su enlace', c.text.includes(enlace));
+    cierto('y el HTML también', c.html.includes(enlace));
+    cierto('le dice que lo guarde', /guarda este correo/i.test(c.text));
+    cierto('y hay versión de texto, no solo HTML', c.text.length > 200);
+
+    // La clave va en la cabecera, nunca en el cuerpo.
+    cierto('autentica con la clave', String(red.visto.cabeceras[0].Authorization || '').startsWith('Bearer '));
+    falso('y la clave NO viaja en el cuerpo', JSON.stringify(c).includes('re_clave_de_prueba'));
+
+    // Nada externo: un correo sobre datos personales no puede pedirle al cliente que cargue
+    // recursos de terceros.
+    falso('el HTML no carga imágenes de fuera', /<img/i.test(c.html));
+    falso('ni scripts', /<script/i.test(c.html));
+  }
+
+  // ── Sin clave cargada, no se cae nada ─────────────────────────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo);
+    const red = conTres();
+    const r = await W.onRequestPost({ request: await peticion(),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+    red.soltar();
+    eq('no intenta mandar nada', red.visto.correos, 0);
+    eq('el pago igual se marca', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
+    eq('y se contesta 200', r.status, 200);
+    // El aviso interno no depende de Resend, así que ese sí sale.
+    eq('y el aviso interno igual sale', red.visto.avisos, 1);
+  }
+
+  // ── Si Resend falla, el cobro no se cae ───────────────────────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo);
+    const red = conTres({ correoCae: true });
+    let lanzo = false, r = null;
+    try {
+      r = await W.onRequestPost({ request: await peticion(),
+        env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN,
+               RESEND_API_KEY: 're_clave_de_prueba' } });
+    } catch { lanzo = true; }
+    red.soltar();
+    falso('el handler no deja escapar el fallo', lanzo);
+    eq('contesta 200', r && r.status, 200);
+    eq('y el pedido queda pagado', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
+  }
+
+  // ── Como unidad: nunca lanza ──────────────────────────────────────────────────────────
+  {
+    let lanzo = false, res = null;
+    try {
+      res = await CO.enviarCorreoDePago({ id: ID, correo: CORREO, dominio: 'x.cl', monto_total: 1 },
+        're_x', async () => { throw new Error('la red se cayó'); });
+    } catch { lanzo = true; }
+    falso('enviarCorreoDePago NUNCA lanza', lanzo);
+    eq('y dice que no pudo', res, false);
+    eq('sin clave devuelve false sin tocar la red',
+      await CO.enviarCorreoDePago({ id: ID, correo: CORREO }, '   ', async () => { throw new Error('no debería llamarse'); }), false);
+    eq('sin correo del comprador tampoco manda nada',
+      await CO.enviarCorreoDePago({ id: ID, dominio: 'x.cl' }, 're_x', async () => { throw new Error('no debería llamarse'); }), false);
+  }
+
+  // ── El remitente no puede estar en el dominio raíz ────────────────────────────────────
+  //
+  // El raíz tiene el SPF de Google Workspace. Mandar desde ahí por Resend habría exigido un
+  // segundo SPF, y dos SPF es SPF inválido: el correo del negocio empezaría a ir a spam.
+  {
+    cierto('el remitente sale del subdominio de envíos', CO.REMITENTE.includes('@envios.spindlelab.cl>'));
+    falso('y NO del dominio raíz', /@spindlelab\.cl>/.test(CO.REMITENTE));
+    cierto('pero las respuestas sí llegan al raíz', CO.RESPONDER_A.endsWith('@spindlelab.cl'));
   }
 }
 
