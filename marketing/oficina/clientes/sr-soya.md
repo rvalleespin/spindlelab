@@ -186,7 +186,41 @@ anuncios optimizan hacia el paso 3**, la consulta, y la venta la cierra Carlos e
 **Lo que decide la rentabilidad es cuánto dura un alumno**, no el precio por clase. Y **dos alumnos
 recurrentes cubren los $300.000 completos**. Detalle en `ventas/sr-soya-academia-vocal-analisis.md`.
 
-### 💰 Decisión de precio canonizada (23-oct-2026)
+### 💰 Decisión de precio canonizada (24-oct-2026, reemplaza a la del 23-oct)
+
+> **$200.000 al mes, sin IVA, con boleta de honorarios a nombre de Ramón.**
+> Total para Carlos: **$300.000 al mes**, honorario más publicidad.
+> **Revisar:** al cuarto mes, junto con el resto del plan.
+
+**Por qué cambió en un día:** el 23-oct se había decidido cobrar $200.000 + IVA. **Ese IVA no
+correspondía.** Este contrato no corre por el régimen de empresa: Ramón lo emite con boleta de
+honorarios a su nombre, y **la boleta de honorarios no se grava con IVA**. Lo que sí tiene es
+retención o PPM, que es impuesto del emisor y no un cargo al cliente.
+
+**La cuenta real de lo que recibe Ramón:**
+
+| | |
+|---|---|
+| Boleta bruta | $200.000 |
+| Retención / PPM 2026, **15,25%** | $30.500 |
+| **Líquido** | **$169.500** |
+
+Tasa verificada el 24-oct-2026 en el [SII](https://www.sii.cl/preguntas_frecuentes/declaracion_renta/001_140_3611.htm):
+**15,25% para el año comercial 2026**, subiendo por la Ley 21.133 hasta 17% en 2028. **Al cuarto
+mes esa tasa ya será 16%**, y conviene tenerlo presente al revisar el precio.
+
+**Quién retiene** depende de Carlos: si paga como persona natural, transfiere los $200.000 completos
+y Ramón declara el PPM; si pagara a través de una empresa, ella retiene y transfiere $169.500. **El
+líquido es el mismo en los dos casos**, cambia solo el flujo de caja y quién hace el trámite.
+
+⚠️ **Lo que hay que mirar de frente, y es decisión de Ramón.** El 23-oct se descartó absorber el
+IVA porque dejaba el honorario en $168.067, bajo el piso de `ventas/sr-soya-modelo-de-cobro.md`.
+**Por boleta de honorarios el líquido es $169.500: prácticamente el mismo número.** La decisión de
+cobrar $200.000 puede ser correcta por razones comerciales, pero el argumento del piso aplica igual.
+Con el embudo incluido (valorado en $290.000), **la salida no es subir el precio a Carlos: es no
+regalar el embudo completo o acotarlo.** Queda anotado, sin resolver.
+
+### Decisión del 23-oct, superada
 
 > **El honorario son $200.000 + IVA = $238.000 al mes.** Decidido por Ramón el 23-oct.
 > **Revisar:** al cuarto mes, junto con el resto del plan.
@@ -267,6 +301,11 @@ pasos, porque el del 20-oct los dejó en el aire. Lo pedido:
 ⚠️ **El PDF que Carlos tiene es el del 20-oct y lleva las cifras viejas** («los $300.000
 completos»). La versión del repo está corregida y dice $338.000. **No se remandó a propósito:**
 el correo del 23-oct ya pone el número que manda. Llevar la corregida a la reunión.
+
+**Corrección del 24-oct, en borrador y sin enviar** (`r-7904746664392940205`): el correo del
+23-oct le pidió $338.000 con IVA. Hay que corregirlo **rápido**, porque Carlos tiene en su bandeja
+una cifra que se pasa de su tope y podría contestar que no le da. La corrección es **buena noticia
+para él**: vuelve a $300.000.
 
 **Sin respuesta de Carlos desde el 19-oct.**
 

@@ -191,3 +191,30 @@ esa misma semana, en cuatro puntos → el pago con números → la fecha propues
 
 **Nota menor:** el asunto quedó como «Re: Re: Reunión mañana a las 12:00», por cómo arma el asunto
 la herramienta de respuesta. No afecta el hilo ni la entrega.
+
+---
+
+## Corrección del 24-oct: no hay IVA, va por boleta de honorarios
+
+Ramón: *«creo que debemos ajustarnos a los 200... este va pago a mi cuenta personal. daría boleta.
+no corre por el regimen de empresa»*.
+
+**Y eso resuelve el problema completo, no lo negocia:** la boleta de honorarios **no se grava con
+IVA**. El $238.000 del correo de ayer simplemente no correspondía. Vuelve a $200.000 + $100.000 =
+**$300.000**, que es lo que Carlos tenía en la cabeza desde septiembre.
+
+**Borrador listo, sin enviar:** `r-7904746664392940205`, en el hilo.
+
+Cómo está escrito, que acá el tono importa porque es la segunda corrección de precio en dos días:
+
+- **Abre con la buena noticia**, no con la disculpa: «Una corrección de lo que te mandé ayer, y es
+  a tu favor».
+- **Da la razón en una línea** y sigue. Sin flagelarse.
+- **No repite los pasos**, solo dice que siguen igual. Son seis líneas.
+- **Cierra con la misma pregunta** del correo anterior, para no perder el hilo de la decisión.
+
+⚠️ **Conviene mandarlo hoy.** Carlos tiene en su bandeja un correo que le pide $338.000, que se
+pasa de su tope declarado. Si contesta antes de la corrección, puede ser para decir que no le da.
+
+**Documentos al día:** `SPL-COT-2026-016` corregida y re-renderizada, sin IVA en ninguna de sus
+cinco menciones anteriores. La cuenta de lo que recibe Ramón líquido quedó en la ficha del cliente.
