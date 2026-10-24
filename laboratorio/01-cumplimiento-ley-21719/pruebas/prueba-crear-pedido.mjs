@@ -79,8 +79,17 @@ una portada de verdad y no un cascarón.</p>
 <a href="/privacidad/">Política de privacidad</a></body></html>`;
 
 /** Un informe profundo como el que queda en la caché de KV, con dos señales que el kit cierra. */
-const PROFUNDO = (dominio = 'clinicaejemplo.cl') => ({
-  ok: true, dominio, revisado: `https://www.${dominio}/`, revisadoEn: '2026-10-24T00:00:00.000Z',
+/**
+ * Un informe profundo como el que queda en la caché de KV.
+ *
+ * ⚠️ `revisadoEn` es RECIENTE a propósito: desde el 24-oct el checkout exige que la revisión con
+ * navegador y el chequeo rápido sean del mismo momento, porque congelar dos fotos tomadas con
+ * horas de diferencia vendería un alcance que quizá ya no corresponde al sitio. Con una fecha
+ * fija, todos los casos felices de este archivo caerían en `medicion-vieja`.
+ */
+const PROFUNDO = (dominio = 'clinicaejemplo.cl', desfaseMs = 0) => ({
+  ok: true, dominio, revisado: `https://www.${dominio}/`,
+  revisadoEn: new Date(Date.now() - desfaseMs).toISOString(),
   puntaje: 40, pesoConfirmado: 13, pesoTotal: 13, pendientes: 2, sinConfirmar: 0, noAplica: 0,
   parcial: false, bloqueado: null, segundosMirados: 7,
   items: [
@@ -826,6 +835,48 @@ console.log('=== 21. no se afirma sobre la plata de alguien lo que no se sabe ==
   falso('sin respuesta, NO se afirma que no se cobró', /No se te cobró nada/i.test(b.detalle));
   cierto('se dice que no se pudo confirmar', /no alcanzamos a confirmar/i.test(b.detalle));
   cierto('y se le dice qué hacer si ve un cargo', /si ves un cargo/i.test(b.detalle));
+}
+
+console.log('=== 22. no se vende con una medición de ayer y un chequeo de ahora ===');
+{
+  // El informe profundo vive 24 horas en KV. Para MOSTRAR un resultado eso está bien; para
+  // VENDER no, porque el contrato congela las dos mediciones juntas y dos fotos tomadas con
+  // horas de diferencia no describen el mismo sitio. Lo encontró una revisión externa.
+  const { db, crudo } = baseNueva();
+  const viejo = PROFUNDO('clinicaejemplo.cl', 5 * 60 * 60 * 1000);  // de hace cinco horas
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(viejo) });
+  const red = conRed();
+  const r = await E.onRequestPost({
+    request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' },
+  });
+  const j = await r.json();
+  red.soltar();
+
+  eq('contesta 409', r.status, 409);
+  eq('con su motivo', j.motivo, 'medicion-vieja');
+  cierto('y le dice qué hacer, no solo que no', /vuelve a correr el chequeo/i.test(j.detalle));
+  eq('sin crear pedido', filas(crudo).length, 0);
+  eq('y sin llamar a Mercado Pago', red.llamadas.mp, 0);
+
+  // Dentro de la ventana sí se vende: alguien que corrió el chequeo, lo pensó diez minutos y
+  // volvió no tiene por qué medir de nuevo.
+  const { db: db2, crudo: c2 } = baseNueva();
+  const kv2 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO('clinicaejemplo.cl', 10 * 60 * 1000)) });
+  const red2 = conRed();
+  const ok2 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok' } });
+  red2.soltar();
+  eq('diez minutos después sí se puede comprar', ok2.status, 200);
+  eq('y queda el pedido', filas(c2).length, 1);
+
+  // Y un informe sin fecha no se da por bueno: no se puede afirmar que es de ahora.
+  const { db: db3 } = baseNueva();
+  const sinFecha = PROFUNDO();
+  delete sinFecha.revisadoEn;
+  const kv3 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(sinFecha) });
+  const red3 = conRed();
+  const r3 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db3, VYC_TOPES: kv3, MP_ACCESS_TOKEN: 'tok' } });
+  red3.soltar();
+  eq('un informe sin fecha tampoco sirve', (await r3.json()).motivo, 'medicion-vieja');
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
