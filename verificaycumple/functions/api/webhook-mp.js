@@ -34,6 +34,7 @@ import {
 } from './almacen.js';
 import { ESTADOS, ID_PEDIDO_NUESTRO } from './pedidos.js';
 import { avisarVenta } from './aviso.js';
+import { enviarCorreoDePago } from './correo.js';
 
 function responder(estado, cuerpo) {
   return new Response(JSON.stringify(cuerpo), {
@@ -322,8 +323,15 @@ export async function onRequestPost(contexto) {
   // Solo cuando ESTA entrega fue la que movió el pedido. Si lo alcanzó otra, esa otra ya avisó,
   // y dos avisos por la misma venta se leen como dos ventas.
   if (movido.movido && estadoFinal === ESTADOS.PAGADO) {
-    const aviso = avisarVenta({ ...pedido, estado: estadoFinal, pagado_en: extra.pagado_en });
-    if (contexto.waitUntil) contexto.waitUntil(aviso); else await aviso;
+    const pagado = { ...pedido, estado: estadoFinal, pagado_en: extra.pagado_en };
+    // Dos destinatarios distintos y por vías distintas: el aviso interno a nosotros, y el
+    // correo con su enlace a quien compró. Se lanzan juntos y ninguno espera al otro: si uno
+    // falla, el otro igual sale.
+    const envios = Promise.all([
+      avisarVenta(pagado),
+      enviarCorreoDePago(pagado, env.RESEND_API_KEY),
+    ]);
+    if (contexto.waitUntil) contexto.waitUntil(envios); else await envios;
   }
 
   await anotarResultado(

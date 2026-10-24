@@ -45,6 +45,7 @@ import {
   crearOrdenMP, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES,
 } from './cobro.js';
 import { avisarVenta } from './aviso.js';
+import { enviarCorreoDePago } from './correo.js';
 
 
 const NO_EXISTE = { ok: false, motivo: 'no-existe' };
@@ -201,8 +202,12 @@ async function reconciliar(env, pedido, esperar) {
   // La reconciliación también puede ser la que descubre una venta: si la notificación nunca
   // llegó, este es el único momento en que alguien se entera.
   if (estadoFinal === ESTADOS.PAGADO) {
-    const aviso = avisarVenta({ ...pedido, estado: estadoFinal, pagado_en: new Date().toISOString() });
-    if (esperar) esperar(aviso); else await aviso;
+    const pagado = { ...pedido, estado: estadoFinal, pagado_en: new Date().toISOString() };
+    const envios = Promise.all([
+      avisarVenta(pagado),
+      enviarCorreoDePago(pagado, env.RESEND_API_KEY),
+    ]);
+    if (esperar) esperar(envios); else await envios;
   }
   // Se relee para que la pantalla dibuje el pedido entero y no una mezcla del viejo con el
   // estado nuevo. Si la relectura falla, el de antes sigue siendo cierto.
