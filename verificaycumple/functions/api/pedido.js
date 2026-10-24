@@ -85,8 +85,27 @@ export const MONTO_NETO = 149000;
 export const MONTO_TOTAL = 177310;  // 149.000 + 19% de IVA
 export const TITULO_KIT = 'Kit de implementación · Verifica y Cumple';
 
-/** Cuántos pedidos puede crear una misma IP en un día. */
-export const TOPE_PEDIDOS_IP_DIA = 5;
+/**
+ * Cuántas órdenes puede abrir una misma IP en un día.
+ *
+ * ── POR QUÉ ESTE NÚMERO SUBIÓ, Y POR QUÉ SE CUENTA DISTINTO (24-oct-2026) ────────────────
+ *
+ * Estaba en 5 y contaba CADA intento, incluidos los que rechazábamos nosotros. La primera vez
+ * que alguien probó el checkout de verdad, Mercado Pago devolvió un error en cada llamada, y a
+ * los cinco reintentos el tope lo dejó fuera del sitio por el resto del día. O sea que un fallo
+ * NUESTRO se convertía en un castigo para quien estaba intentando pagarnos.
+ *
+ * Dos cambios, y el segundo importa más que el primero:
+ *
+ *   1. Quince en vez de cinco. Cinco es menos que lo que gasta una persona legítima que se
+ *      topa con un problema y reintenta, y mucho menos que dos compras desde una oficina con
+ *      IP compartida.
+ *   2. **El contador sube justo antes de llamar a Mercado Pago, no al entrar.** Un cuerpo mal
+ *      formado, un correo con errata, un sitio que ya no es elegible: nada de eso gasta cupo,
+ *      porque nada de eso cuesta. Lo que el tope protege son las llamadas salientes a Mercado
+ *      Pago, así que es lo único que cuenta.
+ */
+export const TOPE_PEDIDOS_IP_DIA = 15;
 const TTL_TOPE_S = 60 * 60 * 30;
 
 /**
@@ -212,16 +231,21 @@ export async function onRequestPost(contexto) {
   // Si KV no está, se deja pasar, igual que `doce-puntos.js`. Acá además es inofensivo por una
   // razón que conviene dejar escrita: el informe profundo TAMBIÉN sale de KV, así que sin KV la
   // venta se detiene sola en el paso siguiente. La puerta de arriba ya está cerrada.
-  if (kv) {
-    const ip = request.headers.get('CF-Connecting-IP') || '';
+  // Acá solo se MIRA el contador. Subirlo acá cobraba el intento antes de saber si íbamos a
+  // poder vender, así que un rechazo nuestro gastaba el cupo del comprador. Sube más abajo,
+  // justo antes de llamar a Mercado Pago, que es lo único que este tope protege.
+  const claveTope = kv
+    ? clavesDeTope(request.headers.get('CF-Connecting-IP') || '', '', new Date(), 'tope:pedido').ip
+    : null;
+  if (kv && claveTope) {
     try {
-      const claves = clavesDeTope(ip, '', new Date(), 'tope:pedido');
-      const porIp = await contar(kv, claves.ip, TOPE_PEDIDOS_IP_DIA, TTL_TOPE_S);
-      if (!porIp.pasa) {
+      const usados = Number((await kv.get(claveTope)) || 0);
+      if (usados >= TOPE_PEDIDOS_IP_DIA) {
         return jsonPost({
           ok: false,
           motivo: 'tope',
-          detalle: 'Hiciste varios intentos de compra hoy. Escríbenos y lo resolvemos por correo.',
+          detalle: 'Abriste varios pagos hoy desde esta conexión. Escríbenos y lo resolvemos ' +
+            'por correo, que es más rápido que esperar.',
         }, 429);
       }
     } catch { /* KV caído no bloquea una venta: ver la nota de arriba. */ }
@@ -347,15 +371,43 @@ export async function onRequestPost(contexto) {
     return jsonPost({ ok: false, motivo: 'orden-invalida', detalle: (e && e.message) || null }, 500);
   }
 
+  // Acá sí se cobra el intento: es la llamada saliente que el tope existe para proteger.
+  if (kv && claveTope) {
+    try { await contar(kv, claveTope, TOPE_PEDIDOS_IP_DIA, TTL_TOPE_S); } catch {}
+  }
+
   const creada = await crearOrdenMP(orden, idPedido, env.MP_ACCESS_TOKEN);
   if (!creada.ok) {
     // El pedido se queda en `creado` SIN `mp_order_id`, y se devuelve 502. No se borra: la fila
     // es el único registro de que alguien intentó comprar, y `etapaDelPedido` ya distingue ese
     // caso para no decirle «estamos confirmando tu pago» a quien nunca llegó a la pasarela.
+    //
+    // ── POR QUÉ ESTO SE REGISTRA, Y POR QUÉ COSTÓ UN DÍA NO HABERLO HECHO ───────────────
+    //
+    // `crearOrdenMP` ya capturaba lo que Mercado Pago contesta, y acá se descartaba. El primer
+    // pago de prueba real falló con este 502 en todos los intentos y NADIE pudo saber por qué:
+    // ni en la respuesta, ni en los logs, ni desde el panel. Un error que no se puede
+    // diagnosticar desde afuera obliga a adivinar, y adivinar sobre el camino del dinero es
+    // exactamente lo que no se puede hacer.
+    //
+    // Se registra el código HTTP y el código/mensaje que devuelve Mercado Pago. **Nunca el
+    // token ni el cuerpo entero**: el token es un secreto y el cuerpo lleva el correo del
+    // comprador, y los registros de Cloudflare los puede leer cualquiera con acceso a la cuenta.
+    const mp = creada.detalleMP || {};
+    const resumenMP = [
+      mp.error || mp.code || mp.type || null,
+      mp.message || (Array.isArray(mp.errors) && mp.errors[0] && (mp.errors[0].message || mp.errors[0].code)) || null,
+    ].filter(Boolean).join(' · ').slice(0, 300) || '(sin cuerpo)';
+    console.log(`[pedido] Mercado Pago rechazó la orden ${idPedido}: ${creada.error} · ${resumenMP}`);
+
     return jsonPost({
       ok: false, motivo: 'no-se-pudo-abrir-el-pago', id: idPedido,
+      // El código va en la respuesta a propósito. No le sirve a nadie para atacarnos —no se
+      // puede llamar a Mercado Pago en nuestro nombre— y convierte un callejón sin salida en un
+      // diagnóstico: `http-401` es un problema de credenciales y `http-400` es el cuerpo.
+      codigo: creada.error || null,
       detalle: 'No pudimos abrir el pago en Mercado Pago. No se te cobró nada. Vuelve a ' +
-        'intentarlo en un momento.',
+        'intentarlo en un momento, y si te pasa de nuevo escríbenos con este enlace.',
     }, 502);
   }
 
