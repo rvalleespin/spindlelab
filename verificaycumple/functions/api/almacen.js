@@ -142,7 +142,7 @@ export async function buscarPedidoReciente(db, { dominio, correo, desdeIso } = {
 }
 
 /**
- * La compra abierta de esta pareja (dominio, correo), SIN ventana de tiempo.
+ * La compra abierta de esta pareja (dominio, correo) que es MÁS VIEJA que `hastaIso`.
  *
  * Existe porque el índice `idx_pedidos_compra_abierta` y `buscarPedidoReciente` no cubren lo
  * mismo, y esa asimetría dejaba gente fuera para siempre: el índice garantiza UNA compra
@@ -151,17 +151,23 @@ export async function buscarPedidoReciente(db, { dominio, correo, desdeIso } = {
  * bloqueaba el INSERT y nadie podía encontrarlo para resolverlo: la persona recibía
  * «no se te cobró nada. Vuelve a intentarlo» en cada intento, por el resto de los tiempos.
  *
+ * ⚠️ El piso `hastaIso` tampoco es cosmético. Sin él, dos peticiones simultáneas de la misma
+ * pareja podían terminar con la segunda CERRANDO la fila que la primera acababa de crear: la
+ * segunda choca contra el índice, no encuentra nadie «reciente» por una diferencia de
+ * milisegundos, y entonces esta consulta le devolvía esa misma fila nueva como si fuera vieja.
+ * Con el piso, solo puede devolver lo que de verdad quedó fuera de la ventana.
+ *
  * ⚠️ El filtro `estado = 'creado'` NO es un detalle de rendimiento, es seguridad: sin él esta
  * consulta podría devolver el pedido PAGADO de otra persona que comparte dominio y correo, y
  * con él su enlace privado. Es el mismo motivo por el que lo lleva `buscarPedidoReciente`.
  */
-export async function buscarCompraAbierta(db, { dominio, correo } = {}) {
-  if (!dominio || !correo) return null;
+export async function buscarCompraAbierta(db, { dominio, correo, hastaIso } = {}) {
+  if (!dominio || !correo || !hastaIso) return null;
   const f = await db.prepare(
     `SELECT * FROM pedidos
-      WHERE estado = ? AND dominio = ? AND correo = ?
+      WHERE estado = ? AND creado_en < ? AND dominio = ? AND correo = ?
       ORDER BY creado_en DESC LIMIT 1`,
-  ).bind(ESTADOS.CREADO, String(dominio), String(correo)).first();
+  ).bind(ESTADOS.CREADO, String(hastaIso), String(dominio), String(correo)).first();
   return f ? hidratar(f) : null;
 }
 

@@ -74,6 +74,15 @@ function json(cuerpo, estado = 200) {
 export const ESPERA_RECONCILIAR_S = 60;
 
 /**
+ * Los estados de una orden de Mercado Pago que significan «esta orden ya no se puede pagar».
+ *
+ * Solo con uno de estos se cierra una compra abierta vieja. Cualquier otro —incluido uno que
+ * no conozcamos— se trata como viva, que es el lado seguro: matar el enlace de pago de alguien
+ * que está por pagar es peor que dejar una fila de más.
+ */
+const ORDEN_MUERTA = new Set(['expired', 'canceled', 'failed']);
+
+/**
  * Preguntarle a Mercado Pago por una orden que nuestra base todavía no da por resuelta.
  *
  * POR QUÉ EXISTE. Hasta hoy el estado de un pedido dependía POR COMPLETO de que llegara y
@@ -134,15 +143,59 @@ async function reconciliar(env, pedido) {
   if (pago && pago.id) extra.mp_payment_id = String(pago.id);
   if (decision.estado === ESTADOS.PAGADO) extra.pagado_en = new Date().toISOString();
 
+  let estadoFinal = decision.estado;
   let movido;
   try {
-    movido = await marcarEstado(env.VYC_PEDIDOS, pedido.id, pedido.estado, decision.estado, extra);
+    movido = await marcarEstado(env.VYC_PEDIDOS, pedido.id, pedido.estado, estadoFinal, extra);
   } catch {
     return pedido;
   }
-  if (!movido.movido) return pedido;
 
-  console.log(`[pedido] reconciliado ${pedido.id}: ${pedido.estado} → ${decision.estado}`);
+  // ── EL MISMO RESCATE QUE TIENE EL WEBHOOK, Y QUE ESTO NACIÓ SIN ÉL ─────────────────────
+  //
+  // Entre que se leyó el pedido y que volvió Mercado Pago pasan hasta diez segundos, y en esa
+  // ventana la notificación puede llegar y mover la fila. Entonces este UPDATE no encuentra el
+  // pedido en el estado que esperaba y, con el `return` que había acá, se abandonaba en
+  // silencio: la orden decía pagada y la base quedaba atrás.
+  //
+  // El caso malo no es el que primero viene a la cabeza. Si el webhook la dejó en `pendiente`,
+  // esto se recupera solo en el siguiente GET. Pero si la dejó en `rechazado` —que es el camino
+  // NORMAL de quien reintenta con otra tarjeta— entonces `convieneRefrescar` deja de ser cierto
+  // para ese pedido y la red de seguridad NO VUELVE A CORRER NUNCA. A quien pagó se le muestra
+  // que su pago fue rechazado, para siempre.
+  //
+  // Se resuelve como allá: releer, volver a preguntar con el pedido como quedó, y si sigue
+  // diciendo MARCAR, alcanzarlo. Una vista vieja de la orden nunca vuelve a dar MARCAR, así
+  // que no se puede quedar en un bucle.
+  if (!movido.movido) {
+    let actual = null;
+    try { actual = await leerPedido(env.VYC_PEDIDOS, pedido.id); } catch { actual = null; }
+    if (!actual) return pedido;
+
+    const reintento = decidirDesdeOrden({ pedido: actual, orden: lectura.orden });
+    if (reintento.accion !== ACCIONES.MARCAR) {
+      // No hay nada que alcanzar: o el pedido ya está donde corresponde, o esta vista de la
+      // orden es más vieja que lo guardado. Las dos son correctas y se devuelve lo que hay.
+      if (reintento.accion === ACCIONES.REVISAR) {
+        console.log(`[pedido] ${pedido.id} necesita revisión tras la carrera: ${reintento.motivo}`);
+      }
+      return actual;
+    }
+
+    const extra2 = { ...extra };
+    if (reintento.estado === ESTADOS.PAGADO) extra2.pagado_en = new Date().toISOString();
+    else delete extra2.pagado_en;
+    try {
+      movido = await marcarEstado(env.VYC_PEDIDOS, actual.id, actual.estado, reintento.estado, extra2);
+    } catch {
+      return actual;
+    }
+    if (!movido.movido) return actual;
+    estadoFinal = reintento.estado;
+    console.log(`[pedido] ${pedido.id}: perdió la carrera contra ${actual.estado}, alcanzado a ${estadoFinal}`);
+  }
+
+  console.log(`[pedido] reconciliado ${pedido.id}: ${pedido.estado} → ${estadoFinal}`);
   // Se relee para que la pantalla dibuje el pedido entero y no una mezcla del viejo con el
   // estado nuevo. Si la relectura falla, el de antes sigue siendo cierto.
   try { return (await leerPedido(env.VYC_PEDIDOS, pedido.id)) || pedido; } catch { return pedido; }
@@ -529,18 +582,47 @@ export async function onRequestPost(contexto) {
         // «no se te cobró nada, vuelve a intentarlo» — un consejo que no podía funcionar nunca.
         // No es una carrera: pasa siempre, y es determinista.
         //
-        // Que esa fila esté vencida no es una suposición, se deduce: `desdeIso` se calcula con
-        // VENTANA_DOBLE_CLIC_MS, que es VIGENCIA_ORDEN_HORAS, que es el mismo `expiration_time`
-        // con el que se abrió su orden en Mercado Pago. Si quedó fuera de la ventana, su orden
-        // ya no es pagable. Por eso se cierra en vez de reusarse: reusar su id mandaría a la
-        // persona a un enlace de pago muerto.
+        // ⚠️ NO SE DEDUCE QUE LA ORDEN VENCIÓ. La primera versión de esto razonaba así: la
+        // ventana de la búsqueda sale de VIGENCIA_ORDEN_HORAS, que es el mismo
+        // `expiration_time` con que se abrió la orden, así que una fila fuera de la ventana
+        // tiene su orden vencida. El razonamiento es elegante y es FALSO, porque `creado_en` es
+        // cuándo nació la FILA y no cuándo nació la ORDEN, y las dos cosas se pueden separar:
+        // si el primer intento no logró abrir el pago, la fila queda sin orden; si la persona
+        // vuelve dentro de la ventana, se reusa esa fila vieja y se le abre una orden NUEVA,
+        // que vive 24 horas desde ESE momento. Cerrarla por la fecha de la fila sería matar un
+        // enlace de pago vivo.
+        //
+        // Por eso se pide evidencia en vez de deducir. Y hay dos casos:
+        //   - la fila nunca llegó a tener orden → no hay nada que matar, se cierra y se rehace;
+        //   - la fila tiene orden → se le pregunta a Mercado Pago. Si sigue viva, lo correcto
+        //     NO es cerrarla sino REUSARLA, que es mandar a la persona al pago que ya tiene
+        //     abierto; si está vencida, cancelada o fallida, ahí sí se cierra.
+        const hastaIso = desdeIso;
         let vencida = null;
         try {
-          vencida = await buscarCompraAbierta(env.VYC_PEDIDOS, { dominio, correo });
+          vencida = await buscarCompraAbierta(env.VYC_PEDIDOS, { dominio, correo, hastaIso });
         } catch { vencida = null; }
 
         let cerrada = { movido: false };
-        if (vencida) {
+        if (vencida && vencida.mp_order_id && env.MP_ACCESS_TOKEN) {
+          const lectura = await leerOrdenMP(vencida.mp_order_id, env.MP_ACCESS_TOKEN);
+          const estadoOrden = lectura.ok && lectura.orden ? lectura.orden.status : null;
+          if (lectura.ok && !ORDEN_MUERTA.has(String(estadoOrden))) {
+            // Sigue viva: se reusa. El `crearOrdenMP` de más abajo manda su id como clave de
+            // idempotencia y Mercado Pago devuelve esa misma orden con su enlace.
+            console.log(`[pedido] compra abierta ${vencida.id} sigue viva (${estadoOrden}): se reusa`);
+            idPedido = vencida.id;
+            puesto = { creado: false, reusado: true };
+          } else if (!lectura.ok && lectura.estadoHttp !== 404) {
+            // No se pudo preguntar. Antes que matar una orden que quizá está viva, se dice que
+            // no se pudo y la persona reintenta. Es el lado seguro.
+            console.log(`[pedido] no se pudo consultar la orden de ${vencida.id}: ${lectura.error}`);
+            return jsonPost({ ok: false, motivo: 'no-se-pudo-consultar',
+              detalle: 'No pudimos comprobar el estado de tu compra anterior. No se te cobró nada. Inténtalo de nuevo en un momento.' }, 409);
+          }
+        }
+
+        if (vencida && !puesto.reusado) {
           try {
             cerrada = await marcarEstado(env.VYC_PEDIDOS, vencida.id, ESTADOS.CREADO, ESTADOS.RECHAZADO);
           } catch { cerrada = { movido: false }; }
@@ -553,7 +635,7 @@ export async function onRequestPost(contexto) {
           try { puesto = await insertar(); } catch { puesto = { creado: false }; }
         }
 
-        if (!puesto.creado) {
+        if (!puesto.creado && !puesto.reusado) {
           // Ni insertó, ni hay reciente, ni se pudo liberar: acá sí no se puede saber qué pasó,
           // y seguir abriría una orden contra un pedido que no existe.
           return jsonPost({ ok: false, motivo: 'no-se-pudo-guardar',

@@ -161,14 +161,28 @@ export async function onRequestPost(contexto) {
       // La ventana se toma prestada de `VENTANA_RECLAMO_MS`, que ya es el horizonte en que este
       // sistema considera que un evento sigue en vuelo. Pasada, el 404 sí es definitivo: esa
       // orden no es nuestra y reintentar no lo va a cambiar nunca.
-      let reciente = false;
-      try {
-        const posible = await leerPedido(env.VYC_PEDIDOS, url.searchParams.get(PARAM_REF_EXTERNA));
-        reciente = Boolean(posible && posible.creado_en &&
-          Date.now() - Date.parse(posible.creado_en) < VENTANA_RECLAMO_MS);
-      } catch { reciente = false; }
+      // El parámetro con NUESTRO id no está firmado y puede no venir. Sin él no se puede saber
+      // de qué pedido se trata, y entonces la pregunta no es «¿es reciente?» sino «¿qué hago
+      // cuando no sé?». La respuesta es el lado seguro: NO cerrar. Cerrar es irreversible —el
+      // rescate del reclamo exige `resultado IS NULL`— y los reintentos de Mercado Pago son
+      // finitos, así que equivocarse hacia el reintento cuesta ruido y equivocarse hacia el
+      // cierre cuesta un pago.
+      const refUrl = url.searchParams.get(PARAM_REF_EXTERNA);
+      let cerrable = false;
+      if (refUrl) {
+        try {
+          const posible = await leerPedido(env.VYC_PEDIDOS, refUrl);
+          // Solo se cierra si SABEMOS de qué pedido se trata y ya pasó su ventana. Un
+          // `data.external_reference` que no corresponde a ningún pedido nuestro también es
+          // cerrable: esa orden no es de esta integración.
+          cerrable = !posible || !posible.creado_en ||
+            Date.now() - Date.parse(posible.creado_en) >= VENTANA_RECLAMO_MS;
+        } catch { cerrable = false; }
+      } else {
+        console.log('[webhook] 404 sin data.external_reference: no se cierra, se pide reintento');
+      }
 
-      if (reciente) return soltarYReintentar('orden-todavia-no-esta');
+      if (!cerrable) return soltarYReintentar('orden-todavia-no-esta');
 
       await anotarResultado(env.VYC_PEDIDOS, clave,
         `orden inexistente (404)${exacta ? '' : ' (clave no exacta)'}`);
@@ -261,7 +275,17 @@ export async function onRequestPost(contexto) {
     if (!actual) return soltarYReintentar('base-no-responde');
 
     const reintento = decidirDesdeOrden({ pedido: actual, orden });
-    if (reintento.accion === ACCIONES.MARCAR) {
+
+    if (reintento.accion !== ACCIONES.MARCAR) {
+      // No hay nada que alcanzar. La nota tiene que decir DÓNDE quedó el pedido de verdad: la
+      // primera versión escribía el estado que esta entrega quería, que el pedido no tiene, y
+      // eso convierte el registro en algo que miente justo cuando hay que auditarlo.
+      estadoFinal = actual.estado;
+      nota = ` (perdió la carrera; ${reintento.motivo})`;
+      if (reintento.accion === ACCIONES.REVISAR) {
+        console.log(`[webhook] REVISAR ${pedido.id} tras la carrera: ${reintento.motivo}`);
+      }
+    } else {
       const extra2 = { ...extra };
       if (reintento.estado === ESTADOS.PAGADO) extra2.pagado_en = new Date().toISOString();
       else delete extra2.pagado_en;
@@ -270,14 +294,24 @@ export async function onRequestPost(contexto) {
       } catch {
         return soltarYReintentar('base-no-responde');
       }
+
       if (!movido.movido) {
-        // Otra entrega volvió a ganar en el mismo instante. Antes que afirmar que está hecho,
-        // se pide reintento: Mercado Pago relee la orden y converge.
-        return soltarYReintentar(`no-se-pudo-alcanzar:${reintento.estado}`);
+        // Otra entrega volvió a ganar en el mismo instante. Antes de pedir reintento hay que
+        // mirar: si esa otra entrega lo dejó justo donde esta quería, el trabajo está hecho y
+        // un 503 sería avisar de un error que no existe — y encima soltaría el evento, que es
+        // el único rastro que queda de esta entrega.
+        let tercera = null;
+        try { tercera = await leerPedido(env.VYC_PEDIDOS, pedido.id); } catch { tercera = null; }
+        if (!tercera || tercera.estado !== reintento.estado) {
+          return soltarYReintentar(`no-se-pudo-alcanzar:${reintento.estado}`);
+        }
+        estadoFinal = tercera.estado;
+        nota = ` (lo alcanzó otra entrega: ya estaba en ${tercera.estado})`;
+      } else {
+        estadoFinal = reintento.estado;
+        nota = ` (perdió la carrera contra ${actual.estado} y se alcanzó)`;
+        console.log(`[webhook] ${pedido.id}: carrera perdida contra ${actual.estado}, alcanzado a ${estadoFinal}`);
       }
-      estadoFinal = reintento.estado;
-      nota = ` (perdió la carrera contra ${actual.estado} y se alcanzó)`;
-      console.log(`[webhook] ${pedido.id}: carrera perdida contra ${actual.estado}, alcanzado a ${estadoFinal}`);
     }
   }
 
