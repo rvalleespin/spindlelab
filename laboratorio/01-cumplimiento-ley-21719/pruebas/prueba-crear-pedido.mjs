@@ -288,8 +288,16 @@ console.log('=== 6. si Mercado Pago falla, el pedido NO se borra ===');
   const j = await r.json();
   red.soltar();
 
-  eq('contesta 502', r.status, 502);
-  cierto('y dice que no se cobró nada', String(j.detalle).includes('No se te cobró'));
+  // ⚠️ 409 y no 5xx: Cloudflare intercepta las respuestas 5xx de una Function y las reemplaza
+  // por su propia página de error en texto plano, así que el mensaje nunca llegaba a la persona
+  // y el navegador terminaba diciéndole «revisa tu conexión». Comprobado en producción el 24-oct.
+  eq('contesta 409, porque un 5xx no llega a la persona', r.status, 409);
+  // ⚠️ CAMBIÓ: acá la red se cae, o sea que Mercado Pago nunca contestó. La orden PUEDE existir
+  // del otro lado sin que nosotros lo sepamos, así que afirmar «no se te cobró nada» sería
+  // asegurar algo sobre la plata de alguien que no podemos sostener. La prueba 21 cubre las dos
+  // ramas; acá solo se exige que diga algo útil y que no mienta.
+  falso('con la red caída NO afirma que no se cobró', String(j.detalle).includes('No se te cobró'));
+  cierto('pero igual le dice qué hacer', String(j.detalle).length > 40);
   eq('el pedido QUEDA', filas(crudo).length, 1);
   eq('en estado creado', filas(crudo)[0].estado, 'creado');
   eq('pero SIN id de orden, que es lo que lo distingue', filas(crudo)[0].mp_order_id, null);
@@ -425,7 +433,7 @@ console.log('=== 11. el origen ===');
 console.log('=== 12. sin base y otros métodos ===');
 {
   const sinBase = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_TOPES: kvNuevo() } });
-  eq('sin base, 503', sinBase.status, 503);
+  eq('sin base, 409', sinBase.status, 409);
 
   const { db } = baseNueva();
   const put = new Request('https://verifica.spindlelab.cl/api/pedido', { method: 'PUT' });
@@ -588,6 +596,236 @@ console.log('=== 16. LA CARRERA DE VERDAD: dos peticiones a la vez, no una tras 
   const claves = red.llamadas.cabecerasMP.map((h) => h['X-Idempotency-Key']);
   eq('Mercado Pago recibe una sola clave', new Set(claves).size, 1);
   eq('y es la del pedido que quedó', claves[0], ja.id);
+}
+
+console.log('=== 17. cuando Mercado Pago rechaza, se puede saber POR QUÉ ===');
+{
+  // El primer pago de prueba real falló con 502 en todos los intentos y nadie pudo saber la
+  // causa: ni en la respuesta, ni en los logs, ni desde el panel. `crearOrdenMP` capturaba lo
+  // que Mercado Pago contestaba y el handler lo descartaba. Un error que no se puede
+  // diagnosticar desde afuera obliga a adivinar, y acá se adivina sobre el camino del dinero.
+  const { db, crudo } = baseNueva();
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+
+  const dicho = [];
+  const antesLog = console.log;
+  console.log = (...a) => { dicho.push(a.join(' ')); };
+  const red = conRed({
+    mpEstado: 401,
+    mp: { error: 'invalid_credentials', message: 'Las credenciales no son válidas', status: 401 },
+  });
+  const r = await E.onRequestPost({
+    request: pedir(BIEN),
+    env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'APP_USR-token-secretisimo-123' },
+  });
+  const j = await r.json();
+  red.soltar();
+  console.log = antesLog;
+
+  // ⚠️ 409 y no 5xx: Cloudflare intercepta las respuestas 5xx de una Function y las reemplaza
+  // por su propia página de error en texto plano, así que el mensaje nunca llegaba a la persona
+  // y el navegador terminaba diciéndole «revisa tu conexión». Comprobado en producción el 24-oct.
+  eq('contesta 409, porque un 5xx no llega a la persona', r.status, 409);
+  eq('con el código HTTP de Mercado Pago en la respuesta', j.codigo, 'http-401');
+  eq('y el id, para poder escribirnos con él', j.id, filas(crudo)[0].id);
+
+  const registro = dicho.join(' | ');
+  cierto('queda registrado', registro.includes('Mercado Pago rechazó la orden'));
+  cierto('con el código HTTP', registro.includes('http-401'));
+  cierto('y con lo que dijo Mercado Pago', registro.includes('invalid_credentials'));
+
+  // ⚠️ LO QUE NO PUEDE ESTAR EN EL REGISTRO. Los logs de Cloudflare los lee cualquiera con
+  // acceso a la cuenta, así que un token o un correo ahí es una filtración, no una ayuda.
+  falso('NUNCA el token', registro.includes('APP_USR-token-secretisimo-123'));
+  falso('ni el correo del comprador', registro.includes('contacto@clinicaejemplo.cl'));
+
+  // Y un rechazo sin cuerpo tampoco puede reventar ni dejar al handler mudo.
+  const { db: db2 } = baseNueva();
+  const kv2 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const dicho2 = [];
+  console.log = (...a) => { dicho2.push(a.join(' ')); };
+  const red2 = conRed({ mpEstado: 500, mp: null });
+  let lanzo = false, r2;
+  try {
+    r2 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok' } });
+  } catch { lanzo = true; }
+  red2.soltar();
+  console.log = antesLog;
+  falso('un rechazo raro no lanza', lanzo);
+  eq('sigue siendo 409', r2 && r2.status, 409);
+  cierto('y deja registro igual', dicho2.join(' ').includes('Mercado Pago rechazó la orden'));
+}
+
+console.log('=== 18. el tope cobra lo que cuesta, no los rechazos nuestros ===');
+{
+  // Estaba en 5 y contaba CADA intento. La primera vez que alguien probó el checkout de verdad,
+  // Mercado Pago falló en cada llamada y a los cinco reintentos el tope lo dejó fuera del sitio
+  // por el resto del día: un fallo nuestro convertido en castigo para quien quería pagarnos.
+  const { db, crudo } = baseNueva();
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' };
+  const dia = new Date().toISOString().slice(0, 10);
+  const clave = `tope:pedido:ip:${dia}:5.5.5.5`;
+  const conIp = (cuerpo) => new Request('https://verifica.spindlelab.cl/api/pedido', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', 'CF-Connecting-IP': '5.5.5.5' },
+    body: JSON.stringify(cuerpo),
+  });
+  const gastado = async () => Number((await kv.get(clave)) || 0);
+
+  const red = conRed();
+  // Rechazos que NO son del comprador: nada de esto puede gastarle el cupo.
+  await E.onRequestPost({ request: conIp({ ...BIEN, correo: 'no-es-correo' }), env });
+  await E.onRequestPost({ request: conIp({ ...BIEN, consiento: false }), env });
+  await E.onRequestPost({ request: conIp({ ...BIEN, dominio: 'no es un dominio' }), env });
+  eq('una errata no gasta cupo', await gastado(), 0);
+
+  // Un sitio que ya no es elegible tampoco: es una decisión nuestra, no un abuso suyo.
+  //
+  // ⚠️ Hay que limpiar LOS DOS informes. La primera versión de esta prueba solo limpiaba el
+  // profundo, y el chequeo rápido —que el endpoint vuelve a correr— seguía devolviendo `cmp`
+  // pendiente, así que la venta procedía y la aserción fallaba. El error era de la prueba.
+  const limpio = PROFUNDO();
+  limpio.items = limpio.items.map((i) => ({ ...i, estado: 'ok', ok: true }));
+  await kv.put('cache:clinicaejemplo.cl', JSON.stringify(limpio));
+  red.soltar();
+  const redLimpia = conRed({ sitio: PORTADA.replace(/<script[^>]*><\/script>/, '') });
+  await E.onRequestPost({ request: conIp(BIEN), env });
+  redLimpia.soltar();
+  eq('un rechazo de la compuerta tampoco', await gastado(), 0);
+
+  // Lo que SÍ cuesta es abrir la orden en Mercado Pago, y eso sí se cobra.
+  await kv.put('cache:clinicaejemplo.cl', JSON.stringify(PROFUNDO()));
+  const redFinal = conRed();
+  await E.onRequestPost({ request: conIp(BIEN), env });
+  redFinal.soltar();
+  eq('abrir una orden sí gasta uno', await gastado(), 1);
+
+  // Y el tope sigue existiendo: lleno a mano, rechaza.
+  await kv.put(clave, String(E.TOPE_PEDIDOS_IP_DIA));
+  const red2 = conRed();
+  const topado = await E.onRequestPost({ request: conIp({ ...BIEN, correo: 'otro@ejemplo.cl' }), env });
+  red2.soltar();
+  eq('pasado el tope, 429', topado.status, 429);
+  eq('con su motivo', (await topado.json()).motivo, 'tope');
+
+  cierto('y el tope es holgado para una persona real', E.TOPE_PEDIDOS_IP_DIA >= 10);
+}
+
+console.log('=== 19. ninguna respuesta de cara a la persona usa un 5xx ===');
+{
+  // Cloudflare reemplaza los 5xx que salen de una Function por su propia página en texto plano.
+  // El navegador no la puede parsear, cae en el catch del fetch, y le dice a la persona «revisa
+  // tu conexión» cuando la conexión estaba bien. Tres capas de mensaje equivocado por un código
+  // de estado, y con campaña activa eso es gente que se va.
+  const { db } = baseNueva();
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' };
+  const codigos = [];
+
+  const casos = [
+    ['cuerpo vacío', () => E.onRequestPost({ request: pedir({}), env })],
+    ['sin consentimiento', () => E.onRequestPost({ request: pedir({ ...BIEN, consiento: false }), env })],
+    ['sin base', () => E.onRequestPost({ request: pedir(BIEN), env: { VYC_TOPES: kv } })],
+    ['Mercado Pago rechaza', () => E.onRequestPost({ request: pedir(BIEN), env })],
+    ['Mercado Pago sin token', () => E.onRequestPost({ request: pedir({ ...BIEN, correo: 'otro@ejemplo.cl' }), env: { VYC_PEDIDOS: db, VYC_TOPES: kv } })],
+  ];
+  for (const [nombre, correr] of casos) {
+    const red = conRed({ mpEstado: 500, mp: { message: 'boom' } });
+    const r = await correr();
+    red.soltar();
+    codigos.push([nombre, r.status]);
+    falso(`${nombre}: no es 5xx`, r.status >= 500);
+    // Y el cuerpo tiene que ser JSON legible, que es lo que el navegador lee.
+    let j = null;
+    try { j = await r.json(); } catch {}
+    cierto(`${nombre}: contesta JSON`, j !== null && typeof j === 'object');
+  }
+  cierto('todos por debajo de 500', codigos.every(([, c]) => c < 500));
+}
+
+console.log('=== 20. LA ATRIBUCIÓN: una venta tiene que saber qué campaña la trajo ===');
+{
+  // El endpoint leía las UTM de `request.url`, y esa URL es `/api/pedido`, que nunca lleva
+  // parámetros. O sea que TODAS las ventas se guardaban sin atribución, con una campaña pagada
+  // corriendo. Una venta que no se puede adjudicar hace la campaña inmedible: no se sabe qué
+  // anuncio funciona ni cuál apagar.
+  const { db, crudo } = baseNueva();
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' };
+
+  const red = conRed();
+  await E.onRequestPost({
+    request: pedir({ ...BIEN, utms: {
+      utm_source: 'meta', utm_medium: 'cpc', utm_campaign: 'vyc-oct',
+      utm_content: 'video-1', utm_term: 'ley-21719',
+    } }),
+    env,
+  });
+  red.soltar();
+
+  const f = filas(crudo)[0];
+  eq('la fuente queda guardada', f.utm_source, 'meta');
+  eq('el medio', f.utm_medium, 'cpc');
+  eq('la campaña', f.utm_campaign, 'vyc-oct');
+  eq('el contenido', f.utm_content, 'video-1');
+  eq('el término', f.utm_term, 'ley-21719');
+
+  // Y lo que el navegador manda se acota: es dato de campaña, pero no texto libre sin límite.
+  const { db: db2, crudo: c2 } = baseNueva();
+  const kv2 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const red2 = conRed();
+  await E.onRequestPost({
+    request: pedir({ ...BIEN, utms: {
+      utm_source: 'x'.repeat(900),
+      utm_medium: 'con\u0000control\u001f',
+      utm_campaign: 12345,
+      inventado: 'no-deberia-entrar',
+    } }),
+    env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok' },
+  });
+  red2.soltar();
+  const g = filas(c2)[0];
+  eq('se recorta a 200', g.utm_source.length, 200);
+  eq('se limpian los caracteres de control', g.utm_medium, 'con control');
+  eq('lo que no es texto se descarta', g.utm_campaign, null);
+  falso('y un campo inventado no entra', Object.keys(g).includes('inventado'));
+
+  // Sin UTM no revienta ni inventa nada.
+  const { db: db3, crudo: c3 } = baseNueva();
+  const kv3 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const red3 = conRed();
+  await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db3, VYC_TOPES: kv3, MP_ACCESS_TOKEN: 'tok' } });
+  red3.soltar();
+  eq('sin UTM, quedan nulas', filas(c3)[0].utm_source, null);
+}
+
+console.log('=== 21. no se afirma sobre la plata de alguien lo que no se sabe ===');
+{
+  const kvBase = () => kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+
+  // (a) Mercado Pago CONTESTÓ con un error: la orden no se creó, y tranquilizar es cierto.
+  const { db } = baseNueva();
+  const red = conRed({ mpEstado: 400, mp: { message: 'bad request' } });
+  const a = await (await E.onRequestPost({
+    request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kvBase(), MP_ACCESS_TOKEN: 'tok' },
+  })).json();
+  red.soltar();
+  cierto('con respuesta de Mercado Pago, se puede decir que no se cobró',
+    /No se te cobró nada/i.test(a.detalle));
+
+  // (b) La petición NI SIQUIERA llegó a contestar: la orden PUEDE existir del otro lado y
+  // nosotros no lo sabemos. Decirle «no se te cobró nada» sería afirmar sobre su plata algo que
+  // no podemos sostener.
+  const { db: db2 } = baseNueva();
+  const red2 = conRed({ caeMP: true });
+  const b = await (await E.onRequestPost({
+    request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kvBase(), MP_ACCESS_TOKEN: 'tok' },
+  })).json();
+  red2.soltar();
+  falso('sin respuesta, NO se afirma que no se cobró', /No se te cobró nada/i.test(b.detalle));
+  cierto('se dice que no se pudo confirmar', /no alcanzamos a confirmar/i.test(b.detalle));
+  cierto('y se le dice qué hacer si ve un cargo', /si ves un cargo/i.test(b.detalle));
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);

@@ -299,7 +299,7 @@ console.log('=== 8. los bordes ===');
   eq('un cuerpo que no es JSON, 400', noJson.status, 400);
 
   const sinBase = await I.onRequestPost({ request: pedir({ id, ...DATOS }), env: {} });
-  eq('sin base, 503', sinBase.status, 503);
+  eq('sin base, 409', sinBase.status, 409);
 
   const get = await I.onRequest({
     request: new Request('https://v.cl/api/intake', { method: 'GET' }), env,
