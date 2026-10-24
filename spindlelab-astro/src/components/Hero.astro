@@ -14,17 +14,19 @@ import { CONTACTO } from '../consts';
     playsinline
     preload="metadata"></video>
 
-  <!-- Velo oscuro para legibilidad -->
+  <!-- Velo oscuro para legibilidad. Antes .74/.64/.64/.92: donde el hilo de oro cruza el texto, la
+       bajada llegaba a 2,2:1 y el sobretítulo a 2,2:1. Con .80/.72/.72/.92, la bajada en tono papel y
+       el sobretítulo sobre un chip de tinta, el peor píxel medido queda sobre 4,5:1. -->
   <div
     class="absolute inset-0 z-[1] pointer-events-none"
-    style="background:linear-gradient(to bottom, rgba(14,20,27,0.74) 0%, rgba(14,20,27,0.64) 26%, rgba(14,20,27,0.64) 54%, rgba(14,20,27,0.92) 100%)"
+    style="background:linear-gradient(to bottom, rgba(14,20,27,0.8) 0%, rgba(14,20,27,0.72) 26%, rgba(14,20,27,0.72) 54%, rgba(14,20,27,0.92) 100%)"
   >
   </div>
 
   <!-- Texto del hero -->
   <div class="relative z-10 flex flex-col items-center text-center pt-28 sm:pt-32 md:pt-36 px-4 sm:px-6">
     <p
-      class="mb-5 sm:mb-6 max-w-xs sm:max-w-none text-xs font-semibold uppercase tracking-[0.2em] text-support"
+      class="mb-5 sm:mb-6 max-w-xs sm:max-w-none inline-block px-3.5 py-[7px] rounded-2xl sm:rounded-full bg-bg/[0.82] backdrop-blur-[6px] text-xs font-semibold uppercase tracking-[0.2em] text-support"
       style="text-shadow:0 1px 14px rgba(14,20,27,.9)"
     >
       Marketing y crecimiento con IA para empresas que ya venden
@@ -37,7 +39,7 @@ import { CONTACTO } from '../consts';
       Veamos dónde se cae<br class="sm:hidden" />{' '}el resto.
     </h1>
     <p
-      class="mt-6 sm:mt-8 text-fg-muted text-sm sm:text-base md:text-lg leading-relaxed max-w-xl px-2"
+      class="mt-6 sm:mt-8 text-fg/[0.92] text-sm sm:text-base md:text-lg leading-relaxed max-w-xl px-2"
       style="text-shadow:0 1px 14px rgba(14,20,27,.9)"
     >
       Revisamos tu sitio y si Google y las IA pueden leerlo. Después conversamos cómo te llegan las

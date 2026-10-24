@@ -63,13 +63,14 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
 <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/inter.css?v=1">
-<link rel="stylesheet" href="/assets/css/style.css?v=29">
+<link rel="stylesheet" href="/assets/css/style.css?v=30">
 </head>
 <body>
 
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="/" aria-label="SpindleLab, inicio">SpindleLab<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span class="bars"></span></button>
     <div class="nav-pill"><ul class="nav-links" id="nav-links">
       <li><a href="/servicios/">Soluciones</a></li>
       <li><a href="/metodo/">Método</a></li>
@@ -77,6 +78,7 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
       <li><a href="/#evidencia">Evidencia</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="/contacto/">Contacto</a></li>
+      <li class="nav-links-cta"><a class="btn gold small" href="/contacto/">Pedir la revisión</a></li>
     </ul>
     <a class="btn gold small nav-cta" href="/contacto/">Pedir la revisión</a></div>
   </div>
@@ -106,7 +108,16 @@ if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
   </div>
 </footer>
 
-<script src="/assets/js/site-header.js" defer></script>
+<script>
+(function(){
+  var btn=document.querySelector('.menu-btn'),links=document.getElementById('nav-links');
+  if(btn){btn.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+  });}
+})();
+</script>
+<script src="/assets/js/site-header.js?v=2" defer></script>
 <div id="cookie-banner" hidden>
   <style>
     #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#161D26;border-top:1px solid rgba(247,245,240,.12);padding:18px 20px}
