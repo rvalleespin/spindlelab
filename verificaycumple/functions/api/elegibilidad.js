@@ -45,6 +45,11 @@ export const CIERRA_EL_KIT = new Set(['cmp', 'carga', 'cookies', 'envio', 'aviso
 export const NO_LO_CIERRA_EL_KIT = {
   politica: 'la publica el cliente, después de que su abogado revise el borrador que entregamos',
   https: 'es del hosting del cliente',
+  // `casilla` es la cuarta señal del chequeo rápido y aparece solo cuando el sitio tiene un
+  // formulario. Faltaba acá, así que caía en el texto de reserva «no es parte del kit», que es
+  // cierto pero no dice por qué. El kit instala el gestor de rastreadores; los formularios del
+  // cliente no los tocamos.
+  casilla: 'va en el formulario del cliente, y el kit instala el gestor de rastreadores, no toca sus formularios',
 };
 
 export const MOTIVOS = {

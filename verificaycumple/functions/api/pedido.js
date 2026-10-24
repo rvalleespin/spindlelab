@@ -41,6 +41,9 @@ const TITULOS = {
   aviso: 'Si aparece un aviso al entrar',
   politica: 'Enlace a tu política de privacidad',
   https: 'Conexión cifrada (HTTPS)',
+  // Faltaba, y es una señal real del chequeo rápido: un pedido cuyo `senales_fuera` la incluyera
+  // habría mostrado el id crudo «casilla» en la pantalla del cliente.
+  casilla: 'Casilla de consentimiento en tu formulario',
 };
 
 const NO_EXISTE = { ok: false, motivo: 'no-existe' };

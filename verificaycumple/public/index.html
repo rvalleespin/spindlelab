@@ -88,7 +88,7 @@
       "operatingSystem": "Navegador web",
       "inLanguage": "es-CL",
       "datePublished": "2026-09-23",
-      "dateModified": "2026-10-15",
+      "dateModified": "2026-10-24",
       "provider": {
         "@id": "https://spindlelab.cl/#org"
       },
@@ -100,13 +100,35 @@
       }
     },
     {
+      "@type": "Service",
+      "@id": "https://verifica.spindlelab.cl/#kit",
+      "name": "Kit de implementación Ley 21.719",
+      "serviceType": "Instalación de gestor de consentimiento",
+      "provider": {
+        "@id": "https://spindlelab.cl/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      },
+      "description": "Instalación del gestor de consentimiento configurado para retener los rastreadores hasta que la persona acepte, borrador de política de privacidad para que lo revise el abogado del cliente, y el chequeo corrido de nuevo al final sobre la misma página que se midió al principio.",
+      "offers": {
+        "@type": "Offer",
+        "price": "177310",
+        "priceCurrency": "CLP",
+        "valueAddedTaxIncluded": true,
+        "availability": "https://schema.org/InStock",
+        "url": "https://verifica.spindlelab.cl/#ayuda"
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://verifica.spindlelab.cl/#pagina",
       "url": "https://verifica.spindlelab.cl/",
       "name": "Verifica y Cumple · Chequeo técnico Ley 21.719",
       "inLanguage": "es-CL",
       "datePublished": "2026-09-23",
-      "dateModified": "2026-10-15",
+      "dateModified": "2026-10-24",
       "isPartOf": {
         "@id": "https://verifica.spindlelab.cl/#app"
       },
@@ -243,7 +265,7 @@
           "name": "¿Cuánto cuesta arreglar lo que salga pendiente?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "El kit de implementación parte en $149.000 más IVA, una vez. Instala el gestor de consentimiento, corrige las señales que tu chequeo dejó pendientes, incluye una plantilla de política de privacidad para que la revise tu abogado, y vuelve a correr el chequeo al final para que veas el cambio. No incluye la revisión legal de tu caso, que es de abogado."
+            "text": "El kit de implementación cuesta $149.000 más IVA, o sea $177.310 en total, una vez. Instala el gestor de consentimiento, corrige las señales que tu chequeo dejó pendientes, incluye una plantilla de política de privacidad para que la revise tu abogado, y vuelve a correr el chequeo al final para que veas el cambio. No incluye la revisión legal de tu caso, que es de abogado."
           }
         }
       ]
@@ -1314,7 +1336,7 @@
   }
   .kit-principal .kit-etiqueta { color: var(--vivo-verde); }
   .kit-secundario .kit-etiqueta { color: var(--vivo-rosa-osc); }
-  /* "Desde $149.000" mide 8,3 veces su tamaño de letra. En una tarjeta angosta (dos columnas
+  /* "$149.000" medía 8,3 veces su tamaño de letra cuando decía "Desde $149.000". En una tarjeta angosta (dos columnas
      cerca de 700 px, o tres cerca de 1100) no cabía y "$149.000" bajaba solo a otra línea,
      descuadrado contra "Desde $39.000" al lado. Con cqi la letra se achica justo lo necesario
      para caber en una línea; donde cqi no existe, queda el 2,1rem de siempre. */
@@ -1385,6 +1407,20 @@
   .pedir-trampa { display: none; }
   .pedir .boton-ayuda { border: 0; font: inherit; font-weight: 700; cursor: pointer; }
   .pedir .boton-ayuda:disabled { background: var(--inactivo); cursor: wait; }
+  .compra { margin: 18px 0 0; padding: 20px; border-radius: 14px; background: var(--crema-200, #f6efe3);
+            border: 1px solid rgba(0,0,0,.08); max-width: 34rem; }
+  .compra[hidden] { display: none; }
+  .compra-kicker { margin: 0 0 6px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+  .compra-monto { margin: 0 0 10px; font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
+  .compra-monto span { display: block; font-size: .85rem; font-weight: 400; opacity: .75; }
+  .compra-que { margin: 0 0 16px; font-size: .95rem; }
+  .compra .pedir-consiento { margin-top: 12px; }
+  .compra-ayuda { margin: 6px 0 0; font-size: .85rem; opacity: .75; }
+  .compra-sigue { margin: 12px 0 0; font-size: .85rem; opacity: .75; }
+  .compra label { display: block; margin-top: 4px; }
+  .compra input[type="email"] { display: block; width: 100%; margin-top: 6px; padding: 10px 12px;
+            font: inherit; border-radius: 9px; border: 1px solid rgba(0,0,0,.2); }
+  .compra button[disabled] { opacity: .6; cursor: progress; }
   .pedir-estado { margin: 12px 0 0; font-size: .9rem; color: var(--pendiente); }
   .pedir-estado:empty { display: none; }
   .pedir-listo { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
@@ -1521,6 +1557,21 @@
              abajo del formulario, y quien navega con teclado o lector de pantalla se quedaba
              en el botón sin saber que ya había algo que leer. -->
         <div id="resultado" role="region" aria-label="Resultado del chequeo" aria-live="polite" tabindex="-1"></div>
+
+        <!-- El paso de compra. Vive acá, estático y revisable, y el script lo MUEVE justo debajo
+             del botón que se apretó. Moverlo en vez de clonar markup en los cuatro lugares
+             posibles garantiza que nunca haya dos pasos de compra abiertos a la vez. -->
+        <form id="compra" class="compra" hidden>
+          <p class="compra-kicker">Comprar el kit</p>
+          <p class="compra-monto">$177.310 <span>IVA incluido · una vez</span></p>
+          <p class="compra-que">Dejamos instalado el gestor de consentimiento, te entregamos el borrador de tu política para que lo revise tu abogado, y volvemos a correr el chequeo al final sobre la misma página.</p>
+          <label>Correo <input type="email" name="correo" required autocomplete="email" placeholder="tu@empresa.cl"></label>
+          <p class="compra-ayuda">Es donde te llega el enlace de tu pedido y donde te pedimos el acceso. Mercado Pago también lo necesita.</p>
+          <label class="pedir-consiento"><input type="checkbox" name="consiento" required> <span>Acepto que estos datos se usen para responder mi pedido o mi pregunta, según la <a href="/privacidad/">política de privacidad</a>.</span></label>
+          <button type="submit" class="boton-ayuda">Ir a pagar</button>
+          <p class="pedir-estado" role="status"></p>
+          <p class="compra-sigue">Te llevamos a Mercado Pago. Vuelves a una página con tu pedido, y el enlace de esa página es tuyo: guárdalo.</p>
+        </form>
 
         <!-- El segundo resultado: lo que vio un navegador de verdad al abrir el sitio.
              Se dispara solo cuando el rápido ya está en pantalla y crece hacia abajo. No
@@ -1661,14 +1712,14 @@
               <path class="sello-check" d="M32 52 L44 64 L70 36"></path>
             </svg>
             <p class="kit-etiqueta">Kit de implementación</p>
-            <p class="kit-monto">Desde $149.000 <span>+ IVA · una vez</span></p>
+            <p class="kit-monto">$149.000 <span>+ IVA · $177.310 en total · una vez</span></p>
             <ul class="kit-incluye">
               <li>Instalamos el aviso de cookies (el gestor de consentimiento) que pide permiso antes de cargar rastreadores</li>
               <li>Arreglamos las señales que tu chequeo dejó pendientes</li>
               <li>Plantilla de política de privacidad, para que la revise tu abogado</li>
               <li>Volvemos a correr el chequeo al final, para que veas el cambio</li>
             </ul>
-            <p class="kit-nota">El valor sube si tu sitio tiene más de lo que el chequeo alcanzó a ver, y te pasamos el monto exacto antes de empezar. No incluye la revisión legal de tu caso, que es de abogado.</p>
+            <p class="kit-nota">Este precio es para un sitio con una página de inicio medida. Si tienes carro de compras, varios dominios o integraciones a medida, el chequeo no te ofrece el kit y lo vemos caso a caso. No incluye la revisión legal de tu caso, que es de abogado.</p>
           </div>
           <div class="kit-precio kit-secundario">
             <p class="kit-etiqueta">Revisión trimestral</p>
@@ -1785,7 +1836,7 @@
         </div>
         <div class="pregunta">
           <h3>¿Cuánto cuesta arreglar lo que salga pendiente?</h3>
-          <p>El kit de implementación parte en $149.000 más IVA, una vez. Instala el gestor de consentimiento, corrige las señales que tu chequeo dejó pendientes, incluye una plantilla de política de privacidad para que la revise tu abogado, y vuelve a correr el chequeo al final para que veas el cambio. No incluye la revisión legal de tu caso, que es de abogado.</p>
+          <p>El kit de implementación cuesta $149.000 más IVA, o sea $177.310 en total, una vez. Instala el gestor de consentimiento, corrige las señales que tu chequeo dejó pendientes, incluye una plantilla de política de privacidad para que la revise tu abogado, y vuelve a correr el chequeo al final para que veas el cambio. No incluye la revisión legal de tu caso, que es de abogado.</p>
         </div>
       </div>
     </div>
@@ -1886,6 +1937,37 @@
   // falso, y ahí el tercer estado no existe.
   function estadoDe(item) {
     return ESTADOS[item.estado] ? item.estado : (item.ok ? 'ok' : 'pendiente');
+  }
+
+  // ⚠️ ESTA LISTA ESTÁ REPETIDA en functions/api/elegibilidad.js, que es la que decide de
+  // verdad. Acá vive solo para no OFRECER lo que el servidor va a rechazar. Si agregas una
+  // señal, va en los dos lados; `prueba-compuerta-boton.mjs` compara las dos y se pone roja si
+  // se separan. Es el mismo arreglo que ya tiene la lista de orígenes más abajo.
+  var CIERRA_EL_KIT = ['cmp', 'carga', 'cookies', 'envio', 'aviso'];
+
+  /**
+   * ¿Este informe permite ofrecer el kit?
+   *
+   * Hasta el 24-oct el botón se dibujaba con `pendientes > 0`, y eso no es lo que el servidor
+   * exige. La diferencia no era teórica: cuatro situaciones reales mostraban «Quiero el kit»,
+   * la persona escribía su correo, marcaba la casilla, apretaba pagar, y recibía un rechazo.
+   *
+   *   - solo `politica` pendiente (un sitio limpio al que solo le falta publicar su política);
+   *   - solo `casilla` pendiente (le falta la casilla en su formulario);
+   *   - `puntaje` nulo con pendientes, que es cuando no pudimos confirmar lo suficiente;
+   *   - un informe `parcial` o bloqueado, con pendientes.
+   *
+   * En los cuatro, el servidor contesta que no se puede cotizar lo que no se vio o que no hay
+   * nada que el kit cierre. Ofrecerlo igual es cobrarle a alguien su tiempo por un «no».
+   */
+  function sePuedeVender(data) {
+    if (!data || data.puntaje === null || data.puntaje === undefined) return false;
+    if (data.bloqueado || data.parcial) return false;
+    var items = data.items || [];
+    for (var i = 0; i < items.length; i++) {
+      if (estadoDe(items[i]) === 'pendiente' && CIERRA_EL_KIT.indexOf(items[i].id) >= 0) return true;
+    }
+    return false;
   }
 
   // Botón que lleva al formulario de pedido con el contexto del chequeo. El formulario lo
@@ -2107,7 +2189,7 @@
       if (sinConfirmar > 0) cuenta += ' <span class="sin-cortar">· ' + sinConfirmar + ' que no pudimos ver</span>';
     }
     html += '<div class="resumen-resultado"><p>' + cuenta + '</p>';
-    html += pendientes > 0
+    html += sePuedeVender(data)
       ? botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Resultado del chequeo')
       : botonPedir('pregunta', 'Pregúntanos', dominio, puntaje, 'Resultado del chequeo');
     html += '</div>';
@@ -2140,11 +2222,13 @@
     // --- El cierre. Solo ofrece el kit si quedó algo pendiente: venderlo para corregir
     // nada, o para "corregir" algo que no pudimos ver, era prometer de más. ---
     html += '<div class="panel-resolucion">';
-    if (pendientes > 0) {
+    // La misma compuerta que el botón: si el servidor va a rechazar la venta, este bloque
+    // tampoco la ofrece. Antes dependía solo de `pendientes > 0`.
+    if (sePuedeVender(data)) {
       html += '<p class="kicker">Lo que hace el kit</p>';
       html += '<p>Tu chequeo encontró <strong>' + plural(pendientes, 'señal pendiente', 'señales pendientes') + '</strong> en <strong>' + escapar(dominio) + '</strong>' +
         (sinConfirmar > 0 ? ', y ' + sinConfirmar + ' que no pudimos ver' : '') +
-        '. El kit se hace cargo de la parte técnica. El texto final de tu política lo revisa tu abogado. <span class="monto">Desde $149.000 + IVA</span>, una vez.</p>';
+        '. El kit se hace cargo de la parte técnica. El texto final de tu política lo revisa tu abogado. <span class="monto">$177.310</span>, IVA incluido, una vez.</p>';
       html += botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Resultado del chequeo');
     } else {
       // Sin pendientes no se vende nada. Con señales sin confirmar, el cierre no dice "sin
@@ -2446,7 +2530,7 @@
     else cuenta = 'Nada pendiente';
     if (sinConfirmar > 0 && confirmados > 0) cuenta += ' <span class="sin-cortar">· ' + sinConfirmar + ' que no pudimos ver</span>';
     html += '<div class="resumen-resultado"><p>' + cuenta + '</p>';
-    html += pendientes > 0
+    html += sePuedeVender(data)
       ? botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Revisión con navegador')
       : botonPedir('pregunta', 'Pregúntanos', dominio, puntaje, 'Revisión con navegador');
     html += '</div>';
@@ -2517,14 +2601,16 @@
 
     // --- El cierre. Misma regla que el rápido: el kit solo si hay pendientes reales ---
     html += '<div class="panel-resolucion">';
-    if (pendientes > 0) {
+    // La misma compuerta que el botón: si el servidor va a rechazar la venta, este bloque
+    // tampoco la ofrece. Antes dependía solo de `pendientes > 0`.
+    if (sePuedeVender(data)) {
       html += '<p class="kicker">Lo que hace el kit</p>';
       html += '<p>Al abrir <strong>' + escapar(dominio) + '</strong> en un navegador encontramos <strong>' +
         plural(pendientes, 'cosa pendiente', 'cosas pendientes') + '</strong>' +
         (sinConfirmar > 0 ? ', y ' + sinConfirmar + ' que no pudimos ver' : '') +
         '. El kit se hace cargo de la parte técnica: que nada se cargue antes de que la persona acepte, y que ' +
         'rechazar cueste lo mismo que aceptar. El texto final de tu política lo revisa tu abogado. ' +
-        '<span class="monto">Desde $149.000 + IVA</span>, una vez.</p>';
+        '<span class="monto">$177.310</span>, IVA incluido, una vez.</p>';
       html += botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Revisión con navegador');
     } else if (confirmados === 0) {
       // Nada pendiente porque no vimos nada. Acá no se afirma absolutamente nada sobre el
@@ -3007,10 +3093,116 @@
   }
 
   // Delegado en el documento: los botones del resultado se dibujan después, con innerHTML.
+  /* ── El paso de compra ───────────────────────────────────────────────────────────────
+   *
+   * Dos campos y un botón. Lo que NO lleva es el monto ni las señales: el servidor rearma todo
+   * eso por su cuenta, así que mandarlos desde acá sería darle al navegador un voto que no le
+   * corresponde. Lo único que viaja es el dominio, el correo y el consentimiento.
+   */
+  const panelCompra = document.getElementById('compra');
+  const estadoCompra = panelCompra && panelCompra.querySelector('.pedir-estado');
+  let dominioCompra = '';
+  let avisoLentoCompra = null;
+
+  function mensajeCompra(texto) {
+    if (estadoCompra) estadoCompra.textContent = texto || '';
+  }
+
+  function soltarBotonCompra(texto) {
+    const b = panelCompra.querySelector('button[type="submit"]');
+    b.disabled = false;
+    b.textContent = texto || 'Ir a pagar';
+    panelCompra.querySelectorAll('input').forEach(function (i) { i.disabled = false; });
+    if (avisoLentoCompra) { clearTimeout(avisoLentoCompra); avisoLentoCompra = null; }
+  }
+
+  function abrirCompra(a) {
+    if (!panelCompra) return;
+    dominioCompra = a.getAttribute('data-dominio') || '';
+    mensajeCompra('');
+    soltarBotonCompra();
+    panelCompra.hidden = false;
+    // Se MUEVE junto al botón que se apretó, en vez de clonarlo: así nunca hay dos abiertos.
+    a.insertAdjacentElement('afterend', panelCompra);
+    const correo = panelCompra.querySelector('input[name="correo"]');
+    if (correo) correo.focus();
+  }
+
+  /**
+   * Antes de salir del sitio, se mira a dónde.
+   *
+   * La URL viene de nuestro servidor, pero nuestro servidor la recibió de un tercero, y un
+   * `location.assign` sobre una cadena sin mirar es el único punto de este flujo donde un valor
+   * malo se convierte en una redirección a cualquier parte.
+   */
+  function destinoDePagoValido(u) {
+    try {
+      const url = new URL(u);
+      if (url.protocol !== 'https:') return false;
+      return /(^|\.)mercadopago\.(com|cl)$/.test(url.hostname) ||
+             /(^|\.)mercadolibre\.(com|cl)$/.test(url.hostname);
+    } catch { return false; }
+  }
+
+  if (panelCompra) panelCompra.addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    if (!panelCompra.reportValidity()) return;
+
+    // PRIMERA sentencia del envío, antes del fetch: es la capa barata contra el doble clic. La
+    // de verdad está en el servidor, que busca un pedido reciente antes de crear otro.
+    const boton = panelCompra.querySelector('button[type="submit"]');
+    boton.disabled = true;
+    boton.textContent = 'Abriendo el pago…';
+    panelCompra.querySelectorAll('input').forEach(function (i) { i.disabled = true; });
+    mensajeCompra('Estamos confirmando el precio de tu sitio.');
+    // El mismo umbral y la misma frase que usa el chequeo rápido: dos definiciones distintas de
+    // «lento» en la misma página le enseñan a la gente que los números son arbitrarios.
+    avisoLentoCompra = setTimeout(function () {
+      mensajeCompra('Está tardando más de lo normal. Seguimos.');
+    }, 1500);
+
+    let r, data = null;
+    try {
+      r = await fetch('/api/pedido', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          dominio: dominioCompra,
+          correo: panelCompra.querySelector('input[name="correo"]').value.trim(),
+          consiento: panelCompra.querySelector('input[name="consiento"]').checked === true,
+        }),
+        signal: AbortSignal.timeout(30000),
+      });
+      data = await r.json();
+    } catch {
+      soltarBotonCompra('Reintentar');
+      mensajeCompra('No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo, o escríbenos a ' + CONTACTO + '.');
+      return;
+    }
+
+    if (data && data.ok && destinoDePagoValido(data.checkout_url)) {
+      mensajeCompra('Te estamos llevando a Mercado Pago…');
+      location.assign(data.checkout_url);
+      return;  // El botón queda deshabilitado a propósito: la navegación puede tardar.
+    }
+
+    soltarBotonCompra('Reintentar');
+    // `detalle` es texto redactado para una persona, no un código. Cuando no viene —o cuando la
+    // URL de pago no pasó la comprobación— se dice algo honesto en vez de mostrar el motivo
+    // técnico, que no le sirve a nadie en pantalla.
+    mensajeCompra((data && data.detalle) ||
+      'No pudimos abrir el pago. No se te cobró nada. Vuelve a intentarlo, y si te pasa de nuevo escríbenos a ' + CONTACTO + '.');
+    if (data && data.motivo) console.warn('compra:', data.motivo);
+  });
+
   document.addEventListener('click', function (ev) {
     const a = ev.target.closest && ev.target.closest('[data-pedir]');
     if (!a) return;
     ev.preventDefault();
+    // El kit se compra en el sitio, así que no baja al formulario largo: abre el paso de dos
+    // campos justo debajo del botón. Los caminos de «pregunta» y de la suscripción siguen
+    // exactamente igual que antes, que es lo que esta guarda de dos líneas protege.
+    if (a.getAttribute('data-pedir') === 'kit') { abrirCompra(a); return; }
     const valor = QUE[a.getAttribute('data-pedir')] || QUE.kit;
     form.querySelectorAll('input[name="Pedido"]').forEach(function (r) { r.checked = r.value === valor; });
     ajustarTextos();
