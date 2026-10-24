@@ -137,10 +137,16 @@ export function igualesEnTiempoConstante(a, b) {
 const V1_VALIDO = /^[0-9a-f]{64}$/i;
 
 /**
- * Normaliza el `ts` a milisegundos sin asumir su unidad.
+ * El `ts` de la cabecera, en milisegundos.
  *
- * Trece dígitos o más son milisegundos; menos, segundos. Se detecta por largo porque la doc
- * se contradice (ver punto 3 de arriba). Devuelve `null` si no es un número.
+ * **Mercado Pago lo manda en SEGUNDOS, con diez dígitos.** Está capturado de peticiones reales
+ * el 24-oct-2026 (`x-signature: ts=<10 dígitos>,v1=<64 hex>`), no supuesto. Un valor de trece
+ * dígitos sería milisegundos, y los de doce se tratan como milisegundos porque en segundos
+ * caerían en el año 33.658, que no es una fecha que vayamos a ver.
+ *
+ * ⚠️ El manifiesto se arma con el `ts` TAL CUAL vino, nunca con esta conversión: cambiarlo
+ * rompería la firma. Esto es solo para comparar antigüedad, y hoy esa comparación está
+ * apagada (ver `toleranciaMs` en `verificarFirma`).
  */
 export function tsEnMilisegundos(ts) {
   const n = Number(ts);

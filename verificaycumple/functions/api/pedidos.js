@@ -51,7 +51,12 @@ export const ESTADOS = {
 const TRANSICIONES = {
   [ESTADOS.CREADO]: [ESTADOS.CREADO, ESTADOS.PAGADO, ESTADOS.RECHAZADO, ESTADOS.DEVUELTO],
   [ESTADOS.PAGADO]: [ESTADOS.PAGADO, ESTADOS.ENTREGADO, ESTADOS.DEVUELTO],
-  [ESTADOS.RECHAZADO]: [ESTADOS.RECHAZADO, ESTADOS.CREADO],
+  // PAGADO entra acá porque un rechazo seguido de un pago es el camino NORMAL de un
+  // reintento, no una anomalía: `failed` no es un estado terminal en la Orders API, y la
+  // persona puede volver a intentar con otra tarjeta sobre la misma orden. Sin esta
+  // transición, esa segunda vuelta caía en `transicion-invalida`, el handler contestaba 200
+  // y el pedido se quedaba en `rechazado` con la plata ya cobrada.
+  [ESTADOS.RECHAZADO]: [ESTADOS.RECHAZADO, ESTADOS.CREADO, ESTADOS.PAGADO],
   [ESTADOS.DEVUELTO]: [ESTADOS.DEVUELTO],
   [ESTADOS.ENTREGADO]: [ESTADOS.ENTREGADO, ESTADOS.DEVUELTO],
 };

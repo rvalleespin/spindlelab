@@ -184,12 +184,30 @@ export function habilitaTrabajo(pago) {
  * estamos.
  */
 export function claveDeEvento(cuerpo, dataId) {
+  // El `data.id` va SIEMPRE, y va primero. Es lo único de la pareja que la firma cubre: el
+  // manifiesto es `id:<data.id>;request-id:<x-request-id>;ts:<ts>;` y el cuerpo no entra.
+  //
+  // Antes la clave era solo `ev_<cuerpo.id>` y el `dataId` se descartaba. Con eso, quien
+  // tuviera una firma capturada podía mandar el cuerpo que quisiera y quemar la clave de
+  // CUALQUIER pedido, incluido uno que no ha visto nunca: cada repetición reclamaba una clave
+  // nueva, la procesaba hasta el final y la dejaba con resultado, así que si entre las claves
+  // quemadas caía la del cobro real, ese aviso contestaba «repetido» y el pago no se marcaba.
+  //
+  // Anclando en el `data.id` firmado, el radio queda confinado al recurso que esa firma ya
+  // autorizaba: su propio pedido. No es idempotencia perfecta —dentro de ese recurso todavía
+  // se puede adivinar el id del aviso— pero deja de ser un espacio de claves abierto.
+  //
+  // ⚠️ El `data.id` llega TAL CUAL se escribió, con mayúsculas (capturado el 24-oct-2026 del
+  // simulador del panel: `?data.id=ORD01SIMULACION000000000000`). Acá se normaliza a
+  // minúsculas para que dos avisos del mismo recurso con distinta caja no se traten como
+  // recursos distintos, que es lo mismo que hace `armarManifiesto` con la firma.
+  const recurso = String(dataId || 'sin-id').toLowerCase();
   if (cuerpo && cuerpo.id !== undefined && cuerpo.id !== null && String(cuerpo.id) !== '') {
-    return { clave: `ev_${String(cuerpo.id)}`, exacta: true };
+    return { clave: `ev_${recurso}_${String(cuerpo.id)}`, exacta: true };
   }
   const tipo = (cuerpo && cuerpo.type) || 'sin-tipo';
   const accion = (cuerpo && cuerpo.action) || 'sin-accion';
-  return { clave: `rec_${tipo}_${accion}_${dataId || 'sin-id'}`, exacta: false };
+  return { clave: `rec_${recurso}_${tipo}_${accion}`, exacta: false };
 }
 
 /**
@@ -383,6 +401,8 @@ export function pagoDeLaOrden(orden) {
  * Lee una ORDEN de la API de Mercado Pago.
  * GET https://api.mercadopago.com/v1/orders/{order_id}
  */
+export const MS_LECTURA_ORDEN = 10000;
+
 export async function leerOrdenMP(idOrden, token, fetchImpl = fetch) {
   if (!token) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-token' };
   if (!idOrden) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-id' };
@@ -390,6 +410,11 @@ export async function leerOrdenMP(idOrden, token, fetchImpl = fetch) {
   try {
     r = await fetchImpl(`https://api.mercadopago.com/v1/orders/${encodeURIComponent(idOrden)}`, {
       method: 'GET',
+      // Sin corte de tiempo, una conexión que se queda colgada nunca rechaza la promesa: el
+      // `catch` no se despierta, el evento queda reclamado y la invocación muere esperando.
+      // Mercado Pago anuncia su propio tope en `x-socket-timeout: 22000`, así que diez
+      // segundos dejan margen para contestar dentro de su ventana.
+      signal: AbortSignal.timeout(MS_LECTURA_ORDEN),
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
     });
   } catch (e) {

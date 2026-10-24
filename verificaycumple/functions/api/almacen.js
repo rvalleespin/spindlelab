@@ -123,6 +123,20 @@ export async function marcarEstado(db, id, desde, hasta, extra = {}) {
 }
 
 /**
+ * Cuánto puede quedar un reclamo sin terminar antes de que otro intento se lo pueda llevar.
+ *
+ * El calendario de reintentos de Mercado Pago es 0, 15 min, 30 min, 6 h, 48 h, 96 h, 96 h,
+ * 96 h. Con diez minutos, el reintento de los 15 ya puede rescatar un reclamo abandonado, que
+ * es el primero que llega y el que más importa.
+ *
+ * El riesgo de una ventana corta sería que dos intentos procesaran a la vez, y está cubierto
+ * aparte: `marcarEstado` lleva el estado esperado en el WHERE, así que el segundo encuentra el
+ * pedido ya movido y reporta `ya-se-movio` sin tocar nada. Y nuestro propio handler tarda
+ * segundos, no minutos: el tope que Mercado Pago anuncia en `x-socket-timeout` son 22.000 ms.
+ */
+export const VENTANA_RECLAMO_MS = 10 * 60 * 1000;
+
+/**
  * Registra que llegó un evento, y dice si es la PRIMERA vez.
  *
  * Acá está la idempotencia de verdad. `INSERT OR IGNORE` sobre una clave primaria es atómico:
@@ -131,16 +145,55 @@ export async function marcarEstado(db, id, desde, hasta, extra = {}) {
  *
  * Lo que NO se hace: leer primero y escribir después. Entre las dos operaciones cabe el otro
  * reintento, y los dos se creerían el primero.
+ *
+ * ── EL RECLAMO ABANDONADO (24-oct-2026) ──────────────────────────────────────────────────
+ *
+ * Reclamar y no terminar deja el evento muerto. El handler suelta el reclamo cuando el
+ * trabajo falla de forma recuperable, pero soltarlo es un DELETE contra la misma base cuyo
+ * fallo disparó la liberación: en el caso típico —D1 con un hipo— el DELETE falla también, y
+ * entonces el reintento ve el evento registrado, contesta «repetido» y se va. El cliente pagó
+ * y el pedido se queda en `creado` para siempre, sin rastro en ninguna parte.
+ *
+ * Por eso el reclamo ahora VENCE, y no se confía en que la liberación haya salido bien.
+ *
+ * El invariante que lo hace posible ya existía: **toda salida terminada del handler pasa por
+ * `anotarResultado`**, así que una fila con `resultado IS NULL` es, por construcción, un
+ * reclamo que nadie terminó. Si además está vieja, se puede volver a reclamar.
+ *
+ * El re-reclamo es un UPDATE con la condición adentro (`WHERE id = ? AND resultado IS NULL AND
+ * recibido_en < ?`) y se mira `changes`, así que sigue siendo atómico: de dos reintentos
+ * simultáneos, uno se lleva la fila y el otro ve `changes = 0`.
+ *
+ * ⚠️ La comparación de fechas se hace **entre cadenas ISO de JavaScript**, no con las funciones
+ * de fecha de SQLite. No es un capricho: `recibido_en` se guarda con `toISOString()`
+ * (`2026-10-24T01:40:17.697Z`) y `datetime('now','-10 minutes')` devuelve
+ * `2026-10-24 01:40:17`, con un espacio donde el otro tiene una `T`. Como `'T'` (0x54) es mayor
+ * que `' '` (0x20), **toda fila del mismo día compararía mayor** y el vencimiento no se
+ * activaría nunca. Con las dos puntas en el mismo formato de ancho fijo, el orden
+ * lexicográfico de ISO-8601 en UTC es el orden cronológico y la comparación es exacta.
  */
-export async function registrarEvento(db, clave, { tipo = null, pedidoId = null, resultado = null } = {}) {
+export async function registrarEvento(
+  db, clave, { tipo = null, pedidoId = null, resultado = null, ahoraMs = null } = {},
+) {
   if (!clave) return { primeraVez: false, motivo: 'sin-clave' };
+  const ahora = ahoraMs === null ? Date.now() : ahoraMs;
   const r = await db.prepare(
     'INSERT OR IGNORE INTO eventos_mp (id, recibido_en, tipo, pedido_id, resultado) VALUES (?, ?, ?, ?, ?)',
-  ).bind(clave, new Date().toISOString(), tipo, pedidoId, resultado).run();
-  const cambios = (r && r.meta && r.meta.changes) || 0;
-  return cambios > 0
-    ? { primeraVez: true, motivo: 'nuevo' }
-    : { primeraVez: false, motivo: 'repetido' };
+  ).bind(clave, new Date(ahora).toISOString(), tipo, pedidoId, resultado).run();
+  if (((r && r.meta && r.meta.changes) || 0) > 0) {
+    return { primeraVez: true, motivo: 'nuevo' };
+  }
+
+  // No entró: la fila ya estaba. ¿Es un reclamo que alguien abandonó?
+  const corte = new Date(ahora - VENTANA_RECLAMO_MS).toISOString();
+  const re = await db.prepare(
+    'UPDATE eventos_mp SET recibido_en = ? WHERE id = ? AND resultado IS NULL AND recibido_en < ?',
+  ).bind(new Date(ahora).toISOString(), clave, corte).run();
+  if (((re && re.meta && re.meta.changes) || 0) > 0) {
+    return { primeraVez: true, motivo: 'reclamo-vencido' };
+  }
+
+  return { primeraVez: false, motivo: 'repetido' };
 }
 
 /**
@@ -157,15 +210,39 @@ export async function registrarEvento(db, clave, { tipo = null, pedidoId = null,
  * vuelva a intentar.
  */
 export async function liberarEvento(db, clave) {
-  if (!clave) return;
-  try { await db.prepare('DELETE FROM eventos_mp WHERE id = ?').bind(clave).run(); } catch {}
+  if (!clave) return { soltado: false, motivo: 'sin-clave' };
+  try {
+    await db.prepare('DELETE FROM eventos_mp WHERE id = ?').bind(clave).run();
+    return { soltado: true, motivo: 'ok' };
+  } catch (e) {
+    // El error se traga —no hay nada mejor que hacer con él acá— pero NO se oculta al que
+    // llama. Antes esta función no devolvía nada, así que el handler contestaba 503 creyendo
+    // que había soltado el reclamo cuando no. Y el caso en que el DELETE falla es justamente
+    // el típico: se llama porque la base falló, así que la base ya está caída.
+    //
+    // Que el reclamo se recupere igual lo resuelve el vencimiento de `registrarEvento`; esto
+    // es para que la respuesta no mienta y el motivo se pueda leer en el registro de entregas
+    // de Mercado Pago y en `wrangler pages deployment tail`, que es toda la observabilidad que
+    // hay.
+    return { soltado: false, motivo: `no-se-pudo-soltar:${(e && e.message) || 'error'}` };
+  }
 }
 
 /** Deja escrito cómo terminó un evento, para poder depurar después. */
 export async function anotarResultado(db, clave, resultado) {
-  if (!clave) return;
-  await db.prepare('UPDATE eventos_mp SET resultado = ? WHERE id = ?')
-    .bind(String(resultado).slice(0, 200), clave).run();
+  if (!clave) return { anotado: false, motivo: 'sin-clave' };
+  // Es una nota de auditoría: no puede tumbar la respuesta del handler ni cambiar lo que se le
+  // contesta a Mercado Pago. Antes iba a pelo, y sus cuatro llamadas en el handler están fuera
+  // de todo try, así que un hipo de D1 en el camino feliz —con el pedido YA marcado como
+  // pagado— se convertía en un 500 y Mercado Pago lo reintentaba ocho veces sobre un trabajo
+  // que ya estaba hecho.
+  try {
+    await db.prepare('UPDATE eventos_mp SET resultado = ? WHERE id = ?')
+      .bind(String(resultado).slice(0, 200), clave).run();
+    return { anotado: true, motivo: 'ok' };
+  } catch (e) {
+    return { anotado: false, motivo: `no-se-pudo-anotar:${(e && e.message) || 'error'}` };
+  }
 }
 
 /**

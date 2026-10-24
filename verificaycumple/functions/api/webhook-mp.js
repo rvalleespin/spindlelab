@@ -82,9 +82,18 @@ export async function onRequestPost(contexto) {
   }
 
   // De acá en adelante, cualquier salida recuperable tiene que soltar el evento.
+  //
+  // Soltarlo puede fallar, y falla justo en el caso típico: se llama porque la base no
+  // respondió, así que el DELETE arranca con la base ya caída. Por eso hay dos defensas y no
+  // una: el reclamo VENCE solo en `registrarEvento`, y acá el motivo dice si la liberación
+  // salió o no, para poder leerlo en el registro de entregas de Mercado Pago. Lo que no se
+  // hace es contestar 503 afirmando que se soltó cuando no se sabe.
   const soltarYReintentar = async (motivo) => {
-    await liberarEvento(env.VYC_PEDIDOS, clave);
-    return responder(503, { ok: false, motivo });
+    const soltado = await liberarEvento(env.VYC_PEDIDOS, clave);
+    return responder(503, {
+      ok: false,
+      motivo: soltado && soltado.soltado ? motivo : `${motivo}+reclamo-vence-solo`,
+    });
   };
 
   // ── 3. Releer la orden contra la API ────────────────────────────────────────────────────
