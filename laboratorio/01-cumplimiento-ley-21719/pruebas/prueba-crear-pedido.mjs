@@ -26,6 +26,7 @@ import { rutaEnElRepo } from './rutas.mjs';
 const E = await import(rutaEnElRepo('verificaycumple/functions/api/pedido.js', 'PEDIDO_JS'));
 const P = await import(rutaEnElRepo('verificaycumple/functions/api/pedidos.js', 'PEDIDOS_JS'));
 const A = await import(rutaEnElRepo('verificaycumple/functions/api/almacen.js', 'ALMACEN_JS'));
+const PR = await import(rutaEnElRepo('verificaycumple/functions/api/profundo.js', 'PROFUNDO_JS'));
 
 let ok = 0, malo = 0;
 const eq = (n, r, e) => {
@@ -82,10 +83,9 @@ una portada de verdad y no un cascarón.</p>
 /**
  * Un informe profundo como el que queda en la caché de KV.
  *
- * ⚠️ `revisadoEn` es RECIENTE a propósito: desde el 24-oct el checkout exige que la revisión con
- * navegador y el chequeo rápido sean del mismo momento, porque congelar dos fotos tomadas con
- * horas de diferencia vendería un alcance que quizá ya no corresponde al sitio. Con una fecha
- * fija, todos los casos felices de este archivo caerían en `medicion-vieja`.
+ * ⚠️ `revisadoEn` es RELATIVO a propósito, nunca una fecha fija: el checkout rechaza un informe
+ * que no pueda fechar o que haya pasado su validez, así que con una fecha escrita a mano todos
+ * los casos felices de este archivo se pondrían rojos solos al día siguiente.
  */
 const PROFUNDO = (dominio = 'clinicaejemplo.cl', desfaseMs = 0) => ({
   ok: true, dominio, revisado: `https://www.${dominio}/`,
@@ -837,46 +837,67 @@ console.log('=== 21. no se afirma sobre la plata de alguien lo que no se sabe ==
   cierto('y se le dice qué hacer si ve un cargo', /si ves un cargo/i.test(b.detalle));
 }
 
-console.log('=== 22. no se vende con una medición de ayer y un chequeo de ahora ===');
+console.log('=== 22. hasta cuándo una medición sirve para vender ===');
 {
-  // El informe profundo vive 24 horas en KV. Para MOSTRAR un resultado eso está bien; para
-  // VENDER no, porque el contrato congela las dos mediciones juntas y dos fotos tomadas con
-  // horas de diferencia no describen el mismo sitio. Lo encontró una revisión externa.
+  // ESTA PRUEBA ESTUVO MAL Y DIO POR BUENO EL DEFECTO. Su primera versión, del 24-oct por la
+  // mañana, afirmaba que un informe de hace cinco horas NO se podía vender, porque el código
+  // exigía media hora. El código y la prueba salieron del mismo supuesto en el mismo rato, así
+  // que la prueba confirmaba el error en vez de delatarlo.
+  //
+  // Lo que el supuesto no miró: cuando el informe sale de la caché, la página le dice a la
+  // persona «esto no lo medimos recién: es la medición de tal hora, la guardamos por un día», y
+  // debajo le ofrece el kit. Esa medición YA es, declaradamente, su resultado. Negarse a
+  // venderle sobre el mismo dato que le acabamos de mostrar como suyo no protege nada.
+  //
+  // Y costaba ventas: Ramón midió un sitio, volvió un rato después y no pudo comprar, con la
+  // campaña pagada corriendo. El mensaje lo mandaba a «volver a correr el chequeo», que sirve
+  // el informe de la caché otra vez, así que el consejo no podía funcionar nunca.
+  //
+  // Ahora se cuida la RELACIÓN entre los dos números, no un valor inventado.
+
+  // Lo único que de verdad hay que proteger: lo que se puede vender dura exactamente lo que
+  // dura en la caché. Si alguien cambia uno, el otro lo sigue solo.
+  eq('la ventana de venta es la validez de la caché', E.VENTANA_MEDICION_MS, PR.CACHE_HORAS * 60 * 60 * 1000);
+
+  // El caso que estaba roto: dentro de su validez se vende, aunque hayan pasado horas.
   const { db, crudo } = baseNueva();
-  const viejo = PROFUNDO('clinicaejemplo.cl', 5 * 60 * 60 * 1000);  // de hace cinco horas
-  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(viejo) });
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO('clinicaejemplo.cl', 5 * 60 * 60 * 1000)) });
   const red = conRed();
   const r = await E.onRequestPost({
     request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' },
   });
-  const j = await r.json();
   red.soltar();
+  eq('con un informe de hace cinco horas sí se compra', r.status, 200);
+  eq('y queda el pedido', filas(crudo).length, 1);
 
-  eq('contesta 409', r.status, 409);
-  eq('con su motivo', j.motivo, 'medicion-vieja');
-  cierto('y le dice qué hacer, no solo que no', /vuelve a correr el chequeo/i.test(j.detalle));
-  eq('sin crear pedido', filas(crudo).length, 0);
-  eq('y sin llamar a Mercado Pago', red.llamadas.mp, 0);
-
-  // Dentro de la ventana sí se vende: alguien que corrió el chequeo, lo pensó diez minutos y
-  // volvió no tiene por qué medir de nuevo.
+  // Pasada su validez ya no: ese informe la caché ya no lo serviría.
   const { db: db2, crudo: c2 } = baseNueva();
-  const kv2 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO('clinicaejemplo.cl', 10 * 60 * 1000)) });
+  const pasado = (PR.CACHE_HORAS + 1) * 60 * 60 * 1000;
+  const kv2 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO('clinicaejemplo.cl', pasado)) });
   const red2 = conRed();
-  const ok2 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok' } });
+  const r2 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok' } });
+  const j2 = await r2.json();
   red2.soltar();
-  eq('diez minutos después sí se puede comprar', ok2.status, 200);
-  eq('y queda el pedido', filas(c2).length, 1);
+  eq('pasada su validez contesta 409', r2.status, 409);
+  eq('con su motivo', j2.motivo, 'medicion-vieja');
+  eq('sin crear pedido', filas(c2).length, 0);
+  eq('y sin llamar a Mercado Pago', red2.llamadas.mp, 0);
 
-  // Y un informe sin fecha no se da por bueno: no se puede afirmar que es de ahora.
-  const { db: db3 } = baseNueva();
+  // El consejo tiene que nombrar el control que DE VERDAD rehace la medición. «Volver a correr
+  // el chequeo» no lo es: eso vuelve a servir el informe de la caché.
+  cierto('nombra el botón que rehace la medición', /volver a medirlo/i.test(j2.detalle));
+  falso('y no manda a correr el chequeo, que no la rehace', /correr el chequeo/i.test(j2.detalle));
+
+  // Un informe sin fecha no se vende: congelar «lo que medimos» exige saber cuándo se midió.
+  const { db: db3, crudo: c3 } = baseNueva();
   const sinFecha = PROFUNDO();
   delete sinFecha.revisadoEn;
   const kv3 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(sinFecha) });
   const red3 = conRed();
   const r3 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db3, VYC_TOPES: kv3, MP_ACCESS_TOKEN: 'tok' } });
   red3.soltar();
-  eq('un informe sin fecha tampoco sirve', (await r3.json()).motivo, 'medicion-vieja');
+  eq('un informe sin fecha no se vende', (await r3.json()).motivo, 'medicion-vieja');
+  eq('y tampoco deja pedido', filas(c3).length, 0);
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
