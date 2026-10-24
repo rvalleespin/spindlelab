@@ -1,16 +1,24 @@
-# Publicar · Carrusel «Dónde puede caerse una consulta»
+# Publicar · Carrusel «Dónde se cae una consulta»
 
-**Canal:** Instagram `spindlelab.cl` · carrusel de 5 láminas, **1080×1350 (4:5)**
-**Estado:** LISTO PARA REVISIÓN DE RAMÓN. **No publicado.** Nada sale de un borrador generado.
-**Pieza 1 de 3** del plan `marketing/redes/2026-10-octubre-posicionamiento/PLAN.md` (día 1 del calendario).
-**Etiqueta de IA:** no corresponde. La pieza es solo tipografía: sin imagen generada, sin fotorrealismo. (La etiqueta «Perfil generado con IA» es de la cuenta, no de la pieza, y sigue pendiente: `QUE-HAY-PUBLICADO.md` y `PLAN.md` §2.6.)
+**Canal:** Instagram `spindlelab.cl` · carrusel de 5 láminas, **1080x1350 (4:5)**
+**Estado:** v2, rehecha el 23-oct-2026 (noche). LISTA PARA REVISIÓN DE RAMÓN. **No publicada.** Nada sale de un borrador generado.
+**Pieza 1 de 3** del plan `marketing/redes/2026-10-octubre-posicionamiento/PLAN.md` (día 1 del calendario). La pieza 3 queda fuera de la primera tanda (decisión A, opción segura).
+**Voz:** plural de marca; el singular solo en la línea de la historia personal.
+**Etiqueta de IA:** no corresponde. La pieza es solo tipografía y esquemas dibujados: sin imagen generada, sin fotorrealismo. (La etiqueta «Perfil generado con IA» es de la cuenta, no de la pieza, y sigue pendiente: `QUE-HAY-PUBLICADO.md` y `PLAN.md` §2.6.)
 
-> **⚠️ Depende del sitio nuevo. No se sube antes de que esté publicado.** La pieza ofrece «la revisión de una página» y describe la conversación de 20 minutos. Hoy, 23-oct, el título de la home del sitio vivo sigue siendo «Agencia de marketing con IA en Chile» y el de `/contacto/` dice «pide tu diagnóstico gratis». Una persona que toque el enlace hoy encontraría otro nombre para lo mismo. Necesita del sitio nuevo: la oferta de revisión en `/contacto/` y que ese formulario conserve los tres campos ocultos de UTM (`UTM Source`, `UTM Medium`, `UTM Campaign`; hoy los trae, el copy nuevo no los menciona y hay que pedirle al equipo del sitio que los mantenga).
+> **⚠️ Depende del sitio nuevo. No se sube antes de que esté publicado.** La pieza ofrece «la revisión de una página» y describe la conversación de 20 minutos. **Comprobado de nuevo el 23-oct (noche): el sitio nuevo no está publicado.** La home sigue titulándose «Agencia de marketing con IA en Chile», no trae el H1 «Te llegan consultas. Veamos dónde se cae el resto.», y `/contacto/` dice «pide tu diagnóstico gratis». Eso sí: `/contacto/` conserva los tres campos ocultos de UTM (`UTM Source`, `UTM Medium`, `UTM Campaign`) y `/diagnostico/` responde 200. Una persona que toque el enlace hoy encontraría otro nombre para lo mismo.
 
-> **PUERTA DURA (reconocimiento). No se programa ni se sube nada hasta cerrar las dos cosas de abajo, en este orden.** Los tres hallazgos de las láminas 2 y 3 vienen de los prospectos 1, 4 y 5 de `marketing/outbound/semana-02/lote-1-frente-a.md`. Según la tabla del lote, los tres recibieron un correo de SpindleLab el 10-jul. Según los borradores del lote, el del 1 traía la portada vacía como gancho y el del 4 el título de una palabra; el del 5 abría con otro hallazgo (la meta description), aunque el título de una palabra figura en su ficha. El texto exacto que salió está en Gmail. La pieza no nombra a nadie, pero el rubro es un nicho chico (el lote eran 15 asesoras boutique) y el nombre legal de una de las tres incluye literalmente «Servicios Financieros» (`ventas/contactos-asesoras-inversion.csv`). Un dueño que recibió ese correo puede reconocer su propio hallazgo en la lámina.
->
-> 1. **Gmail, no el archivo.** Mirar respuestas, bajas y rebotes de los tres. La tabla del lote tiene la columna «Respuesta» vacía y el estado real de un prospecto vive en Gmail. Si alguno respondió, pidió que no lo escribieran o rebotó, **se saca su hallazgo** y se reescribe esa lámina. Esta sesión no pudo mirar Gmail (`fuentes.md` §3).
-> 2. **Decisión de Ramón, a conciencia: ¿aceptas que esos tres dueños puedan reconocerse?** Opciones: **(a)** subir tal cual, asumiendo que pueden reconocerse; **(b)** cambiar «de servicios financieros» por «de servicios» en láminas 2 y 3, pie, texto alternativo y `fuentes.md`, y volver a renderizar (sigue siendo verdad y se reconoce menos); **(c)** no usar estos tres hallazgos y esperar uno de otro origen. Mientras no decidas, la pieza no sale. Esta corrección no agregó ningún dato que acerque la pieza a una empresa concreta (ni nombres, ni dominios, ni largo de los títulos).
+## Qué decisión de Ramón la condiciona
+
+| Decisión | Qué hace esta pieza | Qué pasa si Ramón responde otra cosa |
+|---|---|---|
+| **D. Hallazgos reales de prospectos** (`PLAN.md`, recuadro) | Aplica la **opción segura**: ningún hallazgo real de un prospecto, ni reconocible. Las láminas 2 y 3 explican qué mira el chequeo, con una señal descrita y sin dar a entender que ahí se perdió algo, sin empresas ni cifras de sus sitios. **La puerta de Gmail de la v1 ya no aplica**, porque no queda ningún dato de un prospecto en la pieza, el pie, el alt ni las historias | Si Ramón elige **mantener** los hallazgos reales, esta versión no se convierte: se pide otra, que vuelve a la puerta de Gmail (respuestas, bajas, secuencia activa) y a la decisión de reconocimiento. La v1 queda en el historial de git (commit `a9ab2f6a`) |
+| **A. Pieza 3** (Ley 21.719) | No se relaciona: esta pieza no toca la ley ni a Verifica y Cumple | Ninguna |
+| **C. Precios en la imagen** | Ninguna lámina lleva precios | Ninguna |
+| **B. Bio y fijados** | No afecta a la producción. La lámina 5 y el sticker apuntan al mismo `/contacto/` que la fila 1 de los enlaces del bio (`PLAN.md` §2.2) | Ninguna sobre la pieza |
+| **Reconfirmar por escrito que la revisión gratis está encendida** (`PLAN.md` §2.1 y §3.3) | La lámina 5 y el pie ofrecen la revisión gratis, que es la misma oferta que el 25-sep se sacó del bio porque «era una promesa que la cuenta no podía cumplir» | **Sin esa reconfirmación no se programa.** Si responde que no, la lámina 5 y el pie se reescriben para ofrecer el chequeo (`/diagnostico/`) y el UTM cambia |
+| Copy del sitio, decisión 1 (`copy-secciones.md` §12): «revisión» frente a «diagnóstico» | Las láminas 4 y 5, el pie y los alt dicen «revisión» | Si cambia la palabra, se corrigen los HTML y se re-renderiza |
+| Copy del sitio, decisión 2: el plazo | La pieza **no dice ningún plazo de entrega**. Los «20 minutos» son el largo de la conversación, no un plazo | Ninguna |
 
 **Hora sugerida:** martes 27-oct-2026, **19:00** (hora de Chile). Es la hora con la que se programó el último carrusel de línea SpindleLab en esta cuenta (3-sep, 19:00). No hay dato propio de mejor hora: con 19 seguidores, lo que mueve la pieza es la historia del mismo día, a las 19:05, desde las dos cuentas. Fecha tentativa: si el sitio sale otro día, es el primer día hábil después de confirmarlo.
 
@@ -20,20 +28,20 @@
 
 ## Texto final (pie de foto, copiar y pegar)
 
-El texto vive también en `caption.md`, con el texto alternativo, los hashtags y las historias. Si se cambia uno, se cambia el otro.
+El texto vive también en `caption.md`, con el alt de cada lámina, los hashtags y las historias. Si se cambia uno, se cambia el otro.
 
 ```
-Una consulta puede caerse antes y después de que alguien te escriba.
+Entre que alguien te busca y te compra, una consulta puede caerse en cuatro lugares.
 
-Alguien pregunta por lo que vendes, mira tu sitio y quizás le escribe también a otra empresa. Entre esa primera consulta y la venta hay varios puntos donde se puede caer. Dos se ven desde afuera.
+Alguien pregunta por lo que vendes, mira tu sitio y quizás le escribe también a otra empresa.
 
-El primero es cuando te buscan. En dos empresas de servicios financieros que revisamos el 23 de octubre, el título que aparece en la pestaña del navegador al abrir la portada era una sola palabra: el nombre de la empresa.
+El primero es cuando te buscan. El título que aparece en la pestaña del navegador debería decir qué haces y dónde. Nuestro chequeo gratis (spindlelab.cl/diagnostico) revisa que tenga entre 15 y 65 caracteres.
 
-El segundo es cuando entran. El cuerpo de la portada de otro sitio de servicios financieros trae cero palabras si se lee sin ejecutar JavaScript, el código que arma la página en el navegador. Nuestro chequeo gratis (spindlelab.cl/diagnostico) la lee así y, en ese sitio, deja en pendiente la señal de contenido suficiente. En un navegador, ese sitio se ve completo.
+El segundo es cuando entran. Hay portadas que llegan vacías a quien no ejecuta JavaScript, porque su texto lo arma el navegador. Nuestro chequeo las lee así, y sin texto en el código no se cumple «Tu portada tiene contenido suficiente».
 
-Los otros dos no se ven desde afuera: si el mensaje llega a alguien y cuánto tarda en responder. Eso lo conversamos en 20 minutos por videollamada, si después de la revisión quieres seguir.
+Los otros dos son cuando escriben y cuando esperan: que el mensaje llegue a alguien y cuánto tarda esa persona en responder. Los conversamos en 20 minutos por videollamada, si después de la revisión quieres seguir.
 
-Partimos por una página. Nos pasas la dirección de tu sitio y te devolvemos por escrito lo más importante que vimos y por dónde partiríamos. Es gratis.
+Si quieres que miremos una página de tu sitio, nos pasas la dirección y te devolvemos por escrito lo más importante que vimos y por dónde partiríamos. Es gratis.
 
 spindlelab.cl/contacto
 ```
@@ -51,50 +59,51 @@ spindlelab.cl/contacto
 
 Se comparte la publicación a historias en **las dos cuentas** (la de la empresa y la personal), como el 30-sep. Un minuto.
 
-- **Empresa (plural):** `Cuatro lugares donde puede caerse una consulta. Dos se ven desde afuera.`
-- **Personal de Ramón (singular):** `Estos son cuatro lugares donde puede caerse una consulta, antes y después de que alguien escriba. Los dos primeros los miré en sitios reales.`
+- **Empresa (plural):** `Cuatro lugares donde puede caerse una consulta, entre que alguien te busca y te compra.`
+- **Personal de Ramón (singular):** `Cuatro lugares donde puede caerse una consulta, entre que alguien te busca y te compra. Si quieres que mire una página de tu sitio, el enlace va acá.`
 - **Sticker de enlace, texto «Pedir la revisión de una página»:**
   `https://spindlelab.cl/contacto/?utm_source=instagram&utm_medium=social&utm_campaign=donde-se-cae-una-consulta`
 
-El pie de foto y el comentario llevan la dirección escrita **sin UTM** porque no son clicables. Quien la tipee entra como «directo»: se cubre preguntando «¿cómo llegaste?» en la llamada de 20 minutos.
+**Enlaces:** el único clicable de la pieza es el del sticker (y el del bio, que define `PLAN.md` §2.2); los dos llevan UTM completo. Instagram no vuelve enlace lo que se escribe en el pie ni en un comentario, así que ahí la dirección va corta (`spindlelab.cl/contacto`, `spindlelab.cl/diagnostico`) y quien la tipee entra como «directo»: se cubre preguntando «¿cómo llegaste?» en la llamada de 20 minutos.
 
 ---
 
 ## Checklist previo (en este orden)
 
-- [ ] **PUERTA DURA: Gmail y decisión de reconocimiento** (cuadro de arriba). Sin esto cerrado, no se programa nada.
-- [ ] **Confirmar que el sitio nuevo ya está publicado.** Con `curl`: la home trae el H1 «Te llegan consultas. Veamos dónde se cae el resto.», `/contacto/` ofrece la revisión de una página y conserva `UTM Source`, `UTM Medium` y `UTM Campaign`. Si no está, no se programa nada: `PLAN.md` §3.1 lo explica.
-- [ ] **Re-correr los tres hechos** (títulos de una palabra en dos empresas, portada con cuerpo vacío en otra) y, con la API del chequeo, que «Tu portada tiene contenido suficiente» siga en pendiente en la tercera y que el título de las otras dos siga bajo los 15 caracteres. Quien sube la historia personal tiene que haber visto esos hallazgos él mismo, porque la frase dice «miré». Los comandos están en `PLAN.md` §9, al final. Si alguno cambió, la lámina se reescribe en pasado («en octubre encontramos…») o se saca, y se actualizan el pie y `fuentes.md`. Los hallazgos de julio ya se vencieron una vez: de nueve que se re-probaron el 23-oct, cuatro no se sostenían.
-- [ ] **Preguntarle a la sesión de Verifica y Cumple** si tiene feed agendado esa semana. El tope es de **3 publicaciones de feed por semana contando las dos líneas**; la semana 1 de este plan usa 2 (esta y la pieza 2 del jueves 29).
-- [ ] **Mirar la cuenta en Instagram**: seguidores hoy, bio, orden de enlaces, si sigue la etiqueta «Perfil generado con IA». Anotarlo en `QUE-HAY-PUBLICADO.md`. La planificación se hizo leyendo ese archivo (25-sep, notas al 16-oct), no el canal.
-- [ ] **Mirar las cinco láminas en el teléfono** antes de subir, no solo en el computador.
-- [ ] Subir 1 a 5 en orden, pegar el pie, pegar el texto alternativo (`caption.md` §3), comentar al tiro.
-- [ ] Compartir a historias en las dos cuentas con el sticker de arriba.
-- [ ] Después de publicar: anotar hora real y enlace en `QUE-HAY-PUBLICADO.md`. A los 4 días, mirar Insights y el correo del formulario (`utm_source=instagram`, `utm_campaign=donde-se-cae-una-consulta`).
+- [ ] **[TÚ] Reconfirmar por escrito que la revisión gratis está encendida** (tabla de arriba). Sin esto cerrado, no se programa.
+- [ ] **[CC] Confirmar que el sitio nuevo ya está publicado.** Con `curl`: `curl -s https://spindlelab.cl/ | grep -c 'Te llegan consultas'` debe dar 1 o más (hoy da 0); el `<title>` de `/contacto/` ya no dice «diagnóstico»; y `curl -s https://spindlelab.cl/contacto/ | grep -o 'UTM Source\|UTM Medium\|UTM Campaign' | sort -u` sigue mostrando los tres. Si no está publicado, no se programa nada: `PLAN.md` §3.1 lo explica.
+- [ ] **[CC] Si Ramón respondió la decisión D «mantener los hallazgos»:** esta versión no se programa; se pide la versión con hallazgos y su puerta de Gmail.
+- [ ] **[CC] Re-correr los dos hechos de las láminas 2 y 3** (comandos y fixture en `fuentes.md` §3). Que la API de `spindlelab.cl/api/chequeo` siga trayendo la señal «El título dice qué haces y dónde» dentro de «¿Te entienden?» y «Tu portada tiene contenido suficiente», y que en `chequeo.js` el título siga midiéndose entre 15 y 65 caracteres. Si cambió algo, se corrige el HTML y se re-renderiza.
+- [ ] **[CC] Preguntarle a la sesión de Verifica y Cumple** si tiene feed agendado esa semana. El tope es de **3 publicaciones de feed por semana contando las dos líneas**; la semana 1 de este plan usa 2 (esta y la pieza 2 del jueves 29).
+- [ ] **[TÚ] Mirar la cuenta en Instagram**: seguidores hoy, bio, orden de enlaces, si sigue la etiqueta «Perfil generado con IA». Anotarlo en `QUE-HAY-PUBLICADO.md`. La planificación se hizo leyendo ese archivo (25-sep, notas al 16-oct), no el canal.
+- [ ] **[TÚ] Mirar las cinco láminas en el teléfono** antes de subir, y no en el computador solamente.
+- [ ] **[TÚ]** Subir 1 a 5 en orden, pegar el pie, pegar el texto alternativo (`caption.md` §3), comentar al tiro.
+- [ ] **[TÚ]** Compartir a historias en las dos cuentas con el sticker de arriba.
+- [ ] Después de publicar: anotar hora real y enlace en `QUE-HAY-PUBLICADO.md`. A los 4 días, mirar el correo del formulario (`utm_source=instagram`, `utm_campaign=donde-se-cae-una-consulta`) y los toques al sticker. Mientras corra la campaña paga de Verifica y Cumple (hasta el 30-nov) no se leen los toques al bio, las visitas al perfil ni los seguidores nuevos (`PLAN.md` §1 y §8).
 - [ ] Si algún dato cambió desde el 23-oct, **no republicar el PNG viejo**: se corrige el HTML y se vuelve a renderizar.
 
 ---
 
 ## Notas de publicación
 
-- **Chequeo de duplicación (pulso-redes), hecho contra `QUE-HAY-PUBLICADO.md`.** Ningún producto repetido: lo último publicado en la cuenta es de Verifica y Cumple (reel del 16-oct, historias del 30-sep, carrusel «Las 12 cosas» del 29-sep, reel «¿Estás seguro?»), y esta pieza es de SpindleLab, otro tema. Las aperturas recientes eran una pregunta («¿Estás seguro?», «¿Tienes un formulario de contacto?»), una cifra («100 de 100…», «Cinco cosas…») y «La ley pide…». Esta abre con una afirmación en la situación del lector, sin «Si» y sin pregunta. Los cierres anteriores eran la dirección sola o «comenta CIRCUITO»; este cierra en la oferta, con su dirección.
+- **Chequeo de duplicación (`pulso-redes`), hecho contra `QUE-HAY-PUBLICADO.md`, no contra el canal.** Ningún producto repetido: lo último publicado en la cuenta es de Verifica y Cumple (reel del 16-oct, historias del 30-sep, carrusel «Las 12 cosas» del 29-sep, reel «¿Estás seguro?»), y esta pieza es de SpindleLab, otro tema. Las aperturas recientes eran una pregunta («¿Estás seguro?», «¿Tienes un formulario de contacto?»), una cifra («100 de 100…», «Cinco cosas…») y, en LinkedIn, un condicional con «Si» (13 y 15-oct). Esta abre con una afirmación en la situación del lector, sin «Si», sin pregunta y sin cifra. Los cierres anteriores eran la dirección sola, «comenta CIRCUITO» o «Dejo X en el primer comentario»; este cierra en la oferta, con su dirección. La pieza 2 (jueves 29) abre distinto («Puedes leer…»).
 - **Cadencia.** Una persona sola: esta pieza, una historia en dos cuentas y un comentario. Nada más que hacer esa semana además de la pieza 2 del jueves.
-- **Qué no es.** No es un caso de cliente, no promete consultas ni ventas ni que una IA te cite, no tiene cifra de pérdida ni plazo. Los tres hallazgos son de prospectos reales, **generalizados** y con fecha. Nunca se nombran, ni en el pie ni respondiendo comentarios: si alguien pregunta cuáles son, se dice que no se nombran.
+- **Qué no es.** No es un caso de cliente, no promete consultas ni ventas ni que una IA te cite, no tiene cifra de pérdida ni plazo, no nombra ni describe a ningún prospecto. Si alguien pregunta en los comentarios «¿en qué sitio lo vieron?», la respuesta es que las láminas son esquemas y no muestran ningún sitio real.
 - **Una trampa conocida de la medición.** El UTM solo se guarda en `/contacto/`. Por eso el sticker apunta directo ahí y no a la home.
-- **Por qué 4:5 y no cuadrado.** `base.css` fija 1080×1080, y esta pieza lo estira a 1350. En el perfil, Instagram recorta la grilla a 3:4: un 4:5 pierde unos 34 px por lado (dentro del margen de 80) y un cuadrado pierde unos 135, que se comen el titular de la portada. Además hay más aire para un texto de hechos. Si Ramón prefiere cuadrado, hay que reacomodar el HTML, no solo cambiar el número.
-- **Qué mira la lectura del día 10** (`PLAN.md` §8): revisiones con `utm_source=instagram`, toques al enlace de la historia, alcance de las historias frente a los seguidores.
+- **Por qué 4:5 y no cuadrado.** En el perfil, Instagram recorta la grilla a 3:4: un 4:5 pierde unos 34 px por lado (dentro del margen de 80) y un cuadrado pierde unos 135, que se comen el titular de la portada.
+- **Qué mira la lectura del día 10** (`PLAN.md` §8): revisiones con `utm_source=instagram`, toques al enlace de la historia. Esta pieza es una de las que cuentan para el mínimo de revisiones (su CTA va a `/contacto/`).
 
-## Chequeo de marca (hecho, no supuesto)
+## Chequeo de marca (medido sobre los PNG re-renderizados el 23-oct, noche, tras la revisión independiente)
 
-- **Un dorado por lámina, medido sobre los PNG.** Láminas 1, 4 y 5: solo el punto del wordmark (8×8 px). Lámina 2: solo el «1». Lámina 3: solo el «0». En las láminas 2 y 3 el punto del wordmark va en crema, como en la pieza modelo.
-- **Verde petróleo solo en etiquetas y en el trazo del mapa.** Nunca en el cuerpo.
-- **Cero serif.** Gabarito en titulares y cifras, Manrope en el texto.
-- **Cero raya larga o media** en las láminas, el pie, el comentario, las historias y estos archivos. Cero Title Case, cero «¿Listo para…?», cero pregunta retórica.
-- **Contraste medido sobre el PNG, no sobre el CSS.** Texto chico gris `#9aa4b0`: 7,07 a 7,40 contra 1. Etiquetas verdes: 6,09 contra 1. Todo sobre 4,5.
-- **Márgenes.** Todo el contenido queda entre x=80 y x=997, y el pie a 80 px del borde. La cifra de las láminas 2 y 3 y el inicio de cada bloque quedan en la misma fila entre una lámina y otra, para que nada salte al deslizar.
-- **Legible en celular.** Titulares de 68 px a 116 px (el de la portada, 100 px), cifras de 310 px, texto de apoyo de 28 px o más. Las etiquetas en mayúscula van desde 20 px, como el resto de la familia.
+- **Un dorado por lámina, contado sobre los píxeles de los cinco PNG:** solo el punto del wordmark (50 píxeles, x 286 a 293, y 1251 a 1258), en las cinco. La cifra «15 a 65» de la lámina 2 ya no es dorada ni grande: la revisión independiente la marcó como el dato menos significativo de la pieza (la señal del título pesa 4 de 100 puntos y solo mide el largo), y pasó a la glosa, en crema.
+- **Verde petróleo solo en etiquetas y en el trazo** (la etiqueta superior, el tramo de la ruta, el rótulo «En un navegador», el rótulo de la caja de cierre). Nunca en el cuerpo.
+- **Cero serif.** Gabarito en titulares y cifras, Manrope en el texto; el monoespaciado de la lámina 3 es el del dispositivo de código de la familia.
+- **Cero raya larga y cero raya media** en las láminas (HTML y PNG), el pie, el comentario, las historias y los archivos de texto de esta carpeta. El comentario de la primera línea de `base.css` también está limpio (se cambió la raya por una coma el 23-oct, noche; el original sigue con raya en `2026-09-septiembre/_sistema/base.css`, fuera de esta carpeta). Cero Title Case, cero «¿Listo para…?», cero pregunta retórica, cero fórmulas de «no X, sino Y».
+- **Tamaño mínimo de texto: 26 px**, medido con el estilo calculado de cada elemento en Chrome (etiquetas, notas, paginador, pie, rótulos del esquema). Titulares de 68 a 104 px; notas de 28 px.
+- **Contraste medido sobre el PNG.** Texto gris `#9aa4b0` sobre el fondo: 7,3 a 1. Etiqueta verde `#2fa99b`: 6,4 a 1. Todo sobre 4,5.
+- **Márgenes (re-medidos en el DOM tras la corrección).** Todo el texto queda entre x=80 y x=1000 y el pie a 83 px del borde inferior; el hueco más chico entre el último texto y el wordmark es de 77 px (lámina 1) y el resto de 98 px o más; ningún texto fuera de esa caja y ninguno con desborde oculto.
 - **Plural de marca y tuteo** en todo lo que dice la cuenta; el singular solo en la línea de la historia personal.
-- **Los cinco PNG fueron abiertos y mirados**, uno por uno, y se volvieron a medir tras el pase de corrección del 23-oct (un dorado por lámina, contenido entre x=80 y x=998, láminas 2 y 3 con la cifra y el bloque de texto en la misma fila).
+- **Los cinco PNG fueron abiertos y mirados**, uno por uno. En la corrección del 23-oct (noche) se re-renderizaron y se volvieron a abrir la 2 y la 3; las otras tres no cambiaron.
 
 ## De dónde sale cada dato
 
@@ -102,11 +111,19 @@ Cada afirmación, con el archivo que la respalda y lo que se comprobó el 23-oct
 
 | Dato | Archivo |
 |---|---|
-| El mensaje, la oferta de revisión, los 20 minutos, «es gratis» | `marketing/oficina/obras-web/spindlelab-posicionamiento-v1/copy-secciones.md` §1, §2.1, §2.2, §2.4, §2.9, §6, §8 |
-| Títulos de una palabra (dos empresas) y portada vacía (otra) | `marketing/outbound/semana-02/lote-1-frente-a.md` §1, §4 y §5, **re-verificados con `curl` el 23-oct** (`PLAN.md` §9) |
-| El criterio del título del chequeo (15 a 65 caracteres, solo mide el largo), la señal «contenido suficiente», cómo lee el chequeo | `spindlelab-astro/functions/api/chequeo.js` y `spindlelab-astro/public/diagnostico/index.html` |
-| Que ese sitio se ve completo en un navegador | Chrome headless el 23-oct: 361 palabras en el cuerpo |
-| Que el chequeo deja «contenido suficiente» en pendiente en ese sitio | API en vivo `/api/chequeo` el 23-oct (cuenta unas 6 palabras: el título; por eso la lámina no cita ningún número del chequeo) |
+| El mensaje, la oferta de revisión, los 20 minutos, «es gratis» | `marketing/oficina/obras-web/spindlelab-posicionamiento-v1/copy-secciones.md` §2.1, §2.2, §2.4, §2.9, §6, §8 |
+| El criterio del título (15 a 65 caracteres, solo mide el largo) y la señal «contenido suficiente» (300 palabras o más, sobre el HTML sin ejecutar JavaScript) | `spindlelab-astro/functions/api/chequeo.js` y `spindlelab-astro/public/diagnostico/index.html`; API en vivo `/api/chequeo` el 23-oct |
+| Que un cuerpo armado con JavaScript llega vacío al chequeo y completo a un navegador | Fixture propio probado el 23-oct (`fuentes.md` §3): 0 palabras en el cuerpo sin ejecutar JavaScript, 603 al ejecutarlo |
+
+## Corrección tras la revisión independiente (23-oct, noche)
+
+Un hallazgo de severidad media a las láminas 2 y 3 (y la portada): el marco es «dónde se cae una consulta», pero ninguna lámina muestra una consulta perdida, y los dos lugares que «se ven desde afuera» quedaban sostenidos por las dos señales de menor peso del chequeo (el título pesa 4 de 100 puntos y la señal de contenido, 3 de 100; ambas comprobadas en `chequeo.js`). Qué se hizo, sin tocar el marco de la portada:
+
+- **Lámina 2:** se sacó el «15 a 65» dorado de 210 px. El dibujo principal es ahora la pestaña, y el rango pasó a una glosa en crema que dice qué revisa el chequeo: «Nuestro chequeo gratis revisa el largo: entre 15 y 65 caracteres.» Se sacó también «Es una de sus señales de ¿Te entienden?». El oro vuelve al punto del wordmark.
+- **Lámina 3:** el titular dejó de decir «Una portada puede llegar vacía» sin decir para quién. Ahora: «Hay portadas que llegan vacías a quien no ejecuta JavaScript.» Y la glosa nombra al lector que sí conocemos: «Nuestro chequeo gratis lee las portadas así.» No dice nada sobre lo que hacen Google ni una IA.
+- **Pie de foto, alt y fuentes** alineados con las dos láminas (`caption.md` §1 y §3; `fuentes.md` §1 y §6).
+
+Lo que no se hizo: una lámina con una consulta realmente perdida. No hay evidencia propia publicable de eso (la decisión D baja los hallazgos reales de prospectos), y se declara en `fuentes.md` §5.
 
 ## Producción
 

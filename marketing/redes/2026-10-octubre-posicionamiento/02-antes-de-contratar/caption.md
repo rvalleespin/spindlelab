@@ -1,78 +1,146 @@
-# Caption · Carrusel "Lo que puedes revisar antes de contratar"
+# Caption · Carrusel «Antes de contratar» (pieza 2) · v2, 23-oct-2026
 
-**Cuenta:** Instagram `spindlelab.cl` · **Voz:** plural de marca · **Formato:** carrusel de 6 láminas, 1080x1350
+**Cuenta:** Instagram `spindlelab.cl` · **Voz:** plural de marca · **Formato:** 1080x1350 (4:5)
 **Estado:** BORRADOR PARA REVISIÓN DE RAMÓN. Nada está publicado.
-**Slug del UTM:** `antes-de-contratar`
+**Corregida el 23-oct-2026 (noche) tras la revisión independiente:** lámina 2 sin ninguna cifra, paso 04 sin cadencia, bajada de la 2A acotada a lo que la pantalla muestra, y lámina del límite con su cláusula completa. Detalle en `publicar.md` §9.
+**Tres versiones en esta carpeta, la misma historia partida como la partió PLAN.md v2 (§3 y §5).** Se sube una sola por vez. Cuál y cuándo está en `publicar.md`.
+
+| Versión | Láminas | Sale cuando | Slug del UTM |
+|---|---|---|---|
+| **Completa** | `lamina-1` a `lamina-6` (6) | El sitio nuevo ya está publicado. Es la que va el día 3 | `antes-de-contratar` |
+| **2A, el chequeo** | `2a-lamina-1` a `2a-lamina-4` (4) | Cuando sea, incluso antes del sitio nuevo: solo cita `/diagnostico/`, que ya está vivo | `que-mira-el-chequeo` |
+| **2B, precios y método** | `2b-lamina-1` a `2b-lamina-4` (4) | Solo si la 2A salió primero y el sitio nuevo ya está publicado. Si salió la completa, no se sube | `precios-y-metodo` |
+
+Hashtags de las tres: los mismos de la pieza 1 (ver más abajo). El límite «el puntaje no dice si te citan ni garantiza una recomendación» se dice **una sola vez en cada versión**, en el titular de su lámina del límite (5 de la completa, 3 de la 2A). Ningún pie de foto, comentario ni historia lo repite. La 2B no habla del chequeo y no lo necesita.
 
 ---
 
-## Pie de foto (copiar y pegar)
+## 1. Pie de foto de la versión completa (copiar y pegar)
 
-La primera línea es el gancho y entra completa antes del "ver más" (95 caracteres; Instagram corta el pie hacia los 125, así que entra entera).
-
-```
-Puedes leer cuánto cuesta, cómo trabajamos y cómo revisamos tu sitio antes de hablar con nadie.
-
-Lo dejamos escrito porque es difícil contratar algo que no puedes comparar. Cada solución tiene su precio de partida publicado, con lo que incluye. El método tiene cuatro pasos y el primero es una revisión gratis. Y el chequeo con el que revisamos tu sitio lo puedes correr tú: 21 señales, gratis y sin dejar tu correo.
-
-El chequeo mide si tu sitio está listo para que la IA lo lea, no si hoy te citan.
-
-Córrelo sobre tu sitio en spindlelab.cl/diagnostico. Si prefieres que lo veamos nosotros, pide la revisión de una página en spindlelab.cl/contacto.
-```
-
-**Hashtags (opcionales, van al final del pie solo si Ramón los quiere):** `#SEO #IA #Chile`, los mismos de septiembre. Con 19 seguidores no mueven alcance; sirven para mantener la línea de la cuenta.
-
-**Por qué las direcciones van sin UTM en el pie:** en Instagram el enlace del pie no se puede tocar, así que un UTM largo ahí solo ensucia el texto. El UTM va donde sí se toca: el sticker de la historia (abajo). Quien teclee la dirección del pie entra como "directo", y eso lo cubre la pregunta de la llamada de 20 minutos ("¿cómo llegaste?").
-
-**Por qué el pie no repite los precios:** envejecen. Los precios viven solo en la lámina 2, con su fecha ("octubre 2026"). Si cambia alguno, se re-renderiza esa lámina y el pie sigue siendo cierto.
-
----
-
-## Enlaces con UTM completo
-
-Usar exactamente estos, con la barra final, directo a la página (no a la portada: el script que guarda el UTM vive solo en `/contacto/`).
-
-| Dónde | URL |
-|---|---|
-| Sticker de enlace de la historia (principal) y primer comentario | `https://spindlelab.cl/diagnostico/?utm_source=instagram&utm_medium=social&utm_campaign=antes-de-contratar` |
-| Segundo sticker opcional, si Ramón quiere ofrecer la revisión en la misma historia | `https://spindlelab.cl/contacto/?utm_source=instagram&utm_medium=social&utm_campaign=antes-de-contratar` |
-
-Las dos respondieron 200 el 23-oct (comprobado con `curl`). El chequeo de `/diagnostico/` no captura leads, así que esta pieza se lee por Instagram Insights y GA4. La revisión pedida por `/contacto/` sí trae `utm_campaign=antes-de-contratar` en el correo del formulario.
-
----
-
-## Primer comentario
-
-Dos líneas, un solo enlace, sin hashtags (estándar de primeros comentarios). Instagram no hace tocables los enlaces de los comentarios: sirve para copiar y deja el UTM puesto.
+La primera línea es el gancho y entra entera antes del «más» (96 caracteres; Instagram corta hacia los 125).
 
 ```
-El chequeo de las 21 señales, sin registro:
+Puedes leer cuánto cuesta, cómo trabajamos y qué mira nuestro chequeo antes de hablar con nadie.
+
+Cada solución publica su precio de partida, con lo que incluye y más IVA. El método tiene cuatro pasos y el primero es una revisión gratis de una página. El chequeo de visibilidad en IA lo corres tú: escribes tu dominio, ves 21 señales y no dejas tu correo.
+
+Lo dejamos escrito porque es difícil contratar algo que no puedes comparar.
+
+Los precios están en spindlelab.cl/servicios y el método en spindlelab.cl/metodo. El chequeo lo corres en spindlelab.cl/diagnostico, y la revisión de una página la pides en spindlelab.cl/contacto.
+
+#SEOtecnico #SitioWeb #MarketingConIA #Chile
+```
+
+## 2. Pie de foto de la 2A, el chequeo (copiar y pegar)
+
+Gancho de 66 caracteres.
+
+```
+Escribes tu dominio y ves 21 señales, ordenadas en tres preguntas.
+
+Es el chequeo de visibilidad en IA de SpindleLab. Cada pregunta tiene su peso en el puntaje y las 21 señales están publicadas, para que puedas repetir el chequeo a mano si quieres.
+
+Córrelo sobre tu sitio en spindlelab.cl/diagnostico.
+
+#SEOtecnico #SitioWeb #MarketingConIA #Chile
+```
+
+## 3. Pie de foto de la 2B, precios y método (copiar y pegar)
+
+Gancho de 70 caracteres.
+
+```
+Puedes leer cuánto cuesta y cómo trabajamos antes de hablar con nadie.
+
+Cada solución publica su precio de partida, con lo que incluye y más IVA. El método tiene cuatro pasos y el primero es una revisión gratis de una página.
+
+Lo dejamos escrito porque es difícil contratar algo que no puedes comparar.
+
+Los precios están en spindlelab.cl/servicios y el método en spindlelab.cl/metodo. La revisión de una página la pides en spindlelab.cl/contacto.
+
+#SEOtecnico #SitioWeb #MarketingConIA #Chile
+```
+
+## 4. Hashtags
+
+`#SEOtecnico #SitioWeb #MarketingConIA #Chile`, idénticos a los de `01-donde-se-cae-una-consulta/caption.md` (23-oct, 23:20) y alineados con el posicionamiento nuevo («marketing y crecimiento con IA para empresas que ya venden»). Sin tilde: `#SEOtécnico` y `#SEOtecnico` son dos etiquetas distintas y parten el conteo. Opcionales, van al final del pie y solo si Ramón los quiere. **Cambió respecto de la v1:** antes eran `#SEO #IA #Chile`, los de septiembre, que ya no calzan con la pieza 1 ni con el posicionamiento. Si Ramón cambia los de la pieza 1, estos cambian con ellos.
+
+## 5. Enlaces con UTM completo
+
+Todo enlace que se puede tocar lleva su UTM, directo a la página (no a la portada: el script que guarda el UTM vive solo en `/contacto/`). **Las direcciones escritas dentro del pie de foto y dentro de las láminas no llevan UTM a propósito:** Instagram no las hace tocables y un UTM largo ahí solo ensucia el texto (regla de PLAN.md §3). Quien las teclea entra como «directo», y eso lo cubre la pregunta de la llamada de 20 minutos («¿cómo llegaste?»).
+
+| Dónde | Versión | URL |
+|---|---|---|
+| Sticker de enlace de la historia (principal) | Completa | `https://spindlelab.cl/diagnostico/?utm_source=instagram&utm_medium=social&utm_campaign=antes-de-contratar` |
+| Segundo sticker, opcional, para ofrecer la revisión en la misma historia | Completa | `https://spindlelab.cl/contacto/?utm_source=instagram&utm_medium=social&utm_campaign=antes-de-contratar` |
+| Sticker de enlace de la historia | 2A | `https://spindlelab.cl/diagnostico/?utm_source=instagram&utm_medium=social&utm_campaign=que-mira-el-chequeo` |
+| Sticker de enlace de la historia | 2B | `https://spindlelab.cl/contacto/?utm_source=instagram&utm_medium=social&utm_campaign=precios-y-metodo` |
+
+Las tres rutas respondieron 200 con su UTM el 23-oct (comprobado con `curl`). El chequeo de `/diagnostico/` no captura leads: los toques al chequeo se leen por Insights de la historia y GA4, y **no cuentan para el mínimo de revisiones del PLAN §8**. Lo que sí trae `utm_campaign` en el correo del formulario es lo que entra por `/contacto/`: el segundo sticker de la completa y el sticker de la 2B.
+
+## 6. Primer comentario
+
+Dos líneas, un solo enlace, sin hashtags. Instagram no hace tocables los enlaces de los comentarios: sirve para copiar y deja el UTM puesto.
+
+**Completa:**
+```
+El chequeo, sin registro:
 https://spindlelab.cl/diagnostico/?utm_source=instagram&utm_medium=social&utm_campaign=antes-de-contratar
 ```
 
----
+**2A:**
+```
+El chequeo, sin registro:
+https://spindlelab.cl/diagnostico/?utm_source=instagram&utm_medium=social&utm_campaign=que-mira-el-chequeo
+```
 
-## Historia (el mismo día)
+**2B:**
+```
+La revisión de una página, gratis:
+https://spindlelab.cl/contacto/?utm_source=instagram&utm_medium=social&utm_campaign=precios-y-metodo
+```
 
-Compartir el post a historias desde la cuenta de la empresa y desde la personal (un minuto, como el 30-sep). Sticker de enlace con la URL del chequeo de la tabla de arriba. Sin texto nuevo sobre la imagen.
+## 7. Historia (el mismo día, un minuto)
 
----
+Se comparte la publicación a historias desde la cuenta de la empresa y desde la personal, con el sticker de la tabla 5. Sin texto nuevo sobre la imagen. Si Ramón quiere una línea:
 
-## Texto alternativo por lámina (campo "Alt" de cada imagen)
+| Versión | Cuenta de la empresa (plural) | Cuenta personal de Ramón (singular) |
+|---|---|---|
+| Completa | `Lo que puedes leer antes de contratar: precios, método y chequeo.` | `Dejé publicados los precios de partida de SpindleLab, cómo trabajo y qué mira el chequeo. Todo se lee antes de hablar conmigo.` |
+| 2A | `Escribes tu dominio y ves 21 señales. Gratis, sin dejar tu correo.` | `Este es el chequeo gratis de SpindleLab: escribes tu dominio y ves 21 señales.` |
+| 2B | `Precios de partida y método, escritos antes de que hables con nadie.` | `Dejé escritos los precios de partida de SpindleLab y cómo trabajo, para que los leas antes de hablar conmigo.` |
 
-1. Portada sobre fondo oscuro. Título: "Puedes leer cuánto cuesta, cómo trabajamos y cómo revisamos tu sitio antes de hablar con nadie." Debajo: "Las tres cosas están publicadas en spindlelab.cl." Marca SpindleLab con el punto final en dorado.
-2. Lista de seis soluciones con su precio de partida, todos más IVA. Auditoría SEO técnica, desde 490.000 pesos. Visibilidad en IA (auditoría), desde 400.000. Google Ads, gestión, desde 350.000 al mes, pauta aparte. Gestión de redes, desde 390.000 al mes, el creativo lo pones tú. Página web a medida, desde 390.000, una página para una campaña. Acompañamiento mensual, desde 590.000 al mes, mínimo 3 meses. Nota al pie: "Precios de partida, más IVA, octubre 2026. El valor final se cierra por escrito."
-3. Los cuatro pasos del método. 01 Revisión gratis: nos pasas la dirección de tu sitio y te devolvemos una página con lo más importante que encontramos. 02 Conversación y propuesta: 20 minutos por videollamada y, si hay trabajo, una propuesta por escrito con qué hacemos, en qué fases y cuánto cuesta. 03 Implementación por fases: hacemos lo acordado o entregamos las especificaciones para que lo implemente tu equipo. 04 Acompañamiento mensual: si quieres seguir, medimos cada mes con el mismo criterio. Cierre: "Cada fase termina con algo que apruebas antes de seguir."
-4. Rótulo: "Qué mira el chequeo". El número 21 en dorado, grande, y al lado la palabra "señales". Tres preguntas con su peso: "¿Te pueden leer?", 30 puntos; "¿Te entienden?", 40 puntos; "¿Te pueden citar?", 30 puntos. Cierre: "Escribes tu dominio. Es gratis y no pedimos tu correo."
-5. Rótulo: "Lo que no mide el chequeo". Texto grande: "No mide si hoy te citan." Debajo: eso depende de que te mencionen en fuentes que la IA lee, como rankings, directorios y artículos, y no se puede saber leyendo tu sitio; hay que preguntarle a los motores.
-6. Cierre. "Córrelo sobre tu sitio, sin registro." En un recuadro, la dirección spindlelab.cl/diagnostico. Debajo, en letra más chica: si prefieres que lo veamos nosotros, pide la revisión de una página, también gratis, en spindlelab.cl/contacto.
+## 8. Texto alternativo por lámina (campo «Alt», máximo 120 caracteres)
 
----
+El número entre paréntesis es el largo contado. El alt de la lámina del límite describe esa misma lámina: no es un segundo lugar donde se dice.
 
-## Qué NO dice el pie, a propósito
+**Completa**
+1. (114) `Portada oscura: «Puedes leer cuánto cuesta, cómo trabajamos y qué mira nuestro chequeo antes de hablar con nadie.»`
+2. (106) `Las seis soluciones de SpindleLab, cada una con su precio de partida publicado en spindlelab.cl/servicios.`
+3. (107) `Cuatro pasos: revisión gratis, conversación y propuesta, implementación por fases y acompañamiento mensual.`
+4. (101) `21 señales en tres preguntas: ¿te pueden leer?, 30 puntos; ¿te entienden?, 40; ¿te pueden citar?, 30.`
+5. (118) `El puntaje no dice si hoy te citan ni garantiza que te recomienden. Los motores usan fuentes ajenas, no solo tu sitio.`
+6. (113) `Cierre: corre el chequeo en spindlelab.cl/diagnostico o pide la revisión de una página en spindlelab.cl/contacto.`
 
-- Ningún precio, ningún plazo ("un día hábil" y "24 horas" están sin decidir) ni resultado (consultas, ventas, que una IA te cite).
-- No dice que la revisión incluya preguntarle a ChatGPT: hoy es un paso manual de Ramón y no una parte fija del servicio.
-- No dice "cómo medimos" para hablar del chequeo: en el sitio, "medir" es el protocolo de preguntas a los motores (cinco preguntas fijas por tres motores), que esta pieza no muestra. El chequeo "lee tu sitio"; por eso aquí se llama "cómo revisamos tu sitio".
-- No dice que Google Ads tenga un mínimo de meses (pendiente de Ramón, ver `publicar.md`).
-- No nombra clientes, prospectos ni a Verifica y Cumple.
+**2A**
+1. (84) `Portada oscura: «Escribes tu dominio y ves 21 señales, ordenadas en tres preguntas.»`
+2. (101) el mismo de la lámina 4 de la completa.
+3. (118) el mismo de la lámina 5 de la completa.
+4. (90) `Cierre: córrelo sobre tu sitio en spindlelab.cl/diagnostico. Leemos solo páginas públicas.`
+
+**2B**
+1. (88) `Portada oscura: «Puedes leer cuánto cuesta y cómo trabajamos antes de hablar con nadie.»`
+2. (106) el mismo de la lámina 2 de la completa.
+3. (107) el mismo de la lámina 3 de la completa.
+4. (114) `Cierre: escríbenos la dirección de tu sitio en spindlelab.cl/contacto. Te respondemos con una página de hallazgos.`
+
+## 9. Qué no dice la pieza, a propósito
+
+- Ningún plazo («un día hábil» y «24 horas» están sin decidir; la revisión de octubre de un prospecto tardó 31 horas contra 24 prometidas), ningún resultado (consultas, ventas, que una IA te cite), ninguna cifra interna del outbound, ningún nombre de cliente ni de prospecto.
+- **Ningún precio en las imágenes**, ni los seis juntos ni uno suelto. La lámina 2 lista las seis soluciones por nombre, dice que cada una publica su precio de partida y manda a `spindlelab.cl/servicios` (regla del 31-ago, reencuadrada el 1-sep; decisión C sin responder, ver `publicar.md` §2). La v2 inicial llevaba un «desde $490.000» rotulado «Un ejemplo»; la revisión independiente lo marcó porque no es el umbral de entrada que la regla deja pasar, y se sacó.
+- **La cadencia de la medición** (mensual o quincenal: decisión 8 de `copy-secciones.md` §12). El paso 04 dice «volvemos a medir con el mismo criterio» y no dice cada cuánto.
+- «Cómo medimos» para hablar del chequeo. En el sitio, «medir» es el protocolo con el que se le pregunta a los motores si te nombran (`/diagnostico/`, «Y cómo medimos si la IA te nombra»). El chequeo de 21 señales «lee tu sitio»; por eso se rotula «Qué mira el chequeo». El único «medir» de la pieza es el del paso 04 del método, que usa la palabra con el mismo sentido que el sitio.
+- Que el resultado del chequeo traiga el detalle de **todas** las señales. En pantalla, las que se cumplen salen solo con su título; la explicación y cómo arreglarla salen en las que no se cumplen o no se pudieron confirmar (`public/diagnostico/index.html`, función que arma la lista). La portada de la 2A dice exactamente eso.
+- Que la revisión incluya preguntarle a ChatGPT: hoy es un paso manual de Ramón y no una parte fija del servicio.
+- «Cada fase termina con algo que apruebas» sin acotar: la lámina 3 lo dice solo para un sitio web, que es donde está probado.
+- Nada de la Ley 21.719 ni de Verifica y Cumple.
