@@ -231,5 +231,41 @@ console.log('=== 11. la comparación recorre siempre todo ===');
   cierto('vacías', m.igualesEnTiempoConstante('', ''));
 }
 
+console.log('=== el secreto pegado con espacios de más igual sirve ===');
+{
+  // Un secreto pegado desde el panel con un espacio o un salto de línea al final se ve
+  // cargado y produce otro HMAC. El síntoma es «todas las notificaciones dan 401 por firma
+  // que no coincide», idéntico al del secreto equivocado, y nadie puede leer el valor
+  // cargado para distinguirlos. Por eso se limpia antes de usarlo.
+  const limpio = 'clave-secreta-del-webhook';
+  const manifiesto = m.armarManifiesto({ dataId: 'ORD123', requestId: 'req-1', ts: '1742505638683' });
+  const v1 = await m.hmacHex(limpio, manifiesto);
+  const cab = `ts=1742505638683,v1=${v1}`;
+  const pide = (secreto) => m.verificarFirma({ dataId: 'ORD123', requestId: 'req-1', cabeceraFirma: cab, secreto });
+
+  cierto('el secreto limpio valida', (await pide(limpio)).valida);
+  cierto('con un espacio al final también', (await pide(limpio + ' ')).valida);
+  cierto('con un salto de línea al final también', (await pide(limpio + '\n')).valida);
+  cierto('con espacios a los dos lados también', (await pide('  ' + limpio + '\t')).valida);
+
+  // Pero limpiar no es ablandar: un secreto distinto sigue sin validar.
+  falso('otro secreto NO valida', (await pide('otra-clave-cualquiera')).valida);
+  // Y un secreto que es SOLO espacios es un secreto ausente, no uno válido.
+  //
+  // Esto se pide SIN QUE LANCE a propósito. Si se quita la guarda, `hmacHex` recibe una clave
+  // de largo cero y `crypto.subtle.importKey` revienta: el endpoint devolvería un 500 en vez
+  // de un 401 limpio, y la prueba moriría en vez de ponerse roja, que en la batería se lee
+  // como «falta la línea de cierre» y es fácil de confundir con otra cosa.
+  const sinLanzar = async (nombre, secreto) => {
+    let r;
+    try { r = await pide(secreto); }
+    catch (e) { malo++; console.log(`  FALLA ${nombre}: LANZÓ en vez de rechazar (${e.message})`); return; }
+    eq(nombre, r.motivo, m.MOTIVOS.SIN_SECRETO);
+  };
+  await sinLanzar('un secreto de puros espacios es «sin secreto»', '   ');
+  await sinLanzar('el vacío también', '');
+  await sinLanzar('un salto de línea solo también', '\n');
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
