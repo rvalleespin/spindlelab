@@ -53,3 +53,19 @@ pages_build_output_dir = "public"
 # las horas del mes.
 binding = "VYC_TOPES"
 id = "fbf273b71b4642f0989be319d86a6b0b"
+
+# La base de los pedidos. Va acá por la misma razón que el KV: un enlace a otro recurso no
+# tiene comando en wrangler, o se hace en el panel o se declara en este archivo.
+#
+# POR QUÉ D1 Y NO EL KV QUE YA ESTABA (23-oct-2026)
+# El KV es eventualmente consistente: después de que el webhook escribe «pagado», una lectura
+# puede devolver el estado viejo por un rato. Para el tope de abuso da lo mismo; para «pagué y
+# me dice que no» no. Y KV no actualiza por campo, así que el webhook marcando el pago y el
+# cliente mandando sus datos de facturación se pisarían entre sí.
+#
+# El esquema vive en `functions/api/pedidos.js`, exportado como `ESQUEMA`, para que esté al
+# lado del código que lo usa y no se desincronice.
+[[d1_databases]]
+binding = "VYC_PEDIDOS"
+database_name = "vyc-pedidos"
+database_id = "62d8229f-c756-4df3-9118-faebd22459a8"
