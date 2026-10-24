@@ -1407,16 +1407,22 @@
   .pedir-trampa { display: none; }
   .pedir .boton-ayuda { border: 0; font: inherit; font-weight: 700; cursor: pointer; }
   .pedir .boton-ayuda:disabled { background: var(--inactivo); cursor: wait; }
-  .compra { margin: 18px 0 0; padding: 20px; border-radius: 14px; background: var(--crema-200, #f6efe3);
-            border: 1px solid rgba(0,0,0,.08); max-width: 34rem; }
+  /* ⚠️ El color del texto va EXPLÍCITO, no heredado. Este panel se mueve junto al botón que se
+     apretó, y uno de esos botones vive dentro de una sección de fondo azul con texto claro: sin
+     declarar el color, el panel salía crema con letras blancas encima, ilegible. Se vio al
+     mirarlo renderizado, no al leer el markup. */
+  .compra { margin: 18px 0 0; padding: 20px; border-radius: 14px; background: var(--panel);
+            color: var(--texto); border: 1px solid var(--borde); max-width: 34rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .compra a { color: var(--verde-700); }
   .compra[hidden] { display: none; }
-  .compra-kicker { margin: 0 0 6px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; opacity: .7; }
+  .compra-kicker { margin: 0 0 6px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--texto-suave); }
   .compra-monto { margin: 0 0 10px; font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
-  .compra-monto span { display: block; font-size: .85rem; font-weight: 400; opacity: .75; }
+  .compra-monto span { display: block; font-size: .85rem; font-weight: 400; color: var(--texto-suave); }
   .compra-que { margin: 0 0 16px; font-size: .95rem; }
   .compra .pedir-consiento { margin-top: 12px; }
-  .compra-ayuda { margin: 6px 0 0; font-size: .85rem; opacity: .75; }
-  .compra-sigue { margin: 12px 0 0; font-size: .85rem; opacity: .75; }
+  .compra-ayuda { margin: 6px 0 0; font-size: .85rem; color: var(--texto-suave); }
+  .compra-sigue { margin: 12px 0 0; font-size: .85rem; color: var(--texto-suave); }
   .compra label { display: block; margin-top: 4px; }
   .compra input[type="email"] { display: block; width: 100%; margin-top: 6px; padding: 10px 12px;
             font: inherit; border-radius: 9px; border: 1px solid rgba(0,0,0,.2); }
@@ -3106,6 +3112,11 @@
 
   function mensajeCompra(texto) {
     if (estadoCompra) estadoCompra.textContent = texto || '';
+    // La línea de «te llevamos a Mercado Pago» describe lo que pasa si sale bien. Dejarla
+    // visible debajo de un error la convierte en una promesa falsa justo cuando la persona está
+    // leyendo que algo no funcionó. Se vio mirando el render, no el código.
+    const sigue = panelCompra && panelCompra.querySelector('.compra-sigue');
+    if (sigue) sigue.hidden = Boolean(texto);
   }
 
   function soltarBotonCompra(texto) {
