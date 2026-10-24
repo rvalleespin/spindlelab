@@ -74,7 +74,8 @@ const MAPA = {
   rejected: ESTADOS.RECHAZADO,
   cancelled: ESTADOS.RECHAZADO,
   refunded: ESTADOS.DEVUELTO,
-  charged_back: ESTADOS.DEVUELTO,
+  // Misma distinción que en el mapa de órdenes: el contracargo lo hace el emisor, no nosotros.
+  charged_back: ESTADOS.CONTRACARGADO,
   pending: null,
   in_process: null,
   authorized: null,     // autorizado NO es cobrado
@@ -286,7 +287,12 @@ const MAPA_ORDEN = {
   canceled: ESTADOS.RECHAZADO,
   expired: ESTADOS.RECHAZADO,
   refunded: ESTADOS.DEVUELTO,
-  charged_back: ESTADOS.DEVUELTO,
+  // ⚠️ UN CONTRACARGO NO ES UNA DEVOLUCIÓN, y mandarlo al mismo estado hacía que la pantalla le
+  // dijera a la persona «Te devolvimos el dinero» y «el pago volvió a tu medio de pago». Un
+  // contracargo lo revierte el emisor de la tarjeta tras una disputa: nosotros no emitimos nada.
+  // Atribuirse una acción que el registro no acredita es exactamente lo que este producto le
+  // marca en rojo a otros sitios.
+  charged_back: ESTADOS.CONTRACARGADO,
   // `created` se queda en null a propósito: la orden existe en Mercado Pago y el pedido ya está
   // en `creado`, así que no hay nada que mover.
   created: null,

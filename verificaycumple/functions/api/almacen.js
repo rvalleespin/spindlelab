@@ -59,10 +59,14 @@ export async function crearPedido(db, datos) {
     utm_term: datos.utm_term ?? null,
   };
   const huecos = COLUMNAS_CREAR.map(() => '?').join(', ');
-  await db.prepare(
-    `INSERT INTO pedidos (${COLUMNAS_CREAR.join(', ')}) VALUES (${huecos})`,
+  // `OR IGNORE` por el índice parcial único (dominio, correo) sobre los pedidos en `creado`: si
+  // otra petición simultánea ya abrió una compra para esa pareja, esta no inserta y lo dice, en
+  // vez de reventar o de crear una segunda orden pagable. Quien llama tiene que mirar `creado`.
+  const r = await db.prepare(
+    `INSERT OR IGNORE INTO pedidos (${COLUMNAS_CREAR.join(', ')}) VALUES (${huecos})`,
   ).bind(...COLUMNAS_CREAR.map((c) => fila[c])).run();
-  return fila;
+  const cambios = (r && r.meta && r.meta.changes) || 0;
+  return { ...fila, creado: cambios > 0 };
 }
 
 /** Devuelve el pedido con las listas ya deserializadas, o null. */

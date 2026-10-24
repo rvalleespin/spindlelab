@@ -48,6 +48,7 @@ export const ETAPAS = {
   ENTREGADO: 'entregado',
   SIN_PAGO: 'sin-pago',
   DEVUELTO: 'devuelto',
+  CONTRACARGADO: 'contracargado',
 };
 
 export const ACTUA = {
@@ -119,6 +120,22 @@ export function etapaDelPedido(pedido) {
       detalle: 'Mercado Pago no aprobó el pago. No te cobramos nada y no empezamos ningún trabajo.',
       quienActua: ACTUA.CLIENTE,
       queHacer: 'Si quieres, puedes intentarlo de nuevo. Si te vuelve a pasar, escríbenos y lo vemos.',
+      loQueSigue: null,
+      terminado: true,
+    };
+  }
+
+  if (pedido.estado === ESTADOS.CONTRACARGADO) {
+    return {
+      etapa: ETAPAS.CONTRACARGADO,
+      titulo: 'Tu banco revirtió el pago',
+      // No se dice «te devolvimos»: no fuimos nosotros, y el dinero vuelve por el camino del
+      // emisor, no por el nuestro. Decirlo al revés es atribuirse una acción que no se hizo.
+      detalle: 'Mercado Pago nos avisa que el emisor de tu tarjeta revirtió este pago. Nosotros ' +
+        'no emitimos esa devolución, así que si no la pediste tú, conviene que hables con tu banco.',
+      quienActua: ACTUA.CLIENTE,
+      queHacer: 'Si fue un error o no reconoces el movimiento, escríbenos con este enlace y lo ' +
+        'revisamos contigo.',
       loQueSigue: null,
       terminado: true,
     };

@@ -35,7 +35,8 @@ export const ESTADOS = {
   PENDIENTE: 'pendiente',  // está pagando con un medio que no acredita al instante
   PAGADO: 'pagado',        // confirmado CONTRA LA API, no por la vuelta del navegador
   RECHAZADO: 'rechazado',  // Mercado Pago lo rechazó
-  DEVUELTO: 'devuelto',    // se devolvió la plata
+  DEVUELTO: 'devuelto',    // NOSOTROS devolvimos la plata
+  CONTRACARGADO: 'contracargado',  // el emisor la revirtió por una disputa; no fuimos nosotros
   ENTREGADO: 'entregado',  // el trabajo está hecho y verificado
 };
 
@@ -63,12 +64,12 @@ export const ESTADOS = {
  */
 const TRANSICIONES = {
   [ESTADOS.CREADO]: [ESTADOS.CREADO, ESTADOS.PENDIENTE, ESTADOS.PAGADO, ESTADOS.RECHAZADO,
-    ESTADOS.DEVUELTO],
+    ESTADOS.DEVUELTO, ESTADOS.CONTRACARGADO],
   // Un pendiente puede terminar en cualquiera de las tres puntas, y puede llegar dos veces
   // (Mercado Pago avisa cada cambio del medio de pago), así que se admite a sí mismo.
   [ESTADOS.PENDIENTE]: [ESTADOS.PENDIENTE, ESTADOS.PAGADO, ESTADOS.RECHAZADO,
     ESTADOS.DEVUELTO],
-  [ESTADOS.PAGADO]: [ESTADOS.PAGADO, ESTADOS.ENTREGADO, ESTADOS.DEVUELTO],
+  [ESTADOS.PAGADO]: [ESTADOS.PAGADO, ESTADOS.ENTREGADO, ESTADOS.DEVUELTO, ESTADOS.CONTRACARGADO],
   // PAGADO entra acá porque un rechazo seguido de un pago es el camino NORMAL de un
   // reintento, no una anomalía: `failed` no es un estado terminal en la Orders API, y la
   // persona puede volver a intentar con otra tarjeta sobre la misma orden. Sin esta
@@ -76,7 +77,9 @@ const TRANSICIONES = {
   // y el pedido se quedaba en `rechazado` con la plata ya cobrada.
   [ESTADOS.RECHAZADO]: [ESTADOS.RECHAZADO, ESTADOS.CREADO, ESTADOS.PENDIENTE, ESTADOS.PAGADO],
   [ESTADOS.DEVUELTO]: [ESTADOS.DEVUELTO],
-  [ESTADOS.ENTREGADO]: [ESTADOS.ENTREGADO, ESTADOS.DEVUELTO],
+  // Un contracargo se puede revertir si la disputa se gana, así que no es un pozo sin salida.
+  [ESTADOS.CONTRACARGADO]: [ESTADOS.CONTRACARGADO, ESTADOS.PAGADO, ESTADOS.DEVUELTO],
+  [ESTADOS.ENTREGADO]: [ESTADOS.ENTREGADO, ESTADOS.DEVUELTO, ESTADOS.CONTRACARGADO],
 };
 
 export function transicionValida(de, a) {
@@ -182,6 +185,33 @@ export function congelarContrato({ informe, elegibilidad, montoNeto, montoTotal,
  *
  * Esta función es pura a propósito: se puede comprobar el cuerpo exacto sin tocar la red.
  */
+/**
+ * Cuánto vive una orden de Mercado Pago sin pagar.
+ *
+ * ── POR QUÉ ESTE NÚMERO MANDA SOBRE OTRO (24-oct-2026) ───────────────────────────────────
+ *
+ * De acá sale el `expiration_time` de la orden Y la ventana del antidoble clic del checkout.
+ * No es elegancia: es que cuando los dos se escribían por separado, se contradecían.
+ *
+ * La ventana estaba en 30 minutos y la orden vivía un día. O sea que durante 23 horas y media,
+ * alguien que había abierto un pago y no lo había completado podía volver, no ser reconocido
+ * como el mismo, y recibir una SEGUNDA orden mientras la primera seguía pagable. Dos enlaces
+ * vivos por un solo kit: si pagaba los dos, cobrábamos dos veces.
+ *
+ * Y el comentario que justificaba los 30 minutos decía que pasada la ventana la persona «no
+ * queda atada a una orden vencida» — pero a los 30 minutos no estaba vencida. La justificación
+ * daba por cierto un hecho que la otra constante desmentía.
+ *
+ * El invariante que de verdad importa, escrito una sola vez: **nunca puede haber dos órdenes
+ * pagables para el mismo sitio y el mismo correo a la vez.** Eso se cumple si, y solo si, la
+ * ventana de reutilización dura por lo menos lo que dura la orden.
+ *
+ * El costo de la regla, dicho: reutilizar una orden creada hace 23 horas le deja a la persona
+ * una hora para pagarla. Es incómodo y es mucho menos malo que la alternativa, que es cobrarle
+ * dos veces. Si alguna vez molesta, lo que se acorta es la VIGENCIA, no la ventana.
+ */
+export const VIGENCIA_ORDEN_HORAS = 24;
+
 export function armarOrdenMP({ idPedido, correo, montoTotal, titulo, urls }) {
   if (!ID_VALIDO_MP.test(idPedido)) {
     throw new Error(`external_reference inválido para Mercado Pago: ${idPedido}`);
@@ -213,10 +243,14 @@ export function armarOrdenMP({ idPedido, correo, montoTotal, titulo, urls }) {
         auto_return: 'approved',
       },
     },
-    // Sin vencimiento, un pedido que nadie paga se queda en `creado` para siempre. Con un día,
+    // Sin vencimiento, un pedido que nadie paga se queda en `creado` para siempre. Con esto,
     // Mercado Pago lo pasa a `expired`, que el webhook ya sabe tratar como rechazo. Es duración
     // ISO 8601, no una fecha.
-    expiration_time: 'P1D',
+    //
+    // ⚠️ El número sale de `VIGENCIA_ORDEN_HORAS` y NO se escribe a mano. Ver la nota de esa
+    // constante: cuando este valor y la ventana del antidoble clic se escribían por separado,
+    // se contradecían.
+    expiration_time: `PT${VIGENCIA_ORDEN_HORAS}H`,
   };
 }
 
@@ -270,6 +304,23 @@ CREATE TABLE IF NOT EXISTS pedidos (
 CREATE INDEX IF NOT EXISTS idx_pedidos_mp_order ON pedidos (mp_order_id);
 CREATE INDEX IF NOT EXISTS idx_pedidos_mp_payment ON pedidos (mp_payment_id);
 CREATE INDEX IF NOT EXISTS idx_pedidos_estado ON pedidos (estado, creado_en);
+
+-- UNA SOLA COMPRA ABIERTA POR SITIO Y CORREO. Es un índice PARCIAL, y su WHERE es la mitad de
+-- la idea: solo restringe los pedidos en estado creado, o sea los que tienen una orden pagable. Un
+-- cliente puede comprar dos veces en su vida. Lo que no puede es tener dos enlaces de pago
+-- vivos a la vez, porque pagar los dos sería pagar dos veces el mismo kit.
+--
+-- ⚠️ NI UN PUNTO Y COMA DENTRO DE ESTOS COMENTARIOS. Las pruebas aplican el esquema partiéndolo
+-- por punto y coma, así que uno dentro de un comentario corta la sentencia por la mitad y la
+-- siguiente mitad revienta con un error de sintaxis que no se parece en nada a la causa.
+--
+-- Esto existe porque buscar-y-después-insertar NO es atómico: dos peticiones simultáneas
+-- terminan su búsqueda antes de que cualquiera inserte, las dos creen ser la primera, y cada una
+-- abre su propia orden con su propia clave de idempotencia. La defensa tiene que estar en la
+-- base, que es la única que puede decidir sin carreras. Es el mismo razonamiento que el
+-- INSERT OR IGNORE de eventos_mp.
+CREATE UNIQUE INDEX IF NOT EXISTS idx_pedidos_compra_abierta
+  ON pedidos (dominio, correo) WHERE estado = 'creado';
 
 -- Cada notificación que llega, una vez. Es la protección contra repetición: Mercado Pago
 -- reintenta cada 15 minutos hasta recibir un 200, así que el mismo evento llega varias veces.
