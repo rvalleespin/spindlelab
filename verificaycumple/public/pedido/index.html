@@ -243,7 +243,12 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(cuerpo),
       })
-        .then(function (r) { return r.json().then(function (j) { return { estado: r.status, j: j }; }); })
+        // Se conserva si HUBO respuesta, para no confundir dos fallas distintas más abajo.
+        .then(function (r) {
+          return r.json()
+            .then(function (j) { return { estado: r.status, j: j, hubo: true }; })
+            .catch(function () { return { estado: r.status, j: null, hubo: true }; });
+        })
         .then(function (res) {
           if (res.j && res.j.ok) {
             // Se repinta con el estado NUEVO que el propio endpoint devolvió, para que no haya
@@ -255,11 +260,16 @@
           b.disabled = false;
           b.textContent = 'Enviar mis datos';
           estado.textContent = (res.j && res.j.detalle) ||
-            'No pudimos guardar tus datos. Vuelve a intentarlo, o escríbenos con este enlace.';
+            'Tuvimos un problema de nuestro lado y no pudimos guardar tus datos. Vuelve a ' +
+            'intentarlo, o escríbenos con este enlace.';
         })
         .catch(function () {
           b.disabled = false;
           b.textContent = 'Enviar mis datos';
+          // Acá el fetch no llegó a contestar, así que la conexión SÍ es el problema. Cuando sí
+          // contesta y el cuerpo no se puede leer, el mensaje es otro (ver arriba): decirle
+          // «revisa tu conexión» a alguien que ya pagó y cuya conexión está bien lo manda a
+          // buscar donde no hay nada, y lo más probable es que abandone.
           estado.textContent = 'No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo.';
         });
     });
@@ -341,7 +351,14 @@
     if (!id) { noEncontrado(); return; }
 
     fetch('/api/pedido?id=' + encodeURIComponent(id), { headers: { Accept: 'application/json' } })
-      .then(function (r) { return r.json().then(function (j) { return { estado: r.status, j: j }; }); })
+      // Si el cuerpo no se puede leer —una página de error del borde, una respuesta cortada— eso
+      // NO es un problema de conexión: la respuesta llegó. Sin este catch caía en el de abajo y
+      // se le decía a alguien que ya pagó que revisara su conexión.
+      .then(function (r) {
+        return r.json()
+          .then(function (j) { return { estado: r.status, j: j }; })
+          .catch(function () { return { estado: r.status, j: null }; });
+      })
       .then(function (res) {
         if (res.estado === 404) { noEncontrado(); return; }
         if (!res.j || !res.j.ok) {
@@ -363,9 +380,12 @@
         }
       })
       .catch(function () {
+        // Lo mismo acá: este catch solo se alcanza si el fetch no llegó a contestar. El caso de
+        // «contestó y no se pudo leer» lo atiende el `then`, que no culpa a la conexión.
         contenido.innerHTML =
           '<div class="tarjeta"><h1>No pudimos conectarnos</h1>' +
-          '<p class="detalle">Revisa tu conexión y vuelve a cargar la página.</p></div>';
+          '<p class="detalle">Revisa tu conexión y vuelve a cargar la página. Tu pedido está ' +
+          'guardado y este enlace sigue siendo válido.</p></div>';
       });
   }
 

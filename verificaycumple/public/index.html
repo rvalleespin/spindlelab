@@ -361,7 +361,10 @@
     --serif: Georgia, "Times New Roman", Times, serif;
     --vivo-azul: var(--azul-600);
     --vivo-rosa: var(--rosa-500);
-    --vivo-rosa-osc: var(--rosa-700);
+    /* El hover del botón principal. Bajó un paso más el 24-oct porque el estado en reposo
+       pasó a ser --rosa-700 por contraste, y si el hover fuera el mismo color el botón dejaría
+       de responder al puntero. Contraste 7,0 sobre blanco. */
+    --vivo-rosa-osc: #a3185f;
     --vivo-verde: var(--lima-400);
     --vivo-tinta: var(--tinta-900);
     --vivo-panel: var(--crema-100);
@@ -1288,9 +1291,16 @@
   /* Solo los párrafos sueltos de la sección se centran; los de dentro de las tarjetas
      de precio mantienen su propia alineación. */
   .ayuda-caja > p { margin: 0 auto 26px; color: var(--vivo-suave); max-width: 54ch; font-size: 1.02rem; }
+  /* ⚠️ EL FONDO DEL BOTÓN NO ES `--vivo-rosa`, Y ES A PROPÓSITO (24-oct-2026).
+     El rosa de marca `#ff3ea0` con texto blanco da 3,26 de contraste, y el mínimo para texto
+     normal son 4,5. `--rosa-700` (#c21e78) es el mismo rosa de la paleta, un paso más oscuro, y
+     da 5,6. No es un color nuevo: ya estaba declarado.
+     Importa más de lo que parece ahora que hay campaña: la mayoría del tráfico llega por
+     teléfono, y un rosa claro con letras blancas bajo el sol deja de leerse justo en el único
+     botón que hay que apretar. El rosa de marca sigue en todo lo demás. */
   .boton-ayuda {
     display: inline-block;
-    background: var(--vivo-rosa);
+    background: var(--rosa-700);
     color: var(--blanco);
     font-weight: 700;
     padding: 15px 30px;
@@ -3173,6 +3183,26 @@
     } catch { return false; }
   }
 
+  /* VOLVER CON EL BOTÓN «ATRÁS» DESDE MERCADO PAGO.
+   *
+   * Al salir hacia la pasarela el formulario queda deshabilitado y con el texto «Te estamos
+   * llevando a Mercado Pago…», a propósito: la navegación puede tardar y no queremos dos envíos.
+   * Pero si la persona se arrepiente y vuelve atrás, el navegador puede restaurar la página tal
+   * como estaba —desde su caché de ida y vuelta—, y entonces se encuentra con un formulario
+   * muerto, un mensaje que habla de una navegación que ya no está ocurriendo, y ninguna forma
+   * visible de reintentar. Con una campaña pagada encima, eso es alguien que se va.
+   *
+   * `pageshow` con `persisted` es el único aviso de que la página volvió de esa caché.
+   */
+  window.addEventListener('pageshow', function (ev) {
+    if (!panelCompra || !ev.persisted) return;
+    soltarBotonCompra();
+    const id = (function () { try { return sessionStorage.getItem('vyc-ultimo-pedido'); } catch { return null; } })();
+    mensajeCompra(id
+      ? 'Volviste sin terminar el pago. Puedes intentarlo de nuevo acá, o ver tu pedido en verifica.spindlelab.cl/pedido/?id=' + id
+      : 'Volviste sin terminar el pago. Puedes intentarlo de nuevo cuando quieras.');
+  });
+
   if (panelCompra) panelCompra.addEventListener('submit', async function (ev) {
     ev.preventDefault();
     if (!panelCompra.reportValidity()) return;
@@ -3218,6 +3248,10 @@
 
     if (data && data.ok && destinoDePagoValido(data.checkout_url)) {
       mensajeCompra('Te estamos llevando a Mercado Pago…');
+      // El enlace del pedido se guarda ANTES de salir del sitio. Si la persona abandona la
+      // pasarela y vuelve, esto es lo único que la devuelve a su pedido: el id no se puede
+      // adivinar y el correo tarda.
+      try { sessionStorage.setItem('vyc-ultimo-pedido', data.id); } catch {}
       location.assign(data.checkout_url);
       return;  // El botón queda deshabilitado a propósito: la navegación puede tardar.
     }

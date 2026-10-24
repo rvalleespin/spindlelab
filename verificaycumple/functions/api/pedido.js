@@ -135,6 +135,16 @@ const TTL_TOPE_S = 60 * 60 * 30;
  */
 export const VENTANA_DOBLE_CLIC_MS = VIGENCIA_ORDEN_HORAS * 60 * 60 * 1000;
 
+/**
+ * Cuánto puede haber envejecido la revisión con navegador para seguir sirviendo de base.
+ *
+ * No es lo mismo que su vida en KV. En KV dura 24 horas porque eso ahorra abrir un navegador
+ * contra el mismo sitio dos veces el mismo día, y para MOSTRAR un resultado está bien. Pero para
+ * VENDER hay que congelar las dos mediciones —la rápida, que se rehace en el momento, y la
+ * profunda— y dos fotos tomadas con horas de diferencia no describen el mismo sitio.
+ */
+export const VENTANA_MEDICION_MS = 30 * 60 * 1000;
+
 /** La forma de un correo. La expresión es la misma de `doce-puntos.js`, pero ANCLADA: allá sirve
  *  para encontrar un correo dentro de un texto, y acá para validar que esto es un correo entero. */
 const CORREO_VALIDO = /^[a-z0-9._%+-]{1,64}@(?:[a-z0-9-]{1,63}\.){1,4}[a-z]{2,12}$/i;
@@ -276,6 +286,24 @@ export async function onRequestPost(contexto) {
       ok: false, motivo: 'sin-medicion',
       detalle: 'No tenemos una revisión con navegador reciente de este sitio. Vuelve a correr el ' +
         'chequeo y compra desde ahí, para que lo que contrates sea lo que medimos.',
+    }, 409);
+  }
+
+  // ── LAS DOS MEDICIONES TIENEN QUE SER DEL MISMO MOMENTO ───────────────────────────────
+  //
+  // El informe profundo vive 24 horas en KV y el rápido se rehace acá, recién. Si el de KV es de
+  // ayer, el contrato congelaría dos fotos tomadas con horas de diferencia y vendería un alcance
+  // que quizá ya no corresponde al sitio: «lo que medimos» dejaría de ser una sola cosa.
+  //
+  // Media hora es el margen: cubre a quien corrió el chequeo, lo pensó y volvió a comprar, y
+  // deja fuera a quien vuelve al día siguiente con un enlace viejo. A ese no se le niega la
+  // venta, se le pide volver a medir, que es lo que de verdad necesita.
+  const medidoEn = Date.parse(profundo.revisadoEn || '');
+  if (!Number.isFinite(medidoEn) || Date.now() - medidoEn > VENTANA_MEDICION_MS) {
+    return jsonPost({
+      ok: false, motivo: 'medicion-vieja',
+      detalle: 'La revisión con navegador que tenemos de este sitio ya no es de ahora. Vuelve a ' +
+        'correr el chequeo y compra desde ahí: lo que contrates tiene que ser lo que medimos hoy.',
     }, 409);
   }
 
