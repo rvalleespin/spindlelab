@@ -1,0 +1,74 @@
+/* Carrusel "Probado primero en lo nuestro" · octubre 2026 (posicionamiento nuevo)
+   Extiende base.css. No redefine tokens: los usa.
+
+   FORMATO: 1080x1350 (4:5), igual que las piezas 01 y 02 de la campaña. base.css fija 1080x1080;
+   acá se sube el alto. Razón: en el perfil de Instagram la grilla recorta a 3:4, y un 4:5 solo
+   pierde ~34px por lado (dentro del margen de 80px), mientras que un cuadrado pierde ~135px por
+   lado y se come el titular de la portada. (La v1 de esta pieza salió cuadrada y quedaba
+   "orrimos nuestro cheque" en la grilla: corregido el 23-oct.)
+
+   Semantica del color en esta pieza:
+     verde petroleo #2fa99b = solo etiquetas (el eyebrow y las etiquetas de grupo de la lamina 2)
+     gris #9aa4b0 = lo que se dice en segundo plano (segunda linea, notas)
+     dorado #c9a227 = UN uso por lamina: el punto del wordmark. Nunca en cuerpo ni en el dispositivo.
+   Dispositivos propios: la lista de hallazgos con casilla tachada (lamina 2),
+   el formulario dibujado con el boton congelado (lamina 3) y el aviso con el boton activo (lamina 4).
+   Nada es captura de nadie. */
+
+html,body { height:1350px; }
+.post { height:1350px; }
+
+.top { display:flex; align-items:baseline; justify-content:space-between; gap:24px; }
+.pager { font-size:20px; font-weight:800; letter-spacing:2.6px; color:#9aa4b0; }
+
+.cuerpo { flex:1; display:flex; flex-direction:column; justify-content:center; padding-bottom:120px; }
+.cuerpo.anclado { justify-content:flex-start; padding-top:44px; }
+
+.nota { font-size:31px; line-height:1.48; color:#9aa4b0; max-width:880px; }
+
+/* ---- Lamina 2: lo que tenia el sitio, con quien lo vio ---- */
+.lista { margin-top:0; }
+.lista .lab { font-size:21px; font-weight:700; letter-spacing:2.8px; text-transform:uppercase;
+  color:#2fa99b; padding:0 2px 16px; }
+.lista .lab.otro { margin-top:66px; }
+.lista .fila { display:flex; align-items:flex-start; gap:30px; padding:42px 2px;
+  border-top:1px solid rgba(247,245,240,0.10); }
+.lista .fila:last-child { border-bottom:1px solid rgba(247,245,240,0.10); }
+.lista .x { flex:none; width:54px; height:54px; margin-top:8px; border:3px solid #9aa4b0;
+  border-radius:12px; position:relative; }
+.lista .x::before, .lista .x::after { content:''; position:absolute; left:50%; top:50%;
+  width:26px; height:4px; border-radius:2px; background:#9aa4b0; }
+.lista .x::before { transform:translate(-50%,-50%) rotate(45deg); }
+.lista .x::after { transform:translate(-50%,-50%) rotate(-45deg); }
+.lista .t { font-family:'Gabarito'; font-weight:600; font-size:62px; line-height:1.14;
+  letter-spacing:-1.3px; color:#f2efe8; text-wrap:balance; }
+
+/* ---- Laminas 3 y 4: el formulario dibujado ---- */
+.formcard { background:rgba(22,29,38,0.82); border:1px solid rgba(247,245,240,0.12);
+  border-radius:16px; padding:40px 44px 44px; }
+.formcard .campo { height:72px; border:1px solid rgba(247,245,240,0.16); border-radius:10px;
+  display:flex; align-items:center; padding:0 26px; font-size:27px; color:#9aa4b0; }
+.formcard .campo + .campo { margin-top:16px; }
+.formcard .campo.alto { height:140px; align-items:flex-start; padding-top:21px; }
+
+.boton { margin-top:32px; height:100px; border-radius:12px; display:flex; align-items:center;
+  justify-content:center; gap:22px; font-family:'Manrope'; font-weight:700; font-size:38px;
+  color:#f2efe8; background:rgba(247,245,240,0.09); border:1px solid rgba(247,245,240,0.20); }
+/* El giro quieto: un arco fijo. En el PNG no se mueve, y ese es el punto. */
+.spin { flex:none; width:40px; height:40px; border-radius:50%;
+  border:4px solid rgba(247,245,240,0.22); border-top-color:#f2efe8; }
+
+.g3 { text-wrap:pretty; font-family:'Gabarito'; font-weight:600; font-size:62px; line-height:1.15; letter-spacing:-1.3px; color:#f2efe8; }
+.g3 .gris { color:#9aa4b0; }
+
+/* ---- Lamina 4: lo que no se sabe, y lo que hay hoy ---- */
+/* El mismo formulario, ahora con el envio fallido: aviso arriba y el boton otra vez activo. */
+.aviso { display:flex; align-items:center; min-height:96px; padding:18px 30px; border-radius:10px;
+  border:1px solid rgba(247,245,240,0.18); background:rgba(14,20,27,0.55);
+  border-left:5px solid #9aa4b0; font-size:31px; line-height:1.35; color:#f2efe8; }
+.boton.activo { margin-top:22px; background:#f2efe8; color:#0e141b; border-color:#f2efe8; }
+
+/* ---- Lamina 5: el cierre ---- */
+.url-grande { margin-top:46px; display:inline-block; font-family:'Gabarito'; font-weight:600;
+  font-size:58px; letter-spacing:-1px; color:#f2efe8; white-space:nowrap;
+  border:1px solid rgba(247,245,240,0.34); border-radius:14px; padding:20px 38px; }

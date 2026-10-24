@@ -1,0 +1,113 @@
+/* Carrusel "Dónde se cae una consulta" · octubre 2026 (posicionamiento nuevo) · v2, 23-oct noche
+   Extiende base.css (copia de 2026-09-septiembre/_sistema/base.css). No redefine tokens: los usa.
+
+   FORMATO: 1080x1350 (4:5). base.css fija 1080x1080; acá se estira el lienzo. Razón: en el
+   perfil de Instagram la grilla recorta a 3:4, y un 4:5 solo pierde ~34px por lado (dentro del
+   margen de 80px), mientras que un cuadrado pierde ~135px por lado y se come el titular de la
+   portada.
+
+   v2: ninguna lámina lleva un caso real de un prospecto (decisión D, opción segura). Los
+   dispositivos de las láminas 2 y 3 son esquemas rotulados como esquema. Tras la revisión
+   independiente del 23-oct (noche) tampoco hay una cifra grande en la lámina 2: el rango de
+   15 a 65 caracteres es un criterio de la señal del título (4 de 100 puntos, solo mide el
+   largo) y va en la glosa, en crema; el dibujo principal es la pestaña. La lámina 3 nombra al
+   lector que recibe la portada vacía (quien no ejecuta JavaScript, como nuestro chequeo).
+   TAMAÑO MÍNIMO: etiquetas y notas desde 26px (se leen en un celular). El mínimo anterior era 20px.
+
+   SEMÁNTICA DEL MAPA (cuatro lugares):
+     trazo SÓLIDO en verde petróleo  = se ve desde afuera (cuando te buscan, cuando entran)
+     trazo DISCONTINUO en crema      = se conversa (cuando escriben, cuando esperan)
+   Dorado #c9a227 = UNO por lámina: el punto del wordmark, en las cinco. Verde petróleo solo en
+   etiquetas y en el trazo. */
+
+html,body { height:1350px; }
+.post { height:1350px; }
+
+/* ---------- cabecera: etiqueta y paginador, desde 26px ---------- */
+.top { display:flex; align-items:baseline; justify-content:space-between; gap:24px; }
+.eyebrow { font-size:26px; font-weight:800; letter-spacing:2.4px; }
+.pager { font-size:26px; font-weight:800; letter-spacing:2.4px; color:#9aa4b0; }
+.foot .cta { font-size:26px; }
+
+/* ---------- ruta compacta (láminas 2 a 4): cuatro tramos, el de turno encendido ---------- */
+.ruta { display:flex; justify-content:space-between; margin-top:34px; }
+.ruta i { flex:0 0 216px; height:6px; border-radius:3px; background:rgba(247,245,240,0.14); }
+/* tramo discontinuo: 9 pasos de 24px (216px) con el trazo centrado, para que cierre parejo en los dos extremos */
+.ruta i.d { border-radius:0; background:repeating-linear-gradient(90deg, transparent 0 5px, rgba(247,245,240,0.20) 5px 19px, transparent 19px 24px); }
+.ruta i.on { background:#2fa99b; }
+.ruta i.d.on { background:repeating-linear-gradient(90deg, transparent 0 5px, #f2efe8 5px 19px, transparent 19px 24px); }
+
+/* ---------- mapa grande (portada) ---------- */
+.mapa { display:flex; gap:28px; margin-top:auto; }
+.mapa .grupo { flex:1; }
+.mapa .rot { display:block; font-size:26px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
+  color:#2fa99b; padding-bottom:16px; white-space:nowrap; }
+.mapa .grupo.d .rot { color:#f2efe8; }
+.mapa .trazo { display:flex; gap:14px; }
+.mapa .paso { flex:1; border-top:6px solid #2fa99b; padding-top:20px; }
+.mapa .grupo.d .paso { position:relative; border-top:0; padding-top:26px; }
+.mapa .grupo.d .paso::before { content:''; position:absolute; top:0; left:0; right:0; height:6px;
+  background:repeating-linear-gradient(90deg, transparent 0 5px, #f2efe8 5px 19px, transparent 19px 24px); }
+.mapa .paso b { display:block; font-family:'Gabarito'; font-weight:600; font-size:44px; line-height:1; color:#f2efe8; }
+.mapa .paso span { display:block; font-size:28px; line-height:1.3; font-weight:600; color:#f2efe8; margin-top:12px; }
+
+/* ---------- cuerpo de las láminas interiores ---------- */
+.cuerpo { flex:1; display:flex; flex-direction:column; padding-bottom:128px; }
+.h2 { font-family:'Gabarito'; font-weight:600; letter-spacing:-1.4px; line-height:1.13; color:#f2efe8;
+  font-size:68px; max-width:920px; margin-top:58px; min-height:154px; text-wrap:balance; }
+/* titular de tres a cuatro palabras más largo (lámina 3): baja un poco el cuerpo para que quepa en dos líneas */
+.h2.largo { font-size:62px; letter-spacing:-1.3px; max-width:940px; margin-top:52px; min-height:140px; }
+.glosa { font-family:'Gabarito'; font-weight:600; font-size:44px; line-height:1.24; letter-spacing:-0.8px;
+  color:#f2efe8; max-width:920px; margin-top:34px; text-wrap:balance; }
+.nota { font-size:28px; line-height:1.5; color:#9aa4b0; max-width:900px; margin-top:28px; }
+.sello { font-size:26px; font-weight:800; letter-spacing:2.2px; text-transform:uppercase; color:#9aa4b0; }
+
+/* ---------- lámina 2: una pestaña de navegador dibujada ----------
+   La pestaña es el dibujo principal. El 15 a 65 ya no es una cifra grande: la señal del título pesa
+   4 de 100 puntos en el chequeo y solo mide el largo, así que va en la glosa, en crema. */
+.pestana { margin-top:48px; }
+.pestana .tira { display:flex; align-items:flex-end; border-bottom:2px solid rgba(247,245,240,0.22); padding-left:22px; }
+.pestana .tab { display:flex; align-items:center; gap:22px; height:100px; padding:0 44px 0 34px;
+  background:rgba(247,245,240,0.07); border:2px solid rgba(247,245,240,0.22); border-bottom:0;
+  border-radius:20px 20px 0 0; margin-bottom:-2px; }
+.pestana .fav { width:34px; height:34px; border-radius:50%; border:3px solid #9aa4b0; flex:0 0 auto; }
+.pestana .tt { font-size:44px; font-weight:600; letter-spacing:-0.6px; color:#f2efe8; white-space:nowrap; }
+.pestana .ventana { height:230px; padding:38px 40px; border:2px solid rgba(247,245,240,0.22); border-top:0;
+  border-radius:0 0 18px 18px; background:rgba(255,255,255,0.02); }
+.pestana .ventana i { display:block; height:16px; border-radius:8px; background:rgba(242,239,232,0.28); margin-top:24px; }
+.pestana .ventana i.t { height:28px; width:56%; margin-top:0; background:rgba(242,239,232,0.70); border-radius:10px; }
+.pestana .sello { margin-top:20px; }
+
+/* ---------- lámina 3: dos recuadros, el mismo sitio visto de dos maneras (esquema) ---------- */
+.dos { display:flex; gap:28px; margin-top:40px; }
+.dos .col { flex:1; }
+.dos .tag { font-size:26px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#9aa4b0; white-space:nowrap; }
+.dos .col.v .tag { color:#2fa99b; }
+.dos .caja { margin-top:16px; height:290px; border-radius:16px; padding:30px 32px; }
+/* lo que ve una persona: una página con texto (barras, no letras) */
+.dos .v .caja { border:2px solid rgba(47,169,155,0.65); background:rgba(255,255,255,0.03); }
+.dos .barra { height:16px; border-radius:8px; background:rgba(242,239,232,0.30); margin-top:20px; }
+.dos .barra.t { height:28px; width:62%; background:rgba(242,239,232,0.82); margin-top:0; border-radius:10px; }
+.dos .barra.b { width:46%; height:34px; margin-top:34px; background:rgba(47,169,155,0.55); border-radius:10px; }
+/* lo que llega sin ejecutar JavaScript: el cuerpo vacío, en código */
+.dos .d .caja { border:2px dashed rgba(242,239,232,0.38); background:rgba(22,29,38,0.55); }
+.dos .cod { font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:26px; line-height:1.75; color:#9aa4b0; white-space:nowrap; }
+.dos .cod b { color:#f2efe8; font-weight:600; }
+.dos .cod .sangria { padding-left:26px; }
+.dos .vacio { margin-top:14px; font-size:26px; line-height:1.4; color:#9aa4b0; }
+.esquema { font-size:26px; color:#9aa4b0; margin-top:18px; }
+
+/* ---------- lámina 4: dos lugares que se conversan ---------- */
+.fichas { margin-top:52px; display:flex; flex-direction:column; gap:24px; }
+.ficha { border:2px dashed rgba(242,239,232,0.38); border-radius:16px; padding:38px 44px; background:rgba(255,255,255,0.02); }
+.ficha .tag { font-size:26px; font-weight:800; letter-spacing:2.4px; text-transform:uppercase; color:#9aa4b0; }
+.ficha .txt { font-family:'Gabarito'; font-weight:600; font-size:46px; line-height:1.18; letter-spacing:-1px;
+  color:#f2efe8; margin-top:12px; }
+
+/* ---------- lámina 5: cierre ---------- */
+.caja-cierre { margin-top:auto; background:rgba(255,255,255,0.02); border:1px solid rgba(247,245,240,0.10);
+  border-radius:16px; padding:44px 48px 50px; }
+.caja-cierre .tag { font-size:26px; font-weight:800; letter-spacing:2.4px; text-transform:uppercase; color:#2fa99b; }
+.caja-cierre .url { font-family:'Gabarito'; font-weight:600; font-size:72px; letter-spacing:-1.6px; color:#f2efe8; margin-top:22px; }
+
+.h { text-wrap:balance; }

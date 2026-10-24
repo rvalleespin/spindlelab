@@ -1,0 +1,46 @@
+/* Imagen única "Bloquear a GPTBot no te saca de las respuestas de ChatGPT de hoy" · octubre 2026
+   Extiende base.css (copia de 2026-09-septiembre/_sistema/base.css). No redefine tokens: los usa.
+
+   FORMATO: 1080x1350 (4:5), como las piezas 01 a 03 de esta carpeta. base.css fija 1080x1080;
+   acá se estira el lienzo. En la grilla del perfil, Instagram recorta a 3:4: todo el contenido
+   queda dentro de x=80..1000 y el último bloque a 80 px del borde inferior.
+
+   DISPOSITIVO: código. Dos reglas de robots.txt con la misma forma (User-agent + Disallow: /) y
+   consecuencia distinta, dicha por la documentación oficial de cada empresa (ver fuentes.md).
+   Sintaxis: la clave en gris (#9aa4b0), el valor en crema (#f2efe8, peso 700). Sin colores de
+   sintaxis nuevos: el sistema no los tiene y el verde petróleo es solo de etiquetas.
+   Dorado #c9a227 = UN solo uso: el punto del wordmark.
+   Tamaños mínimos: etiquetas y notas desde 26 px para que se lean en un celular. */
+
+html,body { height:1350px; }
+.post { height:1350px; }
+
+.top { display:flex; align-items:baseline; justify-content:space-between; gap:24px; flex-shrink:0; }
+.rule { flex-shrink:0; }
+/* base.css deja la etiqueta en 21 px; en esta pieza sube a 26 px (legible en celular) */
+.top .eyebrow { font-size:26px; letter-spacing:3.2px; }
+
+.cuerpo { flex:1; display:flex; flex-direction:column; padding-bottom:150px; }
+
+/* el gancho: una sola frase, Gabarito, en tres líneas con los cortes puestos a mano: «no te saca» queda junto */
+.gancho { font-size:77px; max-width:920px; margin-top:48px; line-height:1.08; letter-spacing:-1.8px; flex-shrink:0; }
+
+/* el dispositivo de código */
+.robots { margin-top:44px; padding:34px 44px 36px; border-radius:14px; flex-shrink:0;
+  background:rgba(22,29,38,0.86); border:1px solid rgba(247,245,240,0.14); }
+.robots .com { font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:26px; line-height:1.5; color:#9aa4b0; }
+.robots .reg { font-family:ui-monospace,'SF Mono',Menlo,monospace; font-size:34px; line-height:1.5; color:#9aa4b0; white-space:nowrap; }
+.robots .reg b { color:#f2efe8; font-weight:700; }
+.robots .com + .reg { margin-top:8px; }
+.robots .efecto { font-family:'Manrope','Inter',sans-serif; font-size:28px; line-height:1.4; color:#9aa4b0; margin-top:14px; max-width:840px; }
+.robots .efecto b { color:#f2efe8; font-weight:700; }
+.robots .sep { height:1px; background:rgba(247,245,240,0.14); margin:26px 0; }
+
+/* nota debajo del dispositivo: Anthropic */
+.nota { font-size:26px; line-height:1.5; color:#9aa4b0; max-width:920px; margin-top:28px; flex-shrink:0; }
+.nota b { color:#f2efe8; font-weight:600; }
+
+/* pie: wordmark a la izquierda, CTA a la derecha en dos líneas */
+.cta2 { text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:6px; }
+.cta2 span { font-size:26px; line-height:1.2; color:#9aa4b0; }
+.cta2 b { font-family:'Gabarito'; font-weight:600; font-size:38px; line-height:1.1; letter-spacing:-0.6px; color:#f2efe8; }

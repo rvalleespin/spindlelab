@@ -1,6 +1,6 @@
 ---
 import Icon from './Icon.astro';
-import { NAV_LINKS, MAILTO, EMAIL } from '../consts';
+import { NAV_LINKS, MAILTO, EMAIL, CONTACTO } from '../consts';
 ---
 
 <nav
@@ -27,16 +27,16 @@ import { NAV_LINKS, MAILTO, EMAIL } from '../consts';
       ))
     }
     <a
-      href="/diagnostico/"
+      href={CONTACTO}
       class="ml-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
     >
-      Chequea tu sitio
+      Pedir la revisión
     </a>
   </div>
 
   <div class="flex items-center gap-3 sm:gap-6 text-fg-muted">
     <a
-      href={MAILTO}
+      href={CONTACTO}
       class="hidden sm:flex lg:hidden items-center gap-2 text-sm font-medium hover:text-fg transition-colors"
     >
       <Icon name="mail" />
@@ -69,6 +69,8 @@ import { NAV_LINKS, MAILTO, EMAIL } from '../consts';
 <!-- Cajón del menú móvil -->
 <div
   id="menu-drawer"
+  inert
+  aria-hidden="true"
   class="lg:hidden fixed top-0 right-0 bottom-0 z-40 w-[85%] max-w-sm bg-surface-2/95 backdrop-blur-xl shadow-2xl border-l border-white/10 translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
 >
   <div class="flex flex-col h-full pt-24 px-8 pb-8">
@@ -91,11 +93,11 @@ import { NAV_LINKS, MAILTO, EMAIL } from '../consts';
         {EMAIL}
       </a>
       <a
-        href="/diagnostico/"
+        href={CONTACTO}
         data-menu-link
         class="mt-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-5 py-3 rounded-full transition-colors text-center"
       >
-        Chequea tu sitio
+        Pedir la revisión
       </a>
     </div>
   </div>
@@ -116,6 +118,12 @@ import { NAV_LINKS, MAILTO, EMAIL } from '../consts';
     btn?.setAttribute('aria-label', v ? 'Cerrar menú' : 'Abrir menú');
     document.body.style.overflow = v ? 'hidden' : '';
     drawer?.classList.toggle('translate-x-full', !v);
+    // Cerrado, el cajón queda solo trasladado fuera de pantalla: sin inert, el foco del
+    // teclado entraba a sus 8 enlaces invisibles. inert lo saca del orden de tabulación.
+    if (drawer) {
+      drawer.inert = !v;
+      drawer.setAttribute('aria-hidden', String(!v));
+    }
     overlay?.classList.toggle('opacity-0', !v);
     overlay?.classList.toggle('pointer-events-none', !v);
     iconMenu?.classList.toggle('opacity-0', v);
@@ -128,6 +136,12 @@ import { NAV_LINKS, MAILTO, EMAIL } from '../consts';
 
   btn?.addEventListener('click', () => setOpen(!open));
   overlay?.addEventListener('click', () => setOpen(false));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && open) {
+      setOpen(false);
+      btn?.focus();
+    }
+  });
   document.querySelectorAll('[data-menu-link]').forEach((a) =>
     a.addEventListener('click', () => setOpen(false))
   );
