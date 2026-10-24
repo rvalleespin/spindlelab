@@ -129,7 +129,7 @@ console.log('=== 3. EL EVENTO REPETIDO: solo el primero pasa ===');
   const resto = [];
   for (let i = 0; i < 7; i++) resto.push(await A.registrarEvento(db, 'ev_12345', { tipo: 'payment' }));
   falso('ninguno de los siete reintentos pasa', resto.some((r) => r.primeraVez));
-  eq('y todos dicen por qué', new Set(resto.map((r) => r.motivo)), new Set(['repetido']));
+  eq('y todos dicen por qué', [...new Set(resto.map((r) => r.motivo))].sort(), ['repetido']);
 
   // Otro evento distinto sí pasa.
   cierto('un evento distinto sí es nuevo', (await A.registrarEvento(db, 'ev_99999')).primeraVez);
