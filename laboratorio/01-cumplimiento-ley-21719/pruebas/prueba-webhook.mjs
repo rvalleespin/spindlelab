@@ -60,12 +60,17 @@ function baseNueva() {
 /** Una petición igual a la que manda Mercado Pago, firmada de verdad. */
 async function peticion({ dataId = ID_ORDEN, requestId = REQUEST_ID, secreto = SECRETO,
   cuerpo = { id: 991199, type: 'order', action: 'order.processed', data: { id: ID_ORDEN } },
+  // La petición real del 24-oct trae también `data.external_reference` con NUESTRO id de
+  // pedido. No se usa para decidir nada —no está firmado— pero sí para saber, cuando una firma
+  // se rechaza, si quien llama conoce un id nuestro o está golpeando la puerta a ciegas.
+  refExterna = null,
   firmaRota = false } = {}) {
   const ts = '1742505638683';
   const manifiesto = F.armarManifiesto({ dataId, requestId, ts });
   const v1 = firmaRota ? 'a'.repeat(64) : await F.hmacHex(secreto, manifiesto);
   return new Request(
-    `https://verifica.spindlelab.cl/api/webhook-mp?data.id=${encodeURIComponent(dataId)}&type=order`,
+    `https://verifica.spindlelab.cl/api/webhook-mp?data.id=${encodeURIComponent(dataId)}&type=order` +
+      (refExterna ? `&data.external_reference=${encodeURIComponent(refExterna)}` : ''),
     {
       method: 'POST',
       headers: {
@@ -481,6 +486,60 @@ console.log('=== 15. la lectura de la orden tiene corte de tiempo ===');
     return { ok: true, status: 200, json: async () => ({ id: 'ORD1' }) };
   });
   cierto('el fetch se hace con un signal de aborto', vioSignal);
+}
+
+console.log('=== 16. una firma rechazada deja rastro, y no filtra nada ===');
+{
+  // EL 24-OCT ESTO COSTÓ UN PAGO. Durante una hora, todas las notificaciones de una compra real
+  // se rechazaron porque el secreto cargado era el de otra aplicación de Mercado Pago. De
+  // nuestro lado no quedó ni una línea: la tabla de eventos estaba vacía —la firma se verifica
+  // ANTES de escribir nada— y el motivo solo viajaba en el cuerpo del 401, que vive en el panel
+  // de Mercado Pago y no acá. Un secreto equivocado y alguien golpeando la puerta se veían
+  // exactamente igual: nada.
+  //
+  // La señal que los separa es si quien llama conoce un id de pedido NUESTRO. Mercado Pago lo
+  // manda en `data.external_reference`; un escaneo no lo tiene.
+
+  const env = { MP_WEBHOOK_SECRET: SECRETO };
+  const lineas = [];
+  const antesLog = console.log;
+  console.log = (...a) => lineas.push(a.map(String).join(' '));
+  let conNuestra, conAjena;
+  try {
+    conNuestra = await W.onRequestPost({
+      request: await peticion({ firmaRota: true, refExterna: 'vyc_' + 'a'.repeat(32) }), env,
+    });
+    conAjena = await W.onRequestPost({
+      request: await peticion({ firmaRota: true, refExterna: 'pedido-de-otro-sistema' }), env,
+    });
+  } finally {
+    // Se restituye ANTES de afirmar nada: si no, un FALLA se escribiría en el array y no en la
+    // pantalla, y la prueba fallaría en silencio.
+    console.log = antesLog;
+  }
+
+  eq('la firma rota sigue dando 401', conNuestra.status, 401);
+  eq('y la otra también', conAjena.status, 401);
+  eq('quedaron dos líneas, una por rechazo', lineas.filter((l) => l.includes('firma rechazada')).length, 2);
+
+  const nuestra = lineas.find((l) => l.includes('firma rechazada'));
+  const ajena = lineas.filter((l) => l.includes('firma rechazada'))[1];
+  cierto('dice el motivo', /no-coincide|firma/i.test(nuestra));
+  cierto('con una referencia nuestra lo dice', /referencia nuestra:sí/.test(nuestra));
+  cierto('y con una ajena, también', /referencia nuestra:no/.test(ajena));
+  cierto('anota si venía data.id', /data\.id:sí/.test(nuestra));
+  cierto('y si venía request-id', /request-id:sí/.test(nuestra));
+
+  // ── Lo que NO puede aparecer nunca ────────────────────────────────────────────────────
+  //
+  // Un registro de depuración es un lugar donde los secretos se escapan sin que nadie lo note,
+  // y este se escribe en el camino que ve el tráfico no autenticado.
+  const todo = lineas.join('\n');
+  falso('NUNCA el secreto del webhook', todo.includes(SECRETO));
+  falso('ni la firma que trajo la petición', todo.includes('a'.repeat(64)));
+  falso('ni el ts de la firma', todo.includes('1742505638683'));
+  falso('ni el id de pedido completo, que lo elige quien llama', todo.includes('vyc_' + 'a'.repeat(32)));
+  falso('ni el texto ajeno tal cual', todo.includes('pedido-de-otro-sistema'));
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
