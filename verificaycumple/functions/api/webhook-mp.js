@@ -52,13 +52,33 @@ export async function onRequestPost(contexto) {
     secreto: env.MP_WEBHOOK_SECRET,
   });
   if (!firma.valida) {
-    // 401 es lo que la doc pide. El motivo va en el cuerpo para poder depurar: sin él, un
-    // webhook que rechaza todo es imposible de arreglar en producción.
+    // 401 es lo que la doc pide, y el motivo va en el cuerpo, que Mercado Pago sí guarda en su
+    // registro de entregas. Pero ese registro está en SU panel, no acá: durante horas, el
+    // 24-oct, todas las notificaciones de un pago real se rechazaron por tener cargado el
+    // secreto de la aplicación equivocada, y de nuestro lado no quedó ni una línea. Un secreto
+    // malo y alguien golpeando la puerta se ven exactamente igual: nada.
+    //
+    // Por eso se escribe acá lo que es NUESTRO y acotado. Nunca el secreto, nunca el `v1` ni el
+    // `ts` de la firma, nunca el cuerpo, y nunca el valor de un parámetro que elige quien
+    // llama: solo si venían, y si la referencia externa tiene la forma de un id nuestro. Esa
+    // última es la que separa las dos hipótesis, porque un escaneo no conoce ningún id nuestro.
+    const refExterna = url.searchParams.get('data.external_reference');
+    console.log('[webhook] firma rechazada: ' + firma.motivo +
+      ` · data.id:${dataId ? 'sí' : 'no'}` +
+      ` · request-id:${requestId ? 'sí' : 'no'}` +
+      ` · referencia nuestra:${ID_PEDIDO_NUESTRO.test(String(refExterna || '')) ? 'sí' : 'no'}`);
     return responder(401, { ok: false, motivo: firma.motivo });
   }
 
   if (!env.VYC_PEDIDOS) {
     // Falla nuestra y recuperable: que reintente.
+    //
+    // ⚠️ El motivo que va en este cuerpo NO se puede leer en ninguna parte: Cloudflare
+    // intercepta cualquier 5xx que salga de una Pages Function y lo reemplaza por su propia
+    // página de texto plano, así que lo que Mercado Pago guarda en su registro de entregas es
+    // la página de Cloudflare, no esto. El código 503 sí llega —y es lo que hace que reintente,
+    // que es para lo que está—, pero el motivo solo existe si se escribe acá.
+    console.log('[webhook] 503 sin-base');
     return responder(503, { ok: false, motivo: 'sin-base' });
   }
 
@@ -75,6 +95,7 @@ export async function onRequestPost(contexto) {
       tipo: (cuerpo && cuerpo.type) || null,
     });
   } catch {
+    console.log('[webhook] 503 base-no-responde');
     return responder(503, { ok: false, motivo: 'base-no-responde' });
   }
   if (!reclamo.primeraVez) {
@@ -88,12 +109,16 @@ export async function onRequestPost(contexto) {
   // una: el reclamo VENCE solo en `registrarEvento`, y acá el motivo dice si la liberación
   // salió o no, para poder leerlo en el registro de entregas de Mercado Pago. Lo que no se
   // hace es contestar 503 afirmando que se soltó cuando no se sabe.
+  //
+  // Ese motivo se escribe además en el registro. El comentario anterior decía que se podía leer
+  // «en el registro de entregas de Mercado Pago», y es falso: Cloudflare reemplaza el cuerpo de
+  // cualquier 5xx por su propia página, así que allá llega la de Cloudflare. Sin este
+  // `console.log` el motivo no existe en ninguna parte.
   const soltarYReintentar = async (motivo) => {
     const soltado = await liberarEvento(env.VYC_PEDIDOS, clave);
-    return responder(503, {
-      ok: false,
-      motivo: soltado && soltado.soltado ? motivo : `${motivo}+reclamo-vence-solo`,
-    });
+    const dicho = soltado && soltado.soltado ? motivo : `${motivo}+reclamo-vence-solo`;
+    console.log(`[webhook] 503 ${dicho} · clave ${clave}`);
+    return responder(503, { ok: false, motivo: dicho });
   };
 
   // ── 3. Releer la orden contra la API ────────────────────────────────────────────────────
