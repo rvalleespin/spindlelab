@@ -32,6 +32,20 @@
  * probando, y no que ya estamos instalando.
  */
 
+// ⚠️ NINGUNA RESPUESTA DE CARA AL NAVEGADOR USA UN CÓDIGO 5xx.
+//
+// Cloudflare INTERCEPTA las respuestas 5xx que salen de una Function y las reemplaza por su
+// propia página de error en texto plano. Comprobado en producción el 24-oct-2026: este mismo
+// endpoint devuelve su JSON con 400 y con 409, y con 502 devuelve `error code: 502`.
+//
+// La cadena de consecuencias es peor que el síntoma: el navegador no puede parsear esa página,
+// cae en el catch del fetch, y le dice a la persona «revisa tu conexión» cuando la conexión
+// estaba bien y el problema era nuestro. Tres capas de mensaje equivocado por un código.
+//
+// Por eso lo que la persona ve sale siempre con 4xx y el motivo real va en el cuerpo. El
+// webhook es la excepción y ahí 503 es correcto: quien lo lee es Mercado Pago, que necesita un
+// 5xx para reintentar, y no hay ninguna persona mirando.
+
 import { leerPedido, guardarIntake, vistaPublica } from './almacen.js';
 import { etapaDelPedido, señalesDelPedido, convieneRefrescar, TITULOS } from './etapas.js';
 import { ID_PEDIDO_NUESTRO } from './pedidos.js';
@@ -102,7 +116,8 @@ export function normalizarRut(v) {
 export async function onRequestPost(contexto) {
   const { request, env } = contexto;
 
-  if (!env.VYC_PEDIDOS) return json({ ok: false, motivo: 'sin-base' }, 503);
+  if (!env.VYC_PEDIDOS) return json({ ok: false, motivo: 'sin-base',
+    detalle: 'Tuvimos un problema de nuestro lado. Vuelve a intentarlo en un momento.' }, 409);
 
   let cuerpo = null;
   try { cuerpo = await request.json(); } catch { cuerpo = null; }
@@ -138,7 +153,8 @@ export async function onRequestPost(contexto) {
 
   let pedido;
   try { pedido = await leerPedido(env.VYC_PEDIDOS, id); } catch {
-    return json({ ok: false, motivo: 'error-de-lectura' }, 503);
+    return json({ ok: false, motivo: 'error-de-lectura',
+      detalle: 'No pudimos leer tu pedido ahora. Vuelve a intentarlo en un momento.' }, 409);
   }
   if (!pedido) return json(NO_EXISTE, 404);
 
@@ -179,7 +195,8 @@ export async function onRequestPost(contexto) {
 
   let guardado;
   try { guardado = await guardarIntake(env.VYC_PEDIDOS, id, datos); } catch {
-    return json({ ok: false, motivo: 'no-se-pudo-guardar' }, 503);
+    return json({ ok: false, motivo: 'no-se-pudo-guardar',
+      detalle: 'No pudimos guardar tus datos ahora. Vuelve a intentarlo en un momento.' }, 409);
   }
 
   if (!guardado.guardado) {

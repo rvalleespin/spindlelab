@@ -3185,9 +3185,15 @@
         signal: AbortSignal.timeout(30000),
       });
       data = await r.json();
-    } catch {
+    } catch (err) {
       soltarBotonCompra('Reintentar');
-      mensajeCompra('No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo, o escríbenos a ' + CONTACTO + '.');
+      // Dos fallas muy distintas caían en el mismo mensaje. Si `fetch` no llegó a contestar, la
+      // conexión sí es el problema. Si contestó y no pudimos leer la respuesta, el problema es
+      // NUESTRO, y decirle a alguien «revisa tu conexión» cuando su conexión está bien lo manda
+      // a buscar donde no hay nada.
+      mensajeCompra(r
+        ? 'Tuvimos un problema de nuestro lado y no se te cobró nada. Vuelve a intentarlo, o escríbenos a ' + CONTACTO + '.'
+        : 'No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo, o escríbenos a ' + CONTACTO + '.');
       return;
     }
 

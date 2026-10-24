@@ -462,6 +462,11 @@ export const MS_LECTURA_ORDEN = 10000;
  * navegador.
  */
 export async function crearOrdenMP(cuerpo, idempotencia, token, fetchImpl = fetch) {
+  // El token se limpia antes de usarlo, por la misma razón que el secreto de la firma: uno
+  // pegado con un espacio o un salto de línea al final se ve CARGADO en el panel y no sirve. El
+  // 24-oct el checkout entero estuvo caído porque `MP_ACCESS_TOKEN` llegaba vacío a la función,
+  // y desde afuera solo se veía un 502 sin explicación.
+  token = typeof token === 'string' ? token.trim() : token;
   if (!token) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-token' };
   if (!idempotencia) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-idempotencia' };
   let r;
@@ -506,6 +511,11 @@ export async function crearOrdenMP(cuerpo, idempotencia, token, fetchImpl = fetc
 }
 
 export async function leerOrdenMP(idOrden, token, fetchImpl = fetch) {
+  // El token se limpia antes de usarlo, por la misma razón que el secreto de la firma: uno
+  // pegado con un espacio o un salto de línea al final se ve CARGADO en el panel y no sirve. El
+  // 24-oct el checkout entero estuvo caído porque `MP_ACCESS_TOKEN` llegaba vacío a la función,
+  // y desde afuera solo se veía un 502 sin explicación.
+  token = typeof token === 'string' ? token.trim() : token;
   if (!token) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-token' };
   if (!idOrden) return { ok: false, orden: null, estadoHttp: 0, error: 'sin-id' };
   let r;

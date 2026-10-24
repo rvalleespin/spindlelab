@@ -16,6 +16,20 @@
  * alguien «ese id tiene la forma correcta pero no existe».
  */
 
+// ⚠️ NINGUNA RESPUESTA DE CARA AL NAVEGADOR USA UN CÓDIGO 5xx.
+//
+// Cloudflare INTERCEPTA las respuestas 5xx que salen de una Function y las reemplaza por su
+// propia página de error en texto plano. Comprobado en producción el 24-oct-2026: este mismo
+// endpoint devuelve su JSON con 400 y con 409, y con 502 devuelve `error code: 502`.
+//
+// La cadena de consecuencias es peor que el síntoma: el navegador no puede parsear esa página,
+// cae en el catch del fetch, y le dice a la persona «revisa tu conexión» cuando la conexión
+// estaba bien y el problema era nuestro. Tres capas de mensaje equivocado por un código.
+//
+// Por eso lo que la persona ve sale siempre con 4xx y el motivo real va en el cuerpo. El
+// webhook es la excepción y ahí 503 es correcto: quien lo lee es Mercado Pago, que necesita un
+// 5xx para reintentar, y no hay ninguna persona mirando.
+
 import {
   leerPedido, vistaPublica, crearPedido, buscarPedidoReciente, marcarEstado,
 } from './almacen.js';
@@ -48,7 +62,7 @@ export async function onRequestGet(contexto) {
 
   if (!env.VYC_PEDIDOS) {
     // Sin base no se inventa un estado. Es un fallo nuestro y se dice como tal.
-    return json({ ok: false, motivo: 'sin-base' }, 503);
+    return json({ ok: false, motivo: 'sin-base' }, 409);
   }
   if (!id) return json(NO_EXISTE, 404);
 
@@ -56,7 +70,7 @@ export async function onRequestGet(contexto) {
   try {
     pedido = await leerPedido(env.VYC_PEDIDOS, id);
   } catch {
-    return json({ ok: false, motivo: 'error-de-lectura' }, 503);
+    return json({ ok: false, motivo: 'error-de-lectura' }, 409);
   }
   if (!pedido) return json(NO_EXISTE, 404);
 
@@ -185,7 +199,8 @@ export async function onRequestPost(contexto) {
   const url = new URL(request.url);
 
   if (!origenPropio(request, url)) return jsonPost({ ok: false, motivo: 'origen' }, 403);
-  if (!env.VYC_PEDIDOS) return jsonPost({ ok: false, motivo: 'sin-base' }, 503);
+  if (!env.VYC_PEDIDOS) return jsonPost({ ok: false, motivo: 'sin-base',
+      detalle: 'Tuvimos un problema de nuestro lado. Vuelve a intentarlo en un momento.' }, 409);
 
   let cuerpo = null;
   try { cuerpo = await request.json(); } catch { cuerpo = null; }
@@ -323,7 +338,8 @@ export async function onRequestPost(contexto) {
         ...utmsDe(request.url),
       });
     } catch {
-      return jsonPost({ ok: false, motivo: 'no-se-pudo-guardar' }, 503);
+      return jsonPost({ ok: false, motivo: 'no-se-pudo-guardar',
+        detalle: 'Tuvimos un problema al guardar tu pedido. No se te cobró nada. Vuelve a intentarlo.' }, 409);
     }
 
     // ── LA CARRERA QUE LA BÚSQUEDA DE ARRIBA NO PUEDE CERRAR ────────────────────────────
@@ -346,7 +362,8 @@ export async function onRequestPost(contexto) {
       if (!ganador) {
         // No insertó y tampoco está: no se puede saber qué pasó, y seguir abriría una orden
         // contra un pedido que no existe.
-        return jsonPost({ ok: false, motivo: 'no-se-pudo-guardar' }, 503);
+        return jsonPost({ ok: false, motivo: 'no-se-pudo-guardar',
+        detalle: 'Tuvimos un problema al guardar tu pedido. No se te cobró nada. Vuelve a intentarlo.' }, 409);
       }
       idPedido = ganador.id;
     }
@@ -408,7 +425,19 @@ export async function onRequestPost(contexto) {
       codigo: creada.error || null,
       detalle: 'No pudimos abrir el pago en Mercado Pago. No se te cobró nada. Vuelve a ' +
         'intentarlo en un momento, y si te pasa de nuevo escríbenos con este enlace.',
-    }, 502);
+    // ⚠️ 409 Y NO 502, Y NO ES UN CAPRICHO.
+    //
+    // Cloudflare INTERCEPTA las respuestas 5xx que salen de una Function y las reemplaza por su
+    // propia página de error, un `error code: 502` en texto plano. Comprobado en producción el
+    // 24-oct: el mismo endpoint devuelve mi JSON con 400 y con 409, y con 502 devuelve la página
+    // de Cloudflare. Consecuencia en cadena: el navegador no puede parsear eso, cae en el catch
+    // del fetch, y le dice a la persona «revisa tu conexión» cuando la conexión estaba bien y el
+    // problema era nuestro. Tres capas de mensaje equivocado por un código de estado.
+    //
+    // Que no se pueda abrir el pago es un conflicto con el estado de las cosas, no un error de
+    // sintaxis de la petición, así que 409 tampoco es una mentira. El motivo y el código van en
+    // el cuerpo, que es donde el navegador los lee.
+    }, 409);
   }
 
   try {
