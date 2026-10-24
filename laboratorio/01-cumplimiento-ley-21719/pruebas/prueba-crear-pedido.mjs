@@ -900,5 +900,93 @@ console.log('=== 22. hasta cuándo una medición sirve para vender ===');
   eq('y tampoco deja pedido', filas(c3).length, 0);
 }
 
+console.log('=== 23. una compra abierta vencida no puede encerrar a nadie ===');
+{
+  // EL DEFECTO, encontrado el 24-oct por una revisión adversaria y verificado línea por línea:
+  // el índice `idx_pedidos_compra_abierta` garantiza UNA compra abierta por (dominio, correo)
+  // SIN mirar su edad, pero `buscarPedidoReciente` solo mira las últimas VIGENCIA_ORDEN_HORAS.
+  // En el hueco entre los dos, una fila vieja atascada en `creado` bloqueaba el INSERT y nadie
+  // podía encontrarla: cada intento daba 409 «no se te cobró nada, vuelve a intentarlo», para
+  // siempre. Determinista, no una carrera.
+  //
+  // Y hoy ninguna fila sale de `creado` sola: la única salida era el webhook.
+
+  const { db, crudo } = baseNueva();
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+
+  // Una compra abierta de hace más de un día, de la MISMA pareja: su orden en Mercado Pago ya
+  // venció (se abrió con expiration_time = VIGENCIA_ORDEN_HORAS), pero sigue tomando el índice.
+  const idViejo = 'vyc_' + 'b'.repeat(32);
+  const haceMucho = new Date(Date.now() - (P.VIGENCIA_ORDEN_HORAS + 2) * 60 * 60 * 1000).toISOString();
+  crudo.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
+     VALUES (?, ?, 'creado', 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
+      '{}', 149000, 177310, 'contacto@clinicaejemplo.cl', 'ORD_VENCIDA')`,
+  ).run(idViejo, haceMucho);
+
+  const red = conRed();
+  const r = await E.onRequestPost({ request: pedir(BIEN), env });
+  const j = await r.json();
+  red.soltar();
+
+  eq('ahora sí se puede comprar', r.status, 200);
+  cierto('con un pedido nuevo', /^vyc_[0-9a-f]{32}$/.test(j.id));
+  falso('que no es el viejo', j.id === idViejo);
+
+  const todas = filas(crudo);
+  eq('quedan dos filas: la vieja cerrada y la nueva', todas.length, 2);
+  eq('la vieja queda rechazada, no en creado', todas.find((f) => f.id === idViejo).estado, 'rechazado');
+  eq('y la nueva queda abierta', todas.find((f) => f.id === j.id).estado, 'creado');
+
+  // El enlace de pago tiene que ser el de la orden NUEVA. Reusar el id de la fila vieja habría
+  // mandado a la persona a un enlace muerto, que es peor que el 409: cree que va a pagar.
+  eq('se abrió una orden nueva en Mercado Pago', red.llamadas.mp, 1);
+  eq('con la clave de idempotencia del pedido nuevo', red.llamadas.cabecerasMP[0]['X-Idempotency-Key'], j.id);
+  eq('y la referencia externa del pedido nuevo', red.llamadas.cuerposMP[0].external_reference, j.id);
+
+  // ── Y lo que NO puede pasar: que la búsqueda sin fecha agarre un pedido ajeno ─────────
+  //
+  // ⚠️ LA PRIMERA VERSIÓN DE ESTE TRAMO NO PROBABA NADA. Ponía una fila `pagado` sola y
+  // afirmaba que no se tocaba. Pero el índice parcial SOLO cubre las filas en `creado`, así
+  // que con una `pagado` sola el INSERT entra sin chocar, el rescate nunca corre y
+  // `buscarCompraAbierta` ni se llama. Se descubrió rompiendo el filtro de estado a propósito:
+  // la prueba siguió verde. Una prueba que pasa con el código roto es peor que ninguna.
+  //
+  // Para ejercerlo de verdad hacen falta las DOS filas: una `creado` vieja que bloquee el
+  // índice —y obligue a entrar al rescate— y una `pagado` MÁS NUEVA de la misma pareja. Con el
+  // filtro puesto, la búsqueda devuelve la vieja en `creado` y todo sale bien. Sin el filtro,
+  // el `ORDER BY creado_en DESC` devuelve la PAGADA, que no se puede cerrar, y la compra muere.
+  const { db: db2, crudo: c2 } = baseNueva();
+  const kv2 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const meter = (crudo, id, estado, cuando, orden) => crudo.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
+     VALUES (?, ?, ?, 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]', '[]',
+      '{}', 149000, 177310, 'contacto@clinicaejemplo.cl', ?)`,
+  ).run(id, cuando, estado, orden);
+
+  const idBloquea = 'vyc_' + 'd'.repeat(32);
+  const idPagadoNuevo = 'vyc_' + 'c'.repeat(32);
+  meter(c2, idBloquea, 'creado', haceMucho, 'ORD_VIEJA');
+  // Más nueva que la que bloquea: es la que agarraría el ORDER BY si no estuviera el filtro.
+  meter(c2, idPagadoNuevo, 'pagado', new Date().toISOString(), 'ORD_AJENA');
+
+  const red2 = conRed();
+  const r2 = await E.onRequestPost({
+    request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'TEST-tok' },
+  });
+  const j2 = await r2.json();
+  red2.soltar();
+
+  eq('con una pagada más nueva al lado, igual se compra', r2.status, 200);
+  falso('y NUNCA se devuelve el id del pedido ajeno', j2.id === idPagadoNuevo);
+  const ajeno = filas(c2).find((f) => f.id === idPagadoNuevo);
+  eq('el pedido pagado no se tocó', ajeno.estado, 'pagado');
+  eq('ni se le cambió la orden', ajeno.mp_order_id, 'ORD_AJENA');
+  eq('la que se cerró es la que bloqueaba', filas(c2).find((f) => f.id === idBloquea).estado, 'rechazado');
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
