@@ -33,6 +33,7 @@ import {
   registrarEvento, liberarEvento, anotarResultado, leerPedido, marcarEstado, VENTANA_RECLAMO_MS,
 } from './almacen.js';
 import { ESTADOS, ID_PEDIDO_NUESTRO } from './pedidos.js';
+import { avisarVenta } from './aviso.js';
 
 function responder(estado, cuerpo) {
   return new Response(JSON.stringify(cuerpo), {
@@ -313,6 +314,16 @@ export async function onRequestPost(contexto) {
         console.log(`[webhook] ${pedido.id}: carrera perdida contra ${actual.estado}, alcanzado a ${estadoFinal}`);
       }
     }
+  }
+
+  // Una venta nueva tiene que llegarle a una persona. Va con `waitUntil` para no demorar la
+  // respuesta a Mercado Pago: un aviso lento no puede convertirse en un reintento.
+  //
+  // Solo cuando ESTA entrega fue la que movió el pedido. Si lo alcanzó otra, esa otra ya avisó,
+  // y dos avisos por la misma venta se leen como dos ventas.
+  if (movido.movido && estadoFinal === ESTADOS.PAGADO) {
+    const aviso = avisarVenta({ ...pedido, estado: estadoFinal, pagado_en: extra.pagado_en });
+    if (contexto.waitUntil) contexto.waitUntil(aviso); else await aviso;
   }
 
   await anotarResultado(

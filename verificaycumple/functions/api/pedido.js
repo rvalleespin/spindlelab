@@ -44,6 +44,7 @@ import {
 import {
   crearOrdenMP, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES,
 } from './cobro.js';
+import { avisarVenta } from './aviso.js';
 
 
 const NO_EXISTE = { ok: false, motivo: 'no-existe' };
@@ -102,7 +103,7 @@ const ORDEN_MUERTA = new Set(['expired', 'canceled', 'failed']);
  * de seguridad sobre la lectura de una pantalla, no puede romperla. El webhook sigue siendo el
  * camino principal.
  */
-async function reconciliar(env, pedido) {
+async function reconciliar(env, pedido, esperar) {
   // Solo donde Mercado Pago puede saber algo que nosotros no. `convieneRefrescar` ya define
   // exactamente eso —`pendiente`, o `creado` con orden abierta— y es la misma regla que decide
   // si la pantalla se repregunta. Que sean la misma no es casualidad: preguntar cuando la
@@ -196,6 +197,13 @@ async function reconciliar(env, pedido) {
   }
 
   console.log(`[pedido] reconciliado ${pedido.id}: ${pedido.estado} → ${estadoFinal}`);
+
+  // La reconciliación también puede ser la que descubre una venta: si la notificación nunca
+  // llegó, este es el único momento en que alguien se entera.
+  if (estadoFinal === ESTADOS.PAGADO) {
+    const aviso = avisarVenta({ ...pedido, estado: estadoFinal, pagado_en: new Date().toISOString() });
+    if (esperar) esperar(aviso); else await aviso;
+  }
   // Se relee para que la pantalla dibuje el pedido entero y no una mezcla del viejo con el
   // estado nuevo. Si la relectura falla, el de antes sigue siendo cierto.
   try { return (await leerPedido(env.VYC_PEDIDOS, pedido.id)) || pedido; } catch { return pedido; }
@@ -221,7 +229,8 @@ export async function onRequestGet(contexto) {
 
   // La red de seguridad: si la notificación no llegó, acá se le pregunta a Mercado Pago. Nunca
   // falla hacia afuera — si no se puede, devuelve el pedido tal como estaba.
-  pedido = await reconciliar(env, pedido);
+  pedido = await reconciliar(env, pedido,
+    contexto.waitUntil ? (p) => contexto.waitUntil(p) : null);
 
   return json({
     ok: true,
