@@ -748,8 +748,13 @@ console.log('=== 20. los 11 sitios del banco, con su fila esperada cada uno ==='
       54, ['pendiente', 'ok', 'ok', 'pendiente'], ['meta']],
     ['lastorres.com', () => desdeTxt('ev1/requests-lastorres.txt', 'ev1/cdp-lastorres.json'),
       0, ['pendiente', 'pendiente', 'pendiente', 'pendiente'], ['clarity', 'ga4', 'gads', 'gtm', 'meta']],
+    // Su 77 era EL FALSO ROJO, escrito acá como si fuera lo correcto (corregido el 16-oct).
+    // Cero rastreadores del catálogo, cero cookies, los tres ítems de rastreo en verde: no
+    // tiene nada esperando un permiso, así que cobrarle el aviso que no necesita le costaba
+    // 3 de 13. Es un sitio real, no un caso de laboratorio, y por eso vale como prueba de
+    // que el arreglo no es solo para la página de Verifica.
     ['opticasclvision.cl', () => desdeTxt('ev1/requests-opticasclvision.txt', 'ev1/cdp-opticasclvision.json'),
-      77, ['ok', 'ok', 'ok', 'pendiente'], []],
+      100, ['ok', 'ok', 'ok', 'no-aplica'], []],
     // Su caso propio: el .txt de la interacción trae los dos tramos y el .json de la misma
     // pasada trae las 20 cookies que quedaron. Antes se cruzaba el .txt de la interacción con
     // el .json de la pasada PASIVA, que no tiene ninguna cookie.
@@ -784,8 +789,8 @@ console.log('=== 20. los 11 sitios del banco, con su fila esperada cada uno ==='
        r.items.find((i) => i.id === 'aviso').estado], estadosEsperados);
     eq(`${dominio}: los rastreadores esperados`, r.rastreadores.map((h) => h.clave).sort(), rastreadoresEsperados);
     eq(`${dominio}: cuatro ítems`, r.items.length, 4);
-    cierto(`${dominio}: todos los estados son de los tres permitidos`,
-      r.items.every((i) => ['ok', 'pendiente', 'sin-confirmar'].includes(i.estado)));
+    cierto(`${dominio}: todos los estados son de los cuatro permitidos`,
+      r.items.every((i) => ['ok', 'pendiente', 'sin-confirmar', 'no-aplica'].includes(i.estado)));
     cierto(`${dominio}: el campo ok siempre calza con el estado`,
       r.items.every((i) => i.ok === (i.estado === 'ok')));
     cierto(`${dominio}: un ítem que no está en verde trae su arreglo`,
@@ -1792,6 +1797,71 @@ console.log('=== 34. la pared que nos deja CIEGOS no puede salir mejor que la qu
   }
   eq('las tres paredes del censo declinan aunque no se pueda contar el texto', paredesQueDeclinan, 3);
   eq('y las 31 portadas reales siguen recibiendo informe', realesQueSiguen, 31);
+}
+
+/* ================================================================== */
+console.log('=== 35. el FALSO ROJO: no se le cobra un aviso a quien no tiene nada que consentir ===');
+{
+  // 16-oct. El ítem del aviso preguntaba "¿aparece?" sin preguntar "¿hace falta?", y le
+  // descontaba 3 de 13 a todo sitio que no escribe nada. Medido en casa: la propia página de
+  // Verifica salía 77/100 con los otros tres ítems en verde. Un aviso ahí no retiene nada, y
+  // ponérselo para subir el puntaje es el banner decorativo que este chequeo denuncia.
+  const pide = [
+    { url: 'https://limpio.cl/', metodo: 'GET', tipo: 'Document', ms: 100, conCuerpo: false },
+    { url: 'https://limpio.cl/estilo.css', metodo: 'GET', tipo: 'Stylesheet', ms: 240, conCuerpo: false },
+  ];
+  const base = {
+    urlFinal: 'https://limpio.cl/', titulo: 'Limpio', letras: 4000, msTotal: 18000, parcial: false,
+    tras1: { ms: 11000, peticiones: pide, cookies: [] },
+    tras2: { ms: 18000, peticiones: pide, cookies: [] },
+    // El detector CORRIÓ y no encontró aviso. Es distinto de `{ fallo: true }`, que es
+    // "no pudimos mirar" y sale por la primera rama.
+    aviso: { avisos: [], marcosIlegibles: [] },
+  };
+
+  const r = m.armarInforme(base, 'limpio.cl');
+  const aviso = r.items.find((i) => i.id === 'aviso');
+  eq('el aviso no cuenta como falta', aviso.estado, 'no-aplica');
+  cierto('y el detalle dice por qué', /nada esperando un permiso/.test(aviso.detalle));
+  cierto('ni a favor ni en contra, con esas palabras', /ni a favor ni en contra/.test(aviso.detalle));
+  cierto('el arreglo no manda a instalar nada hoy', /Nada que hacer por ahora/.test(aviso.arreglo));
+  falso('y NO manda instalar un gestor de consentimiento', /Instala un gestor/.test(aviso.arreglo || ''));
+  eq('sale del puntaje: 10 de 13 confirmados', [r.pesoConfirmado, r.pesoTotal], [10, 13]);
+  eq('y el sitio limpio marca 100', r.puntaje, 100);
+  eq('sin pendientes', r.pendientes, 0);
+  eq('y sin "no lo pudimos ver"', r.sinConfirmar, 0);
+  eq('se reporta la cuenta del estado nuevo', r.noAplica, 1);
+
+  // Las tres partes de la condición, cada una por separado. Si cualquiera se afloja, vuelve
+  // el camino al 100 falso: un aviso que falta en un sitio que SÍ tiene algo que consentir.
+  const unaCookiePropia = {
+    ...base,
+    tras1: { ...base.tras1, cookies: [{ name: 'sesion', domain: 'limpio.cl' }] },
+    tras2: { ...base.tras2, cookies: [{ name: 'sesion', domain: 'limpio.cl' }] },
+  };
+  eq('con UNA cookie propia ya no se puede afirmar que no hay nada que consentir',
+    m.armarInforme(unaCookiePropia, 'limpio.cl').items.find((i) => i.id === 'aviso').estado, 'pendiente');
+
+  const unaCookieTercera = {
+    ...base,
+    tras1: { ...base.tras1, cookies: [{ name: 'lo_que_sea', domain: '.quiensabe.net' }] },
+    tras2: { ...base.tras2, cookies: [{ name: 'lo_que_sea', domain: '.quiensabe.net' }] },
+  };
+  eq('y con una de un tercero que no está en el catálogo, tampoco',
+    m.armarInforme(unaCookieTercera, 'limpio.cl').items.find((i) => i.id === 'aviso').estado, 'pendiente');
+
+  const aMedias = { ...base, parcial: true };
+  falso('de una página que cargó a medias no se afirma que no hay nada que consentir',
+    m.armarInforme(aMedias, 'limpio.cl').items.find((i) => i.id === 'aviso').estado === 'no-aplica');
+
+  // Y el caso que ya existía no se mueve: si algo del catálogo corrió, falta el aviso y punto.
+  const conRastreador = {
+    ...base,
+    tras1: { ...base.tras1, peticiones: [...pide, { url: 'https://www.google-analytics.com/g/collect?v=2', metodo: 'POST', tipo: 'XHR', ms: 900, conCuerpo: true }] },
+    tras2: { ...base.tras2, peticiones: [...pide, { url: 'https://www.google-analytics.com/g/collect?v=2', metodo: 'POST', tipo: 'XHR', ms: 900, conCuerpo: true }] },
+  };
+  eq('con un rastreador corriendo, el aviso que falta sigue siendo una falta',
+    m.armarInforme(conRastreador, 'limpio.cl').items.find((i) => i.id === 'aviso').estado, 'pendiente');
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
