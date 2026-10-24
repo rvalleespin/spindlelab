@@ -141,6 +141,30 @@ export async function buscarPedidoReciente(db, { dominio, correo, desdeIso } = {
   return f ? hidratar(f) : null;
 }
 
+/**
+ * La compra abierta de esta pareja (dominio, correo), SIN ventana de tiempo.
+ *
+ * Existe porque el índice `idx_pedidos_compra_abierta` y `buscarPedidoReciente` no cubren lo
+ * mismo, y esa asimetría dejaba gente fuera para siempre: el índice garantiza UNA compra
+ * abierta por pareja sin mirar su edad, pero la búsqueda que la recupera solo mira las últimas
+ * `VIGENCIA_ORDEN_HORAS`. En el hueco entre las dos, un pedido viejo atascado en `creado`
+ * bloqueaba el INSERT y nadie podía encontrarlo para resolverlo: la persona recibía
+ * «no se te cobró nada. Vuelve a intentarlo» en cada intento, por el resto de los tiempos.
+ *
+ * ⚠️ El filtro `estado = 'creado'` NO es un detalle de rendimiento, es seguridad: sin él esta
+ * consulta podría devolver el pedido PAGADO de otra persona que comparte dominio y correo, y
+ * con él su enlace privado. Es el mismo motivo por el que lo lleva `buscarPedidoReciente`.
+ */
+export async function buscarCompraAbierta(db, { dominio, correo } = {}) {
+  if (!dominio || !correo) return null;
+  const f = await db.prepare(
+    `SELECT * FROM pedidos
+      WHERE estado = ? AND dominio = ? AND correo = ?
+      ORDER BY creado_en DESC LIMIT 1`,
+  ).bind(ESTADOS.CREADO, String(dominio), String(correo)).first();
+  return f ? hidratar(f) : null;
+}
+
 export async function marcarEstado(db, id, desde, hasta, extra = {}) {
   if (!transicionValida(desde, hasta)) {
     return { movido: false, motivo: 'transicion-invalida' };

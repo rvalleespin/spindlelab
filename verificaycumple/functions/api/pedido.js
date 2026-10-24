@@ -31,7 +31,8 @@
 // 5xx para reintentar, y no hay ninguna persona mirando.
 
 import {
-  leerPedido, vistaPublica, crearPedido, buscarPedidoReciente, marcarEstado,
+  leerPedido, vistaPublica, crearPedido, buscarPedidoReciente, buscarCompraAbierta,
+  marcarEstado,
 } from './almacen.js';
 import { etapaDelPedido, señalesDelPedido, convieneRefrescar, TITULOS } from './etapas.js';
 import { chequear, normalizarDominio } from './chequeo.js';
@@ -375,23 +376,29 @@ export async function onRequestPost(contexto) {
       urlMedida: profundo.revisado || rapido.revisado || null,
     });
 
+    // El INSERT va ANTES de llamar a Mercado Pago. El webhook tiene una rama que contesta 503
+    // y pide reintento cuando la referencia tiene nuestra forma pero el pedido todavía no
+    // está, justo para esta carrera, pero apoyarse en ella cuesta un reintento de 15 minutos
+    // del lado de Mercado Pago. Insertando primero, la carrera no existe.
+    //
+    // Va en una función porque se usa DOS veces: la segunda después de cerrar una compra
+    // abierta vencida que bloqueaba el índice (más abajo). El cuerpo tiene que ser idéntico en
+    // las dos, y copiarlo era la forma segura de que se separaran.
+    const insertar = () => crearPedido(env.VYC_PEDIDOS, {
+      id: idPedido,
+      dominio,
+      correo,
+      ...contrato,
+      // ⚠️ De `cuerpo.utms`, NO de `request.url`. La URL de esta petición es `/api/pedido` y
+      // nunca lleva parámetros de campaña: con `utmsDe(request.url)` todas las ventas se
+      // guardaban sin atribución. Los parámetros viven en la URL de la página, así que los
+      // manda el navegador, y acá creerle es inofensivo (ver la nota de `limpiarUtms`).
+      ...limpiarUtms(cuerpo.utms),
+    });
+
     let puesto;
     try {
-      // El INSERT va ANTES de llamar a Mercado Pago. El webhook tiene una rama que contesta 503
-      // y pide reintento cuando la referencia tiene nuestra forma pero el pedido todavía no
-      // está, justo para esta carrera, pero apoyarse en ella cuesta un reintento de 15 minutos
-      // del lado de Mercado Pago. Insertando primero, la carrera no existe.
-      puesto = await crearPedido(env.VYC_PEDIDOS, {
-        id: idPedido,
-        dominio,
-        correo,
-        ...contrato,
-        // ⚠️ De `cuerpo.utms`, NO de `request.url`. La URL de esta petición es `/api/pedido` y
-        // nunca lleva parámetros de campaña: con `utmsDe(request.url)` todas las ventas se
-        // guardaban sin atribución. Los parámetros viven en la URL de la página, así que los
-        // manda el navegador, y acá creerle es inofensivo (ver la nota de `limpiarUtms`).
-        ...limpiarUtms(cuerpo.utms),
-      });
+      puesto = await insertar();
     } catch {
       return jsonPost({ ok: false, motivo: 'no-se-pudo-guardar',
         detalle: 'Tuvimos un problema al guardar tu pedido. No se te cobró nada. Vuelve a intentarlo.' }, 409);
@@ -414,13 +421,50 @@ export async function onRequestPost(contexto) {
       try {
         ganador = await buscarPedidoReciente(env.VYC_PEDIDOS, { dominio, correo, desdeIso });
       } catch { ganador = null; }
-      if (!ganador) {
-        // No insertó y tampoco está: no se puede saber qué pasó, y seguir abriría una orden
-        // contra un pedido que no existe.
-        return jsonPost({ ok: false, motivo: 'no-se-pudo-guardar',
-        detalle: 'Tuvimos un problema al guardar tu pedido. No se te cobró nada. Vuelve a intentarlo.' }, 409);
+
+      if (ganador) {
+        idPedido = ganador.id;
+      } else {
+        // ── LA COMPRA ABIERTA QUE YA VENCIÓ ──────────────────────────────────────────────
+        //
+        // Si no insertó y tampoco hay nadie reciente, lo que bloquea el índice es una compra
+        // abierta MÁS VIEJA que la ventana. El índice no mira la edad y la búsqueda sí, y en
+        // ese hueco esta pareja (dominio, correo) quedaba encerrada PARA SIEMPRE: cada intento
+        // volvía a chocar, cada intento volvía a no encontrar nada, y cada intento recibía
+        // «no se te cobró nada, vuelve a intentarlo» — un consejo que no podía funcionar nunca.
+        // No es una carrera: pasa siempre, y es determinista.
+        //
+        // Que esa fila esté vencida no es una suposición, se deduce: `desdeIso` se calcula con
+        // VENTANA_DOBLE_CLIC_MS, que es VIGENCIA_ORDEN_HORAS, que es el mismo `expiration_time`
+        // con el que se abrió su orden en Mercado Pago. Si quedó fuera de la ventana, su orden
+        // ya no es pagable. Por eso se cierra en vez de reusarse: reusar su id mandaría a la
+        // persona a un enlace de pago muerto.
+        let vencida = null;
+        try {
+          vencida = await buscarCompraAbierta(env.VYC_PEDIDOS, { dominio, correo });
+        } catch { vencida = null; }
+
+        let cerrada = { movido: false };
+        if (vencida) {
+          try {
+            cerrada = await marcarEstado(env.VYC_PEDIDOS, vencida.id, ESTADOS.CREADO, ESTADOS.RECHAZADO);
+          } catch { cerrada = { movido: false }; }
+          // Sin token ni datos de la persona: solo nuestro id, que es lo que permite seguirle
+          // el rastro en la base. El correo no entra en los registros.
+          console.log(`[pedido] compra abierta vencida ${vencida.id}: ${cerrada.movido ? 'cerrada' : 'no se pudo cerrar'}`);
+        }
+
+        if (cerrada.movido) {
+          try { puesto = await insertar(); } catch { puesto = { creado: false }; }
+        }
+
+        if (!puesto.creado) {
+          // Ni insertó, ni hay reciente, ni se pudo liberar: acá sí no se puede saber qué pasó,
+          // y seguir abriría una orden contra un pedido que no existe.
+          return jsonPost({ ok: false, motivo: 'no-se-pudo-guardar',
+          detalle: 'Tuvimos un problema al guardar tu pedido. No se te cobró nada. Vuelve a intentarlo.' }, 409);
+        }
       }
-      idPedido = ganador.id;
     }
   }
 
