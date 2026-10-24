@@ -10,3 +10,16 @@ analisiscotizacionfotografo.md
 
 # cache local de wrangler pages dev
 spindlelab-astro/.wrangler/
+
+# Secretos de desarrollo local. NUNCA se commitean.
+#
+# `.dev.vars` es el archivo que lee `wrangler pages dev` para las variables y secretos cuando
+# el proyecto corre en la máquina. Es el lugar natural donde termina pegado un token real —de
+# Mercado Pago, de Browser Rendering— mientras alguien prueba algo. Este repo ya sirvió
+# públicamente un archivo de Wrangler con un correo personal adentro (16-oct), y la causa fue
+# la misma: un archivo interno que nadie había dicho que era interno.
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+!.env.example
