@@ -35,7 +35,7 @@ import {
 } from './almacen.js';
 import { etapaDelPedido, señalesDelPedido, convieneRefrescar, TITULOS } from './etapas.js';
 import { chequear, normalizarDominio } from './chequeo.js';
-import { clavesDeTope, contar } from './profundo.js';
+import { clavesDeTope, contar, CACHE_HORAS } from './profundo.js';
 import { elegibilidad } from './elegibilidad.js';
 import {
   ESTADOS, nuevoIdPedido, congelarContrato, armarOrdenMP, limpiarUtms, VIGENCIA_ORDEN_HORAS,
@@ -138,12 +138,31 @@ export const VENTANA_DOBLE_CLIC_MS = VIGENCIA_ORDEN_HORAS * 60 * 60 * 1000;
 /**
  * Cuánto puede haber envejecido la revisión con navegador para seguir sirviendo de base.
  *
- * No es lo mismo que su vida en KV. En KV dura 24 horas porque eso ahorra abrir un navegador
- * contra el mismo sitio dos veces el mismo día, y para MOSTRAR un resultado está bien. Pero para
- * VENDER hay que congelar las dos mediciones —la rápida, que se rehace en el momento, y la
- * profunda— y dos fotos tomadas con horas de diferencia no describen el mismo sitio.
+ * Es la MISMA validez que tiene en KV, y se importa de allá en vez de escribirse acá.
+ *
+ * La primera versión de esto, del 24-oct por la mañana, inventó media hora con este argumento:
+ * «en KV dura un día porque para MOSTRAR está bien, pero para VENDER hay que congelar las dos
+ * mediciones juntas». Suena razonable y es falso, porque le falta mirar lo que la página ya
+ * dice. Cuando el informe sale de la caché, el resultado trae escrito «esto no lo medimos
+ * recién: es la medición de tal hora, la guardamos por un día», y debajo le ofrecemos el kit.
+ * O sea que esa medición ya es, declaradamente, el resultado de esa persona.
+ *
+ * Negarse a venderle sobre el mismo dato que acabamos de mostrarle como suyo no protege nada:
+ * solo parte en dos una creencia que tiene que ser una. Si un día entero es demasiado para
+ * cotizar, entonces también es demasiado para mostrarlo como su resultado, y lo que hay que
+ * bajar es la vida en KV —un número, en un lugar—, no agregar un segundo número acá.
+ *
+ * Y el costo fue real, no teórico: con media hora, cualquiera que midiera su sitio, leyera los
+ * doce puntos y volviera a comprar un rato después chocaba con un 409, y el mensaje lo mandaba
+ * a «volver a correr el chequeo», que NO rehace la revisión con navegador —la vuelve a servir
+ * de la caché—, así que el consejo no podía funcionar. Callejón sin salida por 24 horas, con
+ * la campaña pagada encima. Lo encontró Ramón probando a mano, no las pruebas: la mía daba por
+ * cierto lo mismo que el código.
+ *
+ * Lo que sí sigue protegiendo, y por eso la guarda no desaparece: un informe que no se puede
+ * FECHAR no se vende. Congelar en el contrato «lo que medimos» exige saber cuándo se midió.
  */
-export const VENTANA_MEDICION_MS = 30 * 60 * 1000;
+export const VENTANA_MEDICION_MS = CACHE_HORAS * 60 * 60 * 1000;
 
 /** La forma de un correo. La expresión es la misma de `doce-puntos.js`, pero ANCLADA: allá sirve
  *  para encontrar un correo dentro de un texto, y acá para validar que esto es un correo entero. */
@@ -302,8 +321,12 @@ export async function onRequestPost(contexto) {
   if (!Number.isFinite(medidoEn) || Date.now() - medidoEn > VENTANA_MEDICION_MS) {
     return jsonPost({
       ok: false, motivo: 'medicion-vieja',
-      detalle: 'La revisión con navegador que tenemos de este sitio ya no es de ahora. Vuelve a ' +
-        'correr el chequeo y compra desde ahí: lo que contrates tiene que ser lo que medimos hoy.',
+      // El botón se llama «Volver a medirlo» y está en el resultado, junto al aviso de que la
+      // medición no es de recién. Nombrarlo importa: la versión anterior decía «vuelve a correr
+      // el chequeo», y eso sirve el informe de la caché otra vez, así que no arreglaba nada.
+      detalle: 'No podemos fechar la revisión con navegador que tenemos de este sitio. Apreta ' +
+        '«Volver a medirlo» en el resultado y compra desde ahí: lo que contrates tiene que ser ' +
+        'lo que medimos.',
     }, 409);
   }
 

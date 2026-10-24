@@ -1538,7 +1538,13 @@ export function claveDeErrorDeRed(texto) {
 
 export const TOPE_IP_DIA = 20;
 export const TOPE_GLOBAL_DIA = 80;
-const CACHE_HORAS = 24;
+// Cuánto tiempo una revisión con navegador sigue describiendo este sitio. Es UNA sola
+// creencia y se usa en tres lados: cuánto vive en KV, lo que la página le dice a la persona
+// («guardamos cada una por un día») y desde el 24-oct también hasta cuándo se puede VENDER
+// sobre ella (pedido.js la importa). Tener dos números para el mismo hecho fue justo el
+// defecto: mostrábamos una medición como el resultado de alguien y después nos negábamos a
+// venderle sobre ella.
+export const CACHE_HORAS = 24;
 
 /**
  * Las claves del día, separadas para poder probarlas sin KV.
