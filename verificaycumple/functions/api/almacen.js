@@ -143,6 +143,24 @@ export async function registrarEvento(db, clave, { tipo = null, pedidoId = null,
     : { primeraVez: false, motivo: 'repetido' };
 }
 
+/**
+ * Suelta un evento que se había reclamado pero no se pudo procesar.
+ *
+ * POR QUÉ HACE FALTA. `registrarEvento` es un reclamo: el primero que llega se queda con el
+ * evento y los reintentos se van. Eso está bien mientras el trabajo salga. Pero si entre el
+ * reclamo y el trabajo algo falla de forma recuperable —la API de Mercado Pago no contesta,
+ * por ejemplo— el evento queda reclamado y NUNCA procesado: el reintento llega, ve que ya
+ * está registrado, y se va sin hacer nada.
+ *
+ * Es la forma más silenciosa de perder un pago. Por eso, cuando el fallo es de los que un
+ * reintento podría arreglar, se suelta la fila y se contesta un error para que Mercado Pago
+ * vuelva a intentar.
+ */
+export async function liberarEvento(db, clave) {
+  if (!clave) return;
+  try { await db.prepare('DELETE FROM eventos_mp WHERE id = ?').bind(clave).run(); } catch {}
+}
+
 /** Deja escrito cómo terminó un evento, para poder depurar después. */
 export async function anotarResultado(db, clave, resultado) {
   if (!clave) return;
