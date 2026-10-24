@@ -1386,6 +1386,13 @@
     border: 2px solid var(--vivo-tinta); border-radius: var(--radio-tarjeta);
   }
   .pedir { scroll-margin-top: calc(var(--alto-header) + 16px); }
+  /* Cuando un campo obligatorio queda vacío, el navegador hace scroll HASTA ESE CAMPO —no
+     hasta el formulario— y dibuja ahí su globo de aviso. Sin este margen el campo aterriza
+     detrás del header pegajoso y lo único que se ve es el globo recortado contra el borde de
+     arriba, así que la persona concluye que el botón no hizo nada. Pasaba en los dos
+     formularios, el de preguntas y el de pago. */
+  .pedir input, .pedir textarea, .pedir select,
+  .compra input { scroll-margin-top: calc(var(--alto-header) + 16px); }
   .pedir-titulo {
     margin: 0 0 6px; font-family: "Archivo Black", Impact, var(--serif); font-weight: 400;
     text-transform: uppercase; font-size: 1.35rem; letter-spacing: -0.02em;
