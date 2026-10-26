@@ -294,9 +294,18 @@
       // cuatro campos, y pedirlos por correo convierte en una conversación lo que cabe en un
       // formulario. El mailto se queda abajo como salida si algo no funciona.
       if (e.etapa === 'falta-datos') html += '<p class="te-toca-form" data-form-intake></p>';
+      // El asunto y la primera línea hablan del SITIO, no del número de pedido. Esos 32 hex no
+      // le dicen nada a quien escribe, y verlos dos veces en un correo que está empezando a
+      // redactar hace que el mensaje parezca un ticket y no una conversación. El número igual
+      // tiene que viajar —es lo que nos deja encontrar su pedido sin preguntárselo— así que va
+      // al final, después de una línea divisoria, donde se lee como una referencia y no como
+      // el tema del correo.
+      var sitioCorreo = p.dominio || 'mi sitio';
       html += '<a class="boton' + (e.etapa === 'falta-datos' ? ' secundario' : '') + '" href="mailto:hola@spindlelab.cl' +
-        '?subject=' + encodeURIComponent('Pedido ' + p.id) +
-        '&body=' + encodeURIComponent('Hola, sobre mi pedido ' + p.id + ' en ' + (p.dominio || '') + ':\n\n') +
+        '?subject=' + encodeURIComponent('Pedido de ' + sitioCorreo) +
+        '&body=' + encodeURIComponent(
+          'Hola, les escribo por mi pedido de ' + sitioCorreo + ':\n\n\n\n' +
+          '--\nNúmero de pedido: ' + p.id + '\n') +
         '">Escríbenos</a>';
       html += '</div>';
     }
