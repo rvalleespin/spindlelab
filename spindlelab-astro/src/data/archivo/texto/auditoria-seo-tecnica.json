@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/auditoria-seo-tecnica.json",
- "sha256": "289dffd2baaaea852979a99333d7cac7622e91dcbcd4ea6291d79ff8cf381c60",
+ "sha256": "24bbc274fdfdefeca080297d91ce600f49298f5246090b6ad1f8cda387527e0b",
  "id": "auditoria-seo-tecnica",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -30,10 +30,12 @@
       "id": "auditoria-seo-tecnica.h1",
       "rol": "h1",
       "tinta": "Auditoría SEO técnica.",
-      "gris": "Qué le impide a Google leer tu sitio, y qué arreglar primero.",
-      "texto": "Auditoría SEO técnica. Qué le impide a Google leer tu sitio, y qué arreglar primero.",
-      "origen": "texto del v3 anterior",
-      "estado": "queda"
+      "gris": "Qué le impide a Google entender tu sitio, y qué arreglar primero.",
+      "texto": "Auditoría SEO técnica. Qué le impide a Google entender tu sitio, y qué arreglar primero.",
+      "origen": "texto del v3 anterior; ronda 2 (desvios/ronda2-frases.md, frase 4)",
+      "antes": "Auditoría SEO técnica. Qué le impide a Google leer tu sitio, y qué arreglar primero.",
+      "por_que": "Ronda 2, lectura en frío: «leer un sitio» no se entiende (3 de 3); para Google se dice «entender», como en el resto del sitio. Gris de 11 palabras (rango 6 a 13).",
+      "estado": "cambia"
      },
      {
       "id": "auditoria-seo-tecnica.resto",

@@ -64,9 +64,11 @@
     {
      "id": "blog.cierre.guia",
      "rol": "entradilla",
-     "texto": "El chequeo revisa 21 señales de tu dominio en segundos, gratis. Cada señal que no pases viene con la instrucción para arreglarla.",
-     "origen": "spindlelab-astro/src/data/paginas-v3.json blog.cierre.guia",
-     "estado": "queda"
+     "texto": "Son 21 chequeos concretos sobre tu sitio, en segundos y gratis. Cada chequeo que no pases viene con la instrucción para arreglarlo.",
+     "antes": "El chequeo revisa 21 señales de tu dominio en segundos, gratis. Cada señal que no pases viene con la instrucción para arreglarla.",
+     "origen": "e13/desvios/ronda2-frases.md, frase 8",
+     "por_que": "Los lectores en frío no entendieron «señal» ni «bloque» (lectura-fria/lector-1..3).",
+     "estado": "cambia"
     },
     {
      "id": "blog.cierre.cuerpo",

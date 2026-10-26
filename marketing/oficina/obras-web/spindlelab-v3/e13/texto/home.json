@@ -58,9 +58,10 @@
     {
      "id": "home.portada.entradilla",
      "rol": "entradilla",
-     "texto": "Revisamos tu sitio y si Google y las IA pueden leerlo. Después conversamos cómo te llegan las consultas y qué pasa con ellas, y te proponemos por escrito qué hacer.",
+     "texto": "Revisamos tu sitio y si Google y las IA, como ChatGPT, pueden visitarlo y entender a qué te dedicas. Después conversamos cómo te llegan las consultas y qué pasa con ellas, y te proponemos por escrito qué hacer.",
      "estado": "cambia",
-     "origen": "copy-secciones-v1.2 §2.1 (subtítulo); v2-vigente/home.txt",
+     "origen": "copy-secciones-v1.2 §2.1 (subtítulo); v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frase 1)",
+     "por_que": "Ronda 2: la primera versión decía «si Google y las IA pueden leerlo» y los tres lectores en frío no entendieron «leerlo». Ahora dice qué hace la IA con el sitio (visitarlo, entender a qué te dedicas) y glosa ChatGPT la primera vez que aparece una IA.",
      "antes": "Para empresas, clínicas y estudios profesionales. Si tu sitio ya existe y no lo vas a rehacer, también hacemos SEO técnico y visibilidad en IA: revisamos qué le impide a Google y a ChatGPT leerlo, y lo arreglamos."
     },
     {
@@ -76,11 +77,12 @@
      "id": "home.portada.microcopy",
      "rol": "nota",
      "uso": "ayuda",
-     "texto": "Te devolvemos una página con lo más importante que encontramos en tu sitio y en si la IA puede leerlo, y por dónde partiríamos. Es gratis y llega en un día hábil.",
+     "texto": "Te devolvemos una página con lo más importante que encontramos en tu sitio y por dónde partiríamos. También te decimos si ChatGPT y otras IA pueden visitarlo y entender a qué te dedicas. Es gratis y llega en un día hábil.",
      "estado": "nuevo",
-     "origen": "copy-secciones-v1.2 §2.1 (microcopy bajo el botón); v2-vigente/home.txt",
+     "origen": "copy-secciones-v1.2 §2.1 (microcopy bajo el botón); v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frase 5)",
      "fuente": "Plazo: «un día hábil» y no «24 horas» (guía §3; el único plazo documentado fue de 31 horas, HANDOFF-diagnostico-focuscontable-2oct.md).",
-     "nota": "Literal del v2 publicado, que repite esta frase en siete páginas. «Y en si la IA puede leerlo» es torpe; no la cambio aquí para no abrir una diferencia entre páginas. Propuesta para todas a la vez en desvios/home.md, decisión abierta 5."
+     "antes": "Te devolvemos una página con lo más importante que encontramos en tu sitio y en si la IA puede leerlo, y por dónde partiríamos. Es gratis y llega en un día hábil.",
+     "por_que": "Ronda 2: «en si la IA puede leerlo» (literal del v2 publicado, torpe) y «leerlo» no se entendieron en la lectura en frío. Son ahora dos oraciones; la segunda dice qué se revisa de la IA. Los seis artículos del blog que repiten la frase la cambian igual (ronda2-frases.md, frase 5)."
     },
     {
      "id": "home.portada.chequeo",
@@ -259,19 +261,32 @@
     {
      "id": "home.soluciones.busqueda.texto",
      "rol": "parrafo",
-     "texto": "Revisamos si Google y las IA pueden leer tu sitio y entender a qué te dedicas, y te dejamos un plan ordenado por impacto. Que la IA pueda leerlo es el requisito para que un asistente como ChatGPT te entienda; no garantiza que te nombre.",
-     "estado": "nuevo",
-     "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt"
+     "texto": "Revisamos si Google y las IA, como ChatGPT, pueden visitar tu sitio y entender a qué te dedicas, y te dejamos un plan ordenado por impacto. Visibilidad en IA busca que ChatGPT y otras IA entiendan y describan bien tu empresa. Que puedan visitar tu sitio es el requisito para eso; no garantiza que te nombren.",
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frases 1 y 10)",
+     "antes": "Revisamos si Google y las IA pueden leer tu sitio y entender a qué te dedicas, y te dejamos un plan ordenado por impacto. Que la IA pueda leerlo es el requisito para que un asistente como ChatGPT te entienda; no garantiza que te nombre.",
+     "por_que": "Ronda 2, lectura en frío: «leer» no se entiende (3 de 3) y «Visibilidad en IA» no se entendió sin glosa (2 de 3: «pensé que me iban a poner avisos dentro de ChatGPT»). La glosa es la del encargo; «busca» dice el propósito y no promete el resultado, y la última oración sigue diciendo que el requisito no garantiza nada."
     },
     {
-     "id": "home.soluciones.busqueda.precio",
+     "id": "home.soluciones.busqueda.aud.precio",
+     "rol": "nota",
+     "uso": "precio",
+     "texto": "Desde $490.000 + IVA · una vez",
+     "estado": "nuevo",
+     "origen": "ronda 2 de E13 (lectura en frío: dos de tres lectores leyeron dos precios para lo mismo); servicios-v3.json auditoria-seo-tecnica",
+     "fuente": "servicios-v3.json auditoria-seo-tecnica, secciones[1].planes[1].precio, idéntico como texto (planes[0] es «Gratis»: la revisión). Va sobre el enlace «Ver Auditoría SEO técnica», cada precio junto a su enlace.",
+     "por_que": "Antes el bloque mostraba un solo precio («Desde $400.000 + IVA · una vez», el de Visibilidad en IA) y enlazaba a dos servicios, y la Auditoría parte en $490.000: se leyó como dos precios para lo mismo."
+    },
+    {
+     "id": "home.soluciones.busqueda.via.precio",
      "rol": "nota",
      "uso": "precio",
      "texto": "Desde $400.000 + IVA · una vez",
-     "estado": "nuevo",
+     "estado": "cambia",
+     "antes": "home.soluciones.busqueda.precio: «Desde $400.000 + IVA · una vez» como único precio del bloque",
      "origen": "v2-vigente/home.txt («Desde $400.000 + IVA.»), con « · una vez» de servicios-v3.json",
-     "fuente": "servicios-v3.json visibilidad-en-ia, secciones[1].planes[0].precio, idéntico como texto. Es el precio de partida del bloque (Visibilidad en IA); la Auditoría SEO técnica parte en $490.000 + IVA · una vez y su precio lo dice su página.",
-     "por_que": "Lectura fría del 19-oct (E12): el lector no sabía si el precio era una vez o al mes."
+     "fuente": "servicios-v3.json visibilidad-en-ia, secciones[1].planes[0].precio, idéntico como texto. Va sobre el enlace «Ver Visibilidad en IA».",
+     "por_que": "Lectura fría del 19-oct (E12): el lector no sabía si el precio era una vez o al mes. Ronda 2: el precio pasa a ir junto a su enlace."
     },
     {
      "id": "home.soluciones.busqueda.aud.boton",
@@ -301,9 +316,11 @@
     {
      "id": "home.soluciones.anuncios.texto",
      "rol": "parrafo",
-     "texto": "Anuncios para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
-     "estado": "nuevo",
-     "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt"
+     "texto": "Anuncios en Google (el servicio se llama Paid Media) para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frase 9)",
+     "antes": "Anuncios para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
+     "por_que": "Ronda 2, lectura en frío: «Paid Media (Google)» no se entendió (2 de 3; «dos líneas antes decía Anuncios en Google, que lo entendí perfecto»). La glosa va aquí y no en la línea de precio, porque el guardián compara «Paid Media (Google) desde $350.000/mes + IVA» seguido, sin nada en medio."
     },
     {
      "id": "home.soluciones.anuncios.precio",
@@ -413,10 +430,10 @@
     {
      "id": "home.pruebas.h2",
      "rol": "h2",
-     "tinta": "Lo que puedes revisar antes de contratar.",
-     "texto": "Lo que puedes revisar antes de contratar.",
+     "tinta": "Lo que puedes revisar antes de contratar",
+     "texto": "Lo que puedes revisar antes de contratar",
      "estado": "nuevo",
-     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt",
+     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt; ronda 2 (acta de QA, defecto 18: sin punto final, como los otros seis h2)",
      "antes": "Cada pieza, con un dato medido. Y su fecha, para que lo revises tú.",
      "nota": "Una sola tinta. «Mostramos, no prometemos» salió de este h2 (copy §2.6): los lectores lo marcaron como eslogan vago; el límite se dice una vez, en las preguntas frecuentes."
     },
@@ -477,12 +494,12 @@
     {
      "id": "home.pruebas.chequeo.texto",
      "rol": "parrafo",
-     "texto": "Escribes la dirección de tu sitio y ves 21 señales, con lo que pesa cada bloque. Es gratis y sin registro. Mide si tu sitio está preparado para que la IA lo lea; no mide si hoy te citan.",
+     "texto": "Escribes la dirección de tu sitio y ves 21 chequeos concretos, en tres grupos, con los puntos que vale cada uno. Es gratis y sin registro. Mide si tu sitio está preparado para que ChatGPT y otras IA puedan visitarlo y entender a qué te dedicas; no mide si hoy te citan.",
      "estado": "cambia",
-     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt",
+     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frases 6 y 7)",
      "antes": "Escribes tu dominio y ves 21 señales, con lo que pesa cada bloque. Es gratis y sin registro. Mide si tu sitio está preparado para que la IA lo lea; no mide si hoy te citan.",
-     "por_que": "El campo del chequeo dice «La dirección de tu sitio» desde la lectura fría de E12 (una dueña de clínica no sabía si «dominio» era la dirección de su página); el texto tiene que decir lo mismo que el campo.",
-     "fuente": "21 señales y pesos 30/40/30: confirmado en el código el 23-oct (copy §11)."
+     "por_que": "E12: el campo del chequeo dice «La dirección de tu sitio» (una dueña de clínica no sabía si «dominio» era la dirección de su página). Ronda 2, lectura en frío: «21 señales, con lo que pesa cada bloque» no se entendió (3 de 3: «ni idea qué es una señal ni un bloque») y «que la IA lo lea» tampoco. «Chequeos» es el nombre que ya tienen los 21 en /diagnostico/; «grupos» y «puntos» son las palabras de la gente para «bloques» y «peso».",
+     "fuente": "21 chequeos en tres grupos (30, 40 y 30 puntos) y un puntaje de 0 a 100: confirmado en el código el 23-oct (copy §11)."
     },
     {
      "id": "home.pruebas.chequeo.boton",
@@ -550,10 +567,12 @@
     {
      "id": "home.pruebas.caso.texto",
      "rol": "parrafo",
-     "texto": "Construimos su sitio con un panel para que él mismo edite textos y series, y hoy lo opera él. Es un caso de sitio web, no de crecimiento de ventas.",
+     "texto": "Construimos su sitio con un panel para que él mismo edite textos y series. Es un caso de sitio web, no de crecimiento de ventas.",
      "estado": "nuevo",
-     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt",
-     "condicion": "«Hoy lo opera él» descansa en una mantención acordada y en el login verificado el 23-sep, sin un registro de uso reciente. Ramón lo confirma. El permiso para nombrarlo es verbal (inventario-casos.md:98; Ramón, 16-oct: «no se necesita más permiso. ya lo pedí»).",
+     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt; ronda 2 (acta de QA, defecto 4)",
+     "antes": "Construimos su sitio con un panel para que él mismo edite textos y series, y hoy lo opera él. Es un caso de sitio web, no de crecimiento de ventas.",
+     "por_que": "Ronda 2, defecto 4: «hoy lo opera él» afirma un uso presente sin registro. Queda el valor conservador de desvios/home.md §7.1: lo que se construyó y para qué, sin decir que hoy lo usa. Si Ramón confirma con evidencia que lo opera, vuelve «y hoy lo opera él».",
+     "condicion": "El permiso para nombrarlo es verbal (inventario-casos.md:98; Ramón, 16-oct: «no se necesita más permiso. ya lo pedí»).",
      "fuente": "Sin cifras de su negocio: es un caso de sitio web (brief §6.5). Ya no lleva «805 kB a 95 kB»: el dato medido vive en la página del caso."
     },
     {
@@ -680,10 +699,10 @@
     {
      "id": "home.faq.h2",
      "rol": "h2",
-     "tinta": "Lo esencial, en claro.",
-     "texto": "Lo esencial, en claro.",
+     "tinta": "Lo esencial, en claro",
+     "texto": "Lo esencial, en claro",
      "estado": "nuevo",
-     "origen": "v2-vigente/home.txt",
+     "origen": "v2-vigente/home.txt; ronda 2 (acta de QA, defecto 18: sin punto final)",
      "nota": "Una sola tinta."
     },
     {

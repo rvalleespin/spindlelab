@@ -182,11 +182,11 @@ Ninguno nuevo. Se reusan: el molde de `dw.fase.N` (`rol: parrafo` con `rotulo` y
 
 ## 7 · Decisiones abiertas de Ramón que tocan mis textos
 
-1. **«Hoy lo opera él»** (Combeau: `home.pruebas.caso.texto` y `combeau.resultado.p2`). Descansa en una mantención acordada y en el login verificado el 23-sep, sin un registro de uso reciente. Si no lo confirma, `combeau.resultado.p2` queda en «No tenemos un número ni una fecha de uso que mostrar.» o sale, y la home dice «Construimos su sitio con un panel para que él mismo edite textos y series».
+1. **«Hoy lo opera él»** (Combeau). **Resuelta con el valor conservador en la ronda 2** (§8): la home dice «Construimos su sitio con un panel para que él mismo edite textos y series.» y el caso, «El panel existe y está hecho para que él lo opere. No tenemos un número ni una fecha de uso que mostrar.» Si Ramón confirma con evidencia que Bernardo lo opera, vuelve «y hoy lo opera él» / «lo opera él».
 2. **«Tomo pocos proyectos a la vez» y «reviso yo lo que te entrego»** (`home.quien.p1`). Una lectora no creyó la primera; la segunda es declarada. Viven solo ahí.
 3. **El CV** (`home.quien.cv`): «ocho marcas nacionales» y «cuatro países» están en el v2 publicado, pero su memoria dice que las cifras de agencias no van al copy de SpindleLab. Y el cargo «Consultor de marketing y crecimiento con IA» (`home.quien.pie`, `comun.entidad.cargo`) es R5: `blog.json` lleva «Fundador de SpindleLab» y conviene que digan lo mismo.
 4. **«Salió mal» y «perdía mensajes sin avisar»** (`home.pruebas.propio.texto`): hechos del caso de Verifica y Cumple sin puntajes. Confirma que se pueden decir tal cual.
-5. **La frase «y en si la IA puede leerlo»** (`home.portada.microcopy`). Es literal del v2 publicado y se repite en siete páginas (la home y seis artículos del blog); es torpe, pero la dejé igual para no abrir una diferencia entre páginas. Propuesta para todas a la vez: «Te devolvemos una página con lo más importante que encontramos en tu sitio, si la IA puede leerlo y por dónde partiríamos.» No la apliqué.
+5. **La frase «y en si la IA puede leerlo»** (`home.portada.microcopy`). **Resuelta en la ronda 2** (§8): ya no existe en la home; son dos oraciones y la segunda dice qué se revisa de la IA. Las demás páginas la cambian igual (`ronda2-frases.md`, frase 5).
 6. **Combeau como una sola tarjeta.** El brief pide dos entradas; Combeau tenía dos (fotografía y modelo) y las uní en una (`combeau-fotografia`, que conserva el id porque lo lee `desarrollo-web.astro`). Si Mauro quería dos tarjetas de Combeau más Verifica y Cumple, son tres entradas y el filtro vuelve a tener sentido. Salieron además «El chequeo de 21 señales» y spindlelab.cl como piezas del índice.
 7. **«Sitio web a medida»** es rótulo del bloque (copy §2.5), no el claim de la marca, que dejó de serlo. El servicio sigue llamándose «Desarrollo web».
 8. **Política de privacidad en el pie** (`comun.pie.privacidad`). El pie de E12 no la enlazaba y `/privacidad/` no tiene versión v3; el v2 sí la enlaza. Decide Mauro con Diego.
@@ -195,3 +195,23 @@ Ninguno nuevo. Se reusan: el molde de `dw.fase.N` (`rol: parrafo` con `rotulo` y
 11. **La quinta pregunta frecuente** («¿Hay contrato de permanencia?») salió de las lecturas en frío, no de un prospecto real.
 12. **Permiso de Combeau**: verbal (inventario-casos.md:98; Ramón, 16-oct). Las fichas de la troncal dicen otra cosa. Está dicho en la condición de `home.pruebas.caso.texto`.
 13. **Fuera de mi encargo, pendiente de su dueño:** `layout-a.ts` (texto en `comun.entidad.*`), `llms.txt`, `v3-chequeo.js` (sus textos de resultado dicen «Pedir el diagnóstico»), la imagen al compartir `og-e12-marca.jpg` (puede traer el claim viejo horneado) y `og-e12-trabajo.jpg` (alt «Tres piezas de SpindleLab: el sitio de un fotógrafo, la app Praxi y Sesenta, un concepto.», hoy escrito a mano en `trabajo/index.astro`).
+
+## 8 · Ronda 2 (26-oct): qué cambié
+
+Las frases exactas, con su antes y su después, están en `e13/desvios/ronda2-frases.md` (frases 1 a 15). Aquí solo lo que tocó a la home y al marco.
+
+| Qué cambié | Por qué | De dónde sale |
+|---|---|---|
+| `home.portada.entradilla`: «…si Google y las IA, como ChatGPT, pueden visitarlo y entender a qué te dedicas» | «pueden leerlo» no se entendió (3 de 3) | acta de QA, defecto 3; `lectura-fria/lector-1..3.txt` |
+| `home.portada.microcopy` en dos oraciones: «…y por dónde partiríamos. También te decimos si ChatGPT y otras IA pueden visitarlo y entender a qué te dedicas.» | «en si la IA puede leerlo» | defecto 3; `ronda-2-correcciones.md` |
+| `home.soluciones.busqueda.texto` con la glosa de Visibilidad en IA («busca que ChatGPT y otras IA entiendan y describan bien tu empresa») | «Visibilidad en IA» sin explicar (2 de 3) | defecto 3 |
+| `home.soluciones.anuncios.texto` con «(el servicio se llama Paid Media)» | «Paid Media (Google)» sin explicar (2 de 3). La glosa va en el texto y no en la línea de precio: el guardián compara «Paid Media (Google) desde .000/mes + IVA» seguido | defecto 3 |
+| `home.pruebas.chequeo.texto`: «ves 21 chequeos concretos, en tres grupos, con los puntos que vale cada uno» y «para que ChatGPT y otras IA puedan visitarlo y entender a qué te dedicas» | «21 señales… cada bloque» no se entendió (3 de 3) | defecto 3 |
+| `home.pruebas.caso.texto` sin «y hoy lo opera él»; `combeau.resultado.p2` «está hecho para que él lo opere» | Uso presente sin registro | defecto 4; §7.1 |
+| `home.pruebas.h2` y `home.faq.h2` sin punto final | Dos h2 con punto y seis sin él. `home.contacto.h2` queda con sus dos puntos porque son dos oraciones en dos tintas, no un título con punto | defecto 18 |
+| `combeau.solucion.ingredientes`, sexto punto: «Google y la IA pueden entender quién es y a qué se dedica» | Misma palabra («leer») | defecto 3 |
+| Marco: ninguno | `comun.json` no decía «leer», «señales» ni «plantillas» | |
+
+Fuera de mis archivos (servicios, desarrollo web, auditoría, diagnóstico) apliqué las mismas frases porque la ronda lo pidió; la tabla está en `ronda2-frases.md`.
+
+Lo que dijeron los lectores y **no corregí** porque no es de frases, y queda para Ramón: «Uso agentes de IA…» generó duda en los tres (¿lo que recibo lo hizo un robot?); el sitio parte por el sitio y a dos de los tres no les duele ahí (una consultora cuyas consultas llegan por recomendación, una clínica que paga anuncios, un restaurante que vende por reservas); un solo caso y de un fotógrafo; «SEO técnico desde el diseño» y «Página de Campaña» sin explicar; el párrafo de Verifica y Cumple (ley, otro sitio, un formulario) no se entiende sin contexto.

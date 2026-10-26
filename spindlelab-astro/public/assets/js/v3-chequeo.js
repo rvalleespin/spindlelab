@@ -10,7 +10,7 @@
 // E13 (26-oct): solo cadenas. El botón pasa a «Pedir la revisión a mano», los cuatro
 // veredictos dejan de hablar de citas y menciones (el chequeo mide si el sitio está
 // preparado, no si hoy aparece en las respuestas), el remate habla de la revisión a mano y
-// el error de campo vacío dice «la dirección de tu sitio». Va con ?v=4.
+// el error de campo vacío dice «la dirección de tu sitio». E13, ronda 2: el veredicto bajo 45 dice «visitar tu sitio y entender a qué te dedicas». Va con ?v=5.
 (function(){
   var form = document.getElementById('chq-form');
   var input = document.getElementById('chq-dominio');
@@ -57,7 +57,7 @@
     if(p >= 90) return 'Tu sitio está listo por el lado técnico. Este chequeo no mide lo que otros sitios publican sobre ti.';
     if(p >= 70) return 'Tienes lo esencial resuelto, pero quedan huecos técnicos por cerrar. Los ves más abajo.';
     if(p >= 45) return 'Los motores pueden llegar a tu sitio, pero les cuesta entender qué haces.';
-    return 'Hoy a la IA le cuesta leer tu sitio o entender qué haces. Abajo ves qué falta.';
+    return 'Hoy a una IA le cuesta visitar tu sitio o entender a qué te dedicas. Abajo ves qué falta.';
   }
 
   function pintar(d){

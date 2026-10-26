@@ -80,8 +80,13 @@ const redes = enlaceDe('redes-sociales', 'home.soluciones.anuncios.redes.boton')
 const dw = enlaceDe('desarrollo-web', 'home.soluciones.sitio.dw.boton');
 const aco = enlaceDe('acompanamiento-mensual', 'home.soluciones.acompanamiento.boton');
 
-const precioBusqueda = t('home.soluciones.busqueda.precio').texto as string;
-igualQue(precioDe('visibilidad-en-ia', 0), precioBusqueda, 'home, el precio de Búsqueda y visibilidad en IA');
+// Búsqueda y visibilidad en IA enlaza a dos servicios con precio distinto: cada precio va junto a su enlace (ronda 2 de E13,
+// lectura en frío: con un solo precio para dos enlaces, dos de tres lectores leyeron dos precios para lo mismo). Cada uno es,
+// como texto, el del primer plan con monto de su servicio (el de Auditoría es el plan 1: el 0 es la revisión gratis).
+const precioAud = t('home.soluciones.busqueda.aud.precio').texto as string;
+igualQue(precioDe('auditoria-seo-tecnica', 1), precioAud, 'home, el precio de la Auditoría SEO técnica');
+const precioVia = t('home.soluciones.busqueda.via.precio').texto as string;
+igualQue(precioDe('visibilidad-en-ia', 0), precioVia, 'home, el precio de Visibilidad en IA');
 const precioAnuncios = t('home.soluciones.anuncios.precio').texto as string;
 contiene(precioAnuncios, `${paid.nombre} ${desde(precioDe('paid-media', 0))}`, 'home, el precio de Paid Media');
 contiene(precioAnuncios, `${redes.nombre} ${desde(precioDe('redes-sociales', 0))}`, 'home, el precio de la gestión de redes');
@@ -92,7 +97,7 @@ igualQue(precioDe('acompanamiento-mensual', 0), precioAco, 'home, el precio del 
 igualQue(aco.nombre, t('home.soluciones.acompanamiento.nombre').texto, 'home, el nombre del Acompañamiento mensual');
 
 const bloques = [
-  { k: 'busqueda', precio: precioBusqueda, enlaces: [aud, via] },
+  { k: 'busqueda', pares: [{ precio: precioAud, enlace: aud }, { precio: precioVia, enlace: via }] },
   { k: 'anuncios', precio: precioAnuncios, enlaces: [paid, redes] },
   { k: 'sitio', precio: precioSitio, enlaces: [dw] },
   { k: 'acompanamiento', precio: precioAco, enlaces: [aco] },
@@ -265,10 +270,21 @@ const og = { src: '/assets/img/og-e12-marca.jpg?v=2', alt: t('home.portada.og-al
         <div class="servicio borde">
           <h3 class="servicio__sit t-titulo">{b.nombre}</h3>
           <div class="servicio__cuerpo"><p class="cuerpo caja">{b.texto}</p></div>
-          <div class="servicio__precio">
-            <p class="cuerpo valor">{b.precio}</p>
-            {b.enlaces.map((e) => <p class="chico"><a class="subrayado" href={e.href}>{e.texto}<Icono nombre="flecha" /></a></p>)}
-          </div>
+          {b.pares ? (
+            <div class="servicio__precio servicio__precio--pares">
+              {b.pares.map((x) => (
+                <div class="servicio__par">
+                  <p class="cuerpo valor">{x.precio}</p>
+                  <p class="chico"><a class="subrayado" href={x.enlace.href}>{x.enlace.texto}<Icono nombre="flecha" /></a></p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div class="servicio__precio">
+              <p class="cuerpo valor">{b.precio}</p>
+              {b.enlaces.map((e) => <p class="chico"><a class="subrayado" href={e.href}>{e.texto}<Icono nombre="flecha" /></a></p>)}
+            </div>
+          )}
         </div>
       ))}
     </section>

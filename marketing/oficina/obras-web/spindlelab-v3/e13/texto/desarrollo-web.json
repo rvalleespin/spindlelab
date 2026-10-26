@@ -2,7 +2,7 @@
  "id": "desarrollo-web",
  "ruta": "/servicios/desarrollo-web/",
  "title": "Desarrollo web a medida, desde $390.000 + IVA · SpindleLab",
- "description": "Sitios web a medida, sin plantillas ni WordPress, con panel para que edites tú y SEO técnico desde el diseño. Cuatro planes, desde $390.000 + IVA.",
+ "description": "Sitios web a medida, hechos para tu negocio, con panel para que edites tú y SEO técnico desde el diseño. Cuatro planes, desde $390.000 + IVA.",
  "senales": "Simón, e12/senales-obra.md §2.7 (el title con el precio de entrada); la description sale de la publicada el 24-oct (v2-vigente/servicios__desarrollo-web.txt) con los cuatro planes",
  "estructura": "spec-visual.md §2.4 (vista 5 del prototipo): cabecera; franja (Combeau fotografía); lo que va en todos los planes; lo que construimos (Combeau y Verifica y Cumple); glosario y planes; cinco fases; preguntas; cierre. Obra E13: texto al mensaje nuevo; ver e13/desvios/servicios.md.",
  "secciones": [
@@ -28,22 +28,24 @@
      "id": "dw.h1",
      "rol": "h1",
      "tinta": "Desarrollo web.",
-     "gris": "Un sitio a medida, sin plantillas ni WordPress, con panel para editar.",
-     "texto": "Desarrollo web. Un sitio a medida, sin plantillas ni WordPress, con panel para editar.",
+     "gris": "Un sitio a medida, hecho para tu negocio, con panel para editar.",
+     "texto": "Desarrollo web. Un sitio a medida, hecho para tu negocio, con panel para editar.",
      "estado": "cambia",
-     "origen": "v2-vigente/servicios__desarrollo-web.txt (subtítulo); copy-secciones-v1.2.md §5.4",
-     "antes": "Desarrollo web. Diseñamos y programamos sitios listos para que Google y la IA los lean.",
-     "por_que": "Sale el claim «diseñamos y programamos sitios» (revisión 23-oct, claim central: el sitio ya no es la tesis). Lo que queda es lo que dice la versión publicada el 24-oct: a medida, sin plantillas ni WordPress, con panel para editar. Lock E12 §14: la continuación gris va de 6 a 13 palabras."
+     "origen": "v2-vigente/servicios__desarrollo-web.txt (subtítulo); copy-secciones-v1.2.md §5.4; ronda 2 (desvios/ronda2-frases.md, frase 12)",
+     "antes": "Desarrollo web. Un sitio a medida, sin plantillas ni WordPress, con panel para editar.",
+     "por_que": "E13 sacó el claim «diseñamos y programamos sitios» (revisión 23-oct). Ronda 2, lectura en frío: «sin plantillas ni WordPress» se leyó como desventaja (2 de 3: «si no es WordPress, ¿después quién me lo toca?»); ahora dice lo que sí es. Lock E12 §14: gris de 12 palabras (rango 6 a 13)."
     },
     {
      "id": "dw.entradilla",
      "rol": "entradilla",
-     "texto": "Es para cuando no tienes sitio, o el que tienes hay que hacerlo de nuevo. Cuatro planes, desde $390.000 + IVA. Si tu sitio funciona y no lo vas a rehacer, te sirve más Visibilidad en IA.",
+     "texto": "Es para cuando no tienes sitio, o el que tienes hay que hacerlo de nuevo. Cuatro planes, desde $390.000 + IVA. Si tu sitio funciona y no lo vas a rehacer, te sirve más Visibilidad en IA, que busca que ChatGPT y otras IA entiendan y describan bien tu empresa.",
      "enlaces": {
       "Visibilidad en IA": "/servicios/visibilidad-en-ia/"
      },
-     "estado": "queda",
-     "origen": "texto-paso2.json «dw.entradilla»"
+     "estado": "cambia",
+     "origen": "texto-paso2.json «dw.entradilla»; ronda 2 (desvios/ronda2-frases.md, frase 11)",
+     "antes": "Es para cuando no tienes sitio, o el que tienes hay que hacerlo de nuevo. Cuatro planes, desde $390.000 + IVA. Si tu sitio funciona y no lo vas a rehacer, te sirve más Visibilidad en IA.",
+     "por_que": "Ronda 2, lectura en frío: «Visibilidad en IA» no se entendió sin glosa (2 de 3). Es la primera vez que la página nombra el servicio."
     },
     {
      "id": "dw.boton.planes",
@@ -88,26 +90,30 @@
     {
      "id": "dw.incluye.1",
      "rol": "parrafo",
-     "texto": "Diseño propio, sin plantilla. Partimos de referentes de tu rubro, no de un tema comprado.",
+     "texto": "Diseño propio, hecho para tu negocio. Partimos de referentes de tu rubro.",
      "fuente": "fases, 01 Descubrimiento; FAQ «¿Usan plantillas o WordPress?»",
-     "estado": "queda",
-     "origen": "texto-paso2.json «dw.incluye.1»"
+     "estado": "cambia",
+     "origen": "texto-paso2.json «dw.incluye.1»; ronda 2 (desvios/ronda2-frases.md, frase 12)",
+     "antes": "Diseño propio, sin plantilla. Partimos de referentes de tu rubro, no de un tema comprado.",
+     "por_que": "Ronda 2, lectura en frío: «sin plantilla» y «no de un tema comprado» se leyeron como jerga de desarrollador y como desventaja."
     },
     {
      "id": "dw.incluye.2",
      "rol": "parrafo",
-     "texto": "Código propio, sin WordPress ni constructores de páginas. Así controlamos cuánto pesa cada página y qué tan rápido carga.",
+     "texto": "Código propio, escrito para este sitio. Así controlamos cuánto pesa cada página y qué tan rápido carga.",
      "fuente": "desarrollo-web.astro, «Código propio y diseño a medida, con control total del rendimiento»",
-     "estado": "queda",
-     "origen": "texto-paso2.json «dw.incluye.2»"
+     "estado": "cambia",
+     "origen": "texto-paso2.json «dw.incluye.2»; ronda 2 (desvios/ronda2-frases.md, frase 12)",
+     "antes": "Código propio, sin WordPress ni constructores de páginas. Así controlamos cuánto pesa cada página y qué tan rápido carga.",
+     "por_que": "Ronda 2, lectura en frío: «sin WordPress» se leyó como desventaja (2 de 3)."
     },
     {
      "id": "dw.incluye.3",
      "rol": "parrafo",
-     "texto": "El SEO técnico de base: que Google pueda encontrar tus páginas, leerlas y mostrarlas, con un bloque de datos que el visitante no ve, pero que le dice a Google qué negocio eres, dónde estás y quién responde. En el Sitio Completo, además, dejamos el sitio listo para que ChatGPT y otros asistentes de IA puedan leerlo y entender a qué te dedicas.",
+     "texto": "El SEO técnico de base: que Google pueda encontrar tus páginas, entenderlas y mostrarlas, con un bloque de datos que el visitante no ve, pero que le dice a Google qué negocio eres, dónde estás y quién responde. En el Sitio Completo, además, dejamos el sitio listo para que ChatGPT y otras IA puedan visitarlo y entender a qué te dedicas.",
      "fuente": "oferta-v3.json planes (SEO técnico en los cuatro; «puesta a punto AEO/GEO» solo en el Sitio Completo)",
      "estado": "cambia",
-     "origen": "texto-paso2.json «dw.incluye.3»",
+     "origen": "texto-paso2.json «dw.incluye.3»; ronda 2 (desvios/ronda2-frases.md, frases 3 y 4: antes «leerlas» y «puedan leerlo»)",
      "antes": "… En el Sitio Completo, además, lo preparamos para que ChatGPT y otros asistentes de IA puedan nombrarte en sus respuestas.",
      "por_que": "«Puedan nombrarte» promete un resultado que no controlamos (revisión 23-oct)."
     },
@@ -226,12 +232,12 @@
      "items": [
       "Pauta: la publicidad que pagas en Google, Instagram o Facebook. Convertirla es que quien llega por ella te escriba o te compre.",
       "Home: la página de inicio.",
-      "SEO técnico: lo que permite que Google encuentre tus páginas, las lea y las muestre.",
+      "SEO técnico: lo que permite que Google encuentre tus páginas, las entienda y las muestre.",
       "Schema: un bloque de datos que el visitante no ve, pero que le dice a Google y a la IA qué negocio eres.",
       "Indexación: que Google guarde tus páginas para poder mostrarlas cuando alguien busca.",
       "Velocidad: cuánto demora tu sitio en aparecer, sobre todo en el celular.",
       "CMS: el panel donde cambias textos, fotos o artículos sin tocar el código.",
-      "Puesta a punto AEO/GEO: dejar el sitio listo para que ChatGPT y otros asistentes de IA lo lean y entiendan a qué te dedicas. Son dos siglas en inglés para lo mismo: preparar un sitio para las respuestas que escribe la IA.",
+      "Puesta a punto AEO/GEO: dejar el sitio listo para que ChatGPT y otras IA puedan visitarlo y entender a qué te dedicas. Son dos siglas en inglés para lo mismo: preparar un sitio para las respuestas que escribe la IA.",
       "Integraciones: conectar el sitio con otros sistemas, como tus reservas o tus pagos.",
       "Arquitectura propia: el sitio se organiza por dentro según lo que necesita tu negocio, no según una plantilla."
      ],
@@ -324,9 +330,11 @@
     {
      "id": "dw.faq.1.r",
      "rol": "parrafo",
-     "texto": "No. Cada sitio se programa desde cero, sin temas comprados ni constructores de páginas. Así controlamos la velocidad y el SEO técnico desde la base.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «dw.faq.1.r»"
+     "texto": "No. Cada sitio se diseña y se programa desde cero para tu negocio. Así controlamos la velocidad y el SEO técnico desde la base.",
+     "estado": "cambia",
+     "origen": "texto-paso2.json «dw.faq.1.r»; ronda 2 (desvios/ronda2-frases.md, frase 12)",
+     "antes": "No. Cada sitio se programa desde cero, sin temas comprados ni constructores de páginas. Así controlamos la velocidad y el SEO técnico desde la base.",
+     "por_que": "Ronda 2: la pregunta queda tal cual (alguien la hace así); la respuesta dice lo que sí es en vez de lo que no usa."
     },
     {
      "id": "dw.faq.2.p",

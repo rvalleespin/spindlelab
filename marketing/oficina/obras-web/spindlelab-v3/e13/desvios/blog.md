@@ -79,7 +79,7 @@ Alcance: `/v3/blog/` y los siete artículos. Los cuerpos se corrigen solo donde 
 |---|---|---|---|
 | 45 | `<title>` | «Cómo elegir (y verificar) una agencia de AEO/GEO en Chile · SpindleLab» (69, con «en Chile») | «Cómo elegir y verificar una agencia de AEO/GEO · SpindleLab» (59) |
 | 46 | h1, titular del índice y del Article; meta description | «…en Chile» | Sin «en Chile». El contenido (cómo verificar a quien contratas) se conserva: es una guía de compra sobre la categoría, no una presentación de SpindleLab como agencia de AEO/GEO |
-| 47 | Cierre del cuerpo | «Puedes usar esta misma vara con nosotros… la invitación es que nos exijas los seis criterios con el mismo rigor que a cualquiera» (implica que SpindleLab cumple los seis; no tiene un caso de IA con antes y después, modelo de negocio §2) | «Nuestro método y nuestros precios de partida están publicados, y el chequeo de tu sitio es abierto, para que compruebes por tu cuenta lo que decimos» |
+| 47 | Cierre del cuerpo | «Puedes usar esta misma vara con nosotros… la invitación es que nos exijas los seis criterios con el mismo rigor que a cualquiera» (implica que SpindleLab cumple los seis; no tiene un caso de IA con antes y después, modelo de negocio §2) | Ronda 1: «Nuestro método y nuestros precios de partida están publicados…». **Ronda 2: el párrafo se borra entero** (ver fila 84); no invita a medirnos con un caso que no existe |
 | 48 | Criterio 6 | «A esto se le suele llamar share of voice» (término de la lista de la guía) | Sale la frase; queda «Lo clave es que sea reproducible» |
 | 49 | Recuadro «Advertencia de compra» y FAQ «¿Puede una agencia garantizarme el #1?» (visible y FAQPage) | «lo serio promete probabilidades, no puestos»; «trabaja para subir la probabilidad de que te citen» | «lo serio promete método, entregables y plazos, no puestos»; «no promete un puesto ni una cantidad de citas: mide tu punto de partida, prioriza por impacto y promete método, entregables y plazos. Habla de mediciones repetibles» |
 | 50 | Primer párrafo | «contratar a alguien para que tu empresa aparezca en respuestas de IA» | «para trabajar la visibilidad de tu empresa en respuestas de IA» |
@@ -124,7 +124,7 @@ Alcance: `/v3/blog/` y los siete artículos. Los cuerpos se corrigen solo donde 
 
 1. **Rangos de mercado en `cuesta` (fila 30).** Salen del estudio de precios de Marco del 25-ago, que él mismo califica de evidencia media y sesgada al alza (artículos de las propias agencias). Quedan marcadas como estimaciones, pero siguen siendo cifras ajenas. Si Ramón prefiere no publicar ningún rango de terceros, se deja solo el recuadro con los precios de SpindleLab y se retira la sección.
 2. **Los tres precios de SpindleLab dentro de `cuesta` (filas 32 y 33)** son texto de blog, no pasan por los guardianes de precios. Están copiados de los `servicios__*.txt` del v2 («desde», «+ IVA», mínimo 3 meses). Si alguien reabre un precio, hay que buscarlos aquí también (`grep '\$490.000\|\$400.000\|\$590.000'` sobre `data/blog-v3/`).
-3. **Una frase que no escribí en `elegir`:** «Todavía no tenemos un caso con antes y después en respuestas de IA, y no vamos a mostrar uno que no exista.» Es verdad (modelo de negocio §2 y §13), encaja con «mostramos, no prometemos» y volvería el criterio 3 de la guía honesto contra nosotros. Pero es admitir algo en público: lo decide Ramón.
+3. **~~Una frase que no escribí en `elegir`~~ (cerrado en la ronda 2).** El párrafo «Puedes usar esta misma vara con nosotros» se borró; no se agregó la admisión «todavía no tenemos un caso con antes y después» (sigue siendo decisión de Ramón si quiere decirlo).
 4. **`fintechs` sigue siendo un artículo de un rubro** (tema de la ficha, título y tarjeta). Ya no afirma experiencia ni dice que la oferta sea para ese rubro, y avisa que casi todo vale para cualquier sitio. Si Ramón quiere desrubrarlo del todo: «SEO técnico para sitios con aplicación propia» (el slug no se toca).
 5. **Anclas que cambiaron** (por el cambio de título de sección): `#por-que-gratis-y-en-24-horas` (mini), `#autodiagnostico-en-10-minutos` (fintechs) y `#las-cinco-acciones-que-aumentan-tus-probabilidades` (chatgpt). Nada dentro del sitio las enlaza (revisé `src/`); si alguien las enlazó afuera, caen en el artículo sin ancla. El ancla que sí usan Método y Visibilidad en IA, `#como-medir-si-esta-funcionando`, no cambió.
 6. **`llms.txt` (capa transversal, no lo toqué).** Las líneas 24 a 30 listan los siete artículos con los titulares y bajadas viejas, y la línea 35 dice «mini-diagnóstico gratuito (menos de 24 horas)». Para el rol que lo reescriba, los cuatro que cambian:
@@ -134,4 +134,66 @@ Alcance: `/v3/blog/` y los siete artículos. Los cuerpos se corrigen solo donde 
    - `[SEO técnico para fintechs chilenas: siete problemas que revisar](https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/): una lista de revisión de SEO técnico para sitios financieros, con la corrección de cada punto.`
 7. **Fecha de publicación del artículo de la revisión** (`16-jul`): se conserva. Si Ramón prefiere re-fecharlo porque cambió de tema, es un cambio en `_indice.json` y en su `.json`.
 8. **`extraer-texto.mjs` copia siempre `comun`** además de la página pedida, y `comun` es de otro rol. Para no pisarlo con lo que ese rol tenga a medias, copié `blog.json` con un script mío que hace exactamente lo mismo (comprobado: `extraer-texto.mjs --comprobar` da «igual» para `blog.json`).
-9. **Build completo.** Al cerrar, `construir.sh blog` cae en `/v3/` (home: «Falta el texto «home.cinta.tramos»»), que es de otro rol en curso. Para probar mi área construí solo las rutas del blog en el scratchpad (`blog/construir-blog.sh`: copia de `spindlelab-astro/` con `src/pages/` reducido a `v3/blog/`): 8 páginas, sin errores.
+9. **Build completo.** En la ronda 1 caía en la home (otro rol en curso). En la ronda 2 el sitio ya está en la raíz y `construir.sh blog2` construye las 22 páginas sin errores.
+
+---
+
+## 4 · Ronda 2 (26-oct, tarde): defecto 11 de la QA de Javiera y frases unificadas de Clara
+
+El sitio ya está en la raíz: las rutas son `/blog/…` (los `/v3/` de arriba son los de la ronda 1). Fuentes: `acta-qa.md` defecto 11 (las citas exactas), `ronda-2-correcciones.md` fila 11 y «Frases que se unifican», `desvios/ronda2-frases.md` (frases 1 a 8 y la regla para los textos largos).
+
+### 4.1 · Afirmaciones comparativas o causales sin fuente (cada una se quita o pasa a lo que sí se sabe)
+
+| # | Dónde | Decía | Dice ahora |
+|---|---|---|---|
+| 68 | aeo, «Claridad» | «Las empresas que se describen igual en su sitio, sus perfiles y los directorios ganan por goleada» | «Si una empresa se describe igual en su sitio, sus perfiles y los directorios, el modelo tiene menos que adivinar» |
+| 69 | aeo, «Citabilidad» | «Las páginas que responden preguntas específicas superan siempre al folleto corporativo genérico» | «Una página que responde una pregunta específica le da al modelo algo concreto que extraer; un folleto corporativo genérico, no» |
+| 70 | aeo, «Qué cambió» | «Hoy una parte creciente de las decisiones (especialmente en B2B, donde se investiga antes de comprar) empieza con una pregunta a una IA» | «Hoy hay otra forma de buscar: preguntarle a una IA, que responde con una recomendación redactada…» (sin cifra ni tendencia) |
+| 71 | aeo, «Qué se mantiene» (mismo argumento que la fila 82) | «Por eso la inversión es una sola: la infraestructura que te posiciona en Google es la que te hace citable por la IA» | «Por eso buena parte del trabajo es una sola: la base técnica que usa Google es la misma que usan los motores de IA» |
+| 72 | 21, bloque 1 | «hace una distinción que casi ninguna herramienta hace» (no medimos a las otras herramientas) | «el chequeo distingue algo que cambia el consejo: no todos los robots de IA deciden lo mismo» |
+| 73 | 21, bloque 1, tercer chequeo (misma familia, en la frase anterior a la 74) | «el que menos herramientas revisan» | «es distinto: pedimos tu portada presentándonos como cada robot» |
+| 74 | 21, bloque 1 | «Es el fallo que menos se detecta y el que más caro sale» | «Pesa 8 puntos, el máximo del instrumento junto con declarar tu negocio como entidad, y no se ve leyendo el robots.txt» (el peso es el del código: 8 es el máximo, hay dos) |
+| 75 | 21, bloque 2 | «el chequeo de más peso de todo el instrumento, con 8 puntos, es declarar tu negocio como entidad» (hay dos de 8: éste y «El servidor no expulsa a los robots de IA») | «uno de los dos chequeos de más peso del instrumento, con 8 puntos» |
+| 76 | 21, bloque 1 | «casi nadie bloquea estos bots a propósito: aparecen por un plugin de seguridad…» | «un bloqueo puede estar ahí sin que nadie lo haya decidido: lo puede traer un plugin de seguridad, un WAF… o un robots.txt heredado» |
+| 77 | 21, bloque 3 | «llms.txt es el más nuevo de todos y todavía no lo tiene casi nadie» | «es el más nuevo de todos: es un archivo de texto en la raíz…» |
+| 78 | 21, bloque 3 (misma familia) | «Es el formato más citable que existe» (FAQPage) | «Es un formato fácil de citar» |
+| 79 | chatgpt, acción 2 | «Los modelos citan con confianza lo que entienden sin ambigüedad. Eso significa que…»; «el modelo duda; y un modelo que duda, no te nombra» | «Ayuda que el modelo no tenga que adivinar quién eres. Por eso…»; «lo que el modelo diga de ti puede salir mezclado» |
+| 80 | chatgpt, epígrafe (el tricolon «entender, verificar y citar» del acta) | «Los modelos no recomiendan a quien grita más fuerte. Recomiendan a quien pueden entender, verificar y citar sin riesgo de equivocarse» | «Un modelo no te recomienda porque lo repitas más fuerte: necesita poder entender quién eres y comprobarlo» |
+| 81 | chatgpt, acción 3 (misma familia) | «Las páginas que mejor funcionan comparten formato… los formatos más extraíbles… es invisible para un modelo» | «Ayuda que la página responda una pregunta específica en las primeras líneas…; son formatos fáciles de extraer; el contenido genérico no afirma nada concreto que un modelo pueda citar» |
+| 82 | chatgpt, acción 5 | «Es una sola inversión con dos retornos» | «así que parte del trabajo sirve para las dos cosas» |
+| 83 | elegir, FAQ «¿Necesito contratar SEO técnico y AEO por separado?» (visible y FAQPage; mismo argumento que 71 y 82) | «muchas veces la inversión es una sola: arreglar y aprovechar la infraestructura que te posiciona en Google es lo que te hace citable por la IA» | «parte del trabajo sirve para las dos cosas: la infraestructura que usa Google es la misma que usan los motores de IA» |
+| 84 | elegir, cierre de «La regla simple» | «Puedes usar esta misma vara con nosotros. Nuestro método y nuestros precios de partida están publicados, y el chequeo de tu sitio es abierto…» (invita a medirnos con los seis criterios; no hay un caso con antes y después) | **Se borra el párrafo.** No se agrega ninguna admisión (sigue siendo decisión de Ramón; §3.3) |
+
+### 4.2 · Frases unificadas de Clara (`ronda2-frases.md`)
+
+| # | Dónde | Frase de Clara | Antes → después en el blog |
+|---|---|---|---|
+| 85 | mini, primer párrafo (frases 1 y 4: primera aparición de una IA en la página; Google) | 1 y 4 | «si Google puede leer y entender tu sitio, si las IA como ChatGPT pueden leerlo» → «si Google y las IA, como ChatGPT, pueden visitar tu sitio y entender a qué te dedicas» |
+| 86 | mini, punto 2 de «Qué incluye» (frase 3) | 3 | «Si la IA puede leerlo. Si los robots… pueden entrar a tu sitio» → «Si ChatGPT y otras IA pueden visitar tu sitio y entender a qué te dedicas. Si los robots de ChatGPT, Gemini y Perplexity no están bloqueados…» |
+| 87 | elegir, «Un punto de partida» (frase 2: ya hay una IA antes en la página) | 2 | «mira si Google y las IA pueden leer tu sitio y qué corregiríamos primero» → «mira si Google y las IA pueden visitar tu sitio y entender a qué te dedicas, y qué corregiríamos primero» |
+| 88 | aeo, FAQ «¿Cuánto cuesta empezar?» (visible y FAQPage) | 2 | «mira si Google y las IA pueden leer tu sitio y llega en un día hábil» → «…pueden visitar tu sitio y entender a qué te dedicas, y llega en un día hábil» |
+| 89 | aeo, FAQ «¿Esto aplica a empresas chilenas…?» (visible y FAQPage) | regla de «leer» literal sin explicar | «que los robots puedan leer el sitio» → «que los robots puedan visitar el sitio» |
+| 90 | chatgpt, «Regla de bolsillo» | regla de «leer» como promesa | «(que los robots puedan leer tu sitio…)» → «(que los robots de IA puedan visitar tu sitio…)» |
+| 91 | 21, primer párrafo y primera FAQ (visible y FAQPage) (frases 6 y 8: contar los 21) | 6 y 8 | «Nuestro chequeo mide 21 señales… las agrupa en esos tres bloques» → «El nuestro consta de 21 chequeos concretos, todos leídos del código público de tu sitio, que se agrupan en esos tres bloques»; «El nuestro mide 21 señales agrupadas en tres bloques» → «El nuestro consta de 21 chequeos concretos agrupados en tres bloques» |
+| 92 | 21, «Qué mide el puntaje, y qué no» (frase 7) | 7 (forma de `paginas-v3.json:139`) | «preparado para que un motor de IA lo lea, lo entienda y lo cite» → «preparado para que ChatGPT y otras IA puedan visitarlo, entender a qué te dedicas y citarlo» |
+| 93 | Cierre del índice y de los siete artículos: `blog.cierre.guia` (`e13/texto/blog.json` y su copia con huella; `paginas-v3.json` blog.cierre.guia) | 8 | «El chequeo revisa 21 señales de tu dominio en segundos, gratis. Cada señal que no pases viene con la instrucción para arreglarla.» → «Son 21 chequeos concretos sobre tu sitio, en segundos y gratis. Cada chequeo que no pases viene con la instrucción para arreglarlo.» (texto exacto de Clara) |
+
+Nota sobre 91: en la lista de Clara la frase 8 es del cierre; para contar los 21 dentro del artículo usé su fórmula («21 chequeos concretos») porque el artículo ya llama «chequeo» a cada uno de los 21. No usé «revisión» (queda para la gratis).
+
+### 4.3 · Qué se mantiene a propósito en esta ronda
+
+- **Los tres nombres de grupo «¿Te pueden leer?», «¿Te entienden?» y «¿Te pueden citar?»**, la palabra «Bloque» en los H2 del artículo de los 21 (con sus anclas `#bloque-1`, `#bloque-2`, `#bloque-3`) y los pesos 30/40/30: Clara los deja intactos en todo archivo (regla para los textos largos).
+- **«Leer» literal y explicado** (chatgpt «un sitio que los bots no pueden leer: JavaScript que esconde el contenido»; elegir «los robots no pueden leer»; aeo «un sitio que los robots pueden leer, que carga rápido»), «leer tu puntaje» y «puedes leer esta página».
+- **«Señal»** donde quiere decir otra cosa: señales de confianza, E-E-A-T, «los demás son señales de orden».
+- **«pueden entrar»** en los nombres de chequeo de la tabla de los 21 y en «entrar, entender qué eres y citarte»: son los títulos que publica el chequeo y la frase que resume sus tres grupos; no es la promesa de venta de la revisión.
+- **Sin fuente que dejé (no estaban en la lista de la QA; se las pasa a Ramón si quiere cerrar la categoría):** «Google sigue moviendo la mayoría del tráfico» (aeo y chatgpt, FAQ); «en la lista de Google, salir cuarto era un buen negocio» y «leídas por un lector nuevo y más estricto» (aeo); y en los 21 la razón de diseño «cuando adivina, prefiere citar a alguien que no lo obligó a adivinar» (bloque 2 y una FAQ), que es el fundamento de los pesos del chequeo y no está medido.
+- **Tricolon**: «entrar, entender qué eres y citarte» (21, primer párrafo) queda porque son los tres grupos reales del chequeo.
+
+### 4.4 · Verificación de la ronda 2
+
+- `construir.sh blog2`: 22 páginas, sin errores. `extraer-texto.mjs --comprobar`: `blog.json` y `comun.json` «igual» (los DISTINTO que quedan, `home.json` y `caso-combeau.json`, son de otros roles).
+- Barrido sobre el volcado de las 8 rutas del blog: 0 de las diez citas del acta, 0 de las frases viejas («pueden leer tu sitio», «leerlo», «21 señales», «ves 21 señales»), 0 de «24 horas», «partners», «agentes de IA», «share of voice», «sin compromiso», rayas, «Estudio de diseño…». Queda «mini-diagnostico» solo en slugs y URLs (7).
+- `FAQPage` = FAQ visible en las 6 páginas que lo tienen (compara texto a texto, en las dos direcciones).
+- `verificar.mjs --prefijo /blog/`: 8 páginas a 390 y 8 a 1440, «Sin hallazgos» en ambos.
+- Títulos ≤ 60 y descripciones ≤ 160 en las 8 (el más largo: 60 y 151).
+

@@ -209,14 +209,14 @@ export function diagnostico() {
       {
         '@type': 'WebApplication',
         '@id': `${url}#chequeo`,
-        name: 'Chequeo de 21 señales',
+        name: 'Chequeo de visibilidad en IA',
         url,
         applicationCategory: 'BusinessApplication',
         operatingSystem: 'Web',
         isAccessibleForFree: true,
         creator: { '@id': `${SITIO}/#org` },
         inLanguage: 'es-CL',
-        description: 'Escribes tu dominio y revisa en segundos si ChatGPT, Claude y Perplexity pueden entrar a tu sitio y entender qué haces: 21 señales, con su peso.',
+        description: 'Escribes la dirección de tu sitio y revisa en segundos si ChatGPT, Claude y Perplexity pueden visitarlo y entender a qué te dedicas: 21 chequeos, con su peso.',
       },
       { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: s.breadcrumb },
       {

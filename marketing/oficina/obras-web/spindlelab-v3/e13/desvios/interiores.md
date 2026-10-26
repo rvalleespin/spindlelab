@@ -1,6 +1,6 @@
 # Desvíos del área INTERIORES (obra E13)
 
-**26-oct-2026 · Clara + Diego.** Páginas: `/v3/metodo/`, `/v3/nosotros/`, `/v3/contacto/` y `/v3/diagnostico/`. Rama `claude/v3-modelo-nuevo`, sin commit.
+**26-oct-2026 · Clara + Diego.** Páginas: `/v3/metodo/`, `/v3/nosotros/`, `/v3/contacto/` y `/v3/diagnostico/` (desde la ronda 2 el sitio está en la raíz: `/metodo/`, `/nosotros/`, `/contacto/` y `/diagnostico/`). Rama `claude/v3-modelo-nuevo`, sin commit. La ronda 2 está al final (§4).
 Fuente del texto: `e13/fuentes/v2-vigente/<ruta>.txt` (publicado y aprobado el 24-oct), `copy-secciones-v1.2.md` §2.7, §6, §7, §8 y §9, y la sección «Afirmaciones a corregir» de `revision-v3-contra-modelo-nuevo-23oct.md`.
 
 ## 1 · Qué cambié
@@ -77,7 +77,7 @@ Fuente del texto: `e13/fuentes/v2-vigente/<ruta>.txt` (publicado y aprobado el 2
 
 | Qué cambié | Por qué |
 |---|---|
-| La imagen al compartir de las cuatro páginas pasa a `/assets/img/og-posicionamiento.jpg?v=1` con alt «SpindleLab. Marketing y crecimiento con IA» (la que usa v2-vigente) | Las `og-e12-{metodo,nosotros,contacto,diagnostico}.jpg` traen el h1 anterior horneado en la imagen (la de contacto dice «Te respondemos en 24 horas»). La imagen nueva es un archivo sin versionar que agregó otro rol: si no llega al árbol, hay que traerla |
+| La imagen al compartir de las cuatro páginas es `/assets/img/og-e12-<ruta>.jpg?v=2` (`ogDe()` de `interiores.mjs`), con alt «SpindleLab: &lt;h1 de la página&gt;». **Corrección de la ronda 2:** en la primera entrega escribí que usaban `og-posicionamiento.jpg?v=1`; lo cambió Diego al construir la home y el marco (`desvios/home-construccion.md`): las cuatro imágenes se regeneraron con el h1 nuevo horneado (plantilla de A) y llevan `?v=2` porque cada nombre se sobrescribe y los activos se cachean fuerte | Las `og-e12-*` de E12 traían el h1 anterior (la de contacto decía «Te respondemos en 24 horas»); ya no |
 | Comentarios de plantilla (los rangos de columnas, «c5» a «c12») con guion simple | Para que la búsqueda de rayas largas y medias dé cero en lo mío; no cambia nada de lo que se ve |
 
 ## 2 · Las afirmaciones de la revisión que caían en mis páginas
@@ -109,6 +109,40 @@ Fuente del texto: `e13/fuentes/v2-vigente/<ruta>.txt` (publicado y aprobado el 2
 9. **Método, paso 02: la conversación y la propuesta no dicen si son gratis.** Ningún documento lo afirma; el texto dice solo que el precio queda por escrito antes de empezar. Si es gratis (probablemente lo es), conviene una frase de Ramón.
 10. **Decisión 7 (consulta real a ChatGPT dentro de la revisión).** Mientras siga abierta, ninguna de mis páginas dice que la revisión «le pregunta a los motores». Si se vuelve parte fija, se reescriben la FAQ «¿Qué mide el puntaje?», «Dos caminos» y el remate del script.
 11. **«Prefiero hablarlo contigo»** (segundo botón del remate del script) queda como estaba: singular de Ramón en un texto de marca. No está en el barrido y es lo que ya medía el recorrido; se anota por si Clara quiere un pase de voz.
-12. **Imágenes al compartir viejas.** Las cuatro `og-e12-*` de estas rutas quedan sin referencia en mis páginas (y traen el mensaje anterior). Retirarlas del árbol es de quien corte el peso de `public/`.
+12. **Imágenes al compartir.** (Corregido en la ronda 2: en la primera entrega este punto decía que las `og-e12-*` quedaban sin referencia.) Las cuatro páginas usan `og-e12-<ruta>.jpg?v=2`, regeneradas por Diego con el h1 nuevo; no queda nada que retirar de mis rutas.
 13. **Barrido de «motor».** En mis páginas solo aparece «motores» en el sentido de motores de IA (FAQ y «no mide», texto aprobado en v2-vigente); «motor» singular no aparece.
 14. **El árbol de trabajo no compiló entero mientras construí** (otros roles a medias: `home.cinta.tramos` y `blog.cierre.h2` faltaban en sus copias de texto). Verifiqué con `HEAD` más solo mis archivos (33 páginas, `astro build` sin errores) y con una copia que deja solo mis cuatro rutas. Falta una construcción del árbol completo cuando los demás terminen.
+
+## 4 · Ronda 2 (acta de QA de la ronda 1, defectos 6 y 8; `ronda-2-correcciones.md` filas 6 y 8)
+
+Todo se midió sobre el sitio construido en la raíz (`astro build`, 22 páginas), con el aviso de cookies cerrado (`localStorage.spindlelab_consent = 'denied'`), con Chrome de la Mac y Playwright. «Antes» es el mismo árbol con `archivo.css` de `HEAD`.
+
+| Qué cambié | Por qué | Medido |
+|---|---|---|
+| `archivo.css`: `.a-body .datos-fase dd a { padding-block: 14px; }` bajo 834 y con puntero grueso (junto a la regla de `.datos-fase`) | Defecto 8: los tres enlaces de «Cuánto cuesta» de `/metodo/` («Ver la auditoría», «Ver las soluciones», «Ver el acompañamiento») medían 17 de alto. Van al final de una frase, dentro del texto, así que no sirve el margen negativo del párrafo que usa la home (allí el enlace es el único hijo del párrafo): se usa el relleno de un elemento en línea, que no cambia el alto de la línea (el mismo método de `.consiento a` y `.prosa .nota a`) | `/metodo/` a 360, 390 y 768: los tres enlaces pasan de 17 a **45** de alto (cuando la frase los parte en dos líneas, de 34,5 a 62,5 o de 35 a 63). **Lo que se ve no se mueve:** el texto de cada enlace queda en el mismo píxel y la página mide lo mismo (3.725 / 3.517 / 3.243 px a 360 / 390 / 768, antes y después). 0 controles bajo 44 × 44 y 0 solapes entre controles |
+| `archivo.css`: `.a-body .consiento { margin-block: 2px; gap: 14px; }` bajo 834 y con puntero grueso (dentro del bloque de `.formulario__directo a`) | Defecto 8: el enlace de la política (45 de alto por el relleno de 14) pisaba al botón de envío (1,5 px a 360 y 390; 1 px a 768). Al medir encontré dos solapes más a 768: 2 px con el campo «Cuéntanos brevemente» (arriba) y 2 px con el área de la casilla (el texto empieza a 44 px y el área de la casilla llega a 46). Con 17 de línea y 28 de relleno no había aire: 12 px entre filas del formulario no alcanzan para 14 + 14. Se suman 2 px de aire arriba y abajo de la fila, y el texto se separa 2 px de la casilla | `/contacto/` a 360, 390 y 768: 0 solapes entre controles (antes: enlace × botón 49,3 × 1,5 a 360 y 390; enlace × botón 155,7 × 1, enlace × campo 461 × 2 y enlace × casilla 2 × 44 a 768), 0 controles bajo 44 × 44, sin desborde (`scrollWidth` = ancho). **Lo que se mueve:** la frase del consentimiento baja 2 px y se corre 2 px a la derecha, el botón baja 4 px y la página crece 4 px (2.581 → 2.585 a 360, 2.505 → 2.509 a 390, 2.276 → 2.280 a 768); la casilla dibujada no se mueve |
+| `e13/desvios/interiores.md`: la línea de la imagen al compartir (§1, transversal) y el punto 12 de §3 | Defecto 6 (c): decían `og-posicionamiento.jpg?v=1` y hoy son `og-e12-<ruta>.jpg?v=2` | `grep` sobre `interiores.mjs` (`ogDe()`) y `home-construccion.md` |
+
+`verificar.mjs` (a 390 y a 1440) sobre `/metodo/` y `/contacto/`: sin hallazgos. También medí `/nosotros/` y `/diagnostico/` a 360, 390 y 768: 0 controles bajo 44 × 44 y 0 solapes.
+
+## 5 · Ronda 2, frases unificadas (`ronda2-frases.md`, sección «Lugares que NO son de `e13/texto/*.json`»)
+
+Texto exacto de la tabla de Clara. Construido en la raíz (`construir.sh interiores2`, 22 páginas, sin errores).
+
+| Archivo | Antes | Después |
+|---|---|---|
+| `paginas-v3.json`, `metodo`, paso 01 (y por lo tanto el HowTo del JSON-LD, que usa el mismo texto) | «…señales de confianza y si la IA puede leerlo.» | «…señales de confianza y si Google y las IA pueden visitar tu sitio y entender a qué te dedicas.» (la frase exacta de la fila de Clara; no lleva «como ChatGPT», que la frase 1 pide en la primera mención de una IA: queda para Clara si lo quiere) |
+| `paginas-v3.json`, `diagnostico`, FAQ «¿Qué mide exactamente el puntaje?» (y su `FAQPage`) | «Mide si tu sitio está técnicamente preparado para que los motores de IA lo lean, lo entiendan y lo puedan citar.» | «Mide si tu sitio está técnicamente preparado para que ChatGPT y otras IA puedan visitarlo, entender a qué te dedicas y citarlo.» |
+| `interiores.mjs`, `WebApplication` del chequeo, `name` | «Chequeo de 21 señales» | «Chequeo de visibilidad en IA» (la propuesta de Clara; lo confirma Simón) |
+| `interiores.mjs`, `WebApplication`, `description` | «Escribes tu dominio y revisa en segundos si ChatGPT, Claude y Perplexity pueden entrar a tu sitio y entender qué haces: 21 señales, con su peso.» | «Escribes la dirección de tu sitio y revisa en segundos si ChatGPT, Claude y Perplexity pueden visitarlo y entender a qué te dedicas: 21 chequeos, con su peso.» |
+| `Chequeo.astro`, texto por defecto de `intro` (no se ve: la página del chequeo pasa `intro=""` y la home ya no lo usa) | «…ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas.» | «…ves si ChatGPT y otras IA pueden visitarlo y entender a qué te dedicas.» |
+| `v3-chequeo.js`, `veredicto()` bajo 45 (solo la cadena y su comentario de encabezado; la lógica no cambia) | «Hoy a la IA le cuesta leer tu sitio o entender qué haces. Abajo ves qué falta.» | «Hoy a una IA le cuesta visitar tu sitio o entender a qué te dedicas. Abajo ves qué falta.» |
+| `Chequeo.astro`, referencia al script | `?v=4` | `?v=5` (el script cambió; es la única referencia) |
+
+Medido: barrido de «pueden leer», «pueden leerlo», «lo lean», «lo lea», «21 señales», «sin plantilla», «leer tu sitio», «asistentes de IA» y «pueden entrar» sobre mis datos, plantillas, `interiores.mjs`, `Chequeo.astro` y `v3-chequeo.js`: 0, salvo el nombre del grupo «¿Te pueden leer?» (no se toca). Sobre el volcado de `/metodo/`, `/nosotros/` y `/contacto/`: 0. `FAQPage` igual a las FAQ visibles (contacto 4 de 4, diagnóstico 5 de 5), JSON-LD de las cuatro parsea, la simulación del chequeo (cuatro puntajes) muestra el veredicto nuevo y carga `?v=5` sin errores de consola, y `verificar.mjs` a 390 y 1440 sobre las cuatro rutas: «Sin hallazgos».
+
+**Quedan con la frase vieja (y por qué):**
+1. `e13/texto/diagnostico.json` (de Clara en esta ronda): `title` («¿ChatGPT puede leer tu sitio?»: ella lo deja a propósito, es la consulta que alguien escribiría en un buscador), `description` («pueden entrar a tu sitio y entender qué haces»), h1 («…asistentes de IA pueden leer tu sitio»), entradilla («…pueden leerlo»), `caminos.guia` y `caminos.1.d` («el chequeo… lee tu sitio»: uso literal, el robot lee la página) y el registro `diagnostico.resultado.veredicto.0` (todavía con el texto anterior del script; el script ya dice el nuevo).
+2. «¿Te pueden leer?», «¿Te entienden?», «¿Te pueden citar?» y «leer 30, entender 40, citar 30»: los nombres y pesos del chequeo; no se tocan en ningún archivo.
+3. El veredicto de 45 a 69 puntos («Los motores pueden llegar a tu sitio, pero les cuesta entender qué haces.») y la FAQ «¿Un puntaje alto…?» («los motores arman sus respuestas…»): no están en la tabla de Clara.
+4. `paginas-v3.json` línea 285 (`blog.cierre.guia`) no es de mis claves; ya trae la frase 8 aplicada por Blog.

@@ -4,9 +4,12 @@
 // Desde 1194: la barra lateral de 320 px, pegajosa (miga, h1 en dos tintas, ficha mono, índice de secciones con el punto
 // de 3 px, créditos abajo) y la columna: el medio principal 16:9, las cinco secciones con sus filas de medios y el
 // cierre. Bajo 1194: el medio principal arriba (desde 834, 16:9 con radio; bajo 834, 4:5 a sangre), el nombre, la
-// ficha y las secciones en una columna, y el índice en la barra flotante de abajo. El caso no tiene pie.
+// ficha y las secciones en una columna, y el índice en la barra flotante de abajo.
 //
 // E13: con un solo caso no hay «Siguiente». El cierre pide la revisión de una página y enlaza al índice de Trabajo.
+// E13, ronda 2 (acta de QA, defecto 5): el caso lleva el pie común (PaginaA con su pie, como las demás rutas). La spec decía
+// «el caso no tiene pie» (§2, lo común, 2) y la política de privacidad dice que el control de cookies y el enlace a ella están
+// al final de cualquier página. Bajo 1194 la página deja el alto de la barra flotante bajo el pie (archivo.css, `.a-pagina:has(.caso)`).
 //
 // Todo el texto es de Clara y todo medio sale de medios-casos.json: lo arma modelo() en casos.mjs, que hace fallar el
 // build si falta algo. Este archivo lo lee Tailwind: aquí no va lógica ni palabras sueltas (desvios.md, tanda 1).
@@ -23,7 +26,7 @@ interface Props {
 const m = modelo(Astro.props.caso);
 const ruta = `/trabajo/${m.caso}/`;
 ---
-<PaginaA pie={false}>
+<PaginaA>
   <div class="caso">
     <header class="lateral">
       <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1], href: '/trabajo/' }, { texto: m.miga[2] }]} />

@@ -3,13 +3,11 @@
 // Visibilidad en IA, Auditoría SEO técnica, Acompañamiento mensual, Gestión de redes sociales y Paid Media (Google).
 //
 // Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md §2.4: la plantilla interior, «las secciones de hoy
-// (incluye, planes, fases, preguntas, cierre) con la misma forma que Desarrollo web». La franja: el chequeo en
-// Visibilidad en IA (es lo que mide este servicio) y ninguna en los otros cuatro (ninguna pieza del inventario muestra
-// ese servicio aplicado; la de Auditoría, Verifica y Cumple, salió el 23-oct por ser un campo de color, abajo). Lo que
-// la spec no cubría está en spindlelab-v3/desvios.md, tanda 4 y vuelta 1 de la QA de obra.
+// (incluye, planes, fases, preguntas, cierre) con la misma forma que Desarrollo web». Sin franja en ninguno de los cinco
+// (ver «La franja», abajo). Lo que la spec no cubría está en spindlelab-v3/desvios.md, tanda 4 y vuelta 1 de la QA de obra.
 //
-// EL TEXTO. Clara cambia de cada uno la miga, el h1 (en dos tintas: el nombre del servicio y lo que le hace al cliente)
-// y el alt (y el pie) de la franja (src/data/archivo/texto/<slug>.json); lo demás «queda tal cual, desde su dato»: la
+// EL TEXTO. Clara cambia de cada uno la miga y el h1 (en dos tintas: el nombre del servicio y lo que le hace al cliente;
+// src/data/archivo/texto/<slug>.json); lo demás «queda tal cual, desde su dato»: la
 // línea con el precio, los dos botones, la nota de precios, el lead, las secciones con sus planes y precios, las
 // preguntas, el cierre y «Siguiente» salen de servicios-v3.json, como hoy, con el mismo armado que tenían en la página
 // anterior (el título de cada punto de la lista partido en su «:», las comillas «», los enlaces de ENLACES). Los dos
@@ -33,7 +31,6 @@ import aud from '../../data/archivo/texto/auditoria-seo-tecnica.json';
 import aco from '../../data/archivo/texto/acompanamiento-mensual.json';
 import redes from '../../data/archivo/texto/redes-sociales.json';
 import paid from '../../data/archivo/texto/paid-media.json';
-import medios from '../../data/archivo/medios.json';
 import servicios from '../../data/servicios-v3.json';
 
 export function getStaticPaths() {
@@ -115,24 +112,11 @@ const marcasSr: string[] | undefined = secBloques?.marcasSr;
 const enOrden = SECUENCIA.has(slug);
 const ListaBloques = enOrden ? 'ol' : 'ul';
 
-// ---- La franja (§2.4)
-const m = medios.medios as Record<string, { src: string; ancho: number; alto: number; alt: string }>;
-// La imagen de la spec va bajo 834 (16:9, recortada al centro: 1050 px alcanzan). Desde 834, el mismo centro a 2,39
-// sacado a 1920 de la misma captura (franjas-tanda-4.py): el de 1050 se veía agrandado 1,34 veces a 1440.
-type Medio = { src: string; ancho: number; alto: number };
-let franja: null | { medio: Medio; ancha: Medio; alt: string; pieza: { nombre: string; linea: string }; pie?: string } = null;
-if (slug === 'visibilidad-en-ia') {
-  // El alt de Clara («… con el resultado de un sitio en pantalla») describe un resultado que el archivo de la spec no
-  // muestra: chequeo-43 es la primera pantalla del chequeo, sin resultado. Va el alt que se escribió mirando ese archivo
-  // (medios.json, tanda 2). desvios.md, tanda 4.
-  // El pie (nombre y línea) es de Clara, aquí: la entrada «chequeo» ya no está en el índice de /trabajo/ (obra E13).
-  const pie = t('visibilidad-en-ia.franja.pie') as { tinta: string; gris: string };
-  franja = { medio: m['chequeo-43'], ancha: m['chequeo-239'], alt: m['chequeo-43'].alt, pieza: { nombre: pie.tinta, linea: pie.gris } };
-}
-// Auditoría SEO técnica no lleva franja desde el 23-oct (spec §2.4, §3.4 y §0.4, punto 14; acta de la obra, vuelta 1,
-// defecto 3): era Verifica y Cumple, y todas sus capturas son un campo de color con la regla 2 de §3.4 (la franja, 42,4 %
-// de azul). Queda como Acompañamiento mensual: la cabecera y después las secciones. El alt y el pie que Clara le escribió
-// a esa franja quedan sin uso.
+// ---- La franja (§2.4): ninguna de las cinco páginas la lleva. Visibilidad en IA tenía la captura del chequeo anterior
+// (chequeo-43 y chequeo-239), con texto horneado («…y citarte», un superlativo sin fuente, una frase cortada) y un campo
+// de formulario falso, fuera de A · Archivo: la QA de la ronda 1 (acta, defecto 1) la retiró y sus medios se borraron
+// (obra E13, ronda 2). Auditoría SEO técnica no la lleva desde el 23-oct (spec §2.4, §3.4 y §0.4, punto 14: era Verifica y
+// Cumple, un campo de color) ni Acompañamiento, Redes y Paid Media: la cabecera y después las secciones.
 
 // ---- Los botones y «Siguiente». «Ver planes» solo existía en la página anterior; «Escríbenos» es el del menú. Obra E13:
 // el botón principal del cierre dice qué se pide en cada servicio (Clara, `<slug>.cierre.boton`: «Pedir la revisión de mi
@@ -194,23 +178,7 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=2`, alt: `SpindleLab: ${h1.t
       </div>
     </section>
 
-    {/* 2 · LA FRANJA (§2.4.2): a lo más una, 2,39 desde 834 y 16:9 bajo 834, recortada al centro */}
-    {franja && (
-      <figure class="reticula franja" data-entrada>
-        <div class="medio">
-          <picture>
-            <source media="(min-width: 834px)" srcset={franja.ancha.src} width={franja.ancha.ancho} height={franja.ancha.alto} />
-            <img src={franja.medio.src} alt={franja.alt} width={franja.medio.ancho} height={franja.medio.alto} loading="eager" fetchpriority="high" decoding="async" />
-          </picture>
-        </div>
-        <figcaption>
-          <p class="pie"><span class="tinta">{franja.pieza.nombre}</span> <span class="rotulo">· {franja.pieza.linea}</span></p>
-          {franja.pie && <p class="pie">{franja.pie}</p>}
-        </figcaption>
-      </figure>
-    )}
-
-    {/* 3 · LO QUE INCLUYE (lista, c5 a c12) */}
+    {/* 2 · LO QUE INCLUYE (lista, c5 a c12) */}
     {secIncluye && (
       <section class="seccion reticula" aria-labelledby="h-incluye">
         <div class="int-sec__cab"><h2 class="t-declaracion" id="h-incluye">{secIncluye.h2}</h2></div>
@@ -222,7 +190,7 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=2`, alt: `SpindleLab: ${h1.t
       </section>
     )}
 
-    {/* 4 · PLANES (c5 a c16): los planes y, debajo, el compromiso y la nota */}
+    {/* 3 · PLANES (c5 a c16): los planes y, debajo, el compromiso y la nota */}
     {secPlanes && (
       <section class="seccion reticula" id="planes" aria-labelledby="h-planes">
         <div class="int-sec__cab"><h2 class="t-declaracion" id="h-planes">{secPlanes.h2}</h2></div>
@@ -244,7 +212,7 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=2`, alt: `SpindleLab: ${h1.t
       </section>
     )}
 
-    {/* 5 · LOS BLOQUES, en la forma de las fases (c5 a c12) */}
+    {/* 4 · LOS BLOQUES, en la forma de las fases (c5 a c12) */}
     {secBloques && (
       <section class="seccion reticula" aria-labelledby="h-bloques">
         <div class="int-sec__cab"><h2 class="t-declaracion" id="h-bloques">{secBloques.h2}</h2></div>
@@ -263,7 +231,7 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=2`, alt: `SpindleLab: ${h1.t
       </section>
     )}
 
-    {/* 6 · PREGUNTAS (c5 a c12) */}
+    {/* 5 · PREGUNTAS (c5 a c12) */}
     {faq.length > 0 && (
       <section class="seccion reticula" aria-labelledby="h-faq">
         <div class="int-sec__cab"><h2 class="t-declaracion" id="h-faq">{hFaq}</h2></div>
@@ -275,7 +243,7 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=2`, alt: `SpindleLab: ${h1.t
       </section>
     )}
 
-    {/* 7 · CIERRE (§2.4.4) y «Siguiente» */}
+    {/* 6 · CIERRE (§2.4.4) y «Siguiente» */}
     <section class="seccion reticula" aria-labelledby="h-cierre">
       <div class="cierre">
         {secCierre && <h2 class="t-declaracion" id="h-cierre">{secCierre.h2}</h2>}

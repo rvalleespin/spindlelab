@@ -260,7 +260,7 @@ body.a-body {
 .a-body .miga [aria-current] { color: var(--a-blanco); display: inline-flex; min-height: 44px; align-items: center; }
 
 /* ------------------------------------------------------------------ pie (§2, lo común, 2) */
-/* Borde superior, el logo a 20 px, el correo en mono y la hora; 160 px arriba. Los casos no llevan pie. */
+/* Borde superior, el logo a 20 px, el correo en mono y la hora; 160 px arriba. (E13, ronda 2: el caso también lo lleva.) */
 .a-body .pie-sitio {
   margin-top: 160px; padding: 16px var(--a-m) 24px; display: flex; flex-wrap: wrap; gap: 12px 40px;
   align-items: center; border-top: 1px solid var(--a-linea-seccion);
@@ -296,7 +296,6 @@ body.a-body {
   .a-body .portada-v__accion > .chico:last-child, .a-body .fase__der > .chico:has(> a), .a-body .int-lista__pie:not(.chico) { margin-block: -13px; }
   .a-body .portada-v__accion > .chico:last-child a, .a-body .fase__der > .chico > a, .a-body .int-lista__pie:not(.chico) a,
   .a-body .servicio__precio .chico a { display: flex; width: fit-content; align-items: center; min-height: 44px; }
-  .a-body .servicio__precio { gap: 0; }
   .a-body .pie-sitio .cab__logo { margin-block: -12px; }
   .a-body .pie-sitio__correo { display: inline-flex; align-items: center; min-height: 44px; padding-top: 6px; margin-block: -18px -12px; }
   /* el botón «Cookies» que consent-banner.js cuelga junto al correo trae su estilo en línea: va con !important */
@@ -627,6 +626,16 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bot
 .a-body .servicio__cuerpo { display: flex; flex-direction: column; gap: 12px; }
 .a-body .servicio__precio { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .a-body .servicio__precio .valor { color: var(--a-blanco); }
+/* Búsqueda y visibilidad en IA (ronda 2 de E13): un precio sobre cada enlace, en pares. Dentro del par, el precio y su enlace
+   juntos; entre pares, el aire que los separa. Bajo 834 los enlaces miden 44 y llevan 13 px de aire propio sobre el texto, así
+   que el par no suma separación y entre pares queda más. */
+.a-body .servicio__precio--pares { gap: 24px; }
+.a-body .servicio__par { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .servicio__precio--pares { gap: 16px; }
+  .a-body .servicio__par { gap: 0; }
+  .a-body .servicio__par .chico { margin-top: -6px; }
+}
 /* la flecha de los enlaces de texto de la home (bloques de servicios, filas de pruebas, enlace al método): 4 px, como en
    los datos de las fases del método y en el nombre de la pieza */
 .a-body .servicio__precio .icono-flecha, .a-body .fase__der .icono-flecha, .a-body .int-lista__pie .icono-flecha { margin-left: 4px; }
@@ -1006,6 +1015,11 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
 .a-body .datos-fase__fila--entera { grid-column: 1 / -1; }
 .a-body .datos-fase__linea { display: block; }
 .a-body .datos-fase a .icono-flecha { display: inline-block; margin-left: 4px; }
+/* E13, ronda 2 (acta de QA, defecto 8): los enlaces de «Cuánto cuesta» («Ver la auditoría», «Ver las soluciones», «Ver el
+   acompañamiento») van al final de una frase, dentro del texto, y medían 17 de alto. Bajo 834 y con puntero grueso su área
+   sube a 44 con el relleno de arriba y de abajo: el de un elemento en línea no cambia el alto de la línea, así que lo que se
+   ve no se mueve (mismo método que .consiento a y .prosa .nota a). Arriba y abajo hay texto sin enlace. */
+@media (max-width: 833.98px), (pointer: coarse) { .a-body .datos-fase dd a { padding-block: 14px; } }
 /* Una lista de términos (método, «Lo que necesitamos de ti»): la misma fila de la lista, con su término */
 .a-body .int-lista > .int-lista__fila { padding: 12px 0; border-top: 1px solid var(--a-linea); }
 .a-body .int-lista__fila > .cuerpo { max-width: var(--a-caja); }
@@ -1072,6 +1086,10 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
   /* el enlace dentro de la frase del consentimiento: su área de 44 de alto sin mover la línea (el relleno de un elemento
      en línea no cambia el alto de la línea) */
   .a-body .consiento a { padding-block: 14px; }
+  /* E13, ronda 2 (acta de QA, defecto 8): ese área de 45 de alto pisaba 1 a 2 px al botón de envío (a 360, 390 y 768) y, a 768,
+     2 px al campo de arriba y al área de la casilla (el texto empieza 2 px dentro de ella). La fila gana 2 px de aire arriba
+     y abajo, y el texto se separa 2 px de la casilla: las áreas ya no se tocan y la casilla dibujada no se mueve. */
+  .a-body .consiento { margin-block: 2px; gap: 14px; }
 }
 
 /* EL ÍNDICE DEL BLOG (§2.5): la barra lateral del índice de trabajo y, a la derecha, las filas: borde superior en la
@@ -1182,10 +1200,11 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
   letter-spacing: 0; text-transform: none;
 }
 .a-body .barra--articulo summary > .rotulo { flex: none; }
-/* el artículo tiene pie: bajo 1194 la página deja el alto de la barra abajo para que no lo tape */
+/* el artículo y el caso tienen pie (E13, ronda 2: el caso lo ganó; ambos son `.caso`): bajo 1194 la página deja el alto de la
+   barra abajo para que no lo tape */
 @media (max-width: 1193.98px) {
-  .a-body .articulo { padding-bottom: 0; }
-  .a-body .a-pagina:has(.articulo) { padding-bottom: 96px; }
+  .a-body .caso { padding-bottom: 0; }
+  .a-body .a-pagina:has(.caso) { padding-bottom: 96px; }
 }
 
 /* ------------------------------------------------------------------ movimiento reducido (§1.6) */

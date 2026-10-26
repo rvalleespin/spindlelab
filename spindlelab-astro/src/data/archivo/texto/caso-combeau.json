@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/caso-combeau.json",
- "sha256": "a0333260d0a6190de850ee6e85158259cf9a403eba442e013e2817aa7b41e21b",
+ "sha256": "e5bd38c839f9721c0b743e9a81c991f7be5d42669b3ce20aa43835e0ccee54ee",
  "id": "caso-combeau",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -237,7 +237,7 @@
        "Marca qué parte de cada foto no se corta en los recuadros. (Encuadre hecho para su panel)",
        "Sube la foto tal cual y el sitio la entrega recortada y liviana. (Netlify Image CDN)",
        "El book no baja sus videos hasta que hacen falta. (Video con carga diferida)",
-       "Google y la IA pueden leer quién es y a qué se dedica. (Datos estructurados)",
+       "Google y la IA pueden entender quién es y a qué se dedica. (Datos estructurados)",
        "Las páginas llegan armadas, sin esperar scripts de otros sitios. (Astro)"
       ],
       "fuente": "inventario-casos §2.1, §2.2 y §2.9, «Ingredientes con fila»",
@@ -377,10 +377,10 @@
      {
       "id": "combeau.resultado.p2",
       "rol": "parrafo",
-      "texto": "El panel existe y lo opera él. No tenemos un número ni una fecha de uso que mostrar.",
+      "texto": "El panel existe y está hecho para que él lo opere. No tenemos un número ni una fecha de uso que mostrar.",
       "fuente": "inventario-casos §2.9 (el panel y sus colecciones). Sin fecha ni conteo de uso: la revisión del panel (revision-panel-admin-bernardo.md:589-594) dice a la vez que subió una campaña y que el login seguía en revisión en el dominio nuevo, y el cierre del 23-sep solo verificó que el login funciona.",
       "estado": "cambia",
-      "condicion": "«Lo opera él» lo confirma Ramón (hay una mantención acordada y el login se verificó el 23-sep, sin un registro de uso reciente). Si no lo confirma, la frase se reduce a «No tenemos un número ni una fecha de uso para mostrar.» o sale.",
+      "condicion": "Ronda 2 (acta de QA, defecto 4): la versión anterior decía «El panel existe y lo opera él», un uso presente sin registro (hay una mantención acordada y el login se verificó el 23-sep, pero ningún registro de uso posterior). Queda el valor conservador: dice para qué está hecho el panel. Si Ramón confirma con evidencia que lo opera, vuelve «lo opera él».",
       "por_que": "Revisión del 23-oct, fila «alto»: la frase de resultado «Lo que esperábamos del panel pasó… en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas» era la única afirmación de resultado sobre un cliente en todo el sitio y su propia fuente la contradice en el mismo párrafo (el login estaba en revisión). Se reescribe con lo verificable, sin número y sin fecha, y deja de validar la hipótesis: la hipótesis del caso queda abierta, que es lo honesto.",
       "antes": "Lo que esperábamos del panel pasó, aunque sin número: en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas."
      }

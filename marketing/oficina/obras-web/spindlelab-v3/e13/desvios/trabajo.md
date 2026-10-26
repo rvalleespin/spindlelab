@@ -2,6 +2,8 @@
 
 Archivos míos: `src/pages/v3/trabajo/index.astro` y `[caso].astro`, `src/data/archivo/casos.mjs`, `src/components/a/Caso.astro` y `FilaCaso.astro`, `src/scripts/archivo/muro.mjs`, `src/data/archivo/medios.json` y `medios-casos.json`, reglas exclusivas de `archivo.css`, la imagen al compartir de `/trabajo/` y `e13/herramientas/og-trabajo.mjs`. Sin commit. Decisión 3 del brief (valores por defecto): dos entradas, Combeau y Verifica y Cumple.
 
+**Rutas.** Desde el corte a la raíz (`452f3bac`) las páginas son `/trabajo/` y `/trabajo/combeau/` y sus archivos viven en `src/pages/trabajo/`. Donde este archivo dice `/v3/trabajo/` o `src/pages/v3/…` (escrito antes del corte), léase sin `/v3/`; los medios siguen en `public/v3/…`. La ronda 2 está en la sección 6.
+
 ## 1 · Qué cambié, por qué, de dónde sale
 
 | Qué cambié | Por qué | De dónde sale |
@@ -28,9 +30,9 @@ Archivos míos: `src/pages/v3/trabajo/index.astro` y `[caso].astro`, `src/data/a
 - Filas de `medios.json` (11) y `medios-casos.json` (los cinco casos: 1.012 líneas). El JSON conserva el formato byte a byte (`indent=1`); su cabecera «no se edita a mano» lo dice y avisa que se editó.
 - La cinta (`public/v3/cinta/`, `cinta.json`, `cinta.mjs`) la retiró el otro Diego.
 
-**Se conserva.** `/v3/trabajo/combeau/` entera (sus 20 archivos en `public/v3/trabajo/combeau/`), `combeau-fotografia-169/-45`, `verifica-y-cumple-45` (desarrollo-web), `-53` (muro de `/trabajo/`), `-12-169` (home y og), `chequeo-239/-43`, `ramon-vallejos-34`, `portada/`, `marca/`, `og-e12-combeau.jpg`.
+**Se conserva** (al cierre de la ronda 1; `chequeo-239/-43` ya no existen: Servicios los retiró en la ronda 2, defecto 1). `/v3/trabajo/combeau/` entera (sus 20 archivos en `public/v3/trabajo/combeau/`), `combeau-fotografia-169/-45`, `verifica-y-cumple-45` (desarrollo-web), `-53` (muro de `/trabajo/`), `-12-169` (home y og), `ramon-vallejos-34`, `portada/`, `marca/`, `og-e12-combeau.jpg`.
 
-**`public/v3`: 26.860 kB (27.153.688 B, 156 archivos) → 8.540 kB (8.660.004 B, 42 archivos).** Lucía estimó 26,9 → ≈ 8,6 MB. De la diferencia, 1.952 kB son la cinta (otro Diego) y el resto es lo de arriba.
+**`public/v3`: 26.860 kB (27.153.688 B, 156 archivos) → 8.540 kB (8.660.004 B, 42 archivos).** Lucía estimó 26,9 → ≈ 8,6 MB. De la diferencia, 1.952 kB son la cinta (otro Diego) y el resto es lo de arriba. Hoy (ronda 2): 8.448 kB, porque Servicios retiró `chequeo-239/-43`.
 
 ## 3 · Lo que ya no lee nadie (para la orquestadora; no los toqué, son de Clara)
 
@@ -56,11 +58,38 @@ Capturas (fuera del repositorio): `.../scratchpad/capt-trabajo-final/` (`v3__tra
 
 ## 5 · Qué quedó abierto
 
-1. **El muro de dos piezas queda desparejo (propuesta, no la apliqué).** A 1440 y 1920, Combeau va en 4:5 (la captura de teléfono, con el menú enorme) y Verifica y Cumple en 5:3: la columna de la derecha termina ~320 px más arriba y queda un hueco. Es la composición del spec (Clara: «Portada de la tarjeta: la de fotografía (`combeau-fotografia-45`)»). Probé en una copia de prueba, sin tocar el árbol, usar `combeau-fotografia-169` (la de escritorio, que ya existe) en 5:3: las dos portadas quedan parejas, arriba alineadas, la página más corta y sin ningún medio nuevo. Es un cambio de dos palabras en `PORTADAS` de `trabajo/index.astro` (`medio: 'combeau-fotografia-169', forma: 'p-53'`); recorta ~6 % del ancho de la captura (3 % por lado; el menú de Combeau queda cortado a la derecha). Captura de la variante: `.../scratchpad/capt-trabajo-var/v3__trabajo-1440-full.jpg`. Decide Lucía o Ramón.
+1. **El muro de dos piezas: SÍ se aplicó la variante pareja (commit `1c65e6a6`).** En la ronda 1 lo dejé como propuesta porque la spec y Clara fijaban la portada de Combeau en `combeau-fotografia-45` (4:5, la captura del teléfono): a 1440 y 1920 la columna de la derecha terminaba ~320 px más arriba y quedaba un hueco. La orquestadora aplicó mi propuesta tal cual: `PORTADAS` de `trabajo/index.astro` usa `combeau-fotografia-169` en `p-53` (la captura de escritorio, que ya existía, recortada al marco 5:3) y `ALTO` quedó solo con `p-53`. Las dos tarjetas arrancan a la misma altura; la 16:9 pierde ~6 % del ancho (3 % por lado; el menú de Combeau queda cortado a la derecha). Desvío respecto de la spec §3.3 y de la nota de Clara en `trabajo.json` («Portada de la tarjeta: la de fotografía (`combeau-fotografia-45`)»), que sigue diciendo `-45`: se declara aquí. `combeau-fotografia-45` sigue en uso (`desarrollo-web`). Captura de la variante en la ronda 1: `.../scratchpad/capt-trabajo-var/v3__trabajo-1440-full.jpg`.
 2. **`public/v3/medios/combeau-modelo-45.webp` (36 kB) y su fila en `medios.json` quedaron sin ningún lector**: Clara unió las dos entradas de Combeau en una (portada `-fotografia-45`). Los dejé porque el encargo dice que los de Combeau se quedan; si no se quieren, son un `rm` y una fila. El caso usa otro archivo del mismo nombre bajo `public/v3/trabajo/combeau/`.
 3. **«motor» ×2 en `/v3/trabajo/` y `/v3/trabajo/combeau/`**: viene del `knowsAbout` de la persona en el JSON-LD que emite el Layout («Visibilidad en motores de IA»). No es de mi área (`comun.entidad.sabe`, `layout-a.ts`) y es el plural de «motor de IA», que la guía permite; lo dejo anotado por si el barrido final lo cuenta.
 4. **Fuera de mi área, con comentarios viejos**: `Video.astro` y `video.mjs` aún dicen «(los conceptos bajo 834)». `Pieza.astro` (lo comparte `desarrollo-web.astro`) conserva la prop `tipo` / `data-tipo`, que ya nadie lee. Los dos son cambios de comentario o de una línea para su dueño.
 5. **`medios-casos.json` dice que lo escribe `e12/construccion/herramientas/medios-casos.py`.** Si alguien lo vuelve a correr, regenerará los cinco casos que salieron y esa carpeta de medios ya no existe: no se debe correr en esta obra.
 6. **Verifica y Cumple en `/trabajo/` sigue con su portada 5:3 y el aviso «La persona a caballo de esta portada está generada con IA.»** (texto de Clara, sin cambio). La tarjeta al compartir usa otra imagen por la razón de la sección 1.
 7. **Permiso de Combeau** sigue siendo verbal (`desvios/home.md` §7.12). La página del caso no lo dice; no es mío.
-8. Mientras viva bajo `/v3/`, el `canonical` lleva `/v3/` y la página va con `noindex`; las URL del JSON-LD ya salen sin `/v3/`; la conversión a raíz la hace `convertir-a-raiz.mjs` (ya contempla `trabajo` y los medios de `public/v3/trabajo/<caso>/`).
+8. Tras el corte a la raíz, el `canonical` es `https://spindlelab.cl/trabajo/combeau/` y la página sale sin `noindex` (lo quitó `convertir-a-raiz.mjs`); las URL del JSON-LD ya salían sin `/v3/`. Los comentarios de cabecera de `[caso].astro` e `index.astro` se actualizaron.
+
+## 6 · Ronda 2: el caso lleva el pie (QA defecto 5) y este registro al día (defecto 6)
+
+**Cambio respecto de la spec.** `spec-visual.md` §2 («Lo común», 2) dice «el caso no tiene pie» y cierra con «Siguiente»; `spec-home.md` §3.4 dice que el pie cambia en todas las rutas; la política de privacidad dice que el control de cookies y el enlace a ella están «al final de cualquier página». La spec del caso quedó contradicha y yo no lo declaré en la ronda 1 (`PaginaA pie={false}`). **Desde ahora `/trabajo/combeau/` lleva el pie común** (logo, correo con asunto, hora, Chequeo gratis, Política de privacidad con el botón «Cookies», LinkedIn, Instagram), igual que las demás rutas. Es un desvío declarado respecto de la spec §2.
+
+| Qué cambié | Por qué | De dónde sale |
+|---|---|---|
+| `Caso.astro`: `<PaginaA>` sin `pie={false}`; la cabecera del archivo dice por qué | El caso no ofrecía control de cookies ni enlace a `/privacidad/` tras contestar el aviso | QA defecto 5; `ronda-2-correcciones.md` fila 5 |
+| `archivo.css`: la regla que ya usaba el artículo del blog para convivir con la barra flotante y el pie pasa de `.articulo` a `.caso` (`.caso { padding-bottom: 0 }` y `.a-pagina:has(.caso) { padding-bottom: 96px }`, bajo 1194). El artículo es `class="caso articulo"`: el blog queda igual. Más el comentario del pie sin «los casos no llevan pie» | Bajo el pie la página deja el alto de la barra; con el aviso abierto, el pie ya reservaba el alto del aviso (`.pie-sitio` con `padding-bottom` por tramo) y `caso.mjs` sube la barra sobre el aviso con `--a-alto-aviso`. Ningún valor nuevo: se reutiliza lo medido para el blog | `archivo.css` (bloque «nada tapado por lo fijo» y el del blog) |
+| Comentarios de `[caso].astro` e `index.astro` al día (raíz, sin `noindex`, portadas parejas); `ALTO` y `PORTADAS` sin la rama `p-45` | Estaban desactualizados tras `452f3bac` y `1c65e6a6` | defecto 6 |
+
+**Medido** (`construir.sh trabajo`; script `scratchpad/herr/medir-cierre.mjs`: al final de la página comprueba que el botón del cierre, el corchete y todos los enlaces del pie, con «Cookies», estén enteros y que `elementFromPoint` en su centro y en las cuatro esquinas no devuelva el aviso, la barra ni el encabezado; después recorre la página entera con Tab y hace la misma prueba con cada elemento que recibe el foco, esperando 450 ms por si hay scroll animado; «abierto» = sin elección guardada, «cerrado» = `localStorage.spindlelab_consent = 'denied'`).
+
+| Ancho | Antes (sin pie), aviso abierto | Después, aviso abierto | Después, aviso cerrado |
+|---|---|---|---|
+| 360 | `[ Todo el trabajo ]` tapado por el aviso; botón del cierre tapado por la barra; con Tab, «Pedir la revisión» y «Todo el trabajo» tapados (2) | 0 tapados; 26 elementos con Tab; fin de página a 5.287/5.287 px con el pie, «Política de privacidad · Cookies», LinkedIn e Instagram a la vista sobre la barra y el aviso | 0 tapados; 23 con Tab |
+| 390 | ídem (2 tapados con Tab) | 0 tapados; 26 con Tab | 0 tapados; 23 con Tab |
+| 768 | `[ Todo el trabajo ]` tapado por la barra y el aviso; 1 tapado con Tab | 0 tapados; 26 con Tab | 0 tapados; 23 con Tab |
+| 1440 | 0 (sin barra, aviso de 69 px) pero sin pie | 0 tapados; 31 con Tab | 0 tapados; 28 con Tab |
+
+- El «antes» se reconstruyó volviendo a poner `pie={false}` y `.articulo` en una copia de prueba: reproduce el defecto de la QA a 360, 390 y 768.
+- Con el aviso cerrado, `#cookie-preferencias` existe a los cuatro anchos (antes: 0). Con el aviso abierto, el botón «Cookies» también está, porque el pie ya lo trae.
+- `verificar.mjs --prefijo /trabajo/` a 360, 390, 768 y 1440: «Sin hallazgos» (2 páginas cada vez).
+- `enlaces.mjs dist`: 24 páginas, 711 referencias, 0 rotas. `barrer-terminos.mjs --solo '^trabajo'`: cero salvo el «motor» ×2 de la sección 5, punto 3. JSON-LD de las dos páginas, parseado.
+- No es un defecto nuevo, y no lo toqué: a 360 y 390 el área de toque del correo del pie roza 2 px a la hora (se repite en `/servicios/` y en el blog; el pie es de Diego-home).
+- Capturas: `.../scratchpad/capt-cierre-despues/fin-{abierto,cerrado}-{360,390,768,1440}.jpg` (antes: `capt-cierre-antes/`).
+- **Queda sin tocar, de otro dueño:** `PaginaA.astro` conserva la prop `pie` (con su comentario «Los casos no tienen pie») y `Pie.astro` dice en su cabecera «Los casos no llevan pie: PaginaA lo omite con pie={false}». Ninguna ruta pasa ya `pie={false}`: la prop y las dos frases quedaron viejas.

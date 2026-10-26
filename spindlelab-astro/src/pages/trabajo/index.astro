@@ -1,8 +1,8 @@
 ---
 // ÍNDICE DE TRABAJO DE A · ARCHIVO (obra E12, corrida 2, tanda 2; recortado en la obra E13). Diego.
 //
-// La URL no cambia: /trabajo/ pasa de src/pages/v3/trabajo.astro (la página de driftime, que A reemplaza) a
-// src/pages/v3/trabajo/index.astro, para que los casos vivan al lado (/trabajo/<caso>/).
+// La URL no cambia: /trabajo/ pasó de src/pages/v3/trabajo.astro (la página de driftime, que A reemplaza) a
+// una carpeta, para que los casos vivan al lado (/trabajo/<caso>/); desde el corte a la raíz (E13), en src/pages/trabajo/.
 //
 // Contrato: spec-visual.md §2.2 (barra lateral desde 1194, muro de dos columnas en el orden de Clara, adónde lleva cada
 // entrada), §3.3 (las portadas), §3.4 (techo de campo del índice) y §4.
@@ -35,13 +35,13 @@ const pagina = trabajo.texto;
 const m = medios.medios;
 const externo = t('comun.externo').texto;
 
-// Las dos portadas, en las proporciones de Koto (spec §2.2, en el orden de Clara): la de Combeau en 4:5 y la de Verifica y
-// Cumple en 5:3.
-const PORTADAS: Record<string, { medio: string; forma: 'p-45' | 'p-53' }> = {
+// Las dos portadas, parejas, en 5:3 (spec §2.2, en el orden de Clara). Commit 1c65e6a6: Combeau usa la captura de escritorio
+// (la 16:9, recortada al marco) y no la del teléfono en 4:5, para que las dos tarjetas arranquen a la misma altura.
+const PORTADAS: Record<string, { medio: string; forma: 'p-53' }> = {
   'combeau-fotografia': { medio: 'combeau-fotografia-169', forma: 'p-53' },
   'verifica-y-cumple': { medio: 'verifica-y-cumple-53', forma: 'p-53' },
 };
-const ALTO = { 'p-45': 5 / 4, 'p-53': 3 / 5 } as const;
+const ALTO = { 'p-53': 3 / 5 } as const;
 
 type Entrada = { id: string; nombre: string; bajada: string; linea: string; destino: string; cursor: string; pie?: string };
 const entradas = (pagina.entradas as Entrada[]).map((e) => {

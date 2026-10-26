@@ -39,7 +39,7 @@
 | Sale «Los modelos citan lo que entienden sin ambigüedad» (claridad de entidad) | Afirmación sobre cómo eligen fuentes los modelos, sin respaldo | revisión 23-oct |
 | «mini-diagnóstico gratuito» → «revisión gratis»; «en 24 horas» → «en un día hábil» (nota, FAQ, cierre) | Guía §3 | guía §3 |
 | Cierre: «Revisa si las IA pueden leer tu sitio.» | Sin consulta manual a un motor prometida | copy-secciones §5.2 («Ojo») |
-| La franja ya no toma el pie de `trabajo.entradas` (la entrada «chequeo» salió del índice de /trabajo/): el pie «El chequeo de 21 señales · Propio · 2026» vive en `visibilidad-en-ia.franja.pie` | El build caía | Trabajo (otro rol) |
+| **Ronda 2:** se retira la franja de Visibilidad en IA (era la captura del chequeo anterior, con «…y citarte», un superlativo sin fuente, una frase cortada y un campo de formulario falso). La plantilla de las cinco páginas ya no tiene franja (sin código muerto ni hueco: capturas a 1440, 768 y 390 vistas) y se borran `public/v3/medios/chequeo-43.webp`, `public/v3/medios/chequeo-239.webp` y sus dos filas de `medios.json`. Peso de `public/v3`: 8.660.004 B en 42 archivos antes, 8.569.674 B en 40 después (−90.330 B). `verificar.mjs` sobre `/servicios/visibilidad-en-ia/`: sin hallazgos a 390 y a 1440, antes y después | La QA de la ronda 1 (acta, defecto 1) la declaró reparo mayor; era mi §2.5 | acta-qa.md defecto 1; ronda-2-correcciones.md fila 1 |
 
 ### Auditoría SEO técnica
 
@@ -105,7 +105,7 @@
 2. **Medición de menciones en IA: una sola vez.** Queda en la Auditoría de Visibilidad y en Auditoría + Visibilidad como medición puntual y fechada, porque es el servicio. `capacidad-servicios.md` §2 marca esa línea base como manual de Ramón y que no escala más allá de 1 o 2 clientes. Si no se quiere ni eso, hay que reescribir los dos planes y el h1.
 3. **Qué se mide cada mes en el Acompañamiento.** Dejé «chequeo + Search Console», que es lo que el documento de onboarding respalda. Si algún día hay medición mensual de menciones, hay que escribirla antes en `capacidad-servicios.md`.
 4. **El Pro de $790.000 se describe distinto en dos páginas** (heredado): en Visibilidad es Esencial + 15 keywords + contenido citable mensual; en Acompañamiento son las dos capas juntas. Al sacar share-of-voice, AI Overviews y las consultas medidas, el Pro de Visibilidad queda con poco que lo diferencie. Lo decide Ramón.
-5. **La franja de Visibilidad en IA** es una captura del chequeo anterior (`chequeo-43` y `chequeo-239`): trae escritos «Cada vez más clientes preguntan antes de buscar…» y «…y citarte». Conviene volver a sacarla (captura real, no generada) cuando `/diagnostico/` esté cerrado, o quitar la franja, como en Auditoría y Acompañamiento. No la toqué: el texto está dentro de la imagen.
+5. ~~La franja de Visibilidad en IA~~ **Cerrado en la ronda 2:** la franja se retiró y se borraron sus dos medios (ver la tabla de Visibilidad). Queda en la fuente de Clara (`e13/texto/visibilidad-en-ia.json`) los dos elementos sin uso `visibilidad-en-ia.franja.alt` y `visibilidad-en-ia.franja.pie` (el primero menciona `chequeo-43` en su campo `donde`); los retira Clara en esta ronda.
 6. **Verifica y Cumple en Desarrollo web.** Lo dejé junto a Combeau como «sitio propio». Si Ramón prefiere solo Combeau, se quita una línea del arreglo `obra` en `desarrollo-web.astro`. Con dos piezas la tercera columna de la grilla queda vacía.
 7. **«Revisión humana en cada fase antes de avanzar»** sigue en «En todos los planes» (era la frase de la versión publicada). Es método, pero el inventario no lo mide. Lo confirma Ramón.
 8. **«Podemos trabajar con quien ejecute hoy»** (FAQ del Acompañamiento): capacidad declarada y nunca ejercida (`capacidad-servicios.md` §3). Quedó en «podemos», con especificaciones.
@@ -113,3 +113,26 @@
 10. **Miga «Soluciones» frente a la navegación.** Si `comun.nav.servicios` sigue diciendo «Servicios», las siete páginas muestran dos nombres distintos para lo mismo. Lo cierra quien edita `comun.json` y `Encabezado`.
 11. **Fuera de mi área, y aparece en cada página**: el nodo `ProfessionalService` / `Person` del JSON-LD de `Layout.astro` todavía dice «Estudio de diseño y tecnología… diseñamos y programamos sitios» y «visibilidad en motores de IA» (lo detecta `barrer-terminos.mjs` como «posicionamiento anterior» en las siete rutas).
 12. **El build completo del sitio** caía en `/v3/index.html` («Falta el texto «home.cinta.tramos»», edición en curso de la home) y en `/v3/trabajo/combeau/` («combeau.siguiente.caso»). Mis siete páginas compilan; las revisé en un build con esas dos rutas sustituidas por un stub.
+
+## 3 · Ronda 2, frases de Clara (`ronda2-frases.md`), en mis datos
+
+Mis datos son `servicios-v3.json` y `oferta-v3.json`; los textos de `e13/texto/*.json` los edita Clara. Sin cambio de precios, planes ni nombres de servicio; el build con los guardianes pasa (22 páginas).
+
+| Qué cambié | Frase | Dónde |
+|---|---|---|
+| Cierre de Visibilidad: h2 «Revisa si las IA pueden visitar tu sitio y entender a qué te dedicas.» y «…te decimos si las IA pueden visitarlo y entender a qué te dedicas, y qué corregiríamos primero.» | 1 y 2 | `servicios-v3.json` visibilidad-en-ia, últimas dos líneas |
+| Lead de Visibilidad: «Los motores leen tu sitio y también lo que se dice…» pasa a «Las IA visitan tu sitio y también miran lo que se dice de tu empresa fuera de él…» (no estaba en la lista de la tabla; es el mismo «leer un sitio» que los lectores no entendieron) | 3 | `servicios-v3.json` visibilidad-en-ia, `lead` |
+| Lead de Auditoría: «…ser difícil de entender para Google y para las IA, como ChatGPT. Revisamos si pueden visitarlo y entender a qué te dedicas…» (sale «difícil de leer» y «rastrearlo y entenderlo»; «como ChatGPT» porque es la primera IA de la página) | 1, 4 | `servicios-v3.json` auditoria-seo-tecnica, `lead` |
+| FAQ de Auditoría «¿En qué se diferencia…?»: «…lo que ChatGPT y otras IA necesitan para visitar tu sitio y entender a qué te dedicas: datos estructurados, claridad de entidad y señales de confianza (E-E-A-T).» («señales de confianza» queda: es otra cosa) | 3 | idem, FAQ 4 |
+| Glosa de Visibilidad en IA, una vez por página: tagline del plan «Auditoría + Visibilidad en IA» («La auditoría técnica más Visibilidad en IA: que ChatGPT y otras IA entiendan y describan bien tu empresa.») y tagline del Acompañamiento Esencial («…SEO técnico o visibilidad en IA (que ChatGPT y otras IA entiendan y describan bien tu empresa).») | 11 | `servicios-v3.json` auditoria-seo-tecnica y acompanamiento-mensual |
+| `nota` del momento «Tu sitio existe y no lo vas a rehacer»: «No hace falta reconstruir para que ChatGPT y otras IA puedan visitar tu sitio y entender a qué te dedicas.» (dato que ya no se pinta: `/servicios/` usa el texto de Clara) | 3 | `oferta-v3.json` momentos[1].nota |
+| Punto del plan Página de Campaña: «Diseño a medida, hecho para tu negocio» (se ve en la tarjeta de `/servicios/desarrollo-web/`) | 12 | `oferta-v3.json` momentos[0].planes[0].puntos |
+| Línea del plan Sitio Completo: «…puesto a punto para que ChatGPT y otras IA puedan visitar tu sitio y entender a qué te dedicas.» (era «para que la IA te lea»; se ve en la tarjeta del plan) | 3 | `oferta-v3.json` momentos[0].planes[2].d |
+| Descripciones sin pintar de Desarrollo web (`d`, `dIndice`): «El sitio nace listo para que Google y las IA puedan visitarlo y entender a qué te dedicas…» (sale «legible para las máquinas que leen tu negocio») | 2 | `oferta-v3.json` momentos[0].items[0] |
+
+**Qué sigue con la frase vieja en mis páginas, y por qué.** Todo lo que queda está en `e13/texto/*.json` (Clara lo edita en esta ronda; después hay que re-extraer esas páginas) y pasa por las plantillas sin que yo lo toque:
+- `servicios.json`: `servicios.m1.nota` («…pueden leer tu sitio… Que la IA pueda leerlo…», frase 10), `servicios.m2.nota` (glosa de Paid Media, frase 9), `servicios.m3.dw` («sin plantillas ni WordPress», frase 12) y `servicios.cierre.p` («…pueden leerlo…», frase 2).
+- `auditoria-seo-tecnica.json`: el h1 («Qué le impide a Google leer tu sitio», frase 4).
+- `desarrollo-web.json`: `description`, h1 y `dw.incluye.1/2/3` («sin plantilla», «sin WordPress», «puedan leerlo»), el glosario («las lea», «lo lean», «no según una plantilla»), la pregunta «¿Usan plantillas o WordPress?» (frase 12: la pregunta queda tal cual) y la entradilla («te sirve más Visibilidad en IA», frase 11).
+- Quedan «señal» en «señales de confianza (E-E-A-T)» y en «Algunas señales se pueden trabajar» (otra cosa que los 21 chequeos; la respuesta explica cuáles son).
+- `visibilidad-en-ia.franja.pie` («El chequeo de 21 señales»): la franja ya no está; el elemento sin uso lo retira Clara.

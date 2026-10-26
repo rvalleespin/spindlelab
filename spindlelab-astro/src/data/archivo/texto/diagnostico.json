@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/diagnostico.json",
- "sha256": "245b9db9872022b286803e155b1b0543ed6b7d79a642f6ef0e7de182b28c7e43",
+ "sha256": "38f5575288243b2d90b5d71e263f5d2bb8d37bdc0e78357e4ef19e966b9be8e6",
  "id": "diagnostico",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -29,19 +29,21 @@
       "id": "diagnostico.h1",
       "rol": "h1",
       "tinta": "Chequeo gratis.",
-      "gris": "Mira si ChatGPT y otros asistentes de IA pueden leer tu sitio.",
-      "texto": "Chequeo gratis. Mira si ChatGPT y otros asistentes de IA pueden leer tu sitio.",
-      "origen": "e12 (sin cambio)",
-      "nota": "El documento de textos dice que «¿Te puede leer la IA?» funciona como nombre de la herramienta y no urge cambiarlo; el h1 de E12 ya dice qué es y qué hace, y no afirma nada que haya que corregir.",
-      "estado": "queda"
+      "gris": "Mira si ChatGPT y otras IA pueden visitar tu sitio y entenderlo.",
+      "texto": "Chequeo gratis. Mira si ChatGPT y otras IA pueden visitar tu sitio y entenderlo.",
+      "origen": "e12; ronda 2 (desvios/ronda2-frases.md, frase 3)",
+      "antes": "Chequeo gratis. Mira si ChatGPT y otros asistentes de IA pueden leer tu sitio.",
+      "por_que": "Ronda 2, lectura en frío: «pueden leer tu sitio» no se entiende (3 de 3). Gris de 12 palabras (rango 6 a 13). El title de la página («¿ChatGPT puede leer tu sitio?») no se toca: es la consulta que alguien escribiría en un buscador y es de la capa de señales de Simón. Los nombres de los tres grupos del chequeo («¿Te pueden leer?», «¿Te entienden?», «¿Te pueden citar?») son los del motor y quedan.",
+      "nota": "El documento de textos decía que «¿Te puede leer la IA?» funciona como nombre de la herramienta y no urgía cambiarlo; la lectura en frío de la ronda 2 dijo que sí urge en la home y en las páginas de venta.",
+      "estado": "cambia"
      },
      {
       "id": "diagnostico.linea",
       "rol": "entradilla",
-      "texto": "Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas.",
-      "antes": "Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas. Es el mismo chequeo que le pasamos a cada sitio que construimos, antes de entregarlo.",
-      "origen": "v2-vigente/diagnostico.txt (hero); copy-secciones-v1.2 §9",
-      "por_que": "Sale la segunda frase: afirma una práctica que no existió (el chequeo está en producción desde el 27-ago y ningún sitio entregado pasó por él antes de salir).",
+      "texto": "Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otras IA pueden visitarlo y entender a qué te dedicas.",
+      "antes": "Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas.",
+      "origen": "v2-vigente/diagnostico.txt (hero); copy-secciones-v1.2 §9; ronda 2 (desvios/ronda2-frases.md, frase 3)",
+      "por_que": "E13: sale la segunda frase del v2 («Es el mismo chequeo que le pasamos a cada sitio que construimos, antes de entregarlo»), que afirmaba una práctica que no existió (el chequeo está en producción desde el 27-ago y ningún sitio entregado pasó por él antes de salir). Ronda 2: «pueden leerlo» no se entendió en la lectura en frío.",
       "estado": "cambia"
      },
      {
@@ -372,8 +374,8 @@
      {
       "id": "diagnostico.resultado.veredicto.0",
       "rol": "parrafo",
-      "texto": "Hoy a la IA le cuesta leer tu sitio o entender qué haces. Abajo ves qué falta.",
-      "antes": "Hoy la IA tiene poco con qué trabajar cuando alguien pregunta por tu rubro.",
+      "texto": "Hoy a una IA le cuesta visitar tu sitio o entender a qué te dedicas. Abajo ves qué falta.",
+      "antes": "Hoy a la IA le cuesta leer tu sitio o entender qué haces. Abajo ves qué falta.",
       "uso": "script, puntaje bajo 45",
       "por_que": "Sale la escena de alguien preguntando por tu rubro (el chequeo no mide qué responde la IA).",
       "estado": "cambia"
