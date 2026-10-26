@@ -2342,27 +2342,26 @@
    *
    * El servidor exige la revisión con navegador para vender: congela las dos mediciones en el
    * contrato y no cotiza lo que no vio. Pero el botón «Quiero el kit» se dibuja con el chequeo
-   * RÁPIDO, que termina en un segundo, mientras la revisión con navegador tarda de 21 a 25.
+   * RÁPIDO, que termina en un segundo, mientras la revisión con navegador tarda de 21 a 34.
    *
-   * Hasta el 26-oct eso dejaba una ventana en la que la página invitaba a comprar algo que el
-   * servidor todavía no podía vender. Quien apretaba rápido —o sea, quien tenía más ganas—
-   * recibía un 409 pidiéndole repetir el chequeo que acababa de correr. Lo encontró Ramón
-   * probando, y el orden de las llamadas en el registro no deja lugar a dudas: el POST de la
-   * compra salió ANTES que la revisión.
+   * Hasta el 26-oct eso dejaba una ventana de medio minuto en la que la página invitaba a
+   * comprar algo que el servidor todavía no podía vender. Quien apretaba rápido —o sea, quien
+   * tenía más ganas— recibía un 409 pidiéndole repetir el chequeo que acababa de correr.
    *
-   * Ahora el botón sigue a la vista desde el primer segundo, que es lo que conviene, pero el
-   * panel espera a que la medición llegue en vez de dejar comprar en falso.
+   * ⚠️ POR QUÉ ESTO VIAJA POR EL DOM Y NO POR UNA VARIABLE. El primer intento usó un `let`
+   * compartido, y no funcionó: el código del chequeo y el del panel de compra viven en IIFE
+   * DISTINTAS, así que `abrirCompra` reventaba con «profundoListo is not defined» justo en esa
+   * línea. Y reventaba en silencio: el panel ya se había movido y enfocado antes, así que desde
+   * fuera parecía que todo iba bien y el botón quedaba habilitado igual. Lo cazó el navegador,
+   * no las pruebas: un `grep` del código encuentra la variable escrita y no ve el ámbito.
+   *
+   * Un atributo en `<html>` más un evento sí cruzan esa frontera, y además se pueden mirar
+   * desde fuera, que es lo que permite comprobarlo de verdad.
    */
-  let profundoListo = false;
-  let profundoFallo = false;
-  // Lo que el panel de compra quiere que se ejecute cuando la medición llegue. Es uno solo:
-  // solo puede haber un panel abierto a la vez, porque se MUEVE en vez de clonarse.
-  let avisarCuandoLlegueElProfundo = null;
-
-  function avisarAlPanel() {
-    const f = avisarCuandoLlegueElProfundo;
-    avisarCuandoLlegueElProfundo = null;
-    if (f) f();
+  function anunciarProfundo(estado) {   // 'en-vuelo' · 'listo' · 'fallo'
+    document.documentElement.setAttribute('data-profundo', estado);
+    try { document.dispatchEvent(new CustomEvent('vyc:profundo', { detail: { estado: estado } })); }
+    catch (e) { /* un navegador sin CustomEvent igual deja el atributo puesto */ }
   }
   let abortarProfundo = null;
   // Cuántas señales dejó pendientes el chequeo rápido, para poder nombrar la
@@ -2816,8 +2815,7 @@
     falloElNavegador = null;
     // Una corrida nueva invalida la medición anterior para efectos de vender: lo que se
     // contrata tiene que ser lo que se midió en ESTA vuelta.
-    profundoListo = false;
-    profundoFallo = false;
+    anunciarProfundo('en-vuelo');
     // Lo que la persona tiene en pantalla, antes de taparlo con la tarjeta de espera. Solo
     // en un "Volver a medirlo": una corrida nueva empieza de cero y ahí no hay nada suyo
     // que cuidar. Se toma de la variable y no del DOM para que dos clics seguidos no
@@ -2873,13 +2871,11 @@
         avisoProfundo.textContent = '';
         if (data && data.ok === true) {
           falloElNavegador = false;
-          profundoListo = true;
+          anunciarProfundo('listo');
           sinMoverLoQueLeen(seccionProfundo, function () { renderProfundo(data); });
           avisoProfundo.textContent = 'La revisión con navegador ya está lista, debajo del resultado.';
-          avisarAlPanel();
         } else {
-          profundoFallo = true;
-          avisarAlPanel();
+          anunciarProfundo('fallo');
           // Con el informe guardado abajo, el navegador SÍ llegó a abrir el sitio: fue en la
           // medición que sigue en pantalla. Decir lo contrario haría que la costura de los 12
           // puntos ("a tu política sí llegamos, aunque a tu sitio no") contradiga al informe
@@ -2899,8 +2895,7 @@
       .catch(function () {
         if (mia !== corrida) return;
         avisoProfundo.textContent = '';
-        profundoFallo = true;
-        avisarAlPanel();
+        anunciarProfundo('fallo');
         falloElNavegador = !informeGuardado;
         sinMoverLoQueLeen(seccionProfundo, function () { renderFallaProfunda(null, informeGuardado); });
         avisoProfundo.textContent = informeGuardado
@@ -3213,21 +3208,41 @@
     // Si la revisión con navegador todavía no llegó, el formulario se deja escribir —para que
     // la persona vaya poniendo su correo— pero el botón espera. Decirle que aguarde unos
     // segundos es cierto y se resuelve solo; mandarla a repetir el chequeo era falso.
-    if (!profundoListo) {
-      const b = panelCompra.querySelector('button[type="submit"]');
-      b.disabled = true;
-      b.textContent = profundoFallo ? 'No se pudo revisar' : 'Revisando tu sitio…';
-      mensajeCompra(profundoFallo
-        ? 'No pudimos terminar la revisión con navegador de tu sitio, y sin ella no podemos cotizar lo que no vimos. Apreta «Volver a medirlo» en el resultado.'
-        : 'Estamos terminando de revisar tu sitio con un navegador. Son unos segundos y el botón se activa solo.');
-      avisarCuandoLlegueElProfundo = function () {
-        if (panelCompra.hidden) return;
-        if (profundoListo) { soltarBotonCompra(); mensajeCompra(''); return; }
-        b.textContent = 'No se pudo revisar';
-        mensajeCompra('No pudimos terminar la revisión con navegador de tu sitio. Apreta «Volver a medirlo» en el resultado.');
-      };
+    pintarEspera();
+  }
+
+  /** Lo que dice el chequeo, leído del DOM porque vive en otra IIFE (ver `anunciarProfundo`). */
+  function estadoDelProfundo() {
+    return document.documentElement.getAttribute('data-profundo') || '';
+  }
+
+  /**
+   * Ajusta el botón del panel al estado de la revisión. Se llama al abrir y cada vez que el
+   * chequeo anuncia un cambio, así que la persona no tiene que hacer nada: el botón se suelta
+   * solo cuando la medición llega.
+   */
+  function pintarEspera() {
+    if (!panelCompra || panelCompra.hidden) return;
+    const b = panelCompra.querySelector('button[type="submit"]');
+    if (!b) return;
+    const estado = estadoDelProfundo();
+    if (estado === 'listo') {
+      if (b.textContent.trim() !== 'Ir a pagar') { soltarBotonCompra(); mensajeCompra(''); }
+      return;
+    }
+    b.disabled = true;
+    if (estado === 'fallo') {
+      b.textContent = 'No se pudo revisar';
+      mensajeCompra('No pudimos terminar la revisión con navegador de tu sitio, y sin ella no ' +
+        'podemos cotizar lo que no vimos. Apreta «Volver a medirlo» en el resultado.');
+    } else {
+      b.textContent = 'Revisando tu sitio…';
+      mensajeCompra('Estamos terminando de revisar tu sitio con un navegador. Son unos segundos ' +
+        'y el botón se activa solo.');
     }
   }
+
+  document.addEventListener('vyc:profundo', pintarEspera);
 
   /**
    * Antes de salir del sitio, se mira a dónde.
