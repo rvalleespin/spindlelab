@@ -1,4 +1,4 @@
-// EL BLOG SOBRE A (obra E12, corrida 2, tanda 5): el índice /v3/blog/ y la plantilla de los siete artículos. Diego,
+// EL BLOG SOBRE A (obra E12, corrida 2, tanda 5): el índice /blog/ y la plantilla de los siete artículos. Diego,
 // 19-oct-2026.
 //
 // Contrato: spec-visual.md §2.5. El índice es el /latest de Koto sin imágenes: la barra lateral (h1 en dos tintas, «(7)»
@@ -9,7 +9,7 @@
 // EL CUERPO VA TAL CUAL ESTÁ EN data/blog-v3/<slug>.html (en E12 era el HTML publicado; en E13 se corrigió a mano donde
 // afirmaba algo que no se sostenía, ver e13/desvios/blog.md). Esta plantilla no le cambia una letra. Lo que toca es
 // marcado, nunca texto:
-//   · los enlaces internos apuntan a /v3/ y los que van a un id de la misma página llevan su ruta (spec §5.2.2: nunca
+//   · los enlaces internos apuntan a / y los que van a un id de la misma página llevan su ruta (spec §5.2.2: nunca
 //     «#x» suelto);
 //   · cada h2 sin id recibe uno (el mismo cálculo que en driftime: el id #como-medir-si-esta-funcionando lo usan el
 //     método y Visibilidad en IA) y el id pasa del h2 a su sección;
@@ -136,7 +136,7 @@ export function articulo(slug) {
   const info = infoDe(slug);
   const meta = info.meta;
   const { crudo, iProsa, h1, corta, tema, lectura } = cabezaDe(slug);
-  const ruta = `/v3/blog/${slug}/`;
+  const ruta = `/blog/${slug}/`;
 
   // El bloque .prose: el archivo termina en «</div> </div>» (prose y el contenedor .wrap)
   const iCierreWrap = crudo.lastIndexOf('</div>');
@@ -146,12 +146,12 @@ export function articulo(slug) {
   }
   const prosa = crudo.slice(iProsa + MARCA_PROSA.length, iCierreProsa);
 
-  // Los enlaces: los del sitio publicado pasan a /v3/ (solo los prefijos que existen en v3: no se inventan destinos) y
+  // Los enlaces: los del sitio publicado pasan a / (solo los prefijos que existen en v3: no se inventan destinos) y
   // los que van a un id de esta misma página llevan su ruta
   const RUTAS = ['blog', 'servicios', 'diagnostico', 'contacto', 'metodo', 'nosotros'];
   const enlazado = prosa
-    .replace(new RegExp(`href="/(${RUTAS.join('|')})/`, 'g'), 'href="/v3/$1/')
-    .replace(/href="\/"/g, 'href="/v3/"')
+    .replace(new RegExp(`href="/(${RUTAS.join('|')})/`, 'g'), 'href="/$1/')
+    .replace(/href="\/"/g, 'href="/"')
     .replace(/href="#([^"]+)"/g, `href="${ruta}#$1"`);
 
   // Las secciones: una por h2, con su id (el que trae o uno nuevo)
@@ -234,7 +234,7 @@ export function articulo(slug) {
     intro,
     secciones,
     cierre: cierre(),
-    siguiente: { rotulo: t('articulo.siguiente').texto, titulo: sig.headline, href: `/v3/blog/${sig.slug}/` },
+    siguiente: { rotulo: t('articulo.siguiente').texto, titulo: sig.headline, href: `/blog/${sig.slug}/` },
   };
 }
 
@@ -246,7 +246,7 @@ export function indiceBlog() {
   igualQue(t('blog.linea').texto, paginas.blog.linea, 'blog, la línea');
   const filas = POSTS.map((p) => ({
     titulo: p.headline,
-    href: `/v3/blog/${p.slug}/`,
+    href: `/blog/${p.slug}/`,
     fecha: fechaCorta(p.datePublished),
     iso: p.datePublished,
     tema: cabezaDe(p.slug).tema,

@@ -5,7 +5,7 @@
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "trabajo",
-  "ruta": "/v3/trabajo/",
+  "ruta": "/trabajo/",
   "title": "Trabajo: un sitio de cliente y una herramienta · SpindleLab",
   "description": "El sitio de un fotógrafo, que hicimos para un cliente, y Verifica y Cumple, una herramienta propia. Cada entrada dice de quién es.",
   "senales": "Title y description nuevos de E13 (Clara): los de E12 hablaban de «diseño y desarrollo web» y de «cuatro marcas inventadas para rubros que atendemos» (esa frase insinuaba clientela: fila «medio» de la revisión del 23-oct). Los reconfirma Simón en la capa de señales.",
@@ -93,7 +93,7 @@
     "tipo": "Cliente",
     "anio": "2026",
     "linea": "Cliente · 2026",
-    "destino": "/v3/trabajo/combeau/",
+    "destino": "/trabajo/combeau/",
     "cursor": "Ver el caso",
     "fuente": "inventario-casos §2.1 y §2.2 (las dos etiquetas y su efecto: «él carga sus series solo», «805 kB → 95 kB», «0 kB de video en la carga inicial»)",
     "estado": "cambia",

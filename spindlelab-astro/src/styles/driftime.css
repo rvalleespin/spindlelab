@@ -334,7 +334,7 @@ html body.d-body #cookie-banner #cookie-accept:hover { background: #fff; border-
 html body.d-body #cookie-banner #cookie-reject { background: transparent; color: var(--d-papel); border-color: rgba(247, 245, 240, 0.32); }
 html body.d-body #cookie-banner #cookie-reject:hover { background: rgba(247, 245, 240, 0.08); }
 /* PANTALLAS BAJAS (E1, 13-oct). En la primera carga el aviso medía 109 a 146 px en pantallas
-   de 320 a 430 de alto y tapaba el chequeo: en /v3/diagnostico/ el botón entero a 320 × 568 y
+   de 320 a 430 de alto y tapaba el chequeo: en /diagnostico/ el botón entero a 320 × 568 y
    el campo o el botón en los siete teléfonos apaisados medidos; en la home, 26 px del botón a
    568 × 320. Se compacta solo por alto, nunca por ancho: texto a 12 px (el tamaño de la
    etiqueta de pieza), menos relleno y, en horizontal, el texto y los botones en una fila.
@@ -372,7 +372,7 @@ html body.d-body #cookie-aviso button:last-child:hover { background: rgba(247, 2
    · ABAJO, el aviso: scroll-padding-bottom con el alto del aviso + ~18 px, mientras está
      abierto. No mueve ninguna ancla (las anclas se alinean arriba). El aviso mide 78 px desde
      885 px de ancho (una fila), 134 entre 681 y 884 (el texto y los botones en dos filas),
-     109 a 128 entre 360 y 680 y 146 a 320 (medido en /v3/contacto/). En pantallas
+     109 a 128 entre 360 y 680 y 146 a 320 (medido en /contacto/). En pantallas
      bajas el aviso se compacta y lleva sus propios valores (al final del bloque).
    · ARRIBA, el módulo: scroll-padding-top de 100 px SOLO mientras hay foco de teclado
      (`:focus-visible`). Siempre puesto, corría 100 px cada ancla que ya tiene su propio

@@ -5,7 +5,7 @@
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "desarrollo-web",
-  "ruta": "/v3/servicios/desarrollo-web/",
+  "ruta": "/servicios/desarrollo-web/",
   "title": "Desarrollo web a medida, desde $390.000 + IVA · SpindleLab",
   "description": "Sitios web a medida, sin plantillas ni WordPress, con panel para que edites tú y SEO técnico desde el diseño. Cuatro planes, desde $390.000 + IVA.",
   "senales": "Simón, e12/senales-obra.md §2.7 (el title con el precio de entrada); la description sale de la publicada el 24-oct (v2-vigente/servicios__desarrollo-web.txt) con los cuatro planes",
@@ -45,7 +45,7 @@
       "rol": "entradilla",
       "texto": "Es para cuando no tienes sitio, o el que tienes hay que hacerlo de nuevo. Cuatro planes, desde $390.000 + IVA. Si tu sitio funciona y no lo vas a rehacer, te sirve más Visibilidad en IA.",
       "enlaces": {
-       "Visibilidad en IA": "/v3/servicios/visibilidad-en-ia/"
+       "Visibilidad en IA": "/servicios/visibilidad-en-ia/"
       },
       "estado": "queda",
       "origen": "texto-paso2.json «dw.entradilla»"
@@ -62,7 +62,7 @@
       "id": "dw.boton.escribir",
       "rol": "boton",
       "texto": "Escribir a SpindleLab",
-      "destino": "/v3/contacto/",
+      "destino": "/contacto/",
       "estado": "queda",
       "origen": "texto-paso2.json «dw.boton.escribir»"
      },
@@ -121,7 +121,7 @@
       "rol": "parrafo",
       "texto": "El chequeo gratis de SpindleLab, pasado sobre tu sitio antes de entregarlo. Te dejamos el puntaje por escrito y, si tenías otro sitio, también el de antes.",
       "enlaces": {
-       "chequeo": "/v3/diagnostico/"
+       "chequeo": "/diagnostico/"
       },
       "fuente": "desarrollo-web.astro (decidido en E8); promesa de proceso, e11/material.md §5",
       "estado": "cambia",
@@ -170,9 +170,9 @@
       "id": "dw.obra.entradas",
       "rol": "nota",
       "uso": "referencia",
-      "texto": "Dos entradas del índice, con su nombre, bajada y la línea corta (tipo · año): Combeau (→ /v3/trabajo/combeau/) · Verifica y Cumple (→ https://verifica.spindlelab.cl/). Ver «trabajo.entradas».",
+      "texto": "Dos entradas del índice, con su nombre, bajada y la línea corta (tipo · año): Combeau (→ /trabajo/combeau/) · Verifica y Cumple (→ https://verifica.spindlelab.cl/). Ver «trabajo.entradas».",
       "estado": "cambia",
-      "antes": "Tres entradas del índice: Combeau (→ /v3/trabajo/combeau/#fotografia) · Praxi (→ /v3/trabajo/praxi/) · Sesenta, concepto (→ /v3/trabajo/sesenta/).",
+      "antes": "Tres entradas del índice: Combeau (→ /trabajo/combeau/#fotografia) · Praxi (→ /trabajo/praxi/) · Sesenta, concepto (→ /trabajo/sesenta/).",
       "por_que": "Praxi y Sesenta salen (brief de obra §3 y §5). Combeau es un solo caso con dos partes y su entrada lleva a la página, sin ancla.",
       "origen": "texto-paso2.json «dw.obra.entradas»"
      },
@@ -180,7 +180,7 @@
       "id": "dw.obra.boton",
       "rol": "boton",
       "texto": "Ver todo el trabajo",
-      "destino": "/v3/trabajo/",
+      "destino": "/trabajo/",
       "estado": "queda",
       "origen": "texto-paso2.json «dw.obra.boton»"
      }
@@ -429,7 +429,7 @@
       "id": "dw.cierre.boton1",
       "rol": "boton",
       "texto": "Conversar mi proyecto",
-      "destino": "/v3/contacto/",
+      "destino": "/contacto/",
       "estado": "cambia",
       "origen": "v2-vigente/servicios__desarrollo-web.txt («Conversar mi proyecto»)",
       "antes": "Escribir a SpindleLab"
@@ -438,7 +438,7 @@
       "id": "dw.cierre.boton2",
       "rol": "boton",
       "texto": "Chequear mi sitio ahora",
-      "destino": "/v3/diagnostico/",
+      "destino": "/diagnostico/",
       "estado": "cambia",
       "origen": "texto-paso2.json «dw.cierre.boton2»",
       "antes": "Revisar mi sitio gratis",
@@ -449,7 +449,7 @@
       "rol": "boton",
       "rotulo": "Siguiente",
       "texto": "Acompañamiento mensual →",
-      "destino": "/v3/servicios/acompanamiento-mensual/",
+      "destino": "/servicios/acompanamiento-mensual/",
       "estado": "cambia",
       "origen": "texto-paso2.json «dw.siguiente»",
       "antes": "Visibilidad en IA →",

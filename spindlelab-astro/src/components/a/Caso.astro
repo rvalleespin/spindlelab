@@ -21,12 +21,12 @@ interface Props {
   caso: string;
 }
 const m = modelo(Astro.props.caso);
-const ruta = `/v3/trabajo/${m.caso}/`;
+const ruta = `/trabajo/${m.caso}/`;
 ---
 <PaginaA pie={false}>
   <div class="caso">
     <header class="lateral">
-      <Miga items={[{ texto: m.miga[0], href: '/v3/' }, { texto: m.miga[1], href: '/v3/trabajo/' }, { texto: m.miga[2] }]} />
+      <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1], href: '/trabajo/' }, { texto: m.miga[2] }]} />
       <h1 class="t-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
       <div class="lateral__ficha">
         <p class="rotulo">{m.ficha.linea}</p>

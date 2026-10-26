@@ -576,7 +576,7 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bot
 @media (max-width: 833.98px) and (max-height: 740px) {
   .a-body .portada-v__medio { width: 100%; max-height: 28svh; }
 }
-/* la ayuda de /v3/diagnostico/, donde corría de 659 a 940 px desde 768 (acta de la obra, vuelta 1, defecto 5) */
+/* la ayuda de /diagnostico/, donde corría de 659 a 940 px desde 768 (acta de la obra, vuelta 1, defecto 5) */
 .a-body .chequeo > .chico, .a-body .chequeo__form > .chico { max-width: var(--a-caja); }
 @media (min-width: 834px) {
   /* el video llena la portada (100svh menos el encabezado, que va antes sobre el lienzo); el texto, abajo y encima */
@@ -855,7 +855,7 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
 /* La plantilla de las páginas de la casa, la de Koto en /services y /about (lock §20.1): negras, con a lo más una franja
    de imagen. Implementación de referencia: la vista 5 del prototipo (proto/a/servicios/desarrollo-web/); los espacios
    del prototipo que no están en la escala de §1.5 van al paso más cercano (14 → 12 o 16, 10 → 12, 28 → 24). La usan
-   /v3/servicios/, Desarrollo web y los cinco servicios de [slug].astro (desvios.md, tanda 4). */
+   /servicios/, Desarrollo web y los cinco servicios de [slug].astro (desvios.md, tanda 4). */
 
 /* 1 · Cabecera: miga; h1 a Declaración en dos tintas (c1–c10 desde 1194); la entradilla y lo que la acompaña (tope 493);
    los botones. 48 arriba */
@@ -1012,18 +1012,18 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
 /* Los botones al pie del contenido de una sección (dos caminos, la ley) */
 .a-body .int-botones { margin-top: 24px; }
 
-/* El chequeo de /v3/diagnostico/ (§2.4): bajo la cabecera, en c1–c8, con el resultado en la misma columna; el h2 oculto
+/* El chequeo de /diagnostico/ (§2.4): bajo la cabecera, en c1–c8, con el resultado en la misma columna; el h2 oculto
    «Resultado del chequeo» solo existe cuando hay resultado */
 .a-body .int-cab > .int-instr { margin-top: 16px; }
 @media (min-width: 834px) { .a-body .int-cab > .int-instr { grid-column: 1 / span 8; } }
 .a-body .chequeo:not(:has(#chq-out[style*='block'])) .chequeo__titulo-res { display: none; }
 
-/* /v3/nosotros/: la bio junto al retrato (las clases de «Quién está detrás» de la home), con la trayectoria en su lista */
+/* /nosotros/: la bio junto al retrato (las clases de «Quién está detrás» de la home), con la trayectoria en su lista */
 .a-body .quien__h2 { margin-top: 24px; }
 .a-body .quien__lista { align-self: stretch; max-width: var(--a-caja); }
 .a-body .sin-corte { white-space: nowrap; }
 
-/* /v3/contacto/: el formulario en c1–c8 (§2.4), 40 arriba y 12 entre campos (la cabecera es corta: el formulario entero
+/* /contacto/: el formulario en c1–c8 (§2.4), 40 arriba y 12 entre campos (la cabecera es corta: el formulario entero
    sobre el pliegue a 1440 × 900, también con el aviso de cookies abierto). Los campos de §4.1: placa, borde #707070, texto de 16 (sin zoom en iOS), 44 de alto, placeholder gris;
    al pasar el mouse y con el foco, el borde gris, y el contorno blanco del foco de §4.3. */
 .a-body .form-sec { padding-top: 40px; }

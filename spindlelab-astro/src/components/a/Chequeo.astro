@@ -1,8 +1,8 @@
 ---
-// EL CHEQUEO (spec §2.1, §2.4 «/v3/diagnostico/», §4.1): el de producción, con sus ids (chq-form, chq-dominio, chq-btn,
+// EL CHEQUEO (spec §2.1, §2.4 «/diagnostico/», §4.1): el de producción, con sus ids (chq-form, chq-dominio, chq-btn,
 // chq-out, chq-error) y su script, /assets/js/v3-chequeo.js, sin tocar (spec §6.16). Lo que cambia es solo cómo se ve:
 // archivo.css lo viste a él y al resultado que pinta el script. El resultado se pinta bajo el formulario, en la misma
-// columna. data-contacto lleva los botones del resultado a /v3/contacto/ (con ?sitio=, que lee contacto).
+// columna. data-contacto lleva los botones del resultado a /contacto/ (con ?sitio=, que lee contacto).
 // Textos de Clara (texto-obra.json, home.chequeo.*). `apilado`: desde 1194, campo y botón uno sobre otro a todo el
 // ancho de la columna (la portada de la home); si no, en una fila.
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
   ejemplo?: string;
   boton?: string;
   ayuda?: string;
-  /** /v3/diagnostico/ (tanda 5): el h2 oculto «Resultado del chequeo», que se lee solo cuando hay resultado (sin él, el
+  /** /diagnostico/ (tanda 5): el h2 oculto «Resultado del chequeo», que se lee solo cuando hay resultado (sin él, el
    *  resultado salta del h1 a sus h3). La página de driftime lo tenía; sin la prop, el marcado es el de siempre. */
   tituloResultado?: string;
 }
@@ -31,7 +31,7 @@ const {
 <div class:list={['chequeo', { 'chequeo--apilado': apilado }]} role="group" aria-labelledby={rotulo ? 'chq-rotulo' : undefined}>
   {rotulo && <p class="rotulo tinta" id="chq-rotulo">{rotulo}</p>}
   {intro && <p class="chico">{intro}</p>}
-  <form class="chequeo__form" id="chq-form" data-contacto="/v3/contacto/" novalidate>
+  <form class="chequeo__form" id="chq-form" data-contacto="/contacto/" novalidate>
     <label class="rotulo" for="chq-dominio">{etiqueta}</label>
     <div class="chequeo__campo">
       <input id="chq-dominio" name="dominio" type="text" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder={ejemplo} aria-describedby="chq-ayuda" />

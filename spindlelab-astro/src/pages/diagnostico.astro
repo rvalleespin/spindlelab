@@ -1,0 +1,113 @@
+---
+// DIAGNÓSTICO SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 5; ajustado en la obra E13, 26-oct-2026).
+//
+// Contrato: spindlelab-v3/spec-visual.md §2.4, fila «/diagnostico/»: el instrumento primero (miga, h1 y su línea en
+// c1-c10, y debajo el chequeo grande en c1-c8, con el resultado en la misma columna); después «Los 21 chequeos», «Lo
+// que este chequeo no mide», «Dos caminos», «La Ley 21.719», preguntas y el cierre «También lo revisamos nosotros, a
+// mano.». Sin franja. El único sandbox a la vista de la página es este (§5.5). Lo que la spec no cubría: desvios.md,
+// tanda 5. En E13 la página se mantiene y se corrige el texto: lo gratis que se hace a mano es la «revisión», y el
+// chequeo no promete resultados.
+//
+// El chequeo es el de producción (Chequeo.astro: los ids chq-*, v3-chequeo.js sin tocar); su resultado se pinta con el
+// sistema de A (archivo.css). El texto lo arma diagnostico() en interiores.mjs; señales de Simón, senales-obra.md §2.6.
+import Layout from '../layouts/Layout.astro';
+import PaginaA from '../components/a/PaginaA.astro';
+import Miga from '../components/a/Miga.astro';
+import Chequeo from '../components/a/Chequeo.astro';
+import Icono from '../components/a/Icono.astro';
+import { LAYOUT_A } from '../components/a/layout-a';
+import { diagnostico } from '../data/archivo/interiores.mjs';
+
+const m = diagnostico();
+---
+<Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
+  <PaginaA>
+    {/* 1 · EL INSTRUMENTO PRIMERO: la cabecera y, debajo, el chequeo en c1-c8 */}
+    <section class="reticula int-cab" aria-labelledby="h-titulo">
+      <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1] }]} />
+      <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
+      <p class="cuerpo caja">{m.linea}</p>
+      <div class="int-instr" id="chequeo">
+        <Chequeo rotulo="" intro="" etiqueta={m.chequeo.etiqueta} ejemplo={m.chequeo.ejemplo} boton={m.chequeo.boton} ayuda={m.chequeo.ayuda} tituloResultado="Resultado del chequeo" />
+      </div>
+    </section>
+
+    {/* 2 · LOS 21 CHEQUEOS, PUBLICADOS: los tres bloques con su peso en mono (c5-c12) */}
+    <section class="seccion reticula" id="metodologia" aria-labelledby="h-21">
+      <div class="int-sec__cab">
+        <h2 class="t-declaracion" id="h-21">{m.veintiuno.h2}</h2>
+        <p class="chico">{m.veintiuno.chico}</p>
+        <p class="chico"><span class="tinta">{m.veintiuno.linea.tinta}</span> {m.veintiuno.linea.resto}</p>
+      </div>
+      <div class="int-sec__cuerpo">
+        {m.veintiuno.bloques.map((b) => (
+          <div class="fase">
+            <div class="fase__izq">
+              <h3 class="t-fase">{b.h3}</h3>
+              <p class="dato">{b.peso} puntos</p>
+            </div>
+            <p class="cuerpo">{b.texto.map((x) => (x.tinta ? <span class="tinta">{x.texto}</span> : x.texto))}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* 3 · LO QUE ESTE CHEQUEO NO MIDE (lista, c5-c12) */}
+    <section class="seccion reticula" aria-labelledby="h-nomide">
+      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-nomide">{m.noMide.h2}</h2></div>
+      <ul class="int-sec__cuerpo int-lista">
+        {m.noMide.lista.map((b) => <li><h3 class="int-lista__t tinta">{b.t}</h3><p class="cuerpo">{b.d}</p></li>)}
+      </ul>
+    </section>
+
+    {/* 4 · DOS CAMINOS, Y NINGUNO TE COBRA (los dos caminos en la forma de las fases, c5-c12) */}
+    <section class="seccion reticula" aria-labelledby="h-caminos">
+      <div class="int-sec__cab">
+        <h2 class="t-declaracion" id="h-caminos">{m.dosCaminos.h2}</h2>
+        <p class="chico">{m.dosCaminos.guia}</p>
+      </div>
+      <div class="int-sec__cuerpo">
+        <ol>
+          {m.dosCaminos.lista.map((b, i) => (
+            <li class="fase">
+              <h3 class="t-fase"><span aria-hidden="true">{String(i + 1).padStart(2, '0')} · </span>{b.t}</h3>
+              <p class="cuerpo">{b.d}</p>
+            </li>
+          ))}
+        </ol>
+        <div class="botones int-botones">
+          {m.dosCaminos.botones.map((b, i) => <a class={`boton boton--${b.clase}`} href={b.href}>{b.texto}{i === 0 && <Icono nombre="flecha" />}</a>)}
+        </div>
+      </div>
+    </section>
+
+    {/* 5 · LA LEY 21.719 TAMBIÉN TE TOCA: el otro chequeo propio, en su sitio aparte (↗) */}
+    <section class="seccion reticula" aria-labelledby="h-ley">
+      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-ley">{m.laLey.h2}</h2></div>
+      <div class="int-sec__cuerpo">
+        <p class="cuerpo caja">{m.laLey.p}</p>
+        <div class="botones int-botones">
+          <a class="boton boton--placa" href={m.laLey.boton.href} rel="noopener">{m.laLey.boton.texto}<span class="solo-lector"> {m.laLey.boton.aparte}</span><Icono nombre="fuera" /></a>
+        </div>
+      </div>
+    </section>
+
+    {/* 6 · PREGUNTAS (c5-c12) */}
+    <section class="seccion reticula" aria-labelledby="h-faq">
+      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-faq">{m.preguntas.h2}</h2></div>
+      <div class="int-sec__cuerpo">
+        {m.preguntas.lista.map((q) => <div class="pregunta"><h3>{q.p}</h3><p class="cuerpo">{q.r}</p></div>)}
+      </div>
+    </section>
+
+    {/* 7 · CIERRE (§2.4.4): «También lo revisamos nosotros, a mano.» */}
+    <section class="seccion reticula" aria-labelledby="h-cierre">
+      <div class="cierre">
+        <h2 class="t-declaracion" id="h-cierre">{m.cierre.h2}</h2>
+        <p class="cuerpo">{m.cierre.p}</p>
+        <div class="botones"><a class="boton boton--claro" href={m.cierre.boton.href}>{m.cierre.boton.texto}<Icono nombre="flecha" /></a></div>
+      </div>
+    </section>
+  </PaginaA>
+</Layout>

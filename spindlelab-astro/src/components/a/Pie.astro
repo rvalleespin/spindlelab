@@ -17,14 +17,14 @@ const t = textoDe(comun);
 const correo = t('comun.pie.correo');
 const privacidad = t('comun.pie.privacidad');
 const enlaces = [
-  { texto: 'Chequeo gratis', href: '/v3/diagnostico/' },
+  { texto: 'Chequeo gratis', href: '/diagnostico/' },
   { texto: privacidad.texto as string, href: privacidad.destino as string },
   { texto: 'LinkedIn', href: 'https://www.linkedin.com/company/spindlelab/', fuera: true },
   { texto: 'Instagram', href: 'https://www.instagram.com/spindlelab.cl/', fuera: true },
 ];
 ---
 <footer class="pie-sitio">
-  <a class="cab__logo" href="/v3/"><Logo /></a>
+  <a class="cab__logo" href="/"><Logo /></a>
   <a class="pie-sitio__correo rotulo" href={correo.destino}>{correo.texto}</a>
   <Hora />
   <nav class="pie-sitio__enlaces" aria-label="Pie">

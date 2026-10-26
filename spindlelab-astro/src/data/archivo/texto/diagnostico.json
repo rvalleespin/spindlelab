@@ -5,7 +5,7 @@
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "diagnostico",
-  "ruta": "/v3/diagnostico/",
+  "ruta": "/diagnostico/",
   "modo": "ajusta (E13)",
   "regla": "E13, 26-oct-2026: la página se mantiene (es la pieza más fuerte y verificable, copy-secciones-v1.2 §9) y se le aplican las correcciones de §9 con el texto publicado en e13/fuentes/v2-vigente/diagnostico.txt. La ruta se llama /diagnostico/ y el instrumento se llama «chequeo»; lo gratis que hacemos a mano se llama «revisión». Aquí vive todo el texto visible, salvo las cinco preguntas frecuentes, que son datos de página porque de ellas sale el FAQPage del JSON-LD: viven en spindlelab-astro/src/data/paginas-v3.json, clave «diagnostico», faq. Los tres bloques de «Los 21 chequeos» siguen en interiores.mjs, tal cual (describen lo que mide el motor y no cambian). Los textos del resultado que pinta el script (veredictos, remate y botones) viven en public/assets/js/v3-chequeo.js y se registran aquí para que haya una sola lista. El texto de E12 que se reemplaza va en «antes».",
   "title": "Chequeo gratis: ¿ChatGPT puede leer tu sitio? · SpindleLab",
@@ -237,7 +237,7 @@
       "id": "diagnostico.caminos.boton1",
       "rol": "boton",
       "texto": "Pedir la revisión a mano",
-      "destino": "/v3/contacto/",
+      "destino": "/contacto/",
       "antes": "Pedir el diagnóstico",
       "origen": "copy-secciones-v1.2 §9",
       "estado": "cambia"
@@ -246,7 +246,7 @@
       "id": "diagnostico.caminos.boton2",
       "rol": "boton",
       "texto": "Volver al chequeo",
-      "destino": "/v3/diagnostico/#chequeo",
+      "destino": "/diagnostico/#chequeo",
       "origen": "e12 (sin cambio)",
       "estado": "queda"
      }
@@ -330,7 +330,7 @@
       "id": "diagnostico.cierre.boton",
       "rol": "boton",
       "texto": "Pedir la revisión a mano",
-      "destino": "/v3/contacto/",
+      "destino": "/contacto/",
       "antes": "Pedir el diagnóstico",
       "origen": "copy-secciones-v1.2 §9",
       "estado": "cambia"
@@ -382,7 +382,7 @@
       "id": "diagnostico.resultado.boton1",
       "rol": "boton",
       "texto": "Pedir la revisión a mano",
-      "destino": "/v3/contacto/?sitio=<dirección>",
+      "destino": "/contacto/?sitio=<dirección>",
       "antes": "Pedir el diagnóstico",
       "uso": "script, junto al puntaje y en el remate",
       "estado": "cambia"
@@ -410,7 +410,7 @@
       "id": "diagnostico.resultado.boton2",
       "rol": "boton",
       "texto": "Prefiero hablarlo contigo",
-      "destino": "/v3/contacto/?sitio=<dirección>",
+      "destino": "/contacto/?sitio=<dirección>",
       "uso": "script, remate",
       "estado": "queda"
      }

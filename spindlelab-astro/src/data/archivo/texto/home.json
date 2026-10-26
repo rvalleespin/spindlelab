@@ -5,7 +5,7 @@
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "home",
-  "ruta": "/v3/",
+  "ruta": "/",
   "title": "SpindleLab · Marketing y crecimiento con IA",
   "description": "Marketing y crecimiento con IA para empresas que ya venden. Revisión gratis de una página y propuesta por escrito, con alcance, plazos y precio.",
   "senales": "Title y description del v2 vigente (e13/fuentes/v2-vigente/home.txt), con una diferencia: el title pierde el «en Chile» del v2 (Ramón lo descartó como relleno). Los reconfirma Simón en la capa de señales de E13; el brief §4 pide FAQPage en el JSON-LD y debe coincidir con home.faq.*.",
@@ -72,7 +72,7 @@
       "id": "home.portada.boton",
       "rol": "boton",
       "texto": "Pedir la revisión de una página",
-      "destino": "/v3/contacto/",
+      "destino": "/contacto/",
       "estado": "nuevo",
       "origen": "copy-secciones-v1.2 §2.1 (CTA principal)",
       "nota": "La única acción principal de la ruta. Se ve en la primera pantalla a 390 y a 1440, también con el aviso de cookies abierto (brief §7, criterio 3). Se completa con «…y entonces recibes una página con los hallazgos»: lo dice la nota de abajo."
@@ -91,7 +91,7 @@
       "id": "home.portada.chequeo",
       "rol": "boton",
       "texto": "Chequear mi sitio ahora, sin registro",
-      "destino": "/v3/diagnostico/",
+      "destino": "/diagnostico/",
       "estado": "nuevo",
       "origen": "copy-secciones-v1.2 §2.1 (enlace secundario)",
       "nota": "Enlace secundario, no botón: el chequeo deja de ser la acción de la portada (brief §2). Reemplaza al formulario del chequeo dentro de la portada (home.chequeo.*, retirado). «Chequeo» y no «diagnóstico»: así se llama la herramienta."
@@ -224,7 +224,7 @@
       "id": "home.como.boton",
       "rol": "boton",
       "texto": "Ver el método completo",
-      "destino": "/v3/metodo/",
+      "destino": "/metodo/",
       "estado": "nuevo",
       "origen": "copy-secciones-v1.2 §2.4 («Ver el método completo →»; la flecha es el icono)"
      }
@@ -282,7 +282,7 @@
       "id": "home.soluciones.busqueda.aud.boton",
       "rol": "boton",
       "texto": "Ver Auditoría SEO técnica",
-      "destino": "/v3/servicios/auditoria-seo-tecnica/",
+      "destino": "/servicios/auditoria-seo-tecnica/",
       "estado": "nuevo",
       "origen": "home.servicios.aud.boton (E12); v2-vigente/home.txt («Auditoría SEO técnica →»)"
      },
@@ -290,7 +290,7 @@
       "id": "home.soluciones.busqueda.via.boton",
       "rol": "boton",
       "texto": "Ver Visibilidad en IA",
-      "destino": "/v3/servicios/visibilidad-en-ia/",
+      "destino": "/servicios/visibilidad-en-ia/",
       "estado": "nuevo",
       "origen": "home.servicios.via.boton (E12); v2-vigente/home.txt («Visibilidad en IA →»)"
      },
@@ -324,7 +324,7 @@
       "id": "home.soluciones.anuncios.paid.boton",
       "rol": "boton",
       "texto": "Ver Paid Media (Google)",
-      "destino": "/v3/servicios/paid-media/",
+      "destino": "/servicios/paid-media/",
       "estado": "nuevo",
       "origen": "v2-vigente/home.txt («Paid media (Google) →»), con el nombre de oferta-v3.json (tambien[1])"
      },
@@ -332,7 +332,7 @@
       "id": "home.soluciones.anuncios.redes.boton",
       "rol": "boton",
       "texto": "Ver Gestión de redes sociales",
-      "destino": "/v3/servicios/redes-sociales/",
+      "destino": "/servicios/redes-sociales/",
       "estado": "nuevo",
       "origen": "v2-vigente/home.txt («Gestión de redes →»), con el nombre de oferta-v3.json (tambien[0])"
      },
@@ -365,7 +365,7 @@
       "id": "home.soluciones.sitio.dw.boton",
       "rol": "boton",
       "texto": "Ver Desarrollo web",
-      "destino": "/v3/servicios/desarrollo-web/",
+      "destino": "/servicios/desarrollo-web/",
       "estado": "queda",
       "origen": "home.servicios.dw.boton (E12)"
      },
@@ -400,7 +400,7 @@
       "id": "home.soluciones.acompanamiento.boton",
       "rol": "boton",
       "texto": "Ver Acompañamiento mensual",
-      "destino": "/v3/servicios/acompanamiento-mensual/",
+      "destino": "/servicios/acompanamiento-mensual/",
       "estado": "queda",
       "origen": "home.servicios.aco.boton (E12)"
      }
@@ -444,7 +444,7 @@
       "id": "home.pruebas.precios.boton",
       "rol": "boton",
       "texto": "Ver los precios",
-      "destino": "/v3/servicios/",
+      "destino": "/servicios/",
       "estado": "nuevo",
       "origen": "copy-secciones-v1.2 §2.6 («Ver los precios →»)"
      },
@@ -467,7 +467,7 @@
       "id": "home.pruebas.metodo.boton",
       "rol": "boton",
       "texto": "Leer el método",
-      "destino": "/v3/metodo/",
+      "destino": "/metodo/",
       "estado": "nuevo",
       "origen": "copy-secciones-v1.2 §2.6 («Leer el método →»)"
      },
@@ -493,7 +493,7 @@
       "id": "home.pruebas.chequeo.boton",
       "rol": "boton",
       "texto": "Hacer el chequeo",
-      "destino": "/v3/diagnostico/",
+      "destino": "/diagnostico/",
       "estado": "nuevo",
       "origen": "copy-secciones-v1.2 §2.6 («Hacer el chequeo →»)"
      },
@@ -565,7 +565,7 @@
       "id": "home.pruebas.caso.boton",
       "rol": "boton",
       "texto": "Ver el caso",
-      "destino": "/v3/trabajo/combeau/",
+      "destino": "/trabajo/combeau/",
       "estado": "nuevo",
       "origen": "comun.cursor.caso («Ver el caso»)"
      },
@@ -573,7 +573,7 @@
       "id": "home.pruebas.todo",
       "rol": "boton",
       "texto": "[ Todo el trabajo ] (2)",
-      "destino": "/v3/trabajo/",
+      "destino": "/trabajo/",
       "estado": "cambia",
       "origen": "home.obra.todo (E12)",
       "antes": "[ Todo el trabajo ] (10)",
@@ -658,7 +658,7 @@
       "id": "home.quien.boton",
       "rol": "boton",
       "texto": "Conocer a Ramón",
-      "destino": "/v3/nosotros/",
+      "destino": "/nosotros/",
       "estado": "queda",
       "origen": "texto-paso2.json «home.quien.boton» (E12)",
       "nota": "El documento de textos dice «Conocer más». Queda «Conocer a Ramón» porque dice qué hay del otro lado del clic y «más» no."
@@ -803,7 +803,7 @@
       "id": "home.contacto.boton",
       "rol": "boton",
       "texto": "Enviar la dirección de mi sitio",
-      "destino": "/v3/contacto/",
+      "destino": "/contacto/",
       "estado": "cambia",
       "origen": "copy-secciones-v1.2 §2.9 (CTA)",
       "antes": "Escribir a SpindleLab",

@@ -1,4 +1,4 @@
-// EL MURO DE /v3/trabajo/ (spec §2.2). Lo carga src/pages/v3/trabajo/index.astro.
+// EL MURO DE /trabajo/ (spec §2.2). Lo carga src/pages/v3/trabajo/index.astro.
 //   · Desde 834, dos columnas de igual ancho con 8 px entre ellas: cada pieza, en el orden de Clara, va a la columna
 //     más corta, y ocupa en la retícula tantas filas de 1 px como mide (más los 32 px que la separan de la siguiente).
 //     Así el documento queda en el orden de Clara (el teclado y el lector de pantalla lo recorren así) y las columnas

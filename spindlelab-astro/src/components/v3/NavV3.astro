@@ -25,13 +25,13 @@ import '../../styles/driftime.css';
 // Las OCHO páginas de primer nivel. Antes eran seis enlaces y dos de ellos eran anclas
 // de la home, no páginas: se podía «navegar» sin salir nunca del inicio.
 const principales = [
-  { href: '/v3/', label: 'Inicio' },
-  { href: '/v3/servicios/', label: 'Servicios' },
-  { href: '/v3/trabajo/', label: 'Trabajo' },
-  { href: '/v3/metodo/', label: 'Método' },
-  { href: '/v3/nosotros/', label: 'Nosotros' },
-  { href: '/v3/blog/', label: 'Blog' },
-  { href: '/v3/diagnostico/', label: 'Chequeo gratis' },
+  { href: '/', label: 'Inicio' },
+  { href: '/servicios/', label: 'Servicios' },
+  { href: '/trabajo/', label: 'Trabajo' },
+  { href: '/metodo/', label: 'Método' },
+  { href: '/nosotros/', label: 'Nosotros' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/diagnostico/', label: 'Chequeo gratis' },
   { href: CONTACTO, label: 'Contacto' },
 ];
 
@@ -43,7 +43,7 @@ const principales = [
 // del módulo es el único de la vista): el número en papel y la palabra subrayada a 1 px.
 const conBarra = (p: string) => (p.endsWith('/') ? p : `${p}/`);
 const aqui = conBarra(Astro.url.pathname);
-const SECCIONES = ['/v3/servicios/', '/v3/blog/'];
+const SECCIONES = ['/servicios/', '/blog/'];
 const actual = (href: string): 'page' | 'true' | undefined =>
   href === aqui ? 'page' : SECCIONES.includes(href) && aqui.startsWith(href) ? 'true' : undefined;
 ---
@@ -71,7 +71,7 @@ const actual = (href: string): 'page' | 'true' | undefined =>
   <div class="rounded-v3 overflow-hidden bg-black/75 backdrop-blur border border-white/10">
     <div class="flex items-stretch">
       <a
-        href="/v3/"
+        href="/"
         class="font-wordmark text-lg sm:text-xl text-papel tracking-tight pl-5 pr-4 py-3 flex items-center"
       >
         SpindleLab<span class="text-gold">.</span>

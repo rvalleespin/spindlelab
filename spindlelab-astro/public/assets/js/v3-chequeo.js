@@ -19,8 +19,8 @@
   var err = document.getElementById('chq-error');
   if(!form) return;
   // A dónde llevan los botones del resultado y el aviso de error. La maqueta pone
-  // data-contacto="/v3/contacto/" en el formulario: con /contacto/ fijo, la única salida de
-  // conversión del chequeo sacaba al visitante de la v3 y el puente de UTM de /v3/contacto/
+  // data-contacto="/contacto/" en el formulario: con /contacto/ fijo, la única salida de
+  // conversión del chequeo sacaba al visitante de la v3 y el puente de UTM de /contacto/
   // no corría (revisión cruzada, 6-oct). Sin el atributo sigue yendo a /contacto/.
   var CT = form.getAttribute('data-contacto') || '/contacto/';
   // El dominio viaja a contacto (QA final, 6-oct): quien acaba de escribirlo en el chequeo y

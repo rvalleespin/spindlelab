@@ -5,7 +5,7 @@
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "caso-combeau",
-  "ruta": "/v3/trabajo/combeau/",
+  "ruta": "/trabajo/combeau/",
   "title": "Bernardo Combeau: fotografía y book de modelo · SpindleLab",
   "description": "Diseñamos y programamos los dos sitios de Bernardo Combeau, fotógrafo y modelo. Él carga sus series desde un panel, y el sitio entrega sus fotos livianas.",
   "senales": "Simón, e12/senales-obra.md §2.4",
@@ -391,7 +391,7 @@
     "nombre": "Cierre",
     "trabajo": "Ofrecer pedir la revisión y llevar al índice. No hay «Siguiente caso»: con Praxi y los cuatro conceptos fuera, Combeau es la única página de caso, y el otro elemento del índice (Verifica y Cumple) es un sitio aparte.",
     "borrado": [
-     "combeau.siguiente.rotulo («Siguiente») y combeau.siguiente.caso («Praxi. Se acuerda de cada serie que hiciste.», → /v3/trabajo/praxi/): Praxi sale de la obra. src/data/archivo/casos.mjs (líneas ~503 a 520) calcula «Siguiente» con el orden de los casos y lee ambos ids; con un solo caso apuntaría a sí mismo. Diego lo quita de la plantilla de caso."
+     "combeau.siguiente.rotulo («Siguiente») y combeau.siguiente.caso («Praxi. Se acuerda de cada serie que hiciste.», → /trabajo/praxi/): Praxi sale de la obra. src/data/archivo/casos.mjs (líneas ~503 a 520) calcula «Siguiente» con el orden de los casos y lee ambos ids; con un solo caso apuntaría a sí mismo. Diego lo quita de la plantilla de caso."
     ],
     "elementos": [
      {
@@ -410,7 +410,7 @@
       "id": "combeau.siguiente.boton",
       "rol": "boton",
       "texto": "Pedir la revisión de una página",
-      "destino": "/v3/contacto/",
+      "destino": "/contacto/",
       "estado": "cambia",
       "antes": "Escribir a SpindleLab",
       "por_que": "El mismo botón que la portada de la home: una sola acción en todo el sitio."
@@ -419,7 +419,7 @@
       "id": "combeau.siguiente.todo",
       "rol": "boton",
       "texto": "[ Todo el trabajo ] (2)",
-      "destino": "/v3/trabajo/",
+      "destino": "/trabajo/",
       "estado": "cambia",
       "antes": "[ Todo el trabajo ] (10)",
       "origen": "texto-paso2.json «praxi.siguiente.todo»",

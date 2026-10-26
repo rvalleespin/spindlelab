@@ -5,7 +5,7 @@
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "auditoria-seo-tecnica",
-  "ruta": "/v3/servicios/auditoria-seo-tecnica/",
+  "ruta": "/servicios/auditoria-seo-tecnica/",
   "title": "Auditoría SEO técnica para empresas · SpindleLab",
   "description": "Encontramos qué le impide a Google rastrear, entender y confiar en tu sitio, y te lo entregamos ordenado por impacto. Desde $490.000 + IVA.",
   "senales": "v2-vigente/servicios__auditoria-seo-tecnica.txt (title publicado el 24-oct); la description es la de la versión anterior del v3, sin cambio",
@@ -56,7 +56,7 @@
       "texto": "Pedir la auditoría",
       "antes": "Pedir el diagnóstico",
       "origen": "copy-secciones-v1.2.md §5.1 (cierre: CTA «Pedir la auditoría»)",
-      "destino": "/v3/contacto/",
+      "destino": "/contacto/",
       "estado": "cambia"
      }
     ]

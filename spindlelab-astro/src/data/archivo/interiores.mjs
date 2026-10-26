@@ -1,5 +1,5 @@
-// LAS CUATRO INTERIORES SOBRE A (obra E12, corrida 2, tanda 5; reescritas en la obra E13, 26-oct-2026): /v3/metodo/,
-// /v3/diagnostico/, /v3/nosotros/ y /v3/contacto/.
+// LAS CUATRO INTERIORES SOBRE A (obra E12, corrida 2, tanda 5; reescritas en la obra E13, 26-oct-2026): /metodo/,
+// /diagnostico/, /nosotros/ y /contacto/.
 //
 // Contrato: spec-visual.md §2.4 (la plantilla interior y la fila de cada ruta), §3.4 (interiores ≤ 5 % de campo; ninguna
 // de las cuatro lleva franja) y §4.1 (los campos del formulario). En E13 el mensaje es «marketing y crecimiento con IA
@@ -30,8 +30,8 @@ import tNos from './texto/nosotros.json';
 import tCont from './texto/contacto.json';
 
 const NB = ' '; // número y unidad no se parten (la misma tipografía de las páginas de driftime)
-const CONTACTO = '/v3/contacto/';
-const CHEQUEO = '/v3/diagnostico/';
+const CONTACTO = '/contacto/';
+const CHEQUEO = '/diagnostico/';
 
 // ---- comunes
 const dos = (e, donde) => {
@@ -64,7 +64,7 @@ const largos = (title, description, donde) => {
 const ogDe = (id, h1) => ({ src: `/assets/img/og-e12-${id}.jpg?v=2`, alt: `SpindleLab: ${typeof h1 === 'string' ? h1 : `${h1.tinta} ${h1.gris}`}` });
 const boton = (e, clase) => ({ texto: e.texto, href: e.destino, clase });
 
-// ================================================================= /v3/metodo/ (spec §2.4; Simón §2.8)
+// ================================================================= /metodo/ (spec §2.4; Simón §2.8)
 export function metodo() {
   const t = textoDe(tMetodo, comun);
   const s = paginas.metodo;
@@ -136,7 +136,7 @@ export function metodo() {
   };
 }
 
-// ================================================================= /v3/diagnostico/ (spec §2.4: el instrumento primero; Simón §2.6)
+// ================================================================= /diagnostico/ (spec §2.4: el instrumento primero; Simón §2.6)
 export function diagnostico() {
   const t = textoDe(tDiag, comun);
   const s = paginas.diagnostico;
@@ -236,7 +236,7 @@ export function diagnostico() {
   };
 }
 
-// ================================================================= /v3/nosotros/ (spec §2.4; Simón §2.10)
+// ================================================================= /nosotros/ (spec §2.4; Simón §2.10)
 export function nosotros() {
   const t = textoDe(tNos, comun);
   const miga = migaDe(t('nosotros.miga').texto, null, 'nosotros');
@@ -301,7 +301,7 @@ export function nosotros() {
   };
 }
 
-// ================================================================= /v3/contacto/ (spec §2.4 y §4.1; Simón §2.11)
+// ================================================================= /contacto/ (spec §2.4 y §4.1; Simón §2.11)
 export function contacto() {
   const t = textoDe(tCont, comun);
   const s = paginas.contacto;

@@ -1,0 +1,294 @@
+---
+// LOS CINCO SERVICIOS SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 4). Diego, 19-oct-2026.
+// Visibilidad en IA, Auditoría SEO técnica, Acompañamiento mensual, Gestión de redes sociales y Paid Media (Google).
+//
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md §2.4: la plantilla interior, «las secciones de hoy
+// (incluye, planes, fases, preguntas, cierre) con la misma forma que Desarrollo web». La franja: el chequeo en
+// Visibilidad en IA (es lo que mide este servicio) y ninguna en los otros cuatro (ninguna pieza del inventario muestra
+// ese servicio aplicado; la de Auditoría, Verifica y Cumple, salió el 23-oct por ser un campo de color, abajo). Lo que
+// la spec no cubría está en spindlelab-v3/desvios.md, tanda 4 y vuelta 1 de la QA de obra.
+//
+// EL TEXTO. Clara cambia de cada uno la miga, el h1 (en dos tintas: el nombre del servicio y lo que le hace al cliente)
+// y el alt (y el pie) de la franja (src/data/archivo/texto/<slug>.json); lo demás «queda tal cual, desde su dato»: la
+// línea con el precio, los dos botones, la nota de precios, el lead, las secciones con sus planes y precios, las
+// preguntas, el cierre y «Siguiente» salen de servicios-v3.json, como hoy, con el mismo armado que tenían en la página
+// anterior (el título de cada punto de la lista partido en su «:», las comillas «», los enlaces de ENLACES). Los dos
+// botones de la cabecera y los del cierre son los de hoy. Todo monto a la vista se compara con los JSON (servicios.mjs).
+//
+// LAS SEÑALES (Simón, senales-obra.md §2.7): title y description de Clara, que son los de Simón; el grafo de hoy queda
+// (Service con su OfferCatalog, BreadcrumbList igual a la miga, FAQPage con las preguntas a la vista), y la description
+// del Service pasa a ser la de la página. Imagen al compartir: og-e12-<slug>.jpg?v=2 (og-tanda-4.mjs, regeneradas en la obra E13 con el h1 nuevo).
+import Layout from '../../layouts/Layout.astro';
+import PaginaA from '../../components/a/PaginaA.astro';
+import Miga from '../../components/a/Miga.astro';
+import Icono from '../../components/a/Icono.astro';
+import { LAYOUT_A } from '../../components/a/layout-a';
+import { textoDe, igualQue } from '../../data/archivo/texto.mjs';
+import { SITIO, siguiente, soloMontosDe } from '../../data/archivo/servicios.mjs';
+import comun from '../../data/archivo/texto/comun.json';
+import textoServicios from '../../data/archivo/texto/servicios.json';
+import dw from '../../data/archivo/texto/desarrollo-web.json';
+import via from '../../data/archivo/texto/visibilidad-en-ia.json';
+import aud from '../../data/archivo/texto/auditoria-seo-tecnica.json';
+import aco from '../../data/archivo/texto/acompanamiento-mensual.json';
+import redes from '../../data/archivo/texto/redes-sociales.json';
+import paid from '../../data/archivo/texto/paid-media.json';
+import medios from '../../data/archivo/medios.json';
+import servicios from '../../data/servicios-v3.json';
+
+export function getStaticPaths() {
+  return Object.keys(servicios).map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params as { slug: string };
+const s = (servicios as Record<string, any>)[slug];
+const COPIAS: Record<string, any> = {
+  'visibilidad-en-ia': via,
+  'auditoria-seo-tecnica': aud,
+  'acompanamiento-mensual': aco,
+  'redes-sociales': redes,
+  'paid-media': paid,
+};
+const copia = COPIAS[slug];
+if (!copia) throw new Error(`[slug].astro: falta la copia del texto de Clara de «${slug}» (extraer-texto.mjs ${slug})`);
+const t = textoDe(copia, comun, dw, textoServicios);
+const pagina = copia.texto;
+const RUTA = `/servicios/${slug}/`;
+const h1 = t(`${slug}.h1`) as { tinta: string; gris: string };
+igualQue(h1.tinta.replace(/\.$/, ''), s.h1, `${slug}, el nombre del h1`);
+
+// ---- La miga (Clara), y el BreadcrumbList del JSON dice lo mismo
+const miga = (t(`${slug}.miga`).texto as string).split(' · ');
+igualQue(s.breadcrumb.map((b: { name: string }) => b.name).join(' · '), miga.join(' · '), `${slug}, BreadcrumbList y miga`);
+
+// ---- Lo que queda tal cual, desde su dato (servicios-v3.json)
+const secs: any[] = s.secciones ?? [];
+const secIncluye = secs.find((x) => Array.isArray(x.lista) && x.lista.length);
+const secPlanes = secs.find((x) => Array.isArray(x.planes) && x.planes.length);
+const secBloques = secs.find((x) => Array.isArray(x.bloques) && x.bloques.length);
+const conParrafos = secs.filter((x) => Array.isArray(x.parrafos));
+const hFaq: string = conParrafos.length > 1 ? conParrafos[0].h2 : 'Preguntas frecuentes';
+const secCierre = conParrafos.length ? conParrafos[conParrafos.length - 1] : null;
+const faq: { p: string; r: string }[] = s.faq ?? [];
+soloMontosDe([s.linea, s.lead, ...faq.map((f) => f.r), secPlanes?.nota ?? '', secPlanes?.compromiso ?? ''].join(' '), slug, `${slug}, el texto`);
+
+// El armado de la página anterior, que es como se lee hoy: «Rastreo e indexación: qué puede ver…» → el título y el
+// cuerpo (con mayúscula inicial); las comillas rectas pasan a «».
+const comillas = (x: string) => x.replace(/"([^"]+)"/g, '«$1»');
+const mayus = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
+const partir = (x: string) => {
+  const i = x.indexOf(': ');
+  return i > 0 && i <= 90 ? { t: x.slice(0, i), d: mayus(comillas(x.slice(i + 2))) } : { t: '', d: comillas(x) };
+};
+
+// Las frases que la página anterior enlazaba en el texto corrido, la primera vez y nunca hacia la misma página. El texto
+// se escapa antes de poner el enlace: set:html es seguro aunque el dato venga del JSON. Todas van con su ruta (§5.2.2).
+const ENLACES: [string, string][] = [
+  ['protocolo público', '/blog/como-aparecer-en-chatgpt/#como-medir-si-esta-funcionando'],
+  ['servicio de acompañamiento mensual', '/servicios/acompanamiento-mensual/'],
+  ['Gestión de redes sociales', '/servicios/redes-sociales/'],
+  ['Paid Media (Google)', '/servicios/paid-media/'],
+  ['chequeo gratis', '/diagnostico/'],
+];
+const esc = (x: string) => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const enlazadas = new Set<string>();
+const enlaza = (x: string) =>
+  ENLACES.reduce((a, [frase, href]) => {
+    if (enlazadas.has(frase) || href === RUTA || !a.includes(frase)) return a;
+    enlazadas.add(frase);
+    return a.replace(frase, `<a href="${href}">${frase}</a>`);
+  }, esc(x));
+
+// En el orden en que se lee la página, para que «la primera vez» sea la primera que ve quien lee
+const incluye = (secIncluye?.lista ?? []).map((x: string) => { const p = partir(x); return { t: p.t, d: enlaza(p.d) }; });
+const compromisoHtml: string = secPlanes?.compromiso ? enlaza(secPlanes.compromiso) : '';
+const notaPlanesHtml: string = secPlanes?.nota ? enlaza(comillas(secPlanes.nota)) : '';
+const bloquesHtml: string[] = (secBloques?.bloques ?? []).map((b: any) => enlaza(comillas(b.d)));
+const faqHtml: string[] = faq.map((f) => enlaza(f.r));
+
+// Los bloques en la forma de las fases: la marca (Sí/No, A a D, S1 a S4, 01 a 04) delante del título, como «01 ·
+// Descubrimiento» en Desarrollo web. Si son pasos en orden van en una lista ordenada y la marca no se lee; si traen su
+// lectura (Sí → «Prometemos:», S1 → «Semana 1:»), se lee esa.
+const SECUENCIA = new Set(['acompanamiento-mensual', 'redes-sociales', 'paid-media']);
+const marcas: string[] = secBloques?.marcas ?? [];
+const marcasSr: string[] | undefined = secBloques?.marcasSr;
+const enOrden = SECUENCIA.has(slug);
+const ListaBloques = enOrden ? 'ol' : 'ul';
+
+// ---- La franja (§2.4)
+const m = medios.medios as Record<string, { src: string; ancho: number; alto: number; alt: string }>;
+// La imagen de la spec va bajo 834 (16:9, recortada al centro: 1050 px alcanzan). Desde 834, el mismo centro a 2,39
+// sacado a 1920 de la misma captura (franjas-tanda-4.py): el de 1050 se veía agrandado 1,34 veces a 1440.
+type Medio = { src: string; ancho: number; alto: number };
+let franja: null | { medio: Medio; ancha: Medio; alt: string; pieza: { nombre: string; linea: string }; pie?: string } = null;
+if (slug === 'visibilidad-en-ia') {
+  // El alt de Clara («… con el resultado de un sitio en pantalla») describe un resultado que el archivo de la spec no
+  // muestra: chequeo-43 es la primera pantalla del chequeo, sin resultado. Va el alt que se escribió mirando ese archivo
+  // (medios.json, tanda 2). desvios.md, tanda 4.
+  // El pie (nombre y línea) es de Clara, aquí: la entrada «chequeo» ya no está en el índice de /trabajo/ (obra E13).
+  const pie = t('visibilidad-en-ia.franja.pie') as { tinta: string; gris: string };
+  franja = { medio: m['chequeo-43'], ancha: m['chequeo-239'], alt: m['chequeo-43'].alt, pieza: { nombre: pie.tinta, linea: pie.gris } };
+}
+// Auditoría SEO técnica no lleva franja desde el 23-oct (spec §2.4, §3.4 y §0.4, punto 14; acta de la obra, vuelta 1,
+// defecto 3): era Verifica y Cumple, y todas sus capturas son un campo de color con la regla 2 de §3.4 (la franja, 42,4 %
+// de azul). Queda como Acompañamiento mensual: la cabecera y después las secciones. El alt y el pie que Clara le escribió
+// a esa franja quedan sin uso.
+
+// ---- Los botones y «Siguiente». «Ver planes» solo existía en la página anterior; «Escríbenos» es el del menú. Obra E13:
+// el botón principal del cierre dice qué se pide en cada servicio (Clara, `<slug>.cierre.boton`: «Pedir la revisión de mi
+// sitio», «Pedir la auditoría», «Conversar mi caso»), y el chequeo pasa a ser el botón secundario («Chequear mi sitio
+// ahora», el mismo de /servicios/ y de la portada). Los dos van a /contacto/ y /diagnostico/.
+const VER_PLANES = 'Ver planes';
+const escribenos = t('comun.nav.escribenos').texto;
+const pedir = t(`${slug}.cierre.boton`);
+const chequeo = t('servicios.cierre.boton2');
+// El chequeo en el cierre, como hoy: no en Redes ni en Paid Media (el chequeo lee el sitio para la IA, que no es lo que
+// esos dos servicios trabajan)
+const cierreChequeo = !['redes-sociales', 'paid-media'].includes(slug);
+const sig = siguiente(slug);
+const rotuloSiguiente = t('dw.siguiente').rotulo as string;
+
+// ---- Señales (Simón, senales-obra.md §2.7)
+const title = pagina.title;
+const description = pagina.description;
+if (title.length > 60 || description.length < 120 || description.length > 160) {
+  throw new Error(`${slug}: title (${title.length}) o description (${description.length}) fuera de los largos de senales-obra.md §1.2`);
+}
+soloMontosDe(`${title} ${description}`, slug, `${slug}, title y description`);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${s.canonical}#service`,
+      name: s.serviceName,
+      serviceType: s.serviceType,
+      description,
+      provider: { '@id': `${SITIO}/#org` },
+      areaServed: { '@type': 'Country', name: 'Chile' },
+      ...(s.offerCatalog ? { hasOfferCatalog: s.offerCatalog } : {}),
+    },
+    { '@type': 'BreadcrumbList', '@id': `${s.canonical}#breadcrumb`, itemListElement: s.breadcrumb },
+    {
+      '@type': 'FAQPage',
+      '@id': `${s.canonical}#faq`,
+      mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.p, acceptedAnswer: { '@type': 'Answer', text: f.r } })),
+    },
+  ],
+};
+const og = { src: `/assets/img/og-e12-${slug}.jpg?v=2`, alt: `SpindleLab: ${h1.tinta} ${h1.gris}` };
+---
+<Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  <PaginaA>
+    {/* 1 · CABECERA (§2.4.1): miga, h1 en dos tintas, la línea con el precio, el lead y la nota de los precios; los botones */}
+    <section class="reticula int-cab" aria-labelledby="h-titulo">
+      <Miga items={[{ texto: miga[0], href: '/' }, { texto: miga[1], href: '/servicios/' }, { texto: miga[2] }]} />
+      <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{h1.tinta}</span> <span class="gris">{h1.gris}</span></h1>
+      <p class="cuerpo caja">{s.linea}</p>
+      {s.lead && <p class="cuerpo caja">{comillas(s.lead)}</p>}
+      <p class="chico caja">{s.nota.join(' ')}</p>
+      <div class="botones">
+        {secPlanes && <a class="boton boton--claro" href={`${RUTA}#planes`}>{VER_PLANES}</a>}
+        <a class="boton boton--placa" href="/contacto/">{escribenos}<Icono nombre="flecha" /></a>
+      </div>
+    </section>
+
+    {/* 2 · LA FRANJA (§2.4.2): a lo más una, 2,39 desde 834 y 16:9 bajo 834, recortada al centro */}
+    {franja && (
+      <figure class="reticula franja" data-entrada>
+        <div class="medio">
+          <picture>
+            <source media="(min-width: 834px)" srcset={franja.ancha.src} width={franja.ancha.ancho} height={franja.ancha.alto} />
+            <img src={franja.medio.src} alt={franja.alt} width={franja.medio.ancho} height={franja.medio.alto} loading="eager" fetchpriority="high" decoding="async" />
+          </picture>
+        </div>
+        <figcaption>
+          <p class="pie"><span class="tinta">{franja.pieza.nombre}</span> <span class="rotulo">· {franja.pieza.linea}</span></p>
+          {franja.pie && <p class="pie">{franja.pie}</p>}
+        </figcaption>
+      </figure>
+    )}
+
+    {/* 3 · LO QUE INCLUYE (lista, c5 a c12) */}
+    {secIncluye && (
+      <section class="seccion reticula" aria-labelledby="h-incluye">
+        <div class="int-sec__cab"><h2 class="t-declaracion" id="h-incluye">{secIncluye.h2}</h2></div>
+        <ul class="int-sec__cuerpo int-lista">
+          {incluye.map((x: { t: string; d: string }) => (
+            <li>{x.t && <h3 class="int-lista__t tinta">{x.t}</h3>}<p class="cuerpo" set:html={x.d} /></li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    {/* 4 · PLANES (c5 a c16): los planes y, debajo, el compromiso y la nota */}
+    {secPlanes && (
+      <section class="seccion reticula" id="planes" aria-labelledby="h-planes">
+        <div class="int-sec__cab"><h2 class="t-declaracion" id="h-planes">{secPlanes.h2}</h2></div>
+        <div class="int-sec__cuerpo int-sec__cuerpo--ancho">
+          {secPlanes.planes.map((p: any) => (
+            <article class="plan">
+              <div><h3>{p.nombre}</h3><p class="cuerpo plan__precio">{p.precio}</p></div>
+              {p.tagline && <p class="cuerpo">{p.tagline}</p>}
+              {p.puntos?.filter(Boolean).length > 0 && <ul>{p.puntos.filter(Boolean).map((x: string) => <li>{x}</li>)}</ul>}
+            </article>
+          ))}
+          {(compromisoHtml || notaPlanesHtml) && (
+            <div class="planes__pie">
+              {compromisoHtml && <p class="cuerpo" set:html={compromisoHtml} />}
+              {notaPlanesHtml && <p class="chico" set:html={notaPlanesHtml} />}
+            </div>
+          )}
+        </div>
+      </section>
+    )}
+
+    {/* 5 · LOS BLOQUES, en la forma de las fases (c5 a c12) */}
+    {secBloques && (
+      <section class="seccion reticula" aria-labelledby="h-bloques">
+        <div class="int-sec__cab"><h2 class="t-declaracion" id="h-bloques">{secBloques.h2}</h2></div>
+        <ListaBloques class="int-sec__cuerpo">
+          {secBloques.bloques.map((b: any, i: number) => (
+            <li class="fase">
+              <h3 class="t-fase">
+                <span aria-hidden={marcasSr || enOrden ? 'true' : undefined}>{marcas[i] ?? String(i + 1).padStart(2, '0')} · </span>
+                {marcasSr?.[i] && <span class="solo-lector">{marcasSr[i]} </span>}
+                {b.t}
+              </h3>
+              <p class="cuerpo" set:html={bloquesHtml[i]} />
+            </li>
+          ))}
+        </ListaBloques>
+      </section>
+    )}
+
+    {/* 6 · PREGUNTAS (c5 a c12) */}
+    {faq.length > 0 && (
+      <section class="seccion reticula" aria-labelledby="h-faq">
+        <div class="int-sec__cab"><h2 class="t-declaracion" id="h-faq">{hFaq}</h2></div>
+        <div class="int-sec__cuerpo">
+          {faq.map((f, i) => (
+            <div class="pregunta"><h3>{f.p}</h3><p class="cuerpo" set:html={faqHtml[i]} /></div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    {/* 7 · CIERRE (§2.4.4) y «Siguiente» */}
+    <section class="seccion reticula" aria-labelledby="h-cierre">
+      <div class="cierre">
+        {secCierre && <h2 class="t-declaracion" id="h-cierre">{secCierre.h2}</h2>}
+        {secCierre?.parrafos?.[0] && <p class="cuerpo">{secCierre.parrafos[0]}</p>}
+        <div class="botones">
+          <a class="boton boton--claro" href={pedir.destino}>{pedir.texto}<Icono nombre="flecha" /></a>
+          {cierreChequeo && <a class="boton boton--placa" href={chequeo.destino}>{chequeo.texto}</a>}
+        </div>
+        <div class="int-siguiente">
+          <p class="rotulo">{rotuloSiguiente}</p>
+          <a class="t-titulo t-display subrayado" href={sig.href}>{sig.nombre}<Icono nombre="flecha" /></a>
+        </div>
+      </div>
+    </section>
+  </PaginaA>
+</Layout>

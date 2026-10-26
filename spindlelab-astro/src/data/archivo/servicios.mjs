@@ -1,6 +1,6 @@
 // LOS SERVICIOS DE A (obra E12, corrida 2, tanda 4). Diego, 19-oct-2026; orden y comprobaciones al día en la obra E13.
 //
-// Lo que comparten /v3/servicios/, Desarrollo web y los cinco servicios de [slug].astro: el orden de los seis (el de la
+// Lo que comparten /servicios/, Desarrollo web y los cinco servicios de [slug].astro: el orden de los seis (el de la
 // página de servicios), el siguiente de cada uno, los trozos de un texto de Clara con sus enlaces, y la comprobación de
 // los precios. Los precios y los nombres salen de oferta-v3.json y servicios-v3.json (la obra E13 corrigió su texto, no
 // ningún monto ni nombre): aquí solo se leen y se comparan, como texto, con lo que escribió Clara (brief E12 §6.4, spec
@@ -46,7 +46,7 @@ export function nombreDe(slug) {
   return s.nombre;
 }
 
-// ---- Un texto de Clara partido en sus enlaces («enlaces»: { "el chequeo": "/v3/diagnostico/" }), sin cambiar una
+// ---- Un texto de Clara partido en sus enlaces («enlaces»: { "el chequeo": "/diagnostico/" }), sin cambiar una
 // letra: cada frase se enlaza la primera vez que aparece. Si una frase no está en el texto, el build se cae.
 export function trozos(texto, enlaces = {}) {
   const salida = [];

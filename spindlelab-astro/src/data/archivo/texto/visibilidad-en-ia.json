@@ -5,7 +5,7 @@
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "visibilidad-en-ia",
-  "ruta": "/v3/servicios/visibilidad-en-ia/",
+  "ruta": "/servicios/visibilidad-en-ia/",
   "title": "Visibilidad en IA (AEO/GEO) · SpindleLab",
   "description": "Medimos cómo te describen ChatGPT, Gemini y Perplexity y qué cambiar en tu sitio para que te entiendan mejor. Auditoría desde $400.000 + IVA.",
   "senales": "v2-vigente/servicios__visibilidad-en-ia.txt (title y description publicados el 24-oct)",
@@ -77,7 +77,7 @@
       "texto": "Pedir la revisión de mi sitio",
       "antes": "Pedir el diagnóstico",
       "origen": "copy-secciones-v1.2.md §5.2 (cierre: CTA «Pedir la revisión de mi sitio»)",
-      "destino": "/v3/contacto/",
+      "destino": "/contacto/",
       "estado": "cambia"
      }
     ]

@@ -5,7 +5,7 @@
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "acompanamiento-mensual",
-  "ruta": "/v3/servicios/acompanamiento-mensual/",
+  "ruta": "/servicios/acompanamiento-mensual/",
   "title": "Acompañamiento mensual de SEO e IA · SpindleLab",
   "description": "Cada mes implementamos mejoras de SEO técnico y de visibilidad en IA, publicamos contenido y entregamos un informe. Desde $590.000/mes + IVA, mínimo 3 meses.",
   "senales": "v2-vigente/servicios__acompanamiento-mensual.txt (title publicado el 24-oct); la description sale de la del v2 con el precio de entrada",
@@ -56,7 +56,7 @@
       "texto": "Conversar mi caso",
       "antes": "Pedir el diagnóstico",
       "origen": "copy-secciones-v1.2.md §5.3 («Conversar mi caso» se mantiene)",
-      "destino": "/v3/contacto/",
+      "destino": "/contacto/",
       "estado": "cambia"
      }
     ]

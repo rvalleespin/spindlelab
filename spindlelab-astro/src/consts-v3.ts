@@ -7,7 +7,7 @@
 // proyecto» apuntaban a /contacto/, /servicios/..., /blog/ — las rutas publicadas. Al
 // recorrer la maqueta, el primer clic en el menú te sacaba del v3 y te dejaba en el sitio
 // en vivo, que es justo lo que no sirve para evaluar una propuesta.
-export const CONTACTO_V3 = '/v3/contacto/';
+export const CONTACTO_V3 = '/contacto/';
 
 // UN NOMBRE POR SERVICIO, en caja de oración (antislop A6: sin Title Case, tampoco en la nav).
 // Es el mismo nombre del h1, la miga, el «Siguiente» de cada servicio, la home y el índice
@@ -15,20 +15,20 @@ export const CONTACTO_V3 = '/v3/contacto/';
 // el índice. El <title> y el nodo Service del JSON-LD conservan el nombre de producto.
 // Revisión cruzada, 6-oct (spec §7).
 export const SERVICIOS_V3 = [
-  { href: '/v3/servicios/desarrollo-web/', label: 'Desarrollo web' },
-  { href: '/v3/servicios/visibilidad-en-ia/', label: 'Visibilidad en IA' },
-  { href: '/v3/servicios/auditoria-seo-tecnica/', label: 'Auditoría SEO técnica' },
-  { href: '/v3/servicios/acompanamiento-mensual/', label: 'Acompañamiento mensual' },
-  { href: '/v3/servicios/redes-sociales/', label: 'Gestión de redes sociales' },
-  { href: '/v3/servicios/paid-media/', label: 'Paid Media (Google)' },
+  { href: '/servicios/desarrollo-web/', label: 'Desarrollo web' },
+  { href: '/servicios/visibilidad-en-ia/', label: 'Visibilidad en IA' },
+  { href: '/servicios/auditoria-seo-tecnica/', label: 'Auditoría SEO técnica' },
+  { href: '/servicios/acompanamiento-mensual/', label: 'Acompañamiento mensual' },
+  { href: '/servicios/redes-sociales/', label: 'Gestión de redes sociales' },
+  { href: '/servicios/paid-media/', label: 'Paid Media (Google)' },
 ];
 
 export const CASA_V3 = [
-  { href: '/v3/trabajo/', label: 'Trabajo' },
-  { href: '/v3/metodo/', label: 'Método' },
-  { href: '/v3/nosotros/', label: 'Nosotros' },
-  { href: '/v3/diagnostico/', label: 'Chequeo gratis' },
-  { href: '/v3/blog/', label: 'Blog' },
+  { href: '/trabajo/', label: 'Trabajo' },
+  { href: '/metodo/', label: 'Método' },
+  { href: '/nosotros/', label: 'Nosotros' },
+  { href: '/diagnostico/', label: 'Chequeo gratis' },
+  { href: '/blog/', label: 'Blog' },
   { href: CONTACTO_V3, label: 'Contacto' },
   // Privacidad no tiene versión v3: se deja apuntando a la publicada, que sí existe.
   { href: '/privacidad/', label: 'Privacidad' },

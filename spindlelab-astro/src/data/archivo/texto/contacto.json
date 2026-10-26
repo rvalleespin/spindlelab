@@ -5,7 +5,7 @@
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "contacto",
-  "ruta": "/v3/contacto/",
+  "ruta": "/contacto/",
   "modo": "reescribe (E13)",
   "regla": "E13, 26-oct-2026: el texto sale de e13/fuentes/v2-vigente/contacto.txt (publicado y aprobado el 24-oct) y de copy-secciones-v1.2.md §8. Aquí vive todo el texto visible de la página, salvo las cuatro preguntas frecuentes, que son datos de página porque de ellas sale también el FAQPage del JSON-LD: viven en spindlelab-astro/src/data/paginas-v3.json, clave «contacto», y lo que se ve es lo mismo que lo que dice el FAQPage. El texto de E12 que se reemplaza va en «antes».",
   "title": "Contacto: pide tu revisión gratis · SpindleLab",
