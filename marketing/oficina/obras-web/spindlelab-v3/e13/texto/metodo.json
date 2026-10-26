@@ -1,6 +1,6 @@
 {
  "id": "metodo",
- "ruta": "/v3/metodo/",
+ "ruta": "/metodo/",
  "modo": "reescribe (E13)",
  "regla": "E13, 26-oct-2026: el texto sale de e13/fuentes/v2-vigente/metodo.txt (publicado y aprobado el 24-oct) y de copy-secciones-v1.2.md §6. Aquí vive todo el texto visible de la página, salvo los cuatro pasos (nombre, texto, duración o frecuencia, lo que recibes y cuánto cuesta), que son datos de página porque de ellos sale también el HowTo del JSON-LD: viven en spindlelab-astro/src/data/paginas-v3.json, clave «metodo», y el texto de cada paso es el mismo que se ve y el del HowTo. El texto de E12 que se reemplaza va en «antes».",
  "title": "Método SpindleLab: de la revisión gratis al trabajo mensual",
@@ -44,7 +44,7 @@
      "id": "metodo.boton1",
      "rol": "boton",
      "texto": "Enviar mi dirección",
-     "destino": "/v3/contacto/",
+     "destino": "/contacto/",
      "antes": "Correr el chequeo",
      "origen": "v2-vigente/metodo.txt (CTA del hero); copy-secciones-v1.2 §6",
      "por_que": "La acción principal de la ruta es pedir la revisión (brief §2). El chequeo baja a enlace secundario, en el cierre.",
@@ -54,7 +54,7 @@
      "id": "metodo.boton2",
      "rol": "boton",
      "texto": "Ver los cuatro pasos",
-     "destino": "/v3/metodo/#fases",
+     "destino": "/metodo/#fases",
      "antes": "Ver las cuatro fases",
      "origen": "e12; el documento de textos habla de «pasos»",
      "por_que": "El mismo nombre que el HowTo: son cuatro pasos.",
@@ -274,7 +274,7 @@
      "id": "metodo.cierre.boton1",
      "rol": "boton",
      "texto": "Pedir mi revisión",
-     "destino": "/v3/contacto/",
+     "destino": "/contacto/",
      "antes": "Pedir el diagnóstico",
      "origen": "v2-vigente/metodo.txt (cierre)",
      "por_que": "Lo gratis es la revisión; «diagnóstico» queda para la etapa pagada (copy §1.5).",
@@ -284,7 +284,7 @@
      "id": "metodo.cierre.boton2",
      "rol": "boton",
      "texto": "Correr el chequeo",
-     "destino": "/v3/diagnostico/",
+     "destino": "/diagnostico/",
      "origen": "e12 (sin cambio)",
      "estado": "queda"
     }

@@ -1,6 +1,6 @@
 {
  "id": "blog",
- "ruta": "/v3/blog/",
+ "ruta": "/blog/",
  "modo": "queda con ajustes",
  "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector. E13 (26-oct): también se corrige el cierre y, en los siete cuerpos, solo lo que afirmaba algo que no se sostiene; cada cambio está en e13/desvios/blog.md.",
  "title": "Blog: SEO técnico y visibilidad en IA · SpindleLab",
@@ -81,7 +81,7 @@
      "id": "blog.cierre.cta",
      "rol": "boton",
      "texto": "Pedir la revisión de una página",
-     "destino": "/v3/contacto/",
+     "destino": "/contacto/",
      "antes": "Correr el chequeo (botón principal) y «Escríbenos» (secundario)",
      "origen": "brief de obra E13 §2 y §3 (una sola acción principal por ruta; el chequeo baja a enlace secundario)",
      "estado": "cambia"
@@ -90,7 +90,7 @@
      "id": "blog.cierre.chequeo",
      "rol": "boton",
      "texto": "Correr el chequeo",
-     "destino": "/v3/diagnostico/",
+     "destino": "/diagnostico/",
      "nota": "Pasa de principal a secundario.",
      "estado": "queda"
     }

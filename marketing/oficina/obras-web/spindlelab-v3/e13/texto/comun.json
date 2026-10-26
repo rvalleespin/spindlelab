@@ -5,7 +5,7 @@
    "rol": "boton",
    "texto": "Soluciones",
    "origen": "copy-secciones-v1.2 §3 (navegación); v2-vigente/home.txt",
-   "destino": "/v3/servicios/",
+   "destino": "/servicios/",
    "estado": "cambia",
    "antes": "Servicios",
    "por_que": "El menú nuevo dice «Soluciones». La ruta y el id siguen siendo los de servicios."
@@ -15,7 +15,7 @@
    "rol": "boton",
    "texto": "Método",
    "origen": "texto-paso2.json comun.nav",
-   "destino": "/v3/metodo/",
+   "destino": "/metodo/",
    "estado": "queda"
   },
   {
@@ -23,7 +23,7 @@
    "rol": "boton",
    "texto": "Nosotros",
    "origen": "texto-paso2.json comun.nav",
-   "destino": "/v3/nosotros/",
+   "destino": "/nosotros/",
    "estado": "queda"
   },
   {
@@ -31,7 +31,7 @@
    "rol": "boton",
    "texto": "Trabajo",
    "origen": "texto-paso2.json comun.nav",
-   "destino": "/v3/trabajo/",
+   "destino": "/trabajo/",
    "estado": "queda",
    "nota": "Cambia su lugar en el menú (cuarto, no primero) y no su texto. El v2 decía «Evidencia»; esta obra deja «Trabajo», que es el nombre de la ruta."
   },
@@ -40,7 +40,7 @@
    "rol": "boton",
    "texto": "Blog",
    "origen": "copy-secciones-v1.2 §3 (navegación); v2-vigente/home.txt",
-   "destino": "/v3/blog/",
+   "destino": "/blog/",
    "estado": "nuevo",
    "nota": "El menú de E12 (Trabajo, Servicios, Método, Nosotros, Escríbenos) no traía el blog; el menú del documento de textos sí."
   },
@@ -49,7 +49,7 @@
    "rol": "boton",
    "texto": "Contacto",
    "origen": "copy-secciones-v1.2 §3 (navegación); v2-vigente/home.txt",
-   "destino": "/v3/contacto/",
+   "destino": "/contacto/",
    "estado": "nuevo",
    "antes": "Escríbenos",
    "por_que": "El enlace del menú pasa a llamarse «Contacto» y el verbo se queda en el botón de al lado."
@@ -59,7 +59,7 @@
    "rol": "boton",
    "texto": "Pedir la revisión",
    "origen": "copy-secciones-v1.2 §3 (botón de la navegación); brief §3 (transversal)",
-   "destino": "/v3/contacto/",
+   "destino": "/contacto/",
    "uso": "botón destacado del menú",
    "estado": "nuevo",
    "nota": "Es la acción única del sitio hecha botón. Lleva a /contacto/ (donde se dispara generate_lead) y no al chequeo. Decisión 3 del copy; el brief la da por hecha (§1)."
@@ -69,7 +69,7 @@
    "rol": "boton",
    "texto": "Escríbenos",
    "origen": "texto-paso2.json comun.nav",
-   "destino": "/v3/contacto/",
+   "destino": "/contacto/",
    "estado": "queda",
    "uso": "botón de cierre (heredado)",
    "nota": "YA NO ES DEL MENÚ. Se deja porque lo leen como texto de un botón de cierre src/pages/v3/servicios/[slug].astro:147 y src/data/archivo/blog.mjs:36; si se borra el id, esas dos páginas caen. Cuando los roles de servicios y de blog lo cambien por «Pedir la revisión de una página» (comun.nav.revision o home.portada.boton), este id se retira."
@@ -91,7 +91,7 @@
    "texto": "SpindleLab",
    "origen": "spec-visual.md §5.4",
    "uso": "nombre accesible",
-   "donde": "aria-label del SVG del logo, en el encabezado y en el pie; el enlace del logo lleva a /v3/",
+   "donde": "aria-label del SVG del logo, en el encabezado y en el pie; el enlace del logo lleva a /",
    "estado": "queda"
   },
   {
@@ -106,7 +106,7 @@
    "id": "comun.saltar",
    "rol": "boton",
    "texto": "Saltar al contenido",
-   "destino": "/v3/<ruta>/#contenido",
+   "destino": "/<ruta>/#contenido",
    "nota": "El primer enlace del documento, visible al recibir el foco (spec, lo común, punto 3). Se escribe con su ruta, nunca «#contenido» suelto (spec §5.2).",
    "estado": "nuevo"
   }

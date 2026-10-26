@@ -1,6 +1,6 @@
 {
  "id": "paid-media",
- "ruta": "/v3/servicios/paid-media/",
+ "ruta": "/servicios/paid-media/",
  "title": "Paid Media (Google): anuncios de búsqueda · SpindleLab",
  "description": "Armamos y manejamos tu Google Ads para que tu anuncio salga cuando alguien busca lo que vendes, con el presupuesto bajo tu control. Desde $350.000/mes + IVA.",
  "senales": "texto del v3 anterior, sin cambio (title y description no dicen nada de lo que la revisión señala)",
@@ -51,7 +51,7 @@
      "texto": "Conversar mi caso",
      "antes": "Pedir el diagnóstico",
      "origen": "copy-secciones-v1.2.md §5.6 (botones: «Conversar mi caso»)",
-     "destino": "/v3/contacto/",
+     "destino": "/contacto/",
      "estado": "cambia"
     }
    ]

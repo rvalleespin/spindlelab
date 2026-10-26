@@ -1,6 +1,6 @@
 {
  "id": "nosotros",
- "ruta": "/v3/nosotros/",
+ "ruta": "/nosotros/",
  "modo": "reescribe (E13)",
  "regla": "E13, 26-oct-2026: el texto sale de e13/fuentes/v2-vigente/nosotros.txt (publicado y aprobado el 24-oct) y de copy-secciones-v1.2.md §2.7 y §7. Todo en singular de Ramón (la página entera es suya). Se saca «Por qué un solo sistema» (subordinaba redes y pauta al sitio) y todo lo que el documento manda borrar: «más de cinco años», «orquestando el motor», los partners, «el objetivo es que vendas… tu nombre ya esté ahí», «Sin humo» y «Con eso decides con información». El texto de E12 que se reemplaza va en «antes».",
  "title": "Ramón Vallejos, marketing y crecimiento con IA · SpindleLab",
@@ -49,8 +49,8 @@
      "id": "nosotros.boton1",
      "rol": "boton",
      "texto": "Pedir la revisión de una página",
-     "destino": "/v3/contacto/",
-     "antes": "Revisar mi sitio gratis (a /v3/diagnostico/) y «Escríbenos» (a /v3/contacto/)",
+     "destino": "/contacto/",
+     "antes": "Revisar mi sitio gratis (a /diagnostico/) y «Escríbenos» (a /contacto/)",
      "origen": "brief de obra §2: una sola acción principal por ruta, «Pedir la revisión de una página» hacia /contacto/",
      "por_que": "E12 tenía dos botones en la cabecera. El chequeo baja a enlace secundario y la acción principal es una.",
      "estado": "cambia"
@@ -205,7 +205,7 @@
      "id": "nosotros.cierre.boton",
      "rol": "boton",
      "texto": "Escribirme",
-     "destino": "/v3/contacto/",
+     "destino": "/contacto/",
      "antes": "Pedir el diagnóstico y Revisar mi sitio gratis",
      "origen": "v2-vigente/nosotros.txt",
      "estado": "cambia"
@@ -215,7 +215,7 @@
      "rol": "boton",
      "texto": "Método",
      "rotulo": "Siguiente",
-     "destino": "/v3/metodo/",
+     "destino": "/metodo/",
      "origen": "e12 (sin cambio)",
      "estado": "queda"
     }
