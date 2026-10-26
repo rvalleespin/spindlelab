@@ -1,0 +1,121 @@
+{
+ "id": "diagnostico",
+ "ruta": "/v3/diagnostico/",
+ "modo": "queda con ajustes",
+ "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
+ "title": "Chequeo gratis: ¿ChatGPT puede leer tu sitio? · SpindleLab",
+ "description": "Escribe tu dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden leer, entender y citar tu sitio. Gratis, con las 21 señales y su peso publicados.",
+ "senales": "Simón, e12/senales-obra.md §2.6",
+ "secciones": [
+  {
+   "id": "cabecera",
+   "nombre": "El instrumento primero",
+   "trabajo": "Brief §3, «sube de papel»: es la parte que el visitante corre sobre su dominio, la prueba de que lo que construimos se mide. Mismo idioma que el chequeo de la home.",
+   "elementos": [
+    {
+     "id": "diagnostico.miga",
+     "rol": "rotulo",
+     "texto": "Inicio · Chequeo gratis",
+     "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+     "uso": "miga",
+     "estado": "queda"
+    },
+    {
+     "id": "diagnostico.h1",
+     "rol": "h1",
+     "tinta": "Chequeo gratis.",
+     "gris": "Mira si ChatGPT y otros asistentes de IA pueden leer tu sitio.",
+     "texto": "Chequeo gratis. Mira si ChatGPT y otros asistentes de IA pueden leer tu sitio.",
+     "antes": "¿Te puede leer la IA?",
+     "origen": "spindlelab-astro/src/data/paginas-v3.json diagnostico.h1",
+     "por_que": "El h1 era la única pregunta de la página aparte de las preguntas frecuentes y el cierre; ahora dice qué es y qué hace, como la home.",
+     "estado": "cambia"
+    },
+    {
+     "id": "diagnostico.linea",
+     "rol": "entradilla",
+     "texto": "Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas. Es el mismo chequeo que le pasamos a cada sitio que construimos, antes de entregarlo.",
+     "antes": "Pon tu dominio y revisamos al instante si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio, y si la IA puede entender qué haces y citarte.",
+     "origen": "spindlelab-astro/src/data/paginas-v3.json diagnostico.linea",
+     "por_que": "La lectura fría: «los robots… pueden entrar» le sonó a hackeo al gerente, la dueña de la clínica no conoce Claude ni Perplexity y no sabía si «tu dominio» era la dirección de su página. La segunda frase es el giro: el chequeo prueba el trabajo del estudio.",
+     "estado": "cambia"
+    },
+    {
+     "id": "diagnostico.label",
+     "rol": "rotulo",
+     "texto": "La dirección de tu sitio",
+     "antes": "Tu dominio",
+     "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+     "por_que": "El mismo campo que la home.",
+     "uso": "label",
+     "estado": "cambia"
+    },
+    {
+     "id": "diagnostico.placeholder",
+     "rol": "nota",
+     "texto": "tuempresa.cl",
+     "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+     "uso": "placeholder",
+     "estado": "queda"
+    },
+    {
+     "id": "diagnostico.boton",
+     "rol": "boton",
+     "texto": "Revisar mi sitio",
+     "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+     "destino": "corre /api/chequeo (ids chq-* sin cambio)",
+     "estado": "queda"
+    },
+    {
+     "id": "diagnostico.ayuda",
+     "rol": "nota",
+     "texto": "Gratis y sin dejar tu correo. Leemos solo páginas públicas, las mismas que lee cualquier buscador.",
+     "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+     "uso": "ayuda",
+     "estado": "queda"
+    },
+    {
+     "id": "diagnostico.error-vacio",
+     "rol": "nota",
+     "texto": "Escribe la dirección de tu sitio para empezar.",
+     "uso": "error",
+     "antes": "Escribe tu dominio para empezar.",
+     "condicion": "El mismo de la home: vive en v3-chequeo.js y pide su fila en la spec.",
+     "estado": "cambia"
+    }
+   ]
+  },
+  {
+   "id": "resto",
+   "nombre": "Lo demás",
+   "trabajo": "La metodología publicada, lo que no mide, los dos caminos, la ley y las preguntas.",
+   "elementos": [
+    {
+     "id": "diagnostico.resto",
+     "rol": "nota",
+     "texto": "Queda tal cual, desde su dato: el resultado del chequeo y su línea («21 chequeos, 100 puntos…»), «Los 21 chequeos, publicados» con sus tres bloques y pesos, «Dos caminos, y ninguno te cobra», «La Ley 21.719 también te toca», las cinco preguntas y el cierre «¿Quién aparece en tu lugar?».",
+     "uso": "referencia",
+     "origen": "spindlelab-astro/src/data/paginas-v3.json diagnostico",
+     "estado": "queda"
+    },
+    {
+     "id": "diagnostico.nomide.p2",
+     "rol": "parrafo",
+     "texto": "Los motores citan rankings, directorios y artículos de terceros, además del sitio de quien recomiendan. Si no sabes de dónde sale la recomendación, no sabes qué trabajar.",
+     "antes": "Los motores citan rankings, directorios y artículos de terceros, y no solo el sitio de quien recomiendan. Si no sabes de dónde sale la recomendación, no sabes qué trabajar.",
+     "origen": "spindlelab-astro/src/data/paginas-v3.json diagnostico.noMide",
+     "por_que": "Detector A4 («no solo X, sino Y»): el contraste es real, pero «además del» dice lo mismo sin el molde.",
+     "estado": "cambia"
+    },
+    {
+     "id": "diagnostico.ley.pie",
+     "rol": "nota",
+     "texto": "La persona a caballo de esta portada está generada con IA.",
+     "uso": "pie",
+     "condicion": "Solo si la sección de la ley conserva la imagen de Verifica y Cumple abierta en un notebook y un teléfono, donde se ve la persona a caballo. Su alt queda.",
+     "estado": "nuevo"
+    }
+   ]
+  }
+ ]
+}

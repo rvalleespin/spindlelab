@@ -1,0 +1,193 @@
+{
+ "nav": [
+  {
+   "id": "comun.nav.trabajo",
+   "rol": "boton",
+   "texto": "Trabajo",
+   "origen": "texto-paso2.json comun.nav",
+   "destino": "/v3/trabajo/",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.nav.servicios",
+   "rol": "boton",
+   "texto": "Servicios",
+   "origen": "texto-paso2.json comun.nav",
+   "destino": "/v3/servicios/",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.nav.metodo",
+   "rol": "boton",
+   "texto": "Método",
+   "origen": "texto-paso2.json comun.nav",
+   "destino": "/v3/metodo/",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.nav.nosotros",
+   "rol": "boton",
+   "texto": "Nosotros",
+   "origen": "texto-paso2.json comun.nav",
+   "destino": "/v3/nosotros/",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.nav.escribenos",
+   "rol": "boton",
+   "texto": "Escríbenos",
+   "origen": "texto-paso2.json comun.nav",
+   "destino": "/v3/contacto/",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.nav.nombre",
+   "rol": "nota",
+   "texto": "Principal",
+   "origen": "direccion-a.md §6.1 (confirmado)",
+   "uso": "nombre accesible",
+   "donde": "aria-label del nav del encabezado",
+   "estado": "queda"
+  }
+ ],
+ "encabezado": [
+  {
+   "id": "comun.logo",
+   "rol": "nota",
+   "texto": "SpindleLab",
+   "origen": "spec-visual.md §5.4",
+   "uso": "nombre accesible",
+   "donde": "aria-label del SVG del logo, en el encabezado y en el pie; el enlace del logo lleva a /v3/",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.telemetria",
+   "rol": "rotulo",
+   "texto": "Santiago",
+   "origen": "texto-paso2.json comun.telemetria",
+   "nota": "Va con la hora en vivo y su huso («Santiago 14:05 UTC-3»), spec §5.5. La escribe el navegador.",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.saltar",
+   "rol": "boton",
+   "texto": "Saltar al contenido",
+   "destino": "/v3/<ruta>/#contenido",
+   "nota": "El primer enlace del documento, visible al recibir el foco (spec, lo común, punto 3). Se escribe con su ruta, nunca «#contenido» suelto (spec §5.2).",
+   "estado": "nuevo"
+  }
+ ],
+ "pie": [
+  {
+   "id": "comun.pie.correo",
+   "rol": "boton",
+   "texto": "hola@spindlelab.cl",
+   "origen": "pie del prototipo de A",
+   "destino": "mailto:hola@spindlelab.cl",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.pie.hora",
+   "rol": "rotulo",
+   "texto": "Santiago",
+   "origen": "spec §5.5",
+   "nota": "La misma hora del encabezado. Los casos no tienen pie.",
+   "estado": "queda"
+  }
+ ],
+ "miga": [
+  {
+   "id": "comun.miga",
+   "rol": "rotulo",
+   "texto": "Inicio · <página>",
+   "origen": "spec, lo común, punto 5",
+   "uso": "miga",
+   "nota": "Separada por «·», la actual en blanco. Su BreadcrumbList dice lo mismo (Simón, senales-obra.md).",
+   "estado": "queda"
+  }
+ ],
+ "cursor": [
+  {
+   "id": "comun.cursor.caso",
+   "rol": "nota",
+   "texto": "Ver el caso",
+   "origen": "texto-paso2.json comun.cursor",
+   "uso": "cursor",
+   "donde": "Sobre una pieza real con página de caso: Combeau (las dos entradas) y Praxi",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.cursor.concepto",
+   "rol": "nota",
+   "texto": "Ver el concepto",
+   "origen": "texto-paso2.json comun.cursor",
+   "uso": "cursor",
+   "donde": "Sobre las cuatro piezas de concepto",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.cursor.sitio",
+   "rol": "nota",
+   "texto": "Ver el sitio",
+   "uso": "cursor",
+   "donde": "Sobre Verifica y Cumple, que enlaza a verifica.spindlelab.cl (spec §2.2 y §0.5, «Para Clara»)",
+   "por_que": "Dice adónde lleva, como los otros dos: no hay caso, hay un sitio que responde. En el rótulo quieto que aparece con el foco va el mismo texto.",
+   "estado": "nuevo"
+  },
+  {
+   "id": "comun.cursor.chequeo",
+   "rol": "nota",
+   "texto": "Ir al chequeo",
+   "uso": "cursor",
+   "donde": "Sobre la entrada «El chequeo de 21 señales», que lleva a /v3/diagnostico/",
+   "por_que": "No es un caso ni un sitio aparte: es la herramienta, en esta misma web.",
+   "estado": "nuevo"
+  },
+  {
+   "id": "comun.cursor.foco",
+   "rol": "nota",
+   "texto": "El rótulo quieto que aparece al recibir el foco con el teclado lleva el mismo texto que el círculo de esa pieza.",
+   "uso": "referencia",
+   "estado": "nuevo"
+  }
+ ],
+ "controles": [
+  {
+   "id": "comun.pausa",
+   "rol": "boton",
+   "texto": "Pausar el video",
+   "origen": "direccion-a.md §6.1 (confirmado)",
+   "uso": "nombre accesible",
+   "estados": {
+    "en pausa": "Seguir el video"
+   },
+   "nota": "aria-label del botón de pausa de todo video que se mueve solo (portada, cinta, casos), con aria-pressed. Con movimiento reducido o ahorro de datos el video no arranca y el botón dice «Seguir el video».",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.secciones",
+   "rol": "nota",
+   "texto": "Secciones",
+   "origen": "direccion-a.md §6.1 (confirmado)",
+   "uso": "nombre accesible",
+   "donde": "aria-label del índice de secciones de un caso o de un artículo",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.secciones.barra",
+   "rol": "nota",
+   "texto": "Ver las secciones",
+   "uso": "nombre accesible",
+   "donde": "El «+» de la barra flotante del caso bajo 1194 px (el summary del details). Lo visible es el nombre del caso y la sección activa; esto es lo que lee el lector de pantalla del botón «+».",
+   "estado": "nuevo"
+  },
+  {
+   "id": "comun.externo",
+   "rol": "nota",
+   "texto": "(sitio aparte: verifica.spindlelab.cl)",
+   "uso": "solo lector de pantalla",
+   "donde": "Dentro del enlace de Verifica y Cumple, oculto a la vista; la flecha ↗ en SVG va con aria-hidden.",
+   "estado": "nuevo"
+  }
+ ]
+}

@@ -1,8 +1,8 @@
 {
- "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
- "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/blog.json",
+ "sha256": "cf18b09583ea1291ee96b597359bc696f6c054a6e7c7c541f0ee5833d0afbcbd",
  "id": "blog",
- "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "blog",
   "ruta": "/v3/blog/",
