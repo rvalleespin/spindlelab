@@ -2337,6 +2337,33 @@
   // descarta: sin esto, revisar un segundo sitio dejaba el informe del primero
   // aterrizando encima del segundo.
   let corrida = 0;
+
+  /* ── ¿SE PUEDE COMPRAR YA? ────────────────────────────────────────────────────────────
+   *
+   * El servidor exige la revisión con navegador para vender: congela las dos mediciones en el
+   * contrato y no cotiza lo que no vio. Pero el botón «Quiero el kit» se dibuja con el chequeo
+   * RÁPIDO, que termina en un segundo, mientras la revisión con navegador tarda de 21 a 25.
+   *
+   * Hasta el 26-oct eso dejaba una ventana en la que la página invitaba a comprar algo que el
+   * servidor todavía no podía vender. Quien apretaba rápido —o sea, quien tenía más ganas—
+   * recibía un 409 pidiéndole repetir el chequeo que acababa de correr. Lo encontró Ramón
+   * probando, y el orden de las llamadas en el registro no deja lugar a dudas: el POST de la
+   * compra salió ANTES que la revisión.
+   *
+   * Ahora el botón sigue a la vista desde el primer segundo, que es lo que conviene, pero el
+   * panel espera a que la medición llegue en vez de dejar comprar en falso.
+   */
+  let profundoListo = false;
+  let profundoFallo = false;
+  // Lo que el panel de compra quiere que se ejecute cuando la medición llegue. Es uno solo:
+  // solo puede haber un panel abierto a la vez, porque se MUEVE en vez de clonarse.
+  let avisarCuandoLlegueElProfundo = null;
+
+  function avisarAlPanel() {
+    const f = avisarCuandoLlegueElProfundo;
+    avisarCuandoLlegueElProfundo = null;
+    if (f) f();
+  }
   let abortarProfundo = null;
   // Cuántas señales dejó pendientes el chequeo rápido, para poder nombrar la
   // diferencia entre los dos informes en vez de dejar que el lector la descubra.
@@ -2787,6 +2814,10 @@
     abortarProfundo = control;
     rehacerPedido = !!rehacer;
     falloElNavegador = null;
+    // Una corrida nueva invalida la medición anterior para efectos de vender: lo que se
+    // contrata tiene que ser lo que se midió en ESTA vuelta.
+    profundoListo = false;
+    profundoFallo = false;
     // Lo que la persona tiene en pantalla, antes de taparlo con la tarjeta de espera. Solo
     // en un "Volver a medirlo": una corrida nueva empieza de cero y ahí no hay nada suyo
     // que cuidar. Se toma de la variable y no del DOM para que dos clics seguidos no
@@ -2842,9 +2873,13 @@
         avisoProfundo.textContent = '';
         if (data && data.ok === true) {
           falloElNavegador = false;
+          profundoListo = true;
           sinMoverLoQueLeen(seccionProfundo, function () { renderProfundo(data); });
           avisoProfundo.textContent = 'La revisión con navegador ya está lista, debajo del resultado.';
+          avisarAlPanel();
         } else {
+          profundoFallo = true;
+          avisarAlPanel();
           // Con el informe guardado abajo, el navegador SÍ llegó a abrir el sitio: fue en la
           // medición que sigue en pantalla. Decir lo contrario haría que la costura de los 12
           // puntos ("a tu política sí llegamos, aunque a tu sitio no") contradiga al informe
@@ -2864,6 +2899,8 @@
       .catch(function () {
         if (mia !== corrida) return;
         avisoProfundo.textContent = '';
+        profundoFallo = true;
+        avisarAlPanel();
         falloElNavegador = !informeGuardado;
         sinMoverLoQueLeen(seccionProfundo, function () { renderFallaProfunda(null, informeGuardado); });
         avisoProfundo.textContent = informeGuardado
@@ -3172,6 +3209,24 @@
     a.insertAdjacentElement('afterend', panelCompra);
     const correo = panelCompra.querySelector('input[name="correo"]');
     if (correo) correo.focus();
+
+    // Si la revisión con navegador todavía no llegó, el formulario se deja escribir —para que
+    // la persona vaya poniendo su correo— pero el botón espera. Decirle que aguarde unos
+    // segundos es cierto y se resuelve solo; mandarla a repetir el chequeo era falso.
+    if (!profundoListo) {
+      const b = panelCompra.querySelector('button[type="submit"]');
+      b.disabled = true;
+      b.textContent = profundoFallo ? 'No se pudo revisar' : 'Revisando tu sitio…';
+      mensajeCompra(profundoFallo
+        ? 'No pudimos terminar la revisión con navegador de tu sitio, y sin ella no podemos cotizar lo que no vimos. Apreta «Volver a medirlo» en el resultado.'
+        : 'Estamos terminando de revisar tu sitio con un navegador. Son unos segundos y el botón se activa solo.');
+      avisarCuandoLlegueElProfundo = function () {
+        if (panelCompra.hidden) return;
+        if (profundoListo) { soltarBotonCompra(); mensajeCompra(''); return; }
+        b.textContent = 'No se pudo revisar';
+        mensajeCompra('No pudimos terminar la revisión con navegador de tu sitio. Apreta «Volver a medirlo» en el resultado.');
+      };
+    }
   }
 
   /**

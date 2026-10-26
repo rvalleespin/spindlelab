@@ -466,8 +466,18 @@ export async function onRequestPost(contexto) {
   if (!profundo) {
     return jsonPost({
       ok: false, motivo: 'sin-medicion',
-      detalle: 'No tenemos una revisión con navegador reciente de este sitio. Vuelve a correr el ' +
-        'chequeo y compra desde ahí, para que lo que contrates sea lo que medimos.',
+      // ⚠️ El mensaje anterior decía «vuelve a correr el chequeo y compra desde ahí», y a
+      // Ramón le salió JUSTO DESPUÉS de correr el chequeo: la página ofrece el botón con el
+      // resultado rápido, que tarda un segundo, mientras la revisión con navegador tarda
+      // veinte. Apretó rápido y recibió un consejo que describía lo que acababa de hacer.
+      //
+      // La causa se arregló en la página —el panel ahora espera a que la medición llegue— y
+      // acá queda el respaldo, para quien llegue con un enlace viejo o con la medición ya
+      // vencida. Por eso el texto nombra LAS DOS PARTES del chequeo: lo que falta no es
+      // correrlo, es esperar la segunda.
+      detalle: 'Todavía no tenemos la revisión con navegador de este sitio, y sin ella no ' +
+        'podemos cotizar lo que no vimos. Corre el chequeo de nuevo y espera a que termine la ' +
+        'segunda parte, la que abre tu sitio en un navegador. Desde ahí puedes comprar.',
     }, 409);
   }
 
