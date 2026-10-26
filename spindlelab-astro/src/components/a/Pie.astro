@@ -1,12 +1,37 @@
 ---
 // EL PIE DE A (spec §2, «Lo común», 2; prototipo .pie-sitio): borde superior en la línea de sección, el logo a 20 px,
 // hola@spindlelab.cl en mono y la hora; 160 px arriba. Los casos no llevan pie: PaginaA lo omite con pie={false}.
-// consent-banner.js (del Layout) cuelga aquí, junto al último enlace, el botón para cambiar las cookies.
+// E13 (spec-home §3.4): suma una segunda fila de cuatro enlaces: el chequeo (que sale de la portada y, sin un enlace fijo,
+// se vuelve difícil de encontrar), la política de privacidad (el chequeo de Verifica y Cumple la busca en un sitio, y un
+// chequeo público se corre sobre nosotros), LinkedIn e Instagram (el sameAs del JSON-LD). consent-banner.js cuelga aquí,
+// junto al enlace de privacidad, el botón para cambiar las cookies.
+// Texto de Clara: comun.pie.correo (con su asunto) y comun.pie.privacidad. Los rótulos «Chequeo gratis», «LinkedIn» e
+// «Instagram» y su orden son de la spec (no tienen id en comun.json: ver desvios/home-construccion.md).
 import Logo from './Logo.astro';
 import Hora from './Hora.astro';
+import Icono from './Icono.astro';
+import { textoDe } from '../../data/archivo/texto.mjs';
+import comun from '../../data/archivo/texto/comun.json';
+
+const t = textoDe(comun);
+const correo = t('comun.pie.correo');
+const privacidad = t('comun.pie.privacidad');
+const enlaces = [
+  { texto: 'Chequeo gratis', href: '/v3/diagnostico/' },
+  { texto: privacidad.texto as string, href: privacidad.destino as string },
+  { texto: 'LinkedIn', href: 'https://www.linkedin.com/company/spindlelab/', fuera: true },
+  { texto: 'Instagram', href: 'https://www.instagram.com/spindlelab.cl/', fuera: true },
+];
 ---
 <footer class="pie-sitio">
   <a class="cab__logo" href="/v3/"><Logo /></a>
-  <a class="pie-sitio__correo rotulo" href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a>
+  <a class="pie-sitio__correo rotulo" href={correo.destino}>{correo.texto}</a>
   <Hora />
+  <nav class="pie-sitio__enlaces" aria-label="Pie">
+    <ul>
+      {enlaces.map((e) => (
+        <li><a class="rotulo" href={e.href} rel={e.fuera ? 'noopener' : undefined}>{e.texto}{e.fuera && <Icono nombre="fuera" />}</a></li>
+      ))}
+    </ul>
+  </nav>
 </footer>

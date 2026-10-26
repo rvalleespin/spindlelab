@@ -1,5 +1,5 @@
 {
- "nota": "Los medios de la home y de /v3/trabajo/ (tanda 2): de dónde sale cada uno y su alt. El alt describe la imagen mirándola; nunca nombra las medidas de Combeau (spec §3.3, §6.10). Los archivos están en public/v3/medios/.",
+ "nota": "Los medios de la home y de /v3/trabajo/: de dónde sale cada uno y su alt. El alt describe la imagen mirándola; nunca nombra las medidas de Combeau (spec §3.3, §6.10). Los archivos están en public/v3/medios/. E13: salieron los de Praxi y los cuatro conceptos.",
  "medios": {
   "combeau-fotografia-169": {
    "src": "/v3/medios/combeau-fotografia-169.webp",
@@ -22,20 +22,6 @@
    "alt": "El book de modelo de Bernardo Combeau en un celular: su nombre, el menú y su retrato de traje.",
    "altDe": "Clara, texto-obra.json caso-combeau, medios de «La pieza»"
   },
-  "praxi-45": {
-   "src": "/v3/medios/praxi-45.webp",
-   "ancho": 1050,
-   "alto": 1312,
-   "alt": "El avatar de Praxi: la P negra con su punto sobre el amarillo de la marca.",
-   "altDe": "Clara, texto-obra.json caso-praxi (praxi-avatar-amarillo-162, la misma imagen)"
-  },
-  "praxi-43": {
-   "src": "/v3/medios/praxi-43.webp",
-   "ancho": 1050,
-   "alto": 788,
-   "alt": "El avatar de Praxi: la P negra con su punto sobre el amarillo de la marca.",
-   "altDe": "Clara, texto-obra.json caso-praxi (praxi-avatar-amarillo-162, la misma imagen)"
-  },
   "verifica-y-cumple-45": {
    "src": "/v3/medios/verifica-y-cumple-45.webp",
    "ancho": 780,
@@ -50,68 +36,12 @@
    "alt": "La portada de verifica.spindlelab.cl: «¿Estás seguro?» en letras enormes, blanco y lima sobre azul, y una persona de traje y sombrero rosados que lee un papel, a caballo.",
    "altDe": "Clara, texto-obra.json auditoria-seo-tecnica.franja.alt"
   },
-  "sesenta-home-169": {
-   "src": "/v3/medios/sesenta-home-169.webp",
-   "ancho": 1600,
-   "alto": 900,
-   "alt": "La primera pantalla del sitio de Sesenta a 1440, con el sello «Concepto de SpindleLab: Sesenta no existe» arriba.",
-   "altDe": "Clara, texto-obra.json caso-sesenta"
-  },
-  "sesenta-45": {
-   "src": "/v3/medios/sesenta-45.webp",
-   "ancho": 1050,
-   "alto": 1312,
-   "alt": "Portada de Sesenta: un 60 enorme en blanco cortado por el marco, sobre el azul de la ropa de trabajo, con la suma de un escrito en papel.",
-   "altDe": "prototipo de A (proto/a), revisado mirando la imagen"
-  },
-  "ocelo-43": {
-   "src": "/v3/medios/ocelo-43.webp",
-   "ancho": 1050,
-   "alto": 788,
-   "alt": "Portada de Ocelo: la C de Landolt sobre una carta de optotipos encendida, con una franja roja y verde abajo.",
-   "altDe": "prototipo de A (proto/a), revisado mirando la imagen"
-  },
-  "doceavo-53": {
-   "src": "/v3/medios/doceavo-53.webp",
-   "ancho": 1050,
-   "alto": 630,
-   "alt": "Portada de Doceavo: el año en doce casillas sobre papel verde pálido de libro contable, con puntos rojos en los vencimientos.",
-   "altDe": "prototipo de A (proto/a), revisado mirando la imagen"
-  },
-  "tonela-45": {
-   "src": "/v3/medios/tonela-45.webp",
-   "ancho": 1050,
-   "alto": 1312,
-   "alt": "Portada de Tonela: ocho bandas verticales de colores, cada una con su tonelaje, y la etiqueta cosida de la marca.",
-   "altDe": "prototipo de A (proto/a), revisado mirando la imagen"
-  },
   "chequeo-43": {
    "src": "/v3/medios/chequeo-43.webp",
    "ancho": 1050,
    "alto": 788,
    "alt": "La página del chequeo en spindlelab.cl: «¿Te puede leer la IA?», el campo para el dominio y el botón «Revisar mi sitio».",
    "altDe": "prototipo de A (proto/a), revisado mirando la imagen"
-  },
-  "spindlelab-privacidad-53": {
-   "src": "/v3/medios/spindlelab-privacidad-53.webp",
-   "ancho": 1050,
-   "alto": 630,
-   "alt": "La página de privacidad de spindlelab.cl a 1440: «Política de privacidad», «Qué hacemos con tus datos» y, abajo, el aviso que pregunta si aceptas Google Analytics y Meta Pixel.",
-   "altDe": "Diego, tanda 2, mirando la captura (captura nueva: desvios.md, tanda 2)"
-  },
-  "combeau-galeria-169": {
-   "src": "/v3/medios/combeau-galeria-169.webp",
-   "ancho": 1600,
-   "alto": 900,
-   "alt": "La galería de retratos del sitio de Bernardo Combeau a 1440: Modelos, Corporativos y Retratos masculinos, cada una con su foto y los años de la serie.",
-   "altDe": "prototipo de A (proto/a), revisado mirando la imagen; «sus años» pasa a «los años de la serie» (son las fechas de cada galería, no una edad: spec §6.10)"
-  },
-  "praxi-numeros-169": {
-   "src": "/v3/medios/praxi-numeros-169.webp",
-   "ancho": 1600,
-   "alto": 900,
-   "alt": "Captura de la portada de Praxi: cuatro gráficos de progreso con cifras de ejemplo.",
-   "altDe": "Clara, texto-obra.json caso-praxi, medios de «Solución»"
   },
   "verifica-y-cumple-12-169": {
    "src": "/v3/medios/verifica-y-cumple-12-169.webp",
@@ -134,14 +64,6 @@
    "alt": "La página del chequeo en spindlelab.cl: «¿Te puede leer la IA?», el campo para el dominio y el botón «Revisar mi sitio».",
    "altDe": "el de chequeo-43 (la misma captura, el mismo encuadre)",
    "de": "La franja de Visibilidad en IA desde 834 (tanda 4): el centro a 2,39 de chequeo-43, sacado a 1920 de la misma captura a 2× del 17-oct con e12/construccion/herramientas/franjas-tanda-4.py"
-  },
-  "verifica-y-cumple-239": {
-   "src": "/v3/medios/verifica-y-cumple-239.webp",
-   "ancho": 1920,
-   "alto": 804,
-   "alt": "La portada de verifica.spindlelab.cl: «¿Estás seguro?» en letras enormes, blanco y lima sobre azul, y una persona de traje y sombrero rosados que lee un papel, a caballo.",
-   "altDe": "el de verifica-y-cumple-53 (la misma captura, el mismo encuadre)",
-   "de": "La franja de Auditoría SEO técnica desde 834 (tanda 4): el centro a 2,39 de verifica-y-cumple-53, sacado a 1920 de la misma captura a 2× del 17-oct con e12/construccion/herramientas/franjas-tanda-4.py"
   }
  }
 }

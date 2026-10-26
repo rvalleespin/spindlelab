@@ -4,10 +4,8 @@
 //     Así el documento queda en el orden de Clara (el teclado y el lector de pantalla lo recorren así) y las columnas
 //     se ven como el muro de Koto. Sin JS, cada pieza en la columna que le tocó en el build (data-col) y las filas
 //     alineadas. Bajo 834, una columna.
-//   · El filtro filtra de verdad: esconde las piezas de otro tipo, dice cuál está activo (aria-pressed) y vuelve a
-//     repartir el muro.
+//   · E13: el filtro por tipo se sacó (con dos entradas, Cliente 1 y Propio 1, no filtraba nada); con él, esconder piezas.
 const muro = document.querySelector('[data-muro]');
-const filtro = document.querySelector('[data-filtro]');
 if (muro) {
   const piezas = [...muro.querySelectorAll('.pieza')];
   const dos = window.matchMedia('(min-width: 834px)');
@@ -20,10 +18,9 @@ if (muro) {
       piezas.forEach((p) => { p.style.gridColumn = ''; });
       return;
     }
-    const visibles = piezas.filter((p) => !p.hidden);
-    const altos = visibles.map((p) => p.getBoundingClientRect().height);
+    const altos = piezas.map((p) => p.getBoundingClientRect().height);
     const cols = [0, 0];
-    visibles.forEach((p, i) => {
+    piezas.forEach((p, i) => {
       const c = cols[0] <= cols[1] ? 0 : 1;
       const filas = Math.ceil(altos[i]) + SEPARACION;
       p.style.gridColumn = String(c + 1);
@@ -41,14 +38,4 @@ if (muro) {
     pendiente = requestAnimationFrame(armar);
   });
   if (dos.addEventListener) dos.addEventListener('change', armar);
-
-  if (filtro) {
-    const botones = [...filtro.querySelectorAll('button[data-tipo]')];
-    botones.forEach((b) => b.addEventListener('click', () => {
-      const tipo = b.dataset.tipo;
-      botones.forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
-      piezas.forEach((p) => { p.hidden = !(tipo === 'todo' || p.dataset.tipo === tipo); });
-      armar();
-    }));
-  }
 }

@@ -58,8 +58,10 @@ const largos = (title, description, donde) => {
     throw new Error(`${donde}: title (${title.length}) o description (${description.length}) fuera de los largos de senales-obra.md §1.2`);
   }
 };
-// La imagen al compartir de E13 es la del mensaje nuevo (la de E12 traía el h1 anterior horneado en la imagen).
-const OG = { src: '/assets/img/og-posicionamiento.jpg?v=1', alt: 'SpindleLab. Marketing y crecimiento con IA' };
+// La imagen al compartir de cada página es og-e12-<id>.jpg, con el h1 de la página escrito en la imagen (regeneradas en
+// E13 con el h1 nuevo, en la plantilla de A: el negro, Google Sans Flex, tinta y gris). El alt dice el titular de la
+// imagen. ?v=2: cada nombre se sobrescribe y los activos se cachean fuerte (CLAUDE.md, trampa de caché).
+const ogDe = (id, h1) => ({ src: `/assets/img/og-e12-${id}.jpg?v=2`, alt: `SpindleLab: ${typeof h1 === 'string' ? h1 : `${h1.tinta} ${h1.gris}`}` });
 const boton = (e, clase) => ({ texto: e.texto, href: e.destino, clase });
 
 // ================================================================= /v3/metodo/ (spec §2.4; Simón §2.8)
@@ -121,7 +123,7 @@ export function metodo() {
     ],
   };
   return {
-    title, description, jsonLd, og: OG,
+    title, description, jsonLd, og: ogDe('metodo', h1),
     miga, h1, linea, nota, botones,
     fases: { h2: t('metodo.pasos.h2').texto, cuesta: t('metodo.pasos.cuesta').texto, lista: fases },
     reglas: { h2: t('metodo.reglas.h2').texto, lista: reglas },
@@ -225,7 +227,7 @@ export function diagnostico() {
     ],
   };
   return {
-    title, description, jsonLd, og: OG,
+    title, description, jsonLd, og: ogDe('diagnostico', h1),
     miga, h1, linea, chequeo,
     veintiuno: { h2: t('diagnostico.veintiuno.h2').texto, chico: t('diagnostico.veintiuno.chico').texto, linea: linea21, bloques },
     noMide, dosCaminos, laLey,
@@ -292,7 +294,7 @@ export function nosotros() {
     ],
   };
   return {
-    title, description, jsonLd, og: OG,
+    title, description, jsonLd, og: ogDe('nosotros', h1),
     miga, h1, linea: t('nosotros.linea').texto, alt: t('nosotros.retrato').texto,
     botones: [boton(t('nosotros.boton1'), 'claro')],
     bio: t('nosotros.bio').texto, firma, trayectoria, como, cierre,
@@ -361,7 +363,7 @@ export function contacto() {
     ],
   };
   return {
-    title, description, jsonLd, og: OG,
+    title, description, jsonLd, og: ogDe('contacto', h1),
     miga, h1, linea, form, consiento, despues,
     preguntas: { h2: t('contacto.antes.h2').texto, lista: s.faq },
   };
