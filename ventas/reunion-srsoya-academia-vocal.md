@@ -1,5 +1,27 @@
 # Reunión con Carlos: la academia vocal
 
+> ## 📅 AGENDADA: miércoles 28 de octubre, 16:00 (hora Chile)
+>
+> Carlos la aceptó el 24-oct: *«Dale me parece. Me gustaría que **si o si** lo viéramos en una
+> reunión. El miércoles 28 a las 16:00hrs me queda súper bien.»*
+>
+> **Ese "si o si" es el dato de la respuesta.** No va a comprometerse por correo. La reunión es
+> donde se cierra o no se cierra.
+>
+> **Lo que NO respondió:** ninguna de las tres preguntas, ni la fecha del 2 de noviembre, ni nada
+> del pago. «Dale me parece» no es un sí a nada concreto.
+>
+> ### Cambios desde que se escribió este guion
+>
+> | Qué | Estado |
+> |---|---|
+> | **El IVA** | ✅ Resuelto y fuera de la mesa. Va con **boleta de honorarios**, sin IVA: **$300.000 al mes**. Se corrige por correo antes de la reunión |
+> | **La fecha de inicio** | Propuesta: **lunes 2 de noviembre**. Sin confirmar. Es lo primero que hay que cerrar |
+> | **La cotización** | `SPL-COT-2026-016` corregida en el repo. **El PDF que Carlos tiene es el del 20-oct, con las cifras viejas.** Llevar la corregida |
+> | **El pago** | Nunca ha pagado. Es el punto que decide si esto existe |
+
+
+
 - **Para qué es:** cerrar la cotización `SPL-COT-2026-016`, repasar los riesgos de frente, y salir
   con la lista de accesos y de material pedida. **Media hora alcanza si se sigue el orden.**
 - **Documentos sobre la mesa:** `SPL-COT-2026-016` (la cotización) y `SPL-NT-2026-002` (el embudo

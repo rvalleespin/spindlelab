@@ -288,6 +288,31 @@ El correo propone **media hora** para repasar riesgos, material y accesos. Guió
 preguntas de cada riesgo y las cinco decisiones que deben salir cerradas, en
 `ventas/reunion-srsoya-academia-vocal.md`.
 
+## Estado al 26-oct-2026
+
+**Carlos respondió el sábado 24-oct 14:59 UTC**, mensaje `1a16e6c66bff3c47`. Cuatro líneas:
+
+> «Dale me parece. Me gustaría que **si o si** lo viéramos en una reunión. El **miércoles 28 a las
+> 16:00hrs** me queda súper bien. Ahí vemos los detalles!»
+
+**Cómo leerlo:**
+
+- ✅ **Acepta reunirse**, y toma uno de los dos horarios que se le ofrecieron.
+- ⚠️ **«Dale me parece» no es un sí a nada concreto.** No confirmó la fecha de inicio del 2-nov, no
+  dijo nada del pago, y no respondió ninguna de las tres preguntas.
+- ⚠️ **El «si o si» importa:** no se va a comprometer por correo. **La reunión del 28 es donde esto
+  se cierra o no se cierra.**
+- ⚠️ **Respondió al correo que le pedía $338.000**, porque la corrección del IVA nunca salió. Sigue
+  con esa cifra en la cabeza.
+
+**Pendiente antes del miércoles:**
+
+- [ ] **Enviar la corrección del IVA.** Borrador `r1955864075021416110`, en el hilo. Confirma la
+      hora, baja de $338.000 a $300.000 y le pide las tres respuestas para llegar preparado.
+- [ ] **Crear el evento de calendario** con el enlace de Meet e invitarlo. Queda para Ramón.
+- [ ] Repasar `ventas/reunion-srsoya-academia-vocal.md`, que ya está actualizado con lo que cambió.
+- [ ] Llevar el PDF corregido de `SPL-COT-2026-016`.
+
 ## Estado al 23-oct-2026
 
 **Correo enviado**, mensaje `1a16a35d15a872b7`, 23-oct 19:21 UTC, en el hilo. Es el que aterriza los
