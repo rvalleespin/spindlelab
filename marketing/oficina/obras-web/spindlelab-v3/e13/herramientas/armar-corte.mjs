@@ -50,7 +50,6 @@ const DE_MAIN = [
   'spindlelab-astro/public/js',
   'spindlelab-astro/public/privacidad',
   'spindlelab-astro/public/404.html',
-  'spindlelab-astro/public/robots.txt',
   'spindlelab-astro/public/assets/css/style.css',
   'spindlelab-astro/public/assets/js/site-header.js',
 ];
