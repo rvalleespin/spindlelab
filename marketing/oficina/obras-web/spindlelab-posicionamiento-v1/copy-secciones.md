@@ -142,10 +142,10 @@ Cinco. Cuatro salen de lo que suelen preguntar los prospectos (precio, qué nece
 
 | Pieza | Texto nuevo |
 |---|---|
-| Título del home | SpindleLab · Marketing y crecimiento con IA en Chile |
+| Título del home | SpindleLab · Marketing y crecimiento con IA |
 | Meta description del home | Marketing y crecimiento con IA para empresas que ya venden. Revisión gratis de una página y propuesta por escrito, con alcance, plazos y precio. |
 | Texto alternativo de la imagen social | SpindleLab. Marketing y crecimiento con IA |
-| JSON-LD, descripción de la organización | Marketing y crecimiento con IA para empresas en Chile: revisión del sitio y de la presencia en IA, implementación por fases y acompañamiento mensual. |
+| JSON-LD, descripción de la organización | Marketing y crecimiento con IA para empresas: revisión del sitio y de la presencia en IA, implementación por fases y acompañamiento mensual. |
 | JSON-LD, cargo de Ramón | Consultor de marketing y crecimiento con IA |
 | Pie, línea de marca | Marketing y crecimiento con IA para empresas que ya venden. |
 | Pie, barra inferior | © 2026 SpindleLab · Chile |
