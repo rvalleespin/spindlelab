@@ -85,7 +85,7 @@ Se conservan: el hilo de oro de la portada, el logo El huso, el retrato de Ramó
 5. **Barrido de términos** sobre todo lo que se publica (texto visible, atributos, JSON-LD, `llms.txt`, `paginas-v3.json`, `interiores.mjs`, `layout-a.ts`, `v3-chequeo.js`, imagen al compartir): cero «mini-diagnóstico», «diagnóstico gratis», «24 horas», «partners», «motor», «más elegido», «agentes de IA» fuera de «Quién está detrás», «compromiso» de puntaje, «quincenal» de monitoreo y los demás de la sección 6.
 6. **Precios** de las seis páginas de servicio y de la home idénticos a `origin/main`, con «desde» y «+ IVA».
 7. **UTM:** una visita con `?utm_source=…&utm_medium=…&utm_campaign=…` a la home o a un servicio, que llega a `/contacto/` por clic o por el chequeo, deja los tres campos ocultos llenos (hoy llega vacío).
-8. **Peso:** la home carga menos de 1,5 MB a 1440 y el árbol que se corta a `main` no suma archivos sin uso (`public/v3/` medido antes y después).
+8. **Peso:** la home carga menos de 1,5 MB a 1440 en la primera carga y recorrida entera no pasa de 1,6 MB (con el video completo de la portada, 1.002 kB), y el árbol que se corta a `main` no suma archivos sin uso (`public/v3/` medido antes y después). [Aclarado el 26-oct al ver la medición de Lucía y de Diego: 1.382 kB la primera carga y 1.541 kB recorrida; el criterio original no decía si «carga» era la primera carga o la página entera, y se declara en el acta con las dos cifras.]
 9. **Chequeo propio** (`chequear()` de `functions/api/chequeo.js` sobre el build local): la home saca lo mismo o más que el 83 del v3 del 16-oct.
 10. **Detector anti-slop** (`estudio-web/antislop-web.md` y `refero-design/references/anti-ai-slop.md`) corrido entero por Javiera, en subagente limpio, máximo dos rondas.
 11. **Cero** rayas largas o medias, Title Case, «¿Listo para…?» y «en Chile» de relleno en lo que ve el público.
@@ -102,4 +102,9 @@ Código en la rama con commit y push por fase · `texto/texto-obra.json` (Clara)
 
 ## 10 · Historial de correcciones
 
-(vacío al abrir la obra)
+| Fecha | Qué cambió | Por qué |
+|---|---|---|
+| 26-oct | Se construye y se mide bajo `/v3/`; **antes de la QA se convierte a raíz** (`herramientas/convertir-a-raiz.mjs`) y la QA audita el sitio ya en la raíz. | Lo que Javiera mide tiene que ser lo que se publica. El script queda ensayado y documentado en la lista de publicación. |
+| 26-oct | Criterio 8 (peso) aclarado: primera carga y recorrida. | Ver el criterio. |
+| 26-oct | Los seis rótulos mono de sección de la home (El problema, Método SpindleLab…) **no se pintan**. | El texto de Clara no les dio id y la spec dice que sin ellos el layout no cambia. Es una decisión de oficio de la orquestadora, no una regla del detector (que no los menciona): con ellos, la home tendría seis etiquetas mono más sobre los títulos. Si Ramón los quiere, es agregar seis ids y no se toca la plantilla. |
+| 26-oct | Sale de la rama lo que ningún archivo vivo usa: `public/assets/img/d/`, `public/assets/img/obra/` y los medios del v2 (12 MB). | Peso del repositorio y de lo que se publica. Queda en el historial de git. |
