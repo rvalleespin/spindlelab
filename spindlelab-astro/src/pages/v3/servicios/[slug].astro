@@ -17,7 +17,7 @@
 //
 // LAS SEÑALES (Simón, senales-obra.md §2.7): title y description de Clara, que son los de Simón; el grafo de hoy queda
 // (Service con su OfferCatalog, BreadcrumbList igual a la miga, FAQPage con las preguntas a la vista), y la description
-// del Service pasa a ser la de la página. Imagen al compartir: og-e12-<slug>.jpg (og-tanda-4.mjs).
+// del Service pasa a ser la de la página. Imagen al compartir: og-e12-<slug>.jpg?v=2 (og-tanda-4.mjs, regeneradas en la obra E13 con el h1 nuevo).
 import Layout from '../../../layouts/Layout.astro';
 import PaginaA from '../../../components/a/PaginaA.astro';
 import Miga from '../../../components/a/Miga.astro';
@@ -28,7 +28,6 @@ import { SITIO, siguiente, soloMontosDe } from '../../../data/archivo/servicios.
 import comun from '../../../data/archivo/texto/comun.json';
 import textoServicios from '../../../data/archivo/texto/servicios.json';
 import dw from '../../../data/archivo/texto/desarrollo-web.json';
-import trabajo from '../../../data/archivo/texto/trabajo.json';
 import via from '../../../data/archivo/texto/visibilidad-en-ia.json';
 import aud from '../../../data/archivo/texto/auditoria-seo-tecnica.json';
 import aco from '../../../data/archivo/texto/acompanamiento-mensual.json';
@@ -107,7 +106,7 @@ const notaPlanesHtml: string = secPlanes?.nota ? enlaza(comillas(secPlanes.nota)
 const bloquesHtml: string[] = (secBloques?.bloques ?? []).map((b: any) => enlaza(comillas(b.d)));
 const faqHtml: string[] = faq.map((f) => enlaza(f.r));
 
-// Los bloques en la forma de las fases: la marca (Sí/No, A–D, S1–S4, 01–04) delante del título, como «01 ·
+// Los bloques en la forma de las fases: la marca (Sí/No, A a D, S1 a S4, 01 a 04) delante del título, como «01 ·
 // Descubrimiento» en Desarrollo web. Si son pasos en orden van en una lista ordenada y la marca no se lee; si traen su
 // lectura (Sí → «Prometemos:», S1 → «Semana 1:»), se lee esa.
 const SECUENCIA = new Set(['acompanamiento-mensual', 'redes-sociales', 'paid-media']);
@@ -118,12 +117,6 @@ const ListaBloques = enOrden ? 'ol' : 'ul';
 
 // ---- La franja (§2.4)
 const m = medios.medios as Record<string, { src: string; ancho: number; alto: number; alt: string }>;
-const entradas = trabajo.texto.entradas as { id: string; nombre: string; linea: string }[];
-const entrada = (id: string) => {
-  const e = entradas.find((x) => x.id === id);
-  if (!e) throw new Error(`${slug}: la entrada «${id}» no está en trabajo.entradas`);
-  return e;
-};
 // La imagen de la spec va bajo 834 (16:9, recortada al centro: 1050 px alcanzan). Desde 834, el mismo centro a 2,39
 // sacado a 1920 de la misma captura (franjas-tanda-4.py): el de 1050 se veía agrandado 1,34 veces a 1440.
 type Medio = { src: string; ancho: number; alto: number };
@@ -132,20 +125,23 @@ if (slug === 'visibilidad-en-ia') {
   // El alt de Clara («… con el resultado de un sitio en pantalla») describe un resultado que el archivo de la spec no
   // muestra: chequeo-43 es la primera pantalla del chequeo, sin resultado. Va el alt que se escribió mirando ese archivo
   // (medios.json, tanda 2). desvios.md, tanda 4.
-  franja = { medio: m['chequeo-43'], ancha: m['chequeo-239'], alt: m['chequeo-43'].alt, pieza: entrada('chequeo') };
+  // El pie (nombre y línea) es de Clara, aquí: la entrada «chequeo» ya no está en el índice de /trabajo/ (obra E13).
+  const pie = t('visibilidad-en-ia.franja.pie') as { tinta: string; gris: string };
+  franja = { medio: m['chequeo-43'], ancha: m['chequeo-239'], alt: m['chequeo-43'].alt, pieza: { nombre: pie.tinta, linea: pie.gris } };
 }
 // Auditoría SEO técnica no lleva franja desde el 23-oct (spec §2.4, §3.4 y §0.4, punto 14; acta de la obra, vuelta 1,
 // defecto 3): era Verifica y Cumple, y todas sus capturas son un campo de color con la regla 2 de §3.4 (la franja, 42,4 %
 // de azul). Queda como Acompañamiento mensual: la cabecera y después las secciones. El alt y el pie que Clara le escribió
 // a esa franja quedan sin uso.
 
-// ---- Los botones y «Siguiente». Los de la cabecera y del cierre son los de hoy (Clara: «quedan tal cual»): «Ver
-// planes» y «Correr el chequeo» solo existían en la página anterior; «Escríbenos», «Pedir el diagnóstico» y «Siguiente»
-// son los mismos textos de Clara en el menú, en /servicios/ y en Desarrollo web.
+// ---- Los botones y «Siguiente». «Ver planes» solo existía en la página anterior; «Escríbenos» es el del menú. Obra E13:
+// el botón principal del cierre dice qué se pide en cada servicio (Clara, `<slug>.cierre.boton`: «Pedir la revisión de mi
+// sitio», «Pedir la auditoría», «Conversar mi caso»), y el chequeo pasa a ser el botón secundario («Chequear mi sitio
+// ahora», el mismo de /servicios/ y de la portada). Los dos van a /v3/contacto/ y /v3/diagnostico/.
 const VER_PLANES = 'Ver planes';
-const CORRER_CHEQUEO = 'Correr el chequeo';
 const escribenos = t('comun.nav.escribenos').texto;
-const pedir = t('servicios.chequeo.boton2').texto;
+const pedir = t(`${slug}.cierre.boton`);
+const chequeo = t('servicios.cierre.boton2');
 // El chequeo en el cierre, como hoy: no en Redes ni en Paid Media (el chequeo lee el sitio para la IA, que no es lo que
 // esos dos servicios trabajan)
 const cierreChequeo = !['redes-sociales', 'paid-media'].includes(slug);
@@ -180,7 +176,7 @@ const jsonLd = {
     },
   ],
 };
-const og = { src: `/assets/img/og-e12-${slug}.jpg?v=1`, alt: `SpindleLab: ${h1.tinta} ${h1.gris}` };
+const og = { src: `/assets/img/og-e12-${slug}.jpg?v=2`, alt: `SpindleLab: ${h1.tinta} ${h1.gris}` };
 ---
 <Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <meta slot="head" name="robots" content="noindex, nofollow" />
@@ -215,7 +211,7 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=1`, alt: `SpindleLab: ${h1.t
       </figure>
     )}
 
-    {/* 3 · LO QUE INCLUYE (lista, c5–c12) */}
+    {/* 3 · LO QUE INCLUYE (lista, c5 a c12) */}
     {secIncluye && (
       <section class="seccion reticula" aria-labelledby="h-incluye">
         <div class="int-sec__cab"><h2 class="t-declaracion" id="h-incluye">{secIncluye.h2}</h2></div>
@@ -227,7 +223,7 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=1`, alt: `SpindleLab: ${h1.t
       </section>
     )}
 
-    {/* 4 · PLANES (c5–c16): los planes y, debajo, el compromiso y la nota */}
+    {/* 4 · PLANES (c5 a c16): los planes y, debajo, el compromiso y la nota */}
     {secPlanes && (
       <section class="seccion reticula" id="planes" aria-labelledby="h-planes">
         <div class="int-sec__cab"><h2 class="t-declaracion" id="h-planes">{secPlanes.h2}</h2></div>
@@ -249,7 +245,7 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=1`, alt: `SpindleLab: ${h1.t
       </section>
     )}
 
-    {/* 5 · LOS BLOQUES, en la forma de las fases (c5–c12) */}
+    {/* 5 · LOS BLOQUES, en la forma de las fases (c5 a c12) */}
     {secBloques && (
       <section class="seccion reticula" aria-labelledby="h-bloques">
         <div class="int-sec__cab"><h2 class="t-declaracion" id="h-bloques">{secBloques.h2}</h2></div>
@@ -268,7 +264,7 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=1`, alt: `SpindleLab: ${h1.t
       </section>
     )}
 
-    {/* 6 · PREGUNTAS (c5–c12) */}
+    {/* 6 · PREGUNTAS (c5 a c12) */}
     {faq.length > 0 && (
       <section class="seccion reticula" aria-labelledby="h-faq">
         <div class="int-sec__cab"><h2 class="t-declaracion" id="h-faq">{hFaq}</h2></div>
@@ -286,8 +282,8 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=1`, alt: `SpindleLab: ${h1.t
         {secCierre && <h2 class="t-declaracion" id="h-cierre">{secCierre.h2}</h2>}
         {secCierre?.parrafos?.[0] && <p class="cuerpo">{secCierre.parrafos[0]}</p>}
         <div class="botones">
-          <a class="boton boton--claro" href="/v3/contacto/">{pedir}<Icono nombre="flecha" /></a>
-          {cierreChequeo && <a class="boton boton--placa" href="/v3/diagnostico/">{CORRER_CHEQUEO}</a>}
+          <a class="boton boton--claro" href={pedir.destino}>{pedir.texto}<Icono nombre="flecha" /></a>
+          {cierreChequeo && <a class="boton boton--placa" href={chequeo.destino}>{chequeo.texto}</a>}
         </div>
         <div class="int-siguiente">
           <p class="rotulo">{rotuloSiguiente}</p>

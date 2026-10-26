@@ -1,12 +1,12 @@
 ---
-// NOSOTROS SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 5). Diego, 19-oct-2026.
+// NOSOTROS SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 5; reescrito en la obra E13, 26-oct-2026).
 //
-// Contrato: spindlelab-v3/spec-visual.md §2.4, fila «/v3/nosotros/»: cabecera; el retrato 3:4 de Ramón en c1–c5 junto
-// a la bio (c7–c14), como «Quién está detrás» de la home pero a la escala de la página; «Por qué un solo sistema» y
-// «Cómo trabajo» como secciones; el cierre. El texto de la bio, tal cual (R4). Sin franja: el retrato es la imagen.
-// Lo que la spec no cubría está en spindlelab-v3/desvios.md, tanda 5.
+// Contrato: spindlelab-v3/spec-visual.md §2.4, fila «/v3/nosotros/»: cabecera; el retrato 3:4 de Ramón en c1-c5 junto
+// a la bio (c7-c14), como «Quién está detrás» de la home pero a la escala de la página; «Cómo trabajo» como sección;
+// el cierre. Sin franja: el retrato es la imagen. En E13 se saca «Por qué un solo sistema» (subordinaba redes y pauta
+// al sitio): la página queda con la bio, la trayectoria, las tres reglas de Ramón y el cierre, todo en su singular.
 //
-// El texto lo arma nosotros() en interiores.mjs (lo de Clara y lo que queda tal cual). Señales de Simón,
+// El texto lo arma nosotros() en interiores.mjs, desde texto/nosotros.json (Clara). Señales de Simón,
 // senales-obra.md §2.10; el jobTitle de #autor-ramon lo pone el Layout con la prop de layout-a.ts.
 import Layout from '../../layouts/Layout.astro';
 import PaginaA from '../../components/a/PaginaA.astro';
@@ -24,7 +24,7 @@ const retrato = medios.medios['ramon-vallejos-34'];
   <meta slot="head" name="robots" content="noindex, nofollow" />
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
   <PaginaA>
-    {/* 1 · CABECERA (§2.4.1): el h1 de Ramón en una sola tinta (R4, Clara) */}
+    {/* 1 · CABECERA (§2.4.1): el h1 de Ramón en una sola tinta (Clara) */}
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: m.miga[0], href: '/v3/' }, { texto: m.miga[1] }]} />
       <h1 class="t-declaracion" id="h-titulo">{m.h1}</h1>
@@ -34,7 +34,7 @@ const retrato = medios.medios['ramon-vallejos-34'];
       </div>
     </section>
 
-    {/* 2 · EL RETRATO Y LA BIO: el retrato 3:4 entero en c1–c5, la bio en c7–c14 apoyada abajo */}
+    {/* 2 · EL RETRATO Y LA BIO: el retrato 3:4 entero en c1-c5, la bio en c7-c14 apoyada abajo */}
     <section class="seccion reticula quien" aria-labelledby="h-trayectoria">
       <div class="quien__retrato" data-entrada>
         <Imagen src={retrato.src} alt={m.alt} ancho={retrato.ancho} alto={retrato.alto} clase="p-34" primeraPantalla />
@@ -49,15 +49,7 @@ const retrato = medios.medios['ramon-vallejos-34'];
       </div>
     </section>
 
-    {/* 3 · POR QUÉ UN SOLO SISTEMA (c5–c12) */}
-    <section class="seccion reticula" aria-labelledby="h-sistema">
-      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-sistema">{m.sistema.h2}</h2></div>
-      <div class="int-sec__cuerpo">
-        {m.sistema.parrafos.map((p) => <p class="cuerpo caja">{p}</p>)}
-      </div>
-    </section>
-
-    {/* 4 · CÓMO TRABAJO (lista, c5–c12) */}
+    {/* 3 · CÓMO TRABAJO: las tres reglas (lista, c5-c12) */}
     <section class="seccion reticula" aria-labelledby="h-como">
       <div class="int-sec__cab"><h2 class="t-declaracion" id="h-como">{m.como.h2}</h2></div>
       <ul class="int-sec__cuerpo int-lista">
@@ -65,11 +57,10 @@ const retrato = medios.medios['ramon-vallejos-34'];
       </ul>
     </section>
 
-    {/* 5 · CIERRE (§2.4.4) y «Siguiente · Método» */}
+    {/* 4 · CIERRE (§2.4.4) y «Siguiente · Método» */}
     <section class="seccion reticula" aria-labelledby="h-cierre">
       <div class="cierre">
         <h2 class="t-declaracion" id="h-cierre">{m.cierre.h2}</h2>
-        <p class="chico">{m.cierre.bajada}</p>
         <p class="cuerpo">{m.cierre.p}</p>
         <div class="botones">
           {m.cierre.botones.map((b, i) => <a class={`boton boton--${b.clase}`} href={b.href}>{b.texto}{i === 0 && <Icono nombre="flecha" />}</a>)}

@@ -24,7 +24,7 @@ const {
   etiqueta = 'La dirección de tu sitio',
   ejemplo = 'tuempresa.cl',
   boton = 'Revisar mi sitio',
-  ayuda = 'Mira 21 cosas de tu sitio, gratis y sin pedirte el correo. No guardamos la dirección que escribes. Si construimos tu sitio, le pasamos este chequeo antes de entregártelo.',
+  ayuda = 'Mira 21 cosas de tu sitio, gratis y sin pedirte el correo. No guardamos la dirección que escribes.',
   tituloResultado,
 } = Astro.props;
 ---
@@ -43,4 +43,4 @@ const {
   {tituloResultado && <h2 class="solo-lector chequeo__titulo-res">{tituloResultado}</h2>}
   <div id="chq-out" aria-live="polite"></div>
 </div>
-<script is:inline src="/assets/js/v3-chequeo.js?v=3" defer></script>
+<script is:inline src="/assets/js/v3-chequeo.js?v=4" defer></script>

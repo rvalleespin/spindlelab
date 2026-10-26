@@ -82,7 +82,7 @@
      único paso de conversión del camino de error (WCAG 1.4.1). Papel con subrayado de
      1 px, como los enlaces en texto corrido del resto del sitio.
    · Las marcas de estado (✓ ✕ ?) con el radio del sistema y no en círculo (manual §07).
-   · «Pedir el diagnóstico» también dentro de .chq-score, junto al veredicto: quien ve su
+   · El botón que pide la revisión también va dentro de .chq-score, junto al veredicto: quien ve su
      puntaje tiene el paso siguiente a la vista, sin bajar los 21 ítems. Reusa .chq-ramas
      (mismo botón de 36 px); aquí solo pierde el margen de arriba y no se estira. */
 .d-body .chq-error a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }

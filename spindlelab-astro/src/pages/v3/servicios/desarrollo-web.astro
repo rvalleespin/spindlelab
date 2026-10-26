@@ -6,12 +6,12 @@
 // prototipo (tableros/e12-direcciones/proto/a/servicios/desarrollo-web/); donde difieren, manda la spec. Lo que la spec
 // no cubría está en spindlelab-v3/desvios.md, tanda 4.
 //
-// En orden: cabecera; franja; «En todos los planes» (lista); «Lo que construimos» (tres portadas 4:5 en c5–c16, con el
+// En orden: cabecera; franja; «En todos los planes» (lista); «Lo que construimos» (dos portadas 4:5 en c5 a c16, con el
 // círculo del cursor); el glosario y los cuatro planes; «Cinco fases» (la fase a la vista pasa del gris al blanco:
 // fases.mjs); preguntas; cierre con «Siguiente».
 //
 // El texto es de Clara, tal cual (src/data/archivo/texto/desarrollo-web.json). Los planes salen tal cual de
-// oferta-v3.json (momentos[0].planes: nombre, precio, línea y puntos), comparados con la lista de Clara; las tres piezas,
+// oferta-v3.json (momentos[0].planes: nombre, precio, línea y puntos), comparados con la lista de Clara; las dos piezas,
 // de las entradas de /trabajo/ (trabajo.json); los medios, de medios.json. Todo monto a la vista se compara con los JSON
 // (servicios.mjs). Las señales son de Simón, e12/senales-obra.md §2.7: el grafo de hoy queda (Service con su
 // OfferCatalog de cuatro planes y minPrice en CLP sin IVA, BreadcrumbList igual a la miga y FAQPage con las preguntas a
@@ -39,7 +39,7 @@ const RUTA = '/v3/servicios/desarrollo-web/';
 
 // ---- Cabecera
 const miga = t('dw.miga').opciones as string[];
-igualQue(miga.join(' · '), 'Inicio · Servicios · Desarrollo web', 'desarrollo web, la miga');
+igualQue(miga.join(' · '), 'Inicio · Soluciones · Desarrollo web', 'desarrollo web, la miga');
 const entradilla = t('dw.entradilla');
 soloMontosDe(entradilla.texto, 'desarrollo-web', 'desarrollo web, la entradilla');
 const trozosEntradilla = trozos(entradilla.texto, entradilla.enlaces);
@@ -50,7 +50,7 @@ const aPlanes = bPlanes.destino.startsWith('#') ? `${RUTA}${bPlanes.destino}` : 
 
 // ---- La franja (§2.4, §3.4): Combeau fotografía, recortada al centro; su alt, el de Clara para la franja. Debajo, el
 // nombre de la pieza y su línea, los de su entrada de /trabajo/ (como el pie de la franja del prototipo).
-const entradas = trabajo.texto.entradas as { id: string; nombre: string; bajada: string; linea: string; destino: string; cursor: string }[];
+const entradas = trabajo.texto.entradas as { id: string; nombre: string; bajada: string; linea: string; destino: string; cursor: string; pie?: string }[];
 const entrada = (id: string) => {
   const e = entradas.find((x) => x.id === id);
   if (!e) throw new Error(`desarrollo web: la entrada «${id}» no está en trabajo.entradas`);
@@ -64,15 +64,17 @@ const incluye = ['1', '2', '3', '4', '6', '7'].map((n) => {
   return trozos(e.texto, e.enlaces);
 });
 
-// ---- Lo que construimos: las tres entradas que nombra Clara, con su destino de A
+// ---- Lo que construimos (obra E13): las dos entradas que quedan en /trabajo/, Combeau y Verifica y Cumple, con su destino
+// de A. Verifica y Cumple es un sitio aparte: lleva la flecha ↗, el aviso para el lector de pantalla y el pie de la persona
+// generada con IA, como en el muro.
 const obra = [
   { id: 'combeau-fotografia', medio: m['combeau-fotografia-45'] },
-  { id: 'praxi', medio: m['praxi-45'] },
-  { id: 'sesenta', medio: m['sesenta-45'] },
+  { id: 'verifica-y-cumple', medio: m['verifica-y-cumple-45'] },
 ].map((p) => ({ ...p, e: entrada(p.id) }));
 const refObra = t('dw.obra.entradas').texto;
 for (const p of obra) contiene(refObra, p.e.destino, `desarrollo web, destino de «${p.e.nombre}»`);
 const bObra = t('dw.obra.boton');
+const externo = t('comun.externo').texto as string;
 
 // ---- Planes: tal cual de oferta-v3.json, comparados con la lista de Clara
 const planes = oferta.momentos[0].planes;
@@ -93,7 +95,7 @@ const fases = [1, 2, 3, 4, 5].map((n) => {
 });
 
 // ---- Preguntas
-const preguntas = [1, 2, 3, 4, 5, 6].map((n) => ({ p: t(`dw.faq.${n}.p`).texto, r: t(`dw.faq.${n}.r`).texto }));
+const preguntas = [1, 2, 3, 4, 5].map((n) => ({ p: t(`dw.faq.${n}.p`).texto, r: t(`dw.faq.${n}.r`).texto }));
 soloMontosDe(preguntas.map((q) => q.r).join(' '), 'desarrollo-web', 'desarrollo web, las preguntas');
 
 // ---- Cierre y «Siguiente» (el de Clara, que es el que sigue en el orden de servicios.mjs). La flecha del texto de
@@ -160,7 +162,7 @@ const jsonLd = {
     },
   ],
 };
-const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=1', alt: `SpindleLab: ${dos('dw.h1').tinta} ${dos('dw.h1').gris}` };
+const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=2', alt: `SpindleLab: ${dos('dw.h1').tinta} ${dos('dw.h1').gris}` };
 ---
 <Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <meta slot="head" name="robots" content="noindex, nofollow" />
@@ -183,7 +185,7 @@ const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=1', alt: `SpindleLab:
       <figcaption class="pie"><span class="tinta">{franja.pieza.nombre}</span> <span class="rotulo">· {franja.pieza.linea}</span></figcaption>
     </figure>
 
-    {/* 3 · EN TODOS LOS PLANES (lista, c5–c12) */}
+    {/* 3 · EN TODOS LOS PLANES (lista, c5 a c12) */}
     <section class="seccion reticula" aria-labelledby="h-incluye">
       <div class="int-sec__cab">
         <h2 class="t-declaracion" id="h-incluye"><span class="tinta">{dos('dw.incluye.h2').tinta}</span> <span class="gris">{dos('dw.incluye.h2').gris}</span></h2>
@@ -193,7 +195,7 @@ const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=1', alt: `SpindleLab:
       </ul>
     </section>
 
-    {/* 4 · LO QUE CONSTRUIMOS: tres portadas 4:5 en c5–c16, con el círculo del cursor (§4.2) */}
+    {/* 4 · LO QUE CONSTRUIMOS: dos portadas 4:5 en c5 a c16, con el círculo del cursor (§4.2) */}
     <section class="seccion reticula" aria-labelledby="h-obra">
       <div class="int-sec__cab">
         <h2 class="t-declaracion" id="h-obra"><span class="tinta">{dos('dw.obra.h2').tinta}</span> <span class="gris">{dos('dw.obra.h2').gris}</span></h2>
@@ -201,17 +203,16 @@ const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=1', alt: `SpindleLab:
       <div class="int-sec__cuerpo int-sec__cuerpo--ancho">
         <div class="obra3">
           {obra.map((p, i) => (
-            <Pieza id={`o-${p.id}`} nombre={p.e.nombre} bajada={p.e.bajada} linea={p.e.linea} destino={p.e.destino} cursor={p.e.cursor} medio={p.medio} forma="p-45" entrada={i === 0} />
+            <Pieza id={`o-${p.id}`} nombre={p.e.nombre} bajada={p.e.bajada} linea={p.e.linea} destino={p.e.destino} cursor={p.e.cursor} medio={p.medio} forma="p-45" pie={p.e.pie} externo={externo} entrada={i === 0} />
           ))}
         </div>
         <div class="obra3__pie">
-          <p class="chico">{t('dw.obra.concepto').texto}</p>
           <a class="boton boton--placa" href={bObra.destino}>{bObra.texto}<Icono nombre="flecha" /></a>
         </div>
       </div>
     </section>
 
-    {/* 5 · PLANES (c5–c16): el glosario antes de los planes (Clara), los cuatro planes y la nota */}
+    {/* 5 · PLANES (c5 a c16): el glosario antes de los planes (Clara), los cuatro planes y la nota */}
     <section class="seccion reticula" id="planes" aria-labelledby="h-planes">
       <div class="int-sec__cab">
         <h2 class="t-declaracion" id="h-planes"><span class="tinta">{dos('dw.planes.h2').tinta}</span> <span class="gris">{dos('dw.planes.h2').gris}</span></h2>
@@ -236,7 +237,7 @@ const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=1', alt: `SpindleLab:
       </div>
     </section>
 
-    {/* 6 · CINCO FASES (c5–c12): la fase a la vista pasa del gris al blanco en 167 ms (fases.mjs) */}
+    {/* 6 · CINCO FASES (c5 a c12): la fase a la vista pasa del gris al blanco en 167 ms (fases.mjs) */}
     <section class="seccion reticula" aria-labelledby="h-fases">
       <div class="int-sec__cab">
         <h2 class="t-declaracion" id="h-fases"><span class="tinta">{dos('dw.fases.h2').tinta}</span> <span class="gris">{dos('dw.fases.h2').gris}</span></h2>
@@ -251,7 +252,7 @@ const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=1', alt: `SpindleLab:
       </ol>
     </section>
 
-    {/* 7 · PREGUNTAS (c5–c12) */}
+    {/* 7 · PREGUNTAS (c5 a c12) */}
     <section class="seccion reticula" aria-labelledby="h-faq">
       <div class="int-sec__cab">
         <h2 class="t-declaracion" id="h-faq">{t('dw.faq.h2').texto}</h2>

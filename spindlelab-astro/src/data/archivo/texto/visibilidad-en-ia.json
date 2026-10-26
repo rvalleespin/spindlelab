@@ -1,48 +1,49 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/visibilidad-en-ia.json",
- "sha256": "84c9b3ea6574022ed486e23d3143ecf33b1b71c687e8a918ce28ccb573f798bd",
+ "sha256": "cae8296d8335754ee6b96571db18b622e8da66ed69971dd10fa70d0b436fcecb",
  "id": "visibilidad-en-ia",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "visibilidad-en-ia",
   "ruta": "/v3/servicios/visibilidad-en-ia/",
-  "title": "Visibilidad en IA (AEO/GEO): que ChatGPT pueda citarte",
-  "description": "Revisamos cómo te describen ChatGPT, Gemini y Perplexity y qué le falta a tu sitio para que puedan citarte, y nos ocupamos de eso. Desde $400.000 + IVA.",
-  "senales": "Simón, e12/senales-obra.md §2.7 (title y description: los fija Simón, con Clara, en servicios-v3.json)",
-  "modo": "queda con ajustes",
-  "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
+  "title": "Visibilidad en IA (AEO/GEO) · SpindleLab",
+  "description": "Medimos cómo te describen ChatGPT, Gemini y Perplexity y qué cambiar en tu sitio para que te entiendan mejor. Auditoría desde $400.000 + IVA.",
+  "senales": "v2-vigente/servicios__visibilidad-en-ia.txt (title y description publicados el 24-oct)",
+  "modo": "reescrita al mensaje nuevo (obra E13)",
+  "regla": "Lo que no se lista aquí sale de servicios-v3.json, que esta obra corrigió a mano (monitoreo, consultas medidas, share-of-voice, AI Overviews, compromiso de puntaje, «aumentar tu probabilidad de cita», mini-diagnóstico, 24 horas). Ver e13/desvios/servicios.md.",
   "secciones": [
    {
     "id": "cabecera",
     "nombre": "Cabecera",
-    "trabajo": "Nombrar el servicio y decir qué le hace al cliente.",
+    "trabajo": "Nombrar el servicio y decir qué se mide, sin prometer que te citen.",
     "elementos": [
      {
       "id": "visibilidad-en-ia.miga",
       "rol": "rotulo",
-      "texto": "Inicio · Servicios · Visibilidad en IA",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "texto": "Inicio · Soluciones · Visibilidad en IA",
+      "origen": "v2-vigente/servicios__visibilidad-en-ia.txt (la miga dice «Soluciones»)",
       "uso": "miga",
-      "estado": "queda"
+      "antes": "Inicio · Servicios · Visibilidad en IA",
+      "estado": "cambia"
      },
      {
       "id": "visibilidad-en-ia.h1",
       "rol": "h1",
       "tinta": "Visibilidad en IA.",
-      "gris": "Que ChatGPT, Gemini y Perplexity puedan leer tu sitio y nombrarte.",
-      "texto": "Visibilidad en IA. Que ChatGPT, Gemini y Perplexity puedan leer tu sitio y nombrarte.",
-      "antes": "Visibilidad en IA",
-      "origen": "spindlelab-astro/src/data/servicios-v3.json visibilidad-en-ia.h1",
-      "por_que": "La plantilla de A pone el h1 en dos tintas; el nombre del servicio no cambia y la continuación dice qué le hace al cliente.",
+      "gris": "Qué dicen ChatGPT, Gemini y Perplexity de tu empresa.",
+      "texto": "Visibilidad en IA. Qué dicen ChatGPT, Gemini y Perplexity de tu empresa.",
+      "antes": "Visibilidad en IA. Que ChatGPT, Gemini y Perplexity puedan leer tu sitio y nombrarte.",
+      "origen": "copy-secciones-v1.2.md §5.2 (H1: «Visibilidad en IA: qué dicen ChatGPT, Gemini y Perplexity de tu empresa.»)",
+      "por_que": "Sale «y nombrarte» (promesa de resultado, revisión 23-oct). La plantilla de A pone el h1 en dos tintas: el documento partido en su dos puntos.",
       "estado": "cambia"
      },
      {
       "id": "visibilidad-en-ia.resto",
       "rol": "nota",
-      "texto": "Queda tal cual, desde su dato: la línea con el precio («linea»), los dos botones, la nota de precios, el lead, todas las secciones con sus planes y precios, las preguntas, el cierre y «Siguiente».",
+      "texto": "Sale de servicios-v3.json (corregido a mano en esta obra): la línea con el precio («linea»), la nota de precios, el lead, las secciones con sus planes y precios, las preguntas, el cierre y «Siguiente».",
       "uso": "referencia",
       "origen": "spindlelab-astro/src/data/servicios-v3.json visibilidad-en-ia",
-      "estado": "queda"
+      "estado": "cambia"
      },
      {
       "id": "visibilidad-en-ia.franja.alt",
@@ -50,7 +51,34 @@
       "texto": "El chequeo gratis de SpindleLab con el resultado de un sitio en pantalla.",
       "uso": "alt",
       "donde": "La franja 2,39:1: el chequeo con un resultado (chequeo-43, recortado al centro; spec §2.4)",
-      "estado": "nuevo"
+      "estado": "queda"
+     },
+     {
+      "id": "visibilidad-en-ia.franja.pie",
+      "rol": "nota",
+      "tinta": "El chequeo de 21 señales",
+      "gris": "Propio · 2026",
+      "texto": "El chequeo de 21 señales · Propio · 2026",
+      "uso": "pie",
+      "donde": "Bajo la franja: nombre y línea de la pieza, como el pie de la franja de Desarrollo web",
+      "origen": "e13/texto/trabajo.json, entrada «chequeo» del v3 anterior (la retiró la obra E13 del índice de /trabajo/; el pie se lleva aquí para no depender de ella)",
+      "estado": "cambia"
+     }
+    ]
+   },
+   {
+    "id": "cierre",
+    "nombre": "Cierre",
+    "trabajo": "Pedir la revisión del sitio.",
+    "elementos": [
+     {
+      "id": "visibilidad-en-ia.cierre.boton",
+      "rol": "boton",
+      "texto": "Pedir la revisión de mi sitio",
+      "antes": "Pedir el diagnóstico",
+      "origen": "copy-secciones-v1.2.md §5.2 (cierre: CTA «Pedir la revisión de mi sitio»)",
+      "destino": "/v3/contacto/",
+      "estado": "cambia"
      }
     ]
    }

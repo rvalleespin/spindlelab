@@ -1,22 +1,22 @@
 {
  "id": "home",
  "ruta": "/v3/",
- "title": "SpindleLab · Estudio de diseño y tecnología en Santiago",
- "description": "Diseñamos y programamos sitios y herramientas a medida, listos para que Google y ChatGPT puedan leerlos. Precios publicados y un chequeo gratis de tu sitio.",
- "senales": "Simón, e12/senales-obra.md §2.1 (la description de Simón, de 156; la mía medía 170 y nombraba «la IA»: queda la de él, que nombra ChatGPT como el h1)",
- "estructura": "spec-visual.md §2.1: portada con el video del hilo de oro → la cinta → índice corto → cada pieza con un dato medido → servicios → quién está detrás → contacto.",
+ "title": "SpindleLab · Marketing y crecimiento con IA",
+ "description": "Marketing y crecimiento con IA para empresas que ya venden. Revisión gratis de una página y propuesta por escrito, con alcance, plazos y precio.",
+ "senales": "Title y description del v2 vigente (e13/fuentes/v2-vigente/home.txt), con una diferencia: el title pierde el «en Chile» del v2 (Ramón lo descartó como relleno). Los reconfirma Simón en la capa de señales de E13; el brief §4 pide FAQPage en el JSON-LD y debe coincidir con home.faq.*.",
+ "estructura": "brief-de-obra.md §4, nueve secciones en este orden: portada → problema → para quién → cómo partimos → soluciones → pruebas → quién está detrás → preguntas frecuentes → cierre. Se van la cinta, el índice corto de trabajo y «Cada pieza, con un dato medido».",
  "secciones": [
   {
    "id": "portada",
-   "nombre": "Portada: el hilo de oro, la declaración y el chequeo",
-   "trabajo": "Decir qué es SpindleLab, qué hace y para quién, y que también hace SEO técnico y visibilidad en IA; y dejar el chequeo a mano para comprobarlo con el sitio propio. El video no dice nada: todo el trabajo lo hace el texto.",
+   "nombre": "Portada: el hilo de oro, la declaración y la acción",
+   "trabajo": "Decir en cinco segundos qué hace SpindleLab y para quién, y dejar una sola acción: pedir la revisión de una página. El chequeo de la herramienta baja a enlace secundario. El video no dice nada: todo el trabajo lo hace el texto.",
    "elementos": [
     {
      "id": "home.portada.video",
      "rol": "nota",
      "texto": "El video del hilo de oro (e12/medios/hilo/). La imagen quieta lleva alt vacío y el video, aria-hidden: es un ambiente sin información, así que no se describe ni lleva pie. No muestra a ninguna persona y no se presenta como trabajo (spec §0.3, punto 1), así que tampoco lleva el aviso de imagen generada.",
      "uso": "referencia",
-     "estado": "nuevo"
+     "estado": "queda"
     },
     {
      "id": "home.portada.pausa",
@@ -27,613 +27,627 @@
       "en pausa": "Seguir el video"
      },
      "donde": "Arriba a la derecha de la portada; primer control en el orden de tabulación (spec §3.1, punto 3)",
-     "estado": "nuevo"
+     "estado": "queda"
     },
     {
      "id": "home.portada.rotulo",
      "rol": "rotulo",
-     "texto": "Estudio de diseño y tecnología",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.hero.sitio.rotulo»"
+     "texto": "Marketing y crecimiento con IA para empresas que ya venden",
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.1 (línea sobre el titular); v2-vigente/home.txt",
+     "antes": "Estudio de diseño y tecnología",
+     "por_que": "Es la categoría. Va sobre el titular y no en él, porque las dos lecturas en frío del borrador dijeron que como titular describía «una agencia cualquiera», y que el titular de abajo engancha pero solo no dice qué venden.",
+     "nota": "Sin punto final, como el rótulo anterior. Es la línea más larga que ha tenido un rotulo en esta portada (10 palabras): Lucía decide cómo cabe a 390."
     },
     {
      "id": "home.portada.h1",
      "rol": "h1",
-     "tinta": "Diseñamos y programamos sitios a medida.",
-     "gris": "Y los dejamos listos para que Google y ChatGPT puedan leerlos.",
-     "texto": "Diseñamos y programamos sitios a medida. Y los dejamos listos para que Google y ChatGPT puedan leerlos.",
-     "nota": "Hero 3, elegido por Ramón en la compuerta 2 («3 tres»). Es la frase de 48 px en la esquina, sobre el velo.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.hero.sitio.h1»"
+     "tinta": "Te llegan consultas.",
+     "gris": "Veamos dónde se cae el resto.",
+     "texto": "Te llegan consultas. Veamos dónde se cae el resto.",
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.1 (candidato 1, elegido); v2-vigente/home.txt",
+     "antes": "Diseñamos y programamos sitios a medida. Y los dejamos listos para que Google y ChatGPT puedan leerlos.",
+     "por_que": "Abre en lo que el lector ya vive y dice una acción. Test de intercambio: por sí solo funcionaría para una clínica y para una inmobiliaria, y eso es deliberado, porque el rubro lo pone la línea de arriba y el subtítulo nombra lo que se revisa. Lock §14: tinta 3 palabras (tope 8), gris 6 palabras (rango 6 a 13).",
+     "descartes": [
+      "«Marketing y crecimiento con IA para empresas que ya venden.» como titular: pasa a ser la línea sobre el titular.",
+      "«Un socio de crecimiento que parte por mirar, no por prometer.»: «socio» sin prueba es adjetivo, y «no por prometer» insinúa a otros.",
+      "«Si te llegan consultas, veamos dónde se caen.»: más acotada, pero pierde fuerza. Queda como alternativa si una lectura en frío dice que el titular supone cosas del lector."
+     ]
     },
     {
      "id": "home.portada.entradilla",
      "rol": "entradilla",
-     "texto": "Para empresas, clínicas y estudios profesionales. Si tu sitio ya existe y no lo vas a rehacer, también hacemos SEO técnico y visibilidad en IA: revisamos qué le impide a Google y a ChatGPT leerlo, y lo arreglamos.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.hero.sitio.entradilla»"
+     "texto": "Revisamos tu sitio y si Google y las IA pueden leerlo. Después conversamos cómo te llegan las consultas y qué pasa con ellas, y te proponemos por escrito qué hacer.",
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.1 (subtítulo); v2-vigente/home.txt",
+     "antes": "Para empresas, clínicas y estudios profesionales. Si tu sitio ya existe y no lo vas a rehacer, también hacemos SEO técnico y visibilidad en IA: revisamos qué le impide a Google y a ChatGPT leerlo, y lo arreglamos."
     },
     {
-     "id": "home.chequeo.rotulo",
-     "rol": "rotulo",
-     "texto": "Chequeo gratis",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.chequeo.rotulo»"
-    },
-    {
-     "id": "home.chequeo.intro",
-     "rol": "parrafo",
-     "texto": "Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas.",
-     "fuente": "inventario-casos §2.4; e11/material.md §3",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.chequeo.intro»"
-    },
-    {
-     "id": "home.chequeo.label",
-     "rol": "rotulo",
-     "uso": "label",
-     "texto": "La dirección de tu sitio",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.chequeo.label»"
-    },
-    {
-     "id": "home.chequeo.placeholder",
-     "rol": "nota",
-     "uso": "placeholder",
-     "texto": "tuempresa.cl",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.chequeo.placeholder»"
-    },
-    {
-     "id": "home.chequeo.boton",
+     "id": "home.portada.boton",
      "rol": "boton",
-     "texto": "Revisar mi sitio",
-     "destino": "corre /api/chequeo en la misma pantalla (v3-chequeo.js; ids chq-* sin cambio)",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.chequeo.boton»"
+     "texto": "Pedir la revisión de una página",
+     "destino": "/v3/contacto/",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.1 (CTA principal)",
+     "nota": "La única acción principal de la ruta. Se ve en la primera pantalla a 390 y a 1440, también con el aviso de cookies abierto (brief §7, criterio 3). Se completa con «…y entonces recibes una página con los hallazgos»: lo dice la nota de abajo."
     },
     {
-     "id": "home.chequeo.ayuda",
+     "id": "home.portada.microcopy",
      "rol": "nota",
      "uso": "ayuda",
-     "texto": "Mira 21 cosas de tu sitio, gratis y sin pedirte el correo. No guardamos la dirección que escribes. Si construimos tu sitio, le pasamos este chequeo antes de entregártelo.",
-     "fuente": "chequeo.js (21 ítems); /v3/diagnostico/ («Gratis y sin dejar tu correo», FAQ «¿Guardan mi dominio?»); Desarrollo web, «Todo parte con esto»",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.chequeo.ayuda»"
+     "texto": "Te devolvemos una página con lo más importante que encontramos en tu sitio y en si la IA puede leerlo, y por dónde partiríamos. Es gratis y llega en un día hábil.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.1 (microcopy bajo el botón); v2-vigente/home.txt",
+     "fuente": "Plazo: «un día hábil» y no «24 horas» (guía §3; el único plazo documentado fue de 31 horas, HANDOFF-diagnostico-focuscontable-2oct.md).",
+     "nota": "Literal del v2 publicado, que repite esta frase en siete páginas. «Y en si la IA puede leerlo» es torpe; no la cambio aquí para no abrir una diferencia entre páginas. Propuesta para todas a la vez en desvios/home.md, decisión abierta 5."
     },
     {
-     "id": "home.chequeo.error-vacio",
-     "rol": "nota",
-     "texto": "Escribe la dirección de tu sitio para empezar.",
-     "uso": "error",
-     "antes": "Escribe tu dominio para empezar.",
-     "condicion": "Vive en v3-chequeo.js, que el brief protege (criterio 11: diff 0 o el cambio con su motivo en la spec). Lucía lo anota en la spec y Diego lo cambia; si no, queda el de hoy.",
-     "por_que": "El campo dice «La dirección de tu sitio» desde la lectura fría (la dueña de la clínica no sabía si «dominio» era la dirección de su página) y el error todavía dice «dominio» (direccion-a.md §6.2).",
-     "estado": "cambia"
-    },
-    {
-     "id": "home.chequeo.resultado",
-     "rol": "nota",
-     "texto": "El resultado del chequeo, los veredictos, «Revisando…», «Pedir el diagnóstico», «Prefiero hablarlo contigo» y los demás errores son los de producción (v3-chequeo.js, pase de voz de E8) y quedan tal cual.",
-     "uso": "referencia",
-     "origen": "spindlelab-astro/public/assets/js/v3-chequeo.js",
-     "estado": "queda"
-    }
-   ],
-   "borrado": [
-    "Las opciones 1 y 2 del hero quedan en texto-paso2.json como historia (compuerta 2, punto 3).",
-    "Nada sobre el video: ni pie, ni rótulo, ni «generado con IA». No muestra personas ni se presenta como trabajo, y cualquier texto encima que no sea la frase y el chequeo es un texto sobre un medio (spec §6.6)."
-   ]
-  },
-  {
-   "id": "cinta",
-   "nombre": "La cinta: ocho piezas, dos segundos cada una",
-   "trabajo": "Mostrar que lo de arriba ya existe, en movimiento, y llevar a cada pieza. Sin titular visible.",
-   "elementos": [
-    {
-     "id": "home.cinta.nombre",
-     "rol": "nota",
-     "texto": "Ocho piezas seguidas, dos segundos cada una: los dos sitios de Bernardo Combeau, Praxi y Verifica y Cumple, y cuatro conceptos: Sesenta, Tonela, Ocelo y Doceavo.",
-     "uso": "nombre accesible",
-     "donde": "aria-label de la sección (el video va con aria-hidden)",
-     "antes": "Ocho piezas seguidas, dos segundos cada una: los sitios de Combeau, Praxi y Verifica y Cumple, y las piezas de concepto Sesenta, Tonela, Ocelo y Doceavo",
-     "por_que": "Combeau son dos sitios; «las piezas de concepto» pasa a «cuatro conceptos».",
-     "estado": "cambia"
-    },
-    {
-     "id": "home.cinta.pausa",
+     "id": "home.portada.chequeo",
      "rol": "boton",
-     "texto": "Pausar el video",
-     "uso": "nombre accesible",
-     "estados": {
-      "en pausa": "Seguir el video"
-     },
-     "donde": "Esquina de abajo a la derecha de la cinta",
-     "estado": "nuevo"
+     "texto": "Chequear mi sitio ahora, sin registro",
+     "destino": "/v3/diagnostico/",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.1 (enlace secundario)",
+     "nota": "Enlace secundario, no botón: el chequeo deja de ser la acción de la portada (brief §2). Reemplaza al formulario del chequeo dentro de la portada (home.chequeo.*, retirado). «Chequeo» y no «diagnóstico»: así se llama la herramienta."
     },
     {
-     "id": "home.cinta.tramos",
-     "rol": "ficha",
-     "uso": "tramos",
-     "nota": "La ficha de la pieza que está pasando (spec §2.1, fila 2; cinta.json). El nombre va enlazado; tipo · año en mono; la bajada en chico es la primera frase de su entrada del índice.",
-     "tramos": [
-      {
-       "nombre": "Combeau, fotografía",
-       "linea": "Cliente · 2026",
-       "bajada": "El sitio de un fotógrafo de retrato.",
-       "destino": "/v3/trabajo/combeau/#fotografia"
-      },
-      {
-       "nombre": "Sesenta",
-       "linea": "Concepto · 2026",
-       "bajada": "Un estudio de abogados laborales que no existe, del lado del trabajador.",
-       "destino": "/v3/trabajo/sesenta/"
-      },
-      {
-       "nombre": "Praxi",
-       "linea": "Propio · 2026",
-       "bajada": "Una app de entrenamiento con un coach de IA que se acuerda de cada serie.",
-       "nota": "Las personas están generadas con IA.",
-       "destino": "/v3/trabajo/praxi/"
-      },
-      {
-       "nombre": "Tonela",
-       "linea": "Concepto · 2026",
-       "bajada": "Un proveedor de izaje que no existe, en Antofagasta: eslingas, cadenas y grilletes.",
-       "destino": "/v3/trabajo/tonela/"
-      },
-      {
-       "nombre": "Verifica y Cumple",
-       "linea": "Propio · 2026",
-       "bajada": "Revisa gratis las señales técnicas que la Ley 21.719, de datos personales, le pide a un sitio con formulario.",
-       "nota": "La persona a caballo de esta portada está generada con IA.",
-       "destino": "https://verifica.spindlelab.cl/"
-      },
-      {
-       "nombre": "Ocelo",
-       "linea": "Concepto · 2026",
-       "bajada": "Una clínica de ojos que no existe, en Providencia.",
-       "destino": "/v3/trabajo/ocelo/"
-      },
-      {
-       "nombre": "Combeau, modelo",
-       "linea": "Cliente · 2026",
-       "bajada": "El mismo cliente, el otro oficio: su book de modelo, en inglés.",
-       "destino": "/v3/trabajo/combeau/#modelo"
-      },
-      {
-       "nombre": "Doceavo",
-       "linea": "Concepto · 2026",
-       "bajada": "Un estudio contable que no existe, en Concepción.",
-       "destino": "/v3/trabajo/doceavo/"
-      }
-     ],
-     "estado": "nuevo"
+     "id": "home.portada.og-alt",
+     "rol": "nota",
+     "uso": "alt de la imagen al compartir",
+     "texto": "SpindleLab. Marketing y crecimiento con IA",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §3 (texto alternativo de la imagen social); v2-vigente/home.txt (OGALT)",
+     "antes": "SpindleLab, estudio de diseño y tecnología: diseñamos y programamos sitios a medida. (hoy escrito a mano en src/pages/v3/index.astro)",
+     "donde": "ogImageAlt de la home. No se ve en la página. La imagen misma (og-e12-marca.jpg) puede traer el claim viejo horneado: la revisa quien lleve la capa de señales."
     }
    ],
    "borrado": [
-    "El tramo de Verifica y Cumple suma la nota de la persona a caballo: es una imagen generada con IA (Higgsfield, commit 698821e del 21-sep, «Imagen generada (Higgsfield, cinematic_studio_2_5): un fiscalizador a caballo»), y la regla del caso Praxi vale para toda persona generada que se vea en el sitio: se dice junto a la imagen."
+    "El formulario del chequeo dentro de la portada (home.chequeo.rotulo, .intro, .label, .placeholder, .boton, .ayuda, .error-vacio, .resultado): la portada pide una sola acción y el chequeo vive en /diagnostico/, adonde lleva el enlace secundario. El pendiente sobre el error vacío en v3-chequeo.js pasa a /diagnostico/ (diagnostico.error-vacio).",
+    "«Si construimos tu sitio, le pasamos este chequeo antes de entregártelo» (home.chequeo.ayuda): sin respaldo, fila «alto» de la revisión del 23-oct.",
+    "Nada sobre el video: ni pie, ni rótulo, ni «generado con IA»."
    ]
   },
   {
-   "id": "obra",
-   "nombre": "Índice corto de trabajo",
-   "trabajo": "Mostrar cuatro piezas de tipos distintos y llevar al índice.",
+   "id": "problema",
+   "nombre": "Dónde puede caerse una consulta",
+   "trabajo": "Nombrar el problema en las palabras del cliente y decir por dónde se parte, sin afirmar cómo está organizada la empresa del lector.",
    "elementos": [
     {
-     "id": "home.obra.h2",
+     "id": "home.problema.h2",
      "rol": "h2",
-     "tinta": "Trabajo.",
-     "gris": "Lo que diseñamos y programamos, para clientes y para nosotros.",
-     "texto": "Trabajo. Lo que diseñamos y programamos, para clientes y para nosotros.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.obra.h2»"
+     "tinta": "Dónde puede caerse una consulta",
+     "texto": "Dónde puede caerse una consulta",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.2; v2-vigente/home.txt",
+     "nota": "Una sola tinta: el copy aprobado no trae continuación gris y no la invento."
     },
     {
-     "id": "home.obra.entradas",
-     "rol": "nota",
-     "texto": "Cuatro entradas del índice, con el mismo nombre y bajada que en /trabajo/ y la línea mono solo tipo · año: Combeau, fotografía (→ /v3/trabajo/combeau/#fotografia) · Praxi (→ /v3/trabajo/praxi/) · Verifica y Cumple (→ https://verifica.spindlelab.cl/, con ↗) · Sesenta (→ /v3/trabajo/sesenta/). Ver «trabajo.entradas».",
-     "uso": "referencia",
-     "antes": "Cuatro entradas del índice, con el mismo nombre y bajada que en /trabajo/, y en la línea mono solo tipo · año (sin herramientas)",
-     "por_que": "Los destinos: Combeau es una página con dos partes y Verifica y Cumple no tiene caso (spec §0.4, puntos 6 y 7).",
-     "estado": "cambia"
+     "id": "home.problema.p",
+     "rol": "parrafo",
+     "texto": "Alguien pregunta por lo que vendes, mira tu sitio, quizás le escribe también a otra empresa. Entre esa primera consulta y la venta hay varios puntos donde se puede caer, desde lo que tu sitio explica hasta cuánto tarda alguien en responder. Nosotros revisamos primero el sitio, y de ahí seguimos con lo que encontremos.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.2; v2-vigente/home.txt"
+    }
+   ],
+   "borrado": [
+    "El recuadro de chat «Ejemplo simulado» (una IA nombrando a SpindleLab: prueba social inventada aunque diga «simulado»), el titular «Cada pieza por su lado. Por eso no apareces.» y la escena del estudio de abogados (home.servicios.via.escena): el borrador la sacó del documento de textos."
+   ]
+  },
+  {
+   "id": "para-quien",
+   "nombre": "Para empresas que ya venden",
+   "trabajo": "Filtrar al lector: decir a quién le sirve, con rubros solo como ejemplo, y dejar entrar a quien parte de cero.",
+   "elementos": [
+    {
+     "id": "home.paraquien.h2",
+     "rol": "h2",
+     "tinta": "Para empresas que ya venden",
+     "texto": "Para empresas que ya venden",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.3; v2-vigente/home.txt",
+     "nota": "Una sola tinta, como la sección anterior."
     },
     {
-     "id": "home.obra.pie-verifica",
-     "rol": "nota",
-     "texto": "La persona a caballo de esta portada está generada con IA.",
-     "uso": "pie",
-     "donde": "Junto a la portada de Verifica y Cumple (verifica-y-cumple-45: la persona a caballo se ve entera)",
-     "estado": "nuevo"
+     "id": "home.paraquien.p1",
+     "rol": "parrafo",
+     "texto": "Por ejemplo, una consultora, una clínica o un restaurante. Les sirve a equipos de dos o tres personas o más que ya responden consultas y cerraron ventas este año.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.3; v2-vigente/home.txt",
+     "condicion": "Los tres ejemplos de rubro los confirma Ramón (copy §11, última fila). Son ejemplos de cliente ideal, no clientes atendidos: ninguno de los tres lo ha sido."
     },
     {
-     "id": "home.obra.concepto",
-     "rol": "nota",
-     "texto": "Las marcas rotuladas Concepto son inventadas: muestran cómo trabajaríamos un rubro, y no tuvieron clientes.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.obra.concepto»"
+     "id": "home.paraquien.p2",
+     "rol": "parrafo",
+     "texto": "Quien está armando todo también puede escribirnos. El sitio es la primera parte.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.3; v2-vigente/home.txt"
+    }
+   ]
+  },
+  {
+   "id": "como",
+   "nombre": "Cómo partimos y cómo seguimos",
+   "trabajo": "Mostrar el camino de cuatro pasos y lo que se recibe en cada uno, con el molde de fases de /metodo/.",
+   "elementos": [
+    {
+     "id": "home.como.h2",
+     "rol": "h2",
+     "tinta": "Cómo partimos y cómo seguimos",
+     "texto": "Cómo partimos y cómo seguimos",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.4; v2-vigente/home.txt",
+     "nota": "Una sola tinta."
     },
     {
-     "id": "home.obra.todo",
+     "id": "home.como.1",
+     "rol": "parrafo",
+     "rotulo": "01 · Revisión gratis",
+     "texto": "Nos pasas la dirección de tu sitio y te devolvemos los hallazgos principales y por dónde partiríamos.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.4; v2-vigente/home.txt",
+     "nota": "Molde de dw.fase.N: «rotulo» lleva el número y el nombre separados por « · »; «texto», lo que se recibe."
+    },
+    {
+     "id": "home.como.2",
+     "rol": "parrafo",
+     "rotulo": "02 · Conversación y propuesta",
+     "texto": "Hablamos 20 minutos por videollamada sobre cómo te llegan las consultas y qué pasa con ellas. Si hay trabajo que hacer, recibes por escrito qué hacemos, en qué fases y cuánto cuesta cada una. Si antes hay que mirar más a fondo, lo cotizamos aparte.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.4; v2-vigente/home.txt",
+     "nota": "El «diagnóstico pagado» no aparece con precio ni plazo porque no existe: solo queda la posibilidad abierta («lo cotizamos aparte»)."
+    },
+    {
+     "id": "home.como.3",
+     "rol": "parrafo",
+     "rotulo": "03 · Implementación",
+     "texto": "Hacemos lo acordado por fases, o te entregamos las especificaciones para que las implemente tu equipo. Cada fase termina con algo que tú apruebas antes de pasar a la siguiente.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.4; v2-vigente/home.txt",
+     "condicion": "«Cada fase termina con algo que apruebas» está probado en Desarrollo web y no en los otros servicios; «o te entregamos las especificaciones» es posible pero nunca ejercido (copy §11)."
+    },
+    {
+     "id": "home.como.4",
+     "rol": "parrafo",
+     "rotulo": "04 · Acompañamiento mensual",
+     "texto": "Si quieres seguir, medimos cada mes con el mismo criterio y decidimos juntos qué toca ahora.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.4; v2-vigente/home.txt",
+     "fuente": "Cadencia mensual: decisión 4 del brief (informe mensual, ninguna promesa de monitoreo de menciones en IA ni de puntaje a 3 meses)."
+    },
+    {
+     "id": "home.como.boton",
      "rol": "boton",
-     "texto": "[ Todo el trabajo ] (10)",
-     "destino": "/v3/trabajo/",
-     "nota": "El único corchete de la página (lock §14). El 10 es el conteo verdadero del índice: si cambia el número de entradas, cambia aquí.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.obra.todo»"
+     "texto": "Ver el método completo",
+     "destino": "/v3/metodo/",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.4 («Ver el método completo →»; la flecha es el icono)"
     }
    ]
   },
   {
-   "id": "prueba",
-   "nombre": "Cada pieza, con un dato medido",
-   "trabajo": "Cumplir lo que dice el posicionamiento: lo que construimos se puede medir. Una pieza al lado de un dato revisable, con fecha.",
+   "id": "soluciones",
+   "nombre": "Lo que podemos hacer por ti",
+   "trabajo": "Que cada lector encuentre qué se hace, desde cuánto cuesta y adónde ir, en cuatro bloques con el precio a la vista.",
    "elementos": [
     {
-     "id": "home.prueba.h2",
+     "id": "home.soluciones.h2",
      "rol": "h2",
-     "tinta": "Cada pieza, con un dato medido.",
-     "gris": "Y su fecha, para que lo revises tú.",
-     "texto": "Cada pieza, con un dato medido. Y su fecha, para que lo revises tú.",
-     "estado": "cambia",
-     "origen": "texto-paso2.json «home.prueba.h2»",
-     "antes": "Cada pieza, con su prueba. Al lado de lo que hicimos, un dato con su fecha, que puedes revisar.",
-     "por_que": "Lock §14: la continuación gris va de 6 a 13 palabras y la tinta hasta 8 (lo midió herramientas/comprobar-obra.py). Lectura fría, 19-oct: «Cada pieza, con su prueba» le sonó a folleto, y leyó «prueba» como promesa de resultado de negocio, que el párrafo de abajo dice que no hay. Ahora dice lo que es: un dato medido, con su fecha."
+     "tinta": "Lo que podemos hacer por ti",
+     "texto": "Lo que podemos hacer por ti",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt",
+     "antes": "Servicios. Lo que hacemos, cada uno con su precio publicado.",
+     "nota": "Una sola tinta."
     },
     {
-     "id": "home.prueba.aviso",
+     "id": "home.soluciones.intro",
      "rol": "parrafo",
-     "texto": "No son cifras de ventas de clientes: esas no las tenemos medidas, y no las vamos a inventar. Son datos de cómo quedó hecho el trabajo.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.prueba.aviso»"
+     "texto": "Cada solución tiene su página, con lo que incluye y su precio de partida (más IVA).",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt"
     },
     {
-     "id": "home.prueba.combeau.pieza",
-     "rol": "h2",
-     "nivel": 3,
-     "texto": "El sitio de Bernardo Combeau, fotógrafo de retrato.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.prueba.combeau.pieza»"
-    },
-    {
-     "id": "home.prueba.combeau.dato",
-     "rol": "parrafo",
-     "texto": "Él sube sus fotos tal como las tiene, sin achicarlas, y el sitio las ajusta solo a la pantalla de cada visitante. Una foto que él sube con 805 kB, quien la mira la recibe en 95 kB: ocho veces más liviana, así que en el celular aparece antes.",
-     "fuente": "inventario-casos §2.1 (Netlify Image CDN: 804.697 → 94.576 bytes, WebP a 828 px)",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.prueba.combeau.dato»"
-    },
-    {
-     "id": "home.prueba.combeau.ficha",
-     "rol": "ficha",
-     "campos": [
-      {
-       "rotulo": "Medido",
-       "valor": "16-oct-2026"
-      }
-     ],
-     "nota": "El permiso es el de la compuerta 1, punto 2 («no se necesita más permiso»), dicho por Ramón.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.prueba.combeau.ficha»"
-    },
-    {
-     "id": "home.prueba.praxi.pieza",
+     "id": "home.soluciones.busqueda.nombre",
      "rol": "h2",
      "nivel": 3,
-     "texto": "Praxi, una app de entrenamiento con un coach de IA.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.prueba.praxi.pieza»"
+     "texto": "Búsqueda y visibilidad en IA",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.5",
+     "nota": "Rótulo de grupo del copy: no es el nombre de un servicio. Los nombres exactos de oferta-v3.json van en los botones."
     },
     {
-     "id": "home.prueba.praxi.dato",
+     "id": "home.soluciones.busqueda.texto",
      "rol": "parrafo",
-     "texto": "En Praxi la IA conversa, pero no decide cuánto peso levantas: eso lo calcula un programa con reglas fijas. La app tiene 384 pruebas automáticas que revisan, cada vez que algo cambia, que todo siga calculando igual, y el 16 de octubre pasaron todas.",
-     "fuente": "inventario-praxi §0.1, §5 y §8.1 (384/384 en 35 archivos)",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.prueba.praxi.dato»"
+     "texto": "Revisamos si Google y las IA pueden leer tu sitio y entender a qué te dedicas, y te dejamos un plan ordenado por impacto. Que la IA pueda leerlo es el requisito para que un asistente como ChatGPT te entienda; no garantiza que te nombre.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt"
     },
     {
-     "id": "home.prueba.praxi.ficha",
-     "rol": "ficha",
-     "campos": [
-      {
-       "rotulo": "Medido",
-       "valor": "16-oct-2026"
-      }
-     ],
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.prueba.praxi.ficha»"
+     "id": "home.soluciones.busqueda.precio",
+     "rol": "nota",
+     "uso": "precio",
+     "texto": "Desde $400.000 + IVA · una vez",
+     "estado": "nuevo",
+     "origen": "v2-vigente/home.txt («Desde $400.000 + IVA.»), con « · una vez» de servicios-v3.json",
+     "fuente": "servicios-v3.json visibilidad-en-ia, secciones[1].planes[0].precio, idéntico como texto. Es el precio de partida del bloque (Visibilidad en IA); la Auditoría SEO técnica parte en $490.000 + IVA · una vez y su precio lo dice su página.",
+     "por_que": "Lectura fría del 19-oct (E12): el lector no sabía si el precio era una vez o al mes."
     },
     {
-     "id": "home.prueba.vyc.pieza",
+     "id": "home.soluciones.busqueda.aud.boton",
+     "rol": "boton",
+     "texto": "Ver Auditoría SEO técnica",
+     "destino": "/v3/servicios/auditoria-seo-tecnica/",
+     "estado": "nuevo",
+     "origen": "home.servicios.aud.boton (E12); v2-vigente/home.txt («Auditoría SEO técnica →»)"
+    },
+    {
+     "id": "home.soluciones.busqueda.via.boton",
+     "rol": "boton",
+     "texto": "Ver Visibilidad en IA",
+     "destino": "/v3/servicios/visibilidad-en-ia/",
+     "estado": "nuevo",
+     "origen": "home.servicios.via.boton (E12); v2-vigente/home.txt («Visibilidad en IA →»)"
+    },
+    {
+     "id": "home.soluciones.anuncios.nombre",
      "rol": "h2",
      "nivel": 3,
-     "texto": "Verifica y Cumple, nuestro chequeo gratis de la ley de datos personales.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.prueba.vyc.pieza»"
+     "texto": "Anuncios en Google y redes",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.5",
+     "nota": "Rótulo de grupo."
     },
     {
-     "id": "home.prueba.vyc.dato",
+     "id": "home.soluciones.anuncios.texto",
      "rol": "parrafo",
-     "texto": "Revisa desde afuera lo que la Ley 21.719 le pide a un sitio con formulario: si enlaza la política de privacidad, si pide permiso antes de medir a quien entra y si el formulario tiene su casilla de consentimiento. El 16 de octubre respondió en 0,52 segundos. No es asesoría legal: te dice qué falta, no si cumples la ley.",
-     "fuente": "inventario-casos §2.3 (qué revisa; Medido: /api/chequeo respondió 200 en 0,52 s el 16-oct) y §7 («describe señales; no certifica»)",
-     "estado": "cambia",
-     "antes": "Su sitio sacaba 54 de 100 en el chequeo gratis de esta página. Le agregamos lo que le faltaba, como un bloque de datos que el visitante no ve, pero que Google y la IA leen para saber qué es el sitio y quién está detrás. Dos días después sacó 94. Puedes comprobarlo: escribe verifica.spindlelab.cl en el chequeo de esta página.",
-     "por_que": "Cierra el defecto 20 del acta del paso 2: sin el 54 → 94 (compuerta 2, pregunta 6, por defecto). La «alternativa» del paso 2 cambiaba la pieza por el chequeo, pero la spec deja el medio de Verifica y Cumple en esta fila (§3.3, «sus 12 cosas»): el texto ahora habla de esa pieza, con un dato medido.",
-     "origen": "texto-paso2.json «home.prueba.vyc.dato»"
+     "texto": "Anuncios para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt"
     },
     {
-     "id": "home.prueba.vyc.ficha",
-     "rol": "ficha",
-     "campos": [
-      {
-       "rotulo": "Medido",
-       "valor": "16-oct-2026"
-      }
-     ],
-     "estado": "cambia",
-     "antes": [
-      {
-       "rotulo": "Medido",
-       "valor": "14 y 16-oct-2026"
-      }
-     ],
-     "por_que": "El dato es el tiempo de respuesta del 16-oct, no el puntaje del 14 y el 16.",
-     "origen": "texto-paso2.json «home.prueba.vyc.ficha»"
-    }
-   ],
-   "borrado": [
-    "El 54 → 94 de Verifica y Cumple: no se muestra (compuerta 2, pregunta 6). Sigue medido en el inventario."
-   ]
-  },
-  {
-   "id": "servicios",
-   "nombre": "Servicios, Desarrollo web primero",
-   "trabajo": "Que cada lector encuentre su caso por la situación en que está, con el precio a la vista.",
-   "elementos": [
-    {
-     "id": "home.servicios.h2",
-     "rol": "h2",
-     "tinta": "Servicios.",
-     "gris": "Lo que hacemos, cada uno con su precio publicado.",
-     "texto": "Servicios. Lo que hacemos, cada uno con su precio publicado.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.h2»"
+     "id": "home.soluciones.anuncios.precio",
+     "rol": "nota",
+     "uso": "precio",
+     "texto": "Paid Media (Google) desde $350.000/mes + IVA; Gestión de redes sociales desde $390.000/mes + IVA. La inversión en pauta va aparte.",
+     "estado": "nuevo",
+     "origen": "v2-vigente/home.txt («Google Ads desde $350.000 al mes + IVA; redes desde $390.000 al mes + IVA»), con los nombres de oferta-v3.json y el «/mes» de servicios-v3.json",
+     "fuente": "servicios-v3.json paid-media planes[0] «Desde $350.000/mes + IVA» y redes-sociales planes[0] «Desde $390.000/mes + IVA»; cada precio está dentro de la frase tal cual (como lo exigía el guardián de «también» de E12). paid-media.nota: «El precio es el fee de gestión», «La inversión en pauta la pones tú».",
+     "por_que": "Escrito con «/mes» y con los nombres exactos de oferta-v3.json para que los guardianes comparen texto con dato sin cambiar el guardián."
     },
     {
-     "id": "home.servicios.guia",
-     "rol": "parrafo",
-     "texto": "Si no sabes cuál te sirve, pide el mini-diagnóstico gratis: con él te decimos por dónde partir.",
-     "fuente": "servicios-v3.json acompanamiento-mensual.faq[4] («Cuál te conviene lo definimos después del mini-diagnóstico gratuito»)",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.guia»"
+     "id": "home.soluciones.anuncios.paid.boton",
+     "rol": "boton",
+     "texto": "Ver Paid Media (Google)",
+     "destino": "/v3/servicios/paid-media/",
+     "estado": "nuevo",
+     "origen": "v2-vigente/home.txt («Paid media (Google) →»), con el nombre de oferta-v3.json (tambien[1])"
     },
     {
-     "id": "home.servicios.dw.situacion",
-     "rol": "rotulo",
-     "uso": "situacion",
-     "texto": "Tu sitio te frena, o no existe.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.dw.situacion»"
+     "id": "home.soluciones.anuncios.redes.boton",
+     "rol": "boton",
+     "texto": "Ver Gestión de redes sociales",
+     "destino": "/v3/servicios/redes-sociales/",
+     "estado": "nuevo",
+     "origen": "v2-vigente/home.txt («Gestión de redes →»), con el nombre de oferta-v3.json (tambien[0])"
     },
     {
-     "id": "home.servicios.dw.nombre",
+     "id": "home.soluciones.sitio.nombre",
      "rol": "h2",
      "nivel": 3,
-     "texto": "Desarrollo web",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.dw.nombre»"
+     "texto": "Sitio web a medida",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.5",
+     "nota": "Rótulo de grupo del copy, no el nombre del servicio (que es «Desarrollo web», en el botón). «A medida» es la descripción del bloque y no el claim de la marca, que dejó de serlo (guía §3)."
     },
     {
-     "id": "home.servicios.dw.texto",
+     "id": "home.soluciones.sitio.texto",
      "rol": "parrafo",
-     "texto": "Lo diseñamos y lo programamos a medida, sin plantilla. Queda listo para que Google y la IA puedan leerlo, y antes de entregarlo le pasamos el chequeo gratis de esta página.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.dw.texto»"
+     "texto": "Con panel para que edites tú y SEO técnico desde el diseño. Desde una página de campaña hasta un sitio de doce páginas.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt"
     },
     {
-     "id": "home.servicios.dw.precio",
+     "id": "home.soluciones.sitio.precio",
      "rol": "nota",
      "uso": "precio",
      "texto": "Desde $390.000 + IVA",
-     "fuente": "oferta-v3.json momentos[0].planes[0].p",
      "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.dw.precio»"
+     "origen": "home.servicios.dw.precio (E12); v2-vigente/home.txt",
+     "fuente": "oferta-v3.json momentos[0].planes[0].p, idéntico como texto."
     },
     {
-     "id": "home.servicios.dw.boton",
+     "id": "home.soluciones.sitio.dw.boton",
      "rol": "boton",
      "texto": "Ver Desarrollo web",
      "destino": "/v3/servicios/desarrollo-web/",
      "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.dw.boton»"
+     "origen": "home.servicios.dw.boton (E12)"
     },
     {
-     "id": "home.servicios.via.situacion",
-     "rol": "rotulo",
-     "uso": "situacion",
-     "texto": "Tu sitio existe y no lo vas a rehacer.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.via.situacion»"
-    },
-    {
-     "id": "home.servicios.via.nombre",
-     "rol": "h2",
-     "nivel": 3,
-     "texto": "Visibilidad en IA",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.via.nombre»"
-    },
-    {
-     "id": "home.servicios.via.texto",
-     "rol": "parrafo",
-     "texto": "Cuando alguien le pregunta por tu rubro a ChatGPT o a otro asistente de IA, como Gemini o Perplexity, la respuesta sale de lo que esas herramientas leen en internet: tu sitio y lo que otros dicen de ti. Trabajamos los dos para que tu empresa pueda aparecer. Nadie puede prometerte que aparezcas; lo que sí te mostramos es qué responden hoy y quién aparece en tu lugar, y en el Acompañamiento mensual lo volvemos a medir cada mes.",
-     "fuente": "servicios-v3.json visibilidad-en-ia.lead; e11/material.md E17 y §6 («No prometemos», /v3/servicios/visibilidad-en-ia/); servicios-v3.json visibilidad-en-ia, planes (Auditoría de Visibilidad: medición en tres motores y quién gana hoy esas respuestas; Acompañamiento Esencial: consultas medidas al mes)",
-     "estado": "cambia",
-     "origen": "texto-paso2.json «home.servicios.via.texto»",
-     "antes": "Cuando alguien le pregunta por tu rubro a ChatGPT o a otro asistente de IA, como Gemini o Perplexity, la respuesta sale de lo que esas herramientas leen en internet: tu sitio y lo que otros dicen de ti. Trabajamos los dos para que tu empresa pueda aparecer. Nadie puede prometerte que aparezcas, y no tenemos una cifra de cuántos clientes llegan hoy por ahí. Por eso el primer paso, el chequeo, es gratis.",
-     "por_que": "Lectura fría, 19-oct: «no tenemos una cifra de cuántos clientes llegan hoy por ahí» lo leyó como «venden algo de $400.000 y admiten que no saben si sirve», el primero de sus diez. Queda la frase honesta («Nadie puede prometerte…») y se suma lo que el servicio sí entrega y mide (servicios-v3.json, Auditoría de Visibilidad y Acompañamiento Esencial: «Quién gana hoy esas respuestas», «~10 consultas medidas al mes»)."
-    },
-    {
-     "id": "home.servicios.via.escena",
-     "rol": "nota",
-     "uso": "escena",
-     "texto": "En septiembre revisamos desde afuera el sitio público de un estudio de abogados que aquí no nombramos, con más de 250 artículos. Google podía leer su sitio; ChatGPT, Claude y Perplexity recibían un error. Lo causaba una regla del servicio que protege su sitio, que alguien activó sin saber que también dejaba fuera a los buscadores de IA.",
-     "fuente": "e11/material.md E1; ventas/presentaciones/*-2026-09-11/preguntas-y-hallazgos.md:24-39 («una regla del CDN que alguien activó sin saber qué apagaba»; la prueba fue sobre la portada)",
-     "estado": "cambia",
-     "origen": "texto-paso2.json «home.servicios.via.escena»",
-     "antes": "En septiembre revisamos desde afuera el sitio público de un estudio de abogados que aquí no nombramos, con más de 250 artículos. Google podía leer su sitio; ChatGPT, Claude y Perplexity recibían un error. Lo causaba una regla del servicio que protege su sitio, que alguien activó sin saber qué apagaba.",
-     "por_que": "Lectura fría, 19-oct: «sin saber qué apagaba» lo dejó sin saber qué se había apagado. Ahora lo dice. Quién la activó y cómo terminó no los sabemos, y no se escriben."
-    },
-    {
-     "id": "home.servicios.via.precio",
-     "rol": "nota",
-     "uso": "precio",
-     "texto": "Desde $400.000 + IVA · una vez",
-     "fuente": "servicios-v3.json visibilidad-en-ia (Auditoría de Visibilidad)",
-     "estado": "cambia",
-     "origen": "texto-paso2.json «home.servicios.via.precio»",
-     "antes": "Desde $400.000 + IVA",
-     "por_que": "Lectura fría, 19-oct: no sabía si el precio era una vez o al mes. «una vez» es como lo dice servicios-v3.json."
-    },
-    {
-     "id": "home.servicios.via.boton",
-     "rol": "boton",
-     "texto": "Ver Visibilidad en IA",
-     "destino": "/v3/servicios/visibilidad-en-ia/",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.via.boton»"
-    },
-    {
-     "id": "home.servicios.aud.situacion",
-     "rol": "rotulo",
-     "uso": "situacion",
-     "texto": "Quieres saber qué frena a tu sitio en Google.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.aud.situacion»"
-    },
-    {
-     "id": "home.servicios.aud.nombre",
-     "rol": "h2",
-     "nivel": 3,
-     "texto": "Auditoría SEO técnica",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.aud.nombre»"
-    },
-    {
-     "id": "home.servicios.aud.texto",
-     "rol": "parrafo",
-     "texto": "El SEO técnico es lo que permite que Google encuentre tus páginas, las lea y las muestre. La auditoría revisa tu sitio completo y te dice qué falla y qué arreglar primero.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.aud.texto»"
-    },
-    {
-     "id": "home.servicios.aud.precio",
-     "rol": "nota",
-     "uso": "precio",
-     "texto": "Desde $490.000 + IVA · una vez",
-     "fuente": "servicios-v3.json auditoria-seo-tecnica (Auditoría Completa)",
-     "estado": "cambia",
-     "origen": "texto-paso2.json «home.servicios.aud.precio»",
-     "antes": "Desde $490.000 + IVA",
-     "por_que": "Lectura fría, 19-oct: no sabía si el precio era una vez o al mes. «una vez» es como lo dice servicios-v3.json."
-    },
-    {
-     "id": "home.servicios.aud.boton",
-     "rol": "boton",
-     "texto": "Ver Auditoría SEO técnica",
-     "destino": "/v3/servicios/auditoria-seo-tecnica/",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.aud.boton»"
-    },
-    {
-     "id": "home.servicios.aco.situacion",
-     "rol": "rotulo",
-     "uso": "situacion",
-     "texto": "Tu sitio ya funciona y quieres que siga mejorando.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.aco.situacion»"
-    },
-    {
-     "id": "home.servicios.aco.nombre",
+     "id": "home.soluciones.acompanamiento.nombre",
      "rol": "h2",
      "nivel": 3,
      "texto": "Acompañamiento mensual",
      "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.aco.nombre»"
+     "origen": "home.servicios.aco.nombre (E12); copy-secciones-v1.2 §2.5",
+     "fuente": "oferta-v3.json momentos[2].items[0].n, idéntico."
     },
     {
-     "id": "home.servicios.aco.texto",
+     "id": "home.soluciones.acompanamiento.texto",
      "rol": "parrafo",
-     "texto": "Una auditoría te dice qué hacer; este servicio lo hace, mes a mes, en SEO técnico, en visibilidad en IA o en las dos. Mínimo tres meses; después, mes a mes, con aviso de 30 días.",
-     "fuente": "servicios-v3.json acompanamiento-mensual (lead, linea y nota[1] «Cumplidos los 3 meses, mes a mes con aviso de 30 días»)",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.aco.texto»"
+     "texto": "Implementación y medición cada mes, con informe y reunión. Para quien ya hizo la primera parte y quiere sostenerla.",
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt",
+     "antes": "Una auditoría te dice qué hacer; este servicio lo hace, mes a mes, en SEO técnico, en visibilidad en IA o en las dos. Mínimo tres meses; después, mes a mes, con aviso de 30 días.",
+     "por_que": "Informe mensual y sin promesa de monitoreo (decisión 4). El mínimo de tres meses y el aviso de 30 días se dicen en la última pregunta de las frecuentes."
     },
     {
-     "id": "home.servicios.aco.precio",
+     "id": "home.soluciones.acompanamiento.precio",
      "rol": "nota",
      "uso": "precio",
      "texto": "Desde $590.000/mes + IVA",
-     "fuente": "servicios-v3.json acompanamiento-mensual (Esencial)",
      "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.aco.precio»"
+     "origen": "home.servicios.aco.precio (E12); v2-vigente/home.txt («Desde $590.000 al mes + IVA»)",
+     "fuente": "servicios-v3.json acompanamiento-mensual planes[0].precio, idéntico como texto."
     },
     {
-     "id": "home.servicios.aco.boton",
+     "id": "home.soluciones.acompanamiento.boton",
      "rol": "boton",
      "texto": "Ver Acompañamiento mensual",
      "destino": "/v3/servicios/acompanamiento-mensual/",
      "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.aco.boton»"
+     "origen": "home.servicios.aco.boton (E12)"
+    }
+   ],
+   "borrado": [
+    "El orden de E12 (Desarrollo web primero como «puerta»), las situaciones («Tu sitio te frena, o no existe.») y la línea «Si no sabes cuál te sirve, pide el mini-diagnóstico gratis».",
+    "«Lo diseñamos y lo programamos a medida, sin plantilla» como claim de apertura, «antes de entregarlo le pasamos el chequeo gratis» (sin respaldo) y «Trabajamos los dos para que tu empresa pueda aparecer»: el copy §2.5 los saca. «Las dos capas» y lo demás de Visibilidad en IA vive en su página."
+   ]
+  },
+  {
+   "id": "pruebas",
+   "nombre": "Lo que puedes revisar antes de contratar",
+   "trabajo": "Poner a la vista lo que cualquiera puede comprobar, y un solo caso real dicho tal cual fue. Sin cifras de negocio, sin logos, sin testimonios.",
+   "elementos": [
+    {
+     "id": "home.pruebas.h2",
+     "rol": "h2",
+     "tinta": "Lo que puedes revisar antes de contratar.",
+     "texto": "Lo que puedes revisar antes de contratar.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt",
+     "antes": "Cada pieza, con un dato medido. Y su fecha, para que lo revises tú.",
+     "nota": "Una sola tinta. «Mostramos, no prometemos» salió de este h2 (copy §2.6): los lectores lo marcaron como eslogan vago; el límite se dice una vez, en las preguntas frecuentes."
     },
     {
-     "id": "home.servicios.tambien",
+     "id": "home.pruebas.precios.titulo",
+     "rol": "h2",
+     "nivel": 3,
+     "texto": "Precios publicados",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6"
+    },
+    {
+     "id": "home.pruebas.precios.texto",
      "rol": "parrafo",
-     "texto": "También: Paid Media (Google), la gestión de tus anuncios de búsqueda en Google, desde $350.000/mes + IVA, sin contar lo que inviertes en los anuncios; y Gestión de redes sociales en LinkedIn, Instagram y Facebook, desde $390.000/mes + IVA.",
-     "enlaces": {
-      "Paid Media (Google)": "/v3/servicios/paid-media/",
-      "Gestión de redes sociales": "/v3/servicios/redes-sociales/"
-     },
-     "fuente": "oferta-v3.json tambien; servicios-v3.json paid-media y redes-sociales (planes[0].precio); servicios-v3.json paid-media.nota («El precio es el fee de gestión»; «La inversión en pauta la pones tú»)",
-     "nota": "Compuerta 1, punto 1: en la home, una línea.",
+     "texto": "Cada solución trae su precio de partida y lo que incluye, a la vista. El valor final se cierra por escrito después de la revisión.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt"
+    },
+    {
+     "id": "home.pruebas.precios.boton",
+     "rol": "boton",
+     "texto": "Ver los precios",
+     "destino": "/v3/servicios/",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6 («Ver los precios →»)"
+    },
+    {
+     "id": "home.pruebas.metodo.titulo",
+     "rol": "h2",
+     "nivel": 3,
+     "texto": "Método escrito",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6"
+    },
+    {
+     "id": "home.pruebas.metodo.texto",
+     "rol": "parrafo",
+     "texto": "Las fases y lo que recibes en cada una están en la página del método, para que las leas antes de contratar.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt"
+    },
+    {
+     "id": "home.pruebas.metodo.boton",
+     "rol": "boton",
+     "texto": "Leer el método",
+     "destino": "/v3/metodo/",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6 («Leer el método →»)"
+    },
+    {
+     "id": "home.pruebas.chequeo.titulo",
+     "rol": "h2",
+     "nivel": 3,
+     "texto": "Chequeo abierto",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6"
+    },
+    {
+     "id": "home.pruebas.chequeo.texto",
+     "rol": "parrafo",
+     "texto": "Escribes la dirección de tu sitio y ves 21 señales, con lo que pesa cada bloque. Es gratis y sin registro. Mide si tu sitio está preparado para que la IA lo lea; no mide si hoy te citan.",
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt",
+     "antes": "Escribes tu dominio y ves 21 señales, con lo que pesa cada bloque. Es gratis y sin registro. Mide si tu sitio está preparado para que la IA lo lea; no mide si hoy te citan.",
+     "por_que": "El campo del chequeo dice «La dirección de tu sitio» desde la lectura fría de E12 (una dueña de clínica no sabía si «dominio» era la dirección de su página); el texto tiene que decir lo mismo que el campo.",
+     "fuente": "21 señales y pesos 30/40/30: confirmado en el código el 23-oct (copy §11)."
+    },
+    {
+     "id": "home.pruebas.chequeo.boton",
+     "rol": "boton",
+     "texto": "Hacer el chequeo",
+     "destino": "/v3/diagnostico/",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6 («Hacer el chequeo →»)"
+    },
+    {
+     "id": "home.pruebas.propio.titulo",
+     "rol": "h2",
+     "nivel": 3,
+     "texto": "Probado primero en lo nuestro",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6"
+    },
+    {
+     "id": "home.pruebas.propio.texto",
+     "rol": "parrafo",
+     "texto": "Antes de publicar Verifica y Cumple, el chequeo de la Ley 21.719 de datos personales, lo corrí sobre mi propio sitio. Salió mal. Al arreglarlo encontré además un formulario que perdía mensajes sin avisar, y lo corregí.",
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt",
+     "antes": "Antes de publicar el chequeo de la Ley 21.719 de datos personales, lo corrí sobre mi propio sitio. Salió mal. Al arreglarlo encontré además un formulario que perdía mensajes sin avisar, y lo corregí.",
+     "por_que": "Brief §4 (sección 6) pide Verifica y Cumple como pieza propia con su enlace. En vez de una tarjeta aparte que repetiría el mismo hecho, el párrafo la nombra y el enlace de abajo lleva a ella; la ficha completa está en /trabajo/. Singular de Ramón, como en el v2 publicado y como en la fuente observacional del corpus.",
+     "fuente": "ventas/casos-de-exito/verifica-y-cumple.md (corrida del 9-sep, publicado el 21-sep). Sin los puntajes 36 y 73, que no se citan (copy §11). El formulario apareció al arreglar el consentimiento: no lo detectó el chequeo.",
+     "condicion": "Ramón confirma que «salió mal» y «perdía mensajes» se pueden decir tal cual."
+    },
+    {
+     "id": "home.pruebas.propio.aviso",
+     "rol": "nota",
+     "uso": "aviso",
+     "texto": "No es asesoría legal ni certifica que cumples.",
+     "estado": "nuevo",
+     "origen": "trabajo.json entrada «verifica-y-cumple» (E12), que lo toma de inventario-casos §7 («describe señales; no certifica»)",
+     "nota": "Va junto al enlace a Verifica y Cumple."
+    },
+    {
+     "id": "home.pruebas.propio.boton",
+     "rol": "boton",
+     "texto": "Ver Verifica y Cumple",
+     "destino": "https://verifica.spindlelab.cl/",
+     "estado": "nuevo",
+     "origen": "trabajo.json entrada «verifica-y-cumple» (destino y aviso de sitio aparte)",
+     "nota": "Enlace externo: lleva la flecha ↗ y, oculto a la vista, comun.externo «(sitio aparte: verifica.spindlelab.cl)»."
+    },
+    {
+     "id": "home.pruebas.pie-verifica",
+     "rol": "nota",
+     "texto": "La persona a caballo de esta portada está generada con IA.",
+     "uso": "pie",
+     "donde": "Junto a la portada de Verifica y Cumple, solo si la home la muestra (verifica-y-cumple-45: la persona a caballo se ve entera)",
      "estado": "queda",
-     "origen": "texto-paso2.json «home.servicios.tambien»"
+     "origen": "home.obra.pie-verifica (E12)",
+     "condicion": "Si Lucía deja la sección sin imagen de Verifica y Cumple, este pie no se usa. Si la imagen aparece, el pie es obligatorio."
+    },
+    {
+     "id": "home.pruebas.caso.titulo",
+     "rol": "h2",
+     "nivel": 3,
+     "texto": "Un caso real: Bernardo Combeau, fotógrafo",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt"
+    },
+    {
+     "id": "home.pruebas.caso.texto",
+     "rol": "parrafo",
+     "texto": "Construimos su sitio con un panel para que él mismo edite textos y series, y hoy lo opera él. Es un caso de sitio web, no de crecimiento de ventas.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt",
+     "condicion": "«Hoy lo opera él» descansa en una mantención acordada y en el login verificado el 23-sep, sin un registro de uso reciente. Ramón lo confirma. El permiso para nombrarlo es verbal (inventario-casos.md:98; Ramón, 16-oct: «no se necesita más permiso. ya lo pedí»).",
+     "fuente": "Sin cifras de su negocio: es un caso de sitio web (brief §6.5). Ya no lleva «805 kB a 95 kB»: el dato medido vive en la página del caso."
+    },
+    {
+     "id": "home.pruebas.caso.boton",
+     "rol": "boton",
+     "texto": "Ver el caso",
+     "destino": "/v3/trabajo/combeau/",
+     "estado": "nuevo",
+     "origen": "comun.cursor.caso («Ver el caso»)"
+    },
+    {
+     "id": "home.pruebas.todo",
+     "rol": "boton",
+     "texto": "[ Todo el trabajo ] (2)",
+     "destino": "/v3/trabajo/",
+     "estado": "cambia",
+     "origen": "home.obra.todo (E12)",
+     "antes": "[ Todo el trabajo ] (10)",
+     "nota": "El único corchete de la página (lock §14). El 2 es el conteo verdadero de trabajo.entradas: si cambia el número de entradas, cambia aquí y en combeau.siguiente.todo."
     }
+   ],
+   "borrado": [
+    "Las tres filas de «Cada pieza, con un dato medido» con sus cifras (805 kB a 95 kB, 384 pruebas de Praxi, 0,52 segundos de Verifica y Cumple), la advertencia «No son cifras de ventas de clientes» y la ficha «Medido 16-oct-2026». Praxi sale de la obra; los otros dos datos viven en sus páginas.",
+    "«Es el mismo chequeo que le pasamos a cada sitio que construimos» y cualquier variante: sin respaldo.",
+    "La intro «No tienes que creernos…» y el remate «y no te mostramos cifras que no tenemos» del caso (copy §2.6: anuncian y alaban)."
    ]
   },
   {
    "id": "quien",
    "nombre": "Quién está detrás",
-   "trabajo": "Contestar quién hace esto antes de que lo pregunten, sin inflar el tamaño.",
+   "trabajo": "Contestar quién hace esto antes de que lo pregunten, sin inflar el tamaño: una persona, lo que hace la IA y lo que hace él.",
    "elementos": [
     {
      "id": "home.quien.h2",
      "rol": "h2",
-     "tinta": "Detrás de SpindleLab está Ramón Vallejos.",
-     "gris": "Diseña y programa con agentes de IA; él revisa y aprueba el código.",
-     "texto": "Detrás de SpindleLab está Ramón Vallejos. Diseña y programa con agentes de IA; él revisa y aprueba el código.",
-     "fuente": "nosotros.astro:85 («con agentes de IA a mi lado y partners para lo que no hacemos en casa»)",
+     "tinta": "Quién está detrás",
+     "texto": "Quién está detrás",
      "estado": "cambia",
-     "origen": "texto-paso2.json «home.quien.h2»",
-     "antes": "Detrás de SpindleLab está Ramón Vallejos. Diseña él, y programa con agentes de IA: escriben código que él revisa y aprueba.",
-     "por_que": "Lock §14: la continuación gris va de 6 a 13 palabras y la tinta hasta 8 (lo midió herramientas/comprobar-obra.py). La idea no cambia: los agentes escriben el código y él lo revisa y lo aprueba."
+     "origen": "copy-secciones-v1.2 §2.7; v2-vigente/home.txt",
+     "antes": "Detrás de SpindleLab está Ramón Vallejos. Diseña y programa con agentes de IA; él revisa y aprueba el código.",
+     "por_que": "El h2 de antes decía «agentes de IA» y «aprueba el código»: la medición de Praxi dice que 50 de 219 commits fueron directo a main, así que «aprueba» no está medido (revisión del 23-oct). El documento de textos lo dice en singular y con lo que hace cada uno, en el primer párrafo.",
+     "nota": "Una sola tinta. Si Lucía quiere dos tintas aquí, la partición natural es sacar la primera frase de home.quien.p1 («Soy Ramón Vallejos y SpindleLab soy yo.», 7 palabras) como gris."
+    },
+    {
+     "id": "home.quien.pie",
+     "rol": "nota",
+     "uso": "pie",
+     "texto": "Ramón Vallejos · Consultor de marketing y crecimiento con IA",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.7 (pie de la foto)",
+     "condicion": "El cargo lo confirma Ramón (R5 del brief; comun.entidad.cargo dice lo mismo en el JSON-LD)."
+    },
+    {
+     "id": "home.quien.p1",
+     "rol": "parrafo",
+     "texto": "Soy Ramón Vallejos y SpindleLab soy yo. Uso agentes de IA para el trabajo que se repite y reviso yo lo que te entrego. Como soy una persona, tomo pocos proyectos a la vez. Atiendo a todo Chile por videollamada.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.7 (P1); v2-vigente/home.txt",
+     "condicion": "Dos afirmaciones que confirma Ramón: «reviso yo lo que te entrego» (declarada, honesta; decisión 4 del copy) y «tomo pocos proyectos a la vez» (de capacidad; una lectora no la creyó, por eso vive solo aquí). Singular deliberado: es la presentación de la persona. «Agentes de IA» solo vive aquí y en Nosotros (guía §3)."
     },
     {
      "id": "home.quien.cv",
      "rol": "parrafo",
-     "texto": "Antes pasó más de cinco años en agencias: Universal McCann; Graphene IPG, con la cuenta de LATAM Airlines en cuatro países; Incrementa y Maggiore.",
-     "fuente": "nosotros.astro:89-94 (CV cerrado, e11/material.md §5)",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.quien.cv»"
+     "texto": "Antes trabajé en agencias. Coordiné la producción de piezas para ocho marcas nacionales en Universal McCann y trabajé la cuenta de LATAM Airlines en Graphene IPG, con campañas en cuatro países. Después hice pauta de retail y B2B en Incrementa, y contenido y SEO en Maggiore.",
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.7 (P2); v2-vigente/home.txt",
+     "antes": "Antes pasó más de cinco años en agencias: Universal McCann; Graphene IPG, con la cuenta de LATAM Airlines en cuatro países; Incrementa y Maggiore.",
+     "por_que": "«Más de cinco años» no se verifica contra el CV (suma entre 4 años y 4 años 9 meses): sale. Pasa a primera persona, como el resto de la sección.",
+     "condicion": "El CV es un conjunto cerrado de hechos. «Ocho marcas nacionales» y «cuatro países» están en el v2 publicado, pero la memoria de Ramón dice que las cifras de las agencias no van al copy de SpindleLab: lo confirma él."
     },
     {
-     "id": "home.quien.publicado",
+     "id": "home.quien.regla.1",
      "rol": "parrafo",
-     "texto": "Tú hablas con él durante todo el proyecto. Cuando un trabajo pide algo que él no hace, lo hace con otros profesionales, y te lo dice. Los precios, el método y el chequeo están publicados, para que compares antes de escribirnos.",
-     "condicion": "«y te lo dice» describe cómo trabaja Ramón: lo confirma él.",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.quien.publicado»"
+     "rotulo": "Empiezo por mirar",
+     "texto": "Reviso tu sitio antes de cobrarte nada y te cuento lo que encontré.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.7 (regla 1)",
+     "nota": "Molde de dw.fase.N: «rotulo» es el título corto de la regla; «texto», una frase."
+    },
+    {
+     "id": "home.quien.regla.2",
+     "rol": "parrafo",
+     "rotulo": "Te digo qué se puede mover y qué no",
+     "texto": "Si el problema no está en tu sitio, te lo digo, y la conversación de 20 minutos sirve para ver dónde mirar.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.7 (regla 2); v2-vigente/home.txt"
+    },
+    {
+     "id": "home.quien.regla.3",
+     "rol": "parrafo",
+     "rotulo": "Lo dejo por escrito",
+     "texto": "Alcance, fases, plazos y precio, antes de empezar.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.7 (regla 3)"
     },
     {
      "id": "home.quien.boton",
@@ -641,7 +655,8 @@
      "texto": "Conocer a Ramón",
      "destino": "/v3/nosotros/",
      "estado": "queda",
-     "origen": "texto-paso2.json «home.quien.boton»"
+     "origen": "texto-paso2.json «home.quien.boton» (E12)",
+     "nota": "El documento de textos dice «Conocer más». Queda «Conocer a Ramón» porque dice qué hay del otro lado del clic y «más» no."
     },
     {
      "id": "home.quien.retrato",
@@ -651,54 +666,156 @@
      "origen": "prototipo de A (ramon-vallejos-34.webp)",
      "estado": "queda"
     }
+   ],
+   "borrado": [
+    "«Tú hablas con él durante todo el proyecto. Cuando un trabajo pide algo que él no hace, lo hace con otros profesionales, y te lo dice» (home.quien.publicado): los partners no tienen relación comercial documentada (copy §2.7).",
+    "«Diseña y programa con agentes de IA; él revisa y aprueba el código»: ver el «por qué» de home.quien.h2."
+   ]
+  },
+  {
+   "id": "faq",
+   "nombre": "Preguntas frecuentes",
+   "trabajo": "Contestar las cinco dudas que decide un comprador antes de escribir, y decir una vez, concreto, el límite de lo que se promete.",
+   "elementos": [
+    {
+     "id": "home.faq.h2",
+     "rol": "h2",
+     "tinta": "Lo esencial, en claro.",
+     "texto": "Lo esencial, en claro.",
+     "estado": "nuevo",
+     "origen": "v2-vigente/home.txt",
+     "nota": "Una sola tinta."
+    },
+    {
+     "id": "home.faq.1.p",
+     "rol": "h2",
+     "nivel": 3,
+     "texto": "¿Cuánto cuesta?",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.8"
+    },
+    {
+     "id": "home.faq.1.r",
+     "rol": "parrafo",
+     "texto": "Cada solución publica su precio de partida, con lo que incluye, más IVA. Por ejemplo, desde $350.000 al mes la gestión de Google Ads, desde $390.000 una página web, desde $490.000 una auditoría SEO y desde $590.000 al mes el acompañamiento. La revisión de una página es gratis.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.8; v2-vigente/home.txt",
+     "fuente": "Cada monto es el precio de partida de su página: paid-media $350.000/mes, desarrollo-web $390.000 (Página de Campaña), auditoria-seo-tecnica $490.000 (Auditoría Completa), acompanamiento-mensual $590.000/mes (Esencial). Releer contra el sitio vivo el día de publicar."
+    },
+    {
+     "id": "home.faq.2.p",
+     "rol": "h2",
+     "nivel": 3,
+     "texto": "¿Qué necesitan de mí para partir?",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.8"
+    },
+    {
+     "id": "home.faq.2.r",
+     "rol": "parrafo",
+     "texto": "La dirección de tu sitio. Si avanzamos, te vamos a pedir acceso de lectura a tu analítica y a Search Console, y para implementar, un acceso acotado a tu sitio. Si hay que mirar tu proceso de ventas, también cómo registras las consultas y cuántas se cierran.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.8; v2-vigente/home.txt",
+     "fuente": "Coherencia con marketing/onboarding-cliente.md (copy §11)."
+    },
+    {
+     "id": "home.faq.3.p",
+     "rol": "h2",
+     "nivel": 3,
+     "texto": "¿Y si el problema no es mi sitio?",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.8"
+    },
+    {
+     "id": "home.faq.3.r",
+     "rol": "parrafo",
+     "texto": "Entonces te lo decimos. La revisión puede mostrar que tu sitio está en orden, y en ese caso la conversación de 20 minutos sirve para ver dónde mirar.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.8; v2-vigente/home.txt"
+    },
+    {
+     "id": "home.faq.4.p",
+     "rol": "h2",
+     "nivel": 3,
+     "texto": "¿Prometen resultados?",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.8"
+    },
+    {
+     "id": "home.faq.4.r",
+     "rol": "parrafo",
+     "texto": "No. Lo que dejamos por escrito es el método, los entregables y los plazos. Lo que responde una IA o lo que decide un cliente no lo controla nadie.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.8; v2-vigente/home.txt",
+     "nota": "El único lugar donde el sitio dice el límite de lo que promete (copy §1.4). En el resto de la home no se repite como estribillo."
+    },
+    {
+     "id": "home.faq.5.p",
+     "rol": "h2",
+     "nivel": 3,
+     "texto": "¿Hay contrato de permanencia?",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.8",
+     "condicion": "Esta pregunta salió de las lecturas en frío, no de un prospecto real (copy §2.8): Ramón confirma que se pregunta."
+    },
+    {
+     "id": "home.faq.5.r",
+     "rol": "parrafo",
+     "texto": "Un proyecto se paga por fases. El acompañamiento mensual tiene un mínimo de 3 meses y después sigue mes a mes, con aviso de 30 días.",
+     "estado": "nuevo",
+     "origen": "copy-secciones-v1.2 §2.8; v2-vigente/home.txt",
+     "fuente": "servicios-v3.json acompanamiento-mensual (mínimo de 3 meses; mes a mes con aviso de 30 días)."
+    },
+    {
+     "id": "home.faq.jsonld",
+     "rol": "nota",
+     "uso": "referencia",
+     "texto": "El FAQPage del JSON-LD de la home repite estas cinco preguntas y respuestas, tal cual, en este orden (brief §7, criterio 3: debe coincidir con el FAQ visible). El @id y la forma son los de v2-vigente/home.txt.",
+     "estado": "nuevo"
+    }
+   ],
+   "borrado": [
+    "«¿Qué es SpindleLab?» («consultoría chilena de SEO técnico… para empresas B2B y de sectores donde la confianza pesa») y «es donde más movemos la aguja»; la pregunta de AEO/GEO (se explica mejor en el blog) y cualquier pregunta que no sea una de estas cinco."
    ]
   },
   {
    "id": "contacto",
-   "nombre": "Contacto",
-   "trabajo": "Decir qué pasa al escribir: qué recibes, en cuánto tiempo y si cuesta.",
+   "nombre": "Cierre",
+   "trabajo": "Decir qué pasa al escribir: qué mandas, qué recibes. Una sola acción, hacia /contacto/.",
    "elementos": [
     {
      "id": "home.contacto.h2",
      "rol": "h2",
-     "tinta": "Escríbenos con la dirección de tu sitio.",
-     "gris": "En 24 horas te mandamos el mini-diagnóstico, gratis.",
-     "texto": "Escríbenos con la dirección de tu sitio. En 24 horas te mandamos el mini-diagnóstico, gratis.",
-     "fuente": "paginas-v3.json contacto",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.contacto.h2»"
-    },
-    {
-     "id": "home.contacto.que-es",
-     "rol": "parrafo",
-     "texto": "Es una página con lo que está bien en tu sitio, lo que lo frena y qué haríamos primero. Lo hace una persona, que además le pregunta a ChatGPT, Gemini y Perplexity por tu rubro, cosa que el chequeo gratis de esta página no hace.",
-     "fuente": "paginas-v3.json contacto.lead; e11/material.md §3 («lo hace el mini-diagnóstico a mano»)",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.contacto.que-es»"
-    },
-    {
-     "id": "home.contacto.de-cero",
-     "rol": "parrafo",
-     "texto": "Si partes de cero, en el mismo plazo te escribimos para conversar tu proyecto.",
-     "fuente": "paginas-v3.json contacto (bloque «Listo.»)",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.contacto.de-cero»"
+     "tinta": "Empieza por una página.",
+     "gris": "Escríbenos la dirección de tu sitio y te respondemos con la revisión.",
+     "texto": "Empieza por una página. Escríbenos la dirección de tu sitio y te respondemos con la revisión.",
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.9 (H2 y P juntos); v2-vigente/home.txt",
+     "antes": "Escríbenos con la dirección de tu sitio. En 24 horas te mandamos el mini-diagnóstico, gratis.",
+     "por_que": "Sin «24 horas» ni «mini-diagnóstico». El h2 y el párrafo del documento caben en las dos tintas del patrón de E12: tinta 4 palabras (tope 8), gris 12 (rango 6 a 13)."
     },
     {
      "id": "home.contacto.boton",
      "rol": "boton",
-     "texto": "Escribir a SpindleLab",
+     "texto": "Enviar la dirección de mi sitio",
      "destino": "/v3/contacto/",
-     "estado": "queda",
-     "origen": "texto-paso2.json «home.contacto.boton»"
+     "estado": "cambia",
+     "origen": "copy-secciones-v1.2 §2.9 (CTA)",
+     "antes": "Escribir a SpindleLab",
+     "por_que": "Dice qué pasa al hacer clic. Es la misma acción de la portada con otras palabras: lleva a /contacto/, donde se dispara generate_lead."
     },
     {
      "id": "home.contacto.correo",
      "rol": "nota",
      "texto": "O directo a hola@spindlelab.cl",
+     "destino": "mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis",
      "estado": "queda",
-     "origen": "texto-paso2.json «home.contacto.correo»"
+     "origen": "texto-paso2.json «home.contacto.correo» (E12)",
+     "nota": "Mismo asunto que el correo del pie (comun.pie.correo)."
     }
+   ],
+   "borrado": [
+    "«Es una página con lo que está bien en tu sitio…» (home.contacto.que-es): decía que además se le pregunta a ChatGPT, Gemini y Perplexity por el rubro, cosa que es manual de Ramón y que el sitio no promete a todos (copy §12.7). «Si partes de cero, en el mismo plazo te escribimos» (home.contacto.de-cero): lo cubre «Quien está armando todo también puede escribirnos»."
    ]
   }
  ]

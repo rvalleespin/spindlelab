@@ -2,48 +2,23 @@
   "meta": {
     "slug": "como-aparecer-en-chatgpt",
     "title": "¿Cómo aparecer en las respuestas de ChatGPT? · SpindleLab",
-    "description": "Guía honesta para aparecer en ChatGPT, Gemini y Perplexity: cómo eligen fuentes los motores de IA y 5 acciones concretas para ser citado.",
+    "description": "Cómo eligen fuentes ChatGPT, Gemini y Perplexity y cinco acciones que dependen de ti: qué robots dejar entrar, qué publicar y qué no se puede prometer.",
     "headline": "¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?",
     "datePublished": "2026-07-07",
-    "dateModified": "2026-08-25",
+    "dateModified": "2026-10-26",
     "canonical": "https://spindlelab.cl/blog/como-aparecer-en-chatgpt/"
   },
   "jsonLd": {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ProfessionalService",
-        "@id": "https://spindlelab.cl/#org",
-        "name": "SpindleLab",
-        "url": "https://spindlelab.cl/",
-        "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
-        "email": "hola@spindlelab.cl",
-        "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Santiago",
-          "addressCountry": "CL"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Chile"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/company/spindlelab/",
-          "https://www.instagram.com/spindle.lab/"
-        ],
-        "founder": {
-          "@id": "https://spindlelab.cl/#autor-ramon"
-        }
-      },
-      {
         "@type": "Article",
         "@id": "https://spindlelab.cl/blog/como-aparecer-en-chatgpt/#article",
         "headline": "¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?",
-        "description": "Cómo eligen fuentes los motores de IA y las cinco acciones concretas que aumentan tus probabilidades de ser citado.",
+        "description": "Cómo eligen fuentes ChatGPT, Gemini y Perplexity y cinco acciones que dependen de ti: qué robots dejar entrar, qué publicar y qué no se puede prometer.",
         "inLanguage": "es-CL",
         "datePublished": "2026-07-07",
-        "dateModified": "2026-08-25",
+        "dateModified": "2026-10-26",
         "image": "https://spindlelab.cl/assets/img/og-marca.jpg?v=4",
         "author": {
           "@id": "https://spindlelab.cl/#autor-ramon"
@@ -52,16 +27,6 @@
           "@id": "https://spindlelab.cl/#org"
         },
         "mainEntityOfPage": "https://spindlelab.cl/blog/como-aparecer-en-chatgpt/"
-      },
-      {
-        "@type": "Person",
-        "@id": "https://spindlelab.cl/#autor-ramon",
-        "name": "Ramón Vallejos",
-        "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
-        "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
-        "worksFor": {
-          "@id": "https://spindlelab.cl/#org"
-        }
       },
       {
         "@type": "BreadcrumbList",
@@ -75,7 +40,7 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "El Taller",
+            "name": "Blog",
             "item": "https://spindlelab.cl/blog/"
           },
           {
@@ -94,7 +59,7 @@
             "name": "¿Cuánto tarda en verse resultado?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "En respuestas con búsqueda en vivo, las mejoras de contenido y señales pueden reflejarse en semanas. En el conocimiento base del modelo, los cambios toman meses o esperan al siguiente ciclo de entrenamiento. Por eso la estrategia correcta trabaja ambos caminos a la vez."
+              "text": "No hay un plazo que se pueda prometer. Los motores que buscan en vivo leen tu sitio cuando alguien pregunta, así que un cambio en la página puede notarse antes que uno en el conocimiento base del modelo, que se actualiza cuando el proveedor lo vuelve a entrenar. Por eso conviene medir con las mismas preguntas antes y después, y trabajar ambos caminos a la vez."
             }
           },
           {
@@ -102,7 +67,7 @@
             "name": "¿Y si prefiero que la IA no use mi contenido?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Es una decisión legítima. Algunos medios la han tomado. Pero para una empresa que vende servicios, bloquear los bots equivale a pedir que no te recomienden. Se puede proteger contenido específico y dejar abierto lo comercial: esa configuración fina es parte del trabajo."
+              "text": "Es una decisión legítima. Los robots de entrenamiento (GPTBot, ClaudeBot, Google-Extended y CCBot) se pueden bloquear sin perder citas hoy, porque recogen texto para modelos futuros. Lo que conviene dejar abierto son los de búsqueda en vivo y los asistentes que entran cuando alguien pregunta, porque esos deciden si apareces en las respuestas de hoy. Se puede proteger contenido específico y dejar abierto lo comercial."
             }
           },
           {

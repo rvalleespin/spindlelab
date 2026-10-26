@@ -1,49 +1,49 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/contacto.json",
- "sha256": "fc54a2fb54922239946ca91e79b2566feafa5f5e2109d921e63e90f9aaa490f6",
+ "sha256": "49cb9c4d7a90d8b911b4c926d120cbebd3a53372691321f69bfaeaf2a23481c1",
  "id": "contacto",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "contacto",
   "ruta": "/v3/contacto/",
-  "modo": "queda con ajustes",
-  "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
-  "title": "Contacto: pide un sitio o un diagnóstico gratis · SpindleLab",
-  "description": "Escríbenos a hola@spindlelab.cl. Si quieres un sitio, te contamos cómo lo haríamos; si ya tienes uno, en 24 horas te mandamos un mini-diagnóstico gratis.",
-  "senales": "Simón, e12/senales-obra.md §2.11",
-  "protegido": "No cambian los nombres de los campos, .contact-form, #f-utm-*, .form-status, .form-success, v3-contacto.js ni generate_lead (brief §6.7, criterio 11). Solo cambia el texto visible.",
+  "modo": "reescribe (E13)",
+  "regla": "E13, 26-oct-2026: el texto sale de e13/fuentes/v2-vigente/contacto.txt (publicado y aprobado el 24-oct) y de copy-secciones-v1.2.md §8. Aquí vive todo el texto visible de la página, salvo las cuatro preguntas frecuentes, que son datos de página porque de ellas sale también el FAQPage del JSON-LD: viven en spindlelab-astro/src/data/paginas-v3.json, clave «contacto», y lo que se ve es lo mismo que lo que dice el FAQPage. El texto de E12 que se reemplaza va en «antes».",
+  "title": "Contacto: pide tu revisión gratis · SpindleLab",
+  "description": "Escríbenos la dirección de tu sitio y en un día hábil recibes una revisión de una página con lo más importante que encontramos.",
+  "senales": "Simón, e12/senales-obra.md §2.11, con el cambio de e13: v2-vigente/contacto.txt",
+  "protegido": "No cambian los nombres de los campos, .contact-form, #f-utm-*, .form-status, .form-success, v3-contacto.js ni generate_lead (brief de obra §6.2). Solo cambia el texto visible.",
   "secciones": [
    {
     "id": "cabecera",
     "nombre": "Cabecera",
-    "trabajo": "Con el giro, la puerta también es un sitio nuevo: decir qué pasa al escribir en los dos casos.",
+    "trabajo": "Pedir una sola cosa, la dirección del sitio, y decir qué se recibe y cuándo.",
     "elementos": [
      {
       "id": "contacto.miga",
       "rol": "rotulo",
       "texto": "Inicio · Contacto",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio)",
       "uso": "miga",
       "estado": "queda"
      },
      {
       "id": "contacto.h1",
       "rol": "h1",
-      "tinta": "Escríbenos.",
-      "gris": "Te respondemos en 24 horas, tengas sitio o partas de cero.",
-      "texto": "Escríbenos. Te respondemos en 24 horas, tengas sitio o partas de cero.",
-      "antes": "Un correo. Tu URL. 24 horas.",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json contacto.h1",
-      "por_que": "Hablaba solo del diagnóstico (Simón, senales-obra §2.11), y tres fragmentos sin verbo como titular son lo que la voz de la marca no usa (voz-spindlelab, «Lo que no aparece nunca»).",
+      "tinta": "Escríbenos la dirección de tu sitio",
+      "gris": "y te respondemos con una revisión.",
+      "texto": "Escríbenos la dirección de tu sitio y te respondemos con una revisión.",
+      "antes": "Escríbenos. Te respondemos en 24 horas, tengas sitio o partas de cero.",
+      "origen": "v2-vigente/contacto.txt; copy-secciones-v1.2 §8",
+      "por_que": "Sale «24 horas» (el único plazo documentado fue de 31 h). Una frase en dos tintas: seis palabras en tinta, seis en gris.",
       "estado": "cambia"
      },
      {
       "id": "contacto.linea",
       "rol": "entradilla",
-      "texto": "Si ya tienes sitio, te mandamos el mini-diagnóstico: una página con lo que está bien, lo que lo frena y qué haríamos primero, gratis. Si partes de cero, te escribimos para conversar tu proyecto.",
-      "antes": "Escríbenos con la dirección de tu sitio y recibes el mini-diagnóstico, gratis.",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json contacto.linea",
-      "por_que": "Los dos caminos, con lo que recibe cada uno (las mismas palabras que el contacto de la home).",
+      "texto": "Te respondemos con una página con lo más importante que encontramos. Es gratis y llega en un día hábil.",
+      "antes": "Si ya tienes sitio, te mandamos el mini-diagnóstico: una página con lo que está bien, lo que lo frena y qué haríamos primero, gratis. Si partes de cero, te escribimos para conversar tu proyecto.",
+      "origen": "v2-vigente/contacto.txt",
+      "por_que": "Sale «mini-diagnóstico». La revisión es gratis y llega en un día hábil.",
       "estado": "cambia"
      }
     ]
@@ -51,22 +51,21 @@
    {
     "id": "formulario",
     "nombre": "El formulario",
-    "trabajo": "Que llenarlo sea obvio para los dos casos, sin tocar lo que mide.",
+    "trabajo": "Que llenarlo sea obvio, sin tocar lo que mide.",
     "elementos": [
      {
       "id": "contacto.form.h2",
       "rol": "h2",
-      "texto": "Cuéntanos qué necesitas",
-      "antes": "Pide tu mini-diagnóstico",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json contacto.secciones[0].h2",
-      "por_que": "El formulario sirve también para pedir un sitio.",
+      "texto": "Cuéntanos de tu proyecto",
+      "antes": "Cuéntanos qué necesitas",
+      "origen": "v2-vigente/contacto.txt",
       "estado": "cambia"
      },
      {
       "id": "contacto.form.nombre",
       "rol": "rotulo",
       "texto": "Nombre",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio)",
       "uso": "label",
       "estado": "queda"
      },
@@ -74,7 +73,7 @@
       "id": "contacto.form.correo",
       "rol": "rotulo",
       "texto": "Correo",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio)",
       "uso": "label",
       "estado": "queda"
      },
@@ -82,17 +81,15 @@
       "id": "contacto.form.sitio",
       "rol": "rotulo",
       "texto": "La dirección de tu sitio",
-      "antes": "Sitio web",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
-      "por_que": "El mismo nombre del campo que el chequeo. El name del campo sigue siendo «Sitio web».",
+      "origen": "e12 (sin cambio). El name del campo sigue siendo «Sitio web».",
       "uso": "label",
-      "estado": "cambia"
+      "estado": "queda"
      },
      {
       "id": "contacto.form.sitio.placeholder",
       "rol": "nota",
       "texto": "tuempresa.cl",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio)",
       "uso": "placeholder",
       "estado": "queda"
      },
@@ -100,7 +97,7 @@
       "id": "contacto.form.sitio.ayuda",
       "rol": "nota",
       "texto": "Si partes de cero, escribe «no tengo» y cuéntanos tu proyecto abajo.",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio); calza con «quien parte de cero también entra, por el sitio» (copy §1.2)",
       "uso": "ayuda",
       "estado": "queda"
      },
@@ -108,17 +105,17 @@
       "id": "contacto.form.mensaje",
       "rol": "rotulo",
       "texto": "Cuéntanos brevemente (opcional)",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio)",
       "uso": "label",
       "estado": "queda"
      },
      {
       "id": "contacto.form.mensaje.placeholder",
       "rol": "nota",
-      "texto": "Qué hace tu empresa y qué necesitas de tu sitio…",
-      "antes": "Qué hace tu empresa, qué te preocupa de tu sitio…",
-      "origen": "contacto.astro:171",
-      "por_que": "Sirve también para quien parte de cero.",
+      "texto": "Qué vende tu empresa y cómo te llegan hoy las consultas",
+      "antes": "Qué hace tu empresa y qué necesitas de tu sitio…",
+      "origen": "copy-secciones-v1.2 §8",
+      "por_que": "Pide lo que el método necesita para la conversación: qué vende y cómo llegan las consultas.",
       "uso": "placeholder",
       "estado": "cambia"
      },
@@ -126,17 +123,17 @@
       "id": "contacto.form.consiento",
       "rol": "rotulo",
       "texto": "Acepto que estos datos se usen para responder mi solicitud, según la política de privacidad.",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio)",
       "uso": "label",
       "estado": "queda"
      },
      {
       "id": "contacto.form.boton",
       "rol": "boton",
-      "texto": "Enviar mi mensaje →",
-      "antes": "Pedir mi mini-diagnóstico →",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json contacto.secciones[0].boton",
-      "por_que": "Dice qué pasa al hacer clic en los dos casos. El script, si el envío falla, le vuelve a poner este texto (contacto.astro, MutationObserver).",
+      "texto": "Enviar la dirección",
+      "antes": "Enviar mi mensaje →",
+      "origen": "copy-secciones-v1.2 §8",
+      "por_que": "Dice qué se manda. La flecha es el SVG de la plantilla; si el envío falla, el script le pone «Enviar →» y contacto.mjs le devuelve este texto con su flecha.",
       "estado": "cambia"
      },
      {
@@ -151,7 +148,7 @@
       "id": "contacto.form.error",
       "rol": "nota",
       "texto": "Algo falló al enviar. Escríbenos directo a hola@spindlelab.cl mientras lo revisamos.",
-      "origen": "v3-contacto.js",
+      "origen": "v3-contacto.js; copy-secciones-v1.2 §8",
       "uso": "error",
       "estado": "queda"
      },
@@ -159,22 +156,24 @@
       "id": "contacto.form.listo.t",
       "rol": "h2",
       "texto": "Listo.",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json contacto.secciones[0].bloques[0]",
       "nivel": 3,
+      "origen": "e12 (sin cambio)",
       "estado": "queda"
      },
      {
       "id": "contacto.form.listo.d",
       "rol": "parrafo",
-      "texto": "Te escribimos dentro de 24 horas con tu mini-diagnóstico, o para conversar tu proyecto si partes de cero.",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json contacto.secciones[0].bloques[0]",
-      "estado": "queda"
+      "texto": "Te escribimos dentro de un día hábil con tu revisión.",
+      "antes": "Te escribimos dentro de 24 horas con tu mini-diagnóstico, o para conversar tu proyecto si partes de cero.",
+      "origen": "copy-secciones-v1.2 §8 («Listo. Te escribimos dentro de un día hábil con tu revisión.»)",
+      "por_que": "Sale «24 horas» y «mini-diagnóstico». Quien parte de cero no tiene un sitio que revisar: la confirmación del documento no lo distingue y queda como decisión abierta en e13/desvios/interiores.md.",
+      "estado": "cambia"
      },
      {
       "id": "contacto.form.directo",
       "rol": "nota",
       "texto": "O escríbenos directo a hola@spindlelab.cl",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio); v2-vigente/contacto.txt",
       "estado": "queda"
      }
     ]
@@ -182,66 +181,81 @@
    {
     "id": "despues",
     "nombre": "Qué pasa después",
-    "trabajo": "Bajar el miedo a escribir: qué pasa, en cuánto y sin compromiso.",
+    "trabajo": "Bajar el miedo a escribir: qué pasa, en cuánto y quién decide.",
     "elementos": [
      {
       "id": "contacto.despues.h2",
       "rol": "h2",
       "texto": "Qué pasa después",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio); v2-vigente/contacto.txt",
       "estado": "queda"
      },
      {
       "id": "contacto.despues.1.t",
       "rol": "h2",
       "texto": "Nos escribes",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
       "nivel": 3,
+      "origen": "e12 (sin cambio)",
       "estado": "queda"
      },
      {
       "id": "contacto.despues.1.d",
       "rol": "parrafo",
-      "texto": "Con la dirección de tu sitio basta. Si partes de cero, cuéntanos qué vendes y qué necesitas.",
-      "antes": "Un correo con tu URL basta. Si quieres, cuéntanos qué vendes y qué te preocupa de tu sitio.",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
-      "por_que": "El camino de quien parte de cero; «URL» pasa a «la dirección de tu sitio».",
+      "texto": "Con la dirección de tu sitio basta. Si quieres, agrega qué vendes y cómo te llegan las consultas.",
+      "antes": "Con la dirección de tu sitio basta. Si partes de cero, cuéntanos qué vendes y qué necesitas.",
+      "origen": "v2-vigente/contacto.txt",
       "estado": "cambia"
      },
      {
       "id": "contacto.despues.2.t",
       "rol": "h2",
-      "texto": "Te respondemos en 24 horas",
-      "antes": "Recibes el diagnóstico",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
-      "por_que": "Vale para los dos caminos.",
+      "texto": "Recibes la revisión",
       "nivel": 3,
+      "antes": "Te respondemos en 24 horas",
+      "origen": "v2-vigente/contacto.txt",
       "estado": "cambia"
      },
      {
       "id": "contacto.despues.2.d",
       "rol": "parrafo",
-      "texto": "Si tienes sitio, con el mini-diagnóstico: una página, en lenguaje claro, con los hallazgos que más importan y su prioridad. Si partes de cero, para conversar tu proyecto.",
-      "antes": "En 24 horas: una página, en lenguaje claro, con los hallazgos que más importan y su prioridad.",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
-      "por_que": "Los dos caminos, con el mismo plazo que ya dice «Listo.».",
+      "texto": "Una página en lenguaje claro, con los hallazgos más importantes y por dónde partiríamos.",
+      "antes": "Si tienes sitio, con el mini-diagnóstico: una página, en lenguaje claro, con los hallazgos que más importan y su prioridad. Si partes de cero, para conversar tu proyecto.",
+      "origen": "v2-vigente/contacto.txt",
       "estado": "cambia"
      },
      {
-      "id": "contacto.despues.3",
-      "rol": "nota",
-      "texto": "Queda tal cual: «Decides con calma» y su texto.",
-      "uso": "referencia",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "id": "contacto.despues.3.t",
+      "rol": "h2",
+      "texto": "Tú decides",
+      "nivel": 3,
+      "antes": "Decides con calma",
+      "origen": "v2-vigente/contacto.txt; copy-secciones-v1.2 §8 («Se borra… «Decides con calma»»)",
+      "por_que": "El documento manda sacar «Decides con calma».",
+      "estado": "cambia"
+     },
+     {
+      "id": "contacto.despues.3.d",
+      "rol": "parrafo",
+      "texto": "Si quieres avanzar, conversamos 20 minutos y te mandamos una propuesta por escrito. Si no, la revisión queda contigo.",
+      "antes": "Si quieres avanzar, agendamos 20 minutos y te enviamos una propuesta cerrada. Si no, el diagnóstico queda contigo, sin seguimiento insistente.",
+      "origen": "v2-vigente/contacto.txt",
+      "por_que": "Sale «diagnóstico»; «sin seguimiento insistente» sale con «Decides con calma».",
+      "estado": "cambia"
+     },
+     {
+      "id": "contacto.antes.h2",
+      "rol": "h2",
+      "texto": "Antes de escribir",
+      "origen": "e12 (sin cambio); v2-vigente/contacto.txt",
       "estado": "queda"
      },
      {
-      "id": "contacto.antes",
+      "id": "contacto.antes.referencia",
       "rol": "nota",
-      "texto": "Queda tal cual: «Antes de escribir» y sus tres preguntas.",
+      "texto": "Las cuatro preguntas y sus respuestas están en paginas-v3.json, clave «contacto», faq, y son las mismas del FAQPage del JSON-LD (texto de v2-vigente/contacto.txt).",
       "uso": "referencia",
       "origen": "spindlelab-astro/src/data/paginas-v3.json contacto.faq",
-      "estado": "queda"
+      "estado": "cambia"
      }
     ]
    }

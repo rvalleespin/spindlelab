@@ -1,15 +1,15 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/desarrollo-web.json",
- "sha256": "10c1067e762e14349af072ba2d0cf174351448094d55be25bcdcc45e740510c7",
+ "sha256": "1749997cfaf7b4369d18ef9b94f13b042c191251e783f2707c7983b02d18bef1",
  "id": "desarrollo-web",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "desarrollo-web",
   "ruta": "/v3/servicios/desarrollo-web/",
   "title": "Desarrollo web a medida, desde $390.000 + IVA · SpindleLab",
-  "description": "Diseñamos y programamos tu sitio a medida, listo para que Google y la IA puedan leerlo. Cuatro planes, desde $390.000 + IVA.",
-  "senales": "Simón, e12/senales-obra.md §2.7 (el title de Simón, con el precio de entrada; la description es la mía)",
-  "estructura": "spec-visual.md §2.4 (vista 5 del prototipo): cabecera; franja (Combeau fotografía); lo que va en todos los planes; sitios que construimos; glosario y planes; cinco fases; preguntas; cierre.",
+  "description": "Sitios web a medida, sin plantillas ni WordPress, con panel para que edites tú y SEO técnico desde el diseño. Cuatro planes, desde $390.000 + IVA.",
+  "senales": "Simón, e12/senales-obra.md §2.7 (el title con el precio de entrada); la description sale de la publicada el 24-oct (v2-vigente/servicios__desarrollo-web.txt) con los cuatro planes",
+  "estructura": "spec-visual.md §2.4 (vista 5 del prototipo): cabecera; franja (Combeau fotografía); lo que va en todos los planes; lo que construimos (Combeau y Verifica y Cumple); glosario y planes; cinco fases; preguntas; cierre. Obra E13: texto al mensaje nuevo; ver e13/desvios/servicios.md.",
   "secciones": [
    {
     "id": "cabecera",
@@ -22,22 +22,23 @@
       "uso": "miga",
       "opciones": [
        "Inicio",
-       "Servicios",
+       "Soluciones",
        "Desarrollo web"
       ],
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.miga»"
+      "estado": "cambia",
+      "origen": "texto-paso2.json «dw.miga»",
+      "antes": "Inicio · Servicios · Desarrollo web"
      },
      {
       "id": "dw.h1",
       "rol": "h1",
       "tinta": "Desarrollo web.",
-      "gris": "Diseñamos y programamos sitios listos para que Google y la IA los lean.",
-      "texto": "Desarrollo web. Diseñamos y programamos sitios listos para que Google y la IA los lean.",
+      "gris": "Un sitio a medida, sin plantillas ni WordPress, con panel para editar.",
+      "texto": "Desarrollo web. Un sitio a medida, sin plantillas ni WordPress, con panel para editar.",
       "estado": "cambia",
-      "origen": "texto-paso2.json «dw.h1»",
-      "antes": "Desarrollo web. Diseñamos y programamos tu sitio, y lo dejamos listo para que Google y la IA puedan leerlo.",
-      "por_que": "Lock §14: la continuación gris va de 6 a 13 palabras y la tinta hasta 8 (lo midió herramientas/comprobar-obra.py)."
+      "origen": "v2-vigente/servicios__desarrollo-web.txt (subtítulo); copy-secciones-v1.2.md §5.4",
+      "antes": "Desarrollo web. Diseñamos y programamos sitios listos para que Google y la IA los lean.",
+      "por_que": "Sale el claim «diseñamos y programamos sitios» (revisión 23-oct, claim central: el sitio ya no es la tesis). Lo que queda es lo que dice la versión publicada el 24-oct: a medida, sin plantillas ni WordPress, con panel para editar. Lock E12 §14: la continuación gris va de 6 a 13 palabras."
      },
      {
       "id": "dw.entradilla",
@@ -108,29 +109,35 @@
      {
       "id": "dw.incluye.3",
       "rol": "parrafo",
-      "texto": "El SEO técnico de base: que Google pueda encontrar tus páginas, leerlas y mostrarlas, con un bloque de datos que el visitante no ve, pero que le dice a Google qué negocio eres, dónde estás y quién responde. En el Sitio Completo, además, lo preparamos para que ChatGPT y otros asistentes de IA puedan nombrarte en sus respuestas.",
+      "texto": "El SEO técnico de base: que Google pueda encontrar tus páginas, leerlas y mostrarlas, con un bloque de datos que el visitante no ve, pero que le dice a Google qué negocio eres, dónde estás y quién responde. En el Sitio Completo, además, dejamos el sitio listo para que ChatGPT y otros asistentes de IA puedan leerlo y entender a qué te dedicas.",
       "fuente": "oferta-v3.json planes (SEO técnico en los cuatro; «puesta a punto AEO/GEO» solo en el Sitio Completo)",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.incluye.3»"
+      "estado": "cambia",
+      "origen": "texto-paso2.json «dw.incluye.3»",
+      "antes": "… En el Sitio Completo, además, lo preparamos para que ChatGPT y otros asistentes de IA puedan nombrarte en sus respuestas.",
+      "por_que": "«Puedan nombrarte» promete un resultado que no controlamos (revisión 23-oct)."
      },
      {
       "id": "dw.incluye.4",
       "rol": "parrafo",
-      "texto": "El chequeo gratis de nuestra página de inicio, pasado sobre tu sitio antes de entregarlo. Te dejamos el puntaje por escrito y, si tenías otro sitio, también el de antes.",
+      "texto": "El chequeo gratis de SpindleLab, pasado sobre tu sitio antes de entregarlo. Te dejamos el puntaje por escrito y, si tenías otro sitio, también el de antes.",
       "enlaces": {
        "chequeo": "/v3/diagnostico/"
       },
       "fuente": "desarrollo-web.astro (decidido en E8); promesa de proceso, e11/material.md §5",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.incluye.4»"
+      "estado": "cambia",
+      "origen": "texto-paso2.json «dw.incluye.4»",
+      "antes": "El chequeo gratis de nuestra página de inicio, pasado sobre tu sitio antes de entregarlo. …",
+      "por_que": "«De nuestra página de inicio» no decía de qué chequeo hablaba. Queda como promesa de proceso, no como práctica pasada: nunca decimos «el mismo que le pasamos a cada sitio que construimos» (el chequeo existe desde el 27-ago; revisión 23-oct)."
      },
      {
       "id": "dw.incluye.6",
       "rol": "parrafo",
-      "texto": "Lo programamos con agentes de IA, y Ramón revisa cada fase antes de avanzar.",
+      "texto": "Revisión humana en cada fase antes de avanzar.",
       "fuente": "desarrollo-web.astro, «Construcción con IA, revisión humana en cada fase antes de avanzar»",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.incluye.6»"
+      "estado": "cambia",
+      "origen": "v2-vigente/servicios__desarrollo-web.txt («Revisión humana en cada fase antes de avanzar.»)",
+      "antes": "Lo programamos con agentes de IA, y Ramón revisa cada fase antes de avanzar.",
+      "por_que": "«Agentes de IA» solo vive en «Quién está detrás» (guía E13 §3); «Ramón revisa cada fase» es un hecho que el inventario no sostiene (en Praxi, 50 de 219 cambios fueron directo; revisión 23-oct), y queda como método, que es lo que dice la versión publicada el 24-oct."
      },
      {
       "id": "dw.incluye.7",
@@ -152,27 +159,22 @@
       "id": "dw.obra.h2",
       "rol": "h2",
       "tinta": "Lo que construimos.",
-      "gris": "Para clientes, para nosotros y como concepto, con lo que se midió.",
-      "texto": "Lo que construimos. Para clientes, para nosotros y como concepto, con lo que se midió.",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.obra.h2»"
+      "gris": "Uno para un cliente y otro propio, con lo que se midió.",
+      "texto": "Lo que construimos. Uno para un cliente y otro propio, con lo que se midió.",
+      "estado": "cambia",
+      "origen": "texto-paso2.json «dw.obra.h2»",
+      "antes": "Lo que construimos. Para clientes, para nosotros y como concepto, con lo que se midió.",
+      "por_que": "Praxi y los cuatro conceptos salen del sitio (decisión 3 de Ramón; brief de obra §1): quedan Combeau y Verifica y Cumple."
      },
      {
       "id": "dw.obra.entradas",
       "rol": "nota",
       "uso": "referencia",
-      "texto": "Tres entradas del índice, con su nombre, bajada y la línea corta (tipo · año): Combeau, fotografía (→ /v3/trabajo/combeau/#fotografia) · Praxi (→ /v3/trabajo/praxi/) · Sesenta, concepto (→ /v3/trabajo/sesenta/). Ver «trabajo.entradas».",
+      "texto": "Dos entradas del índice, con su nombre, bajada y la línea corta (tipo · año): Combeau (→ /v3/trabajo/combeau/) · Verifica y Cumple (→ https://verifica.spindlelab.cl/). Ver «trabajo.entradas».",
       "estado": "cambia",
-      "antes": "Tres entradas del índice, con su nombre, bajada y línea mono: Combeau, fotografía · Praxi · Sesenta (concepto). Ver «trabajo.entradas».",
-      "por_que": "Los destinos de A: Combeau es una página con dos partes.",
+      "antes": "Tres entradas del índice: Combeau (→ /v3/trabajo/combeau/#fotografia) · Praxi (→ /v3/trabajo/praxi/) · Sesenta, concepto (→ /v3/trabajo/sesenta/).",
+      "por_que": "Praxi y Sesenta salen (brief de obra §3 y §5). Combeau es un solo caso con dos partes y su entrada lleva a la página, sin ancla.",
       "origen": "texto-paso2.json «dw.obra.entradas»"
-     },
-     {
-      "id": "dw.obra.concepto",
-      "rol": "nota",
-      "texto": "Las marcas rotuladas Concepto son inventadas: muestran cómo trabajaríamos un rubro, y no tuvieron clientes.",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.obra.concepto»"
      },
      {
       "id": "dw.obra.boton",
@@ -234,13 +236,14 @@
        "Indexación: que Google guarde tus páginas para poder mostrarlas cuando alguien busca.",
        "Velocidad: cuánto demora tu sitio en aparecer, sobre todo en el celular.",
        "CMS: el panel donde cambias textos, fotos o artículos sin tocar el código.",
-       "Puesta a punto AEO/GEO: dejar el sitio listo para que ChatGPT y otros asistentes de IA lo lean y puedan nombrarte en sus respuestas. Son dos siglas en inglés para lo mismo: aparecer en las respuestas que escribe la IA.",
-       "Integraciones: conectar el sitio con otros sistemas, como tu CRM (donde registras a tus clientes), tus reservas o tus pagos.",
+       "Puesta a punto AEO/GEO: dejar el sitio listo para que ChatGPT y otros asistentes de IA lo lean y entiendan a qué te dedicas. Son dos siglas en inglés para lo mismo: preparar un sitio para las respuestas que escribe la IA.",
+       "Integraciones: conectar el sitio con otros sistemas, como tus reservas o tus pagos.",
        "Arquitectura propia: el sitio se organiza por dentro según lo que necesita tu negocio, no según una plantilla."
       ],
       "nota": "Va antes de las tarjetas de los planes, no después: la dueña de la clínica leyó «schema», «indexación» y «AEO/GEO» en los planes sin entenderlos, y el glosario la rescató recién abajo.",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.planes.glosario»"
+      "estado": "cambia",
+      "origen": "texto-paso2.json «dw.planes.glosario»",
+      "por_que": "Sale «tu CRM» de «Integraciones» (nunca entregado; revisión 23-oct y copy-secciones-v1.2.md §5.4) y «puedan nombrarte» de AEO/GEO (promete un resultado)."
      }
     ]
    },
@@ -277,10 +280,12 @@
      {
       "id": "dw.fase.3",
       "rol": "parrafo",
-      "rotulo": "03 · Desarrollo con IA",
-      "texto": "Programamos el sitio con agentes de IA y Ramón revisa el código. Sigues cada avance en un enlace de prueba, antes de que se publique.",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.fase.3»"
+      "rotulo": "03 · Desarrollo",
+      "texto": "Construimos el sitio por etapas, con revisión humana en cada una. Sigues el progreso en un enlace de prueba, antes de que se publique.",
+      "estado": "cambia",
+      "origen": "texto-paso2.json «dw.fase.3»",
+      "antes": "03 · Desarrollo con IA. Programamos el sitio con agentes de IA y Ramón revisa el código. …",
+      "por_que": "copy-secciones-v1.2.md §5.4: «03 Desarrollo. Construimos el sitio por etapas, con revisión humana en cada avance.» Sin agentes de IA."
      },
      {
       "id": "dw.fase.4",
@@ -318,7 +323,8 @@
       "nivel": 3,
       "texto": "¿Usan plantillas o WordPress?",
       "estado": "queda",
-      "origen": "texto-paso2.json «dw.faq.1.p»"
+      "origen": "texto-paso2.json «dw.faq.1.p»",
+      "nota": "Obra E13: sale «¿Qué cambia que lo construyan con IA?» (contaba el método interno; decisión 4 del documento de textos) y las preguntas siguientes se renumeran 3 a 5."
      },
      {
       "id": "dw.faq.1.r",
@@ -347,34 +353,19 @@
       "id": "dw.faq.3.p",
       "rol": "h2",
       "nivel": 3,
-      "texto": "¿Qué cambia que lo construyan con IA?",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.faq.3.p»"
-     },
-     {
-      "id": "dw.faq.3.r",
-      "rol": "parrafo",
-      "texto": "Los plazos. La IA acorta el trabajo de programar, no la revisión: Ramón aprueba cada fase antes de pasar a la siguiente.",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.faq.3.r»"
-     },
-     {
-      "id": "dw.faq.4.p",
-      "rol": "h2",
-      "nivel": 3,
       "texto": "¿El sitio incluye SEO?",
       "estado": "queda",
       "origen": "texto-paso2.json «dw.faq.4.p»"
      },
      {
-      "id": "dw.faq.4.r",
+      "id": "dw.faq.3.r",
       "rol": "parrafo",
       "texto": "Sí. El SEO técnico va en todos los planes y se piensa desde el diseño. Si además quieres trabajar cómo te nombran ChatGPT, Gemini y Perplexity, eso se profundiza en Visibilidad en IA.",
       "estado": "queda",
       "origen": "texto-paso2.json «dw.faq.4.r»"
      },
      {
-      "id": "dw.faq.5.p",
+      "id": "dw.faq.4.p",
       "rol": "h2",
       "nivel": 3,
       "texto": "¿Qué necesitan de mí para partir?",
@@ -382,7 +373,7 @@
       "origen": "texto-paso2.json «dw.faq.5.p»"
      },
      {
-      "id": "dw.faq.5.r",
+      "id": "dw.faq.4.r",
       "rol": "parrafo",
       "texto": "El anticipo, los textos y las imágenes: el plazo de tu plan cuenta desde que nos llegan. Para publicar, acceso a tu dominio.",
       "fuente": "desarrollo-web.astro #planes, nota",
@@ -390,7 +381,7 @@
       "origen": "texto-paso2.json «dw.faq.5.r»"
      },
      {
-      "id": "dw.faq.6.p",
+      "id": "dw.faq.5.p",
       "rol": "h2",
       "nivel": 3,
       "texto": "¿Ustedes escriben los textos y sacan las fotos?",
@@ -398,7 +389,7 @@
       "origen": "texto-paso2.json «dw.faq.6.p»"
      },
      {
-      "id": "dw.faq.6.r",
+      "id": "dw.faq.5.r",
       "rol": "parrafo",
       "texto": "No. Los textos y las imágenes los pones tú, y el plazo cuenta desde que nos llegan. La redacción, el diseño gráfico y la producción de fotos o video no están en los planes.",
       "fuente": "oferta-v3.json «fuera» (contenido creativo, diseño gráfico, producción de video); nota de #planes",
@@ -417,45 +408,52 @@
       "id": "dw.cierre.h2",
       "rol": "h2",
       "tinta": "Cuéntanos qué necesita tu sitio.",
-      "gris": "Te respondemos en 24 horas, tengas sitio o no.",
-      "texto": "Cuéntanos qué necesita tu sitio. Te respondemos en 24 horas, tengas sitio o no.",
+      "gris": "Te respondemos en un día hábil, tengas sitio o no.",
+      "texto": "Cuéntanos qué necesita tu sitio. Te respondemos en un día hábil, tengas sitio o no.",
       "fuente": "paginas-v3.json contacto",
       "estado": "cambia",
       "origen": "texto-paso2.json «dw.cierre.h2»",
-      "antes": "Cuéntanos qué necesita tu sitio. Te respondemos en 24 horas.",
-      "por_que": "Lock §14: la continuación gris va de 6 a 13 palabras y la tinta hasta 8 (lo midió herramientas/comprobar-obra.py). La continuación suma los dos casos, como el contacto."
+      "antes": "Cuéntanos qué necesita tu sitio. Te respondemos en 24 horas, tengas sitio o no.",
+      "por_que": "Guía E13 §3: nunca «24 horas»; el único plazo documentado fue de 31 horas."
      },
      {
       "id": "dw.cierre.p",
       "rol": "parrafo",
-      "texto": "Si partes de cero, conversamos tu proyecto. Si ya tienes sitio, empezamos con el mini-diagnóstico: una página con lo que está bien, lo que lo frena y qué haríamos primero, gratis.",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.cierre.p»"
+      "texto": "Si partes de cero, conversamos tu proyecto. Si ya tienes sitio, empezamos con la revisión gratis: una página con lo que está bien, lo que lo frena y qué haríamos primero.",
+      "estado": "cambia",
+      "origen": "texto-paso2.json «dw.cierre.p»",
+      "antes": "… empezamos con el mini-diagnóstico: una página con lo que está bien, lo que lo frena y qué haríamos primero, gratis.",
+      "por_que": "«Mini-diagnóstico» pasa a «revisión gratis» (guía E13 §3)."
      },
      {
       "id": "dw.cierre.boton1",
       "rol": "boton",
-      "texto": "Escribir a SpindleLab",
+      "texto": "Conversar mi proyecto",
       "destino": "/v3/contacto/",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.cierre.boton1»"
+      "estado": "cambia",
+      "origen": "v2-vigente/servicios__desarrollo-web.txt («Conversar mi proyecto»)",
+      "antes": "Escribir a SpindleLab"
      },
      {
       "id": "dw.cierre.boton2",
       "rol": "boton",
-      "texto": "Revisar mi sitio gratis",
+      "texto": "Chequear mi sitio ahora",
       "destino": "/v3/diagnostico/",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.cierre.boton2»"
+      "estado": "cambia",
+      "origen": "texto-paso2.json «dw.cierre.boton2»",
+      "antes": "Revisar mi sitio gratis",
+      "por_que": "«Revisión» es lo que se pide a Ramón (contacto); el chequeo, la herramienta, se llama «chequeo» (el mismo botón de /servicios/ y de la portada)."
      },
      {
       "id": "dw.siguiente",
       "rol": "boton",
       "rotulo": "Siguiente",
-      "texto": "Visibilidad en IA →",
-      "destino": "/v3/servicios/visibilidad-en-ia/",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.siguiente»"
+      "texto": "Acompañamiento mensual →",
+      "destino": "/v3/servicios/acompanamiento-mensual/",
+      "estado": "cambia",
+      "origen": "texto-paso2.json «dw.siguiente»",
+      "antes": "Visibilidad en IA →",
+      "por_que": "El orden de los seis sigue los cuatro bloques de /servicios/ (servicios.mjs): después de Desarrollo web viene el Acompañamiento mensual."
      }
     ]
    }

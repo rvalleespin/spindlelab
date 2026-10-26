@@ -1,41 +1,16 @@
 {
   "meta": {
     "slug": "21-chequeos-visibilidad-ia",
-    "title": "Los 21 chequeos de visibilidad en IA, explicados · SpindleLab",
+    "title": "Los 21 chequeos de visibilidad en IA explicados · SpindleLab",
     "description": "Qué mide cada uno de los 21 chequeos de visibilidad en IA, cuánto pesa en el puntaje y cómo se arregla si no lo pasas. Con la metodología completa.",
     "headline": "Los 21 chequeos de visibilidad en IA, explicados uno por uno",
     "datePublished": "2026-09-04",
-    "dateModified": "2026-09-08",
+    "dateModified": "2026-10-26",
     "canonical": "https://spindlelab.cl/blog/21-chequeos-visibilidad-ia/"
   },
   "jsonLd": {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://spindlelab.cl/#org",
-        "name": "SpindleLab",
-        "url": "https://spindlelab.cl/",
-        "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
-        "email": "hola@spindlelab.cl",
-        "description": "SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Santiago",
-          "addressCountry": "CL"
-        },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Chile"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/company/spindlelab/",
-          "https://www.instagram.com/spindle.lab/"
-        ],
-        "founder": {
-          "@id": "https://spindlelab.cl/#autor-ramon"
-        }
-      },
       {
         "@type": "Article",
         "@id": "https://spindlelab.cl/blog/21-chequeos-visibilidad-ia/#article",
@@ -43,7 +18,7 @@
         "description": "Qué mide cada uno de los 21 chequeos de visibilidad en IA, cuánto pesa en el puntaje y cómo se arregla si no lo pasas. Con la metodología completa.",
         "inLanguage": "es-CL",
         "datePublished": "2026-09-04",
-        "dateModified": "2026-09-08",
+        "dateModified": "2026-10-26",
         "image": "https://spindlelab.cl/assets/img/og-marca.jpg?v=4",
         "author": {
           "@id": "https://spindlelab.cl/#autor-ramon"
@@ -52,16 +27,6 @@
           "@id": "https://spindlelab.cl/#org"
         },
         "mainEntityOfPage": "https://spindlelab.cl/blog/21-chequeos-visibilidad-ia/"
-      },
-      {
-        "@type": "Person",
-        "@id": "https://spindlelab.cl/#autor-ramon",
-        "name": "Ramón Vallejos",
-        "jobTitle": "Consultor de SEO técnico y visibilidad en IA (AEO/GEO)",
-        "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
-        "worksFor": {
-          "@id": "https://spindlelab.cl/#org"
-        }
       },
       {
         "@type": "BreadcrumbList",
@@ -75,7 +40,7 @@
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "El Taller",
+            "name": "Blog",
             "item": "https://spindlelab.cl/blog/"
           },
           {
@@ -110,7 +75,7 @@
             "name": "¿Bloquear a GPTBot protege mi contenido?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Evita que tu texto entre al entrenamiento de los modelos futuros de OpenAI, y es una decisión legítima sobre tu propiedad intelectual. Lo que NO hace es quitarte citas hoy: de eso se encargan otros robots (OAI-SearchBot y ChatGPT-User), que conviene dejar entrar si tu negocio depende de que te encuentren. La confusión entre ambos es el error más común del rubro."
+              "text": "Evita que tu texto entre al entrenamiento de los modelos futuros de OpenAI, y es una decisión legítima sobre tu propiedad intelectual. Lo que NO hace es quitarte citas hoy: de eso se encargan otros robots (OAI-SearchBot y ChatGPT-User), que conviene dejar entrar si tu negocio depende de que te encuentren. Confundir ambos es fácil, y por eso el chequeo los separa."
             }
           },
           {
@@ -134,7 +99,7 @@
             "name": "¿Un puntaje alto significa que ChatGPT me va a recomendar?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. El chequeo mide si tu sitio está preparado, no si hoy te citan. Los motores arman sus respuestas con fuentes de terceros, no solo con tu sitio. Puedes estar impecable por dentro y aun así no aparecer, y qué fuentes te faltan es justo lo que revisa el diagnóstico completo."
+              "text": "No. El chequeo mide si tu sitio está preparado, no si hoy te citan. Los motores arman sus respuestas con fuentes de terceros, no solo con tu sitio. Puedes estar impecable por dentro y aun así no aparecer, y qué fuentes te faltan se revisa aparte, preguntándole directamente a los motores."
             }
           }
         ]

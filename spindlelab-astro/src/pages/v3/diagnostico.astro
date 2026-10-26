@@ -1,10 +1,12 @@
 ---
-// DIAGNÓSTICO SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 5). Diego, 19-oct-2026.
+// DIAGNÓSTICO SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 5; ajustado en la obra E13, 26-oct-2026).
 //
 // Contrato: spindlelab-v3/spec-visual.md §2.4, fila «/v3/diagnostico/»: el instrumento primero (miga, h1 y su línea en
-// c1–c10, y debajo el chequeo grande en c1–c8, con el resultado en la misma columna); después «Los 21 chequeos», «Lo
-// que este chequeo no mide», «Dos caminos», «La Ley 21.719», preguntas y el cierre «¿Quién aparece en tu lugar?». Sin
-// franja. El único sandbox a la vista de la página es este (§5.5). Lo que la spec no cubría: desvios.md, tanda 5.
+// c1-c10, y debajo el chequeo grande en c1-c8, con el resultado en la misma columna); después «Los 21 chequeos», «Lo
+// que este chequeo no mide», «Dos caminos», «La Ley 21.719», preguntas y el cierre «También lo revisamos nosotros, a
+// mano.». Sin franja. El único sandbox a la vista de la página es este (§5.5). Lo que la spec no cubría: desvios.md,
+// tanda 5. En E13 la página se mantiene y se corrige el texto: lo gratis que se hace a mano es la «revisión», y el
+// chequeo no promete resultados.
 //
 // El chequeo es el de producción (Chequeo.astro: los ids chq-*, v3-chequeo.js sin tocar); su resultado se pinta con el
 // sistema de A (archivo.css). El texto lo arma diagnostico() en interiores.mjs; señales de Simón, senales-obra.md §2.6.
@@ -22,7 +24,7 @@ const m = diagnostico();
   <meta slot="head" name="robots" content="noindex, nofollow" />
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
   <PaginaA>
-    {/* 1 · EL INSTRUMENTO PRIMERO: la cabecera y, debajo, el chequeo en c1–c8 */}
+    {/* 1 · EL INSTRUMENTO PRIMERO: la cabecera y, debajo, el chequeo en c1-c8 */}
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: m.miga[0], href: '/v3/' }, { texto: m.miga[1] }]} />
       <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
@@ -32,7 +34,7 @@ const m = diagnostico();
       </div>
     </section>
 
-    {/* 2 · LOS 21 CHEQUEOS, PUBLICADOS: los tres bloques con su peso en mono (c5–c12) */}
+    {/* 2 · LOS 21 CHEQUEOS, PUBLICADOS: los tres bloques con su peso en mono (c5-c12) */}
     <section class="seccion reticula" id="metodologia" aria-labelledby="h-21">
       <div class="int-sec__cab">
         <h2 class="t-declaracion" id="h-21">{m.veintiuno.h2}</h2>
@@ -52,7 +54,7 @@ const m = diagnostico();
       </div>
     </section>
 
-    {/* 3 · LO QUE ESTE CHEQUEO NO MIDE (lista, c5–c12) */}
+    {/* 3 · LO QUE ESTE CHEQUEO NO MIDE (lista, c5-c12) */}
     <section class="seccion reticula" aria-labelledby="h-nomide">
       <div class="int-sec__cab"><h2 class="t-declaracion" id="h-nomide">{m.noMide.h2}</h2></div>
       <ul class="int-sec__cuerpo int-lista">
@@ -60,7 +62,7 @@ const m = diagnostico();
       </ul>
     </section>
 
-    {/* 4 · DOS CAMINOS, Y NINGUNO TE COBRA (los dos caminos en la forma de las fases, c5–c12) */}
+    {/* 4 · DOS CAMINOS, Y NINGUNO TE COBRA (los dos caminos en la forma de las fases, c5-c12) */}
     <section class="seccion reticula" aria-labelledby="h-caminos">
       <div class="int-sec__cab">
         <h2 class="t-declaracion" id="h-caminos">{m.dosCaminos.h2}</h2>
@@ -92,7 +94,7 @@ const m = diagnostico();
       </div>
     </section>
 
-    {/* 6 · PREGUNTAS (c5–c12) */}
+    {/* 6 · PREGUNTAS (c5-c12) */}
     <section class="seccion reticula" aria-labelledby="h-faq">
       <div class="int-sec__cab"><h2 class="t-declaracion" id="h-faq">{m.preguntas.h2}</h2></div>
       <div class="int-sec__cuerpo">
@@ -100,7 +102,7 @@ const m = diagnostico();
       </div>
     </section>
 
-    {/* 7 · CIERRE (§2.4.4): «¿Quién aparece en tu lugar?» */}
+    {/* 7 · CIERRE (§2.4.4): «También lo revisamos nosotros, a mano.» */}
     <section class="seccion reticula" aria-labelledby="h-cierre">
       <div class="cierre">
         <h2 class="t-declaracion" id="h-cierre">{m.cierre.h2}</h2>

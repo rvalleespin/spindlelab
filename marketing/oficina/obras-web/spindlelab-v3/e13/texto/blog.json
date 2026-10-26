@@ -2,9 +2,9 @@
  "id": "blog",
  "ruta": "/v3/blog/",
  "modo": "queda con ajustes",
- "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
+ "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector. E13 (26-oct): también se corrige el cierre y, en los siete cuerpos, solo lo que afirmaba algo que no se sostiene; cada cambio está en e13/desvios/blog.md.",
  "title": "Blog: SEO técnico y visibilidad en IA · SpindleLab",
- "description": "Cómo funcionan el SEO técnico y la visibilidad en motores de IA en Chile, explicado con la metodología a la vista y sin promesas de primeros lugares.",
+ "description": "Cómo funcionan el SEO técnico y la visibilidad en motores de IA, explicado con la metodología a la vista y sin promesas de primeros lugares.",
  "senales": "Simón, e12/senales-obra.md §2.9: el índice y los siete artículos quedan; cambia solo su imagen al compartir",
  "secciones": [
   {
@@ -55,11 +55,43 @@
      "estado": "queda"
     },
     {
-     "id": "blog.cierre",
-     "rol": "nota",
-     "texto": "Queda tal cual: «Leer ayuda; medir, más.», su guía, su cuerpo y los dos botones.",
-     "uso": "referencia",
-     "origen": "spindlelab-astro/src/data/paginas-v3.json blog.cierre",
+     "id": "blog.cierre.h2",
+     "rol": "h2",
+     "texto": "Leer ayuda; medir, más.",
+     "origen": "spindlelab-astro/src/data/paginas-v3.json blog.cierre.h2",
+     "estado": "queda"
+    },
+    {
+     "id": "blog.cierre.guia",
+     "rol": "entradilla",
+     "texto": "El chequeo revisa 21 señales de tu dominio en segundos, gratis. Cada señal que no pases viene con la instrucción para arreglarla.",
+     "origen": "spindlelab-astro/src/data/paginas-v3.json blog.cierre.guia",
+     "estado": "queda"
+    },
+    {
+     "id": "blog.cierre.cuerpo",
+     "rol": "cuerpo",
+     "texto": "Si prefieres que una persona mire tu sitio, pide la revisión de una página: es gratis y llega en un día hábil.",
+     "antes": "Es el mismo chequeo con el que partimos cada proyecto.",
+     "origen": "e13/fuentes/v2-vigente/blog.txt (cierre del Taller: «En un día hábil te decimos dónde está parado tu sitio. Gratis.»)",
+     "por_que": "La frase de antes afirmaba una práctica que no está respaldada (revisión 23-oct, «sin_respaldo»): el chequeo existe desde el 27-ago y el único sitio entregado salió el 24-jul. El cierre pasa a la acción principal del sitio.",
+     "estado": "cambia"
+    },
+    {
+     "id": "blog.cierre.cta",
+     "rol": "boton",
+     "texto": "Pedir la revisión de una página",
+     "destino": "/v3/contacto/",
+     "antes": "Correr el chequeo (botón principal) y «Escríbenos» (secundario)",
+     "origen": "brief de obra E13 §2 y §3 (una sola acción principal por ruta; el chequeo baja a enlace secundario)",
+     "estado": "cambia"
+    },
+    {
+     "id": "blog.cierre.chequeo",
+     "rol": "boton",
+     "texto": "Correr el chequeo",
+     "destino": "/v3/diagnostico/",
+     "nota": "Pasa de principal a secundario.",
      "estado": "queda"
     }
    ]
@@ -67,7 +99,7 @@
   {
    "id": "articulo",
    "nombre": "Plantilla del artículo (los siete)",
-   "trabajo": "El cuerpo de cada artículo queda tal cual (brief §3); aquí solo lo que pone la plantilla de A.",
+   "trabajo": "Los cuerpos se corrigen solo donde afirmaban algo que no se sostiene (guía E13; detalle en e13/desvios/blog.md, una fila por afirmación); aquí lo que pone la plantilla de A.",
    "elementos": [
     {
      "id": "articulo.miga",
