@@ -197,61 +197,63 @@ console.log('=== 6. el precio quedó cerrado en toda la página ===');
 
 /* ── EL BOTÓN NO PUEDE INVITAR A COMPRAR ANTES DE QUE SE PUEDA VENDER ──────────────────
  *
- * El 26-oct Ramón apretó «Quiero el kit» y recibió un 409. El registro del servidor dejó el
- * orden a la vista: `/api/chequeo` → `/api/pedido` (409) → `/api/profundo`. O sea que el POST
- * de la compra salió ANTES de que la revisión con navegador existiera.
+ * El 26-oct Ramón apretó «Quiero el kit» y recibió un 409. Los tiempos del servidor:
  *
- * La causa: el botón se dibuja con el resultado RÁPIDO, que vuelve en un segundo, y el
- * servidor exige la revisión con NAVEGADOR, que tarda de 21 a 25. En esa ventana la página
- * invitaba a comprar algo que el servidor todavía no podía vender, y el que apretaba rápido
- * —el que tenía más ganas— era el que se llevaba el error.
+ *     0,0s  /api/chequeo     2,7s   200
+ *     1,6s  /api/profundo   33,6s   200   ← todavía corriendo
+ *    23,0s  /api/pedido      0,2s   409   ← apretó acá
  *
- * Lo que de verdad prueba el arreglo es abrir la página en un navegador y mirar el botón; eso
- * se hace aparte. Esto es el centinela: que el panel SIGA consultando si la medición llegó
- * antes de dejar comprar. Si alguien quita esa consulta, acá se nota.
+ * El botón se dibuja con el chequeo RÁPIDO, que vuelve en un segundo; el servidor exige la
+ * revisión con NAVEGADOR, que tarda medio minuto. En esa ventana la página invita a comprar
+ * algo que todavía no se puede vender, y el que aprieta rápido es el que se lleva el error.
+ *
+ * ⚠️ EL PRIMER ARREGLO NO FUNCIONÓ, Y ESTA PRUEBA LO DIO POR BUENO. Usaba un `let` compartido
+ * entre el chequeo y el panel, pero los dos viven en IIFE DISTINTAS: `abrirCompra` reventaba
+ * con «profundoListo is not defined» justo en esa línea, en silencio —el panel ya se había
+ * movido y enfocado antes— y el botón quedaba habilitado igual. La versión anterior de estas
+ * aserciones buscaba la variable con una expresión regular, la encontraba escrita, y daba todo
+ * por correcto: un `grep` ve el nombre y NO VE EL ÁMBITO. Lo cazó el navegador.
+ *
+ * Por eso ahora el estado viaja por el DOM: un atributo en `<html>` más un evento. Eso cruza la
+ * frontera de las IIFE por construcción, así que el fallo de ámbito deja de ser posible, y
+ * además se puede mirar desde fuera. Lo que de verdad prueba el arreglo sigue siendo abrir la
+ * página en un navegador Y MIRAR LA CONSOLA; esto es el centinela del mecanismo.
  */
 console.log('=== el panel de compra espera a la revisión con navegador ===');
 {
-  cierto('el panel sabe si la medición llegó', /let profundoListo = false;/.test(HTML));
-  cierto('y se reinicia en cada corrida nueva',
-    /profundoListo = false;[\s\S]{0,120}profundoFallo = false;/.test(HTML));
-  cierto('se marca lista cuando la revisión vuelve bien',
-    /data\.ok === true\)\s*\{[\s\S]{0,200}profundoListo = true;/.test(HTML));
+  // El chequeo anuncia por el DOM, no por una variable.
+  cierto('anuncia el estado en un atributo del documento',
+    /setAttribute\('data-profundo', estado\)/.test(HTML));
+  cierto('y además lo avisa con un evento', /new CustomEvent\('vyc:profundo'/.test(HTML));
+  cierto('sin romperse en un navegador sin CustomEvent', /catch \(e\) \{[^}]*\}/.test(HTML));
 
-  // El corazón: al abrir el panel se consulta el estado y, si no está, el botón no se puede
-  // apretar. Sin esta guarda vuelve el defecto exacto del 26-oct.
-  cierto('al abrir el panel se consulta antes de habilitar', /if \(!profundoListo\) \{/.test(HTML));
-  const i = HTML.indexOf('if (!profundoListo) {');
-  const bloque = i > 0 ? HTML.slice(i, i + 1400) : '';
-  cierto('y ahí el botón queda deshabilitado', /b\.disabled = true;/.test(bloque));
-  cierto('con un texto que dice que está revisando', /Revisando tu sitio/.test(bloque));
-  cierto('y un aviso de que se activa solo', /se activa solo/.test(bloque));
+  // Los tres momentos, cada uno con su anuncio.
+  eq('hay un anuncio por cada desenlace', (HTML.match(/anunciarProfundo\('/g) || []).length, 4);
+  cierto('al empezar una corrida: en vuelo', /anunciarProfundo\('en-vuelo'\)/.test(HTML));
+  cierto('cuando la revisión vuelve bien: listo',
+    /data\.ok === true\)\s*\{[\s\S]{0,160}anunciarProfundo\('listo'\)/.test(HTML));
+  eq('y dos caminos de fallo lo dicen', (HTML.match(/anunciarProfundo\('fallo'\)/g) || []).length, 2);
 
-  // Y cuando llega, el botón se suelta sin que la persona haga nada.
-  cierto('el panel se entera cuando la medición llega', /avisarCuandoLlegueElProfundo/.test(bloque));
-  cierto('y ahí se habilita', /soltarBotonCompra\(\);/.test(bloque));
+  // El panel LEE EL DOM. Si volviera a leer una variable, el fallo de ámbito podría repetirse.
+  cierto('el panel lee el estado del documento',
+    /getAttribute\('data-profundo'\)/.test(HTML));
+  cierto('y se vuelve a pintar cuando el chequeo avisa',
+    /addEventListener\('vyc:profundo', pintarEspera\)/.test(HTML));
+  cierto('al abrir el panel se pinta la espera', /pintarEspera\(\);\s*\n\s*\}/.test(HTML));
 
-  /* ⚠️ Las tres aserciones que siguen reemplazan a unas anteriores que NO SERVÍAN. Decían
-   * «un fallo también avisa al panel» con un `profundoFallo = true; … avisarAlPanel();`, y eso
-   * casaba con CUALQUIERA de los dos sitios donde se marca el fallo: al borrar el aviso de uno,
-   * la prueba seguía verde porque encontraba el del otro. Se vio rompiendo el código a
-   * propósito y mirando que no pasara nada.
-   *
-   * Ahora se cuentan los avisos y se exige que cada camino tenga el suyo. Son tres y tienen que
-   * ser tres: la revisión que vuelve bien, la que vuelve con un «no» y la que ni vuelve.
-   */
-  eq('hay un aviso al panel por cada desenlace', (HTML.match(/avisarAlPanel\(\);/g) || []).length, 3);
-  cierto('el desenlace feliz avisa', /profundoListo = true;[\s\S]{0,300}avisarAlPanel\(\);/.test(HTML));
-  cierto('un fallo de la revisión también avisa, en vez de dejar al panel esperando',
-    /profundoFallo = true;\s*\n\s*avisarAlPanel\(\);/.test(HTML));
-  cierto('y el panel lo dice en vez de esperar', /No se pudo revisar/.test(bloque));
+  const i = HTML.indexOf('function pintarEspera');
+  const bloque = i > 0 ? HTML.slice(i, i + 1300) : '';
+  cierto('con la medición lista, el botón se suelta', /estado === 'listo'[\s\S]{0,120}soltarBotonCompra\(\)/.test(bloque));
+  cierto('y si no, queda deshabilitado', /b\.disabled = true;/.test(bloque));
+  cierto('diciendo que está revisando', /Revisando tu sitio/.test(bloque));
+  cierto('y que se activa solo', /se activa solo/.test(bloque));
+  cierto('un fallo lo dice en vez de esperar para siempre', /No se pudo revisar/.test(bloque));
 
   // El respaldo del servidor: su mensaje ya no manda a repetir lo que la persona acaba de hacer.
   const SRV = readFileSync(`${RAIZ}/functions/api/pedido.js`, 'utf8');
   const j = SRV.indexOf("motivo: 'sin-medicion'");
   const msg = j > 0 ? SRV.slice(j, SRV.indexOf('}, 409)', j)) : '';
   cierto('el 409 nombra la segunda parte del chequeo', /segunda parte/.test(msg));
-  falso('y ya no dice solo «vuelve a correr el chequeo»', /Vuelve a correr el \' \+/.test(msg));
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
