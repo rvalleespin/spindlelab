@@ -32,7 +32,7 @@ import { claveDeEvento, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES 
 import {
   registrarEvento, liberarEvento, anotarResultado, leerPedido, marcarEstado, VENTANA_RECLAMO_MS,
 } from './almacen.js';
-import { ESTADOS, ID_PEDIDO_NUESTRO } from './pedidos.js';
+import { ESTADOS, ESTADOS_RESUELTOS, ID_PEDIDO_NUESTRO } from './pedidos.js';
 import { avisarVenta, avisarRevisar } from './aviso.js';
 import { enviarCorreoDePago } from './correo.js';
 
@@ -160,34 +160,62 @@ export async function onRequestPost(contexto) {
       // las credenciales de producción. También puede serlo si la orden todavía no es visible
       // en la API cuando el aviso llega.
       //
-      // La ventana se toma prestada de `VENTANA_RECLAMO_MS`, que ya es el horizonte en que este
-      // sistema considera que un evento sigue en vuelo. Pasada, el 404 sí es definitivo: esa
-      // orden no es nuestra y reintentar no lo va a cambiar nunca.
-      // El parámetro con NUESTRO id no está firmado y puede no venir. Sin él no se puede saber
-      // de qué pedido se trata, y entonces la pregunta no es «¿es reciente?» sino «¿qué hago
-      // cuando no sé?». La respuesta es el lado seguro: NO cerrar. Cerrar es irreversible —el
-      // rescate del reclamo exige `resultado IS NULL`— y los reintentos de Mercado Pago son
-      // finitos, así que equivocarse hacia el reintento cuesta ruido y equivocarse hacia el
-      // cierre cuesta un pago.
+      // ── QUÉ DECIDE EL CIERRE, Y POR QUÉ YA NO ES LA EDAD DEL PEDIDO (27-oct-2026) ──────
+      //
+      // Antes se cerraba cuando el pedido era más viejo que `VENTANA_RECLAMO_MS`. Eso tenía un
+      // agujero que cuesta plata: una orden vive 24 horas, así que alguien puede pagar DOS
+      // HORAS después de crearla. Si justo ahí el 404 es pasajero —credenciales recién
+      // rotadas, la orden todavía no visible en la API— el evento se cerraba para siempre con
+      // el pago ya cobrado. La edad del pedido no dice nada sobre si Mercado Pago puede
+      // mostrarnos esa orden; solo dice cuánto lleva esperando.
+      //
+      // Lo que sí lo dice es el ESTADO. Si el pedido sigue vivo —`creado` o `pendiente`—,
+      // cerrar es apostar contra un pago que puede estar entrando justo ahora. Si ya está
+      // resuelto, el dinero está decidido y la notificación no cambia nada.
+      //
+      // ⚠️ NO se pudo medir la persistencia del fallo, que sería lo ideal («lleva media hora
+      // dando 404, ya no es pasajero»): el camino de reintento BORRA la fila del evento, así
+      // que `recibido_en` se reinicia en cada entrega y no hay memoria que consultar. Para
+      // tenerla haría falta una columna nueva y una migración; queda anotado, no hecho.
+      //
+      // Y lo que queda: un pedido vivo cuyo 404 sea permanente se reintenta hasta que Mercado
+      // Pago se cansa, y el evento queda sin resolver. Eso es ruido en una tabla. La
+      // alternativa era perder un pago.
       const refUrl = url.searchParams.get(PARAM_REF_EXTERNA);
       let cerrable = false;
+      let porque = 'sin-referencia';
       if (refUrl) {
         try {
           const posible = await leerPedido(env.VYC_PEDIDOS, refUrl);
-          // Solo se cierra si SABEMOS de qué pedido se trata y ya pasó su ventana. Un
-          // `data.external_reference` que no corresponde a ningún pedido nuestro también es
-          // cerrable: esa orden no es de esta integración.
-          cerrable = !posible || !posible.creado_en ||
-            Date.now() - Date.parse(posible.creado_en) >= VENTANA_RECLAMO_MS;
-        } catch { cerrable = false; }
+          if (!posible) { cerrable = true; porque = 'no-es-un-pedido-nuestro'; }
+          else if (ESTADOS_RESUELTOS.has(posible.estado)) { cerrable = true; porque = `ya-resuelto:${posible.estado}`; }
+          else { porque = `pedido-vivo:${posible.estado}`; }
+        } catch { cerrable = false; porque = 'no-se-pudo-leer-el-pedido'; }
       } else {
         console.log('[webhook] 404 sin data.external_reference: no se cierra, se pide reintento');
       }
 
-      if (!cerrable) return soltarYReintentar('orden-todavia-no-esta');
+      if (!cerrable) {
+        console.log(`[webhook] 404 no se cierra (${porque})`);
+        return soltarYReintentar('orden-todavia-no-esta');
+      }
+
+      // ── CERRAR ES IRREVERSIBLE, ASÍ QUE NO PUEDE SER SILENCIOSO ────────────────────────
+      //
+      // El rescate del reclamo exige `resultado IS NULL`, de modo que después de esto ni el
+      // reintento de Mercado Pago ni un reenvío manual vuelven a procesarlo. Si la decisión
+      // estuvo mal —y se toma con un parámetro que NO viene firmado— nadie se habría enterado
+      // nunca. Ahora sí.
+      const avisoCierre = avisarRevisar(
+        { id: refUrl || '(sin referencia)', dominio: '(orden que no pudimos leer)', estado: '404' },
+        { motivo: 'orden-inexistente',
+          detalle: `Mercado Pago avisó de una orden que su propia API no nos deja leer (404) y ` +
+            `el evento se cerró por «${porque}». Si esto coincidió con un cobro real, ese pago ` +
+            `NO quedó registrado: búscalo en el panel de Mercado Pago.` });
+      if (contexto && contexto.waitUntil) contexto.waitUntil(avisoCierre); else await avisoCierre;
 
       await anotarResultado(env.VYC_PEDIDOS, clave,
-        `orden inexistente (404)${exacta ? '' : ' (clave no exacta)'}`);
+        `orden inexistente (404 · ${porque})${exacta ? '' : ' (clave no exacta)'}`);
       return responder(200, { ok: true, accion: ACCIONES.IGNORAR, motivo: 'orden-inexistente' });
     }
     return soltarYReintentar(`no-se-pudo-leer:${lectura.error}`);

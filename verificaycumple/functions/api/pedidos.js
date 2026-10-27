@@ -40,6 +40,17 @@ export const ESTADOS = {
   ENTREGADO: 'entregado',  // el trabajo está hecho y verificado
 };
 
+/**
+ * Los estados en los que el dinero de un pedido YA está decidido.
+ *
+ * Se usa para saber cuándo una notificación que no se pudo leer puede darse por cerrada sin
+ * arriesgar un pago: si el pedido todavía está vivo —`creado` o `pendiente`— cerrar es
+ * apostar, porque la plata puede estar entrando justo ahora.
+ */
+export const ESTADOS_RESUELTOS = new Set([
+  ESTADOS.PAGADO, ESTADOS.RECHAZADO, ESTADOS.DEVUELTO, ESTADOS.CONTRACARGADO, ESTADOS.ENTREGADO,
+]);
+
 /*
  * POR QUÉ EXISTE `pendiente` (24-oct-2026)
  *
