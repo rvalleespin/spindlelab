@@ -111,7 +111,7 @@
         "@type": "Country",
         "name": "Chile"
       },
-      "description": "Instalación del gestor de consentimiento configurado para retener los rastreadores hasta que la persona acepte, borrador de política de privacidad para que lo revise el abogado del cliente, y el chequeo corrido de nuevo al final sobre la misma página que se midió al principio.",
+      "description": "Instalación del gestor de consentimiento configurado para retener los rastreadores hasta que la persona acepte, la casilla de consentimiento de los formularios del cliente, borrador de política de privacidad para que lo revise su abogado, y el chequeo corrido de nuevo al final sobre la misma página que se midió al principio. Requiere acceso al sitio del cliente. No incluye el HTTPS, que depende de su proveedor de hosting, ni la revisión legal del caso.",
       "offers": {
         "@type": "Offer",
         "price": "177310",
@@ -1436,7 +1436,15 @@
   .compra-kicker { margin: 0 0 6px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--texto-suave); }
   .compra-monto { margin: 0 0 10px; font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
   .compra-monto span { display: block; font-size: .85rem; font-weight: 400; color: var(--texto-suave); }
-  .compra-que { margin: 0 0 16px; font-size: .95rem; }
+  .compra-que { margin: 0 0 12px; font-size: .95rem; }
+  /* Las condiciones van ANTES del botón y se leen, no se esconden tras un enlace: lo que
+     cambia la decisión de alguien que está por pagar tiene que estar a la vista. */
+  /* Alineada a la izquierda aunque el panel esté centrado: una lista con viñetas centrada
+     deja los puntos flotando y cuesta leerla. Se vio renderizando, no leyendo el CSS. */
+  .compra-condiciones { margin: 0 0 16px; padding-left: 20px; font-size: .88rem;
+    color: var(--texto-suave); line-height: 1.5; text-align: left; }
+  .compra-condiciones li { margin: 0 0 6px; }
+  .compra-condiciones strong { color: var(--texto); }
   .compra .pedir-consiento { margin-top: 12px; }
   .compra-ayuda { margin: 6px 0 0; font-size: .85rem; color: var(--texto-suave); }
   .compra-sigue { margin: 12px 0 0; font-size: .85rem; color: var(--texto-suave); }
@@ -1587,7 +1595,13 @@
         <form id="compra" class="compra" hidden>
           <p class="compra-kicker">Comprar el kit</p>
           <p class="compra-monto">$177.310 <span>IVA incluido · una vez</span></p>
-          <p class="compra-que">Dejamos instalado el gestor de consentimiento, te entregamos el borrador de tu política para que lo revise tu abogado, y volvemos a correr el chequeo al final sobre la misma página.</p>
+          <p class="compra-que">Dejamos instalado el gestor de consentimiento, arreglamos la casilla de consentimiento de tus formularios si hace falta, te entregamos el borrador de tu política para que lo revise tu abogado, y volvemos a correr el chequeo al final sobre la misma página.</p>
+          <ul class="compra-condiciones">
+            <li><strong>Necesitamos acceso a tu sitio</strong> para hacer los arreglos: tu hosting, tu repositorio, o un usuario temporal de tu gestor de contenidos. Te lo pedimos por correo apenas pagues.</li>
+            <li><strong>Si no nos lo puedes dar, te devolvemos todo.</strong> Y lo mismo mientras no hayamos tocado tu sitio: hasta que empezamos a trabajar, la devolución es del 100%.</li>
+            <li><strong>El HTTPS no va incluido</strong>, porque depende de tu proveedor de hosting y no está en nuestras manos. Si te falta, te decimos qué pedirle.</li>
+            <li>Tampoco incluye la revisión legal de tu caso, que es de abogado.</li>
+          </ul>
           <label>Correo <input type="email" name="correo" required autocomplete="email" placeholder="tu@empresa.cl"></label>
           <p class="compra-ayuda">Lo necesita Mercado Pago, y es donde te escribimos para pedirte el acceso a tu sitio. <strong>Después de pagar vuelves solo a la pantalla de tu pedido: guarda ese enlace</strong>, es la única forma de volver y no hace falta ninguna cuenta.</p>
           <label class="pedir-consiento"><input type="checkbox" name="consiento" required> <span>Acepto que estos datos se usen para responder mi pedido o mi pregunta, según la <a href="/privacidad/">política de privacidad</a>.</span></label>
@@ -1738,11 +1752,11 @@
             <p class="kit-monto">$149.000 <span>+ IVA · $177.310 en total · una vez</span></p>
             <ul class="kit-incluye">
               <li>Instalamos el aviso de cookies (el gestor de consentimiento) que pide permiso antes de cargar rastreadores</li>
-              <li>Arreglamos las señales que tu chequeo dejó pendientes</li>
+              <li>Arreglamos las señales que tu chequeo dejó pendientes, incluida la casilla de consentimiento de tus formularios</li>
               <li>Plantilla de política de privacidad, para que la revise tu abogado</li>
               <li>Volvemos a correr el chequeo al final, para que veas el cambio</li>
             </ul>
-            <p class="kit-nota">Este precio es para un sitio con una página de inicio medida. Si tienes carro de compras, varios dominios o integraciones a medida, el chequeo no te ofrece el kit y lo vemos caso a caso. No incluye la revisión legal de tu caso, que es de abogado.</p>
+            <p class="kit-nota">Este precio es para un sitio con una página de inicio medida. Si tienes carro de compras, varios dominios o integraciones a medida, el chequeo no te ofrece el kit y lo vemos caso a caso. <strong>Necesitamos acceso a tu sitio para trabajar</strong>, y si no nos lo puedes dar te devolvemos todo; mientras no lo hayamos tocado, la devolución es del 100%. No incluye el HTTPS, que depende de tu proveedor de hosting, ni la revisión legal de tu caso, que es de abogado.</p>
           </div>
           <div class="kit-precio kit-secundario">
             <p class="kit-etiqueta">Revisión trimestral</p>

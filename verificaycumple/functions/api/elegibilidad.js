@@ -49,8 +49,24 @@ export const NO_LO_CIERRA_EL_KIT = {
   // formulario. Faltaba acá, así que caía en el texto de reserva «no es parte del kit», que es
   // cierto pero no dice por qué. El kit instala el gestor de rastreadores; los formularios del
   // cliente no los tocamos.
-  casilla: 'va en el formulario del cliente, y el kit instala el gestor de rastreadores, no toca sus formularios',
 };
+
+/**
+ * Lo que el kit ARREGLA pero que, por sí solo, NO justifica venderlo. (Decisión de Ramón, 27-oct-2026)
+ *
+ * ── POR QUÉ ES UN TERCER CONJUNTO Y NO SE METE EN `CIERRA_EL_KIT` ───────────────────────
+ *
+ * Son dos preguntas distintas que estaban mezcladas en una sola lista:
+ *
+ *   1. ¿Hay algo pendiente que justifique cobrar $177.310?  →  `CIERRA_EL_KIT`
+ *   2. ¿Qué entra en el trabajo una vez vendido?            →  `CIERRA_EL_KIT` + esto
+ *
+ * La casilla de consentimiento de un formulario es un arreglo chico y está en el espíritu de
+ * lo que se vende, así que entra en el trabajo. Pero si fuera a `CIERRA_EL_KIT`, un sitio al
+ * que solo le falta una casilla podría comprar un kit de $177.310 para arreglar un checkbox.
+ * Eso no es vender, es cobrar de más.
+ */
+export const TAMBIEN_ARREGLA = new Set(['casilla']);
 
 export const MOTIVOS = {
   PUEDE: 'puede',
@@ -137,19 +153,24 @@ export function elegibilidad({ rapido = null, profundo = null } = {}) {
   }
 
   const cierra = pendientes.filter((i) => CIERRA_EL_KIT.has(i.id));
-  const noCierra = pendientes.filter((i) => !CIERRA_EL_KIT.has(i.id));
+  // Lo que entra en el trabajo sin justificar la venta. Ver `TAMBIEN_ARREGLA`.
+  const tambien = pendientes.filter((i) => TAMBIEN_ARREGLA.has(i.id));
+  const noCierra = pendientes.filter((i) => !CIERRA_EL_KIT.has(i.id) && !TAMBIEN_ARREGLA.has(i.id));
 
   // EL CASO QUE LA REGLA VIEJA NO VEÍA. Hay pendientes, pero ninguno es del kit: típicamente un
   // sitio limpio de rastreadores al que solo le falta publicar su política. Instalarle un gestor
   // de consentimiento no le mueve nada, porque no tiene nada que retener.
   if (!cierra.length) {
-    const de = noCierra
-      .map((i) => `«${i.titulo}», que ${NO_LO_CIERRA_EL_KIT[i.id] || 'no es parte del kit'}`)
+    const de = [...tambien, ...noCierra]
+      .map((i) => `«${i.titulo}», que ${TAMBIEN_ARREGLA.has(i.id)
+        ? 'lo arreglamos igual, pero por sí solo no justifica comprar el kit'
+        : (NO_LO_CIERRA_EL_KIT[i.id] || 'no es parte del kit')}`)
       .join('; ');
     return {
       puede: false,
       motivo: MOTIVOS.NADA_QUE_EL_KIT_CIERRE,
       cierra: [],
+      tambien,
       noCierra,
       detalle: `Lo que quedó pendiente en este sitio no lo cierra el kit: ${de}.`,
     };
@@ -159,6 +180,7 @@ export function elegibilidad({ rapido = null, profundo = null } = {}) {
     puede: true,
     motivo: MOTIVOS.PUEDE,
     cierra,
+    tambien,
     noCierra,
     detalle: noCierra.length
       ? `El kit cierra ${cierra.length === 1 ? 'la señal pendiente' : `${cierra.length} de las señales pendientes`}. ` +

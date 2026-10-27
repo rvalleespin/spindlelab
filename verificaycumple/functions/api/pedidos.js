@@ -181,7 +181,11 @@ export function congelarContrato({ informe, elegibilidad, montoNeto, montoTotal,
     throw new Error('No se congela un contrato de un pedido que no puede comprar');
   }
   return {
-    senales_contratadas: elegibilidad.cierra.map((i) => i.id),
+    // Lo contratado es TODO lo que el kit va a arreglar: las que justifican la venta y las que
+    // entran en el trabajo sin justificarla (ver `TAMBIEN_ARREGLA` en elegibilidad.js). Si acá
+    // fueran solo las primeras, el contrato congelado prometería menos de lo que se entrega, y
+    // el informe final mostraría un arreglo que nadie compró.
+    senales_contratadas: [...elegibilidad.cierra, ...(elegibilidad.tambien || [])].map((i) => i.id),
     senales_fuera: elegibilidad.noCierra.map((i) => i.id),
     informe_json: JSON.stringify(informe),
     url_medida: urlMedida || (informe && informe.revisado) || null,
