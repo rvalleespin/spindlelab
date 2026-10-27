@@ -134,3 +134,33 @@ como "Perdido ✗ — silencio", revisar en ~1 mes o probar WhatsApp (+56 9 6167
 - **Recordatorio programado** (nuevo): `send_later` para 28-oct 13:00 UTC — revisar el hilo
   y, si no hubo respuesta, dejar seguimiento 1 como borrador en Gmail para que Ramón lo mande.
 - **Trigger del recordatorio del 28-oct:** `trig_01WKMZEL6NT5Qq4mrBTqP7vL`.
+
+---
+
+## Actualización 27-oct (nudge adelantado por decisión de Ramón)
+
+- **Ramón adelantó el seguimiento un día** respecto del recordatorio programado (que estaba para el 28-oct):
+  "mandé la cotización. debería mandar un correo para recordar la respuesta". Son 4 días de silencio
+  desde el envío del 23-oct, aceptable para el toque 1 de una cotización.
+- **Hilo verificado** (`get_thread 1a168f41cb965668`, metadata): sigue con 1 solo mensaje
+  (el enviado por Ramón el 23-oct 10:44). Ni Eduardo ni Danae respondieron.
+- **Borrador de seguimiento 1 creado en Gmail**, en el mismo hilo (`replyToMessageId: 1a16901e5c77966f`,
+  draftId `r-4826920219958750155`, messageId `1a17dac4bee24666`). **No enviado.** Lo manda Ramón.
+  Texto corto, re-pregunta por el dominio/hosting que quedó pendiente del correo original
+  (gancho concreto para que respondan algo útil, no solo "sí/no"):
+
+  > Hola Eduardo,
+  >
+  > ¿Cómo quedaron con la cotización por su lado?
+  >
+  > Y para ir avanzando en paralelo: ¿me cuentan quién tiene hoy a cargo el dominio y el hosting?
+  > Con eso dejo preparada la migración sin cortes para cuando digan vamos.
+  >
+  > Un abrazo,
+  > Ramón
+
+- **Recordatorio programado del 28-oct CANCELADO** (`trig_01WKMZEL6NT5Qq4mrBTqP7vL` eliminado):
+  ya no tiene sentido porque el nudge quedó preparado hoy.
+- **Siguiente ventana** (manual, no hay recordatorio activo): si no responde en ~5-7 días después
+  de que Ramón mande este borrador, toque 2 con otro ángulo (precio desglosado, un adicional del
+  diagnóstico, o pasar a WhatsApp +56 9 6167 3894 — tiene publicado).
