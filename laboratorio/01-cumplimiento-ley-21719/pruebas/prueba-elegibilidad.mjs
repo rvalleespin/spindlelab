@@ -227,5 +227,37 @@ console.log('=== 9. la forma de la respuesta es siempre la misma ===');
     m.elegibilidad(casos[3]).cierra.length > 0);
 }
 
+/* ================================================================== */
+console.log('=== lo que el kit ARREGLA pero no justifica vender (27-oct) ===');
+{
+  const inf = (...items) => ({ ok: true, puntaje: 50, items });
+
+  // La casilla entra en el trabajo, pero NO en lo que justifica cobrar $177.310. Son dos
+  // preguntas distintas y estaban mezcladas en una sola lista.
+  cierto('la casilla esta en TAMBIEN_ARREGLA', m.TAMBIEN_ARREGLA.has('casilla'));
+  falso('y NO en lo que justifica la venta', m.CIERRA_EL_KIT.has('casilla'));
+  falso('el https no esta en ninguno de los dos',
+    m.CIERRA_EL_KIT.has('https') || m.TAMBIEN_ARREGLA.has('https'));
+
+  // UN SITIO AL QUE SOLO LE FALTA LA CASILLA NO COMPRA. Si `casilla` hubiera ido a
+  // CIERRA_EL_KIT, este sitio veria el boton y pagaria 177.310 por arreglar un checkbox.
+  const solaCasilla = m.elegibilidad({ rapido: inf(item('casilla', 'Casilla del formulario', 'pendiente', 1)) });
+  falso('solo la casilla no habilita la compra', solaCasilla.puede);
+  eq('y el motivo lo dice', solaCasilla.motivo, m.MOTIVOS.NADA_QUE_EL_KIT_CIERRE);
+  cierto('con un texto que explica que igual se arregla',
+    /lo arreglamos igual/.test(solaCasilla.detalle));
+
+  // PERO SI HAY ALGO QUE SI JUSTIFICA, LA CASILLA VIAJA EN EL TRABAJO.
+  const conAmbas = m.elegibilidad({ rapido: inf(
+    item('cmp', 'Gestor de consentimiento', 'pendiente', 3),
+    item('casilla', 'Casilla del formulario', 'pendiente', 1),
+    item('https', 'Conexion segura', 'pendiente', 1),
+  ) });
+  cierto('con el gestor pendiente si se puede comprar', conAmbas.puede);
+  eq('lo que justifica la venta es el gestor', conAmbas.cierra.map((i) => i.id), ['cmp']);
+  eq('la casilla va en el trabajo', (conAmbas.tambien || []).map((i) => i.id), ['casilla']);
+  eq('y el https queda fuera, declarado', conAmbas.noCierra.map((i) => i.id), ['https']);
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
