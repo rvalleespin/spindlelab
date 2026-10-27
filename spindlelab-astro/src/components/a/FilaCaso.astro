@@ -1,0 +1,27 @@
+---
+// UNA FILA DE MEDIOS DEL CASO (spec §2.3; lock §21.2): una 16:9 a todo el ancho o un par 4:5 | 4:5, con el pie de Clara
+// debajo de la fila. `entrada`: la fila entra a la vista una vez con el resorte «entrada» (§1.6: una por sección).
+// Tanda 3; recortada en la obra E13: las filas apiladas (4:5 con dos 1,62) y el hueco nombrado eran de Praxi y de los
+// conceptos, que salieron del build; ningún caso las pide y quedan en el historial de git.
+import MedioCaso from './MedioCaso.astro';
+import Icono from './Icono.astro';
+
+interface Props {
+  fila: { forma: string; medios: any[]; pie: string; enlace?: { texto: string; destino: string } | null };
+  entrada?: boolean;
+}
+const { fila: f, entrada = false } = Astro.props;
+const e = entrada ? '' : undefined;
+---
+<figure class:list={['fila', `fila--${f.forma}`]} data-entrada={e}>
+  <div class="fila__medios">
+    {f.forma === '169' && <MedioCaso medio={f.medios[0]} clase="p-169" />}
+    {f.forma === 'par' && <><MedioCaso medio={f.medios[0]} clase="p-45" /><MedioCaso medio={f.medios[1]} clase="p-45" /></>}
+  </div>
+  {(f.pie || f.enlace) && (
+    <figcaption class="pie">
+      {f.pie}
+      {f.enlace && <> <a class="subrayado" href={f.enlace.destino}>{f.enlace.texto}<Icono nombre="fuera" /></a></>}
+    </figcaption>
+  )}
+</figure>

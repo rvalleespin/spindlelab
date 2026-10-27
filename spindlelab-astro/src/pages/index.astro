@@ -1,30 +1,362 @@
 ---
+// HOME DE A · ARCHIVO, RECOMPUESTA PARA EL MODELO NUEVO (obra E13, 26-oct-2026; antes, obra E12, corrida 2, tanda 2).
+//
+// Contrato: marketing/oficina/obras-web/spindlelab-v3/e13/spec-home.md (Lucía): las nueve secciones del brief §4 con las
+// clases y los componentes que ya existen, la portada en su variante H-A (la acción principal ocupa la columna que tenía
+// el chequeo) y, de spec-visual.md, lo que esa spec no cambia (§1 tokens, §3.1 el hilo de oro y su velo, §3.3 medios, §4
+// estados). Salen la cinta, el índice corto, «Cada pieza, con un dato medido» y el chequeo apilado de la portada.
+//
+// El texto es de Clara, tal cual: se lee de src/data/archivo/texto/ (copias de e13/texto/*.json, ver texto.mjs). Los
+// precios y los nombres de servicio salen de oferta-v3.json y servicios-v3.json, y el build se cae si no son iguales,
+// como texto, a los de Clara (también los de las preguntas frecuentes). Las señales (title, description, JSON-LD con el
+// FAQPage de las mismas cinco preguntas que se ven, imagen al compartir) son de Simón, e13/texto/home.json «senales».
+//
+// Las clases de la portada (.portada-v, .portada-v__medio, .portada-v__pie) son las que miden las herramientas de
+// portada de E12 (portada.mjs y contraste-portada.py): no se cambian sin cambiar esas dos.
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import Problema from '../components/Problema.astro';
-import ParaQuien from '../components/ParaQuien.astro';
-import Servicios from '../components/Servicios.astro';
-import Metodo from '../components/Metodo.astro';
-import Nosotros from '../components/Nosotros.astro';
-import Evidencia from '../components/Evidencia.astro';
-import Faq from '../components/Faq.astro';
-import Contacto from '../components/Contacto.astro';
-import Footer from '../components/Footer.astro';
----
+import PaginaA from '../components/a/PaginaA.astro';
+import Video from '../components/a/Video.astro';
+import Imagen from '../components/a/Imagen.astro';
+import Icono from '../components/a/Icono.astro';
+import { LAYOUT_A } from '../components/a/layout-a';
+import { textoDe, igualQue, contiene } from '../data/archivo/texto.mjs';
+import { ORDEN, preciosDe } from '../data/archivo/servicios.mjs';
+import comun from '../data/archivo/texto/comun.json';
+import home from '../data/archivo/texto/home.json';
+import trabajo from '../data/archivo/texto/trabajo.json';
+import medios from '../data/archivo/medios.json';
+import oferta from '../data/oferta-v3.json';
+import servicios from '../data/servicios-v3.json';
 
-<Layout>
-  <Nav />
-  <main>
-    <Hero />
-    <Problema />
-    <ParaQuien />
-    <Metodo />
-    <Servicios />
-    <Evidencia />
-    <Nosotros />
-    <Faq />
-    <Contacto />
-  </main>
-  <Footer />
+const t = textoDe(home, comun);
+const pagina = home.texto;
+const m = medios.medios;
+const dos = (id: string) => t(id) as { tinta: string; gris?: string };
+const externo = t('comun.externo').texto;
+// Los rótulos mono sobre el h2 («El problema», «Método SpindleLab»…) están en el texto publicado el 24-oct, pero el texto
+// de Clara de E13 no les dio id (desvios/home-construccion.md, punto 1): si los suma (home.<sección>.rotulo), salen solos.
+const rotuloDe = (id: string): string => {
+  try { return t(id).texto as string; } catch (e) { return ''; }
+};
+const rot = {
+  problema: rotuloDe('home.problema.rotulo'),
+  como: rotuloDe('home.como.rotulo'),
+  soluciones: rotuloDe('home.soluciones.rotulo'),
+  pruebas: rotuloDe('home.pruebas.rotulo'),
+  quien: rotuloDe('home.quien.rotulo'),
+  faq: rotuloDe('home.faq.rotulo'),
+};
+
+// ---- 1 · Portada: la acción es la revisión; el chequeo baja a un enlace
+const boton = t('home.portada.boton');
+const enlaceChequeo = t('home.portada.chequeo');
+
+// ---- 4 · Cómo partimos y cómo seguimos: «01 · Revisión gratis». El número es el de la lista ordenada: va con aria-hidden
+const fases = [1, 2, 3, 4].map((n) => {
+  const e = t(`home.como.${n}`);
+  const r = e.rotulo as string;
+  const i = r.indexOf(' · ');
+  return { numero: r.slice(0, i + 3), nombre: r.slice(i + 3), texto: e.texto as string };
+});
+
+// ---- 5 · Lo que podemos hacer por ti: cuatro bloques con su precio. Los nombres de servicio, los destinos y los precios
+// salen de los JSON y se comparan, como texto, con los de Clara (brief §6.3): un dato que no coincida hace caer el build.
+const sv = servicios as Record<string, { secciones: { planes?: { precio: string }[] }[] }>;
+const precioDe = (slug: string, i: number) => sv[slug].secciones.find((s) => Array.isArray(s.planes))!.planes![i].precio;
+const FILAS = [...oferta.momentos.flatMap((mo) => mo.items), ...oferta.tambien];
+const enlaceDe = (slug: string, idBoton: string) => {
+  const it = FILAS.find((f) => f.href.split('/').filter(Boolean).pop() === slug);
+  if (!it) throw new Error(`home: «${slug}» no está en oferta-v3.json`);
+  const b = t(idBoton);
+  igualQue(`Ver ${it.n}`, b.texto, `home, el botón de ${slug}`);
+  igualQue(it.href, b.destino, `home, el destino de ${slug}`);
+  return { nombre: it.n as string, href: it.href as string, texto: b.texto as string };
+};
+const desde = (p: string) => p.replace(/^Desde /, 'desde ');
+const aud = enlaceDe('auditoria-seo-tecnica', 'home.soluciones.busqueda.aud.boton');
+const via = enlaceDe('visibilidad-en-ia', 'home.soluciones.busqueda.via.boton');
+const paid = enlaceDe('paid-media', 'home.soluciones.anuncios.paid.boton');
+const redes = enlaceDe('redes-sociales', 'home.soluciones.anuncios.redes.boton');
+const dw = enlaceDe('desarrollo-web', 'home.soluciones.sitio.dw.boton');
+const aco = enlaceDe('acompanamiento-mensual', 'home.soluciones.acompanamiento.boton');
+
+// Búsqueda y visibilidad en IA enlaza a dos servicios con precio distinto: cada precio va junto a su enlace (ronda 2 de E13,
+// lectura en frío: con un solo precio para dos enlaces, dos de tres lectores leyeron dos precios para lo mismo). Cada uno es,
+// como texto, el del primer plan con monto de su servicio (el de Auditoría es el plan 1: el 0 es la revisión gratis).
+const precioAud = t('home.soluciones.busqueda.aud.precio').texto as string;
+igualQue(precioDe('auditoria-seo-tecnica', 1), precioAud, 'home, el precio de la Auditoría SEO técnica');
+const precioVia = t('home.soluciones.busqueda.via.precio').texto as string;
+igualQue(precioDe('visibilidad-en-ia', 0), precioVia, 'home, el precio de Visibilidad en IA');
+const precioAnuncios = t('home.soluciones.anuncios.precio').texto as string;
+contiene(precioAnuncios, `${paid.nombre} ${desde(precioDe('paid-media', 0))}`, 'home, el precio de Paid Media');
+contiene(precioAnuncios, `${redes.nombre} ${desde(precioDe('redes-sociales', 0))}`, 'home, el precio de la gestión de redes');
+const precioSitio = t('home.soluciones.sitio.precio').texto as string;
+igualQue(oferta.momentos[0].planes[0].p, precioSitio, 'home, el precio de Sitio web a medida');
+const precioAco = t('home.soluciones.acompanamiento.precio').texto as string;
+igualQue(precioDe('acompanamiento-mensual', 0), precioAco, 'home, el precio del Acompañamiento mensual');
+igualQue(aco.nombre, t('home.soluciones.acompanamiento.nombre').texto, 'home, el nombre del Acompañamiento mensual');
+
+const bloques = [
+  { k: 'busqueda', pares: [{ precio: precioAud, enlace: aud }, { precio: precioVia, enlace: via }] },
+  { k: 'anuncios', precio: precioAnuncios, enlaces: [paid, redes] },
+  { k: 'sitio', precio: precioSitio, enlaces: [dw] },
+  { k: 'acompanamiento', precio: precioAco, enlaces: [aco] },
+].map((b) => ({
+  ...b,
+  nombre: t(`home.soluciones.${b.k}.nombre`).texto as string,
+  texto: t(`home.soluciones.${b.k}.texto`).texto as string,
+}));
+
+// ---- 6 · Lo que puedes revisar antes de contratar: cinco filas con la forma de las fases. Dos de ellas traen su medio
+// (Verifica y Cumple y Combeau); ninguno lleva una persona generada a la vista, así que home.pruebas.pie-verifica no se usa.
+const fila = (k: string) => ({
+  titulo: t(`home.pruebas.${k}.titulo`).texto as string,
+  texto: t(`home.pruebas.${k}.texto`).texto as string,
+  boton: t(`home.pruebas.${k}.boton`),
+});
+const pruebas = [
+  { ...fila('precios') },
+  { ...fila('metodo') },
+  { ...fila('chequeo') },
+  { ...fila('propio'), medio: m['verifica-y-cumple-12-169'], entrada: true, aviso: t('home.pruebas.propio.aviso').texto as string, fuera: true },
+  { ...fila('caso'), medio: m['combeau-fotografia-169'] },
+];
+// «[ Todo el trabajo ] (2)»: el 2 es el conteo verdadero del índice de /trabajo/ (Clara).
+const todo = t('home.pruebas.todo');
+igualQue(todo.texto, `[ Todo el trabajo ] (${trabajo.texto.entradas.length})`, 'home, el corchete de las pruebas');
+
+// ---- 7 · Quién está detrás: las tres reglas, cada una con su título y una frase
+const reglas = [1, 2, 3].map((n) => {
+  const e = t(`home.quien.regla.${n}`);
+  return { t: e.rotulo as string, d: e.texto as string };
+});
+
+// ---- 8 · Preguntas frecuentes: las visibles son las del FAQPage del JSON-LD, del mismo texto. Todo monto que digan está
+// en los precios de algún servicio de los JSON.
+const preguntas = [1, 2, 3, 4, 5].map((n) => ({ p: t(`home.faq.${n}.p`).texto as string, r: t(`home.faq.${n}.r`).texto as string }));
+const preciosDeTodos = ORDEN.flatMap((s) => preciosDe(s.slug)).join(' | ');
+for (const q of preguntas) {
+  for (const monto of q.r.match(/\$\d{1,3}(?:\.\d{3})*/g) || []) {
+    if (!preciosDeTodos.includes(monto)) throw new Error(`home, preguntas: «${monto}» no está en los precios de ningún servicio`);
+  }
+}
+
+// ---- Señales (Simón, home.json «senales»): title y description de Clara, que son los de Simón.
+const title = pagina.title;
+const description = pagina.description;
+if (title.length > 60 || description.length < 120 || description.length > 160) {
+  throw new Error(`home: title (${title.length}) o description (${description.length}) fuera de los largos de senales-obra.md §1.2`);
+}
+// Las fechas del WebPage (acta de la obra, vuelta 1, defecto 1; senales-obra.md §1.2). datePublished es el de la portada
+// publicada (2026-07-08: estaba en línea ese día, plan-operativo-90-dias.md, semana 1; el mismo que llevaba la v3 del
+// 16-oct). dateModified lo escribe el build, nunca a mano: el día en que se construye, en la hora de Chile, así que al
+// publicar la v3 dice el día en que sale. Sin fecha, el chequeo de la casa (functions/api/chequeo.js, «fecha») le quita
+// 4 puntos a la home: 79 contra 83 del 16-oct (criterio 9 del brief).
+const PUBLICADA = '2026-07-08';
+const construida = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Santiago', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+if (!/^\d{4}-\d{2}-\d{2}$/.test(construida) || construida < PUBLICADA) {
+  throw new Error(`home: dateModified «${construida}» no es una fecha ISO posterior a datePublished (${PUBLICADA})`);
+}
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://spindlelab.cl/#webpage',
+      url: 'https://spindlelab.cl/',
+      name: title,
+      description,
+      inLanguage: 'es-CL',
+      isPartOf: { '@id': 'https://spindlelab.cl/#website' },
+      about: { '@id': 'https://spindlelab.cl/#org' },
+      datePublished: PUBLICADA,
+      dateModified: construida,
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://spindlelab.cl/#faq',
+      mainEntity: preguntas.map((q) => ({ '@type': 'Question', name: q.p, acceptedAnswer: { '@type': 'Answer', text: q.r } })),
+    },
+  ],
+};
+const og = { src: '/assets/img/og-e12-marca.jpg?v=2', alt: t('home.portada.og-alt').texto as string };
+---
+<Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
+  <link slot="head" rel="preload" as="image" href="/v3/portada/hilo-1920-poster.webp" fetchpriority="high" />
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  <PaginaA>
+    {/* 1 · PORTADA (spec-home §2, H-A; spec-visual §3.1). El hilo de oro a sangre; la pausa, primer control. Sobre el velo
+         (desde 834) o debajo, sobre el lienzo (bajo 834): el rótulo, el h1 en dos tintas y la entradilla a la izquierda, y
+         a la derecha la acción: el botón de la revisión, su microcopy (la promesa del botón) y el enlace al chequeo. En el
+         DOM va la entradilla antes de la acción; bajo 834 se ve la acción antes (order en archivo.css). */}
+    <section class="portada-v" aria-labelledby="portada-titulo">
+      <Video
+        clase="portada-v__medio"
+        sangre
+        pausaArriba
+        primeraPantalla
+        poster="/v3/portada/hilo-1920-poster.webp"
+        ancho={1920}
+        alto={1080}
+        fuentes={[
+          { desde: 834, webm: '/v3/portada/hilo-1920.webm', mp4: '/v3/portada/hilo-1920.mp4' },
+          { webm: '/v3/portada/hilo-960.webm', mp4: '/v3/portada/hilo-960.mp4' },
+        ]}
+      />
+      <div class="portada-v__pie">
+        <div class="portada-v__decl">
+          <p class="rotulo">{t('home.portada.rotulo').texto}</p>
+          <h1 class="t-portada" id="portada-titulo"><span class="tinta">{dos('home.portada.h1').tinta}</span> <span class="gris">{dos('home.portada.h1').gris}</span></h1>
+          <p class="cuerpo entradilla">{t('home.portada.entradilla').texto}</p>
+        </div>
+        <div class="portada-v__accion">
+          <a class="boton boton--claro" id="portada-cta" href={boton.destino}>{boton.texto}<Icono nombre="flecha" /></a>
+          <p class="chico">{t('home.portada.microcopy').texto}</p>
+          <p class="chico"><a href={enlaceChequeo.destino}>{enlaceChequeo.texto}</a></p>
+        </div>
+      </div>
+    </section>
+
+    {/* 2 · DÓNDE PUEDE CAERSE UNA CONSULTA (spec-home §1, fila 2): el h2 en c1–c4, pegajoso desde 1194; el párrafo en c5–c12 */}
+    <section class="seccion reticula" aria-labelledby="h-problema">
+      <div class="int-sec__cab">
+        {rot.problema && <p class="rotulo">{rot.problema}</p>}
+        <h2 class="t-declaracion" id="h-problema"><span class="tinta">{dos('home.problema.h2').tinta}</span></h2>
+      </div>
+      <div class="int-sec__cuerpo">
+        <p class="cuerpo caja">{t('home.problema.p').texto}</p>
+      </div>
+    </section>
+
+    {/* 3 · PARA EMPRESAS QUE YA VENDEN (fila 3): igual que la 2, dos párrafos */}
+    <section class="seccion reticula" aria-labelledby="h-empresas">
+      <div class="int-sec__cab">
+        <h2 class="t-declaracion" id="h-empresas"><span class="tinta">{dos('home.paraquien.h2').tinta}</span></h2>
+      </div>
+      <div class="int-sec__cuerpo">
+        <p class="cuerpo caja">{t('home.paraquien.p1').texto}</p>
+        <p class="cuerpo caja">{t('home.paraquien.p2').texto}</p>
+      </div>
+    </section>
+
+    {/* 4 · CÓMO PARTIMOS Y CÓMO SEGUIMOS (fila 4): el molde de las fases de /metodo/, sin sus datos, y el enlace al método */}
+    <section class="seccion reticula" aria-labelledby="h-metodo">
+      <div class="int-sec__cab">
+        {rot.como && <p class="rotulo">{rot.como}</p>}
+        <h2 class="t-declaracion" id="h-metodo"><span class="tinta">{dos('home.como.h2').tinta}</span></h2>
+      </div>
+      <div class="int-sec__cuerpo int-sec__cuerpo--ancho">
+        <ol>
+          {fases.map((f) => (
+            <li class="fase">
+              <h3 class="t-fase"><span aria-hidden="true">{f.numero}</span>{f.nombre}</h3>
+              <div class="fase__der"><p class="cuerpo">{f.texto}</p></div>
+            </li>
+          ))}
+        </ol>
+        <p class="cuerpo int-lista__pie"><a href={t('home.como.boton').destino}>{t('home.como.boton').texto}<Icono nombre="flecha" /></a></p>
+      </div>
+    </section>
+
+    {/* 5 · LO QUE PODEMOS HACER POR TI (fila 5): cuatro bloques como lista de filas con línea (nombre, texto, precio y un
+         enlace por servicio). Ninguna fila es un botón ni una tarjeta; los precios, iguales a los JSON. */}
+    <section class="seccion reticula servicios" aria-labelledby="h-serv">
+      <div class="servicios__cab">
+        {rot.soluciones && <p class="rotulo">{rot.soluciones}</p>}
+        <h2 class="t-declaracion" id="h-serv"><span class="tinta">{dos('home.soluciones.h2').tinta}</span></h2>
+        <p class="cuerpo caja">{t('home.soluciones.intro').texto}</p>
+      </div>
+      {bloques.map((b) => (
+        <div class="servicio borde">
+          <h3 class="servicio__sit t-titulo">{b.nombre}</h3>
+          <div class="servicio__cuerpo"><p class="cuerpo caja">{b.texto}</p></div>
+          {b.pares ? (
+            <div class="servicio__precio servicio__precio--pares">
+              {b.pares.map((x) => (
+                <div class="servicio__par">
+                  <p class="cuerpo valor">{x.precio}</p>
+                  <p class="chico"><a class="subrayado" href={x.enlace.href}>{x.enlace.texto}<Icono nombre="flecha" /></a></p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div class="servicio__precio">
+              <p class="cuerpo valor">{b.precio}</p>
+              {b.enlaces.map((e) => <p class="chico"><a class="subrayado" href={e.href}>{e.texto}<Icono nombre="flecha" /></a></p>)}
+            </div>
+          )}
+        </div>
+      ))}
+    </section>
+
+    {/* 6 · LO QUE PUEDES REVISAR ANTES DE CONTRATAR (fila 6; spec-home §4): una sola lista de cinco filas con la forma de
+         las fases, dos con su medio. Reemplaza la cinta, el índice corto y las pruebas. El único corchete de la página. */}
+    <section class="seccion reticula" aria-labelledby="h-revisar">
+      <div class="int-sec__cab">
+        {rot.pruebas && <p class="rotulo">{rot.pruebas}</p>}
+        <h2 class="t-declaracion" id="h-revisar"><span class="tinta">{dos('home.pruebas.h2').tinta}</span></h2>
+      </div>
+      <div class="int-sec__cuerpo int-sec__cuerpo--ancho">
+        <ol>
+          {pruebas.map((p) => (
+            <li class="fase">
+              <h3 class="t-fase">{p.titulo}</h3>
+              <div class="fase__der">
+                <p class="cuerpo">{p.texto}</p>
+                {p.medio && (
+                  <div data-entrada={p.entrada ? '' : undefined}>
+                    <Imagen src={p.medio.src} alt={p.medio.alt} ancho={p.medio.ancho} alto={p.medio.alto} clase="p-169" />
+                  </div>
+                )}
+                <p class="chico"><a class="subrayado" href={p.boton.destino}>{p.boton.texto}{p.fuera ? <><Icono nombre="fuera" /><span class="solo-lector"> {externo}</span></> : <Icono nombre="flecha" />}</a></p>
+                {p.aviso && <p class="chico">{p.aviso}</p>}
+              </div>
+            </li>
+          ))}
+        </ol>
+        <p class="chico int-lista__pie"><a class="corchete" href={todo.destino}>{todo.texto}</a></p>
+      </div>
+    </section>
+
+    {/* 7 · QUIÉN ESTÁ DETRÁS (fila 7): el retrato 3:4 entero y grande; el texto apoyado abajo, con el nombre y el cargo, las
+         tres reglas y el enlace a Nosotros. */}
+    <section class="seccion reticula quien" aria-labelledby="h-quien">
+      <div class="quien__retrato" data-entrada>
+        <Imagen src={m['ramon-vallejos-34'].src} alt={t('home.quien.retrato').texto} ancho={m['ramon-vallejos-34'].ancho} alto={m['ramon-vallejos-34'].alto} clase="p-34" />
+      </div>
+      <div class="quien__txt">
+        {rot.quien && <p class="rotulo">{rot.quien}</p>}
+        <h2 class="t-declaracion" id="h-quien"><span class="tinta">{dos('home.quien.h2').tinta}</span></h2>
+        <p class="rotulo">{t('home.quien.pie').texto}</p>
+        <p class="cuerpo caja">{t('home.quien.p1').texto}</p>
+        <p class="cuerpo caja">{t('home.quien.cv').texto}</p>
+        <ul class="int-lista quien__lista">
+          {reglas.map((r) => <li><h3 class="int-lista__t tinta">{r.t}</h3><p class="cuerpo">{r.d}</p></li>)}
+        </ul>
+        <a class="boton boton--placa" href={t('home.quien.boton').destino}>{t('home.quien.boton').texto}<Icono nombre="flecha" /></a>
+      </div>
+    </section>
+
+    {/* 8 · PREGUNTAS FRECUENTES (fila 8): todas abiertas, sin details; lo que se ve es lo que dice el FAQPage */}
+    <section class="seccion reticula" aria-labelledby="h-faq">
+      <div class="int-sec__cab">
+        {rot.faq && <p class="rotulo">{rot.faq}</p>}
+        <h2 class="t-declaracion" id="h-faq"><span class="tinta">{dos('home.faq.h2').tinta}</span></h2>
+      </div>
+      <div class="int-sec__cuerpo">
+        {preguntas.map((q) => (
+          <div class="pregunta"><h3>{q.p}</h3><p class="cuerpo">{q.r}</p></div>
+        ))}
+      </div>
+    </section>
+
+    {/* 9 · CIERRE (fila 9): una sola acción, hacia /contacto/ */}
+    <section class="seccion reticula contacto" aria-labelledby="h-contacto">
+      <div class="contacto__txt">
+        <h2 class="t-declaracion" id="h-contacto"><span class="tinta">{dos('home.contacto.h2').tinta}</span> <span class="gris">{dos('home.contacto.h2').gris}</span></h2>
+        <a class="boton boton--claro" href={t('home.contacto.boton').destino}>{t('home.contacto.boton').texto}<Icono nombre="flecha" /></a>
+        <p class="chico"><a href={t('home.contacto.correo').destino}>{t('home.contacto.correo').texto}</a></p>
+      </div>
+    </section>
+  </PaginaA>
 </Layout>

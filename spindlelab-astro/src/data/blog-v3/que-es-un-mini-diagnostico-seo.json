@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "slug": "que-es-un-mini-diagnostico-seo",
+    "title": "Qué incluye la revisión gratis de una página · SpindleLab",
+    "description": "Qué es la revisión gratis de una página, qué incluye y qué no: una primera mirada a tu sitio, hecha desde afuera, que llega en un día hábil.",
+    "headline": "¿Qué es la revisión gratis de una página y qué incluye?",
+    "datePublished": "2026-07-16",
+    "dateModified": "2026-10-26",
+    "canonical": "https://spindlelab.cl/blog/que-es-un-mini-diagnostico-seo/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://spindlelab.cl/blog/que-es-un-mini-diagnostico-seo/#article",
+        "headline": "¿Qué es la revisión gratis de una página y qué incluye?",
+        "description": "Qué es la revisión gratis de una página, qué incluye y qué no: una primera mirada a tu sitio, hecha desde afuera, que llega en un día hábil.",
+        "inLanguage": "es-CL",
+        "datePublished": "2026-07-16",
+        "dateModified": "2026-10-26",
+        "image": "https://spindlelab.cl/assets/img/og-marca.jpg?v=4",
+        "author": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        },
+        "publisher": {
+          "@id": "https://spindlelab.cl/#org"
+        },
+        "mainEntityOfPage": "https://spindlelab.cl/blog/que-es-un-mini-diagnostico-seo/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://spindlelab.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://spindlelab.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Qué es la revisión de una página",
+            "item": "https://spindlelab.cl/blog/que-es-un-mini-diagnostico-seo/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Necesito darles acceso a mi sitio o a Google Analytics?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. La revisión se hace desde afuera, igual que te ven Google y los motores de IA. Los accesos solo se piden si avanzamos a una auditoría completa."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Sirve si mi empresa ya trabaja con una agencia de marketing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. La revisión mira tu sitio, no a quien lo administra, y sirve como segunda opinión sobre lo que ya se hizo y lo que no. Si trabajas con una agencia, puedes llevarle los hallazgos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Para qué tipo de empresas sirve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Para cualquier empresa que ya venda y tenga un sitio. Si tu caso no calza, la revisión te lo dice. Atendemos a todo Chile, por videollamada."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

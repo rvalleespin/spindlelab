@@ -1,0 +1,1216 @@
+/* A · ARCHIVO — la hoja de la dirección que eligió Ramón en la compuerta 2 de la obra E12 (19-oct-2026).
+
+   Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md (§1 tokens, §2 «Lo común», §3.5 video, §4
+   estados, §5.3 construcción). Implementación de referencia: tableros/e12-direcciones/proto/a/a.css; donde difieren,
+   manda la spec (§0.4). Lo que la spec no cubría está en spindlelab-v3/desvios.md.
+
+   Reglas de esta hoja:
+   · Solo la importan los componentes de src/components/a/ y las páginas de A. Toda regla va bajo body.a-body (o
+     html:has(body.a-body)): si la hoja se cargara por error en una página de producción, no alcanza a nada.
+   · Los tokens son propiedades de body.a-body con prefijo --a- (spec §1), no de :root.
+   · Un valor que no está en las tablas de la spec no se usa. Los espacios salen de la escala de §1.5
+     (4 · 8 · 12 · 16 · 24 · 32 · 40 · 48 · 56 · 80 · 120 · 160); los rellenos ópticos de los rótulos de placa son los
+     del prototipo.
+   · Esta hoja no la lee Tailwind (tailwind.config.mjs solo mira .astro, .html, .js, .ts…), así que lo que aquí se
+     escriba no cambia el CSS de las páginas publicadas. Los .astro de A sí los lee: ver desvios.md, tanda 1. */
+
+/* ------------------------------------------------------------------ letras (spec §1.2) */
+/* Dos archivos locales con su OFL al lado en /fonts/. Ninguna de las dos trae flechas en este subconjunto: la flecha
+   es un SVG. Se precargan por la prop `letras` del Layout (fila del 19-oct de §7). */
+@font-face {
+  font-family: 'Google Sans Flex';
+  src: url('/fonts/google-sans-flex-latin.woff2') format('woff2');
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Mono';
+  src: url('/fonts/dm-mono-500-latin.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ------------------------------------------------------------------ tokens (spec §1.1, §1.3, §1.4) */
+/* El lienzo va también en <html>, para que el rebote del scroll no muestre otro negro (§5.3.3). <html> no puede leer
+   las propiedades del <body>: el valor es el de --a-lienzo. */
+html:has(body.a-body) { background: #060606; color-scheme: dark; -webkit-text-size-adjust: 100%; }
+
+body.a-body {
+  /* color: cada token con su rol (§1.1) */
+  --a-lienzo: #060606;
+  --a-placa: #141414;
+  --a-placa-activa: #202020;
+  --a-placa-apretada: #2a2a2a;
+  --a-blanco: #ffffff;
+  --a-blanco-70: rgba(255, 255, 255, 0.7);
+  --a-gris: #989898;
+  --a-apretado: #d0d0d0;
+  --a-linea-seccion: #2d2d2d;
+  --a-linea: rgba(255, 255, 255, 0.1);
+  --a-borde-campo: #707070;
+  --a-velo: rgba(6, 6, 6, 0.7);
+
+  /* retícula de Koto (§1.4): margen 16, separación 8, sin ancho máximo */
+  --a-m: 16px;
+  --a-g: 8px;
+  --a-lateral: 320px;
+
+  --a-f-letra: 'Google Sans Flex', system-ui, sans-serif;
+  --a-f-mono: 'DM Mono', ui-monospace, monospace;
+
+  /* escala, 1440 → 390, lineal con clamp (§1.3) */
+  --a-t-portada: clamp(26px, 2.0952vw + 17.829px, 48px);
+  --a-t-declaracion: clamp(26px, 1.15vw + 21.5px, 38px);
+  --a-t-siguiente: clamp(23px, 0.86vw + 19.6px, 32px);
+  --a-t-titulo: clamp(23px, 0.1vw + 22.6px, 24px);
+  --a-t-cuerpo: clamp(15px, 0.1vw + 14.6px, 16px);
+  --a-t-chico: clamp(13px, 0.1vw + 12.6px, 14px);
+  --a-i-cuerpo: 1.35;
+  --a-caja: 493px;
+
+  /* el color no lleva resorte: 167 ms lineal (§1.6) */
+  --a-color: 167ms linear;
+
+  margin: 0;
+  background: var(--a-lienzo);
+  color: var(--a-gris);
+  font-family: var(--a-f-letra);
+  font-weight: 370;
+  font-stretch: 100%;
+  font-size: var(--a-t-cuerpo);
+  line-height: var(--a-i-cuerpo);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ------------------------------------------------------------------ base */
+.a-body *, .a-body *::before, .a-body *::after { box-sizing: border-box; }
+.a-body img, .a-body video, .a-body svg { display: block; max-width: 100%; }
+.a-body h1, .a-body h2, .a-body h3, .a-body p, .a-body ul, .a-body ol, .a-body dl, .a-body dd, .a-body figure,
+.a-body blockquote { margin: 0; }
+.a-body ul, .a-body ol { padding: 0; list-style: none; }
+.a-body strong, .a-body b, .a-body em, .a-body i { font-weight: inherit; font-style: normal; } /* §1.2: cero negrita */
+.a-body a { color: inherit; text-decoration: none; }
+.a-body button, .a-body input, .a-body select, .a-body textarea { font: inherit; color: inherit; }
+/* Los destinos de un enlace interno quedan bajo el encabezado plegado, no debajo (§4.3) */
+.a-body [id] { scroll-margin-top: 88px; }
+
+/* ------------------------------------------------------------------ letra: el corte hace la jerarquía (§1.2, §1.3) */
+.a-body h1, .a-body h2, .a-body h3, .a-body .t-display {
+  font-family: var(--a-f-letra); font-stretch: 76%; font-weight: 300; color: var(--a-blanco);
+  text-wrap: balance;
+}
+.a-body .t-portada { font-size: var(--a-t-portada); line-height: 1; letter-spacing: -0.01em; }
+.a-body .t-declaracion { font-size: var(--a-t-declaracion); line-height: 1.1; letter-spacing: -0.01em; }
+.a-body .t-siguiente { font-size: var(--a-t-siguiente); line-height: 1.15; }
+.a-body .t-titulo { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .tinta { color: var(--a-blanco); }
+.a-body .gris { color: var(--a-gris); }
+.a-body .cuerpo { font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); color: var(--a-gris); text-wrap: pretty; }
+.a-body .cuerpo + .cuerpo { margin-top: 1em; }
+.a-body .chico { font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); text-wrap: pretty; }
+/* La caja del cuerpo: tope de 493 px en todos los anchos (§1.3, §0.4.4) */
+.a-body .caja { max-width: var(--a-caja); }
+.a-body .rotulo {
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25;
+  letter-spacing: 0.03em; text-transform: uppercase; color: var(--a-gris);
+}
+.a-body .dato {
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; line-height: 1.35;
+  letter-spacing: 0.03em; color: var(--a-gris);
+}
+/* Enlace del cuerpo (§4.1): blanco, subrayado de 1 px al 45 % a 3 px; al pasar, al 100 % en 167 ms */
+.a-body .cuerpo a, .a-body .chico a, .a-body a.subrayado {
+  color: var(--a-blanco); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.45); transition: text-decoration-color var(--a-color);
+}
+.a-body .cuerpo a:hover, .a-body .chico a:hover, .a-body a.subrayado:hover { text-decoration-color: var(--a-blanco); }
+
+/* ------------------------------------------------------------------ foco (§4.3): contorno blanco de 2 px a 3 px */
+.a-body :focus-visible { outline: 2px solid var(--a-blanco); outline-offset: 3px; }
+/* el contorno con radio 2 (§1.5) en lo que no tiene radio propio; lo que lo tiene (botón, campo, medio) lo conserva */
+.a-body a:not(.boton):not(.medio-enlace):focus-visible, .a-body summary:focus-visible { border-radius: 2px; }
+.a-body .medio-enlace:focus-visible { border-radius: 6px; }
+
+.a-body .solo-lector, .a-body .sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Enlace para saltar al contenido: el primero del documento, botón claro al recibir el foco (§2, lo común, 3) */
+.a-body .saltar { position: absolute; left: var(--a-m); top: -80px; z-index: 50; }
+.a-body .saltar:focus { top: var(--a-m); }
+
+/* ------------------------------------------------------------------ retícula (§1.4): 8 · 12 · 16 columnas */
+.a-body .reticula {
+  display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--a-g); padding-inline: var(--a-m);
+}
+@media (min-width: 834px) { .a-body .reticula { grid-template-columns: repeat(12, minmax(0, 1fr)); } }
+@media (min-width: 1194px) { .a-body .reticula { grid-template-columns: repeat(16, minmax(0, 1fr)); } }
+
+/* Arriba de cada sección, 120 desde 834 y 80 bajo 834 (§1.5) */
+.a-body .seccion { padding-top: 120px; }
+@media (max-width: 833.98px) { .a-body .seccion { padding-top: 80px; } }
+/* Las líneas son el borde superior de una sección o de una fila, nunca alrededor de un bloque (§1.5) */
+.a-body .borde { border-top: 1px solid var(--a-linea-seccion); }
+.a-body .borde-fila { border-top: 1px solid var(--a-linea); }
+
+/* ------------------------------------------------------------------ botones (§4.1) */
+/* Mono 11 en mayúsculas, 44 de alto, radio 4. Claro: blanco con texto lienzo. Placa: placa con texto blanco. */
+.a-body .boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 16px; border: 0; border-radius: 4px; cursor: pointer;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: background-color var(--a-color), color var(--a-color);
+}
+.a-body .boton--claro { background: var(--a-blanco); color: var(--a-lienzo); }
+.a-body .boton--claro:hover { background: var(--a-gris); }
+.a-body .boton--claro:active { background: var(--a-apretado); }
+.a-body .boton--placa { background: var(--a-placa); color: var(--a-blanco); }
+.a-body .boton--placa:hover { background: var(--a-placa-activa); }
+.a-body .boton--placa:active { background: var(--a-placa-apretada); }
+.a-body .boton[disabled] { cursor: progress; background: var(--a-placa-activa); color: var(--a-gris); }
+/* Corchete («[ Todo el trabajo ] (10)»): gris, blanco al pasar; el único de la página (§4.1, §6.13) */
+.a-body .corchete {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
+  text-transform: uppercase; color: var(--a-gris); transition: color var(--a-color);
+}
+.a-body .corchete:hover { color: var(--a-blanco); }
+
+/* ------------------------------------------------------------------ iconos (§1.6): tres SVG en currentColor */
+.a-body .icono-flecha { display: inline-block; vertical-align: baseline; width: 12px; height: 12px; flex: none; stroke: currentColor; stroke-width: 1.5; fill: none; }
+/* la misma flecha, girada, marca un enlace que sale del sitio (§2.2: «la flecha ↗ en SVG») */
+.a-body .icono-flecha--fuera { transform: rotate(-45deg); }
+.a-body .icono-pausa, .a-body .icono-seguir { width: 14px; height: 14px; fill: currentColor; }
+
+/* ------------------------------------------------------------------ encabezado (§2, lo común, 1) */
+/* Logo a 24 px en el margen (20 bajo 834), el menú en mono, a la derecha «SANTIAGO» con la hora. 64 de alto desde 834,
+   pegajoso, y al bajar se pliega en una placa de 48 (radio 4, a 8 del borde) con el resorte «entrada». Bajo 834, 90 de
+   alto: el menú pasa a una segunda fila de 44 y no hay botón «Menú». */
+.a-body .cab { position: relative; z-index: 20; }
+.a-body .cab__fila {
+  position: relative; display: flex; align-items: center; gap: 56px; min-height: 64px; padding: 0 var(--a-m);
+}
+.a-body .cab__logo { display: inline-flex; align-items: center; color: var(--a-blanco); flex: none; }
+.a-body .cab__logo svg { height: 24px; width: auto; }
+.a-body .cab__nav ul { display: flex; gap: 40px; }
+.a-body .cab__nav a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
+  text-transform: uppercase; color: var(--a-blanco-70); transition: color var(--a-color);
+}
+.a-body .cab__nav a:hover, .a-body .cab__nav a[aria-current] { color: var(--a-blanco); }
+.a-body .cab__hora { margin-left: auto; white-space: nowrap; }
+.a-body .cab__placa { display: none; }
+/* E13 · a la derecha, la hora y el botón de la revisión (spec-home §3.2). El botón es el boton--claro de siempre: sobre
+   la placa del encabezado plegado (#141414) uno de placa desaparecería. */
+.a-body .cab__der { margin-left: auto; display: flex; align-items: center; gap: 40px; }
+.a-body .cab__der .cab__hora { margin-left: 0; }
+.a-body .cab__cta { flex: none; }
+/* De 834 a 1193 los espacios del encabezado bajan un paso de la escala: con los de 1440, plegado a 834 la hora se salía
+   de la placa 15 px (medido: logo 117 + menú 437 + hora 139 + 2 × 56 = 805 en 778 de caja). E13: con el botón, la hora
+   cede (es adorno y no cabe) y el menú baja otro paso */
+@media (min-width: 834px) and (max-width: 1193.98px) {
+  .a-body .cab__fila { gap: 40px; }
+  .a-body .cab__nav ul { gap: 24px; }
+  .a-body .cab__der .cab__hora { display: none; }  /* solo la del encabezado: la del pie se queda */
+}
+@media (min-width: 834px) {
+  .a-body .cab { position: sticky; top: 0; }
+  .a-body .cab__placa {
+    display: block; position: absolute; inset: 8px var(--a-m) auto; height: 48px; border-radius: 4px;
+    background: var(--a-placa); opacity: 0; pointer-events: none;
+  }
+  .a-body .cab--plegada .cab__placa { opacity: 1; }
+  .a-body .cab--plegada .cab__fila { padding-inline: calc(var(--a-m) + 12px); }
+}
+@media (max-width: 833.98px) {
+  /* padding-top 2: el logo mide 44 de alto (área de toque) y su dibujo queda a 14 px del borde; 2 + 44 + 44 = 90 */
+  .a-body .cab__fila { flex-wrap: wrap; gap: 0 16px; min-height: 0; padding-top: 2px; }
+  .a-body .cab__logo svg { height: 20px; }
+  .a-body .cab__nav { order: 3; width: 100%; }
+  .a-body .cab__nav ul { justify-content: space-between; gap: 8px; }
+  /* E13 (spec-home §3.2): la fila 1 es el logo y el botón (en el lugar de la hora); la fila 2, cinco ítems («Contacto»
+     sale: el botón lleva al mismo destino). El encabezado es pegajoso en todos los anchos y se pliega en la placa de 64
+     al bajar: el botón de la revisión queda siempre a la vista, y plegarse no mueve la página (90 − 64 = 26). */
+  .a-body .cab__der .cab__hora, .a-body .cab__nav-contacto { display: none; }  /* la hora del pie se queda */
+  .a-body .cab { position: sticky; top: 0; }
+  .a-body .cab__placa {
+    display: block; position: absolute; inset: 8px var(--a-m) auto; height: 48px; border-radius: 4px;
+    background: var(--a-placa); opacity: 0; pointer-events: none; transition: opacity var(--a-color);
+  }
+  .a-body .cab--plegada .cab__placa { opacity: 1; }
+  .a-body .cab--plegada .cab__fila { min-height: 64px; padding: 0 calc(var(--a-m) + 12px); flex-wrap: nowrap; align-items: center; }
+  .a-body .cab--plegada .cab__nav { display: none; }
+  .a-body .cab--plegada { margin-bottom: 26px; }
+}
+
+/* ------------------------------------------------------------------ miga (§2, lo común, 5) */
+.a-body .miga ol { display: flex; flex-wrap: wrap; gap: 0 8px; }
+.a-body .miga li { display: inline-flex; align-items: center; }
+.a-body .miga__sep { margin-right: 8px; color: var(--a-gris); }
+.a-body .miga a { display: inline-flex; min-height: 44px; align-items: center; transition: color var(--a-color); }
+.a-body .miga a:hover { color: var(--a-blanco); }
+.a-body .miga [aria-current] { color: var(--a-blanco); display: inline-flex; min-height: 44px; align-items: center; }
+
+/* ------------------------------------------------------------------ pie (§2, lo común, 2) */
+/* Borde superior, el logo a 20 px, el correo en mono y la hora; 160 px arriba. (E13, ronda 2: el caso también lo lleva.) */
+.a-body .pie-sitio {
+  margin-top: 160px; padding: 16px var(--a-m) 24px; display: flex; flex-wrap: wrap; gap: 12px 40px;
+  align-items: center; border-top: 1px solid var(--a-linea-seccion);
+}
+.a-body .pie-sitio .cab__logo svg { height: 20px; }
+.a-body .pie-sitio .cab__hora { margin-left: auto; }
+.a-body .pie-sitio__correo { text-transform: none; color: var(--a-gris); transition: color var(--a-color); }
+.a-body .pie-sitio__correo:hover { color: var(--a-blanco); }
+/* E13 (spec-home §3.4): una segunda fila de enlaces. consent-banner.js cuelga el botón «Cookies» junto al de privacidad. */
+.a-body .pie-sitio__enlaces { flex: 1 0 100%; }
+.a-body .pie-sitio__enlaces ul { display: flex; flex-wrap: wrap; gap: 0 32px; }
+.a-body .pie-sitio__enlaces a {
+  display: inline-flex; align-items: center; gap: 4px; min-height: 32px; color: var(--a-gris); transition: color var(--a-color);
+}
+.a-body .pie-sitio__enlaces a:hover { color: var(--a-blanco); }
+
+/* ------------------------------------------------------------------ área de toque (§4.3): 44 × 44 */
+/* Bajo 834 y con cualquier puntero grueso, en alto y en ancho, también el logo y los correos sueltos. Donde no hay
+   otro objetivo al lado (el pie) el área crece con margen negativo y lo que se ve no se mueve (prototipo, defecto 11). */
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .cab__logo { min-height: 44px; }
+  .a-body .cab__nav a, .a-body .miga a { min-width: 44px; justify-content: center; }
+  /* E13: la fila de enlaces del pie y los enlaces de texto de las filas de la home (spec-home §6, criterio 17). Los del pie:
+     44 de alto, y 4 px de aire sobre ellos para que sus áreas no pisen las del correo y las de «Cookies» (medido: 3 px). Los
+     enlaces de las filas de la home son un solo enlace por párrafo: su área sube a 44 con el margen negativo del párrafo
+     (lo que se ve no se mueve; arriba y abajo hay texto o medios sin enlace). Los de los bloques de servicios van apilados
+     (dos en Búsqueda y en Anuncios): cada uno de 44 de alto, sin margen negativo, para que sus áreas no se pisen. */
+  .a-body .pie-sitio__enlaces { margin-top: 4px; }
+  .a-body .pie-sitio__enlaces a { min-height: 44px; }
+  /* el botón «Cookies» que consent-banner.js cuelga junto al enlace de privacidad ya vive en una fila de 44: sin los
+     márgenes negativos del correo, que le pisaban 3 px de área al enlace de la fila de abajo (Instagram) */
+  html body.a-body .pie-sitio .pie-sitio__enlaces #cookie-preferencias { margin-block: 0 !important; padding: 0 !important; }
+  .a-body .portada-v__accion > .chico:last-child, .a-body .fase__der > .chico:has(> a), .a-body .int-lista__pie:not(.chico) { margin-block: -13px; }
+  .a-body .portada-v__accion > .chico:last-child a, .a-body .fase__der > .chico > a, .a-body .int-lista__pie:not(.chico) a,
+  .a-body .servicio__precio .chico a { display: flex; width: fit-content; align-items: center; min-height: 44px; }
+  .a-body .pie-sitio .cab__logo { margin-block: -12px; }
+  .a-body .pie-sitio__correo { display: inline-flex; align-items: center; min-height: 44px; padding-top: 6px; margin-block: -18px -12px; }
+  /* el botón «Cookies» que consent-banner.js cuelga junto al correo trae su estilo en línea: va con !important */
+  html body.a-body .pie-sitio #cookie-preferencias {
+    display: inline-flex !important; align-items: center; min-height: 44px; padding-top: 6px !important; margin-block: -18px -12px !important;
+  }
+  /* Bajo 834 el pie se parte en filas y el correo queda bajo el logo: las dos áreas se pisaban 97 × 13 y el 27 % del
+     área del logo abría el correo (acta de la obra, vuelta 1, defecto 7). El logo crece solo hacia arriba (24 px, hacia
+     los 160 vacíos sobre el pie) y apoya su dibujo abajo; el correo y «Cookies» crecen 12 arriba y 18 abajo, con el
+     relleno abajo. Lo que se ve no se mueve (medido a 360, 390 y 768: el logo y los dos textos en el mismo píxel, la
+     página del mismo alto) y las áreas ya no se tocan */
+  .a-body .pie-sitio .cab__logo { margin-block: -24px 0; align-items: flex-end; }
+  .a-body .pie-sitio__correo { padding-top: 0; padding-bottom: 6px; margin-block: -12px -18px; }
+  html body.a-body .pie-sitio #cookie-preferencias { padding-top: 0 !important; padding-bottom: 6px !important; margin-block: -12px -18px !important; }
+}
+
+/* ------------------------------------------------------------------ medios (§3.3) */
+/* Plano en su marco, radio 6; cada medio espera en su placa y aparece en 167 ms al cargar (la carga como diseño). Sin
+   JS (body.a-sin-js, que el primer script quita) se ve de entrada. */
+.a-body .medio { position: relative; overflow: hidden; border-radius: 6px; background: var(--a-placa); isolation: isolate; }
+.a-body .medio > img, .a-body .medio > video, .a-body .medio > picture, .a-body .medio > picture > img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.a-body .medio > img, .a-body .medio > video { opacity: 0; transition: opacity var(--a-color); }
+.a-body .medio > img.cargado, .a-body .medio > video.cargado,
+body.a-body.a-sin-js .medio > img { opacity: 1; }
+.a-body .medio--sangre { border-radius: 0; }
+.a-body .p-169 { aspect-ratio: 16 / 9; }
+.a-body .p-45 { aspect-ratio: 4 / 5; }
+.a-body .p-43 { aspect-ratio: 4 / 3; }
+.a-body .p-53 { aspect-ratio: 5 / 3; }
+.a-body .p-162 { aspect-ratio: 1.62; }
+.a-body .p-34 { aspect-ratio: 3 / 4; }
+.a-body .p-239 { aspect-ratio: 2.39; }
+.a-body .pie { margin-top: 8px; max-width: var(--a-caja); font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); text-wrap: pretty; }
+/* Rótulo de esquina en una placa, sobre un medio (radio 2, §1.5): el único texto de interfaz sobre el trabajo (§6.6) */
+.a-body .marca-medio {
+  position: absolute; z-index: 2; left: 12px; top: 12px; padding: 7px 8px 6px; border-radius: 2px;
+  background: var(--a-placa); color: var(--a-blanco);
+}
+.a-body .marca-medio .gris { color: var(--a-gris); }
+
+/* ------------------------------------------------------------------ video (§3.5) y su pausa (§3.1.3, §4.1) */
+/* La imagen quieta abajo, el video encima: aparece en 167 ms cuando da su primer cuadro. Sin JS, solo la imagen. */
+.a-body .video > .video__quieta, .a-body .video > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.a-body .video > video { opacity: 0; transition: opacity var(--a-color); }
+.a-body .video > video.corriendo { opacity: 1; }
+.a-body .pausa {
+  position: absolute; z-index: 3; right: 12px; bottom: 12px; width: 44px; height: 44px; border: 0; border-radius: 4px;
+  display: grid; place-items: center; background: var(--a-placa); color: var(--a-blanco); cursor: pointer;
+  transition: background-color var(--a-color), color var(--a-color);
+}
+.a-body .pausa[hidden] { display: none; }
+.a-body .pausa:hover { background: var(--a-placa-activa); }
+.a-body .pausa .icono-seguir { display: none; }
+.a-body .pausa[aria-pressed='true'] { background: var(--a-blanco); color: var(--a-lienzo); }
+.a-body .pausa[aria-pressed='true'] .icono-pausa { display: none; }
+.a-body .pausa[aria-pressed='true'] .icono-seguir { display: block; }
+.a-body .pausa--arriba { top: 16px; right: var(--a-m); bottom: auto; }
+
+/* ------------------------------------------------------------------ cursor (§4.2) */
+/* Círculo de 88 px, blanco, texto en lienzo en mono 11; el anillo de 1 px en lienzo es un borde, no una sombra (§1.5).
+   Solo con (hover: hover) and (pointer: fine) y sin movimiento reducido: lo enciende el script con .con-circulo. */
+.a-body .circulo {
+  position: fixed; left: 0; top: 0; z-index: 40; width: 88px; height: 88px; margin: -44px 0 0 -44px;
+  display: none; place-items: center; text-align: center; padding: 8px; pointer-events: none;
+  border: 1px solid var(--a-lienzo); border-radius: 50%; background: var(--a-blanco); color: var(--a-lienzo);
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
+  text-transform: uppercase; transform: scale(0); will-change: transform;
+}
+.a-body.con-circulo .circulo { display: grid; }
+.a-body.con-circulo .medio-enlace[data-ir] { cursor: none; }
+.a-body.con-circulo.teclado .medio-enlace[data-ir] { cursor: pointer; }
+/* Con teclado, el texto del círculo queda quieto dentro de la pieza enfocada, en un rótulo de placa (§4.1) */
+.a-body .medio-enlace { position: relative; display: block; }
+.a-body .medio-enlace .quieto { display: none; }
+.a-body .medio-enlace:focus-visible .quieto {
+  display: block; position: absolute; z-index: 3; left: 12px; bottom: 12px; padding: 7px 8px 6px; border-radius: 2px;
+  background: var(--a-placa); color: var(--a-blanco);
+}
+
+/* ------------------------------------------------------------------ el chequeo (§2.1, §4.1) */
+/* Los ids y el script son los de producción (chq-form, chq-dominio, chq-btn, chq-out, chq-error; v3-chequeo.js sin
+   tocar). Esta hoja solo lo viste, también el resultado que pinta v3-chequeo.js (con el sistema de A: prototipo .res__*). */
+.a-body .chequeo { display: flex; flex-direction: column; gap: 12px; }
+.a-body .chequeo__form { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+.a-body .chequeo__campo { display: flex; gap: 8px; }
+.a-body .chequeo__campo input {
+  flex: 1 1 auto; min-width: 0; height: 44px; padding: 0 12px; border-radius: 4px; border: 1px solid var(--a-borde-campo);
+  background: var(--a-placa); color: var(--a-blanco); font-size: 16px; font-weight: 370;
+  transition: border-color var(--a-color);
+}
+.a-body .chequeo__campo input::placeholder { color: var(--a-gris); opacity: 1; }
+.a-body .chequeo__campo input:hover { border-color: var(--a-gris); }
+.a-body .chequeo__campo input:focus-visible { border-color: var(--a-gris); }
+.a-body .chequeo__campo .boton { flex: none; }
+.a-body #chq-error { margin-top: 4px; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-blanco); }
+.a-body #chq-error .chq-error-codigo { margin-top: 4px; font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-gris); }
+.a-body #chq-error a { color: var(--a-blanco); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.a-body #chq-out { margin-top: 8px; }
+/* Mientras no hay resultado, el contenedor (vacío, pero en su lugar para que el lector de pantalla anuncie lo que llegue)
+   no suma su separación: el chequeo de la portada se apoya en la misma línea de abajo que la frase (§2.1). Tanda 2. */
+.a-body .chequeo > #chq-out:empty { margin-top: -12px; }
+.a-body .chq-score {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--a-linea-seccion);
+}
+.a-body .chq-num { font-stretch: 76%; font-weight: 300; font-size: var(--a-t-titulo); line-height: 1.2; color: var(--a-blanco); }
+.a-body .chq-veredicto { flex-basis: 100%; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .chq-veredicto b { font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-blanco); }
+.a-body .chq-aviso { display: block; margin-top: 8px; }
+.a-body .chq-ramas { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 12px; }
+.a-body .chq-r1 {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 4px;
+  background: var(--a-placa); color: var(--a-blanco); transition: background-color var(--a-color);
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em; text-transform: uppercase;
+}
+.a-body .chq-r1:hover { background: var(--a-placa-activa); }
+.a-body .chq-r1:active { background: var(--a-placa-apretada); }
+.a-body .chq-r2 {
+  display: inline-flex; align-items: center; min-height: 44px; font-size: var(--a-t-chico); color: var(--a-blanco);
+  text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.45); transition: text-decoration-color var(--a-color);
+}
+.a-body .chq-r2:hover { text-decoration-color: var(--a-blanco); }
+.a-body .chq-bloque { margin-top: 24px; }
+.a-body .chq-bloque h3 {
+  font-family: var(--a-f-mono); font-stretch: 100%; font-weight: 500; font-size: 11px; line-height: 1.25;
+  letter-spacing: 0.03em; text-transform: uppercase; color: var(--a-gris);
+}
+.a-body .chq-bloque .sub { margin-top: 4px; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .chq-list { margin-top: 8px; }
+.a-body .chq-list li {
+  display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 8px; padding: 8px 0;
+  border-bottom: 1px solid var(--a-linea); font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo);
+}
+/* La marca: el signo que escribe v3-chequeo.js (✓ ✕ ?) no está en ninguna de las dos letras; se oculta y se dibuja
+   un punto de 9 px: lleno y blanco si cumple, solo el borde gris si no o si no se pudo confirmar (prototipo .res__marca).
+   Lo que lee el lector de pantalla es el texto oculto del script («Cumple:», «No cumple:», «No lo pudimos confirmar:»). */
+.a-body .chq-mark {
+  width: 9px; height: 9px; margin-top: 5px; border-radius: 50%; border: 1px solid var(--a-gris);
+  font-size: 0; line-height: 0; color: transparent; overflow: hidden;
+}
+.a-body .chq-mark.chq-si { background: var(--a-blanco); border-color: var(--a-blanco); }
+.a-body .chq-t { color: var(--a-gris); }
+.a-body .chq-list li.ok .chq-t { color: var(--a-blanco); }
+.a-body .chq-d { margin-top: 4px; color: var(--a-gris); }
+.a-body .chq-fix { margin-top: 4px; color: var(--a-blanco); }
+.a-body .chq-remate { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--a-linea-seccion); }
+.a-body .chq-remate h3 { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .chq-remate p { margin-top: 8px; max-width: var(--a-caja); font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+
+/* ------------------------------------------------------------------ el aviso de cookies (§4.3) */
+/* Vive en Layout.astro con su <style> aislado por Astro (`#cookie-banner[data-astro-cid-…] …`, 1-2-1): aquí se viste
+   con más especificidad (`html body.a-body #cookie-banner …`), sin tocar su HTML ni sus ids. Placa, borde superior en
+   la línea de sección, texto gris en Google Sans Flex 14, enlace blanco subrayado, botones del sistema (Aceptar claro,
+   Rechazar de placa). */
+html body.a-body #cookie-banner { background: var(--a-placa); border-top: 1px solid var(--a-linea-seccion); padding: 12px var(--a-m); }
+html body.a-body #cookie-banner .cb-inner.cb-inner { max-width: none; gap: 8px 24px; }
+html body.a-body #cookie-banner .cb-inner p {
+  max-width: 640px; font-family: var(--a-f-letra); font-weight: 370; font-size: 14px; line-height: 1.35; color: var(--a-gris);
+}
+html body.a-body #cookie-banner .cb-inner a {
+  color: var(--a-blanco); font: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+}
+html body.a-body #cookie-banner .cb-actions.cb-actions { gap: 8px; }
+/* Desde 834, en una fila (§4.3, 23-oct; acta de la obra, vuelta 1, defecto 4): el texto, con su tope de 640, se angosta
+   lo que haga falta y los botones quedan a su derecha. Entre 834 y unos 890 los botones bajaban a una segunda fila y el
+   aviso medía 115 px: a 834 × 1112 tapaba el campo y el botón del chequeo de la home. En una fila mide 69 */
+@media (min-width: 834px) {
+  html body.a-body #cookie-banner .cb-inner.cb-inner { flex-wrap: nowrap; }
+  html body.a-body #cookie-banner .cb-inner p { flex: 0 1 auto; min-width: 0; }
+}
+html body.a-body #cookie-banner .cb-actions button {
+  min-height: 44px; padding: 0 16px; border: 0; border-radius: 4px;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em; text-transform: uppercase;
+  transition: background-color var(--a-color);
+}
+html body.a-body #cookie-banner #cookie-accept { background: var(--a-blanco); color: var(--a-lienzo); }
+html body.a-body #cookie-banner #cookie-accept:hover { background: var(--a-gris); }
+html body.a-body #cookie-banner #cookie-accept:active { background: var(--a-apretado); }
+html body.a-body #cookie-banner #cookie-reject { background: var(--a-placa); color: var(--a-blanco); }
+html body.a-body #cookie-banner #cookie-reject:hover { background: var(--a-placa-activa); }
+html body.a-body #cookie-banner #cookie-reject:active { background: var(--a-placa-apretada); }
+html body.a-body #cookie-banner button:focus-visible { outline: 2px solid var(--a-blanco); outline-offset: 3px; }
+/* El aviso que confirma la elección (#cookie-aviso) lo crea consent-banner.js con estilo en línea (Inter, radio 16,
+   sombra): por eso aquí va con !important. Placa, radio 4, sin sombra ni borde (§1.5). */
+html body.a-body #cookie-aviso {
+  background: var(--a-placa) !important; border: 0 !important; border-radius: 4px !important; box-shadow: none !important;
+  color: var(--a-gris) !important; font-family: var(--a-f-letra) !important; font-weight: 370 !important;
+  font-size: 14px !important; line-height: 1.35 !important;
+}
+html body.a-body #cookie-aviso button {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px !important; border: 0 !important;
+  border-radius: 4px !important; font-family: var(--a-f-mono) !important; font-weight: 500 !important; font-size: 11px !important;
+  letter-spacing: 0.03em; text-transform: uppercase;
+}
+html body.a-body #cookie-aviso button:first-child { background: var(--a-blanco) !important; color: var(--a-lienzo) !important; }
+html body.a-body #cookie-aviso button:last-child { background: var(--a-placa-activa) !important; color: var(--a-blanco) !important; }
+/* Pantallas bajas: el aviso no puede tapar el chequeo de la primera pantalla (§4.3; la regla de driftime del 13-oct) */
+@media (orientation: landscape) and (max-height: 500px) {
+  html body.a-body #cookie-banner { padding: 8px var(--a-m); }
+  html body.a-body #cookie-banner .cb-inner.cb-inner { flex-direction: row; flex-wrap: nowrap; align-items: center; }
+  html body.a-body #cookie-banner .cb-inner p { flex: 1 1 auto; min-width: 0; max-width: none; font-size: 13px; }
+}
+
+/* ------------------------------------------------------------------ nada tapado por lo fijo (§4.3) */
+/* Arriba, el encabezado pegajoso (64; E13: en todos los anchos): solo mientras hay foco de teclado, para no correr las
+   anclas que ya tienen su scroll-margin. Abajo, el aviso de cookies mientras está abierto. */
+html:has(body.a-body):has(:focus-visible) { scroll-padding-top: 80px; }
+/* El alto del aviso, medido en esta hoja (tanda 1): 69 px en una fila (desde 834 desde el 23-oct; antes, desde ~850),
+   115 de 600 a 833, 134 de 390 a 414 y 153 a 360 y 320. El relleno es ese alto más unos 20 px. */
+html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 96px; }
+@media (max-width: 833.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 136px; }
+}
+@media (max-width: 599.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 160px; }
+}
+@media (max-width: 379.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 176px; }
+}
+/* E13: el pie ahora tiene una fila de enlaces (la política de privacidad entre ellos): mientras el aviso está abierto, el pie
+   deja debajo el alto del aviso (el mismo relleno de arriba), para que se pueda llegar a sus enlaces con el scroll y con el
+   teclado sin que el aviso los tape. Se va con el aviso. */
+html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bottom: 96px; }
+@media (max-width: 833.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bottom: 136px; }
+}
+@media (max-width: 599.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bottom: 160px; }
+}
+@media (max-width: 379.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bottom: 176px; }
+}
+
+/* ================================================================== HOME (spec §2.1, §3.1, §3.2) · tanda 2 */
+
+/* 1 · La portada: el hilo de oro (§3.1). Las clases .portada-v, .portada-v__medio y .portada-v__pie son las que miden
+   e12/spec/herramientas/portada.mjs y contraste-portada.py (el velo y cada línea de texto contra los 121 cuadros).
+   El medio es el componente Video (a sangre, sin radio); la pausa, arriba a la derecha y primer control de la portada. */
+.a-body .portada-v { position: relative; isolation: isolate; }
+.a-body .portada-v__medio { aspect-ratio: 16 / 9; background: var(--a-lienzo); }
+.a-body .portada-v__medio > img, .a-body .portada-v__medio > video { object-position: 50% 50%; }
+/* La imagen quieta es lo primero que se pinta y la candidata a LCP (§3.1, tabla de slots): no espera al script para
+   aparecer, como los otros medios (desvios.md, tanda 2) */
+.a-body .portada-v__medio > .video__quieta { opacity: 1; }
+.a-body .portada-v__pie {
+  position: relative; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--a-g);
+  row-gap: 24px; align-items: end; padding: 24px var(--a-m) 0;
+}
+.a-body .portada-v__decl { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; }
+.a-body .portada-v__decl .entradilla { max-width: var(--a-caja); }
+/* E13 (spec-home §2, variante H-A): la acción principal ocupa el lugar que tenía el chequeo (renombra .portada-v__chequeo).
+   El botón, su microcopy (la promesa del botón, pegada bajo él) y el enlace al chequeo, que es otra acción y va después. */
+.a-body .portada-v__accion { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+/* la caja del texto, también en el chico de la acción: tope de 493 px en todos los anchos (§1.3) */
+.a-body .portada-v__accion .chico { max-width: var(--a-caja); }
+/* Bajo 834, la portada lee rótulo, h1, acción y entradilla (§2.1, fila 1; §0.4, punto 13; 23-oct, acta de la obra,
+   vuelta 1, defecto 4; E13: antes el campo del chequeo, ahora el botón de la revisión): con el aviso de cookies abierto,
+   el botón queda sobre él a 360 × 800 y 390 × 844. Solo el orden a la vista: el DOM no cambia (la entradilla no tiene
+   nada enfocable, así que el Tab tampoco). El bloque de la frase se abre en la retícula de la portada (row-gap 24): entre
+   el rótulo y el h1, 16 como hoy (24 − 8); entre el h1 y la acción y entre la acción y la entradilla, 24. La franja del
+   video no pasa del 28 % de la pantalla: a 360 × 640 con el aviso abierto el botón queda a 30 px sobre él (sin la regla,
+   a 7); a 390 × 844 y más, 28svh es más que la franja 16:9 y no cambia nada. */
+@media (max-width: 833.98px) {
+  .a-body .portada-v__decl { display: contents; }
+  .a-body .portada-v__decl > * { grid-column: 1 / -1; }
+  .a-body .portada-v__decl > h1 { margin-top: -8px; }
+  .a-body .portada-v__accion { order: 1; }
+  .a-body .portada-v__decl > .entradilla { order: 2; }
+}
+/* La franja del video no pasa del 28 % de la pantalla, solo en pantallas bajas (360 × 640, 375 × 667, 320 × 568). La spec lo
+   pedía bajo 834 sin más, pero en una tablet (768 × 1024, donde 28svh = 287 y la franja 16:9 mide 432) el ancho se encogía
+   con el alto (aspect-ratio) y la franja quedaba a medio ancho: con width: 100% se recorta arriba y abajo, y con el tope
+   de altura de pantalla se queda donde hace falta (desvios/home-construccion.md). */
+@media (max-width: 833.98px) and (max-height: 740px) {
+  .a-body .portada-v__medio { width: 100%; max-height: 28svh; }
+}
+/* la ayuda de /diagnostico/, donde corría de 659 a 940 px desde 768 (acta de la obra, vuelta 1, defecto 5) */
+.a-body .chequeo > .chico, .a-body .chequeo__form > .chico { max-width: var(--a-caja); }
+@media (min-width: 834px) {
+  /* el video llena la portada (100svh menos el encabezado, que va antes sobre el lienzo); el texto, abajo y encima */
+  .a-body .portada-v { display: flex; flex-direction: column; justify-content: flex-end; min-height: calc(100svh - 64px); }
+  .a-body .portada-v__medio { position: absolute; inset: 0; z-index: -1; aspect-ratio: auto; }
+  /* arriba, 48 px que funden el borde del video con el lienzo del encabezado: la costura, no el contraste (§3.1.4) */
+  .a-body .portada-v__medio::after {
+    content: ''; position: absolute; inset: 0 0 auto; z-index: 1; height: 48px; pointer-events: none;
+    background: linear-gradient(to bottom, #060606, rgba(6, 6, 6, 0));
+  }
+  /* el velo (--a-velo-portada, §1.1; §3.1.4): nace con el bloque de texto, no con la pantalla, así crece si el texto
+     crece (E13: ya no hay resultado del chequeo en la portada, el alto es fijo). 0 en el borde de arriba del bloque, 0,88
+     a los 160 px, 0,88 hasta 48 px antes del borde de abajo y #060606 entero en el borde, que empalma con el lienzo de
+     la sección siguiente. El texto empieza 16 px bajo el final de la rampa (160 + 16). Los dos bloques apoyados en la
+     misma línea de abajo, a 24 px del borde. El velo no recibe el puntero (sobre la pausa, cuando la portada es baja); el
+     texto y la acción, sí. */
+  .a-body .portada-v__pie {
+    grid-template-columns: repeat(12, minmax(0, 1fr)); padding: 176px var(--a-m) 24px; pointer-events: none;
+    background: linear-gradient(to bottom, rgba(6, 6, 6, 0) 0, rgba(6, 6, 6, 0.88) 160px, rgba(6, 6, 6, 0.88) calc(100% - 48px), #060606 100%);
+  }
+  .a-body .portada-v__pie > * { pointer-events: auto; }
+  .a-body .portada-v__decl { grid-column: 1 / span 7; }
+  .a-body .portada-v__accion { grid-column: 8 / -1; }
+  .a-body .portada-v__accion .boton { width: 100%; }
+}
+@media (min-width: 1194px) {
+  .a-body .portada-v__pie { grid-template-columns: repeat(16, minmax(0, 1fr)); }
+  .a-body .portada-v__decl { grid-column: 1 / span 12; }
+  .a-body .portada-v__accion { grid-column: 13 / -1; }
+}
+
+/* Una entrada del trabajo (/trabajo/): bajo el medio, nombre en blanco y bajada en gris en una sola frase, a
+   cuerpo, y la línea mono. Sin borde ni caja. (E13: la cinta y el índice corto de la home salieron; esto lo usa /trabajo/.) */
+.a-body .pieza { position: relative; min-width: 0; }
+.a-body .pieza__txt { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
+.a-body .pieza__nombre {
+  font-stretch: 100%; font-weight: 370; font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); text-wrap: pretty;
+}
+.a-body .pieza__nombre .icono-flecha { margin-left: 4px; }
+
+/* E13 · Los bloques de «Lo que podemos hacer por ti» (spec-home §1, fila 5): el nombre del bloque a Título (c1–c4), el
+   texto (c5–c11) y el precio en blanco con un enlace por servicio (c13–c16); de 834 a 1193, c1–c4, c5–c9 y c10–c12;
+   apilado bajo 834. Cuatro bloques de peso parecido: una lista de filas con línea, no tarjetas ni botones. */
+.a-body .servicios__cab { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
+@media (min-width: 1194px) { .a-body .servicios__cab { grid-column: 1 / span 6; } }
+.a-body .servicio { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; row-gap: 12px; padding: 16px 0 40px; }
+.a-body .servicio__sit, .a-body .servicio__cuerpo, .a-body .servicio__precio { grid-column: 1 / -1; }
+.a-body .servicio__cuerpo { display: flex; flex-direction: column; gap: 12px; }
+.a-body .servicio__precio { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.a-body .servicio__precio .valor { color: var(--a-blanco); }
+/* Búsqueda y visibilidad en IA (ronda 2 de E13): un precio sobre cada enlace, en pares. Dentro del par, el precio y su enlace
+   juntos; entre pares, el aire que los separa. Bajo 834 los enlaces miden 44 y llevan 13 px de aire propio sobre el texto, así
+   que el par no suma separación y entre pares queda más. */
+.a-body .servicio__precio--pares { gap: 24px; }
+.a-body .servicio__par { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .servicio__precio--pares { gap: 16px; }
+  .a-body .servicio__par { gap: 0; }
+  .a-body .servicio__par .chico { margin-top: -6px; }
+}
+/* la flecha de los enlaces de texto de la home (bloques de servicios, filas de pruebas, enlace al método): 4 px, como en
+   los datos de las fases del método y en el nombre de la pieza */
+.a-body .servicio__precio .icono-flecha, .a-body .fase__der .icono-flecha, .a-body .int-lista__pie .icono-flecha { margin-left: 4px; }
+@media (min-width: 834px) {
+  .a-body .servicio__sit { grid-column: 1 / span 4; }
+  .a-body .servicio__cuerpo { grid-column: 5 / span 5; }
+  .a-body .servicio__precio { grid-column: 10 / -1; }
+}
+@media (min-width: 1194px) {
+  .a-body .servicio__cuerpo { grid-column: 5 / span 7; }
+  .a-body .servicio__precio { grid-column: 13 / -1; }
+}
+
+/* 6 · Quién está detrás: el retrato 3:4 entero en c1–c5; el texto en c7–c14 (c6–c12 de 834 a 1193), apoyado abajo */
+.a-body .quien__retrato { grid-column: 1 / -1; }
+.a-body .quien__txt {
+  grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; align-self: end;
+  margin-top: 24px;
+}
+@media (min-width: 834px) {
+  .a-body .quien__retrato { grid-column: 1 / span 5; }
+  .a-body .quien__txt { grid-column: 6 / -1; margin-top: 0; }
+}
+@media (min-width: 1194px) { .a-body .quien__txt { grid-column: 7 / span 8; } }
+
+/* 7 · Contacto, en c1–c9 */
+.a-body .contacto__txt { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+@media (min-width: 1194px) { .a-body .contacto__txt { grid-column: 1 / span 9; } }
+/* el correo suelto, con su área de 44 bajo 834 y con puntero grueso (§4.3; prototipo: 17 de alto en 44) */
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .contacto__txt a[href^='mailto:'] { display: inline-flex; align-items: center; min-height: 44px; margin-block: -13.5px; }
+}
+
+/* ================================================================== ÍNDICE DE TRABAJO (spec §2.2) · tanda 2 */
+/* Desde 1194: la barra lateral de 320 px pegajosa a 80 px del borde de arriba y el muro a la derecha, con 16 px entre
+   los dos. Bajo 1194, el título, el conteo y la entradilla arriba del muro. */
+.a-body .indice { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px var(--a-m); padding: 8px var(--a-m) 0; }
+.a-body .indice__lateral { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+/* la entradilla, con el tope de 493 de la caja del texto (§1.3): de 834 a 1193 corría a 800 px */
+.a-body .indice__lateral .chico { max-width: var(--a-caja); }
+@media (min-width: 1194px) {
+  .a-body .indice { grid-template-columns: var(--a-lateral) minmax(0, 1fr); }
+  /* si la barra es más alta que la pantalla, se desplaza adentro; el relleno de 8 a los lados (y el margen negativo que
+     lo devuelve) deja ver entero el contorno del foco, que el desplazamiento recortaría */
+  .a-body .indice__lateral {
+    position: sticky; top: 80px; align-self: start; max-height: calc(100svh - 96px); overflow: auto;
+    padding: 48px 8px 8px; margin-inline: -8px;
+  }
+}
+
+/* El muro: una columna bajo 834; desde 834, dos de igual ancho con 8 px entre ellas, en las tres proporciones de Koto.
+   muro.mjs reparte cada pieza a la columna más corta y le da tantas filas de 1 px como mide (+ 32 de separación);
+   sin JS, cada pieza en su columna (data-col) con las filas alineadas. */
+.a-body .muro { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 40px; align-items: start; }
+@media (min-width: 834px) {
+  .a-body .muro { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--a-g); row-gap: 32px; grid-auto-flow: row dense; }
+  .a-body .muro .pieza[data-col='1'] { grid-column: 1; }
+  .a-body .muro .pieza[data-col='2'] { grid-column: 2; }
+  .a-body .muro.muro--armado { grid-auto-rows: 1px; row-gap: 0; }
+}
+/* Al pasar el mouse (solo puntero fino desde 834): las demás piezas bajo --a-velo en 167 ms; la del mouse se acorta 24 px
+   con el resorte «estado» (base.mjs). spindlelab.cl no es un enlace: no lleva velo. */
+.a-body .pieza__velo {
+  position: absolute; inset: 0; z-index: 2; background: var(--a-velo); opacity: 0; pointer-events: none;
+  transition: opacity var(--a-color);
+}
+@media (hover: hover) and (pointer: fine) and (min-width: 834px) {
+  .a-body .muro:has(.medio-enlace:hover) .pieza:not(:has(.medio-enlace:hover)) .pieza__velo { opacity: 1; }
+}
+
+/* ================================================================== CASO (spec §2.3; lock §21.5) · tanda 3 */
+/* Desde 1194: la barra lateral de 320 px pegajosa y la columna (el ancho de la ventana menos 368), con 16 px entre las
+   dos. Bajo 1194, una columna: el medio principal arriba (order: -1), después el nombre, la ficha, los créditos y las
+   secciones; el índice pasa a la barra flotante de abajo. Entre todos los bloques, 8 px (Koto). */
+.a-body .caso { display: flex; flex-direction: column; gap: var(--a-g); padding: 8px var(--a-m) 96px; }
+.a-body .caso__columna { display: contents; }
+
+/* La barra lateral (§2.3): miga, h1 a Título en dos tintas, la ficha mono (TIPO · AÑO, a la vista sin scroll a
+   1440 y a 390), el índice de secciones y, abajo, los créditos en chico. */
+.a-body .lateral { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding-top: 16px; }
+.a-body .lateral h1 { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .lateral__ficha { display: flex; flex-direction: column; gap: 8px; }
+.a-body .lateral__datos { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; }
+.a-body .lateral__indice { display: none; }
+.a-body .lateral__creditos { display: flex; flex-direction: column; gap: 8px; }
+.a-body .lateral__creditos .chico { max-width: 300px; }
+@media (min-width: 1194px) {
+  .a-body .caso { display: grid; grid-template-columns: var(--a-lateral) minmax(0, 1fr); column-gap: var(--a-m); row-gap: 0; padding-bottom: 80px; }
+  .a-body .caso__columna { display: flex; flex-direction: column; gap: var(--a-g); min-width: 0; }
+  /* pegajosa a 80 px, del alto de la ventana menos 96 (§2.3); si su contenido es más alto, se desplaza adentro. El
+     relleno de 8 a los lados (y el margen negativo que lo devuelve) deja ver entero el contorno del foco (tanda 2). */
+  .a-body .lateral {
+    position: sticky; top: 80px; align-self: start; height: calc(100svh - 96px); overflow: auto;
+    padding: 48px 8px 8px; margin-inline: -8px;
+  }
+  .a-body .lateral__indice { display: block; position: relative; align-self: stretch; margin-top: 24px; }
+  .a-body .lateral__creditos { margin-top: auto; padding-top: 24px; }
+}
+/* El índice de secciones (§2.3, §4.1): cuerpo 16, filas de 36; la activa en blanco con el punto de 3 px a su izquierda,
+   que se mueve con el resorte «estado» (caso.mjs). Sin JS, el punto queda en la primera. */
+.a-body .lateral__indice a {
+  display: flex; align-items: center; min-height: 36px; padding-left: 12px; color: var(--a-gris);
+  font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); transition: color var(--a-color);
+}
+.a-body .lateral__indice a:hover, .a-body .lateral__indice a[aria-current] { color: var(--a-blanco); }
+.a-body .lateral__punto {
+  position: absolute; left: 0; top: 16.5px; width: 3px; height: 3px; background: var(--a-blanco); pointer-events: none;
+}
+@media (pointer: coarse) { .a-body .lateral__indice a { min-height: 44px; } .a-body .lateral__punto { top: 20.5px; } }
+
+/* El medio principal (§2.3): desde 834, 16:9 dentro de los márgenes y con radio 6 (a 1440, 1072 × 603); bajo 834,
+   4:5 a sangre y sin radio. */
+.a-body .medio-principal { order: -1; margin-inline: calc(-1 * var(--a-m)); }
+.a-body .medio-principal .medio { aspect-ratio: 4 / 5; border-radius: 0; }
+.a-body .medio-principal .medio > .video__quieta, .a-body .medio-principal .medio > video { object-position: 50% 0; }
+.a-body .medio-principal .pie { padding-inline: var(--a-m); }
+@media (min-width: 834px) {
+  .a-body .medio-principal { margin-inline: 0; }
+  .a-body .medio-principal .medio { aspect-ratio: 16 / 9; border-radius: 6px; }
+  .a-body .medio-principal .medio > .video__quieta, .a-body .medio-principal .medio > video { object-position: 50% 50%; }
+  .a-body .medio-principal .pie { padding-inline: 0; }
+}
+@media (min-width: 1194px) { .a-body .medio-principal { order: 0; } }
+/* La imagen quieta en un <picture> (la de bajo 834 es otra): llena el marco como el <img> de siempre */
+.a-body .video > picture.video__quieta > img { width: 100%; height: 100%; object-fit: cover; object-position: inherit; }
+
+/* Cada sección (§2.3): borde superior en la línea de sección, 24 px arriba y 12 abajo; el rótulo mono y el h2 a Título
+   a la izquierda, el cuerpo (tope 493) a la derecha desde 1194; bajo 1194, uno sobre otro. Después, sus filas. */
+.a-body .caso-bloque { margin-top: 16px; }
+.a-body .caso-sec {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px 0 12px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+.a-body .caso-sec__izq { display: flex; flex-direction: column; gap: 12px; }
+.a-body .caso-sec__der { display: flex; flex-direction: column; gap: 16px; max-width: var(--a-caja); }
+.a-body .caso-sec__der .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .caso-sec h2, .a-body .caso-sec h3 { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .caso-sec__rotulo { margin-top: 8px; }
+@media (min-width: 1194px) {
+  .a-body .caso-sec { position: relative; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: 24px 24px 12px; }
+  .a-body .caso-sec h2, .a-body .caso-sec h3 { max-width: 16em; }
+  /* La cruz de registro (§2.3, lock §10): 9 × 9 en la línea de sección donde el borde de las dos primeras secciones
+     cruza el límite de la barra (x = 336 a 1440: 16 px antes de la columna). Ninguna bajo 1194. Reversible: esta regla. */
+  .a-body .caso-bloque:nth-of-type(-n + 2) > .caso-sec::before {
+    content: ''; position: absolute; left: calc(-1 * var(--a-m) - 4.5px); top: -4px; width: 9px; height: 9px;
+    background: linear-gradient(var(--a-linea-seccion), var(--a-linea-seccion)) center / 1px 100% no-repeat,
+                linear-gradient(var(--a-linea-seccion), var(--a-linea-seccion)) center / 100% 1px no-repeat;
+  }
+}
+/* Las dos partes de Combeau (#fotografia, #modelo): su título y su párrafo, con la línea entre filas de una lista */
+.a-body .caso-parte { margin-top: 16px; }
+.a-body .caso-sec--parte { border-top-color: var(--a-linea); }
+
+/* «Con qué está hecho» (§2.3): lo que le hace a quien lo usa, en cuerpo; la herramienta, en dato mono. Filas con la
+   línea entre filas de una lista, sin caja. */
+.a-body .ingredientes { border-top: 1px solid var(--a-linea); }
+.a-body .ingredientes li {
+  padding: 12px 0; border-bottom: 1px solid var(--a-linea); font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo);
+  color: var(--a-gris); text-wrap: pretty;
+}
+.a-body .ingredientes .dato { display: block; margin-top: 4px; }
+
+/* Las filas de medios (§2.3; lock §21.2): una 16:9 o un par 4:5 (E13: las apiladas de los conceptos salieron), radio 6 y
+   8 px entre todos. El par mantiene su forma en todos los anchos (a 390, pares de 175 px). Ninguna a sangre. */
+.a-body .filas { display: flex; flex-direction: column; gap: var(--a-g); margin-top: var(--a-g); }
+.a-body .fila__medios { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a-g); }
+.a-body .fila--par .fila__medios { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+/* El enlace dentro de un pie (la original de la foto de Combeau): su área de 44 bajo 834 y con puntero grueso (§4.3),
+   sin mover lo que se ve (como el correo suelto de la home) */
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .fila .pie a { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; margin-block: -13px; }
+  /* Entre la foto y la fila siguiente hay 52 px y el área, pareja (13 arriba y 13 abajo), se metía 5 px en la fila de
+     abajo: el 9-10 % del área abría la imagen (acta de la obra, vuelta 1, defecto 7). Crece 20 arriba y 6 abajo, y el
+     relleno de arriba deja el texto donde estaba (medido a 360, 390 y 768: 100 % del área propia, el texto en el mismo
+     píxel, la página del mismo alto) */
+  .a-body .fila .pie a { margin-block: -20px -6px; padding-top: 14px; }
+}
+
+/* «Siguiente» (§2.3): al final de la columna, con borde superior y 120 px arriba (80 bajo 834); a la izquierda el
+   contacto y, a la derecha, el enlace que sigue (en el caso de Combeau, el corchete al índice; en el artículo, el que
+   sigue). Entra una vez (resorte «entrada»). E13: el medio 16:9 de 416 px del caso que sigue salió con Praxi. */
+.a-body .siguiente {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; margin-top: 80px; padding-top: 24px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+@media (min-width: 834px) { .a-body .siguiente { margin-top: 120px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+@media (min-width: 1194px) { .a-body .siguiente { padding: 24px 24px 0; } }
+.a-body .siguiente__contacto { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.a-body .siguiente__contacto .t-titulo { max-width: 22em; }
+.a-body .siguiente__caso { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+
+/* La barra flotante bajo 1194 (§2.3; lock §21.3): una placa a 16 px del borde con el nombre del caso en mono gris, la
+   sección activa en mono blanco sobre la placa activa y «+», que abre la lista (un details). */
+.a-body .barra {
+  position: fixed; z-index: 30; left: var(--a-m); right: var(--a-m); bottom: var(--a-m); padding: 4px;
+  border-radius: 4px; background: var(--a-placa);
+}
+.a-body .barra summary {
+  display: flex; align-items: center; gap: 8px; min-height: 44px; padding-left: 8px; cursor: pointer; list-style: none;
+}
+.a-body .barra summary::-webkit-details-marker { display: none; }
+.a-body .barra summary:focus-visible { outline-offset: -2px; border-radius: 2px; }
+.a-body .barra__activa { margin-left: auto; padding: 7px 8px 6px; border-radius: 2px; background: var(--a-placa-activa); color: var(--a-blanco); }
+.a-body .barra__mas {
+  display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 16px; color: var(--a-blanco);
+}
+.a-body .barra ul { padding: 4px 8px; }
+.a-body .barra ul a { display: flex; align-items: center; min-height: 44px; color: var(--a-gris); transition: color var(--a-color); }
+.a-body .barra ul a[aria-current] { color: var(--a-blanco); }
+/* al pasar el mouse, solo con un puntero que pasa: en táctil el toque que abre la lista dejaba «hover» pegado en la fila
+   que quedaba bajo el dedo */
+@media (hover: hover) { .a-body .barra ul a:hover { color: var(--a-blanco); } }
+/* Con el aviso de cookies abierto, la barra va 8 px sobre él (§2.3, §4.3, 23-oct): caso.mjs escribe su alto en
+   --a-alto-aviso mientras está a la vista; al elegir, la barra vuelve a su lugar, sin animación */
+html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a-alto-aviso, 0px) + 8px); }
+@media (min-width: 1194px) { .a-body .barra { display: none; } }
+/* La barra no tapa lo que recibe el foco (§4.3): el relleno de abajo del alto de la barra, bajo 1194; con el aviso
+   abierto, más su alto (la barra va sobre él) */
+@media (max-width: 1193.98px) {
+  html:has(body.a-body .barra) { scroll-padding-bottom: 96px; }
+  html:has(body.a-body .barra):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: calc(var(--a-alto-aviso, 0px) + 96px); }
+}
+
+/* ================================================================== INTERIOR (spec §2.4) · tanda 4 */
+/* La plantilla de las páginas de la casa, la de Koto en /services y /about (lock §20.1): negras, con a lo más una franja
+   de imagen. Implementación de referencia: la vista 5 del prototipo (proto/a/servicios/desarrollo-web/); los espacios
+   del prototipo que no están en la escala de §1.5 van al paso más cercano (14 → 12 o 16, 10 → 12, 28 → 24). La usan
+   /servicios/, Desarrollo web y los cinco servicios de [slug].astro (desvios.md, tanda 4). */
+
+/* 1 · Cabecera: miga; h1 a Declaración en dos tintas (c1–c10 desde 1194); la entradilla y lo que la acompaña (tope 493);
+   los botones. 48 arriba */
+.a-body .int-cab { padding-top: 48px; row-gap: 16px; }
+.a-body .int-cab > * { grid-column: 1 / -1; }
+@media (min-width: 1194px) { .a-body .int-cab h1 { grid-column: 1 / span 10; } }
+.a-body .int-cab .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .botones { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.a-body .int-cab .botones { margin-top: 8px; }
+
+/* 2 · La franja (a lo más una): un medio del trabajo a todo el ancho de la retícula, 2,39:1 desde 834 y 16:9 bajo 834,
+   radio 6, 56 arriba; recortada al centro. Nunca un campo (§3.4). Debajo, el nombre de la pieza en blanco y su línea
+   mono, como el pie del prototipo; y el aviso de Clara si la imagen lleva una persona generada. */
+.a-body .franja { margin-top: 56px; }
+.a-body .franja > * { grid-column: 1 / -1; }
+.a-body .franja .medio { aspect-ratio: 16 / 9; }
+.a-body .franja .medio > picture { display: block; width: 100%; height: 100%; }
+.a-body .franja .medio > img, .a-body .franja .medio > picture > img { object-position: 50% 50%; }
+@media (min-width: 834px) { .a-body .franja .medio { aspect-ratio: 2.39; } }
+.a-body .franja .pie .tinta { color: var(--a-blanco); }
+.a-body .franja .pie + .pie { margin-top: 4px; }
+
+/* 3 · Las secciones: el h2 a Declaración en c1–c4, pegajoso a 88 px desde 1194 (bajo 1194, arriba de su contenido); el
+   contenido en c5–c12 (listas, fases, preguntas) o en c5–c16 (planes, piezas, las filas de servicios). */
+.a-body .int-sec__cab { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
+.a-body .int-sec__cab .cuerpo, .a-body .int-sec__cab .chico { max-width: var(--a-caja); }
+.a-body .int-sec__cuerpo { grid-column: 1 / -1; min-width: 0; }
+@media (min-width: 1194px) {
+  .a-body .int-sec__cab { grid-column: 1 / span 4; position: sticky; top: 88px; align-self: start; margin-bottom: 0; }
+  .a-body .int-sec__cuerpo { grid-column: 5 / span 8; }
+  .a-body .int-sec__cuerpo--ancho { grid-column: 5 / -1; }
+}
+
+/* Una lista: filas con la línea entre filas (--a-linea), el texto con el tope de la caja. Si la fila tiene título (los
+   cinco servicios: «Rastreo e indexación: …»), el título va en blanco a cuerpo, como el nombre de una pieza. */
+.a-body .int-lista > li { padding: 12px 0; border-top: 1px solid var(--a-linea); }
+.a-body .int-lista > li > .cuerpo, .a-body .int-lista > li > .chico { max-width: var(--a-caja); }
+.a-body .int-lista__t {
+  max-width: var(--a-caja); margin-bottom: 4px; font-stretch: 100%; font-weight: 370; font-size: var(--a-t-cuerpo);
+  line-height: var(--a-i-cuerpo); text-wrap: pretty;
+}
+.a-body .int-lista__pie { margin-top: 16px; max-width: var(--a-caja); }
+
+/* Las filas de servicios de /servicios/ (una por servicio del momento): el nombre a Título con la flecha, la línea de qué
+   hace y el precio en blanco, con la línea de sección como los planes. Desde 834, sobre las doce columnas de la retícula
+   que ocupa la lista (c5–c16 desde 1194; todas de 834 a 1193): el nombre en 3, la línea en 5 y el precio en las 3
+   últimas, con una columna libre antes del precio (en 3:4:3 la línea y el precio quedaban a 8 px; desvios.md, tanda 4).
+   Toda la fila lleva al servicio: el enlace es el nombre y su área se estira a la fila; al pasar el mouse por la fila,
+   el subrayado del nombre va al 100 % (§4.1). */
+.a-body .fila-servicio {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px var(--a-g); padding: 16px 0 32px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+.a-body .fila-servicio h3 { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .fila-servicio h3 a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.a-body .fila-servicio h3 .icono-flecha { margin-left: 8px; }
+.a-body .fila-servicio:hover a.subrayado { text-decoration-color: var(--a-blanco); }
+.a-body .fila-servicio .cuerpo { max-width: var(--a-caja); }
+.a-body .fila-servicio .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .fila-servicio__precio { color: var(--a-blanco); }
+@media (min-width: 834px) {
+  .a-body .fila-servicio { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .a-body .fila-servicio__nombre { grid-column: 1 / span 3; }
+  .a-body .fila-servicio__linea { grid-column: 4 / span 5; }
+  .a-body .fila-servicio__precio { grid-column: 10 / span 3; }
+}
+
+/* «Sitios que construimos» (Desarrollo web): tres portadas 4:5 en c5–c16, una columna bajo 834 */
+.a-body .obra3 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px var(--a-g); }
+@media (min-width: 834px) { .a-body .obra3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.a-body .obra3__pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; margin-top: 24px; }
+.a-body .obra3__pie .chico { max-width: var(--a-caja); }
+
+/* El glosario de los planes (Desarrollo web): antes de los planes (Clara), su rótulo y la lista en dos columnas desde 834 */
+.a-body .glosario { margin-bottom: 40px; }
+.a-body .glosario__rot { margin-bottom: 8px; }
+.a-body .glosario__lista { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 var(--a-g); }
+@media (min-width: 834px) { .a-body .glosario__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.a-body .glosario__lista li { padding: 12px 0; border-top: 1px solid var(--a-linea); max-width: var(--a-caja); }
+
+/* Los planes: filas con la línea de sección; desde 834 en columnas 3:4:3 (nombre y precio · línea · puntos) */
+.a-body .plan {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px var(--a-g); padding: 16px 0 32px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+@media (min-width: 834px) { .a-body .plan { grid-template-columns: 3fr 4fr 3fr; } }
+.a-body .plan h3 { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .plan__precio { margin-top: 8px; color: var(--a-blanco); }
+.a-body .plan .cuerpo { max-width: var(--a-caja); }
+.a-body .plan li { padding: 4px 0; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); text-wrap: pretty; }
+.a-body .plan li::before { content: '· '; color: var(--a-gris); }
+/* Debajo de los planes: el compromiso de los tres meses (cuerpo) y la nota de los precios (chico) */
+.a-body .planes__pie { display: flex; flex-direction: column; gap: 16px; padding-top: 16px; border-top: 1px solid var(--a-linea-seccion); }
+.a-body .planes__pie .cuerpo, .a-body .planes__pie .chico { max-width: var(--a-caja); }
+.a-body .planes__pie .cuerpo + .cuerpo { margin-top: 0; }
+
+/* Las fases (y los bloques de los cinco servicios, en la misma forma): filas con la línea de sección; desde 834, 2:5 */
+.a-body .fase {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px var(--a-g); padding: 16px 0 24px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+@media (min-width: 834px) { .a-body .fase { grid-template-columns: 2fr 5fr; } }
+.a-body .t-fase { font-size: var(--a-t-titulo); line-height: 1.2; color: var(--a-blanco); transition: color var(--a-color); }
+.a-body .fase .cuerpo { max-width: var(--a-caja); transition: color var(--a-color); }
+/* La fase a la vista pasa del gris al blanco en 167 ms (§2.4: solo «Cinco fases» de Desarrollo web; fases.mjs marca la
+   lista con data-vista cuando puede observarla). Sin JS, los títulos en blanco y el cuerpo en gris; con movimiento
+   reducido, todas en blanco y sin transición. */
+.a-body .fases--vista[data-vista] .fase:not(.a-la-vista) .t-fase { color: var(--a-gris); }
+.a-body .fases--vista[data-vista] .fase.a-la-vista .cuerpo { color: var(--a-blanco); }
+@media (prefers-reduced-motion: reduce) {
+  body.a-body .fases--vista .fase .t-fase, body.a-body .fases--vista .fase .cuerpo { color: var(--a-blanco); }
+}
+
+/* Las preguntas: filas con la línea de sección; desde 834, 2:3 (la pregunta a Título · la respuesta) */
+.a-body .pregunta {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px var(--a-g); padding: 16px 0 24px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+@media (min-width: 834px) { .a-body .pregunta { grid-template-columns: 2fr 3fr; } }
+.a-body .pregunta h3 { font-size: var(--a-t-titulo); line-height: 1.2; }
+.a-body .pregunta .cuerpo { max-width: var(--a-caja); }
+
+/* 4 · El cierre: c1–c9, el h2 (en dos tintas si las trae), el párrafo y los botones de contacto o del chequeo;
+   «Siguiente» debajo, 32 px más abajo (el gap de 16 y su margen) */
+.a-body .cierre { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+@media (min-width: 1194px) { .a-body .cierre { grid-column: 1 / span 9; } }
+.a-body .cierre .cuerpo { max-width: var(--a-caja); }
+.a-body .int-siguiente { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 16px; }
+.a-body .int-siguiente a { display: inline-flex; align-items: baseline; gap: 8px; }
+/* su área de 44 de alto bajo 834 y con puntero grueso (§4.3; medido: 28), sin mover lo que se ve */
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .int-siguiente a { align-items: center; min-height: 44px; margin-block: -8px; }
+}
+
+/* ================================================================== TANDA 5: método, diagnóstico, nosotros, contacto
+   y el blog (spec §2.4 y §2.5) */
+/* Lo que estas páginas suman a la plantilla interior de la tanda 4; ninguna de estas clases aparece en las páginas de
+   las tandas anteriores. Los espacios, de la escala de §1.5. Lo que la spec no fijaba: desvios.md, tanda 5. */
+
+/* Una fila en la forma de las fases (método, los 21 chequeos, los dos caminos, qué pasa después): el título a Título y,
+   a la derecha, el cuerpo y sus datos */
+.a-body .fase__izq { display: flex; flex-direction: column; gap: 8px; }
+.a-body .fase__der { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+/* Los datos de cada fase del método: el rótulo mono y el valor en chico; desde 834, dos por fila y el precio entero */
+.a-body .datos-fase { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px var(--a-g); max-width: var(--a-caja); }
+@media (min-width: 834px) { .a-body .datos-fase { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.a-body .datos-fase__fila { display: flex; flex-direction: column; gap: 4px; }
+.a-body .datos-fase__fila--entera { grid-column: 1 / -1; }
+.a-body .datos-fase__linea { display: block; }
+.a-body .datos-fase a .icono-flecha { display: inline-block; margin-left: 4px; }
+/* E13, ronda 2 (acta de QA, defecto 8): los enlaces de «Cuánto cuesta» («Ver la auditoría», «Ver las soluciones», «Ver el
+   acompañamiento») van al final de una frase, dentro del texto, y medían 17 de alto. Bajo 834 y con puntero grueso su área
+   sube a 44 con el relleno de arriba y de abajo: el de un elemento en línea no cambia el alto de la línea, así que lo que se
+   ve no se mueve (mismo método que .consiento a y .prosa .nota a). Arriba y abajo hay texto sin enlace. */
+@media (max-width: 833.98px), (pointer: coarse) { .a-body .datos-fase dd a { padding-block: 14px; } }
+/* Una lista de términos (método, «Lo que necesitamos de ti»): la misma fila de la lista, con su término */
+.a-body .int-lista > .int-lista__fila { padding: 12px 0; border-top: 1px solid var(--a-linea); }
+.a-body .int-lista__fila > .cuerpo { max-width: var(--a-caja); }
+/* Los botones al pie del contenido de una sección (dos caminos, la ley) */
+.a-body .int-botones { margin-top: 24px; }
+
+/* El chequeo de /diagnostico/ (§2.4): bajo la cabecera, en c1–c8, con el resultado en la misma columna; el h2 oculto
+   «Resultado del chequeo» solo existe cuando hay resultado */
+.a-body .int-cab > .int-instr { margin-top: 16px; }
+@media (min-width: 834px) { .a-body .int-cab > .int-instr { grid-column: 1 / span 8; } }
+.a-body .chequeo:not(:has(#chq-out[style*='block'])) .chequeo__titulo-res { display: none; }
+
+/* /nosotros/: la bio junto al retrato (las clases de «Quién está detrás» de la home), con la trayectoria en su lista */
+.a-body .quien__h2 { margin-top: 24px; }
+.a-body .quien__lista { align-self: stretch; max-width: var(--a-caja); }
+.a-body .sin-corte { white-space: nowrap; }
+
+/* /contacto/: el formulario en c1–c8 (§2.4), 40 arriba y 12 entre campos (la cabecera es corta: el formulario entero
+   sobre el pliegue a 1440 × 900, también con el aviso de cookies abierto). Los campos de §4.1: placa, borde #707070, texto de 16 (sin zoom en iOS), 44 de alto, placeholder gris;
+   al pasar el mouse y con el foco, el borde gris, y el contorno blanco del foco de §4.3. */
+.a-body .form-sec { padding-top: 40px; }
+.a-body .form-zona { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+@media (min-width: 834px) { .a-body .form-zona { grid-column: 1 / span 8; } }
+.a-body .formulario { display: flex; flex-direction: column; gap: 12px; }
+.a-body .formulario[hidden], .a-body .formulario__listo[hidden] { display: none; }
+.a-body .formulario__par { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px var(--a-g); }
+@media (min-width: 834px) { .a-body .formulario__par { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.a-body .campo { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.a-body .campo .chico { max-width: var(--a-caja); }
+.a-body .campo input, .a-body .campo textarea {
+  width: 100%; margin: 0; height: 44px; padding: 0 12px; border-radius: 4px; border: 1px solid var(--a-borde-campo);
+  background: var(--a-placa); color: var(--a-blanco); font-size: 16px; font-weight: 370; line-height: var(--a-i-cuerpo);
+  transition: border-color var(--a-color);
+}
+.a-body .campo textarea { display: block; height: auto; min-height: 88px; padding: 12px; resize: vertical; }
+.a-body .campo input::placeholder, .a-body .campo textarea::placeholder { color: var(--a-gris); opacity: 1; }
+.a-body .campo input:hover, .a-body .campo textarea:hover,
+.a-body .campo input:focus, .a-body .campo textarea:focus { border-color: var(--a-gris); }
+/* el autocompletado de Chrome pinta el campo de otro color: se le devuelve la placa (un relleno, no una sombra) */
+.a-body .campo input:-webkit-autofill { -webkit-text-fill-color: var(--a-blanco); box-shadow: 0 0 0 1000px var(--a-placa) inset; caret-color: var(--a-blanco); }
+/* El consentimiento: la casilla de 16 px (vacía, el borde del campo; marcada, blanca) dentro de un área de 44 × 44 que no
+   mueve lo que se ve (§4.3), y la frase en chico con el enlace blanco */
+.a-body .consiento { display: flex; align-items: flex-start; gap: 12px; max-width: var(--a-caja); cursor: pointer; }
+.a-body .consiento input {
+  appearance: none; -webkit-appearance: none; flex: none; width: 44px; height: 44px; margin: -12px -14px;
+  border: 0; border-radius: 0; cursor: pointer;
+  background: center / 14px 14px no-repeat linear-gradient(var(--a-placa), var(--a-placa)),
+              center / 16px 16px no-repeat linear-gradient(var(--a-borde-campo), var(--a-borde-campo));
+}
+.a-body .consiento input:hover { background: center / 14px 14px no-repeat linear-gradient(var(--a-placa), var(--a-placa)),
+              center / 16px 16px no-repeat linear-gradient(var(--a-gris), var(--a-gris)); }
+.a-body .consiento input:checked { background: center / 16px 16px no-repeat linear-gradient(var(--a-blanco), var(--a-blanco)); }
+.a-body .consiento input:focus-visible { outline-offset: -11px; border-radius: 0; }
+.a-body .consiento a { color: var(--a-blanco); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: rgba(255, 255, 255, 0.45); }
+.a-body .formulario__envio { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+/* v3-contacto.js reescribe la clase de .form-status: se viste desde el padre. El error, en blanco y sin rojo (§4.1) */
+.a-body .formulario__envio .form-status { font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .formulario__envio .form-status.err { color: var(--a-blanco); }
+/* Lo que reemplaza al formulario cuando el envío sale bien: una fila con la línea de sección, sin caja (§1.5) */
+.a-body .formulario__listo { display: flex; flex-direction: column; gap: 8px; padding-top: 16px; border-top: 1px solid var(--a-linea-seccion); }
+.a-body .formulario__listo .cuerpo { max-width: var(--a-caja); }
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .formulario__directo a { display: inline-flex; align-items: center; min-height: 44px; margin-block: -13.5px; }
+  /* el enlace dentro de la frase del consentimiento: su área de 44 de alto sin mover la línea (el relleno de un elemento
+     en línea no cambia el alto de la línea) */
+  .a-body .consiento a { padding-block: 14px; }
+  /* E13, ronda 2 (acta de QA, defecto 8): ese área de 45 de alto pisaba 1 a 2 px al botón de envío (a 360, 390 y 768) y, a 768,
+     2 px al campo de arriba y al área de la casilla (el texto empieza 2 px dentro de ella). La fila gana 2 px de aire arriba
+     y abajo, y el texto se separa 2 px de la casilla: las áreas ya no se tocan y la casilla dibujada no se mueve. */
+  .a-body .consiento { margin-block: 2px; gap: 14px; }
+}
+
+/* EL ÍNDICE DEL BLOG (§2.5): la barra lateral del índice de trabajo y, a la derecha, las filas: borde superior en la
+   línea, la fecha y el tema en dato mono en la mitad izquierda y el título a Título, enlazado, en la derecha (desde
+   1194; bajo 1194, uno sobre otro). Toda la fila lleva al artículo. Al final, el cierre del blog. */
+.a-body .blog__columna { min-width: 0; }
+.a-body .fila-blog {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px var(--a-g); padding: 12px 0 32px;
+  border-top: 1px solid var(--a-linea);
+}
+@media (min-width: 1194px) {
+  .a-body .indice--blog .indice__lateral { padding-top: 48px; }
+  .a-body .blog__columna { padding-top: 48px; }
+  .a-body .fila-blog { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding-inline: 24px; }
+}
+.a-body .fila-blog h2 { max-width: 20em; }
+.a-body .fila-blog h2 a::after { content: ''; position: absolute; inset: 0; z-index: 1; }
+.a-body .fila-blog h2 .icono-flecha { display: inline-block; margin-left: 8px; }
+.a-body .fila-blog:hover a.subrayado { text-decoration-color: var(--a-blanco); }
+.a-body .blog-cierre .cuerpo + .cuerpo, .a-body .siguiente__contacto .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .blog-cierre {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-top: 80px; padding-top: 24px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+@media (min-width: 834px) { .a-body .blog-cierre .cuerpo + .cuerpo, .a-body .siguiente__contacto .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .blog-cierre { margin-top: 120px; } }
+@media (min-width: 1194px) { .a-body .blog-cierre .cuerpo + .cuerpo, .a-body .siguiente__contacto .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .blog-cierre { padding-inline: 24px; } }
+
+/* EL ARTÍCULO (§2.5): la plantilla del caso con otro contenido. En la barra, la ficha, el autor (el retrato a 44 px,
+   radio 6) y el índice del artículo con su rótulo; en la columna, el cuerpo verbatim con tope de 493, partido en las
+   secciones del caso (el h2 a Título a la izquierda, el cuerpo a la derecha desde 1194). */
+.a-body .autor { display: flex; align-items: center; gap: 12px; }
+.a-body .autor img { width: 44px; height: 44px; border-radius: 6px; object-fit: cover; flex: none; }
+.a-body .autor .chico { display: flex; flex-direction: column; }
+.a-body .lateral__rot { margin-bottom: 8px; }
+/* sin medio principal: la columna abre con la entrada del artículo, en la mitad del cuerpo desde 1194 */
+.a-body .articulo__intro { display: flex; flex-direction: column; gap: 16px; padding-top: 16px; }
+@media (min-width: 1194px) {
+  .a-body .articulo__intro { padding: 48px 24px 0 calc(50% + 12px); }
+}
+.a-body .caso-sec--articulo > .prosa-tabla { grid-column: 1 / -1; }
+/* El cuerpo: Google Sans Flex a cuerpo, gris; lo marcado (strong, b) y los enlaces en blanco, sin negrita (§1.2) */
+.a-body .prosa { display: flex; flex-direction: column; gap: 16px; min-width: 0; font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .prosa > *, .a-body .prosa li { max-width: var(--a-caja); text-wrap: pretty; }
+.a-body .prosa > [hidden] { display: none; }
+.a-body .prosa strong, .a-body .prosa b { color: var(--a-blanco); }
+.a-body .prosa a {
+  color: var(--a-blanco); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.45); transition: text-decoration-color var(--a-color);
+}
+.a-body .prosa a:hover { text-decoration-color: var(--a-blanco); }
+.a-body .prosa h3 { margin-top: 8px; font-stretch: 100%; font-weight: 370; font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); }
+.a-body .prosa code { font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-blanco); overflow-wrap: anywhere; }
+.a-body .prosa li + li { margin-top: 8px; }
+.a-body .prosa ul > li { position: relative; padding-left: 16px; }
+.a-body .prosa ul > li::before { content: '·'; position: absolute; left: 0; color: var(--a-gris); }
+.a-body .prosa ol { counter-reset: art; }
+.a-body .prosa ol > li { position: relative; padding-left: 32px; counter-increment: art; }
+.a-body .prosa ol > li::before {
+  content: counter(art, decimal-leading-zero); position: absolute; left: 0; top: 2px;
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-gris);
+}
+/* La cita, a Título en blanco, y la nota, con la línea entre filas arriba: ninguna en una caja (§1.5, §6.5) */
+.a-body .prosa blockquote {
+  padding-top: 16px; border-top: 1px solid var(--a-linea); font-stretch: 76%; font-weight: 300;
+  font-size: var(--a-t-titulo); line-height: 1.2; color: var(--a-blanco); text-wrap: balance;
+}
+.a-body .prosa .nota { padding-top: 12px; border-top: 1px solid var(--a-linea); }
+/* un enlace dentro de la nota (un div, no un párrafo): su área de 44 de alto bajo 834 y con puntero grueso, sin mover la
+   línea (§4.3) */
+@media (max-width: 833.98px), (pointer: coarse) { .a-body .prosa .nota a { padding-block: 14px; } }
+/* Las preguntas del artículo (details): filas con la línea de sección; «+» y «–» en mono */
+.a-body .prosa .faq { max-width: var(--a-caja); border-bottom: 1px solid var(--a-linea-seccion); }
+.a-body .prosa details { border-top: 1px solid var(--a-linea-seccion); }
+.a-body .prosa summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; padding: 8px 0;
+  color: var(--a-blanco); cursor: pointer; list-style: none;
+}
+.a-body .prosa summary::-webkit-details-marker { display: none; }
+.a-body .prosa summary::after { content: '+'; flex: none; font-family: var(--a-f-mono); font-weight: 500; font-size: 16px; color: var(--a-blanco); }
+.a-body .prosa details[open] > summary::after { content: '–'; }
+.a-body .prosa .faq-a { padding-bottom: 16px; }
+/* Las tablas: las dos mitades de la columna; filas con la línea entre filas, el encabezado en rótulo mono, el texto en
+   chico. Si no caben, se desplazan dentro de su caja (la página no). */
+.a-body .prosa-tabla { min-width: 0; margin-top: 8px; overflow-x: auto; }
+.a-body .prosa-tabla table { width: 100%; border-collapse: collapse; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-gris); }
+.a-body .prosa-tabla th, .a-body .prosa-tabla td { padding: 12px 16px 12px 0; text-align: left; vertical-align: top; border-bottom: 1px solid var(--a-linea); }
+.a-body .prosa-tabla th {
+  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
+  text-transform: uppercase; color: var(--a-gris); white-space: nowrap; border-bottom-color: var(--a-linea-seccion);
+}
+.a-body .prosa-tabla td:first-child, .a-body .prosa-tabla strong { color: var(--a-blanco); }
+.a-body .prosa-tabla code { font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-blanco); }
+@media (max-width: 1023.98px) {
+  .a-body .prosa-tabla th, .a-body .prosa-tabla td { min-width: 152px; }
+  /* al desplazar la tabla, la primera columna (el nombre del chequeo) se queda: si no, a la tercera ya no sabes en qué
+     fila vas (la regla de driftime, QA del 5-oct) */
+  .a-body .prosa-tabla th:first-child, .a-body .prosa-tabla td:first-child { position: sticky; left: 0; z-index: 1; background: var(--a-lienzo); }
+}
+/* «Siguiente artículo»: el título del próximo a la escala de «Siguiente», enlazado */
+.a-body .articulo .siguiente__caso .t-siguiente { max-width: 16em; }
+.a-body .articulo .siguiente__caso .icono-flecha { display: inline-block; margin-left: 8px; }
+/* La barra flotante bajo 1194: la sección activa de un artículo es una frase, no un rótulo: va en chico, en una línea */
+.a-body .barra__activa--frase {
+  min-width: 0; flex: 0 1 auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-family: var(--a-f-letra); font-weight: 370; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo);
+  letter-spacing: 0; text-transform: none;
+}
+.a-body .barra--articulo summary > .rotulo { flex: none; }
+/* el artículo y el caso tienen pie (E13, ronda 2: el caso lo ganó; ambos son `.caso`): bajo 1194 la página deja el alto de la
+   barra abajo para que no lo tape */
+@media (max-width: 1193.98px) {
+  .a-body .caso { padding-bottom: 0; }
+  .a-body .a-pagina:has(.caso) { padding-bottom: 96px; }
+}
+
+/* ------------------------------------------------------------------ movimiento reducido (§1.6) */
+/* Ningún resorte corre, el círculo no existe, todo está en su lugar y los cambios de color son instantáneos. */
+@media (prefers-reduced-motion: reduce) {
+  .a-body *, .a-body *::before, .a-body *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+  .a-body .medio > img { opacity: 1; }
+  .a-body .circulo { display: none !important; }
+}

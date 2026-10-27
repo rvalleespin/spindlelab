@@ -1,0 +1,24 @@
+---
+// UN MEDIO DE UNA FILA DEL CASO (spec §2.3 y §3.3): una imagen plana en su marco (Imagen) o un video con su pausa
+// (Video). El alt o la descripción son de Clara; el pie va debajo de la fila entera (Caso.astro). Tanda 3.
+import Imagen from './Imagen.astro';
+import Video from './Video.astro';
+
+interface Medio {
+  src: string;
+  ancho: number;
+  alto: number;
+  alt: string;
+  video?: { webm: string; mp4: string };
+}
+interface Props {
+  medio: Medio;
+  clase?: string;
+}
+const { medio, clase } = Astro.props;
+---
+{medio.video ? (
+  <Video poster={medio.src} ancho={medio.ancho} alto={medio.alto} webm={medio.video.webm} mp4={medio.video.mp4} clase={clase} descripcion={medio.alt} />
+) : (
+  <Imagen src={medio.src} alt={medio.alt} ancho={medio.ancho} alto={medio.alto} clase={clase} />
+)}

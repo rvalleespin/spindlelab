@@ -1,0 +1,432 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/caso-combeau.json",
+ "sha256": "e5bd38c839f9721c0b743e9a81c991f7be5d42669b3ce20aa43835e0ccee54ee",
+ "id": "caso-combeau",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "caso-combeau",
+  "ruta": "/trabajo/combeau/",
+  "title": "Bernardo Combeau: fotografía y book de modelo · SpindleLab",
+  "description": "Diseñamos y programamos los dos sitios de Bernardo Combeau, fotógrafo y modelo. Él carga sus series desde un panel, y el sitio entrega sus fotos livianas.",
+  "senales": "Simón, e12/senales-obra.md §2.4",
+  "estructura": "La plantilla de caso (spec §2.3). Una página con dos partes: dentro de «La pieza», id=\"fotografia\" e id=\"modelo\", cada una abriendo con su 16:9. Solo medios de e12/casos/combeau/medios/.",
+  "reglas": [
+   "Ningún texto, medio ni alt con su edad, estatura, pelo, ojos, contacto o ficha de contratación (compuerta 2, pregunta 7; defecto 21 del acta, en A).",
+   "Ningún resultado de su negocio, ni el 76 de su portada, ni su sitio como ejemplo de SEO (inventario §7)."
+  ],
+  "secciones": [
+   {
+    "id": "lateral",
+    "nombre": "Barra lateral",
+    "trabajo": "Nombrar el caso: quién es el cliente, qué se hizo y cuándo salió.",
+    "elementos": [
+     {
+      "id": "combeau.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Trabajo · Bernardo Combeau",
+      "uso": "miga",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.h1",
+      "rol": "h1",
+      "tinta": "Bernardo Combeau.",
+      "gris": "Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.",
+      "texto": "Bernardo Combeau. Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos.",
+      "fuente": "inventario-casos §2.1, §2.2 y §2.9 (él carga sus series desde el panel; el book es el otro oficio)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.ficha",
+      "rol": "ficha",
+      "campos": [
+       {
+        "rotulo": "Tipo",
+        "valor": "Cliente"
+       },
+       {
+        "rotulo": "Año",
+        "valor": "2026"
+       },
+       {
+        "rotulo": "Qué es",
+        "valor": "Sitio de fotografía y book de modelo"
+       },
+       {
+        "rotulo": "En línea desde",
+        "valor": "24-jul-2026"
+       }
+      ],
+      "linea": "Cliente · 2026",
+      "fuente": "inventario-casos §2 y §2.9 («Fechas con fila»)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.indice",
+      "rol": "rotulo",
+      "uso": "índice de secciones",
+      "opciones": [
+       "Problema",
+       "Hipótesis",
+       "Solución",
+       "La pieza",
+       "Sin métrica"
+      ],
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.creditos.rotulo",
+      "rol": "rotulo",
+      "texto": "Quién lo hizo",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.creditos",
+      "rol": "nota",
+      "texto": "Diseño, programación y panel: SpindleLab. Las fotos y los textos los pone Bernardo.",
+      "fuente": "inventario-casos §2.1 («Sitio y panel de administración»; él carga sus series)",
+      "estado": "nuevo"
+     }
+    ]
+   },
+   {
+    "id": "medio",
+    "nombre": "Medio principal",
+    "trabajo": "Mostrar el sitio de punta a punta.",
+    "elementos": [
+     {
+      "id": "combeau.medio.descripcion",
+      "rol": "nota",
+      "texto": "Recorrido por la portada de su sitio de fotografía: el retrato en luz verde con su frase, sus retratos y sus proyectos.",
+      "uso": "alt",
+      "donde": "combeau-fotografia-recorrido-1440 (a 390, el -390); video con aria-hidden, este texto en la figura",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.medio.poster",
+      "rol": "nota",
+      "texto": "Portada del sitio de Bernardo Combeau: «Un buen retrato no se toma. Se construye dirigiendo a la persona hasta su mejor versión.»",
+      "uso": "alt",
+      "donde": "póster del recorrido",
+      "origen": "casos/combeau/medios.json (altDePartida, revisado mirando)",
+      "estado": "nuevo"
+     }
+    ]
+   },
+   {
+    "id": "problema",
+    "nombre": "Problema",
+    "trabajo": "Decir qué necesitaba el cliente, con lo que consta, sin inventar sus palabras.",
+    "elementos": [
+     {
+      "id": "combeau.problema.rotulo",
+      "rol": "rotulo",
+      "texto": "Problema",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.problema.h2",
+      "rol": "h2",
+      "texto": "Fotos grandes, sin depender de nadie.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.problema.p1",
+      "rol": "parrafo",
+      "texto": "Bernardo es fotógrafo de retrato. Necesitaba un sitio donde sus fotos se vieran grandes, y poder subir una serie nueva él mismo, sin escribirle a nadie cada vez. Y para su otro oficio, un book de modelo en inglés, con su propia portada y su propio menú, en el mismo dominio.",
+      "fuente": "oficina/clientes/bernardo-combeau.md (sitio + panel de administración, Plan Esencial); obra-v3.json:16 y :33 (el book en inglés, con su propia marca y navegación)",
+      "estado": "nuevo"
+     }
+    ]
+   },
+   {
+    "id": "hipotesis",
+    "nombre": "Hipótesis",
+    "trabajo": "Decir qué se creyó y cómo se iba a saber.",
+    "elementos": [
+     {
+      "id": "combeau.hipotesis.rotulo",
+      "rol": "rotulo",
+      "texto": "Hipótesis",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.hipotesis.h2",
+      "rol": "h2",
+      "texto": "Que el sitio lo actualice él.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.hipotesis.p1",
+      "rol": "parrafo",
+      "texto": "Si él podía cargar sus series desde un panel, el sitio iba a seguir vivo sin depender de nosotros. Y si el sitio ajustaba cada foto a la pantalla de quien la mira, Bernardo podía subirlas tal como las tiene, sin achicarlas antes. Íbamos a saber si funcionaba cuando publicara una serie nueva sin pedirnos nada.",
+      "fuente": "inventario-casos §2.1, §2.2 y §2.9",
+      "estado": "nuevo"
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "e12/casos/combeau/medios/combeau-panel-entrada-169.webp",
+      "forma": "16:9",
+      "alt": "La pantalla de entrada del panel donde Bernardo carga sus series, con el botón para entrar con su cuenta de GitHub."
+     }
+    ]
+   },
+   {
+    "id": "solucion",
+    "nombre": "Solución",
+    "trabajo": "Lo que se hizo, con cada ingrediente después de lo que le hace a él o a quien lo visita.",
+    "elementos": [
+     {
+      "id": "combeau.solucion.rotulo",
+      "rol": "rotulo",
+      "texto": "Solución",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.solucion.h2",
+      "rol": "h2",
+      "texto": "Un panel y fotos a su medida.",
+      "estado": "cambia",
+      "antes": "Un panel, y cada foto a su medida.",
+      "por_que": "Lock §21.5: titulares de sección de 2 a 7 palabras (lo midió herramientas/comprobar-obra.py)."
+     },
+     {
+      "id": "combeau.solucion.p1",
+      "rol": "parrafo",
+      "texto": "Bernardo entra a su panel con una cuenta de GitHub, el servicio donde se guarda su sitio, y desde ahí carga sus series: la portada, sus retratos, sus proyectos y lo que cuenta de su estudio. Como una misma foto aparece en recuadros de distinta forma, en cada una él marca el punto que no se puede perder, como una cara, y el sitio recorta alrededor de ese punto en la portada y en las galerías.",
+      "fuente": "inventario-casos §2.1 (Decap CMS, login con GitHub) y §2.9 (colecciones del panel; encuadre de fotos, en producción según revision-panel-admin-bernardo.md:586-588; no medido el 19-oct)",
+      "estado": "nuevo",
+      "antes": "Bernardo entra a su panel con su cuenta de GitHub y desde ahí carga sus series: la portada, sus retratos, sus proyectos y lo que cuenta de su estudio. Para cada foto marca qué parte no se puede cortar, y el sitio respeta ese punto en los recuadros de la portada y de las galerías.",
+      "por_que": "Lectura fría, 19-oct: se perdió en «su cuenta de GitHub» («¿mi secretaria tendría que tener cuenta de GitHub?») y no entendió «qué parte no se puede cortar». Ahora dice qué es GitHub y para qué marca ese punto. «como una cara» es un ejemplo de uso, no una foto en particular."
+     },
+     {
+      "id": "combeau.solucion.p2",
+      "rol": "parrafo",
+      "texto": "Él sube cada foto tal como la tiene, y el sitio la entrega al tamaño de la pantalla de quien la mira. Una foto de su portada que él subió con 805 kB le llega al visitante en 95 kB, ocho veces más liviana. En el book de modelo, los videos no se descargan hasta que alguien los abre.",
+      "fuente": "inventario-casos §2.1 (Netlify Image CDN: 804.697 → 94.576 bytes, WebP a 828 px, 16 y 19-oct) y §2.2 (0 kB de video en la carga inicial)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.solucion.p3",
+      "rol": "parrafo",
+      "texto": "Por dentro, el sitio también dice quién es: un bloque de datos que el visitante no ve, pero que le dice a Google y a la IA que Bernardo Combeau es fotógrafo de retrato y dónde trabaja.",
+      "fuente": "inventario-casos §2.1 (Person y LocalBusiness: «una máquina puede leer quién es, a qué se dedica y dónde trabaja») y §4.3 (antes del 3-sep, cero datos estructurados)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.solucion.ingredientes.rotulo",
+      "rol": "rotulo",
+      "texto": "Con qué está hecho",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.solucion.ingredientes.intro",
+      "rol": "nota",
+      "texto": "El detalle, para quien quiera mostrárselo a su técnico.",
+      "origen": "el mismo texto de Praxi (texto-paso2.json «praxi.solucion.ingredientes.intro»)",
+      "estado": "queda"
+     },
+     {
+      "id": "combeau.solucion.ingredientes",
+      "rol": "nota",
+      "uso": "lista",
+      "items": [
+       "Él carga sus series solo, desde un panel. (Decap CMS)",
+       "Entra al panel con su cuenta de GitHub. (Login con GitHub)",
+       "Marca qué parte de cada foto no se corta en los recuadros. (Encuadre hecho para su panel)",
+       "Sube la foto tal cual y el sitio la entrega recortada y liviana. (Netlify Image CDN)",
+       "El book no baja sus videos hasta que hacen falta. (Video con carga diferida)",
+       "Google y la IA pueden entender quién es y a qué se dedica. (Datos estructurados)",
+       "Las páginas llegan armadas, sin esperar scripts de otros sitios. (Astro)"
+      ],
+      "fuente": "inventario-casos §2.1, §2.2 y §2.9, «Ingredientes con fila»",
+      "estado": "nuevo",
+      "por_que": "Lectura fría, 19-oct: «Una máquina puede leer…» le sonó a texto de máquina; ahora dice cuáles.",
+      "antes": "Sexto ítem: «Una máquina puede leer quién es y a qué se dedica. (Datos estructurados)»"
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "e12/casos/combeau/medios/combeau-panel-encuadre-169.webp",
+      "forma": "16:9",
+      "alt": "El panel de Bernardo editando una serie de retratos: a la izquierda marca qué parte de la foto no se corta; a la derecha, la página como va a quedar.",
+      "pie": "El panel por dentro, capturado el 3 de septiembre de 2026 en una copia de prueba con sus fotos de ese día. Hoy el encuadre se abre con el botón «Editar foto»."
+     },
+     {
+      "archivo": "e12/casos/combeau/medios/combeau-panel-colecciones-169.webp",
+      "forma": "16:9",
+      "alt": "El panel de Bernardo: la lista de lo que puede editar (portada, sobre mí, estudio, servicios, contacto, retratos y proyectos).",
+      "pie": "El panel por dentro, capturado el 3 de septiembre de 2026 en una copia de prueba."
+     },
+     {
+      "archivo": "e12/casos/combeau/medios/combeau-foto-servida-828.webp",
+      "forma": "4:5 o 1:1, a decidir por Lucía",
+      "alt": "Retrato de un hombre que sonríe con un acordeón rojo, de Bernardo Combeau, tal como lo entrega su sitio.",
+      "pie": "La foto como la entrega su sitio: 828 × 828 píxeles y 95 kB. La original pesa 805 kB.",
+      "enlace": {
+       "texto": "Ver la original (805 kB)",
+       "destino": "https://bernardocombeau.cl/uploads/beto3.jpg"
+      },
+      "nota": "El sandbox «la foto que sube y la que ve su visitante» (inventario §6.1). La original se enlaza, no se copia."
+     }
+    ]
+   },
+   {
+    "id": "pieza",
+    "nombre": "La pieza (con las dos partes)",
+    "trabajo": "Mostrar los dos sitios, cada uno en su parte, para que el índice lleve directo a cada uno.",
+    "elementos": [
+     {
+      "id": "combeau.pieza.rotulo",
+      "rol": "rotulo",
+      "texto": "La pieza",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.pieza.h2",
+      "rol": "h2",
+      "texto": "Dos oficios, un mismo nombre.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.pieza.fotografia.h3",
+      "rol": "h2",
+      "texto": "El sitio de fotografía",
+      "nivel": 3,
+      "ancla": "fotografia",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.pieza.fotografia.p",
+      "rol": "parrafo",
+      "texto": "Abre con un retrato a pantalla completa y su frase: «Un buen retrato no se toma. Se construye dirigiendo a la persona hasta su mejor versión.» Debajo van sus retratos y sus proyectos, cada serie con su página.",
+      "fuente": "casos/combeau/medios.json (recorrido: el hero, «Retratos» y «Proyectos»)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.pieza.modelo.h3",
+      "rol": "h2",
+      "texto": "El book de modelo",
+      "nivel": 3,
+      "ancla": "modelo",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.pieza.modelo.p",
+      "rol": "parrafo",
+      "texto": "Vive en el mismo dominio, en inglés, con su propia portada y su propio menú: sus fotos, sus trabajos publicitarios y sus comerciales. Se edita desde el mismo panel.",
+      "fuente": "obra-v3.json:33; inventario-casos §2.2 (colección «Modelo» en el panel) y medios.json (recorrido: el book, «Selected Work» y «Commercials»)",
+      "estado": "nuevo"
+     }
+    ],
+    "medios": [
+     {
+      "archivo": "e12/casos/combeau/medios/combeau-fotografia-169.webp",
+      "forma": "16:9",
+      "alt": "Portada del sitio de fotografía de Bernardo Combeau a 1440: un retrato en luz verde con su frase encima.",
+      "donde": "abre la parte id=\"fotografia\""
+     },
+     {
+      "archivo": "e12/casos/combeau/medios/combeau-fotografia-45.webp",
+      "forma": "4:5",
+      "alt": "La portada del sitio de fotografía de Bernardo Combeau en un celular."
+     },
+     {
+      "archivo": "e12/casos/combeau/medios/combeau-modelo-169.webp",
+      "forma": "16:9",
+      "alt": "Portada del book de modelo de Bernardo Combeau: él, de traje azul, apoyado en una columna.",
+      "donde": "abre la parte id=\"modelo\""
+     },
+     {
+      "archivo": "e12/casos/combeau/medios/combeau-modelo-45.webp",
+      "forma": "4:5",
+      "alt": "El book de modelo de Bernardo Combeau en un celular: su nombre, el menú y su retrato de traje."
+     },
+     {
+      "archivo": "e12/casos/combeau/medios/combeau-modelo-recorrido-1440.webm",
+      "forma": "16:9",
+      "descripcion": "Recorrido por el book de modelo: sus fotos, sus trabajos publicitarios y sus comerciales."
+     }
+    ]
+   },
+   {
+    "id": "resultado",
+    "nombre": "Sin métrica",
+    "trabajo": "Decir qué no se midió y lo que sí, sin presentar su sitio como logro de SEO.",
+    "elementos": [
+     {
+      "id": "combeau.resultado.rotulo",
+      "rol": "rotulo",
+      "texto": "Sin métrica",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.resultado.h2",
+      "rol": "h2",
+      "texto": "Ningún dato de su negocio.",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.resultado.p1",
+      "rol": "parrafo",
+      "texto": "No medimos visitas, consultas ni ventas del sitio de Bernardo, y no tenemos ningún dato de su negocio para mostrar. Lo que sí está medido, el 16 de octubre de 2026, es cómo quedó hecho: la foto de su portada llegaba en 95 kB en vez de 805, y el book abría sin descargar ningún video.",
+      "fuente": "inventario-casos §4.4 (sin métrica de negocio), §2.1 y §2.2",
+      "estado": "nuevo"
+     },
+     {
+      "id": "combeau.resultado.p2",
+      "rol": "parrafo",
+      "texto": "El panel existe y está hecho para que él lo opere. No tenemos un número ni una fecha de uso que mostrar.",
+      "fuente": "inventario-casos §2.9 (el panel y sus colecciones). Sin fecha ni conteo de uso: la revisión del panel (revision-panel-admin-bernardo.md:589-594) dice a la vez que subió una campaña y que el login seguía en revisión en el dominio nuevo, y el cierre del 23-sep solo verificó que el login funciona.",
+      "estado": "cambia",
+      "condicion": "Ronda 2 (acta de QA, defecto 4): la versión anterior decía «El panel existe y lo opera él», un uso presente sin registro (hay una mantención acordada y el login se verificó el 23-sep, pero ningún registro de uso posterior). Queda el valor conservador: dice para qué está hecho el panel. Si Ramón confirma con evidencia que lo opera, vuelve «lo opera él».",
+      "por_que": "Revisión del 23-oct, fila «alto»: la frase de resultado «Lo que esperábamos del panel pasó… en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas» era la única afirmación de resultado sobre un cliente en todo el sitio y su propia fuente la contradice en el mismo párrafo (el login estaba en revisión). Se reescribe con lo verificable, sin número y sin fecha, y deja de validar la hipótesis: la hipótesis del caso queda abierta, que es lo honesto.",
+      "antes": "Lo que esperábamos del panel pasó, aunque sin número: en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas."
+     }
+    ]
+   },
+   {
+    "id": "siguiente",
+    "nombre": "Cierre",
+    "trabajo": "Ofrecer pedir la revisión y llevar al índice. No hay «Siguiente caso»: con Praxi y los cuatro conceptos fuera, Combeau es la única página de caso, y el otro elemento del índice (Verifica y Cumple) es un sitio aparte.",
+    "borrado": [
+     "combeau.siguiente.rotulo («Siguiente») y combeau.siguiente.caso («Praxi. Se acuerda de cada serie que hiciste.», → /trabajo/praxi/): Praxi sale de la obra. src/data/archivo/casos.mjs (líneas ~503 a 520) calcula «Siguiente» con el orden de los casos y lee ambos ids; con un solo caso apuntaría a sí mismo. Diego lo quita de la plantilla de caso."
+    ],
+    "elementos": [
+     {
+      "id": "combeau.siguiente.contacto",
+      "rol": "parrafo",
+      "tinta": "Si quieres un sitio así para tu negocio,",
+      "gris": "pide la revisión de una página y te respondemos en un día hábil.",
+      "texto": "Si quieres un sitio así para tu negocio, pide la revisión de una página y te respondemos en un día hábil.",
+      "fuente": "copy-secciones-v1.2 §2.9 y §8; v2-vigente/contacto.txt («Es gratis y llega en un día hábil»)",
+      "estado": "cambia",
+      "antes": "Si quieres un sitio así para tu negocio, escríbenos y te respondemos en 24 horas.",
+      "por_que": "Revisión del 23-oct: «24 horas» está en 38 lugares y el único plazo documentado fue de 31 horas; el plazo es «un día hábil» y lo gratis se llama «revisión». Lock §14: gris de 13 palabras (rango 6 a 13).",
+      "nota": "Quien no tiene sitio y quiere uno nuevo puede escribir igual: /contacto/ lo recibe (copy §2.3, «Quien está armando todo también puede escribirnos»). La frase pide la revisión porque es la acción única del sitio."
+     },
+     {
+      "id": "combeau.siguiente.boton",
+      "rol": "boton",
+      "texto": "Pedir la revisión de una página",
+      "destino": "/contacto/",
+      "estado": "cambia",
+      "antes": "Escribir a SpindleLab",
+      "por_que": "El mismo botón que la portada de la home: una sola acción en todo el sitio."
+     },
+     {
+      "id": "combeau.siguiente.todo",
+      "rol": "boton",
+      "texto": "[ Todo el trabajo ] (2)",
+      "destino": "/trabajo/",
+      "estado": "cambia",
+      "antes": "[ Todo el trabajo ] (10)",
+      "origen": "texto-paso2.json «praxi.siguiente.todo»",
+      "nota": "El 2 es el conteo verdadero de trabajo.entradas (casos.mjs:516 lo compara con trabajo.conteo)."
+     }
+    ]
+   }
+  ]
+ }
+}

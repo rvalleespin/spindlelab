@@ -1,0 +1,153 @@
+---
+// ÍNDICE DE TRABAJO DE A · ARCHIVO (obra E12, corrida 2, tanda 2; recortado en la obra E13). Diego.
+//
+// La URL no cambia: /trabajo/ pasó de src/pages/v3/trabajo.astro (la página de driftime, que A reemplaza) a
+// una carpeta, para que los casos vivan al lado (/trabajo/<caso>/); desde el corte a la raíz (E13), en src/pages/trabajo/.
+//
+// Contrato: spec-visual.md §2.2 (barra lateral desde 1194, muro de dos columnas en el orden de Clara, adónde lleva cada
+// entrada), §3.3 (las portadas), §3.4 (techo de campo del índice) y §4.
+//
+// E13 (brief §1, decisión 3): el índice queda con dos entradas, el sitio de Combeau (un caso, con página) y Verifica y
+// Cumple (una pieza propia que enlaza a verifica.spindlelab.cl). Salieron Praxi, los cuatro conceptos, el chequeo y
+// spindlelab.cl. Con dos entradas el filtro (Cliente 1, Propio 1) no filtra nada y se sacó, como recomendó Clara
+// (desvios/home.md, §3.8): quedan sin lector trabajo.filtro y trabajo.filtro.nombre.
+//
+// El texto es de Clara, tal cual (trabajo.json: el h1, la entradilla, el conteo y las dos entradas con su bajada, su línea
+// mono y su destino). El conteo sale de las entradas y el build se cae si no dice lo mismo que el texto de Clara. Las
+// señales, de Simón (senales-obra.md §2.2): CollectionPage + ItemList + BreadcrumbList; el ItemList sigue el orden del
+// muro y cada entrada va con su url (la de Verifica y Cumple, externa).
+//
+// El muro va en el orden de Clara en el documento (así lo lee el teclado y el lector de pantalla) y se reparte en dos
+// columnas con la retícula: cada pieza a la columna más corta (muro.mjs; sin JS, la columna que le toca con las alturas
+// de su proporción). desvios.md, tanda 2.
+import Layout from '../../layouts/Layout.astro';
+import PaginaA from '../../components/a/PaginaA.astro';
+import Pieza from '../../components/a/Pieza.astro';
+import Miga from '../../components/a/Miga.astro';
+import { LAYOUT_A } from '../../components/a/layout-a';
+import { textoDe, igualQue } from '../../data/archivo/texto.mjs';
+import comun from '../../data/archivo/texto/comun.json';
+import trabajo from '../../data/archivo/texto/trabajo.json';
+import medios from '../../data/archivo/medios.json';
+
+const t = textoDe(trabajo, comun);
+const pagina = trabajo.texto;
+const m = medios.medios;
+const externo = t('comun.externo').texto;
+
+// Las dos portadas, parejas, en 5:3 (spec §2.2, en el orden de Clara). Commit 1c65e6a6: Combeau usa la captura de escritorio
+// (la 16:9, recortada al marco) y no la del teléfono en 4:5, para que las dos tarjetas arranquen a la misma altura.
+const PORTADAS: Record<string, { medio: string; forma: 'p-53' }> = {
+  'combeau-fotografia': { medio: 'combeau-fotografia-169', forma: 'p-53' },
+  'verifica-y-cumple': { medio: 'verifica-y-cumple-53', forma: 'p-53' },
+};
+const ALTO = { 'p-53': 3 / 5 } as const;
+
+type Entrada = { id: string; nombre: string; bajada: string; linea: string; destino: string; cursor: string; pie?: string };
+const entradas = (pagina.entradas as Entrada[]).map((e) => {
+  const p = PORTADAS[e.id];
+  if (!p) throw new Error(`/trabajo/: la entrada «${e.id}» no tiene portada`);
+  return { ...e, ...p, medio: m[p.medio as keyof typeof m] };
+});
+
+// La columna de cada pieza sin JS: la más corta, con el alto de su proporción y unas líneas de texto (como el
+// prototipo, data-alto). muro.mjs la vuelve a calcular con el alto medido.
+{
+  const cols = [0, 0];
+  for (const e of entradas as (typeof entradas[number] & { columna?: number })[]) {
+    const c = cols[0] <= cols[1] ? 0 : 1;
+    e.columna = c + 1;
+    cols[c] += ALTO[e.forma] + 0.2 + (e.pie ? 0.05 : 0);
+  }
+}
+
+const conteo = t('trabajo.conteo').texto;
+// El conteo (spec §2.2; Clara: «sale del dato»): el total, igual al texto de Clara.
+igualQue(conteo, `(${entradas.length})`, '/trabajo/, el conteo del título');
+
+// ---- Señales (Simón, senales-obra.md §2.2)
+const title = pagina.title;
+const description = pagina.description;
+if (title.length > 60 || description.length < 120 || description.length > 160) {
+  throw new Error(`/trabajo/: title (${title.length}) o description (${description.length}) fuera de los largos de senales-obra.md §1.2`);
+}
+const URL_FINAL = 'https://spindlelab.cl/trabajo/';
+// La URL final (sin /) de adonde lleva cada entrada; la de fuera (Verifica y Cumple), tal cual.
+const final = (d: string) => (/^https?:/.test(d) ? d : `https://spindlelab.cl${d.replace(/^\/\//, '/')}`);
+// El nombre del ListItem (Simón): Combeau con su nombre completo (la entrada dice «Combeau»).
+const nombreLista = (e: (typeof entradas)[number]) => (e.id.startsWith('combeau-') ? `Bernardo ${e.nombre}` : e.nombre);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${URL_FINAL}#collectionpage`,
+      url: URL_FINAL,
+      name: title,
+      description,
+      inLanguage: 'es-CL',
+      isPartOf: { '@id': 'https://spindlelab.cl/#website' },
+      breadcrumb: { '@id': `${URL_FINAL}#breadcrumb` },
+      mainEntity: { '@id': `${URL_FINAL}#itemlist` },
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${URL_FINAL}#itemlist`,
+      numberOfItems: entradas.length,
+      itemListElement: entradas.map((e, i) => ({ '@type': 'ListItem', position: i + 1, name: nombreLista(e), url: final(e.destino) })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${URL_FINAL}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://spindlelab.cl/' },
+        { '@type': 'ListItem', position: 2, name: 'Trabajo', item: URL_FINAL },
+      ],
+    },
+  ],
+};
+// Las portadas que caen en la primera pantalla: desde 834 las dos (el muro va en dos columnas); bajo 834, solo la de
+// Combeau, y la de Verifica y Cumple (40 kB) se pide igual. Van sin espera (§3.3; acta de la obra, vuelta 1, defecto 6).
+const EN_PRIMERA = 2;
+const h1 = t('trabajo.h1') as { tinta: string; gris: string };
+const miga = (t('trabajo.miga').texto as string).split(' · ');
+---
+<Layout title={title} description={description} ogImage="/assets/img/og-e12-trabajo.jpg?v=2" ogImageAlt="Dos piezas de SpindleLab: la portada del sitio de un fotógrafo, en luz verde, y «Las 12 cosas que tu sitio tiene que dejar publicadas», de Verifica y Cumple, en blanco sobre azul." {...LAYOUT_A}>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  <PaginaA>
+    <div class="indice">
+      {/* La barra lateral (desde 1194, pegajosa; bajo 1194, arriba del muro): miga, h1 en dos tintas, conteo y entradilla. */}
+      <div class="indice__lateral">
+        <Miga items={[{ texto: miga[0], href: '/' }, { texto: miga[1] }]} />
+        <h1 class="t-titulo"><span class="tinta">{h1.tinta}</span> <span class="gris">{h1.gris}</span></h1>
+        <p class="rotulo">{conteo}</p>
+        <p class="chico">{t('trabajo.entradilla').texto}</p>
+      </div>
+      {/* El muro: dos columnas desde 834, una bajo 834; en el documento, el orden de Clara. */}
+      <div class="muro" data-muro>
+        {entradas.map((e, i) => (
+          <Pieza
+            id={e.id}
+            nombre={e.nombre}
+            bajada={e.bajada}
+            linea={e.linea}
+            destino={e.destino}
+            cursor={e.cursor}
+            pie={e.pie}
+            medio={e.medio}
+            forma={e.forma}
+            externo={externo}
+            nivel="h2"
+            indice
+            columna={(e as { columna?: number }).columna}
+            primeraPantalla={i < EN_PRIMERA}
+          />
+        ))}
+      </div>
+    </div>
+  </PaginaA>
+</Layout>
+
+<script>
+  import '../../scripts/archivo/muro.mjs';
+</script>
