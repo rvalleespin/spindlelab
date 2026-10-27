@@ -118,6 +118,17 @@ console.log('=== 3. cuando le toca al cliente, se le dice QUÉ hacer ===');
 }
 
 /* ================================================================== */
+console.log('=== 3 bis. la etapa nombra todos los datos que pide el formulario ===');
+{
+  const faltaDatos = E.etapaDelPedido(ped({
+    estado: P.ESTADOS.PAGADO, razon_social: null, acceso_recibido_en: null,
+  }));
+  cierto('nombra la plataforma que también pide el formulario', /plataforma/i.test(faltaDatos.queHacer));
+  cierto('no dice que son cuatro datos a secas', !/son cuatro datos/i.test(faltaDatos.queHacer));
+  cierto('no pide ninguna contraseña', /no te vamos a pedir ninguna contraseña/i.test(faltaDatos.queHacer));
+}
+
+/* ================================================================== */
 console.log('=== 4. cuando NO le toca, no se le pide nada ===');
 {
   // Una pantalla que siempre pide algo entrena a la persona a ignorarla.

@@ -86,7 +86,21 @@ for (const [nombre, formas] of CONDICIONES) {
   cierto(`el panel de compra declara ${nombre}`, formas.some((re) => re.test(PANEL)));
 }
 // Y la que ya estaba, que no se puede perder al reescribir el resto.
-cierto('el panel sigue diciendo que la revisión legal es de abogado', /abogado/i.test(PANEL));
+// ⚠️ POR CONCEPTO, NO POR LA FRASE EXACTA — igual que las de arriba, y por lo mismo.
+// La primera versión de estas cuatro estaba pinchada a la redacción literal. Una reescritura
+// que decía exactamente lo mismo —«si no puedes darnos EL acceso», con artículo— las puso
+// rojas. Una prueba que falla porque alguien agregó una palabra no está cuidando la condición:
+// está congelando el texto, y lo que termina pasando es que la afloja quien la encuentra.
+cierto('el panel mantiene que la revisión legal corresponde al abogado',
+  /(revisi[oó]n legal|borrador)[^.]{0,80}abogado/i.test(PANEL));
+cierto('el acceso se declara temporal y de permisos mínimos',
+  /acceso temporal[^.]{0,90}permisos m[ií]nimos/i.test(PANEL));
+cierto('la devolución cubre que no se pueda dar acceso',
+  /(devolvemos[^.]{0,130}acceso|acceso[^.]{0,130}devolvemos)/i.test(PANEL));
+cierto('el HTTPS depende del hosting',
+  /HTTPS no est[aá] inclu[^.]{0,70}hosting/i.test(PANEL));
+cierto('el consentimiento del checkout habla de gestionar la compra', /gestionar mi compra/i.test(PANEL));
+cierto('el consentimiento del checkout no habla de una pregunta', !/mi pregunta/i.test(PANEL));
 
 /* ================================================================== */
 console.log('=== 2. el bloque de precios dice lo mismo ===');
