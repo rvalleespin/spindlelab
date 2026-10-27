@@ -189,8 +189,8 @@ export function etapaDelPedido(pedido) {
         'publicar: razón social, RUT, giro y dirección. Para el correo de contacto por temas de ' +
         'datos usamos el mismo de tu pedido, salvo que nos digas otro.',
       quienActua: ACTUA.CLIENTE,
-      queHacer: 'Completa el formulario de esta página. Son cuatro datos y no te vamos a pedir ' +
-        'ninguna contraseña.',
+      queHacer: 'Completa los datos de tu empresa y dinos en qué plataforma está tu sitio. ' +
+        'No te vamos a pedir ninguna contraseña.',
       loQueSigue: 'Después te pedimos un acceso temporal a tu sitio, y ahí empezamos.',
       terminado: false,
     };
