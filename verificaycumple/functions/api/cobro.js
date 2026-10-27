@@ -383,12 +383,30 @@ export function decidirDesdeOrden({ pedido, orden }) {
     };
   }
 
-  // Si la orden dice pagada, lo que de verdad se cobró tiene que calzar también. La doc
-  // describe `total_paid_amount` como «la suma de todos los paid_amount de la transacción»,
-  // así que una orden `processed` con un pagado menor es algo que se mira a mano.
+  // Si la orden dice pagada, lo que de verdad se cobró tiene que alcanzar. La doc describe
+  // `total_paid_amount` como «la suma de todos los paid_amount de la transacción», así que una
+  // orden `processed` con un pagado MENOR es algo que se mira a mano antes de entregar.
+  //
+  // ── POR QUÉ «MENOR» Y NO «DISTINTO» (26-oct-2026) ─────────────────────────────────────
+  //
+  // Hasta hoy la condición era `pagado !== total`, o sea que cualquier diferencia frenaba la
+  // entrega. Eso tenía un modo de fallar que no se ve leyéndolo: si Mercado Pago informara acá
+  // el total CON el interés de las cuotas, toda venta en cuotas caería en «pagado-no-calza» y
+  // quedaría sin marcar. En Chile las cuotas son lo normal, así que habría sido la mayoría.
+  //
+  // No se pudo comprobar cuál de las dos lecturas del campo es la verdadera: el entorno de
+  // prueba de Mercado Pago no ofreció el selector de cuotas, y nuestra orden no las restringe
+  // (`armarOrdenMP` no manda ninguna exclusión de medios de pago), así que la ausencia es de la
+  // cuenta de prueba, no del código.
+  //
+  // Cuando no se puede medir cuál supuesto es cierto, lo que corresponde es que el código sea
+  // correcto bajo LOS DOS. Y resulta que la comprobación simétrica nunca fue la correcta: esto
+  // existe para atrapar que nos paguen DE MENOS. Que entre de más —porque el interés infló la
+  // cifra, o por un redondeo del emisor— no es un problema que justifique retener una entrega
+  // ya pagada. Frenar ahí sería cobrarle a alguien y no entregarle.
   if (destino === ESTADOS.PAGADO) {
     const pagado = montoDe(orden.total_paid_amount);
-    if (pagado !== null && pagado !== total) {
+    if (pagado !== null && pagado < total) {
       return {
         accion: ACCIONES.REVISAR, estado: null, motivo: 'pagado-no-calza',
         detalle: `La orden dice procesada pero se pagaron ${orden.total_paid_amount} de ${orden.total_amount}.`,
