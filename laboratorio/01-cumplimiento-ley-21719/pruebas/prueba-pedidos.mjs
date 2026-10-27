@@ -146,6 +146,32 @@ console.log('=== 4. el cuerpo de la orden es el que Mercado Pago espera ===');
   eq('la orden vence según la vigencia declarada', cuerpo.expiration_time,
     `PT${m.VIGENCIA_ORDEN_HORAS}H`);
 
+  // ── EL TOPE DE CUOTAS (26-oct) ────────────────────────────────────────────────────────
+  //
+  // Decisión de Ramón: hasta 3. Lo que hace falta comprobar no es el número —ese sale de la
+  // constante— sino DÓNDE va el campo: `config.payment_method` es hermano de `config.online`,
+  // no hijo suyo. Si se anida mal, Mercado Pago no devuelve error: ignora el bloque y el tope
+  // nunca se aplica. O sea que el modo de fallar de esto es silencioso, y por eso se mira la
+  // forma del objeto y no solo que el número esté escrito en alguna parte.
+  // Se lee con guarda a propósito: si el bloque se anidara mal, `cuerpo.config.payment_method`
+  // sería undefined y leerlo directo reventaría el archivo con un TypeError, abortando las
+  // aserciones de abajo —que son justamente las que nombran el problema—. Una prueba que se
+  // cae no es lo mismo que una prueba que acusa: la primera te da un rastro de pila, la
+  // segunda te dice qué está mal.
+  const bloqueCuotas = cuerpo.config.payment_method || {};
+  eq('el tope de cuotas sale de la constante', bloqueCuotas.max_installments, m.MAX_CUOTAS);
+  eq('y la constante es 3', m.MAX_CUOTAS, 3);
+  eq('payment_method es hermano de online, no hijo',
+    Object.keys(cuerpo.config).sort(), ['online', 'payment_method']);
+  falso('no quedó colgado dentro de online', 'payment_method' in cuerpo.config.online);
+  falso('ni suelto en la raíz', 'payment_method' in cuerpo);
+  // LO QUE NO SE MANDA, Y ES LO CARO. `installments_cost: 'seller'` traslada el costo de las
+  // cuotas al vendedor. El checkout de Mercado Pago le dice al comprador que los intereses los
+  // aplica su banco, y así queremos que siga: este campo nos haría pagar el financiamiento sin
+  // que nadie lo haya decidido.
+  falso('no traslada el costo de las cuotas al vendedor', 'installments_cost' in bloqueCuotas);
+  eq('el bloque lleva solo el tope', Object.keys(bloqueCuotas), ['max_installments']);
+
   // NO existe campo de moneda en Orders: el CLP sale de la cuenta del vendedor. Mandar uno
   // sería inventar un campo.
   falso('no manda currency_id', 'currency_id' in cuerpo);
