@@ -428,5 +428,53 @@ console.log('=== 14. leer la orden contra la API ===');
   falso('la red caida no lanza', caido.ok);
 }
 
+/* ================================================================== */
+console.log('=== el sobre de un rechazo, que es lo que soporte pide (27-oct) ===');
+{
+  // Cuando la API de Mercado Pago rechaza una orden, lo unico que se podia decirles era «me
+  // dio 403». Su soporte pidio textualmente el x-request-id para poder localizar la denegacion
+  // en SUS registros, y no lo teniamos: la respuesta se leia y se tiraba el sobre. Hubo que
+  // desplegar para contestar una pregunta.
+  const cab = (v) => ({ get: (h) => (String(h).toLowerCase() === 'x-request-id' ? v : null) });
+
+  const r = await m.crearOrdenMP({ x: 1 }, 'clave', 'TOKEN', async () => ({
+    ok: false, status: 403, headers: cab('abc-123'),
+    json: async () => ({ error: 'PA_UNAUTHORIZED_RESULT_FROM_POLICIES',
+      message: 'At least one policy returned UNAUTHORIZED.' }),
+  }));
+  eq('el rechazo dice el estado', r.error, 'http-403');
+  eq('y trae el x-request-id de Mercado Pago', r.requestIdMP, 'abc-123');
+  eq('y su cuerpo completo', r.detalleMP.error, 'PA_UNAUTHORIZED_RESULT_FROM_POLICIES');
+
+  // Si la cabecera no viene, se dice que no vino. Inventar un identificador seria mandarle a
+  // soporte a buscar algo que no existe.
+  const sinCab = await m.crearOrdenMP({ x: 1 }, 'clave', 'TOKEN', async () => ({
+    ok: false, status: 403, headers: cab(null), json: async () => ({}) }));
+  eq('sin la cabecera queda en null', sinCab.requestIdMP, null);
+
+  // Y una respuesta sin `headers` —que es como las fingen varias pruebas viejas— no revienta.
+  let lanzo = false, raro = null;
+  try {
+    raro = await m.crearOrdenMP({ x: 1 }, 'c', 'T', async () => ({ ok: false, status: 500, json: async () => ({}) }));
+  } catch { lanzo = true; }
+  falso('una respuesta sin headers no lanza', lanzo);
+  eq('y deja el identificador en null', raro && raro.requestIdMP, null);
+}
+
+/* ================================================================== */
+console.log('=== tachar correos antes de registrar nada (privacidad) ===');
+{
+  // El cuerpo que se registra es de MERCADO PAGO, no nuestro, asi que normalmente no lleva
+  // datos del comprador. Pero una API que valida puede devolver el campo que no le gusto, y
+  // `payer.email` es uno de los que mandamos. Tachar no cuesta nada.
+  eq('tacha un correo', m.tacharCorreos('{"payer":"ramon@ejemplo.cl"}'), '{"payer":"«correo»"}');
+  eq('y varios en la misma linea', m.tacharCorreos('a@b.cl y c@d.cl'), '«correo» y «correo»');
+  eq('deja intacto lo que no es correo',
+    m.tacharCorreos('PA_UNAUTHORIZED_RESULT_FROM_POLICIES'), 'PA_UNAUTHORIZED_RESULT_FROM_POLICIES');
+  // Lo que de verdad importa: que no quede ni el dominio de quien compro.
+  falso('no deja rastro del dominio del comprador',
+    m.tacharCorreos('{"e":"alguien@clinicaprivada.cl"}').includes('clinicaprivada'));
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
