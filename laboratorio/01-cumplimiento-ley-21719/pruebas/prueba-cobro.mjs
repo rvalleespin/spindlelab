@@ -321,6 +321,31 @@ console.log('=== 12. EL CAMINO DE LAS ORDENES, que es el que quedo configurado =
   const corta = m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_paid_amount: '1000' }) });
   eq('procesada con menos pagado se revisa', corta.accion, m.ACCIONES.REVISAR);
   eq('y lo dice', corta.motivo, 'pagado-no-calza');
+  // Un peso de menos tambien. El corte esta en el total, no en «mucho menos».
+  eq('un peso de menos tambien frena',
+    m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_paid_amount: '177309' }) }).motivo,
+    'pagado-no-calza');
+
+  // ── PAGADO DE MAS: SE ENTREGA (26-oct) ────────────────────────────────────────────────
+  //
+  // Si Mercado Pago informara `total_paid_amount` con el interes de las cuotas, la condicion
+  // simetrica («distinto del total») habria frenado toda venta en cuotas. No se pudo medir cual
+  // lectura del campo es la real, asi que el codigo tiene que ser correcto bajo las dos: lo que
+  // frena es que paguen DE MENOS. De mas, la plata entro y se entrega.
+  const conInteres = m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_paid_amount: '195041' }) });
+  eq('pagado de mas se marca igual', conInteres.accion, m.ACCIONES.MARCAR);
+  eq('y queda pagado', conInteres.estado, P.ESTADOS.PAGADO);
+  falso('no lo manda a revisar', conInteres.accion === m.ACCIONES.REVISAR);
+  falso('ni inventa el motivo', conInteres.motivo === 'pagado-no-calza');
+  // Un peso de mas, que es el caso de redondeo del emisor, tampoco frena.
+  eq('un peso de mas tampoco frena',
+    m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_paid_amount: '177311' }) }).accion,
+    m.ACCIONES.MARCAR);
+  // Y el total de la ORDEN sigue teniendo que calzar exacto: lo de arriba afloja lo que se
+  // cobro, no lo que se vendio. Si la orden dice otro precio, eso es otra cosa y se revisa.
+  eq('el total de la orden sigue exacto',
+    m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_amount: '195041', total_paid_amount: '195041' }) }).motivo,
+    'monto-no-calza');
 
   // Las mismas defensas que el otro camino.
   eq('otra referencia', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ external_reference: 'otro' }) }).motivo, 'referencia-no-calza');
