@@ -820,7 +820,16 @@ console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave 
     eq('y no deja el evento cerrado', ev.filter((e) => e.resultado !== null).length, 0);
   }
 
-  // ── 404 con un pedido viejo: ahí sí es definitivo ─────────────────────────────────────
+  // ── 404 CON UN PEDIDO VIEJO PERO VIVO: TAMPOCO SE CIERRA (cambió el 27-oct) ───────────
+  //
+  // Esta prueba exigía lo contrario: pedido de hace una hora, 404, se cierra. Era el caso que
+  // cuesta plata. Una orden de Mercado Pago vive 24 HORAS, así que alguien puede pagar dos
+  // horas después de crearla; si justo ahí el 404 es pasajero —credenciales recién rotadas, la
+  // orden todavía no visible— el evento quedaba cerrado para siempre con el cobro hecho.
+  //
+  // La edad del pedido no dice nada sobre si Mercado Pago puede mostrarnos la orden. El estado
+  // sí: mientras el pedido esté vivo, cerrar es apostar contra un pago que puede estar
+  // entrando ahora mismo.
   {
     const { db, crudo } = baseNueva();
     sembrar(crudo, ID, new Date(Date.now() - 60 * 60 * 1000).toISOString());
@@ -832,13 +841,61 @@ console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave 
       env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
     });
     soltar();
-    eq('se cierra con 200', r.status, 200);
+    eq('un pedido vivo de hace una hora pide reintento', r.status, 503);
+    const ev = crudo.prepare('SELECT * FROM eventos_mp').all();
+    eq('y el evento NO queda cerrado', ev.filter((e) => e.resultado !== null).length, 0);
+  }
+
+  // ── 404 CON EL DINERO YA DECIDIDO: ahí sí se cierra, y se avisa ───────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo, ID, new Date(Date.now() - 60 * 60 * 1000).toISOString());
+    crudo.prepare('UPDATE pedidos SET estado = ? WHERE id = ?').run('pagado', ID);
+    let avisos = 0;
+    const soltar = conFetch(async (u) => {
+      if (String(u && u.url ? u.url : u).includes('web3forms')) { avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
+      return { ok: false, status: 404, json: async () => ({}) };
+    });
+    const req = await peticion({ cuerpo: SIN_ID });
+    const url = new URL(req.url); url.searchParams.set('data.external_reference', ID);
+    const r = await W.onRequestPost({
+      request: new Request(url, { method: 'POST', headers: req.headers, body: JSON.stringify(SIN_ID) }),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+    });
+    soltar();
+    eq('con el pedido ya resuelto se cierra con 200', r.status, 200);
     eq('como orden inexistente', (await r.json()).motivo, 'orden-inexistente');
     const ev = crudo.prepare('SELECT * FROM eventos_mp').all();
     cierto('y queda anotado', ev.some((e) => String(e.resultado || '').includes('404')));
+    cierto('con el porqué del cierre', ev.some((e) => String(e.resultado || '').includes('ya-resuelto')));
     // El rastro de la clave débil, que antes solo se escribía en la salida que marcaba.
     cierto('diciendo que la clave no era exacta',
       ev.some((e) => String(e.resultado || '').includes('clave no exacta')));
+    // CERRAR ES IRREVERSIBLE, así que no puede ser silencioso: después de esto ni el reintento
+    // de Mercado Pago ni un reenvío manual vuelven a procesar el evento.
+    eq('y sale un aviso, porque el cierre no se puede deshacer', avisos, 1);
+  }
+
+  // ── 404 de una orden que no es nuestra: se cierra igual ───────────────────────────────
+  {
+    const { db, crudo } = baseNueva();
+    let avisos = 0;
+    const soltar = conFetch(async (u) => {
+      if (String(u && u.url ? u.url : u).includes('web3forms')) { avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
+      return { ok: false, status: 404, json: async () => ({}) };
+    });
+    const req = await peticion({ cuerpo: SIN_ID });
+    const url = new URL(req.url); url.searchParams.set('data.external_reference', 'vyc_' + '0'.repeat(32));
+    const r = await W.onRequestPost({
+      request: new Request(url, { method: 'POST', headers: req.headers, body: JSON.stringify(SIN_ID) }),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+    });
+    soltar();
+    eq('una referencia que no es de ningún pedido nuestro se cierra', r.status, 200);
+    const ev = crudo.prepare('SELECT * FROM eventos_mp').all();
+    cierto('diciendo que no es nuestro',
+      ev.some((e) => String(e.resultado || '').includes('no-es-un-pedido-nuestro')));
+    eq('y también avisa', avisos, 1);
   }
 
   // ── Una salida REVISAR también deja ese rastro ────────────────────────────────────────
