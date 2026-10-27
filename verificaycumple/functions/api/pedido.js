@@ -40,6 +40,7 @@ import { clavesDeTope, contar, CACHE_HORAS } from './profundo.js';
 import { elegibilidad } from './elegibilidad.js';
 import {
   ESTADOS, nuevoIdPedido, congelarContrato, armarOrdenMP, limpiarUtms, VIGENCIA_ORDEN_HORAS,
+  VERSION_POLITICA,
 } from './pedidos.js';
 import {
   crearOrdenMP, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES,
@@ -560,6 +561,10 @@ export async function onRequestPost(contexto) {
       id: idPedido,
       dominio,
       correo,
+      // La constancia del consentimiento se escribe ACÁ, que es el único punto donde se
+      // comprobó que `consiento` venía en true. Ver `VERSION_POLITICA`.
+      consentido_en: new Date().toISOString(),
+      politica_version: VERSION_POLITICA,
       ...contrato,
       // ⚠️ De `cuerpo.utms`, NO de `request.url`. La URL de esta petición es `/api/pedido` y
       // nunca lleva parámetros de campaña: con `utmsDe(request.url)` todas las ventas se

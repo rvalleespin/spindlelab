@@ -236,6 +236,28 @@ export function congelarContrato({ informe, elegibilidad, montoNeto, montoTotal,
 export const VIGENCIA_ORDEN_HORAS = 24;
 
 /**
+ * La versión de la política de privacidad que estaba publicada cuando se escribió esto.
+ *
+ * ── POR QUÉ SE GUARDA, Y POR QUÉ ES ESTE PRODUCTO EL QUE NO PUEDE NO HACERLO (27-oct-2026) ──
+ *
+ * El checkout exige `consiento === true` para vender, pero hasta hoy ese booleano se validaba y
+ * se tiraba: no quedaba en ninguna parte QUÉ aceptó la persona ni CUÁNDO. Si alguien reclamaba,
+ * no se podía reconstruir. En un producto que vende cumplimiento de la Ley 21.719, y que le
+ * cobra a otros por no tener esto en orden, es el peor sitio donde dejar un hueco.
+ *
+ * Se guarda la VERSIÓN, no el texto entero: la política publicada lleva su propio registro de
+ * cambios, así que de la versión se reconstruye el contenido. Y no se guarda ningún dato nuevo
+ * de la persona —la fila ya tiene su correo y su fecha—, así que esto no agranda lo que
+ * retenemos: lo vuelve legible.
+ *
+ * ⚠️ Este número y el que imprime `public/privacidad/index.html` son DOS COPIAS DEL MISMO
+ * HECHO. Si se separan, se guardan pedidos diciendo que aceptaron una versión que nunca
+ * estuvo publicada, y nadie se entera. Por eso hay una prueba que los compara: no se cambia
+ * uno sin el otro.
+ */
+export const VERSION_POLITICA = '1.8';
+
+/**
  * Hasta cuántas cuotas se le ofrecen al comprador.
  *
  * ── DECISIÓN DE RAMÓN, 26-oct-2026 ───────────────────────────────────────────────────────
@@ -319,6 +341,16 @@ CREATE TABLE IF NOT EXISTS pedidos (
 
   -- Lo único que se pide antes de pagar.
   correo              TEXT NOT NULL,
+
+  -- Constancia del consentimiento: qué versión de la política aceptó y cuándo. El endpoint
+  -- exige que "consiento" venga en true para vender, y esto es lo que queda escrito de eso.
+  -- ⚠️ DOS CARACTERES PROHIBIDOS EN LOS COMENTARIOS DE ESTE ESQUEMA, y los dos cortan en
+  -- silencio: la comilla invertida (esto es un literal de plantilla, una sola lo parte en dos)
+  -- y el punto y coma (las pruebas ejecutan el esquema partiéndolo por punto y coma, así que
+  -- uno dentro de un comentario deja el CREATE TABLE a la mitad).
+  -- ⚠️ Se escriben juntos o no se escribe ninguno: media constancia no es constancia.
+  consentido_en       TEXT,
+  politica_version    TEXT,
 
   -- Mercado Pago
   mp_order_id         TEXT,

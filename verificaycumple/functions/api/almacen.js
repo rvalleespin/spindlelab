@@ -30,7 +30,7 @@ import { ESTADOS, transicionValida } from './pedidos.js';
 const COLUMNAS_CREAR = [
   'id', 'creado_en', 'estado', 'dominio', 'url_medida',
   'senales_contratadas', 'senales_fuera', 'informe_json', 'monto_neto', 'monto_total',
-  'correo', 'mp_order_id',
+  'correo', 'consentido_en', 'politica_version', 'mp_order_id',
   'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
 ];
 
@@ -51,6 +51,12 @@ export async function crearPedido(db, datos) {
     monto_neto: datos.monto_neto,
     monto_total: datos.monto_total,
     correo: datos.correo,
+    // ⚠️ NO llevan valor por defecto A PROPÓSITO. Si `crearPedido` pusiera la fecha solo,
+    // cualquier camino que llegara acá quedaría diciendo que hubo consentimiento, lo haya
+    // comprobado o no. Una constancia que se escribe sola no es constancia: es decoración.
+    // Quien valida el consentimiento es quien tiene que pasarlos, y hay una prueba de eso.
+    consentido_en: datos.consentido_en ?? null,
+    politica_version: datos.politica_version ?? null,
     mp_order_id: datos.mp_order_id ?? null,
     utm_source: datos.utm_source ?? null,
     utm_medium: datos.utm_medium ?? null,
