@@ -337,6 +337,16 @@ function montoDe(v) {
  * antes de mirar el estado: que la orden sea de este pedido, que el monto calce, y que la
  * transición exista.
  */
+/**
+ * Los `status_detail` que dejan pasar una orden `processed` a pagado sin que la mire nadie.
+ *
+ * Hoy es uno solo, y sale de la única observación real que tenemos: el pago de prueba del
+ * 24-oct-2026 llegó con `accredited`. Agregar uno acá es decir «esta plata está de verdad en
+ * la cuenta y no volvió», así que se agrega con una orden real delante, no por lectura de la
+ * documentación.
+ */
+export const DETALLES_PAGO_LIMPIO = new Set(['accredited']);
+
 export function decidirDesdeOrden({ pedido, orden }) {
   if (!pedido) {
     return {
@@ -405,6 +415,29 @@ export function decidirDesdeOrden({ pedido, orden }) {
   // cifra, o por un redondeo del emisor— no es un problema que justifique retener una entrega
   // ya pagada. Frenar ahí sería cobrarle a alguien y no entregarle.
   if (destino === ESTADOS.PAGADO) {
+    // ── EL REEMBOLSO PARCIAL, QUE NO CAMBIA EL ESTADO DE LA ORDEN (27-oct-2026) ─────────
+    //
+    // Mercado Pago documenta la devolución parcial como una orden que SIGUE en `processed`,
+    // con el detalle en `status_detail: partially_refunded`. Mirando solo `status`, una
+    // devolución parcial pasaba inadvertida y el pedido seguía figurando pagado y entregable.
+    //
+    // ⚠️ EL CRITERIO ES UNA LISTA DE LO CONOCIDO, NO DE LO PROHIBIDO. Si fuera al revés —
+    // «bloquear si dice partially_refunded»— cualquier detalle nuevo que Mercado Pago invente
+    // entraría como bueno sin que nadie lo decida.
+    //
+    // Y la asimetría del caso ausente está pensada: si el campo NO viene, se sigue. Solo
+    // tenemos UNA observación real de una orden pagada (24-oct, `accredited`), así que no sé
+    // si siempre llega; bloquear toda venta por un campo que quizá no existe es peor que el
+    // riesgo que evita. Si viene y no lo reconocemos, ahí sí se para: un valor legible que no
+    // entendemos es motivo de mirar, y desde hoy eso además avisa.
+    const detalle = typeof orden.status_detail === 'string' ? orden.status_detail.trim() : '';
+    if (detalle && !DETALLES_PAGO_LIMPIO.has(detalle)) {
+      return {
+        accion: ACCIONES.REVISAR, estado: null, motivo: 'detalle-de-pago-desconocido',
+        detalle: `La orden dice procesada con status_detail «${detalle}», que no es uno de los ` +
+          `que damos por bueno. Si es una devolución, el pedido NO debe quedar entregable.`,
+      };
+    }
     const pagado = montoDe(orden.total_paid_amount);
     if (pagado !== null && pagado < total) {
       return {

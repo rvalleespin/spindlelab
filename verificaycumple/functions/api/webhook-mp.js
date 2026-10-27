@@ -33,7 +33,7 @@ import {
   registrarEvento, liberarEvento, anotarResultado, leerPedido, marcarEstado, VENTANA_RECLAMO_MS,
 } from './almacen.js';
 import { ESTADOS, ID_PEDIDO_NUESTRO } from './pedidos.js';
-import { avisarVenta } from './aviso.js';
+import { avisarVenta, avisarRevisar } from './aviso.js';
 import { enviarCorreoDePago } from './correo.js';
 
 function responder(estado, cuerpo) {
@@ -229,6 +229,10 @@ export async function onRequestPost(contexto) {
     // que mirar una persona. Hasta ahora la nota moría en una columna que nadie consulta.
     if (decision.accion === ACCIONES.REVISAR) {
       console.log(`[webhook] REVISAR ${pedido.id}: ${decision.motivo}`);
+      // Y además se avisa. El registro queda igual, pero dejar de depender de que alguien lo
+      // consulte es la diferencia entre un estado que existe y uno que no.
+      const envio = avisarRevisar(pedido, decision);
+      if (contexto && contexto.waitUntil) contexto.waitUntil(envio); else await envio;
     }
     await anotarResultado(env.VYC_PEDIDOS, clave,
       `${decision.accion}: ${decision.motivo}${exacta ? '' : ' (clave no exacta)'}`);

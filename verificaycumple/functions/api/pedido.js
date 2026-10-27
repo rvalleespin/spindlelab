@@ -690,7 +690,14 @@ export async function onRequestPost(contexto) {
       urls: { exito: destino, pendiente: destino, rechazo: destino },
     });
   } catch (e) {
-    return jsonPost({ ok: false, motivo: 'orden-invalida', detalle: (e && e.message) || null }, 500);
+    // 409 y no 500, por una razón de pantalla y no de semántica: Cloudflare reemplaza los 5xx
+    // de una Function por su propia página de texto plano, así que el navegador recibiría eso
+    // en vez del JSON que espera, y la persona vería un error en inglés sin nada que hacer.
+    // El 500 era además el único punto del checkout que contradecía la promesa de no devolver
+    // 5xx nunca. Se registra para que no quede invisible: esto es un fallo nuestro, no suyo.
+    console.log(`[pedido] no se pudo armar la orden ${idPedido}: ${(e && e.message) || e}`);
+    return jsonPost({ ok: false, motivo: 'orden-invalida',
+      detalle: 'Tuvimos un problema al preparar tu pago. No se te cobró nada. Vuelve a intentarlo.' }, 409);
   }
 
   // Acá sí se cobra el intento: es la llamada saliente que el tope existe para proteger.

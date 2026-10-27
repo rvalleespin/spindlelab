@@ -54,6 +54,60 @@ export function cuerpoDelAviso(pedido) {
 }
 
 /**
+ * El cuerpo del aviso cuando una notificación necesita que la mire una persona.
+ *
+ * ── POR QUÉ EXISTE (27-oct-2026) ─────────────────────────────────────────────────────────
+ *
+ * El webhook ya sabía distinguir «esto no calza, que lo vea alguien» de «esto se marca solo».
+ * Lo que no tenía era a quién avisarle: la decisión terminaba en un `console.log` y en una
+ * columna de la base. Una revisión independiente lo dijo sin rodeos — el aviso queda
+ * enterrado y el cliente no tiene ruta de salida. Un estado que solo existe en un registro
+ * que nadie consulta es, en la práctica, un estado que no existe.
+ *
+ * Mismo canal que el aviso de venta, y las mismas reglas de privacidad: va el PREFIJO del
+ * pedido, nunca el id entero (es la única credencial del comprador) y nunca su correo.
+ */
+export function cuerpoDeRevisar(pedido, decision) {
+  const prefijo = String((pedido && pedido.id) || '').slice(0, LARGO_PREFIJO);
+  const d = decision || {};
+  return {
+    access_key: CLAVE_WEB3FORMS,
+    subject: `REVISAR · ${d.motivo || 'sin motivo'} · ${(pedido && pedido.dominio) || 'sitio sin nombre'}`,
+    from_name: 'Verifica y Cumple',
+    Sitio: (pedido && pedido.dominio) || '(sin dominio)',
+    Motivo: d.motivo || '(sin motivo)',
+    Detalle: d.detalle || '(sin detalle)',
+    'Pedido (prefijo)': `${prefijo}…`,
+    Estado: (pedido && pedido.estado) || '(sin estado)',
+    'Qué hacer': 'Mercado Pago avisó algo que NO calza con lo que vendimos, así que el pedido ' +
+      'no se movió solo. Abre la base de pedidos y la orden en el panel de Mercado Pago, y ' +
+      'compara antes de tocar nada. Mientras tanto el cliente ve su pedido sin avanzar.',
+  };
+}
+
+/** El aviso de que algo necesita una persona. Nunca lanza, igual que el de venta. */
+export async function avisarRevisar(pedido, decision, fetchImpl = fetch) {
+  if (!pedido || !pedido.id) return false;
+  try {
+    const r = await fetchImpl('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(cuerpoDeRevisar(pedido, decision)),
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!r.ok) {
+      console.log(`[aviso] REVISAR: Web3Forms contestó http-${r.status}`);
+      return false;
+    }
+    console.log(`[aviso] revisar avisado: ${String(pedido.id).slice(0, LARGO_PREFIJO)}… · ${(decision || {}).motivo}`);
+    return true;
+  } catch (e) {
+    console.log(`[aviso] no se pudo avisar el REVISAR: ${e && e.message}`);
+    return false;
+  }
+}
+
+/**
  * Manda el aviso. Devuelve true solo si Web3Forms lo aceptó, y nunca lanza.
  *
  * @param {object} pedido  el pedido ya marcado como pagado
