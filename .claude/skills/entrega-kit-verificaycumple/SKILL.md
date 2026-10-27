@@ -1,6 +1,6 @@
 ---
 name: entrega-kit-verificaycumple
-description: Ejecuta el kit pagado de Verifica y Cumple (verificaycumple.pages.dev, marca aparte de SpindleLab, firmada por Ramón — $149.000+IVA) en el sitio real de un cliente que ya confirmó el pago — instala un gestor de consentimiento, aplica los ajustes técnicos que el chequeo detectó, entrega una plantilla de política de privacidad para que la revise su abogado, y verifica con el mismo chequeo público. Usar cuando un cliente de Verifica y Cumple confirma que quiere el kit, nunca antes de tener acceso real a su sitio.
+description: Ejecuta el kit pagado de Verifica y Cumple (verifica.spindlelab.cl, servicio de SpindleLab SpA — $149.000+IVA, $177.310 en total) en el sitio real de un cliente que ya pagó por el checkout — instala un gestor de consentimiento, aplica los ajustes técnicos que el chequeo detectó, entrega una plantilla de política de privacidad para que la revise su abogado, y verifica con el mismo chequeo público. Usar cuando un cliente de Verifica y Cumple confirma que quiere el kit, nunca antes de tener acceso real a su sitio.
 ---
 
 # Entrega del kit de Verifica y Cumple
@@ -20,12 +20,15 @@ propio repo. Acá no lo tengo por defecto — hay que pedirlo.**
 
 ## Antes de tocar nada: marca y acceso
 
-- **Verifica y Cumple es marca aparte de SpindleLab** (Camino B, confirmado
-  2 veces — 3-sep y 21-sep-2026). La plantilla de política de privacidad de este
-  kit **nunca nombra a SpindleLab SpA como responsable** — el responsable es
-  siempre el cliente. No confundir con la plantilla ya escrita para
-  `spindlelab.cl` (esa sí nombra a SpindleLab SpA, RUT 78.474.925-8, porque ese
-  es un caso distinto: SpindleLab auditándose a sí misma).
+- **Verifica y Cumple es un servicio de SpindleLab SpA** (RUT 78.474.925-8), en
+  `verifica.spindlelab.cl`. ⚠️ Esto REVIRTIÓ el «Camino B» de marca aparte que
+  decía antes esta guía: se decidió el 21-sep y se dio vuelta el 23-sep-2026. La
+  factura sale de la SpA.
+- **Pero la regla de la plantilla no cambió, y se sostiene por otro motivo:** la
+  política de privacidad que se entrega **nunca nombra a SpindleLab SpA como
+  responsable** — el responsable es siempre el cliente, porque los datos que
+  trata son suyos. No confundir con la plantilla ya escrita para `spindlelab.cl`
+  (esa sí nombra a SpindleLab SpA, porque ahí SpindleLab se audita a sí misma).
 - **Acceso real, no asumido, no implícito.** Decisión explícita de Ramón
   (21-sep-2026): esta skill pide **acceso real al hosting/repo/CMS** del cliente
   (o credenciales temporales de un usuario dedicado) antes de instalar nada — el
@@ -47,11 +50,14 @@ propio repo. Acá no lo tengo por defecto — hay que pedirlo.**
   **plantilla** sobre la estructura del Art. 14 ter — el texto final y la
   evaluación del caso del cliente los define su abogado. Esto se dice
   explícitamente al entregar, no se da por sobreentendido.
-- **El precio se ajusta según lo que el chequeo real muestre** (así lo dice la
-  landing). Si al levantar el sitio real aparece algo mucho más grande de lo
-  esperado (ej. un e-commerce con 6 trackers y checkout propio, no un sitio de
-  5 páginas), eso se conversa con el cliente **antes** de seguir, no se absorbe
-  en silencio ni se cobra de más sin avisar.
+- **El precio es cerrado: $149.000 + IVA = $177.310, una vez.** Ya NO «se ajusta
+  según lo que el chequeo muestre»: eso cambió el 24-oct-2026, con la compra
+  directa. Quien ve el botón ya pasó una compuerta de elegibilidad del lado del
+  servidor, y los casos fuera de alcance (tienda con carro, varios dominios) no
+  lo ven — esos van al formulario. Si aun así, al levantar el sitio real, aparece
+  algo mucho más grande de lo que el chequeo alcanzó a medir, se conversa con
+  Ramón y con el cliente **antes** de seguir. Pero ya es la excepción, no el caso
+  normal.
 - **El "antes" se corre siempre, y se guarda.** Sin un resultado del chequeo
   tomado *antes* de tocar nada, no hay antes/después real que mostrar — y es lo
   que hace creíble la entrega (ver el caso de SpindleLab).
@@ -61,12 +67,17 @@ propio repo. Acá no lo tengo por defecto — hay que pedirlo.**
 
 ## Método
 
-1. **Intake.** El cliente confirma por `hola@spindlelab.cl` (es el único CTA de
-   la landing — mailto, no formulario). Se pide: el dominio, y el acceso real
-   (hosting/repo/CMS o un usuario técnico temporal). No se agenda trabajo sin
-   tener ambas cosas.
+1. **Intake.** ⚠️ Cambió entero el 24-oct-2026: **ya no llega por `mailto`.**
+   El cliente **paga en el sitio** y cae en su pantalla privada de pedido
+   (`/pedido/?id=…`), donde llena razón social, RUT, giro, dirección y en qué
+   plataforma está su sitio. Recibe además un correo automático con ese enlace,
+   que es su única credencial: no hay cuenta ni contraseña.
+   El dominio ya viene congelado en el pedido, así que no hay que preguntarlo.
+   Lo que el formulario NO pide, y se pide por correo, es **el acceso real**
+   (hosting/repo/CMS o un usuario técnico temporal). Sin acceso no se agenda
+   trabajo.
 2. **Chequear el "antes".** Correr el chequeo público
-   (`https://verificaycumple.pages.dev`) contra el dominio del cliente **antes**
+   (`https://verifica.spindlelab.cl`) contra el dominio del cliente **antes**
    de cualquier cambio. Guardar el resultado completo (score + detalle de cada
    ítem, no solo el número) — es la línea base real del reporte final.
 3. **Levantar el sitio real.** No asumir la configuración de spindlelab.cl (Astro
@@ -80,10 +91,34 @@ propio repo. Acá no lo tengo por defecto — hay que pedirlo.**
    Consent Mode v2 con `gtag('consent','default',{...denied})` antes de
    `gtag('config',...)`, más los trackers sin API de consentimiento nativa (ej.
    Meta Pixel) envueltos en una función que solo corre si el consentimiento ya
-   fue otorgado o cuando el banner lo otorga. Si el cliente usa WordPress/Shopify
-   con un plugin de cookies ya instalable, puede ser más rápido y más
-   "reconocible" por el chequeo público usar ese plugin en vez de construir uno
-   a mano (ver limitación del chequeo, abajo).
+   fue otorgado o cuando el banner lo otorga.
+
+   **⚠️ DECISIÓN DEL 27-OCT-2026: el gestor por defecto es Klaro.** No se
+   construye uno a mano salvo que no quede alternativa. Las razones, en orden:
+
+   - **No le cuesta un peso a nadie, ni al cliente ni a SpindleLab.** Klaro es
+     código abierto (BSD-3), se aloja en el propio sitio del cliente, sin cuenta
+     y sin mensualidad. Eso no es un detalle de presupuesto: **la página vende el
+     kit como «una vez» y la única exclusión que declara es el abogado.** Un
+     gestor con suscripción mensual volvería falsa esa frase, y el cliente lo
+     descubriría después de pagar.
+   - **Bloquea de verdad.** No es un cartel decorativo: cambia el `src` del
+     script por `data-src` y el `type` por `text/plain`, así que el navegador no
+     ejecuta el rastreador hasta que la persona acepta.
+   - **El chequeo lo reconoce**, así que el «después» muestra el cambio.
+
+   Según dónde esté el sitio del cliente:
+
+   | Plataforma | Qué se instala | Costo |
+   |---|---|---|
+   | A medida, HTML, Astro | **Klaro** (o tarteaucitron) | gratis, autoalojado |
+   | WordPress | **Complianz** o **Cookie Notice**, versión gratis | gratis |
+   | Shopify o constructor cerrado | hay que evaluar uno alojado | por ver, caso a caso |
+
+   ⚠️ **El archivo tiene que quedar llamándose `klaro.js` o `klaro.min.js`.** El
+   chequeo lo detecta por el nombre; si se renombra o se empaqueta dentro de otro
+   bundle, nuestro propio instrumento no lo ve y el cliente recibe un «antes y
+   después» plano aunque el arreglo sea real.
 5. **Ajustes técnicos según lo que el chequeo detectó** — exactamente esos, ni
    más ni menos: si falta HTTPS, si falta `lang` declarado, si hay una casilla
    de consentimiento premarcada (no cumple el Art. 12, que exige un acto
@@ -106,9 +141,13 @@ propio repo. Acá no lo tengo por defecto — hay que pedirlo.**
 
 ## Limitación conocida del chequeo (para no confundirla con un error de la entrega)
 
-`chequeo.js` solo reconoce gestores de consentimiento de una lista fija de
-proveedores externos (Cookiebot, OneTrust, Osano, iubenda, CookieYes, Axeptio,
-Complianz, Klaro, tarteaucitron, CookieFirst, CookieScript). Un gestor construido
+`chequeo.js` solo reconoce gestores de consentimiento de una lista fija, hoy de
+**20 entradas**: Cookiebot, OneTrust, Osano, iubenda, CookieYes, Axeptio,
+Complianz, Klaro, tarteaucitron, CookieFirst, CookieScript, Usercentrics,
+Didomi, CookieHub, Termly, y cinco plugins de WordPress (CookieAdmin, Real
+Cookie Banner, Borlabs Cookie, GDPR Cookie Compliance, Cookie Notice). La lista
+viva está en la constante `CMPS` de `functions/api/chequeo.js`: se mira ahí, no
+acá, porque acá se desactualiza. Un gestor construido
 a mano (como el de spindlelab.cl) **no lo detecta como "gestor reconocido"**,
 aunque bloquee todo correctamente — el chequeo sí detecta si hay
 `gtag('consent','default',...)` inline, pero esa señal es informativa, no suma
@@ -166,8 +205,9 @@ cliente como caso de éxito sin su permiso explícito.
 
 ## Contrato
 
-- **Recibe:** cliente que confirmó pago del kit por `hola@spindlelab.cl` +
-  dominio + acceso real (hosting/repo/CMS).
+- **Recibe:** una venta del kit ya pagada en el checkout (el pedido trae dominio,
+  razón social, RUT, giro, dirección y plataforma) + el acceso real al sitio
+  (hosting/repo/CMS), que se pide aparte por correo.
 - **Entrega:** gestor de consentimiento instalado y verificado en navegador,
   ajustes técnicos del chequeo resueltos, plantilla de política con los datos
   del cliente, reporte antes/después con los dos resultados del chequeo.
@@ -213,7 +253,11 @@ cliente como caso de éxito sin su permiso explícito.
 > se arregló el mismo día.
 
 > ✅ **Principio:** *una plantilla legal nunca se reutiliza entre proyectos sin
-> revisar el responsable — Verifica y Cumple es marca aparte de SpindleLab a
-> propósito, y su política nunca nombra a SpindleLab SpA como responsable.*
-> **Respaldo:** decisión de marca "Camino B", confirmada 3-sep y reconfirmada
-> 21-sep-2026.
+> revisar el responsable: el responsable de la política es SIEMPRE el cliente,
+> porque los datos que trata son suyos.* **Respaldo:** ⚠️ este principio venía
+> apoyado en un hecho que dejó de ser cierto — decía «porque Verifica y Cumple es
+> marca aparte de SpindleLab», y esa decisión («Camino B») se revirtió el
+> 23-sep-2026. El principio se sostiene igual por un motivo que no depende de la
+> marca, pero sirve de recordatorio: **un principio atado a un hecho cambiante
+> hay que volver a mirarlo cuando el hecho cambia**, o te quedas obedeciendo una
+> regla por una razón que ya es falsa.
