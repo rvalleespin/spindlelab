@@ -317,6 +317,39 @@ console.log('=== 12. EL CAMINO DE LAS ORDENES, que es el que quedo configurado =
   eq('uno distinto no', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_amount: '1000', total_paid_amount: '1000' }) }).motivo, 'monto-no-calza');
   eq('y uno vacio tampoco', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_amount: '' }) }).motivo, 'monto-no-calza');
 
+  // ── EL REEMBOLSO PARCIAL, QUE NO CAMBIA EL `status` (27-oct) ──────────────────────────
+  //
+  // Mercado Pago documenta la devolución parcial como una orden que SIGUE en `processed`, con
+  // la novedad en `status_detail`. Mirando solo `status`, el pedido quedaba pagado y
+  // entregable con parte de la plata devuelta.
+  const devuelta = m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status_detail: 'partially_refunded' }) });
+  eq('una devolucion parcial se revisa', devuelta.accion, m.ACCIONES.REVISAR);
+  eq('y lo dice', devuelta.motivo, 'detalle-de-pago-desconocido');
+  eq('y NO la deja pagada', devuelta.estado, null);
+  falso('ni habilita el trabajo', devuelta.estado === P.ESTADOS.PAGADO);
+
+  // EL CRITERIO ES LISTA DE LO CONOCIDO, NO DE LO PROHIBIDO. Un detalle que MP invente mañana
+  // tiene que parar igual, sin que nadie lo agregue a una lista negra.
+  eq('un detalle nuevo tambien para',
+    m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status_detail: 'inventado_manana' }) }).motivo,
+    'detalle-de-pago-desconocido');
+  eq('la lista de lo que pasa solo tiene un valor', [...m.DETALLES_PAGO_LIMPIO], ['accredited']);
+  eq('y es el que marca pagado',
+    m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status_detail: 'accredited' }) }).accion,
+    m.ACCIONES.MARCAR);
+
+  // LA ASIMETRIA DEL CASO AUSENTE, A PROPOSITO. Si el campo no viene, se sigue: solo hay UNA
+  // observacion real de una orden pagada, asi que bloquear toda venta por un campo que quiza
+  // no existe seria peor que el riesgo que evita. Un valor LEGIBLE que no entendemos si para.
+  const sinDetalle = ORD(); delete sinDetalle.status_detail;
+  eq('sin status_detail se marca igual', m.decidirDesdeOrden({ pedido: PEDIDO, orden: sinDetalle }).accion, m.ACCIONES.MARCAR);
+  eq('y vacio tambien', m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status_detail: '' }) }).accion, m.ACCIONES.MARCAR);
+
+  // Y solo aplica al tramo de PAGADO: una orden devuelta entera ya tiene su propio estado.
+  eq('refunded sigue yendo a devuelto',
+    m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ status: 'refunded', status_detail: 'lo-que-sea' }) }).estado,
+    P.ESTADOS.DEVUELTO);
+
   // Procesada pero pagada de menos: se mira a mano, no se marca.
   const corta = m.decidirDesdeOrden({ pedido: PEDIDO, orden: ORD({ total_paid_amount: '1000' }) });
   eq('procesada con menos pagado se revisa', corta.accion, m.ACCIONES.REVISAR);

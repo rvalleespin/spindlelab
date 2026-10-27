@@ -1021,6 +1021,74 @@ console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de m�
     eq('el pedido queda pendiente', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pendiente');
   }
 
+  // ── UN «REVISAR» TAMBIEN AVISA, Y ESO NO ESTABA PROBADO (27-oct) ──────────────────────
+  //
+  // Al quitar la llamada al aviso del webhook, la bateria entera seguia en verde: la unidad
+  // estaba probada y el CABLEADO no. Es el mismo fallo que el boton del 26 — una prueba que
+  // mira el codigo ve la funcion escrita y no ve si alguien la llama. Esta mira el efecto.
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo);
+    const antes = globalThis.fetch;
+    const cuerpos = [];
+    globalThis.fetch = async (u, o = {}) => {
+      if (String(u && u.url ? u.url : u).includes('web3forms')) {
+        cuerpos.push(o.body ? JSON.parse(o.body) : null);
+        return { ok: true, status: 200, json: async () => ({ success: true }) };
+      }
+      return { ok: true, status: 200, json: async () => ORDEN(ID, { status_detail: 'partially_refunded' }) };
+    };
+    const r = await W.onRequestPost({ request: await peticion(),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+    globalThis.fetch = antes;
+
+    eq('una devolucion parcial NO deja el pedido pagado',
+      crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'creado');
+    eq('pero si sale un aviso', cuerpos.length, 1);
+    cierto('que grita REVISAR', String(cuerpos[0] && cuerpos[0].subject).startsWith('REVISAR'));
+    cierto('y dice el motivo', String(cuerpos[0] && cuerpos[0].Motivo).includes('detalle-de-pago-desconocido'));
+    falso('sin el correo del comprador', JSON.stringify(cuerpos[0]).includes('persona@clinicaejemplo.cl'));
+    eq('y Mercado Pago recibe 200 igual', r && r.status, 200);
+  }
+
+  // ── EL AVISO DE «REVISAR», QUE ANTES NO EXISTIA (27-oct) ──────────────────────────────
+  //
+  // El webhook ya sabia distinguir «esto no calza, que lo vea alguien» de «esto se marca
+  // solo». Lo que no tenia era a quien avisarle: la decision moria en un console.log y en una
+  // columna que nadie consulta. Un estado que solo existe en un registro que nadie mira es,
+  // en la practica, un estado que no existe.
+  {
+    const c = AV.cuerpoDeRevisar(
+      { id: ID, dominio: 'otro.cl', correo: 'secreto@otro.cl', estado: 'creado' },
+      { motivo: 'detalle-de-pago-desconocido', detalle: 'La orden dice algo raro.' });
+    eq('usa la misma clave publica', c.access_key, AV.CLAVE_WEB3FORMS);
+    cierto('el asunto grita REVISAR', c.subject.startsWith('REVISAR'));
+    cierto('y dice el motivo en el asunto', c.subject.includes('detalle-de-pago-desconocido'));
+    cierto('y de que sitio es', c.subject.includes('otro.cl'));
+    eq('lleva el motivo', c.Motivo, 'detalle-de-pago-desconocido');
+    cierto('y el detalle redactado', String(c.Detalle).includes('algo raro'));
+    cierto('dice que hacer', String(c['Que hacer'] || c['Qué hacer']).length > 40);
+
+    // LAS MISMAS DOS REGLAS DE PRIVACIDAD QUE EL AVISO DE VENTA, y por los mismos motivos: el
+    // id entero es la UNICA credencial del comprador, y su correo no tiene por que viajar a
+    // un tercero para contarnos que algo no calzo.
+    falso('nunca va el correo del comprador', JSON.stringify(c).includes('secreto@otro.cl'));
+    falso('ni el id entero', JSON.stringify(c).includes(ID));
+    eq('solo el prefijo', c['Pedido (prefijo)'], ID.slice(0, AV.LARGO_PREFIJO) + '…');
+
+    // Y que no lance, afirmado donde vive, por la misma razon que el de venta: una prueba que
+    // revienta no esta diciendo lo mismo que una que falla.
+    let lanzo = false, r = null;
+    try {
+      r = await AV.avisarRevisar({ id: ID, dominio: 'x.cl' }, { motivo: 'm' },
+        async () => { throw new Error('la red se cayo'); });
+    } catch { lanzo = true; }
+    falso('avisarRevisar no lanza aunque la red falle', lanzo);
+    eq('y devuelve false', r, false);
+    eq('sin pedido devuelve false sin llamar', await AV.avisarRevisar(null, { motivo: 'm' },
+      async () => { throw new Error('no deberia llamarse'); }), false);
+  }
+
   // ── El cuerpo del aviso, como unidad ──────────────────────────────────────────────────
   {
     const c = AV.cuerpoDelAviso({ id: ID, dominio: 'otro.cl', monto_total: 177310,
