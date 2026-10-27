@@ -160,7 +160,9 @@ const jsonLd = {
     },
   ],
 };
-const og = { src: `/assets/img/og-e12-${slug}.jpg?v=2`, alt: `SpindleLab: ${h1.tinta} ${h1.gris}` };
+// auditoria-seo-tecnica se regeneró en la ronda 2 (traía «impide a Google leer tu sitio» horneado): ?v=3; las otras, ?v=2.
+const OG_V: Record<string, number> = { 'auditoria-seo-tecnica': 3 };
+const og = { src: `/assets/img/og-e12-${slug}.jpg?v=${OG_V[slug] ?? 2}`, alt: `SpindleLab: ${h1.tinta} ${h1.gris}` };
 ---
 <Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />

@@ -77,12 +77,12 @@
      "id": "home.portada.microcopy",
      "rol": "nota",
      "uso": "ayuda",
-     "texto": "Te devolvemos una página con lo más importante que encontramos en tu sitio y por dónde partiríamos. También te decimos si ChatGPT y otras IA pueden visitarlo y entender a qué te dedicas. Es gratis y llega en un día hábil.",
+     "texto": "Te devolvemos una página con lo más importante que encontramos en tu sitio y por dónde partiríamos. También te decimos si ChatGPT y otras IA pueden entender tu sitio. Es gratis y llega en un día hábil.",
      "estado": "nuevo",
      "origen": "copy-secciones-v1.2 §2.1 (microcopy bajo el botón); v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frase 5)",
      "fuente": "Plazo: «un día hábil» y no «24 horas» (guía §3; el único plazo documentado fue de 31 horas, HANDOFF-diagnostico-focuscontable-2oct.md).",
      "antes": "Te devolvemos una página con lo más importante que encontramos en tu sitio y en si la IA puede leerlo, y por dónde partiríamos. Es gratis y llega en un día hábil.",
-     "por_que": "Ronda 2: «en si la IA puede leerlo» (literal del v2 publicado, torpe) y «leerlo» no se entendieron en la lectura en frío. Son ahora dos oraciones; la segunda dice qué se revisa de la IA. Los seis artículos del blog que repiten la frase la cambian igual (ronda2-frases.md, frase 5)."
+     "por_que": "Ronda 2: «en si la IA puede leerlo» (literal del v2 publicado, torpe) y «leerlo» no se entendieron en la lectura en frío. Son ahora dos oraciones; la segunda dice qué se revisa de la IA. Los seis artículos del blog que repiten la frase la cambian igual (ronda2-frases.md, frase 5). QA ronda 2, defecto 21: en la home la segunda oración se acorta a «pueden entender tu sitio», porque la cláusula completa ya está en la entradilla y en el bloque de búsqueda."
     },
     {
      "id": "home.portada.chequeo",
@@ -261,11 +261,11 @@
     {
      "id": "home.soluciones.busqueda.texto",
      "rol": "parrafo",
-     "texto": "Revisamos si Google y las IA, como ChatGPT, pueden visitar tu sitio y entender a qué te dedicas, y te dejamos un plan ordenado por impacto. Visibilidad en IA busca que ChatGPT y otras IA entiendan y describan bien tu empresa. Que puedan visitar tu sitio es el requisito para eso; no garantiza que te nombren.",
+     "texto": "Revisamos si Google y las IA pueden visitar tu sitio y entender a qué te dedicas, y te dejamos un plan ordenado por impacto. Visibilidad en IA busca que ChatGPT y otras IA entiendan y describan bien tu empresa. Que puedan visitarlo es el requisito para eso; no garantiza que te nombren.",
      "estado": "cambia",
      "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frases 1 y 10)",
      "antes": "Revisamos si Google y las IA pueden leer tu sitio y entender a qué te dedicas, y te dejamos un plan ordenado por impacto. Que la IA pueda leerlo es el requisito para que un asistente como ChatGPT te entienda; no garantiza que te nombre.",
-     "por_que": "Ronda 2, lectura en frío: «leer» no se entiende (3 de 3) y «Visibilidad en IA» no se entendió sin glosa (2 de 3: «pensé que me iban a poner avisos dentro de ChatGPT»). La glosa es la del encargo; «busca» dice el propósito y no promete el resultado, y la última oración sigue diciendo que el requisito no garantiza nada."
+     "por_que": "Ronda 2, lectura en frío: «leer» no se entiende (3 de 3) y «Visibilidad en IA» no se entendió sin glosa (2 de 3: «pensé que me iban a poner avisos dentro de ChatGPT»). La glosa es la del encargo; «busca» dice el propósito y no promete el resultado, y la última oración sigue diciendo que el requisito no garantiza nada. QA ronda 2, defecto 21: sale «, como ChatGPT,» (ya está en la entradilla y la glosa lo nombra una oración después) y «visitar tu sitio» pasa a «visitarlo» en la última oración."
     },
     {
      "id": "home.soluciones.busqueda.aud.precio",
@@ -316,11 +316,11 @@
     {
      "id": "home.soluciones.anuncios.texto",
      "rol": "parrafo",
-     "texto": "Anuncios en Google (el servicio se llama Paid Media) para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
+     "texto": "Anuncios en Google Ads para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
      "estado": "cambia",
      "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frase 9)",
-     "antes": "Anuncios para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
-     "por_que": "Ronda 2, lectura en frío: «Paid Media (Google)» no se entendió (2 de 3; «dos líneas antes decía Anuncios en Google, que lo entendí perfecto»). La glosa va aquí y no en la línea de precio, porque el guardián compara «Paid Media (Google) desde $350.000/mes + IVA» seguido, sin nada en medio."
+     "antes": "Anuncios en Google (el servicio se llama Paid Media) para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
+     "por_que": "Ronda 2, lectura en frío: «Paid Media (Google)» no se entendió (2 de 3). La primera glosa («el servicio se llama Paid Media») hizo visible el inglés y los lectores pidieron «Google Ads» (acta de QA, ronda 2). Ahora el texto dice Google Ads y el nombre exacto queda en la línea de precio y en el botón. La glosa va aquí y no en la línea de precio, porque el guardián compara «Paid Media (Google) desde $350.000/mes + IVA» seguido, sin nada en medio."
     },
     {
      "id": "home.soluciones.anuncios.precio",
@@ -494,11 +494,11 @@
     {
      "id": "home.pruebas.chequeo.texto",
      "rol": "parrafo",
-     "texto": "Escribes la dirección de tu sitio y ves 21 chequeos concretos, en tres grupos, con los puntos que vale cada uno. Es gratis y sin registro. Mide si tu sitio está preparado para que ChatGPT y otras IA puedan visitarlo y entender a qué te dedicas; no mide si hoy te citan.",
+     "texto": "Escribes la dirección de tu sitio y ves 21 chequeos concretos, en tres grupos, con los puntos que vale cada uno. Es gratis y sin registro. Mide si tu sitio está preparado para que ChatGPT y otras IA puedan entenderlo; no mide si hoy te citan.",
      "estado": "cambia",
      "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frases 6 y 7)",
      "antes": "Escribes tu dominio y ves 21 señales, con lo que pesa cada bloque. Es gratis y sin registro. Mide si tu sitio está preparado para que la IA lo lea; no mide si hoy te citan.",
-     "por_que": "E12: el campo del chequeo dice «La dirección de tu sitio» (una dueña de clínica no sabía si «dominio» era la dirección de su página). Ronda 2, lectura en frío: «21 señales, con lo que pesa cada bloque» no se entendió (3 de 3: «ni idea qué es una señal ni un bloque») y «que la IA lo lea» tampoco. «Chequeos» es el nombre que ya tienen los 21 en /diagnostico/; «grupos» y «puntos» son las palabras de la gente para «bloques» y «peso».",
+     "por_que": "E12: el campo del chequeo dice «La dirección de tu sitio» (una dueña de clínica no sabía si «dominio» era la dirección de su página). Ronda 2, lectura en frío: «21 señales, con lo que pesa cada bloque» no se entendió (3 de 3: «ni idea qué es una señal ni un bloque») y «que la IA lo lea» tampoco. «Chequeos» es el nombre que ya tienen los 21 en /diagnostico/; «grupos» y «puntos» son las palabras de la gente para «bloques» y «peso». QA ronda 2, defecto 21: «Mide si tu sitio está preparado para que ChatGPT y otras IA puedan entenderlo», sin repetir la cláusula completa.",
      "fuente": "21 chequeos en tres grupos (30, 40 y 30 puntos) y un puntaje de 0 a 100: confirmado en el código el 23-oct (copy §11)."
     },
     {

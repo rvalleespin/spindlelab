@@ -215,3 +215,21 @@ Las frases exactas, con su antes y su después, están en `e13/desvios/ronda2-fr
 Fuera de mis archivos (servicios, desarrollo web, auditoría, diagnóstico) apliqué las mismas frases porque la ronda lo pidió; la tabla está en `ronda2-frases.md`.
 
 Lo que dijeron los lectores y **no corregí** porque no es de frases, y queda para Ramón: «Uso agentes de IA…» generó duda en los tres (¿lo que recibo lo hizo un robot?); el sitio parte por el sitio y a dos de los tres no les duele ahí (una consultora cuyas consultas llegan por recomendación, una clínica que paga anuncios, un restaurante que vende por reservas); un solo caso y de un fotógrafo; «SEO técnico desde el diseño» y «Página de Campaña» sin explicar; el párrafo de Verifica y Cumple (ley, otro sitio, un formulario) no se entiende sin contexto.
+
+## 9 · Última corrección de la ronda 2 (acta de QA, defectos 20, 21 y 23a, y Paid Media)
+
+| Qué cambié | Por qué | De dónde sale |
+|---|---|---|
+| `diagnostico.json` `title`: «Chequeo gratis: ¿ChatGPT entiende tu sitio? · SpindleLab» (56) | Decía «puede leer tu sitio». «Puede entender» mide 62 y el tope es 60 | defecto 20 |
+| `diagnostico.json` `description`: «Mira si ChatGPT, Gemini y Perplexity pueden visitar tu sitio y entender a qué te dedicas. Gratis, sin registro y en segundos. No mide si hoy te citan.» (150) | Decía «pueden entrar a tu sitio y entender qué haces» y «tu dominio»; «entrar» no | defecto 20 |
+| El <title>, el og:title y el nombre del WebPage del JSON-LD de `/diagnostico/` salen de ese `title` (`interiores.mjs`: `tDiag.texto.title`), así que no hay otro lugar que cambiar | Comprobado en el código y en el `dist` | defecto 20 |
+| Home, microcopy de la revisión: la segunda oración pasa a «También te decimos si ChatGPT y otras IA pueden entender tu sitio.» | «entender a qué te dedicas» salía 4 veces en la home | defecto 21 |
+| Home, bloque «Búsqueda y visibilidad en IA»: sale «, como ChatGPT,» y la última oración dice «Que puedan visitarlo es el requisito para eso…» | La entradilla ya glosa ChatGPT y la cláusula completa se queda aquí | defecto 21 |
+| Home, «Chequeo abierto»: «Mide si tu sitio está preparado para que ChatGPT y otras IA puedan entenderlo» | Idem | defecto 21 |
+| Resultado en la home: la cláusula completa («pueden visitar… y entender a qué te dedicas») queda dos veces, en la entradilla y en el bloque de búsqueda; las otras dos son cortas y no pierden información, porque la completa está en la misma página | | defecto 21 |
+| `servicios.cierre.p`: «Revisamos tu sitio y si Google y las IA pueden entenderlo, en un día hábil. Es gratis.» | `/servicios/` repetía la cláusula completa (bloque 01 y cierre) | defecto 21, «mismo criterio» |
+| `desarrollo-web.json`, glosario AEO/GEO: «…ChatGPT y otras IA puedan entenderlo» | La página repetía la cláusula completa en `dw.incluye.3` y en el glosario (y una tercera vez en el punto del plan Sitio Completo de `oferta-v3.json`, que no es mío) | defecto 21, «mismo criterio» |
+| Glosa de Paid Media en la home (`home.soluciones.anuncios.texto`) y en `/servicios/` (`servicios.m2.nota`): «Anuncios en Google Ads para quien ya está buscando lo que vendes, …» | «(el servicio se llama Paid Media)» hacía visible el inglés; 2 de 3 lectores pidieron «Google Ads». La línea de precio no cambia y el guardián sigue viendo «Paid Media (Google) desde .000/mes + IVA» seguido | acta de QA, ronda 2, diagnóstico 1 |
+| Se retiran `visibilidad-en-ia.franja.alt` y `visibilidad-en-ia.franja.pie` de `visibilidad-en-ia.json` | La franja ya no existe; Servicios confirmó que nadie los lee | defecto 23a |
+
+Contacto: la cláusula no aparece (0 veces). Método: una vez en el cuerpo (el resto del conteo es el JSON-LD).

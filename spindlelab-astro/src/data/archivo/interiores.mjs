@@ -61,7 +61,9 @@ const largos = (title, description, donde) => {
 // La imagen al compartir de cada página es og-e12-<id>.jpg, con el h1 de la página escrito en la imagen (regeneradas en
 // E13 con el h1 nuevo, en la plantilla de A: el negro, Google Sans Flex, tinta y gris). El alt dice el titular de la
 // imagen. ?v=2: cada nombre se sobrescribe y los activos se cachean fuerte (CLAUDE.md, trampa de caché).
-const ogDe = (id, h1) => ({ src: `/assets/img/og-e12-${id}.jpg?v=2`, alt: `SpindleLab: ${typeof h1 === 'string' ? h1 : `${h1.tinta} ${h1.gris}`}` });
+// La de /diagnostico/ se regeneró en la ronda 2 (traía «pueden leer tu sitio» horneado): ?v=3.
+const OG_V = { diagnostico: 3 };
+const ogDe = (id, h1) => ({ src: `/assets/img/og-e12-${id}.jpg?v=${OG_V[id] ?? 2}`, alt: `SpindleLab: ${typeof h1 === 'string' ? h1 : `${h1.tinta} ${h1.gris}`}` });
 const boton = (e, clase) => ({ texto: e.texto, href: e.destino, clase });
 
 // ================================================================= /metodo/ (spec §2.4; Simón §2.8)

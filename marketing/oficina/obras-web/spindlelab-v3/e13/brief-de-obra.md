@@ -89,7 +89,7 @@ Se conservan: el hilo de oro de la portada, el logo El huso, el retrato de Ramó
 9. **Chequeo propio** (`chequear()` de `functions/api/chequeo.js` sobre el build local): la home saca lo mismo o más que el 83 del v3 del 16-oct.
 10. **Detector anti-slop** (`estudio-web/antislop-web.md` y `refero-design/references/anti-ai-slop.md`) corrido entero por Javiera, en subagente limpio, máximo dos rondas.
 11. **Cero** rayas largas o medias, Title Case, «¿Listo para…?» y «en Chile» de relleno en lo que ve el público.
-12. Las 20 URL vivas del `sitemap.xml` tienen equivalente en el v3 (hoy: 20 de 20) y el sitemap nuevo suma `/trabajo/`.
+12. Las 20 URL vivas del `sitemap.xml` tienen equivalente en el v3 (hoy: 20 de 20) y el sitemap nuevo suma `/trabajo/` y `/trabajo/combeau/` (22 en total; lo dijo la QA de la ronda 2 como residuo: el brief y los commits decían 21).
 
 ## 8 · Entregables
 

@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/diagnostico.json",
- "sha256": "38f5575288243b2d90b5d71e263f5d2bb8d37bdc0e78357e4ef19e966b9be8e6",
+ "sha256": "ea1f372beed1bc87749ac2817497409a3f02d6a78fee2652504460b4e0092bec",
  "id": "diagnostico",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -8,9 +8,9 @@
   "ruta": "/diagnostico/",
   "modo": "ajusta (E13)",
   "regla": "E13, 26-oct-2026: la página se mantiene (es la pieza más fuerte y verificable, copy-secciones-v1.2 §9) y se le aplican las correcciones de §9 con el texto publicado en e13/fuentes/v2-vigente/diagnostico.txt. La ruta se llama /diagnostico/ y el instrumento se llama «chequeo»; lo gratis que hacemos a mano se llama «revisión». Aquí vive todo el texto visible, salvo las cinco preguntas frecuentes, que son datos de página porque de ellas sale el FAQPage del JSON-LD: viven en spindlelab-astro/src/data/paginas-v3.json, clave «diagnostico», faq. Los tres bloques de «Los 21 chequeos» siguen en interiores.mjs, tal cual (describen lo que mide el motor y no cambian). Los textos del resultado que pinta el script (veredictos, remate y botones) viven en public/assets/js/v3-chequeo.js y se registran aquí para que haya una sola lista. El texto de E12 que se reemplaza va en «antes».",
-  "title": "Chequeo gratis: ¿ChatGPT puede leer tu sitio? · SpindleLab",
-  "description": "Escribe tu dominio y revisamos si ChatGPT, Gemini y Perplexity pueden entrar a tu sitio y entender qué haces. Gratis, sin registro. No mide si hoy te citan.",
-  "senales": "Simón, e12/senales-obra.md §2.6, con el cambio de e13: v2-vigente/diagnostico.txt",
+  "title": "Chequeo gratis: ¿ChatGPT entiende tu sitio? · SpindleLab",
+  "description": "Mira si ChatGPT, Gemini y Perplexity pueden visitar tu sitio y entender a qué te dedicas. Gratis, sin registro y en segundos. No mide si hoy te citan.",
+  "senales": "Simón, e12/senales-obra.md §2.6, con el cambio de e13: v2-vigente/diagnostico.txt. Ronda 2 (acta de QA, defecto 20): title y description pasan a las frases de la ronda (antes «¿ChatGPT puede leer tu sitio?» y «Escribe tu dominio y revisamos si ChatGPT, Gemini y Perplexity pueden entrar a tu sitio y entender qué haces. Gratis, sin registro. No mide si hoy te citan.»). Title de 56 (el «puede entender» de la propuesta mide 62); description de 150. Salen de aquí el <title>, el og:title y el nombre del WebPage del JSON-LD (interiores.mjs: tDiag.texto.title).",
   "secciones": [
    {
     "id": "cabecera",

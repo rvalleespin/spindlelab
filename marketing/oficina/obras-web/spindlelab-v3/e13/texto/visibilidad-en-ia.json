@@ -39,25 +39,6 @@
      "uso": "referencia",
      "origen": "spindlelab-astro/src/data/servicios-v3.json visibilidad-en-ia",
      "estado": "cambia"
-    },
-    {
-     "id": "visibilidad-en-ia.franja.alt",
-     "rol": "nota",
-     "texto": "El chequeo gratis de SpindleLab con el resultado de un sitio en pantalla.",
-     "uso": "alt",
-     "donde": "La franja 2,39:1: el chequeo con un resultado (chequeo-43, recortado al centro; spec §2.4)",
-     "estado": "queda"
-    },
-    {
-     "id": "visibilidad-en-ia.franja.pie",
-     "rol": "nota",
-     "tinta": "El chequeo de 21 señales",
-     "gris": "Propio · 2026",
-     "texto": "El chequeo de 21 señales · Propio · 2026",
-     "uso": "pie",
-     "donde": "Bajo la franja: nombre y línea de la pieza, como el pie de la franja de Desarrollo web",
-     "origen": "e13/texto/trabajo.json, entrada «chequeo» del v3 anterior (la retiró la obra E13 del índice de /trabajo/; el pie se lleva aquí para no depender de ella)",
-     "estado": "cambia"
     }
    ]
   },

@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/visibilidad-en-ia.json",
- "sha256": "22019370cdc09c1f352629ba1dc4747b81830b5d9ddde14ba4ea276c97b7c3df",
+ "sha256": "62ef58e289b6abce5a23dd05fb1468b7db3c06d3e6d4342283a01758905d895b",
  "id": "visibilidad-en-ia",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -43,25 +43,6 @@
       "texto": "Sale de servicios-v3.json (corregido a mano en esta obra): la línea con el precio («linea»), la nota de precios, el lead, las secciones con sus planes y precios, las preguntas, el cierre y «Siguiente».",
       "uso": "referencia",
       "origen": "spindlelab-astro/src/data/servicios-v3.json visibilidad-en-ia",
-      "estado": "cambia"
-     },
-     {
-      "id": "visibilidad-en-ia.franja.alt",
-      "rol": "nota",
-      "texto": "El chequeo gratis de SpindleLab con el resultado de un sitio en pantalla.",
-      "uso": "alt",
-      "donde": "La franja 2,39:1: el chequeo con un resultado (chequeo-43, recortado al centro; spec §2.4)",
-      "estado": "queda"
-     },
-     {
-      "id": "visibilidad-en-ia.franja.pie",
-      "rol": "nota",
-      "tinta": "El chequeo de 21 señales",
-      "gris": "Propio · 2026",
-      "texto": "El chequeo de 21 señales · Propio · 2026",
-      "uso": "pie",
-      "donde": "Bajo la franja: nombre y línea de la pieza, como el pie de la franja de Desarrollo web",
-      "origen": "e13/texto/trabajo.json, entrada «chequeo» del v3 anterior (la retiró la obra E13 del índice de /trabajo/; el pie se lleva aquí para no depender de ella)",
       "estado": "cambia"
      }
     ]

@@ -149,10 +149,10 @@
     {
      "id": "servicios.m2.nota",
      "rol": "parrafo",
-     "texto": "Anuncios en Google (el servicio se llama Paid Media) para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte. La inversión en pauta va aparte.",
+     "texto": "Anuncios en Google Ads para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte. La inversión en pauta va aparte.",
      "origen": "v2-vigente/servicios.txt, bloque 02; ronda 2 (desvios/ronda2-frases.md, frase 9)",
-     "antes": "Anuncios para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte. La inversión en pauta va aparte.",
-     "por_que": "Ronda 2, lectura en frío: «Paid Media (Google)» no se entendió (2 de 3). Igual a home.soluciones.anuncios.texto.",
+     "antes": "Anuncios en Google (el servicio se llama Paid Media) para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte. La inversión en pauta va aparte.",
+     "por_que": "Ronda 2, lectura en frío: «Paid Media (Google)» no se entendió (2 de 3). La primera glosa («el servicio se llama Paid Media») hizo visible el inglés y los lectores pidieron «Google Ads» (acta de QA, ronda 2). Igual a home.soluciones.anuncios.texto.",
      "estado": "cambia"
     },
     {
@@ -384,8 +384,8 @@
     {
      "id": "servicios.cierre.p",
      "rol": "parrafo",
-     "texto": "Revisamos tu sitio y si Google y las IA pueden visitarlo y entender a qué te dedicas, en un día hábil. Es gratis.",
-     "antes": "Revisamos tu sitio y si Google y las IA pueden leerlo, en un día hábil. Es gratis.",
+     "texto": "Revisamos tu sitio y si Google y las IA pueden entenderlo, en un día hábil. Es gratis.",
+     "antes": "Revisamos tu sitio y si Google y las IA pueden visitarlo y entender a qué te dedicas, en un día hábil. Es gratis. (primera versión de la ronda 2; el original decía «pueden leerlo»)",
      "origen": "copy-secciones-v1.2.md §4 (cierre) con el plazo de la guía de la obra («un día hábil»); ronda 2 (desvios/ronda2-frases.md, frase 2)",
      "por_que": "Ronda 2, lectura en frío: «pueden leerlo» no se entendió (3 de 3).",
      "estado": "cambia"

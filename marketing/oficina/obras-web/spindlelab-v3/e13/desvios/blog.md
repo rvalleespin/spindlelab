@@ -197,3 +197,13 @@ Nota sobre 91: en la lista de Clara la frase 8 es del cierre; para contar los 21
 - `verificar.mjs --prefijo /blog/`: 8 páginas a 390 y 8 a 1440, «Sin hallazgos» en ambos.
 - Títulos ≤ 60 y descripciones ≤ 160 en las 8 (el más largo: 60 y 151).
 
+
+### 4.5 · Defecto 25 de la QA de la ronda 2 (superlativo sin fuente y «móvil»)
+
+| # | Dónde | Decía | Dice ahora |
+|---|---|---|---|
+| 94 | mini, «¿Por qué es gratis y llega en un día hábil?» | «Porque es la mejor manera de mostrar cómo trabajamos sin pedirte un acto de fe» | «Porque es una manera de mostrar cómo trabajamos antes de que decidas» |
+| 95 | fintechs, problema 3 | «duplican el tiempo de carga en móvil» | «duplican el tiempo de carga en el celular» |
+| 96 | fintechs, «Cómo revisarlo tú mismo en 10 minutos», paso 3 | «Corre tu home por PageSpeed Insights en móvil» (la pestaña de la herramienta se llama «Móvil»; en prosa es-CL va «celular») | «Corre tu home por PageSpeed Insights, en su versión para celular» (no hay otro «móvil» en `blog-v3/`: 0 en `.html` y `.json`) |
+
+Verificación: `construir.sh blog3` 22 páginas sin errores; 0 de «acto de fe», «mejor manera», «móvil»; `FAQPage` = FAQ visible en las 6 páginas que lo tienen (ninguna FAQ cambió en esta pasada); `verificar.mjs --prefijo /blog/` «Sin hallazgos» a 390 y a 1440; el barrido de términos da lo mismo que en la ronda 2 (solo los residuos explicados en §2 y §4.3).
