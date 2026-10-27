@@ -235,6 +235,25 @@ export function congelarContrato({ informe, elegibilidad, montoNeto, montoTotal,
  */
 export const VIGENCIA_ORDEN_HORAS = 24;
 
+/**
+ * Hasta cuántas cuotas se le ofrecen al comprador.
+ *
+ * ── DECISIÓN DE RAMÓN, 26-oct-2026 ───────────────────────────────────────────────────────
+ *
+ * Sin este campo, Mercado Pago ofrece las que quiera el emisor de la tarjeta. Se vio en el
+ * checkout de prueba: el selector aparecía con más opciones que una.
+ *
+ * ⚠️ LO QUE NO SE PUSO, A PROPÓSITO. El mismo bloque admite `installments_cost: 'seller'`, que
+ * traslada el costo de las cuotas AL VENDEDOR. No va: el propio checkout de Mercado Pago le
+ * dice al comprador «si hay intereses, los aplicará tu banco», y así queremos que siga. Poner
+ * ese campo sería pagar nosotros el financiamiento sin que nadie lo haya decidido.
+ *
+ * El campo es `config.payment_method.max_installments`, hermano de `config.online` y NO hijo
+ * suyo. Verificado en la referencia de Create order antes de escribirlo: una anidación mal
+ * puesta acá no da error, Mercado Pago la ignora en silencio y el límite nunca se aplica.
+ */
+export const MAX_CUOTAS = 3;
+
 export function armarOrdenMP({ idPedido, correo, montoTotal, titulo, urls }) {
   if (!ID_VALIDO_MP.test(idPedido)) {
     throw new Error(`external_reference inválido para Mercado Pago: ${idPedido}`);
@@ -256,6 +275,8 @@ export function armarOrdenMP({ idPedido, correo, montoTotal, titulo, urls }) {
       quantity: 1,
     }],
     config: {
+      // Tope de cuotas. Ver `MAX_CUOTAS`: va acá, al lado de `online`, no adentro.
+      payment_method: { max_installments: MAX_CUOTAS },
       online: {
         success_url: urls.exito,
         pending_url: urls.pendiente,
