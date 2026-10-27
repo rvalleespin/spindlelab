@@ -164,3 +164,11 @@ como "Perdido ✗ — silencio", revisar en ~1 mes o probar WhatsApp (+56 9 6167
 - **Siguiente ventana** (manual, no hay recordatorio activo): si no responde en ~5-7 días después
   de que Ramón mande este borrador, toque 2 con otro ángulo (precio desglosado, un adicional del
   diagnóstico, o pasar a WhatsApp +56 9 6167 3894 — tiene publicado).
+
+### Toque 1 ENVIADO (27-oct 14:12 UTC)
+
+- Ramón mandó el nudge. Verificado por `get_thread 1a168f41cb965668`:
+  el hilo pasó de 1 a 2 mensajes, el segundo (messageId `1a17db4940f4d6f5`) tiene label SENT,
+  desde `hola@spindlelab.cl`, a `eduardohb@hbcontadores.cl` con cc `Danaesp@hbcontadores.cl`.
+- **Ventana del toque 2:** ~1-3 noviembre (5-7 días) si Eduardo no responde antes.
+  **No hay recordatorio programado**: si Ramón quiere uno nuevo, pedirlo.
