@@ -43,7 +43,7 @@ import {
   VERSION_POLITICA,
 } from './pedidos.js';
 import {
-  crearOrdenMP, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES,
+  crearOrdenMP, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES, tacharCorreos,
 } from './cobro.js';
 import { avisarVenta } from './aviso.js';
 import { enviarCorreoDePago } from './correo.js';
@@ -728,6 +728,21 @@ export async function onRequestPost(contexto) {
       mp.message || (Array.isArray(mp.errors) && mp.errors[0] && (mp.errors[0].message || mp.errors[0].code)) || null,
     ].filter(Boolean).join(' · ').slice(0, 300) || '(sin cuerpo)';
     console.log(`[pedido] Mercado Pago rechazó la orden ${idPedido}: ${creada.error} · ${resumenMP}`);
+
+    // ── Y EL SOBRE, QUE ES LO QUE SOPORTE PIDE (27-oct-2026) ──────────────────────────
+    //
+    // El resumen de arriba sirve para leer de un vistazo qué pasó. Esto sirve para OTRA cosa:
+    // que Mercado Pago pueda encontrar su propio registro de esa llamada. Su soporte lo pidió
+    // textualmente —«compartan el x-request-id y el body/HTTP conservados de ese intento»— y
+    // no lo teníamos, así que hubo que desplegar para poder contestar una pregunta.
+    //
+    // ⚠️ Los correos se tachan. Este es el cuerpo que devuelve MERCADO PAGO, no el nuestro,
+    // así que normalmente no lleva datos del comprador; pero una API que valida puede
+    // devolver el campo que no le gustó, y `payer.email` es uno de los que mandamos. Tachar
+    // cuesta nada y el diagnóstico no se pierde: lo que importa es el código, no quién compró.
+    let sobre = '(sin cuerpo)';
+    try { sobre = tacharCorreos(JSON.stringify(creada.detalleMP)).slice(0, 900); } catch {}
+    console.log(`[pedido] x-request-id de Mercado Pago: ${creada.requestIdMP || '(no vino)'} · cuerpo: ${sobre}`);
 
     return jsonPost({
       ok: false, motivo: 'no-se-pudo-abrir-el-pago', id: idPedido,

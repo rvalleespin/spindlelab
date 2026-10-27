@@ -512,6 +512,19 @@ export const MS_LECTURA_ORDEN = 10000;
  * ser idéntico. Lo es porque sale del contrato ya congelado en D1, no de lo que mande el
  * navegador.
  */
+/**
+ * Tacha cualquier cosa con forma de correo. Se usa antes de registrar el cuerpo que devuelve
+ * Mercado Pago cuando rechaza una orden.
+ *
+ * Ese cuerpo es SUYO, no nuestro, así que normalmente no lleva datos del comprador. Pero una
+ * API que valida puede devolver el campo que no le gustó, y `payer.email` es uno de los que
+ * mandamos. Tachar no cuesta nada y el diagnóstico no se pierde: lo que sirve para depurar es
+ * el código del error, no quién compró.
+ */
+export function tacharCorreos(texto) {
+  return String(texto).replace(/[^\s"']+@[^\s"']+/g, '«correo»');
+}
+
 export async function crearOrdenMP(cuerpo, idempotencia, token, fetchImpl = fetch) {
   // El token se limpia antes de usarlo, por la misma razón que el secreto de la firma: uno
   // pegado con un espacio o un salto de línea al final se ve CARGADO en el panel y no sirve. El
@@ -546,6 +559,16 @@ export async function crearOrdenMP(cuerpo, idempotencia, token, fetchImpl = fetc
       ok: false, orden: null, estadoHttp: r.status,
       error: `http-${r.status}`,
       detalleMP: detalle,
+      // ── EL IDENTIFICADOR CON EL QUE MERCADO PAGO ENCUENTRA SU PROPIO REGISTRO ─────────
+      //
+      // Sin esto, cuando su API rechaza una orden lo único que se puede decirles es «me dio
+      // 403». Con esto se les puede decir CUÁL llamada. El 27-oct-2026 su soporte lo pidió
+      // textualmente para localizar una denegación que llevaba un día bloqueando el cobro, y
+      // no lo teníamos: la respuesta se leía y se tiraba el sobre.
+      //
+      // No es un dato nuestro ni del comprador: es el número de ticket interno de ellos.
+      requestIdMP: (r.headers && typeof r.headers.get === 'function'
+        && (r.headers.get('x-request-id') || r.headers.get('X-Request-Id'))) || null,
     };
   }
   let orden;
