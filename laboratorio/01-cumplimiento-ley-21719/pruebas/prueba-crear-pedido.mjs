@@ -186,6 +186,16 @@ console.log('=== 1. el camino feliz ===');
   eq('el cache-control no deja guardar', r.headers.get('cache-control'), 'no-store');
   falso('y NO manda el comodín de CORS', r.headers.get('access-control-allow-origin'));
 
+  // ── LA CONSTANCIA DEL CONSENTIMIENTO (27-oct-2026) ──────────────────────────────────
+  //
+  // El endpoint exige que "consiento" venga en true para vender, pero hasta hoy ese booleano
+  // se validaba y se tiraba: no quedaba escrito QUÉ aceptó la persona ni CUÁNDO. Si alguien
+  // reclamaba, no se podía reconstruir — en un producto que le cobra a otros justamente por
+  // no tener esto en orden.
+  cierto('queda escrito CUÁNDO consintió', /^[0-9]{4}-[0-9]{2}-[0-9]{2}T/.test(String(f.consentido_en)));
+  eq('y QUÉ versión de la política aceptó', f.politica_version, P.VERSION_POLITICA);
+  cierto('la versión no viene vacía', String(f.politica_version || '').length > 0);
+
   // Las señales contratadas salen de los DOS informes, no de uno.
   const contratadas = JSON.parse(f.senales_contratadas).sort();
   eq('contrata lo que el kit cierra, de los dos informes', contratadas, ['carga', 'cmp', 'cookies']);
@@ -224,6 +234,28 @@ console.log('=== 2. sin la revisión con navegador en caché no se vende ===');
   cierto('y una frase que dice qué hacer', String(j && j.detalle).length > 40);
   eq('NO crea pedido', filas(crudo).length, 0);
   eq('y no llama a Mercado Pago', red.llamadas.mp, 0);
+}
+
+/* ================================================================== */
+console.log('=== 2 bis. la constancia NO se escribe sola ===');
+{
+  // `crearPedido` no le pone fecha de consentimiento por su cuenta, y es a propósito: si lo
+  // hiciera, cualquier camino que llegara a insertar quedaría diciendo que hubo consentimiento,
+  // lo hubiera comprobado o no. Una constancia que se escribe sola no es constancia.
+  const { db, crudo } = baseNueva();
+  await A.crearPedido(db, {
+    id: 'vyc_' + 'a'.repeat(32),
+    dominio: 'ejemplo.cl',
+    correo: 'alguien@ejemplo.cl',
+    senales_contratadas: ['cmp'],
+    senales_fuera: [],
+    informe_json: '{}',
+    monto_neto: 149000,
+    monto_total: 177310,
+  });
+  const f = filas(crudo)[0];
+  eq('sin que se la pasen, la fecha queda vacía', f.consentido_en, null);
+  eq('y la versión también', f.politica_version, null);
 }
 
 /* ================================================================== */

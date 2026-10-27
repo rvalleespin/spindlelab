@@ -20,6 +20,7 @@
  *      Mercado Pago reintenta cada 15 minutos hasta recibir un 200.
  */
 
+import { readFileSync } from 'node:fs';
 import { rutaEnElRepo } from './rutas.mjs';
 
 const RUTA = rutaEnElRepo('verificaycumple/functions/api/pedidos.js', 'PEDIDOS_JS');
@@ -274,6 +275,20 @@ console.log('=== 8. el esquema guarda lo congelado y protege contra el evento re
   cierto('el informe final tiene dónde guardarse', /informe_final_json/.test(s));
   // Lo que NO debe estar: nada de la tarjeta, nunca.
   falso('no hay columna de tarjeta', /tarjeta|card|cvv|numero_tarjeta/i.test(s));
+}
+
+/* ================================================================== */
+console.log('=== la versión de la política, contra la página publicada ===');
+{
+  // `VERSION_POLITICA` y el número que imprime /privacidad/ son DOS COPIAS DEL MISMO HECHO.
+  // Si se separan, se guardan pedidos diciendo que alguien aceptó una versión que nunca estuvo
+  // publicada — y ninguna de las dos se queja, porque cada una es coherente consigo misma.
+  // Esta prueba es el único lugar donde se tocan.
+  const rutaPolitica = RUTA.replace(/functions\/api\/pedidos\.js$/, 'public/privacidad/index.html');
+  const plano = readFileSync(rutaPolitica, 'utf8').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+  const hallada = plano.match(/Versi[oó]n\s+([0-9]+\.[0-9]+)/i);
+  cierto('la página publica un número de versión', Boolean(hallada));
+  eq('y es el mismo que se guarda en cada pedido', hallada && hallada[1], m.VERSION_POLITICA);
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
