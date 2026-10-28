@@ -1448,6 +1448,11 @@
   .compra .pedir-consiento { margin-top: 12px; }
   .compra-ayuda { margin: 6px 0 0; font-size: .85rem; color: var(--texto-suave); }
   .compra-sigue { margin: 12px 0 0; font-size: .85rem; color: var(--texto-suave); }
+  .compra-rescate { margin: 10px 0 0; font-size: .88rem; }
+  .compra-rescate[hidden] { display: none; }
+  .boton-rescate { font: inherit; font-weight: 600; cursor: pointer; margin-left: 4px;
+    background: transparent; color: var(--verde-700); border: 0; padding: 0;
+    text-decoration: underline; text-underline-offset: 3px; }
   .compra label { display: block; margin-top: 4px; }
   .compra input[type="email"] { display: block; width: 100%; margin-top: 6px; padding: 10px 12px;
             font: inherit; border-radius: 9px; border: 1px solid rgba(0,0,0,.2); }
@@ -1607,6 +1612,12 @@
           <label class="pedir-consiento"><input type="checkbox" name="consiento" required> <span>Acepto que mis datos se usen para gestionar mi compra, según la <a href="/privacidad/">política de privacidad</a>.</span></label>
           <button type="submit" class="boton-ayuda">Ir a pagar</button>
           <p class="pedir-estado" role="status"></p>
+          <!-- Se muestra solo cuando el pago no se pudo abrir por algo NUESTRO. Quien llega
+               hasta acá es el visitante más interesado de todos: midió su sitio, leyó el precio
+               y decidió pagar. Dejarlo con un «vuelve a intentarlo» que va a volver a fallar es
+               perderlo justo en ese punto. -->
+          <p class="compra-rescate" hidden>No es cosa tuya, el problema está de nuestro lado.
+            <button type="button" class="boton-rescate" data-pedir="kit-sin-pago">Avísame cuando funcione</button></p>
           <p class="compra-sigue">Te llevamos a Mercado Pago. Vuelves a una página con tu pedido, y el enlace de esa página es tuyo: guárdalo.</p>
         </form>
 
@@ -3213,6 +3224,7 @@
     dominioCompra = a.getAttribute('data-dominio') || '';
     mensajeCompra('');
     soltarBotonCompra();
+    esconderRescate();
     panelCompra.hidden = false;
     // Se MUEVE junto al botón que se apretó, en vez de clonarlo: así nunca hay dos abiertos.
     a.insertAdjacentElement('afterend', panelCompra);
@@ -3294,6 +3306,55 @@
       : 'Volviste sin terminar el pago. Puedes intentarlo de nuevo cuando quieras.');
   });
 
+  const rescateCompra = panelCompra && panelCompra.querySelector('.compra-rescate');
+
+  /**
+   * Los fallos en los que el pago no se abrió por algo NUESTRO o de Mercado Pago.
+   *
+   * Los otros 409 del checkout —«vuelve a correr el chequeo», «este sitio no necesita el
+   * kit»— ya traen su propia salida y es clara. Ofrecerle encima un formulario a quien solo
+   * tiene que apretar un botón es ruido, y entrena a la gente a ignorar lo que la pantalla
+   * dice. Acá se ofrece únicamente cuando la persona no tiene nada que arreglar de su lado.
+   */
+  const FALLO_NUESTRO = ['no-se-pudo-abrir-el-pago', 'no-se-pudo-guardar'];
+
+  function esconderRescate() { if (rescateCompra) rescateCompra.hidden = true; }
+
+  /**
+   * Ofrece dejar los datos cuando el pago no se pudo abrir.
+   *
+   * ── POR QUÉ EXISTE (28-oct-2026) ──────────────────────────────────────────────────────
+   *
+   * Hasta hoy, un fallo del pago terminaba en «vuelve a intentarlo en un momento». Cuando la
+   * causa es nuestra —la cuenta de Mercado Pago bloqueada, por ejemplo— ese reintento falla
+   * otra vez, y la persona se va. Y no es cualquiera: es la única que midió su sitio, leyó las
+   * condiciones y decidió pagar $177.310.
+   *
+   * No inventa un camino nuevo: reutiliza el del formulario, el mismo que usa «Pregúntanos».
+   * El botón lleva `data-pedir`, así que lo atiende el mismo manejador delegado; con un valor
+   * que NO es «kit» cae al camino del formulario en vez de reabrir el panel de compra.
+   */
+  function ofrecerRescate(motivo) {
+    if (!rescateCompra) return;
+    const b = rescateCompra.querySelector('[data-pedir]');
+    const kit = document.querySelector('[data-pedir="kit"]');
+    if (b) {
+      b.setAttribute('data-dominio', dominioCompra || (kit && kit.getAttribute('data-dominio')) || '');
+      b.setAttribute('data-puntaje', (kit && kit.getAttribute('data-puntaje')) || '');
+      // Va en el correo que recibe SpindleLab: estos pedidos no son una pregunta cualquiera,
+      // son una venta que se cayó, y hay que tratarlos distinto.
+      b.setAttribute('data-desde', 'No se pudo abrir el pago' + (motivo ? ' · ' + motivo : ''));
+    }
+    // El correo ya lo escribió una vez. Pedírselo de nuevo, después de que algo falló por
+    // nuestra culpa, es la forma más fácil de que cierre la pestaña.
+    try {
+      const suyo = panelCompra.querySelector('input[name="correo"]');
+      const campo = form && form.elements['Email'];
+      if (suyo && suyo.value && campo && !campo.value) campo.value = suyo.value.trim();
+    } catch (e) { /* si el formulario no está, el botón igual lleva a él */ }
+    rescateCompra.hidden = false;
+  }
+
   if (panelCompra) panelCompra.addEventListener('submit', async function (ev) {
     ev.preventDefault();
     if (!panelCompra.reportValidity()) return;
@@ -3303,6 +3364,7 @@
     const boton = panelCompra.querySelector('button[type="submit"]');
     boton.disabled = true;
     boton.textContent = 'Abriendo el pago…';
+    esconderRescate();
     panelCompra.querySelectorAll('input').forEach(function (i) { i.disabled = true; });
     mensajeCompra('Estamos confirmando el precio de tu sitio.');
     // El mismo umbral y la misma frase que usa el chequeo rápido: dos definiciones distintas de
@@ -3334,6 +3396,9 @@
       mensajeCompra(r
         ? 'Tuvimos un problema de nuestro lado y no se te cobró nada. Vuelve a intentarlo, o escríbenos a ' + CONTACTO + '.'
         : 'No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo, o escríbenos a ' + CONTACTO + '.');
+      // Solo si contestó: si la conexión se cayó, el formulario tampoco va a poder enviarse, y
+      // ofrecerlo sería mandarla a otro callejón.
+      if (r) ofrecerRescate('respuesta-ilegible');
       return;
     }
 
@@ -3353,6 +3418,9 @@
     // técnico, que no le sirve a nadie en pantalla.
     mensajeCompra((data && data.detalle) ||
       'No pudimos abrir el pago. No se te cobró nada. Vuelve a intentarlo, y si te pasa de nuevo escríbenos a ' + CONTACTO + '.');
+    // Sin `motivo` tampoco sabemos de quién fue: ahí se ofrece igual, porque la persona no
+    // tiene cómo saber qué arreglar y el lado seguro es no perderla.
+    if (!data || !data.motivo || FALLO_NUESTRO.indexOf(data.motivo) >= 0) ofrecerRescate(data && data.motivo);
     if (data && data.motivo) console.warn('compra:', data.motivo);
   });
 
