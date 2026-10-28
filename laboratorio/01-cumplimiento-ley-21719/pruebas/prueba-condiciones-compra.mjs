@@ -39,6 +39,7 @@ const eq = (n, r, e) => {
   else { malo++; console.log(`  FALLA ${n}: esperado ${JSON.stringify(e)}, real ${JSON.stringify(r)}`); }
 };
 const cierto = (n, v) => eq(n, Boolean(v), true);
+const falso = (n, v) => eq(n, Boolean(v), false);
 
 /** El texto visible de un trozo del HTML, sin etiquetas y con los espacios normalizados. */
 const texto = (html) => html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
@@ -53,6 +54,13 @@ function trozo(desde, hasta, nombre) {
 }
 
 const PANEL = trozo('<form id="compra"', '</form>', 'el panel de compra');
+// El mismo trozo SIN quitar las etiquetas. `trozo` devuelve texto plano, que es lo que sirve
+// para comprobar lo que la persona lee; pero hay invariantes que viven en el marcado (un
+// atributo, un `hidden`) y ahí el texto plano no puede ver nada.
+const PANEL_HTML = (function () {
+  const i = HTML.indexOf('<form id="compra"');
+  return HTML.slice(i, HTML.indexOf('</form>', i));
+})();
 // ⚠️ DOS TRAMPAS EN ESTE RECORTE, y las dos daban un rojo que no era culpa del sitio:
 //
 //   1. El final NO puede ser el primer `</div>`: ese cierra el <svg> del sello, así que el
@@ -124,6 +132,37 @@ console.log('=== 4. la promesa de «una vez» sigue siendo cierta ===');
 // frase se volvería falsa y habría que declararlo. La prueba no puede saber qué se instala,
 // pero sí puede dejar la frase amarrada para que nadie la cambie sin pensarlo.
 cierto('el panel dice que es un pago único', /una vez/i.test(PANEL));
+
+/* ================================================================== */
+console.log('=== el rescate cuando el pago no se puede abrir (28-oct) ===');
+{
+  // Quien llega hasta «Ir a pagar» es el visitante mas interesado: midio su sitio, leyo las
+  // condiciones y decidio pagar. Hasta hoy, si el pago fallaba por algo NUESTRO, se iba con un
+  // «vuelve a intentarlo» que volvia a fallar.
+  cierto('el panel trae el bloque de rescate', /class="compra-rescate"/.test(PANEL_HTML));
+  cierto('y nace oculto', /class="compra-rescate"[^>]*\shidden/.test(PANEL_HTML));
+
+  // ⚠️ LA ASERCION QUE DE VERDAD CUIDA ALGO. El boton se apoya en el manejador delegado de
+  // `data-pedir`, y ese manejador trata el valor «kit» distinto: reabre el panel de COMPRA en
+  // vez de llevar al formulario. Si alguien «simplifica» este valor a «kit», el boton deja de
+  // rescatar nada y vuelve a dejar a la persona donde ya fallo — sin error, sin sintoma.
+  const btn = PANEL_HTML.match(/<button[^>]*class="boton-rescate"[^>]*>/);
+  cierto('el boton existe', Boolean(btn));
+  const valor = btn && (btn[0].match(/data-pedir="([^"]*)"/) || [])[1];
+  cierto('lleva data-pedir', Boolean(valor));
+  falso('y NO es «kit», que reabriria el panel de compra', valor === 'kit');
+
+  // La lista de fallos que ofrecen el rescate. Se mira en la fuente porque es una decision de
+  // producto escrita en una constante, no una forma de la pagina.
+  const FUENTE = HTML;
+  const lista = (FUENTE.match(/FALLO_NUESTRO = \[([^\]]*)\]/) || [])[1] || '';
+  cierto('incluye que no se pudo abrir el pago', /no-se-pudo-abrir-el-pago/.test(lista));
+  cierto('e incluye que no se pudo guardar', /no-se-pudo-guardar/.test(lista));
+  // Y lo que NO tiene que estar: los 409 que la persona SI puede resolver sola tienen su
+  // propia salida. Ofrecerle encima un formulario es ruido, y entrena a ignorar la pantalla.
+  falso('no ofrece rescate cuando falta la medicion', /sin-medicion/.test(lista));
+  falso('ni cuando el sitio no se pudo medir', /no-se-pudo-medir/.test(lista));
+}
 
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
