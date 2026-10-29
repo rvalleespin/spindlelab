@@ -42,3 +42,6 @@ Sin respuestas ni rebotes de los motor desde el 23-oct. Una respuesta de terrant
 
 ## Archivos clave (en `marketing/motor-revision-previa/`)
 `seguimiento/envios-motor-2026-10.csv` (registro), `seguimiento/hilos-enviados.json`, `seguimiento/pendientes-por-dia.md`, `borradores/` (textos, `html_correo.py`, `lint.mjs`), `corridas/` (mediciones del motor), `motor/` (scripts; `remedir.mjs` vuelve a medir un sitio).
+
+## Prueba de bandeja (29-oct)
+Ramón envió el mismo correo a manuvalleespin@hotmail.com y r.valleespin@gmail.com. Gmail llegó; en Hotmail no apareció, sin rebote. Pendiente: ver si está en Correo no deseado o demorado. `proveedor-correo.csv` clasifica a los 56 destinatarios por proveedor de correo (MX): 16 Microsoft, 20 Google, 20 otro. Usarlo en la lectura de resultados para separar respuestas por proveedor.
