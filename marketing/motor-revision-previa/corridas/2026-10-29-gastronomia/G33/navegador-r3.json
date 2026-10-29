@@ -1,0 +1,1248 @@
+{
+  "url": "https://lasbezanilla.cl/",
+  "cuando": "2026-10-29T16:47:52.955Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "_session_id",
+        "dominio": "lasbezanilla.cl",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://lasbezanilla.cl/",
+      "titulo": "lasbezanilla.cl",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://lasbezanilla.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "https://lasbezanilla.cl",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/sobre-nosotros",
+          "t": "Sobre nosotros"
+        },
+        {
+          "h": "/retiro-en-tienda",
+          "t": "Retiro en Tienda"
+        },
+        {
+          "h": "/tortas",
+          "t": "Tortas"
+        },
+        {
+          "h": "/tortas/tortas-blancas",
+          "t": "Tortas Blancas"
+        },
+        {
+          "h": "/tortas/tortas-de-chocolate",
+          "t": "Tortas de Chocolate"
+        },
+        {
+          "h": "/tortas/tortas-milhojas",
+          "t": "Tortas Milhojas"
+        },
+        {
+          "h": "/tortas",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/tentaciones",
+          "t": "Tentaciones"
+        },
+        {
+          "h": "/postres-y-especiales",
+          "t": "Postres y Especiales"
+        },
+        {
+          "h": "/confiteria",
+          "t": "Confitería"
+        },
+        {
+          "h": "/salados",
+          "t": "Salados"
+        },
+        {
+          "h": "/nuestras-tiendas",
+          "t": "Nuestras Tiendas"
+        },
+        {
+          "h": "/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/sobre-nosotros",
+          "t": "Sobre nosotros"
+        },
+        {
+          "h": "/retiro-en-tienda",
+          "t": "Retiro en Tienda"
+        },
+        {
+          "h": "/tortas/tortas-blancas",
+          "t": "Tortas Blancas"
+        },
+        {
+          "h": "/tortas/tortas-de-chocolate",
+          "t": "Tortas de Chocolate"
+        },
+        {
+          "h": "/tortas/tortas-milhojas",
+          "t": "Tortas Milhojas"
+        },
+        {
+          "h": "/tortas",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/tentaciones",
+          "t": "Tentaciones"
+        },
+        {
+          "h": "/postres-y-especiales",
+          "t": "Postres y Especiales"
+        },
+        {
+          "h": "/confiteria",
+          "t": "Confitería"
+        },
+        {
+          "h": "/salados",
+          "t": "Salados"
+        },
+        {
+          "h": "/nuestras-tiendas",
+          "t": "Nuestras Tiendas"
+        },
+        {
+          "h": "/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://lasbezanilla.cl/v2/checkout/information/",
+          "t": "Proceder al Pago"
+        },
+        {
+          "h": "/cart",
+          "t": "Ir al carro"
+        },
+        {
+          "h": "/nuestras-tiendas",
+          "t": "Leer más"
+        },
+        {
+          "h": "/rosario",
+          "t": ""
+        },
+        {
+          "h": "/tortas",
+          "t": ""
+        },
+        {
+          "h": "/confiteria",
+          "t": ""
+        },
+        {
+          "h": "/confiteria",
+          "t": "Confitería"
+        },
+        {
+          "h": "/tortas",
+          "t": ""
+        },
+        {
+          "h": "/tortas",
+          "t": "Tortas"
+        },
+        {
+          "h": "/tentaciones",
+          "t": ""
+        },
+        {
+          "h": "/tentaciones",
+          "t": "Tentaciones"
+        },
+        {
+          "h": "/postres-y-especiales",
+          "t": ""
+        },
+        {
+          "h": "/postres-y-especiales",
+          "t": "Postres y Especiales"
+        },
+        {
+          "h": "/hoja-huevo-moll-20p",
+          "t": ""
+        },
+        {
+          "h": "/hoja-huevo-moll-20p",
+          "t": "Hoja Huevo Moll 20P"
+        },
+        {
+          "h": "/torta-petit-don-carlos",
+          "t": ""
+        },
+        {
+          "h": "/torta-petit-don-carlos",
+          "t": "Torta Petit Don Carlos"
+        },
+        {
+          "h": "/mil-hoja-manjar-copiar-1",
+          "t": ""
+        },
+        {
+          "h": "/mil-hoja-manjar-copiar-1",
+          "t": "Petit Mil Hoja Manjar"
+        },
+        {
+          "h": "/don-carlos-copiar-2",
+          "t": ""
+        },
+        {
+          "h": "/don-carlos-copiar-2",
+          "t": "Petit Don Carlos"
+        },
+        {
+          "h": "/vicente-copiar",
+          "t": ""
+        },
+        {
+          "h": "/vicente-copiar",
+          "t": "Vicente"
+        },
+        {
+          "h": "/rosario-copiar",
+          "t": ""
+        },
+        {
+          "h": "/rosario-copiar",
+          "t": "Rosario"
+        },
+        {
+          "h": "/amelia-copiar",
+          "t": ""
+        },
+        {
+          "h": "/amelia-copiar",
+          "t": "Amelia"
+        },
+        {
+          "h": "/mil-hoja-manjar-copiar",
+          "t": ""
+        },
+        {
+          "h": "/mil-hoja-manjar-copiar",
+          "t": "Mil Hoja Manjar"
+        },
+        {
+          "h": "/don-jorge-copiar",
+          "t": ""
+        },
+        {
+          "h": "/don-jorge-copiar",
+          "t": "Don Jorge"
+        },
+        {
+          "h": "/jesus-copiar",
+          "t": ""
+        },
+        {
+          "h": "/jesus-copiar",
+          "t": "Jesus"
+        },
+        {
+          "h": "/gonzalo-copiar",
+          "t": ""
+        },
+        {
+          "h": "/gonzalo-copiar",
+          "t": "Gonzalo"
+        },
+        {
+          "h": "/olivia-copiar",
+          "t": ""
+        },
+        {
+          "h": "/olivia-copiar",
+          "t": "Olivia"
+        },
+        {
+          "h": "/don-carlos",
+          "t": "Agotado"
+        },
+        {
+          "h": "/don-carlos",
+          "t": "Don Carlos"
+        },
+        {
+          "h": "/mil-hoja-manjar",
+          "t": ""
+        },
+        {
+          "h": "/mil-hoja-manjar",
+          "t": "Mil Hoja Manjar"
+        },
+        {
+          "h": "/don-carlos-1",
+          "t": ""
+        },
+        {
+          "h": "/don-carlos-1",
+          "t": "Don Carlos"
+        },
+        {
+          "h": "/mermelada",
+          "t": "Sólo en tiendas"
+        },
+        {
+          "h": "/mermelada",
+          "t": "Mermelada"
+        },
+        {
+          "h": "/rosario",
+          "t": ""
+        },
+        {
+          "h": "/rosario",
+          "t": "Rosario"
+        },
+        {
+          "h": "/don-carlos-copiar",
+          "t": ""
+        },
+        {
+          "h": "/don-carlos-copiar",
+          "t": "Don Carlos"
+        },
+        {
+          "h": "/rosario-copiar",
+          "t": ""
+        },
+        {
+          "h": "/rosario-copiar",
+          "t": "Rosario"
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "Tortas"
+        },
+        {
+          "h": "/tentaciones",
+          "t": "Tentaciones"
+        },
+        {
+          "h": "/postres-y-especiales",
+          "t": "Postres y Especiales"
+        },
+        {
+          "h": "/confiteria",
+          "t": "Confitería"
+        },
+        {
+          "h": "/salados",
+          "t": "Salados"
+        },
+        {
+          "h": "/nuestras-tiendas",
+          "t": "Nuestras Tiendas"
+        },
+        {
+          "h": "/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/terminos-y-condiciones",
+          "t": "Términos y Condiciones Generales"
+        },
+        {
+          "h": "/politica-de-reembolso",
+          "t": "Política de reembolso"
+        },
+        {
+          "h": "/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/politica-de-privacidad",
+          "t": "Política de privacidad"
+        },
+        {
+          "h": "https://maps.google.com/maps?q=Santiago, , Chile",
+          "t": "lasbezanilla.cl\n\nSantiago\n- Chile"
+        },
+        {
+          "h": "https://jumpseller.cl/?utm_medium=store&utm_campaign=powered_by&utm_source=lasbezanilla-cl",
+          "t": "Desarrollado por Jumpseller"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://lasbezanilla.cl/politica-de-reembolso",
+          "t": "Política de reembolso"
+        },
+        {
+          "h": "https://lasbezanilla.cl/politica-de-privacidad",
+          "t": "Política de privacidad"
+        }
+      ],
+      "largo_texto": 1008,
+      "muestra": "0\nInicio\nSobre nosotros\nProductos\nNuestras Tiendas\nContacto\nRevise AQUÍ condiciones de entrega y locales habilitados para retiro en tienda.\n\nLeer más\nConfitería \nTortas \nTentaciones \nPostres y Especiales \nRecién Llegados\nHoja Huevo Moll 20P\n$39.700\nTorta Petit Don Carlos\n$16.500\nPetit Mil Hoja Manjar\n$16.500\nPetit Don Carlos\n$16.500\nVicente\n$34.900\nRosario\n$35.900\nAmelia\n$38.500\nMil Hoja Manjar\n$30.500\nDon Jorge\n$35.900\nJesus\n$35.900\nGonzalo\n$34.900\nOlivia\n$34.900\nProductos Destacados\nAgotado\nDo",
+      "cta_en_pantalla": [
+        {
+          "t": "contacto",
+          "h": "/contact"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 136
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "_session_id",
+        "dominio": "lasbezanilla.cl",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://lasbezanilla.cl/",
+      "titulo": "lasbezanilla.cl",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://lasbezanilla.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "https://lasbezanilla.cl",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/sobre-nosotros",
+          "t": "Sobre nosotros"
+        },
+        {
+          "h": "/retiro-en-tienda",
+          "t": "Retiro en Tienda"
+        },
+        {
+          "h": "/tortas",
+          "t": "Tortas"
+        },
+        {
+          "h": "/tortas/tortas-blancas",
+          "t": "Tortas Blancas"
+        },
+        {
+          "h": "/tortas/tortas-de-chocolate",
+          "t": "Tortas de Chocolate"
+        },
+        {
+          "h": "/tortas/tortas-milhojas",
+          "t": "Tortas Milhojas"
+        },
+        {
+          "h": "/tortas",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/tentaciones",
+          "t": "Tentaciones"
+        },
+        {
+          "h": "/postres-y-especiales",
+          "t": "Postres y Especiales"
+        },
+        {
+          "h": "/confiteria",
+          "t": "Confitería"
+        },
+        {
+          "h": "/salados",
+          "t": "Salados"
+        },
+        {
+          "h": "/nuestras-tiendas",
+          "t": "Nuestras Tiendas"
+        },
+        {
+          "h": "/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/sobre-nosotros",
+          "t": "Sobre nosotros"
+        },
+        {
+          "h": "/retiro-en-tienda",
+          "t": "Retiro en Tienda"
+        },
+        {
+          "h": "/tortas/tortas-blancas",
+          "t": "Tortas Blancas"
+        },
+        {
+          "h": "/tortas/tortas-de-chocolate",
+          "t": "Tortas de Chocolate"
+        },
+        {
+          "h": "/tortas/tortas-milhojas",
+          "t": "Tortas Milhojas"
+        },
+        {
+          "h": "/tortas",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/tentaciones",
+          "t": "Tentaciones"
+        },
+        {
+          "h": "/postres-y-especiales",
+          "t": "Postres y Especiales"
+        },
+        {
+          "h": "/confiteria",
+          "t": "Confitería"
+        },
+        {
+          "h": "/salados",
+          "t": "Salados"
+        },
+        {
+          "h": "/nuestras-tiendas",
+          "t": "Nuestras Tiendas"
+        },
+        {
+          "h": "/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://lasbezanilla.cl/v2/checkout/information/",
+          "t": "Proceder al Pago"
+        },
+        {
+          "h": "/cart",
+          "t": "Ir al carro"
+        },
+        {
+          "h": "/nuestras-tiendas",
+          "t": "Leer más"
+        },
+        {
+          "h": "/rosario",
+          "t": ""
+        },
+        {
+          "h": "/tortas",
+          "t": ""
+        },
+        {
+          "h": "/confiteria",
+          "t": ""
+        },
+        {
+          "h": "/confiteria",
+          "t": "Confitería"
+        },
+        {
+          "h": "/tortas",
+          "t": ""
+        },
+        {
+          "h": "/tortas",
+          "t": "Tortas"
+        },
+        {
+          "h": "/tentaciones",
+          "t": ""
+        },
+        {
+          "h": "/tentaciones",
+          "t": "Tentaciones"
+        },
+        {
+          "h": "/postres-y-especiales",
+          "t": ""
+        },
+        {
+          "h": "/postres-y-especiales",
+          "t": "Postres y Especiales"
+        },
+        {
+          "h": "/hoja-huevo-moll-20p",
+          "t": ""
+        },
+        {
+          "h": "/hoja-huevo-moll-20p",
+          "t": "Hoja Huevo Moll 20P"
+        },
+        {
+          "h": "/torta-petit-don-carlos",
+          "t": ""
+        },
+        {
+          "h": "/torta-petit-don-carlos",
+          "t": "Torta Petit Don Carlos"
+        },
+        {
+          "h": "/mil-hoja-manjar-copiar-1",
+          "t": ""
+        },
+        {
+          "h": "/mil-hoja-manjar-copiar-1",
+          "t": "Petit Mil Hoja Manjar"
+        },
+        {
+          "h": "/don-carlos-copiar-2",
+          "t": ""
+        },
+        {
+          "h": "/don-carlos-copiar-2",
+          "t": "Petit Don Carlos"
+        },
+        {
+          "h": "/vicente-copiar",
+          "t": ""
+        },
+        {
+          "h": "/vicente-copiar",
+          "t": "Vicente"
+        },
+        {
+          "h": "/rosario-copiar",
+          "t": ""
+        },
+        {
+          "h": "/rosario-copiar",
+          "t": "Rosario"
+        },
+        {
+          "h": "/amelia-copiar",
+          "t": ""
+        },
+        {
+          "h": "/amelia-copiar",
+          "t": "Amelia"
+        },
+        {
+          "h": "/mil-hoja-manjar-copiar",
+          "t": ""
+        },
+        {
+          "h": "/mil-hoja-manjar-copiar",
+          "t": "Mil Hoja Manjar"
+        },
+        {
+          "h": "/don-jorge-copiar",
+          "t": ""
+        },
+        {
+          "h": "/don-jorge-copiar",
+          "t": "Don Jorge"
+        },
+        {
+          "h": "/jesus-copiar",
+          "t": ""
+        },
+        {
+          "h": "/jesus-copiar",
+          "t": "Jesus"
+        },
+        {
+          "h": "/gonzalo-copiar",
+          "t": ""
+        },
+        {
+          "h": "/gonzalo-copiar",
+          "t": "Gonzalo"
+        },
+        {
+          "h": "/olivia-copiar",
+          "t": ""
+        },
+        {
+          "h": "/olivia-copiar",
+          "t": "Olivia"
+        },
+        {
+          "h": "/don-carlos",
+          "t": "Agotado"
+        },
+        {
+          "h": "/don-carlos",
+          "t": "Don Carlos"
+        },
+        {
+          "h": "/mil-hoja-manjar",
+          "t": ""
+        },
+        {
+          "h": "/mil-hoja-manjar",
+          "t": "Mil Hoja Manjar"
+        },
+        {
+          "h": "/don-carlos-1",
+          "t": ""
+        },
+        {
+          "h": "/don-carlos-1",
+          "t": "Don Carlos"
+        },
+        {
+          "h": "/mermelada",
+          "t": "Sólo en tiendas"
+        },
+        {
+          "h": "/mermelada",
+          "t": "Mermelada"
+        },
+        {
+          "h": "/rosario",
+          "t": ""
+        },
+        {
+          "h": "/rosario",
+          "t": "Rosario"
+        },
+        {
+          "h": "/don-carlos-copiar",
+          "t": ""
+        },
+        {
+          "h": "/don-carlos-copiar",
+          "t": "Don Carlos"
+        },
+        {
+          "h": "/rosario-copiar",
+          "t": ""
+        },
+        {
+          "h": "/rosario-copiar",
+          "t": "Rosario"
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "https://lasbezanilla.cl/admin/settings/general/store_info",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "Tortas"
+        },
+        {
+          "h": "/tentaciones",
+          "t": "Tentaciones"
+        },
+        {
+          "h": "/postres-y-especiales",
+          "t": "Postres y Especiales"
+        },
+        {
+          "h": "/confiteria",
+          "t": "Confitería"
+        },
+        {
+          "h": "/salados",
+          "t": "Salados"
+        },
+        {
+          "h": "/nuestras-tiendas",
+          "t": "Nuestras Tiendas"
+        },
+        {
+          "h": "/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/terminos-y-condiciones",
+          "t": "Términos y Condiciones Generales"
+        },
+        {
+          "h": "/politica-de-reembolso",
+          "t": "Política de reembolso"
+        },
+        {
+          "h": "/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/politica-de-privacidad",
+          "t": "Política de privacidad"
+        },
+        {
+          "h": "https://maps.google.com/maps?q=Santiago, , Chile",
+          "t": "lasbezanilla.cl\n\nSantiago\n- Chile"
+        },
+        {
+          "h": "https://jumpseller.cl/?utm_medium=store&utm_campaign=powered_by&utm_source=lasbezanilla-cl",
+          "t": "Desarrollado por Jumpseller"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://lasbezanilla.cl/politica-de-reembolso",
+          "t": "Política de reembolso"
+        },
+        {
+          "h": "https://lasbezanilla.cl/politica-de-privacidad",
+          "t": "Política de privacidad"
+        }
+      ],
+      "largo_texto": 1008,
+      "muestra": "0\nInicio\nSobre nosotros\nProductos\nNuestras Tiendas\nContacto\nRevise AQUÍ condiciones de entrega y locales habilitados para retiro en tienda.\n\nLeer más\nConfitería \nTortas \nTentaciones \nPostres y Especiales \nRecién Llegados\nHoja Huevo Moll 20P\n$39.700\nTorta Petit Don Carlos\n$16.500\nPetit Mil Hoja Manjar\n$16.500\nPetit Don Carlos\n$16.500\nVicente\n$34.900\nRosario\n$35.900\nAmelia\n$38.500\nMil Hoja Manjar\n$30.500\nDon Jorge\n$35.900\nJesus\n$35.900\nGonzalo\n$34.900\nOlivia\n$34.900\nProductos Destacados\nAgotado\nDo",
+      "cta_en_pantalla": [
+        {
+          "t": "contacto",
+          "h": "/contact"
+        },
+        {
+          "t": "contacto",
+          "h": "/contact"
+        },
+        {
+          "t": "contacto",
+          "h": "/contact"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 136
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://lasbezanilla.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://code.jquery.com/jquery-3.7.1.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/color_pickers.min.css?1791899897",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/app.min.css?1736816151",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://files.jumpseller.com/common/packs/js/jumpseller-2.0.1-bf38c9a0f664f9e3.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/theme.min.js?1736816151",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/main.min.js?1736816151",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images.jumpseller.com/store/lasbezanilla-cl/store/logo/Logo-Las-Bezanilla_600x.webp?1736817623",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/b5a88557b62145ff5bfb/banner_home1.jpg?1738782300",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/b2d7ce98afc40861e004/banner_home_3.jpg?1791159992",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/Phosphor.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K4.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/raleway/v37/1Ptug8zYS_SKggPNyC0ITw.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/albertsans/v4/i7dOIFdwYjGaAMFtZd_QA1ZbYFc.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/0e0e483d4e181e586be7/ejemploproductoshome-05_1500x.webp?1737229519",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/a3a988d9e64d9858f7ef/gonzalo_538fa733-d9b8-4f32-9074-bb5a4fdf915e.jpg?1737229719",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/67815005/thumb/306/306?1758724535",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/77235b9e82c2586ea12c/ejemploproductoshome-03_1500x.webp?1737229899",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/5c120719fef83b50591c/pie-limon.jpg?1737230061",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/66002129/thumb/306/306?1753984336",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/66001980/thumb/306/306?1753984116",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/65493056/thumb/306/306?1752876643",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/65493054/thumb/306/306?1752876636",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/59084991/resize/32/32?1736817624",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/59083394/thumb/306/306?1736816231",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/59083419/thumb/306/306?1736816237",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/59083426/thumb/306/306?1736816239",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/59083452/thumb/306/306?1736816245",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/59132861/thumb/306/306?1736900553",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdnx.jumpseller.com/lasbezanilla-cl/image/65492868/thumb/306/306?1752876237",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/eb2249b3124b8eff2f3c/descarga_1.png?1737515784",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/804789f70d3094eed5d4/ubereats.png?1737515803",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/79403600725d3ce63cbc/Rappi_logo_svg.png?1737515770",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://assets.jumpseller.com/public/placeholder/themes/payments/pay-wire-es.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "_session_id",
+      "desde": "lasbezanilla.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 1386463,
+    "al_abrir_bytes": 1232048,
+    "n_peticiones": 45,
+    "mas_pesados": [
+      {
+        "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/0e0e483d4e181e586be7/ejemploproductoshome-05_1500x.webp?1737229519",
+        "bytes": 187871
+      },
+      {
+        "url": "https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/Phosphor.woff2",
+        "bytes": 148066
+      },
+      {
+        "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/b5a88557b62145ff5bfb/banner_home1.jpg?1738782300",
+        "bytes": 113233
+      },
+      {
+        "url": "https://assets.jumpseller.com/store/lasbezanilla-cl/themes/816405/settings/a3a988d9e64d9858f7ef/gonzalo_538fa733-d9b8-4f32-9074-bb5a4fdf915e.jpg?1737229719",
+        "bytes": 97958
+      }
+    ]
+  },
+  "html_len": 106038
+}

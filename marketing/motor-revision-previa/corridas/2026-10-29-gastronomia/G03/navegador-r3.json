@@ -1,0 +1,3520 @@
+{
+  "url": "https://singularcoffee.cl/",
+  "cuando": "2026-10-29T16:32:16.891Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "singularcoffee.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "singularcoffee.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "singularcoffee.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "singularcoffee.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".singularcoffee.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_ga_6PTX1WKC4B",
+        "dominio": ".singularcoffee.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".singularcoffee.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "__kla_id",
+        "dominio": "singularcoffee.cl",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://singularcoffee.cl/",
+      "titulo": "Singular Coffee Roasters – SINGULAR COFFEE ROASTERS",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://singularcoffee.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/localization",
+          "accion_abs": "https://singularcoffee.cl/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/localization",
+          "accion_abs": "https://singularcoffee.cl/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://singularcoffee.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart",
+          "accion_abs": "https://singularcoffee.cl/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/contact#Newsletter--newsletter",
+          "accion_abs": "https://singularcoffee.cl/contact#Newsletter--newsletter",
+          "metodo": "post",
+          "campos": 2,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        },
+        {
+          "action": "/localization",
+          "accion_abs": "https://singularcoffee.cl/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "",
+          "accion_abs": "https://singularcoffee.cl/",
+          "metodo": "get",
+          "campos": 3,
+          "requeridos": 3,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir al contenido"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "Argentina\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Bolivia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Brasil\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Chile\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Colombia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Ecuador\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Paraguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Perú\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Uruguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Venezuela\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "/account",
+          "t": "Cuenta"
+        },
+        {
+          "h": "/cart",
+          "t": "Carrito\n\n    \n      \n        0"
+        },
+        {
+          "h": "https://instagram.com/singularcoffeeroasters",
+          "t": "Instagram"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "Argentina\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Bolivia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Brasil\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Chile\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Colombia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Ecuador\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Paraguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Perú\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Uruguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Venezuela\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "/account",
+          "t": "Cuenta"
+        },
+        {
+          "h": "/cart",
+          "t": "Carrito"
+        },
+        {
+          "h": "#",
+          "t": "Comprar"
+        },
+        {
+          "h": "/collections/origen",
+          "t": "Café"
+        },
+        {
+          "h": "/products/brasil-boa-vista",
+          "t": "Brasil"
+        },
+        {
+          "h": "/collections/origen-costa-rica",
+          "t": "Costa Rica"
+        },
+        {
+          "h": "/collections/origen-colombia",
+          "t": "Colombia"
+        },
+        {
+          "h": "/collections/origen-honduras",
+          "t": "Honduras"
+        },
+        {
+          "h": "/collections/origen-kenia-1",
+          "t": "Kenia"
+        },
+        {
+          "h": "/collections/panama",
+          "t": "Panamá"
+        },
+        {
+          "h": "/products/peru-palma-pampa",
+          "t": "Peru"
+        },
+        {
+          "h": "/collections/origen-ruanda",
+          "t": "Ruanda"
+        },
+        {
+          "h": "/collections/origen",
+          "t": "Ver todos"
+        },
+        {
+          "h": "/collections/panama",
+          "t": "Panamá"
+        },
+        {
+          "h": "/collections/origen-africa",
+          "t": "África"
+        },
+        {
+          "h": "/collections/apparel",
+          "t": "Merch"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Academy"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Talleres"
+        },
+        {
+          "h": "/products/taller-de-filtrado-metodo-v60",
+          "t": "Talleres"
+        },
+        {
+          "h": "/products/cupping-singular-coffee-roasters",
+          "t": "Cata de Café"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Conócenos"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Sobre Nosotros"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/collections/origen",
+          "t": "Café"
+        },
+        {
+          "h": "/products/brasil-boa-vista",
+          "t": "Brasil"
+        },
+        {
+          "h": "/collections/origen-costa-rica",
+          "t": "Costa Rica"
+        },
+        {
+          "h": "/collections/origen-colombia",
+          "t": "Colombia"
+        },
+        {
+          "h": "/collections/origen-honduras",
+          "t": "Honduras"
+        },
+        {
+          "h": "/collections/origen-kenia-1",
+          "t": "Kenia"
+        },
+        {
+          "h": "/collections/panama",
+          "t": "Panamá"
+        },
+        {
+          "h": "/products/peru-palma-pampa",
+          "t": "Peru"
+        },
+        {
+          "h": "/collections/origen-ruanda",
+          "t": "Ruanda"
+        },
+        {
+          "h": "/collections/origen",
+          "t": "Ver todos"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Academy"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Talleres"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Conócenos"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Sobre Nosotros"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://instagram.com/singularcoffeeroasters",
+          "t": "Instagram"
+        },
+        {
+          "h": "#",
+          "t": "Comprar"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Academy"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Conócenos"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": ""
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "DESCUBRE"
+        },
+        {
+          "h": "/collections/panama",
+          "t": "COMPRAR"
+        },
+        {
+          "h": "/products/edy-gallo-natural-moreno-coffee-farm-panama",
+          "t": ""
+        },
+        {
+          "h": "/products/edy-gallo-natural-moreno-coffee-farm-panama",
+          "t": "Edy Gallo Natural, Moreno Coffee Farm, Panamá\n\n$25,000"
+        },
+        {
+          "h": "/products/sl-28-honey-moreno-coffee-farm-panama",
+          "t": ""
+        },
+        {
+          "h": "/products/sl-28-honey-moreno-coffee-farm-panama",
+          "t": "SL-28 Honey, Moreno Coffee Farm, Panamá\n\n$25,000"
+        },
+        {
+          "h": "/products/catuai-natural-lote-28-mi-finquita-panama",
+          "t": ""
+        },
+        {
+          "h": "/products/catuai-natural-lote-28-mi-finquita-panama",
+          "t": "Catuaí Natural Lote 28, Mi Finquita, Panamá\n\n$25,000"
+        },
+        {
+          "h": "/collections/apparel",
+          "t": "VER MÁS"
+        },
+        {
+          "h": "/pages/locales-singular-coffee-roasters",
+          "t": "TIENDAS"
+        },
+        {
+          "h": "/pages/nuestra-historia",
+          "t": "NUESTRA HISTORIA"
+        },
+        {
+          "h": "/search",
+          "t": "Búsqueda"
+        },
+        {
+          "h": "https://singularcoffee.myshopify.com/apps/frequently-asked-questions",
+          "t": "Preguntas frecuentes"
+        },
+        {
+          "h": "/pages/politicas-de-privacidad",
+          "t": "Políticas de privacidad"
+        },
+        {
+          "h": "/pages/politicas-de-envio",
+          "t": "Políticas de envío"
+        },
+        {
+          "h": "/pages/politicas-de-reembolso",
+          "t": "Políticas de reembolso"
+        },
+        {
+          "h": "/pages/terminos-y-condiciones",
+          "t": "Terminos y condiciones"
+        },
+        {
+          "h": "#",
+          "t": "Comprar"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Academy"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Conócenos"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "#",
+          "t": "Argentina\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Bolivia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Brasil\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Chile\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Colombia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Ecuador\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Paraguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Perú\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Uruguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Venezuela\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "https://singularcoffee.cl",
+          "t": "© SINGULAR COFFEE ROASTERS 2026"
+        },
+        {
+          "h": "https://es.shopify.com/?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore",
+          "t": "Tecnología de Shopify"
+        },
+        {
+          "h": "#",
+          "t": "Cerrar"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://singularcoffee.cl/pages/politicas-de-privacidad",
+          "t": "Políticas de privacidad"
+        },
+        {
+          "h": "https://singularcoffee.cl/pages/politicas-de-envio",
+          "t": "Políticas de envío"
+        },
+        {
+          "h": "https://singularcoffee.cl/pages/politicas-de-reembolso",
+          "t": "Políticas de reembolso"
+        }
+      ],
+      "largo_texto": 1464,
+      "muestra": "Ir al contenido\nInstagram\nMoneda\nCLP $\nCuenta\nBúsqueda\nCarrito\nComprar\nAcademy\nConócenos\nContacto\nSingular Coffee Academy\n\nRevisa las fechas de nuestros talleres y catas de café.\n\nDESCUBRE\nRealizamos envíos a todo Chile\nRealizamos envíos a todo Chile\nRealizamos envíos a todo Chile\nRealizamos envíos a todo Chile\nRealizamos envíos a todo Chile\n\nPRUEBA. DISFRUTA. REPITE.\n\nTu Ritual Diario\n\nCreemos en esos momentos donde una taza de café se cruza con tus mejores ideas.\n\nRecién llegados\nCOMPRAR\n \nAGR",
+      "cta_en_pantalla": [
+        {
+          "t": "carrito",
+          "h": "/cart"
+        },
+        {
+          "t": "comprar",
+          "h": ""
+        },
+        {
+          "t": "comprar",
+          "h": "#"
+        },
+        {
+          "t": "contacto",
+          "h": "/pages/contact"
+        },
+        {
+          "t": "",
+          "h": ""
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 17,
+        "palabras": 220
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "singularcoffee.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "singularcoffee.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "singularcoffee.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "singularcoffee.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".singularcoffee.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_ga_6PTX1WKC4B",
+        "dominio": ".singularcoffee.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".singularcoffee.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "__kla_id",
+        "dominio": "singularcoffee.cl",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://singularcoffee.cl/",
+      "titulo": "Singular Coffee Roasters – SINGULAR COFFEE ROASTERS",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://singularcoffee.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/localization",
+          "accion_abs": "https://singularcoffee.cl/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/localization",
+          "accion_abs": "https://singularcoffee.cl/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://singularcoffee.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart",
+          "accion_abs": "https://singularcoffee.cl/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/contact#Newsletter--newsletter",
+          "accion_abs": "https://singularcoffee.cl/contact#Newsletter--newsletter",
+          "metodo": "post",
+          "campos": 2,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        },
+        {
+          "action": "/localization",
+          "accion_abs": "https://singularcoffee.cl/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "",
+          "accion_abs": "https://singularcoffee.cl/",
+          "metodo": "get",
+          "campos": 3,
+          "requeridos": 3,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir al contenido"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "Argentina\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Bolivia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Brasil\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Chile\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Colombia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Ecuador\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Paraguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Perú\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Uruguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Venezuela\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "/account",
+          "t": "Cuenta"
+        },
+        {
+          "h": "/cart",
+          "t": "Carrito\n\n    \n      \n        0"
+        },
+        {
+          "h": "https://instagram.com/singularcoffeeroasters",
+          "t": "Instagram"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "Argentina\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Bolivia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Brasil\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Chile\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Colombia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Ecuador\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Paraguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Perú\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Uruguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Venezuela\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "/account",
+          "t": "Cuenta"
+        },
+        {
+          "h": "/cart",
+          "t": "Carrito"
+        },
+        {
+          "h": "#",
+          "t": "Comprar"
+        },
+        {
+          "h": "/collections/origen",
+          "t": "Café"
+        },
+        {
+          "h": "/products/brasil-boa-vista",
+          "t": "Brasil"
+        },
+        {
+          "h": "/collections/origen-costa-rica",
+          "t": "Costa Rica"
+        },
+        {
+          "h": "/collections/origen-colombia",
+          "t": "Colombia"
+        },
+        {
+          "h": "/collections/origen-honduras",
+          "t": "Honduras"
+        },
+        {
+          "h": "/collections/origen-kenia-1",
+          "t": "Kenia"
+        },
+        {
+          "h": "/collections/panama",
+          "t": "Panamá"
+        },
+        {
+          "h": "/products/peru-palma-pampa",
+          "t": "Peru"
+        },
+        {
+          "h": "/collections/origen-ruanda",
+          "t": "Ruanda"
+        },
+        {
+          "h": "/collections/origen",
+          "t": "Ver todos"
+        },
+        {
+          "h": "/collections/panama",
+          "t": "Panamá"
+        },
+        {
+          "h": "/collections/origen-africa",
+          "t": "África"
+        },
+        {
+          "h": "/collections/apparel",
+          "t": "Merch"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Academy"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Talleres"
+        },
+        {
+          "h": "/products/taller-de-filtrado-metodo-v60",
+          "t": "Talleres"
+        },
+        {
+          "h": "/products/cupping-singular-coffee-roasters",
+          "t": "Cata de Café"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Conócenos"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Sobre Nosotros"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/collections/origen",
+          "t": "Café"
+        },
+        {
+          "h": "/products/brasil-boa-vista",
+          "t": "Brasil"
+        },
+        {
+          "h": "/collections/origen-costa-rica",
+          "t": "Costa Rica"
+        },
+        {
+          "h": "/collections/origen-colombia",
+          "t": "Colombia"
+        },
+        {
+          "h": "/collections/origen-honduras",
+          "t": "Honduras"
+        },
+        {
+          "h": "/collections/origen-kenia-1",
+          "t": "Kenia"
+        },
+        {
+          "h": "/collections/panama",
+          "t": "Panamá"
+        },
+        {
+          "h": "/products/peru-palma-pampa",
+          "t": "Peru"
+        },
+        {
+          "h": "/collections/origen-ruanda",
+          "t": "Ruanda"
+        },
+        {
+          "h": "/collections/origen",
+          "t": "Ver todos"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Academy"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Talleres"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Conócenos"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Sobre Nosotros"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://instagram.com/singularcoffeeroasters",
+          "t": "Instagram"
+        },
+        {
+          "h": "#",
+          "t": "Comprar"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Academy"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Conócenos"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": ""
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "DESCUBRE"
+        },
+        {
+          "h": "/collections/panama",
+          "t": "COMPRAR"
+        },
+        {
+          "h": "/products/edy-gallo-natural-moreno-coffee-farm-panama",
+          "t": ""
+        },
+        {
+          "h": "/products/edy-gallo-natural-moreno-coffee-farm-panama",
+          "t": "Edy Gallo Natural, Moreno Coffee Farm, Panamá\n\n$25,000"
+        },
+        {
+          "h": "/products/sl-28-honey-moreno-coffee-farm-panama",
+          "t": ""
+        },
+        {
+          "h": "/products/sl-28-honey-moreno-coffee-farm-panama",
+          "t": "SL-28 Honey, Moreno Coffee Farm, Panamá\n\n$25,000"
+        },
+        {
+          "h": "/products/catuai-natural-lote-28-mi-finquita-panama",
+          "t": ""
+        },
+        {
+          "h": "/products/catuai-natural-lote-28-mi-finquita-panama",
+          "t": "Catuaí Natural Lote 28, Mi Finquita, Panamá\n\n$25,000"
+        },
+        {
+          "h": "/collections/apparel",
+          "t": "VER MÁS"
+        },
+        {
+          "h": "/pages/locales-singular-coffee-roasters",
+          "t": "TIENDAS"
+        },
+        {
+          "h": "/pages/nuestra-historia",
+          "t": "NUESTRA HISTORIA"
+        },
+        {
+          "h": "/search",
+          "t": "Búsqueda"
+        },
+        {
+          "h": "https://singularcoffee.myshopify.com/apps/frequently-asked-questions",
+          "t": "Preguntas frecuentes"
+        },
+        {
+          "h": "/pages/politicas-de-privacidad",
+          "t": "Políticas de privacidad"
+        },
+        {
+          "h": "/pages/politicas-de-envio",
+          "t": "Políticas de envío"
+        },
+        {
+          "h": "/pages/politicas-de-reembolso",
+          "t": "Políticas de reembolso"
+        },
+        {
+          "h": "/pages/terminos-y-condiciones",
+          "t": "Terminos y condiciones"
+        },
+        {
+          "h": "#",
+          "t": "Comprar"
+        },
+        {
+          "h": "/collections/actividades",
+          "t": "Academy"
+        },
+        {
+          "h": "/pages/sobre-nosotros",
+          "t": "Conócenos"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "#",
+          "t": "Argentina\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Bolivia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Brasil\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Chile\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Colombia\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Ecuador\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Paraguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Perú\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Uruguay\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "#",
+          "t": "Venezuela\n\n                    (CLP\n                    $)"
+        },
+        {
+          "h": "https://singularcoffee.cl",
+          "t": "© SINGULAR COFFEE ROASTERS 2026"
+        },
+        {
+          "h": "https://es.shopify.com/?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore",
+          "t": "Tecnología de Shopify"
+        },
+        {
+          "h": "#",
+          "t": "Cerrar"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://singularcoffee.cl/pages/politicas-de-privacidad",
+          "t": "Políticas de privacidad"
+        },
+        {
+          "h": "https://singularcoffee.cl/pages/politicas-de-envio",
+          "t": "Políticas de envío"
+        },
+        {
+          "h": "https://singularcoffee.cl/pages/politicas-de-reembolso",
+          "t": "Políticas de reembolso"
+        }
+      ],
+      "largo_texto": 1464,
+      "muestra": "Ir al contenido\nInstagram\nMoneda\nCLP $\nCuenta\nBúsqueda\nCarrito\nComprar\nAcademy\nConócenos\nContacto\nSingular Coffee Academy\n\nRevisa las fechas de nuestros talleres y catas de café.\n\nDESCUBRE\nRealizamos envíos a todo Chile\nRealizamos envíos a todo Chile\nRealizamos envíos a todo Chile\nRealizamos envíos a todo Chile\nRealizamos envíos a todo Chile\n\nPRUEBA. DISFRUTA. REPITE.\n\nTu Ritual Diario\n\nCreemos en esos momentos donde una taza de café se cruza con tus mejores ideas.\n\nRecién llegados\nCOMPRAR\n \nAGR",
+      "cta_en_pantalla": [
+        {
+          "t": "",
+          "h": ""
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 17,
+        "palabras": 220
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/storefront/assets/storefront/storefronts.moderate.specrules-eb468f32.json",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/fonts/dm_sans/dmsans_n4.ec80bd4dd7e1a334c969c265873491ae56018d72.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/fonts/poppins/poppins_n6.aa29d4918bc243723d56b59572e18228ed0786f6.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/fonts/dm_sans/dmsans_n7.97e21d81502002291ea1de8aefb79170c6946ce5.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/theme.css?v=105007609395970588771768413290",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/swatches.css?v=157844926215047500451768413290",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/vendor.js?v=9664966025159750891768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/theme.js?v=122998032327029019861768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/checkouts/internal/preloads.js?locale=es-CL",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/storefront/assets/storefront/load_feature-ed94c51f.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-318ab40a.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a1881b-53ea-7f03-a018-51cb02251c00/forms-2648/assets/shopify-forms-loader.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.14.0.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/Logo_web.png?v=1750782872&width=270",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/recently-viewed.js?v=65653390500397507271768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/load-rellax.js?v=6756901791972731931768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/parallax-hero.js?v=109394791840204562251768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/CYBER-2_88d83735-b793-48af-a35e-3d9ea203825f.png?v=1785769880&width=1296",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/announcement.js?v=41774303127627989861768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/ticker.js?v=110416271335913772181768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/WhatsAppImage2026-10-15at12.30.46.jpg?v=1792079427&width=640",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/WhatsAppImage2026-10-15at12.30.46_1.jpg?v=1792086124&width=640",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/WhatsAppImage2026-08-11at12.31.52.jpg?v=1786466201&width=640",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/product-info.js?v=38535501611784670381768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/logos.js?v=151760822933074744541768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/newsletter.js?v=121149289364646711221768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/storefront/standard-actions.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/wpm/b56a6403cw68eaaf33p29d38119m7a4be5cam.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/s/trekkie.storefront.25c1cbbda0e2f0b638912871b921232f1392e9e9.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/storefront/assets/shop_events_listener-4e26a9ce.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/fonts/dm_sans/dmsans_n5.8a0f1984c77eb7186ceb87c4da2173ff65eb012e.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/fonts/dm_sans/dmsans_i4.b8fe05e69ee95d5a53155c346957d8cbf5081c1a.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/WhatsApp_Image_2026-05-27_at_11.50.31.jpg?v=1779897141&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/WhatsApp_Image_2025-06-13_at_10.22.33.jpg?v=1768067714&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/ChatGPT_Image_25_jun_2026_10_15_05_a.m..png?v=1782397001&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/WhatsAppImage2026-04-08at11.19.55.jpg?v=1775662031&width=540",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/DSCF7597.jpg?v=1762282667&width=540",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/DSCF9977.jpg?v=1782247524&width=720",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_BuOUs61v.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.document_DMcRsBXN.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.window_CAbVMZox.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.init_BASu_Hxb.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_oML0Hu4L.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.networkErrorMessages_Du380vAr.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-cart-sync_Dj6CfXoY.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.defineInitFunction_CIjOjzsO.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.casing_U_9x-Om3.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.utils_K8y2k-BJ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.v4_C3N_0s0v.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useUserRecognitionSignal_DzPQujSK.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.storage_DQF5v-OM.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_C48kTNUX.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.authorize_DINGMyE5.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useEventListener_BeiI7eri.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.validators_09U1U9sZ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/web-pixels@56a6403cw68eaaf33p29d38119m7a4be5ca/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/web-pixels@56a6403cw68eaaf33p29d38119m7a4be5ca/app/web-pixel-280199216@a3321ca85cf5aaf6b57585fcd8d67b3a~2/pixel.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/web-pixels@56a6403cw68eaaf33p29d38119m7a4be5ca/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a1881b-53ea-7f03-a018-51cb02251c00/forms-2648/assets/index.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/t/37/assets/rellax.js?v=4664090443844197101768413290",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/shopify-xr-js/v1.0/shopify-xr.es.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shop.app/pay/hop?analytics_trace_id=08efe099-bf72-440f-a2ed-a808f6214978&target_origin=https%3A%2F%2Fsingularcoffee.cl&client_handle=singularcoffee.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=AW-16525906688",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "AW-16525906688"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=GT-MJKSLL43",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GT-MJKSLL43"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/web-pixels/strict/app/web-pixel-shopify-app-pixel@0530.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://forms.shopifyapps.com/api/v2/form_instances?shopify_domain=singularcoffee.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://forms.shopifyapps.com/api/v2/form_instances?shopify_domain=singularcoffee.myshopify.com",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://d2wy8f7a9ursnm.cloudfront.net/v5/bugsnag.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=GT-MJKSLL43&cx=c&gtm=4e6as0h2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GT-MJKSLL43"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googleadservices.com/pagead/conversion/16525906688/?random=1793291514077&cv=11&fst=1793291514077&fmt=7&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6as0h2v9182346885za200zd9182346885xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115616985~115938465~115938469~118897920~118897930~120213116~120385423~120412526~120420415~120469145~120469153~121246026~121246034~123620777&u_w=800&u_h=600&u",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=4&frm=0&apvc=1&auid=73861293.1793291514&dt=Singular%20Coffee%20Roasters%20%E2%80%93%20SINGULAR%20COFFEE%20ROASTERS&tid=AW-16525906688&en=page_view&dl=https%3A%2F%2Fsingularcoffee.cl%2F&scrsrc=www.googletagmanager.com&rnd=254441760.1793291514&navt=n&npa=0&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_tu=AAI&gtm=45be6as0h2v9182346885za208zd91823",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ad.doubleclick.net/ccm/s/collect?auid=73861293.1793291514&gtm=45be6as0h2v9182346885za208zd9182346885xecxf1&fmt=8",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.merchant-center-analytics.goog/mc/collect?v=2&tid=MC-6PTX1WKC4B&gtm=45Pe6as0v9182348444za200zb9182346885zd9182346885xf1&_p=1793291513418&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&are=1&cid=1498029965.1793291514&excid=shp.1ff9d670-a6be-43b2-be8d-47f35f1b6433&frm=0&pscdl=&rcb=10&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://sessions.bugsnag.com/",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://sessions.bugsnag.com/",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SVWCjw&shop=singularcoffee.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://whatschat.shopiapps.in/script/sp-whatsapp-app-tabs.js?version=1.0&shop=singularcoffee.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://faq-king.com/scripts/faq_app_546c045dfcc4290ce923c7100c822a3e.js?shop=singularcoffee.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TJtx2L&shop=singularcoffee.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shop/files/Mesa_de_trabajo_1_copia_3_2x_a117e5d7-d64f-4e13-ad34-bab6402f24f5.png?crop=center&height=32&v=1784646919&width=32",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/polyfills.Cm4XMvKf.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/app.cAthPeiN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.DrRCn3HG.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.DqfKWMZb.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static-tracking.klaviyo.com/onsite/js/fender_analytics.d581630832ad2.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static-tracking.klaviyo.com/onsite/js/static.0d6d31623aba7.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/runtime.eb27a8e8fa583.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/sharedUtils.f598f305ef628.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/vendors~static~in_app_forms~signup_forms~fender_analytics~post_identification_sync~web_personalization~client_identity~server_side_cookies~reviews~atlas~~telemetry.7bfc6cc1e5e87.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static-tracking.klaviyo.com/onsite/js/post_identification_sync.7beee9e65774c.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/event_adapter.d5d17da8d93c0.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/16525906688/?random=224436673&cv=11&fst=1793291514077&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6as0h2v9182346885za200zd9182346885xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115616985~115938465~115938469~118897920~118897930~120213116~120385423~120412526~120420415~120469145~120469153~121246026~121246034~123620777&u_w=800",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/5587f402.BLOv5NpY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/cf29e63b.BRQXh2EH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/bfe75f31.6yCNtNv-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/8b3289d0.Bt3qZnT_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.DOeij2sJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/204243fa.V7gQ36sj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/vendors~onsite-personalization~onsite-triggering-v2~in_app_forms~signup_forms~telemetry~~client_identity.18a2c35b6d198.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/vendors~Render~ClientStore~~~onsite-back-in-stock.7f4f70ae133ea.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/vendors~.bf6126b032be2.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.klaviyo.com/onsite/js/5663.c10b1970f298b.js?cb=2",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/consent-tracking-api/v0.1/consent-tracking-api.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/5c5817f3.BEu0evcd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shopiapps.in/whatsapp-share/script/sp_wslcacr_widget_css_v1.css?version=17-01-2022-v1&shop=singularcoffee.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/8f46f026.Bz0NEFVt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/f05935e5.bhemP6c2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-conversion/16525906688/?random=224436673&cv=11&fst=1793291514077&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6as0h2v9182346885za200zd9182346885xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115616985~115938465~115938469~118897920~118897930~120213116~120385423~120412526~120420415~120469145~120469153~121246026~121246034~123620777&u_w=800&u_h=600&url=https%3A",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/32e8c018.BVeb327i.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/7336bdaf.DcxaUsDT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/6f2620f5.D_02a169.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/cf6ddc11.DMeQLHv7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.C0PFpUAK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.BaBGTrLm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/apps/sc/setting_tab.php?shop=singularcoffee.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.DQs60AXV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.B1TfVO1E.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.B0cVlpvy.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BI5RQVDa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shopiapps.in/whatsapp-share/script/assets/images/setting/button/1.svg?v=123",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.DXa3DaPc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.B_FoJ8Ig.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shopiapps.in/whatsapp-share/script/assets/images/avatar/2.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shopiapps.in/whatsapp-share/script/assets/images/button/1.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecg.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/poppins/v24/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.DmSw67Cj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.wULXKuPc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/39921a74.3CxTFnjT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.BBDsaE4D.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/8599b02a.SMqdFzKQ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.CMQnj3Km.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.DOeqFAvq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.DrLHo2nc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/c8760fd8.Be0EZ9hi.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/53bbdad9.CVg-OYc7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.DFPNjnst.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/1a6c2867.DIvU9A1-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.CTDVcfb6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.BAghc-fu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.CFeNdDM-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.BeDDbBvp.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.Dl0SRkiU.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/f7861534.Bd8yhhUE.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.BXt-43WV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.4EMhYNtA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/17425706.BcJPt7Oh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.DH-HAOXQ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.r_2iWLRe.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/06ef5503.Dv-zBuK4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/acc42fa8.DaJQita_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/cccd6056.DePXU1Wc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.D-I2um0-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/79974aab.zZ2KWkIs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.BYEQZ8wJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.hwBClo-8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.BAMqjCt6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.BM7R-elq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.Dz8MQz2P.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.CDFLXjau.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.CRpHa0fS.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.jfu5yGpw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.wWS96b1U.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.CWf9aWZN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/c09515bf.B71fejgK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.B0c9qjLX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.ns171nJ5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.DygUyRW2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.DFN8f_R0.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.DVXb3TBr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.Do-pzA-t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.Aek1wZmx.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.Ddqlep8a.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/ddf59287.CYD1TGGD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.DH2lZj47.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/58314944.C8tOb_bS.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.1JARX8O_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.DxN44MdX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.CjdbXfg7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/9068a4ed.D9qjdpv1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.8wYVCzKV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/f1968089.yy6CXKcX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.DS6ygtkl.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/347b440c.DPGZDqyz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/5ade1ef3.DXB4L25S.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.C2MFP83j.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/5a347040.DqqqLoQW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/792bb671.MG_raAxs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.B_r4aISK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.D1Mwbrt6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.B2WWgZOD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/ca0c3e72.mAtaVirp.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.C8MS0jza.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.Dtj-XP1M.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/d5d34b3b.BdlOFFHa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.DTB5eJ2J.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.DTJ0PR2t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.DcUdfhSw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.fiS1Nr-I.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.BRydut8V.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.B5HdvqVg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/0724c71d.O32rwBsR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/7114e006.lrS99emJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/9babe369.ocvpn2KV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/e0989459.BN6EGpPC.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/collections/actividades",
+      "metodo": "GET",
+      "tipo": "Prefetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.Cs835jgd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.Bvz9lXAd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/ca3c8263.DkbnVCmF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/083cdde5.DYEjGEf-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.rUOq8lM6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.ClHl3T7C.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/d93ca466.C9R5umgP.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.SSgFk5gO.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/d7065744.CK6x5CHa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shop/files/DSCF0240.jpg?v=1783615085&width=720",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.ZeHo6koi.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.BLLdTe6K.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/8fe56fc9.DKeGEDf5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/2210eadb.DF0gIp_2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/8a00b682.BEOU-kK4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.BIoL9TQ3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.B7RRII2U.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shop/files/WhatsApp_Image_2026-06-24_at_11.09.20.jpg?v=1782313813&width=1296",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/c6b02d73.DFxNKn7U.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.Bdvld-6t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/products/catuai-natural-lote-28-mi-finquita-panama",
+      "metodo": "GET",
+      "tipo": "Prefetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/24773686.C8B24loc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/7048f38b.Ct0cMld6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/c3c7c048.B_bxvive.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/7aa3b627.DU4dK-Iv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.CS-vFszt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shop/files/sietecanibales-logo-1.svg?v=1782324765&width=100",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shop/files/Daily-Coffee-News-Logo.png?v=1782324959&width=100",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.B31SY0iW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.DrMLKbeq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/app.DBH01810.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/is-address-empty.DDArxpAV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.LpOe7KaD.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/.well-known/shopify/fec/produce",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.DZtuG_UK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.BMdzfW_y.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ChangeCompanyLocationLink.B1YSPUDc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/index.Du9dByaI.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useApplePayButtonStatus.ct4xfivv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/static/images/flags/cl.svg?width=40",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/static/images/flags/ar.svg?width=40",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/static/images/flags/bo.svg?width=40",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/static/images/flags/br.svg?width=40",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/static/images/flags/co.svg?width=40",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/static/images/flags/ec.svg?width=40",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/static/images/flags/py.svg?width=40",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/static/images/flags/pe.svg?width=40",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/static/images/flags/uy.svg?width=40",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/static/images/flags/ve.svg?width=40",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/findSelectedDeliveryMethod.xO_7ctnq.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.BAjucZ-8.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BrandedPromise.B0RErzdh.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.DRJckcGa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.kQR0txJ7.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.B8v_QGNW.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/MissingFields.BbxB_6wt.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.CyQZvZOO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useOnePageFormSubmit.1WzRSowg.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/checkout-pay-button-exit.KhTiKgPS.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/observe-fit-scale.DpLOWYa8.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.btyKOfco.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Payment.DrWvAMMF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0552/0788/6896/files/logo_singular_x320.png?v=1638402403",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "localization",
+      "desde": "singularcoffee.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_essential",
+      "desde": "singularcoffee.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_analytics",
+      "desde": "singularcoffee.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_marketing",
+      "desde": "singularcoffee.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shop_app_essential",
+      "desde": "shop.app"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "singularcoffee.cl"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "singularcoffee.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 3115031,
+    "al_abrir_bytes": 2570715,
+    "n_peticiones": 324,
+    "mas_pesados": [
+      {
+        "url": "https://cdn.shopify.com/extensions/01a1881b-53ea-7f03-a018-51cb02251c00/forms-2648/assets/index.js",
+        "bytes": 265763
+      },
+      {
+        "url": "https://singularcoffee.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.B1TfVO1E.js",
+        "bytes": 178907
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=GT-MJKSLL43&cx=c&gtm=4e6as0h2",
+        "bytes": 158914
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=GT-MJKSLL43",
+        "bytes": 158903
+      }
+    ]
+  },
+  "html_len": 274476
+}
