@@ -1,5 +1,7 @@
 # Dominio aparte para la venta en frío (propuesta del 29-oct-2026)
 
+**Estado: NO APROBADA.** Ramón decidió el 29-oct no pagar por este canal: prefiere invertir en redes sociales y considera el correo un complemento. No comprar ni configurar nada de esto sin que él lo pida de nuevo.
+
 **Por qué:** el 29-oct se probó la entrega. El mismo correo a Gmail llegó a Principal; a Hotmail, los dos correos de prueba desde hola@spindlelab.cl (uno en texto plano, sin enlaces) cayeron en no deseado, y un correo normal desde el Gmail personal de Ramón sí llegó. Lectura: Microsoft desconfía del dominio spindlelab.cl como remitente (dominio nuevo, 52 envíos en un día el 23-oct). Ese mismo correo, hola@, es el que se usa con clientes y proveedores. La venta en frío debe correr por un dominio aparte para que su reputación no arrastre a la del dominio principal.
 
 ## Dominio sugerido (verificado en el registro el 29-oct, sin comprar)

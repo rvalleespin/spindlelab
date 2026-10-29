@@ -46,3 +46,8 @@ Sin respuestas ni rebotes de los motor desde el 23-oct. Una respuesta de terrant
 ## Prueba de bandeja (29-oct)
 Ramón envió el mismo correo a manuvalleespin@hotmail.com y r.valleespin@gmail.com. Gmail llegó; en Hotmail no apareció, sin rebote. Pendiente: ver si está en Correo no deseado o demorado. `proveedor-correo.csv` clasifica a los 56 destinatarios por proveedor de correo (MX): 16 Microsoft, 20 Google, 20 otro. Usarlo en la lectura de resultados para separar respuestas por proveedor.
 Resultado (29-oct): en Gmail el correo llegó a Principal. En Hotmail los correos de prueba (A: texto plano sin enlaces; B: con enlace) llegaron a Correo no deseado; Ramón no precisó si el original también. Lectura: Microsoft recibe el correo y lo manda a no deseado, y el texto plano sin enlaces no lo evita, así que el filtro no reacciona solo al contenido (dominio nuevo, ráfaga de 52 envíos el 23-oct). Afecta sobre todo a los 16 destinatarios alojados en Microsoft. Acciones: nombre del remitente "Ramón Vallejos (SpindleLab)", máximo 15-20 envíos por día sin ráfagas, y para los contactos en Microsoft un canal alternativo (teléfono publicado en su sitio).
+
+## Decisión de Ramón (29-oct): el correo es un canal complementario, sin gasto
+- No se compra dominio ni casilla nueva, ni listas de contactos. El dinero va a redes sociales.
+- Modo mantenimiento: terminar los toques en curso, ritmo de 15 a 20 por día sin ráfagas, nombre del remitente "Ramón Vallejos (SpindleLab)", y no mandar primeros toques nuevos a contactos alojados en Microsoft (ver `proveedor-correo.csv`).
+- Los hallazgos del motor sirven también para redes (datos agregados, sin nombrar empresas). Lectura de resultados del correo el jue 5-nov.
