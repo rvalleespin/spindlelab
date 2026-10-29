@@ -6,7 +6,7 @@
 **Aprueba:** Ramón, siempre, antes de publicar. Nada se publica solo.
 
 ## 0. Qué hay que producir
-Una tanda de **6 guiones de video corto** (Reel, 30 a 45 segundos, 90 a 110 palabras de voz en off), 1 por categoría de la tabla de abajo más 1 panorámico. Para cada uno, entregar: guion, texto en pantalla (línea por línea), idea de imagen o b-roll, pie de foto, el dato usado con su fuente, y la versión de voz (singular o plural). Si un dato no alcanza para un guion, decirlo y no rellenar.
+Una tanda de **6 guiones de video corto** (Reel, 30 a 45 segundos, 90 a 110 palabras de voz en off), elegidos entre los esqueletos de la sección 3 (uno por categoría de la tabla de abajo, más el panorámico y el tutorial). Para cada uno, entregar: guion, texto en pantalla (línea por línea), idea de imagen o b-roll, pie de foto, el dato usado con su fuente, y la versión de voz (singular o plural). Si un dato no alcanza para un guion, decirlo y no rellenar.
 
 ## 1. De dónde salen los datos y qué se puede decir
 Fuente: `marketing/motor-revision-previa/corridas/` (fichas del motor) y `seguimiento/`. Medición del 14 al 19-oct-2026: **192 sitios chilenos**, la portada abierta como lo haría un visitante nuevo, desde un servidor fuera de Chile, con hallazgos repetidos en 2 o 3 pasadas. En hotelería hay otro lote de 38 sitios (25-sep, protocolo anterior, ver `corridas/2026-10-19-bancos-apollo/LEEME-hoteles-25sep.md`).
@@ -18,7 +18,10 @@ Fuente: `marketing/motor-revision-previa/corridas/` (fichas del motor) y `seguim
 | Contabilidad y auditoría | 39 | 16 (4 de cada 10) | 4 | 9 (más de 2 de cada 10) | 20 (la mitad) | 25 (6 de cada 10) |
 | Inmobiliario | 29 | 15 (la mitad) | 8 | 4 | 14 | 19 (2 de cada 3) |
 | Hotelería (lote del 25-sep) | 38 | 23 (6 de cada 10) | varios | 3 de 38 solo con formulario | no medido | no medido |
-| **Todas** | **192** | **88 (46%)** | 26 | 26 | 88 | 100 (52%) |
+| Cafés y pastelerías (29-oct) | 36 | 22 (6 de cada 10) | 16 (casi la mitad) | 0 | 14 (4 de cada 10) | 23 (6 de cada 10) |
+| **Las 4 categorías de la primera medición** | **192** | **88 (46%)** | 26 | 26 | 88 | 100 (52%) |
+
+Nota de los cafés: lista tomada de OpenStreetMap; de 60 sitios, 21 se descartaron (20 ya no responden, 1 es un dominio estacionado), se quitaron una cadena internacional y dos plataformas de software, y quedan 36. El motor midió cada uno en 2 o 3 pasadas, sin la verificación de dos revisores independientes que tuvieron las muestras de Vibe. Además, 9 de los 36 (1 de cada 4) no muestran cómo contactar, cotizar o comprar en la primera pantalla. Mercados y ferias: solo 3 sitios medidos, no alcanza para una cifra.
 
 **Cómo decirlo:** siempre "de los N sitios que revisamos", con fracciones redondas ("4 de cada 10", "la mitad"). Nunca un porcentaje con decimales ni "las empresas chilenas".
 
@@ -44,7 +47,8 @@ Estructura común: **gancho con la categoría y la cifra → qué significa para
 4. **Salud:** "La mitad de los sitios de clínicas y centros que revisamos guarda cookies de seguimiento antes de que el paciente acepte algo." Tono cuidadoso, sin miedo. Solución: un aviso que pregunta antes de activar el seguimiento.
 5. **Inmobiliario:** "2 de cada 3 sitios de inmobiliarias no declaran qué negocio son en el formato que leen Google y la IA." Gancho de AEO: declarar el negocio en datos estructurados es una de las cosas que ayudan a Google y a la IA a identificar quién eres. Sin prometer que te nombren ni que "no te entienden". Solución: Auditoría de Visibilidad en IA, precio de referencia publicado.
 6. **Hotelería:** "6 de cada 10 hoteles que revisamos guardan cookies de publicidad antes de preguntarle algo al huésped." Matiz: algunas solo después de mover el mouse. Usar solo si Ramón confirma 3 sitios a mano.
-7. **Tutorial de 30 segundos (reutilizable):** "Cómo ver qué guarda tu sitio sin que nadie te lo cuente": ventana de incógnito, esperar 10 segundos, el candado, las cookies. Es el `donde_mirar` del motor.
+7. **Cafés y pastelerías:** "Casi la mitad de los sitios de cafés y pastelerías que revisamos guarda la cookie de Facebook e Instagram antes de preguntarle algo al cliente." Dolor: el café invirtió en publicidad en redes y el sitio no pregunta. Solución: un aviso que pregunta antes de activar el seguimiento (Verifica y Cumple). Usar con cuidado hasta que Ramón confirme 3 sitios a mano, porque esta muestra no tuvo verificación independiente.
+8. **Tutorial de 30 segundos (reutilizable):** "Cómo ver qué guarda tu sitio sin que nadie te lo cuente": ventana de incógnito, esperar 10 segundos, el candado, las cookies. Es el `donde_mirar` del motor.
 
 ## 4. Cadencia y cuenta
 Máximo 2 piezas por semana, según la ficha del cliente. Decide Ramón si la campaña de privacidad vive en `spindlelab.cl` (recomendación vigente: sí, por ahora). Antes de escribir, comparar contra lo último publicado para no repetir muletillas.
@@ -56,4 +60,4 @@ Máximo 2 piezas por semana, según la ficha del cliente. Decide Ramón si la ca
 - [ ] Ramón revisó y confirmó las 3 comprobaciones desde Chile.
 
 ## 6. Pendiente de la sesión del motor
-Estoy ampliando la medición a restaurantes y cafés, ferias y mercados urbanos, para sumar categorías con evidencia propia. Cuando haya cifras las agrego a la tabla de la sección 1 en este mismo archivo.
+Cafés y pastelerías ya están en la tabla (29-oct). Faltan restaurantes, ferias y mercados urbanos: no se pudo armar una lista con fuentes gratuitas y falta que Ramón entregue 15 a 20 nombres o direcciones web por segmento. Cuando los tenga, el motor los mide y se agregan a la tabla de la sección 1 en este mismo archivo.
