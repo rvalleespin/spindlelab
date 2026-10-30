@@ -8,7 +8,8 @@ y la respuesta se escribe aquí, con su fila en §7. Una corrección que se qued
   Accept & Proceed queda acotada a una cosa: la carga como diseño (cada medio espera en su placa con su radio).
 - **Rasgo que se preserva:** un lienzo `#060606` donde la interfaz se retira (gris, chica, una letra en dos cortes,
   cero negrita) y lo que ocupa la pantalla es el trabajo, plano en su marco. El color lo pone cada pieza dentro de su
-  marco; la interfaz no tiene ninguno.
+  marco; la interfaz no tiene ninguno. **Una excepción desde el 30-oct, autorizada por Ramón:** el amarillo de Koto
+  (`#FFE800`) en la acción principal, dos botones y nada más (§0.3, punto 11; §1.1, `--a-accion`).
 - **Qué sacrifica:** el hero monumental del brief de Ramón (la frase va a 48 px, como la portada de Koto); depende del
   material grabado (sin capturas buenas, A se cae); y lleva la letra de los productos de Google (riesgo dicho en
   `tableros/e12-direcciones/direccion-a.md` §0, que Ramón eligió sabiéndolo).
@@ -88,6 +89,14 @@ Cada uno con su porqué. Un desvío que no está en esta lista es un defecto.
 10. **Con el aviso de cookies abierto, la barra flotante sube y queda 8 px sobre él** (§4.3; 23-oct). Koto no tiene un
     aviso que se cruce con su barra: el suyo es una placa de 430 × 42 en la esquina (`medicion/koto/medicion.json`,
     `interaccion.avisoCookies`) y el nuestro no se puede achicar a eso sin tocar su HTML.
+11. **La acción principal es amarilla: `#FFE800` lleno, texto `#060606`** (30-oct; §1.1, `--a-accion`; §4.1). **Autorizado
+    por Ramón** al ver las maquetas del 30-oct (`e13/copy/maquetas-30oct/`, «el blanco del botón me molesta, lo quiero de la
+    gama de Koto»). Es un desvío de esta spec (§1.1, «Ningún color más»; §6.1) y del lock (§20.2, regla 3: «ninguna ruta,
+    servicio, sección ni estado de la interfaz tiene un color propio»; §20.4, opción a, «cero color de interfaz»). En
+    Koto el amarillo es **solo el logo** (lock §2.2: 0 textos, 0 fondos); aquí cambia de rol a propósito: el logo sigue
+    blanco (§5.4) y el amarillo marca **la acción**, en dos lugares: el botón principal de la portada (`#portada-cta`) y
+    el botón del encabezado (`.cab__cta`). Lo que lo acota: un solo rol, dos botones, un mismo destino (`/contacto/`), y
+    la lista de dónde no va (§1.1). No reabre el oro ni el cobalto, y no autoriza un segundo color.
 
 ### 0.4 · Lo que cambia respecto del prototipo de A (lo construye Diego así, no como el prototipo)
 
@@ -148,7 +157,7 @@ usa.** Valores tomados del prototipo (`proto/a/a.css`) salvo donde se dice.
 
 | Token | Valor | Rol, y solo ese | Dónde **no** |
 |---|---|---|---|
-| `--a-lienzo` | `#060606` | El fondo de todas las páginas, siempre: `html` y `body`. El texto sobre lo blanco (botón claro, círculo) | Nunca cambia por página, sección, scroll ni estado (lock §20.2, regla 1) |
+| `--a-lienzo` | `#060606` | El fondo de todas las páginas, siempre: `html` y `body`. El texto sobre lo blanco (botón claro, círculo) y, desde el 30-oct, sobre el amarillo de acción (`--a-accion`) | Nunca cambia por página, sección, scroll ni estado (lock §20.2, regla 1) |
 | `--a-placa` | `#141414` | Encabezado plegado, menú, barra del caso bajo 1194, rótulo sobre un medio (`marca-medio`), botón de pausa, fondo del campo, el marco donde espera cada medio mientras carga | Tarjeta de contenido, banda de sección, fondo de un bloque de texto |
 | `--a-placa-activa` | `#202020` | La sección activa en la barra del caso; el botón de placa al pasar el mouse | Cualquier cosa que no sea un estado |
 | `--a-placa-apretada` | `#2A2A2A` | El botón de placa apretado (`:active`) | Fuera de ese instante |
@@ -162,10 +171,29 @@ usa.** Valores tomados del prototipo (`proto/a/a.css`) salvo donde se dice.
 | `--a-hueco` | `#4A4A4A`, punteado | El borde punteado de un hueco nombrado (lo que falta, dicho: las pantallas internas de Praxi) | Cualquier cosa que exista |
 | `--a-velo` | `#060606` al 70 % | Las piezas del índice que no tienen el mouse (167 ms lineal, solo con puntero fino desde 834) | En táctil no existe; nada más |
 | `--a-velo-portada` | `#060606` de 0 a 0,88 y a 1 en el borde de abajo | Solo la portada desde 834 px (§3.1) | Cualquier otro medio: el texto nunca va sobre un medio del trabajo |
+| `--a-accion` | `#FFE800` (el amarillo de Koto, lock §2.2; OKLCH 0,921 · 0,193 · 102,2°) | **El relleno de los dos botones de la acción principal y de nada más:** `#portada-cta` (la portada de la home) y `.cab__cta` (el encabezado, en toda ruta salvo `/contacto/`). Texto y flecha encima, en `--a-lienzo` (30-oct, §0.3 punto 11) | **Cualquier otro botón** (el cierre de la home y de cada página, «Enviar», «Saltar al contenido», «Conocer a Ramón», los del aviso de cookies, el del chequeo, los de los planes); **ningún texto**, enlace, subrayado, rótulo, número o precio; **ningún fondo** de sección, banda, fila, placa o campo; ningún borde, filete, contorno de foco, icono suelto, `::selection`, círculo del cursor ni barra; el logo, el favicon y las imágenes al compartir. Un botón amarillo con contorno (borde y texto amarillos sobre el negro) **no** existe: se vio en las maquetas y Ramón eligió el lleno |
+| `--a-accion-pasar` | `#E9D400` (L −0,06 en OKLCH, mismo tono) | El botón de acción con el mouse encima (`:hover`), 167 ms lineal | Fuera de ese estado |
+| `--a-accion-apretado` | `#D4C100` (L −0,12, mismo tono) | El botón de acción apretado (`:active`), también en táctil | Fuera de ese instante |
 | campos | los del trabajo | Dentro de un marco de medio, con los techos de §3.4 | La interfaz entera |
 
 **Ningún color más.** Ni el oro `#C9A227`, ni el cobalto (la opción b del lock §20.4 queda descartada por la pregunta
-9), ni un color por servicio, ruta o estado.
+9), ni un color por servicio, ruta o estado. **La única excepción es `--a-accion` (30-oct), con sus dos estados y su rol:**
+si un tercer lugar de la interfaz «necesita» amarillo, es un defecto, no una extensión del token.
+
+**Cómo se eligieron los estados del amarillo** (`e13/herramientas/accion-amarillo.py` →
+`e13/medicion-30oct/accion-amarillo.json`). Se bajó la L de `#FFE800` en OKLCH con el tono fijo, de −0,02 a −0,20, y se
+aclaró hacia el blanco del 15 al 50 %; de cada candidato, el texto encima, el contraste y la distancia (ΔE OKLab) contra el
+reposo y el corrimiento de tono. **Aclarar no sirve:** el amarillo ya está en V = 1; hacia el blanco pierde croma y a la
+mitad del camino el cambio es de 1,10:1 (ΔE 0,064) con el tono corrido 1,7°, se lee como el mismo botón lavado. **Oscurecer
+en OKLCH conserva el tono** (102,2° ± 0,3 en los diez pasos, HSV 54,4 a 54,7°: no se va al oliva). Se eligió:
+
+| Estado | Valor | Texto `#060606` encima | Contra el reposo | ΔE ok contra el reposo | Por qué este paso |
+|---|---|---|---|---|---|
+| Reposo | `#FFE800` | **16,20** | | | El de Koto, tal cual |
+| Al pasar | `#E9D400` (L −0,06) | **13,39** | 1,21:1 | 0,062 | Tres veces el umbral de lo que se distingue (ΔE ≈ 0,02) y todavía «el mismo amarillo». Mirado en la lámina (`e13/herramientas/accion-amarillo-lamina.mjs`, `e13/medicion-30oct/lamina-amarillo.jpg`, el botón a tamaño real sobre el lienzo, la placa y el póster bajo el velo): −0,04 apenas se separa del reposo sobre el video; desde −0,14 el amarillo se lee mostaza |
+| Apretado | `#D4C100` (L −0,12) | **11,03** | 1,47:1 | 0,122 | Un paso más en el mismo sentido, como el botón de placa (reposo → al pasar → apretado se alejan del reposo hacia un lado): en táctil, donde no hay estado al pasar, el toque se nota igual. Del estado al pasar a este, ΔE 0,060. El botón claro hace 1,54:1 y ΔE 0,142 al apretar: el amarillo queda en la misma magnitud |
+
+**El texto va en `#060606`, nunca en blanco:** blanco sobre el amarillo da 1,25 · 1,51 · 1,84:1 en los tres estados.
 
 | Par (WCAG 2.1) | Contraste | Mínimo |
 |---|---|---|
@@ -174,6 +202,12 @@ usa.** Valores tomados del prototipo (`proto/a/a.css`) salvo donde se dice.
 | blanco al 70 % (menú) sobre lienzo | 9,81 | 4,5 |
 | lienzo sobre blanco (botón claro, círculo) · sobre gris (botón claro al pasar) · sobre `#D0D0D0` (apretado) | 20,26 · 7,02 · 13,14 | 4,5 |
 | foco: contorno blanco de 2 px contra el lienzo · contra la placa | 20,26 · 18,42 | 3 |
+| **`#060606` sobre el amarillo** en reposo · al pasar · apretado (30-oct; texto mono 11 y flecha del botón de acción) | **16,20 · 13,39 · 11,03** | 4,5 |
+| **el amarillo contra el lienzo · la placa · la placa activa** (el borde del botón, 1.4.11), reposo · al pasar · apretado | 16,20 · 13,39 · 11,03 · 14,73 · 12,18 · 10,02 · 13,03 · 10,77 · 8,87 | 3 |
+| **el amarillo contra el peor fondo del velo** (0,88 sobre un blanco puro) · **contra el video real**, cuadro por cuadro (anillo de 3 px alrededor del botón, el más claro de los 121 cuadros; `e13/medicion-30oct/contraste-portada.json`) | 12,43 · **12,80 a 13,27** desde 834 (16,20 bajo 834: va sobre el lienzo); al pasar 10,58 a 10,97, apretado 8,71 a 9,03 | 3 |
+| **foco en el botón de acción:** contorno blanco contra el fondo que rodea al botón (lienzo · placa · velo, peor cuadro del video) | 20,26 · 18,42 · **16,01 a 16,59** | 3 |
+| contorno blanco **contra el amarillo** (si lo tocara) · el hueco de 3 px (lienzo, placa o velo) contra el amarillo | **1,25: no basta** · 12,43 a 16,20 | 3 |
+| blanco sobre el amarillo (por qué el texto no va en blanco) | 1,25 · 1,51 · 1,84 | 4,5 |
 | borde del campo `#707070` contra el lienzo · contra el peor fondo del velo de la portada | 4,09 · 3,14 (medido en el render: 3,23 a 3,29) | 3 |
 | gris · blanco sobre el peor fondo del velo de la portada (0,88 sobre un blanco puro) | 5,39 · 15,55 (medido sobre el video: §3.1) | 4,5 |
 | anillo de 1 px del círculo (lienzo) contra un campo blanco | 20,26 | 3 |
@@ -635,6 +669,7 @@ a 2,39:1 (familia de color de 0,02 y 0,27). Verifica y Cumple lo es en todas sus
 |---|---|---|---|---|---|
 | **Botón claro** (mono 11 MAYÚSCULAS, 44 px de alto, radio 4) | blanco, texto lienzo | fondo gris (7,02:1) | contorno blanco 2 px a 3 px | `#D0D0D0` | «Revisando…» en el del chequeo: fondo `--a-placa-activa`, texto gris, `cursor: progress` |
 | **Botón de placa** | placa, texto blanco | placa activa | ídem | `#2A2A2A` | |
+| **Botón de acción** (30-oct; `.boton.boton--accion`: solo `#portada-cta` y `.cab__cta`; mono 11 MAYÚSCULAS, 44 px de alto, radio 4, como el claro) | `--a-accion` `#FFE800`, texto y flecha `--a-lienzo` (16,20:1) | `--a-accion-pasar` `#E9D400` (13,39:1), 167 ms lineal, como todo cambio de color | **el mismo de todo el sitio:** contorno blanco de 2 px **a 3 px** (`outline-offset: 3px`, que este botón no puede bajar: el blanco contra el amarillo da 1,25:1 y lo que lo hace visible es el hueco de 3 px de fondo entre los dos) | `--a-accion-apretado` `#D4C100` (11,03:1) | No tiene: los dos son enlaces. Con movimiento reducido, los cambios de color son instantáneos (§1.6) |
 | **Enlace del cuerpo** | blanco, subrayado de 1 px al 45 % a 3 px | subrayado al 100 % (167 ms) | ídem | | |
 | **Menú** | blanco al 70 % | 100 % (167 ms) | ídem | | La página actual, blanco con `aria-current` |
 | **Corchete** («[ Todo el trabajo ] (10)») | gris | blanco | ídem | | |
@@ -791,6 +826,27 @@ la pregunta abierta de §0.5. **Que no *actúe*, sí**, con la API del propio Le
   movimiento fuera de las tres familias de §1.6. Si Ramón lo quiere en otra parte, se especifica aparte.
 - **El favicon y el `logo` de `#org` dependen del `Layout`** (§0.5): mientras no se resuelva, en `/v3/` se ve el favicon
   de antes.
+- **30-oct · opción 2, «la i con su disco»** (Ramón: «logo 2 por ahora», sobre `e13/copy/maquetas-30oct/logo-opciones.jpg`;
+  «la cruz de la i se ve horrible»). **Cambia solo la i del wordmark** del corte menú (`src/components/a/Logo.astro`, el
+  del encabezado y el pie); el resto, letra por letra, igual. El `d` nuevo sale del de hoy: se quita el subtrazo de la i
+  dibujada (de `M175.12 0H193.62V-74.13` hasta su `175.12 -74.13Z`) y se suman el **asta limpia**
+  `M175.12 0H193.62V-71.69H175.12Z` (la del alto de x de las demás letras) y el **disco**, una elipse centrada en
+  (184,37; −91,5) con **rx 17 y ry 6,5**, separada del asta y sin nada que la cruce. Mismo `viewBox`
+  (`3.34 -117.02 716.32 147.01`), `fill="currentColor"`, `role="img"` y `aria-label`. Es exactamente
+  `e13/copy/maquetas-30oct/logo-i-disco.svg`; `e13/herramientas/logo-i-disco.mjs` arma el mismo `d` desde `Logo.astro` y
+  lo deja en `e13/medicion-30oct/logo-i-disco.json` para copiarlo.
+  **Medido a los tamaños del sitio** (`logo-i-disco.mjs`): a 24 px el disco mide 5,55 × 2,12 px y el hueco con el asta
+  2,17 px; a 20 px, 4,63 × 1,77 y 1,81. En el render, el disco llega a cobertura 1 y queda **al menos una fila de píxeles
+  limpia** entre el disco y el asta a 1x (dos o tres a 2x), en los dos tamaños: no se funde con el asta ni se apaga.
+  Lámina: `e13/medicion-30oct/logo-i-disco.jpg`. Sigue siendo **blanco y nada más** (el amarillo de §1.1 no va en el logo).
+- **Lo que el 30-oct NO cambia, y queda abierto para Ramón (lo dibuja Bruno si dice que sí):** el **favicon**, el **signo**
+  suelto, el `apple-touch-icon`, `icon-192` e `icon-512` (el `logo` de `#org`), el **avatar** y los cortes **grande** y
+  **pequeño** son el huso con su tortera, el dibujo que la opción 2 saca de la i. Con la opción 2 en el encabezado, el
+  favicon queda como un signo que ya no está en el nombre. Mientras no conteste, se quedan como están (`?v=5`). **Las
+  imágenes al compartir que se regeneran el 30-oct** (las de las páginas que cambian de titular) llevan el logo; la
+  plantilla (`og-trabajo.mjs`, que hoy pone el corte grande a 40 px) usa **el `d` de la opción 2 a 39 px de alto** (el
+  tope del corte menú), no el corte grande con la tortera: un logo distinto en el encabezado y en la tarjeta al compartir
+  sería un defecto.
 
 ### 5.5 · Telemetría y sandboxes (lock §11 y §12)
 
@@ -815,7 +871,10 @@ página de Combeau.
 `refero-design/references/anti-ai-slop.md`), y además:
 
 1. **Otro color de interfaz.** Ni oro, ni cobalto, ni un color por servicio, ruta o estado; ningún bloque de interfaz
-   pinta un fondo claro o de color más grande que un control. El lienzo no cambia nunca.
+   pinta un fondo claro o de color más grande que un control. El lienzo no cambia nunca. **La única excepción es
+   `--a-accion` (30-oct, §0.3 punto 11), en `#portada-cta` y `.cab__cta` y en ningún otro lugar** (la lista de «Dónde no»
+   de §1.1); un botón amarillo con contorno, un tercer botón amarillo o el amarillo en un texto, un fondo o un borde son
+   defectos.
 2. **Una interior con el lienzo claro**, o la hoja blanca de B (pregunta 8).
 3. **Tomar rasgos de B** (Mona Sans, la escala grande, la tabla con visor, el banco de datos): brief §6.11.
 4. **Negrita, mayúsculas fuera de la mono, una tercera letra, texto bajo 11 px.**
@@ -1033,3 +1092,4 @@ su landing.
 | 23-oct | **La franja de Auditoría SEO técnica sale, y la regla de campo pasa a la 2** (cierra el defecto 3 del acta de la obra, vuelta 1, mayor). La franja (Verifica y Cumple, `verifica-y-cumple-239`) era un campo de color en la primera pantalla y la regla de la cubeta no lo veía: el degradé reparte el azul en varias cubetas. **Regla 2:** campo si la cubeta lo dice o si una familia de color (40° de tono × 0,30 de valor) llega al 30 % del marco; los claros, con la cubeta (`campo-medios.py`, `es_campo`; todas las herramientas que cuentan campos la usan). Las ventanas salen de once combinaciones probadas contra 614 medios de Koto recorrido de nuevo a 1440 y los de A: la franja de Auditoría es campo con todas (41,5 a 42,6 %); una familia de claros volvía campo las fotos de oficina de Koto, 60° juntaba las eslingas de Tonela, 0,45 de valor volvía campo la foto de Combeau. **Los techos se recalibran contra Koto contado con la misma regla** (casos 4,3 a 42,4 %, mediana 27; `/work` 33,0; home 14,4; interiores 0 a 1,5) y no se mueven, salvo los seguidos de la home, que pasan de 2 a 3 (Koto sube su home de 1 a 2 con la regla 2; la página de A no cambió). A con la regla 2: home 13,1 % (unos 18,3 con la cinta en su tramo más claro), `/trabajo/` 30,1, casos de 6,1 a 30,2, Desarrollo web 3,5, Auditoría 0 sin franja; dentro de todos los techos. Ninguna otra pieza muestra una auditoría aplicada y todo Verifica y Cumple es campo: **Auditoría queda sin franja**, como Acompañamiento mensual; el alt y el pie de su franja (Clara) quedan sin uso. Diego: `[slug].astro` (la rama de Auditoría) (§2.4, §3.3, §3.4, §0.4 punto 14; `herramientas/campo-medios.py`, `koto-campos-regla2.py`, `campo-regla2-ventanas.py`; `datos/campo-medios.json`, `koto-campos-regla2.json`, `campo-regla2-ventanas.json`, `campos-paginas-regla2.json`; la página sin franja en los ocho tamaños, `img/obra-v1-ocho-anchos-auditoria.jpg`) | **regla** | Javiera, acta de la obra (vuelta 1); decide y escribe Lucía |
 | 23-oct | **El aviso de cookies no tapa lo importante: el chequeo de la home bajo 834 va antes que la entradilla, y el aviso va en una fila desde 834** (cierra el defecto 4 del acta de la obra, vuelta 1, mayor). El aviso se queda abajo y a todo el ancho (arriba taparía el logo y el menú en toda página; Koto lo pone abajo). Bajo 834 la portada lee rótulo, `h1`, chequeo y entradilla, solo a la vista (el DOM no cambia): el chequeo pegado a la frase que prueba es la lectura de la compuerta 1, punto 1. Desde 834, `.cb-inner` sin salto de línea y su párrafo que se angosta: el aviso mide 69 px desde 834 (de 834 a ~890 medía 115 y tapaba el chequeo a 834 × 1112, un tamaño que el acta no midió). §4.3 escribe qué es «lo importante» que el aviso abierto nunca tapa (el chequeo de la home y de diagnóstico, el «Concepto», el botón de contacto a 1440 × 900) y qué sí puede tapar hasta que la persona elige (el botón de contacto a 1024 × 768 y 1194 × 834, como hoy; la home a 375 × 667, fuera de los anchos de la obra). Medido sobre el build con el cambio inyectado: con el aviso abierto, campo y botón de 590 a 634 a 360 × 800 (aviso desde 647) y de 607 a 651 a 390 × 844 (desde 710); a 834 × 1112, de 963 a 1007 con el aviso desde 1043; 0 tapados en los ocho tamaños. Diego: `index.astro` o `archivo.css` (el orden bajo 834) y `archivo.css` (el aviso desde 834) (§2.1, §3.1, §4.3, §4.4, §0.4 punto 13; `obra-v1-defectos.mjs`, `datos/obra-v1-defectos.json`, `img/obra-v1-aviso-home-*.jpg`; los ocho tamaños en `img/obra-v1-ocho-anchos-home.jpg`) | **regla** | Javiera, acta de la obra (vuelta 1); decide y escribe Lucía |
 | 23-oct | **E12, cierre de la obra.** A · Archivo quedó construida en `spindlelab-astro/` (27 rutas bajo `/v3/`, con `noindex`; último cambio de código en `f2fe7b4`) contra esta spec, con sus desvíos en `desvios.md` (cinco tandas y la vuelta 1 de la QA). **QA de obra** de Javiera en contexto limpio (`e12/acta-obra.md`): **vuelta 1 Rechazado** (cuatro mayores y cuatro menores; los mayores 2, 3 y 4 se cerraron en esta spec con las tres filas de arriba) y **vuelta 2 Con reparos** (`f3044fc`): los ocho cerrados y medidos con las mismas herramientas (el chequeo local, 83 como el 16-oct; «Concepto» sin scroll en 64 de 64; Auditoría sin franja; el aviso sin tapar el chequeo en ningún tamaño), producción igual byte a byte contra dos bases y `Layout.astro` con las cinco props y nada más. **Quedan dos menores, antes de publicar:** el **9** (Diego): bajo 834 el área de toque de «Cookies» del pie baja sobre la hora (9, 6 y 3 % sin responder a 360, 390 y 414) y el foco cruza su texto; el **10** (Lucía): **esta spec se contradice** entre §1.3 (tope de 493 «en todos los anchos») y §2.1, fila 5 («También: Paid Media…» en una línea de cuerpo en c5–c12, que desde 1194 corre a 567, 676 y 911 px); Lucía escribe cuál manda y su fila aquí, y Diego construye lo que cambie. Los dos se comprueban en exprés (`pie-cookies.mjs`, `foco.mjs` a 390, `tambien.mjs`). **La pregunta del `Layout` de §0.5 está cerrada** desde el 19-oct (fila de ese día, `0cb13d5`); el texto de §0.5 es anterior a la respuesta. Las dos compuertas, por escrito, y nada aprobado se reabrió. **Capturas de cierre:** las 27 rutas a 390, 768 y 1440 desde el build, primera pantalla y página entera, más tres hojas (`capturas/e12/`, `3ae1b8b`). **Lo que queda**, con dueño (la lista de publicación rehecha sobre E12, R1, el cargo de Ramón, R2, los cuatro conceptos, lo declarado para Lucía y Clara, la generación «cuando tenga plata» y las pantallas internas de Praxi): `pendientes-traspaso-revisados.md` §0. **El criterio 13** (lectores fríos sobre el sitio construido, que Javiera pasó al cierre) se corrió hoy con tres lectores en contexto aparte sobre la home y Praxi sacadas del `dist/` (`e12/cierre/criterio-13/lectura.md`): los tres dicen qué hacemos, entienden el SEO técnico y la visibilidad en IA recién en Servicios y probarían el chequeo, pero **tropiezan con términos sin explicar en la primera pantalla**: no se cumple entero, y va a Clara y a Ramón antes de publicar (no es defecto de construcción). **El manual de marca nuevo** va a la troncal: `marketing/encargos-otras-sesiones/encargo-manual-marca-e12.md`. Nada se publicó ni fue a `main` | **cierre** (QA con reparos, vuelta 2 de 2); 9 y 10 **pendientes antes de publicar** | Javiera (QA), Diego (construcción), Lucía (spec); registra Mauro |
+| 30-oct | **Desvío autorizado por Ramón de §1.1 y del lock §20.2: la acción principal es amarilla** (§0.3, punto 11). La interfaz tenía cero color (§1.1, «Ningún color más»; lock §20.2, regla 3, y §20.4, opción a); desde hoy, el amarillo de Koto `#FFE800`, lleno y con el texto en `#060606`, en **dos** botones: el principal de la portada (`#portada-cta`, «Hablemos de tu sitio») y el del encabezado (`.cab__cta`, «Hablemos»), los dos a `/contacto/`. Token `--a-accion` con sus dos estados (`--a-accion-pasar` `#E9D400`, `--a-accion-apretado` `#D4C100`: L −0,06 y −0,12 en OKLCH, mismo tono), clase `.boton--accion`, el foco blanco de siempre a 3 px. Medido (`e13/herramientas/accion-amarillo.py`, `portada-30oct.mjs` + `contraste-portada.py` de E12 sin cambios): texto 16,20 · 13,39 · 11,03:1; el amarillo contra el video bajo el velo, cuadro por cuadro, 12,80 a 13,27:1; el foco, 16,01 a 20,26:1 contra lo que rodea al botón. **Dónde no va** está en §1.1 y lo prohíbe §6.1: ningún otro botón (el cierre, «Enviar», «Saltar al contenido» y el aviso de cookies quedan como están), ningún texto, fondo, borde ni foco, ni el logo. **El titular nuevo de la portada** («Sitios web a medida y marketing con IA» · «*En redes arriendas.* Tu sitio es lo único que es tuyo.» y el recuadro «Hablemos de tu sitio») y **la sección 2 nueva** («Todo lo que haces para vender termina en tu sitio», dos listas lado a lado desde 834) se componen en `e13/spec-home.md` §12, medidos con el aviso de cookies abierto: el botón entra en la primera pantalla a 360 × 800 (181 px sobre el aviso) y a 390 × 844 (227). **El logo pasa a la opción 2, «la i con su disco»** (§5.4): asta limpia y el punto como un disco aplanado separado (rx 17, ry 6,5), sin la tortera que cruzaba la i; el favicon, los iconos y los cortes grande y pequeño quedan abiertos para Ramón | **regla** (el rol del amarillo y su lista de dónde no) · **preferencia** (los dos pasos de L de los estados) | Ramón, sobre las maquetas del 30-oct; lo escribe Lucía |

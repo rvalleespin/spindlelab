@@ -1,0 +1,557 @@
+{
+ "herramienta": "e13/herramientas/accion-amarillo.py",
+ "cuando": "2026-10-30",
+ "accion": {
+  "hex": "#FFE800",
+  "oklch": [
+   0.9208,
+   0.1929,
+   102.16
+  ],
+  "hsv": [
+   54.6,
+   1.0,
+   1.0
+  ],
+  "luminancia": 0.7897
+ },
+ "candidatos": [
+  {
+   "modo": "oscurecer",
+   "paso": -0.02,
+   "hex": "#F8E100",
+   "oklch": [
+    0.9004,
+    0.1885,
+    101.93
+   ],
+   "hsv": [
+    54.4,
+    1.0,
+    0.973
+   ],
+   "textoSobre": 15.21,
+   "contraReposo": 1.07,
+   "deOkContraReposo": 0.0209,
+   "corrimientoTono": -0.23,
+   "contraLienzo": 15.21
+  },
+  {
+   "modo": "oscurecer",
+   "paso": -0.04,
+   "hex": "#F0DB00",
+   "oklch": [
+    0.881,
+    0.1848,
+    102.44
+   ],
+   "hsv": [
+    54.7,
+    1.0,
+    0.941
+   ],
+   "textoSobre": 14.32,
+   "contraReposo": 1.13,
+   "deOkContraReposo": 0.0407,
+   "corrimientoTono": 0.28,
+   "contraLienzo": 14.32
+  },
+  {
+   "modo": "oscurecer",
+   "paso": -0.05,
+   "hex": "#EDD700",
+   "oklch": [
+    0.8701,
+    0.1821,
+    101.94
+   ],
+   "hsv": [
+    54.4,
+    1.0,
+    0.929
+   ],
+   "textoSobre": 13.82,
+   "contraReposo": 1.17,
+   "deOkContraReposo": 0.0519,
+   "corrimientoTono": -0.21,
+   "contraLienzo": 13.82
+  },
+  {
+   "modo": "oscurecer",
+   "paso": -0.06,
+   "hex": "#E9D400",
+   "oklch": [
+    0.8603,
+    0.1803,
+    102.2
+   ],
+   "hsv": [
+    54.6,
+    1.0,
+    0.914
+   ],
+   "textoSobre": 13.39,
+   "contraReposo": 1.21,
+   "deOkContraReposo": 0.0618,
+   "corrimientoTono": 0.05,
+   "contraLienzo": 13.39
+  },
+  {
+   "modo": "oscurecer",
+   "paso": -0.08,
+   "hex": "#E2CE00",
+   "oklch": [
+    0.8416,
+    0.1765,
+    102.37
+   ],
+   "hsv": [
+    54.7,
+    1.0,
+    0.886
+   ],
+   "textoSobre": 12.6,
+   "contraReposo": 1.29,
+   "deOkContraReposo": 0.0809,
+   "corrimientoTono": 0.22,
+   "contraLienzo": 12.6
+  },
+  {
+   "modo": "oscurecer",
+   "paso": -0.1,
+   "hex": "#DBC700",
+   "oklch": [
+    0.8207,
+    0.1719,
+    102.12
+   ],
+   "hsv": [
+    54.5,
+    1.0,
+    0.859
+   ],
+   "textoSobre": 11.75,
+   "contraReposo": 1.38,
+   "deOkContraReposo": 0.1023,
+   "corrimientoTono": -0.03,
+   "contraLienzo": 11.75
+  },
+  {
+   "modo": "oscurecer",
+   "paso": -0.12,
+   "hex": "#D4C100",
+   "oklch": [
+    0.8017,
+    0.1681,
+    102.3
+   ],
+   "hsv": [
+    54.6,
+    1.0,
+    0.831
+   ],
+   "textoSobre": 11.03,
+   "contraReposo": 1.47,
+   "deOkContraReposo": 0.1216,
+   "corrimientoTono": 0.14,
+   "contraLienzo": 11.03
+  },
+  {
+   "modo": "oscurecer",
+   "paso": -0.14,
+   "hex": "#CDBA00",
+   "oklch": [
+    0.7806,
+    0.1635,
+    102.03
+   ],
+   "hsv": [
+    54.4,
+    1.0,
+    0.804
+   ],
+   "textoSobre": 10.25,
+   "contraReposo": 1.58,
+   "deOkContraReposo": 0.1433,
+   "corrimientoTono": -0.13,
+   "contraLienzo": 10.25
+  },
+  {
+   "modo": "oscurecer",
+   "paso": -0.16,
+   "hex": "#C6B400",
+   "oklch": [
+    0.7614,
+    0.1596,
+    102.22
+   ],
+   "hsv": [
+    54.5,
+    1.0,
+    0.776
+   ],
+   "textoSobre": 9.58,
+   "contraReposo": 1.69,
+   "deOkContraReposo": 0.1629,
+   "corrimientoTono": 0.06,
+   "contraLienzo": 9.58
+  },
+  {
+   "modo": "oscurecer",
+   "paso": -0.2,
+   "hex": "#B8A700",
+   "oklch": [
+    0.7205,
+    0.1509,
+    102.12
+   ],
+   "hsv": [
+    54.5,
+    1.0,
+    0.722
+   ],
+   "textoSobre": 8.26,
+   "contraReposo": 1.96,
+   "deOkContraReposo": 0.2047,
+   "corrimientoTono": -0.04,
+   "contraLienzo": 8.26
+  },
+  {
+   "modo": "aclarar",
+   "paso": 0.15,
+   "hex": "#FFEB26",
+   "oklch": [
+    0.9276,
+    0.1884,
+    102.92
+   ],
+   "hsv": [
+    54.5,
+    0.851,
+    1.0
+   ],
+   "textoSobre": 16.56,
+   "contraReposo": 1.02,
+   "deOkContraReposo": 0.0085,
+   "corrimientoTono": 0.77,
+   "contraLienzo": 16.56
+  },
+  {
+   "modo": "aclarar",
+   "paso": 0.25,
+   "hex": "#FFEE40",
+   "oklch": [
+    0.9348,
+    0.1802,
+    103.55
+   ],
+   "hsv": [
+    54.7,
+    0.749,
+    1.0
+   ],
+   "textoSobre": 16.94,
+   "contraReposo": 1.05,
+   "deOkContraReposo": 0.0195,
+   "corrimientoTono": 1.39,
+   "contraLienzo": 16.94
+  },
+  {
+   "modo": "aclarar",
+   "paso": 0.35,
+   "hex": "#FFF059",
+   "oklch": [
+    0.9406,
+    0.1668,
+    103.62
+   ],
+   "hsv": [
+    54.6,
+    0.651,
+    1.0
+   ],
+   "textoSobre": 17.23,
+   "contraReposo": 1.06,
+   "deOkContraReposo": 0.0331,
+   "corrimientoTono": 1.47,
+   "contraLienzo": 17.23
+  },
+  {
+   "modo": "aclarar",
+   "paso": 0.5,
+   "hex": "#FFF480",
+   "oklch": [
+    0.9527,
+    0.138,
+    103.83
+   ],
+   "hsv": [
+    54.8,
+    0.498,
+    1.0
+   ],
+   "textoSobre": 17.85,
+   "contraReposo": 1.1,
+   "deOkContraReposo": 0.0636,
+   "corrimientoTono": 1.67,
+   "contraLienzo": 17.85
+  }
+ ],
+ "elegido": {
+  "reposo": "#FFE800",
+  "pasar": "#E9D400",
+  "apretado": "#D4C100"
+ },
+ "pares": [
+  {
+   "par": "texto #060606 sobre el amarillo (reposo, #FFE800)",
+   "contraste": 16.2,
+   "minimo": 4.5,
+   "aprueba": true,
+   "rol": "el texto mono 11 del botón y su flecha"
+  },
+  {
+   "par": "texto #060606 sobre el amarillo (pasar, #E9D400)",
+   "contraste": 13.39,
+   "minimo": 4.5,
+   "aprueba": true,
+   "rol": "el texto mono 11 del botón y su flecha"
+  },
+  {
+   "par": "texto #060606 sobre el amarillo (apretado, #D4C100)",
+   "contraste": 11.03,
+   "minimo": 4.5,
+   "aprueba": true,
+   "rol": "el texto mono 11 del botón y su flecha"
+  },
+  {
+   "par": "blanco sobre el amarillo (reposo)",
+   "contraste": 1.25,
+   "minimo": 4.5,
+   "aprueba": false,
+   "rol": "para que conste por qué el texto no va en blanco"
+  },
+  {
+   "par": "blanco sobre el amarillo (pasar)",
+   "contraste": 1.51,
+   "minimo": 4.5,
+   "aprueba": false,
+   "rol": "para que conste por qué el texto no va en blanco"
+  },
+  {
+   "par": "blanco sobre el amarillo (apretado)",
+   "contraste": 1.84,
+   "minimo": 4.5,
+   "aprueba": false,
+   "rol": "para que conste por qué el texto no va en blanco"
+  },
+  {
+   "par": "amarillo (reposo) contra lienzo",
+   "contraste": 16.2,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (pasar) contra lienzo",
+   "contraste": 13.39,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (apretado) contra lienzo",
+   "contraste": 11.03,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (reposo) contra placa",
+   "contraste": 14.73,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (pasar) contra placa",
+   "contraste": 12.18,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (apretado) contra placa",
+   "contraste": 10.02,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (reposo) contra placa-activa",
+   "contraste": 13.03,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (pasar) contra placa-activa",
+   "contraste": 10.77,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (apretado) contra placa-activa",
+   "contraste": 8.87,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (reposo) contra velo-peor",
+   "contraste": 12.43,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (pasar) contra velo-peor",
+   "contraste": 10.28,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "amarillo (apretado) contra velo-peor",
+   "contraste": 8.46,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el borde del botón: identifica el control (WCAG 1.4.11)"
+  },
+  {
+   "par": "foco blanco contra lienzo",
+   "contraste": 20.26,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el contorno de 2 px a 3 px, sobre el fondo que rodea al botón"
+  },
+  {
+   "par": "foco blanco contra placa",
+   "contraste": 18.42,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el contorno de 2 px a 3 px, sobre el fondo que rodea al botón"
+  },
+  {
+   "par": "foco blanco contra velo-peor",
+   "contraste": 15.55,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "el contorno de 2 px a 3 px, sobre el fondo que rodea al botón"
+  },
+  {
+   "par": "foco blanco contra el amarillo (reposo)",
+   "contraste": 1.25,
+   "minimo": 3.0,
+   "aprueba": false,
+   "rol": "si el contorno tocara el botón: NO aprueba, por eso el hueco de 3 px no se quita"
+  },
+  {
+   "par": "foco blanco contra el amarillo (pasar)",
+   "contraste": 1.51,
+   "minimo": 3.0,
+   "aprueba": false,
+   "rol": "si el contorno tocara el botón: NO aprueba, por eso el hueco de 3 px no se quita"
+  },
+  {
+   "par": "foco blanco contra el amarillo (apretado)",
+   "contraste": 1.84,
+   "minimo": 3.0,
+   "aprueba": false,
+   "rol": "si el contorno tocara el botón: NO aprueba, por eso el hueco de 3 px no se quita"
+  },
+  {
+   "par": "hueco de 3 px (lienzo) contra el amarillo",
+   "contraste": 16.2,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "lo que separa el contorno del relleno"
+  },
+  {
+   "par": "hueco de 3 px (placa) contra el amarillo",
+   "contraste": 14.73,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "lo que separa el contorno del relleno"
+  },
+  {
+   "par": "hueco de 3 px (velo-peor) contra el amarillo",
+   "contraste": 12.43,
+   "minimo": 3.0,
+   "aprueba": true,
+   "rol": "lo que separa el contorno del relleno"
+  },
+  {
+   "par": "estado al pasar contra el reposo",
+   "contraste": 1.21,
+   "minimo": null,
+   "aprueba": null,
+   "rol": "cuánto se nota (el botón claro: blanco → gris 2,88; blanco → apretado 1,54)"
+  },
+  {
+   "par": "apretado contra el reposo",
+   "contraste": 1.47,
+   "minimo": null,
+   "aprueba": null,
+   "rol": "ídem"
+  },
+  {
+   "par": "apretado contra el estado al pasar",
+   "contraste": 1.21,
+   "minimo": null,
+   "aprueba": null,
+   "rol": "ídem"
+  },
+  {
+   "par": "botón claro: gris contra blanco (referencia)",
+   "contraste": 2.88,
+   "minimo": null,
+   "aprueba": null,
+   "rol": "el cambio al pasar del botón claro de hoy"
+  },
+  {
+   "par": "botón claro: apretado contra blanco (referencia)",
+   "contraste": 1.54,
+   "minimo": null,
+   "aprueba": null,
+   "rol": "el cambio al apretar del botón claro de hoy"
+  }
+ ],
+ "deOk": {
+  "pasar-reposo": 0.0618,
+  "apretado-reposo": 0.1216,
+  "apretado-pasar": 0.0598,
+  "gris-blanco (claro, referencia)": 0.3203,
+  "apretado-blanco (claro, referencia)": 0.1424
+ },
+ "oroDelHilo": {
+  "poster": "../e12/medios/hilo/hilo-1920-poster.webp",
+  "pixeles": 74640,
+  "fraccion": 0.036,
+  "tonoHsv": {
+   "p5": 32.9,
+   "mediana": 37.4,
+   "p95": 41.5,
+   "max": 52.0
+  },
+  "tonoOklch": {
+   "p5": 67.2,
+   "mediana": 77.7,
+   "p95": 85.9
+  },
+  "colorMediano": "#B7883F",
+  "deOkMedianoContraAccion": 0.2839,
+  "fraccionSobre52grados": 0.0
+ }
+}
