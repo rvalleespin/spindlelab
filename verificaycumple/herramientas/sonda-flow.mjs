@@ -87,12 +87,25 @@ function forma(nombre, v) {
 if (!process.env.FLOW_API_KEY || !process.env.FLOW_SECRET_KEY) {
   const ruta = join(homedir(), '.flow-claves');
   try {
-    let leidas = 0;
+    // Lo que ya venía del entorno gana, y hay que anotarlo ANTES de empezar a escribir en
+    // `process.env`, o a mitad del recorrido ya no se distingue qué vino de dónde.
+    const delEntorno = new Set(Object.keys(process.env).filter((k) => /^FLOW_/.test(k) && process.env[k]));
+    const cuenta = new Map();
     for (const linea of readFileSync(ruta, 'utf8').split('\n')) {
       const m = linea.match(/^\s*(FLOW_[A-Z_]+)\s*=\s*(.*)$/);
-      if (m && !process.env[m[1]]) { process.env[m[1]] = m[2]; leidas++; }
+      if (!m) continue;
+      cuenta.set(m[1], (cuenta.get(m[1]) || 0) + 1);
+      if (delEntorno.has(m[1])) continue;
+      // ⚠️ GANA LA ÚLTIMA, no la primera. Corregir una clave se hace agregando una línea con
+      // `>>`, que es el gesto natural; si ganara la primera, la corrección se ignoraría en
+      // silencio y el síntoma sería «Flow rechaza mi clave buena» — un error de configuración
+      // disfrazado de error del proveedor.
+      process.env[m[1]] = m[2];
     }
-    console.log(`(${leidas} clave(s) leidas de ${ruta})`);
+    const repetidas = [...cuenta].filter(([, n]) => n > 1);
+    console.log(`(${cuenta.size} clave(s) leidas de ${ruta})`);
+    // Y no se elige en silencio: si hay repetidas, se dice cuál mandó.
+    for (const [k, n] of repetidas) console.log(`  ⚠️ ${k} aparece ${n} veces en el archivo; vale la ULTIMA.`);
   } catch (e) {
     console.log(`(no se pudo leer ${ruta}: ${e.code || (e && e.message)})`);
   }
