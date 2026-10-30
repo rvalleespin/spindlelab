@@ -53,9 +53,21 @@ const VUELTA = 'https://verifica.spindlelab.cl/pedido/';
 function forma(nombre, v) {
   if (v === undefined) return `${nombre}: NO ESTÁ en el entorno`;
   const limpio = v.trim();
-  const sucio = limpio.length !== v.length;
-  return `${nombre}: ${v.length} caracteres${sucio ? ` ⚠️ con espacios alrededor (quedan ${limpio.length} al limpiar)` : ''}` +
-    `${limpio.length === 0 ? ' ⚠️ VACÍO' : ''}`;
+  const notas = [];
+  if (limpio.length !== v.length) notas.push(`espacios alrededor (quedan ${limpio.length} al limpiar)`);
+  if (limpio.length === 0) notas.push('VACÍO');
+  // Un pegado doble se ve «presente» y con largo plausible, y produce un error de credenciales
+  // idéntico al de una clave equivocada. Se detecta sin mirar el valor: si la primera mitad es
+  // igual a la segunda, se pegó dos veces.
+  const mitad = limpio.length / 2;
+  if (limpio.length > 1 && Number.isInteger(mitad) && limpio.slice(0, mitad) === limpio.slice(mitad)) {
+    notas.push('PEGADO DOS VECES (la primera mitad es idéntica a la segunda)');
+  }
+  // Y la forma de los caracteres, que tampoco revela el valor: las claves de Flow son
+  // hexadecimal con guiones. Una letra fuera de ese juego suele ser una etiqueta que se
+  // coló en el copiado.
+  if (limpio && !/^[0-9A-Fa-f-]+$/.test(limpio)) notas.push('tiene caracteres fuera de [0-9A-F-]');
+  return `${nombre}: ${v.length} caracteres${notas.length ? ' ⚠️ ' + notas.join(' · ') : ''}`;
 }
 
 const apiKey = process.env.FLOW_API_KEY;
@@ -102,7 +114,30 @@ if (accion === 'crear') {
     console.log(`\n>>> status = ${JSON.stringify(r.pago.status)}   (el número que falta en ESTADOS_FLOW)`);
     console.log(`>>> ESTADOS_FLOW lo conoce: ${r.pago.status in F.ESTADOS_FLOW ? 'sí' : 'NO — por eso nada se marca solo'}`);
   }
+} else if (accion === 'donde') {
+  // ── EN QUÉ ENTORNO VIVEN ESTAS CLAVES ─────────────────────────────────────────────────
+  //
+  // Flow tiene dos mundos con credenciales DISTINTAS: `sandbox.flow.cl` y `www.flow.cl`. Una
+  // clave de producción llamando al sandbox devuelve «apiKey not found», que es exactamente lo
+  // que estamos viendo. Hay que distinguirlo de «la clave está mal copiada».
+  //
+  // ⚠️ SE PREGUNTA CON `payment/getStatus`, NO CON `payment/create`, Y ESA ES LA DECISIÓN
+  // IMPORTANTE DE ESTE BLOQUE. `getStatus` solo LEE: no abre un pago, no cobra y no deja nada
+  // creado del otro lado. Probar el entorno de producción con `create` significaría abrir un
+  // cobro real para averiguar una pregunta de configuración, y eso no se hace nunca.
+  //
+  // El token es uno que no existe a propósito. Lo que interesa no es el pago, es CUÁL de los
+  // dos errores contesta cada entorno:
+  //   - «apiKey not found»  → ese entorno no conoce la clave.
+  //   - cualquier otro       → la clave sí vive ahí, y el que falta es el pago inventado.
+  for (const [nombre, base] of [['SANDBOX', F.BASE_SANDBOX], ['PRODUCCION', F.BASE_PRODUCCION]]) {
+    const r = await F.leerPagoFlow('token-inexistente-de-la-sonda', { apiKey, secretKey, base });
+    console.log(`\n--- ${nombre}  (${base}) ---`);
+    console.log(JSON.stringify(r.detalleFlow || r, null, 2));
+  }
+  console.log('\nSi SANDBOX dice «apiKey not found» y PRODUCCION dice otra cosa, la cuenta');
+  console.log('se creo en www.flow.cl y no en sandbox.flow.cl.');
 } else {
-  console.log('Uso:\n  node herramientas/sonda-flow.mjs crear\n  node herramientas/sonda-flow.mjs leer <token>');
+  console.log('Uso:\n  node herramientas/sonda-flow.mjs donde\n  node herramientas/sonda-flow.mjs crear\n  node herramientas/sonda-flow.mjs leer <token>');
   process.exit(1);
 }
