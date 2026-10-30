@@ -1608,7 +1608,7 @@
             <li><strong>La revisión legal no está incluida.</strong> El borrador lo revisa tu abogado.</li>
           </ul>
           <label>Correo <input type="email" name="correo" required autocomplete="email" placeholder="tu@empresa.cl"></label>
-          <p class="compra-ayuda">Lo necesita Mercado Pago, y es donde te escribimos para pedirte el acceso a tu sitio. <strong>Después de pagar vuelves solo a la pantalla de tu pedido: guarda ese enlace</strong>, es la única forma de volver y no hace falta ninguna cuenta.</p>
+          <p class="compra-ayuda">Lo necesita el medio de pago, y es donde te escribimos para pedirte el acceso a tu sitio. <strong>Después de pagar vuelves solo a la pantalla de tu pedido: guarda ese enlace</strong>, es la única forma de volver y no hace falta ninguna cuenta.</p>
           <label class="pedir-consiento"><input type="checkbox" name="consiento" required> <span>Acepto que mis datos se usen para gestionar mi compra, según la <a href="/privacidad/">política de privacidad</a>.</span></label>
           <button type="submit" class="boton-ayuda">Ir a pagar</button>
           <p class="pedir-estado" role="status"></p>
@@ -1618,7 +1618,7 @@
                perderlo justo en ese punto. -->
           <p class="compra-rescate" hidden>No es cosa tuya, el problema está de nuestro lado.
             <button type="button" class="boton-rescate" data-pedir="kit-sin-pago">Avísame cuando funcione</button></p>
-          <p class="compra-sigue">Te llevamos a Mercado Pago. Vuelves a una página con tu pedido, y el enlace de esa página es tuyo: guárdalo.</p>
+          <p class="compra-sigue">Te llevamos a la pantalla de pago. Vuelves a una página con tu pedido, y el enlace de esa página es tuyo: guárdalo.</p>
         </form>
 
         <!-- El segundo resultado: lo que vio un navegador de verdad al abrir el sitio.
@@ -3281,7 +3281,17 @@
     try {
       const url = new URL(u);
       if (url.protocol !== 'https:') return false;
-      return /(^|\.)mercadopago\.(com|cl)$/.test(url.hostname) ||
+      // ⚠️ ESTA LISTA TIENE QUE CRECER CON CADA PASARELA, Y OLVIDARLO ROMPE LA COMPRA ENTERA.
+      //
+      // Pasó el 30-oct-2026: el servidor ya cobraba por Flow, devolvía su URL correctamente, y
+      // esta función la rechazaba por no ser de Mercado Pago. El pago quedaba CREADO del lado de
+      // Flow y la persona nunca llegaba a él: veía «Reintentar» y un mensaje que no explicaba
+      // nada. El checkout estaba 100% roto y el servidor no tenía ni un error que mostrar,
+      // porque desde su punto de vista todo había salido bien.
+      //
+      // `(^|\.)` importa: sin eso, `malvadoflow.cl` pasaría.
+      return /(^|\.)flow\.cl$/.test(url.hostname) ||
+             /(^|\.)mercadopago\.(com|cl)$/.test(url.hostname) ||
              /(^|\.)mercadolibre\.(com|cl)$/.test(url.hostname);
     } catch { return false; }
   }
@@ -3403,7 +3413,7 @@
     }
 
     if (data && data.ok && destinoDePagoValido(data.checkout_url)) {
-      mensajeCompra('Te estamos llevando a Mercado Pago…');
+      mensajeCompra('Te estamos llevando al pago…');
       // El enlace del pedido se guarda ANTES de salir del sitio. Si la persona abandona la
       // pasarela y vuelve, esto es lo único que la devuelve a su pedido: el id no se puede
       // adivinar y el correo tarda.
