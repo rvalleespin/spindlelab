@@ -15,6 +15,7 @@ SpindleLab ofrece el kit "Verifica y Cumple" ($149.000 + IVA, una sola vez, no i
 | 2ª ola y reactivación (21) | 19-oct | 23-oct | vencido desde el 26-oct, sin texto para las 15 R |
 | Tanda 1 Vibe (13 vivos; V28 y V44 rebotaron) | 23-oct | 27-oct | **vie 30-oct** |
 | Tanda 2 Vibe (15) | 26-oct | **jue 29-oct** | **lun 2-nov** |
+| Tanda 3 Vibe (2 enviados: resolaud.cl V84 y trustdoc.cl V94; audiprop V67 y medicinachina V89 cayeron en la re-medición y sus borradores se borraron) | 30-oct 15:23 UTC | **mar 3-nov** | **lun 9-nov** |
 
 Sin respuestas ni rebotes de los motor desde el 23-oct. Una respuesta de terrantai.com llegó a un hilo del copiloto (no del motor): la lee Ramón.
 
@@ -22,6 +23,7 @@ Sin respuestas ni rebotes de los motor desde el 23-oct. Una respuesta de terrant
 1. **Jue 29-oct:** crear 15 borradores de toque 2 de la tanda 2 (`borradores/borradores-toque2-tanda2.json`).
 2. **Vie 30-oct:** crear 13 borradores de toque 3 de la tanda 1 (`borradores/borradores-toque3-tanda1.json`).
 3. **Lun 2-nov:** crear 15 borradores de toque 3 de la tanda 2 (`borradores/borradores-toque3-tanda2.json`).
+3b. **Mar 3-nov:** crear 2 borradores de toque 2 de la tanda 3 como respuesta en el hilo (hilos `1a18d3832dd511bf` resolaud y `1a18d3837c492a80` trustdoc). Antes, mirar la bandeja y re-medir solo si el texto vuelve a afirmar un hecho técnico en presente. El toque 3 (lun 9-nov) siempre se re-mide antes.
 4. **Hacia el 3-6 nov:** lectura de resultados (respuestas por tipo de hallazgo, cookies o formulario, y por tipo de destinatario). Comparar contra el ~5% del método anterior.
 
 ## Cómo crear cada lote (con acceso a Gmail)
