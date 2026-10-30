@@ -1,10 +1,10 @@
-// LOS SERVICIOS DE A (obra E12, corrida 2, tanda 4). Diego, 19-oct-2026.
+// LOS SERVICIOS DE A (obra E12, corrida 2, tanda 4). Diego, 19-oct-2026; orden y comprobaciones al día en la obra E13.
 //
-// Lo que comparten /v3/servicios/, Desarrollo web y los cinco servicios de [slug].astro: el orden de los seis (el de la
-// página de servicios, que es el de oferta-v3.json), el siguiente de cada uno, los trozos de un texto de Clara con sus
-// enlaces, y la comprobación de los precios. Los precios y los nombres salen de oferta-v3.json y servicios-v3.json, que
-// esta obra no toca: aquí solo se leen y se comparan, como texto, con lo que escribió Clara (brief §6.4, spec §6.9). Un
-// precio de Clara que no esté en los JSON hace caer el build.
+// Lo que comparten /servicios/, Desarrollo web y los cinco servicios de [slug].astro: el orden de los seis (el de la
+// página de servicios), el siguiente de cada uno, los trozos de un texto de Clara con sus enlaces, y la comprobación de
+// los precios. Los precios y los nombres salen de oferta-v3.json y servicios-v3.json (la obra E13 corrigió su texto, no
+// ningún monto ni nombre): aquí solo se leen y se comparan, como texto, con lo que escribió Clara (brief E12 §6.4, spec
+// §6.9). Un precio de Clara que no esté en los JSON hace caer el build.
 //
 // Es .mjs y no .ts a propósito: Tailwind (tailwind.config.mjs, que no se toca) lee las palabras de los .astro y .ts de
 // src/, y una que coincida con una clase cambiaría el CSS de las páginas publicadas (desvios.md, tanda 1, punto 6).
@@ -13,13 +13,26 @@ import servicios from '../servicios-v3.json';
 
 export const SITIO = 'https://spindlelab.cl';
 
-// ---- Los seis, en el orden de la página de servicios: los momentos de oferta-v3.json y después «también» (Redes y
-// Paid Media). Es el mismo orden del menú de servicios del v3 anterior y el de «Siguiente», en ciclo.
-export const ORDEN = [...oferta.momentos.flatMap((m) => m.items), ...oferta.tambien].map((it) => ({
-  nombre: it.n,
-  href: it.href,
-  slug: it.href.split('/').filter(Boolean).pop(),
-}));
+// ---- Los seis, en el orden de la página de servicios (obra E13): los cuatro bloques del documento de textos §4, que son
+// Búsqueda y visibilidad en IA (Auditoría, Visibilidad), Anuncios en Google y redes (Paid Media, Redes), Sitio web a medida
+// (Desarrollo web) y Acompañamiento mensual. Es también el orden del ItemList del JSON-LD y el de «Siguiente», en ciclo.
+// Los nombres y los destinos salen de oferta-v3.json, que conserva su forma (la home lee momentos[] y tambien[]); lo único
+// que se fija aquí es el orden.
+const POR_BLOQUE = [
+  'auditoria-seo-tecnica',
+  'visibilidad-en-ia',
+  'paid-media',
+  'redes-sociales',
+  'desarrollo-web',
+  'acompanamiento-mensual',
+];
+const FILAS = [...oferta.momentos.flatMap((m) => m.items), ...oferta.tambien];
+export const ORDEN = POR_BLOQUE.map((slug) => {
+  const it = FILAS.find((f) => f.href.split('/').filter(Boolean).pop() === slug);
+  if (!it) throw new Error(`servicios.mjs: «${slug}» no está en oferta-v3.json`);
+  return { nombre: it.n, href: it.href, slug };
+});
+if (ORDEN.length !== FILAS.length) throw new Error('servicios.mjs: oferta-v3.json trae servicios que ORDEN no ordena');
 
 export function siguiente(slug) {
   const i = ORDEN.findIndex((s) => s.slug === slug);
@@ -33,7 +46,7 @@ export function nombreDe(slug) {
   return s.nombre;
 }
 
-// ---- Un texto de Clara partido en sus enlaces («enlaces»: { "el chequeo": "/v3/diagnostico/" }), sin cambiar una
+// ---- Un texto de Clara partido en sus enlaces («enlaces»: { "el chequeo": "/diagnostico/" }), sin cambiar una
 // letra: cada frase se enlaza la primera vez que aparece. Si una frase no está en el texto, el build se cae.
 export function trozos(texto, enlaces = {}) {
   const salida = [];

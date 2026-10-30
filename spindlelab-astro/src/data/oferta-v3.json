@@ -6,9 +6,9 @@
         {
           "n": "Desarrollo web",
           "p": "$390.000 · $690.000 · $1.190.000",
-          "href": "/v3/servicios/desarrollo-web/",
-          "d": "El sitio nace legible para las máquinas que hoy recomiendan tu negocio. Lo compruebas con el mismo chequeo, sobre tu dominio, antes y después.",
-          "dIndice": "El sitio nace legible para las máquinas que hoy recomiendan tu negocio. Lo compruebas con el chequeo gratis, sobre tu dominio, antes y después."
+          "href": "/servicios/desarrollo-web/",
+          "d": "El sitio nace listo para que Google y las IA puedan visitarlo y entender a qué te dedicas. Lo compruebas con el mismo chequeo, sobre tu dominio, antes y después.",
+          "dIndice": "El sitio nace listo para que Google y las IA puedan visitarlo y entender a qué te dedicas. Lo compruebas con el chequeo gratis, sobre tu dominio, antes y después."
         }
       ],
       "nota": "",
@@ -21,7 +21,7 @@
           "d": "Una página hecha para convertir la pauta que ya estás pagando.",
           "puntos": [
             "Una página, para una campaña y una oferta",
-            "Diseño a medida, sin plantilla",
+            "Diseño a medida, hecho para tu negocio",
             "SEO técnico y medición desde el primer día",
             "Entrega en ~1 semana"
           ]
@@ -40,7 +40,7 @@
         {
           "n": "Sitio Completo",
           "p": "Desde $1.190.000 + IVA",
-          "d": "Más páginas y puesto a punto para que la IA te lea.",
+          "d": "Más páginas y puesto a punto para que ChatGPT y otras IA puedan visitar tu sitio y entender a qué te dedicas.",
           "puntos": [
             "Home y hasta 12 páginas",
             "Blog o CMS que administras tú",
@@ -56,7 +56,7 @@
           "puntos": [
             "Todo lo del Sitio Completo, y más",
             "Páginas sin tope",
-            "Integraciones: CRM, reservas, pagos",
+            "Integraciones a medida: reservas, pagos",
             "Arquitectura propia",
             "Multi-idioma"
           ]
@@ -69,32 +69,32 @@
         {
           "n": "Visibilidad en IA",
           "p": "$400.000",
-          "href": "/v3/servicios/visibilidad-en-ia/",
-          "d": "Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro."
+          "href": "/servicios/visibilidad-en-ia/",
+          "d": "Mide cómo te describen ChatGPT, Gemini y Perplexity y qué cambiar en tu sitio para que te entiendan mejor."
         },
         {
           "n": "Auditoría SEO técnica",
           "p": "$490.000 · $690.000 con Visibilidad en IA",
-          "href": "/v3/servicios/auditoria-seo-tecnica/",
+          "href": "/servicios/auditoria-seo-tecnica/",
           "d": "Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué arreglar primero."
         }
       ],
       "palabra": "Visibilidad",
       "campo": "navy",
-      "nota": "No hace falta reconstruir para que una IA pueda citarte.",
+      "nota": "No hace falta reconstruir para que ChatGPT y otras IA puedan visitar tu sitio y entender a qué te dedicas.",
       "planes": [
         {
           "n": "Visibilidad en IA",
-          "d": "Para que ChatGPT, Gemini y Perplexity puedan citarte cuando preguntan por tu rubro.",
+          "d": "Mide cómo te describen ChatGPT, Gemini y Perplexity y qué cambiar en tu sitio para que te entiendan mejor.",
           "p": "$400.000",
-          "href": "/v3/servicios/visibilidad-en-ia/",
+          "href": "/servicios/visibilidad-en-ia/",
           "cta": "Ver Visibilidad en IA"
         },
         {
           "n": "Auditoría SEO técnica",
           "d": "Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué arreglar primero.",
           "p": "$490.000 · $690.000 con Visibilidad IA",
-          "href": "/v3/servicios/auditoria-seo-tecnica/",
+          "href": "/servicios/auditoria-seo-tecnica/",
           "cta": "Ver Auditoría SEO técnica"
         }
       ]
@@ -105,8 +105,8 @@
         {
           "n": "Acompañamiento mensual",
           "p": "$590.000/mes · $790.000/mes Pro",
-          "href": "/v3/servicios/acompanamiento-mensual/",
-          "d": "Implementación continua e informes quincenales de SEO técnico o de visibilidad en IA."
+          "href": "/servicios/acompanamiento-mensual/",
+          "d": "Implementación continua e informe mensual de SEO técnico o de visibilidad en IA."
         }
       ],
       "palabra": "Continuidad",
@@ -134,13 +134,13 @@
     {
       "n": "Gestión de redes sociales",
       "p": "$390.000/mes · $590.000/mes con pauta",
-      "href": "/v3/servicios/redes-sociales/",
+      "href": "/servicios/redes-sociales/",
       "d": "Orgánico y pauta social en LinkedIn y Meta."
     },
     {
       "n": "Paid Media (Google)",
       "p": "$350.000/mes · $550.000/mes Pro",
-      "href": "/v3/servicios/paid-media/",
+      "href": "/servicios/paid-media/",
       "d": "Google Ads para llegar a quien ya está buscando lo que ofreces."
     }
   ],
@@ -159,14 +159,14 @@
         "n": "Gestión de redes sociales",
         "d": "Orgánico y pauta social en LinkedIn y Meta.",
         "p": "$390.000/mes · $590.000/mes con pauta",
-        "href": "/v3/servicios/redes-sociales/",
+        "href": "/servicios/redes-sociales/",
         "cta": "Ver Gestión de redes sociales"
       },
       {
         "n": "Paid Media (Google)",
         "d": "Google Ads de alta intención: captura a quien ya está buscando lo que ofreces.",
         "p": "$350.000/mes · $550.000/mes Pro",
-        "href": "/v3/servicios/paid-media/",
+        "href": "/servicios/paid-media/",
         "cta": "Ver Paid Media (Google)"
       }
     ]

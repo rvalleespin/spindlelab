@@ -1,0 +1,144 @@
+TITLE: Contacto: pide tu revisión gratis · SpindleLab
+DESC: Escríbenos la dirección de tu sitio y en un día hábil recibes una revisión de una página con lo más importante que encontramos.
+CANON: https://spindlelab.cl/contacto/
+OG: https://spindlelab.cl/assets/img/og-posicionamiento.jpg?v=1
+OGALT: SpindleLab. Marketing y crecimiento con IA
+
+=== TEXTO ===
+SpindleLab
+.
+Soluciones
+Método
+Nosotros
+Evidencia
+Blog
+Contacto
+Pedir la revisión
+INICIO
+CONTACTO
+Escríbenos la dirección de tu sitio y te respondemos con una revisión.
+
+Te respondemos con una página con lo más importante que encontramos. Es gratis y llega en un día hábil.
+
+COMPLETAR EL FORMULARIO ↓
+O escríbenos directo a hola@spindlelab.cl
+EL PRIMER PASO
+Cuéntanos de tu proyecto
+
+Con tu nombre, tu correo y la dirección de tu sitio ya podemos partir.
+
+NOMBRE
+EMAIL
+SITIO WEB
+CUÉNTANOS BREVEMENTE (opcional)
+Acepto que estos datos se usen para responder mi solicitud, según la política de privacidad.
+ENVIAR LA DIRECCIÓN
+
+¿Prefieres ir directo? Escríbenos a hola@spindlelab.cl
+
+TRES PASOS
+Qué pasa después
+01
+Nos escribes
+
+Con la dirección de tu sitio basta. Si quieres, agrega qué vendes y cómo te llegan las consultas.
+
+02
+Recibes la revisión
+
+Una página en lenguaje claro, con los hallazgos más importantes y por dónde partiríamos.
+
+03
+Tú decides
+
+Si quieres avanzar, conversamos 20 minutos y te mandamos una propuesta por escrito. Si no, la revisión queda contigo.
+
+PREGUNTAS FRECUENTES
+Antes de escribir
+¿La revisión es gratis?
+¿Qué información necesitan para empezar?
+¿Firman acuerdos de confidencialidad?
+¿Atienden fuera de Santiago?
+
+SpindleLab.
+
+SOLUCIONES
+Auditoría SEO técnica
+Visibilidad en IA
+Acompañamiento mensual
+Gestión de redes sociales
+Paid media (Google)
+Desarrollo web
+SITIO
+Método
+Nosotros
+Chequeo gratis
+El Taller
+Contacto
+CONTACTO
+Santiago, Chile
+hola@spindlelab.cl
+LinkedIn
+Instagram
+© 2026 SpindleLab · Chile
+Política de privacidad · Cookies
+Marketing y crecimiento con IA para empresas que ya venden.
+
+Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la política de privacidad.
+
+Rechazar
+Aceptar
+
+=== JSON-LD ===
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://spindlelab.cl/#org",
+      "name": "SpindleLab",
+      "url": "https://spindlelab.cl/",
+      "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+      "email": "hola@spindlelab.cl",
+      "description": "Marketing y crecimiento con IA para empresas en Chile: revisión del sitio y de la presencia en IA, implementación por fases y acompañamiento mensual.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
+      "areaServed": {"@type": "Country", "name": "Chile"},
+      "sameAs": ["https://www.linkedin.com/company/spindlelab/", "https://www.instagram.com/spindlelab.cl/"],
+      "founder": {"@id": "https://spindlelab.cl/#autor-ramon"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://spindlelab.cl/#autor-ramon",
+      "name": "Ramón Vallejos",
+      "jobTitle": "Consultor de marketing y crecimiento con IA",
+      "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+      "url": "https://spindlelab.cl/nosotros/",
+      "worksFor": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://spindlelab.cl/contacto/#page",
+      "url": "https://spindlelab.cl/contacto/",
+      "name": "Contacto · SpindleLab",
+      "about": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
+        {"@type": "ListItem", "position": 2, "name": "Contacto", "item": "https://spindlelab.cl/contacto/"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "¿La revisión es gratis?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Es nuestra primera entrega y no te cobramos por ella."}},
+        {"@type": "Question", "name": "¿Qué información necesitan para empezar?", "acceptedAnswer": {"@type": "Answer", "text": "Solo la dirección de tu sitio. Si avanzamos, te vamos a pedir acceso de lectura a Search Console y a tu analítica."}},
+        {"@type": "Question", "name": "¿Firman acuerdos de confidencialidad?", "acceptedAnswer": {"@type": "Answer", "text": "Podemos firmar uno si lo necesitas."}},
+        {"@type": "Question", "name": "¿Atienden fuera de Santiago?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. El trabajo es remoto y atendemos a todo Chile. Nos juntamos por videollamada, en horario de oficina."}}
+      ]
+    }
+  ]
+}
+

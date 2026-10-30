@@ -1,0 +1,225 @@
+{
+ "id": "nosotros",
+ "ruta": "/nosotros/",
+ "modo": "reescribe (E13)",
+ "regla": "E13, 26-oct-2026: el texto sale de e13/fuentes/v2-vigente/nosotros.txt (publicado y aprobado el 24-oct) y de copy-secciones-v1.2.md §2.7 y §7. Todo en singular de Ramón (la página entera es suya). Se saca «Por qué un solo sistema» (subordinaba redes y pauta al sitio) y todo lo que el documento manda borrar: «más de cinco años», «orquestando el motor», los partners, «el objetivo es que vendas… tu nombre ya esté ahí», «Sin humo» y «Con eso decides con información». El texto de E12 que se reemplaza va en «antes».",
+ "title": "Ramón Vallejos, marketing y crecimiento con IA · SpindleLab",
+ "description": "Detrás de SpindleLab está Ramón Vallejos. Marketing y crecimiento con IA, con evidencia antes que promesas. Revisión gratis de una página.",
+ "senales": "Simón, e12/senales-obra.md §2.10, con el cambio de e13: v2-vigente/nosotros.txt",
+ "secciones": [
+  {
+   "id": "cabecera",
+   "nombre": "Cabecera y bio",
+   "trabajo": "Decir quién está detrás, con qué herramientas trabaja y cuánto toma a la vez. La bio es la de v2-vigente, tal cual.",
+   "elementos": [
+    {
+     "id": "nosotros.miga",
+     "rol": "rotulo",
+     "texto": "Inicio · Nosotros",
+     "origen": "e12 (sin cambio)",
+     "uso": "miga",
+     "estado": "queda"
+    },
+    {
+     "id": "nosotros.h1",
+     "rol": "h1",
+     "texto": "No te prometo. Te muestro.",
+     "origen": "v2-vigente/nosotros.txt; copy-secciones-v1.2 §7",
+     "nota": "En una sola tinta: partirlo en dos dejaría una continuación de dos palabras (el lock §14 pide de 6 a 13) y no se le agrega nada a un texto de Ramón.",
+     "estado": "queda"
+    },
+    {
+     "id": "nosotros.linea",
+     "rol": "entradilla",
+     "texto": "Detrás de SpindleLab está Ramón Vallejos: marketing y crecimiento con IA para empresas que ya venden.",
+     "antes": "Detrás de SpindleLab está Ramón Vallejos: diseño y programación de sitios a medida, SEO técnico y visibilidad en IA.",
+     "origen": "meta description de v2-vigente/nosotros.txt («Detrás de SpindleLab está Ramón Vallejos. Marketing y crecimiento con IA…») y la línea sobre el titular de la home («Marketing y crecimiento con IA para empresas que ya venden.»)",
+     "por_que": "La plantilla v3 tiene una entradilla bajo el h1 y la de E12 decía la tesis anterior (sitios a medida). No es la bio.",
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.retrato",
+     "rol": "nota",
+     "texto": "Ramón Vallejos, de camisa celeste, sobre fondo oscuro.",
+     "origen": "e12 (sin cambio)",
+     "uso": "alt",
+     "estado": "queda"
+    },
+    {
+     "id": "nosotros.boton1",
+     "rol": "boton",
+     "texto": "Pedir la revisión de una página",
+     "destino": "/contacto/",
+     "antes": "Revisar mi sitio gratis (a /diagnostico/) y «Escríbenos» (a /contacto/)",
+     "origen": "brief de obra §2: una sola acción principal por ruta, «Pedir la revisión de una página» hacia /contacto/",
+     "por_que": "E12 tenía dos botones en la cabecera. El chequeo baja a enlace secundario y la acción principal es una.",
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.bio",
+     "rol": "parrafo",
+     "texto": "Soy Ramón Vallejos y SpindleLab soy yo. Uso agentes de IA para el trabajo que se repite y reviso yo lo que te entrego. Como soy una persona, tomo pocos proyectos a la vez. Atiendo a todo Chile por videollamada.",
+     "antes": "Soy Ramón Vallejos. SpindleLab soy yo al frente, orquestando el motor, con agentes de IA a mi lado y partners para lo que no hacemos en casa.",
+     "origen": "v2-vigente/nosotros.txt; copy-secciones-v1.2 §2.7 (P1)",
+     "por_que": "Sale «orquestando el motor» (jerga sin referente) y «partners para lo que no hacemos en casa» (los partners no tienen relación comercial documentada y la frase proyecta un equipo sobre una operación de una persona). «Agentes de IA» solo vive aquí y en «Quién está detrás» de la home.",
+     "condicion": "«Como soy una persona, tomo pocos proyectos a la vez» es una afirmación de capacidad que Ramón confirma (copy §12, decisión 6). Si no la confirma, sale la frase.",
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.rol",
+     "rol": "nota",
+     "texto": "Ramón Vallejos · Consultor de marketing y crecimiento con IA · Chile",
+     "antes": "Ramón Vallejos · Fundador de SpindleLab: diseño y desarrollo web, SEO técnico y visibilidad en IA · Chile",
+     "origen": "v2-vigente/nosotros.txt (pie de la foto y jobTitle de #autor-ramon)",
+     "por_que": "El cargo de E12 era la tesis anterior. El jobTitle del JSON-LD sale de layout-a.ts (props del Layout, que no es de esta área) y tiene que decir lo mismo.",
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.trayectoria.h2",
+     "rol": "h2",
+     "texto": "Antes trabajé en agencias",
+     "antes": "Antes pasé más de cinco años en agencias",
+     "origen": "v2-vigente/nosotros.txt («Antes trabajé en agencias.»)",
+     "por_que": "«Más de cinco años» no se verifica contra el CV (las fechas suman entre 4 años y 4 años 9 meses). Regla de marca: el CV es un conjunto cerrado de hechos.",
+     "nivel": 2,
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.trayectoria.1",
+     "rol": "parrafo",
+     "texto": "Coordiné la producción de piezas para ocho marcas nacionales en Universal McCann.",
+     "antes": "Empecé en Universal McCann, coordinando la producción de piezas para ocho marcas nacionales.",
+     "origen": "v2-vigente/nosotros.txt (P2)",
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.trayectoria.2",
+     "rol": "parrafo",
+     "texto": "Trabajé la cuenta de LATAM Airlines en Graphene IPG, con campañas en cuatro países.",
+     "antes": "En Graphene IPG trabajé la cuenta de LATAM Airlines, con campañas en Chile, Perú, Ecuador y Colombia.",
+     "origen": "v2-vigente/nosotros.txt (P2)",
+     "por_que": "El documento de textos dice «cuatro países»; se usa su redacción.",
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.trayectoria.3",
+     "rol": "parrafo",
+     "texto": "Después hice pauta de retail y B2B en Incrementa, y contenido y SEO en Maggiore.",
+     "antes": "Después vino la pauta de retail y B2B en Incrementa, y el contenido y el SEO de una cartera B2B en Maggiore.",
+     "origen": "v2-vigente/nosotros.txt (P2)",
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.trayectoria.4",
+     "rol": "parrafo",
+     "texto": "Estudié Comunicación Publicitaria en la Universidad Andrés Bello y un máster en Marketing Digital y E-commerce en la Universidad de Barcelona.",
+     "origen": "e12 (sin cambio); el JSON-LD de v2-vigente ya declara las dos universidades en alumniOf",
+     "condicion": "El texto de v2-vigente no trae esta línea. Se conserva porque es un hecho del CV ya público en el JSON-LD; si Ramón prefiere la página como en v2, sale.",
+     "estado": "queda"
+    }
+   ]
+  },
+  {
+   "id": "como",
+   "nombre": "Cómo trabajo",
+   "trabajo": "Las tres reglas de Ramón, en su voz. Reemplazan a «Por qué un solo sistema» y a las cinco reglas de E12.",
+   "elementos": [
+    {
+     "id": "nosotros.como.h2",
+     "rol": "h2",
+     "texto": "Cómo trabajo",
+     "origen": "e12 (sin cambio)",
+     "estado": "queda"
+    },
+    {
+     "id": "nosotros.como.1.t",
+     "rol": "h2",
+     "texto": "Empiezo por mirar",
+     "nivel": 3,
+     "origen": "v2-vigente/nosotros.txt; copy-secciones-v1.2 §2.7",
+     "estado": "nuevo"
+    },
+    {
+     "id": "nosotros.como.1.d",
+     "rol": "parrafo",
+     "texto": "Reviso tu sitio antes de cobrarte nada y te cuento lo que encontré.",
+     "origen": "v2-vigente/nosotros.txt",
+     "estado": "nuevo"
+    },
+    {
+     "id": "nosotros.como.2.t",
+     "rol": "h2",
+     "texto": "Te digo qué se puede mover y qué no",
+     "nivel": 3,
+     "origen": "v2-vigente/nosotros.txt",
+     "estado": "nuevo"
+    },
+    {
+     "id": "nosotros.como.2.d",
+     "rol": "parrafo",
+     "texto": "Si el problema no está en tu sitio, te lo digo, y la conversación de 20 minutos sirve para ver dónde mirar.",
+     "origen": "v2-vigente/nosotros.txt",
+     "estado": "nuevo"
+    },
+    {
+     "id": "nosotros.como.3.t",
+     "rol": "h2",
+     "texto": "Lo dejo por escrito",
+     "nivel": 3,
+     "origen": "v2-vigente/nosotros.txt",
+     "estado": "nuevo"
+    },
+    {
+     "id": "nosotros.como.3.d",
+     "rol": "parrafo",
+     "texto": "Alcance, fases, plazos y precio, antes de empezar.",
+     "origen": "v2-vigente/nosotros.txt",
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "cierre",
+   "nombre": "Cierre y siguiente",
+   "trabajo": "Un solo paso, en singular: escribirle a Ramón la dirección del sitio.",
+   "elementos": [
+    {
+     "id": "nosotros.cierre.h2",
+     "rol": "h2",
+     "texto": "Escríbeme la dirección de tu sitio.",
+     "antes": "¿Apareces cuando tus clientes preguntan?",
+     "origen": "v2-vigente/nosotros.txt; copy-secciones-v1.2 §7",
+     "por_que": "Era una pregunta retórica sobre la tesis anterior.",
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.cierre.p",
+     "rol": "parrafo",
+     "texto": "Te respondo con la revisión.",
+     "antes": "Lo primero es un diagnóstico. Reviso tu sitio, tu contenido y si la IA te nombra, y te entrego en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas. Con eso decides con información, no a ciegas.",
+     "origen": "v2-vigente/nosotros.txt",
+     "por_que": "Sacaba «diagnóstico», «24 horas», «mueve la aguja» y «Con eso decides con información» (remate sin hecho). La bajada de E12 («Te lo muestro antes de que pagues nada.») sale porque el h1 de la página ya lo dice.",
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.cierre.boton",
+     "rol": "boton",
+     "texto": "Escribirme",
+     "destino": "/contacto/",
+     "antes": "Pedir el diagnóstico y Revisar mi sitio gratis",
+     "origen": "v2-vigente/nosotros.txt",
+     "estado": "cambia"
+    },
+    {
+     "id": "nosotros.siguiente",
+     "rol": "boton",
+     "texto": "Método",
+     "rotulo": "Siguiente",
+     "destino": "/metodo/",
+     "origen": "e12 (sin cambio)",
+     "estado": "queda"
+    }
+   ]
+  }
+ ]
+}

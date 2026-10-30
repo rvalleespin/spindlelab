@@ -1,27 +1,27 @@
 {
- "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
- "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/diagnostico.json",
+ "sha256": "b54b9e7addbd489662ef7460a9fa704877438075bbe3407810c1416e9776623e",
  "id": "diagnostico",
- "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "diagnostico",
-  "ruta": "/v3/diagnostico/",
-  "modo": "queda con ajustes",
-  "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
-  "title": "Chequeo gratis: ¿ChatGPT puede leer tu sitio? · SpindleLab",
-  "description": "Escribe tu dominio y en segundos ves si ChatGPT, Claude y Perplexity pueden leer, entender y citar tu sitio. Gratis, con las 21 señales y su peso publicados.",
-  "senales": "Simón, e12/senales-obra.md §2.6",
+  "ruta": "/diagnostico/",
+  "modo": "ajusta (E13)",
+  "regla": "E13, 26-oct-2026: la página se mantiene (es la pieza más fuerte y verificable, copy-secciones-v1.2 §9) y se le aplican las correcciones de §9 con el texto publicado en e13/fuentes/v2-vigente/diagnostico.txt. La ruta se llama /diagnostico/ y el instrumento se llama «chequeo»; lo gratis que hacemos a mano se llama «revisión». Aquí vive todo el texto visible, salvo las cinco preguntas frecuentes, que son datos de página porque de ellas sale el FAQPage del JSON-LD: viven en spindlelab-astro/src/data/paginas-v3.json, clave «diagnostico», faq. Los tres bloques de «Los 21 chequeos» siguen en interiores.mjs, tal cual (describen lo que mide el motor y no cambian). Los textos del resultado que pinta el script (veredictos, remate y botones) viven en public/assets/js/v3-chequeo.js y se registran aquí para que haya una sola lista. El texto de E12 que se reemplaza va en «antes».",
+  "title": "Chequeo gratis: ¿ChatGPT entiende tu sitio? · SpindleLab",
+  "description": "Mira si ChatGPT, Claude y Perplexity pueden visitar tu sitio y entender a qué te dedicas. Gratis, sin registro y en segundos. No mide si hoy te citan.",
+  "senales": "Simón, e12/senales-obra.md §2.6, con el cambio de e13: v2-vigente/diagnostico.txt. Ronda 2 (acta de QA, defecto 20): title y description pasan a las frases de la ronda (antes «¿ChatGPT puede leer tu sitio?» y «Escribe tu dominio y revisamos si ChatGPT, Gemini y Perplexity pueden entrar a tu sitio y entender qué haces. Gratis, sin registro. No mide si hoy te citan.»). Title de 56 (el «puede entender» de la propuesta mide 62); description de 150. Salen de aquí el <title>, el og:title y el nombre del WebPage del JSON-LD (interiores.mjs: tDiag.texto.title).",
   "secciones": [
    {
     "id": "cabecera",
     "nombre": "El instrumento primero",
-    "trabajo": "Brief §3, «sube de papel»: es la parte que el visitante corre sobre su dominio, la prueba de que lo que construimos se mide. Mismo idioma que el chequeo de la home.",
+    "trabajo": "Es la parte que el visitante corre sobre su dirección: la prueba de que lo que decimos se mide. Mismo idioma que el chequeo de la home.",
     "elementos": [
      {
       "id": "diagnostico.miga",
       "rol": "rotulo",
       "texto": "Inicio · Chequeo gratis",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio)",
       "uso": "miga",
       "estado": "queda"
      },
@@ -29,37 +29,36 @@
       "id": "diagnostico.h1",
       "rol": "h1",
       "tinta": "Chequeo gratis.",
-      "gris": "Mira si ChatGPT y otros asistentes de IA pueden leer tu sitio.",
-      "texto": "Chequeo gratis. Mira si ChatGPT y otros asistentes de IA pueden leer tu sitio.",
-      "antes": "¿Te puede leer la IA?",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json diagnostico.h1",
-      "por_que": "El h1 era la única pregunta de la página aparte de las preguntas frecuentes y el cierre; ahora dice qué es y qué hace, como la home.",
+      "gris": "Mira si ChatGPT y otras IA pueden visitar tu sitio y entenderlo.",
+      "texto": "Chequeo gratis. Mira si ChatGPT y otras IA pueden visitar tu sitio y entenderlo.",
+      "origen": "e12; ronda 2 (desvios/ronda2-frases.md, frase 3)",
+      "antes": "Chequeo gratis. Mira si ChatGPT y otros asistentes de IA pueden leer tu sitio.",
+      "por_que": "Ronda 2, lectura en frío: «pueden leer tu sitio» no se entiende (3 de 3). Gris de 12 palabras (rango 6 a 13). El title de la página («¿ChatGPT puede leer tu sitio?») no se toca: es la consulta que alguien escribiría en un buscador y es de la capa de señales de Simón. Los nombres de los tres grupos del chequeo («¿Te pueden leer?», «¿Te entienden?», «¿Te pueden citar?») son los del motor y quedan.",
+      "nota": "El documento de textos decía que «¿Te puede leer la IA?» funciona como nombre de la herramienta y no urgía cambiarlo; la lectura en frío de la ronda 2 dijo que sí urge en la home y en las páginas de venta.",
       "estado": "cambia"
      },
      {
       "id": "diagnostico.linea",
       "rol": "entradilla",
-      "texto": "Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas. Es el mismo chequeo que le pasamos a cada sitio que construimos, antes de entregarlo.",
-      "antes": "Pon tu dominio y revisamos al instante si los robots de ChatGPT, Claude y Perplexity pueden entrar a tu sitio, y si la IA puede entender qué haces y citarte.",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json diagnostico.linea",
-      "por_que": "La lectura fría: «los robots… pueden entrar» le sonó a hackeo al gerente, la dueña de la clínica no conoce Claude ni Perplexity y no sabía si «tu dominio» era la dirección de su página. La segunda frase es el giro: el chequeo prueba el trabajo del estudio.",
+      "texto": "Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otras IA pueden visitarlo y entender a qué te dedicas.",
+      "antes": "Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otros asistentes de IA pueden leerlo y entender a qué te dedicas.",
+      "origen": "v2-vigente/diagnostico.txt (hero); copy-secciones-v1.2 §9; ronda 2 (desvios/ronda2-frases.md, frase 3)",
+      "por_que": "E13: sale la segunda frase del v2 («Es el mismo chequeo que le pasamos a cada sitio que construimos, antes de entregarlo»), que afirmaba una práctica que no existió (el chequeo está en producción desde el 27-ago y ningún sitio entregado pasó por él antes de salir). Ronda 2: «pueden leerlo» no se entendió en la lectura en frío.",
       "estado": "cambia"
      },
      {
       "id": "diagnostico.label",
       "rol": "rotulo",
       "texto": "La dirección de tu sitio",
-      "antes": "Tu dominio",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
-      "por_que": "El mismo campo que la home.",
+      "origen": "e12 (sin cambio)",
       "uso": "label",
-      "estado": "cambia"
+      "estado": "queda"
      },
      {
       "id": "diagnostico.placeholder",
       "rol": "nota",
       "texto": "tuempresa.cl",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio)",
       "uso": "placeholder",
       "estado": "queda"
      },
@@ -67,7 +66,7 @@
       "id": "diagnostico.boton",
       "rol": "boton",
       "texto": "Revisar mi sitio",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio)",
       "destino": "corre /api/chequeo (ids chq-* sin cambio)",
       "estado": "queda"
      },
@@ -75,7 +74,7 @@
       "id": "diagnostico.ayuda",
       "rol": "nota",
       "texto": "Gratis y sin dejar tu correo. Leemos solo páginas públicas, las mismas que lee cualquier buscador.",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio); v2-vigente/diagnostico.txt",
       "uso": "ayuda",
       "estado": "queda"
      },
@@ -83,42 +82,339 @@
       "id": "diagnostico.error-vacio",
       "rol": "nota",
       "texto": "Escribe la dirección de tu sitio para empezar.",
-      "uso": "error",
+      "uso": "error (v3-chequeo.js)",
       "antes": "Escribe tu dominio para empezar.",
-      "condicion": "El mismo de la home: vive en v3-chequeo.js y pide su fila en la spec.",
+      "origen": "e13: ya estaba decidido en E12 («El mismo de la home») y no se había aplicado al script",
+      "por_que": "El campo se llama «La dirección de tu sitio»; el error decía «tu dominio».",
       "estado": "cambia"
      }
     ]
    },
    {
-    "id": "resto",
-    "nombre": "Lo demás",
-    "trabajo": "La metodología publicada, lo que no mide, los dos caminos, la ley y las preguntas.",
+    "id": "veintiuno",
+    "nombre": "Los 21 chequeos, publicados",
+    "trabajo": "La metodología completa, con el peso de cada bloque, para que se pueda repetir a mano.",
     "elementos": [
      {
-      "id": "diagnostico.resto",
-      "rol": "nota",
-      "texto": "Queda tal cual, desde su dato: el resultado del chequeo y su línea («21 chequeos, 100 puntos…»), «Los 21 chequeos, publicados» con sus tres bloques y pesos, «Dos caminos, y ninguno te cobra», «La Ley 21.719 también te toca», las cinco preguntas y el cierre «¿Quién aparece en tu lugar?».",
-      "uso": "referencia",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json diagnostico",
+      "id": "diagnostico.veintiuno.h2",
+      "rol": "h2",
+      "texto": "Los 21 chequeos, publicados.",
+      "origen": "e12 (sin cambio); v2-vigente/diagnostico.txt",
       "estado": "queda"
      },
      {
-      "id": "diagnostico.nomide.p2",
-      "rol": "parrafo",
-      "texto": "Los motores citan rankings, directorios y artículos de terceros, además del sitio de quien recomiendan. Si no sabes de dónde sale la recomendación, no sabes qué trabajar.",
-      "antes": "Los motores citan rankings, directorios y artículos de terceros, y no solo el sitio de quien recomiendan. Si no sabes de dónde sale la recomendación, no sabes qué trabajar.",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json diagnostico.noMide",
-      "por_que": "Detector A4 («no solo X, sino Y»): el contraste es real, pero «además del» dice lo mismo sin el molde.",
+      "id": "diagnostico.veintiuno.chico",
+      "rol": "nota",
+      "texto": "Acá está la metodología completa, con el peso de cada bloque, para que puedas repetir el chequeo a mano si quieres.",
+      "antes": "La metodología completa, con el peso de cada bloque, para que puedas repetir el chequeo a mano si quieres.",
+      "origen": "v2-vigente/diagnostico.txt; copy-secciones-v1.2 §9 («Ninguna herramienta del rubro publica su metodología» ya estaba fuera)",
       "estado": "cambia"
      },
      {
-      "id": "diagnostico.ley.pie",
+      "id": "diagnostico.veintiuno.linea",
       "rol": "nota",
-      "texto": "La persona a caballo de esta portada está generada con IA.",
-      "uso": "pie",
-      "condicion": "Solo si la sección de la ley conserva la imagen de Verifica y Cumple abierta en un notebook y un teléfono, donde se ve la persona a caballo. Su alt queda.",
-      "estado": "nuevo"
+      "tinta": "21 chequeos, 100 puntos.",
+      "gris": "Tres bloques, con su peso: leer 30, entender 40, citar 30.",
+      "texto": "21 chequeos, 100 puntos. Tres bloques, con su peso: leer 30, entender 40, citar 30.",
+      "antes": "21 chequeos, 100 puntos. Tres bloques: leerte 30, entenderte 40, citarte 30.",
+      "origen": "e13",
+      "por_que": "Sale «citarte» (la página no promete que te citen) y se dice «con su peso». Los pesos son los del motor (30/40/30, functions/api/chequeo.js).",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.veintiuno.referencia",
+      "rol": "nota",
+      "texto": "Los tres bloques («¿Te pueden leer?», «¿Te entienden?» y «¿Te pueden citar?», con su peso) tienen los mismos nombres que el motor y quedan tal cual en interiores.mjs.",
+      "uso": "referencia",
+      "origen": "spindlelab-astro/src/data/archivo/interiores.mjs; functions/api/chequeo.js:1224",
+      "estado": "queda"
+     }
+    ]
+   },
+   {
+    "id": "nomide",
+    "nombre": "Lo que este chequeo no mide",
+    "trabajo": "Decir con exactitud hasta dónde llega el instrumento, para que nadie lea el puntaje como una promesa.",
+    "elementos": [
+     {
+      "id": "diagnostico.nomide.h2",
+      "rol": "h2",
+      "texto": "Lo que este chequeo no mide",
+      "origen": "e12 (sin cambio)",
+      "estado": "queda"
+     },
+     {
+      "id": "diagnostico.nomide.1.t",
+      "rol": "h2",
+      "texto": "Si hoy la IA te nombra",
+      "nivel": 3,
+      "antes": "Y cómo medimos si la IA te nombra",
+      "origen": "e13; v2-vigente/diagnostico.txt (FAQ «¿Qué mide exactamente el puntaje?»)",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.nomide.1.d",
+      "rol": "parrafo",
+      "texto": "El puntaje mide si tu sitio está preparado. Que hoy te nombren depende de lo que se publica fuera de él, y para saberlo hay que preguntarle a los motores de IA.",
+      "antes": "No mide si hoy te citan: para eso hay que preguntarle a los motores. En los planes con acompañamiento lo hacemos cada mes con las mismas preguntas y en los mismos motores, con fecha y con la fuente de cada respuesta registrada. Cambiar las preguntas rompería la comparación entre meses.",
+      "origen": "e13; copy-secciones-v1.2 §9 («Es la medición que corremos cada mes en los planes con acompañamiento» no se sostiene: no hay planes con clientes)",
+      "por_que": "Sale la cadencia mensual y «los planes con acompañamiento» (nadie los compra aún; decisión 4 del brief: ninguna promesa de monitoreo de menciones en IA). Queda lo verificable: el chequeo no mide si hoy te nombran.",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.nomide.2.t",
+      "rol": "h2",
+      "texto": "Qué pasa después de la visita",
+      "nivel": 3,
+      "antes": "Lo que muestran las corridas",
+      "origen": "e13; modelo de negocio, el problema del cliente («me llegan consultas, pero no sé cuántas terminan en venta», copy-secciones-v1.2 §1.2)",
+      "por_que": "«Lo que muestran las corridas» describía mediciones internas sin tamaño de muestra declarado (copy §9: «se verifica o se quita»). Se reemplaza por otro límite verdadero del instrumento, que además conecta con la conversación del paso 02.",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.nomide.2.d",
+      "rol": "parrafo",
+      "texto": "El chequeo lee páginas públicas de tu sitio. No ve cuántas consultas te llegan ni cuántas terminan en venta, y eso se ve en la conversación de 20 minutos.",
+      "antes": "Los motores citan rankings, directorios y artículos de terceros, además del sitio de quien recomiendan. Si no sabes de dónde sale la recomendación, no sabes qué trabajar.",
+      "origen": "e13; v2-vigente/metodo.txt (paso 02)",
+      "estado": "cambia"
+     }
+    ]
+   },
+   {
+    "id": "caminos",
+    "nombre": "Dos caminos, y ninguno te cobra",
+    "trabajo": "Separar lo automático de lo que hacemos a mano, con el plazo documentado.",
+    "elementos": [
+     {
+      "id": "diagnostico.caminos.h2",
+      "rol": "h2",
+      "texto": "Dos caminos, y ninguno te cobra.",
+      "origen": "e12 (sin cambio); v2-vigente/diagnostico.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "diagnostico.caminos.guia",
+      "rol": "nota",
+      "texto": "El chequeo de esta página lee tu sitio y la revisión la hacemos a mano. Los dos son gratis.",
+      "antes": "El chequeo de esta página lee tu sitio; el mini-diagnóstico le pregunta a los motores. Los dos son gratis.",
+      "origen": "v2-vigente/diagnostico.txt («El chequeo es automático y revisa tu sitio. La revisión la hacemos a mano.»)",
+      "por_que": "Sale «mini-diagnóstico» y que la revisión «le pregunta a los motores» (la consulta real es un paso manual de Ramón, decisión 7 abierta).",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.caminos.1.t",
+      "rol": "h2",
+      "texto": "El chequeo que acabas de correr",
+      "nivel": 3,
+      "origen": "v2-vigente/diagnostico.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "diagnostico.caminos.1.d",
+      "rol": "parrafo",
+      "texto": "Automático, en segundos, sobre tu sitio. Te dice si estás técnicamente listo y qué corregir primero.",
+      "origen": "v2-vigente/diagnostico.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "diagnostico.caminos.2.t",
+      "rol": "h2",
+      "texto": "La revisión que hacemos a mano",
+      "nivel": 3,
+      "antes": "El mini-diagnóstico",
+      "origen": "v2-vigente/diagnostico.txt; copy-secciones-v1.2 §9",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.caminos.2.d",
+      "rol": "parrafo",
+      "texto": "Te devolvemos una página con lo más importante que encontramos en tu sitio y por dónde partiríamos. Es gratis y llega en un día hábil.",
+      "antes": "Lo hacemos a mano. Le preguntamos a ChatGPT, Gemini y Perplexity por tu categoría, y vemos quién aparece en tu lugar y qué fuentes citan. Una página, gratis, en 24 horas.",
+      "origen": "v2-vigente/diagnostico.txt",
+      "por_que": "Sale «Le preguntamos a ChatGPT, Gemini y Perplexity por tu categoría» (la consulta real es manual y no escala; decisión 7) y «24 horas».",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.caminos.boton1",
+      "rol": "boton",
+      "texto": "Pedir la revisión a mano",
+      "destino": "/contacto/",
+      "antes": "Pedir el diagnóstico",
+      "origen": "copy-secciones-v1.2 §9",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.caminos.boton2",
+      "rol": "boton",
+      "texto": "Volver al chequeo",
+      "destino": "/diagnostico/#chequeo",
+      "origen": "e12 (sin cambio)",
+      "estado": "queda"
+     }
+    ]
+   },
+   {
+    "id": "ley",
+    "nombre": "La Ley 21.719 también te toca",
+    "trabajo": "Llevar a quien trata datos personales al otro chequeo propio, en su sitio aparte.",
+    "elementos": [
+     {
+      "id": "diagnostico.ley.h2",
+      "rol": "h2",
+      "texto": "La Ley 21.719 también te toca.",
+      "origen": "e12 (sin cambio)",
+      "estado": "queda"
+     },
+     {
+      "id": "diagnostico.ley.p",
+      "rol": "parrafo",
+      "texto": "Si tu sitio trata datos personales (un formulario de contacto ya cuenta), la Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Verifica y Cumple, nuestro chequeo gratuito para esa ley, revisa las señales técnicas básicas que se ven desde afuera, como si tu portada enlaza una política de privacidad y si usas un gestor de consentimiento.",
+      "origen": "e12 (sin cambio); v2-vigente/diagnostico.txt",
+      "condicion": "La fecha de entrada en vigencia tiene un proyecto de postergación en trámite: se vuelve a medir el día de publicar (revisión del 23-oct, «Datos que caducan»).",
+      "estado": "queda"
+     },
+     {
+      "id": "diagnostico.ley.boton",
+      "rol": "boton",
+      "texto": "Revisar mi sitio para la Ley 21.719",
+      "destino": "https://verifica.spindlelab.cl/",
+      "origen": "e12 (sin cambio); v2-vigente/diagnostico.txt",
+      "estado": "queda"
+     }
+    ]
+   },
+   {
+    "id": "preguntas",
+    "nombre": "Lo que solemos responder",
+    "trabajo": "Cinco respuestas cortas, las mismas del FAQPage.",
+    "elementos": [
+     {
+      "id": "diagnostico.preguntas.h2",
+      "rol": "h2",
+      "texto": "Lo que solemos responder.",
+      "origen": "e12 (sin cambio); v2-vigente/diagnostico.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "diagnostico.preguntas.referencia",
+      "rol": "nota",
+      "texto": "Las cinco preguntas y sus respuestas están en paginas-v3.json, clave «diagnostico», faq, y son las mismas del FAQPage del JSON-LD (texto de v2-vigente/diagnostico.txt, con los cambios que dice e13/desvios/interiores.md).",
+      "uso": "referencia",
+      "origen": "spindlelab-astro/src/data/paginas-v3.json diagnostico.faq",
+      "estado": "cambia"
+     }
+    ]
+   },
+   {
+    "id": "cierre",
+    "nombre": "Cierre",
+    "trabajo": "El mismo paso de toda la obra, dicho desde el chequeo: pedir la revisión a mano.",
+    "elementos": [
+     {
+      "id": "diagnostico.cierre.h2",
+      "rol": "h2",
+      "texto": "También lo revisamos nosotros, a mano.",
+      "antes": "¿Quién aparece en tu lugar?",
+      "origen": "v2-vigente/diagnostico.txt; copy-secciones-v1.2 §9",
+      "por_que": "Era una pregunta retórica que prometía mostrar quién aparece en tu lugar, y eso no es parte fija de la revisión (decisión 7).",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.cierre.p",
+      "rol": "parrafo",
+      "texto": "Es gratis y llega en un día hábil.",
+      "antes": "Una página, gratis, en 24 horas.",
+      "origen": "v2-vigente/diagnostico.txt",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.cierre.boton",
+      "rol": "boton",
+      "texto": "Pedir la revisión a mano",
+      "destino": "/contacto/",
+      "antes": "Pedir el diagnóstico",
+      "origen": "copy-secciones-v1.2 §9",
+      "estado": "cambia"
+     }
+    ]
+   },
+   {
+    "id": "resultado",
+    "nombre": "El resultado que pinta el script",
+    "trabajo": "Lo que se lee cuando el chequeo termina: el veredicto según el puntaje, el remate y los botones. Vive en public/assets/js/v3-chequeo.js; se registra aquí para que haya una sola lista. Ningún veredicto dice que te citen: el puntaje mide si el sitio está preparado, no si hoy aparece.",
+    "elementos": [
+     {
+      "id": "diagnostico.resultado.veredicto.90",
+      "rol": "parrafo",
+      "texto": "Tu sitio está listo por el lado técnico. Este chequeo no mide lo que otros sitios publican sobre ti.",
+      "antes": "Tu sitio está listo por el lado técnico. Lo que te falta para que te citen ya no está dentro de tu sitio.",
+      "uso": "script, puntaje de 90 a 100",
+      "por_que": "Sale «para que te citen» (promesa de resultado) y se dice lo que el chequeo no ve.",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.resultado.veredicto.70",
+      "rol": "parrafo",
+      "texto": "Tienes lo esencial resuelto, pero quedan huecos técnicos por cerrar. Los ves más abajo.",
+      "antes": "Tienes lo esencial resuelto, pero hay huecos que te cuestan menciones.",
+      "uso": "script, puntaje de 70 a 89",
+      "por_que": "Sale «te cuestan menciones»: el chequeo no mide menciones.",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.resultado.veredicto.45",
+      "rol": "parrafo",
+      "texto": "Los motores pueden llegar a tu sitio, pero les cuesta entender qué haces.",
+      "antes": "Los motores pueden llegar, pero les cuesta entenderte y no tienen mucho que citar.",
+      "uso": "script, puntaje de 45 a 69",
+      "por_que": "Sale «no tienen mucho que citar».",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.resultado.veredicto.0",
+      "rol": "parrafo",
+      "texto": "Hoy a una IA le cuesta visitar tu sitio o entender a qué te dedicas. Abajo ves qué falta.",
+      "antes": "Hoy a la IA le cuesta leer tu sitio o entender qué haces. Abajo ves qué falta.",
+      "uso": "script, puntaje bajo 45",
+      "por_que": "Sale la escena de alguien preguntando por tu rubro (el chequeo no mide qué responde la IA).",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.resultado.boton1",
+      "rol": "boton",
+      "texto": "Pedir la revisión a mano",
+      "destino": "/contacto/?sitio=<dirección>",
+      "antes": "Pedir el diagnóstico",
+      "uso": "script, junto al puntaje y en el remate",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.resultado.remate.t",
+      "rol": "h2",
+      "texto": "Lo revisamos a mano, gratis.",
+      "nivel": 3,
+      "antes": "Esto es la mitad técnica.",
+      "uso": "script, remate",
+      "por_que": "«La mitad técnica» daba a entender que la otra mitad es lo que dicen los motores, y esa consulta no es parte fija de la revisión.",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.resultado.remate.p",
+      "rol": "parrafo",
+      "texto": "El chequeo es automático y lee tu sitio. En la revisión lo miramos a mano y te devolvemos una página con lo más importante que encontramos y por dónde partiríamos. Llega en un día hábil.",
+      "antes": "El chequeo revisa tu sitio. El diagnóstico te dice quién aparece hoy cuando alguien pregunta por tu rubro en ChatGPT, Gemini y Perplexity, y de qué fuentes lo están sacando. Te lo entregamos en una página, gratis, en 24 horas.",
+      "uso": "script, remate",
+      "por_que": "Sale la consulta a ChatGPT, Gemini y Perplexity (decisión 7), «diagnóstico» y «24 horas».",
+      "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.resultado.boton2",
+      "rol": "boton",
+      "texto": "Prefiero hablarlo contigo",
+      "destino": "/contacto/?sitio=<dirección>",
+      "uso": "script, remate",
+      "estado": "queda"
      }
     ]
    }

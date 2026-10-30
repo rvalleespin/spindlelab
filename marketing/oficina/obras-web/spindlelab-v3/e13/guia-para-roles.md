@@ -1,0 +1,47 @@
+# Guía común para los roles de la obra E13
+
+Léela entera antes de tocar nada. Cada rol recibe además su encargo con los archivos que le tocan.
+
+## 1 · Dónde estás y qué es esto
+
+- **Worktree** (el único donde se escribe): `/Users/ramon/Library/Mobile Documents/com~apple~CloudDocs/SPINDLELAB/.claude/worktrees/gifted-spence-cf5936`. Rama `claude/v3-modelo-nuevo`. **No hagas `git commit`, `git push`, `git add`, `git merge`, `git checkout` ni `git stash`**: la orquestadora commitea. No toques archivos que no son tuyos (ver tu encargo): otros roles trabajan en paralelo en el mismo árbol.
+- **Qué se hace:** el sitio nuevo de SpindleLab (el «v3», Astro, bajo `spindlelab-astro/src/pages/v3/`) se adapta al modelo de negocio y al mensaje nuevos. Se conserva el diseño («A · Archivo»); lo que cambia es el mensaje. Lee primero `e13/brief-de-obra.md` (mismo directorio que esta guía): objetivo, mapa de rutas, orden de la home, lo que NO se hace y los criterios.
+- **El mensaje, en tres líneas.** «Marketing y crecimiento con IA para empresas que ya venden.» Titular de la home: *Te llegan consultas.* Veamos dónde se cae el resto. Ruta de cuatro pasos: revisión gratis de una página → conversación de 20 minutos → propuesta por escrito, por fases → implementación y acompañamiento mensual. Una sola acción principal: «Pedir la revisión de una página» hacia `/contacto/`.
+- **Las cuatro decisiones de Ramón** (brief §1; sin respuesta, se usan estos valores): look del v3 se conserva; se publica en raíz (pero se construye bajo `/v3/`); casos que quedan: Bernardo Combeau y Verifica y Cumple (salen Praxi y los cuatro conceptos); informe del acompañamiento **mensual** y **ninguna promesa** de monitoreo de menciones en IA ni de puntaje a 3 meses.
+
+## 2 · Fuentes del texto (todo en `e13/fuentes/`)
+
+1. **`v2-vigente/<ruta>.txt`**: el texto, las metas y el JSON-LD que quedaron publicados el 24-oct con este mismo mensaje sobre el diseño vigente, ya revisados por Javiera y aprobados por Ramón. **Es la fuente principal.** Adáptalo al formato y a la estructura de la página v3; no lo reescribas desde cero.
+2. `copy-secciones-v1.2.md`: el borrador de donde salió, con el detalle de qué se borra y por qué (sección 5 por página de servicio, 13 el barrido de términos).
+3. `revision-v3-contra-modelo-nuevo-23oct.md`: qué afirmaciones del v3 actual no se sostienen, con archivo y línea (sección «Afirmaciones a corregir antes de publicar»). **Cada fila es un defecto que tienes que dejar corregido en tu área.**
+4. `modelo-de-negocio-v1-BORRADOR.md`: qué está respaldado y qué no.
+
+## 3 · Reglas de la casa (no se negocian)
+
+- **Voz:** tuteo chileno (nunca voseo), singular de Ramón solo donde habla él (Nosotros, «Quién está detrás»), plural de marca para lo que el negocio entrega. Carga `/voz-spindlelab` y `/web-copy-interfaz` (Skill tool) antes de escribir y lee `.claude/skills/estudio-web/antislop-web.md`.
+- **Cero** rayas largas o medias (— –), cero Title Case en títulos o botones, cero «¿Listo para…?» y cierres con pregunta retórica, cero «sin compromiso» repetido, cero «en Chile» como relleno de títulos o descripciones (Ramón lo descartó: suena a IA; «atendemos a todo Chile» en una frase de cuerpo, donde hace falta, sí vale).
+- **Se promete método, entregables y plazos. Nunca resultados.** Nada de «aumentar tu probabilidad de cita», «para que te citen/te recomienden», «tu nombre ya esté ahí», compromiso de puntaje, «mueve la aguja».
+- **Cero prueba social inventada**: ni cifras, ni logos, ni testimonios, ni «clientes» en plural, ni rubros «que atendemos», ni experiencia pasada que no está documentada («lo que encontramos al auditar sitios financieros», «el error más común que vemos»). El único caso público es Bernardo Combeau, dicho como caso de sitio web y no de crecimiento de ventas.
+- **Plazos:** «un día hábil» para la revisión gratis. Nunca «24 horas» ni «24 h».
+- **Palabras:** lo gratis es la «revisión» (de una página). «Diagnóstico» solo es el nombre del **chequeo** automático de `/diagnostico/` (la ruta se llama así, la herramienta se llama «chequeo») y de la etapa pagada que aún no existe (no se menciona con precio ni plazo).
+- **Precios, planes, plazos de entrega y nombres de servicio: no se tocan.** Los guardianes del build (`igualQue`, `contiene`, `comprobarPrecio`) los comparan; si uno cae, arregla tu texto, no el guardián ni el dato. Los precios son los de `origin/main`; si dudas, mira `e13/fuentes/v2-vigente/servicios__*.txt`.
+- **Barrido de términos** (no puede quedar ninguno en texto visible, atributos `alt`/`title`/`aria-label`, metas, JSON-LD ni `llms.txt` de lo tuyo): «mini-diagnóstico», «diagnóstico gratis/gratuito», «24 horas», «24 h», «partners», «te conectamos con», «motor» (salvo «motor de IA»), «Más elegido» y toda insignia de popularidad, «SGE», «agentes de IA» y «revisión diaria» (solo vive en «Quién está detrás» de la home y de Nosotros), «monitoreo doble», «quincenal» (para informes o medición), «cada quince días», «share-of-voice», «AI Overviews», «nos comprometemos» a puntaje, «a los 3 meses» (de puntaje), «NDA habitual», «sectores donde la confianza es crítica», «nos especializamos», «finanzas, salud», «más de cinco años», «te empiecen a citar», «sin compromiso» repetido, «Estudio de diseño y tecnología», «No es una agencia de marketing», «sitios a medida» como claim central de la marca (Desarrollo web sigue siendo un servicio con ese nombre; el claim ya no es la tesis del sitio).
+- **No se inventa.** Si el documento no lo dice y algo queda coja, se anota en tu archivo de desvíos y se deja corto. Una frase honesta y corta vale más que una larga sin respaldo.
+
+## 4 · Cómo se trabaja el texto (el flujo de Clara hacia JSON con huella)
+
+- Hay dos tipos de texto en `spindlelab-astro/src/`:
+  1. **Copias con huella** `src/data/archivo/texto/<id>.json`. **No se editan a mano.** Su fuente es `marketing/oficina/obras-web/spindlelab-v3/e13/texto/<id>.json` (un archivo por página, más `comun.json`). Edita la fuente con la herramienta Edit (texto exacto, sin reescribir el archivo entero con un script: otros roles editan otras páginas) y vuelve a copiar con
+     `node "<worktree>/marketing/oficina/obras-web/spindlelab-v3/e13/herramientas/extraer-texto.mjs" <id> [<id> …]`.
+     Cada elemento lleva `id`, `rol`, `texto` (o `tinta` + `gris`, o `campos`, `tramos`…), y se lee con `textoDe(...)(id)`. Un id que no existe cae en el build. Si agregas un elemento, dale un id nuevo con el mismo patrón y márcalo `"estado": "cambia"` o `"nuevo"` con `"origen"` (de dónde sale: v2-vigente, copy-secciones §…).
+  2. **Datos de página** (`src/data/oferta-v3.json`, `servicios-v3.json`, `paginas-v3.json`, `archivo/interiores.mjs`, `archivo/blog.mjs`, `src/data/blog-v3/*.html|json`): sí se editan directamente, con cuidado de no tocar precios ni nombres.
+- **Construcción de prueba (fuera de iCloud):** `/private/tmp/claude-501/-Users-ramon-Library-Mobile-Documents-com-apple-CloudDocs-SPINDLELAB--claude-worktrees-gifted-spence-cf5936/4ac6c118-bcaa-47d9-8343-315e8e616ff3/scratchpad/herr/construir.sh <tu-nombre> [líneas]` copia `spindlelab-astro/` a una carpeta tuya del scratchpad y construye ahí (~5 s). El resultado queda en `.../scratchpad/b-<tu-nombre>/dist`. **Nunca corras `npm install` ni construyas dentro de iCloud.** Como otros roles editan en paralelo, un error de build en un archivo que no es tuyo no es tuyo: espera un minuto y reintenta, o ignóralo si el error nombra otro archivo.
+- **Volcar el texto visible de lo construido** (para barrer términos): `node .../scratchpad/herr/volcar-texto.mjs <dist> <carpeta-salida>` escribe un `.txt` por ruta (texto visible, title, description, canonical, og, JSON-LD). Barre ahí con `grep -in`. Para capturas: `node .../scratchpad/herr/capturar.mjs <dist> <carpeta-salida> <ruta> [ancho] [alto] [1=página completa]` (JPEG; míralas con la herramienta Read). Las capturas **no van al repositorio**.
+- `npm run verificar` (contraste real, desborde, un h1, JSON-LD, alt, enlaces) corre desde la copia del scratchpad: `cd .../scratchpad/b-<tu-nombre> && node scripts/verificar.mjs --ancho 390 --prefijo /v3/<tu-ruta>/` (usa el Chrome de la Mac; tarda). Úsalo en lo que construyas.
+
+## 5 · Qué entregas
+
+1. Los cambios en tus archivos, construyendo sin errores.
+2. **`e13/desvios/<tu-area>.md`**: una tabla corta «qué cambié / por qué / de dónde sale» y, aparte, «qué quedó sin decidir» (cosas que dependen de Ramón o que dejaste cortas). Una línea por desvío; sin relleno.
+3. Tu mensaje final (lo lee la orquestadora): qué archivos tocaste, qué barrido corriste y con qué resultado (los términos que quedan, y por qué), qué dejaste abierto. **Honesto:** si algo no pasa, dilo con el comando y la salida.
+4. **No hay pruebas sin mirar.** «Se ve bien» sin captura o medición no cuenta.

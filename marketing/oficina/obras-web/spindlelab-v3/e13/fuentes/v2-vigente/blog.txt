@@ -1,0 +1,201 @@
+TITLE: El Taller: SEO técnico y visibilidad en IA · SpindleLab
+DESC: El Taller de SpindleLab: guías claras sobre SEO técnico y visibilidad en IA para empresas chilenas.
+CANON: https://spindlelab.cl/blog/
+OG: https://spindlelab.cl/assets/img/og-posicionamiento.jpg?v=1
+OGALT: SpindleLab. Marketing y crecimiento con IA
+
+=== TEXTO ===
+SpindleLab
+.
+Soluciones
+Método
+Nosotros
+Evidencia
+Blog
+Contacto
+Pedir la revisión
+INICIO
+EL TALLER
+El Taller de SpindleLab
+
+Ideas claras sobre búsqueda e IA. Lo que aprendemos auditando sitios y midiendo respuestas de IA, explicado sin jerga y con foco en empresas chilenas. Sin relleno: si está publicado aquí, es porque lo usamos en el trabajo real.
+
+PEDIR LA REVISIÓN →
+Sin costo · Respuesta en un día hábil
+EL TALLER
+Últimos artículos
+METODOLOGÍA · SEPTIEMBRE 2026
+Los 21 chequeos de visibilidad en IA, explicados uno por uno
+
+Qué mide cada uno, cuánto pesa en el puntaje y cómo se arregla. La metodología completa del chequeo, publicada.
+
+Leer artículo
+GUÍA DE COMPRA · AGOSTO 2026
+Cómo elegir (y verificar) una agencia de AEO/GEO en Chile
+
+No es un ranking. Los seis criterios que debes exigir y cómo comprobar cada uno tú mismo, antes de firmar.
+
+Leer artículo
+GUÍA DEL MÉTODO · JULIO 2026
+¿Qué es un mini-diagnóstico SEO y qué incluye?
+
+Qué es, qué incluye y qué no la radiografía gratuita de 1 página que SpindleLab entrega en un día hábil.
+
+Leer artículo
+GUÍA DE PRECIOS · JULIO 2026
+¿Cuánto cuesta el SEO técnico en el mercado chileno en 2026?
+
+Rangos reales de precio para auditoría técnica y visibilidad en IA, y por qué esperar sale más caro que decidir ahora.
+
+Leer artículo
+VISIBILIDAD EN IA · JULIO 2026
+¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?
+
+Qué mira un motor generativo antes de recomendar una empresa, y las cinco acciones concretas y honestas para entrar en esas respuestas.
+
+Leer artículo
+SEO TÉCNICO · JULIO 2026
+SEO técnico para fintechs chilenas: los 7 problemas que más se repiten
+
+Lo que encontramos una y otra vez al auditar sitios financieros en Chile, y cómo corregirlo sin rehacer la plataforma.
+
+Leer artículo
+GUÍA PARA GERENTES · JULIO 2026
+AEO y GEO explicados para gerentes que no son técnicos
+
+Qué significan las siglas, qué cambia respecto del SEO de siempre y cómo decidir si tu empresa necesita actuar ahora.
+
+Leer artículo
+HABLEMOS
+¿Prefieres la revisión de tu propio sitio?
+
+Leer ayuda; medir, más. En un día hábil te decimos dónde está parado tu sitio. Gratis.
+
+PEDIR LA REVISIÓN GRATIS
+hola@spindlelab.cl
+
+SpindleLab.
+
+SOLUCIONES
+Auditoría SEO técnica
+Visibilidad en IA
+Acompañamiento mensual
+Gestión de redes sociales
+Paid media (Google)
+Desarrollo web
+SITIO
+Método
+Nosotros
+Chequeo gratis
+El Taller
+Contacto
+CONTACTO
+Santiago, Chile
+hola@spindlelab.cl
+LinkedIn
+Instagram
+© 2026 SpindleLab · Chile
+Política de privacidad · Cookies
+Marketing y crecimiento con IA para empresas que ya venden.
+
+Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la política de privacidad.
+
+Rechazar
+Aceptar
+
+=== JSON-LD ===
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://spindlelab.cl/#org",
+      "name": "SpindleLab",
+      "url": "https://spindlelab.cl/",
+      "logo": "https://spindlelab.cl/assets/img/favicon-512.png",
+      "email": "hola@spindlelab.cl",
+      "description": "Marketing y crecimiento con IA para empresas en Chile: revisión del sitio y de la presencia en IA, implementación por fases y acompañamiento mensual.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/spindlelab/",
+        "https://www.instagram.com/spindlelab.cl/"
+      ],
+      "founder": {"@id": "https://spindlelab.cl/#autor-ramon"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://spindlelab.cl/#autor-ramon",
+      "name": "Ramón Vallejos",
+      "jobTitle": "Consultor de marketing y crecimiento con IA",
+      "image": "https://spindlelab.cl/assets/img/ramon-vallejos.jpg",
+      "url": "https://spindlelab.cl/nosotros/",
+      "worksFor": {"@id": "https://spindlelab.cl/#org"}
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://spindlelab.cl/blog/#blog",
+      "name": "El Taller · SpindleLab",
+      "description": "Guías claras sobre SEO técnico y visibilidad en motores de IA (AEO/GEO) para empresas en Chile.",
+      "url": "https://spindlelab.cl/blog/",
+      "inLanguage": "es-CL",
+      "publisher": {
+        "@id": "https://spindlelab.cl/#org"
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Cómo elegir (y verificar) una agencia de AEO/GEO en Chile",
+          "url": "https://spindlelab.cl/blog/como-elegir-verificar-agencia-aeo-geo-chile/"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "¿Qué es un mini-diagnóstico SEO y qué incluye?",
+          "url": "https://spindlelab.cl/blog/que-es-un-mini-diagnostico-seo/"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "¿Cuánto cuesta el SEO técnico en el mercado chileno en 2026?",
+          "url": "https://spindlelab.cl/blog/cuanto-cuesta-seo-tecnico-chile/"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?",
+          "url": "https://spindlelab.cl/blog/como-aparecer-en-chatgpt/"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "SEO técnico para fintechs chilenas: los 7 problemas que más se repiten",
+          "url": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "AEO y GEO explicados para gerentes que no son técnicos",
+          "url": "https://spindlelab.cl/blog/que-es-aeo-geo/"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://spindlelab.cl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "El Taller",
+          "item": "https://spindlelab.cl/blog/"
+        }
+      ]
+    }
+  ]
+}
+

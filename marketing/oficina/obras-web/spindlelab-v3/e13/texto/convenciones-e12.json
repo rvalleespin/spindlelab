@@ -1,0 +1,96 @@
+{
+ "convenciones": [
+  "Tuteo en todo el sitio. Castellano de Chile. Sin raya de golpe.",
+  "«tinta» + «gris» = una sola frase en dos tintas (lock §2.8 y §14: hasta 8 palabras en tinta, de 6 a 13 en gris, una vez por sección).",
+  "«estado»: «queda» (viene del paso 2 o del sitio v3 y no cambia), «cambia» (con «antes» y «por_que») o «nuevo».",
+  "«origen» dice de dónde viene el texto; «fuente», de dónde sale el hecho. Lo que no tiene fuente es redacción.",
+  "«condicion» marca un texto que espera una decisión. Si la decisión es «no», el elemento sale o queda su «antes».",
+  "«uso: referencia» es una instrucción para quien construye, no texto de la página. En las rutas que quedan, el texto que no cambia se toma de su dato (servicios-v3.json, paginas-v3.json, nosotros.astro) y no se transcribe aquí: así no hay dos copias que se separen.",
+  "«medios» lista, por sección, cada archivo con su forma y su alt (imágenes) o su descripción (videos, que van con aria-hidden). Las filas y su orden los fija la spec; los alt se escribieron mirando cada imagen."
+ ],
+ "roles": {
+  "rotulo": "Nombre corto en mono (tipo, lugar, sección, conteo, label de un campo). Nunca una frase.",
+  "h1": "El titular de la página. Si trae «tinta» y «gris», va en dos tintas en la misma línea: la parte en tinta nombra, la gris dice qué le hace al lector.",
+  "h2": "Titular de sección. «nivel»: 3 marca un subtítulo dentro de la sección.",
+  "entradilla": "El párrafo que sigue al titular y lo explica.",
+  "parrafo": "Texto corrido.",
+  "boton": "Botón o enlace con acción. «destino» dice adónde lleva.",
+  "nota": "Texto chico: ayuda de un campo, pie de imagen, aviso. «uso» precisa: ayuda, pie, alt, placeholder, glosario, precio.",
+  "ficha": "Datos en mono. «campos» con rótulo y valor.",
+  "cita": "Cita textual, con su fuente."
+ },
+ "afirmaciones_por_verificar": [
+  {
+   "texto": "La persona a caballo de la portada de Verifica y Cumple está generada con IA",
+   "estado": "Lo dice el commit que la puso (698821e, 21-sep: «Imagen generada (Higgsfield, cinematic_studio_2_5): un fiscalizador a caballo»). Hallazgo de esta corrida: ningún documento de la obra lo anotaba. Todo medio de Verifica y Cumple donde se vea lleva el pie: el tramo de la cinta, el índice corto de la home, el muro, la franja de Auditoría SEO técnica y la imagen de la ley en /diagnostico/."
+  },
+  {
+   "texto": "«El 16 de octubre respondió en 0,52 segundos» (Verifica y Cumple, home)",
+   "estado": "Medido una vez, el 16-oct (inventario-casos §2.3). Si Javiera pide la mediana de tres, se mide en la corrida 2 y la cifra se cambia aquí, con su fecha."
+  },
+  {
+   "texto": "«ocho veces más liviana» (Combeau)",
+   "estado": "804.697 / 94.576 = 8,5 (inventario-casos §2.1). «Ocho veces» redondea hacia abajo."
+  },
+  {
+   "texto": "«en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas» (Combeau, Sin métrica)",
+   "estado": "Dicho, no medido hoy: revision-panel-admin-bernardo.md:589-590 («confirmado por HTTP directo»). Si Javiera pide medirlo, se mide o la frase sale."
+  },
+  {
+   "texto": "El encuadre de fotos en el panel de Combeau, y que hoy se abre con «Editar foto»",
+   "estado": "Dicho: en producción según revision-panel-admin-bernardo.md:586-588; el panel por dentro no se pudo abrir el 19-oct (pide su sesión de GitHub). Las capturas son del 3-sep y su pie lo dice."
+  },
+  {
+   "texto": "«en las reseñas de las apps de entrenamiento se repite la misma queja» (Praxi)",
+   "estado": "Dicho: investigación interna de Praxi del 3-ago, cinco citas marcadas [D] (inventario-praxi §8.1). Ya no dice «la que más se repite»."
+  },
+  {
+   "texto": "Los tres cambios en primera persona de /nosotros/ (Por qué un solo sistema, párrafos 2 y 3; «Diseño y programo a medida»)",
+   "estado": "Son la voz de Ramón fuera de la bio: los confirma él. Si no, quedan los de hoy (el párrafo 3 de hoy dispara el detector A4)."
+  },
+  {
+   "texto": "El cargo de Ramón («Fundador de SpindleLab…»), en /nosotros/ y en la firma de los artículos",
+   "estado": "R5 del brief: lo confirma Ramón (senales-obra §1.1 propone el mismo para el jobTitle)."
+  },
+  {
+   "texto": "«Tú hablas con él durante todo el proyecto» y «y te lo dice» (home, Quién está detrás)",
+   "estado": "Viene del paso 2 con su condición: describe cómo trabaja Ramón; lo confirma él."
+  },
+  {
+   "texto": "Las condiciones de Desarrollo web que vienen del paso 2 (si el plan incluye comprar el dominio; si Ramón ayuda con los textos)",
+   "estado": "Siguen abiertas: las responde Ramón."
+  }
+ ],
+ "pendientes": {
+  "Lucía (spec)": [
+   "El error del chequeo vacío («Escribe la dirección de tu sitio para empezar.») vive en v3-chequeo.js: pide su fila en la spec con el motivo (criterio 11) para que Diego lo cambie.",
+   "Spec §2.1, fila 4: dice que Verifica y Cumple muestra «la alternativa de Clara («Sin métrica de negocio…»)». El texto de esa fila es «home.prueba.vyc.dato» (lo que revisa y su tiempo de respuesta medido), sin puntaje. La alternativa del paso 2 cambiaba la pieza por el chequeo; como la spec deja el medio de Verifica y Cumple (§3.3), escribí el dato para esa pieza.",
+   "Spec §2.2: la línea mono de /trabajo/ en A es «tipo · año», sin herramientas (salida A del paso 2, que cerró el defecto 16). La spec dice «hasta dos ingredientes»: cero cabe; conviene que lo diga.",
+   "La persona generada en la portada de Verifica y Cumple: dónde va el pie en la cinta, el índice corto, el muro y la franja de Auditoría SEO técnica. Propuesta: en la franja, «sus 12 cosas» (verifica-y-cumple-12-169), sin persona, y el pie sobra.",
+   "La foto servida de Combeau es cuadrada (828 × 828): su forma en la fila la decides tú.",
+   "Lectura fría, 19-oct: «Qué quiere decir» va debajo de los planes de Desarrollo web, y el lector se encontró con «Home», schema, AEO/GEO y CMS antes de su explicación. Propuesta: el glosario antes de los planes, o cada término de los planes enlazado a su línea.",
+   "Lectura fría, 19-oct: en Praxi, «Las personas están generadas con IA» se lee seis veces y «Los números son de ejemplo» cuatro; el lector concluyó que «casi todo es falso». Propuesta: cuando dos o más medios de una misma fila llevan el mismo pie, va una vez bajo la fila.",
+   "La sección 4 de la home se titula ahora «Cada pieza, con un dato medido» (lectura fría, 19-oct). La spec la nombra por el título viejo, «Cada pieza, con su prueba» (spec-visual.md:54, :295, :508 y :531): es la misma sección, con los mismos ids (home.prueba.*), y conviene renombrarla para que Diego no busque dos."
+  ],
+  "Diego (construcción)": [
+   "La ficha de cada tramo de la cinta («home.cinta.tramos») reemplaza la de cinta.json del prototipo.",
+   "Las situaciones y líneas de /servicios/ son las de la home: van en la página o en oferta-v3.json, a tu elección, con nombres y precios en diff 0.",
+   "En /contacto/ cambia solo el texto visible: el name del campo sigue siendo «Sitio web».",
+   "Defecto 8 del acta de obra: volver a sacar las copias de auditoria-seo-tecnica, acompanamiento-mensual y redes-sociales (node construccion/herramientas/extraer-texto.mjs auditoria-seo-tecnica acompanamiento-mensual redes-sociales) y construir. Cambian solo su <title> y su og:title; lo probé el 23-oct en un build aparte (texto/defecto-8/), y extraer-texto.mjs --comprobar da esas tres como DISTINTO hasta que se saquen."
+  ],
+  "Bruno": [
+   "Tonela, fila 11 del caso.md («Lo que lee un motor»): la placa está pendiente; sin ella, «Sin métrica» va sin fila."
+  ],
+  "Simón": [
+   "La description de Acompañamiento mensual que propones dice «con informes quincenales»: la cadencia de informes es R2, abierta, y la home y /servicios/ ya no la prometen.",
+   "El og:image:alt de Praxi («Debajo del chat hay reglas, no una corazonada.»): confirmado contra la captura (landing-1440-sec09, praxi-reglas-169).",
+   "Tu description de la home, de 156, queda; nombra ChatGPT como el h1.",
+   "Los title de Auditoría SEO técnica, Acompañamiento mensual y Gestión de redes sociales pasan a mayúscula inicial (acta de obra, defecto 8). Lo dejé en tu §2.7, con su fila en Correcciones, para que lo revises: no cambia la consulta (Google no distingue mayúsculas), ni el largo, ni el grafo. El name del Service de esos tres sale de serviceName, en servicios-v3.json, y sigue en Title Case: no se ve en la página y es un dato que esta obra no toca. Si se alinea, es en el JSON y al publicar, con Ramón."
+  ],
+  "Ramón": [
+   "Paid Media dice cuatro veces que optimiza «con agentes de IA» (servicios-v3.json paid-media) y no tiene fila en ningún inventario; el criterio 13 del paso 2 pedía que toda afirmación de IA remita a Praxi. No lo toqué porque no es del giro: lo decides tú (o se le pone fila).",
+   "Las preguntas de la lectura fría del paso 2 que siguen sin respuesta: el anticipo, si hay un costo mensual, de quién es el código al terminar, qué pasa si no estás disponible, cuántas rondas trae cada plan, si atiendes regiones y si hay WhatsApp.",
+   "Lectura fría del 19-oct, lo que no es texto: un solo cliente con caso pesa más que cualquier frase (sus números 3 y 5); y preguntas que el sitio no contesta: si las 24 horas son hábiles, cuánto cuesta y quién paga el hosting y el dominio, quién hace un cambio chico (un teléfono, un precio) después de entregar un sitio sin panel y cuánto cuesta, y qué pasa con el sitio que ya tiene mientras se hace el nuevo."
+  ]
+ }
+}

@@ -6,8 +6,14 @@
 //   · themeColor: #060606, el lienzo;
 //   · iconos: El huso, con ?v=5 (spec §5.4);
 //   · entidad: el #org y el jobTitle de Simón (senales-obra.md §1.1). El jobTitle es su propuesta: lo confirma Ramón
-//     antes de publicar.
+//     antes de publicar. E13: la descripción, la lista de lo que sabe y el cargo salen del texto de Clara
+//     (comun.entidad.*, de e13/texto/comun.json), que dice lo mismo que el v2 publicado el 24-oct.
 // Uso: <Layout title="…" description="…" {...LAYOUT_A}>. El noindex lo pone cada página en su slot «head».
+import { textoDe } from '../../data/archivo/texto.mjs';
+import comun from '../../data/archivo/texto/comun.json';
+
+const entidad = textoDe(comun);
+
 export const LAYOUT_A = {
   bodyClass: 'a-body a-sin-js',
   lenis: false,
@@ -23,23 +29,12 @@ export const LAYOUT_A = {
   ],
   entidad: {
     org: {
-      description:
-        'Estudio de diseño y tecnología en Santiago: diseñamos y programamos sitios y herramientas a medida, y hacemos SEO técnico y visibilidad en motores de IA (AEO/GEO) para que Google y ChatGPT puedan leerlos.',
-      knowsAbout: [
-        'SEO técnico',
-        'AEO',
-        'GEO',
-        'Visibilidad en IA',
-        'E-E-A-T',
-        'Datos estructurados',
-        'Desarrollo web a medida',
-        'Diseño web',
-        'Desarrollo de aplicaciones web',
-      ],
+      description: entidad('comun.entidad.descripcion').texto as string,
+      knowsAbout: entidad('comun.entidad.sabe').items as string[],
       logo: 'https://spindlelab.cl/v3/marca/icon-512.png',
     },
     autor: {
-      jobTitle: 'Fundador de SpindleLab: diseño y desarrollo web, SEO técnico y visibilidad en IA',
+      jobTitle: entidad('comun.entidad.cargo').texto as string,
     },
   },
 };

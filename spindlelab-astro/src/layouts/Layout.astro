@@ -13,7 +13,7 @@ interface Props {
   ogImageAlt?: string;
   /** «article» en los posts; «website» en el resto. */
   ogType?: string;
-  // LAS CINCO QUE SIGUEN LAS PASA SOLO /v3/ (obra E12, dirección A · Archivo). Las aprobó
+  // LAS CINCO QUE SIGUEN LAS PASA SOLO / (obra E12, dirección A · Archivo). Las aprobó
   // Ramón el 19-oct-2026 («Sí, agrégalas»: e12/insumos-ramon-19oct.md §5; spec §0.5 y su
   // fila del 19-oct en §7). El valor por defecto de cada una es el de hoy, así que las
   // páginas publicadas salen iguales byte a byte (se comprueba con
@@ -34,11 +34,11 @@ interface Props {
 }
 
 const {
-  title = 'Agencia de marketing con IA en Chile · SpindleLab',
-  description = 'Auditamos tu sitio y tu presencia en IA para que ChatGPT, Gemini y Perplexity te recomienden antes que tu competencia. Diagnóstico gratis en 24 horas.',
+  title = 'SpindleLab · Marketing y crecimiento con IA',
+  description = 'Marketing y crecimiento con IA para empresas que ya venden. Revisión gratis de una página y propuesta por escrito, con alcance, plazos y precio.',
   bodyClass = 'bg-bg',
-  ogImage = 'https://spindlelab.cl/assets/img/og-marca.jpg?v=4',
-  ogImageAlt = 'SpindleLab. SEO técnico y visibilidad en IA',
+  ogImage = 'https://spindlelab.cl/assets/img/og-posicionamiento.jpg?v=1',
+  ogImageAlt = 'SpindleLab. Marketing y crecimiento con IA para empresas que ya venden. Te llegan consultas. Veamos dónde se cae el resto.',
   ogType = 'website',
   lenis = true,
   letras,
@@ -61,7 +61,7 @@ const jsonLd = {
       logo: 'https://spindlelab.cl/assets/img/favicon-512.png',
       email: 'hola@spindlelab.cl',
       description:
-        'SEO técnico, visibilidad en motores de IA (AEO/GEO) y desarrollo web a medida para empresas B2B y financieras en Chile.',
+        'Marketing y crecimiento con IA para empresas que ya venden: revisión del sitio y de la presencia en IA, implementación por fases y acompañamiento mensual.',
       areaServed: { '@type': 'Country', name: 'Chile' },
       address: { '@type': 'PostalAddress', addressLocality: 'Santiago', addressCountry: 'CL' },
       knowsAbout: [
@@ -75,16 +75,16 @@ const jsonLd = {
       ],
       sameAs: [
         'https://www.linkedin.com/company/spindlelab/',
-        'https://www.instagram.com/spindle.lab/',
+        'https://www.instagram.com/spindlelab.cl/',
       ],
       founder: { '@id': 'https://spindlelab.cl/#autor-ramon' },
       makesOffer: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/auditoria-seo-tecnica/#service', name: 'Auditoría SEO Técnica' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/visibilidad-en-ia/#service', name: 'Visibilidad en IA (AEO/GEO)' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/acompanamiento-mensual/#service', name: 'Acompañamiento Mensual' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/redes-sociales/#service', name: 'Gestión de Redes Sociales' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/paid-media/#service', name: 'Paid Media (Google)' } },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/desarrollo-web/#service', name: 'Desarrollo Web' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/auditoria-seo-tecnica/#service', name: 'Auditoría SEO técnica' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/visibilidad-en-ia/#service', name: 'Visibilidad en IA' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/acompanamiento-mensual/#service', name: 'Acompañamiento mensual' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/redes-sociales/#service', name: 'Gestión de redes sociales' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/paid-media/#service', name: 'Paid media (Google)' } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', '@id': 'https://spindlelab.cl/servicios/desarrollo-web/#service', name: 'Desarrollo web' } },
       ],
       ...entidad?.org,
     },
@@ -100,7 +100,7 @@ const jsonLd = {
       '@type': 'Person',
       '@id': 'https://spindlelab.cl/#autor-ramon',
       name: 'Ramón Vallejos',
-      jobTitle: 'Consultor de SEO técnico y visibilidad en IA (AEO/GEO)',
+      jobTitle: 'Consultor de marketing y crecimiento con IA',
       image: 'https://spindlelab.cl/assets/img/ramon-vallejos.jpg',
       url: 'https://spindlelab.cl/nosotros/',
       worksFor: { '@id': 'https://spindlelab.cl/#org' },

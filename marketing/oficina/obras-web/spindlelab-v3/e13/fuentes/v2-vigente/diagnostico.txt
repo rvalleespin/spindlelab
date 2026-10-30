@@ -1,0 +1,194 @@
+TITLE: Chequeo gratis de visibilidad en IA · SpindleLab
+DESC: Pon tu dominio y revisamos si ChatGPT, Gemini y Perplexity pueden entrar a tu sitio y entender qué haces. Gratis, sin registro. No mide si hoy te citan.
+CANON: https://spindlelab.cl/diagnostico/
+OG: https://spindlelab.cl/assets/img/og-posicionamiento.jpg?v=1
+OGALT: SpindleLab. Marketing y crecimiento con IA
+
+=== TEXTO ===
+SpindleLab
+.
+Soluciones
+Método
+Nosotros
+Evidencia
+Blog
+Contacto
+Pedir la revisión
+INICIO
+CHEQUEO DE VISIBILIDAD EN IA
+¿Te puede leer la IA?
+
+Pon tu dominio y revisamos si ChatGPT, Gemini y Perplexity pueden entrar a tu sitio y entender qué haces.
+
+Tu dominio
+Revisar mi sitio
+
+Gratis y sin dejar tu correo. Leemos solo páginas públicas, las mismas que lee cualquier buscador.
+
+QUÉ REVISAMOS
+Los 21 chequeos, publicados.
+
+Acá está la metodología completa, con el peso de cada bloque, para que puedas repetir el chequeo a mano si quieres.
+
+Ver los 21 chequeos y cuánto pesa cada bloque
+CÓMO SIGUE
+Dos caminos, y ninguno te cobra.
+01
+El chequeo que acabas de correr
+
+Automático, en segundos, sobre tu sitio. Te dice si estás técnicamente listo y qué corregir primero.
+
+02
+La revisión que hacemos a mano
+
+Te devolvemos una página con lo más importante que encontramos en tu sitio y por dónde partiríamos. Es gratis y llega en un día hábil.
+
+ADEMÁS DE ESTO
+Un chequeo distinto, para la Ley 21.719.
+
+Si tu sitio trata datos personales (un formulario de contacto ya cuenta), la Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Verifica y Cumple, nuestro chequeo gratuito para esa ley, revisa las señales técnicas básicas que se ven desde afuera, como si tu portada enlaza una política de privacidad y si usas un gestor de consentimiento.
+
+Revisar mi sitio para la Ley 21.719
+PREGUNTAS
+Lo que solemos responder.
+¿El chequeo es realmente gratis?
+¿Qué mide exactamente el puntaje?
+¿Un puntaje alto significa que ChatGPT me va a recomendar?
+¿Guardan mi dominio?
+¿En qué se diferencia de la revisión a mano?
+HABLEMOS
+También lo revisamos nosotros, a mano.
+
+Es gratis y llega en un día hábil.
+
+PEDIR LA REVISIÓN A MANO
+hola@spindlelab.cl
+
+SpindleLab.
+
+SOLUCIONES
+Auditoría SEO técnica
+Visibilidad en IA
+Acompañamiento mensual
+Gestión de redes sociales
+Paid media (Google)
+Desarrollo web
+SITIO
+Método
+Nosotros
+Chequeo gratis
+El Taller
+Contacto
+CONTACTO
+Santiago, Chile
+hola@spindlelab.cl
+LinkedIn
+Instagram
+© 2026 SpindleLab · Chile
+Política de privacidad · Cookies
+Marketing y crecimiento con IA para empresas que ya venden.
+
+Usamos Google Analytics y Meta Pixel para entender cómo se usa este sitio. Puedes aceptarlos o rechazarlos. Más detalle en la política de privacidad.
+
+Rechazar
+Aceptar
+
+=== JSON-LD ===
+
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://spindlelab.cl/#org",
+      "name": "SpindleLab",
+      "url": "https://spindlelab.cl/",
+      "email": "hola@spindlelab.cl",
+      "description": "Marketing y crecimiento con IA para empresas en Chile: revisión del sitio y de la presencia en IA, implementación por fases y acompañamiento mensual.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Santiago", "addressCountry": "CL"},
+      "areaServed": {"@type": "Country", "name": "Chile"},
+      "founder": {"@id": "https://spindlelab.cl/#autor-ramon"},
+      "sameAs": ["https://www.linkedin.com/company/spindlelab/", "https://www.instagram.com/spindlelab.cl/"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://spindlelab.cl/#autor-ramon",
+      "name": "Ramón Vallejos",
+      "jobTitle": "Consultor de marketing y crecimiento con IA",
+      "worksFor": {"@id": "https://spindlelab.cl/#org"},
+      "knowsAbout": ["SEO técnico", "AEO", "GEO", "datos estructurados", "visibilidad en motores de IA"],
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "Universidad de Barcelona"},
+        {"@type": "CollegeOrUniversity", "name": "Universidad Andrés Bello"}
+      ]
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://spindlelab.cl/diagnostico/#app",
+      "name": "Chequeo de visibilidad en IA",
+      "url": "https://spindlelab.cl/diagnostico/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Navegador web",
+      "inLanguage": "es-CL",
+      "provider": {"@id": "https://spindlelab.cl/#org"},
+      "featureList": [
+        "Verifica si los robots de búsqueda de IA en vivo (OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User) pueden acceder al sitio, si el servidor no los expulsa por nombre, y si el bloqueo de los robots de entrenamiento es una decisión consciente",
+        "Revisa los datos estructurados que declaran la entidad del negocio",
+        "Comprueba llms.txt, FAQPage, sitemap y canonical",
+        "Entrega un puntaje de 0 a 100 y las tres prioridades a corregir"
+      ],
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CLP",
+                 "description": "Gratis, sin registro y sin dejar correo."}
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://spindlelab.cl/diagnostico/#protocolo",
+      "name": "Cómo calculamos el puntaje de visibilidad en IA",
+      "description": "Los 21 chequeos que corremos sobre un sitio público, agrupados en tres bloques, con su peso.",
+      "totalTime": "PT20S",
+      "step": [
+        {"@type": "HowToStep", "position": 1, "name": "¿Te pueden leer?",
+         "text": "Leemos el robots.txt y verificamos que los robots de búsqueda de IA en vivo (los que deciden si te citan hoy: OAI-SearchBot, ChatGPT-User, Claude-SearchBot, Claude-User, PerplexityBot y Perplexity-User) no estén bloqueados; pedimos la portada presentándonos como esos robots para detectar bloqueos del servidor o CDN; revisamos que el bloqueo de robots de entrenamiento (GPTBot, ClaudeBot, Google-Extended, CCBot) sea una decisión consciente, porque no afecta las citas de hoy; y que el sitio responda 200 por HTTPS. Vale 30 de los 100 puntos."},
+        {"@type": "HowToStep", "position": 2, "name": "¿Te entienden?",
+         "text": "Revisamos el JSON-LD: si hay un nodo de entidad, si declara dirección y contacto, si tiene al menos tres perfiles en sameAs, si hay una persona con credenciales, y el título, la meta description y el H1. Vale 40 puntos."},
+        {"@type": "HowToStep", "position": 3, "name": "¿Te pueden citar?",
+         "text": "Comprobamos llms.txt, FAQPage, sitemap.xml, canonical, idioma declarado, títulos en forma de pregunta, fechas en el schema y cantidad de texto visible. Vale 30 puntos."}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://spindlelab.cl/diagnostico/#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "¿El chequeo es realmente gratis?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Sí, y no pedimos tu correo. Escribes el dominio y ves el resultado completo en pantalla, con el detalle de cada chequeo."}},
+        {"@type": "Question", "name": "¿Qué mide exactamente el puntaje?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Mide si tu sitio está técnicamente preparado para que los motores de IA lo lean, lo entiendan y lo puedan citar. No mide si hoy te citan: eso depende de menciones en fuentes externas y se revisa a mano."}},
+        {"@type": "Question", "name": "¿Un puntaje alto significa que ChatGPT me va a recomendar?",
+         "acceptedAnswer": {"@type": "Answer", "text": "No. Este chequeo mide si tu sitio está preparado, no si hoy te citan. Los motores arman sus respuestas con fuentes de terceros (rankings, directorios, artículos), no solo con tu sitio. Puedes estar impecable por dentro y aun así no aparecer. Qué fuentes te faltan no se ve desde tu sitio: hay que preguntarle a los motores."}},
+        {"@type": "Question", "name": "¿Guardan mi dominio?",
+         "acceptedAnswer": {"@type": "Answer", "text": "No guardamos el dominio consultado ni te pedimos datos. El chequeo lee únicamente páginas públicas de tu sitio, las mismas que lee cualquier buscador."}},
+        {"@type": "Question", "name": "¿En qué se diferencia de la revisión a mano?",
+         "acceptedAnswer": {"@type": "Answer", "text": "El chequeo es automático y revisa tu sitio. La revisión la hacemos a mano."}}
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://spindlelab.cl/diagnostico/#breadcrumb",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://spindlelab.cl/"},
+        {"@type": "ListItem", "position": 2, "name": "Chequeo de visibilidad en IA", "item": "https://spindlelab.cl/diagnostico/"}
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://spindlelab.cl/diagnostico/",
+      "url": "https://spindlelab.cl/diagnostico/",
+      "name": "Chequeo de visibilidad en IA",
+      "isPartOf": {"@id": "https://spindlelab.cl/#org"},
+      "breadcrumb": {"@id": "https://spindlelab.cl/diagnostico/#breadcrumb"},
+      "mainEntity": {"@id": "https://spindlelab.cl/diagnostico/#app"},
+      "inLanguage": "es-CL"
+    }
+  ]
+}
+

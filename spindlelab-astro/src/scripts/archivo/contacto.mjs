@@ -1,4 +1,4 @@
-// /v3/contacto/ SOBRE A (obra E12, tanda 5). Lo carga contacto.astro. Lo que la página de driftime hacía por su cuenta
+// /contacto/ SOBRE A (obra E12, tanda 5). Lo carga contacto.astro. Lo que la página de driftime hacía por su cuenta
 // (src/pages/v3/contacto.astro hasta la tanda 4, QA del 5 y 6-oct), sin tocar v3-contacto.js, .contact-form, los name,
 // los #f-utm-* ni generate_lead (spec §6.16):
 //   1. El dominio que viene del chequeo: v3-chequeo.js manda ?sitio=<dominio> en los enlaces del resultado; si el campo
@@ -18,7 +18,7 @@ try {
   if (v && campo && !campo.value) campo.value = v;
 } catch (e) { /* sin parámetro, nada que hacer */ }
 
-const AQUI = '/v3/contacto/';
+const AQUI = '/contacto/';
 document.querySelectorAll(`a[href="${AQUI}"]`).forEach((a) => a.setAttribute('href', `${AQUI}#contacto-form`));
 
 const boton = document.querySelector('.contact-form button[type="submit"]');

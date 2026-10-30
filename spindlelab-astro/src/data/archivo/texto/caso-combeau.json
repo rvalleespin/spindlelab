@@ -1,11 +1,11 @@
 {
- "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
- "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/caso-combeau.json",
+ "sha256": "e5bd38c839f9721c0b743e9a81c991f7be5d42669b3ce20aa43835e0ccee54ee",
  "id": "caso-combeau",
- "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "caso-combeau",
-  "ruta": "/v3/trabajo/combeau/",
+  "ruta": "/trabajo/combeau/",
   "title": "Bernardo Combeau: fotografía y book de modelo · SpindleLab",
   "description": "Diseñamos y programamos los dos sitios de Bernardo Combeau, fotógrafo y modelo. Él carga sus series desde un panel, y el sitio entrega sus fotos livianas.",
   "senales": "Simón, e12/senales-obra.md §2.4",
@@ -237,7 +237,7 @@
        "Marca qué parte de cada foto no se corta en los recuadros. (Encuadre hecho para su panel)",
        "Sube la foto tal cual y el sitio la entrega recortada y liviana. (Netlify Image CDN)",
        "El book no baja sus videos hasta que hacen falta. (Video con carga diferida)",
-       "Google y la IA pueden leer quién es y a qué se dedica. (Datos estructurados)",
+       "Google y la IA pueden entender quién es y a qué se dedica. (Datos estructurados)",
        "Las páginas llegan armadas, sin esperar scripts de otros sitios. (Astro)"
       ],
       "fuente": "inventario-casos §2.1, §2.2 y §2.9, «Ingredientes con fila»",
@@ -377,57 +377,53 @@
      {
       "id": "combeau.resultado.p2",
       "rol": "parrafo",
-      "texto": "Lo que esperábamos del panel pasó, aunque sin número: en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas.",
-      "fuente": "inventario-casos §2.9, «Él usa el panel solo» (dicho: revision-panel-admin-bernardo.md:589-590, «confirmado por HTTP directo»)",
-      "estado": "nuevo",
-      "por_que": "Detectores, 19-oct: «publicó solo una campaña» se leía como «publicó apenas una campaña»; lo que se quiere decir es que la publicó sin pedirnos nada. Lectura fría, 19-oct: «después de que el sitio cambió de servidor» le abrió una pregunta que el caso no contesta («¿estaba malo?»), y «una señal» le pareció poco. Ahora se ata a la hipótesis («Íbamos a saber si funcionaba cuando publicara una serie nueva sin pedirnos nada») y sale el servidor. La fecha es la de la fuente: lo dice la revisión del panel, escrita entre el 8 y el 23 de septiembre.",
-      "antes": "Hay también una señal de que el panel le sirve, sin número: después de que el sitio cambió de servidor, en septiembre, Bernardo publicó solo una campaña y fotos nuevas."
+      "texto": "El panel existe y está hecho para que él lo opere. No tenemos un número ni una fecha de uso que mostrar.",
+      "fuente": "inventario-casos §2.9 (el panel y sus colecciones). Sin fecha ni conteo de uso: la revisión del panel (revision-panel-admin-bernardo.md:589-594) dice a la vez que subió una campaña y que el login seguía en revisión en el dominio nuevo, y el cierre del 23-sep solo verificó que el login funciona.",
+      "estado": "cambia",
+      "condicion": "Ronda 2 (acta de QA, defecto 4): la versión anterior decía «El panel existe y lo opera él», un uso presente sin registro (hay una mantención acordada y el login se verificó el 23-sep, pero ningún registro de uso posterior). Queda el valor conservador: dice para qué está hecho el panel. Si Ramón confirma con evidencia que lo opera, vuelve «lo opera él».",
+      "por_que": "Revisión del 23-oct, fila «alto»: la frase de resultado «Lo que esperábamos del panel pasó… en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas» era la única afirmación de resultado sobre un cliente en todo el sitio y su propia fuente la contradice en el mismo párrafo (el login estaba en revisión). Se reescribe con lo verificable, sin número y sin fecha, y deja de validar la hipótesis: la hipótesis del caso queda abierta, que es lo honesto.",
+      "antes": "Lo que esperábamos del panel pasó, aunque sin número: en septiembre, Bernardo publicó por su cuenta una campaña y fotos nuevas."
      }
     ]
    },
    {
     "id": "siguiente",
-    "nombre": "Siguiente",
-    "trabajo": "Ofrecer escribir y llevar al próximo caso.",
+    "nombre": "Cierre",
+    "trabajo": "Ofrecer pedir la revisión y llevar al índice. No hay «Siguiente caso»: con Praxi y los cuatro conceptos fuera, Combeau es la única página de caso, y el otro elemento del índice (Verifica y Cumple) es un sitio aparte.",
+    "borrado": [
+     "combeau.siguiente.rotulo («Siguiente») y combeau.siguiente.caso («Praxi. Se acuerda de cada serie que hiciste.», → /trabajo/praxi/): Praxi sale de la obra. src/data/archivo/casos.mjs (líneas ~503 a 520) calcula «Siguiente» con el orden de los casos y lee ambos ids; con un solo caso apuntaría a sí mismo. Diego lo quita de la plantilla de caso."
+    ],
     "elementos": [
      {
       "id": "combeau.siguiente.contacto",
       "rol": "parrafo",
       "tinta": "Si quieres un sitio así para tu negocio,",
-      "gris": "escríbenos y te respondemos en 24 horas.",
-      "texto": "Si quieres un sitio así para tu negocio, escríbenos y te respondemos en 24 horas.",
-      "fuente": "paginas-v3.json contacto",
-      "estado": "nuevo"
+      "gris": "pide la revisión de una página y te respondemos en un día hábil.",
+      "texto": "Si quieres un sitio así para tu negocio, pide la revisión de una página y te respondemos en un día hábil.",
+      "fuente": "copy-secciones-v1.2 §2.9 y §8; v2-vigente/contacto.txt («Es gratis y llega en un día hábil»)",
+      "estado": "cambia",
+      "antes": "Si quieres un sitio así para tu negocio, escríbenos y te respondemos en 24 horas.",
+      "por_que": "Revisión del 23-oct: «24 horas» está en 38 lugares y el único plazo documentado fue de 31 horas; el plazo es «un día hábil» y lo gratis se llama «revisión». Lock §14: gris de 13 palabras (rango 6 a 13).",
+      "nota": "Quien no tiene sitio y quiere uno nuevo puede escribir igual: /contacto/ lo recibe (copy §2.3, «Quien está armando todo también puede escribirnos»). La frase pide la revisión porque es la acción única del sitio."
      },
      {
       "id": "combeau.siguiente.boton",
       "rol": "boton",
-      "texto": "Escribir a SpindleLab",
-      "destino": "/v3/contacto/",
-      "estado": "nuevo"
-     },
-     {
-      "id": "combeau.siguiente.rotulo",
-      "rol": "rotulo",
-      "texto": "Siguiente",
-      "estado": "nuevo"
-     },
-     {
-      "id": "combeau.siguiente.caso",
-      "rol": "h2",
-      "tinta": "Praxi.",
-      "gris": "Se acuerda de cada serie que hiciste.",
-      "texto": "Praxi. Se acuerda de cada serie que hiciste.",
-      "destino": "/v3/trabajo/praxi/",
-      "estado": "nuevo"
+      "texto": "Pedir la revisión de una página",
+      "destino": "/contacto/",
+      "estado": "cambia",
+      "antes": "Escribir a SpindleLab",
+      "por_que": "El mismo botón que la portada de la home: una sola acción en todo el sitio."
      },
      {
       "id": "combeau.siguiente.todo",
       "rol": "boton",
-      "texto": "[ Todo el trabajo ] (10)",
-      "destino": "/v3/trabajo/",
-      "estado": "queda",
-      "origen": "texto-paso2.json «praxi.siguiente.todo»"
+      "texto": "[ Todo el trabajo ] (2)",
+      "destino": "/trabajo/",
+      "estado": "cambia",
+      "antes": "[ Todo el trabajo ] (10)",
+      "origen": "texto-paso2.json «praxi.siguiente.todo»",
+      "nota": "El 2 es el conteo verdadero de trabajo.entradas (casos.mjs:516 lo compara con trabajo.conteo)."
      }
     ]
    }

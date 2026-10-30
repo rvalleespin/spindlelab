@@ -1,0 +1,62 @@
+{
+ "id": "auditoria-seo-tecnica",
+ "ruta": "/servicios/auditoria-seo-tecnica/",
+ "title": "Auditoría SEO técnica para empresas · SpindleLab",
+ "description": "Encontramos qué le impide a Google rastrear, entender y confiar en tu sitio, y te lo entregamos ordenado por impacto. Desde $490.000 + IVA.",
+ "senales": "v2-vigente/servicios__auditoria-seo-tecnica.txt (title publicado el 24-oct); la description es la de la versión anterior del v3, sin cambio",
+ "modo": "reescrita al mensaje nuevo (obra E13)",
+ "regla": "Lo que no se lista aquí sale de servicios-v3.json, que esta obra corrigió a mano (mini-diagnóstico → revisión gratis, 24 horas → un día hábil, «sectores financieros y de salud»). Ver e13/desvios/servicios.md.",
+ "secciones": [
+  {
+   "id": "cabecera",
+   "nombre": "Cabecera",
+   "trabajo": "Nombrar el servicio y decir qué le hace al cliente.",
+   "elementos": [
+    {
+     "id": "auditoria-seo-tecnica.miga",
+     "rol": "rotulo",
+     "texto": "Inicio · Soluciones · Auditoría SEO técnica",
+     "origen": "v2-vigente/servicios__auditoria-seo-tecnica.txt (la miga dice «Soluciones»)",
+     "uso": "miga",
+     "antes": "Inicio · Servicios · Auditoría SEO técnica",
+     "estado": "cambia"
+    },
+    {
+     "id": "auditoria-seo-tecnica.h1",
+     "rol": "h1",
+     "tinta": "Auditoría SEO técnica.",
+     "gris": "Qué le impide a Google entender tu sitio, y qué arreglar primero.",
+     "texto": "Auditoría SEO técnica. Qué le impide a Google entender tu sitio, y qué arreglar primero.",
+     "origen": "texto del v3 anterior; ronda 2 (desvios/ronda2-frases.md, frase 4)",
+     "antes": "Auditoría SEO técnica. Qué le impide a Google leer tu sitio, y qué arreglar primero.",
+     "por_que": "Ronda 2, lectura en frío: «leer un sitio» no se entiende (3 de 3); para Google se dice «entender», como en el resto del sitio. Gris de 11 palabras (rango 6 a 13).",
+     "estado": "cambia"
+    },
+    {
+     "id": "auditoria-seo-tecnica.resto",
+     "rol": "nota",
+     "texto": "Sale de servicios-v3.json (corregido a mano en esta obra): la línea con el precio («linea»), la nota de precios, el lead, las secciones con sus planes y precios, las preguntas, el cierre y «Siguiente».",
+     "uso": "referencia",
+     "origen": "spindlelab-astro/src/data/servicios-v3.json auditoria-seo-tecnica",
+     "estado": "cambia"
+    }
+   ]
+  },
+  {
+   "id": "cierre",
+   "nombre": "Cierre",
+   "trabajo": "Pedir la auditoría, después de la revisión gratis de una página.",
+   "elementos": [
+    {
+     "id": "auditoria-seo-tecnica.cierre.boton",
+     "rol": "boton",
+     "texto": "Pedir la auditoría",
+     "antes": "Pedir el diagnóstico",
+     "origen": "copy-secciones-v1.2.md §5.1 (cierre: CTA «Pedir la auditoría»)",
+     "destino": "/contacto/",
+     "estado": "cambia"
+    }
+   ]
+  }
+ ]
+}

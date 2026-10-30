@@ -26,6 +26,22 @@ interface Props {
 const { pie = true } = Astro.props;
 const ruta = Astro.url.pathname;
 ---
+{/* ATRIBUCIÓN (E13; la QA del 23-oct midió que no funcionaba). Los UTM del anuncio se guardan en la PRIMERA página que pisa
+     el visitante, sea cual sea, con las claves de sessionStorage que lee v3-contacto.js (#f-utm-*). La captura vivía en
+     NavV3.astro, un componente que ninguna ruta de A usa: anuncio → home → servicio → contacto llegaba con los tres campos
+     vacíos. Va aquí y no en Layout porque PaginaA envuelve a toda página de A y Layout no se toca. Es inline y corre al
+     analizar el HTML, antes que cualquier clic. */}
+<script is:inline>
+  (function () {
+    try {
+      var q = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) {
+        var v = q.get(k);
+        if (v) sessionStorage.setItem(k, v);
+      });
+    } catch (e) {}
+  })();
+</script>
 <div class="a-pagina" data-lenis-prevent>
   <script is:inline>document.body.classList.remove('a-sin-js');</script>
   <a class="saltar boton boton--claro" href={`${ruta}#contenido`}>Saltar al contenido</a>

@@ -1,0 +1,290 @@
+{
+ "nav": [
+  {
+   "id": "comun.nav.servicios",
+   "rol": "boton",
+   "texto": "Soluciones",
+   "origen": "copy-secciones-v1.2 §3 (navegación); v2-vigente/home.txt",
+   "destino": "/servicios/",
+   "estado": "cambia",
+   "antes": "Servicios",
+   "por_que": "El menú nuevo dice «Soluciones». La ruta y el id siguen siendo los de servicios."
+  },
+  {
+   "id": "comun.nav.metodo",
+   "rol": "boton",
+   "texto": "Método",
+   "origen": "texto-paso2.json comun.nav",
+   "destino": "/metodo/",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.nav.nosotros",
+   "rol": "boton",
+   "texto": "Nosotros",
+   "origen": "texto-paso2.json comun.nav",
+   "destino": "/nosotros/",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.nav.trabajo",
+   "rol": "boton",
+   "texto": "Trabajo",
+   "origen": "texto-paso2.json comun.nav",
+   "destino": "/trabajo/",
+   "estado": "queda",
+   "nota": "Cambia su lugar en el menú (cuarto, no primero) y no su texto. El v2 decía «Evidencia»; esta obra deja «Trabajo», que es el nombre de la ruta."
+  },
+  {
+   "id": "comun.nav.blog",
+   "rol": "boton",
+   "texto": "Blog",
+   "origen": "copy-secciones-v1.2 §3 (navegación); v2-vigente/home.txt",
+   "destino": "/blog/",
+   "estado": "nuevo",
+   "nota": "El menú de E12 (Trabajo, Servicios, Método, Nosotros, Escríbenos) no traía el blog; el menú del documento de textos sí."
+  },
+  {
+   "id": "comun.nav.contacto",
+   "rol": "boton",
+   "texto": "Contacto",
+   "origen": "copy-secciones-v1.2 §3 (navegación); v2-vigente/home.txt",
+   "destino": "/contacto/",
+   "estado": "nuevo",
+   "antes": "Escríbenos",
+   "por_que": "El enlace del menú pasa a llamarse «Contacto» y el verbo se queda en el botón de al lado."
+  },
+  {
+   "id": "comun.nav.revision",
+   "rol": "boton",
+   "texto": "Pedir la revisión",
+   "origen": "copy-secciones-v1.2 §3 (botón de la navegación); brief §3 (transversal)",
+   "destino": "/contacto/",
+   "uso": "botón destacado del menú",
+   "estado": "nuevo",
+   "nota": "Es la acción única del sitio hecha botón. Lleva a /contacto/ (donde se dispara generate_lead) y no al chequeo. Decisión 3 del copy; el brief la da por hecha (§1)."
+  },
+  {
+   "id": "comun.nav.escribenos",
+   "rol": "boton",
+   "texto": "Escríbenos",
+   "origen": "texto-paso2.json comun.nav",
+   "destino": "/contacto/",
+   "estado": "queda",
+   "uso": "botón de cierre (heredado)",
+   "nota": "YA NO ES DEL MENÚ. Se deja porque lo leen como texto de un botón de cierre src/pages/v3/servicios/[slug].astro:147 y src/data/archivo/blog.mjs:36; si se borra el id, esas dos páginas caen. Cuando los roles de servicios y de blog lo cambien por «Pedir la revisión de una página» (comun.nav.revision o home.portada.boton), este id se retira."
+  },
+  {
+   "id": "comun.nav.nombre",
+   "rol": "nota",
+   "texto": "Principal",
+   "origen": "direccion-a.md §6.1 (confirmado)",
+   "uso": "nombre accesible",
+   "donde": "aria-label del nav del encabezado",
+   "estado": "queda"
+  }
+ ],
+ "encabezado": [
+  {
+   "id": "comun.logo",
+   "rol": "nota",
+   "texto": "SpindleLab",
+   "origen": "spec-visual.md §5.4",
+   "uso": "nombre accesible",
+   "donde": "aria-label del SVG del logo, en el encabezado y en el pie; el enlace del logo lleva a /",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.telemetria",
+   "rol": "rotulo",
+   "texto": "Santiago",
+   "origen": "texto-paso2.json comun.telemetria",
+   "nota": "Va con la hora en vivo y su huso («Santiago 14:05 UTC-3»), spec §5.5. La escribe el navegador.",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.saltar",
+   "rol": "boton",
+   "texto": "Saltar al contenido",
+   "destino": "/<ruta>/#contenido",
+   "nota": "El primer enlace del documento, visible al recibir el foco (spec, lo común, punto 3). Se escribe con su ruta, nunca «#contenido» suelto (spec §5.2).",
+   "estado": "nuevo"
+  }
+ ],
+ "pie": [
+  {
+   "id": "comun.pie.marca",
+   "rol": "nota",
+   "texto": "Marketing y crecimiento con IA para empresas que ya venden.",
+   "uso": "línea de marca",
+   "origen": "copy-secciones-v1.2 §3 (pie, línea de marca); v2-vigente/home.txt",
+   "estado": "nuevo",
+   "nota": "El pie de E12 no traía línea de marca (solo logo, correo y hora). Va una vez: la etiqueta no se repite en la columna de al lado, que el v2 ya había quitado por duplicada."
+  },
+  {
+   "id": "comun.pie.correo",
+   "rol": "boton",
+   "texto": "hola@spindlelab.cl",
+   "origen": "pie del prototipo de A; copy-secciones-v1.2 §3 (asunto)",
+   "destino": "mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis",
+   "estado": "cambia",
+   "antes": "mailto:hola@spindlelab.cl",
+   "por_que": "El correo del pie lleva el asunto de la revisión: quien escribe desde ahí ya dice qué pide."
+  },
+  {
+   "id": "comun.pie.hora",
+   "rol": "rotulo",
+   "texto": "Santiago",
+   "origen": "spec §5.5",
+   "nota": "La misma hora del encabezado. Los casos no tienen pie.",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.pie.copy",
+   "rol": "nota",
+   "texto": "© 2026 SpindleLab · Chile",
+   "uso": "barra inferior",
+   "origen": "copy-secciones-v1.2 §3 (pie, barra inferior); v2-vigente/home.txt",
+   "estado": "nuevo",
+   "nota": "«Chile» aquí es el dato legal de la barra inferior, no relleno de un título. Es el texto que pidió el documento."
+  },
+  {
+   "id": "comun.pie.privacidad",
+   "rol": "boton",
+   "texto": "Política de privacidad",
+   "destino": "/privacidad/",
+   "origen": "v2-vigente/home.txt (pie: «Política de privacidad · Cookies»)",
+   "estado": "nuevo",
+   "condicion": "El pie de E12 no enlazaba la política y el brief deja /privacidad/ fuera de esta obra (sin versión v3). El v2 publicado sí la enlaza. Decide Mauro con Diego si el pie la lleva; si la lleva, apunta a la ruta de raíz, que existe. El texto del aviso de cookies no está aquí: vive en consent-banner.js, protegido (brief §6.2), y el botón para cambiarlas lo cuelga ese script junto al último enlace del pie."
+  }
+ ],
+ "entidad": [
+  {
+   "id": "comun.entidad.descripcion",
+   "rol": "nota",
+   "texto": "Marketing y crecimiento con IA para empresas que ya venden: revisión del sitio y de la presencia en IA, implementación por fases y acompañamiento mensual.",
+   "uso": "JSON-LD, description del #org",
+   "origen": "copy-secciones-v1.2 §3 (descripción de la organización); v2-vigente/home.txt",
+   "estado": "nuevo",
+   "antes": "Estudio de diseño y tecnología en Santiago: diseñamos y programamos sitios y herramientas a medida, y hacemos SEO técnico y visibilidad en motores de IA (AEO/GEO) para que Google y ChatGPT puedan leerlos. (layout-a.ts, entidad.org.description)",
+   "por_que": "El v2 dice «para empresas en Chile» en esta descripción; aquí se saca el «en Chile» (relleno en una descripción) porque el país ya lo dice areaServed del mismo grafo. Propuesta para que Simón la reconfirme: la capa de señales es suya y el texto de layout-a.ts lo cambia Diego."
+  },
+  {
+   "id": "comun.entidad.cargo",
+   "rol": "nota",
+   "texto": "Consultor de marketing y crecimiento con IA",
+   "uso": "JSON-LD, jobTitle de Ramón (#autor-ramon)",
+   "origen": "copy-secciones-v1.2 §3 (cargo de Ramón); v2-vigente/home.txt",
+   "estado": "nuevo",
+   "antes": "Fundador de SpindleLab: diseño y desarrollo web, SEO técnico y visibilidad en IA (layout-a.ts, entidad.autor.jobTitle)",
+   "condicion": "R5 del brief: el cargo lo confirma Ramón. blog.json (articulo.autor) lleva otro cargo, «Fundador de SpindleLab», que decide el rol del blog; conviene que los dos digan lo mismo."
+  },
+  {
+   "id": "comun.entidad.sabe",
+   "rol": "nota",
+   "uso": "JSON-LD, knowsAbout del #org",
+   "items": [
+    "SEO técnico",
+    "AEO",
+    "GEO",
+    "Visibilidad en IA",
+    "E-E-A-T",
+    "Datos estructurados",
+    "Desarrollo web a medida"
+   ],
+   "origen": "v2-vigente/home.txt (JSON-LD del #org)",
+   "estado": "nuevo",
+   "antes": "Los de layout-a.ts más «Diseño web» y «Desarrollo de aplicaciones web»",
+   "por_que": "«Desarrollo de aplicaciones web» sobraba con Praxi fuera del sitio. Son términos de datos estructurados y los confirma Simón."
+  }
+ ],
+ "miga": [
+  {
+   "id": "comun.miga",
+   "rol": "rotulo",
+   "texto": "Inicio · <página>",
+   "origen": "spec, lo común, punto 5",
+   "uso": "miga",
+   "nota": "Separada por «·», la actual en blanco. Su BreadcrumbList dice lo mismo (Simón, senales-obra.md).",
+   "estado": "queda"
+  }
+ ],
+ "cursor": [
+  {
+   "id": "comun.cursor.caso",
+   "rol": "nota",
+   "texto": "Ver el caso",
+   "origen": "texto-paso2.json comun.cursor",
+   "uso": "cursor",
+   "donde": "Sobre la entrada de Combeau, la única pieza con página de caso",
+   "estado": "cambia",
+   "antes": "Sobre una pieza real con página de caso: Combeau (las dos entradas) y Praxi",
+   "por_que": "Praxi sale de la obra y Combeau pasa de dos entradas a una."
+  },
+  {
+   "id": "comun.cursor.concepto",
+   "rol": "nota",
+   "texto": "Ver el concepto",
+   "origen": "texto-paso2.json comun.cursor",
+   "uso": "cursor",
+   "donde": "Sobre las cuatro piezas de concepto",
+   "estado": "queda",
+   "nota": "SIN USO cuando Diego saque los cuatro conceptos del build (brief §3). Se deja porque src/data/archivo/casos.mjs:525 lo pide para cualquier caso con «concepto»; se retira junto con los conceptos de ORDEN."
+  },
+  {
+   "id": "comun.cursor.sitio",
+   "rol": "nota",
+   "texto": "Ver el sitio",
+   "uso": "cursor",
+   "donde": "Sobre Verifica y Cumple, que enlaza a verifica.spindlelab.cl (spec §2.2 y §0.5, «Para Clara»)",
+   "por_que": "Dice adónde lleva, como los otros dos: no hay caso, hay un sitio que responde. En el rótulo quieto que aparece con el foco va el mismo texto.",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.cursor.foco",
+   "rol": "nota",
+   "texto": "El rótulo quieto que aparece al recibir el foco con el teclado lleva el mismo texto que el círculo de esa pieza.",
+   "uso": "referencia",
+   "estado": "queda"
+  }
+ ],
+ "controles": [
+  {
+   "id": "comun.pausa",
+   "rol": "boton",
+   "texto": "Pausar el video",
+   "origen": "direccion-a.md §6.1 (confirmado)",
+   "uso": "nombre accesible",
+   "estados": {
+    "en pausa": "Seguir el video"
+   },
+   "nota": "aria-label del botón de pausa de todo video que se mueve solo (portada, casos), con aria-pressed. Con movimiento reducido o ahorro de datos el video no arranca y el botón dice «Seguir el video». La cinta ya no existe.",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.secciones",
+   "rol": "nota",
+   "texto": "Secciones",
+   "origen": "direccion-a.md §6.1 (confirmado)",
+   "uso": "nombre accesible",
+   "donde": "aria-label del índice de secciones de un caso o de un artículo",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.secciones.barra",
+   "rol": "nota",
+   "texto": "Ver las secciones",
+   "uso": "nombre accesible",
+   "donde": "El «+» de la barra flotante del caso bajo 1194 px (el summary del details). Lo visible es el nombre del caso y la sección activa; esto es lo que lee el lector de pantalla del botón «+».",
+   "estado": "queda"
+  },
+  {
+   "id": "comun.externo",
+   "rol": "nota",
+   "texto": "(sitio aparte: verifica.spindlelab.cl)",
+   "uso": "solo lector de pantalla",
+   "donde": "Dentro del enlace de Verifica y Cumple, oculto a la vista; la flecha ↗ en SVG va con aria-hidden.",
+   "estado": "queda"
+  }
+ ]
+}

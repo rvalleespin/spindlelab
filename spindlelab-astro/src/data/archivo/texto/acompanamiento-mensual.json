@@ -1,16 +1,16 @@
 {
- "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
- "sha256": "3a43f5489043ae38440fcce4130e787c9fb2870c7fe51b667fa49341d5997133",
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/acompanamiento-mensual.json",
+ "sha256": "bee7559083c8cae1c495444500093d23ce910b20be93c19936f9e04f6fc2a75b",
  "id": "acompanamiento-mensual",
- "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "acompanamiento-mensual",
-  "ruta": "/v3/servicios/acompanamiento-mensual/",
+  "ruta": "/servicios/acompanamiento-mensual/",
   "title": "Acompañamiento mensual de SEO e IA · SpindleLab",
-  "description": "Cada mes arreglamos y medimos lo que hace que Google y la IA lean y citen tu sitio, con informes quincenales. Desde $590.000/mes + IVA, mínimo 3 meses.",
-  "senales": "Simón, e12/senales-obra.md §2.7 (copiado tal cual; en servicios-v3.json los aplica Diego con Clara). Ojo: la de Acompañamiento dice «con informes quincenales», que es R2 (ver pendientes de Simón). El title va en mayúscula inicial desde el 23-oct (antes «Acompañamiento Mensual de SEO e IA · SpindleLab»), con el nombre escrito como en el h1, la miga y oferta-v3.json: acta de obra, defecto 8; antislop A6",
-  "modo": "queda con ajustes",
-  "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
+  "description": "Cada mes implementamos mejoras de SEO técnico y de visibilidad en IA, publicamos contenido y entregamos un informe. Desde $590.000/mes + IVA, mínimo 3 meses.",
+  "senales": "v2-vigente/servicios__acompanamiento-mensual.txt (title publicado el 24-oct); la description sale de la del v2 con el precio de entrada",
+  "modo": "reescrita al mensaje nuevo (obra E13)",
+  "regla": "Lo que no se lista aquí sale de servicios-v3.json, que esta obra corrigió a mano (informe mensual en todas partes; sin monitoreo doble, sin consultas medidas, sin share-of-voice, sin compromiso de puntaje; sin «muchos clientes nos usan»). Ver e13/desvios/servicios.md.",
   "secciones": [
    {
     "id": "cabecera",
@@ -20,10 +20,11 @@
      {
       "id": "acompanamiento-mensual.miga",
       "rol": "rotulo",
-      "texto": "Inicio · Servicios · Acompañamiento mensual",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "texto": "Inicio · Soluciones · Acompañamiento mensual",
+      "origen": "v2-vigente/servicios__acompanamiento-mensual.txt (la miga dice «Soluciones»)",
       "uso": "miga",
-      "estado": "queda"
+      "antes": "Inicio · Servicios · Acompañamiento mensual",
+      "estado": "cambia"
      },
      {
       "id": "acompanamiento-mensual.h1",
@@ -31,18 +32,32 @@
       "tinta": "Acompañamiento mensual.",
       "gris": "Cada mes hacemos lo que la auditoría dijo que había que hacer.",
       "texto": "Acompañamiento mensual. Cada mes hacemos lo que la auditoría dijo que había que hacer.",
-      "antes": "Acompañamiento mensual",
-      "origen": "spindlelab-astro/src/data/servicios-v3.json acompanamiento-mensual.h1",
-      "por_que": "La plantilla de A pone el h1 en dos tintas; el nombre del servicio no cambia y la continuación dice qué le hace al cliente.",
-      "estado": "cambia"
+      "origen": "texto del v3 anterior",
+      "estado": "queda"
      },
      {
       "id": "acompanamiento-mensual.resto",
       "rol": "nota",
-      "texto": "Queda tal cual, desde su dato: la línea con el precio («linea»), los dos botones, la nota de precios, el lead, todas las secciones con sus planes y precios, las preguntas, el cierre y «Siguiente».",
+      "texto": "Sale de servicios-v3.json (corregido a mano en esta obra): la línea con el precio («linea»), la nota de precios, el lead, las secciones con sus planes y precios, las preguntas, el cierre y «Siguiente».",
       "uso": "referencia",
       "origen": "spindlelab-astro/src/data/servicios-v3.json acompanamiento-mensual",
-      "estado": "queda"
+      "estado": "cambia"
+     }
+    ]
+   },
+   {
+    "id": "cierre",
+    "nombre": "Cierre",
+    "trabajo": "Abrir la conversación sobre el caso; la revisión gratis es del sitio, no del acompañamiento.",
+    "elementos": [
+     {
+      "id": "acompanamiento-mensual.cierre.boton",
+      "rol": "boton",
+      "texto": "Conversar mi caso",
+      "antes": "Pedir el diagnóstico",
+      "origen": "copy-secciones-v1.2.md §5.3 («Conversar mi caso» se mantiene)",
+      "destino": "/contacto/",
+      "estado": "cambia"
      }
     ]
    }

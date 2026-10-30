@@ -1,4 +1,4 @@
-// EL BLOG SOBRE A (obra E12, corrida 2, tanda 5): el índice /v3/blog/ y la plantilla de los siete artículos. Diego,
+// EL BLOG SOBRE A (obra E12, corrida 2, tanda 5): el índice /blog/ y la plantilla de los siete artículos. Diego,
 // 19-oct-2026.
 //
 // Contrato: spec-visual.md §2.5. El índice es el /latest de Koto sin imágenes: la barra lateral (h1 en dos tintas, «(7)»
@@ -6,9 +6,10 @@
 // la derecha), con el cierre del blog al final. El artículo es la plantilla del caso (§2.3) con otro contenido: en la
 // barra, la miga, el h1, la ficha, el autor y el índice de sus h2; en la columna, el cuerpo verbatim con tope de 493.
 //
-// EL CUERPO VA VERBATIM (brief §3; Clara: «el cuerpo de cada artículo queda tal cual»). Cada data/blog-v3/<slug>.html es
-// el HTML publicado tal cual, y aquí no se le cambia una letra. Lo que se toca es marcado, nunca texto:
-//   · los enlaces internos apuntan a /v3/ y los que van a un id de la misma página llevan su ruta (spec §5.2.2: nunca
+// EL CUERPO VA TAL CUAL ESTÁ EN data/blog-v3/<slug>.html (en E12 era el HTML publicado; en E13 se corrigió a mano donde
+// afirmaba algo que no se sostenía, ver e13/desvios/blog.md). Esta plantilla no le cambia una letra. Lo que toca es
+// marcado, nunca texto:
+//   · los enlaces internos apuntan a / y los que van a un id de la misma página llevan su ruta (spec §5.2.2: nunca
 //     «#x» suelto);
 //   · cada h2 sin id recibe uno (el mismo cálculo que en driftime: el id #como-medir-si-esta-funcionando lo usan el
 //     método y Visibilidad en IA) y el id pasa del h2 a su sección;
@@ -32,8 +33,14 @@ const slugDe = (ruta) => ruta.split('/').pop().replace(/\.(html|json)$/, '');
 
 const t = textoDe(tBlog, comun);
 const SITIO = 'https://spindlelab.cl';
-const CHEQUEO = { texto: 'Correr el chequeo', href: '/v3/diagnostico/' };
-const ESCRIBENOS = { texto: t('comun.nav.escribenos').texto, href: '/v3/contacto/' };
+// El cierre del blog (E13): el texto sale de blog.cierre.* de Clara y se compara con el dato (paginas-v3.json blog.cierre).
+// La acción principal es «Pedir la revisión de una página» a /contacto/; el chequeo queda como segundo botón.
+const cierre = () => {
+  const c = { h2: t('blog.cierre.h2').texto, guia: t('blog.cierre.guia').texto, cuerpo: t('blog.cierre.cuerpo').texto };
+  for (const k of Object.keys(c)) igualQue(c[k], paginas.blog.cierre[k], `blog, el cierre (${k})`);
+  const [cta, chequeo] = [t('blog.cierre.cta'), t('blog.cierre.chequeo')];
+  return { ...c, botones: [{ texto: cta.texto, href: cta.destino }, { texto: chequeo.texto, href: chequeo.destino }] };
+};
 
 // Del más reciente al más antiguo, con el mismo comparador de antes (los tres del 7-jul quedan en el mismo orden que en
 // el ItemList de hoy y que «Siguiente artículo»)
@@ -129,7 +136,7 @@ export function articulo(slug) {
   const info = infoDe(slug);
   const meta = info.meta;
   const { crudo, iProsa, h1, corta, tema, lectura } = cabezaDe(slug);
-  const ruta = `/v3/blog/${slug}/`;
+  const ruta = `/blog/${slug}/`;
 
   // El bloque .prose: el archivo termina en «</div> </div>» (prose y el contenedor .wrap)
   const iCierreWrap = crudo.lastIndexOf('</div>');
@@ -139,12 +146,12 @@ export function articulo(slug) {
   }
   const prosa = crudo.slice(iProsa + MARCA_PROSA.length, iCierreProsa);
 
-  // Los enlaces: los del sitio publicado pasan a /v3/ (solo los prefijos que existen en v3: no se inventan destinos) y
+  // Los enlaces: los del sitio publicado pasan a / (solo los prefijos que existen en v3: no se inventan destinos) y
   // los que van a un id de esta misma página llevan su ruta
   const RUTAS = ['blog', 'servicios', 'diagnostico', 'contacto', 'metodo', 'nosotros'];
   const enlazado = prosa
-    .replace(new RegExp(`href="/(${RUTAS.join('|')})/`, 'g'), 'href="/v3/$1/')
-    .replace(/href="\/"/g, 'href="/v3/"')
+    .replace(new RegExp(`href="/(${RUTAS.join('|')})/`, 'g'), 'href="/$1/')
+    .replace(/href="\/"/g, 'href="/"')
     .replace(/href="#([^"]+)"/g, `href="${ruta}#$1"`);
 
   // Las secciones: una por h2, con su id (el que trae o uno nuevo)
@@ -196,7 +203,8 @@ export function articulo(slug) {
 
   // El grafo del post (Simón §2.9: queda), sin los nodos que ya emite el Layout (#org, #autor-ramon), con la miga que se
   // ve (posición 2 «Blog», 3 el nombre corto) y la imagen del Article en su tarjeta nueva
-  const og = { src: `/assets/img/og-e12-blog-${slug}.jpg?v=1`, alt: `SpindleLab: ${plano(h1)}` };
+  // ?v=2 (E13): tres de las siete tarjetas se rehicieron porque su titular cambió
+  const og = { src: `/assets/img/og-e12-blog-${slug}.jpg?v=2`, alt: `SpindleLab: ${plano(h1)}` };
   const DEL_LAYOUT = new Set([`${SITIO}/#org`, `${SITIO}/#autor-ramon`]);
   const jsonLd = {
     ...info.jsonLd,
@@ -225,8 +233,8 @@ export function articulo(slug) {
     nombreBarra: t('comun.secciones.barra').texto,
     intro,
     secciones,
-    cierre: { ...paginas.blog.cierre, botones: [CHEQUEO, ESCRIBENOS] },
-    siguiente: { rotulo: t('articulo.siguiente').texto, titulo: sig.headline, href: `/v3/blog/${sig.slug}/` },
+    cierre: cierre(),
+    siguiente: { rotulo: t('articulo.siguiente').texto, titulo: sig.headline, href: `/blog/${sig.slug}/` },
   };
 }
 
@@ -238,7 +246,7 @@ export function indiceBlog() {
   igualQue(t('blog.linea').texto, paginas.blog.linea, 'blog, la línea');
   const filas = POSTS.map((p) => ({
     titulo: p.headline,
-    href: `/v3/blog/${p.slug}/`,
+    href: `/blog/${p.slug}/`,
     fecha: fechaCorta(p.datePublished),
     iso: p.datePublished,
     tema: cabezaDe(p.slug).tema,
@@ -281,6 +289,6 @@ export function indiceBlog() {
     og: { src: '/assets/img/og-e12-blog.jpg?v=1', alt: `SpindleLab: ${h1.tinta} ${h1.gris}` },
     miga, h1: { tinta: h1.tinta, gris: h1.gris }, conteo: t('blog.conteo').texto, linea: t('blog.linea').texto,
     filas,
-    cierre: { ...paginas.blog.cierre, botones: [CHEQUEO, ESCRIBENOS] },
+    cierre: cierre(),
   };
 }

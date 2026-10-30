@@ -51,7 +51,6 @@ body.a-body {
   --a-linea-seccion: #2d2d2d;
   --a-linea: rgba(255, 255, 255, 0.1);
   --a-borde-campo: #707070;
-  --a-hueco: #4a4a4a;
   --a-velo: rgba(6, 6, 6, 0.7);
 
   /* retícula de Koto (§1.4): margen 16, separación 8, sin ancho máximo */
@@ -209,11 +208,18 @@ body.a-body {
 .a-body .cab__nav a:hover, .a-body .cab__nav a[aria-current] { color: var(--a-blanco); }
 .a-body .cab__hora { margin-left: auto; white-space: nowrap; }
 .a-body .cab__placa { display: none; }
+/* E13 · a la derecha, la hora y el botón de la revisión (spec-home §3.2). El botón es el boton--claro de siempre: sobre
+   la placa del encabezado plegado (#141414) uno de placa desaparecería. */
+.a-body .cab__der { margin-left: auto; display: flex; align-items: center; gap: 40px; }
+.a-body .cab__der .cab__hora { margin-left: 0; }
+.a-body .cab__cta { flex: none; }
 /* De 834 a 1193 los espacios del encabezado bajan un paso de la escala: con los de 1440, plegado a 834 la hora se salía
-   de la placa 15 px (medido: logo 117 + menú 437 + hora 139 + 2 × 56 = 805 en 778 de caja) */
+   de la placa 15 px (medido: logo 117 + menú 437 + hora 139 + 2 × 56 = 805 en 778 de caja). E13: con el botón, la hora
+   cede (es adorno y no cabe) y el menú baja otro paso */
 @media (min-width: 834px) and (max-width: 1193.98px) {
   .a-body .cab__fila { gap: 40px; }
-  .a-body .cab__nav ul { gap: 32px; }
+  .a-body .cab__nav ul { gap: 24px; }
+  .a-body .cab__der .cab__hora { display: none; }  /* solo la del encabezado: la del pie se queda */
 }
 @media (min-width: 834px) {
   .a-body .cab { position: sticky; top: 0; }
@@ -230,6 +236,19 @@ body.a-body {
   .a-body .cab__logo svg { height: 20px; }
   .a-body .cab__nav { order: 3; width: 100%; }
   .a-body .cab__nav ul { justify-content: space-between; gap: 8px; }
+  /* E13 (spec-home §3.2): la fila 1 es el logo y el botón (en el lugar de la hora); la fila 2, cinco ítems («Contacto»
+     sale: el botón lleva al mismo destino). El encabezado es pegajoso en todos los anchos y se pliega en la placa de 64
+     al bajar: el botón de la revisión queda siempre a la vista, y plegarse no mueve la página (90 − 64 = 26). */
+  .a-body .cab__der .cab__hora, .a-body .cab__nav-contacto { display: none; }  /* la hora del pie se queda */
+  .a-body .cab { position: sticky; top: 0; }
+  .a-body .cab__placa {
+    display: block; position: absolute; inset: 8px var(--a-m) auto; height: 48px; border-radius: 4px;
+    background: var(--a-placa); opacity: 0; pointer-events: none; transition: opacity var(--a-color);
+  }
+  .a-body .cab--plegada .cab__placa { opacity: 1; }
+  .a-body .cab--plegada .cab__fila { min-height: 64px; padding: 0 calc(var(--a-m) + 12px); flex-wrap: nowrap; align-items: center; }
+  .a-body .cab--plegada .cab__nav { display: none; }
+  .a-body .cab--plegada { margin-bottom: 26px; }
 }
 
 /* ------------------------------------------------------------------ miga (§2, lo común, 5) */
@@ -241,7 +260,7 @@ body.a-body {
 .a-body .miga [aria-current] { color: var(--a-blanco); display: inline-flex; min-height: 44px; align-items: center; }
 
 /* ------------------------------------------------------------------ pie (§2, lo común, 2) */
-/* Borde superior, el logo a 20 px, el correo en mono y la hora; 160 px arriba. Los casos no llevan pie. */
+/* Borde superior, el logo a 20 px, el correo en mono y la hora; 160 px arriba. (E13, ronda 2: el caso también lo lleva.) */
 .a-body .pie-sitio {
   margin-top: 160px; padding: 16px var(--a-m) 24px; display: flex; flex-wrap: wrap; gap: 12px 40px;
   align-items: center; border-top: 1px solid var(--a-linea-seccion);
@@ -250,6 +269,13 @@ body.a-body {
 .a-body .pie-sitio .cab__hora { margin-left: auto; }
 .a-body .pie-sitio__correo { text-transform: none; color: var(--a-gris); transition: color var(--a-color); }
 .a-body .pie-sitio__correo:hover { color: var(--a-blanco); }
+/* E13 (spec-home §3.4): una segunda fila de enlaces. consent-banner.js cuelga el botón «Cookies» junto al de privacidad. */
+.a-body .pie-sitio__enlaces { flex: 1 0 100%; }
+.a-body .pie-sitio__enlaces ul { display: flex; flex-wrap: wrap; gap: 0 32px; }
+.a-body .pie-sitio__enlaces a {
+  display: inline-flex; align-items: center; gap: 4px; min-height: 32px; color: var(--a-gris); transition: color var(--a-color);
+}
+.a-body .pie-sitio__enlaces a:hover { color: var(--a-blanco); }
 
 /* ------------------------------------------------------------------ área de toque (§4.3): 44 × 44 */
 /* Bajo 834 y con cualquier puntero grueso, en alto y en ancho, también el logo y los correos sueltos. Donde no hay
@@ -257,6 +283,19 @@ body.a-body {
 @media (max-width: 833.98px), (pointer: coarse) {
   .a-body .cab__logo { min-height: 44px; }
   .a-body .cab__nav a, .a-body .miga a { min-width: 44px; justify-content: center; }
+  /* E13: la fila de enlaces del pie y los enlaces de texto de las filas de la home (spec-home §6, criterio 17). Los del pie:
+     44 de alto, y 4 px de aire sobre ellos para que sus áreas no pisen las del correo y las de «Cookies» (medido: 3 px). Los
+     enlaces de las filas de la home son un solo enlace por párrafo: su área sube a 44 con el margen negativo del párrafo
+     (lo que se ve no se mueve; arriba y abajo hay texto o medios sin enlace). Los de los bloques de servicios van apilados
+     (dos en Búsqueda y en Anuncios): cada uno de 44 de alto, sin margen negativo, para que sus áreas no se pisen. */
+  .a-body .pie-sitio__enlaces { margin-top: 4px; }
+  .a-body .pie-sitio__enlaces a { min-height: 44px; }
+  /* el botón «Cookies» que consent-banner.js cuelga junto al enlace de privacidad ya vive en una fila de 44: sin los
+     márgenes negativos del correo, que le pisaban 3 px de área al enlace de la fila de abajo (Instagram) */
+  html body.a-body .pie-sitio .pie-sitio__enlaces #cookie-preferencias { margin-block: 0 !important; padding: 0 !important; }
+  .a-body .portada-v__accion > .chico:last-child, .a-body .fase__der > .chico:has(> a), .a-body .int-lista__pie:not(.chico) { margin-block: -13px; }
+  .a-body .portada-v__accion > .chico:last-child a, .a-body .fase__der > .chico > a, .a-body .int-lista__pie:not(.chico) a,
+  .a-body .servicio__precio .chico a { display: flex; width: fit-content; align-items: center; min-height: 44px; }
   .a-body .pie-sitio .cab__logo { margin-block: -12px; }
   .a-body .pie-sitio__correo { display: inline-flex; align-items: center; min-height: 44px; padding-top: 6px; margin-block: -18px -12px; }
   /* el botón «Cookies» que consent-banner.js cuelga junto al correo trae su estilo en línea: va con !important */
@@ -353,12 +392,6 @@ body.a-body.a-sin-js .medio > img { opacity: 1; }
 .a-body .chequeo__campo input:hover { border-color: var(--a-gris); }
 .a-body .chequeo__campo input:focus-visible { border-color: var(--a-gris); }
 .a-body .chequeo__campo .boton { flex: none; }
-/* desde 1194, en la columna angosta de la portada: campo y botón uno sobre otro, a todo el ancho */
-@media (min-width: 1194px) {
-  .a-body .chequeo--apilado .chequeo__campo { flex-direction: column; }
-  .a-body .chequeo--apilado .chequeo__campo input { flex: none; }
-  .a-body .chequeo--apilado .chequeo__campo .boton { width: 100%; }
-}
 .a-body #chq-error { margin-top: 4px; font-size: var(--a-t-chico); line-height: var(--a-i-cuerpo); color: var(--a-blanco); }
 .a-body #chq-error .chq-error-codigo { margin-top: 4px; font-family: var(--a-f-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.03em; color: var(--a-gris); }
 .a-body #chq-error a { color: var(--a-blanco); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
@@ -470,11 +503,9 @@ html body.a-body #cookie-aviso button:last-child { background: var(--a-placa-act
 }
 
 /* ------------------------------------------------------------------ nada tapado por lo fijo (§4.3) */
-/* Arriba, el encabezado pegajoso (64 desde 834): solo mientras hay foco de teclado, para no correr las anclas que ya
-   tienen su scroll-margin. Abajo, el aviso de cookies mientras está abierto. */
-@media (min-width: 834px) {
-  html:has(body.a-body):has(:focus-visible) { scroll-padding-top: 80px; }
-}
+/* Arriba, el encabezado pegajoso (64; E13: en todos los anchos): solo mientras hay foco de teclado, para no correr las
+   anclas que ya tienen su scroll-margin. Abajo, el aviso de cookies mientras está abierto. */
+html:has(body.a-body):has(:focus-visible) { scroll-padding-top: 80px; }
 /* El alto del aviso, medido en esta hoja (tanda 1): 69 px en una fila (desde 834 desde el 23-oct; antes, desde ~850),
    115 de 600 a 833, 134 de 390 a 414 y 153 a 360 y 320. El relleno es ese alto más unos 20 px. */
 html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 96px; }
@@ -486,6 +517,19 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom:
 }
 @media (max-width: 379.98px) {
   html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 176px; }
+}
+/* E13: el pie ahora tiene una fila de enlaces (la política de privacidad entre ellos): mientras el aviso está abierto, el pie
+   deja debajo el alto del aviso (el mismo relleno de arriba), para que se pueda llegar a sus enlaces con el scroll y con el
+   teclado sin que el aviso los tape. Se va con el aviso. */
+html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bottom: 96px; }
+@media (max-width: 833.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bottom: 136px; }
+}
+@media (max-width: 599.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bottom: 160px; }
+}
+@media (max-width: 379.98px) {
+  html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bottom: 176px; }
 }
 
 /* ================================================================== HOME (spec §2.1, §3.1, §3.2) · tanda 2 */
@@ -505,22 +549,33 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom:
 }
 .a-body .portada-v__decl { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; }
 .a-body .portada-v__decl .entradilla { max-width: var(--a-caja); }
-.a-body .portada-v__chequeo { grid-column: 1 / -1; }
-/* Bajo 834, la portada lee rótulo, h1, chequeo y entradilla (§2.1, fila 1; §0.4, punto 13; 23-oct, acta de la obra,
-   vuelta 1, defecto 4): con el aviso de cookies abierto, el campo y el botón quedan sobre él a 360 × 800 y 390 × 844.
-   Solo el orden a la vista: el DOM no cambia (la entradilla no tiene nada enfocable, así que el Tab tampoco). El bloque
-   de la frase se abre en la retícula de la portada (row-gap 24): entre el rótulo y el h1, 16 como hoy (24 − 8); entre el
-   h1 y el chequeo y entre el chequeo y la entradilla, 24 */
+/* E13 (spec-home §2, variante H-A): la acción principal ocupa el lugar que tenía el chequeo (renombra .portada-v__chequeo).
+   El botón, su microcopy (la promesa del botón, pegada bajo él) y el enlace al chequeo, que es otra acción y va después. */
+.a-body .portada-v__accion { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+/* la caja del texto, también en el chico de la acción: tope de 493 px en todos los anchos (§1.3) */
+.a-body .portada-v__accion .chico { max-width: var(--a-caja); }
+/* Bajo 834, la portada lee rótulo, h1, acción y entradilla (§2.1, fila 1; §0.4, punto 13; 23-oct, acta de la obra,
+   vuelta 1, defecto 4; E13: antes el campo del chequeo, ahora el botón de la revisión): con el aviso de cookies abierto,
+   el botón queda sobre él a 360 × 800 y 390 × 844. Solo el orden a la vista: el DOM no cambia (la entradilla no tiene
+   nada enfocable, así que el Tab tampoco). El bloque de la frase se abre en la retícula de la portada (row-gap 24): entre
+   el rótulo y el h1, 16 como hoy (24 − 8); entre el h1 y la acción y entre la acción y la entradilla, 24. La franja del
+   video no pasa del 28 % de la pantalla: a 360 × 640 con el aviso abierto el botón queda a 30 px sobre él (sin la regla,
+   a 7); a 390 × 844 y más, 28svh es más que la franja 16:9 y no cambia nada. */
 @media (max-width: 833.98px) {
   .a-body .portada-v__decl { display: contents; }
   .a-body .portada-v__decl > * { grid-column: 1 / -1; }
   .a-body .portada-v__decl > h1 { margin-top: -8px; }
-  .a-body .portada-v__chequeo { order: 1; }
+  .a-body .portada-v__accion { order: 1; }
   .a-body .portada-v__decl > .entradilla { order: 2; }
 }
-/* la caja del texto, también en el chico del chequeo: tope de 493 px en todos los anchos (§1.3); a 768 corría a 736 */
-.a-body .portada-v__chequeo .chico { max-width: var(--a-caja); }
-/* y en el de /v3/diagnostico/, donde la ayuda corría de 659 a 940 px desde 768 (acta de la obra, vuelta 1, defecto 5) */
+/* La franja del video no pasa del 28 % de la pantalla, solo en pantallas bajas (360 × 640, 375 × 667, 320 × 568). La spec lo
+   pedía bajo 834 sin más, pero en una tablet (768 × 1024, donde 28svh = 287 y la franja 16:9 mide 432) el ancho se encogía
+   con el alto (aspect-ratio) y la franja quedaba a medio ancho: con width: 100% se recorta arriba y abajo, y con el tope
+   de altura de pantalla se queda donde hace falta (desvios/home-construccion.md). */
+@media (max-width: 833.98px) and (max-height: 740px) {
+  .a-body .portada-v__medio { width: 100%; max-height: 28svh; }
+}
+/* la ayuda de /diagnostico/, donde corría de 659 a 940 px desde 768 (acta de la obra, vuelta 1, defecto 5) */
 .a-body .chequeo > .chico, .a-body .chequeo__form > .chico { max-width: var(--a-caja); }
 @media (min-width: 834px) {
   /* el video llena la portada (100svh menos el encabezado, que va antes sobre el lienzo); el texto, abajo y encima */
@@ -532,98 +587,58 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom:
     background: linear-gradient(to bottom, #060606, rgba(6, 6, 6, 0));
   }
   /* el velo (--a-velo-portada, §1.1; §3.1.4): nace con el bloque de texto, no con la pantalla, así crece si el texto
-     crece (el resultado del chequeo). 0 en el borde de arriba del bloque, 0,88 a los 160 px, 0,88 hasta 48 px antes del
-     borde de abajo y #060606 entero en el borde, que empalma con el lienzo de la sección siguiente. El texto empieza
-     16 px bajo el final de la rampa (160 + 16). Los dos bloques apoyados en la misma línea de abajo, a 24 px del borde.
-     El velo no recibe el puntero (sobre la pausa, cuando la portada es baja); el texto y el chequeo, sí. */
+     crece (E13: ya no hay resultado del chequeo en la portada, el alto es fijo). 0 en el borde de arriba del bloque, 0,88
+     a los 160 px, 0,88 hasta 48 px antes del borde de abajo y #060606 entero en el borde, que empalma con el lienzo de
+     la sección siguiente. El texto empieza 16 px bajo el final de la rampa (160 + 16). Los dos bloques apoyados en la
+     misma línea de abajo, a 24 px del borde. El velo no recibe el puntero (sobre la pausa, cuando la portada es baja); el
+     texto y la acción, sí. */
   .a-body .portada-v__pie {
     grid-template-columns: repeat(12, minmax(0, 1fr)); padding: 176px var(--a-m) 24px; pointer-events: none;
     background: linear-gradient(to bottom, rgba(6, 6, 6, 0) 0, rgba(6, 6, 6, 0.88) 160px, rgba(6, 6, 6, 0.88) calc(100% - 48px), #060606 100%);
   }
   .a-body .portada-v__pie > * { pointer-events: auto; }
   .a-body .portada-v__decl { grid-column: 1 / span 7; }
-  .a-body .portada-v__chequeo { grid-column: 8 / -1; }
+  .a-body .portada-v__accion { grid-column: 8 / -1; }
+  .a-body .portada-v__accion .boton { width: 100%; }
 }
 @media (min-width: 1194px) {
   .a-body .portada-v__pie { grid-template-columns: repeat(16, minmax(0, 1fr)); }
   .a-body .portada-v__decl { grid-column: 1 / span 12; }
-  .a-body .portada-v__chequeo { grid-column: 13 / -1; }
+  .a-body .portada-v__accion { grid-column: 13 / -1; }
 }
 
-/* 2 · La cinta (§3.2): la primera sección; 16:9 exacta en c1–c12 y la ficha del tramo en c13–c16, apoyada abajo, desde
-   1194; bajo 1194 la cinta a todo el ancho y la ficha como rótulo de placa sobre ella; bajo 834, a sangre y sin radio */
-.a-body .cinta-s { row-gap: 16px; }
-.a-body .cinta-s__marco { position: relative; grid-column: 1 / -1; }
-.a-body .cinta-s__ficha { display: none; }
-/* la nota de personas generadas, en otra placa abajo a la izquierda, sin tapar la pausa (12 + 44 + 12 + 12) */
-.a-body .cinta-s .marca-medio--abajo { top: auto; bottom: 12px; max-width: calc(100% - 80px); }
-.a-body .cinta-s .marca-medio[hidden] { display: none; }
-@media (min-width: 1194px) {
-  .a-body .cinta-s__marco { grid-column: 1 / span 12; }
-  .a-body .cinta-s__marco .marca-medio { display: none; }
-  .a-body .cinta-s__ficha { grid-column: 13 / -1; align-self: end; display: flex; flex-direction: column; gap: 8px; }
-  .a-body .cinta-s__ficha [hidden] { display: none; }
-}
-@media (max-width: 833.98px) {
-  .a-body .cinta-s { padding-inline: 0; }
-  .a-body .cinta-s .medio { border-radius: 0; }
-}
-
-/* 3 · El índice corto (los destacados de Koto): el h2 pegajoso a 88 px en c1–c4 desde 1194; las piezas en c5–c16 */
-.a-body .destacados__cab { grid-column: 1 / -1; margin-bottom: 32px; }
-.a-body .destacados__lista { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 40px; }
-@media (min-width: 1194px) {
-  .a-body .destacados__cab { grid-column: 1 / span 4; position: sticky; top: 88px; align-self: start; margin-bottom: 0; }
-  .a-body .destacados__lista { grid-column: 5 / -1; }
-}
-.a-body .fila-par { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--a-g); }
-@media (max-width: 833.98px) { .a-body .fila-par { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
-.a-body .destacados__pie {
-  grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
-  gap: 8px 24px; margin-top: 32px;
-}
-@media (min-width: 1194px) { .a-body .destacados__pie { grid-column: 5 / -1; } }
-
-/* Una entrada del trabajo (home y /trabajo/): bajo el medio, nombre en blanco y bajada en gris en una sola frase, a
-   cuerpo, y la línea mono. Sin borde ni caja. */
+/* Una entrada del trabajo (/trabajo/): bajo el medio, nombre en blanco y bajada en gris en una sola frase, a
+   cuerpo, y la línea mono. Sin borde ni caja. (E13: la cinta y el índice corto de la home salieron; esto lo usa /trabajo/.) */
 .a-body .pieza { position: relative; min-width: 0; }
-.a-body .pieza[hidden] { display: none; }
 .a-body .pieza__txt { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
 .a-body .pieza__nombre {
   font-stretch: 100%; font-weight: 370; font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); text-wrap: pretty;
 }
 .a-body .pieza__nombre .icono-flecha { margin-left: 4px; }
 
-/* 4 · Cada pieza, con un dato medido (Craft y Logic): tres filas sin caja, con su borde de arriba en --a-linea; el medio
-   en c5–c12 y lo que lo prueba en c13–c16 desde 1194; c1–c7 y c8–c12 de 834 a 1193; apilado bajo 834 */
-.a-body .prueba__cab { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
-@media (min-width: 1194px) { .a-body .prueba__cab { grid-column: 1 / span 6; } }
-.a-body .prueba__fila {
-  grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; row-gap: 16px; padding: 16px 0 48px;
-  border-top: 1px solid var(--a-linea);
-}
-.a-body .prueba__medio { grid-column: 1 / -1; }
-.a-body .prueba__dato { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 12px; }
-@media (min-width: 834px) {
-  .a-body .prueba__medio { grid-column: 1 / span 7; }
-  .a-body .prueba__dato { grid-column: 8 / -1; }
-}
-@media (min-width: 1194px) {
-  .a-body .prueba__medio { grid-column: 5 / span 8; }
-  .a-body .prueba__dato { grid-column: 13 / -1; }
-}
-.a-body .ficha-linea { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; }
-
-/* 5 · Servicios: la situación de quien lee (c1–c4), el cuerpo (c5–c11) y el precio en blanco con su botón (c13–c16);
-   de 834 a 1193, c1–c4, c5–c9 y c10–c12; apilado bajo 834. Desarrollo web primero y a la escala de la declaración */
+/* E13 · Los bloques de «Lo que podemos hacer por ti» (spec-home §1, fila 5): el nombre del bloque a Título (c1–c4), el
+   texto (c5–c11) y el precio en blanco con un enlace por servicio (c13–c16); de 834 a 1193, c1–c4, c5–c9 y c10–c12;
+   apilado bajo 834. Cuatro bloques de peso parecido: una lista de filas con línea, no tarjetas ni botones. */
 .a-body .servicios__cab { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
 @media (min-width: 1194px) { .a-body .servicios__cab { grid-column: 1 / span 6; } }
 .a-body .servicio { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; row-gap: 12px; padding: 16px 0 40px; }
-.a-body .servicio--puerta { padding-bottom: 56px; }
 .a-body .servicio__sit, .a-body .servicio__cuerpo, .a-body .servicio__precio { grid-column: 1 / -1; }
 .a-body .servicio__cuerpo { display: flex; flex-direction: column; gap: 12px; }
 .a-body .servicio__precio { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .a-body .servicio__precio .valor { color: var(--a-blanco); }
+/* Búsqueda y visibilidad en IA (ronda 2 de E13): un precio sobre cada enlace, en pares. Dentro del par, el precio y su enlace
+   juntos; entre pares, el aire que los separa. Bajo 834 los enlaces miden 44 y llevan 13 px de aire propio sobre el texto, así
+   que el par no suma separación y entre pares queda más. */
+.a-body .servicio__precio--pares { gap: 24px; }
+.a-body .servicio__par { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .servicio__precio--pares { gap: 16px; }
+  .a-body .servicio__par { gap: 0; }
+  .a-body .servicio__par .chico { margin-top: -6px; }
+}
+/* la flecha de los enlaces de texto de la home (bloques de servicios, filas de pruebas, enlace al método): 4 px, como en
+   los datos de las fases del método y en el nombre de la pieza */
+.a-body .servicio__precio .icono-flecha, .a-body .fase__der .icono-flecha, .a-body .int-lista__pie .icono-flecha { margin-left: 4px; }
 @media (min-width: 834px) {
   .a-body .servicio__sit { grid-column: 1 / span 4; }
   .a-body .servicio__cuerpo { grid-column: 5 / span 5; }
@@ -633,11 +648,6 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom:
   .a-body .servicio__cuerpo { grid-column: 5 / span 7; }
   .a-body .servicio__precio { grid-column: 13 / -1; }
 }
-.a-body .servicios__tambien { grid-column: 1 / -1; padding-top: 16px; }
-/* bajo 1194 va a todo el ancho: con el tope de la caja (§1.3; corría de 736 a 992 px entre 768 y 1193, acta de la obra,
-   vuelta 1, defecto 5). Desde 1194, en una línea en c5–c12, como dice §2.1 (fila 5) */
-@media (max-width: 1193.98px) { .a-body .servicios__tambien { max-width: var(--a-caja); } }
-@media (min-width: 1194px) { .a-body .servicios__tambien { grid-column: 5 / span 8; } }
 
 /* 6 · Quién está detrás: el retrato 3:4 entero en c1–c5; el texto en c7–c14 (c6–c12 de 834 a 1193), apoyado abajo */
 .a-body .quien__retrato { grid-column: 1 / -1; }
@@ -661,7 +671,7 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom:
 
 /* ================================================================== ÍNDICE DE TRABAJO (spec §2.2) · tanda 2 */
 /* Desde 1194: la barra lateral de 320 px pegajosa a 80 px del borde de arriba y el muro a la derecha, con 16 px entre
-   los dos. Bajo 1194, el título, el conteo, la entradilla y el filtro arriba del muro. */
+   los dos. Bajo 1194, el título, el conteo y la entradilla arriba del muro. */
 .a-body .indice { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px var(--a-m); padding: 8px var(--a-m) 0; }
 .a-body .indice__lateral { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 /* la entradilla, con el tope de 493 de la caja del texto (§1.3): de 834 a 1193 corría a 800 px */
@@ -675,29 +685,6 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom:
     padding: 48px 8px 8px; margin-inline: -8px;
   }
 }
-
-/* El filtro (§2.2, §4.1): Todo, Cliente, Propio, Concepto, cada uno con su conteo en mono; el activo en blanco con el
-   punto de 3 px; botones con aria-pressed. Desde 1194, una lista de filas de 36; bajo 1194, una fila de botones de 44. */
-.a-body .filtro { margin-top: 24px; align-self: stretch; }
-.a-body .filtro ul { display: flex; flex-direction: column; }
-.a-body .filtro button {
-  position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 0 0 12px;
-  border: 0; background: none; cursor: pointer; color: var(--a-gris); font-size: var(--a-t-cuerpo);
-  line-height: var(--a-i-cuerpo); transition: color var(--a-color);
-}
-.a-body .filtro button:hover, .a-body .filtro button[aria-pressed='true'] { color: var(--a-blanco); }
-.a-body .filtro button[aria-pressed='true']::before {
-  content: ''; position: absolute; left: 0; top: 50%; width: 3px; height: 3px; margin-top: -1.5px; background: var(--a-blanco);
-}
-.a-body .filtro__n { color: inherit; }
-@media (max-width: 1193.98px) {
-  .a-body .filtro { margin-top: 8px; }
-  .a-body .filtro ul { flex-direction: row; flex-wrap: wrap; gap: 0 16px; }
-  .a-body .filtro button { min-height: 44px; }
-}
-@media (pointer: coarse) { .a-body .filtro button { min-height: 44px; } }
-/* sin JS el filtro no filtraría: no se muestra */
-body.a-body.a-sin-js .filtro { display: none; }
 
 /* El muro: una columna bajo 834; desde 834, dos de igual ancho con 8 px entre ellas, en las tres proporciones de Koto.
    muro.mjs reparte cada pieza a la columna más corta y le da tantas filas de 1 px como mide (+ 32 de separación);
@@ -726,8 +713,8 @@ body.a-body.a-sin-js .filtro { display: none; }
 .a-body .caso { display: flex; flex-direction: column; gap: var(--a-g); padding: 8px var(--a-m) 96px; }
 .a-body .caso__columna { display: contents; }
 
-/* La barra lateral (§2.3): miga, h1 a Título en dos tintas, la ficha mono (TIPO · AÑO; en los conceptos «CONCEPTO ·
-   2026», a la vista sin scroll a 1440 y a 390), el índice de secciones y, abajo, los créditos en chico. */
+/* La barra lateral (§2.3): miga, h1 a Título en dos tintas, la ficha mono (TIPO · AÑO, a la vista sin scroll a
+   1440 y a 390), el índice de secciones y, abajo, los créditos en chico. */
 .a-body .lateral { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding-top: 16px; }
 .a-body .lateral h1 { font-size: var(--a-t-titulo); line-height: 1.2; }
 .a-body .lateral__ficha { display: flex; flex-direction: column; gap: 8px; }
@@ -811,16 +798,11 @@ body.a-body.a-sin-js .filtro { display: none; }
 }
 .a-body .ingredientes .dato { display: block; margin-top: 4px; }
 
-/* Las filas de medios (§2.3; lock §21.2): solo las cuatro formas de Koto, radio 6 y 8 px entre todos. Las partidas
-   mantienen su forma en todos los anchos (a 390, pares de 175 px). Ninguna a sangre. */
+/* Las filas de medios (§2.3; lock §21.2): una 16:9 o un par 4:5 (E13: las apiladas de los conceptos salieron), radio 6 y
+   8 px entre todos. El par mantiene su forma en todos los anchos (a 390, pares de 175 px). Ninguna a sangre. */
 .a-body .filas { display: flex; flex-direction: column; gap: var(--a-g); margin-top: var(--a-g); }
 .a-body .fila__medios { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--a-g); }
-.a-body .fila--par .fila__medios, .a-body .fila--45-162 .fila__medios, .a-body .fila--162-45 .fila__medios {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-/* dos 1,62 apilados del alto del 4:5 de al lado (525 × 656 contra 525 × 324 + 8 + 324 a 1440) */
-.a-body .pila { display: grid; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: var(--a-g); }
-.a-body .pila > .medio { aspect-ratio: auto; }
+.a-body .fila--par .fila__medios { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 /* El enlace dentro de un pie (la original de la foto de Combeau): su área de 44 bajo 834 y con puntero grueso (§4.3),
    sin mover lo que se ve (como el correo suelto de la home) */
 @media (max-width: 833.98px), (pointer: coarse) {
@@ -831,12 +813,10 @@ body.a-body.a-sin-js .filtro { display: none; }
      píxel, la página del mismo alto) */
   .a-body .fila .pie a { margin-block: -20px -6px; padding-top: 14px; }
 }
-/* El hueco nombrado (§3.3): lo que falta, dicho, en un marco punteado del tamaño de una fila 16:9 */
-.a-body .hueco { border: 1px dashed var(--a-hueco); border-radius: 6px; padding: 16px; }
-.a-body .hueco .chico { max-width: var(--a-caja); }
 
 /* «Siguiente» (§2.3): al final de la columna, con borde superior y 120 px arriba (80 bajo 834); a la izquierda el
-   contacto, a la derecha el caso que sigue con su medio 16:9 de 416 px y el corchete. Entra una vez (resorte «entrada»). */
+   contacto y, a la derecha, el enlace que sigue (en el caso de Combeau, el corchete al índice; en el artículo, el que
+   sigue). Entra una vez (resorte «entrada»). E13: el medio 16:9 de 416 px del caso que sigue salió con Praxi. */
 .a-body .siguiente {
   display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; margin-top: 80px; padding-top: 24px;
   border-top: 1px solid var(--a-linea-seccion);
@@ -846,7 +826,6 @@ body.a-body.a-sin-js .filtro { display: none; }
 .a-body .siguiente__contacto { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .a-body .siguiente__contacto .t-titulo { max-width: 22em; }
 .a-body .siguiente__caso { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-.a-body .siguiente__caso .medio-enlace { width: min(416px, 100%); }
 
 /* La barra flotante bajo 1194 (§2.3; lock §21.3): una placa a 16 px del borde con el nombre del caso en mono gris, la
    sección activa en mono blanco sobre la placa activa y «+», que abre la lista (un details). */
@@ -870,9 +849,6 @@ body.a-body.a-sin-js .filtro { display: none; }
 /* al pasar el mouse, solo con un puntero que pasa: en táctil el toque que abre la lista dejaba «hover» pegado en la fila
    que quedaba bajo el dedo */
 @media (hover: hover) { .a-body .barra ul a:hover { color: var(--a-blanco); } }
-/* En los conceptos, después del nombre, «·» y el «Tipo» de la ficha de Clara («Concepto»), en rótulo gris y en una línea
-   (§2.3, 23-oct; acta de la obra, vuelta 1, defecto 2): bajo 1194 es lo único que está en la ventana a todo scroll */
-.a-body .barra__tipo { white-space: nowrap; }
 /* Con el aviso de cookies abierto, la barra va 8 px sobre él (§2.3, §4.3, 23-oct): caso.mjs escribe su alto en
    --a-alto-aviso mientras está a la vista; al elegir, la barra vuelve a su lugar, sin animación */
 html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a-alto-aviso, 0px) + 8px); }
@@ -888,7 +864,7 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
 /* La plantilla de las páginas de la casa, la de Koto en /services y /about (lock §20.1): negras, con a lo más una franja
    de imagen. Implementación de referencia: la vista 5 del prototipo (proto/a/servicios/desarrollo-web/); los espacios
    del prototipo que no están en la escala de §1.5 van al paso más cercano (14 → 12 o 16, 10 → 12, 28 → 24). La usan
-   /v3/servicios/, Desarrollo web y los cinco servicios de [slug].astro (desvios.md, tanda 4). */
+   /servicios/, Desarrollo web y los cinco servicios de [slug].astro (desvios.md, tanda 4). */
 
 /* 1 · Cabecera: miga; h1 a Declaración en dos tintas (c1–c10 desde 1194); la entradilla y lo que la acompaña (tope 493);
    los botones. 48 arriba */
@@ -1039,24 +1015,29 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
 .a-body .datos-fase__fila--entera { grid-column: 1 / -1; }
 .a-body .datos-fase__linea { display: block; }
 .a-body .datos-fase a .icono-flecha { display: inline-block; margin-left: 4px; }
+/* E13, ronda 2 (acta de QA, defecto 8): los enlaces de «Cuánto cuesta» («Ver la auditoría», «Ver las soluciones», «Ver el
+   acompañamiento») van al final de una frase, dentro del texto, y medían 17 de alto. Bajo 834 y con puntero grueso su área
+   sube a 44 con el relleno de arriba y de abajo: el de un elemento en línea no cambia el alto de la línea, así que lo que se
+   ve no se mueve (mismo método que .consiento a y .prosa .nota a). Arriba y abajo hay texto sin enlace. */
+@media (max-width: 833.98px), (pointer: coarse) { .a-body .datos-fase dd a { padding-block: 14px; } }
 /* Una lista de términos (método, «Lo que necesitamos de ti»): la misma fila de la lista, con su término */
 .a-body .int-lista > .int-lista__fila { padding: 12px 0; border-top: 1px solid var(--a-linea); }
 .a-body .int-lista__fila > .cuerpo { max-width: var(--a-caja); }
 /* Los botones al pie del contenido de una sección (dos caminos, la ley) */
 .a-body .int-botones { margin-top: 24px; }
 
-/* El chequeo de /v3/diagnostico/ (§2.4): bajo la cabecera, en c1–c8, con el resultado en la misma columna; el h2 oculto
+/* El chequeo de /diagnostico/ (§2.4): bajo la cabecera, en c1–c8, con el resultado en la misma columna; el h2 oculto
    «Resultado del chequeo» solo existe cuando hay resultado */
 .a-body .int-cab > .int-instr { margin-top: 16px; }
 @media (min-width: 834px) { .a-body .int-cab > .int-instr { grid-column: 1 / span 8; } }
 .a-body .chequeo:not(:has(#chq-out[style*='block'])) .chequeo__titulo-res { display: none; }
 
-/* /v3/nosotros/: la bio junto al retrato (las clases de «Quién está detrás» de la home), con la trayectoria en su lista */
+/* /nosotros/: la bio junto al retrato (las clases de «Quién está detrás» de la home), con la trayectoria en su lista */
 .a-body .quien__h2 { margin-top: 24px; }
 .a-body .quien__lista { align-self: stretch; max-width: var(--a-caja); }
 .a-body .sin-corte { white-space: nowrap; }
 
-/* /v3/contacto/: el formulario en c1–c8 (§2.4), 40 arriba y 12 entre campos (la cabecera es corta: el formulario entero
+/* /contacto/: el formulario en c1–c8 (§2.4), 40 arriba y 12 entre campos (la cabecera es corta: el formulario entero
    sobre el pliegue a 1440 × 900, también con el aviso de cookies abierto). Los campos de §4.1: placa, borde #707070, texto de 16 (sin zoom en iOS), 44 de alto, placeholder gris;
    al pasar el mouse y con el foco, el borde gris, y el contorno blanco del foco de §4.3. */
 .a-body .form-sec { padding-top: 40px; }
@@ -1105,6 +1086,10 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
   /* el enlace dentro de la frase del consentimiento: su área de 44 de alto sin mover la línea (el relleno de un elemento
      en línea no cambia el alto de la línea) */
   .a-body .consiento a { padding-block: 14px; }
+  /* E13, ronda 2 (acta de QA, defecto 8): ese área de 45 de alto pisaba 1 a 2 px al botón de envío (a 360, 390 y 768) y, a 768,
+     2 px al campo de arriba y al área de la casilla (el texto empieza 2 px dentro de ella). La fila gana 2 px de aire arriba
+     y abajo, y el texto se separa 2 px de la casilla: las áreas ya no se tocan y la casilla dibujada no se mueve. */
+  .a-body .consiento { margin-block: 2px; gap: 14px; }
 }
 
 /* EL ÍNDICE DEL BLOG (§2.5): la barra lateral del índice de trabajo y, a la derecha, las filas: borde superior en la
@@ -1215,10 +1200,11 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
   letter-spacing: 0; text-transform: none;
 }
 .a-body .barra--articulo summary > .rotulo { flex: none; }
-/* el artículo tiene pie: bajo 1194 la página deja el alto de la barra abajo para que no lo tape */
+/* el artículo y el caso tienen pie (E13, ronda 2: el caso lo ganó; ambos son `.caso`): bajo 1194 la página deja el alto de la
+   barra abajo para que no lo tape */
 @media (max-width: 1193.98px) {
-  .a-body .articulo { padding-bottom: 0; }
-  .a-body .a-pagina:has(.articulo) { padding-bottom: 96px; }
+  .a-body .caso { padding-bottom: 0; }
+  .a-body .a-pagina:has(.caso) { padding-bottom: 96px; }
 }
 
 /* ------------------------------------------------------------------ movimiento reducido (§1.6) */

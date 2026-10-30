@@ -1,27 +1,27 @@
 {
- "origen": "marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json",
- "sha256": "30d0accec4852592083a78579b637ee3d67b0a739707b65712fec33e3e0fba35",
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/metodo.json",
+ "sha256": "223eb8eea62b67cd930930b234d3502329f39db98870108b09bdb4b658e4be72",
  "id": "metodo",
- "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con construccion/herramientas/extraer-texto.mjs.",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "metodo",
-  "ruta": "/v3/metodo/",
-  "modo": "queda con ajustes",
-  "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector.",
-  "title": "Método: SEO técnico y visibilidad en IA · SpindleLab",
-  "description": "Cómo trabajamos, en cuatro pasos medibles: revisamos qué le impide a Google y a la IA leer tu sitio, priorizamos, lo arreglamos y medimos el cambio.",
-  "senales": "Simón, e12/senales-obra.md §2.8",
+  "ruta": "/metodo/",
+  "modo": "reescribe (E13)",
+  "regla": "E13, 26-oct-2026: el texto sale de e13/fuentes/v2-vigente/metodo.txt (publicado y aprobado el 24-oct) y de copy-secciones-v1.2.md §6. Aquí vive todo el texto visible de la página, salvo los cuatro pasos (nombre, texto, duración o frecuencia, lo que recibes y cuánto cuesta), que son datos de página porque de ellos sale también el HowTo del JSON-LD: viven en spindlelab-astro/src/data/paginas-v3.json, clave «metodo», y el texto de cada paso es el mismo que se ve y el del HowTo. El texto de E12 que se reemplaza va en «antes».",
+  "title": "Método SpindleLab: de la revisión gratis al trabajo mensual",
+  "description": "Cuatro pasos: revisión gratis de una página, conversación y propuesta por escrito, implementación por fases y acompañamiento mensual. Así trabaja SpindleLab.",
+  "senales": "Simón, e12/senales-obra.md §2.8, con el cambio de e13: v2-vigente/metodo.txt",
   "secciones": [
    {
     "id": "cabecera",
     "nombre": "Cabecera",
-    "trabajo": "Decir para qué es este método, y adónde ir si el sitio hay que hacerlo de cero.",
+    "trabajo": "Decir cómo se trabaja en una línea (partimos por una revisión gratis y seguimos por fases) y prometer lo que el método sí promete: alcance y precio por escrito antes de empezar.",
     "elementos": [
      {
       "id": "metodo.miga",
       "rol": "rotulo",
       "texto": "Inicio · Método",
-      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "origen": "e12 (sin cambio)",
       "uso": "miga",
       "estado": "queda"
      },
@@ -29,38 +29,268 @@
       "id": "metodo.h1",
       "rol": "h1",
       "tinta": "Cómo trabajamos.",
-      "gris": "Para que Google y la IA lean el sitio que ya tienes.",
-      "texto": "Cómo trabajamos. Para que Google y la IA lean el sitio que ya tienes.",
-      "antes": "Cómo trabajamos",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json metodo.h1",
-      "por_que": "Con el giro, el estudio también diseña y programa; este método es el de un sitio que ya existe. La continuación lo dice. Lock §14: la continuación gris va de 6 a 13 palabras y la tinta hasta 8 (lo midió herramientas/comprobar-obra.py).",
+      "gris": "Partimos por una revisión gratis y seguimos por fases.",
+      "texto": "Cómo trabajamos. Partimos por una revisión gratis y seguimos por fases.",
+      "antes": "Cómo trabajamos. Para que Google y la IA lean el sitio que ya tienes.",
+      "origen": "v2-vigente/metodo.txt (H1 «Cómo trabajamos» y primera mitad de su subtítulo); copy-secciones-v1.2 §6",
+      "por_que": "La continuación de E12 era la tesis anterior (un sitio que ya existe, para Google y la IA). El subtítulo publicado se parte en dos para el h1 de dos tintas: nueve palabras en gris, dentro del rango del lock §14 (de 6 a 13).",
       "estado": "cambia"
      },
      {
       "id": "metodo.linea",
       "rol": "entradilla",
-      "texto": "Cuatro pasos medibles: revisamos qué le impide a Google y a la IA leer tu sitio, priorizamos, lo arreglamos y medimos el cambio.",
-      "origen": "spindlelab-astro/src/data/paginas-v3.json metodo.linea",
-      "estado": "cambia",
-      "antes": "Cuatro pasos medibles: diagnóstico técnico, estrategia AEO/GEO, implementación y monitoreo.",
-      "por_que": "Detector B8 y brief §2: «estrategia AEO/GEO» era la primera línea bajo el título y nadie la explicaba ahí. Son los mismos cuatro pasos, en las palabras de la description de Simón (senales-obra §2.8); los nombres de las fases siguen abajo, cada uno con su explicación."
+      "texto": "Alcance y precio quedan escritos antes de empezar. Acá está completo, para que sepas qué esperar antes de escribirnos.",
+      "antes": "Cuatro pasos medibles: revisamos qué le impide a Google y a la IA leer tu sitio, priorizamos, lo arreglamos y medimos el cambio.",
+      "origen": "v2-vigente/metodo.txt (segunda mitad del subtítulo)",
+      "por_que": "Es la mitad del subtítulo publicado que no cabe en el h1. Reemplaza también al «lead» de E12 («Cada proyecto sigue el Método SpindleLab, nuestro proceso de auditoría SEO + visibilidad en IA…») y a la puerta a Desarrollo web, que ya no son el eje.",
+      "estado": "cambia"
      },
      {
-      "id": "metodo.puerta",
-      "rol": "parrafo",
-      "texto": "Si vamos a diseñar y programar tu sitio desde cero, el proceso es otro: cinco fases que apruebas una por una, en Desarrollo web.",
-      "enlaces": {
-       "Desarrollo web": "/v3/servicios/desarrollo-web/"
-      },
-      "por_que": "Brief §3: Desarrollo web es la puerta del estudio. Sin esta línea, quien llega por el menú lee que el estudio solo audita.",
-      "estado": "nuevo"
+      "id": "metodo.boton1",
+      "rol": "boton",
+      "texto": "Enviar mi dirección",
+      "destino": "/contacto/",
+      "antes": "Correr el chequeo",
+      "origen": "v2-vigente/metodo.txt (CTA del hero); copy-secciones-v1.2 §6",
+      "por_que": "La acción principal de la ruta es pedir la revisión (brief §2). El chequeo baja a enlace secundario, en el cierre.",
+      "estado": "cambia"
      },
      {
-      "id": "metodo.resto",
+      "id": "metodo.boton2",
+      "rol": "boton",
+      "texto": "Ver los cuatro pasos",
+      "destino": "/metodo/#fases",
+      "antes": "Ver las cuatro fases",
+      "origen": "e12; el documento de textos habla de «pasos»",
+      "por_que": "El mismo nombre que el HowTo: son cuatro pasos.",
+      "estado": "cambia"
+     }
+    ]
+   },
+   {
+    "id": "pasos",
+    "nombre": "De la revisión al trabajo de cada mes",
+    "trabajo": "Los cuatro pasos del modelo, en la forma de las fases de Desarrollo web: qué se hace, cuánto dura, qué recibes y cuánto cuesta. Un campo sin dato verificable se omite o dice lo único que está documentado, y no se inventa una duración.",
+    "elementos": [
+     {
+      "id": "metodo.pasos.h2",
+      "rol": "h2",
+      "texto": "De la revisión al trabajo de cada mes",
+      "antes": "Del diagnóstico al monitoreo",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "cambia"
+     },
+     {
+      "id": "metodo.pasos.nota",
       "rol": "nota",
-      "texto": "Queda tal cual, desde su dato: el lead, «Del diagnóstico al monitoreo» (las cuatro fases con duración, entregable y costo), «Tres reglas que no negociamos», «Lo que necesitamos de ti» y el cierre «El primer paso es gratis.».",
+      "tinta": "El paso 01 es gratis.",
+      "gris": "Del 02 en adelante, el precio va por escrito antes de empezar.",
+      "texto": "El paso 01 es gratis. Del 02 en adelante, el precio va por escrito antes de empezar.",
+      "antes": "La fase 01 es gratis. Cada una de las demás dice cuánto cuesta.",
+      "origen": "redacción de e13 sobre los datos de cada paso",
+      "por_que": "El paso 02 no trae un precio propio (la conversación y la propuesta no tienen precio publicado); lo que sí está documentado es que el precio queda por escrito antes de empezar («Lo dejo por escrito: alcance, fases, plazos y precio, antes de empezar», copy §2.7).",
+      "estado": "cambia"
+     },
+     {
+      "id": "metodo.pasos.cuesta",
+      "rol": "rotulo",
+      "texto": "Cuánto cuesta",
+      "origen": "e12 (sin cambio)",
+      "uso": "rótulo de la fila de precio de cada paso",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.pasos.referencia",
+      "rol": "nota",
+      "texto": "Los cuatro pasos (nombre, texto, duración o frecuencia, lo que recibes y cuánto cuesta) están en paginas-v3.json, clave «metodo», con el texto de v2-vigente/metodo.txt y los datos de cada paso de e13/desvios/interiores.md.",
       "uso": "referencia",
       "origen": "spindlelab-astro/src/data/paginas-v3.json metodo",
+      "estado": "cambia"
+     }
+    ]
+   },
+   {
+    "id": "reglas",
+    "nombre": "Tres reglas",
+    "trabajo": "Decir cómo se ordena y se cuenta el trabajo, sin bravata.",
+    "elementos": [
+     {
+      "id": "metodo.reglas.h2",
+      "rol": "h2",
+      "texto": "Tres reglas",
+      "antes": "Tres reglas que no negociamos",
+      "origen": "v2-vigente/metodo.txt; copy-secciones-v1.2 §6",
+      "por_que": "«Que no negociamos» sonaba a bravata.",
+      "estado": "cambia"
+     },
+     {
+      "id": "metodo.reglas.1.t",
+      "rol": "h2",
+      "texto": "Priorizado por impacto",
+      "nivel": 3,
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.reglas.1.d",
+      "rol": "parrafo",
+      "texto": "Ordenamos los hallazgos por impacto y esfuerzo. Primero lo que más pesa, después lo cosmético.",
+      "antes": "Nunca entregamos hallazgos sin jerarquía. Primero lo que más te frena; lo cosmético, al final o nunca.",
+      "origen": "v2-vigente/metodo.txt",
+      "por_que": "«Nunca entregamos 200 hallazgos» afirma historial con pocas auditorías pagadas (copy §6).",
+      "estado": "cambia"
+     },
+     {
+      "id": "metodo.reglas.2.t",
+      "rol": "h2",
+      "texto": "Lenguaje de negocio",
+      "nivel": 3,
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.reglas.2.d",
+      "rol": "parrafo",
+      "texto": "Informes que un gerente entiende sin traductor. La jerga se queda en nuestras herramientas.",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.reglas.3.t",
+      "rol": "h2",
+      "texto": "Sin promesas mágicas",
+      "nivel": 3,
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.reglas.3.d",
+      "rol": "parrafo",
+      "texto": "Nadie puede garantizar respuestas exactas de una IA ni posiciones fijas en Google. Prometemos señales medibles y trabajo verificable.",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     }
+    ]
+   },
+   {
+    "id": "poco",
+    "nombre": "Lo que necesitamos de ti",
+    "trabajo": "Bajar el miedo a empezar: qué hace falta de parte del cliente, y cuándo.",
+    "elementos": [
+     {
+      "id": "metodo.poco.h2",
+      "rol": "h2",
+      "texto": "Lo que necesitamos de ti",
+      "origen": "e12 (sin cambio); v2-vigente/metodo.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.poco.bajada",
+      "rol": "nota",
+      "texto": "Poco, pero importante.",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.poco.1.t",
+      "rol": "rotulo",
+      "texto": "La dirección de tu sitio",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "cambia",
+      "antes": "Tu URL"
+     },
+     {
+      "id": "metodo.poco.1.d",
+      "rol": "parrafo",
+      "texto": "Para partir.",
+      "antes": "Con eso parte el mini-diagnóstico.",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "cambia"
+     },
+     {
+      "id": "metodo.poco.2.t",
+      "rol": "rotulo",
+      "texto": "20 minutos",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.poco.2.d",
+      "rol": "parrafo",
+      "texto": "Para conversar sobre tu negocio y tus clientes.",
+      "antes": "Una conversación para entender qué significa «ganar» para ti.",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "cambia"
+     },
+     {
+      "id": "metodo.poco.3.t",
+      "rol": "rotulo",
+      "texto": "Acceso de lectura",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.poco.3.d",
+      "rol": "parrafo",
+      "texto": "A Google Search Console y a tu analítica, si avanzamos; y para implementar, un acceso acotado a tu sitio.",
+      "antes": "Google Search Console, y Analytics si lo tienes, para la auditoría completa. Nos agregas como usuario, sin compartir tu contraseña.",
+      "origen": "v2-vigente/metodo.txt; copy-secciones-v1.2 §6",
+      "por_que": "«Nunca pedimos accesos de administrador» y «sin compartir tu contraseña» se sacan: el onboarding interno pide un usuario con permisos en el sitio (copy §6, «Se borra»).",
+      "estado": "cambia"
+     },
+     {
+      "id": "metodo.poco.4.t",
+      "rol": "rotulo",
+      "texto": "Una contraparte",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.poco.4.d",
+      "rol": "parrafo",
+      "texto": "Alguien de tu equipo que pueda responder dudas y aprobar prioridades.",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     }
+    ]
+   },
+   {
+    "id": "cierre",
+    "nombre": "Cierre",
+    "trabajo": "Un solo paso, el mismo de toda la obra: mandar la dirección del sitio. El chequeo queda como enlace secundario.",
+    "elementos": [
+     {
+      "id": "metodo.cierre.h2",
+      "rol": "h2",
+      "texto": "El primer paso es gratis.",
+      "origen": "v2-vigente/metodo.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "metodo.cierre.p",
+      "rol": "parrafo",
+      "texto": "Envíanos la dirección de tu sitio y en un día hábil tienes la revisión.",
+      "antes": "Envíanos tu URL y en 24 horas tienes el mini-diagnóstico. Las otras tres fases, solo si la primera te convence.",
+      "origen": "v2-vigente/metodo.txt",
+      "por_que": "Sale «24 horas» y «mini-diagnóstico»; la última frase se saca porque el documento de textos no la trae.",
+      "estado": "cambia"
+     },
+     {
+      "id": "metodo.cierre.boton1",
+      "rol": "boton",
+      "texto": "Pedir mi revisión",
+      "destino": "/contacto/",
+      "antes": "Pedir el diagnóstico",
+      "origen": "v2-vigente/metodo.txt (cierre)",
+      "por_que": "Lo gratis es la revisión; «diagnóstico» queda para la etapa pagada (copy §1.5).",
+      "estado": "cambia"
+     },
+     {
+      "id": "metodo.cierre.boton2",
+      "rol": "boton",
+      "texto": "Correr el chequeo",
+      "destino": "/diagnostico/",
+      "origen": "e12 (sin cambio)",
       "estado": "queda"
      }
     ]

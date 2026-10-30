@@ -1,145 +1,74 @@
 ---
+// NOSOTROS SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 5; reescrito en la obra E13, 26-oct-2026).
+//
+// Contrato: spindlelab-v3/spec-visual.md §2.4, fila «/nosotros/»: cabecera; el retrato 3:4 de Ramón en c1-c5 junto
+// a la bio (c7-c14), como «Quién está detrás» de la home pero a la escala de la página; «Cómo trabajo» como sección;
+// el cierre. Sin franja: el retrato es la imagen. En E13 se saca «Por qué un solo sistema» (subordinaba redes y pauta
+// al sitio): la página queda con la bio, la trayectoria, las tres reglas de Ramón y el cierre, todo en su singular.
+//
+// El texto lo arma nosotros() en interiores.mjs, desde texto/nosotros.json (Clara). Señales de Simón,
+// senales-obra.md §2.10; el jobTitle de #autor-ramon lo pone el Layout con la prop de layout-a.ts.
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
-import Icon from '../components/Icon.astro';
-import { CONTACTO } from '../consts';
+import PaginaA from '../components/a/PaginaA.astro';
+import Miga from '../components/a/Miga.astro';
+import Imagen from '../components/a/Imagen.astro';
+import Icono from '../components/a/Icono.astro';
+import { LAYOUT_A } from '../components/a/layout-a';
+import { nosotros } from '../data/archivo/interiores.mjs';
+import medios from '../data/archivo/medios.json';
 
-const url = 'https://spindlelab.cl/nosotros/';
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'AboutPage',
-      '@id': `${url}#aboutpage`,
-      url,
-      name: 'Nosotros · SpindleLab',
-      mainEntity: { '@id': 'https://spindlelab.cl/#autor-ramon' },
-      about: { '@id': 'https://spindlelab.cl/#autor-ramon' },
-      isPartOf: { '@id': 'https://spindlelab.cl/#website' },
-    },
-  ],
-};
-
-const PUNTOS = [
-  {
-    titulo: 'Diagnóstico antes que contrato',
-    desc: 'Antes de cobrarte nada, reviso tu sitio y tu presencia en IA y te muestro los hallazgos en una página. Gratis, en 24 horas.',
-  },
-  {
-    titulo: 'Arreglo lo técnico y lo legible',
-    desc: 'SEO técnico, datos estructurados y contenido que la IA pueda citar. No hay que rehacer tu sitio. Hay que hacerlo legible.',
-  },
-  {
-    titulo: 'Mido si te recomiendan',
-    desc: 'Registro si ChatGPT, Gemini y Perplexity te nombran ante las preguntas de tus clientes. Con fecha, no de memoria. Nada de métricas de vanidad.',
-  },
-  {
-    titulo: 'Sin humo',
-    desc: 'No prometo primeros lugares. Nadie puede garantizarlos. Te digo qué se puede mover y qué no, y me hago cargo de lo que sí.',
-  },
-];
+const m = nosotros();
+const retrato = medios.medios['ramon-vallejos-34'];
 ---
+<Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
+  <PaginaA>
+    {/* 1 · CABECERA (§2.4.1): el h1 de Ramón en una sola tinta (Clara) */}
+    <section class="reticula int-cab" aria-labelledby="h-titulo">
+      <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1] }]} />
+      <h1 class="t-declaracion" id="h-titulo">{m.h1}</h1>
+      <p class="cuerpo caja">{m.linea}</p>
+      <div class="botones">
+        {m.botones.map((b) => <a class={`boton boton--${b.clase}`} href={b.href}>{b.texto}</a>)}
+      </div>
+    </section>
 
-<Layout
-  title="Ramón Vallejos, consultor de SEO técnico e IA · SpindleLab"
-  description="Detrás de SpindleLab está Ramón Vallejos: SEO técnico y visibilidad en motores de IA, con evidencia antes que promesas. Diagnóstico gratis en 24 horas."
->
-  <Nav />
-  <main>
-    <article class="px-4 sm:px-6 pt-28 sm:pt-36 pb-24">
-      <div class="max-w-3xl mx-auto">
-        <nav class="flex items-center gap-2 text-xs text-fg-muted mb-6" aria-label="Migas de pan">
-          <a href="/" class="hover:text-fg transition-colors">Inicio</a>
-          <span>/</span>
-          <span class="text-fg">Nosotros</span>
-        </nav>
+    {/* 2 · EL RETRATO Y LA BIO: el retrato 3:4 entero en c1-c5, la bio en c7-c14 apoyada abajo */}
+    <section class="seccion reticula quien" aria-labelledby="h-trayectoria">
+      <div class="quien__retrato" data-entrada>
+        <Imagen src={retrato.src} alt={m.alt} ancho={retrato.ancho} alto={retrato.alto} clase="p-34" primeraPantalla />
+      </div>
+      <div class="quien__txt">
+        <p class="cuerpo caja">{m.bio}</p>
+        <p class="chico caja"><span class="tinta">{m.firma.nombre}</span>{m.firma.resto}</p>
+        <h2 class="t-titulo quien__h2" id="h-trayectoria">{m.trayectoria.h2}</h2>
+        <ul class="int-lista quien__lista">
+          {m.trayectoria.lista.map((linea) => <li><p class="cuerpo">{linea.map((p) => (p.junto ? <span class="sin-corte">{p.texto}</span> : p.texto))}</p></li>)}
+        </ul>
+      </div>
+    </section>
 
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-support mb-4">Quiénes somos</p>
-        <h1
-          class="font-display text-3xl sm:text-4xl md:text-[2.75rem] leading-[1.08] text-fg"
-          style="letter-spacing:-0.03em"
-        >
-          No te prometo. Te muestro.
-        </h1>
+    {/* 3 · CÓMO TRABAJO: las tres reglas (lista, c5-c12) */}
+    <section class="seccion reticula" aria-labelledby="h-como">
+      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-como">{m.como.h2}</h2></div>
+      <ul class="int-sec__cuerpo int-lista">
+        {m.como.lista.map((x) => <li><h3 class="int-lista__t tinta">{x.t}</h3><p class="cuerpo">{x.d}</p></li>)}
+      </ul>
+    </section>
 
-        <div class="mt-10 flex items-center gap-5">
-          <img
-            src="/assets/img/ramon-vallejos.jpg"
-            alt="Ramón Vallejos, consultor de SpindleLab"
-            width="896"
-            height="1200"
-            loading="lazy"
-            class="shrink-0 w-20 h-24 rounded-2xl border border-white/10 object-cover object-top"
-          />
-          <div>
-            <p class="text-base font-semibold text-fg">Ramón Vallejos</p>
-            <p class="text-sm text-fg-muted">Consultor de SEO técnico y visibilidad en IA · Chile</p>
-          </div>
+    {/* 4 · CIERRE (§2.4.4) y «Siguiente · Método» */}
+    <section class="seccion reticula" aria-labelledby="h-cierre">
+      <div class="cierre">
+        <h2 class="t-declaracion" id="h-cierre">{m.cierre.h2}</h2>
+        <p class="cuerpo">{m.cierre.p}</p>
+        <div class="botones">
+          {m.cierre.botones.map((b, i) => <a class={`boton boton--${b.clase}`} href={b.href}>{b.texto}{i === 0 && <Icono nombre="flecha" />}</a>)}
         </div>
-
-        <div class="mt-10 space-y-5 text-fg-muted leading-relaxed text-[1.05rem]">
-          <p class="text-fg text-lg">
-            Soy Ramón Vallejos. SpindleLab soy yo al frente, orquestando el motor, con agentes de IA a mi
-            lado y partners para lo que no hacemos en casa.
-          </p>
-          <p>
-            Antes pasé más de cinco años en agencias. Empecé en Universal McCann, coordinando la producción
-            de piezas para ocho marcas nacionales. En Graphene IPG trabajé la cuenta de LATAM Airlines, con
-            campañas en Chile, Perú, Ecuador y Colombia. Después vino la pauta de retail y B2B en
-            Incrementa, y el contenido y el SEO de una cartera B2B en Maggiore. Estudié Comunicación
-            Publicitaria en la Universidad Andrés Bello y un máster en Marketing Digital y E-commerce en la
-            Universidad de Barcelona.
-          </p>
-          <p>
-            En las empresas que reviso pasa casi siempre lo mismo. Uno hizo el sitio, otro lleva las redes,
-            otro la pauta, y ninguno mira si la IA te nombra.
-          </p>
-          <p>
-            Te lo cuento porque con esa experiencia puedo hacerme cargo del eje de tu operación y poner el
-            motor a funcionar entero, no por partes. Conectamos las piezas en un solo sistema y las medimos
-            juntas, con el orgánico como eje, porque es lo que no se apaga cuando cortas el presupuesto.
-          </p>
-          <p>
-            El objetivo no es solo que vendas. Es que cuando alguien pregunte por tu rubro, tu nombre ya
-            esté ahí.
-          </p>
-          <p>
-            Lo primero es un diagnóstico. Reviso tu sitio, tu contenido y si la IA te nombra, y te entrego
-            en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas. Con eso decides con
-            información, no a ciegas.
-          </p>
-        </div>
-
-        <div class="mt-12 grid sm:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
-          {
-            PUNTOS.map((p) => (
-              <div class="bg-surface p-6 md:p-7">
-                <h2 class="text-base font-semibold text-fg mb-1.5">{p.titulo}</h2>
-                <p class="text-sm text-fg-muted leading-relaxed">{p.desc}</p>
-              </div>
-            ))
-          }
-        </div>
-
-        <div class="mt-14 rounded-2xl border border-white/10 bg-surface-2 p-8 text-center">
-          <p class="font-display text-2xl text-fg" style="letter-spacing:-0.02em">
-            ¿Apareces cuando tus clientes preguntan?
-          </p>
-          <p class="mt-2 text-sm text-fg-muted">
-            Te lo mostramos. Diagnóstico real, gratis, en 24 horas. Antes de que pagues nada.
-          </p>
-          <a
-            href={CONTACTO}
-            class="mt-6 inline-flex items-center gap-2 bg-paper hover:bg-white text-bg text-sm font-semibold px-6 py-3 rounded-full transition-colors"
-          >
-            Agenda tu diagnóstico
-            <Icon name="arrowRight" />
-          </a>
+        <div class="int-siguiente">
+          <p class="rotulo">{m.cierre.siguiente.rotulo}</p>
+          <a class="t-titulo t-display subrayado" href={m.cierre.siguiente.href}>{m.cierre.siguiente.texto}<Icono nombre="flecha" /></a>
         </div>
       </div>
-    </article>
-  </main>
-  <Footer />
-  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+    </section>
+  </PaginaA>
 </Layout>

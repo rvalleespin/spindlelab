@@ -1,12 +1,16 @@
 // Extraído VERBATIM de /diagnostico/ para la maqueta V2. No modificar la lógica:
 // captura UTM, honeypot y eventos de conversión ya están resueltos ahí.
 // Cambios de la v3 (6-oct, revisión cruzada): el destino de contacto se lee del formulario
-// (data-contacto) y tres textos (veredicto ≥ 90 sin «acá», remate sin «completo», botón
-// «Pedir el diagnóstico»). La lógica no cambia.
-// QA final (6-oct): los enlaces a contacto llevan ?sitio=<dominio> y el botón «Pedir el
-// diagnóstico» se repite dentro de .chq-score. Cambio de enlaces y de marcado, no de lógica.
+// (data-contacto) y tres textos (veredicto ≥ 90 sin «acá», remate sin «completo» y el botón
+// que pide la revisión). La lógica no cambia.
+// QA final (6-oct): los enlaces a contacto llevan ?sitio=<dominio> y el botón que pide la
+// revisión se repite dentro de .chq-score. Cambio de enlaces y de marcado, no de lógica.
 // E8 (14-oct): el botón mientras corre dice «Revisando…», con el carácter de puntos
-// suspensivos (pase de voz de Clara, fila 1444). Va con ?v=3 en sus dos referencias.
+// suspensivos (pase de voz de Clara, fila 1444).
+// E13 (26-oct): solo cadenas. El botón pasa a «Pedir la revisión a mano», los cuatro
+// veredictos dejan de hablar de citas y menciones (el chequeo mide si el sitio está
+// preparado, no si hoy aparece en las respuestas), el remate habla de la revisión a mano y
+// el error de campo vacío dice «la dirección de tu sitio». E13, ronda 2: el veredicto bajo 45 dice «visitar tu sitio y entender a qué te dedicas». Va con ?v=5.
 (function(){
   var form = document.getElementById('chq-form');
   var input = document.getElementById('chq-dominio');
@@ -15,12 +19,12 @@
   var err = document.getElementById('chq-error');
   if(!form) return;
   // A dónde llevan los botones del resultado y el aviso de error. La maqueta pone
-  // data-contacto="/v3/contacto/" en el formulario: con /contacto/ fijo, la única salida de
-  // conversión del chequeo sacaba al visitante de la v3 y el puente de UTM de /v3/contacto/
+  // data-contacto="/contacto/" en el formulario: con /contacto/ fijo, la única salida de
+  // conversión del chequeo sacaba al visitante de la v3 y el puente de UTM de /contacto/
   // no corría (revisión cruzada, 6-oct). Sin el atributo sigue yendo a /contacto/.
   var CT = form.getAttribute('data-contacto') || '/contacto/';
   // El dominio viaja a contacto (QA final, 6-oct): quien acaba de escribirlo en el chequeo y
-  // pulsa «Pedir el diagnóstico» llegaba a un formulario con «Sitio web» vacío y tenía que
+  // pide la revisión llegaba a un formulario con «Sitio web» vacío y tenía que
   // escribirlo otra vez, justo en el paso que se mide. Contacto lo pone en #f-sitio si está
   // vacío. Solo agrega ?sitio=: los utm_* siguen en sessionStorage, no en la URL.
   function aContacto(dominio){
@@ -50,10 +54,10 @@
   }
 
   function veredicto(p){
-    if(p >= 90) return 'Tu sitio está listo por el lado técnico. Lo que te falta para que te citen ya no está dentro de tu sitio.';
-    if(p >= 70) return 'Tienes lo esencial resuelto, pero hay huecos que te cuestan menciones.';
-    if(p >= 45) return 'Los motores pueden llegar, pero les cuesta entenderte y no tienen mucho que citar.';
-    return 'Hoy la IA tiene poco con qué trabajar cuando alguien pregunta por tu rubro.';
+    if(p >= 90) return 'Tu sitio está listo por el lado técnico. Este chequeo no mide lo que otros sitios publican sobre ti.';
+    if(p >= 70) return 'Tienes lo esencial resuelto, pero quedan huecos técnicos por cerrar. Los ves más abajo.';
+    if(p >= 45) return 'Los motores pueden llegar a tu sitio, pero les cuesta entender qué haces.';
+    return 'Hoy a una IA le cuesta visitar tu sitio o entender a qué te dedicas. Abajo ves qué falta.';
   }
 
   function pintar(d){
@@ -72,7 +76,7 @@
             (sc ? '<span class="chq-aviso">' + esc(sinConfirmar) + '</span>' : '') + '</div>' +
             // El paso siguiente junto al puntaje (QA final, 6-oct): antes quedaba recién
             // después de los 21 ítems. El remate completo sigue al final.
-            '<div class="chq-ramas"><a class="chq-r1" href="' + esc(CTD) + '">Pedir el diagnóstico</a></div></div>';
+            '<div class="chq-ramas"><a class="chq-r1" href="' + esc(CTD) + '">Pedir la revisión a mano</a></div></div>';
 
     d.bloques.forEach(function(b){
       var items = d.items.filter(function(i){ return i.bloque === b.id; });
@@ -102,12 +106,11 @@
       h += '</ul></div>';
     });
 
-    h += '<div class="chq-remate"><h3>Esto es la mitad técnica.</h3>' +
-         '<p>El chequeo revisa tu sitio. El diagnóstico te dice quién aparece hoy cuando alguien pregunta por tu rubro en ChatGPT, Gemini y Perplexity, ' +
-         'y de qué fuentes lo están sacando. Te lo entregamos en una página, gratis, en 24 horas.</p>' +
-         // El mismo nombre del paso en todo el sitio, sin «completo» (spec §7): contacto lo
-         // ofrece como mini-diagnóstico. Revisión cruzada, 6-oct.
-         '<div class="chq-ramas"><a class="chq-r1" href="' + esc(CTD) + '">Pedir el diagnóstico</a>' +
+    h += '<div class="chq-remate"><h3>Lo revisamos a mano, gratis.</h3>' +
+         '<p>El chequeo es automático y lee tu sitio. En la revisión lo miramos a mano y te devolvemos una página ' +
+         'con lo más importante que encontramos y por dónde partiríamos. Llega en un día hábil.</p>' +
+         // El mismo nombre del paso en todo el sitio: la revisión. Revisión cruzada, 6-oct; E13, 26-oct.
+         '<div class="chq-ramas"><a class="chq-r1" href="' + esc(CTD) + '">Pedir la revisión a mano</a>' +
          '<a class="chq-r2" href="' + esc(CTD) + '">Prefiero hablarlo contigo</a></div></div>';
 
     out.innerHTML = h;
@@ -124,7 +127,7 @@
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var v = (input.value || '').trim();
-    if(!v){ fallar('Escribe tu dominio para empezar.'); input.focus(); return; }
+    if(!v){ fallar('Escribe la dirección de tu sitio para empezar.'); input.focus(); return; }
     btn.disabled = true;
     var textoPrevio = btn.textContent;
     btn.textContent = 'Revisando…';
