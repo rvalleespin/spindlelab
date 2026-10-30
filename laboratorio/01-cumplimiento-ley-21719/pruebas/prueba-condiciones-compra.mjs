@@ -32,6 +32,7 @@ import { readFileSync } from 'node:fs';
 import { rutaEnElRepo } from './rutas.mjs';
 
 const HTML = readFileSync(rutaEnElRepo('verificaycumple/public/index.html', 'VYC_INDEX_HTML'), 'utf8');
+const PROFUNDO_FUENTE = readFileSync(rutaEnElRepo('verificaycumple/functions/api/profundo.js', 'PROFUNDO_JS'), 'utf8');
 
 let ok = 0, malo = 0;
 const eq = (n, r, e) => {
@@ -223,6 +224,62 @@ console.log('=== A DONDE PUEDE MANDARTE LA PAGINA (la lista blanca de destinos) 
   for (const [u, esperado, porque] of CASOS) {
     eq(`${esperado ? 'acepta' : 'rechaza'} ${porque}`, Boolean(destinoValido && destinoValido(u)), esperado);
   }
+}
+
+/* ================================================================== */
+console.log('=== LA BARRA DE LA ESPERA MIDE EL GUION REAL (30-oct) ===');
+{
+  // ── POR QUE ESTA PRUEBA EXISTE ────────────────────────────────────────────────────────
+  //
+  // La barra de la espera no puede leer avance: el chequeo profundo es UNA llamada que
+  // vuelve cuando termino. Lo unico que se puede mostrar sin mentir es el TIEMPO contra
+  // nuestro propio guion, cuyos tramos son constantes de `profundo.js`.
+  //
+  // Eso obliga a repetir esos numeros en la pagina, que no puede importar del servidor.
+  // Son DOS CONSTANTES DEL MISMO HECHO: el dia que alguien cambie el guion en el servidor,
+  // la barra mentiria —los pasos se encenderian en momentos que ya no ocurren— y nada se
+  // quejaria. Esta prueba es lo que hace ruidosa esa divergencia.
+  const delServidor = (nombre) => {
+    const m = PROFUNDO_FUENTE.match(new RegExp('export const ' + nombre + '\\s*=\\s*(\\d+)'));
+    return m ? Number(m[1]) : null;
+  };
+  const deLaPagina = (nombre) => {
+    const m = HTML.match(new RegExp('const ' + nombre + '\\s*=\\s*(\\d+)'));
+    return m ? Number(m[1]) : null;
+  };
+
+  for (const [servidor, pagina] of [
+    ['TRAMO_PASIVO_MS', 'ESPERA_TRAMO_PASIVO_MS'],
+    ['TRAMO_GESTO_MS', 'ESPERA_TRAMO_GESTO_MS'],
+  ]) {
+    const a = delServidor(servidor), b = deLaPagina(pagina);
+    cierto(`${servidor} se lee en el servidor`, a !== null);
+    cierto(`${pagina} se lee en la pagina`, b !== null);
+    eq(`${pagina} calza con ${servidor}`, b, a);
+  }
+
+  // Y las piezas de la barra, que son lo que la persona ve.
+  cierto('el panel de espera trae la barra', /class="espera-barra"/.test(HTML));
+  cierto('y los pasos del guion', /class="espera-pasos"/.test(HTML));
+  eq('son cuatro pasos, sin huecos de tiempo sin nadie encendido',
+    (HTML.match(/<li data-paso="\d"/g) || []).length, 4);
+
+  // ⚠️ LA ASERCION QUE CUIDA LA HONESTIDAD, que es el punto entero de este diseño.
+  // Pasado el estimado la barra tiene que DEJAR de estimar. Una barra clavada cerca del
+  // final insinuando que falta poco es la version-loader de una imagen falsa.
+  // ⚠️ SE EXIGE EL MECANISMO, NO LA PALABRA. La primera version de esta asercion decia
+  // `/sin-estimado/.test(HTML)` y pasaba con solo el CSS presente: al borrar la linea que
+  // APLICA la clase, la barra se quedaba estimando para siempre y nada se puso rojo.
+  // Comprobado de verdad en el navegador: a los 28 s la tarjeta lleva la clase.
+  cierto('el codigo APLICA el estado de "ya no estimo"',
+    /classList\.add\('sin-estimado'\)/.test(HTML));
+  cierto('y el CSS lo dibuja distinto', /\.sin-estimado[\s\S]{0,200}repeating-linear-gradient/.test(HTML));
+  cierto('y se dice en palabras, no solo con rayas', /Ya pasamos el medio minuto/.test(HTML));
+  cierto('mientras estima, dice cuanto estima', /Toma alrededor de medio minuto/.test(HTML));
+
+  // Que el tope del relleno no sea 100: el 100% lo pone la llegada del informe, no el reloj.
+  const tope = HTML.match(/Math\.min\((\d+),\s*\(ido \/ ESPERA_ESTIMADO_MS\)/);
+  cierto('el reloj no puede llegar al 100%', tope && Number(tope[1]) < 100);
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
