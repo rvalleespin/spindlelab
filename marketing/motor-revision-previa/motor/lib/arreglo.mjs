@@ -19,6 +19,7 @@ export const VEHICULOS = {
   WEB: { nombre: 'Desarrollo Web a medida', desde: 'Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA', fuente: FUENTE_SITIO, en_correo: false },
   MEDICION: { nombre: 'Acompañamiento Mensual, plan Esencial (foco en una capa)', desde: 'Desde $590.000 + IVA al mes', fuente: FUENTE_SITIO, en_correo: false },
   IA: { nombre: 'Auditoría de Visibilidad en IA', desde: 'Desde $400.000 + IVA, una vez', fuente: FUENTE_SITIO, en_correo: false },
+  PUNTUAL: { nombre: 'Arreglo puntual de la portada', desde: '$149.000 + IVA, una vez', fuente: 'decisión de Ramón, 30-oct-2026', en_correo: true },
   SEO: { nombre: 'Auditoría SEO Técnica, Completa', desde: 'Desde $490.000 + IVA, una vez', fuente: FUENTE_SITIO, en_correo: false },
 };
 
@@ -43,7 +44,7 @@ export const ARREGLO = {
   C5: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso lo arreglo yo y lo pruebo de punta a punta, para que cada consulta llegue.', borrador: true, alcance: 'Corregir el destino del formulario o del correo y probarlo de punta a punta.', por_definir: [SIN_PUNTUAL] },
   F2: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso se arregla: dejo a la vista por dónde te escriben y lo pruebo de punta a punta.', borrador: true, alcance: 'Poner a la vista un formulario, teléfono o WhatsApp y probarlo.', por_definir: [SIN_PUNTUAL] },
   F3: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso se arregla: dejo el número con el formato que WhatsApp pide y lo pruebo desde el celular.', borrador: true, alcance: 'Corregir el enlace de WhatsApp y probarlo desde un celular.', por_definir: [SIN_PUNTUAL] },
-  F7: { linea: 'Auditoría SEO Técnica', veh: 'SEO', frase: 'Eso se arregla: dejo cada enlace llevando a una página que existe y reviso que no queden más rotos.', borrador: true, alcance: 'Corregir los enlaces rotos de la portada y revisar el resto del sitio.', por_definir: [SIN_PUNTUAL] },
+  F7: { linea: 'Arreglo puntual', veh: 'PUNTUAL', frase: 'Eso se arregla: dejo cada enlace llevando a una página que existe y reviso que no queden más rotos en la portada.', borrador: true, alcance: 'Corregir los enlaces rotos de la portada y revisar que no queden más en ella.', por_definir: [] },
   C3: { linea: 'Visibilidad en IA', veh: 'IA', frase: 'Eso se arregla en el servidor, no en tu sitio. Lo hago yo, con quien lo administra.', borrador: true, alcance: 'Cambiar la regla del servidor, CDN o plugin de seguridad que rechaza a los agentes.',
     por_definir: ['La regla vive en infraestructura del prospecto: sin acceso no se puede hacer solo (marketing/capacidad-servicios.md marca esa brecha).', SIN_PUNTUAL] },
   F5: { linea: 'Visibilidad en IA', veh: 'IA', frase: 'Eso se arregla cambiando una línea de tu robots.txt. Lo hago yo y reviso que los agentes entren.', borrador: true, alcance: 'Corregir el robots.txt y comprobar el acceso de los agentes de IA.', por_definir: [SIN_PUNTUAL] },
@@ -55,7 +56,7 @@ export const ARREGLO = {
     alcance: 'Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.', cierre: 'Gratis y sin registro: https://verifica.spindlelab.cl' },
   F10: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso se arregla: dejo a la vista, desde la primera pantalla, la forma de escribirte y lo pruebo en el celular.', borrador: true, alcance: 'Poner una acción de contacto visible en la primera pantalla, en escritorio y en celular.', por_definir: [SIN_PUNTUAL] },
   F11: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso lo arreglo yo y lo reviso en varios tamaños de pantalla.', borrador: true, alcance: 'Hacer que el sitio se vea bien en celular y comprobarlo en varios tamaños.', por_definir: [SIN_PUNTUAL] },
-  F12: { linea: 'Auditoría SEO Técnica', veh: 'SEO', frase: 'Eso se arregla: dejo la portada liviana y mido cuánto baja.', borrador: true, alcance: 'Reducir el peso de la portada y medir el antes y el después.', por_definir: [SIN_PUNTUAL] },
+  F12: { linea: 'Arreglo puntual', veh: 'PUNTUAL', frase: 'Eso se arregla: dejo la portada liviana y mido cuánto baja.', borrador: true, alcance: 'Reducir el peso de la portada y medir el antes y el después.', por_definir: [] },
   F13: { linea: 'Auditoría SEO Técnica', veh: 'SEO', frase: 'Eso lo arreglo yo: dejo la información ordenada, con un título que diga qué haces y para quién.', borrador: true, alcance: 'Ordenar la información de la portada: un título principal claro y el contenido que explica la oferta.', por_definir: [SIN_PUNTUAL] },
   F14: { linea: 'Desarrollo Web', veh: 'WEB', frase: 'Eso se arregla: lo dejo en lo mínimo para que te escriban y lo pruebo.', borrador: true, alcance: 'Reducir el formulario de contacto a lo necesario y probarlo.', por_definir: [SIN_PUNTUAL] },
   F6: { linea: 'Visibilidad en IA', veh: 'IA', frase: 'Eso se arregla en el servidor, no en tu sitio. Lo hago yo, con quien lo administra.', borrador: true, alcance: 'Revisar la regla del servidor que rechaza a los agentes de IA.', por_definir: [SIN_PUNTUAL] },

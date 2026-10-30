@@ -59,3 +59,6 @@ Resultado (29-oct): en Gmail el correo llegó a Principal. En Hotmail los correo
 
 ## Sesión de leads reorientada (30-oct)
 Decisión de Ramón: la sesión de leads busca **contacto por canal** (teléfono, WhatsApp, LinkedIn de quien decide) en vez de más correos. Encargo: `marketing/encargos-otras-sesiones/leads-contactos-por-canal-2026-10-30.md`. Primera lista: `seguimiento/contactos-por-canal-2026-10-30.csv`. No se arman listas de correo nuevas antes de la lectura del jueves 5-nov.
+
+## Arreglo puntual (30-oct)
+Decisión de Ramón: precio de entrada **$149.000 + IVA, una sola vez** para el arreglo puntual de la portada (enlaces rotos F7, portada pesada F12). Cargado en el motor como `PUNTUAL`. Los sitios sin hallazgo fuerte (cookies o formulario sin política) quedan fuera; el arreglo puntual se ofrece como segundo motivo en los que sí lo tienen. Textos en `borradores/oferta-hallazgos-que-el-dueno-siente-borrador.md`, pendientes de revisión. Falta que el troncal lo agregue a `marketing/capacidad-servicios.md`.
