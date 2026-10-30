@@ -229,44 +229,48 @@ lo "arregle" al revés más adelante.
 Facebook/Instagram antes de que el visitante acepte nada. Casi la mitad.
 **Rubro pagado más cercano:** Restaurantes. **Sale primero.**
 
-Una frase por renglón, que es como manda leerlo el manual: el margen derecho queda descompensado.
-Las `/` son respiraciones y las `//` cortes.
+Una frase por renglón, que es como manda leerlo el manual. Las `/` son respiraciones y las `//`
+cortes.
 
 > Pagar publicidad en Instagram está **bien**. / Medir si **funcionó**, también. //
 > **Pero** revisé treinta y seis sitios de cafés y pastelerías en **Chile**. //
 > En casi la **mitad**, la cookie de Facebook entra antes de que el cliente diga **nada**. //
-> Las dos cosas **caben**. //
-> Y la **ley** lo va a pedir. //
-> Una línea abajo que **pregunte**, / y mides a quien te diga que **sí**. //
-> Hice un chequeo **gratis** / que te dice si el tuyo **pregunta**. / Soy **Ramón**, de SpindleLab. //
-> Pagar para que **entren** está bien. / Preguntarles, **también**. //
+> Puedes seguir **midiendo** igual. / Solo hay que preguntarle al cliente **primero**. //
+> Y esa pregunta va a ser **obligatoria** por ley. //
+> Es una **franja** abajo de tu sitio / que le pregunta al cliente si **acepta**. //
+> Hice un chequeo **gratis** / que te dice si tu sitio tiene esa **franja**. //
+> Soy **Ramón**, de SpindleLab. //
+> **Medir** está bien. / Preguntar **primero**, también. //
 
-**82 palabras, 29 segundos.** Largo por renglón: 6, 4, 11, 15, 4, 6, 12, 11, 4, 8. Cada renglón se
-dice en una respiración, que importa porque Ramón ya dijo que tiene problema de modulación.
+**93 palabras, 32 segundos.** Largo por renglón: 6, 4, 11, 15, 4, 7, 8, 14, 13, 4, 7.
 
-**Versión 6, del 30-oct.** Ramón: *"está mejor, pero muy largo. demasiada explicación. lo del senado
-es un dato aparte... contar que hacer publicidad es válido pero también es relevante la protección
-de datos"*. Las cinco anteriores, en la sección 8.
+**Versión 7, del 30-oct, y la que Ramón aprobó hasta la cifra en la 6.** El gancho y la evidencia
+quedaron intactos; se rehízo todo lo que viene después.
 
-Lo que define esta versión:
+### La regla que sale de este rechazo
 
-- **El marco ya no acusa.** Antes la pieza daba a entender que el café hace algo a escondidas, y eso
-  pone a la defensiva a quien mira. Ahora concede primero (*pagar publicidad está bien, medir
-  también*) y recién después agrega. **Conceder antes de contradecir es un movimiento que ya está en
-  la voz de Ramón**, documentado en la skill; acá además es más honesto, porque pautar y medir sí
-  son legítimos.
-- **La tesis en cuatro palabras: "Las dos cosas caben."** Es lo que el guion vende.
-- **La ley queda en seis palabras y el Senado sale.** Sin ningún motivo volvemos al defecto de la
-  versión 2, que Ramón rechazó por no decir por qué importa. Con dos frases de explicación volvemos
-  al de la versión 3, que rechazó por sonar a guía. Seis palabras es el punto medio: *"Y la ley lo va
-  a pedir."*
-- **El Senado y el costo de la medición se van al texto**, que es donde hay espacio para explicarlos.
-- **El cierre repite la construcción de la apertura** para que el loop se sienta como continuación.
+Ramón, sobre la v6: *"las dos caben. y la ley lo va a medir. no sé, muy metafórico quizás... pero no
+es un lenguaje que se hable de repente en las redes. no se entiende. es como vacío"*. Y de la frase
+de cierre: *"se puede tomar como doble sentido"*.
+
+**Ningún pronombre sin su sustantivo al lado, y ningún verbo sin su objeto.** Los tres defectos eran
+el mismo:
+
+| v6 | Qué falla | v7 |
+|---|---|---|
+| *"Las dos cosas caben."* | "Caben" es metafórico y no dice cuáles ni dónde. Suena a frase de marca, no a alguien hablando | *"Puedes seguir midiendo igual. Solo hay que preguntarle al cliente primero."* |
+| *"Y la ley lo va a pedir."* | El "lo" no tiene antecedente. **Ramón lo escuchó como "la ley lo va a medir"**, que es la prueba de que el pronombre estaba flotando | *"Y esa pregunta va a ser obligatoria por ley."* Sujeto concreto |
+| *"Pagar para que entren está bien. Preguntarles, también."* | Doble lectura en "pagar para que entren", y "preguntarles" sin objeto | *"Medir está bien. Preguntar primero, también."* Misma construcción que la apertura, así que el loop se mantiene |
+| *"si el tuyo pregunta"* | "El tuyo" y un verbo sin objeto | *"si tu sitio tiene esa franja"* |
+
+**Y una palabra prohibida en esta campaña: «aviso».** En Chile un aviso es también un anuncio
+publicitario, y en una pieza que habla de pautar en Instagram eso choca. **Se dice «franja»**, que no
+tiene segunda lectura. Vale para los cuatro guiones y para el texto.
 
 ### Versión en texto, para la página de LinkedIn
 
-Pedida por Ramón el 30-oct bajo la misma idea. Plural, porque la página es la marca. Acá sí entra lo
-que no cabe en 29 segundos: el Senado como dato aparte y el costo real de la medición.
+Pedida por Ramón bajo la misma idea. Plural, porque la página es la marca. Acá entra lo que no cabe
+en 32 segundos: el Senado como dato aparte y el costo real de la medición.
 
 > Pagar por publicidad en Instagram es legítimo. Medir si funcionó, también. Nadie debería pedir perdón por querer saber si la plata que puso trajo clientes.
 >
@@ -274,15 +278,15 @@ que no cabe en 29 segundos: el Senado como dato aparte y el costo real de la med
 >
 > Revisamos 36 sitios de cafés y pastelerías en Chile. En casi la mitad pasa eso.
 >
-> Y las dos cosas caben. Un aviso abajo que pregunte, y mides a quien te diga que sí. Al que diga que no, no lo mides, y eso es todo lo que cambia. No se cae la publicidad, no se cae el sitio, y la persona que te dejó sus datos sabe qué pasó con ellos.
+> Y puedes seguir midiendo igual. Una franja abajo de tu sitio que le pregunte al cliente si acepta, y mides a todos los que acepten. A los que no, no los mides, y eso es todo lo que cambia. No se cae la publicidad y no se cae el sitio.
 >
-> Ese permiso lo va a pedir la ley de datos personales. Lo que se está discutiendo en el Senado es desde cuándo, no si hay que pedirlo.
+> Esa pregunta va a ser obligatoria por la ley de datos personales. Lo que se está discutiendo en el Senado es desde cuándo, no si hay que hacerla.
 >
-> Armamos un chequeo gratis que te dice si el tuyo pregunta. Sin registro y sin guardar el dominio que revisas.
+> Armamos un chequeo gratis que te dice si tu sitio tiene esa franja. Sin registro y sin guardar el dominio que revisas.
 > verifica.spindlelab.cl
 
-**El costo de la medición va dicho y no escondido** (*"al que diga que no, no lo mides"*). Prometer
-que no se pierde nada sería mentira, y esta marca se vende justamente por no hacer eso.
+**El costo de la medición va dicho y no escondido** (*"a los que no, no los mides"*). Prometer que no
+se pierde nada sería mentira, y esta marca se vende por no hacer eso.
 
 **Texto en pantalla**
 
@@ -293,8 +297,8 @@ voz cuenta la escena, que es lo que hace que la pieza se entienda con el sonido 
 |---|---|---|---|---|
 | 1 | plano A, 0 a 3 s | — | ESTO MIDE / TU PUBLICIDAD. | *(sin cuerpo: la lista de cookies tiene que leerse)* |
 | 2 | la cifra | **16 de 36** *(lima)* | CASI LA MITAD. | Entra antes de que el cliente diga nada. |
-| 3 | la tesis | — | LAS DOS COSAS / CABEN. | *(sin cuerpo)* |
-| 4 | plano C | — | UNA LÍNEA / QUE PREGUNTE. | Y mides a quien te diga que sí. |
+| 3 | la tesis | — | PUEDES SEGUIR / MIDIENDO. | Preguntándole al cliente primero. |
+| 4 | plano C | — | UNA FRANJA / QUE PREGUNTA. | Y mides a todos los que acepten. |
 | 5 | cierre | — | — | `recuadro-sitio-*.png` de `05-overlays-video`, con el dominio |
 
 Lima: solo la etiqueta de la cifra y el dominio del cierre. Dos usos.
