@@ -58,7 +58,7 @@ const base = (h) => h.replace(/^www\./, '').split('.').slice(-2).join('.');
 const redirigeFuera = (dominio, host) => !!host && base(host) !== base(dominio);
 
 // descartado antes: otra sesion o Dereck ya lo marco como no escribir (dominio reciclado, aparcado, distribuidor, sitio caido, hallazgo flaco).
-const MARCA_DESCARTE = /descartad|NO escribir|DOMINIO RECICLADO|aparcad|parked|no es cl[ií]nica|distribuidor de|fuera de perfil|vende prote[cs]ci[oó]n|vende proteccion/i;   // 'vende proteccion de datos' = el prospecto vende lo mismo que Verifica y Cumple (estrategia §9 y §11)
+const MARCA_DESCARTE = /descartad|descartar|mal etiquetado|NO escribir|DOMINIO RECICLADO|aparcad|parked|no es cl[ií]nica|distribuidor de|fuera de perfil|vende prote[cs]ci[oó]n|vende proteccion/i;   // 'vende proteccion de datos' = el prospecto vende lo mismo que Verifica y Cumple (estrategia §9 y §11)
 export function descartadoAntes(dominio) {
   const dir = path.join(RAIZ, 'ventas'); if (!fs.existsSync(dir)) return null;
   const re = new RegExp('(^|[@.\\s/])' + dominio.replace(/\./g, '\\.') + '([^a-z0-9-]|$)', 'i');

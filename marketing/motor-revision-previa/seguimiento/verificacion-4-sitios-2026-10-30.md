@@ -19,3 +19,9 @@ Origen: candidatos del piloto Vibe que el motor marcó con hallazgo pero que no 
 ## Qué no se hizo
 - No se creó ningún borrador ni se tocó el CSV maestro de envíos.
 - Queda abierta, sin aprobar, la idea de un ángulo alternativo para Quantum ("tiene aviso, pero Meta y Clarity guardaron cookies antes de que respondiera"). Se descarta mientras Quantum cuente como competidor.
+
+## Corrección posterior: rosen.cl no es un hotel (30-oct)
+- rosen.cl es Rosen Chile, tienda de camas, colchones y muebles (Magento). Apollo lo etiquetó como hotel de Temuco. `ventas/turismo-hoteles-6oct.csv` ya lo tenía como «descartar - mal etiquetado en Apollo» desde el 6-oct.
+- **Falla del motor:** `descartadoAntes` (p0.mjs) buscaba `descartad` y la fila decía `descartar`, así que no lo cortó. Corregido: ahora busca también `descartar` y `mal etiquetado`. Probado: `pasada0('rosen.cl')` devuelve `descartado-antes`. Efecto en el resto de `ventas/*.csv`: ninguna otra fila cambia.
+- **Falla mía:** lo presenté como «único hotel nuevo con hallazgo fuerte» sin cruzar esa lista. Sin borrador y fuera de la cola. Con él afuera, la hotelería deja **cero** leads nuevos con hallazgo fuerte.
+- **Cifras de hotelería corregidas** (Rosen estaba contado entre los 30): 29 sitios, 15 con cookies de seguimiento antes de preguntar, 8 con la de Meta, 3 formulario sin política, 12 sin herramienta de medición, 17 sin declarar el negocio, 15 con portada pesada. Corregido en `encargos-otras-sesiones/guiones-video-por-categoria-2026-10-29.md`; esa sesión recibió la versión con 30.
