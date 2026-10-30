@@ -258,5 +258,52 @@ console.log('=== 10. un contracargo no se presenta como una devolución nuestra 
   cierto('la devolución real sí lo dice', /devolvimos/i.test(d.titulo + ' ' + d.detalle));
 }
 
+/* ================================================================== */
+console.log('=== LA PREGUNTA ES SI HAY CON QUE PREGUNTAR, NO SI ES MERCADO PAGO ===');
+{
+  // ── POR QUE EXISTE ESTA SECCION (30-oct-2026) ──────────────────────────────────────────
+  //
+  // El molde de este archivo trae `mp_order_id: 'ORD01PRUEBA'` fijo. Mientras hubo una sola
+  // pasarela eso estaba bien. Al aparecer Flow, `convieneRefrescar` y `etapaDelPedido`
+  // siguieron preguntando `Boolean(pedido.mp_order_id)` y NINGUNA de las 3.752 aserciones de
+  // la bateria se puso roja — porque todas pasaban pedidos con esa columna puesta, que es
+  // justo el caso que seguia funcionando.
+  //
+  // Lo que estaba roto mientras tanto:
+  //   - la red de seguridad que relee el pago era codigo MUERTO para Flow, o sea que una
+  //     notificacion perdida se comia la venta entera sin que nadie se enterara;
+  //   - y a un comprador de Flow la pantalla le decia «No alcanzamos a llevarte a pagar. No
+  //     se te cobro nada» DESPUES de que Flow le cobrara $177.310.
+  //
+  // Una prueba que solo ejercita el caso que funciona no es una prueba: es una compania.
+  const flow = { id: 'vyc_abc', estado: P.ESTADOS.CREADO, flow_token: 'TOK123', mp_order_id: null };
+  const mp = { id: 'vyc_abc', estado: P.ESTADOS.CREADO, flow_token: null, mp_order_id: 'ORD01' };
+  const ninguna = { id: 'vyc_abc', estado: P.ESTADOS.CREADO, flow_token: null, mp_order_id: null };
+
+  cierto('con token de Flow, la red de seguridad corre', E.convieneRefrescar(flow));
+  cierto('con orden de Mercado Pago tambien', E.convieneRefrescar(mp));
+  falso('sin ninguna referencia, no hay a quien preguntarle', E.convieneRefrescar(ninguna));
+
+  // La pantalla, que es lo que la persona lee.
+  falso('a quien SI llego a la pasarela no se le dice que no llegamos',
+    E.etapaDelPedido(flow).etapa === E.ETAPAS.SIN_ORDEN);
+  eq('se le dice que estamos confirmando', E.etapaDelPedido(flow).etapa, E.etapaDelPedido(mp).etapa);
+  eq('y a quien NO llego, SI', E.etapaDelPedido(ninguna).etapa, E.ETAPAS.SIN_ORDEN);
+
+  // ⚠️ Y LA AFIRMACION SOBRE LA PLATA DE ALGUIEN. «No se te cobro nada» solo puede decirse
+  // cuando es verdad, y solo es verdad si nunca se abrio un pago.
+  falso('a un pedido con pago abierto NO se le afirma que no se le cobro',
+    /no se te cobr/i.test(JSON.stringify(E.etapaDelPedido(flow))));
+  cierto('a uno sin pago abierto si, porque ahi es cierto',
+    /no se te cobr/i.test(JSON.stringify(E.etapaDelPedido(ninguna))));
+
+  // El texto no nombra una pasarela: cual cobra es un dato que cambia, y un texto que la
+  // nombra se vuelve falso el dia del cambio sin que nadie lo toque.
+  for (const caso of [flow, mp, ninguna]) {
+    falso('ningun texto de etapa nombra una pasarela',
+      /mercado pago|flow\.cl|webpay/i.test(JSON.stringify(E.etapaDelPedido(caso))));
+  }
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);

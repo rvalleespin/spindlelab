@@ -139,12 +139,17 @@ function conRed({ sitio = PORTADA, mp = null, mpEstado = 201, caeMP = false,
   leida = null, leidaEstado = 200, caeLeida = false,
   // Flow. `flow` es lo que devuelve `payment/create`; `caeFlow` simula que no contesta.
   flow = { url: 'https://sandbox.flow.cl/app/web/pay.php', token: 'TOKFLOW123', flowOrder: 42 },
-  flowEstado = 200, caeFlow = false } = {}) {
+  flowEstado = 200, caeFlow = false, flowPago = null } = {}) {
   const antes = globalThis.fetch;
-  const llamadas = { sitio: 0, mp: 0, flow: 0, lecturas: 0, cuerposMP: [], cabecerasMP: [], cuerposFlow: [] };
+  const llamadas = { sitio: 0, mp: 0, flow: 0, lecturas: 0, lecturasFlow: 0, avisos: [], cuerposMP: [], cabecerasMP: [], cuerposFlow: [] };
   globalThis.fetch = async (u, o = {}) => {
     const url = String(u && u.url ? u.url : u);
     if (url.includes('flow.cl')) {
+      // Leer el estado de un pago (GET a getStatus) no es lo mismo que crear uno (POST), y el
+      // endpoint hace las dos cosas: antes de abrir un cobro nuevo le pregunta a la pasarela
+      // por la compra abierta vieja.
+      if (url.includes('getStatus')) { llamadas.lecturasFlow++; return { ok: true, status: 200,
+        headers: { get: () => null }, json: async () => flowPago }; }
       llamadas.flow++;
       // El cuerpo va como formulario, asi que se desarma para poder mirarlo campo por campo.
       llamadas.cuerposFlow.push(Object.fromEntries(new URLSearchParams(String(o.body || ''))));
@@ -166,6 +171,12 @@ function conRed({ sitio = PORTADA, mp = null, mpEstado = 201, caeMP = false,
       if (caeMP) throw new Error('ECONNRESET');
       const cuerpo = mp === null ? ORDEN_MP(JSON.parse(o.body).external_reference) : mp;
       return { ok: mpEstado >= 200 && mpEstado < 300, status: mpEstado, json: async () => cuerpo };
+    }
+    // Los avisos (al vendedor y al comprador) no son "el sitio": se apartan para poder
+    // comprobarlos POR DESTINO. Contarlos juntos deja que uno tape la ausencia del otro.
+    if (url.includes('web3forms') || url.includes('resend')) {
+      llamadas.avisos.push(new URL(url).host);
+      return { ok: true, status: 200, json: async () => ({ success: true }) };
     }
     llamadas.sitio++;
     if (sitio === null) throw new Error('no-abre');
@@ -1538,6 +1549,61 @@ console.log('=== FLOW: el mismo endpoint, la otra pasarela ===');
       eq(`PASARELA=${JSON.stringify(bueno)} es mp`, E.pasarelaDe({ PASARELA: bueno }), 'mp');
     }
   }
+}
+
+/* ================================================================== */
+console.log('=== LA COMPRA VIEJA QUE RESULTA ESTAR PAGADA ===');
+{
+  // ── POR QUE EXISTE (30-oct-2026) ───────────────────────────────────────────────────────
+  //
+  // Una venta cobrada cuya confirmacion se perdio queda en `creado`. Pasadas las 24 h, la
+  // persona vuelve a comprar. El codigo pregunta a la pasarela, ella dice PAGADO, y
+  // correctamente NO cierra la fila como rechazada.
+  //
+  // Pero la primera version no hacia nada mas: dejaba seguir y la peticion caia en el 409
+  // generico «no se te cobro nada». O sea que a quien SI le habian cobrado $177.310 se le
+  // afirmaba lo contrario, la venta seguia sin marcar, nadie se enteraba, y CADA reintento
+  // repetia lo mismo: quedaba bloqueada para comprar, indefinidamente.
+  //
+  // Lo encontro una revision adversaria. Ninguna de las 3.752 aserciones de la bateria lo vio.
+  const CRED = { FLOW_API_KEY: 'clave', FLOW_SECRET_KEY: 'secreto', PASARELA: 'flow' };
+  const { db, crudo } = baseNueva();
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+
+  const VIEJO = new Date(Date.now() - 40 * 60 * 60 * 1000).toISOString();
+  const IDV = 'vyc_' + 'c'.repeat(32);
+  await A.crearPedido(db, {
+    id: IDV, creado_en: VIEJO, dominio: 'clinicaejemplo.cl', correo: 'contacto@clinicaejemplo.cl',
+    senales_contratadas: ['cmp'], senales_fuera: [], informe_json: '{}',
+    monto_neto: 149000, monto_total: 177310, flow_token: 'TOKVIEJO',
+  });
+
+  const red = conRed({ flowPago: { commerceOrder: IDV, amount: '177310', status: 2,
+    paymentData: { amount: '177310.00', date: '2026-10-29 10:00:00' } } });
+  const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+  red.soltar();
+  const j = await r.json();
+
+  eq('se le pregunto a la pasarela por la compra vieja', red.llamadas.lecturasFlow, 1);
+  eq('contesta 409', r.status, 409);
+  eq('con un motivo que NO es el generico', j.motivo, 'ya-pagaste');
+  // ⚠️⚠️ LA ASERCION QUE CUIDA LO CARO: no se le puede afirmar a alguien que no se le cobro
+  // cuando la pasarela acaba de decir que si.
+  falso('NO se le dice que no se le cobro nada', /no se te cobr/i.test(j.detalle || ''));
+  cierto('se le da el enlace de SU pedido', String(j.detalle).includes(IDV));
+  eq('y el id viene en la respuesta', j.id, IDV);
+
+  // ⚠️⚠️ Y QUE NO QUEDE SOLO EN UN REGISTRO QUE NADIE CONSULTA.
+  //
+  // La primera version de esta asercion decia `red.avisos === undefined ? true : ...`, y
+  // `red.avisos` no existia en este arnes: era verdadera SIEMPRE. Una asercion muerta es peor
+  // que ninguna, porque ocupa el lugar de la que haria falta y se cuenta como cobertura.
+  // Lo delato una mutacion que quito el aviso del codigo y no puso nada rojo.
+  eq('se avisa a una persona, y se sabe a cual', red.llamadas.avisos, ['api.web3forms.com']);
+
+  eq('NO se abrio un segundo cobro', red.llamadas.flow, 0);
+  eq('y sigue habiendo un solo pedido', filas(crudo).length, 1);
+  eq('que no se cerro como rechazado', filas(crudo)[0].estado, 'creado');
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
