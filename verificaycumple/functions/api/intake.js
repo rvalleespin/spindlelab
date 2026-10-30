@@ -50,6 +50,7 @@ import { leerPedido, guardarIntake, vistaPublica } from './almacen.js';
 import { etapaDelPedido, señalesDelPedido, convieneRefrescar, TITULOS } from './etapas.js';
 import { ID_PEDIDO_NUESTRO } from './pedidos.js';
 import { clavesDeTope, contar } from './profundo.js';
+import { avisarAvance } from './aviso.js';
 
 /** Cuántos envíos admite una IP por día. Generoso: alguien corrigiendo su dirección no es un abuso. */
 export const TOPE_INTAKE_IP_DIA = 20;
@@ -212,6 +213,20 @@ export async function onRequestPost(contexto) {
   // tiene que pedir otra vez para saber en qué quedó, y no hay forma de que pinte el estado
   // viejo después de haber escrito.
   const fresco = await leerPedido(env.VYC_PEDIDOS, id);
+
+  // ── Y ALGUIEN TIENE QUE ENTERARSE ───────────────────────────────────────────────────────
+  //
+  // Hasta el 30-oct esto terminaba acá: el cliente completaba sus datos, la fila quedaba
+  // escrita, y nadie lo sabía. Este módulo ni siquiera importaba `aviso.js`. Un pedido
+  // avanzando en silencio es un pedido detenido, y del otro lado hay alguien con una fecha
+  // legal encima.
+  //
+  // Va al fondo y nunca se espera: los datos del cliente YA están guardados, y un aviso que
+  // no sale no puede deshacer eso ni demorarle la pantalla.
+  const aviso = avisarAvance(fresco, guardado.campos.includes('acceso_recibido_en') ? 'acceso' : 'datos')
+    .catch(() => false);
+  if (contexto && contexto.waitUntil) contexto.waitUntil(aviso);
+
   return json({
     ok: true,
     guardado: true,

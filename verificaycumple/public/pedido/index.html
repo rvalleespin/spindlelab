@@ -201,6 +201,61 @@
     ['a-medida', 'Hecho a medida'], ['no-se', 'No sé'], ['otro', 'Otra'],
   ];
 
+  /**
+   * El botón de «ya te di el acceso».
+   *
+   * No es un formulario porque no hay nada que escribir: es una declaración. Y es una
+   * DECLARACIÓN, no una comprobación — el texto de la etapa siguiente ya lo dice así («Nos
+   * dijiste que el acceso ya está. Lo estamos probando»), porque afirmar que el acceso entra
+   * sin haberlo probado sería justo lo que este producto le marca en rojo a otros sitios.
+   *
+   * Lo que de verdad desbloquea es el aviso que dispara del otro lado: alguien se entera.
+   */
+  function montarBotonAcceso(data) {
+    var hueco = contenido.querySelector('[data-boton-acceso]');
+    if (!hueco) return;
+    var id = data.pedido.id;
+
+    var caja = document.createElement('div');
+    caja.className = 'intake';
+    caja.innerHTML =
+      '<button type="button" class="boton" data-acceso>Ya te di el acceso</button>' +
+      '<p class="intake-estado" role="status"></p>';
+    hueco.replaceWith(caja);
+
+    var b = caja.querySelector('[data-acceso]');
+    var estado = caja.querySelector('.intake-estado');
+    b.addEventListener('click', function () {
+      b.disabled = true;
+      b.textContent = 'Avisando…';
+      estado.textContent = '';
+      fetch('/api/intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: id, acceso_listo: true }),
+      })
+        .then(function (r) {
+          return r.json()
+            .then(function (j) { return { j: j, hubo: true }; })
+            .catch(function () { return { j: null, hubo: true }; });
+        })
+        .then(function (res) {
+          if (res.j && res.j.ok) { dibujar(res.j); montarIntake(res.j); montarBotonAcceso(res.j); return; }
+          b.disabled = false;
+          b.textContent = 'Ya te di el acceso';
+          estado.textContent = (res.j && res.j.detalle) ||
+            'No pudimos guardarlo ahora. Vuelve a intentarlo, o escríbenos con este enlace.';
+        })
+        .catch(function () {
+          b.disabled = false;
+          b.textContent = 'Ya te di el acceso';
+          // Mismo criterio que el formulario: acá el fetch no llegó a contestar, así que la
+          // conexión SÍ es el problema.
+          estado.textContent = 'No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo.';
+        });
+    });
+  }
+
   function montarIntake(data) {
     var hueco = contenido.querySelector('[data-form-intake]');
     if (!hueco) return;
@@ -255,6 +310,7 @@
             // forma de quedar mirando el estado viejo después de haber escrito.
             dibujar(res.j);
             montarIntake(res.j);
+            montarBotonAcceso(res.j);
             return;
           }
           b.disabled = false;
@@ -294,6 +350,13 @@
       // cuatro campos, y pedirlos por correo convierte en una conversación lo que cabe en un
       // formulario. El mailto se queda abajo como salida si algo no funciona.
       if (e.etapa === 'falta-datos') html += '<p class="te-toca-form" data-form-intake></p>';
+      // ⚠️ Y EL CONTROL DEL ACCESO, QUE FALTABA Y MATABA EL PEDIDO.
+      //
+      // Hasta el 30-oct esta etapa pedía el acceso y NO ofrecía con qué darlo: ni botón, ni
+      // casilla, solo un «Escríbenos». El endpoint sí aceptaba el dato (`acceso_listo`) y
+      // nadie se lo mandaba nunca — el grep daba cero llamadores. Un pedido pagado llegaba
+      // acá y se quedaba para siempre, salvo que alguien lo moviera a mano en la base.
+      if (e.etapa === 'falta-acceso') html += '<p class="te-toca-form" data-boton-acceso></p>';
       // El asunto y la primera línea hablan del SITIO, no del número de pedido. Esos 32 hex no
       // le dicen nada a quien escribe, y verlos dos veces en un correo que está empezando a
       // redactar hace que el mensaje parezca un ticket y no una conversación. El número igual
@@ -379,6 +442,11 @@
         }
         dibujar(res.j);
         montarIntake(res.j);
+        // ⚠️ Acá es donde más importa: es la carga inicial de la pantalla, o sea el caso
+        // normal de alguien que abre el enlace de su pedido. Sin esta línea el botón del
+        // acceso solo aparecía después de enviar el formulario de datos, que es justo cuando
+        // ya no hace falta.
+        montarBotonAcceso(res.j);
 
         // Se vuelve a preguntar SOLO mientras el pago se confirma, que es lo único que cambia
         // sin que nadie haga nada. Y con un tope: si a los dos minutos no llegó, refrescar más

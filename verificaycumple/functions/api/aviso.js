@@ -54,6 +54,64 @@ export function cuerpoDelAviso(pedido) {
 }
 
 /**
+ * El aviso de que un pedido AVANZÓ: el cliente hizo lo suyo.
+ *
+ * ── POR QUÉ EXISTE (30-oct-2026) ─────────────────────────────────────────────────────────
+ *
+ * Hasta hoy el único aviso era el de la venta. Después de eso, el cliente podía mandar los
+ * datos de su empresa y declarar que el acceso estaba listo, y **nadie se enteraba**: el
+ * módulo del formulario ni siquiera importaba este archivo. La única transición del camino
+ * que sí funcionaba terminaba en una fila de la base que había que ir a mirar.
+ *
+ * Con una fecha legal encima del cliente, un pedido avanzando en silencio es un pedido
+ * detenido. El aviso es lo que convierte «está escrito en la base» en «alguien lo sabe».
+ *
+ * Las mismas reglas que el resto de este archivo: va el prefijo del id, nunca el id entero ni
+ * el correo del comprador. Y nunca puede romper el guardado: si el aviso falla, los datos del
+ * cliente ya quedaron escritos.
+ *
+ * @param {object} pedido  el pedido como quedó después de guardar
+ * @param {'datos'|'acceso'} que  qué fue lo que el cliente completó
+ */
+export async function avisarAvance(pedido, que, fetchImpl = fetch) {
+  if (!pedido || !pedido.id) return false;
+  const prefijo = String(pedido.id).slice(0, LARGO_PREFIJO);
+  const esAcceso = que === 'acceso';
+  try {
+    const r = await fetchImpl('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: CLAVE_WEB3FORMS,
+        subject: esAcceso
+          ? `Acceso declarado · ${pedido.dominio || 'sitio sin nombre'}`
+          : `Datos de empresa recibidos · ${pedido.dominio || 'sitio sin nombre'}`,
+        from_name: 'Verifica y Cumple',
+        Sitio: pedido.dominio || '(sin dominio)',
+        'Pedido (prefijo)': `${prefijo}…`,
+        Empresa: pedido.razon_social || '(todavía sin datos)',
+        Plataforma: pedido.plataforma || '(sin declarar)',
+        'Qué hacer': esAcceso
+          ? 'El cliente dice que el acceso ya está. PRUÉBALO antes de dar por bueno que entra: ' +
+            'su pantalla ya le dice que lo estamos probando, así que si no entra hay que escribirle.'
+          : 'Ya tienes razón social, RUT, giro y dirección para armar el borrador. El cliente ' +
+            'todavía tiene que darte el acceso a su sitio.',
+      }),
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!r.ok) {
+      console.log(`[aviso] Web3Forms contestó http-${r.status} al avisar el avance`);
+      return false;
+    }
+    console.log(`[aviso] avance avisado (${que}): ${prefijo}… · ${pedido.dominio}`);
+    return true;
+  } catch (e) {
+    console.log(`[aviso] no se pudo avisar el avance: ${e && e.message}`);
+    return false;
+  }
+}
+
+/**
  * El cuerpo del aviso cuando una notificación necesita que la mire una persona.
  *
  * ── POR QUÉ EXISTE (27-oct-2026) ─────────────────────────────────────────────────────────
