@@ -229,45 +229,60 @@ lo "arregle" al revés más adelante.
 Facebook/Instagram antes de que el visitante acepte nada. Casi la mitad.
 **Rubro pagado más cercano:** Restaurantes. **Sale primero.**
 
-Una frase por renglón, que es como manda leerlo el manual: el margen derecho tiene que quedar
-descompensado. Las `/` son respiraciones y las `//` cortes.
+Una frase por renglón, que es como manda leerlo el manual: el margen derecho queda descompensado.
+Las `/` son respiraciones y las `//` cortes.
 
-> Una clienta entra a tu sitio a ver la **carta**. //
-> **Pero** se va con algo en el teléfono que no **pidió**. //
-> Es la cookie de **Facebook**, / la que mide si tu publicidad **funcionó**. //
-> No entra cuando ella **acepta**, / entra cuando abre la **página**. //
-> Nadie le preguntó **nada**. //
-> **Revisé** treinta y seis sitios de cafés y pastelerías en **Chile**. //
-> En casi la **mitad** pasa eso mismo. //
-> Esto va a dejar de ser **opcional**. //
-> La ley de datos personales lo va a **pedir**, / y lo que están discutiendo en el Senado / es desde
-> **cuándo**. //
-> Se arregla con una **línea** abajo que pregunte. //
-> Al que diga que **sí**, / lo mides **igual**. //
-> Hice un chequeo **gratis** / que te dice si el tuyo **pregunta**. //
-> Soy **Ramón**, de SpindleLab. //
-> Y si pagas para que **entre**, / lo mínimo es **preguntarle**. //
+> Pagar publicidad en Instagram está **bien**. / Medir si **funcionó**, también. //
+> **Pero** revisé treinta y seis sitios de cafés y pastelerías en **Chile**. //
+> En casi la **mitad**, la cookie de Facebook entra antes de que el cliente diga **nada**. //
+> Las dos cosas **caben**. //
+> Y la **ley** lo va a pedir. //
+> Una línea abajo que **pregunte**, / y mides a quien te diga que **sí**. //
+> Hice un chequeo **gratis** / que te dice si el tuyo **pregunta**. / Soy **Ramón**, de SpindleLab. //
+> Pagar para que **entren** está bien. / Preguntarles, **también**. //
 
-**129 palabras, 44 segundos.** Largo de frase, renglón por renglón: 9, 11, 11, 10, **4**, 11, 7, 6,
-**19**, 8, 8, 11, **4**, 10. Margen irregular, que es la prueba del manual.
+**82 palabras, 29 segundos.** Largo por renglón: 6, 4, 11, 15, 4, 6, 12, 11, 4, 8. Cada renglón se
+dice en una respiración, que importa porque Ramón ya dijo que tiene problema de modulación.
 
-**Versión 5, del 30-oct**, la primera escrita con el método que entregó Ramón
-(`.claude/skills/voz-spindlelab/estructura-video-corto.md`). Las cuatro anteriores y por qué se
-cayeron, en la sección 8. Lo que este guion hace y los otros no:
+**Versión 6, del 30-oct.** Ramón: *"está mejor, pero muy largo. demasiada explicación. lo del senado
+es un dato aparte... contar que hacer publicidad es válido pero también es relevante la protección
+de datos"*. Las cinco anteriores, en la sección 8.
 
-- **La primera línea es contexto y la segunda es el conflicto, con "Pero".** Las cuatro versiones
-  anteriores unían todo con "y", que es la acumulación lineal que el manual señala como la causa de
-  que una narración se lea plana. Es el nombre técnico de lo que Ramón venía diciendo.
-- **Cinco bucles abiertos.** Cada respuesta abre la pregunta siguiente: qué se llevó → cuándo entró
-  → le pasa solo a mí → por qué tendría que moverme → y la postergación.
-- **El final se escribió primero.** *"Y si pagas para que entre, lo mínimo es preguntarle"* enlaza
-  con *"Una clienta entra a tu sitio"* del primer segundo, así que el loop de Instagram se siente
-  como continuación. **La firma quedó penúltima**: *"Soy Ramón, de SpindleLab"* es una firma, no un
-  gancho, y cerrar ahí desperdicia la última línea.
-- **"Revisé", en singular.** Es el prisma, y es lo único que ningún competidor puede decir.
-  Diluirlo en "revisamos" tiraba a la basura la única ventaja del guion.
-- **La prueba que falta es la de Ramón.** El manual dice que ningún guion es definitivo sin leerlo
-  en voz alta, y esa no la puede hacer una sesión de Claude. Si al decirlo se traba, se arregla ahí.
+Lo que define esta versión:
+
+- **El marco ya no acusa.** Antes la pieza daba a entender que el café hace algo a escondidas, y eso
+  pone a la defensiva a quien mira. Ahora concede primero (*pagar publicidad está bien, medir
+  también*) y recién después agrega. **Conceder antes de contradecir es un movimiento que ya está en
+  la voz de Ramón**, documentado en la skill; acá además es más honesto, porque pautar y medir sí
+  son legítimos.
+- **La tesis en cuatro palabras: "Las dos cosas caben."** Es lo que el guion vende.
+- **La ley queda en seis palabras y el Senado sale.** Sin ningún motivo volvemos al defecto de la
+  versión 2, que Ramón rechazó por no decir por qué importa. Con dos frases de explicación volvemos
+  al de la versión 3, que rechazó por sonar a guía. Seis palabras es el punto medio: *"Y la ley lo va
+  a pedir."*
+- **El Senado y el costo de la medición se van al texto**, que es donde hay espacio para explicarlos.
+- **El cierre repite la construcción de la apertura** para que el loop se sienta como continuación.
+
+### Versión en texto, para la página de LinkedIn
+
+Pedida por Ramón el 30-oct bajo la misma idea. Plural, porque la página es la marca. Acá sí entra lo
+que no cabe en 29 segundos: el Senado como dato aparte y el costo real de la medición.
+
+> Pagar por publicidad en Instagram es legítimo. Medir si funcionó, también. Nadie debería pedir perdón por querer saber si la plata que puso trajo clientes.
+>
+> Lo que pasa es que la medición empieza antes de que el cliente diga nada. Entra a tu sitio y la cookie que mide ya quedó en su teléfono.
+>
+> Revisamos 36 sitios de cafés y pastelerías en Chile. En casi la mitad pasa eso.
+>
+> Y las dos cosas caben. Un aviso abajo que pregunte, y mides a quien te diga que sí. Al que diga que no, no lo mides, y eso es todo lo que cambia. No se cae la publicidad, no se cae el sitio, y la persona que te dejó sus datos sabe qué pasó con ellos.
+>
+> Ese permiso lo va a pedir la ley de datos personales. Lo que se está discutiendo en el Senado es desde cuándo, no si hay que pedirlo.
+>
+> Armamos un chequeo gratis que te dice si el tuyo pregunta. Sin registro y sin guardar el dominio que revisas.
+> verifica.spindlelab.cl
+
+**El costo de la medición va dicho y no escondido** (*"al que diga que no, no lo mides"*). Prometer
+que no se pierde nada sería mentira, y esta marca se vende justamente por no hacer eso.
 
 **Texto en pantalla**
 
@@ -276,10 +291,10 @@ voz cuenta la escena, que es lo que hace que la pieza se entienda con el sonido 
 
 | Tarjeta | Tramo | Etiqueta | Línea grande | Cuerpo |
 |---|---|---|---|---|
-| 1 | sobre el plano A, 0 a 2 s | — | NADIE LE / PREGUNTÓ. | *(sin cuerpo: abajo está la lista de cookies y hay que poder leerla)* |
-| 2 | la cifra | **16 de 36** *(lima)* | CASI LA MITAD. | De los sitios de cafés y pastelerías que revisamos en Chile. |
-| 3 | la ley | — | SE DISCUTE / DESDE CUÁNDO. / NO EL PERMISO. | La ley de datos personales va a pedir que preguntes antes. |
-| 4 | el arreglo | — | UNA LÍNEA / ABAJO DE / TU SITIO. | Si dice que sí, mides igual. Si dice que no, tu café funciona igual. |
+| 1 | plano A, 0 a 3 s | — | ESTO MIDE / TU PUBLICIDAD. | *(sin cuerpo: la lista de cookies tiene que leerse)* |
+| 2 | la cifra | **16 de 36** *(lima)* | CASI LA MITAD. | Entra antes de que el cliente diga nada. |
+| 3 | la tesis | — | LAS DOS COSAS / CABEN. | *(sin cuerpo)* |
+| 4 | plano C | — | UNA LÍNEA / QUE PREGUNTE. | Y mides a quien te diga que sí. |
 | 5 | cierre | — | — | `recuadro-sitio-*.png` de `05-overlays-video`, con el dominio |
 
 Lima: solo la etiqueta de la cifra y el dominio del cierre. Dos usos.
