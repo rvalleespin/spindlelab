@@ -21,6 +21,8 @@
  * Fuente: https://www.flow.cl/docs/api.html — leída el 29-oct-2026 antes de escribir una línea.
  */
 
+import { ESTADOS } from './pedidos.js';
+
 /** Dónde vive la API. El sandbox no mueve plata; producción sí. */
 export const BASE_SANDBOX = 'https://sandbox.flow.cl/api';
 export const BASE_PRODUCCION = 'https://www.flow.cl/api';
@@ -158,29 +160,45 @@ export async function leerPagoFlow(token, { apiKey, secretKey, base }, fetchImpl
 }
 
 /**
- * ⚠️⚠️ EL MAPA DE ESTADOS, QUE TODAVÍA NO SE PUEDE LLENAR ⚠️⚠️
+ * EL MAPA DE ESTADOS, LLENADO CON PAGOS REALES (29-oct-2026, sandbox).
  *
- * `payment/getStatus` devuelve un campo `status` con un número, y **Flow NO documenta qué
- * significa cada número** en su referencia pública. Lo busqué el 29-oct y no está.
+ * `payment/getStatus` devuelve un campo `status` con un número y **Flow no documenta qué
+ * significa cada uno** en su referencia pública. Adivinarlo falla en las dos direcciones: dar
+ * por pagado un rechazo regala el kit, y no reconocer un pago deja al comprador mirando una
+ * pantalla que no avanza.
  *
- * Adivinarlo tiene dos formas de salir mal, las dos caras:
- *   - Si se da por pagado un número que significa «rechazado», se entrega el kit gratis.
- *   - Si no se reconoce el número que significa «pagado», el cliente paga y su pantalla no
- *     avanza nunca.
+ * Así que no se adivinó. Cada número de acá abajo tiene un pago detrás, hecho en el sandbox y
+ * leído con la sonda (`herramientas/sonda-flow.mjs`):
  *
- * Por eso nace VACÍO. Mientras lo esté, NINGÚN pago se marca solo: todo cae en «revisar», que
- * además avisa. Es inútil a propósito, y esa inutilidad es lo que obliga a confirmarlo con una
- * observación real en vez de con una suposición.
+ *   1 · `sonda_bf5b5af5…` recién creado, sin tocar → `paymentData` entero en `null`.
+ *       Es «existe y nadie pagó».
+ *   2 · el mismo pago, después de pagarlo → `paymentData.date "2026-10-29 22:38:02"`,
+ *       `media "Webpay"`, `amount "1000.00"`, `fee "32.00"`, `balance 962`.
+ *       **Observado dos veces**, en dos pagos distintos.
+ *   3 · `sonda_…` rechazado a propósito en el simulador → `paymentData` entero en `null`.
  *
- * **Cómo se llena:** un pago de prueba en el sandbox, mirar qué número llega, y escribirlo acá
- * con la fecha y el caso. Un número por vez, cada uno con su pago detrás. Es la misma regla que
- * `DETALLES_PAGO_LIMPIO` del otro proveedor: se agrega con la evidencia delante.
+ * ⚠️ **El 4 NO está, y es a propósito.** Flow tiene al menos un estado más que no se observó
+ * acá. Escribirlo «porque seguro significa anulada» sería exactamente la suposición que este
+ * mapa existe para evitar. Mientras no esté, un 4 cae en «revisar» y alguien lo mira: molesto,
+ * pero nunca entrega un kit que no se pagó ni cierra una venta que sí.
+ *
+ * Para agregar uno: provocarlo en el sandbox, leerlo con la sonda, y escribirlo con su
+ * evidencia. Un número por vez.
+ *
+ * El valor es el estado DESTINO del pedido, o `null` cuando no hay que moverlo — misma forma
+ * que `MAPA_ORDEN` en `cobro.js`, para que el webhook no tenga que aprender dos contratos.
  */
 export const ESTADOS_FLOW = {
-  // 1: '???',  ← pendiente de confirmar con un pago real
-  // 2: '???',
-  // 3: '???',
-  // 4: '???',
+  1: null,                   // pendiente: el pedido se queda como está
+  2: ESTADOS.PAGADO,
+  3: ESTADOS.RECHAZADO,
+};
+
+/** Qué decirle a quien lea el registro, por número. */
+const TEXTO_FLOW = {
+  1: 'Flow todavía no recibe el pago.',
+  2: 'Flow confirma el pago.',
+  3: 'Flow rechazó el pago.',
 };
 
 /** Las acciones, con los mismos nombres que ya usa el webhook. */
@@ -233,13 +251,45 @@ export function decidirDesdeFlow({ pedido, pago }) {
   if (!(n in ESTADOS_FLOW)) {
     return {
       accion: ACCIONES_FLOW.REVISAR, estado: null, motivo: 'estado-sin-confirmar',
-      detalle: `Flow devolvió el estado ${n}, que todavía no hemos confirmado con un pago real. ` +
-        `El pedido NO se mueve hasta que alguien lo mire. Ver ESTADOS_FLOW en flow.js.`,
+      detalle: `Flow devolvió el estado ${n}, que no hemos observado en un pago real. El pedido ` +
+        `NO se mueve hasta que alguien lo mire. Ver ESTADOS_FLOW en flow.js.`,
     };
   }
 
-  return {
-    accion: ACCIONES_FLOW.REVISAR, estado: null, motivo: 'mapa-incompleto',
-    detalle: 'El mapa de estados de Flow está a medio llenar. Revisar flow.js antes de cobrar.',
-  };
+  const destino = ESTADOS_FLOW[n];
+  if (destino === null) {
+    // Existe y nadie pagó. No es un fallo ni hay nada que hacer: es el estado normal entre que
+    // se abre el pago y la persona vuelve. Se devuelve el estado ACTUAL del pedido para que
+    // quien llame no tenga que decidir si eso significa «no lo muevas».
+    return {
+      accion: ACCIONES_FLOW.NADA, estado: pedido.estado, motivo: `flow-${n}`, detalle: TEXTO_FLOW[n],
+    };
+  }
+
+  // ── EL PAGO PARCIAL, QUE ES EL QUE CUESTA PLATA ────────────────────────────────────────
+  //
+  // Un estado «pagado» dice QUE se pagó, no CUÁNTO entró. Con el otro proveedor eso ya fue un
+  // hallazgo real: un reembolso parcial dejaba el pedido en `pagado` y el kit se entregaba
+  // igual, con parte de la plata devuelta.
+  //
+  // La condición es MENOR, no DISTINTO, y la diferencia no es cosmética: en cuotas lo
+  // acreditado puede superar el precio, y comparar por igualdad frenaría la mayoría de las
+  // ventas chilenas, que es la forma más cara de equivocarse en este archivo.
+  //
+  // Si el campo no viene, se sigue. Misma decisión que `DETALLES_PAGO_LIMPIO` en `cobro.js`:
+  // lo ausente no acusa, lo legible y malo sí. Solo vimos `paymentData.amount` en UN pago
+  // observado, y exigirlo siempre convertiría cualquier variación del proveedor en ventas
+  // cobradas y sin marcar.
+  if (destino === ESTADOS.PAGADO) {
+    const acreditado = montoDe(pago.paymentData && pago.paymentData.amount);
+    if (acreditado !== null && acreditado < monto) {
+      return {
+        accion: ACCIONES_FLOW.REVISAR, estado: null, motivo: 'pagado-no-alcanza',
+        detalle: `Flow dice pagado, pero lo acreditado (${pago.paymentData.amount}) es menor que ` +
+          `los ${monto} que se vendieron. No se entrega sin mirarlo.`,
+      };
+    }
+  }
+
+  return { accion: ACCIONES_FLOW.MARCAR, estado: destino, motivo: `flow-${n}`, detalle: TEXTO_FLOW[n] };
 }
