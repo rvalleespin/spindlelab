@@ -1,0 +1,113 @@
+{
+ "cuando": "2026-10-30T16:06:10.832Z",
+ "viewBox": "3.34 -117.02 716.32 147.01",
+ "d": "el de e13/logo/logo-menu-linea.svg",
+ "brunoUnidades": {
+  "disco": [
+   29.97,
+   16.65
+  ],
+  "hueco": 12.26,
+  "asta": 18.5,
+  "centro": [
+   184.374,
+   -92.28
+  ]
+ },
+ "medidas": [
+  {
+   "dpr": 1,
+   "alto": 24,
+   "ancho": 116.9,
+   "teorico": {
+    "discoAncho": 4.89,
+    "discoAlto": 2.72,
+    "hueco": 2,
+    "asta": 3.02
+   },
+   "render": {
+    "filasDisco": 4,
+    "coberturaDisco": [
+     0.25,
+     1,
+     1,
+     0.44
+    ],
+    "filasHueco": 1
+   },
+   "seVe": true,
+   "noToca": true
+  },
+  {
+   "dpr": 1,
+   "alto": 20,
+   "ancho": 97.4,
+   "teorico": {
+    "discoAncho": 4.08,
+    "discoAlto": 2.27,
+    "hueco": 1.67,
+    "asta": 2.52
+   },
+   "render": {
+    "filasDisco": 3,
+    "coberturaDisco": [
+     0.75,
+     1,
+     0.43
+    ],
+    "filasHueco": 1
+   },
+   "seVe": true,
+   "noToca": true
+  },
+  {
+   "dpr": 2,
+   "alto": 24,
+   "ancho": 116.9,
+   "teorico": {
+    "discoAncho": 4.89,
+    "discoAlto": 2.72,
+    "hueco": 2,
+    "asta": 3.02
+   },
+   "render": {
+    "filasDisco": 6,
+    "coberturaDisco": [
+     0.7,
+     1,
+     1,
+     1,
+     1,
+     0.7
+    ],
+    "filasHueco": 3
+   },
+   "seVe": true,
+   "noToca": true
+  },
+  {
+   "dpr": 2,
+   "alto": 20,
+   "ancho": 97.4,
+   "teorico": {
+    "discoAncho": 4.08,
+    "discoAlto": 2.27,
+    "hueco": 1.67,
+    "asta": 2.52
+   },
+   "render": {
+    "filasDisco": 5,
+    "coberturaDisco": [
+     0.46,
+     1,
+     1,
+     1,
+     0.96
+    ],
+    "filasHueco": 3
+   },
+   "seVe": true,
+   "noToca": true
+  }
+ ]
+}

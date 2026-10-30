@@ -92,12 +92,12 @@
     {
      "id": "contacto.form.sitio.ayuda",
      "rol": "nota",
-     "texto": "Si todavía no tienes sitio, escribe «no tengo».",
-     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+     "texto": "Si todavía no tienes sitio, escribe «no tengo» y cuéntanos abajo qué vendes.",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); acta de QA del 30-oct, menor 10",
      "uso": "ayuda",
      "estado": "cambia",
-     "antes": "Si partes de cero, escribe «no tengo» y cuéntanos tu proyecto abajo.",
-     "por_que": "El campo sigue obligatorio (el formulario no se toca); la ayuda le dice a quien no tiene sitio qué poner."
+     "antes": "Si todavía no tienes sitio, escribe «no tengo». (30-oct, la frase de Ramón; antes de eso: «Si partes de cero, escribe «no tengo» y cuéntanos tu proyecto abajo.»)",
+     "por_que": "El campo sigue obligatorio (el formulario no se toca); la ayuda le dice a quien no tiene sitio qué poner. Acta de QA del 30-oct, menor 10: con solo «no tengo», quien no tiene sitio podía mandar el formulario sin decir qué vende (el único campo donde cabe es el opcional de abajo), y lo que se le promete («te decimos cómo lo haríamos y cuánto cuesta») lo necesita. La frase de Ramón queda entera y se le suma lo que falta; «abajo» es el campo «Cuéntanos brevemente», que va justo después."
     },
     {
      "id": "contacto.form.mensaje",
@@ -171,8 +171,12 @@
      "id": "contacto.form.directo",
      "rol": "nota",
      "texto": "O escríbenos directo a hola@spindlelab.cl",
-     "origen": "e12 (sin cambio); v2-vigente/contacto.txt",
-     "estado": "queda"
+     "destino": "mailto:hola@spindlelab.cl?subject=Hablemos%20de%20mi%20sitio&body=Hola.%0AMi%20sitio%3A%20%0ALo%20que%20vendemos%3A%20",
+     "origen": "e12 (sin cambio); v2-vigente/contacto.txt. El destino, desde el 30-oct (acta de QA del 30-oct, menor 9)",
+     "estado": "cambia",
+     "antes": "Sin destino en el JSON: el mailto estaba escrito en el código (interiores.mjs), con asunto «Revisión de mi sitio» y cuerpo «Hola, mi sitio es: ».",
+     "por_que": "El texto vive en el JSON (regla de la obra), así que el asunto y el cuerpo ya escritos pasan aquí y contacto() los lee. El asunto es el mismo del pie y de la home («Hablemos de mi sitio»). El cuerpo deja dos líneas para completar: la dirección del sitio (o «no tengo») y qué vende, que es lo que necesitamos para contestar en los dos caminos: revisar el sitio o decir cómo lo haríamos y cuánto cuesta.",
+     "nota": "Decodificado, el cuerpo es: «Hola.» / «Mi sitio: » / «Lo que vendemos: », en tres líneas."
     }
    ]
   },

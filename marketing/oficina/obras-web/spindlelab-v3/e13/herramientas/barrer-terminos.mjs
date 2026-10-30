@@ -32,7 +32,11 @@ const TERMINOS = [
   ['rubros / especialización', /sectores donde la confianza|nos especializamos|finanzas, salud|rubros que atendemos/gi],
   ['más de cinco años', /m[aá]s de cinco a[ñn]os/gi],
   ['sin compromiso', /sin compromiso/gi],
-  ['posicionamiento anterior', /estudio de dise[ñn]o y tecnolog[ií]a|no es una agencia de marketing|dise[ñn]amos y programamos sitios a medida/gi],
+  // Al día con el 30-oct (acta de QA del 30-oct, menor 12): Ramón volvió a poner el sitio a medida en el centro («Sitios web a
+  // medida y marketing con IA»), así que «diseñamos y programamos sitios a medida» deja de ser posicionamiento anterior (era
+  // falso positivo en la description nueva). Lo anterior ahora es la línea del 23-oct («Marketing y crecimiento con IA para
+  // empresas que ya venden») y su titular («Te llegan consultas…»), además de las de E12.
+  ['posicionamiento anterior', /estudio de dise[ñn]o y tecnolog[ií]a|no es una agencia de marketing|marketing y crecimiento con IA|te llegan consultas/gi],
   ['¿Listo para…?', /¿\s*listo para/gi],
   ['mismo chequeo que a cada sitio', /mismo chequeo (que|con el que)[^.<]{0,80}(construimos|proyecto)|le pasamos este chequeo antes/gi],
   ['rayas largas o medias', /[—–]/g],

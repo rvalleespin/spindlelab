@@ -671,6 +671,9 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bot
   .a-body .quien__txt { grid-column: 6 / -1; margin-top: 0; }
 }
 @media (min-width: 1194px) { .a-body .quien__txt { grid-column: 7 / span 8; } }
+/* La biografía a 16 entre párrafos, no a 32 (30-oct, spec-home §6.21; acta de QA del 30-oct, menor 4): el gap de la
+   columna ya los separa, y el 1em de .cuerpo + .cuerpo se sumaba encima. Con cuatro párrafos se leía en bloques sueltos */
+.a-body .quien__txt > .cuerpo + .cuerpo { margin-top: 0; }
 
 /* 7 · Contacto, en c1–c9 */
 .a-body .contacto__txt { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }

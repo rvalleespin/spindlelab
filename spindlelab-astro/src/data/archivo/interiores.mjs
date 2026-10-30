@@ -62,8 +62,9 @@ const largos = (title, description, donde) => {
 // E13 con el h1 nuevo, en la plantilla de A: el negro, Google Sans Flex, tinta y gris). El alt dice el titular de la
 // imagen. ?v=2: cada nombre se sobrescribe y los activos se cachean fuerte (CLAUDE.md, trampa de caché).
 // La de /diagnostico/ se regeneró en la ronda 2 (traía «pueden leer tu sitio» horneado): ?v=3. Las de /nosotros/ y
-// /contacto/, el 30-oct, con el h1 nuevo y el logo de la i con su disco: ?v=3.
-const OG_V = { diagnostico: 3, nosotros: 3, contacto: 3 };
+// /contacto/, el 30-oct, con el h1 nuevo y el logo de la i con su disco: ?v=3. Las de /metodo/ y /diagnostico/, el
+// 30-oct (acta de QA del 30-oct, mayor 2), con el mismo h1 y el logo nuevo (e13/herramientas/og-logo-19.mjs): ?v=3 y ?v=4.
+const OG_V = { metodo: 3, diagnostico: 4, nosotros: 3, contacto: 3 };
 const ogDe = (id, h1) => ({ src: `/assets/img/og-e12-${id}.jpg?v=${OG_V[id] ?? 2}`, alt: `SpindleLab: ${typeof h1 === 'string' ? h1 : `${h1.tinta} ${h1.gris}`}` });
 const boton = (e, clase) => ({ texto: e.texto, href: e.destino, clase });
 
@@ -326,6 +327,7 @@ export function contacto() {
   const directo = t('contacto.form.directo').texto; // «O escríbenos directo a hola@spindlelab.cl»
   const EMAIL = 'hola@spindlelab.cl';
   if (!directo.endsWith(EMAIL)) throw new Error('contacto: «directo» no termina en el correo');
+  if (!String(t('contacto.form.directo').destino || '').startsWith(`mailto:${EMAIL}?subject=`)) throw new Error('contacto: el mailto de «directo» (su destino en contacto.json) no va al correo con su asunto');
   const form = {
     h2: t('contacto.form.h2').texto,
     nombre: t('contacto.form.nombre').texto,
@@ -339,8 +341,9 @@ export function contacto() {
     boton: t('contacto.form.boton').texto, // la flecha es el SVG de la plantilla (spec §1.2: ninguna de las dos letras trae «→»)
     listo: { h3: t('contacto.form.listo.t').texto, p: t('contacto.form.listo.d').texto },
     directo: { texto: directo.slice(0, -EMAIL.length).trim(), correo: EMAIL },
-    // el mailto de la página: asunto y arranque del cuerpo ya escritos
-    mailto: `mailto:${EMAIL}?subject=Revisi%C3%B3n%20de%20mi%20sitio&body=Hola%2C%20mi%20sitio%20es%3A%20`,
+    // el mailto de la página: asunto y arranque del cuerpo ya escritos, de Clara (contacto.form.directo, «destino»;
+    // acta de QA del 30-oct, menor 9: antes estaba escrito aquí)
+    mailto: t('contacto.form.directo').destino,
   };
   // «política de privacidad» es el enlace del consentimiento, a /privacidad/ (la página publicada, que esta obra no toca)
   const consiento = trozos(form.consiento, { 'política de privacidad': '/privacidad/' });

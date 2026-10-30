@@ -454,12 +454,12 @@
      "id": "dw.siguiente",
      "rol": "boton",
      "rotulo": "Siguiente",
-     "texto": "Acompañamiento mensual →",
-     "destino": "/servicios/acompanamiento-mensual/",
+     "texto": "Auditoría SEO técnica →",
+     "destino": "/servicios/auditoria-seo-tecnica/",
      "estado": "cambia",
-     "origen": "texto-paso2.json «dw.siguiente»",
-     "antes": "Visibilidad en IA →",
-     "por_que": "El orden de los seis sigue los cuatro bloques de /servicios/ (servicios.mjs): después de Desarrollo web viene el Acompañamiento mensual."
+     "origen": "texto-paso2.json «dw.siguiente»; acta de QA del 30-oct, menor 11",
+     "antes": "Acompañamiento mensual → (hasta el 30-oct; en E12, «Visibilidad en IA →»)",
+     "por_que": "El orden de los seis sigue los cuatro bloques de /servicios/ (servicios.mjs). Desde el 30-oct el sitio va primero, como en Soluciones de la home, y después viene lo que se le conecta, empezando por la búsqueda: después de Desarrollo web viene la Auditoría SEO técnica. El build compara este texto y su destino con servicios.mjs."
     }
    ]
   }

@@ -15,7 +15,7 @@
 //
 // LAS SEÑALES (Simón, senales-obra.md §2.7): title y description de Clara, que son los de Simón; el grafo de hoy queda
 // (Service con su OfferCatalog, BreadcrumbList igual a la miga, FAQPage con las preguntas a la vista), y la description
-// del Service pasa a ser la de la página. Imagen al compartir: og-e12-<slug>.jpg?v=2 (og-tanda-4.mjs, regeneradas en la obra E13 con el h1 nuevo).
+// del Service pasa a ser la de la página. Imagen al compartir: og-e12-<slug>.jpg?v=3 (og-tanda-4.mjs, regeneradas en la obra E13 con el h1 nuevo; el 30-oct, con el logo nuevo).
 import Layout from '../../layouts/Layout.astro';
 import PaginaA from '../../components/a/PaginaA.astro';
 import Miga from '../../components/a/Miga.astro';
@@ -161,8 +161,10 @@ const jsonLd = {
   ],
 };
 // auditoria-seo-tecnica se regeneró en la ronda 2 (traía «impide a Google leer tu sitio» horneado): ?v=3; las otras, ?v=2.
-const OG_V: Record<string, number> = { 'auditoria-seo-tecnica': 3 };
-const og = { src: `/assets/img/og-e12-${slug}.jpg?v=${OG_V[slug] ?? 2}`, alt: `SpindleLab: ${h1.tinta} ${h1.gris}` };
+// El 30-oct las cinco se rehicieron con el logo de la i con su disco (acta de QA del 30-oct, mayor 2; og-logo-19.mjs):
+// auditoría a ?v=4 y las otras a ?v=3.
+const OG_V: Record<string, number> = { 'auditoria-seo-tecnica': 4 };
+const og = { src: `/assets/img/og-e12-${slug}.jpg?v=${OG_V[slug] ?? 3}`, alt: `SpindleLab: ${h1.tinta} ${h1.gris}` };
 ---
 <Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />

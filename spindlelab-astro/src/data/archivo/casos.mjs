@@ -87,7 +87,7 @@ export const CASOS = {
           creator: { '@id': 'https://spindlelab.cl/#org' },
           datePublished: '2026-07-24',
           inLanguage: 'es-CL',
-          image: 'https://spindlelab.cl/assets/img/og-e12-combeau.jpg?v=1',
+          image: 'https://spindlelab.cl/assets/img/og-e12-combeau.jpg?v=2',
           about: { '@id': `${u}#sitio` },
           hasPart: [
             { '@type': 'CreativeWork', '@id': `${u}#fotografia`, name: 'Sitio de fotografía', url: 'https://bernardocombeau.cl/' },
@@ -103,7 +103,7 @@ export const CASOS = {
         },
       ];
     },
-    og: { imagen: '/assets/img/og-e12-combeau.jpg?v=1', alt: 'La portada del sitio de Bernardo Combeau, fotógrafo de retrato.' },
+    og: { imagen: '/assets/img/og-e12-combeau.jpg?v=2', alt: 'La portada del sitio de Bernardo Combeau, fotógrafo de retrato.' },
   },
 };
 

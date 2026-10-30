@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/home.json",
- "sha256": "3b9eab530946135140c1454fc42892c2cea86e7d0c379531ae2d6d1b5340b845",
+ "sha256": "65a405e73fbd8abc2259d2486b1d2722be9c6ea8cf56c5c3a8152348bfeafeda",
  "id": "home",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -102,15 +102,6 @@
       "nota": "Enlace secundario, no botón: la forma que tenía home.portada.chequeo, debajo del microcopy. Lleva a Desarrollo web, que tiene las cinco fases y los cuatro planes con su precio, así que cumple lo que dice. Reemplaza al enlace del chequeo en la portada."
      },
      {
-      "id": "home.portada.chequeo",
-      "rol": "boton",
-      "texto": "Chequear mi sitio ahora, sin registro",
-      "destino": "/diagnostico/",
-      "estado": "sale",
-      "origen": "copy-secciones-v1.2 §2.1 (enlace secundario)",
-      "nota": "SALE DE LA PORTADA (Ramón, 30-oct: el recuadro lleva botón, microcopy y el enlace a Desarrollo web). El id se deja solo para que index.astro siga construyendo hasta que lea home.portada.secundario; después se borra. El chequeo sigue en el pie («Chequeo gratis») y en «Lo que puedes revisar antes de contratar»."
-     },
-     {
       "id": "home.portada.og-alt",
       "rol": "nota",
       "uso": "alt de la imagen al compartir",
@@ -126,7 +117,7 @@
      "El formulario del chequeo dentro de la portada (home.chequeo.rotulo, .intro, .label, .placeholder, .boton, .ayuda, .error-vacio, .resultado): la portada pide una sola acción y el chequeo vive en /diagnostico/, adonde lleva el enlace secundario. El pendiente sobre el error vacío en v3-chequeo.js pasa a /diagnostico/ (diagnostico.error-vacio).",
      "«Si construimos tu sitio, le pasamos este chequeo antes de entregártelo» (home.chequeo.ayuda): sin respaldo, fila «alto» de la revisión del 23-oct.",
      "Nada sobre el video: ni pie, ni rótulo, ni «generado con IA».",
-     "30-oct: el enlace «Chequear mi sitio ahora, sin registro» sale de la portada (ver home.portada.chequeo)."
+     "30-oct: el enlace «Chequear mi sitio ahora, sin registro» (home.portada.chequeo, a /diagnostico/) sale de la portada: Ramón puso en el recuadro el botón, el microcopy y el enlace a Desarrollo web (home.portada.secundario). El chequeo sigue en el pie («Chequeo gratis») y en «Lo que puedes revisar antes de contratar». El id se borró el 30-oct, cuando index.astro dejó de leerlo (acta de QA del 30-oct, menor 15)."
     ]
    },
    {
@@ -217,10 +208,11 @@
      {
       "id": "home.problema.sitio.3",
       "rol": "parrafo",
-      "texto": "Google y las IA pueden leerlo y citarlo.",
-      "estado": "nuevo",
-      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
-      "condicion": "Texto de Ramón: se deja. Dos roces para Javiera. «Leer» fue la palabra que los tres lectores en frío no entendieron en la ronda 2 (desvios/ronda2-frases.md, frase 1), aunque aquí la sostiene el contraste con «la plataforma decide». Y «citarlo» dice lo que pueden hacer, no lo que harán: no lo leo como promesa de resultado, pero es la frase de la home que más se acerca."
+      "texto": "Google y las IA pueden visitarlo y entenderlo.",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); acta de QA del 30-oct, menor 8",
+      "antes": "Google y las IA pueden leerlo y citarlo.",
+      "por_que": "Acta de QA del 30-oct, menor 8. «Leer» es la palabra que en la ronda 1 de E13 no entendieron los tres lectores y que la ronda 2 cambió en todo el sitio por «visitar y entender» (ronda-2-correcciones.md: se dice una vez y en todas partes igual). «Citarlo», a tres secciones de «no mide si hoy te citan» y «no garantiza que te nombren», era lo más cerca de una promesa que tenía la home. Queda la misma idea (el sitio es algo que Google y las IA pueden usar; la cuenta en una red, no tanto) con las palabras del resto del sitio. Si Ramón prefiere otra, se cambia aquí."
      },
      {
       "id": "home.problema.sitio.4",
@@ -787,16 +779,6 @@
       "nota": "Va al final: cierra bajo, con un dato de CV, después de la idea y del oficio."
      },
      {
-      "id": "home.quien.cv",
-      "rol": "parrafo",
-      "texto": "Ahí vio dónde se pierde lo que una marca invierte para atraer clientes: casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva. SpindleLab parte de esa idea. Construimos el sitio como el eje del negocio y le conectamos la búsqueda, la pauta, las redes y la medición.",
-      "estado": "sale",
-      "origen": "home.quien.p2",
-      "antes": "(26-oct) El párrafo de la trayectoria en primera persona, con los nombres de cuatro agencias, el de un cliente y dos cifras («ocho marcas», «cuatro países»).",
-      "por_que": "Ramón, 30-oct: sin agencias ni clientes por su nombre, sin cifras. Lo reemplazan home.quien.p1 a p4.",
-      "nota": "ID DE TRANSICIÓN. Lleva el mismo texto que home.quien.p2 para que la página siga construyendo y se lea bien (p1 y después la idea) mientras Diego pasa a leer home.quien.p1, p2, p3 y p4, en ese orden. Cuando lo haga, este id se borra."
-     },
-     {
       "id": "home.quien.regla.1",
       "rol": "parrafo",
       "rotulo": "Empezamos por mirar",
@@ -850,7 +832,8 @@
      "«Diseña y programa con agentes de IA; él revisa y aprueba el código»: ver el «por qué» de home.quien.h2.",
      "30-oct: «Soy Ramón Vallejos y SpindleLab soy yo», «Uso agentes de IA para el trabajo que se repite y reviso yo lo que te entrego», «Como soy una persona, tomo pocos proyectos a la vez» y «Atiendo a todo Chile por videollamada» (Ramón: «no está profesional»).",
      "30-oct: el párrafo de las agencias con sus nombres, el del cliente y las dos cifras. Los hechos quedan, dichos en general (home.quien.p1).",
-     "30-oct: la explicación literal del nombre («Spindle, en inglés, es el eje: la pieza del motor que hace girar a las demás…», maquetas del 30-oct). Ramón: «lo del nombre lo hablé como una guía para que construyas mi idea». La idea queda en home.quien.p2, sin definir la palabra."
+     "30-oct: la explicación literal del nombre («Spindle, en inglés, es el eje: la pieza del motor que hace girar a las demás…», maquetas del 30-oct). Ramón: «lo del nombre lo hablé como una guía para que construyas mi idea». La idea queda en home.quien.p2, sin definir la palabra.",
+     "30-oct: el id de transición home.quien.cv (llevaba el texto de home.quien.p2 mientras index.astro pasaba a leer p1 a p4). Se borró cuando dejó de leerse (acta de QA del 30-oct, menor 15)."
     ]
    },
    {
@@ -1010,10 +993,12 @@
       "id": "home.contacto.correo",
       "rol": "nota",
       "texto": "O directo a hola@spindlelab.cl",
-      "destino": "mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis",
-      "estado": "queda",
-      "origen": "texto-paso2.json «home.contacto.correo» (E12)",
-      "nota": "Mismo asunto que el correo del pie (comun.pie.correo)."
+      "destino": "mailto:hola@spindlelab.cl?subject=Hablemos%20de%20mi%20sitio",
+      "estado": "cambia",
+      "origen": "texto-paso2.json «home.contacto.correo» (E12); acta de QA del 30-oct, menor 9",
+      "antes": "mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis",
+      "por_que": "El asunto «Quiero mi revisión gratis» solo le servía a quien ya tiene sitio. «Hablemos de mi sitio» es el botón de la portada dicho por quien escribe, y sirve a los dos caminos: el que tiene sitio y el que todavía no.",
+      "nota": "Mismo asunto que el correo del pie (comun.pie.correo) y que el de /contacto/ (contacto.form.directo)."
      }
     ],
     "borrado": [

@@ -224,10 +224,10 @@ const jsonLd = {
     {letras ? (
       <>
         {letras.map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
-        {/* Las hojas de Inter y Manrope solo declaran sus letras: sin texto que las use, no
-             se baja ningún archivo de letra. Lo que A no quiere bajar son las precargas. */}
-        <link rel="stylesheet" href="/fonts/inter.css?v=1" />
-        <link rel="stylesheet" href="/fonts/manrope.css?v=1" />
+        {/* Sin las hojas de Inter y Manrope (30-oct-2026, acta de QA del 30-oct, mayor 1): en A
+             ninguna página dibuja una letra en ellas (el aviso de cookies y #cookie-aviso se visten
+             en archivo.css con las de A; medido en las 22 con letras-sin-uso-30oct.mjs), y eran
+             3,1 kB que la home pagaba en cada primera carga. */}
       </>
     ) : (
       <>

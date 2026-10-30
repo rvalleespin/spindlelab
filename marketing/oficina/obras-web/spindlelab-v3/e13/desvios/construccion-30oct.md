@@ -80,6 +80,11 @@ hace Javiera); el chequeo de la casa (`functions/api/chequeo.js`) contra el buil
 
 ## 4 · Lo que queda abierto
 
+> **Al día después de la QA del 30-oct:** todo lo de esta sección se cerró en la vuelta de §5 (las 19 imágenes al
+> compartir, la spec y `logo-i-disco.mjs`, `/nosotros/`, el aire de «Quién está detrás», los ids de Clara, `/favicon.ico`,
+> `/404.html` y `/privacidad/`), salvo el `manifest`, que sigue sin existir. Se deja como estaba para que se lea qué se
+> declaró antes de la QA.
+
 **Para Lucía**
 - Corregir `spec-visual.md` §5.4 (el `d`, el favicon y los iconos de Bruno; el corte de las tarjetas, §2.3) y
   `logo-i-disco.mjs`, que hoy se cae con el `d` construido.
@@ -101,3 +106,155 @@ hace Javiera); el chequeo de la casa (`functions/api/chequeo.js`) contra el buil
 - No hay `manifest`: `icon-192.png` está en `/v3/marca/` pero nada lo enlaza. No lo creé porque no estaba en el sitio.
 - El avatar y los documentos de Bruno (`e13/logo/avatar/`, `documentos/`) no van al sitio: son para las redes y los
   documentos (troncal).
+
+---
+
+## 5 · Vuelta 1 de la QA del 30-oct: cómo se cerró cada defecto
+
+**Diego (con lo de Clara, Lucía y Bruno que pide el acta), 30-oct-2026, tarde.** Sobre `08cc3e82` (acta de Javiera,
+`e13/acta-qa-30oct.md`: Aprobado con reparos, 0 bloqueantes, 3 mayores, 12 menores). Nada está publicado. Los defectos que
+piden una decisión de Ramón (3, 5, 6 y 7) **no se tocaron**: van como preguntas en §6, con las versiones de Clara.
+
+| # | Defecto | Qué hice | Cómo lo medí | Resultado |
+|---|---|---|---|---|
+| 1 | [mayor] Peso de la home a 1440, primera carga, 1.402,1 kB sobre el tope de 1.400 | **Opción (a), autorizada por la orquestadora:** saqué del `<head>` de A las dos hojas que ninguna página de A usa, `/fonts/inter.css` y `/fonts/manrope.css` (3.150 bytes). Solo el ramal `letras` de `Layout.astro`, lejos de gtag, del consentimiento y del Pixel (`git diff 9039b521 -- src/layouts/Layout.astro`: 4 líneas, ninguna de ellos). El techo no se sube | `e13/herramientas/peso-30oct.mjs` (nueva): CDP, suma de `dataLength`, caché apagada, aviso contestado con clic en «Rechazar», 4 s tras `networkidle`. **Calibrada contra la de Javiera:** da **1.399,0** sobre el build de `9039b521` y **1.402,1** sobre el de `a84a1381`, sus dos números al décimo. Antes de sacar las hojas, `letras-sin-uso-30oct.mjs` (nueva): las 22 páginas × 390 y 1440, con el aviso abierto y contestado (que abre `#cookie-aviso`, pintado en Inter por `consent-banner.js`) y recorridas | **1.398,9 kB** primera carga a 1440 (≤ 1.400) · **1.561,7** recorrida (≤ 1.600) · **755,6** a 390 (≤ 950). **0 de 44 pasadas** de A bajan o dibujan Inter o Manrope (el aviso y `#cookie-aviso` ya se vestían con las letras de A en `archivo.css`); solo `/404.html` y `/privacidad/` bajan Inter, y traen su propio `<link>` (son las estáticas de `main`, no pasan por `Layout.astro`). **Margen: 1,1 kB.** Cualquier texto que Ramón sume a la home (§6) se vuelve a medir con `peso-30oct.mjs`; si cruza, lo siguiente que pesa sin aportar es el logo en línea dos veces (4.251 bytes cada uno: un `<symbol>` + dos `<use>`), anotado en `spec-home.md` criterio 10 |
+| 2 | [mayor] 19 de las 22 imágenes al compartir con El huso | Las 19 rehechas con `e13/herramientas/og-logo-19.mjs` (nueva): la plantilla de cada tanda (`og-tanda-4` y `-5`, `og-trabajo`, `og-tanda-3`) con un solo cambio, el logo, que pasa al **corte menú de Bruno** (`logo-menu-blanco.svg`, el mismo de `og-30oct.mjs`) a **50,4 px** en las 17 de texto y **36,0 px** en las 2 de imagen (`/trabajo/` y Combeau): la misma mayúscula que tenían con El huso a 56 y 40. `?v=` subido en uno en cada referencia: método 2→3, diagnóstico 3→4, blog 1→2 y sus siete artículos 2→3 (también el `image` del `Article`), servicios 2→3, Desarrollo web 3→4, Auditoría 3→4, los otros cuatro servicios 2→3, trabajo 2→3, Combeau 1→2 (las dos referencias de `casos.mjs`) | Read de la hoja de contacto de las 19 y de `og-e12-trabajo.jpg` y `og-e12-desarrollo-web.jpg` a tamaño real; diferencia por píxel con las de antes **fuera de la franja del logo** (y > 130); `grep -rhoE 'og-e12-[a-z0-9-]+\.jpg\?v=[0-9]+' dist` | Las 19 llevan la i con su disco; el resto de la tarjeta, igual (diferencia media 0,00 en las 7 generadas en este Chromium el 19-oct; 0,6 a 1,7 en las que salieron del Chrome de la Mac el 26-oct: suavizado de letra, el texto es el mismo). 24 a 67 kB cada una (≤ 200). En el `dist`, las 22 tarjetas en su versión nueva y **ninguna referencia a una versión anterior** |
+| 4 | [menor] La spec no decía lo construido; `logo-i-disco.mjs` se caía | **Como Lucía.** `spec-visual.md` §5.4 reescrita con lo construido (el `d` del corte menú de Bruno y sus números, el favicon y los iconos a `?v=6` sin `favicon.svg`, `/favicon.ico`, `/404.html` y `/privacidad/`, las 22 tarjetas a 50,4 y 36,0 px y por qué no a 39 ni con el corte grande); §2.1 fila 6 («Quién está detrás» con cuatro párrafos); §2.4, la fila de `/nosotros/` (**confirmo** las dos secciones nuevas con los componentes que eligió Diego: una idea en prosa y tres maneras de trabajar como filas no piden otra forma) y la de `/servicios/`; fila nueva en §7. `spec-home.md`: criterio 21 contra el `d` de Bruno, **criterio 22 nuevo** (el aire de la biografía), criterio 10 con las mediciones, historial y herramientas. **El aire:** decidí **16 px entre párrafos**, no 32: el `gap` de `.quien__txt` ya separa, y el 1em de `.cuerpo + .cuerpo` se sumaba encima (una regla en `archivo.css`: `.quien__txt > .cuerpo + .cuerpo { margin-top: 0 }`, el mismo patrón que ya usan `.int-cab`, `.fila-servicio` y `.planes__pie`). `logo-i-disco.mjs` rehecha: compara el `d` de `Logo.astro` con `e13/logo/logo-menu-linea.svg` y mide la columna de la i | `node e13/herramientas/logo-i-disco.mjs e13/medicion-30oct/logo-construido` (sale con 0); `node e13/herramientas/quien-aire-30oct.mjs <url> e13/medicion-30oct/quien-aire` (sale con 0) y Read de `quien-home-1440.jpg` | Logo: el `d` es el de Bruno tal cual; a 24 px y 1x, disco en 4 filas (0,25 · 1 · 1 · 0,44) y 1 limpia; a 20 px, 3 filas y 1 limpia; a 2x, 3 limpias. Aire: **16 · 16 · 16 px** a 390 y a 1440; la biografía se lee como un bloque. Alto de la home: 7.459 a 1440 y 9.012 a 390 (techos 7.800 y 9.300). `/nosotros/` tiene un solo párrafo de bio: la regla no le cambia nada |
+| 8 | [menor] «Google y las IA pueden leerlo y citarlo» | **Como Clara:** «Google y las IA pueden **visitarlo y entenderlo**.» (`home.problema.sitio.3`, con `antes` y `por_que`). Es la palabra que la ronda 2 unificó en todo el sitio, y sale «citarlo», lo más cerca de una promesa que tenía la home. **Si Ramón prefiere otra, se cambia en ese id** | `extraer-texto.mjs`, build, `grep` en `dist/index.html` | «visitarlo y entenderlo» en la home; «leerlo y citarlo», 0. Sigue con 4 filas en «En tu sitio» (el guardián de `.int-par` no cayó) |
+| 9 | [menor] `mailto` preescritos | **Como Clara:** el asunto pasa a **«Hablemos de mi sitio»** en `comun.pie.correo` (el pie de las 22) y `home.contacto.correo`. El de `/contacto/` pasa al JSON (`contacto.form.directo`, campo `destino`), con el mismo asunto y un cuerpo que sirve a los dos caminos: «Hola.» / «Mi sitio: » / «Lo que vendemos: ». **Como Diego:** `contacto()` de `interiores.mjs` lo lee de ahí (antes estaba escrito en el código) y el build cae si no va a `hola@spindlelab.cl` con su asunto | `grep -rhoE 'mailto:[^"]*' dist` | 23 con «Hablemos de mi sitio» (22 pies y el cierre de la home) y 1 con asunto y cuerpo (`/contacto/`). Quedan 2 con «Quiero mi revisión gratis»: los pies de `/404.html` y `/privacidad/`, las estáticas de `main` (fuera de la obra; ver §7) |
+| 10 | [menor] Quien no tiene sitio puede mandar el formulario sin decir qué vende | **Como Clara:** la ayuda del campo del sitio queda «Si todavía no tienes sitio, escribe «no tengo» y cuéntanos abajo qué vendes.» (la frase de Ramón, entera, más lo que faltaba). Solo texto: ni `name`, ni `action`, ni el formulario | Build y captura de `/contacto/` a 390, mirada | Se lee en dos líneas bajo el campo, enlazada por `aria-describedby` como antes; «abajo» es el campo «Cuéntanos brevemente», que va justo después |
+| 11 | [menor] `/servicios/` con el sitio tercero | **Como Diego y Lucía:** el sitio va primero, como en Soluciones de la home: `POR_BLOQUE` de `servicios.mjs` (Desarrollo web, Auditoría, Visibilidad, Paid Media, Redes, Acompañamiento) y el arreglo `BLOQUES` de `servicios/index.astro` (`servicios.m3` primero; los ids de Clara no cambian). La comprobación de los planes de Desarrollo web busca la fila por su `slug` y no por la posición. **Como Clara:** `dw.siguiente` pasa a «Auditoría SEO técnica →»; la nota `servicios.bloques.nota` lo registra | Build (el guardián «servicios, el orden» y los de «Siguiente» pasan); lectura del `dist`; captura de `/servicios/` a 1440, mirada | Rótulos «01 Sitio web a medida» · «02 Búsqueda y visibilidad en IA» · «03 Anuncios en Google y redes» · «04 Acompañamiento mensual»; el `ItemList` en ese orden; «Siguiente»: Desarrollo web → Auditoría → Visibilidad → Paid Media → Redes → Acompañamiento → Desarrollo web. La entradilla («Partimos por el sitio…») y el orden dicen lo mismo |
+| 12 | [menor] «posicionamiento anterior» marcaba la description nueva | **Como Clara:** la regla de `barrer-terminos.mjs` deja de buscar «diseñamos y programamos sitios a medida» y pasa a buscar la línea del 23-oct («marketing y crecimiento con IA») y su titular («te llegan consultas»), además de las de E12. `guia-para-roles.md` §3 al día (y su regla de voz, que todavía decía que Nosotros y «Quién está detrás» van en singular). Con la regla nueva apareció un hallazgo real: el pie de `/privacidad/` decía «Marketing y crecimiento con IA para empresas que ya venden.»; pasa a «Sitios web a medida y marketing con IA.» (`comun.pie.marca`), en la rama y en el paso 3 de `armar-corte.mjs` | `node e13/herramientas/barrer-terminos.mjs spindlelab-astro/dist --resumen` | **«posicionamiento anterior»: 0** (antes 3 falsos positivos). Lo demás, como en el acta: «agentes de IA» 3 (home y `/nosotros/`, donde vive), «mini-diagnóstico» 25 (el artículo y su dirección), «motor» solo en «motores de IA», 0 rayas |
+| 13 | [menor] `lista-publicacion.md` §3.11 pedía confirmar el «1 de diciembre» como fecha suelta | El paso ahora dice: el día de publicar, releer la ficha del boletín 18.623-07 (con la URL del servicio público del Senado) y compararla con la frase de `/diagnostico/`, citada; si la ficha avanzó, Clara corrige `diagnostico.json`, `extraer-texto`, build y `--comprobar`, y se barre `dist` por «21.719», «diciembre» y «vigencia» | Lectura del paso | Al día |
+| 14 | [menor] `/favicon.ico`, `/404.html` y `/privacidad/` con el favicon del v2 | `public/favicon.ico` es ahora el de Bruno (md5 igual a `/v3/marca/favicon.ico` y a `e13/logo/favicon.ico`). **Decidí** que `/404.html` y `/privacidad/` apunten a los cinco iconos de A (`/v3/marca/`, `?v=6`, los de `layout-a.ts`) en lugar de sus tres del v2: un solo favicon en todo el sitio. En la rama y en el paso 3 de `armar-corte.mjs` (que devuelve esas dos páginas desde `main` y ahora les cambia los iconos, cae si no encuentra los `<link>` del v2 y comprueba que `/favicon.ico` sea el de Bruno). `node --check` de la herramienta: bien; **no la corrí** (arma el corte sobre un worktree de `origin/main`, y eso es del día de publicar) | Comprobación de enlaces del `dist` (todo `href`, `src`, `poster` y `content` interno, sin la consulta) | 957 referencias, **0 sin resolver** (los cinco iconos nuevos de las dos estáticas existen). Ojo: `/favicon.ico` no lleva versión, así que un navegador que ya lo tenía puede seguir mostrando el viejo un tiempo |
+| 15 | [menor] `home.portada.chequeo` y `home.quien.cv` sin lector | **Como Clara:** borrados de `texto/home.json`, con su línea en el `borrado` de su sección | `extraer-texto.mjs home` y `--comprobar`; build | 16 de 16 «igual»; el build no los echa de menos (ningún `.astro` ni `.mjs` los lee) |
+
+### Lo que verifiqué al final, sobre el build de esta vuelta
+
+| Qué | Comando | Resultado |
+|---|---|---|
+| Texto con huella | `node e13/herramientas/extraer-texto.mjs --comprobar` | **16 de 16 «igual»**, sale con 0 |
+| Build | `cd spindlelab-astro && npm run build` | 22 páginas, sin errores; pasan los guardianes de precios, nombres, largos, el orden de servicios, los «Siguiente» y el de las 4 filas de `.int-par` |
+| `verificar` a 390 | `node scripts/verificar.mjs --excluir /privacidad/` | 22 páginas, **«Sin hallazgos»**, sale con 0 |
+| `verificar` a 1440 | `… --ancho 1440` | 22 páginas, **«Sin hallazgos»** (6 nodos sobre imagen o degradado: la portada, sin cambios) |
+| JSON-LD | `JSON.parse` de todos los bloques del `dist` | 45 bloques, 0 errores; `FAQPage` de la home, 6 preguntas, la de Instagram primera; `jobTitle` igual |
+| Protegidos | `git diff --stat 9039b521 -- functions public/_headers public/_redirects public/js public/assets/js` | **vacío**; `Layout.astro`: solo las dos hojas, nada de gtag, consentimiento ni Pixel |
+| Precios | sin cambios de datos (`oferta-v3.json` y `servicios-v3.json` no se tocaron); los guardianes de `comprobarPrecio` pasan con el orden nuevo | Iguales |
+
+**Lo que no medí:** Safari, Firefox y un iPhone (tampoco el favicon nuevo en su pantalla de inicio); la primera pantalla y
+el contraste de la portada (no cambió nada de ella: el texto nuevo está en la sección 2, en `/contacto/` y en `/servicios/`);
+Tab por toda la página; la lectura en frío (pendiente de que Ramón elija, §6); `armar-corte.mjs` corrido de verdad.
+
+---
+
+## 6 · Preguntas para Ramón (defectos 3, 5, 6 y 7 del acta del 30-oct)
+
+Son decisiones suyas, no de oficio: el texto es de él o el hecho lo confirma él. **Nada de esto se cambió en el sitio.**
+Las versiones son de Clara y conservan cada hecho. Cuando Ramón conteste por escrito: Clara lo pasa a `texto/*.json`,
+`extraer-texto.mjs`, build, **`peso-30oct.mjs` (al peso le queda 1,1 kB)** y una lectura en frío de la home
+(`lectura-fria-texto.mjs` + `lectura-fria.py`), como pide el acta.
+
+### 6.1 · Defecto 3 (mayor): tres frases donde tropiezan los lectores
+
+Los tres lectores entienden lo sustancial y ven a Ramón serio. Tropiezan en tres frases.
+
+**(a) «Trabaja con agentes de IA dentro del equipo, y el código de cada entrega lo revisa y lo aprueba él.»** (`home.quien.p3`;
+la misma idea en `/nosotros/`, «Cómo trabaja»). **Diagnóstico de Javiera, que lo escala:** es la tercera lectura en que
+tropieza (3 de 3, 2 de 3 y ahora 3 de 3; para 2 de los 3 es uno de sus tres mayores frenos: «¿quién me hace el sitio, una
+persona o un robot?», «todo pasa por una sola persona con IA haciendo parte del trabajo»). La frase dice la herramienta y no
+lo que gana el cliente, y la mitad que habla de él («lo revisa y lo aprueba él») es justo la que tranquiliza. Las dos
+versiones dejan los dos hechos (hay agentes de IA en el equipo; él aprueba cada entrega) y cambian el orden: primero quién
+responde, después con qué trabaja.
+
+- **A1 (recomendada por Clara):** «Responde él por cada entrega: el código lo revisa y lo aprueba antes de que llegue a tu
+  sitio. Para escribirlo trabaja con agentes de IA dentro del equipo.» No suma ningún hecho.
+- **A2:** «Con él hablas de principio a fin. Trabaja con agentes de IA dentro del equipo, y el código de cada entrega lo
+  revisa y lo aprueba él antes de entregártelo.» **Suma un hecho** («con él hablas de principio a fin»): estaba en el sitio
+  publicado (`home.quien.publicado`, «Tú hablas con él durante todo el proyecto») y salió el 26-oct junto con la frase de los
+  otros profesionales. Solo va si Ramón lo confirma.
+- En `/nosotros/` («Cómo trabaja», fila «Agentes de IA, con su revisión») va la misma versión que elija, en su forma de fila.
+
+**(b) El rótulo «Sitios web a medida y marketing con IA».** 2 de 3: «no sé si usan IA para hacer mi marketing o si es
+marketing para que me encuentre la IA». Las dos lecturas son ciertas (los agentes de IA en el equipo; Visibilidad en IA).
+El rótulo es de Ramón y no se toca sin él. Además de la portada, la línea vive en el `title`, la tarjeta al compartir de la
+home, el `jobTitle` de `#autor-ramon`, la descripción de `#org`, el pie y `llms.txt`.
+
+- **B1 (recomendada por Clara):** dejarlo. Las dos lecturas son verdad, uno de los dos lectores lo resolvió leyendo más
+  abajo, y la portada ya nombra a ChatGPT como destino en la entradilla. No cuesta nada.
+- **B2, si quiere decir la herramienta:** «Sitios web a medida y marketing hecho con IA». `title` de 57 (cabe en 60).
+- **B3, si quiere decir el destino:** «Sitios web a medida y marketing para Google y la IA». Ojo: con ese rótulo el `title`
+  mide 64 y el build corta sobre 60, así que el `title` tendría que quedar distinto del rótulo.
+
+**(c) «sin plantillas ni WordPress»** (`home.soluciones.sitio.texto` y `servicios.m3.nota`, también en `llms.txt`). 2 de 3 no
+saben si es bueno o malo; en la ronda 2 de E13, sin la frase, 0 de 3 tropezaron. Lo respalda `dw.faq.1.r` («Cada sitio se
+diseña y se programa desde cero para tu negocio. Así controlamos la velocidad y el SEO técnico desde la base»).
+
+- **C1 (recomendada por Clara):** sacarlo. «Diseñado y programado para tu negocio, con un panel para que edites tú. Desde una
+  página de campaña hasta un sitio de doce páginas.» Es como estaba en la ronda 2, y pesa menos.
+- **C2:** el porqué, con el hecho de `dw.faq.1.r`: «Diseñado y programado desde cero para tu negocio, así controlamos la
+  velocidad desde la base, con un panel para que edites tú. Desde una página de campaña hasta un sitio de doce páginas.»
+- Las dos dependen de 6.2: si el panel no va en todos los planes, «con un panel para que edites tú» también cambia.
+
+### 6.2 · Defecto 5: ¿todos los planes de Desarrollo web traen el panel?
+
+La home (entradilla y Soluciones), la description, `#org`, `llms.txt`, el `h1` de `/servicios/desarrollo-web/` («con panel
+para editar») y su tarjeta al compartir («Desde $390.000 + IVA» debajo) dicen el panel junto al precio de entrada. Pero en
+`/servicios/desarrollo-web/` el único plan que lista «Blog o CMS que administras tú» es el Sitio Completo ($1.190.000), y el
+glosario de esa página dice que el CMS es el panel. Lo que hay escrito en el repo apunta a que **no** todos lo traen: la
+skill de cotizaciones lista el panel entre lo que «cambia el precio» (`.claude/skills/cotizaciones/SKILL.md`, método,
+paso 1). El sitio de `main`, en cambio, decía que todo sitio trae panel («Un panel para editar textos e imágenes tú mismo»).
+
+- **Si todos lo traen:** Ramón lo confirma y la lista de cada plan lo dice (los `puntos` de `oferta-v3.json`; es dato de la
+  oferta, así que lo escribe quien la lleva, con su visto bueno). La home queda como está.
+- **Si no:** el panel deja de ir pegado a los $390.000. Cambian `home.portada.entradilla`, `home.soluciones.sitio.texto`,
+  `servicios.m3.nota`, la description de la home, `comun.entidad.descripcion`, `llms.txt`, `dw.h1` y su tarjeta al compartir
+  (`og-e12-desarrollo-web.jpg`, que se regenera con `og-logo-19.mjs` y sube a `?v=5`). Clara propone la frase cuando Ramón
+  diga desde qué plan va el panel.
+
+### 6.3 · Defecto 6: el único «yo» de la home
+
+«Probado primero en lo nuestro» (`home.pruebas.propio.texto`) dice «lo **corrí** sobre **mi** propio sitio… **encontré**…
+lo **corregí**», en una página donde Ramón va en tercera persona y la marca en plural. 2 de 3 lectores lo notan.
+
+- **Plural (recomendada por Clara: el sitio es del estudio):** «Antes de publicar Verifica y Cumple, el chequeo de la Ley
+  21.719 de datos personales, lo corrimos sobre nuestro propio sitio. Salió mal. Al arreglarlo encontramos además un
+  formulario que perdía mensajes sin avisar, y lo corregimos.»
+- **Tercera persona:** «Antes de publicar Verifica y Cumple, el chequeo de la Ley 21.719 de datos personales, Ramón lo corrió
+  sobre su propio sitio. Salió mal. Al arreglarlo encontró además un formulario que perdía mensajes sin avisar, y lo
+  corrigió.»
+
+### 6.4 · Defecto 7: la misma lista dos veces seguidas
+
+La entradilla («El anuncio, el post, la búsqueda en Google y la respuesta de ChatGPT llevan a la misma dirección…») y el
+párrafo de la sección 2 («El anuncio en Google, el post en Instagram, la respuesta de ChatGPT… Todos mandan a la persona al
+mismo lugar…») dicen la misma lista a unos 150 px a 390. Las dos son de Ramón.
+
+- **7A (recomendada por Clara):** la entradilla se queda como está (es la que le da sentido al titular) y el párrafo de la
+  sección 2 da la lista por dicha, porque su `h2` ya dice que todo termina en el sitio: «Si tu sitio no explica bien lo que
+  haces, o el formulario no te avisa cuando alguien escribe, lo que pagaste para traer a esa persona se pierde ahí.»
+- **7B:** el párrafo de la sección 2 se queda y la entradilla deja la lista para el final: «Diseñamos y programamos tu sitio
+  a medida, con un panel para que lo edites tú, y le conectamos lo demás: el anuncio, el post, la búsqueda en Google y la
+  respuesta de ChatGPT.»
+
+### 6.5 · Para que Ramón lo sepa (cambiado de oficio, se puede devolver)
+
+- **Defecto 8:** «Google y las IA pueden leerlo y citarlo» quedó «Google y las IA pueden visitarlo y entenderlo». Si prefiere
+  la suya u otra, es un id (`home.problema.sitio.3`).
+- **Defecto 10:** a su ayuda del campo del sitio («Si todavía no tienes sitio, escribe «no tengo».») se le sumó «y cuéntanos
+  abajo qué vendes».
+- **Defecto 9:** el asunto de los correos ya escritos es «Hablemos de mi sitio».
+
+---
+
+## 7 · Lo que queda abierto después de esta vuelta
+
+- **Las cuatro preguntas de §6**, y después: texto, build, peso y lectura en frío. Lo que cambie lo revisa Javiera en una QA
+  exprés.
+- **Las decisiones de Ramón que el acta ya listaba** y que esta vuelta no toca: la description de 157 («y les conectamos»), el
+  `h1` de `/nosotros/` y el gris del de `/contacto/`, si «el código de cada entrega lo revisa y lo aprueba él» vale para las
+  entregas a clientes, y «una aerolínea regional» en `/nosotros/`.
+- **`/404.html` y `/privacidad/`** siguen siendo las páginas del v2 (su encabezado, su logo con el punto dorado, su pie con
+  «Quiero mi revisión gratis»). Esta vuelta solo les cambió los iconos y, en `/privacidad/`, la línea de marca del pie. Si se
+  rehacen en A, es una obra aparte.
+- **El margen de peso es de 1,1 kB.** Ver defecto 1.
+- **El `manifest`** sigue sin existir (`icon-192.png` está y nada lo enlaza).

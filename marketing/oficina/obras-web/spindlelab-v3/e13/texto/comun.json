@@ -129,11 +129,11 @@
    "id": "comun.pie.correo",
    "rol": "boton",
    "texto": "hola@spindlelab.cl",
-   "origen": "pie del prototipo de A; copy-secciones-v1.2 §3 (asunto)",
-   "destino": "mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis",
+   "origen": "pie del prototipo de A; copy-secciones-v1.2 §3 (asunto); acta de QA del 30-oct, menor 9",
+   "destino": "mailto:hola@spindlelab.cl?subject=Hablemos%20de%20mi%20sitio",
    "estado": "cambia",
-   "antes": "mailto:hola@spindlelab.cl",
-   "por_que": "El correo del pie lleva el asunto de la revisión: quien escribe desde ahí ya dice qué pide."
+   "antes": "mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis (hasta el 30-oct; antes de E13, mailto:hola@spindlelab.cl sin asunto)",
+   "por_que": "El correo del pie lleva un asunto ya escrito: quien escribe desde ahí ya dice qué pide. Desde el 30-oct el asunto es el botón de la portada dicho por quien escribe («Hablemos de mi sitio»), porque «Quiero mi revisión gratis» no le servía a quien todavía no tiene sitio, el segundo camino que abrió Ramón el 30-oct. Va igual en el pie de las 22 páginas, en el cierre de la home (home.contacto.correo) y en /contacto/ (contacto.form.directo)."
   },
   {
    "id": "comun.pie.hora",

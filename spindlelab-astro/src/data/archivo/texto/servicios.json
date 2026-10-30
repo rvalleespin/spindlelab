@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/servicios.json",
- "sha256": "270a662a6339b6870b26dfe4cca00ba5ff3a9cfeed87e880ef1af85cd5f6d926",
+ "sha256": "b46dd52fe51c1cf790109cccfdbe4ecc30e33643b7eb7e28ae455108e47d89a4",
  "id": "servicios",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -65,7 +65,7 @@
      {
       "id": "servicios.bloques.nota",
       "rol": "nota",
-      "texto": "Cuatro bloques en el orden del documento de textos §4: Búsqueda y visibilidad en IA (Auditoría SEO técnica, Visibilidad en IA) · Anuncios en Google y redes (Paid Media, Gestión de redes sociales) · Sitio web a medida (Desarrollo web) · Acompañamiento mensual. Nombres de servicio y montos, tal cual de oferta-v3.json y servicios-v3.json. El rótulo mono de cada bloque es su número de orden: «01» a «04». Reemplazan a las cuatro «situaciones» del v3 anterior («Tu sitio te frena, o no existe», etc.): el conflicto se resuelve con el orden y el texto, sin componente nuevo. 30-oct (para Diego, si se alinea con la home): Ramón puso el sitio primero en la home. Aquí el orden lo fija ORDEN de servicios.mjs y lo compara el guardián «servicios, el orden», que también arma «Siguiente» entre servicios; moverlo es una decisión de Diego con Lucía, no un cambio de texto. Si se mueve, el rótulo de cada bloque sigue siendo su número de orden.",
+      "texto": "Cuatro bloques en el orden del documento de textos §4: Búsqueda y visibilidad en IA (Auditoría SEO técnica, Visibilidad en IA) · Anuncios en Google y redes (Paid Media, Gestión de redes sociales) · Sitio web a medida (Desarrollo web) · Acompañamiento mensual. Nombres de servicio y montos, tal cual de oferta-v3.json y servicios-v3.json. El rótulo mono de cada bloque es su número de orden: «01» a «04». Reemplazan a las cuatro «situaciones» del v3 anterior («Tu sitio te frena, o no existe», etc.): el conflicto se resuelve con el orden y el texto, sin componente nuevo. 30-oct (para Diego, si se alinea con la home): Ramón puso el sitio primero en la home. Aquí el orden lo fija ORDEN de servicios.mjs y lo compara el guardián «servicios, el orden», que también arma «Siguiente» entre servicios; moverlo es una decisión de Diego con Lucía, no un cambio de texto. Si se mueve, el rótulo de cada bloque sigue siendo su número de orden. 30-oct, después de la QA (acta del 30-oct, menor 11): Diego y Lucía lo movieron. El orden a la vista es ahora el de la home: Sitio web a medida (servicios.m3, «01») · Búsqueda y visibilidad en IA (servicios.m1, «02») · Anuncios en Google y redes (servicios.m2, «03») · Acompañamiento mensual (servicios.m4, «04»). Los ids no cambian: m1 a m4 son nombres, no posiciones. Con eso la entradilla («Partimos por el sitio y le conectamos lo demás») dice lo mismo que el orden, y dw.siguiente pasa a la Auditoría SEO técnica.",
       "uso": "referencia",
       "origen": "copy-secciones-v1.2.md §4; revisión 23-oct (claim central)",
       "estado": "nuevo"

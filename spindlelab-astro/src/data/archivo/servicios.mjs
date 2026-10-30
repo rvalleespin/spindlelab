@@ -13,17 +13,18 @@ import servicios from '../servicios-v3.json';
 
 export const SITIO = 'https://spindlelab.cl';
 
-// ---- Los seis, en el orden de la página de servicios (obra E13): los cuatro bloques del documento de textos §4, que son
-// Búsqueda y visibilidad en IA (Auditoría, Visibilidad), Anuncios en Google y redes (Paid Media, Redes), Sitio web a medida
-// (Desarrollo web) y Acompañamiento mensual. Es también el orden del ItemList del JSON-LD y el de «Siguiente», en ciclo.
-// Los nombres y los destinos salen de oferta-v3.json, que conserva su forma (la home lee momentos[] y tambien[]); lo único
-// que se fija aquí es el orden.
+// ---- Los seis, en el orden de la página de servicios: los cuatro bloques del documento de textos §4 en el orden de
+// Soluciones de la home desde el 30-oct (Ramón: el sitio primero y lo demás conectado a él; acta de QA del 30-oct, menor
+// 11): Sitio web a medida (Desarrollo web), Búsqueda y visibilidad en IA (Auditoría, Visibilidad), Anuncios en Google y
+// redes (Paid Media, Redes) y Acompañamiento mensual. Hasta el 30-oct el sitio iba tercero. Es también el orden del
+// ItemList del JSON-LD y el de «Siguiente», en ciclo (Acompañamiento vuelve a Desarrollo web). Los nombres y los destinos
+// salen de oferta-v3.json, que conserva su forma (la home lee momentos[] y tambien[]); lo único que se fija aquí es el orden.
 const POR_BLOQUE = [
+  'desarrollo-web',
   'auditoria-seo-tecnica',
   'visibilidad-en-ia',
   'paid-media',
   'redes-sociales',
-  'desarrollo-web',
   'acompanamiento-mensual',
 ];
 const FILAS = [...oferta.momentos.flatMap((m) => m.items), ...oferta.tambien];
