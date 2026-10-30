@@ -206,22 +206,30 @@ lo "arregle" al revés más adelante.
 Facebook/Instagram antes de que el visitante acepte nada. Casi la mitad.
 **Rubro pagado más cercano:** Restaurantes. **Sale primero.**
 
-> Tu café paga publicidad en **Instagram**. / La gente hace clic / y entra a tu **sitio**. //
+> Tu café paga publicidad en **Instagram**. / Una clienta la **ve**, / le gusta, / y entra a tu
+> sitio a mirar la **carta**. //
 >
-> Ahí pasa algo que no se **ve**. / Apenas entra, / tu sitio guarda en su navegador / la cookie de
-> **Facebook**, / la que mide si la publicidad **funcionó**. //
+> No alcanzó a tocar **nada** / y en su teléfono ya quedó / una cookie de **Facebook**. / La puso tu
+> **sitio**, / y sirve para reconocerla después / y medir tu **publicidad**. //
 >
-> Y eso pasa / antes de que el cliente acepte **nada**. //
+> Ella nunca dijo que **sí**. / Nadie le **preguntó**. //
 >
-> Revisamos treinta y seis sitios / de cafés y pastelerías en **Chile**. / Casi la **mitad** lo
-> hace. //
+> Revisamos treinta y seis sitios / de cafés y pastelerías en **Chile**, / y en casi la **mitad**
+> pasa eso **mismo**. //
 >
-> No hay que apagar la **publicidad**. / Hay que preguntar **primero** / y medir **después**. //
+> El arreglo es **chico**. / Un aviso que le **pregunte**. / Si dice que **sí**, / mides igual que
+> **siempre**. / Si dice que **no**, / tu café sigue funcionando **igual**. //
 >
-> Hice un chequeo **gratis** / que te muestra qué guarda el **tuyo**. / Soy **Ramón**, de
-> SpindleLab. //
+> Hice un chequeo **gratis** / que te dice si el tuyo lo **tiene**. / Soy **Ramón**, de SpindleLab.
+> //
 
-**104 palabras.** A ritmo hablado, 36 a 40 segundos.
+**113 palabras.** A ritmo hablado, 38 a 42 segundos.
+
+**Versión 2, del 30-oct.** La primera se cayó entera con los otros tres; el diagnóstico está en la
+sección 8. Lo que esta hace distinto: la clienta entra en la segunda línea y no se suelta hasta la
+cifra, *"la puso tu sitio"* traslada la responsabilidad del sitio a su dueño, *"ella nunca dijo que
+sí"* es el costo dicho sin amenazar a nadie, la cifra va pegada a lo que cuenta, y el arreglo es un
+objeto que se puede ver con la objeción muerta en la misma frase.
 
 **Texto en pantalla**
 
@@ -480,3 +488,42 @@ dato, él aguanta solo la semana.
 - [ ] Cero raya larga.
 - [ ] Nada publicado sin el OK de Ramón. Publica él.
 - [ ] Anotado en `marketing/redes/QUE-HAY-PUBLICADO.md` **con el enlace**, después de que salga.
+
+---
+
+## 8. Correcciones
+
+Van acá porque una corrección que se queda en el chat vuelve como defecto en la pasada siguiente.
+
+### 30-oct-2026 · los cuatro guiones se cayeron por estructura, no por redacción
+
+Ramón, leyendo la versión 1: *"no se entienden muy bien. no tienen un buen storytelling. la del café
+parte bien, pero se debilita en el camino. queda enredado. el resto tiene el mismo diagnóstico"*.
+
+Cinco defectos, y los cuatro guiones tenían los cinco:
+
+1. **Saqué la ley y no puse nada en su lugar.** Al quitar la fecha, la multa y la ley, los guiones
+   quedaron describiendo un mecanismo (se escribe una cookie antes del consentimiento) sin decir
+   nunca a quién le cuesta. La creatividad que gana en pago no tiene ese problema porque nombra el
+   costo, y el costo es la persona que entregó sus datos. **Quitar la amenaza obliga a poner el
+   costo, no a quedarse sin ninguno.**
+2. **Ocho cambios de sujeto en cien palabras.** En el del café: tu café, la gente, tu sitio, la
+   cookie, el cliente, treinta y seis sitios, la mitad, tú. Eso es lo que significa "enredado" en
+   la práctica. **Una sola persona, seguida de la primera línea a la última.**
+3. **La cifra llegaba dos tramos después de lo que contaba.** *"Casi la mitad lo hace"* obliga a
+   volver atrás a buscar el antecedente. **La cifra va pegada a la cosa que cuenta.**
+4. **La solución era un eslogan.** *"Preguntar primero y medir después"* no se puede ver ni
+   repetir, y la prueba del elevator pitch es justamente si el que escucha puede contárselo a otro.
+   **El arreglo se nombra como un objeto**, y si tiene una objeción obvia, se mata en la misma
+   frase.
+5. **No había escena.** *"Tu café paga publicidad en Instagram"* es una categoría. El primer
+   movimiento pide una persona en un momento.
+
+**La forma que queda, un tramo por regla:** una persona haciendo algo normal → lo que le pasa a
+ella, en su teléfono, sin que nadie le pregunte → que ella nunca dijo que sí, y que lo puso tu
+sitio → la cifra, pegada a eso → el arreglo como objeto, con la objeción muerta → el chequeo.
+
+**Pendiente:** aplicar la forma a salud, contabilidad y tutorial, a la espera de que Ramón confirme
+que sirve. Contabilidad hay que darlo vuelta entero, porque hoy su protagonista es un enlace que
+falta y un enlace que falta no le pasa a nadie. El tutorial tiene otro defecto, no este: son seis
+instrucciones seguidas con el premio al final, y el premio va primero.
