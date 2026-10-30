@@ -127,3 +127,205 @@ export async function enviarCorreoDePago(pedido, token, fetchImpl = fetch) {
     return false;
   }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════ *
+ * EL CORREO DE CIERRE
+ *
+ * ── POR QUÉ FALTABA (30-oct-2026) ─────────────────────────────────────────────────────────
+ *
+ * La etapa `entregado` le decía a la persona, en pantalla: «Te mandamos el antes y el después
+ * por correo». Este archivo solo definía `correoDePago`. O sea que la última frase del
+ * producto —la que cierra la venta y es lo único que queda cuando el trabajo ya está hecho—
+ * prometía un correo que no existía en ninguna línea del repo.
+ *
+ * ── LA REGLA DEL NÚMERO: NO SE COMPARAN DOS PUNTAJES DISTINTOS ───────────────────────────
+ *
+ * El informe congelado guarda DOS mediciones, `rapido` y `profundo`, y cada una tiene su
+ * propio `puntaje` con su propia escala. Comparar el rápido de antes contra el profundo de
+ * después daría una mejora inventada: un número que sube porque cambió la vara, no porque el
+ * sitio mejorara. Sería exactamente el tipo de afirmación que el chequeo le marca en rojo a
+ * otros sitios, firmada por nosotros, en el correo que cierra el trabajo.
+ *
+ * Por eso `puntajeComparable` exige que la misma llave exista en los dos lados, y si no
+ * existe, el correo NO lleva números. Lleva lo que sí es cierto: qué se cerró.
+ * ══════════════════════════════════════════════════════════════════════════════════════════ */
+
+/** El puntaje de una medición, buscando en orden y devolviendo también DE DÓNDE salió. */
+function puntajesDe(informe) {
+  const salida = {};
+  if (!informe || typeof informe !== 'object') return salida;
+  for (const clave of ['profundo', 'rapido']) {
+    const m = informe[clave];
+    if (m && typeof m.puntaje === 'number' && isFinite(m.puntaje)) salida[clave] = m.puntaje;
+  }
+  // Un informe suelto, sin envolver. Se acepta por comodidad de quien entrega, y viaja con su
+  // propia llave para que no se pueda comparar contra una de las otras dos.
+  if (typeof informe.puntaje === 'number' && isFinite(informe.puntaje)) salida.suelto = informe.puntaje;
+  return salida;
+}
+
+/**
+ * El antes y el después, solo cuando los dos números son de la MISMA medición.
+ *
+ * Devuelve `null` cuando no hay nada comparable, y eso no es un fallo: es la respuesta
+ * correcta. El chequeo deja el puntaje en `null` cuando confirmó menos de la mitad del peso,
+ * así que un sitio difícil de medir puede llegar acá sin número por el camino honesto.
+ */
+export function puntajeComparable(informeAntes, informeDespues) {
+  const antes = puntajesDe(informeAntes);
+  const despues = puntajesDe(informeDespues);
+  for (const clave of ['profundo', 'rapido', 'suelto']) {
+    if (clave in antes && clave in despues) {
+      return { clave, antes: antes[clave], despues: despues[clave] };
+    }
+  }
+  return null;
+}
+
+/**
+ * El mensaje de cierre. Puro, como el de pago, para poder leerlo en una prueba sin red.
+ *
+ * @param {object} pedido  el pedido ya en `entregado`, con su informe congelado
+ * @param {object} informeFinal  la medición nueva, o null si no se pudo rehacer
+ * @param {object} titulos  el catálogo de nombres de señales (TITULOS de etapas.js)
+ */
+export function correoDeEntrega(pedido, informeFinal = null, titulos = {}) {
+  const enlace = enlaceDelPedido(pedido.id);
+  const sitio = pedido.dominio || 'tu sitio';
+  const nombrar = (id) => titulos[id] || id;
+
+  let congelado = null;
+  try {
+    congelado = typeof pedido.informe_json === 'string'
+      ? JSON.parse(pedido.informe_json)
+      : pedido.informe_json;
+  } catch { congelado = null; }
+
+  const comparable = puntajeComparable(congelado, informeFinal);
+  const cerradas = (pedido.senales_contratadas || []).map(nombrar);
+  const fuera = (pedido.senales_fuera || []).map(nombrar);
+
+  const lineas = [
+    `Terminamos el trabajo en ${sitio}.`,
+    '',
+  ];
+
+  if (cerradas.length) {
+    lineas.push('Esto es lo que quedó cerrado:', '');
+    cerradas.forEach((t) => lineas.push(`  · ${t}`));
+    lineas.push('');
+  }
+
+  if (comparable) {
+    // El número se dice con su vara. «De 30 a 77» sin decir sobre qué es media afirmación.
+    lineas.push(
+      `El chequeo que corrimos al principio sobre ${pedido.url_medida || sitio} daba ` +
+        `${comparable.antes} de 100. Lo volvimos a correr sobre la misma página y ahora da ` +
+        `${comparable.despues}.`,
+      '',
+    );
+  } else {
+    // Y cuando no hay número, se dice por qué no hay número, en vez de callarlo.
+    lineas.push(
+      'Volvimos a correr el chequeo sobre la misma página que medimos al principio. Esta vez ' +
+        'no te damos un puntaje comparable: el chequeo solo pone nota cuando alcanza a ' +
+        'confirmar más de la mitad de lo que mide, y preferimos no darte un número que no se ' +
+        'pueda comparar con el de antes.',
+      '',
+    );
+  }
+
+  if (fuera.length) {
+    lineas.push('Esto queda fuera del kit, como estaba dicho desde antes de que pagaras:', '');
+    fuera.forEach((t) => lineas.push(`  · ${t}`));
+    lineas.push('');
+  }
+
+  lineas.push(
+    'Dos cosas por hacer de tu lado:',
+    '',
+    '1. El borrador de tu política lo tiene que revisar tu abogado antes de publicarlo como ' +
+      'definitivo. Nosotros no damos asesoría legal y el texto final no es nuestro.',
+    '',
+    '2. Ya puedes borrar el acceso que nos diste a tu sitio. Si no sabes dónde, escríbenos y ' +
+      'te decimos.',
+    '',
+    'Tu pedido, con el detalle de lo que incluía:',
+    enlace,
+    '',
+    'Si algo no te calza o quieres que revisemos una página distinta, responde este correo.',
+    '',
+    'Verifica y Cumple',
+    BASE_SITIO,
+  );
+
+  const li = (t) => `<li style="margin-bottom:6px">${escapar(t)}</li>`;
+  const html = `<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:24px;background:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#18181b;line-height:1.6">
+<div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:12px;padding:32px">
+<p style="margin:0 0 20px;font-size:17px"><strong>Terminamos el trabajo en ${escapar(sitio)}.</strong></p>
+${cerradas.length ? `<p style="margin:0 0 8px"><strong>Esto es lo que quedó cerrado:</strong></p>
+<ul style="margin:0 0 24px;padding-left:20px">${cerradas.map(li).join('')}</ul>` : ''}
+${comparable
+    ? `<p style="margin:0 0 24px;padding:14px 16px;background:#f0fdf4;border-radius:8px;font-size:15px">
+El chequeo que corrimos al principio sobre ${escapar(pedido.url_medida || sitio)} daba
+<strong>${comparable.antes} de 100</strong>. Lo volvimos a correr sobre la misma página y ahora da
+<strong>${comparable.despues}</strong>.</p>`
+    : `<p style="margin:0 0 24px;padding:14px 16px;background:#f4f4f5;border-radius:8px;font-size:15px">
+Volvimos a correr el chequeo sobre la misma página que medimos al principio. Esta vez no te damos
+un puntaje comparable: el chequeo solo pone nota cuando alcanza a confirmar más de la mitad de lo
+que mide, y preferimos no darte un número que no se pueda comparar con el de antes.</p>`}
+${fuera.length ? `<p style="margin:0 0 8px"><strong>Esto queda fuera del kit</strong>, como estaba dicho desde antes de que pagaras:</p>
+<ul style="margin:0 0 24px;padding-left:20px">${fuera.map(li).join('')}</ul>` : ''}
+<p style="margin:0 0 12px"><strong>Dos cosas por hacer de tu lado:</strong></p>
+<ol style="margin:0 0 24px;padding-left:20px">
+<li style="margin-bottom:10px">El borrador de tu política lo tiene que revisar <strong>tu abogado</strong> antes de publicarlo como definitivo. Nosotros no damos asesoría legal y el texto final no es nuestro.</li>
+<li>Ya puedes borrar el acceso que nos diste a tu sitio. Si no sabes dónde, escríbenos y te decimos.</li>
+</ol>
+<p style="margin:0 0 8px">Tu pedido, con el detalle de lo que incluía:</p>
+<p style="margin:0 0 24px"><a href="${enlace}" style="color:#be185d;font-weight:600;word-break:break-all">${enlace}</a></p>
+<p style="margin:0 0 24px">Si algo no te calza o quieres que revisemos una página distinta, responde este correo.</p>
+<p style="margin:0;font-size:14px;color:#71717a">Verifica y Cumple · <a href="${BASE_SITIO}" style="color:#71717a">verifica.spindlelab.cl</a></p>
+</div></body></html>`;
+
+  return {
+    from: REMITENTE,
+    to: [pedido.correo],
+    reply_to: RESPONDER_A,
+    subject: `Tu sitio quedó listo · ${sitio}`,
+    text: lineas.join('\n'),
+    html,
+  };
+}
+
+/**
+ * Manda el correo de cierre. Igual que el de pago: devuelve true solo si Resend lo aceptó, y
+ * nunca lanza. Un trabajo entregado no se deshace porque un correo no salió — pero quien
+ * entrega TIENE que saberlo, así que el endpoint devuelve este resultado en su respuesta.
+ */
+export async function enviarCorreoDeEntrega(pedido, informeFinal, titulos, token, fetchImpl = fetch) {
+  if (!pedido || !pedido.id || !pedido.correo) return false;
+  token = typeof token === 'string' ? token.trim() : token;
+  if (!token) {
+    console.log('[correo] sin RESEND_API_KEY: no sale el correo de entrega');
+    return false;
+  }
+  try {
+    const r = await fetchImpl('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      body: JSON.stringify(correoDeEntrega(pedido, informeFinal, titulos)),
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!r.ok) {
+      console.log(`[correo] Resend contestó http-${r.status} al cerrar`);
+      return false;
+    }
+    console.log(`[correo] entrega avisada: ${String(pedido.id).slice(0, 12)}…`);
+    return true;
+  } catch (e) {
+    console.log(`[correo] no se pudo avisar la entrega: ${e && e.message}`);
+    return false;
+  }
+}

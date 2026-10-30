@@ -35,6 +35,7 @@ import {
   marcarEstado,
 } from './almacen.js';
 import { etapaDelPedido, señalesDelPedido, convieneRefrescar, TITULOS } from './etapas.js';
+import { ayudaDeAcceso } from './acceso.js';
 import { chequear, normalizarDominio } from './chequeo.js';
 import { clavesDeTope, contar, CACHE_HORAS } from './profundo.js';
 import { elegibilidad } from './elegibilidad.js';
@@ -308,11 +309,18 @@ export async function onRequestGet(contexto) {
   pedido = await reconciliar(env, pedido,
     contexto.waitUntil ? (p) => contexto.waitUntil(p) : null);
 
+  // La etapa se calcula UNA vez y se pasa: `ayudaDeAcceso` decide por sí misma si corresponde
+  // devolver algo, y para eso necesita la etapa, no el pedido crudo. Ver el comentario de esa
+  // función: la condición vive ahí y no acá, porque hay dos llamadores que tienen que decidir
+  // idéntico y uno de los dos es el que atiende el momento en que la ayuda más se necesita.
+  const etapa = etapaDelPedido(pedido);
+
   return json({
     ok: true,
     pedido: vistaPublica(pedido),
-    etapa: etapaDelPedido(pedido),
+    etapa,
     señales: señalesDelPedido(pedido, TITULOS),
+    acceso: ayudaDeAcceso(pedido, etapa),
     refrescar: convieneRefrescar(pedido),
   });
 }

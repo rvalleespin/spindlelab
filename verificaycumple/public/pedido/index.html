@@ -103,6 +103,59 @@
   }
   .te-toca .boton:hover { background: var(--azul-600); }
 
+  /* Las tres salidas para dar el acceso. Van en <details> nativos: se abren sin JS, el
+     teclado los recorre solo, y el que no te sirve ocupa una línea en vez de un párrafo. */
+  .ayuda { margin: 16px 0 0; }
+  .ayuda details { border-top: 1px solid #e8c49b; padding: 11px 0; }
+  .ayuda details:last-of-type { border-bottom: 1px solid #e8c49b; }
+  .ayuda summary { cursor: pointer; font-weight: 700; font-size: 15.5px; }
+  .ayuda summary:focus-visible { outline: 2px solid var(--tinta-900); outline-offset: 3px; }
+  .ayuda ol, .ayuda ul { margin: 11px 0 0; padding-left: 20px; }
+  .ayuda li { margin-bottom: 7px; }
+  .ayuda p { margin: 11px 0 0; font-size: 15.5px; }
+  .ayuda .porque, .ayuda .alfinal { color: var(--tinta-500); font-size: 14.8px; }
+  .ayuda textarea {
+    width: 100%; margin: 11px 0 0; padding: 12px; font: inherit; font-size: 14px;
+    line-height: 1.5; border-radius: 9px; border: 1px solid rgba(0,0,0,.22);
+    background: var(--blanco); resize: vertical;
+  }
+  .ayuda .copiar {
+    margin: 9px 0 0; padding: 9px 16px; border-radius: 999px; background: none;
+    border: 1px solid var(--tinta-900); color: var(--tinta-900);
+    font: inherit; font-weight: 700; font-size: 14.5px; cursor: pointer;
+  }
+  .ayuda .copiado { margin: 7px 0 0; font-size: .88rem; }
+  .ayuda .copiado:empty { display: none; }
+
+  /* Cuando la página deja de revisar sola. Ver el comentario del script: la etapa dice «esta
+     página se actualiza sola» y eso dejaba de ser cierto a los dos minutos, sin avisar. */
+  .sin-refresco {
+    margin: 20px 0 0; padding: 15px 16px; border-radius: 12px;
+    background: var(--crema-200); font-size: 15.5px;
+  }
+  .sin-refresco p { margin: 0 0 11px; }
+  .sin-refresco button {
+    padding: 10px 18px; border-radius: 999px; background: none;
+    border: 1px solid var(--tinta-900); color: var(--tinta-900);
+    font: inherit; font-weight: 700; font-size: 15px; cursor: pointer;
+  }
+
+  /* Lo que queda del lado del cliente en un pedido TERMINADO. Deliberadamente calmado: no
+     bloquea nada, no lleva botón, y no compite con la caja ámbar —que significa «tu pedido
+     está detenido esperándote» y acá sería falsa—. Pero tiene que quedar visible para
+     siempre: una de las dos cosas es borrar una cuenta de administrador nuestra que quedó
+     viva en su sitio. */
+  .recordatorios {
+    margin: 20px 0 0; padding: 16px 18px; border-radius: 14px;
+    background: var(--crema-100); border: 1px solid var(--crema-200);
+  }
+  .recordatorios ul { list-style: none; padding: 0; margin: 0; }
+  .recordatorios li { padding: 7px 0 7px 22px; position: relative; font-size: 15.5px; }
+  .recordatorios li::before {
+    content: ""; position: absolute; left: 0; top: 14px;
+    width: 12px; height: 2px; border-radius: 2px; background: var(--tinta-500);
+  }
+
   .listo { background: var(--verde-100); border-color: #b9dcd4; }
   .listo .etiqueta { color: var(--verde-700); }
 
@@ -240,7 +293,7 @@
             .catch(function () { return { j: null, hubo: true }; });
         })
         .then(function (res) {
-          if (res.j && res.j.ok) { dibujar(res.j); montarIntake(res.j); montarBotonAcceso(res.j); return; }
+          if (res.j && res.j.ok) { dibujar(res.j); montarIntake(res.j); montarBotonAcceso(res.j); montarCopiar(); return; }
           b.disabled = false;
           b.textContent = 'Ya te di el acceso';
           estado.textContent = (res.j && res.j.detalle) ||
@@ -253,6 +306,83 @@
           // conexión SÍ es el problema.
           estado.textContent = 'No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo.';
         });
+    });
+  }
+
+  /* ── LAS TRES SALIDAS PARA DAR EL ACCESO ───────────────────────────────────────────────
+   *
+   * La etapa prometía, literal: «si eres tú, te explicamos dónde crear la invitación; si es
+   * otra persona o una agencia, te damos el texto listo para reenviarle; y si no sabes, lo
+   * averiguamos nosotros». Las dos primeras no existían en ninguna parte y la tercera era un
+   * «Escríbenos» pelado.
+   *
+   * Todo el contenido viene del servidor (`data.acceso`, ver `acceso.js`). Acá no se escribe
+   * ni una instrucción: si la ruta de un menú se pudiera afirmar o no se decidiera en el
+   * front, la regla de «no se inventa una ruta» quedaría a medias, con la mitad del criterio
+   * en un archivo y la otra mitad en este.
+   */
+  function bloqueDeAcceso(a) {
+    if (!a) return '';
+    var h = '<div class="ayuda">';
+
+    h += '<details><summary>Lo administro yo</summary>';
+    if (a.porQue) h += '<p class="porque">' + escapar(a.porQue) + '</p>';
+    // Una de las dos, nunca las dos: el servidor manda `pasos` cuando la ruta del menú se
+    // puede nombrar y `buscar` cuando no. Mandar las dos dejaría que esta función eligiera.
+    if (a.pasos && a.pasos.length) {
+      h += '<ol>';
+      a.pasos.forEach(function (x) { h += '<li>' + escapar(x) + '</li>'; });
+      h += '</ol>';
+    } else if (a.buscar) {
+      h += '<p>' + escapar(a.buscar) + '</p>';
+    }
+    if (a.alFinal) h += '<p class="alfinal">' + escapar(a.alFinal) + '</p>';
+    h += '</details>';
+
+    h += '<details><summary>Lo administra otra persona o una agencia</summary>';
+    h += '<p>Copia este texto y mándaselo. Está escrito para que no tengas que editar nada.</p>';
+    h += '<textarea readonly rows="16" data-texto-reenviar>' +
+      escapar(a.textoParaReenviar) + '</textarea>';
+    h += '<button type="button" class="copiar" data-copiar>Copiar el texto</button>';
+    h += '<p class="copiado" role="status"></p>';
+    // Se dice en voz alta, porque es la pregunta que alguien se hace al reenviar algo de su
+    // pedido a un tercero: ese texto NO lleva el enlace de su pedido (ver el comentario de
+    // `textoParaReenviar`: esos 32 hex son la única llave de esta pantalla).
+    h += '<p class="alfinal">Ese texto no lleva el enlace de tu pedido. Quien administra tu ' +
+      'sitio no necesita ver tus datos, solo saber qué invitación crear.</p>';
+    h += '</details>';
+
+    if (a.siNoSabes) {
+      h += '<details><summary>' + escapar(a.siNoSabes.titulo) + '</summary>';
+      h += '<p>' + escapar(a.siNoSabes.texto) + '</p>';
+      h += '<p class="alfinal">' + escapar(a.siNoSabes.comoSigue) + '</p>';
+      h += '</details>';
+    }
+
+    h += '</div>';
+    return h;
+  }
+
+  /**
+   * El botón de copiar. `navigator.clipboard` no está en todos lados —hace falta contexto
+   * seguro y a veces permiso— así que si no se puede, no se finge: se selecciona el texto y se
+   * le dice qué apretar. Un «¡Copiado!» que no copió nada es peor que no tener botón.
+   */
+  function montarCopiar() {
+    var b = contenido.querySelector('[data-copiar]');
+    if (!b) return;
+    var caja = b.parentNode.querySelector('[data-texto-reenviar]');
+    var dicho = b.parentNode.querySelector('.copiado');
+    b.addEventListener('click', function () {
+      function aMano() {
+        caja.focus();
+        caja.select();
+        dicho.textContent = 'Lo dejamos seleccionado. Cópialo con Ctrl+C (o Cmd+C en Mac).';
+      }
+      if (!navigator.clipboard || !navigator.clipboard.writeText) { aMano(); return; }
+      navigator.clipboard.writeText(caja.value).then(function () {
+        dicho.textContent = 'Copiado. Pégalo en un correo o un WhatsApp.';
+      }).catch(aMano);
     });
   }
 
@@ -311,6 +441,7 @@
             dibujar(res.j);
             montarIntake(res.j);
             montarBotonAcceso(res.j);
+            montarCopiar();
             return;
           }
           b.disabled = false;
@@ -341,6 +472,18 @@
     html += '<p class="detalle">' + escapar(e.detalle) + '</p>';
     if (e.loQueSigue) html += '<p class="sigue">' + escapar(e.loQueSigue) + '</p>';
 
+    // Lo que queda de su lado sin que nada esté esperándolo. Ver el comentario del CSS: es
+    // otro concepto que `queHacer`, y por eso es otro campo y otro recuadro.
+    if (e.recordatorios && e.recordatorios.length) {
+      html += '<div class="recordatorios">';
+      // Sin el número en el rótulo: «Dos cosas» sería el largo de la lista escrito a mano en
+      // otro lugar, y el día que la lista tenga tres, el título miente sin que nada se rompa.
+      html += '<p class="etiqueta">Lo que queda de tu lado</p>';
+      html += '<ul>';
+      e.recordatorios.forEach(function (r) { html += '<li>' + escapar(r) + '</li>'; });
+      html += '</ul></div>';
+    }
+
     // Lo que le toca al cliente. Solo aparece si de verdad le toca.
     if (e.queHacer) {
       html += '<div class="te-toca' + (e.terminado ? '' : '') + '">';
@@ -356,7 +499,13 @@
       // casilla, solo un «Escríbenos». El endpoint sí aceptaba el dato (`acceso_listo`) y
       // nadie se lo mandaba nunca — el grep daba cero llamadores. Un pedido pagado llegaba
       // acá y se quedaba para siempre, salvo que alguien lo moviera a mano en la base.
-      if (e.etapa === 'falta-acceso') html += '<p class="te-toca-form" data-boton-acceso></p>';
+      if (e.etapa === 'falta-acceso') {
+        // Primero CÓMO se da el acceso, y solo después el botón que declara que ya se dio. Al
+        // revés, el único control visible era un botón para declarar algo que la pantalla no
+        // explicaba cómo hacer.
+        html += bloqueDeAcceso(data.acceso);
+        html += '<p class="te-toca-form" data-boton-acceso></p>';
+      }
       // El asunto y la primera línea hablan del SITIO, no del número de pedido. Esos 32 hex no
       // le dicen nada a quien escribe, y verlos dos veces en un correo que está empezando a
       // redactar hace que el mensaje parezca un ticket y no una conversación. El número igual
@@ -417,6 +566,39 @@
   }
 
   var reintentos = 0;
+  // Dos minutos de revisión automática, cada cinco segundos. El número vive acá con nombre y
+  // no suelto en el `if`, porque el aviso que sale al agotarlo tiene que hablar del mismo
+  // número: un tope escrito dos veces se contradice en silencio el día que alguien cambia uno.
+  var TOPE_REINTENTOS = 24;
+
+  /**
+   * Avisar que dejamos de revisar solo, y dar el botón para revisar a mano.
+   *
+   * Se cuelga de la primera tarjeta, que es donde está el texto de la etapa que prometía el
+   * refresco automático. Así la corrección se lee junto a la promesa y no al final de la
+   * página, donde nadie la ataría a la frase que la contradice.
+   */
+  function dejamosDeRefrescar() {
+    var caja = contenido.querySelector('.tarjeta');
+    if (!caja || caja.querySelector('.sin-refresco')) return;
+
+    var div = document.createElement('div');
+    div.className = 'sin-refresco';
+    div.innerHTML =
+      '<p>Estuvimos revisando solos un par de minutos y el pago todavía no se confirma. ' +
+      'Dejamos de revisar para no tenerte esperando frente a una página que no cambia. ' +
+      'Tu pedido está guardado y este enlace sigue siendo válido.</p>' +
+      '<button type="button">Revisar de nuevo</button>';
+    caja.appendChild(div);
+
+    div.querySelector('button').addEventListener('click', function () {
+      reintentos = 0;
+      div.querySelector('button').disabled = true;
+      div.querySelector('button').textContent = 'Revisando…';
+      pedir();
+    });
+  }
+
 
   function pedir() {
     var id = idDelPedido();
@@ -447,13 +629,31 @@
         // acceso solo aparecía después de enviar el formulario de datos, que es justo cuando
         // ya no hace falta.
         montarBotonAcceso(res.j);
+        // El botón de copiar el texto para reenviar. Va en los TRES lugares que repintan la
+        // pantalla —la carga, el envío de los datos y la declaración del acceso— por la misma
+        // razón que `montarBotonAcceso`: `dibujar` reemplaza todo el HTML, así que un
+        // enganche que falte en uno de los tres deja un botón muerto en ese camino.
+        montarCopiar();
 
         // Se vuelve a preguntar SOLO mientras el pago se confirma, que es lo único que cambia
         // sin que nadie haga nada. Y con un tope: si a los dos minutos no llegó, refrescar más
         // no va a ayudar y lo honesto es decirlo.
-        if (res.j.refrescar && reintentos < 24) {
-          reintentos++;
-          setTimeout(pedir, 5000);
+        if (res.j.refrescar) {
+          if (reintentos < TOPE_REINTENTOS) {
+            reintentos++;
+            setTimeout(pedir, 5000);
+          } else {
+            // ⚠️ ACÁ ESTABA LA CUARTA PROMESA SIN CUMPLIR.
+            //
+            // La etapa dice «esta página se actualiza sola», y era cierto durante dos minutos.
+            // Pasados los 24 intentos el bucle se cortaba y la frase se quedaba en pantalla
+            // siendo falsa, sin que nada lo dijera: la persona veía «se actualiza sola» en una
+            // página que ya no se actualizaba, y podía esperar ahí indefinidamente.
+            //
+            // El tope está bien —refrescar para siempre no ayuda a nadie y gasta batería—. Lo
+            // que faltaba era decirlo y devolverle el control.
+            dejamosDeRefrescar();
+          }
         }
       })
       .catch(function () {

@@ -51,6 +51,7 @@ import { etapaDelPedido, señalesDelPedido, convieneRefrescar, TITULOS } from '.
 import { ID_PEDIDO_NUESTRO } from './pedidos.js';
 import { clavesDeTope, contar } from './profundo.js';
 import { avisarAvance } from './aviso.js';
+import { ayudaDeAcceso } from './acceso.js';
 
 /** Cuántos envíos admite una IP por día. Generoso: alguien corrigiendo su dirección no es un abuso. */
 export const TOPE_INTAKE_IP_DIA = 20;
@@ -227,13 +228,20 @@ export async function onRequestPost(contexto) {
     .catch(() => false);
   if (contexto && contexto.waitUntil) contexto.waitUntil(aviso);
 
+  // ⚠️ La MISMA forma que el GET, con la ayuda del acceso incluida. Si acá faltara, la
+  // pantalla mostraría las instrucciones al cargar el enlace y las PERDERÍA justo después de
+  // enviar los datos de la empresa —que es el instante exacto en que la persona pasa a la etapa
+  // del acceso y necesita leerlas—, porque esta respuesta es la que repinta la pantalla.
+  const etapa = etapaDelPedido(fresco);
+
   return json({
     ok: true,
     guardado: true,
     campos: guardado.campos,
     pedido: vistaPublica(fresco),
-    etapa: etapaDelPedido(fresco),
+    etapa,
     señales: señalesDelPedido(fresco, TITULOS),
+    acceso: ayudaDeAcceso(fresco, etapa),
     refrescar: convieneRefrescar(fresco),
   });
 }

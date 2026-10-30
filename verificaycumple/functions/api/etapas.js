@@ -94,6 +94,7 @@ export function etapaDelPedido(pedido) {
           'este enlace y lo resolvemos nosotros.',
         loQueSigue: 'Cuando lo vuelvas a pedir, te llevamos al pago y esta misma página te va a ' +
           'mostrar en qué va.',
+        recordatorios: null,
         terminado: false,
       };
     }
@@ -105,6 +106,7 @@ export function etapaDelPedido(pedido) {
       quienActua: ACTUA.NADIE,
       queHacer: null,
       loQueSigue: 'Cuando el pago esté confirmado, te vamos a pedir un acceso temporal a tu sitio.',
+      recordatorios: null,
       terminado: false,
     };
   }
@@ -120,6 +122,7 @@ export function etapaDelPedido(pedido) {
       quienActua: ACTUA.NADIE,
       queHacer: null,
       loQueSigue: 'Cuando el pago esté acreditado, te vamos a pedir un acceso temporal a tu sitio.',
+      recordatorios: null,
       terminado: false,
     };
   }
@@ -132,6 +135,7 @@ export function etapaDelPedido(pedido) {
       quienActua: ACTUA.CLIENTE,
       queHacer: 'Si quieres, puedes intentarlo de nuevo. Si te vuelve a pasar, escríbenos y lo vemos.',
       loQueSigue: null,
+      recordatorios: null,
       terminado: true,
     };
   }
@@ -148,6 +152,7 @@ export function etapaDelPedido(pedido) {
       queHacer: 'Si fue un error o no reconoces el movimiento, escríbenos con este enlace y lo ' +
         'revisamos contigo.',
       loQueSigue: null,
+      recordatorios: null,
       terminado: true,
     };
   }
@@ -161,6 +166,7 @@ export function etapaDelPedido(pedido) {
       quienActua: ACTUA.NADIE,
       queHacer: null,
       loQueSigue: null,
+      recordatorios: null,
       terminado: true,
     };
   }
@@ -169,15 +175,46 @@ export function etapaDelPedido(pedido) {
     return {
       etapa: ETAPAS.ENTREGADO,
       titulo: 'Tu sitio quedó listo',
-      // Esta frase decía «Abajo está el antes y el después», y la pantalla todavía no lo
-      // dibuja: el informe final está guardado pero no se muestra. Prometer en pantalla algo
-      // que la pantalla no entrega es exactamente lo que este producto no hace. Cuando el
-      // antes/después se dibuje, esta frase vuelve.
+      // Esta frase decía «Abajo está el antes y el después», y la pantalla no lo dibujaba.
+      // Después dijo «Te mandamos el antes y el después por correo», y ese correo no existía en
+      // ninguna línea del repo: `correo.js` solo definía el de pago. Dos versiones de la misma
+      // falta, prometiendo cosas distintas que no estaban.
+      //
+      // Ahora el correo existe (`correoDeEntrega`) y lo manda el endpoint que marca la entrega.
+      // Pero un correo puede no salir —Resend caído, clave vencida— y el trabajo igual está
+      // hecho, así que la pantalla NO afirma que llegó: dice que se mandó y da la salida si no
+      // apareció. Es cierto en los dos casos, que es la única forma de que siga siendo cierto
+      // el día que falle.
       detalle: 'Hicimos los cambios y volvimos a correr el chequeo sobre la misma página que ' +
-        'medimos al principio. Te mandamos el antes y el después por correo.',
+        'medimos al principio, y te mandamos el detalle por correo. Si no te llegó, ' +
+        'escríbenos con este enlace y te lo reenviamos.',
       quienActua: ACTUA.NADIE,
+      // ⚠️ NI `queHacer` NI `loQueSigue`, Y LAS DOS COSAS QUE EL CLIENTE TIENE QUE HACER VAN
+      // EN `recordatorios`. Vale la pena explicar por qué son campos distintos.
+      //
+      // La primera versión de este arreglo puso las dos obligaciones en `queHacer`, que es
+      // lo que la pantalla dibuja en la caja ámbar «TE TOCA A TI» con un botón de escribirnos.
+      // Una prueba que ya existía se puso roja y tenía razón: ese recuadro significa «tu
+      // pedido está detenido esperándote», y un pedido entregado no está detenido. El
+      // principio estaba escrito desde antes —«una pantalla que siempre pide algo entrena a la
+      // persona a ignorarla»— y ponerle una alerta a un trabajo terminado es justo cómo se
+      // gasta esa atención.
+      //
+      // Pero las dos obligaciones son reales y no se pueden callar: le dejamos una cuenta de
+      // administrador viva en su sitio, y un borrador de política que todavía no revisó ningún
+      // abogado. Si publica el borrador como definitivo porque nadie se lo dijo, el daño es
+      // suyo y la culpa nuestra.
+      //
+      // Así que son dos conceptos, no uno: lo que BLOQUEA (urgente, con alerta) y lo que QUEDA
+      // de su lado (calmado, permanente, sin botón). `recordatorios` es el segundo.
       queHacer: null,
       loQueSigue: null,
+      recordatorios: [
+        'El borrador de tu política lo tiene que revisar tu abogado antes de publicarlo como ' +
+          'definitivo. Nosotros no damos asesoría legal y el texto final no es nuestro.',
+        'Ya puedes borrar el acceso que nos diste a tu sitio. Si no sabes dónde, escríbenos ' +
+          'con este enlace y te decimos.',
+      ],
       terminado: true,
     };
   }
@@ -203,6 +240,7 @@ export function etapaDelPedido(pedido) {
       queHacer: 'Completa los datos de tu empresa y dinos en qué plataforma está tu sitio. ' +
         'No te vamos a pedir ninguna contraseña.',
       loQueSigue: 'Después te pedimos un acceso temporal a tu sitio, y ahí empezamos.',
+      recordatorios: null,
       terminado: false,
     };
   }
@@ -220,6 +258,7 @@ export function etapaDelPedido(pedido) {
         'invitación; si es otra persona o una agencia, te damos el texto listo para reenviarle; ' +
         'y si no sabes, lo averiguamos nosotros.',
       loQueSigue: 'Apenas tengamos el acceso, empezamos. No tocamos nada antes.',
+      recordatorios: null,
       terminado: false,
     };
   }
@@ -237,6 +276,7 @@ export function etapaDelPedido(pedido) {
     quienActua: ACTUA.NOSOTROS,
     queHacer: null,
     loQueSigue: 'Cuando terminemos, volvemos a correr el chequeo y te mandamos el antes y el después.',
+    recordatorios: null,
     terminado: false,
   };
 }
