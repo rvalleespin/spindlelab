@@ -1,5 +1,62 @@
 # Lista de publicación E13: el sitio nuevo en la raíz de spindlelab.cl
 
+## PUBLICADO · 30-oct-2026, 18:23 (Chile)
+
+- **OK de Ramón:** por escrito, el 30-oct en la tarde («Confirmo la frase» sobre A1 y «Sí, publica hoy»). Con eso se cierra
+  la fila 10.
+- **Corte:**
+  - `efa98323` en `claude/v3-publicacion`;
+  - armado con `armar-corte.mjs` desde `origin/main` `840dc024` y la obra en `b8410d43`;
+  - es un commit de fusión: primer padre `2895a0ce`, el corte del 26-oct, que no se reescribió; segundo padre
+    `origin/main`. El push fue fast-forward y sin force;
+  - el árbol tiene 290 archivos y 11,6 MB;
+  - el sitemap lleva 2026-10-30 en las 15 páginas que no son artículos.
+- **Antes de armarlo:** el contenedor en la nube no traía `rsync`. Se instaló con `apt-get install rsync`.
+- **Verificación sobre el corte:**
+  - build de 22 páginas;
+  - `verificar` «Sin hallazgos» a 390, 768 y 1440;
+  - 913 referencias internas y 0 rotas;
+  - `wrangler pages dev`: las 22 URL y `/privacidad/` en 200; `/no-existe/` 404, `/indice` 301, `/diagnostico` 308,
+    `/v3/` 404 y la API 400;
+  - las UTM, 12 de 12 con clic real;
+  - el peso de la home: 1.398,8, 1.561,6 y 755,5 kB;
+  - los precios iguales a `main` en las seis páginas de servicio;
+  - lo protegido, idéntico;
+  - el favicon con el mismo md5 que `/v3/marca/`;
+  - las 22 imágenes al compartir, cada una en una sola versión.
+
+  La ficha del boletín 18.623-07, releída el 30-oct, sigue en el segundo trámite en la Cámara y sin número de ley: la
+  frase de `/diagnostico/` es exacta.
+- **Vista previa de Cloudflare antes del merge** (`claude-v3-publicacion.spindlelab-v2.pages.dev`, es decir, el build
+  real de Cloudflare):
+  - las 23 rutas en 200, con las mismas redirecciones y códigos;
+  - el favicon, con el mismo md5;
+  - el `action` del formulario, igual.
+
+  «Workers Builds: spindlelab» falló como en todo PR de este repo (se vio igual en rvalleespin/spindlelab#41); no lo
+  causa esta obra.
+- **Merge:** PR rvalleespin/spindlelab#51, con método `merge`. Merge `f0e1b019`, y su árbol es idéntico al del corte.
+- **En vivo, a los ~90 s del merge:**
+  - las 22 URL del sitemap en 200;
+  - `/privacidad/` 200, `/no-existe/` 404, `/indice` 301 y `/diagnostico` 308;
+  - la API: 400 con `localhost`; con `spindlelab.cl`, `ok:true` y puntaje 94;
+  - `favicon.ico`, `llms.txt` y `sitemap.xml` con el mismo md5 que el corte;
+  - el formulario apunta a Web3Forms;
+  - ningún `noindex`.
+
+  **Consentimiento:**
+  - al rechazar hay 0 pedidos a Google o Meta;
+  - antes de contestar, también 0;
+  - al aceptar aparecen GTM, GA4 y el Pixel.
+
+  La home a 1440 y 390 carga sin errores de página.
+- **Pendiente de Ramón (§5):**
+  - un envío real del formulario con UTM;
+  - Search Console y Bing: reenviar el sitemap;
+  - LinkedIn Post Inspector y Facebook Sharing Debugger;
+  - el favicon y el ícono en un iPhone.
+- **Sigue igual que antes:** `www.spindlelab.cl` responde 200 sin redirigir al dominio sin www (§8).
+
 **Escrita el 26-oct-2026 · ensayada el 26-oct sobre `origin/main` `ba49edbd` y la rama `claude/v3-modelo-nuevo` (`078ceefe`) · puesta al día el 30-oct por Mauro (sección «30-oct», justo abajo), sin ejecutar el corte; y otra vez el 30-oct en la tarde, con las respuestas de Ramón y el visto a `Layout.astro` (sección «30-oct, tarde», la primera).** La rama del corte que se armó el 26-oct, `claude/v3-publicacion` (`762b7295` más `2895a0ce`, los documentos), **ya no sirve tal cual: lleva la E13 del 26-oct y nada de lo del 30-oct.** Publicar ahora es volver a armarla con la receta de la sección 2 desde la rama de la obra, que hoy es `claude/magical-franklin-ckfki2`, forzar el push de esa rama y abrir el PR (URL: `https://github.com/rvalleespin/spindlelab/pull/new/claude/v3-publicacion`), que Ramón confirme y el merge. Reemplaza a `../lista-publicacion.md` (la de E7, escrita para un v3 anterior). Nada de esto se ejecuta sin el OK de Ramón; **publicar es llegar a `main`**.
 
 ## 30-oct, tarde · Lo que decidió Ramón y el corte de hoy (leer primero)
