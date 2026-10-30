@@ -233,8 +233,9 @@ Una frase por renglón, que es como manda leerlo el manual. Las `/` son respirac
 cortes.
 
 > Pagar publicidad en Instagram está **bien**. / Medir si **funcionó**, también. //
-> **Pero** revisé treinta y seis sitios de cafés y pastelerías en **Chile**. //
-> En casi la **mitad**, la cookie de Facebook entra antes de que el cliente diga **nada**. //
+> **Pero** la cookie que mide / entra antes de que el cliente diga **nada**. //
+> Eso pasa en casi la **mitad** / de los treinta y seis sitios de cafés y pastelerías / que **revisé**
+> en Chile. //
 > Puedes seguir **midiendo** igual. / Solo hay que preguntarle al cliente **primero**. //
 > Y esa pregunta va a ser **obligatoria** por ley. //
 > Es una **franja** abajo de tu sitio / que le pregunta al cliente si **acepta**. //
@@ -242,10 +243,10 @@ cortes.
 > Soy **Ramón**, de SpindleLab. //
 > **Medir** está bien. / Preguntar **primero**, también. //
 
-**93 palabras, 32 segundos.** Largo por renglón: 6, 4, 11, 15, 4, 7, 8, 14, 13, 4, 7.
+**100 palabras, 34 segundos.** Largo por renglón: 6, 4, 13, 19, 4, 7, 9, 14, 13, 4, 7.
 
-**Versión 7, del 30-oct, y la que Ramón aprobó hasta la cifra en la 6.** El gancho y la evidencia
-quedaron intactos; se rehízo todo lo que viene después.
+**Versión 8, del 30-oct.** Ramón aprobó la apertura en la v6 y todo lo que va de la franja hacia
+abajo en la v7. Lo único que quedaba era la costura entre las dos mitades.
 
 ### La regla que sale de este rechazo
 
@@ -647,3 +648,26 @@ nombre técnico en vez de "no se entiende".
 | Ritmo | la cola medía 8, 9, 8, 11, 4 palabras, y es justo la que Ramón marcó como ilegible | 9, 11, 11, 10, 4, 11, 7, 6, 19, 8, 8, 11, 4, 10 |
 | Tono | *"La ley de datos personales va a pedir que le preguntes antes"* no pasa la prueba del WhatsApp | *"Esto va a dejar de ser opcional"* |
 | Locución | **no se puede verificar desde una sesión de Claude.** Es la prueba de Ramón y hay que decirlo, no darla por hecha | igual |
+
+### 30-oct-2026 · versión 7: el "pero" pegado a la frase equivocada
+
+Ramón: *"me gusta la frase inicial... pero revisé 36, cuando pasas a esa parte se siente un poco
+desconectado de lo anterior. Ahí está extraño"*. Y: *"de la franja para abajo está súper bien"*, con
+el cierre aprobado porque *"refuerza la primera frase de arriba"*.
+
+**El "pero" anunciaba una contradicción y lo que seguía era la metodología, no la contradicción.**
+
+> Medir si funcionó, también. // **Pero revisé treinta y seis sitios...**
+
+El oyente se prepara para el giro y recibe un dato sobre cómo se hizo el estudio. El giro verdadero
+(*la cookie entra antes de que el cliente acepte*) llegaba una línea más tarde, cuando el "pero" ya
+se había gastado.
+
+**Dos reglas que salen de esto:**
+
+1. **El conector va pegado a la cosa que contradice, no a la que la respalda.** La investigación es
+   respaldo y va después. El problema primero.
+2. **El hilo se hace con una palabra repetida, no con un conector.** *"Medir si funcionó"* →
+   *"la cookie que **mide**"*. La versión anterior saltaba de *medir* a *treinta y seis sitios*, que
+   son dos temas, y ningún "pero" tapa ese hueco. Y la línea del dato ahora abre con **"Eso pasa"**,
+   que apunta hacia atrás en vez de inaugurar un asunto.
