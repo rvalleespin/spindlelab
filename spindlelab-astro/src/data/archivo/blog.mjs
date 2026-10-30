@@ -203,8 +203,9 @@ export function articulo(slug) {
 
   // El grafo del post (Simón §2.9: queda), sin los nodos que ya emite el Layout (#org, #autor-ramon), con la miga que se
   // ve (posición 2 «Blog», 3 el nombre corto) y la imagen del Article en su tarjeta nueva
-  // ?v=2 (E13): tres de las siete tarjetas se rehicieron porque su titular cambió
-  const og = { src: `/assets/img/og-e12-blog-${slug}.jpg?v=2`, alt: `SpindleLab: ${plano(h1)}` };
+  // ?v=2 (E13): tres de las siete tarjetas se rehicieron porque su titular cambió. ?v=3 (30-oct): las siete, con el logo
+  // de la i con su disco (acta de QA del 30-oct, mayor 2; e13/herramientas/og-logo-19.mjs)
+  const og = { src: `/assets/img/og-e12-blog-${slug}.jpg?v=3`, alt: `SpindleLab: ${plano(h1)}` };
   const DEL_LAYOUT = new Set([`${SITIO}/#org`, `${SITIO}/#autor-ramon`]);
   const jsonLd = {
     ...info.jsonLd,
@@ -286,7 +287,7 @@ export function indiceBlog() {
   };
   return {
     title, description, jsonLd,
-    og: { src: '/assets/img/og-e12-blog.jpg?v=1', alt: `SpindleLab: ${h1.tinta} ${h1.gris}` },
+    og: { src: '/assets/img/og-e12-blog.jpg?v=2', alt: `SpindleLab: ${h1.tinta} ${h1.gris}` },
     miga, h1: { tinta: h1.tinta, gris: h1.gris }, conteo: t('blog.conteo').texto, linea: t('blog.linea').texto,
     filas,
     cierre: cierre(),

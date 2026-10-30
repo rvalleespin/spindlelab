@@ -41,11 +41,14 @@ const entradilla = t('servicios.entradilla');
 
 // ---- Los cuatro bloques (documento de textos §4). Cada servicio, con su nombre, su destino y su precio de Clara,
 // comparados con los JSON; y su línea. Los grupos se arman por slug, sobre las filas de oferta-v3.json.
+// Desde el 30-oct el sitio va primero, como en Soluciones de la home (acta de QA del 30-oct, menor 11). Los ids de Clara
+// no cambian (el sitio sigue siendo servicios.m3); lo que cambia es el orden en que se pintan, y el rótulo de cada bloque
+// es su número de orden («01» el sitio).
 const FILAS = [...oferta.momentos.flatMap((m) => m.items), ...oferta.tambien];
 const BLOQUES: { k: string; servicios: { slug: string; linea: string }[] }[] = [
+  { k: 'servicios.m3', servicios: [{ slug: 'desarrollo-web', linea: 'servicios.m3.dw' }] },
   { k: 'servicios.m1', servicios: [{ slug: 'auditoria-seo-tecnica', linea: 'servicios.m1.aud' }, { slug: 'visibilidad-en-ia', linea: 'servicios.m1.via' }] },
   { k: 'servicios.m2', servicios: [{ slug: 'paid-media', linea: 'servicios.m2.paid' }, { slug: 'redes-sociales', linea: 'servicios.m2.redes' }] },
-  { k: 'servicios.m3', servicios: [{ slug: 'desarrollo-web', linea: 'servicios.m3.dw' }] },
   { k: 'servicios.m4', servicios: [{ slug: 'acompanamiento-mensual', linea: 'servicios.m4.aco' }] },
 ];
 const momentos = BLOQUES.map((b, i) => {
@@ -64,7 +67,9 @@ const momentos = BLOQUES.map((b, i) => {
   return { id: `m${i + 1}`, numero: String(i + 1).padStart(2, '0'), situacion: t(`${b.k}.situacion`).texto, nota, filas };
 });
 // Los planes de Desarrollo web, nombrados en su línea de precio, son los de oferta-v3.json
-for (const p of oferta.momentos[0].planes.slice(0, 3)) contiene(momentos[2].filas[0].precio, p.n, 'servicios, planes de Desarrollo web');
+const filaDw = momentos.flatMap((m) => m.filas).find((f) => f.slug === 'desarrollo-web');
+if (!filaDw) throw new Error('servicios: falta la fila de Desarrollo web');
+for (const p of oferta.momentos[0].planes.slice(0, 3)) contiene(filaDw.precio, p.n, 'servicios, planes de Desarrollo web');
 // Los seis, en el orden de servicios.mjs (el de «Siguiente» y del ItemList)
 igualQue(momentos.flatMap((m) => m.filas.map((f) => f.slug)).join(' '), ORDEN.map((s) => s.slug).join(' '), 'servicios, el orden');
 
@@ -118,7 +123,7 @@ const jsonLd = {
     },
   ],
 };
-const og = { src: '/assets/img/og-e12-servicios.jpg?v=2', alt: `SpindleLab: ${dos('servicios.h1').tinta} ${dos('servicios.h1').gris}` };
+const og = { src: '/assets/img/og-e12-servicios.jpg?v=3', alt: `SpindleLab: ${dos('servicios.h1').tinta} ${dos('servicios.h1').gris}` };
 ---
 <Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />

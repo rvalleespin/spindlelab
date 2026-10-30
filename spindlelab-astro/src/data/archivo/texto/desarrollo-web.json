@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/desarrollo-web.json",
- "sha256": "e5d7351850506490b23c12e76293ec1fe8a9a8434a4fe4e34e42924295b126cf",
+ "sha256": "6bbd35b6ad8129ac6b09188ac5f7cab56a4d69a6e9782cacc37b521b036732e5",
  "id": "desarrollo-web",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -63,10 +63,12 @@
      {
       "id": "dw.boton.escribir",
       "rol": "boton",
-      "texto": "Escribir a SpindleLab",
+      "texto": "Hablemos de tu sitio",
       "destino": "/contacto/",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.boton.escribir»"
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "antes": "Escribir a SpindleLab",
+      "por_que": "La acción única del sitio, con las palabras de la portada. La portada enlaza aquí con «Ver cómo hacemos un sitio y cuánto cuesta»: esta página es la que más sentido tiene para ese botón."
      },
      {
       "id": "dw.franja.alt",
@@ -213,7 +215,8 @@
       "texto": "Los cuatro planes van tal cual en oferta-v3.json momentos[0].planes: nombre, precio, línea y puntos, sin cambiar una palabra. Página de Campaña · Desde $390.000 + IVA · Sitio Esencial · Desde $690.000 + IVA · Sitio Completo · Desde $1.190.000 + IVA · Plataforma a Medida · Se cotiza.",
       "fuente": "oferta-v3.json",
       "estado": "queda",
-      "origen": "texto-paso2.json «dw.planes.lista»"
+      "origen": "texto-paso2.json «dw.planes.lista»",
+      "nota": "30-oct (tarde), Ramón: el panel para editar viene en todos los planes de Desarrollo web. En oferta-v3.json, la Página de Campaña y el Sitio Esencial suman el punto «Panel donde cambias textos y fotos»: las palabras del glosario (dw.planes.glosario, «CMS: el panel donde cambias textos, fotos o artículos sin tocar el código»), sin «artículos», porque esos dos planes no traen blog, y sin «sin tocar el código», que lo dice el glosario justo arriba (con esas palabras, el punto partía en dos líneas a 1440). El Sitio Completo ya decía «Blog o CMS que administras tú» y la Plataforma a Medida abre con «Todo lo del Sitio Completo, y más», así que no se les suma nada. Ningún importe cambió. El JSON-LD de la página (OFERTAS en desarrollo-web.astro) dice el panel en las mismas dos ofertas."
      },
      {
       "id": "dw.planes.nota",
@@ -436,11 +439,12 @@
      {
       "id": "dw.cierre.boton1",
       "rol": "boton",
-      "texto": "Conversar mi proyecto",
+      "texto": "Hablemos de tu sitio",
       "destino": "/contacto/",
       "estado": "cambia",
-      "origen": "v2-vigente/servicios__desarrollo-web.txt («Conversar mi proyecto»)",
-      "antes": "Escribir a SpindleLab"
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "antes": "Conversar mi proyecto",
+      "por_que": "El mismo botón de todo el sitio. El h2 de arriba («Cuéntanos qué necesita tu sitio. Te respondemos en un día hábil, tengas sitio o no.») ya cubre los dos casos."
      },
      {
       "id": "dw.cierre.boton2",
@@ -456,12 +460,12 @@
       "id": "dw.siguiente",
       "rol": "boton",
       "rotulo": "Siguiente",
-      "texto": "Acompañamiento mensual →",
-      "destino": "/servicios/acompanamiento-mensual/",
+      "texto": "Auditoría SEO técnica →",
+      "destino": "/servicios/auditoria-seo-tecnica/",
       "estado": "cambia",
-      "origen": "texto-paso2.json «dw.siguiente»",
-      "antes": "Visibilidad en IA →",
-      "por_que": "El orden de los seis sigue los cuatro bloques de /servicios/ (servicios.mjs): después de Desarrollo web viene el Acompañamiento mensual."
+      "origen": "texto-paso2.json «dw.siguiente»; acta de QA del 30-oct, menor 11",
+      "antes": "Acompañamiento mensual → (hasta el 30-oct; en E12, «Visibilidad en IA →»)",
+      "por_que": "El orden de los seis sigue los cuatro bloques de /servicios/ (servicios.mjs). Desde el 30-oct el sitio va primero, como en Soluciones de la home, y después viene lo que se le conecta, empezando por la búsqueda: después de Desarrollo web viene la Auditoría SEO técnica. El build compara este texto y su destino con servicios.mjs."
      }
     ]
    }

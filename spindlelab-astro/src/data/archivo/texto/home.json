@@ -1,20 +1,20 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/home.json",
- "sha256": "5936d9a3d379a06806cf8c261f194dc25b9a66231c5a9547cc0cde4302c53a53",
+ "sha256": "b54b67fdc8b310906f1eb8a96d3a62d9edd2bd2ae27fc530e9052253368ca248",
  "id": "home",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "home",
   "ruta": "/",
-  "title": "SpindleLab · Marketing y crecimiento con IA",
-  "description": "Marketing y crecimiento con IA para empresas que ya venden. Revisión gratis de una página y propuesta por escrito, con alcance, plazos y precio.",
-  "senales": "Title y description del v2 vigente (e13/fuentes/v2-vigente/home.txt), con una diferencia: el title pierde el «en Chile» del v2 (Ramón lo descartó como relleno). Los reconfirma Simón en la capa de señales de E13; el brief §4 pide FAQPage en el JSON-LD y debe coincidir con home.faq.*.",
-  "estructura": "brief-de-obra.md §4, nueve secciones en este orden: portada → problema → para quién → cómo partimos → soluciones → pruebas → quién está detrás → preguntas frecuentes → cierre. Se van la cinta, el índice corto de trabajo y «Cada pieza, con un dato medido».",
+  "title": "SpindleLab · Sitios web a medida y marketing con IA",
+  "description": "Diseñamos y programamos sitios a medida, con panel para que edites tú, y les conectamos tu búsqueda, tus anuncios y tus redes. Revisión gratis de una página.",
+  "senales": "Title y description de Ramón, 30-oct (sitio-propio-direcciones.md, «Señales»). Antes: «SpindleLab · Marketing y crecimiento con IA» y «Marketing y crecimiento con IA para empresas que ya venden. Revisión gratis de una página y propuesta por escrito, con alcance, plazos y precio.». La description de Ramón medía 161 caracteres y index.astro corta el build sobre 160 (senales-obra.md §1.2): «y conectamos a ellos» pasa a «y les conectamos» (157), sin cambiar lo que dice. Title de 51. El FAQPage del JSON-LD lleva seis preguntas, en el orden visible: home.faq.sitio y después home.faq.1 a 5. Los reconfirma Simón en la capa de señales.",
+  "estructura": "brief-de-obra.md §4, nueve secciones. Desde el 30-oct (Ramón): portada → todo lo que haces para vender termina en tu sitio (reemplaza a «Dónde puede caerse una consulta») → para quién → cómo partimos → soluciones, con el sitio primero → pruebas → quién está detrás, en tercera persona → preguntas frecuentes, con una pregunta nueva al principio → cierre.",
   "secciones": [
    {
     "id": "portada",
     "nombre": "Portada: el hilo de oro, la declaración y la acción",
-    "trabajo": "Decir en cinco segundos qué hace SpindleLab y para quién, y dejar una sola acción: pedir la revisión de una página. El chequeo de la herramienta baja a enlace secundario. El video no dice nada: todo el trabajo lo hace el texto.",
+    "trabajo": "Decir en cinco segundos qué hace SpindleLab (sitios web a medida y marketing con IA) y por qué el sitio va primero, y dejar una sola acción: hablar de tu sitio, lo tengas o no. El video no dice nada: todo el trabajo lo hace el texto.",
     "elementos": [
      {
       "id": "home.portada.video",
@@ -37,114 +37,208 @@
      {
       "id": "home.portada.rotulo",
       "rol": "rotulo",
-      "texto": "Marketing y crecimiento con IA para empresas que ya venden",
+      "texto": "Sitios web a medida y marketing con IA",
       "estado": "cambia",
-      "origen": "copy-secciones-v1.2 §2.1 (línea sobre el titular); v2-vigente/home.txt",
-      "antes": "Estudio de diseño y tecnología",
-      "por_que": "Es la categoría. Va sobre el titular y no en él, porque las dos lecturas en frío del borrador dijeron que como titular describía «una agencia cualquiera», y que el titular de abajo engancha pero solo no dice qué venden.",
-      "nota": "Sin punto final, como el rótulo anterior. Es la línea más larga que ha tenido un rotulo en esta portada (10 palabras): Lucía decide cómo cabe a 390."
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "antes": "Marketing y crecimiento con IA para empresas que ya venden",
+      "por_que": "Ramón, 30-oct: el negocio principal es el desarrollo web, la pieza del motor a la que apela el nombre. Lo único que SpindleLab ha vendido son sitios (modelo-de-negocio-v1-BORRADOR.md §1). El rótulo pone primero lo que se vende y conserva la categoría «marketing con IA».",
+      "nota": "Sin punto final, como el anterior. 7 palabras (el anterior tenía 10)."
      },
      {
       "id": "home.portada.h1",
       "rol": "h1",
-      "tinta": "Te llegan consultas.",
-      "gris": "Veamos dónde se cae el resto.",
-      "texto": "Te llegan consultas. Veamos dónde se cae el resto.",
+      "tinta": "En redes arriendas.",
+      "gris": "Tu sitio es lo único que es tuyo.",
+      "texto": "En redes arriendas. Tu sitio es lo único que es tuyo.",
       "estado": "cambia",
-      "origen": "copy-secciones-v1.2 §2.1 (candidato 1, elegido); v2-vigente/home.txt",
-      "antes": "Diseñamos y programamos sitios a medida. Y los dejamos listos para que Google y ChatGPT puedan leerlos.",
-      "por_que": "Abre en lo que el lector ya vive y dice una acción. Test de intercambio: por sí solo funcionaría para una clínica y para una inmobiliaria, y eso es deliberado, porque el rubro lo pone la línea de arriba y el subtítulo nombra lo que se revisa. Lock §14: tinta 3 palabras (tope 8), gris 6 palabras (rango 6 a 13).",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); dirección A del borrador",
+      "antes": "Te llegan consultas. Veamos dónde se cae el resto.",
+      "por_que": "Ramón, 30-oct, sobre el anterior: «queda muerto, no calienta a nadie». Abre en algo que el lector ya vive (en sus redes no manda él) y dice qué es suyo. Test de intercambio: «arriendas» sirve para cualquier rubro a propósito; el rótulo de arriba y la entradilla dicen qué se vende. Lock §14: tinta 3 palabras (tope 8), gris 7 (rango 6 a 13).",
       "descartes": [
-       "«Marketing y crecimiento con IA para empresas que ya venden.» como titular: pasa a ser la línea sobre el titular.",
-       "«Un socio de crecimiento que parte por mirar, no por prometer.»: «socio» sin prueba es adjetivo, y «no por prometer» insinúa a otros.",
-       "«Si te llegan consultas, veamos dónde se caen.»: más acotada, pero pierde fuerza. Queda como alternativa si una lectura en frío dice que el titular supone cosas del lector."
-      ]
+       "«Te llegan consultas. Veamos dónde se cae el resto.»: el titular del 26-oct, que Ramón dio por muerto.",
+       "B «Todo lo que haces para vender termina en tu sitio. Por eso partimos por ahí.»: más razonable que emocionante; queda como entradilla (su segunda versión) y como h2 de la sección 2.",
+       "C «Si tu negocio vive en Instagram, vive en una casa arrendada.»: deja fuera a quien vive de LinkedIn o de referidos, y es la más alarmista."
+      ],
+      "riesgo": "Puede leerse como «las redes no sirven», y también las gestionamos. Lo contesta el cierre de la sección 2 («No te decimos que dejes las redes: también las gestionamos»)."
      },
      {
       "id": "home.portada.entradilla",
       "rol": "entradilla",
-      "texto": "Revisamos tu sitio y si Google y las IA, como ChatGPT, pueden visitarlo y entender a qué te dedicas. Después conversamos cómo te llegan las consultas y qué pasa con ellas, y te proponemos por escrito qué hacer.",
+      "texto": "El anuncio, el post, la búsqueda en Google y la respuesta de ChatGPT llevan a la misma dirección. Diseñamos y programamos esa dirección a medida, con un panel para que la edites tú, y conectamos lo demás a ella.",
       "estado": "cambia",
-      "origen": "copy-secciones-v1.2 §2.1 (subtítulo); v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frase 1)",
-      "por_que": "Ronda 2: la primera versión decía «si Google y las IA pueden leerlo» y los tres lectores en frío no entendieron «leerlo». Ahora dice qué hace la IA con el sitio (visitarlo, entender a qué te dedicas) y glosa ChatGPT la primera vez que aparece una IA.",
-      "antes": "Para empresas, clínicas y estudios profesionales. Si tu sitio ya existe y no lo vas a rehacer, también hacemos SEO técnico y visibilidad en IA: revisamos qué le impide a Google y a ChatGPT leerlo, y lo arreglamos."
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); entradilla de la dirección B",
+      "por_que": "Dice qué se hace (el sitio, diseñado y programado a medida, con panel) y la idea del eje (todo lleva al mismo lugar) sin pelearse con las redes. Nombra ChatGPT por un ejemplo concreto, así que no necesita la glosa «las IA, como ChatGPT» de la ronda 2.",
+      "antes": "Revisamos tu sitio y si Google y las IA, como ChatGPT, pueden visitarlo y entender a qué te dedicas. Después conversamos cómo te llegan las consultas y qué pasa con ellas, y te proponemos por escrito qué hacer."
      },
      {
       "id": "home.portada.boton",
       "rol": "boton",
-      "texto": "Pedir la revisión de una página",
+      "texto": "Hablemos de tu sitio",
       "destino": "/contacto/",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.1 (CTA principal)",
-      "nota": "La única acción principal de la ruta. Se ve en la primera pantalla a 390 y a 1440, también con el aviso de cookies abierto (brief §7, criterio 3). Se completa con «…y entonces recibes una página con los hallazgos»: lo dice la nota de abajo."
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "nota": "La única acción principal de la ruta. COLOR: amarillo lleno #FFE800 con el texto en #060606, el único color de Koto (su logo; lock E12 §2.2). Desvío autorizado por Ramón de spec §1.1 y §20.2 (la interfaz no tenía color): solo este botón y el del encabezado (comun.nav.revision); los demás botones quedan como están. Lo mide y lo escribe Lucía en la spec; lo construye Diego. Se tiene que ver en la primera pantalla a 390 y a 1440, también con el aviso de cookies abierto (brief §7, criterio 3).",
+      "antes": "Pedir la revisión de una página",
+      "por_que": "El botón anterior solo le servía a quien ya tiene sitio. Este sirve a los dos caminos y el microcopy dice qué pasa en cada uno: «…y entonces, si tienes sitio, te lo revisamos; si no, te contamos cómo lo haríamos y cuánto cuesta»."
      },
      {
       "id": "home.portada.microcopy",
       "rol": "nota",
       "uso": "ayuda",
-      "texto": "Te devolvemos una página con lo más importante que encontramos en tu sitio y por dónde partiríamos. Es gratis y llega en un día hábil.",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.1 (microcopy bajo el botón); v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frase 5)",
+      "texto": "Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta.",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
       "fuente": "Plazo: «un día hábil» y no «24 horas» (guía §3; el único plazo documentado fue de 31 horas, HANDOFF-diagnostico-focuscontable-2oct.md).",
-      "antes": "Te devolvemos una página con lo más importante que encontramos en tu sitio y en si la IA puede leerlo, y por dónde partiríamos. Es gratis y llega en un día hábil.",
-      "por_que": "Ronda 2: «en si la IA puede leerlo» (literal del v2 publicado, torpe) y «leerlo» no se entendieron en la lectura en frío. Son ahora dos oraciones; la segunda dice qué se revisa de la IA. Los seis artículos del blog que repiten la frase la cambian igual (ronda2-frases.md, frase 5). QA ronda 2, defecto 21: en la home la segunda oración se acorta a «pueden entender tu sitio», porque la cláusula completa ya está en la entradilla y en el bloque de búsqueda."
+      "antes": "Te devolvemos una página con lo más importante que encontramos en tu sitio y por dónde partiríamos. Es gratis y llega en un día hábil.",
+      "por_que": "Dice qué pasa al apretar el botón en los dos casos, con sitio y sin sitio, y conserva el «gratis» y el plazo."
      },
      {
-      "id": "home.portada.chequeo",
+      "id": "home.portada.secundario",
       "rol": "boton",
-      "texto": "Chequear mi sitio ahora, sin registro",
-      "destino": "/diagnostico/",
+      "texto": "Ver cómo hacemos un sitio y cuánto cuesta",
+      "destino": "/servicios/desarrollo-web/",
       "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.1 (enlace secundario)",
-      "nota": "Enlace secundario, no botón: el chequeo deja de ser la acción de la portada (brief §2). Reemplaza al formulario del chequeo dentro de la portada (home.chequeo.*, retirado). «Chequeo» y no «diagnóstico»: así se llama la herramienta."
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "nota": "Enlace secundario, no botón: la forma que tenía home.portada.chequeo, debajo del microcopy. Lleva a Desarrollo web, que tiene las cinco fases y los cuatro planes con su precio, así que cumple lo que dice. Reemplaza al enlace del chequeo en la portada."
      },
      {
       "id": "home.portada.og-alt",
       "rol": "nota",
       "uso": "alt de la imagen al compartir",
-      "texto": "SpindleLab. Marketing y crecimiento con IA",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §3 (texto alternativo de la imagen social); v2-vigente/home.txt (OGALT)",
-      "antes": "SpindleLab, estudio de diseño y tecnología: diseñamos y programamos sitios a medida. (hoy escrito a mano en src/pages/v3/index.astro)",
-      "donde": "ogImageAlt de la home. No se ve en la página. La imagen misma (og-e12-marca.jpg) puede traer el claim viejo horneado: la revisa quien lleve la capa de señales."
+      "texto": "SpindleLab. Sitios web a medida y marketing con IA",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "antes": "SpindleLab. Marketing y crecimiento con IA",
+      "donde": "ogImageAlt de la home. No se ve en la página. La imagen (og-e12-marca.jpg?v=2) se regenera con el rótulo y el titular nuevos y sube a ?v=3 (Diego): este alt tiene que coincidir con lo que quede escrito en ella.",
+      "por_que": "El texto alternativo dice lo que dice la imagen al compartir, y la imagen pasa a llevar el rótulo nuevo."
      }
     ],
     "borrado": [
      "El formulario del chequeo dentro de la portada (home.chequeo.rotulo, .intro, .label, .placeholder, .boton, .ayuda, .error-vacio, .resultado): la portada pide una sola acción y el chequeo vive en /diagnostico/, adonde lleva el enlace secundario. El pendiente sobre el error vacío en v3-chequeo.js pasa a /diagnostico/ (diagnostico.error-vacio).",
      "«Si construimos tu sitio, le pasamos este chequeo antes de entregártelo» (home.chequeo.ayuda): sin respaldo, fila «alto» de la revisión del 23-oct.",
-     "Nada sobre el video: ni pie, ni rótulo, ni «generado con IA»."
+     "Nada sobre el video: ni pie, ni rótulo, ni «generado con IA».",
+     "30-oct: el enlace «Chequear mi sitio ahora, sin registro» (home.portada.chequeo, a /diagnostico/) sale de la portada: Ramón puso en el recuadro el botón, el microcopy y el enlace a Desarrollo web (home.portada.secundario). El chequeo sigue en el pie («Chequeo gratis») y en «Lo que puedes revisar antes de contratar». El id se borró el 30-oct, cuando index.astro dejó de leerlo (acta de QA del 30-oct, menor 15)."
     ]
    },
    {
     "id": "problema",
-    "nombre": "Dónde puede caerse una consulta",
-    "trabajo": "Nombrar el problema en las palabras del cliente y decir por dónde se parte, sin afirmar cómo está organizada la empresa del lector.",
+    "nombre": "Todo lo que haces para vender termina en tu sitio",
+    "trabajo": "Explicar por qué partimos por el sitio sin pelearse con las redes ni con la pauta: todo lo que se paga para atraer a alguien lo manda al mismo lugar, y ese lugar es lo que es tuyo. Reemplaza a «Dónde puede caerse una consulta» (Ramón, 30-oct).",
     "elementos": [
      {
       "id": "home.problema.h2",
       "rol": "h2",
-      "tinta": "Dónde puede caerse una consulta",
-      "texto": "Dónde puede caerse una consulta",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.2; v2-vigente/home.txt",
-      "nota": "Una sola tinta: el copy aprobado no trae continuación gris y no la invento."
+      "tinta": "Todo lo que haces para vender termina en tu sitio",
+      "texto": "Todo lo que haces para vender termina en tu sitio",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); sección 2 de la dirección B",
+      "nota": "Una sola tinta, sin punto final, como los otros h2. Tiene 10 palabras: si el tope de 8 de la parte en blanco (spec §1.3, lock §14) vale también para un h2 de una sola tinta, no cabe. Es texto de Ramón y no lo corto: lo decide Lucía (el h2 va en c1-c4, pegajoso desde 1194).",
+      "antes": "Dónde puede caerse una consulta"
      },
      {
       "id": "home.problema.p",
       "rol": "parrafo",
-      "texto": "Alguien pregunta por lo que vendes, mira tu sitio, quizás le escribe también a otra empresa. Entre esa primera consulta y la venta hay varios puntos donde se puede caer, desde lo que tu sitio explica hasta cuánto tarda alguien en responder. Nosotros revisamos primero el sitio, y de ahí seguimos con lo que encontremos.",
+      "texto": "Si tu sitio no explica bien lo que haces, o el formulario no te avisa cuando alguien escribe, lo que pagaste para traer a esa persona se pierde ahí.",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); sección 2 de la dirección B; Ramón, 30-oct (tarde), eligió 7A (desvios/construccion-30oct.md §6.4; acta de QA del 30-oct, menor 7)",
+      "antes": "El anuncio en Google, el post en Instagram, la respuesta de ChatGPT cuando alguien pregunta por tu rubro. Todos mandan a la persona al mismo lugar. Si ese lugar no explica bien lo que haces, o el formulario no te avisa cuando alguien escribe, lo que pagaste para traerla se pierde ahí. (30-oct, la de Ramón; antes de eso: «Alguien pregunta por lo que vendes, mira tu sitio, quizás le escribe también a otra empresa. Entre esa primera consulta y la venta hay varios puntos donde se puede caer, desde lo que tu sitio explica hasta cuánto tarda alguien en responder. Nosotros revisamos primero el sitio, y de ahí seguimos con lo que encontremos.»)",
+      "por_que": "Ramón, 30-oct, eligió 7A. Acta de QA del 30-oct, menor 7: la entradilla de la portada y este párrafo decían la misma lista (el anuncio, el post, Google, ChatGPT) a unos 150 px de distancia a 390. La entradilla se queda, porque es la que le da sentido al titular; este párrafo da la lista por dicha, porque el h2 ya dice que todo termina en el sitio. Quedan las dos fallas que nombraba, que son las que el sitio sabe revisar: un sitio que no explica y un formulario que no avisa. (Antes de eso: «El párrafo de la sección nueva. Las dos fallas que nombra (un sitio que no explica, un formulario que no avisa) son las que el sitio sabe revisar.»)"
+     },
+     {
+      "id": "home.problema.columnas",
+      "rol": "nota",
+      "uso": "referencia",
+      "texto": "Dos columnas bajo el párrafo, en int-sec__cuerpo: «En redes» y «En tu sitio». Componente sugerido, que ya existe: dos ul.int-lista (el de las reglas de «Quién está detrás» y de /nosotros/), cada una con su título como h3.int-lista__t.tinta y cada fila como li > p.cuerpo. Lado a lado desde 834; bajo 834, una debajo de la otra, primero «En redes». Las filas no se emparejan (tres contra cuatro), así que no es una tabla. El cierre va debajo de las dos, como p.cuerpo.caja. La composición fina la fija Lucía (spec, sección 2).",
+      "estado": "nuevo"
+     },
+     {
+      "id": "home.problema.redes.t",
+      "rol": "h2",
+      "nivel": 3,
+      "texto": "En redes",
       "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.2; v2-vigente/home.txt"
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
+     },
+     {
+      "id": "home.problema.redes.1",
+      "rol": "parrafo",
+      "texto": "La plataforma decide a quién le muestra lo que publicas.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
+     },
+     {
+      "id": "home.problema.redes.2",
+      "rol": "parrafo",
+      "texto": "Tu cuenta depende de sus reglas.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
+     },
+     {
+      "id": "home.problema.redes.3",
+      "rol": "parrafo",
+      "texto": "Si te vas, tus seguidores se quedan.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "fuente": "Los seguidores de Instagram o LinkedIn no se exportan (sitio-propio-direcciones.md, «Lo que se puede afirmar»)."
+     },
+     {
+      "id": "home.problema.sitio.t",
+      "rol": "h2",
+      "nivel": 3,
+      "texto": "En tu sitio",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
+     },
+     {
+      "id": "home.problema.sitio.1",
+      "rol": "parrafo",
+      "texto": "Tú decides qué dice y en qué orden.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
+     },
+     {
+      "id": "home.problema.sitio.2",
+      "rol": "parrafo",
+      "texto": "Va en tu dominio.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "fuente": "desarrollo-web.json, dw.fase.5 y dw.incluye.7: «Publicamos el sitio en tu dominio».",
+      "nota": "«A tu nombre» no va: que el dominio quede registrado a nombre del cliente y que se le entregue el código no están confirmados (sitio-propio-direcciones.md). Si Ramón los confirma, son el mejor argumento de propiedad."
+     },
+     {
+      "id": "home.problema.sitio.3",
+      "rol": "parrafo",
+      "texto": "Google y las IA pueden visitarlo y entenderlo.",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); acta de QA del 30-oct, menor 8",
+      "antes": "Google y las IA pueden leerlo y citarlo.",
+      "por_que": "Acta de QA del 30-oct, menor 8. «Leer» es la palabra que en la ronda 1 de E13 no entendieron los tres lectores y que la ronda 2 cambió en todo el sitio por «visitar y entender» (ronda-2-correcciones.md: se dice una vez y en todas partes igual). «Citarlo», a tres secciones de «no mide si hoy te citan» y «no garantiza que te nombren», era lo más cerca de una promesa que tenía la home. Queda la misma idea (el sitio es algo que Google y las IA pueden usar; la cuenta en una red, no tanto) con las palabras del resto del sitio. Si Ramón prefiere otra, se cambia aquí."
+     },
+     {
+      "id": "home.problema.sitio.4",
+      "rol": "parrafo",
+      "texto": "Quien te escribe llega a tu correo.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
+     },
+     {
+      "id": "home.problema.cierre",
+      "rol": "parrafo",
+      "texto": "Por eso partimos por el sitio. Después le conectamos lo demás: que Google y ChatGPT lo entiendan, los anuncios en Google, tus redes y la medición de cada mes. No te decimos que dejes las redes: también las gestionamos.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "nota": "Cierra la sección nombrando los demás servicios y contesta el riesgo del titular (que se lea «deja las redes»). Lleva dos veces dos puntos: es texto de Ramón y se deja."
      }
     ],
     "borrado": [
-     "El recuadro de chat «Ejemplo simulado» (una IA nombrando a SpindleLab: prueba social inventada aunque diga «simulado»), el titular «Cada pieza por su lado. Por eso no apareces.» y la escena del estudio de abogados (home.servicios.via.escena): el borrador la sacó del documento de textos."
+     "El recuadro de chat «Ejemplo simulado» (una IA nombrando a SpindleLab: prueba social inventada aunque diga «simulado»), el titular «Cada pieza por su lado. Por eso no apareces.» y la escena del estudio de abogados (home.servicios.via.escena): el borrador la sacó del documento de textos.",
+     "30-oct: el h2 «Dónde puede caerse una consulta» y su párrafo («Alguien pregunta por lo que vendes, mira tu sitio…»): los reemplaza la sección del sitio como el lugar que es tuyo."
     ]
    },
    {
     "id": "para-quien",
     "nombre": "Para empresas que ya venden",
-    "trabajo": "Filtrar al lector: decir a quién le sirve, con rubros solo como ejemplo, y dejar entrar a quien parte de cero.",
+    "trabajo": "Filtrar al lector: decir a quién le sirve, con rubros solo como ejemplo, y abrirle la puerta a quien todavía no tiene sitio.",
     "elementos": [
      {
       "id": "home.paraquien.h2",
@@ -166,9 +260,11 @@
      {
       "id": "home.paraquien.p2",
       "rol": "parrafo",
-      "texto": "Quien está armando todo también puede escribirnos. El sitio es la primera parte.",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.3; v2-vigente/home.txt"
+      "texto": "Si estás partiendo y todavía no tienes sitio, también es por acá: es lo primero que hacemos.",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "antes": "Quien está armando todo también puede escribirnos. El sitio es la primera parte.",
+      "por_que": "Reemplaza a la frase anterior, que decía lo mismo con menos claridad. No se suma: con las dos, la sección repetía la idea."
      }
     ]
    },
@@ -190,10 +286,12 @@
       "id": "home.como.1",
       "rol": "parrafo",
       "rotulo": "01 · Revisión gratis",
-      "texto": "Nos pasas la dirección de tu sitio y te devolvemos los hallazgos principales y por dónde partiríamos.",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.4; v2-vigente/home.txt",
-      "nota": "Molde de dw.fase.N: «rotulo» lleva el número y el nombre separados por « · »; «texto», lo que se recibe."
+      "texto": "Nos pasas la dirección de tu sitio y te devolvemos los hallazgos principales y por dónde partiríamos. Si todavía no tienes, te contamos cómo lo haríamos y cuánto cuesta.",
+      "estado": "cambia",
+      "origen": "home.portada.microcopy (Ramón, 30-oct)",
+      "nota": "Molde de dw.fase.N: «rotulo» lleva el número y el nombre separados por « · »; «texto», lo que se recibe.",
+      "antes": "Nos pasas la dirección de tu sitio y te devolvemos los hallazgos principales y por dónde partiríamos.",
+      "por_que": "El primer paso tiene que servirle también a quien no tiene sitio, al que la sección de arriba invita. La segunda oración es la del microcopy de la portada."
      },
      {
       "id": "home.como.2",
@@ -235,7 +333,7 @@
    {
     "id": "soluciones",
     "nombre": "Lo que podemos hacer por ti",
-    "trabajo": "Que cada lector encuentre qué se hace, desde cuánto cuesta y adónde ir, en cuatro bloques con el precio a la vista.",
+    "trabajo": "Que cada lector encuentre qué se hace, desde cuánto cuesta y adónde ir, con el precio a la vista. Desde el 30-oct el sitio va primero, como el eje, y después lo que se le conecta.",
     "elementos": [
      {
       "id": "home.soluciones.h2",
@@ -250,9 +348,19 @@
      {
       "id": "home.soluciones.intro",
       "rol": "parrafo",
-      "texto": "Cada solución tiene su página, con lo que incluye y su precio de partida (más IVA).",
+      "texto": "Partimos por el sitio y le conectamos lo demás. Cada solución tiene su página, con lo que incluye y su precio de partida (más IVA).",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "antes": "Cada solución tiene su página, con lo que incluye y su precio de partida (más IVA).",
+      "por_que": "Es la frase de enlace que pidió Ramón: dice el orden de los bloques antes de mostrarlos."
+     },
+     {
+      "id": "home.soluciones.orden",
+      "rol": "nota",
+      "uso": "referencia",
+      "texto": "Orden de los bloques desde el 30-oct: Sitio web a medida (home.soluciones.sitio.*) primero; después Búsqueda y visibilidad en IA, Anuncios en Google y redes y Acompañamiento mensual. En index.astro es el orden del arreglo «bloques»; los precios y sus guardianes no cambian.",
       "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt"
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
      },
      {
       "id": "home.soluciones.busqueda.nombre",
@@ -321,11 +429,11 @@
      {
       "id": "home.soluciones.anuncios.texto",
       "rol": "parrafo",
-      "texto": "Anuncios en Google Ads para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
+      "texto": "Anuncios en Google Ads que llevan a tu sitio a quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
       "estado": "cambia",
-      "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt; ronda 2 (desvios/ronda2-frases.md, frase 9)",
-      "antes": "Anuncios en Google (el servicio se llama Paid Media) para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
-      "por_que": "Ronda 2, lectura en frío: «Paid Media (Google)» no se entendió (2 de 3). La primera glosa («el servicio se llama Paid Media») hizo visible el inglés y los lectores pidieron «Google Ads» (acta de QA, ronda 2). Ahora el texto dice Google Ads y el nombre exacto queda en la línea de precio y en el botón. La glosa va aquí y no en la línea de precio, porque el guardián compara «Paid Media (Google) desde $350.000/mes + IVA» seguido, sin nada en medio."
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct) («con sus textos de hoy y, si hace falta, una frase de enlace»)",
+      "antes": "Anuncios en Google Ads para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
+      "por_que": "Frase de enlace con el sitio («que llevan a tu sitio»), para los bloques que se le conectan. El nombre exacto del servicio sigue en la línea de precio y en el botón."
      },
      {
       "id": "home.soluciones.anuncios.precio",
@@ -360,14 +468,16 @@
       "texto": "Sitio web a medida",
       "estado": "nuevo",
       "origen": "copy-secciones-v1.2 §2.5",
-      "nota": "Rótulo de grupo del copy, no el nombre del servicio (que es «Desarrollo web», en el botón). «A medida» es la descripción del bloque y no el claim de la marca, que dejó de serlo (guía §3)."
+      "nota": "Rótulo de grupo, no el nombre del servicio (que es «Desarrollo web», en el botón). Desde el 30-oct es el primer bloque, y «sitios web a medida» vuelve a ser parte de la línea de la marca (home.portada.rotulo)."
      },
      {
       "id": "home.soluciones.sitio.texto",
       "rol": "parrafo",
-      "texto": "Con panel para que edites tú y SEO técnico desde el diseño. Desde una página de campaña hasta un sitio de doce páginas.",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.5; v2-vigente/home.txt"
+      "texto": "Diseñado y programado para tu negocio, con un panel para que edites tú. Desde una página de campaña hasta un sitio de doce páginas.",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); Ramón, 30-oct (tarde), eligió C1 (desvios/construccion-30oct.md §6.1 (c); acta de QA del 30-oct, mayor 3)",
+      "antes": "Diseñado y programado para tu negocio, sin plantillas ni WordPress, con un panel para que edites tú. Desde una página de campaña hasta un sitio de doce páginas. (30-oct, la decisión de Ramón; antes de eso: «Con panel para que edites tú y SEO técnico desde el diseño. Desde una página de campaña hasta un sitio de doce páginas.»)",
+      "por_que": "Ramón, 30-oct, eligió C1. Acta de QA del 30-oct, mayor 3 (c): con «sin plantillas ni WordPress», 2 de 3 lectores no supieron si era bueno o malo; en la ronda 2 de E13, sin la frase, 0 de 3 tropezaron. Queda como estaba en la ronda 2. El «desde cero» sigue donde alguien lo pregunta (dw.faq.1.r). «Con un panel para que edites tú» se queda: Ramón confirmó el 30-oct que el panel viene en todos los planes de Desarrollo web (oferta-v3.json, momentos[0].planes, con un punto en los planes que no lo decían). (Antes de eso: «Primer bloque: dice cómo se hace el sitio. «Sin plantillas ni WordPress» lo respalda dw.faq.1.r.»)"
      },
      {
       "id": "home.soluciones.sitio.precio",
@@ -525,11 +635,11 @@
      {
       "id": "home.pruebas.propio.texto",
       "rol": "parrafo",
-      "texto": "Antes de publicar Verifica y Cumple, el chequeo de la Ley 21.719 de datos personales, lo corrí sobre mi propio sitio. Salió mal. Al arreglarlo encontré además un formulario que perdía mensajes sin avisar, y lo corregí.",
+      "texto": "Antes de publicar Verifica y Cumple, el chequeo de la Ley 21.719 de datos personales, lo corrimos sobre nuestro propio sitio. Salió mal. Al arreglarlo encontramos además un formulario que perdía mensajes sin avisar, y lo corregimos.",
       "estado": "cambia",
-      "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt",
-      "antes": "Antes de publicar el chequeo de la Ley 21.719 de datos personales, lo corrí sobre mi propio sitio. Salió mal. Al arreglarlo encontré además un formulario que perdía mensajes sin avisar, y lo corregí.",
-      "por_que": "Brief §4 (sección 6) pide Verifica y Cumple como pieza propia con su enlace. En vez de una tarjeta aparte que repetiría el mismo hecho, el párrafo la nombra y el enlace de abajo lleva a ella; la ficha completa está en /trabajo/. Singular de Ramón, como en el v2 publicado y como en la fuente observacional del corpus.",
+      "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt; Ramón, 30-oct (tarde), eligió el plural (desvios/construccion-30oct.md §6.3; acta de QA del 30-oct, menor 6)",
+      "antes": "Antes de publicar Verifica y Cumple, el chequeo de la Ley 21.719 de datos personales, lo corrí sobre mi propio sitio. Salió mal. Al arreglarlo encontré además un formulario que perdía mensajes sin avisar, y lo corregí. (hasta el 30-oct; antes de eso, sin nombrar Verifica y Cumple: «Antes de publicar el chequeo de la Ley 21.719 de datos personales, lo corrí sobre mi propio sitio. Salió mal. Al arreglarlo encontré además un formulario que perdía mensajes sin avisar, y lo corregí.»)",
+      "por_que": "Ramón, 30-oct, eligió el plural. Acta de QA del 30-oct, menor 6: era el único «yo» de la home, en una página donde Ramón va en tercera persona y la marca en plural, y 2 de 3 lectores lo notaron. El sitio es del estudio, y el título de la fila ya decía «lo nuestro». Los hechos son los mismos. (Antes de eso: «Brief §4 (sección 6) pide Verifica y Cumple como pieza propia con su enlace. En vez de una tarjeta aparte que repetiría el mismo hecho, el párrafo la nombra y el enlace de abajo lleva a ella; la ficha completa está en /trabajo/. Singular de Ramón, como en el v2 publicado y como en la fuente observacional del corpus.»)",
       "fuente": "ventas/casos-de-exito/verifica-y-cumple.md (corrida del 9-sep, publicado el 21-sep). Sin los puntajes 36 y 73, que no se citan (copy §11). El formulario apareció al arreglar el consentimiento: no lo detectó el chequeo.",
       "condicion": "Ramón confirma que «salió mal» y «perdía mensajes» se pueden decir tal cual."
      },
@@ -608,7 +718,7 @@
    {
     "id": "quien",
     "nombre": "Quién está detrás",
-    "trabajo": "Contestar quién hace esto antes de que lo pregunten, sin inflar el tamaño: una persona, lo que hace la IA y lo que hace él.",
+    "trabajo": "Presentar a quien dirige SpindleLab con hechos y en tercera persona: el estudio presentando a su fundador. Sobrio y con peso; la épica sale de los hechos, no de los adjetivos. Ramón, 30-oct: «se me tiene que mostrar profesional, serio, creativo, innovador».",
     "elementos": [
      {
       "id": "home.quien.h2",
@@ -619,59 +729,86 @@
       "origen": "copy-secciones-v1.2 §2.7; v2-vigente/home.txt",
       "antes": "Detrás de SpindleLab está Ramón Vallejos. Diseña y programa con agentes de IA; él revisa y aprueba el código.",
       "por_que": "El h2 de antes decía «agentes de IA» y «aprueba el código»: la medición de Praxi dice que 50 de 219 commits fueron directo a main, así que «aprueba» no está medido (revisión del 23-oct). El documento de textos lo dice en singular y con lo que hace cada uno, en el primer párrafo.",
-      "nota": "Una sola tinta. Si Lucía quiere dos tintas aquí, la partición natural es sacar la primera frase de home.quien.p1 («Soy Ramón Vallejos y SpindleLab soy yo.», 7 palabras) como gris."
+      "nota": "Una sola tinta. Queda: dice qué hay en la sección y no adjetiva."
      },
      {
       "id": "home.quien.pie",
       "rol": "nota",
       "uso": "pie",
-      "texto": "Ramón Vallejos · Consultor de marketing y crecimiento con IA",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.7 (pie de la foto)",
-      "condicion": "El cargo lo confirma Ramón (R5 del brief; comun.entidad.cargo dice lo mismo en el JSON-LD)."
+      "texto": "Ramón Vallejos · Fundador y director de SpindleLab",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "antes": "Ramón Vallejos · Consultor de marketing y crecimiento con IA",
+      "por_que": "El cargo que fijó Ramón el 30-oct. El jobTitle del JSON-LD (comun.entidad.cargo) dice «Fundador de SpindleLab: sitios web a medida y marketing con IA»."
      },
      {
       "id": "home.quien.p1",
       "rol": "parrafo",
-      "texto": "Soy Ramón Vallejos y SpindleLab soy yo. Uso agentes de IA para el trabajo que se repite y reviso yo lo que te entrego. Como soy una persona, tomo pocos proyectos a la vez. Atiendo a todo Chile por videollamada.",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.7 (P1); v2-vigente/home.txt",
-      "condicion": "Dos afirmaciones que confirma Ramón: «reviso yo lo que te entrego» (declarada, honesta; decisión 4 del copy) y «tomo pocos proyectos a la vez» (de capacidad; una lectora no la creyó, por eso vive solo aquí). Singular deliberado: es la presentación de la persona. «Agentes de IA» solo vive aquí y en Nosotros (guía §3)."
+      "texto": "SpindleLab lo dirige Ramón Vallejos. Viene de años en agencias de medios y de marketing, algunas de ellas parte de redes globales, donde hizo producción, pauta, contenido y SEO para marcas de alcance nacional y regional, con campañas en varios países.",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p1",
+      "antes": "Soy Ramón Vallejos y SpindleLab soy yo. Uso agentes de IA para el trabajo que se repite y reviso yo lo que te entrego. Como soy una persona, tomo pocos proyectos a la vez. Atiendo a todo Chile por videollamada.",
+      "por_que": "Ramón, 30-oct, sobre la versión anterior: «siento que no está profesional, es como de sitio un poco flojo; me gusta lo de \"antes trabajé en agencias\", pero no tiene mucha épica». Pasa a tercera persona (el estudio presenta a su fundador) y abre con la trayectoria, que es lo que le gustaba, dicha con su peso y sin adjetivos.",
+      "fuente": "Hechos que respaldan cada frase, sin nombrarlos (Ramón, 30-oct: ni agencias, ni clientes, ni cifras): Universal McCann, de la red IPG Mediabrands, y Graphene IPG («algunas de ellas parte de redes globales»); la producción de piezas para marcas nacionales; la cuenta de una aerolínea regional con campañas en cuatro países («varios países»); la pauta de retail y B2B en Incrementa; el contenido y el SEO en Maggiore. Fuente: git show 2db3d18:marketing/oficina/obras-web/spindlelab-v3/e12/texto/texto-obra.json (ids nosotros.*) y nosotros.json del 26-oct. «Años» y no un número: «más de cinco años» no se verifica contra el CV."
      },
      {
-      "id": "home.quien.cv",
+      "id": "home.quien.p2",
       "rol": "parrafo",
-      "texto": "Antes trabajé en agencias. Coordiné la producción de piezas para ocho marcas nacionales en Universal McCann y trabajé la cuenta de LATAM Airlines en Graphene IPG, con campañas en cuatro países. Después hice pauta de retail y B2B en Incrementa, y contenido y SEO en Maggiore.",
+      "texto": "Ahí vio dónde se pierde lo que una marca invierte para atraer clientes: casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva. SpindleLab parte de esa idea. Construimos el sitio como el eje del negocio y le conectamos la búsqueda, la pauta, las redes y la medición.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p2",
+      "nota": "Es la idea del nombre (el sitio como eje) sin explicar la palabra: el spindle guía el texto, no se define. Pasa del «él» al «nosotros» en la tercera oración, como el texto base: lo que vio es de él, lo que se entrega es del estudio."
+     },
+     {
+      "id": "home.quien.p3",
+      "rol": "parrafo",
+      "texto": "Responde él por cada entrega: el código lo revisa y lo aprueba antes de que llegue a tu sitio. Para escribirlo trabaja con agentes de IA dentro del equipo. También construyó dos herramientas abiertas: un chequeo que mide si un sitio está preparado para que la IA lo entienda y otro para la Ley 21.719 de datos personales. Cualquiera puede probarlos, gratis.",
       "estado": "cambia",
-      "origen": "copy-secciones-v1.2 §2.7 (P2); v2-vigente/home.txt",
-      "antes": "Antes pasó más de cinco años en agencias: Universal McCann; Graphene IPG, con la cuenta de LATAM Airlines en cuatro países; Incrementa y Maggiore.",
-      "por_que": "«Más de cinco años» no se verifica contra el CV (suma entre 4 años y 4 años 9 meses): sale. Pasa a primera persona, como el resto de la sección.",
-      "condicion": "El CV es un conjunto cerrado de hechos. «Ocho marcas nacionales» y «cuatro países» están en el v2 publicado, pero la memoria de Ramón dice que las cifras de las agencias no van al copy de SpindleLab: lo confirma él."
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p3; Ramón, 30-oct (tarde), eligió A1 (desvios/construccion-30oct.md §6.1 (a); acta de QA del 30-oct, mayor 3)",
+      "fuente": "El chequeo público de /diagnostico/ (21 chequeos, «mide si tu sitio está preparado para que ChatGPT y otras IA puedan entenderlo») y Verifica y Cumple (verifica.spindlelab.cl).",
+      "por_que": "Ramón, 30-oct, eligió A1. Acta de QA del 30-oct, mayor 3 (a): era la frase donde más tropezaban los lectores en frío (3 de 3 en la última lectura; «¿quién me hace el sitio, una persona o un robot?»). Decía primero la herramienta y al final quién responde, que es justo la mitad que tranquiliza. Ahora va primero quién responde por la entrega y después con qué trabaja. Los dos hechos quedan (agentes de IA dentro del equipo; él revisa y aprueba el código de cada entrega) y no se suma ninguno: «con él hablas de principio a fin» era A2 y no se eligió. Lo que sigue, las dos herramientas abiertas, queda igual. (Antes de eso: «El texto base decía «Las herramientas que usa las construyó él»: no todas lo son (trabaja con herramientas de otros), así que la frase dice las dos que sí construyó. «Mide si la IA puede entender un sitio» pasa a «mide si un sitio está preparado para que la IA lo entienda», que es lo que el chequeo mide y como lo dice el resto del sitio.»)",
+      "condicion": "«El código de cada entrega lo revisa y lo aprueba él» es de Ramón (texto base del 30-oct). El 26-oct había salido «aprueba el código» porque en Praxi, su app propia, 50 de 219 commits fueron directo a main: para las entregas a clientes lo afirma él. «Agentes de IA» vive solo aquí y en /nosotros/ (guía §3).",
+      "antes": "Trabaja con agentes de IA dentro del equipo, y el código de cada entrega lo revisa y lo aprueba él. También construyó dos herramientas abiertas: un chequeo que mide si un sitio está preparado para que la IA lo entienda y otro para la Ley 21.719 de datos personales. Cualquiera puede probarlos, gratis. (30-oct, el texto base de Ramón)"
+     },
+     {
+      "id": "home.quien.p4",
+      "rol": "parrafo",
+      "texto": "Estudió Comunicación Publicitaria en la Universidad Andrés Bello y tiene un máster en Marketing Digital y E-commerce de la Universidad de Barcelona.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p4",
+      "fuente": "nosotros.json, nosotros.trayectoria.4 (26-oct); el JSON-LD de #autor-ramon ya declara las dos universidades en alumniOf.",
+      "nota": "Va al final: cierra bajo, con un dato de CV, después de la idea y del oficio."
      },
      {
       "id": "home.quien.regla.1",
       "rol": "parrafo",
-      "rotulo": "Empiezo por mirar",
-      "texto": "Reviso tu sitio antes de cobrarte nada y te cuento lo que encontré.",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.7 (regla 1)",
-      "nota": "Molde de dw.fase.N: «rotulo» es el título corto de la regla; «texto», una frase."
+      "rotulo": "Empezamos por mirar",
+      "texto": "Revisamos tu sitio antes de cobrarte nada y te contamos lo que encontramos.",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "nota": "Molde de dw.fase.N: «rotulo» es el título corto de la regla; «texto», una frase.",
+      "antes": "Empiezo por mirar · Reviso tu sitio antes de cobrarte nada y te cuento lo que encontré.",
+      "por_que": "Las reglas pasan al plural de la marca: son lo que el estudio hace contigo, no la voz de una persona."
      },
      {
       "id": "home.quien.regla.2",
       "rol": "parrafo",
-      "rotulo": "Te digo qué se puede mover y qué no",
-      "texto": "Si el problema no está en tu sitio, te lo digo, y la conversación de 20 minutos sirve para ver dónde mirar.",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.7 (regla 2); v2-vigente/home.txt"
+      "rotulo": "Te decimos qué se puede mover y qué no",
+      "texto": "Si el problema no está en tu sitio, te lo decimos, y la conversación de 20 minutos sirve para ver dónde mirar.",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "antes": "Te digo qué se puede mover y qué no · Si el problema no está en tu sitio, te lo digo, y la conversación de 20 minutos sirve para ver dónde mirar.",
+      "por_que": "Las reglas pasan al plural de la marca: son lo que el estudio hace contigo, no la voz de una persona."
      },
      {
       "id": "home.quien.regla.3",
       "rol": "parrafo",
-      "rotulo": "Lo dejo por escrito",
+      "rotulo": "Lo dejamos por escrito",
       "texto": "Alcance, fases, plazos y precio, antes de empezar.",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.7 (regla 3)"
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "antes": "Lo dejo por escrito · Alcance, fases, plazos y precio, antes de empezar.",
+      "por_que": "Las reglas pasan al plural de la marca: son lo que el estudio hace contigo, no la voz de una persona."
      },
      {
       "id": "home.quien.boton",
@@ -693,13 +830,17 @@
     ],
     "borrado": [
      "«Tú hablas con él durante todo el proyecto. Cuando un trabajo pide algo que él no hace, lo hace con otros profesionales, y te lo dice» (home.quien.publicado): los partners no tienen relación comercial documentada (copy §2.7).",
-     "«Diseña y programa con agentes de IA; él revisa y aprueba el código»: ver el «por qué» de home.quien.h2."
+     "«Diseña y programa con agentes de IA; él revisa y aprueba el código»: ver el «por qué» de home.quien.h2.",
+     "30-oct: «Soy Ramón Vallejos y SpindleLab soy yo», «Uso agentes de IA para el trabajo que se repite y reviso yo lo que te entrego», «Como soy una persona, tomo pocos proyectos a la vez» y «Atiendo a todo Chile por videollamada» (Ramón: «no está profesional»).",
+     "30-oct: el párrafo de las agencias con sus nombres, el del cliente y las dos cifras. Los hechos quedan, dichos en general (home.quien.p1).",
+     "30-oct: la explicación literal del nombre («Spindle, en inglés, es el eje: la pieza del motor que hace girar a las demás…», maquetas del 30-oct). Ramón: «lo del nombre lo hablé como una guía para que construyas mi idea». La idea queda en home.quien.p2, sin definir la palabra.",
+     "30-oct: el id de transición home.quien.cv (llevaba el texto de home.quien.p2 mientras index.astro pasaba a leer p1 a p4). Se borró cuando dejó de leerse (acta de QA del 30-oct, menor 15)."
     ]
    },
    {
     "id": "faq",
     "nombre": "Preguntas frecuentes",
-    "trabajo": "Contestar las cinco dudas que decide un comprador antes de escribir, y decir una vez, concreto, el límite de lo que se promete.",
+    "trabajo": "Contestar las seis dudas que decide un comprador antes de escribir, empezando por la que trae el titular (¿para qué un sitio, si ya tengo redes?), y decir una vez, concreto, el límite de lo que se promete.",
     "elementos": [
      {
       "id": "home.faq.h2",
@@ -709,6 +850,22 @@
       "estado": "nuevo",
       "origen": "v2-vigente/home.txt; ronda 2 (acta de QA, defecto 18: sin punto final)",
       "nota": "Una sola tinta."
+     },
+     {
+      "id": "home.faq.sitio.p",
+      "rol": "h2",
+      "nivel": 3,
+      "texto": "¿Por qué un sitio, si ya tengo Instagram?",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "nota": "La primera pregunta de la lista, antes de home.faq.1. Id con nombre y no con número para no renumerar las otras cinco."
+     },
+     {
+      "id": "home.faq.sitio.r",
+      "rol": "parrafo",
+      "texto": "Porque Instagram es de Instagram. Sirve para que te conozcan, y está bien usarlo. Pero el alcance lo decide la plataforma, y la cuenta depende de sus reglas. El sitio va en tu dominio: ahí llegan tus anuncios, ahí te encuentra Google y ahí te escriben.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
      },
      {
       "id": "home.faq.1.p",
@@ -721,10 +878,12 @@
      {
       "id": "home.faq.1.r",
       "rol": "parrafo",
-      "texto": "Cada solución publica su precio de partida, con lo que incluye, más IVA. Por ejemplo, desde $350.000 al mes la gestión de Google Ads, desde $390.000 una página web, desde $490.000 una auditoría SEO y desde $590.000 al mes el acompañamiento. La revisión de una página es gratis.",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.8; v2-vigente/home.txt",
-      "fuente": "Cada monto es el precio de partida de su página: paid-media $350.000/mes, desarrollo-web $390.000 (Página de Campaña), auditoria-seo-tecnica $490.000 (Auditoría Completa), acompanamiento-mensual $590.000/mes (Esencial). Releer contra el sitio vivo el día de publicar."
+      "texto": "Cada solución publica su precio de partida, con lo que incluye, más IVA. Por ejemplo, desde $390.000 una página web, desde $350.000 al mes la gestión de Google Ads, desde $490.000 una auditoría SEO y desde $590.000 al mes el acompañamiento. La revisión de una página es gratis.",
+      "estado": "cambia",
+      "origen": "home.faq.1.r del 26-oct, reordenada",
+      "fuente": "Cada monto es el precio de partida de su página: paid-media $350.000/mes, desarrollo-web $390.000 (Página de Campaña), auditoria-seo-tecnica $490.000 (Auditoría Completa), acompanamiento-mensual $590.000/mes (Esencial). Releer contra el sitio vivo el día de publicar.",
+      "antes": "Cada solución publica su precio de partida, con lo que incluye, más IVA. Por ejemplo, desde $350.000 al mes la gestión de Google Ads, desde $390.000 una página web, desde $490.000 una auditoría SEO y desde $590.000 al mes el acompañamiento. La revisión de una página es gratis.",
+      "por_que": "El sitio va primero, como en las soluciones. Los mismos cuatro montos (los compara el guardián de index.astro)."
      },
      {
       "id": "home.faq.2.p",
@@ -737,10 +896,12 @@
      {
       "id": "home.faq.2.r",
       "rol": "parrafo",
-      "texto": "La dirección de tu sitio. Si avanzamos, te vamos a pedir acceso de lectura a tu analítica y a Search Console, y para implementar, un acceso acotado a tu sitio. Si hay que mirar tu proceso de ventas, también cómo registras las consultas y cuántas se cierran.",
-      "estado": "nuevo",
-      "origen": "copy-secciones-v1.2 §2.8; v2-vigente/home.txt",
-      "fuente": "Coherencia con marketing/onboarding-cliente.md (copy §11)."
+      "texto": "La dirección de tu sitio o, si todavía no tienes, qué vendes. Si avanzamos, te vamos a pedir acceso de lectura a tu analítica y a Search Console, y para implementar, un acceso acotado a tu sitio. Si hay que mirar tu proceso de ventas, también cómo registras las consultas y cuántas se cierran.",
+      "estado": "cambia",
+      "origen": "home.faq.2.r del 26-oct; contacto.form.sitio.ayuda (Ramón, 30-oct)",
+      "fuente": "Coherencia con marketing/onboarding-cliente.md (copy §11).",
+      "antes": "La dirección de tu sitio. Si avanzamos, te vamos a pedir acceso de lectura a tu analítica y a Search Console, y para implementar, un acceso acotado a tu sitio. Si hay que mirar tu proceso de ventas, también cómo registras las consultas y cuántas se cierran.",
+      "por_que": "Quien no tiene sitio también puede partir (home.paraquien.p2): la respuesta le dice qué mandar. Es lo mismo que pide el formulario de /contacto/ («Si todavía no tienes sitio, escribe «no tengo»»)."
      },
      {
       "id": "home.faq.3.p",
@@ -794,8 +955,8 @@
       "id": "home.faq.jsonld",
       "rol": "nota",
       "uso": "referencia",
-      "texto": "El FAQPage del JSON-LD de la home repite estas cinco preguntas y respuestas, tal cual, en este orden (brief §7, criterio 3: debe coincidir con el FAQ visible). El @id y la forma son los de v2-vigente/home.txt.",
-      "estado": "nuevo"
+      "texto": "El FAQPage del JSON-LD de la home repite estas seis preguntas y respuestas, tal cual y en el orden visible: home.faq.sitio primero y después home.faq.1 a 5 (brief §7, criterio 3). En index.astro, la lista pasa de [1, 2, 3, 4, 5] a ['sitio', 1, 2, 3, 4, 5]. El @id y la forma son los de v2-vigente/home.txt.",
+      "estado": "cambia"
      }
     ],
     "borrado": [
@@ -805,37 +966,40 @@
    {
     "id": "contacto",
     "nombre": "Cierre",
-    "trabajo": "Decir qué pasa al escribir: qué mandas, qué recibes. Una sola acción, hacia /contacto/.",
+    "trabajo": "Decir qué pasa al escribir, tengas sitio o no. Una sola acción, hacia /contacto/.",
     "elementos": [
      {
       "id": "home.contacto.h2",
       "rol": "h2",
-      "tinta": "Empieza por una página.",
-      "gris": "Escríbenos la dirección de tu sitio y te respondemos con la revisión.",
-      "texto": "Empieza por una página. Escríbenos la dirección de tu sitio y te respondemos con la revisión.",
+      "tinta": "Partamos por tu sitio.",
+      "gris": "Tengas uno o no, te respondemos dentro de un día hábil.",
+      "texto": "Partamos por tu sitio. Tengas uno o no, te respondemos dentro de un día hábil.",
       "estado": "cambia",
-      "origen": "copy-secciones-v1.2 §2.9 (H2 y P juntos); v2-vigente/home.txt",
-      "antes": "Escríbenos con la dirección de tu sitio. En 24 horas te mandamos el mini-diagnóstico, gratis.",
-      "por_que": "Sin «24 horas» ni «mini-diagnóstico». El h2 y el párrafo del documento caben en las dos tintas del patrón de E12: tinta 4 palabras (tope 8), gris 12 (rango 6 a 13)."
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct) (la acción «Hablemos de tu sitio» y el plazo de contacto.form.listo.d)",
+      "antes": "Empieza por una página. Escríbenos la dirección de tu sitio y te respondemos con la revisión.",
+      "por_que": "«Empieza por una página» y «Escríbenos la dirección de tu sitio» dejaban fuera a quien no tiene sitio, al que la home ahora invita. «Partamos» retoma el «partimos por el sitio» de la sección 2. Lock §14: tinta 4 palabras, gris 11."
      },
      {
       "id": "home.contacto.boton",
       "rol": "boton",
-      "texto": "Enviar la dirección de mi sitio",
+      "texto": "Hablemos de tu sitio",
       "destino": "/contacto/",
       "estado": "cambia",
-      "origen": "copy-secciones-v1.2 §2.9 (CTA)",
-      "antes": "Escribir a SpindleLab",
-      "por_que": "Dice qué pasa al hacer clic. Es la misma acción de la portada con otras palabras: lleva a /contacto/, donde se dispara generate_lead."
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "antes": "Enviar la dirección de mi sitio",
+      "por_que": "La misma acción que la portada, con las mismas palabras.",
+      "nota": "No va en amarillo: el amarillo es solo del botón de la portada y del encabezado (Ramón, 30-oct)."
      },
      {
       "id": "home.contacto.correo",
       "rol": "nota",
       "texto": "O directo a hola@spindlelab.cl",
-      "destino": "mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis",
-      "estado": "queda",
-      "origen": "texto-paso2.json «home.contacto.correo» (E12)",
-      "nota": "Mismo asunto que el correo del pie (comun.pie.correo)."
+      "destino": "mailto:hola@spindlelab.cl?subject=Hablemos%20de%20mi%20sitio",
+      "estado": "cambia",
+      "origen": "texto-paso2.json «home.contacto.correo» (E12); acta de QA del 30-oct, menor 9",
+      "antes": "mailto:hola@spindlelab.cl?subject=Quiero%20mi%20revisi%C3%B3n%20gratis",
+      "por_que": "El asunto «Quiero mi revisión gratis» solo le servía a quien ya tiene sitio. «Hablemos de mi sitio» es el botón de la portada dicho por quien escribe, y sirve a los dos caminos: el que tiene sitio y el que todavía no.",
+      "nota": "Mismo asunto que el correo del pie (comun.pie.correo) y que el de /contacto/ (contacto.form.directo)."
      }
     ],
     "borrado": [

@@ -5,6 +5,11 @@
 // a la bio (c7-c14), como «Quién está detrás» de la home pero a la escala de la página; «Cómo trabajo» como sección;
 // el cierre. Sin franja: el retrato es la imagen. En E13 se saca «Por qué un solo sistema» (subordinaba redes y pauta
 // al sitio): la página queda con la bio, la trayectoria, las tres reglas de Ramón y el cierre, todo en su singular.
+// 30-oct (Ramón: «se me tiene que mostrar profesional, serio, creativo, innovador»): la página pasa a tercera persona y
+// al plural de la marca, y suma dos secciones entre la trayectoria y las reglas, con los componentes que ya existen y que
+// sugiere Clara: «De dónde sale SpindleLab» (dos párrafos, como «Para empresas que ya venden» de la home) y «Cómo
+// trabaja» (la lista de «Lo que puedes esperar»). Los botones dicen «Hablemos de tu sitio» y siguen en blanco: el
+// amarillo es solo del encabezado y de la portada de la home (spec-visual §1.1).
 //
 // El texto lo arma nosotros() en interiores.mjs, desde texto/nosotros.json (Clara). Señales de Simón,
 // senales-obra.md §2.10; el jobTitle de #autor-ramon lo pone el Layout con la prop de layout-a.ts.
@@ -23,7 +28,7 @@ const retrato = medios.medios['ramon-vallejos-34'];
 <Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
   <PaginaA>
-    {/* 1 · CABECERA (§2.4.1): el h1 de Ramón en una sola tinta (Clara) */}
+    {/* 1 · CABECERA (§2.4.1): el h1 en una sola tinta (Clara, 30-oct) */}
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1] }]} />
       <h1 class="t-declaracion" id="h-titulo">{m.h1}</h1>
@@ -48,7 +53,23 @@ const retrato = medios.medios['ramon-vallejos-34'];
       </div>
     </section>
 
-    {/* 3 · CÓMO TRABAJO: las tres reglas (lista, c5-c12) */}
+    {/* 3 · DE DÓNDE SALE SPINDLELAB (30-oct): el h2 en c1-c4 y dos párrafos en c5-c12 */}
+    <section class="seccion reticula" aria-labelledby="h-idea">
+      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-idea">{m.idea.h2}</h2></div>
+      <div class="int-sec__cuerpo">
+        {m.idea.parrafos.map((p) => <p class="cuerpo caja">{p}</p>)}
+      </div>
+    </section>
+
+    {/* 4 · CÓMO TRABAJA (30-oct): tres filas con título y frase (lista, c5-c12) */}
+    <section class="seccion reticula" aria-labelledby="h-oficio">
+      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-oficio">{m.oficio.h2}</h2></div>
+      <ul class="int-sec__cuerpo int-lista">
+        {m.oficio.lista.map((x) => <li><h3 class="int-lista__t tinta">{x.t}</h3><p class="cuerpo">{x.d}</p></li>)}
+      </ul>
+    </section>
+
+    {/* 5 · LO QUE PUEDES ESPERAR: las tres reglas, en plural (lista, c5-c12) */}
     <section class="seccion reticula" aria-labelledby="h-como">
       <div class="int-sec__cab"><h2 class="t-declaracion" id="h-como">{m.como.h2}</h2></div>
       <ul class="int-sec__cuerpo int-lista">
@@ -56,7 +77,7 @@ const retrato = medios.medios['ramon-vallejos-34'];
       </ul>
     </section>
 
-    {/* 4 · CIERRE (§2.4.4) y «Siguiente · Método» */}
+    {/* 6 · CIERRE (§2.4.4) y «Siguiente · Método» */}
     <section class="seccion reticula" aria-labelledby="h-cierre">
       <div class="cierre">
         <h2 class="t-declaracion" id="h-cierre">{m.cierre.h2}</h2>

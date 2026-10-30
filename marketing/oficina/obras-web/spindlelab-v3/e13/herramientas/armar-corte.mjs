@@ -14,7 +14,13 @@
 //   2. Devuelve a la versión de `origin/main` lo que es de producción y esta obra no toca: functions/, _headers, _redirects,
 //      public/js/, /privacidad/, 404.html y lo que esas dos páginas estáticas piden (style.css, site-header.js).
 //   3. En 404.html y /privacidad/ (páginas estáticas del diseño anterior que esta obra no rehace) cambia dos enlaces que
-//      apuntarían a nada en el sitio nuevo: «Evidencia» (/#evidencia) pasa a «Trabajo» (/trabajo/) y «El Taller» a «Blog».
+//      apuntarían a nada en el sitio nuevo: «Evidencia» (/#evidencia) pasa a «Trabajo» (/trabajo/) y «El Taller» a «Blog»;
+//      y sus tres <link> de icono (el favicon del v2, con su punto dorado) pasan a los cinco de A, la i con su disco de Bruno
+//      (/v3/marca/, ?v=6, los mismos de layout-a.ts): un solo favicon en todo el sitio (acta de QA del 30-oct, menor 14).
+//      /favicon.ico de la raíz no se toca aquí: ya es el de Bruno en la obra (llega con el paso 1). Y la línea de marca del
+//      pie de /privacidad/ («Marketing y crecimiento con IA para empresas que ya venden.», la del 23-oct) pasa a la del 30-oct,
+//      «Sitios web a medida y marketing con IA.» (comun.pie.marca de Clara): el barrido de términos la marca como
+//      posicionamiento anterior (acta de QA del 30-oct, menor 12).
 //   4. Copia los documentos mínimos de la obra a marketing/oficina/obras-web/spindlelab-v3/e13/.
 //   5. Verifica que lo protegido quedó idéntico a main (diff vacío) y lista el resumen del corte contra main.
 // NO hace commit, NO empuja y NO construye: eso lo hace quien ejecuta la lista de publicación (lista-publicacion.md).
@@ -69,7 +75,9 @@ for (const f of faltan) {
 }
 console.log(`2. devuelto desde main: ${DE_MAIN.map((p) => p.replace('spindlelab-astro/', '')).join(', ')}`);
 
-// 3 · enlaces de las dos páginas estáticas
+// 3 · enlaces e iconos de las dos páginas estáticas
+const ICONOS_V2 = '<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg?v=4"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png"><link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">';
+const ICONOS_A = '<link rel="icon" sizes="48x48" href="/v3/marca/favicon.ico?v=6"><link rel="icon" type="image/png" sizes="16x16" href="/v3/marca/favicon-16.png?v=6"><link rel="icon" type="image/png" sizes="32x32" href="/v3/marca/favicon-32.png?v=6"><link rel="icon" type="image/png" sizes="48x48" href="/v3/marca/favicon-48.png?v=6"><link rel="apple-touch-icon" href="/v3/marca/apple-touch-icon.png?v=6">';
 let cambios = 0;
 for (const rel of ['spindlelab-astro/public/404.html', 'spindlelab-astro/public/privacidad/index.html']) {
   const f = join(D, rel);
@@ -77,9 +85,15 @@ for (const rel of ['spindlelab-astro/public/404.html', 'spindlelab-astro/public/
   const antes = t;
   t = t.replace('<li><a href="/#evidencia">Evidencia</a></li>', '<li><a href="/trabajo/">Trabajo</a></li>');
   t = t.replace('<li><a href="/blog/">El Taller</a></li>', '<li><a href="/blog/">Blog</a></li>');
+  if (!t.includes(ICONOS_V2)) { console.error(`3. ${rel}: no trae los <link> de icono del v2 tal como los busca este paso; revisar a mano`); process.exit(1); }
+  t = t.replace(ICONOS_V2, ICONOS_A);
+  t = t.replace('<span>Marketing y crecimiento con IA para empresas que ya venden.</span>', '<span>Sitios web a medida y marketing con IA.</span>');
   if (t !== antes) { writeFileSync(f, t); cambios++; }
 }
-console.log(`3. enlaces de 404.html y /privacidad/ actualizados (${cambios} archivos)`);
+console.log(`3. enlaces e iconos de 404.html y /privacidad/ actualizados (${cambios} archivos)`);
+const raiz = execFileSync('md5sum', [join(D, 'spindlelab-astro/public/favicon.ico'), join(D, 'spindlelab-astro/public/v3/marca/favicon.ico')], { encoding: 'utf8' })
+  .split('\n').filter(Boolean).map((l) => l.split(' ')[0]);
+console.log(`   /favicon.ico de la raíz ${raiz[0] === raiz[1] ? 'es el de Bruno (igual a /v3/marca/favicon.ico)' : 'NO es el de Bruno: copiar e13/logo/favicon.ico a public/favicon.ico'}`);
 
 // 4 · documentos mínimos
 const E13 = 'marketing/oficina/obras-web/spindlelab-v3/e13';

@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/caso-combeau.json",
- "sha256": "e5bd38c839f9721c0b743e9a81c991f7be5d42669b3ce20aa43835e0ccee54ee",
+ "sha256": "64477cd49eb05b3fa9f5a4a6c64e4f86e3c6879a719060a9011fe531d1e498d6",
  "id": "caso-combeau",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -398,22 +398,24 @@
       "id": "combeau.siguiente.contacto",
       "rol": "parrafo",
       "tinta": "Si quieres un sitio así para tu negocio,",
-      "gris": "pide la revisión de una página y te respondemos en un día hábil.",
-      "texto": "Si quieres un sitio así para tu negocio, pide la revisión de una página y te respondemos en un día hábil.",
+      "gris": "escríbenos y te respondemos en un día hábil, tengas sitio o no.",
+      "texto": "Si quieres un sitio así para tu negocio, escríbenos y te respondemos en un día hábil, tengas sitio o no.",
       "fuente": "copy-secciones-v1.2 §2.9 y §8; v2-vigente/contacto.txt («Es gratis y llega en un día hábil»)",
       "estado": "cambia",
-      "antes": "Si quieres un sitio así para tu negocio, escríbenos y te respondemos en 24 horas.",
-      "por_que": "Revisión del 23-oct: «24 horas» está en 38 lugares y el único plazo documentado fue de 31 horas; el plazo es «un día hábil» y lo gratis se llama «revisión». Lock §14: gris de 13 palabras (rango 6 a 13).",
-      "nota": "Quien no tiene sitio y quiere uno nuevo puede escribir igual: /contacto/ lo recibe (copy §2.3, «Quien está armando todo también puede escribirnos»). La frase pide la revisión porque es la acción única del sitio."
+      "antes": "Si quieres un sitio así para tu negocio, pide la revisión de una página y te respondemos en un día hábil.",
+      "por_que": "Quien quiere un sitio así muchas veces no tiene uno: «pide la revisión de una página» no le calzaba. Lock §14: gris de 12 palabras (rango 6 a 13).",
+      "nota": "El botón de abajo dice «Hablemos de tu sitio», como en todo el sitio.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
      },
      {
       "id": "combeau.siguiente.boton",
       "rol": "boton",
-      "texto": "Pedir la revisión de una página",
+      "texto": "Hablemos de tu sitio",
       "destino": "/contacto/",
       "estado": "cambia",
-      "antes": "Escribir a SpindleLab",
-      "por_que": "El mismo botón que la portada de la home: una sola acción en todo el sitio."
+      "antes": "Pedir la revisión de una página",
+      "por_que": "El mismo botón que la portada de la home: una sola acción en todo el sitio.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
      },
      {
       "id": "combeau.siguiente.todo",
