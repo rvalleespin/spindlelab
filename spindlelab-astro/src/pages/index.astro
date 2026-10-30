@@ -1,5 +1,10 @@
 ---
 // HOME DE A · ARCHIVO, RECOMPUESTA PARA EL MODELO NUEVO (obra E13, 26-oct-2026; antes, obra E12, corrida 2, tanda 2).
+// 30-oct (Ramón, sobre e13/copy/maquetas-30oct/): el sitio va primero. Portada «En redes arriendas.», el recuadro
+// «Hablemos de tu sitio» con el botón amarillo (.boton--accion, spec-home §12.1) y el enlace a Desarrollo web; la
+// sección 2 «Todo lo que haces para vender termina en tu sitio» en dos listas (spec-home §12.2, .int-par); el sitio
+// primero en Soluciones; la pregunta del sitio primero en las frecuentes; «Quién está detrás» en tercera persona, en
+// cuatro párrafos. Todo el texto es de Clara (e13/texto/home.json, 30-oct); los desvíos, e13/desvios/construccion-30oct.md.
 //
 // Contrato: marketing/oficina/obras-web/spindlelab-v3/e13/spec-home.md (Lucía): las nueve secciones del brief §4 con las
 // clases y los componentes que ya existen, la portada en su variante H-A (la acción principal ocupa la columna que tenía
@@ -9,7 +14,7 @@
 // El texto es de Clara, tal cual: se lee de src/data/archivo/texto/ (copias de e13/texto/*.json, ver texto.mjs). Los
 // precios y los nombres de servicio salen de oferta-v3.json y servicios-v3.json, y el build se cae si no son iguales,
 // como texto, a los de Clara (también los de las preguntas frecuentes). Las señales (title, description, JSON-LD con el
-// FAQPage de las mismas cinco preguntas que se ven, imagen al compartir) son de Simón, e13/texto/home.json «senales».
+// FAQPage de las mismas seis preguntas que se ven, imagen al compartir) son de Simón, e13/texto/home.json «senales».
 //
 // Las clases de la portada (.portada-v, .portada-v__medio, .portada-v__pie) son las que miden las herramientas de
 // portada de E12 (portada.mjs y contraste-portada.py): no se cambian sin cambiar esas dos.
@@ -47,9 +52,27 @@ const rot = {
   faq: rotuloDe('home.faq.rotulo'),
 };
 
-// ---- 1 · Portada: la acción es la revisión; el chequeo baja a un enlace
+// ---- 1 · Portada: la acción es «Hablemos de tu sitio», en amarillo; debajo, el microcopy de los dos caminos y el enlace
+// a Desarrollo web (home.portada.secundario). El enlace al chequeo sale de la portada el 30-oct (sigue en el pie y en la
+// sección 6).
 const boton = t('home.portada.boton');
-const enlaceChequeo = t('home.portada.chequeo');
+const secundario = t('home.portada.secundario');
+
+// ---- 2 · Todo lo que haces para vender termina en tu sitio: el párrafo, dos listas («En redes» | «En tu sitio») y el
+// cierre. Cuántas filas tiene cada lista lo lee la regla .int-par de archivo.css (4 filas desde 834): si cambia, cambia ahí.
+const filasDe = (k: string) => {
+  const filas: string[] = [];
+  for (let n = 1; ; n++) {
+    let e;
+    try { e = t(`home.problema.${k}.${n}`); } catch (err) { break; }
+    filas.push(e.texto as string);
+  }
+  return { t: t(`home.problema.${k}.t`).texto as string, filas };
+};
+const columnas = [filasDe('redes'), filasDe('sitio')];
+if (Math.max(...columnas.map((c) => c.filas.length)) !== 4) {
+  throw new Error('home, sección 2: la lista más larga ya no tiene 4 filas; .int-par de archivo.css las cuenta (spec-home §12.2)');
+}
 
 // ---- 4 · Cómo partimos y cómo seguimos: «01 · Revisión gratis». El número es el de la lista ordenada: va con aria-hidden
 const fases = [1, 2, 3, 4].map((n) => {
@@ -96,10 +119,11 @@ const precioAco = t('home.soluciones.acompanamiento.precio').texto as string;
 igualQue(precioDe('acompanamiento-mensual', 0), precioAco, 'home, el precio del Acompañamiento mensual');
 igualQue(aco.nombre, t('home.soluciones.acompanamiento.nombre').texto, 'home, el nombre del Acompañamiento mensual');
 
+// 30-oct: el sitio primero, como el eje, y después lo que se le conecta (home.soluciones.orden).
 const bloques = [
+  { k: 'sitio', precio: precioSitio, enlaces: [dw] },
   { k: 'busqueda', pares: [{ precio: precioAud, enlace: aud }, { precio: precioVia, enlace: via }] },
   { k: 'anuncios', precio: precioAnuncios, enlaces: [paid, redes] },
-  { k: 'sitio', precio: precioSitio, enlaces: [dw] },
   { k: 'acompanamiento', precio: precioAco, enlaces: [aco] },
 ].map((b) => ({
   ...b,
@@ -125,15 +149,17 @@ const pruebas = [
 const todo = t('home.pruebas.todo');
 igualQue(todo.texto, `[ Todo el trabajo ] (${trabajo.texto.entradas.length})`, 'home, el corchete de las pruebas');
 
-// ---- 7 · Quién está detrás: las tres reglas, cada una con su título y una frase
+// ---- 7 · Quién está detrás: cuatro párrafos en tercera persona (trayectoria, la idea, cómo trabaja, estudios) y las tres
+// reglas en plural, cada una con su título y una frase
+const bio = [1, 2, 3, 4].map((n) => t(`home.quien.p${n}`).texto as string);
 const reglas = [1, 2, 3].map((n) => {
   const e = t(`home.quien.regla.${n}`);
   return { t: e.rotulo as string, d: e.texto as string };
 });
 
 // ---- 8 · Preguntas frecuentes: las visibles son las del FAQPage del JSON-LD, del mismo texto. Todo monto que digan está
-// en los precios de algún servicio de los JSON.
-const preguntas = [1, 2, 3, 4, 5].map((n) => ({ p: t(`home.faq.${n}.p`).texto as string, r: t(`home.faq.${n}.r`).texto as string }));
+// en los precios de algún servicio de los JSON. 30-oct: la del sitio va primero (home.faq.jsonld).
+const preguntas = ['sitio', 1, 2, 3, 4, 5].map((n) => ({ p: t(`home.faq.${n}.p`).texto as string, r: t(`home.faq.${n}.r`).texto as string }));
 const preciosDeTodos = ORDEN.flatMap((s) => preciosDe(s.slug)).join(' | ');
 for (const q of preguntas) {
   for (const monto of q.r.match(/\$\d{1,3}(?:\.\d{3})*/g) || []) {
@@ -179,7 +205,7 @@ const jsonLd = {
     },
   ],
 };
-const og = { src: '/assets/img/og-e12-marca.jpg?v=2', alt: t('home.portada.og-alt').texto as string };
+const og = { src: '/assets/img/og-e12-marca.jpg?v=3', alt: t('home.portada.og-alt').texto as string };
 ---
 <Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <link slot="head" rel="preload" as="image" href="/v3/portada/hilo-1920-poster.webp" fetchpriority="high" />
@@ -187,8 +213,9 @@ const og = { src: '/assets/img/og-e12-marca.jpg?v=2', alt: t('home.portada.og-al
   <PaginaA>
     {/* 1 · PORTADA (spec-home §2, H-A; spec-visual §3.1). El hilo de oro a sangre; la pausa, primer control. Sobre el velo
          (desde 834) o debajo, sobre el lienzo (bajo 834): el rótulo, el h1 en dos tintas y la entradilla a la izquierda, y
-         a la derecha la acción: el botón de la revisión, su microcopy (la promesa del botón) y el enlace al chequeo. En el
-         DOM va la entradilla antes de la acción; bajo 834 se ve la acción antes (order en archivo.css). */}
+         a la derecha la acción: el botón «Hablemos de tu sitio» en amarillo (30-oct, spec-home §12.1), su microcopy (los
+         dos caminos) y el enlace a Desarrollo web. En el DOM va la entradilla antes de la acción; bajo 834 se ve la acción
+         antes (order en archivo.css). */}
     <section class="portada-v" aria-labelledby="portada-titulo">
       <Video
         clase="portada-v__medio"
@@ -210,14 +237,16 @@ const og = { src: '/assets/img/og-e12-marca.jpg?v=2', alt: t('home.portada.og-al
           <p class="cuerpo entradilla">{t('home.portada.entradilla').texto}</p>
         </div>
         <div class="portada-v__accion">
-          <a class="boton boton--claro" id="portada-cta" href={boton.destino}>{boton.texto}<Icono nombre="flecha" /></a>
+          <a class="boton boton--accion" id="portada-cta" href={boton.destino}>{boton.texto}<Icono nombre="flecha" /></a>
           <p class="chico">{t('home.portada.microcopy').texto}</p>
-          <p class="chico"><a href={enlaceChequeo.destino}>{enlaceChequeo.texto}</a></p>
+          <p class="chico"><a href={secundario.destino}>{secundario.texto}</a></p>
         </div>
       </div>
     </section>
 
-    {/* 2 · DÓNDE PUEDE CAERSE UNA CONSULTA (spec-home §1, fila 2): el h2 en c1–c4, pegajoso desde 1194; el párrafo en c5–c12 */}
+    {/* 2 · TODO LO QUE HACES PARA VENDER TERMINA EN TU SITIO (30-oct, spec-home §12.2): el h2 en c1–c4, pegajoso desde
+         1194; en c5–c12 el párrafo, las dos listas («En redes» | «En tu sitio», lado a lado desde 834, filetes alineados
+         fila a fila) y el cierre. Sin rótulo mono. */}
     <section class="seccion reticula" aria-labelledby="h-problema">
       <div class="int-sec__cab">
         {rot.problema && <p class="rotulo">{rot.problema}</p>}
@@ -225,10 +254,20 @@ const og = { src: '/assets/img/og-e12-marca.jpg?v=2', alt: t('home.portada.og-al
       </div>
       <div class="int-sec__cuerpo">
         <p class="cuerpo caja">{t('home.problema.p').texto}</p>
+        <div class="int-par">
+          {columnas.map((c) => (
+            <>
+              <h3 class="t-titulo int-par__t">{c.t}</h3>
+              <ul class="int-lista int-par__lista">{c.filas.map((x) => <li><p class="cuerpo">{x}</p></li>)}</ul>
+            </>
+          ))}
+        </div>
+        <p class="cuerpo caja">{t('home.problema.cierre').texto}</p>
       </div>
     </section>
 
-    {/* 3 · PARA EMPRESAS QUE YA VENDEN (fila 3): igual que la 2, dos párrafos */}
+    {/* 3 · PARA EMPRESAS QUE YA VENDEN (fila 3): el h2 a la izquierda y dos párrafos (el segundo, desde el 30-oct, para
+         quien parte sin sitio) */}
     <section class="seccion reticula" aria-labelledby="h-empresas">
       <div class="int-sec__cab">
         <h2 class="t-declaracion" id="h-empresas"><span class="tinta">{dos('home.paraquien.h2').tinta}</span></h2>
@@ -259,7 +298,8 @@ const og = { src: '/assets/img/og-e12-marca.jpg?v=2', alt: t('home.portada.og-al
     </section>
 
     {/* 5 · LO QUE PODEMOS HACER POR TI (fila 5): cuatro bloques como lista de filas con línea (nombre, texto, precio y un
-         enlace por servicio). Ninguna fila es un botón ni una tarjeta; los precios, iguales a los JSON. */}
+         enlace por servicio), el sitio primero desde el 30-oct. Ninguna fila es un botón ni una tarjeta; los precios,
+         iguales a los JSON. */}
     <section class="seccion reticula servicios" aria-labelledby="h-serv">
       <div class="servicios__cab">
         {rot.soluciones && <p class="rotulo">{rot.soluciones}</p>}
@@ -318,8 +358,8 @@ const og = { src: '/assets/img/og-e12-marca.jpg?v=2', alt: t('home.portada.og-al
       </div>
     </section>
 
-    {/* 7 · QUIÉN ESTÁ DETRÁS (fila 7): el retrato 3:4 entero y grande; el texto apoyado abajo, con el nombre y el cargo, las
-         tres reglas y el enlace a Nosotros. */}
+    {/* 7 · QUIÉN ESTÁ DETRÁS (fila 7): el retrato 3:4 entero y grande; el texto apoyado abajo, con el nombre y el cargo,
+         cuatro párrafos en tercera persona (30-oct), las tres reglas en plural y el enlace a Nosotros. */}
     <section class="seccion reticula quien" aria-labelledby="h-quien">
       <div class="quien__retrato" data-entrada>
         <Imagen src={m['ramon-vallejos-34'].src} alt={t('home.quien.retrato').texto} ancho={m['ramon-vallejos-34'].ancho} alto={m['ramon-vallejos-34'].alto} clase="p-34" />
@@ -328,8 +368,7 @@ const og = { src: '/assets/img/og-e12-marca.jpg?v=2', alt: t('home.portada.og-al
         {rot.quien && <p class="rotulo">{rot.quien}</p>}
         <h2 class="t-declaracion" id="h-quien"><span class="tinta">{dos('home.quien.h2').tinta}</span></h2>
         <p class="rotulo">{t('home.quien.pie').texto}</p>
-        <p class="cuerpo caja">{t('home.quien.p1').texto}</p>
-        <p class="cuerpo caja">{t('home.quien.cv').texto}</p>
+        {bio.map((p) => <p class="cuerpo caja">{p}</p>)}
         <ul class="int-lista quien__lista">
           {reglas.map((r) => <li><h3 class="int-lista__t tinta">{r.t}</h3><p class="cuerpo">{r.d}</p></li>)}
         </ul>

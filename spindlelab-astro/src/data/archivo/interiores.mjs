@@ -61,8 +61,9 @@ const largos = (title, description, donde) => {
 // La imagen al compartir de cada página es og-e12-<id>.jpg, con el h1 de la página escrito en la imagen (regeneradas en
 // E13 con el h1 nuevo, en la plantilla de A: el negro, Google Sans Flex, tinta y gris). El alt dice el titular de la
 // imagen. ?v=2: cada nombre se sobrescribe y los activos se cachean fuerte (CLAUDE.md, trampa de caché).
-// La de /diagnostico/ se regeneró en la ronda 2 (traía «pueden leer tu sitio» horneado): ?v=3.
-const OG_V = { diagnostico: 3 };
+// La de /diagnostico/ se regeneró en la ronda 2 (traía «pueden leer tu sitio» horneado): ?v=3. Las de /nosotros/ y
+// /contacto/, el 30-oct, con el h1 nuevo y el logo de la i con su disco: ?v=3.
+const OG_V = { diagnostico: 3, nosotros: 3, contacto: 3 };
 const ogDe = (id, h1) => ({ src: `/assets/img/og-e12-${id}.jpg?v=${OG_V[id] ?? 2}`, alt: `SpindleLab: ${typeof h1 === 'string' ? h1 : `${h1.tinta} ${h1.gris}`}` });
 const boton = (e, clase) => ({ texto: e.texto, href: e.destino, clase });
 
@@ -254,7 +255,18 @@ export function nosotros() {
   const firma = { nombre: rol.slice(0, iNombre), resto: rol.slice(iNombre) };
   igualQue(firma.nombre, 'Ramón Vallejos', 'nosotros, la firma');
 
-  // «Cómo trabajo»: las tres reglas de Ramón
+  // 30-oct: dos secciones nuevas entre la trayectoria y las reglas (texto de Clara, en tercera persona). «De dónde sale
+  // SpindleLab»: dos párrafos, la idea del sitio como eje. «Cómo trabaja»: tres filas con título y frase.
+  const idea = {
+    h2: t('nosotros.idea.h2').texto,
+    parrafos: [1, 2].map((i) => t(`nosotros.idea.${i}`).texto),
+  };
+  const oficio = {
+    h2: t('nosotros.oficio.h2').texto,
+    lista: [1, 2, 3].map((i) => ({ t: t(`nosotros.oficio.${i}.t`).texto, d: t(`nosotros.oficio.${i}.d`).texto })),
+  };
+
+  // «Lo que puedes esperar»: las tres reglas, en el plural de la marca desde el 30-oct
   const como = {
     h2: t('nosotros.como.h2').texto,
     lista: [1, 2, 3].map((i) => ({ t: t(`nosotros.como.${i}.t`).texto, d: t(`nosotros.como.${i}.d`).texto })),
@@ -299,7 +311,7 @@ export function nosotros() {
     title, description, jsonLd, og: ogDe('nosotros', h1),
     miga, h1, linea: t('nosotros.linea').texto, alt: t('nosotros.retrato').texto,
     botones: [boton(t('nosotros.boton1'), 'claro')],
-    bio: t('nosotros.bio').texto, firma, trayectoria, como, cierre,
+    bio: t('nosotros.bio').texto, firma, trayectoria, idea, oficio, como, cierre,
   };
 }
 

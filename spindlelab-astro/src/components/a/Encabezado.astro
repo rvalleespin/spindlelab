@@ -7,6 +7,8 @@
 // La página actual va en blanco con aria-current: «page» si es esa página, «true» si es una de su sección (un caso
 // está dentro de Trabajo). El botón es una acción, no una página: no lleva aria-current, y no se dibuja en
 // /contacto/, donde está el formulario.
+// 30-oct: el botón dice «Hablemos» (comun.nav.revision) y va en amarillo, .boton--accion (spec-home §12.3; spec-visual
+// §0.3 punto 11 y §1.1, --a-accion): con #portada-cta, uno de los dos únicos botones con color del sitio.
 import Logo from './Logo.astro';
 import Hora from './Hora.astro';
 import { textoDe } from '../../data/archivo/texto.mjs';
@@ -30,7 +32,7 @@ const actual = (href: string) => (ruta === href ? 'page' : ruta.startsWith(href)
     </nav>
     <div class="cab__der">
       <Hora />
-      {ruta !== revision.destino && <a class="boton boton--claro cab__cta" href={revision.destino}>{revision.texto}</a>}
+      {ruta !== revision.destino && <a class="boton boton--accion cab__cta" href={revision.destino}>{revision.texto}</a>}
     </div>
   </div>
 </header>

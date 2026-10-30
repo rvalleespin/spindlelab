@@ -52,6 +52,11 @@ body.a-body {
   --a-linea: rgba(255, 255, 255, 0.1);
   --a-borde-campo: #707070;
   --a-velo: rgba(6, 6, 6, 0.7);
+  /* 30-oct · la acción principal (§1.1 y §0.3 punto 11; spec-home §12.1): el amarillo de Koto con sus dos estados
+     (L −0,06 y −0,12 en OKLCH, mismo tono). Solo rellena #portada-cta y .cab__cta; nada más lleva color */
+  --a-accion: #ffe800;
+  --a-accion-pasar: #e9d400;
+  --a-accion-apretado: #d4c100;
 
   /* retícula de Koto (§1.4): margen 16, separación 8, sin ancho máximo */
   --a-m: 16px;
@@ -171,6 +176,11 @@ body.a-body {
 .a-body .boton--claro { background: var(--a-blanco); color: var(--a-lienzo); }
 .a-body .boton--claro:hover { background: var(--a-gris); }
 .a-body .boton--claro:active { background: var(--a-apretado); }
+/* 30-oct · la acción principal (spec-visual §1.1 y §4.1): SOLO #portada-cta y .cab__cta. Texto y flecha en el lienzo
+   (16,20 · 13,39 · 11,03:1). El foco es el de todo el sitio, 2 px blanco a 3 px: no se baja (blanco contra amarillo, 1,25:1) */
+.a-body .boton--accion { background: var(--a-accion); color: var(--a-lienzo); }
+.a-body .boton--accion:hover { background: var(--a-accion-pasar); }
+.a-body .boton--accion:active { background: var(--a-accion-apretado); }
 .a-body .boton--placa { background: var(--a-placa); color: var(--a-blanco); }
 .a-body .boton--placa:hover { background: var(--a-placa-activa); }
 .a-body .boton--placa:active { background: var(--a-placa-apretada); }
@@ -208,8 +218,9 @@ body.a-body {
 .a-body .cab__nav a:hover, .a-body .cab__nav a[aria-current] { color: var(--a-blanco); }
 .a-body .cab__hora { margin-left: auto; white-space: nowrap; }
 .a-body .cab__placa { display: none; }
-/* E13 · a la derecha, la hora y el botón de la revisión (spec-home §3.2). El botón es el boton--claro de siempre: sobre
-   la placa del encabezado plegado (#141414) uno de placa desaparecería. */
+/* E13 · a la derecha, la hora y el botón de la revisión (spec-home §3.2). El botón era el boton--claro de siempre: sobre
+   la placa del encabezado plegado (#141414) uno de placa desaparecería. 30-oct: pasa a boton--accion, el amarillo, con
+   «Hablemos» (spec-home §12.3; spec-visual §0.3 punto 11) */
 .a-body .cab__der { margin-left: auto; display: flex; align-items: center; gap: 40px; }
 .a-body .cab__der .cab__hora { margin-left: 0; }
 .a-body .cab__cta { flex: none; }
@@ -907,6 +918,24 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
   line-height: var(--a-i-cuerpo); text-wrap: pretty;
 }
 .a-body .int-lista__pie { margin-top: 16px; max-width: var(--a-caja); }
+
+/* 30-oct · la sección 2 de la home (spec-home §12.2): «En redes» | «En tu sitio». Dos .int-lista lado a lado desde 834,
+   con las filas alineadas entre columnas (subgrid, como .servicio); apiladas bajo 834, «En redes» primero. Sin caja,
+   sin fondo y sin borde alrededor: los filetes son los de .int-lista. */
+.a-body .int-par { display: grid; grid-template-columns: minmax(0, 1fr); margin-block: 32px; }
+.a-body .int-par__t { margin-bottom: 12px; }
+.a-body .int-par__lista + .int-par__t { margin-top: 32px; }
+@media (min-width: 834px) {
+  /* 1 fila para los títulos + tantas como la lista más larga (hoy, 4). Si Clara cambia cuántas son, cambian el 4 y el 6 */
+  .a-body .int-par { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto repeat(4, auto); column-gap: var(--a-g); }
+  .a-body .int-par__lista + .int-par__t { margin-top: 0; }
+  .a-body .int-par > .int-par__t:nth-of-type(1) { grid-area: 1 / 1; }
+  .a-body .int-par > .int-par__t:nth-of-type(2) { grid-area: 1 / 2; }
+  .a-body .int-par > .int-par__lista:nth-of-type(1) { grid-area: 2 / 1 / 6 / 2; }
+  .a-body .int-par > .int-par__lista:nth-of-type(2) { grid-area: 2 / 2 / 6 / 3; }
+  .a-body .int-par__lista { display: grid; grid-template-rows: subgrid; }
+  .a-body .int-par__lista > li { padding-right: 24px; }
+}
 
 /* Las filas de servicios de /servicios/ (una por servicio del momento): el nombre a Título con la flecha, la línea de qué
    hace y el precio en blanco, con la línea de sección como los planes. Desde 834, sobre las doce columnas de la retícula
