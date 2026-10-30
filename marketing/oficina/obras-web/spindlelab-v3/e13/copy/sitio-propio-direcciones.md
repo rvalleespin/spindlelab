@@ -128,3 +128,29 @@ Amarra el nombre, el logo El huso y el video del hilo de oro de la portada. **Ra
 4. Corte de publicación y lectura final de Ramón.
 
 **Fuera del sitio:** el outbound y las bios de LinkedIn todavía dicen la línea anterior. Lo anoto para la troncal.
+
+---
+
+## 30-oct, tarde · Lo que eligió Ramón y las maquetas que siguen (`maquetas-30oct/`)
+
+**Elegido:** el H1 de A, el rótulo nuevo y el texto de B como entradilla y como sección 2. La sección 2 cierra nombrando los demás servicios.
+**Cambios que pidió:**
+- el recuadro de la acción no se entendía;
+- el blanco del botón le molesta y lo quiere de la gama de Koto: Koto es negro, grises, blanco y un solo color, el amarillo `#FFE800`, medido en el lock E12 §2.2;
+- la «cruz» de la i del logo «se ve horrible».
+
+**En las maquetas:**
+- **Recuadro:**
+  - botón «Hablemos de tu sitio»;
+  - microcopy «Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta.»;
+  - enlace secundario «Ver cómo hacemos un sitio y cuánto cuesta».
+
+  El botón del encabezado dice «Hablemos».
+- **Botón en dos versiones del amarillo:** lleno (`#FFE800` con texto `#060606`) o con contorno (borde y texto amarillos sobre el negro).
+- **Sección 2 (B):** el H2, el párrafo, las dos columnas «En redes / En tu sitio» y el cierre con los servicios.
+- **Línea del nombre, en «Quién está detrás»:** «Spindle, en inglés, es el eje: la pieza del motor que hace girar a las demás. En lo que hacemos, ese eje es tu sitio.»
+- **Logo:** se quita solo la i dibujada. Lo demás queda igual, letra por letra.
+  - **Opción 1:** i normal, con punto redondo.
+  - **Opción 2:** i con un disco aplanado por punto, que recuerda el huso sin cruzar el asta.
+
+**Pendiente del paso B, visto en la maqueta:** el pie de «Quién está detrás» dice «Consultor de marketing y crecimiento con IA». Pasa a la línea nueva junto con el `jobTitle` de `#autor-ramon`.
