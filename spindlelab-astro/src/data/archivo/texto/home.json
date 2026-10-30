@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/home.json",
- "sha256": "5936d9a3d379a06806cf8c261f194dc25b9a66231c5a9547cc0cde4302c53a53",
+ "sha256": "569189fa566c877a66f86aa9fcca75fe90d32dea394c93dd56a87bb78def18db",
  "id": "home",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -525,11 +525,11 @@
      {
       "id": "home.pruebas.propio.texto",
       "rol": "parrafo",
-      "texto": "Antes de publicar Verifica y Cumple, el chequeo de la Ley 21.719 de datos personales, lo corrí sobre mi propio sitio. Salió mal. Al arreglarlo encontré además un formulario que perdía mensajes sin avisar, y lo corregí.",
+      "texto": "Antes de publicar Verifica y Cumple, el chequeo de la Ley 21.719 de datos personales, lo corrimos sobre nuestro propio sitio. Salió mal. Al arreglarlo encontramos además un formulario que perdía mensajes sin avisar, y lo corregimos.",
       "estado": "cambia",
       "origen": "copy-secciones-v1.2 §2.6; v2-vigente/home.txt",
       "antes": "Antes de publicar el chequeo de la Ley 21.719 de datos personales, lo corrí sobre mi propio sitio. Salió mal. Al arreglarlo encontré además un formulario que perdía mensajes sin avisar, y lo corregí.",
-      "por_que": "Brief §4 (sección 6) pide Verifica y Cumple como pieza propia con su enlace. En vez de una tarjeta aparte que repetiría el mismo hecho, el párrafo la nombra y el enlace de abajo lleva a ella; la ficha completa está en /trabajo/. Singular de Ramón, como en el v2 publicado y como en la fuente observacional del corpus.",
+      "por_que": "Brief §4 (sección 6) pide Verifica y Cumple como pieza propia con su enlace. En vez de una tarjeta aparte que repetiría el mismo hecho, el párrafo la nombra y el enlace de abajo lleva a ella; la ficha completa está en /trabajo/. En plural desde el 30-oct: Ramón pidió que el «yo» suelto quede en plural, como el resto del sitio (antes iba en singular, como en el v2 publicado).",
       "fuente": "ventas/casos-de-exito/verifica-y-cumple.md (corrida del 9-sep, publicado el 21-sep). Sin los puntajes 36 y 73, que no se citan (copy §11). El formulario apareció al arreglar el consentimiento: no lo detectó el chequeo.",
       "condicion": "Ramón confirma que «salió mal» y «perdía mensajes» se pueden decir tal cual."
      },

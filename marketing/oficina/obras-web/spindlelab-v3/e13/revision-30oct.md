@@ -42,8 +42,8 @@ El troncal fijó el 23-oct «socio de marketing y crecimiento con IA para empres
 | «Va en tu dominio, a tu nombre» / entrega del código | borrador de la sección 2 | solo hechos confirmados | no escribirlo hasta que Ramón diga que el dominio queda a nombre del cliente y que se entrega el código |
 | «Google y las IA pueden leerlo y citarlo» | sección 2 | no prometer citación | se queda: dice posibilidad, no resultado |
 | «lo único que es tuyo» | titular | absoluto | es el gancho que Ramón eligió; la sección 2 debe sostener que también se gestionan las redes (ya lo hace) |
-| un solo «yo» en `home.pruebas.propio` | Home | voz singular/plural | decidir: plural («lo corrimos sobre nuestro propio sitio») o dejarlo como hallazgo propio |
-| «Fundador y director de SpindleLab» | pie de Quién está detrás | sin sugerir equipo | para una firma de una persona basta «Fundador» |
+| un solo «yo» en `home.pruebas.propio` | Home | voz singular/plural | **RESUELTO 30-oct (Ramón): plural.** |
+| «Fundador y director de SpindleLab» | pie de Quién está detrás | sin sugerir equipo | **RESUELTO 30-oct (Ramón): «Fundador».** |
 | botones «Chequear mi sitio ahora, sin registro», «Pedir la revisión…» | home, servicios, método, /diagnostico/ | una sola acción principal | alinear con «Hablemos de tu sitio» o dejar los propios de cada página, pero que el método ya hable también a quien no tiene sitio |
 
 ## 5 · Qué hice en esta pasada
@@ -51,3 +51,23 @@ El troncal fijó el 23-oct «socio de marketing y crecimiento con IA para empres
 - Puse al día mis herramientas: `barrer-terminos.mjs` ya no marca «diseñamos y programamos sitios a medida» (la línea nueva de Ramón) y la guía de roles §3 lo dice.
 - **Marqué mi corte `claude/v3-publicacion` como viejo** (ver el aviso arriba de `lista-publicacion.md`): lleva el texto del 26-oct, con el titular que Ramón mató. **No se debe mergear.** Para publicar hay que rearmarlo desde el árbol de la otra rama cuando Ramón cierre el texto, con `armar-corte.mjs` (receta en `lista-publicacion.md`), regenerando el sitemap (`lastmod`), repitiendo la batería de verificación y pidiendo el cierre exprés de Javiera en contexto limpio.
 - No cambié la rama de la otra sesión ni mi rama de obra en lo que ellos ya cubren (Ley 21.719, titular, botón): para no duplicar ni pisarnos.
+
+## 6 · Respuesta de Ramón a esta nota (30-oct) y qué queda por hacer en la otra rama
+
+Ramón: «las frases no las entiendo. los puntos que entiendo son: el yo suelto debería quedar en plural. dejar en fundador».
+
+**Decidido por Ramón:**
+1. **El «yo» suelto pasa a plural.** `home.pruebas.propio.texto`: «Antes de publicar Verifica y Cumple, el chequeo de la Ley 21.719 de datos personales, lo corrimos sobre nuestro propio sitio. Salió mal. Al arreglarlo encontramos además un formulario que perdía mensajes sin avisar, y lo corregimos.» Regla nueva para el v3: **no queda ningún «yo» en el sitio** (todo en plural o en tercera persona).
+2. **El cargo queda «Fundador»** (se quita «y director»).
+
+**Hecho en `claude/v3-modelo-nuevo`:** el punto 1 (fuente `e13/texto/home.json` y copia con huella; 16/16 «igual»; build de 22 páginas sin errores; en la home sale «nuestro propio sitio»). El punto 2 no existe en esta rama (aquí el cargo ya es «Fundador de SpindleLab»).
+
+**Falta en `claude/magical-franklin-ckfki2` (la línea viva; yo no la toco):**
+- punto 1: mismo texto de arriba en `e13/texto/home.json` (`home.pruebas.propio.texto`);
+- punto 2, a «Fundador de SpindleLab»: `texto/home.json` (`home.quien.pie`), `texto/nosotros.json` (title → «Ramón Vallejos, fundador · SpindleLab»; rol → «Ramón Vallejos · Fundador de SpindleLab · Chile»), `texto/blog.json` (`articulo.autor`) y `spindlelab-astro/public/llms.txt` (líneas 5 y 33: «su fundador y director» → «su fundador»; «fundador y director de SpindleLab» → «fundador de SpindleLab»). Luego `extraer-texto.mjs` y `--comprobar`.
+
+**Las otras frases, dichas en simple (Ramón no las entendió; ninguna lo obliga a decidir hoy):**
+- «casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva»: afirma que la plata se pierde casi siempre en el sitio y casi nunca en el anuncio, sin dato que lo respalde. **Cambio propuesto por defecto:** «…muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva.» Ramón solo interviene si eso no es lo que él vio.
+- «el código de cada entrega lo revisa y lo aprueba él»: hoy no se muestra en pantalla (el párrafo 3 no se pinta); no hay nada que decidir hasta que se muestre.
+- «a tu nombre» y entrega del código: era solo borrador; no está en el sitio y no se escribe mientras Ramón no confirme esos dos hechos.
+- «lo único que es tuyo», «Google y las IA pueden leerlo y citarlo» y los botones: se quedan como están; son decisiones suyas o de la otra sesión.
