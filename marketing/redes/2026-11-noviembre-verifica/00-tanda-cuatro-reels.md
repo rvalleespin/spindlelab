@@ -233,9 +233,10 @@ Una frase por renglón, que es como manda leerlo el manual. Las `/` son respirac
 cortes.
 
 > Pagar publicidad en Instagram está **bien**. / Medir si **funcionó**, también. //
-> **Pero** la cookie que mide / entra antes de que el cliente diga **nada**. //
-> Eso pasa en casi la **mitad** / de los treinta y seis sitios de cafés y pastelerías / que **revisé**
-> en Chile. //
+> **Pero** para medir, / tu sitio guarda algo en el teléfono del **cliente**, / para reconocerlo
+> cuando **vuelva**. //
+> Y lo guarda antes de que **acepte** nada. //
+> Revisé treinta y seis sitios de cafés y pastelerías, / y eso pasa en casi la **mitad**. //
 > Puedes seguir **midiendo** igual. / Solo hay que preguntarle al cliente **primero**. //
 > Y esa pregunta va a ser **obligatoria** por ley. //
 > Es una **franja** abajo de tu sitio / que le pregunta al cliente si **acepta**. //
@@ -243,10 +244,11 @@ cortes.
 > Soy **Ramón**, de SpindleLab. //
 > **Medir** está bien. / Preguntar **primero**, también. //
 
-**100 palabras, 34 segundos.** Largo por renglón: 6, 4, 13, 19, 4, 7, 9, 14, 13, 4, 7.
+**108 palabras, 37 segundos.** Largo por renglón: 6, 4, 16, 8, 16, 4, 7, 9, 14, 13, 4, 7.
 
-**Versión 8, del 30-oct.** Ramón aprobó la apertura en la v6 y todo lo que va de la franja hacia
-abajo en la v7. Lo único que quedaba era la costura entre las dos mitades.
+**Versión 9, del 30-oct.** Ramón tiene aprobada la apertura, la costura y todo lo que va de la
+franja hacia abajo. **La palabra «cookie» no aparece en ningún guion hablado de esta campaña**, por
+la razón de la sección 8.
 
 ### La regla que sale de este rechazo
 
@@ -275,9 +277,9 @@ en 32 segundos: el Senado como dato aparte y el costo real de la medición.
 
 > Pagar por publicidad en Instagram es legítimo. Medir si funcionó, también. Nadie debería pedir perdón por querer saber si la plata que puso trajo clientes.
 >
-> Lo que pasa es que la medición empieza antes de que el cliente diga nada. Entra a tu sitio y la cookie que mide ya quedó en su teléfono.
+> Lo que pasa es que la medición empieza antes de que el cliente diga nada. Entra a tu sitio y tu sitio ya guardó algo en su teléfono para reconocerlo cuando vuelva. Eso es una cookie de seguimiento, y ya es un dato de esa persona.
 >
-> Revisamos 36 sitios de cafés y pastelerías en Chile. En casi la mitad pasa eso.
+> Revisamos 36 sitios de cafés y pastelerías. En casi la mitad pasa eso.
 >
 > Y puedes seguir midiendo igual. Una franja abajo de tu sitio que le pregunte al cliente si acepta, y mides a todos los que acepten. A los que no, no los mides, y eso es todo lo que cambia. No se cae la publicidad y no se cae el sitio.
 >
@@ -671,3 +673,25 @@ se había gastado.
    *"la cookie que **mide**"*. La versión anterior saltaba de *medir* a *treinta y seis sitios*, que
    son dos temas, y ningún "pero" tapa ese hueco. Y la línea del dato ahora abre con **"Eso pasa"**,
    que apunta hacia atrás en vez de inaugurar un asunto.
+
+### 30-oct-2026 · versión 8: «cookie» no es una palabra de privacidad, y «en Chile» le sobra
+
+Ramón: *"es muy técnica para que se hable de cookie... quizás la cookie no se entiende como un tema
+de privacidad o que se está entregando datos"*. Y: *"eso que revisé en Chile suena extraño, porque
+estoy hablando a gente de Chile"*.
+
+**Regla 1: «cookie» no va en ningún guion hablado de esta campaña.** Es jerga, y peor que eso: es
+jerga que **no activa la idea de privacidad**. Quien la oye piensa en un banner molesto, no en sus
+datos. Lo que sí es legible es la acción: **«tu sitio guarda algo en el teléfono del cliente, para
+reconocerlo cuando vuelva»**. Eso cualquiera lo entiende como privacidad, y además es exactamente lo
+que el motor midió (la cookie escrita en el dispositivo), sin afirmar ningún envío de datos, que es
+un límite duro de la medición.
+
+**La palabra no se pierde: se muda a la pantalla.** El plano A es la lista de cookies del navegador,
+así que el ojo lee «cookie» en el panel real de Chrome mientras la voz dice qué significa. Es la
+sinergia verbal/visual del manual, y de paso resuelve el problema de jerga sin perder precisión.
+
+**Regla 2: no se dice «en Chile» cuando se le habla a chilenos.** Suena a que se le explica el país
+al que vive en él. El número de sitios **sí se queda**: es la autoridad del guion y la regla del
+encargo del motor pide siempre decir de cuántos sitios se habla. En texto escrito tampoco hace
+falta, y salió también de ahí.
