@@ -32,7 +32,7 @@ const TERMINOS = [
   ['rubros / especialización', /sectores donde la confianza|nos especializamos|finanzas, salud|rubros que atendemos/gi],
   ['más de cinco años', /m[aá]s de cinco a[ñn]os/gi],
   ['sin compromiso', /sin compromiso/gi],
-  ['posicionamiento anterior', /estudio de dise[ñn]o y tecnolog[ií]a|no es una agencia de marketing|dise[ñn]amos y programamos sitios a medida/gi],
+  ['posicionamiento anterior', /estudio de dise[ñn]o y tecnolog[ií]a|no es una agencia de marketing/gi],
   ['¿Listo para…?', /¿\s*listo para/gi],
   ['mismo chequeo que a cada sitio', /mismo chequeo (que|con el que)[^.<]{0,80}(construimos|proyecto)|le pasamos este chequeo antes/gi],
   ['rayas largas o medias', /[—–]/g],
