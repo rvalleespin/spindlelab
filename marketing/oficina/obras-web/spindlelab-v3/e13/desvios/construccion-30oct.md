@@ -149,6 +149,8 @@ Tab por toda la página; la lectura en frío (pendiente de que Ramón elija, §6
 
 ## 6 · Preguntas para Ramón (defectos 3, 5, 6 y 7 del acta del 30-oct)
 
+**Contestadas el 30-oct en la tarde.** Lo que eligió, construido y medido, está en §8.
+
 Son decisiones suyas, no de oficio: el texto es de él o el hecho lo confirma él. **Nada de esto se cambió en el sitio.**
 Las versiones son de Clara y conservan cada hecho. Cuando Ramón conteste por escrito: Clara lo pasa a `texto/*.json`,
 `extraer-texto.mjs`, build, **`peso-30oct.mjs` (al peso le queda 1,1 kB)** y una lectura en frío de la home
@@ -248,8 +250,8 @@ mismo lugar…») dicen la misma lista a unos 150 px a 390. Las dos son de Ramó
 
 ## 7 · Lo que queda abierto después de esta vuelta
 
-- **Las cuatro preguntas de §6**, y después: texto, build, peso y lectura en frío. Lo que cambie lo revisa Javiera en una QA
-  exprés.
+- **Las cuatro preguntas de §6**: contestadas el 30-oct en la tarde. El texto, el build y el peso están en §8; falta la
+  lectura en frío, y todo lo cambiado lo revisa Javiera en una QA exprés.
 - **Las decisiones de Ramón que el acta ya listaba** y que esta vuelta no toca: la description de 157 («y les conectamos»), el
   `h1` de `/nosotros/` y el gris del de `/contacto/`, si «el código de cada entrega lo revisa y lo aprueba él» vale para las
   entregas a clientes, y «una aerolínea regional» en `/nosotros/`.
@@ -258,3 +260,75 @@ mismo lugar…») dicen la misma lista a unos 150 px a 390. Las dos son de Ramó
   rehacen en A, es una obra aparte.
 - **El margen de peso es de 1,1 kB.** Ver defecto 1.
 - **El `manifest`** sigue sin existir (`icon-192.png` está y nada lo enlaza).
+
+---
+
+## 8 · Respuestas de Ramón (30-oct, tarde)
+
+**Diego, 30-oct-2026, tarde.** Ramón contestó por escrito las cuatro preguntas de §6, en la conversación con la
+orquestadora. Clara pasó el texto en `0f5bf988` (el detalle id por id, en `desvios/texto-30oct.md` §6). Aquí va lo que
+construí y medí sobre ese commit. **Todo construyó a la primera y no cambié nada del sitio:** ni un `.astro`, ni un JSON, ni
+un techo. Nada está publicado y el corte no se armó.
+
+### 8.1 · Lo que eligió y cómo quedó en el `dist`
+
+| Decisión | Dónde | En el `dist` de `0f5bf988` (contra el de `1f02ece6`) |
+|---|---|---|
+| **A1** | `home.quien.p3` y `nosotros.oficio.1.d` | «Responde él por cada entrega: el código lo revisa y lo aprueba antes de que llegue a tu sitio. Para escribirlo trabaja con agentes de IA dentro del equipo.»: 1 vez en `/` (seguida de las dos herramientas abiertas, como estaban) y 1 en `/nosotros/` (la fila «Agentes de IA, con su revisión», con el mismo título) |
+| **B1** | el rótulo y sus repeticiones | Sin cambio: «Sitios web a medida y marketing con IA», 2 veces en `index.html` antes y ahora |
+| **C1** | `home.soluciones.sitio.texto`, `servicios.m3.nota`, `llms.txt` | «sin plantillas»: de 3 a **0**. «WordPress»: de 5 a **2**, los dos en `/servicios/desarrollo-web/` (la pregunta `dw.faq.1.p` a la vista y la misma en el `FAQPage`, con la respuesta «desde cero») |
+| **Plural** | `home.pruebas.propio.texto` | «lo corrimos sobre nuestro propio sitio»: 1; «lo corrí sobre mi propio»: 0 |
+| **7A** | `home.problema.p` | «Si tu sitio no explica bien lo que haces, o el formulario no te avisa cuando alguien escribe, lo que pagaste para traer a esa persona se pierde ahí.»: 1; la lista («El anuncio en Google, el post en Instagram…»): 0 en la sección 2. La entradilla, igual |
+| **El panel en todos los planes** | `oferta-v3.json` (`momentos[0].planes[0]` y `[1]`) y `OFERTAS[0]` y `[1]` de `desarrollo-web.astro` | «Panel donde cambias textos y fotos» en la Página de Campaña (tercer punto) y en el Sitio Esencial (segundo); el Sitio Completo sigue con «Blog o CMS que administras tú» y la Plataforma con «Todo lo del Sitio Completo, y más». La `description` de las `Offer` de Campaña y Esencial dice el panel, igual que su tarjeta. La home, como estaba |
+| **`Layout.astro`** y **los botones con texto propio** | `/metodo/`, `/diagnostico/`, cada servicio | Sin cambio: las cuatro líneas de las letras quedan, gtag, consentimiento y Pixel intactos (ver protegidos abajo) |
+
+### 8.2 · Lo medido
+
+Todo sobre una copia limpia (`git archive HEAD spindlelab-astro | tar -x` en el scratchpad, `node_modules` enlazado) y, para
+comparar, otra de `1f02ece6` construida igual. Los dos `dist` servidos en local sin compresión (`python3 -m http.server`),
+la misma base que las actas. La evidencia que pesa poco quedó en `e13/medicion-30oct/tarde/`.
+
+| Qué | Comando | Resultado |
+|---|---|---|
+| Build | `npx astro build` en la copia | **22 páginas** en 4,18 s, sale con 0, sin errores ni avisos. Pasan los guardianes: precios y nombres contra `oferta-v3.json` y `servicios-v3.json`, largos de `title` y `description`, el orden de servicios, los «Siguiente», las 4 filas de `.int-par` y la lista de planes contra la de Clara. `1f02ece6`: 22 páginas, igual |
+| Texto con huella | `node e13/herramientas/extraer-texto.mjs --comprobar` | **16 de 16 «igual»**, sale con 0 |
+| `verificar` a 390 | `node scripts/verificar.mjs --excluir /privacidad/` | 22 páginas, **«Sin hallazgos»**, sale con 0 |
+| `verificar` a 1440 | `… --ancho 1440` | 22 páginas, **«Sin hallazgos»**, sale con 0 (6 nodos sobre imagen o degradado: la portada, sin cambios) |
+| **Peso, primera carga a 1440** | `node e13/herramientas/peso-30oct.mjs <url> --ancho 1440`, tres corridas | **1.398,8 kB** las tres (1.398.764 bytes) ≤ 1.400. El build de `1f02ece6`, medido igual: **1.398,9** las tres (1.398.863), el número de la vuelta 2: la herramienta sigue calibrada. Diferencia: **−99 bytes**, que son justo los del HTML de la home (39.663 → 39.564). **Margen: 1.236 bytes (1,2 kB)**. No hizo falta bajar nada: el logo en línea dos veces (criterio 10) queda como lo siguiente si algo vuelve a sumar |
+| Peso, recorrida a 1440 | `… --recorrer` | **1.561,6 kB** ≤ 1.600 (antes 1.561,7) |
+| Peso a 390 | `… --ancho 390` | **755,5 kB** ≤ 950 (antes 755,6) |
+| **Primera pantalla** | `node e13/herramientas/portada-30oct.mjs <url> <salida>`, sin `--inyectar`, sobre los dos builds | Las 32 líneas de primera pantalla y del encabezado plegado, **idénticas al décimo** entre los dos builds (`diff` vacío). El botón amarillo entra entero y sin nada encima **con el aviso abierto** en los 11 tamaños de la obra; margen sobre el aviso 44,5 (360 × 640) · 181,1 (360 × 800) · 82,8 (375 × 667) · 227,2 (390 × 844) · 264,7 (414 × 896) · 231,5 (768 × 1024) · 51,6 (834 × 1112) · 52,6 (1024 × 768) · 72,1 (1194 × 834) · 54,6 (1440 × 900) · 35,7 (1920 × 1080), **0 de 5 puntos tapados** en todos. 320 × 568 sigue siendo la excepción de `spec-home.md` §12.1 (−7,4; 2 de 5), igual que antes; sin aviso entra con 145,2. Encabezado plegado dentro de la placa en los 8 anchos. Captura mirada: `tarde/portada-390x844-aviso.jpg` |
+| **Sección 2** | la misma herramienta (`seccion-2.json`) | Dos columnas desde 834, con las filas **sin desfase** (`[0,0,0]`) a 834, 1024, 1194, 1440 y 1920; apilada a 360, 390 y 768. 0 elementos fuera, desborde 0. Sin la lista, la sección baja de 41,5 a 60,8 px según el ancho (1440: 648,7 → 605,5; 390: 904,1 → 843,4). Captura mirada: `tarde/home-s2-1440.jpg` |
+| Alto de la home | la misma herramienta (`alto-home.json`) | **7.438** a 1440 (≤ 7.800) · **7.402** a 1024 (≤ 7.800) · **9.355** a 768 (≤ 9.700) · **8.951** a 390 (≤ 9.300). Antes 7.459 · 7.423 · 9.417 · 9.012. «Quién está detrás» crece 20 a 22 px (A1 es más larga: 958 → 980 a 1440, 1.454 → 1.474 a 390); Soluciones baja 20 y 21 px a 390 y 768 (C1) |
+| Aire de «Quién está detrás» | `node e13/herramientas/quien-aire-30oct.mjs <url> <salida>` | **16 · 16 · 16 px** a 390 y a 1440 (criterio 22), sale con 0 |
+| **Precios** | script del scratchpad sobre los dos `dist` (salida en `tarde/precios.txt`) | `/servicios/desarrollo-web/`: 7 importes visibles y 9 campos de precio del JSON-LD (3 `minPrice`, 3 `priceCurrency`, 3 `valueAddedTaxIncluded`), **iguales**. `/servicios/`: 13 importes visibles iguales; su grafo no lleva precio, ni antes ni ahora. En todo el `dist` (30 `.html`, `.txt` y `.xml`): 137 importes y campos de precio en 10 archivos, **`diff` vacío** |
+| JSON-LD igual a lo visible | lectura de las `Offer` contra las tarjetas del `dist` | Campaña y Esencial dicen el panel, como sus tarjetas; Completo dice «blog/CMS»; Plataforma, «Todo lo del Sitio Completo y más». 45 bloques en el `dist`, **0 errores** de `JSON.parse` |
+| El punto del panel a la vista | Playwright: líneas de cada `li` de los planes (`getClientRects`) y desborde, a 390 y 1440 (`tarde/lineas-y-desborde.json`) | «Panel donde cambias textos y fotos» en **1 línea** a 390 y a 1440, en las dos tarjetas. Desborde 0 en las 7 piezas cambiadas (sección 2, Quién está detrás, Soluciones, Lo que puedes revisar, la fila de `/nosotros/`, el bloque 01 de `/servicios/`, los planes). Capturas miradas: `tarde/dw-planes-1440.jpg`, `dw-planes-390.jpg`, `home-quien-1440.jpg`, `nosotros-oficio-390.jpg` |
+| Qué cambió en el `dist` | comparación archivo por archivo, con el nombre de los `hoisted.*.js` normalizado | Los mismos archivos en los dos; contenido distinto **solo** en `/`, `/nosotros/`, `/servicios/`, `/servicios/desarrollo-web/` y `llms.txt`. Los `hoisted*.js` pesan 84.120 bytes en los dos |
+| Barrido | `node e13/herramientas/barrer-terminos.mjs <dist> --resumen` | Rayas largas o medias: 0. Posicionamiento anterior, «¿Listo para…?», «sin compromiso»: 0. Total 130 hallazgos en 30 archivos, lo mismo que midió Clara |
+| Protegidos | `git diff --stat 1f02ece6 HEAD --` `functions`, `public/_headers`, `public/_redirects`, `public/js`, `public/assets/js`, `src/layouts/Layout.astro`, `src/data/servicios-v3.json` | **Vacío.** Del sitio cambiaron 7 archivos desde `1f02ece6`, todos del commit de Clara; en `oferta-v3.json`, solo las dos líneas del panel |
+
+### 8.3 · Lo que no hice, y por qué
+
+- **No toqué el peso.** Con 1.398,8 kB no hace falta; sacar el logo en línea es un cambio de código que hoy no aporta. Queda
+  anotado como lo siguiente (criterio 10).
+- **Las cuatro `description` de las `Offer` siguen escritas en `desarrollo-web.astro`**, como las dejó Clara. Clara ofreció
+  sacarlas de `puntos`; no lo hice: son resúmenes en prosa del grafo que Simón fijó en `senales-obra.md` §2.7, y derivarlas
+  cambiaría las cuatro, no solo las dos que tocó la decisión de Ramón.
+- **Una observación para Simón, anterior al 30-oct:** la `Offer` del Sitio Completo no dice los idiomas, y su tarjeta sí
+  («Uno o dos idiomas»); la del Esencial dice «un idioma» y la de la Plataforma «multi-idioma». No la cambié porque no es
+  parte de lo decidido y el grafo es de él. Si la suma, es la tercera cadena de `OFERTAS` («…puesta a punto AEO/GEO, uno o dos
+  idiomas.»).
+
+### 8.4 · Lo que queda abierto
+
+- **La QA exprés de Javiera**, en contexto limpio, con la lectura en frío de la home (`lectura-fria-texto.mjs` +
+  `lectura-fria.py`). No la corrí: no me apruebo a mí mismo.
+- **Lo que dejó abierto Clara** (`desvios/texto-30oct.md` §6.5): «En todos los planes» de `/servicios/desarrollo-web/` no nombra
+  el panel (pregunta para Ramón); el título de la fila de `/nosotros/` sigue nombrando primero la herramienta; `home.quien.p3`
+  queda con dos veces dos puntos; la fila 8 de `lista-publicacion.md` (la lleva Mauro); y, para la troncal, la skill
+  `cotizaciones` todavía lista el panel entre lo que cambia el precio.
+- **El margen de peso es de 1,2 kB** (1.236 bytes). Cualquier texto que se sume a la home se vuelve a medir con
+  `peso-30oct.mjs`.
+- **Lo que no medí:** Safari, Firefox y un iPhone; Tab por toda la página (nada del foco cambió); `armar-corte.mjs` corrido de
+  verdad (es del día de publicar).

@@ -1,0 +1,2722 @@
+{
+ "cuando": "2026-10-30T18:31:40.983Z",
+ "base": "http://127.0.0.1:8711",
+ "inyectado": false,
+ "chromium": "141.0.7390.37",
+ "vistas": [
+  {
+   "avisoArriba": 415.4375,
+   "rotulo": {
+    "x": 16,
+    "y": 273,
+    "w": 288,
+    "h": 13.8,
+    "b": 286.8,
+    "r": 304
+   },
+   "h1": {
+    "x": 16,
+    "y": 302.8,
+    "w": 288,
+    "h": 52,
+    "b": 354.8,
+    "r": 304
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 541.4,
+    "w": 288,
+    "h": 121.5,
+    "b": 662.9,
+    "r": 304
+   },
+   "boton": {
+    "x": 16,
+    "y": 378.8,
+    "w": 190.6,
+    "h": 44,
+    "b": 422.8,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 434.8,
+    "w": 288,
+    "h": 52.6,
+    "b": 487.4,
+    "r": 304
+   },
+   "enlace": {
+    "x": 16,
+    "y": 486.4,
+    "w": 253.6,
+    "h": 44,
+    "b": 530.4,
+    "r": 269.6
+   },
+   "puntosTapados": 2,
+   "cab": {
+    "x": 216.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 304
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 90,
+    "b": 90,
+    "r": 320
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 320,
+    "h": 159,
+    "b": 249,
+    "r": 320
+   },
+   "sw": 320,
+   "vw": 320,
+   "vh": 568,
+   "margenBoton": -7.4,
+   "botonEntero": false,
+   "h1Entero": true,
+   "microcopyEntero": false,
+   "enlaceEntero": false,
+   "vista": "320x568",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 273,
+    "w": 288,
+    "h": 13.8,
+    "b": 286.8,
+    "r": 304
+   },
+   "h1": {
+    "x": 16,
+    "y": 302.8,
+    "w": 288,
+    "h": 52,
+    "b": 354.8,
+    "r": 304
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 541.4,
+    "w": 288,
+    "h": 121.5,
+    "b": 662.9,
+    "r": 304
+   },
+   "boton": {
+    "x": 16,
+    "y": 378.8,
+    "w": 190.6,
+    "h": 44,
+    "b": 422.8,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 434.8,
+    "w": 288,
+    "h": 52.6,
+    "b": 487.4,
+    "r": 304
+   },
+   "enlace": {
+    "x": 16,
+    "y": 486.4,
+    "w": 253.6,
+    "h": 44,
+    "b": 530.4,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 216.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 304
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 90,
+    "b": 90,
+    "r": 320
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 320,
+    "h": 159,
+    "b": 249,
+    "r": 320
+   },
+   "sw": 320,
+   "vw": 320,
+   "vh": 568,
+   "margenBoton": 145.2,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "320x568",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 487.4375,
+   "rotulo": {
+    "x": 16,
+    "y": 293.2,
+    "w": 328,
+    "h": 13.8,
+    "b": 306.9,
+    "r": 344
+   },
+   "h1": {
+    "x": 16,
+    "y": 322.9,
+    "w": 328,
+    "h": 52,
+    "b": 374.9,
+    "r": 344
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 561.6,
+    "w": 328,
+    "h": 101.3,
+    "b": 662.8,
+    "r": 344
+   },
+   "boton": {
+    "x": 16,
+    "y": 398.9,
+    "w": 190.6,
+    "h": 44,
+    "b": 442.9,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 454.9,
+    "w": 328,
+    "h": 52.6,
+    "b": 507.6,
+    "r": 344
+   },
+   "enlace": {
+    "x": 16,
+    "y": 506.6,
+    "w": 253.6,
+    "h": 44,
+    "b": 550.6,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 256.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 344
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 360,
+    "h": 90,
+    "b": 90,
+    "r": 360
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 360,
+    "h": 179.2,
+    "b": 269.2,
+    "r": 360
+   },
+   "sw": 360,
+   "vw": 360,
+   "vh": 640,
+   "margenBoton": 44.5,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": false,
+   "enlaceEntero": false,
+   "vista": "360x640",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 293.2,
+    "w": 328,
+    "h": 13.8,
+    "b": 306.9,
+    "r": 344
+   },
+   "h1": {
+    "x": 16,
+    "y": 322.9,
+    "w": 328,
+    "h": 52,
+    "b": 374.9,
+    "r": 344
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 561.6,
+    "w": 328,
+    "h": 101.3,
+    "b": 662.8,
+    "r": 344
+   },
+   "boton": {
+    "x": 16,
+    "y": 398.9,
+    "w": 190.6,
+    "h": 44,
+    "b": 442.9,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 454.9,
+    "w": 328,
+    "h": 52.6,
+    "b": 507.6,
+    "r": 344
+   },
+   "enlace": {
+    "x": 16,
+    "y": 506.6,
+    "w": 253.6,
+    "h": 44,
+    "b": 550.6,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 256.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 344
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 360,
+    "h": 90,
+    "b": 90,
+    "r": 360
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 360,
+    "h": 179.2,
+    "b": 269.2,
+    "r": 360
+   },
+   "sw": 360,
+   "vw": 360,
+   "vh": 640,
+   "margenBoton": 197.1,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "360x640",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 647.4375,
+   "rotulo": {
+    "x": 16,
+    "y": 316.5,
+    "w": 328,
+    "h": 13.8,
+    "b": 330.3,
+    "r": 344
+   },
+   "h1": {
+    "x": 16,
+    "y": 346.3,
+    "w": 328,
+    "h": 52,
+    "b": 398.3,
+    "r": 344
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 584.9,
+    "w": 328,
+    "h": 101.3,
+    "b": 686.1,
+    "r": 344
+   },
+   "boton": {
+    "x": 16,
+    "y": 422.3,
+    "w": 190.6,
+    "h": 44,
+    "b": 466.3,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 478.3,
+    "w": 328,
+    "h": 52.6,
+    "b": 530.9,
+    "r": 344
+   },
+   "enlace": {
+    "x": 16,
+    "y": 529.9,
+    "w": 253.6,
+    "h": 44,
+    "b": 573.9,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 256.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 344
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 360,
+    "h": 90,
+    "b": 90,
+    "r": 360
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 360,
+    "h": 202.5,
+    "b": 292.5,
+    "r": 360
+   },
+   "sw": 360,
+   "vw": 360,
+   "vh": 800,
+   "margenBoton": 181.1,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "360x800",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 316.5,
+    "w": 328,
+    "h": 13.8,
+    "b": 330.3,
+    "r": 344
+   },
+   "h1": {
+    "x": 16,
+    "y": 346.3,
+    "w": 328,
+    "h": 52,
+    "b": 398.3,
+    "r": 344
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 584.9,
+    "w": 328,
+    "h": 101.3,
+    "b": 686.1,
+    "r": 344
+   },
+   "boton": {
+    "x": 16,
+    "y": 422.3,
+    "w": 190.6,
+    "h": 44,
+    "b": 466.3,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 478.3,
+    "w": 328,
+    "h": 52.6,
+    "b": 530.9,
+    "r": 344
+   },
+   "enlace": {
+    "x": 16,
+    "y": 529.9,
+    "w": 253.6,
+    "h": 44,
+    "b": 573.9,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 256.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 344
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 360,
+    "h": 90,
+    "b": 90,
+    "r": 360
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 360,
+    "h": 202.5,
+    "b": 292.5,
+    "r": 360
+   },
+   "sw": 360,
+   "vw": 360,
+   "vh": 800,
+   "margenBoton": 333.7,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "360x800",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 533.328125,
+   "rotulo": {
+    "x": 16,
+    "y": 300.8,
+    "w": 343,
+    "h": 13.8,
+    "b": 314.5,
+    "r": 359
+   },
+   "h1": {
+    "x": 16,
+    "y": 330.5,
+    "w": 343,
+    "h": 52,
+    "b": 382.5,
+    "r": 359
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 569.1,
+    "w": 343,
+    "h": 101.3,
+    "b": 670.4,
+    "r": 359
+   },
+   "boton": {
+    "x": 16,
+    "y": 406.5,
+    "w": 190.6,
+    "h": 44,
+    "b": 450.5,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 462.5,
+    "w": 343,
+    "h": 52.6,
+    "b": 515.1,
+    "r": 359
+   },
+   "enlace": {
+    "x": 16,
+    "y": 514.1,
+    "w": 253.6,
+    "h": 44,
+    "b": 558.1,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 271.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 359
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 375,
+    "h": 90,
+    "b": 90,
+    "r": 375
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 375,
+    "h": 186.8,
+    "b": 276.8,
+    "r": 375
+   },
+   "sw": 375,
+   "vw": 375,
+   "vh": 667,
+   "margenBoton": 82.8,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": false,
+   "vista": "375x667",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 300.8,
+    "w": 343,
+    "h": 13.8,
+    "b": 314.5,
+    "r": 359
+   },
+   "h1": {
+    "x": 16,
+    "y": 330.5,
+    "w": 343,
+    "h": 52,
+    "b": 382.5,
+    "r": 359
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 569.1,
+    "w": 343,
+    "h": 101.3,
+    "b": 670.4,
+    "r": 359
+   },
+   "boton": {
+    "x": 16,
+    "y": 406.5,
+    "w": 190.6,
+    "h": 44,
+    "b": 450.5,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 462.5,
+    "w": 343,
+    "h": 52.6,
+    "b": 515.1,
+    "r": 359
+   },
+   "enlace": {
+    "x": 16,
+    "y": 514.1,
+    "w": 253.6,
+    "h": 44,
+    "b": 558.1,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 271.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 359
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 375,
+    "h": 90,
+    "b": 90,
+    "r": 375
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 375,
+    "h": 186.8,
+    "b": 276.8,
+    "r": 375
+   },
+   "sw": 375,
+   "vw": 375,
+   "vh": 667,
+   "margenBoton": 216.5,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "375x667",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 710.328125,
+   "rotulo": {
+    "x": 16,
+    "y": 333.4,
+    "w": 358,
+    "h": 13.8,
+    "b": 347.1,
+    "r": 374
+   },
+   "h1": {
+    "x": 16,
+    "y": 363.1,
+    "w": 358,
+    "h": 52,
+    "b": 415.1,
+    "r": 374
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 601.8,
+    "w": 358,
+    "h": 101.3,
+    "b": 703,
+    "r": 374
+   },
+   "boton": {
+    "x": 16,
+    "y": 439.1,
+    "w": 190.6,
+    "h": 44,
+    "b": 483.1,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 495.1,
+    "w": 358,
+    "h": 52.6,
+    "b": 547.8,
+    "r": 374
+   },
+   "enlace": {
+    "x": 16,
+    "y": 546.8,
+    "w": 253.6,
+    "h": 44,
+    "b": 590.8,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 286.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 374
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 90,
+    "b": 90,
+    "r": 390
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 390,
+    "h": 219.4,
+    "b": 309.4,
+    "r": 390
+   },
+   "sw": 390,
+   "vw": 390,
+   "vh": 844,
+   "margenBoton": 227.2,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "390x844",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 333.4,
+    "w": 358,
+    "h": 13.8,
+    "b": 347.1,
+    "r": 374
+   },
+   "h1": {
+    "x": 16,
+    "y": 363.1,
+    "w": 358,
+    "h": 52,
+    "b": 415.1,
+    "r": 374
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 601.8,
+    "w": 358,
+    "h": 101.3,
+    "b": 703,
+    "r": 374
+   },
+   "boton": {
+    "x": 16,
+    "y": 439.1,
+    "w": 190.6,
+    "h": 44,
+    "b": 483.1,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 495.1,
+    "w": 358,
+    "h": 52.6,
+    "b": 547.8,
+    "r": 374
+   },
+   "enlace": {
+    "x": 16,
+    "y": 546.8,
+    "w": 253.6,
+    "h": 44,
+    "b": 590.8,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 286.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 374
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 390,
+    "h": 90,
+    "b": 90,
+    "r": 390
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 390,
+    "h": 219.4,
+    "b": 309.4,
+    "r": 390
+   },
+   "sw": 390,
+   "vw": 390,
+   "vh": 844,
+   "margenBoton": 360.9,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "390x844",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 762.328125,
+   "rotulo": {
+    "x": 16,
+    "y": 346.9,
+    "w": 382,
+    "h": 13.8,
+    "b": 360.6,
+    "r": 398
+   },
+   "h1": {
+    "x": 16,
+    "y": 376.6,
+    "w": 382,
+    "h": 53,
+    "b": 429.6,
+    "r": 398
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 616.3,
+    "w": 382,
+    "h": 81.1,
+    "b": 697.4,
+    "r": 398
+   },
+   "boton": {
+    "x": 16,
+    "y": 453.6,
+    "w": 190.6,
+    "h": 44,
+    "b": 497.6,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 509.6,
+    "w": 382,
+    "h": 52.7,
+    "b": 562.3,
+    "r": 398
+   },
+   "enlace": {
+    "x": 16,
+    "y": 561.3,
+    "w": 253.6,
+    "h": 44,
+    "b": 605.3,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 310.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 398
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 414,
+    "h": 90,
+    "b": 90,
+    "r": 414
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 414,
+    "h": 232.9,
+    "b": 322.9,
+    "r": 414
+   },
+   "sw": 414,
+   "vw": 414,
+   "vh": 896,
+   "margenBoton": 264.7,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "414x896",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 346.9,
+    "w": 382,
+    "h": 13.8,
+    "b": 360.6,
+    "r": 398
+   },
+   "h1": {
+    "x": 16,
+    "y": 376.6,
+    "w": 382,
+    "h": 53,
+    "b": 429.6,
+    "r": 398
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 616.3,
+    "w": 382,
+    "h": 81.1,
+    "b": 697.4,
+    "r": 398
+   },
+   "boton": {
+    "x": 16,
+    "y": 453.6,
+    "w": 190.6,
+    "h": 44,
+    "b": 497.6,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 509.6,
+    "w": 382,
+    "h": 52.7,
+    "b": 562.3,
+    "r": 398
+   },
+   "enlace": {
+    "x": 16,
+    "y": 561.3,
+    "w": 253.6,
+    "h": 44,
+    "b": 605.3,
+    "r": 269.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 310.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 398
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 414,
+    "h": 90,
+    "b": 90,
+    "r": 414
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 414,
+    "h": 232.9,
+    "b": 322.9,
+    "r": 414
+   },
+   "sw": 414,
+   "vw": 414,
+   "vh": 896,
+   "margenBoton": 398.4,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "414x896",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 909.21875,
+   "rotulo": {
+    "x": 16,
+    "y": 546,
+    "w": 736,
+    "h": 13.8,
+    "b": 559.8,
+    "r": 752
+   },
+   "h1": {
+    "x": 16,
+    "y": 575.8,
+    "w": 736,
+    "h": 33.9,
+    "b": 609.7,
+    "r": 752
+   },
+   "lineasH1": 1,
+   "entradilla": {
+    "x": 16,
+    "y": 779.8,
+    "w": 493,
+    "h": 83,
+    "b": 862.8,
+    "r": 509
+   },
+   "boton": {
+    "x": 16,
+    "y": 633.7,
+    "w": 190.6,
+    "h": 44,
+    "b": 677.7,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 689.7,
+    "w": 493,
+    "h": 36.1,
+    "b": 725.8,
+    "r": 509
+   },
+   "enlace": {
+    "x": 16,
+    "y": 724.8,
+    "w": 260.6,
+    "h": 44,
+    "b": 768.8,
+    "r": 276.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 664.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 752
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 768,
+    "h": 90,
+    "b": 90,
+    "r": 768
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 768,
+    "h": 432,
+    "b": 522,
+    "r": 768
+   },
+   "sw": 768,
+   "vw": 768,
+   "vh": 1024,
+   "margenBoton": 231.5,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "768x1024",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 546,
+    "w": 736,
+    "h": 13.8,
+    "b": 559.8,
+    "r": 752
+   },
+   "h1": {
+    "x": 16,
+    "y": 575.8,
+    "w": 736,
+    "h": 33.9,
+    "b": 609.7,
+    "r": 752
+   },
+   "lineasH1": 1,
+   "entradilla": {
+    "x": 16,
+    "y": 779.8,
+    "w": 493,
+    "h": 83,
+    "b": 862.8,
+    "r": 509
+   },
+   "boton": {
+    "x": 16,
+    "y": 633.7,
+    "w": 190.6,
+    "h": 44,
+    "b": 677.7,
+    "r": 206.6
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 16,
+    "y": 689.7,
+    "w": 493,
+    "h": 36.1,
+    "b": 725.8,
+    "r": 509
+   },
+   "enlace": {
+    "x": 16,
+    "y": 724.8,
+    "w": 260.6,
+    "h": 44,
+    "b": 768.8,
+    "r": 276.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 664.5,
+    "y": 2,
+    "w": 87.5,
+    "h": 44,
+    "b": 46,
+    "r": 752
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 768,
+    "h": 90,
+    "b": 90,
+    "r": 768
+   },
+   "medio": {
+    "x": 0,
+    "y": 90,
+    "w": 768,
+    "h": 432,
+    "b": 522,
+    "r": 768
+   },
+   "sw": 768,
+   "vw": 768,
+   "vh": 1024,
+   "margenBoton": 346.3,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "768x1024",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 1043,
+   "rotulo": {
+    "x": 16,
+    "y": 888.3,
+    "w": 464.5,
+    "h": 13.8,
+    "b": 902.1,
+    "r": 480.5
+   },
+   "h1": {
+    "x": 16,
+    "y": 918.1,
+    "w": 464.5,
+    "h": 70.6,
+    "b": 988.7,
+    "r": 480.5
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 1004.7,
+    "w": 464.5,
+    "h": 83.3,
+    "b": 1088,
+    "r": 480.5
+   },
+   "boton": {
+    "x": 488.5,
+    "y": 947.4,
+    "w": 329.5,
+    "h": 44,
+    "b": 991.4,
+    "r": 818
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 488.5,
+    "y": 1003.4,
+    "w": 329.5,
+    "h": 54.4,
+    "b": 1057.9,
+    "r": 818
+   },
+   "enlace": {
+    "x": 488.5,
+    "y": 1069.9,
+    "w": 261.8,
+    "h": 17,
+    "b": 1086.9,
+    "r": 750.3
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 730.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 818
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 834,
+    "h": 64,
+    "b": 64,
+    "r": 834
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 834,
+    "h": 1048,
+    "b": 1112,
+    "r": 834
+   },
+   "sw": 834,
+   "vw": 834,
+   "vh": 1112,
+   "margenBoton": 51.6,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": false,
+   "enlaceEntero": false,
+   "vista": "834x1112",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 888.3,
+    "w": 464.5,
+    "h": 13.8,
+    "b": 902.1,
+    "r": 480.5
+   },
+   "h1": {
+    "x": 16,
+    "y": 918.1,
+    "w": 464.5,
+    "h": 70.6,
+    "b": 988.7,
+    "r": 480.5
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 1004.7,
+    "w": 464.5,
+    "h": 83.3,
+    "b": 1088,
+    "r": 480.5
+   },
+   "boton": {
+    "x": 488.5,
+    "y": 947.4,
+    "w": 329.5,
+    "h": 44,
+    "b": 991.4,
+    "r": 818
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 488.5,
+    "y": 1003.4,
+    "w": 329.5,
+    "h": 54.4,
+    "b": 1057.9,
+    "r": 818
+   },
+   "enlace": {
+    "x": 488.5,
+    "y": 1069.9,
+    "w": 261.8,
+    "h": 17,
+    "b": 1086.9,
+    "r": 750.3
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 730.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 818
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 834,
+    "h": 64,
+    "b": 64,
+    "r": 834
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 834,
+    "h": 1048,
+    "b": 1112,
+    "r": 834
+   },
+   "sw": 834,
+   "vw": 834,
+   "vh": 1112,
+   "margenBoton": 120.6,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "834x1112",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 699,
+   "rotulo": {
+    "x": 16,
+    "y": 535.3,
+    "w": 575.3,
+    "h": 13.8,
+    "b": 549.1,
+    "r": 591.3
+   },
+   "h1": {
+    "x": 16,
+    "y": 565.1,
+    "w": 575.3,
+    "h": 78.6,
+    "b": 643.6,
+    "r": 591.3
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 659.6,
+    "w": 493,
+    "h": 84.4,
+    "b": 744,
+    "r": 509
+   },
+   "boton": {
+    "x": 599.3,
+    "y": 602.4,
+    "w": 408.7,
+    "h": 44,
+    "b": 646.4,
+    "r": 1008
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 599.3,
+    "y": 658.4,
+    "w": 408.7,
+    "h": 55.2,
+    "b": 713.6,
+    "r": 1008
+   },
+   "enlace": {
+    "x": 599.3,
+    "y": 725.6,
+    "w": 265.5,
+    "h": 17,
+    "b": 742.6,
+    "r": 864.8
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 920.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1008
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 64,
+    "b": 64,
+    "r": 1024
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 1024,
+    "h": 704,
+    "b": 768,
+    "r": 1024
+   },
+   "sw": 1024,
+   "vw": 1024,
+   "vh": 768,
+   "margenBoton": 52.6,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": false,
+   "enlaceEntero": false,
+   "vista": "1024x768",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 535.3,
+    "w": 575.3,
+    "h": 13.8,
+    "b": 549.1,
+    "r": 591.3
+   },
+   "h1": {
+    "x": 16,
+    "y": 565.1,
+    "w": 575.3,
+    "h": 78.6,
+    "b": 643.6,
+    "r": 591.3
+   },
+   "lineasH1": 2,
+   "entradilla": {
+    "x": 16,
+    "y": 659.6,
+    "w": 493,
+    "h": 84.4,
+    "b": 744,
+    "r": 509
+   },
+   "boton": {
+    "x": 599.3,
+    "y": 602.4,
+    "w": 408.7,
+    "h": 44,
+    "b": 646.4,
+    "r": 1008
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 599.3,
+    "y": 658.4,
+    "w": 408.7,
+    "h": 55.2,
+    "b": 713.6,
+    "r": 1008
+   },
+   "enlace": {
+    "x": 599.3,
+    "y": 725.6,
+    "w": 265.5,
+    "h": 17,
+    "b": 742.6,
+    "r": 864.8
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 920.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1008
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 1024,
+    "h": 64,
+    "b": 64,
+    "r": 1024
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 1024,
+    "h": 704,
+    "b": 768,
+    "r": 1024
+   },
+   "sw": 1024,
+   "vw": 1024,
+   "vh": 768,
+   "margenBoton": 121.6,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "1024x768",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 765,
+   "rotulo": {
+    "x": 16,
+    "y": 636.2,
+    "w": 869.5,
+    "h": 13.8,
+    "b": 649.9,
+    "r": 885.5
+   },
+   "h1": {
+    "x": 16,
+    "y": 665.9,
+    "w": 869.5,
+    "h": 42.8,
+    "b": 708.8,
+    "r": 885.5
+   },
+   "lineasH1": 1,
+   "entradilla": {
+    "x": 16,
+    "y": 724.8,
+    "w": 493,
+    "h": 85.3,
+    "b": 810,
+    "r": 509
+   },
+   "boton": {
+    "x": 893.5,
+    "y": 648.9,
+    "w": 284.5,
+    "h": 44,
+    "b": 692.9,
+    "r": 1178
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 893.5,
+    "y": 704.9,
+    "w": 284.5,
+    "h": 74.5,
+    "b": 779.4,
+    "r": 1178
+   },
+   "enlace": {
+    "x": 893.5,
+    "y": 791.4,
+    "w": 268.8,
+    "h": 17,
+    "b": 808.4,
+    "r": 1162.3
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 1090.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1178
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 1194,
+    "h": 64,
+    "b": 64,
+    "r": 1194
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 1194,
+    "h": 770,
+    "b": 834,
+    "r": 1194
+   },
+   "sw": 1194,
+   "vw": 1194,
+   "vh": 834,
+   "margenBoton": 72.1,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": false,
+   "enlaceEntero": false,
+   "vista": "1194x834",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 636.2,
+    "w": 869.5,
+    "h": 13.8,
+    "b": 649.9,
+    "r": 885.5
+   },
+   "h1": {
+    "x": 16,
+    "y": 665.9,
+    "w": 869.5,
+    "h": 42.8,
+    "b": 708.8,
+    "r": 885.5
+   },
+   "lineasH1": 1,
+   "entradilla": {
+    "x": 16,
+    "y": 724.8,
+    "w": 493,
+    "h": 85.3,
+    "b": 810,
+    "r": 509
+   },
+   "boton": {
+    "x": 893.5,
+    "y": 648.9,
+    "w": 284.5,
+    "h": 44,
+    "b": 692.9,
+    "r": 1178
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 893.5,
+    "y": 704.9,
+    "w": 284.5,
+    "h": 74.5,
+    "b": 779.4,
+    "r": 1178
+   },
+   "enlace": {
+    "x": 893.5,
+    "y": 791.4,
+    "w": 268.8,
+    "h": 17,
+    "b": 808.4,
+    "r": 1162.3
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 1090.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1178
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 1194,
+    "h": 64,
+    "b": 64,
+    "r": 1194
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 1194,
+    "h": 770,
+    "b": 834,
+    "r": 1194
+   },
+   "sw": 1194,
+   "vw": 1194,
+   "vh": 834,
+   "margenBoton": 141.1,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "1194x834",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 731,
+   "rotulo": {
+    "x": 16,
+    "y": 599.9,
+    "w": 934,
+    "h": 13.8,
+    "b": 613.7,
+    "r": 950
+   },
+   "h1": {
+    "x": 16,
+    "y": 629.7,
+    "w": 934,
+    "h": 44.6,
+    "b": 674.3,
+    "r": 950
+   },
+   "lineasH1": 1,
+   "entradilla": {
+    "x": 16,
+    "y": 690.3,
+    "w": 493,
+    "h": 85.7,
+    "b": 776,
+    "r": 509
+   },
+   "boton": {
+    "x": 958,
+    "y": 633.1,
+    "w": 306,
+    "h": 44,
+    "b": 677.1,
+    "r": 1264
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 958,
+    "y": 689.1,
+    "w": 306,
+    "h": 56.2,
+    "b": 745.3,
+    "r": 1264
+   },
+   "enlace": {
+    "x": 958,
+    "y": 757.3,
+    "w": 270.6,
+    "h": 17,
+    "b": 774.3,
+    "r": 1228.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 1176.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1264
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 1280,
+    "h": 64,
+    "b": 64,
+    "r": 1280
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 1280,
+    "h": 736,
+    "b": 800,
+    "r": 1280
+   },
+   "sw": 1280,
+   "vw": 1280,
+   "vh": 800,
+   "margenBoton": 53.9,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": false,
+   "enlaceEntero": false,
+   "vista": "1280x800",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 599.9,
+    "w": 934,
+    "h": 13.8,
+    "b": 613.7,
+    "r": 950
+   },
+   "h1": {
+    "x": 16,
+    "y": 629.7,
+    "w": 934,
+    "h": 44.6,
+    "b": 674.3,
+    "r": 950
+   },
+   "lineasH1": 1,
+   "entradilla": {
+    "x": 16,
+    "y": 690.3,
+    "w": 493,
+    "h": 85.7,
+    "b": 776,
+    "r": 509
+   },
+   "boton": {
+    "x": 958,
+    "y": 633.1,
+    "w": 306,
+    "h": 44,
+    "b": 677.1,
+    "r": 1264
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 958,
+    "y": 689.1,
+    "w": 306,
+    "h": 56.2,
+    "b": 745.3,
+    "r": 1264
+   },
+   "enlace": {
+    "x": 958,
+    "y": 757.3,
+    "w": 270.6,
+    "h": 17,
+    "b": 774.3,
+    "r": 1228.6
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 1176.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1264
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 1280,
+    "h": 64,
+    "b": 64,
+    "r": 1280
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 1280,
+    "h": 736,
+    "b": 800,
+    "r": 1280
+   },
+   "sw": 1280,
+   "vw": 1280,
+   "vh": 800,
+   "margenBoton": 122.9,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "1280x800",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 831,
+   "rotulo": {
+    "x": 16,
+    "y": 695.9,
+    "w": 1054,
+    "h": 13.8,
+    "b": 709.6,
+    "r": 1070
+   },
+   "h1": {
+    "x": 16,
+    "y": 725.6,
+    "w": 1054,
+    "h": 48,
+    "b": 773.6,
+    "r": 1070
+   },
+   "lineasH1": 1,
+   "entradilla": {
+    "x": 16,
+    "y": 789.6,
+    "w": 493,
+    "h": 86.4,
+    "b": 876,
+    "r": 509
+   },
+   "boton": {
+    "x": 1078,
+    "y": 732.4,
+    "w": 346,
+    "h": 44,
+    "b": 776.4,
+    "r": 1424
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 1078,
+    "y": 788.4,
+    "w": 346,
+    "h": 56.7,
+    "b": 845.1,
+    "r": 1424
+   },
+   "enlace": {
+    "x": 1078,
+    "y": 857.1,
+    "w": 273.1,
+    "h": 18,
+    "b": 875.1,
+    "r": 1351.1
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 1336.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1424
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 64,
+    "b": 64,
+    "r": 1440
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 1440,
+    "h": 836,
+    "b": 900,
+    "r": 1440
+   },
+   "sw": 1440,
+   "vw": 1440,
+   "vh": 900,
+   "margenBoton": 54.6,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": false,
+   "enlaceEntero": false,
+   "vista": "1440x900",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 695.9,
+    "w": 1054,
+    "h": 13.8,
+    "b": 709.6,
+    "r": 1070
+   },
+   "h1": {
+    "x": 16,
+    "y": 725.6,
+    "w": 1054,
+    "h": 48,
+    "b": 773.6,
+    "r": 1070
+   },
+   "lineasH1": 1,
+   "entradilla": {
+    "x": 16,
+    "y": 789.6,
+    "w": 493,
+    "h": 86.4,
+    "b": 876,
+    "r": 509
+   },
+   "boton": {
+    "x": 1078,
+    "y": 732.4,
+    "w": 346,
+    "h": 44,
+    "b": 776.4,
+    "r": 1424
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 1078,
+    "y": 788.4,
+    "w": 346,
+    "h": 56.7,
+    "b": 845.1,
+    "r": 1424
+   },
+   "enlace": {
+    "x": 1078,
+    "y": 857.1,
+    "w": 273.1,
+    "h": 18,
+    "b": 875.1,
+    "r": 1351.1
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 1336.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1424
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 64,
+    "b": 64,
+    "r": 1440
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 1440,
+    "h": 836,
+    "b": 900,
+    "r": 1440
+   },
+   "sw": 1440,
+   "vw": 1440,
+   "vh": 900,
+   "margenBoton": 123.6,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "1440x900",
+   "aviso": false
+  },
+  {
+   "avisoArriba": 1011,
+   "rotulo": {
+    "x": 16,
+    "y": 875.9,
+    "w": 1414,
+    "h": 13.8,
+    "b": 889.6,
+    "r": 1430
+   },
+   "h1": {
+    "x": 16,
+    "y": 905.6,
+    "w": 1414,
+    "h": 48,
+    "b": 953.6,
+    "r": 1430
+   },
+   "lineasH1": 1,
+   "entradilla": {
+    "x": 16,
+    "y": 969.6,
+    "w": 493,
+    "h": 86.4,
+    "b": 1056,
+    "r": 509
+   },
+   "boton": {
+    "x": 1438,
+    "y": 931.3,
+    "w": 466,
+    "h": 44,
+    "b": 975.3,
+    "r": 1904
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 1438,
+    "y": 987.3,
+    "w": 466,
+    "h": 37.8,
+    "b": 1025.1,
+    "r": 1904
+   },
+   "enlace": {
+    "x": 1438,
+    "y": 1037.1,
+    "w": 273.1,
+    "h": 18,
+    "b": 1055.1,
+    "r": 1711.1
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 1816.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1904
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 64,
+    "b": 64,
+    "r": 1920
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 1920,
+    "h": 1016,
+    "b": 1080,
+    "r": 1920
+   },
+   "sw": 1920,
+   "vw": 1920,
+   "vh": 1080,
+   "margenBoton": 35.7,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": false,
+   "enlaceEntero": false,
+   "vista": "1920x1080",
+   "aviso": true
+  },
+  {
+   "avisoArriba": null,
+   "rotulo": {
+    "x": 16,
+    "y": 875.9,
+    "w": 1414,
+    "h": 13.8,
+    "b": 889.6,
+    "r": 1430
+   },
+   "h1": {
+    "x": 16,
+    "y": 905.6,
+    "w": 1414,
+    "h": 48,
+    "b": 953.6,
+    "r": 1430
+   },
+   "lineasH1": 1,
+   "entradilla": {
+    "x": 16,
+    "y": 969.6,
+    "w": 493,
+    "h": 86.4,
+    "b": 1056,
+    "r": 509
+   },
+   "boton": {
+    "x": 1438,
+    "y": 931.3,
+    "w": 466,
+    "h": 44,
+    "b": 975.3,
+    "r": 1904
+   },
+   "botonFondo": "rgb(255, 232, 0)",
+   "botonTexto": "rgb(6, 6, 6)",
+   "botonTextoLiteral": "Hablemos de tu sitio",
+   "microcopy": {
+    "x": 1438,
+    "y": 987.3,
+    "w": 466,
+    "h": 37.8,
+    "b": 1025.1,
+    "r": 1904
+   },
+   "enlace": {
+    "x": 1438,
+    "y": 1037.1,
+    "w": 273.1,
+    "h": 18,
+    "b": 1055.1,
+    "r": 1711.1
+   },
+   "puntosTapados": 0,
+   "cab": {
+    "x": 1816.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1904
+   },
+   "cabFondo": "rgb(255, 232, 0)",
+   "cabTexto": "Hablemos",
+   "cabFila": {
+    "x": 0,
+    "y": 0,
+    "w": 1920,
+    "h": 64,
+    "b": 64,
+    "r": 1920
+   },
+   "medio": {
+    "x": 0,
+    "y": 64,
+    "w": 1920,
+    "h": 1016,
+    "b": 1080,
+    "r": 1920
+   },
+   "sw": 1920,
+   "vw": 1920,
+   "vh": 1080,
+   "margenBoton": 104.7,
+   "botonEntero": true,
+   "h1Entero": true,
+   "microcopyEntero": true,
+   "enlaceEntero": true,
+   "vista": "1920x1080",
+   "aviso": false
+  }
+ ],
+ "plegado": [
+  {
+   "plegada": true,
+   "boton": {
+    "x": 204.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 292
+   },
+   "placa": {
+    "x": 16,
+    "y": 8,
+    "w": 288,
+    "h": 48,
+    "b": 56,
+    "r": 304
+   },
+   "placaOpacidad": "1",
+   "contorno": {
+    "color": "rgb(255, 255, 255)",
+    "ancho": 2,
+    "distancia": 3,
+    "estilo": "solid"
+   },
+   "anillo": {
+    "y0": 5,
+    "y1": 59,
+    "x0": 199.5,
+    "x1": 297
+   },
+   "anilloDentroDeLaPlaca": {
+    "arriba": false,
+    "abajo": false,
+    "izquierda": true,
+    "derecha": true
+   },
+   "filaSinDesborde": true,
+   "vista": "320x568"
+  },
+  {
+   "plegada": true,
+   "boton": {
+    "x": 244.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 332
+   },
+   "placa": {
+    "x": 16,
+    "y": 8,
+    "w": 328,
+    "h": 48,
+    "b": 56,
+    "r": 344
+   },
+   "placaOpacidad": "1",
+   "contorno": {
+    "color": "rgb(255, 255, 255)",
+    "ancho": 2,
+    "distancia": 3,
+    "estilo": "solid"
+   },
+   "anillo": {
+    "y0": 5,
+    "y1": 59,
+    "x0": 239.5,
+    "x1": 337
+   },
+   "anilloDentroDeLaPlaca": {
+    "arriba": false,
+    "abajo": false,
+    "izquierda": true,
+    "derecha": true
+   },
+   "filaSinDesborde": true,
+   "vista": "360x800"
+  },
+  {
+   "plegada": true,
+   "boton": {
+    "x": 274.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 362
+   },
+   "placa": {
+    "x": 16,
+    "y": 8,
+    "w": 358,
+    "h": 48,
+    "b": 56,
+    "r": 374
+   },
+   "placaOpacidad": "1",
+   "contorno": {
+    "color": "rgb(255, 255, 255)",
+    "ancho": 2,
+    "distancia": 3,
+    "estilo": "solid"
+   },
+   "anillo": {
+    "y0": 5,
+    "y1": 59,
+    "x0": 269.5,
+    "x1": 367
+   },
+   "anilloDentroDeLaPlaca": {
+    "arriba": false,
+    "abajo": false,
+    "izquierda": true,
+    "derecha": true
+   },
+   "filaSinDesborde": true,
+   "vista": "390x844"
+  },
+  {
+   "plegada": true,
+   "boton": {
+    "x": 652.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 740
+   },
+   "placa": {
+    "x": 16,
+    "y": 8,
+    "w": 736,
+    "h": 48,
+    "b": 56,
+    "r": 752
+   },
+   "placaOpacidad": "1",
+   "contorno": {
+    "color": "rgb(255, 255, 255)",
+    "ancho": 2,
+    "distancia": 3,
+    "estilo": "solid"
+   },
+   "anillo": {
+    "y0": 5,
+    "y1": 59,
+    "x0": 647.5,
+    "x1": 745
+   },
+   "anilloDentroDeLaPlaca": {
+    "arriba": false,
+    "abajo": false,
+    "izquierda": true,
+    "derecha": true
+   },
+   "filaSinDesborde": true,
+   "vista": "768x1024"
+  },
+  {
+   "plegada": true,
+   "boton": {
+    "x": 718.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 806
+   },
+   "placa": {
+    "x": 16,
+    "y": 8,
+    "w": 802,
+    "h": 48,
+    "b": 56,
+    "r": 818
+   },
+   "placaOpacidad": "1",
+   "contorno": {
+    "color": "rgb(255, 255, 255)",
+    "ancho": 2,
+    "distancia": 3,
+    "estilo": "solid"
+   },
+   "anillo": {
+    "y0": 5,
+    "y1": 59,
+    "x0": 713.5,
+    "x1": 811
+   },
+   "anilloDentroDeLaPlaca": {
+    "arriba": false,
+    "abajo": false,
+    "izquierda": true,
+    "derecha": true
+   },
+   "filaSinDesborde": true,
+   "vista": "834x1112"
+  },
+  {
+   "plegada": true,
+   "boton": {
+    "x": 908.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 996
+   },
+   "placa": {
+    "x": 16,
+    "y": 8,
+    "w": 992,
+    "h": 48,
+    "b": 56,
+    "r": 1008
+   },
+   "placaOpacidad": "1",
+   "contorno": {
+    "color": "rgb(255, 255, 255)",
+    "ancho": 2,
+    "distancia": 3,
+    "estilo": "solid"
+   },
+   "anillo": {
+    "y0": 5,
+    "y1": 59,
+    "x0": 903.5,
+    "x1": 1001
+   },
+   "anilloDentroDeLaPlaca": {
+    "arriba": false,
+    "abajo": false,
+    "izquierda": true,
+    "derecha": true
+   },
+   "filaSinDesborde": true,
+   "vista": "1024x768"
+  },
+  {
+   "plegada": true,
+   "boton": {
+    "x": 1078.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1166
+   },
+   "placa": {
+    "x": 16,
+    "y": 8,
+    "w": 1162,
+    "h": 48,
+    "b": 56,
+    "r": 1178
+   },
+   "placaOpacidad": "1",
+   "contorno": {
+    "color": "rgb(255, 255, 255)",
+    "ancho": 2,
+    "distancia": 3,
+    "estilo": "solid"
+   },
+   "anillo": {
+    "y0": 5,
+    "y1": 59,
+    "x0": 1073.5,
+    "x1": 1171
+   },
+   "anilloDentroDeLaPlaca": {
+    "arriba": false,
+    "abajo": false,
+    "izquierda": true,
+    "derecha": true
+   },
+   "filaSinDesborde": true,
+   "vista": "1194x834"
+  },
+  {
+   "plegada": true,
+   "boton": {
+    "x": 1324.5,
+    "y": 10,
+    "w": 87.5,
+    "h": 44,
+    "b": 54,
+    "r": 1412
+   },
+   "placa": {
+    "x": 16,
+    "y": 8,
+    "w": 1408,
+    "h": 48,
+    "b": 56,
+    "r": 1424
+   },
+   "placaOpacidad": "1",
+   "contorno": {
+    "color": "rgb(255, 255, 255)",
+    "ancho": 2,
+    "distancia": 3,
+    "estilo": "solid"
+   },
+   "anillo": {
+    "y0": 5,
+    "y1": 59,
+    "x0": 1319.5,
+    "x1": 1417
+   },
+   "anilloDentroDeLaPlaca": {
+    "arriba": false,
+    "abajo": false,
+    "izquierda": true,
+    "derecha": true
+   },
+   "filaSinDesborde": true,
+   "vista": "1440x900"
+  }
+ ]
+}

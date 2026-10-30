@@ -1,0 +1,19 @@
+{
+ "herramienta": "e13/herramientas/peso-30oct.mjs (CDP, suma de dataLength, caché apagada, aviso contestado con «Rechazar», 4 s tras networkidle); servidor estático local sin compresión (python3 -m http.server)",
+ "kB": "1.000 bytes",
+ "topes": { "primera_carga_1440": 1400, "recorrida_1440": 1600, "a_390": 950 },
+ "0f5bf988 (lo de Clara)": {
+  "primera_carga_1440": [1398764, 1398764, 1398764],
+  "recorrida_1440": 1561612,
+  "a_390": 755481,
+  "html_home_bytes": 39564
+ },
+ "1f02ece6 (antes, calibración)": {
+  "primera_carga_1440": [1398863, 1398863, 1398863],
+  "recorrida_1440": 1561711,
+  "a_390": 755580,
+  "html_home_bytes": 39663
+ },
+ "diferencia_bytes": -99,
+ "margen_primera_carga_bytes": 1236
+}
