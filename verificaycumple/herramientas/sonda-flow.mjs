@@ -35,6 +35,8 @@
 import { createRequire } from 'node:module';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { homedir } from 'node:os';
+import { readFileSync } from 'node:fs';
 
 const AQUI = dirname(fileURLToPath(import.meta.url));
 const F = await import(join(AQUI, '..', 'functions', 'api', 'flow.js'));
@@ -68,6 +70,32 @@ function forma(nombre, v) {
   // coló en el copiado.
   if (limpio && !/^[0-9A-Fa-f-]+$/.test(limpio)) notas.push('tiene caracteres fuera de [0-9A-F-]');
   return `${nombre}: ${v.length} caracteres${notas.length ? ' ⚠️ ' + notas.join(' · ') : ''}`;
+}
+
+/**
+ * Las claves, si no vienen del entorno, se leen de `~/.flow-claves`.
+ *
+ * ⚠️ **El archivo vive FUERA del repo a propósito.** Un archivo de credenciales dentro del
+ * repositorio está a un `git add -A` distraído de quedar publicado, y acá pushear ES desplegar.
+ * Fuera del árbol de trabajo, git no puede verlo aunque alguien se equivoque.
+ *
+ * Formato, una por línea:  FLOW_API_KEY=...  /  FLOW_SECRET_KEY=...
+ *
+ * El entorno MANDA sobre el archivo: si una variable ya está puesta, no se pisa. Así una
+ * prueba puntual con otras claves no obliga a tocar el archivo ni deja residuo.
+ */
+if (!process.env.FLOW_API_KEY || !process.env.FLOW_SECRET_KEY) {
+  const ruta = join(homedir(), '.flow-claves');
+  try {
+    let leidas = 0;
+    for (const linea of readFileSync(ruta, 'utf8').split('\n')) {
+      const m = linea.match(/^\s*(FLOW_[A-Z_]+)\s*=\s*(.*)$/);
+      if (m && !process.env[m[1]]) { process.env[m[1]] = m[2]; leidas++; }
+    }
+    console.log(`(${leidas} clave(s) leidas de ${ruta})`);
+  } catch (e) {
+    console.log(`(no se pudo leer ${ruta}: ${e.code || (e && e.message)})`);
+  }
 }
 
 const apiKey = process.env.FLOW_API_KEY;
