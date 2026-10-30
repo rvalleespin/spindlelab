@@ -1,0 +1,630 @@
+{
+ "base": "dist del build de 0d9bce8a (copia en el scratchpad, git archive)",
+ "rutas": 22,
+ "capturas": [
+  {
+   "ruta": "/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/home-1440.jpg",
+   "h1": [
+    "En redes arriendas. Tu sitio es lo único que es tuyo."
+   ],
+   "desborde": 0,
+   "alto": 7459,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/blog-1440.jpg",
+   "h1": [
+    "Blog. Lo que escribimos sobre búsqueda e IA."
+   ],
+   "desborde": 0,
+   "alto": 1440,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/21-chequeos-visibilidad-ia/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/blog_21-chequeos-visibilidad-ia-1440.jpg",
+   "h1": [
+    "Los 21 chequeos de visibilidad en IA, explicados uno por uno"
+   ],
+   "desborde": 0,
+   "alto": 7013,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/como-aparecer-en-chatgpt/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/blog_como-aparecer-en-chatgpt-1440.jpg",
+   "h1": [
+    "¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?"
+   ],
+   "desborde": 0,
+   "alto": 3829,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/como-elegir-verificar-agencia-aeo-geo-chile/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/blog_como-elegir-verificar-agencia-aeo-geo-chile-1440.jpg",
+   "h1": [
+    "Cómo elegir (y verificar) una agencia de AEO/GEO"
+   ],
+   "desborde": 0,
+   "alto": 5136,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/cuanto-cuesta-seo-tecnico-chile/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/blog_cuanto-cuesta-seo-tecnico-chile-1440.jpg",
+   "h1": [
+    "¿Cuánto cuesta el SEO técnico en el mercado chileno en 2026?"
+   ],
+   "desborde": 0,
+   "alto": 2636,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/que-es-aeo-geo/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/blog_que-es-aeo-geo-1440.jpg",
+   "h1": [
+    "AEO y GEO explicados para gerentes que no son técnicos"
+   ],
+   "desborde": 0,
+   "alto": 2967,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/que-es-un-mini-diagnostico-seo/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/blog_que-es-un-mini-diagnostico-seo-1440.jpg",
+   "h1": [
+    "¿Qué es la revisión gratis de una página y qué incluye?"
+   ],
+   "desborde": 0,
+   "alto": 2333,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/seo-tecnico-fintechs-chile/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/blog_seo-tecnico-fintechs-chile-1440.jpg",
+   "h1": [
+    "SEO técnico para fintechs chilenas: siete problemas que revisar"
+   ],
+   "desborde": 0,
+   "alto": 3338,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/contacto/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/contacto-1440.jpg",
+   "h1": [
+    "Hablemos de tu sitio. Del que ya tienes o del que todavía no."
+   ],
+   "desborde": 0,
+   "alto": 1974,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/diagnostico/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/diagnostico-1440.jpg",
+   "h1": [
+    "Chequeo gratis. Mira si ChatGPT y otras IA pueden visitar tu sitio y entenderlo."
+   ],
+   "desborde": 0,
+   "alto": 3515,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/metodo/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/metodo-1440.jpg",
+   "h1": [
+    "Cómo trabajamos. Partimos por una revisión gratis y seguimos por fases."
+   ],
+   "desborde": 0,
+   "alto": 2868,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/nosotros/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/nosotros-1440.jpg",
+   "h1": [
+    "Construimos el sitio como eje y le conectamos lo demás."
+   ],
+   "desborde": 0,
+   "alto": 2845,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/servicios-1440.jpg",
+   "h1": [
+    "Lo que hacemos. Con el precio de partida a la vista."
+   ],
+   "desborde": 0,
+   "alto": 2961,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/acompanamiento-mensual/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/servicios_acompanamiento-mensual-1440.jpg",
+   "h1": [
+    "Acompañamiento mensual. Cada mes hacemos lo que la auditoría dijo que había que hacer."
+   ],
+   "desborde": 0,
+   "alto": 3750,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/auditoria-seo-tecnica/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/servicios_auditoria-seo-tecnica-1440.jpg",
+   "h1": [
+    "Auditoría SEO técnica. Qué le impide a Google entender tu sitio, y qué arreglar primero."
+   ],
+   "desborde": 0,
+   "alto": 3795,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/desarrollo-web/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/servicios_desarrollo-web-1440.jpg",
+   "h1": [
+    "Desarrollo web. Un sitio a medida, hecho para tu negocio, con panel para editar."
+   ],
+   "desborde": 0,
+   "alto": 5882,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/paid-media/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/servicios_paid-media-1440.jpg",
+   "h1": [
+    "Paid Media (Google). Tu anuncio aparece cuando alguien busca en Google lo que vendes."
+   ],
+   "desborde": 0,
+   "alto": 3641,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/redes-sociales/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/servicios_redes-sociales-1440.jpg",
+   "h1": [
+    "Gestión de redes sociales. Tus publicaciones y tu publicidad en LinkedIn, Instagram y Facebook."
+   ],
+   "desborde": 0,
+   "alto": 3655,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/visibilidad-en-ia/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/servicios_visibilidad-en-ia-1440.jpg",
+   "h1": [
+    "Visibilidad en IA. Qué dicen ChatGPT, Gemini y Perplexity de tu empresa."
+   ],
+   "desborde": 0,
+   "alto": 3919,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/trabajo/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/trabajo-1440.jpg",
+   "h1": [
+    "Trabajo. Un sitio hecho para un cliente y una herramienta propia."
+   ],
+   "desborde": 0,
+   "alto": 900,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/trabajo/combeau/",
+   "ancho": 1440,
+   "tipo": "primera",
+   "archivo": "primera/trabajo_combeau-1440.jpg",
+   "h1": [
+    "Bernardo Combeau. Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos."
+   ],
+   "desborde": 0,
+   "alto": 8358,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/home-390.jpg",
+   "h1": [
+    "En redes arriendas. Tu sitio es lo único que es tuyo."
+   ],
+   "desborde": 0,
+   "alto": 9012,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/blog-390.jpg",
+   "h1": [
+    "Blog. Lo que escribimos sobre búsqueda e IA."
+   ],
+   "desborde": 0,
+   "alto": 1956,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/21-chequeos-visibilidad-ia/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/blog_21-chequeos-visibilidad-ia-390.jpg",
+   "h1": [
+    "Los 21 chequeos de visibilidad en IA, explicados uno por uno"
+   ],
+   "desborde": 0,
+   "alto": 9677,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/como-aparecer-en-chatgpt/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/blog_como-aparecer-en-chatgpt-390.jpg",
+   "h1": [
+    "¿Cómo lograr que tu empresa aparezca en las respuestas de ChatGPT?"
+   ],
+   "desborde": 0,
+   "alto": 5036,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/como-elegir-verificar-agencia-aeo-geo-chile/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/blog_como-elegir-verificar-agencia-aeo-geo-chile-390.jpg",
+   "h1": [
+    "Cómo elegir (y verificar) una agencia de AEO/GEO"
+   ],
+   "desborde": 0,
+   "alto": 6563,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/cuanto-cuesta-seo-tecnico-chile/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/blog_cuanto-cuesta-seo-tecnico-chile-390.jpg",
+   "h1": [
+    "¿Cuánto cuesta el SEO técnico en el mercado chileno en 2026?"
+   ],
+   "desborde": 0,
+   "alto": 3661,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/que-es-aeo-geo/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/blog_que-es-aeo-geo-390.jpg",
+   "h1": [
+    "AEO y GEO explicados para gerentes que no son técnicos"
+   ],
+   "desborde": 0,
+   "alto": 4069,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/que-es-un-mini-diagnostico-seo/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/blog_que-es-un-mini-diagnostico-seo-390.jpg",
+   "h1": [
+    "¿Qué es la revisión gratis de una página y qué incluye?"
+   ],
+   "desborde": 0,
+   "alto": 3376,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/blog/seo-tecnico-fintechs-chile/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/blog_seo-tecnico-fintechs-chile-390.jpg",
+   "h1": [
+    "SEO técnico para fintechs chilenas: siete problemas que revisar"
+   ],
+   "desborde": 0,
+   "alto": 4707,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/contacto/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/contacto-390.jpg",
+   "h1": [
+    "Hablemos de tu sitio. Del que ya tienes o del que todavía no."
+   ],
+   "desborde": 0,
+   "alto": 2590,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/diagnostico/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/diagnostico-390.jpg",
+   "h1": [
+    "Chequeo gratis. Mira si ChatGPT y otras IA pueden visitar tu sitio y entenderlo."
+   ],
+   "desborde": 0,
+   "alto": 4585,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/metodo/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/metodo-390.jpg",
+   "h1": [
+    "Cómo trabajamos. Partimos por una revisión gratis y seguimos por fases."
+   ],
+   "desborde": 0,
+   "alto": 3537,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/nosotros/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/nosotros-390.jpg",
+   "h1": [
+    "Construimos el sitio como eje y le conectamos lo demás."
+   ],
+   "desborde": 0,
+   "alto": 3422,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/servicios-390.jpg",
+   "h1": [
+    "Lo que hacemos. Con el precio de partida a la vista."
+   ],
+   "desborde": 0,
+   "alto": 4267,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/acompanamiento-mensual/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/servicios_acompanamiento-mensual-390.jpg",
+   "h1": [
+    "Acompañamiento mensual. Cada mes hacemos lo que la auditoría dijo que había que hacer."
+   ],
+   "desborde": 0,
+   "alto": 4755,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/auditoria-seo-tecnica/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/servicios_auditoria-seo-tecnica-390.jpg",
+   "h1": [
+    "Auditoría SEO técnica. Qué le impide a Google entender tu sitio, y qué arreglar primero."
+   ],
+   "desborde": 0,
+   "alto": 4803,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/desarrollo-web/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/servicios_desarrollo-web-390.jpg",
+   "h1": [
+    "Desarrollo web. Un sitio a medida, hecho para tu negocio, con panel para editar."
+   ],
+   "desborde": 0,
+   "alto": 7724,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/paid-media/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/servicios_paid-media-390.jpg",
+   "h1": [
+    "Paid Media (Google). Tu anuncio aparece cuando alguien busca en Google lo que vendes."
+   ],
+   "desborde": 0,
+   "alto": 4585,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/redes-sociales/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/servicios_redes-sociales-390.jpg",
+   "h1": [
+    "Gestión de redes sociales. Tus publicaciones y tu publicidad en LinkedIn, Instagram y Facebook."
+   ],
+   "desborde": 0,
+   "alto": 4547,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/servicios/visibilidad-en-ia/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/servicios_visibilidad-en-ia-390.jpg",
+   "h1": [
+    "Visibilidad en IA. Qué dicen ChatGPT, Gemini y Perplexity de tu empresa."
+   ],
+   "desborde": 0,
+   "alto": 4773,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/trabajo/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/trabajo-390.jpg",
+   "h1": [
+    "Trabajo. Un sitio hecho para un cliente y una herramienta propia."
+   ],
+   "desborde": 0,
+   "alto": 1463,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/trabajo/combeau/",
+   "ancho": 390,
+   "tipo": "primera",
+   "archivo": "primera/trabajo_combeau-390.jpg",
+   "h1": [
+    "Bernardo Combeau. Fotógrafo y modelo: dos sitios y un panel donde carga sus fotos."
+   ],
+   "desborde": 0,
+   "alto": 6067,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/",
+   "ancho": 1440,
+   "tipo": "completa",
+   "archivo": "completa/home-1440.jpg",
+   "h1": [
+    "En redes arriendas. Tu sitio es lo único que es tuyo."
+   ],
+   "desborde": 0,
+   "alto": 7459,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/contacto/",
+   "ancho": 1440,
+   "tipo": "completa",
+   "archivo": "completa/contacto-1440.jpg",
+   "h1": [
+    "Hablemos de tu sitio. Del que ya tienes o del que todavía no."
+   ],
+   "desborde": 0,
+   "alto": 1974,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/",
+   "ancho": 390,
+   "tipo": "completa",
+   "archivo": "completa/home-390.jpg",
+   "h1": [
+    "En redes arriendas. Tu sitio es lo único que es tuyo."
+   ],
+   "desborde": 0,
+   "alto": 9012,
+   "errores": [],
+   "fallidos": []
+  },
+  {
+   "ruta": "/contacto/",
+   "ancho": 390,
+   "tipo": "completa",
+   "archivo": "completa/contacto-390.jpg",
+   "h1": [
+    "Hablemos de tu sitio. Del que ya tienes o del que todavía no."
+   ],
+   "desborde": 0,
+   "alto": 2590,
+   "errores": [],
+   "fallidos": []
+  }
+ ]
+}

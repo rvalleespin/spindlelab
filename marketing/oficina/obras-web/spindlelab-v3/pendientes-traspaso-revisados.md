@@ -4,8 +4,78 @@
 **Pedido de Ramón:** *«queda el actual, trae los documentos y revisa los pendientes»*, y después
 *«te paso lo de la sesión antigua por si hay algo del trabajo que se pueda rescatar»*.
 **Detalle ítem por ítem, con evidencia:** `pendientes-traspaso-detalle.md` (misma carpeta).
-**Al día desde el 23-oct-2026:** el estado al cierre de la obra E12 y lo que queda está en §0, justo abajo. Lo de §1 a
-§4 es la revisión del 10 y 11-oct, con sus «Estado al…» de cada fecha; donde choque con §0, manda §0.
+**Al día al 30-oct-2026:** el estado de la obra E13 con lo que Ramón eligió el 30-oct está en la sección «30-oct», justo
+abajo; donde choque con §0, manda esa. **§0** es el estado al cierre de E12 (23-oct). Lo de §1 a §4 es la revisión del 10
+y 11-oct, con sus «Estado al…» de cada fecha; donde choque con §0, manda §0.
+
+## 30-oct-2026 · Estado de E13 con los cambios del 30-oct (Mauro, cierre del día)
+
+**Dónde está.** El sitio nuevo vive en la raíz de `spindlelab-astro/` en la rama `claude/magical-franklin-ckfki2`: la
+obra E13 (aprobada por Javiera el 26-oct) más lo que Ramón eligió el 30-oct sobre `e13/copy/maquetas-30oct/`. Último
+cambio del sitio en `4d794419`; acta de QA en `0d9bce8a`. **Nada está publicado**: `main` sigue en `840dc024` sin nada
+de esto, y la rama del corte del 26-oct (`claude/v3-publicacion`, `2895a0ce`) lleva la E13 del 26-oct sin lo del 30-oct.
+
+**Qué se hizo el 30-oct** (cada rol en su commit): Clara pasó al texto lo decidido (`1bc62e5a`); Lucía especificó y midió
+el amarillo de acción, la sección 2 y la portada nueva (`790f63a0`); Bruno terminó el logo de la i con su disco con
+favicon, iconos, avatar y documentos (`ed2a52c7`); Diego lo construyó (`a84a1381`) y cerró la vuelta 1 de la QA con lo de
+los tres (`4d794419`). Resumen para Ramón, en lenguaje simple: `e13/resumen-30oct.md`.
+
+**Veredicto de Javiera** (`e13/acta-qa-30oct.md`, dos vueltas en contexto aparte): **Aprobado con reparos.** Vuelta 1: 0
+bloqueantes, 3 mayores, 12 menores. Vuelta 2: cerrados los mayores 1 (peso de la home, 1.398,9 kB contra el tope de
+1.400) y 2 (las 22 imágenes al compartir con el logo nuevo) y los menores 4 y 8 a 15; **abiertos el mayor 3 y los
+menores 5, 6 y 7, que dependen de Ramón**; ninguna regresión y ningún defecto nuevo.
+
+**Cierre del día (Mauro):** build de `0d9bce8a` en una copia (22 páginas, sin errores ni avisos), `extraer-texto.mjs
+--comprobar` 16 de 16 «igual», `verificar` sin hallazgos a 390 y a 1440, y las capturas finales en
+`e13/capturas-30oct/` (las 22 rutas a 1440 × 900 y 390 × 844, la home y `/contacto/` enteras y dos hojas; 48 de 48 sin
+errores de consola, pedidos fallidos ni desborde, un `h1` cada una; miradas). `e13/lista-publicacion.md` puesta al día
+(sección «30-oct»), sin ejecutar el corte.
+
+### Antes de publicar (cada uno con su dueño)
+
+| # | Qué | Dueño | Cómo se da por cerrado |
+|---|---|---|---|
+| 1 | **Las cuatro preguntas** de `e13/desvios/construccion-30oct.md` §6: las tres frases donde tropiezan los lectores («agentes de IA», el rótulo, «sin plantillas ni WordPress»: mayor 3), si todo plan de Desarrollo web trae panel (menor 5), el «yo» de «Probado primero en lo nuestro» (menor 6) y la lista dicha dos veces (menor 7) | **Ramón** contesta; **Clara** lo pasa al texto | Su respuesta escrita, o su «publicar como está» por escrito |
+| 2 | **QA exprés** de lo que cambie con esas respuestas: `extraer-texto.mjs`, build, `verificar` a 390 y 1440, **peso de la home** (`peso-30oct.mjs`; queda 1,1 kB de margen) y una lectura en frío de la home | **Javiera** | Su visto en `e13/acta-qa-30oct.md` |
+| 3 | **El permiso por escrito de haber tocado `Layout.astro`** (solo las dos hojas de letras sin uso; gtag, consentimiento y Pixel idénticos, medido por Javiera) | **Ramón** | Su visto |
+| 4 | **Rearmar el corte** desde la rama de la obra, con el sitemap fechado el día de publicar y los dos documentos del 30-oct (`e13/lista-publicacion.md`, sección «30-oct» y receta) | Quien publique, con la lista | La sección 3 de la lista, con 3.13 a 3.15 nuevos |
+| 5 | **La Ley 21.719 el día de publicar:** releer la ficha del boletín 18.623-07 y la frase de `/diagnostico/` (exacta al 30-oct) | **Clara** y quien publique | Paso 3.11 de la lista |
+| 6 | **El `dateModified` de los siete artículos** (hoy 26-oct; el 30-oct les cambió el botón del cierre, la firma y la imagen al compartir, no el cuerpo) | **Simón** | Que suba o que quede, escrito; el sitemap lo hereda |
+
+### Lo que Ramón puede confirmar o devolver (no frena)
+
+«visitarlo y entenderlo», la ayuda del campo del sitio, el asunto «Hablemos de mi sitio», la description de 157
+caracteres, el `h1` de `/nosotros/` y el gris del de `/contacto/`, que «el código de cada entrega lo revisa y lo aprueba
+él» valga para clientes, «una aerolínea regional», los dos hechos de Clara (dominio a nombre del cliente y entrega del
+código), los botones con texto propio de `/metodo/`, `/diagnostico/` y los servicios (Clara), el largo de la home (Lucía)
+y el avatar redondo para redes (Bruno). Todo con su detalle en `e13/resumen-30oct.md`.
+
+### Lo que se movió de §0.2 (23-oct), con su evidencia de hoy
+
+| §0.2 | Estado al 30-oct | Evidencia |
+|---|---|---|
+| 2 · La línea «También: Paid Media…» | Sin objeto: la home se rehízo en E13 | 0 apariciones en el `dist` de `0d9bce8a` |
+| 3 · R1, la ruta | Raíz, valor usado en E13; lo confirma Ramón con su OK al PR | `e13/lista-publicacion.md` §1, fila 2 |
+| 4 · La lista de publicación | Rehecha sobre E13 (26-oct, ensayada) y puesta al día hoy | `e13/lista-publicacion.md` |
+| 5 · El cargo de Ramón | **Cerrado:** «Fundador de SpindleLab: sitios web a medida y marketing con IA», lo eligió Ramón el 30-oct | Javiera, vuelta 2: uno solo en las 22 rutas |
+| 6 · Primera persona en `/nosotros/` | **Cerrado:** tercera persona, por decisión de Ramón el 30-oct | `e13/texto/nosotros.json`; acta del 30-oct |
+| 7 · «Con agentes de IA» en Paid Media | Sin objeto en Paid Media; la frase vive en la home y `/nosotros/`, y es el mayor 3a | `agentes de IA` solo en `/` y `/nosotros/` del `dist` |
+| 8 · R2, la cadencia | Informe mensual, valor usado en E13 | 0 «quincenal» en el `dist` |
+| 9 · R9, los cuatro conceptos | Sin objeto: salieron del sitio en E13 | 0 «Tonela» y 0 «Praxi» en el `dist` |
+| 10 · Criterio 13 (lectura en frío) | Reemplazado por las lecturas de E13 y del 30-oct: hoy es el mayor 3 | `e13/lectura-fria/30oct-v2/` |
+| 14 · El favicon en Safari y en un iPhone | **Sigue abierto**, ahora con el logo nuevo | Nadie lo vio (acta del 30-oct, «Lo que no pude medir») |
+| 15 · La fecha de la Ley 21.719 | Calificada en `/diagnostico/`; se relee el día de publicar | Paso 3.11 de la lista |
+| 16 · R8, `/privacidad/` | **Sigue abierto:** dos `h1` y diseño del v2; el corte solo le cambia iconos, enlaces y la línea de marca | Acta del 30-oct, vuelta 2 |
+| 1, 11, 12 y 13 | **No los re-verifiqué hoy** (el área de toque de «Cookies», el visto de Simón a §2.7, las confirmaciones de E8 y R7, lo que la QA de E12 no midió) | |
+
+### Para la troncal (no lo edito yo)
+
+- La línea de la casa cambió a «Sitios web a medida y marketing con IA»: el outbound y las bios de LinkedIn siguen con
+  «Marketing y crecimiento con IA para empresas que ya venden» (Clara, `e13/desvios/texto-30oct.md` §5).
+- El avatar y los documentos con el logo nuevo están en `e13/logo/avatar/` y `e13/logo/documentos/`; subirlos a redes es
+  de la troncal, después de que Ramón vea lo del avatar.
+- El sitio dice «revisión» y «un día hábil»; los correos de outbound, «diagnóstico gratis» y «24 horas» (ya anotado el
+  26-oct en la lista, §5).
 
 ## 0 · Al cierre de E12 (23-oct-2026, 17:00 Chile · Mauro): el estado y lo que queda
 
