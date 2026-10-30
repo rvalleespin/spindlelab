@@ -46,6 +46,32 @@ export const ACCIONES = {
   REVISAR: 'revisar',      // algo no calza: no se toca el pedido y se avisa
 };
 
+/**
+ * ¿Este pedido tiene con qué preguntarle a una pasarela qué pasó con su pago?
+ *
+ * ── POR QUÉ ES UNA FUNCIÓN Y NO UN `if` REPETIDO (30-oct-2026) ──────────────────────────
+ *
+ * Porque ya se repitió, y el día del cambio de pasarela se actualizó en un lugar y no en los
+ * otros dos. El resultado fue silencioso y caro:
+ *
+ *   - `convieneRefrescar` devolvía false para todo pedido de Flow, así que la red de
+ *     seguridad que relee el pago —la que existe para que una notificación perdida no se
+ *     coma una venta— era código muerto para la pasarela nueva;
+ *   - y la pantalla le mostraba «No alcanzamos a llevarte a pagar. No se te cobró nada» a
+ *     alguien a quien Flow SÍ le había cobrado $177.310.
+ *
+ * Las dos salían de preguntar `Boolean(pedido.mp_order_id)`, que era la forma correcta de
+ * hacer la pregunta cuando había una sola pasarela y dejó de serlo sin que nadie lo notara.
+ * Ninguna prueba lo vio porque las pruebas de la pantalla seguían pasando pedidos con
+ * `mp_order_id`, que es justo el caso que seguía funcionando.
+ *
+ * Lo encontraron tres revisiones independientes, desde tres dimensiones distintas, el mismo
+ * día que se escribió.
+ */
+export function tieneReferenciaDePago(pedido) {
+  return Boolean(pedido && (pedido.flow_token || pedido.mp_order_id));
+}
+
 export const ESTADOS = {
   CREADO: 'creado',        // existe el pedido y la orden en Mercado Pago; nadie pagó todavía
   PENDIENTE: 'pendiente',  // está pagando con un medio que no acredita al instante

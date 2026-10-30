@@ -40,15 +40,16 @@ import { clavesDeTope, contar, CACHE_HORAS } from './profundo.js';
 import { elegibilidad } from './elegibilidad.js';
 import {
   ESTADOS, nuevoIdPedido, congelarContrato, armarOrdenMP, limpiarUtms, VIGENCIA_ORDEN_HORAS,
+  tieneReferenciaDePago,
   VERSION_POLITICA,
 } from './pedidos.js';
 import {
   crearOrdenMP, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES, tacharCorreos,
 } from './cobro.js';
 import {
-  crearPagoFlow, leerPagoFlow, decidirDesdeFlow, credencialesFlow,
+  crearPagoFlow, leerPagoFlow, decidirDesdeFlow, credencialesFlow, FALLOS_ANTES_DE_LA_RED,
 } from './flow.js';
-import { avisarVenta } from './aviso.js';
+import { avisarVenta, avisarRevisar } from './aviso.js';
 import { enviarCorreoDePago } from './correo.js';
 
 
@@ -180,7 +181,7 @@ async function reconciliar(env, pedido, esperar) {
   // pantalla ya no espera nada sería gastar llamadas sin que nadie las mire.
   // Sirve para cualquier pasarela: lo que hace falta es que el pedido tenga una referencia con
   // la que preguntar, y `releerPago` elige el proveedor a partir de cuál tiene.
-  if (!convieneRefrescar(pedido) || !(pedido.flow_token || pedido.mp_order_id)) return pedido;
+  if (!convieneRefrescar(pedido) || !tieneReferenciaDePago(pedido)) return pedido;
 
   // Sin KV no hay freno, y sin freno cada repregunta de la pantalla sería una llamada saliente
   // —y el enlace del pedido lo abren también los clientes de correo, que precargan—. Acá se
@@ -725,9 +726,37 @@ export async function onRequestPost(contexto) {
               console.log(`[pedido] compra abierta ${vencida.id} sigue pendiente en Flow: se reusa`);
               idPedido = vencida.id;
               puesto = { creado: false, reusado: true };
+            } else if (d.estado === ESTADOS.PAGADO) {
+              // ── SU COMPRA ANTERIOR SÍ SE PAGÓ ─────────────────────────────────────────
+              //
+              // No se cierra, no se le abre un segundo cobro, y sobre todo NO se cae en el
+              // 409 genérico de más abajo, que le diría «no se te cobró nada» a alguien a
+              // quien la pasarela le cobró $177.310. Se le devuelve SU pedido.
+              //
+              // ⚠️ La versión anterior ponía `vencida = null` acá y dejaba seguir. El efecto
+              // era el peor posible y no se veía leyéndolo: la venta seguía sin marcar, la
+              // persona leía que no se le había cobrado, y CADA reintento repetía el mismo
+              // 409 — quedaba bloqueada para comprar, indefinidamente. El comentario de este
+              // bloque justificaba no cerrar la fila diciendo que «la reconciliación o el
+              // aviso de revisión la recogen», y ninguna de las dos la recogía.
+              console.log(`[pedido] compra abierta ${vencida.id} ya está pagada: no se abre otra`);
+              const avisoPagada = avisarRevisar(vencida, d);
+              if (contexto && contexto.waitUntil) contexto.waitUntil(avisoPagada); else await avisoPagada;
+              return jsonPost({
+                ok: false, motivo: 'ya-pagaste', id: vencida.id,
+                detalle: 'Tu compra anterior sí se pagó, así que no te vamos a cobrar de nuevo. ' +
+                  // ⚠️ `base` se declara MUCHO más abajo (es un `const` del mismo ámbito), así
+                  // que acá reventaría en ejecución sin que `node --check` dijera nada.
+                  `Puedes ver su estado acá: ${new URL(request.url).origin}/pedido/?id=${encodeURIComponent(vencida.id)} ` +
+                  '— ya avisamos para que la revisemos.',
+              }, 409);
             } else if (d.estado !== ESTADOS.RECHAZADO) {
-              // Ni pendiente ni rechazada: no la tocamos.
-              console.log(`[pedido] compra abierta ${vencida.id} NO se cierra: Flow dice ${d.motivo}`);
+              // Ni pendiente, ni pagada, ni rechazada: algo no calza (monto, estado sin
+              // confirmar). No se toca la fila Y se avisa a una persona, que es la mitad que
+              // faltaba: dejarla viva sin que nadie se entere es dejarla perdida.
+              console.log(`[pedido] compra abierta ${vencida.id} NO se cierra: ${d.motivo}`);
+              const avisoRaro = avisarRevisar(vencida, d);
+              if (contexto && contexto.waitUntil) contexto.waitUntil(avisoRaro); else await avisoRaro;
               vencida = null;
             }
           } else if (lectura && !lectura.ok) {
@@ -828,7 +857,12 @@ export async function onRequestPost(contexto) {
         // la plata de alguien. Si la petición se cortó por tiempo o por red, el pago PUEDE
         // haberse creado del otro lado y no alcanzamos a leer la respuesta: ahí lo honesto es
         // decir que no lo pudimos confirmar, no tranquilizar con algo que no sabemos.
-        detalle: creada.estadoHttp > 0
+        // Se dice «no se te cobró nada» solo cuando es verdad: o la pasarela contestó con un
+        // error (no creó nada), o el fallo fue nuestro y anterior a cualquier llamada. Un
+        // `monto-invalido:…` también cuenta, por eso se compara el prefijo.
+        detalle: (creada.estadoHttp > 0
+          || FALLOS_ANTES_DE_LA_RED.has(creada.error)
+          || String(creada.error || '').startsWith('monto-invalido'))
           ? 'No pudimos abrir el pago. No se te cobró nada. Vuelve a intentarlo en un momento, ' +
             'y si te pasa de nuevo escríbenos con este enlace.'
           : 'No alcanzamos a confirmar el pago. Si ves un cargo, escríbenos con este enlace y lo ' +

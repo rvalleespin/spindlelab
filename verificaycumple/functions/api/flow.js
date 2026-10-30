@@ -95,6 +95,18 @@ export async function firmarFlow(params, secretKey) {
  * sin él, una orden impaga queda pagable para siempre, y dos órdenes vivas por el mismo kit
  * es cobrar dos veces.
  */
+/**
+ * Los fallos que ocurren ANTES de mandar nada por la red.
+ *
+ * ⚠️ Importa para una frase concreta que la persona lee: «no se te cobró nada». Eso es una
+ * afirmación sobre la plata de alguien y solo se puede decir cuando es cierta.
+ *
+ * Con un fallo de red no lo sabemos: la petición pudo haber salido y el pago pudo haberse
+ * creado del otro lado sin que alcanzáramos a leer la respuesta. Con estos, sí lo sabemos,
+ * porque la llamada nunca ocurrió.
+ */
+export const FALLOS_ANTES_DE_LA_RED = new Set(['sin-credenciales', 'sin-id', 'sin-correo']);
+
 export async function crearPagoFlow({ idPedido, correo, monto, titulo, urls, timeoutSegundos },
   { apiKey, secretKey, base }, fetchImpl = fetch) {
   if (!apiKey || !secretKey) return { ok: false, error: 'sin-credenciales' };

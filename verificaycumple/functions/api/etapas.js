@@ -36,7 +36,7 @@
  * ni los datos de facturación.
  */
 
-import { ESTADOS } from './pedidos.js';
+import { ESTADOS, tieneReferenciaDePago } from './pedidos.js';
 
 export const ETAPAS = {
   SIN_ORDEN: 'sin-orden',
@@ -63,6 +63,16 @@ export const ACTUA = {
  * Devuelve siempre la misma forma. `queHacer` es `null` cuando no le toca al cliente: una
  * pantalla que siempre pide algo entrena a la persona a ignorarla.
  */
+/**
+ * ⚠️ NINGÚN TEXTO QUE LEE LA PERSONA NOMBRA UNA PASARELA.
+ *
+ * Desde que cuál cobra es un dato conmutable (`PASARELA`), un texto que dice «Mercado Pago»
+ * se vuelve falso el día que se cambia el dato, sin que nadie toque este archivo y sin que
+ * nada se ponga rojo. Y a la persona no le aporta: lo que necesita saber es en qué va SU
+ * pedido, no el nombre del proveedor que usamos nosotros.
+ *
+ * Los comentarios sí pueden nombrarla, porque cuentan de dónde salió cada decisión.
+ */
 export function etapaDelPedido(pedido) {
   if (!pedido) return null;
 
@@ -72,12 +82,13 @@ export function etapaDelPedido(pedido) {
     // —porque la llamada a Mercado Pago falló— le decíamos «estamos confirmando tu pago»,
     // que es mentira: no hay ningún pago que confirmar, y la página se quedaba actualizándose
     // sola para siempre esperando un aviso que nadie va a mandar.
-    if (!pedido.mp_order_id) {
+    if (!tieneReferenciaDePago(pedido)) {
       return {
         etapa: ETAPAS.SIN_ORDEN,
         titulo: 'No alcanzamos a llevarte a pagar',
-        detalle: 'Guardamos tu pedido, pero algo falló al abrir el pago en Mercado Pago. No se ' +
-          'te cobró nada.',
+        // Sin nombrar la pasarela: cuál cobra es un dato que cambia, y un texto que la nombra
+        // se vuelve falso el día del cambio sin que nadie lo toque.
+        detalle: 'Guardamos tu pedido, pero algo falló al abrir el pago. No se te cobró nada.',
         quienActua: ACTUA.CLIENTE,
         queHacer: 'Vuelve a intentarlo desde tu chequeo. Si te pasa de nuevo, escríbenos con ' +
           'este enlace y lo resolvemos nosotros.',
@@ -89,7 +100,7 @@ export function etapaDelPedido(pedido) {
     return {
       etapa: ETAPAS.CONFIRMANDO,
       titulo: 'Estamos confirmando tu pago',
-      detalle: 'Mercado Pago nos tiene que avisar que el pago se completó. Suele tardar unos ' +
+      detalle: 'El medio de pago nos tiene que avisar que el pago se completó. Suele tardar unos ' +
         'segundos. Esta página se actualiza sola.',
       quienActua: ACTUA.NADIE,
       queHacer: null,
@@ -104,7 +115,7 @@ export function etapaDelPedido(pedido) {
       titulo: 'Tu pago está en camino',
       // Sin esta etapa, un pago que no acredita al instante se veía igual que uno que nunca
       // salió. La diferencia importa: acá la plata ya se movió.
-      detalle: 'El medio de pago que elegiste no acredita al instante. Mercado Pago nos va a ' +
+      detalle: 'El medio de pago que elegiste no acredita al instante. Nos van a ' +
         'avisar cuando se complete, y esta página se actualiza sola.',
       quienActua: ACTUA.NADIE,
       queHacer: null,
@@ -117,7 +128,7 @@ export function etapaDelPedido(pedido) {
     return {
       etapa: ETAPAS.SIN_PAGO,
       titulo: 'El pago no se completó',
-      detalle: 'Mercado Pago no aprobó el pago. No te cobramos nada y no empezamos ningún trabajo.',
+      detalle: 'El pago no fue aprobado. No te cobramos nada y no empezamos ningún trabajo.',
       quienActua: ACTUA.CLIENTE,
       queHacer: 'Si quieres, puedes intentarlo de nuevo. Si te vuelve a pasar, escríbenos y lo vemos.',
       loQueSigue: null,
@@ -131,7 +142,7 @@ export function etapaDelPedido(pedido) {
       titulo: 'Tu banco revirtió el pago',
       // No se dice «te devolvimos»: no fuimos nosotros, y el dinero vuelve por el camino del
       // emisor, no por el nuestro. Decirlo al revés es atribuirse una acción que no se hizo.
-      detalle: 'Mercado Pago nos avisa que el emisor de tu tarjeta revirtió este pago. Nosotros ' +
+      detalle: 'Nos avisan que el emisor de tu tarjeta revirtió este pago. Nosotros ' +
         'no emitimos esa devolución, así que si no la pediste tú, conviene que hables con tu banco.',
       quienActua: ACTUA.CLIENTE,
       queHacer: 'Si fue un error o no reconoces el movimiento, escríbenos con este enlace y lo ' +
@@ -286,5 +297,5 @@ export function señalesDelPedido(pedido, titulos = {}) {
 export function convieneRefrescar(pedido) {
   if (!pedido) return false;
   if (pedido.estado === ESTADOS.PENDIENTE) return true;
-  return pedido.estado === ESTADOS.CREADO && Boolean(pedido.mp_order_id);
+  return pedido.estado === ESTADOS.CREADO && tieneReferenciaDePago(pedido);
 }
