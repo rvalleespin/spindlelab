@@ -1,0 +1,592 @@
+/**
+ * Las cuatro promesas que la pantalla hacía y el código no cumplía.
+ *
+ *   node prueba-entrega.mjs
+ *
+ * ── POR QUÉ EXISTE (30-oct-2026) ────────────────────────────────────────────────────────
+ *
+ * Un recorrido del camino post-pago sobre un pedido sembrado encontró cuatro frases que el
+ * producto le dice a alguien que ya pagó $177.310, y que no correspondían a nada:
+ *
+ *   1. «te damos el texto listo para reenviarle» — ese texto no existía en ninguna parte.
+ *   2. «te explicamos dónde crear la invitación» — no había instrucciones por plataforma, y
+ *      el campo `plataforma`, recogido en el formulario EXACTAMENTE para esto, no lo leía
+ *      ningún código de entrega.
+ *   3. «Te mandamos el antes y el después por correo» — ese correo no existía: `correo.js`
+ *      solo definía el de pago. Y `entregado`, la etapa que lo promete, era un estado
+ *      INALCANZABLE: ningún código lo escribía.
+ *   4. «Esta página se actualiza sola» — cierto durante dos minutos. Después el bucle se
+ *      cortaba y la frase se quedaba en pantalla siendo falsa, sin avisar.
+ *
+ * Las cuatro son del mismo tipo: no rompen el cobro, y caen justo donde la persona ya pagó y
+ * necesita ayuda. Esta prueba las ata.
+ */
+
+import { DatabaseSync } from 'node:sqlite';
+import fs from 'node:fs';
+import { rutaEnElRepo } from './rutas.mjs';
+
+const RAIZ = '/Users/ramon/vyc-ley21719/verificaycumple/functions/api';
+for (const [v, f] of [['PEDIDOS_JS', 'pedidos.js'], ['ALMACEN_JS', 'almacen.js'],
+  ['ETAPAS_JS', 'etapas.js'], ['ACCESO_JS', 'acceso.js'], ['CORREO_JS', 'correo.js'],
+  ['ENTREGAR_JS', 'entregar.js'], ['INTAKE_JS', 'intake.js']]) {
+  if (!process.env[v]) process.env[v] = `${RAIZ}/${f}`;
+}
+
+const P = await import(rutaEnElRepo('verificaycumple/functions/api/pedidos.js', 'PEDIDOS_JS'));
+const A = await import(rutaEnElRepo('verificaycumple/functions/api/almacen.js', 'ALMACEN_JS'));
+const E = await import(rutaEnElRepo('verificaycumple/functions/api/etapas.js', 'ETAPAS_JS'));
+const AC = await import(rutaEnElRepo('verificaycumple/functions/api/acceso.js', 'ACCESO_JS'));
+const C = await import(rutaEnElRepo('verificaycumple/functions/api/correo.js', 'CORREO_JS'));
+const EN = await import(rutaEnElRepo('verificaycumple/functions/api/entregar.js', 'ENTREGAR_JS'));
+const I = await import(rutaEnElRepo('verificaycumple/functions/api/intake.js', 'INTAKE_JS'));
+const HTML = fs.readFileSync(
+  rutaEnElRepo('verificaycumple/public/pedido/index.html', 'VYC_PEDIDO_HTML'), 'utf8');
+
+let ok = 0, malo = 0;
+const eq = (n, r, e) => {
+  if (JSON.stringify(r) === JSON.stringify(e)) ok++;
+  else { malo++; console.log(`  FALLA ${n}: esperado ${JSON.stringify(e)}, real ${JSON.stringify(r)}`); }
+};
+const cierto = (n, v) => eq(n, Boolean(v), true);
+const falso = (n, v) => eq(n, Boolean(v), false);
+
+function comoD1(sq) {
+  return { prepare(sql) { const st = sq.prepare(sql); let a = []; const o = {
+    bind(...x) { a = x; return o; },
+    async run() { const r = st.run(...a); return { meta: { changes: Number(r.changes) } }; },
+    async first() { return st.get(...a) ?? null; },
+    async all() { return { results: st.all(...a) }; } }; return o; } };
+}
+
+const ID = 'vyc_' + 'e'.repeat(32);
+const INFORME_ANTES = { rapido: { puntaje: 30 }, profundo: { puntaje: 41 } };
+
+async function baseConPedido(estado = 'pagado', extra = {}) {
+  const sq = new DatabaseSync(':memory:');
+  for (const q of P.ESQUEMA.split(';')) if (q.trim()) sq.exec(q + ';');
+  const db = comoD1(sq);
+  await A.crearPedido(db, {
+    id: ID, dominio: 'ejemplo.cl', url_medida: 'https://ejemplo.cl/', correo: 'cliente@ejemplo.cl',
+    senales_contratadas: ['cmp', 'carga'], senales_fuera: ['aviso'],
+    informe_json: JSON.stringify(INFORME_ANTES), monto_neto: 149000, monto_total: 177310,
+  });
+  if (estado !== 'creado') {
+    await A.marcarEstado(db, ID, 'creado', estado, { pagado_en: new Date().toISOString() });
+  }
+  if (Object.keys(extra).length) await A.guardarIntake(db, ID, extra);
+  return { db, sq };
+}
+
+/** Un `request` como el que recibe una Pages Function. */
+function peticion(cuerpo, clave) {
+  const h = new Headers({ 'Content-Type': 'application/json' });
+  if (clave !== undefined) h.set('Authorization', `Bearer ${clave}`);
+  return new Request('https://verifica.spindlelab.cl/api/entregar', {
+    method: 'POST', headers: h, body: JSON.stringify(cuerpo),
+  });
+}
+
+/** La red fingida: guarda a dónde se llamó y con qué, y contesta lo que se le diga. */
+function conRed(contesta = () => ({ ok: true, status: 200 })) {
+  const antes = globalThis.fetch;
+  const llamadas = [];
+  globalThis.fetch = async (u, o) => {
+    let cuerpo = null;
+    try { cuerpo = JSON.parse(String((o && o.body) || '{}')); } catch { cuerpo = String(o && o.body); }
+    llamadas.push({ host: new URL(String(u)).host, cuerpo });
+    const r = contesta(llamadas.length);
+    return { ok: r.ok, status: r.status, json: async () => ({}) };
+  };
+  return { llamadas, soltar() { globalThis.fetch = antes; } };
+}
+
+console.log('\n=== 1 · EL TEXTO PARA REENVIAR (promesa 1) ===\n');
+{
+  const base = { id: ID, dominio: 'ejemplo.cl', plataforma: 'wordpress' };
+  const t = AC.textoParaReenviar(base);
+
+  cierto('nombra el sitio', t.includes('ejemplo.cl'));
+  cierto('dice a qué correo va la invitación', t.includes(AC.CORREO_ACCESO));
+  cierto('nombra el permiso de la plataforma', /Administrador/.test(t));
+  cierto('dice que no se pide contraseña', /No piden ninguna contraseña/.test(t));
+  cierto('dice que el acceso es temporal', /temporal/.test(t));
+
+  // ⚠️ LA ASERCIÓN QUE MÁS IMPORTA DE TODO EL ARCHIVO.
+  //
+  // Es un texto pensado para REENVIARSE a un tercero. El id del pedido son los 32 hex que
+  // abren la pantalla privada del comprador: sus datos de facturación, su formulario, su
+  // pedido. Si se colara acá, cada cliente que pidiera ayuda a su agencia le estaría
+  // entregando esa llave sin saberlo.
+  falso('NO lleva el id del pedido', t.includes(ID));
+  falso('NO lleva un enlace al pedido', /\/pedido\//.test(t));
+
+  // Y sin cortes dentro de un párrafo: este texto se PEGA en un WhatsApp o en un correo desde
+  // el teléfono, y un párrafo cortado a mano a 95 caracteres se ve roto en una pantalla
+  // angosta, con cada línea partida a la mitad. Los saltos van solo entre párrafos.
+  // La firma de un corte a mano es concreta: dos líneas seguidas donde la SEGUNDA empieza en
+  // minúscula, o sea la continuación de la frase anterior. Un primer intento midió el largo y
+  // si la línea terminaba en punto, y acusó «La invitación va a este correo: hola@...», que es
+  // una línea corta y completa. La heurística medía otra cosa.
+  const lineas = t.split('\n');
+  const cortes = lineas.filter((l, i) => l.trim() && lineas[i + 1] && /^[a-záéíóúñ]/.test(lineas[i + 1]));
+  eq('ningún párrafo viene cortado a mano', cortes.map((l) => l.slice(-35)), []);
+
+  // Está escrito en primera persona del CLIENTE: es un mensaje que él manda. Si estuviera en
+  // la nuestra, habría que editarlo antes de reenviarlo, y un texto que hay que editar no es
+  // un texto listo — que es literal lo que la pantalla promete.
+  cierto('habla en primera persona del cliente', /Contraté/.test(t));
+  falso('no habla en primera persona nuestra', /Necesitamos un acceso/.test(t));
+
+  // Una plataforma sin ruta de menú nombrable cae en el permiso genérico, no en una ruta
+  // inventada para Webflow.
+  const w = AC.textoParaReenviar({ id: ID, dominio: 'ejemplo.cl', plataforma: 'webflow' });
+  cierto('sin ruta nombrable, describe el permiso', w.includes(AC.LO_QUE_HACE_FALTA));
+  falso('y no inventa un menú de Webflow', /se hace desde Usuarios/.test(w));
+}
+
+console.log('\n=== 2 · LAS INSTRUCCIONES POR PLATAFORMA (promesa 2) ===\n');
+{
+  // El campo `plataforma` se recoge para esto. Antes se guardaba y no lo leía nadie.
+  const wp = AC.fichaDePlataforma('wordpress');
+  cierto('WordPress trae pasos concretos', Array.isArray(wp.pasos) && wp.pasos.length >= 3);
+  cierto('y explica POR QUÉ pide Administrador', /solo el rol de Administrador puede instalar/.test(wp.porQue));
+  cierto('y dice cómo se quita al final', /borrar esa cuenta/.test(wp.alFinal));
+
+  // La regla del archivo: pasos O buscar, nunca las dos. Si una plataforma trajera las dos,
+  // la decisión de qué se puede afirmar quedaría en la pantalla.
+  for (const [nombre, f] of Object.entries(AC.POR_PLATAFORMA)) {
+    falso(`${nombre}: no trae pasos Y buscar a la vez`, Boolean(f.pasos) && Boolean(f.buscar));
+    cierto(`${nombre}: trae una de las dos`, Boolean(f.pasos) || Boolean(f.buscar));
+    cierto(`${nombre}: dice cómo se quita`, Boolean(f.alFinal));
+  }
+
+  // Webflow y Jimdo NO inventan una ruta: Webflow ha movido el acceso entre versiones y
+  // Jimdo no ofrece invitaciones en todos sus planes.
+  falso('Webflow no da una ruta de menú', Boolean(AC.POR_PLATAFORMA.webflow.pasos));
+  falso('Jimdo no da una ruta de menú', Boolean(AC.POR_PLATAFORMA.jimdo.pasos));
+  cierto('Jimdo dice que puede no existir en su plan',
+    /no permite invitar a otra persona en todos sus planes/.test(AC.POR_PLATAFORMA.jimdo.buscar));
+
+  // Lo que el formulario acepta y lo que este módulo conoce tienen que calzar: una plataforma
+  // que el formulario guarda y este archivo no conoce cae al genérico en silencio, y el
+  // cliente recibe «lo averiguamos nosotros» cuando nos dijo exactamente en qué está.
+  const sinFicha = [...I.PLATAFORMAS].filter(
+    (p) => !['no-se', 'otro'].includes(p) && !AC.POR_PLATAFORMA[p]);
+  eq('toda plataforma del formulario tiene ficha', sinFicha, []);
+
+  // Y al revés: una ficha que el formulario no puede guardar es código muerto.
+  const sinOpcion = Object.keys(AC.POR_PLATAFORMA).filter((p) => !I.PLATAFORMAS.has(p));
+  eq('toda ficha es una opción del formulario', sinOpcion, []);
+
+  // «No sé» es una salida de verdad, no un «escríbenos» con otras palabras.
+  cierto('sin plataforma, no le devuelve el problema',
+    /No hace falta que lo sepas/.test(AC.SIN_PLATAFORMA.buscar));
+  cierto('y la tercera salida dice qué pasa si no hay acceso',
+    /[Nn]o te vamos a cobrar por algo que no podemos entregar/.test(AC.SI_NO_SABES.comoSigue));
+}
+
+console.log('\n=== 2 bis · NI UNA RAYA LARGA EN LO QUE LEE EL CLIENTE ===\n');
+{
+  // La raya larga usada como golpe de efecto es el tell de escritura automática que la marca
+  // prohíbe por escrito, y acá pesa el doble: el texto para reenviar se lo manda el cliente a
+  // su agencia, así que una raya ahí delata de dónde salió el mensaje que firma él.
+  //
+  // Se colaron dos en la primera versión de este módulo, y una era exactamente el uso
+  // prohibido («qué parte no — no te vamos a cobrar»). Un grep del archivo no sirve de
+  // guardia: los comentarios de este repo están llenos de rayas, y con razón. Se mira el
+  // texto que SALE.
+  const textos = [];
+  for (const f of [...Object.values(AC.POR_PLATAFORMA), AC.SIN_PLATAFORMA]) {
+    textos.push(f.porQue, f.alFinal, f.buscar, ...(f.pasos || []));
+  }
+  textos.push(AC.SI_NO_SABES.texto, AC.SI_NO_SABES.comoSigue, AC.LO_QUE_HACE_FALTA);
+  for (const plataforma of [...I.PLATAFORMAS]) {
+    textos.push(AC.textoParaReenviar({ id: ID, dominio: 'ejemplo.cl', plataforma }));
+  }
+  const cierre = C.correoDeEntrega({
+    id: ID, dominio: 'ejemplo.cl', correo: 'c@e.cl', senales_contratadas: ['cmp'],
+    senales_fuera: ['aviso'], informe_json: JSON.stringify(INFORME_ANTES),
+  }, { profundo: { puntaje: 95 } }, E.TITULOS);
+  textos.push(cierre.text, cierre.html, cierre.subject);
+
+  const conRaya = textos.filter(Boolean).filter((t) => t.includes('\u2014'));
+  eq('ni una raya larga en el texto del cliente', conRaya.map((t) => t.slice(0, 60)), []);
+}
+
+console.log('\n=== 3 · LA AYUDA SOLO EN SU ETAPA, Y DESDE UN SOLO LUGAR ===\n');
+{
+  const pagadoSinDatos = { id: ID, dominio: 'ejemplo.cl', estado: 'pagado' };
+  const pagadoSinAcceso = { ...pagadoSinDatos, razon_social: 'Ejemplo SpA', plataforma: 'wix' };
+  const enCurso = { ...pagadoSinAcceso, acceso_recibido_en: '2026-10-30T12:00:00.000Z' };
+
+  eq('en falta-datos no hay ayuda de acceso',
+    AC.ayudaDeAcceso(pagadoSinDatos, E.etapaDelPedido(pagadoSinDatos)), null);
+  eq('en en-curso tampoco', AC.ayudaDeAcceso(enCurso, E.etapaDelPedido(enCurso)), null);
+
+  const a = AC.ayudaDeAcceso(pagadoSinAcceso, E.etapaDelPedido(pagadoSinAcceso));
+  cierto('en falta-acceso sí la hay', Boolean(a));
+  eq('y es la de SU plataforma', a.nombre, 'Wix');
+  cierto('trae el texto para reenviar', a.textoParaReenviar.length > 100);
+  cierto('trae la tercera salida', Boolean(a.siNoSabes));
+
+  // La condición vive en `ayudaDeAcceso`, no en los llamadores. Es la lección de
+  // `tieneReferenciaDePago`, que estuvo repetida en tres `if` y el día del cambio se actualizó
+  // uno solo: dos de las tres comparaciones quedaron devolviendo false sin que nada se pusiera
+  // rojo. Acá los llamadores son el GET del pedido y el POST del formulario.
+  const fuentes = {
+    'pedido.js': fs.readFileSync(rutaEnElRepo('verificaycumple/functions/api/pedido.js', 'PEDIDO_JS'), 'utf8'),
+    'intake.js': fs.readFileSync(rutaEnElRepo('verificaycumple/functions/api/intake.js', 'INTAKE_JS'), 'utf8'),
+  };
+  for (const [nombre, texto] of Object.entries(fuentes)) {
+    cierto(`${nombre} devuelve la ayuda`, /acceso:\s*ayudaDeAcceso\(/.test(texto));
+    falso(`${nombre} no repite la condición de la etapa`,
+      /etapa\s*===\s*['"]falta-acceso['"]|ETAPAS\.FALTA_ACCESO/.test(texto));
+  }
+}
+
+console.log('\n=== 4 · EL PUNTAJE NO SE COMPARA CONTRA OTRA VARA ===\n');
+{
+  // Comparar el rápido de antes contra el profundo de después da una mejora inventada: el
+  // número sube porque cambió la vara, no porque el sitio mejorara. Es la clase de afirmación
+  // que el chequeo le marca en rojo a otros sitios, firmada por nosotros.
+  const c = C.puntajeComparable({ rapido: { puntaje: 30 }, profundo: { puntaje: 41 } },
+    { rapido: { puntaje: 88 }, profundo: { puntaje: 95 } });
+  eq('compara la misma medición', c, { clave: 'profundo', antes: 41, despues: 95 });
+
+  eq('solo rápido en los dos lados',
+    C.puntajeComparable({ rapido: { puntaje: 30 } }, { rapido: { puntaje: 90 } }),
+    { clave: 'rapido', antes: 30, despues: 90 });
+
+  eq('rápido contra profundo: NO se compara',
+    C.puntajeComparable({ rapido: { puntaje: 30 } }, { profundo: { puntaje: 95 } }), null);
+
+  eq('sin informe final no hay comparación', C.puntajeComparable(INFORME_ANTES, null), null);
+
+  // El chequeo deja el puntaje en null cuando confirmó menos de la mitad del peso. Un sitio
+  // difícil de medir llega acá sin número por el camino honesto, y eso no es un error.
+  eq('un puntaje nulo no se compara',
+    C.puntajeComparable({ profundo: { puntaje: null } }, { profundo: { puntaje: 95 } }), null);
+  eq('un puntaje que no es número tampoco',
+    C.puntajeComparable({ profundo: { puntaje: '41' } }, { profundo: { puntaje: 95 } }), null);
+}
+
+console.log('\n=== 5 · EL CORREO DE CIERRE (promesa 3) ===\n');
+{
+  const pedido = {
+    id: ID, dominio: 'ejemplo.cl', correo: 'cliente@ejemplo.cl', url_medida: 'https://ejemplo.cl/',
+    senales_contratadas: ['cmp', 'carga'], senales_fuera: ['aviso'],
+    informe_json: JSON.stringify(INFORME_ANTES),
+  };
+  const m = C.correoDeEntrega(pedido, { profundo: { puntaje: 95 } }, E.TITULOS);
+
+  eq('va al correo del comprador', m.to, ['cliente@ejemplo.cl']);
+  cierto('el asunto habla del sitio', m.subject.includes('ejemplo.cl'));
+  cierto('las respuestas van a la casilla real', m.reply_to === C.RESPONDER_A);
+  cierto('lleva el enlace del pedido', m.text.includes(C.enlaceDelPedido(ID)));
+
+  // Las señales salen del CONTRATO CONGELADO, con su nombre, no con su id crudo.
+  cierto('nombra lo cerrado con su título', m.text.includes(E.TITULOS.cmp));
+  cierto('y lo que quedó fuera', m.text.includes(E.TITULOS.aviso));
+  falso('no muestra ids crudos', /· cmp\b/.test(m.text));
+
+  // El número, con su vara. «De 41 a 95» sin decir sobre qué es media afirmación.
+  cierto('dice el antes', m.text.includes('41'));
+  cierto('dice el después', m.text.includes('95'));
+  cierto('y sobre qué página', m.text.includes('https://ejemplo.cl/'));
+
+  // Las dos cosas que quedan del lado del cliente y que nadie puede hacer por él.
+  cierto('manda el borrador al abogado', /revisar tu abogado|revisar\s+tu abogado/.test(m.text));
+  cierto('dice que no damos asesoría legal', /no damos asesoría legal/.test(m.text));
+  cierto('recuerda borrar el acceso', /borrar el acceso/.test(m.text));
+
+  // Y sin informe final NO se inventa una mejora.
+  const sinNumero = C.correoDeEntrega(pedido, null, E.TITULOS);
+  falso('sin medición nueva, ningún puntaje de después', /ahora da \d/.test(sinNumero.text));
+  cierto('y se dice por qué no hay número',
+    /no te damos un puntaje comparable/.test(sinNumero.text));
+
+  // El HTML no puede quedar atrás del texto: hay clientes de correo que solo muestran uno.
+  cierto('el HTML también lleva el enlace', m.html.includes(C.enlaceDelPedido(ID)));
+  cierto('el HTML también manda al abogado', /tu abogado/.test(m.html));
+  cierto('el HTML sin número tampoco inventa',
+    /no te damos\s*\n?un puntaje comparable/.test(sinNumero.html.replace(/\s+/g, ' ')) ||
+    /no te damos un puntaje comparable/.test(sinNumero.html.replace(/\s+/g, ' ')));
+  // Nada externo: ni imágenes, ni fuentes, ni scripts. En un producto sobre datos personales,
+  // pedirle al navegador de alguien que llame a un tercero es lo que marcamos en rojo.
+  falso('el HTML no carga nada de fuera', /<img|<script|@font-face|url\(http/i.test(m.html));
+}
+
+console.log('\n=== 6 · EL ENDPOINT DE ENTREGA: FALLA CERRADO ===\n');
+{
+  const { db } = await baseConPedido('pagado', { razon_social: 'Ejemplo SpA', plataforma: 'wordpress' });
+
+  // Sin el secreto cargado NO se entrega nada. La alternativa —«sin clave, pasa»— deja un
+  // endpoint que marca entregas y manda correos abierto a internet.
+  const r1 = await EN.onRequestPost({ request: peticion({ id: ID }, 'x'), env: { VYC_PEDIDOS: db } });
+  eq('sin CLAVE_ENTREGA: 409', r1.status, 409);
+  eq('y lo dice', (await r1.json()).motivo, 'sin-clave');
+
+  const env = { VYC_PEDIDOS: db, CLAVE_ENTREGA: 'c'.repeat(64), RESEND_API_KEY: 'k' };
+
+  const r2 = await EN.onRequestPost({ request: peticion({ id: ID }, 'd'.repeat(64)), env });
+  eq('clave equivocada: 401', r2.status, 401);
+
+  const r3 = await EN.onRequestPost({ request: peticion({ id: ID }), env });
+  eq('sin cabecera: 401', r3.status, 401);
+
+  // Un espacio pegado al final se ve CARGADO en el panel y no calza con nada. Mismo trato que
+  // el token de Resend y el secreto de la firma.
+  // ⚠️ Esta llamada SÍ entrega, y entregar manda el correo. Sin la red fingida la prueba
+  // salía a api.resend.com de verdad: contestaba 401 y la aserción pasaba igual, así que el
+  // verde tapaba una petición a un tercero desde una prueba.
+  const red6 = conRed();
+  // Base propia: si compartiera la de arriba, el resultado dependería de si una llamada
+  // anterior de esta misma sección alcanzó a mover el pedido, y entonces la aserción mediría
+  // el orden de la prueba en vez del recorte del secreto.
+  const { db: db6 } = await baseConPedido('pagado');
+  const r4 = await EN.onRequestPost({
+    request: peticion({ id: ID }, 'c'.repeat(64)),
+    env: { VYC_PEDIDOS: db6, CLAVE_ENTREGA: ' ' + 'c'.repeat(64) + '\n', RESEND_API_KEY: 'k' },
+  });
+  red6.soltar();
+  cierto('un secreto con espacios igual funciona', r4.status === 200);
+  // Sin el `|| {}`, una mutación que deje la lista vacía revienta acá con un TypeError y
+  // aborta el archivo entero: las aserciones de más abajo, que son las que nombran el
+  // problema, no llegan a correr.
+  eq('y esa entrega no salió a la red de verdad', (red6.llamadas[0] || {}).host, 'api.resend.com');
+
+  // Y la comparación no se corta en el primer byte distinto.
+  falso('mismoSecreto: largo distinto', EN.mismoSecreto('abc', 'abcd'));
+  falso('mismoSecreto: prefijo correcto no alcanza', EN.mismoSecreto('abc', 'abcdef'));
+  falso('mismoSecreto: vacío contra vacío no pasa', EN.mismoSecreto('', ''));
+  cierto('mismoSecreto: iguales', EN.mismoSecreto('abcdef', 'abcdef'));
+}
+
+console.log('\n=== 7 · EL ENDPOINT DE ENTREGA: LO QUE SÍ HACE (promesa 3) ===\n');
+{
+  const { db, sq } = await baseConPedido('pagado', { razon_social: 'Ejemplo SpA', plataforma: 'wordpress', acceso_recibido_en: '2026-10-30T10:00:00.000Z' });
+  const env = { VYC_PEDIDOS: db, CLAVE_ENTREGA: 'c'.repeat(64), RESEND_API_KEY: 'k' };
+  const red = conRed();
+
+  const r = await EN.onRequestPost({
+    request: peticion({ id: ID, informe_final: { profundo: { puntaje: 95 } } }, 'c'.repeat(64)),
+    env,
+  });
+  const j = await r.json();
+  red.soltar();
+
+  eq('entrega: 200', r.status, 200);
+  cierto('dice que entregó', j.entregado);
+  eq('la etapa pasa a entregado', j.etapa.etapa, 'entregado');
+
+  const fila = sq.prepare('SELECT estado, entregado_en, informe_final_json FROM pedidos WHERE id = ?').get(ID);
+  eq('el estado quedó escrito', fila.estado, 'entregado');
+  cierto('con su fecha', Boolean(fila.entregado_en));
+  cierto('y el informe final guardado', String(fila.informe_final_json).includes('95'));
+
+  // El correo SALE, y es la promesa que no existía.
+  eq('se llamó a Resend una vez', red.llamadas.length, 1);
+  eq('y es Resend', red.llamadas[0].host, 'api.resend.com');
+  eq('al comprador', red.llamadas[0].cuerpo.to, ['cliente@ejemplo.cl']);
+  cierto('con el antes y el después', /41/.test(red.llamadas[0].cuerpo.text)
+    && /95/.test(red.llamadas[0].cuerpo.text));
+  cierto('y la respuesta lo confirma', j.correo_enviado);
+
+  // ⚠️ La etapa ya NO afirma que el correo llegó. Un correo puede no salir y el trabajo igual
+  // está hecho: una pantalla que asegura un correo que no se mandó es la misma falta que esto
+  // vino a arreglar, con otro texto.
+  falso('la etapa no afirma que el correo llegó',
+    /Te mandamos el antes y el después por correo\./.test(j.etapa.detalle));
+  cierto('dice que se mandó y da la salida', /Si no te llegó, escríbenos/.test(j.etapa.detalle));
+  // Un pedido terminado no promete un paso más: es la otra regla que ya estaba escrita.
+  eq('y no promete un paso siguiente', j.etapa.loQueSigue, null);
+
+  // ⚠️ LAS DOS OBLIGACIONES DEL CLIENTE VAN EN `recordatorios`, NO EN `queHacer`.
+  //
+  // `queHacer` es lo que la pantalla dibuja en la caja ámbar «TE TOCA A TI», que significa
+  // «tu pedido está detenido esperándote». Un pedido entregado no está detenido, y una
+  // prueba que ya existía lo decía desde antes: «una pantalla que siempre pide algo entrena
+  // a la persona a ignorarla». Poner ahí las obligaciones gastaba esa alerta.
+  //
+  // Pero callarlas sería peor: una es borrar una cuenta de administrador NUESTRA que quedó
+  // viva en su sitio, y la otra es no publicar como definitivo un borrador que no revisó
+  // ningún abogado. Son dos conceptos distintos y por eso son dos campos distintos.
+  eq('la caja ámbar no aparece en un pedido cerrado', j.etapa.queHacer, null);
+  falso('y no se le echa la culpa', j.etapa.quienActua === 'cliente');
+  cierto('pero los recordatorios están', Array.isArray(j.etapa.recordatorios));
+  const rec = j.etapa.recordatorios || [];
+  cierto('el abogado', rec.some((r) => /tu abogado/.test(r)));
+  cierto('y borrar el acceso', rec.some((r) => /borrar el acceso/.test(r)));
+  cierto('el pedido está terminado', j.etapa.terminado);
+
+  // La misma FORMA en todas las etapas: la función declara que devuelve siempre lo mismo, y
+  // un campo que existe en una sola rama obliga a la pantalla a preguntar si la llave está
+  // en vez de si tiene contenido.
+  const todas = [{ estado: 'creado' }, { estado: 'creado', flow_token: 't' },
+    { estado: 'pendiente' }, { estado: 'pagado' }, { estado: 'pagado', razon_social: 'x' },
+    { estado: 'pagado', razon_social: 'x', acceso_recibido_en: 'x' }, { estado: 'entregado' },
+    { estado: 'rechazado' }, { estado: 'devuelto' }, { estado: 'contracargado' }]
+    .map((x) => E.etapaDelPedido(x));
+  eq('todas las etapas traen la llave',
+    todas.filter((e) => !('recordatorios' in e)).map((e) => e.etapa), []);
+  eq('y solo la entregada trae contenido',
+    todas.filter((e) => e.recordatorios).map((e) => e.etapa), ['entregado']);
+}
+
+console.log('\n=== 8 · LA ENTREGA NO SE PUEDE FORZAR NI REPETIR ===\n');
+{
+  // Un pedido sin pagar no se entrega.
+  {
+    const { db } = await baseConPedido('creado');
+    const red = conRed();
+    const r = await EN.onRequestPost({
+      request: peticion({ id: ID }, 'c'.repeat(64)),
+      env: { VYC_PEDIDOS: db, CLAVE_ENTREGA: 'c'.repeat(64), RESEND_API_KEY: 'k' },
+    });
+    red.soltar();
+    const j = await r.json();
+    eq('un pedido en creado: 409', r.status, 409);
+    // ⚠️ El CÓDIGO no alcanza: `marcarEstado` lleva el estado esperado en su WHERE, así que
+    // sin la compuerta igual sale 409, pero con motivo `ya-se-movio` — un mensaje que le dice
+    // a quien entrega que alguien se le adelantó cuando lo que pasa es que nadie pagó.
+    eq('y con el motivo correcto', j.motivo, 'no-se-puede-entregar');
+    eq('nombrando el estado real', j.estado, 'creado');
+    eq('y no se mandó ningún correo', red.llamadas.length, 0);
+  }
+
+  // Un pedido devuelto tampoco: entregarle a alguien a quien se le devolvió la plata es
+  // regalar el trabajo y además decirle que compró algo que ya no tiene.
+  {
+    const { db } = await baseConPedido('devuelto');
+    const r = await EN.onRequestPost({
+      request: peticion({ id: ID }, 'c'.repeat(64)),
+      env: { VYC_PEDIDOS: db, CLAVE_ENTREGA: 'c'.repeat(64) },
+    });
+    eq('un pedido devuelto: 409', r.status, 409);
+    eq('y por el motivo correcto', (await r.json()).motivo, 'no-se-puede-entregar');
+  }
+
+  // Entregar dos veces no revienta, pero NO manda el correo otra vez: el cliente ya lo
+  // recibió, y repetirlo le haría creer que hubo un trabajo nuevo.
+  {
+    const { db } = await baseConPedido('pagado');
+    const env = { VYC_PEDIDOS: db, CLAVE_ENTREGA: 'c'.repeat(64), RESEND_API_KEY: 'k' };
+    const red = conRed();
+    await EN.onRequestPost({ request: peticion({ id: ID }, 'c'.repeat(64)), env });
+    const r2 = await EN.onRequestPost({ request: peticion({ id: ID }, 'c'.repeat(64)), env });
+    const j2 = await r2.json();
+    red.soltar();
+    eq('la segunda vez: 200', r2.status, 200);
+    cierto('dice que ya estaba', j2.ya_estaba);
+    eq('y solo salió UN correo', red.llamadas.length, 1);
+  }
+
+  // Un id que no es nuestro no toca la base.
+  {
+    const { db } = await baseConPedido('pagado');
+    const r = await EN.onRequestPost({
+      request: peticion({ id: 'vyc_nope' }, 'c'.repeat(64)),
+      env: { VYC_PEDIDOS: db, CLAVE_ENTREGA: 'c'.repeat(64) },
+    });
+    eq('id mal formado: 400', r.status, 400);
+  }
+
+  // Un GET no entrega nada.
+  {
+    const r = await EN.onRequest({
+      request: new Request('https://verifica.spindlelab.cl/api/entregar'),
+      env: { CLAVE_ENTREGA: 'c'.repeat(64) },
+    });
+    eq('GET: 405', r.status, 405);
+  }
+}
+
+console.log('\n=== 9 · UN CORREO QUE NO SALE NO DESHACE LA ENTREGA, PERO SE DICE ===\n');
+{
+  const { db, sq } = await baseConPedido('pagado');
+  const env = { VYC_PEDIDOS: db, CLAVE_ENTREGA: 'c'.repeat(64), RESEND_API_KEY: 'k' };
+  const red = conRed(() => ({ ok: false, status: 500 }));
+
+  const r = await EN.onRequestPost({ request: peticion({ id: ID }, 'c'.repeat(64)), env });
+  const j = await r.json();
+  red.soltar();
+
+  eq('la entrega vale igual', r.status, 200);
+  eq('y el estado quedó escrito',
+    sq.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'entregado');
+  falso('pero la respuesta NO dice que el correo salió', j.correo_enviado);
+}
+
+console.log('\n=== 10 · LA PANTALLA: LA AYUDA Y EL FIN DEL REFRESCO (promesas 1, 2 y 4) ===\n');
+{
+  // La ayuda se dibuja con lo que manda el servidor, y antes del botón que declara el acceso.
+  cierto('la pantalla dibuja la ayuda', /function bloqueDeAcceso\(/.test(HTML));
+  cierto('la pinta en la etapa del acceso', /bloqueDeAcceso\(data\.acceso\)/.test(HTML));
+  const iAyuda = HTML.indexOf('bloqueDeAcceso(data.acceso)');
+  const iBoton = HTML.indexOf('data-boton-acceso></p>');
+  cierto('y va ANTES del botón de declarar', iAyuda > 0 && iBoton > iAyuda);
+
+  cierto('muestra el texto para reenviar', /data-texto-reenviar/.test(HTML));
+  cierto('con un botón de copiar', /data-copiar/.test(HTML));
+  // El botón se engancha en los TRES caminos que repintan: la carga, el envío de datos y la
+  // declaración del acceso. `dibujar` reemplaza todo el HTML, así que uno que falte deja un
+  // botón muerto justo en ese camino. Es el mismo error que tuvo `montarBotonAcceso`, que
+  // solo se enganchaba después de enviar el formulario.
+  // Con el punto y coma: `montarCopiar()` sin él también casa con la línea que la DEFINE, y
+  // entonces un camino que falte se compensa con la definición y el número sigue cuadrando.
+  eq('montarCopiar enganchado en los tres caminos',
+    (HTML.match(/montarCopiar\(\);/g) || []).length, 3);
+  // Si el portapapeles no está disponible no se finge: se selecciona y se dice qué apretar.
+  cierto('tiene salida sin portapapeles', /Ctrl\+C/.test(HTML));
+  cierto('y avisa que el texto no lleva el enlace del pedido',
+    /no lleva el enlace de tu pedido/.test(HTML));
+
+  cierto('la pantalla dibuja los recordatorios', /e\.recordatorios && e\.recordatorios\.length/.test(HTML));
+  cierto('en su propio recuadro', /class="recordatorios"/.test(HTML));
+  // Sin el número en el rótulo: sería el largo de la lista escrito a mano en otro archivo.
+  falso('y sin el número escrito a mano', /Dos cosas que quedan de tu lado/.test(HTML));
+
+  // Promesa 4: el tope del refresco tiene nombre y el aviso existe.
+  cierto('el tope tiene nombre', /var TOPE_REINTENTOS = 24;/.test(HTML));
+  falso('y no queda un 24 suelto en el if', /reintentos < 24/.test(HTML));
+  cierto('existe el aviso', /function dejamosDeRefrescar\(/.test(HTML));
+  cierto('se llama al agotar el tope',
+    /reintentos < TOPE_REINTENTOS[\s\S]{0,1200}dejamosDeRefrescar\(\)/.test(HTML));
+  cierto('el aviso dice que dejamos de revisar', /Dejamos de revisar/.test(HTML));
+  cierto('y da un botón para revisar a mano', /Revisar de nuevo/.test(HTML));
+  cierto('que reinicia el contador', /reintentos = 0;[\s\S]{0,300}pedir\(\)/.test(HTML));
+}
+
+console.log('\n=== 11 · EL FORMULARIO SIGUE DEVOLVIENDO LA AYUDA AL REPINTAR ===\n');
+{
+  // Es el momento exacto en que la persona pasa a la etapa del acceso: acaba de enviar sus
+  // datos de empresa y la pantalla se repinta con ESTA respuesta. Si acá faltara la ayuda, la
+  // vería al cargar el enlace y la perdería justo cuando la necesita.
+  const { db } = await baseConPedido('pagado');
+  const red = conRed();
+  const r = await I.onRequestPost({
+    request: new Request('https://verifica.spindlelab.cl/api/intake', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: ID, razon_social: 'Ejemplo SpA', rut: '76.086.428-5',
+        giro: 'Servicios', direccion: 'Calle 1', plataforma: 'wordpress' }),
+    }),
+    env: { VYC_PEDIDOS: db },
+  });
+  const j = await r.json();
+  red.soltar();
+
+  eq('el formulario guarda', r.status, 200);
+  eq('y la etapa pasa al acceso', j.etapa.etapa, 'falta-acceso');
+  cierto('la respuesta trae la ayuda', Boolean(j.acceso));
+  // Mismo cuidado: si `acceso` viene vacío, leer `.nombre` revienta y las cuatro aserciones
+  // siguientes no corren. Una prueba que aborta acusa una vez y se calla.
+  const a11 = j.acceso || {};
+  eq('de la plataforma que declaró', a11.nombre, 'WordPress');
+  cierto('con sus pasos', Array.isArray(a11.pasos) && a11.pasos.length >= 3);
+  cierto('y el texto para reenviar', String(a11.textoParaReenviar || '').includes('ejemplo.cl'));
+  falso('que no lleva el id', String(a11.textoParaReenviar || '').includes(ID));
+}
+
+console.log(`\n${malo ? 'HAY FALLAS' : 'TODO EN VERDE'} — ${ok} aserciones, ${malo} fallas\n`);
+process.exit(malo ? 1 : 0);

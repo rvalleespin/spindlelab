@@ -1384,7 +1384,10 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const frontRuta = '/Users/ramon/vyc-ley21719/verificaycumple/public/pedido/index.html';
     const front = readFileSync(frontRuta, 'utf8');
     const cadaMs = Number((front.match(/setTimeout\(pedir,\s*(\d+)\)/) || [])[1]);
-    const veces = Number((front.match(/reintentos\s*<\s*(\d+)/) || [])[1]);
+    // El 30-oct el tope pasó a ser una constante con nombre, porque el aviso que sale al
+    // agotarlo tiene que hablar del MISMO número: escrito dos veces, se contradicen en
+    // silencio. Se lee de la declaración, que es donde vive el único número.
+    const veces = Number((front.match(/TOPE_REINTENTOS\s*=\s*(\d+)/) || [])[1]);
     cierto('se pudieron leer los dos números del front', Number.isFinite(cadaMs) && Number.isFinite(veces));
     const sesionS = (cadaMs / 1000) * veces;
     const llamadas = Math.ceil(sesionS / E.ESPERA_RECONCILIAR_S);

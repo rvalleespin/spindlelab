@@ -157,7 +157,12 @@ console.log('=== 4. la pantalla OFRECE con que hacer cada cosa ===');
 {
   // El hueco original no era del endpoint: era que la pantalla pedia algo sin dar el control.
   cierto('en falta-datos monta el formulario', /falta-datos'\) html \+= '<p class="te-toca-form" data-form-intake/.test(HTML_PEDIDO));
-  cierto('en falta-acceso monta el boton', /falta-acceso'\) html \+= '<p class="te-toca-form" data-boton-acceso/.test(HTML_PEDIDO));
+  // El 30-oct dejó de ser una línea: antes del botón se dibuja la ayuda para DAR el acceso
+  // (instrucciones por plataforma y texto para reenviar), que es lo que la etapa prometía y no
+  // existía. Lo que esta prueba cuida sigue siendo lo mismo: que la etapa monte su control.
+  cierto('en falta-acceso monta el boton',
+    /falta-acceso'\)\s*\{[\s\S]{0,600}data-boton-acceso/.test(HTML_PEDIDO));
+  cierto('y antes la ayuda para darlo', /bloqueDeAcceso\(data\.acceso\)/.test(HTML_PEDIDO));
   cierto('existe la funcion que lo dibuja', /function montarBotonAcceso/.test(HTML_PEDIDO));
   cierto('y manda acceso_listo', /acceso_listo: true/.test(HTML_PEDIDO));
 
