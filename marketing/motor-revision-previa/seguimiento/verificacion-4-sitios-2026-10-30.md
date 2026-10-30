@@ -25,3 +25,15 @@ Origen: candidatos del piloto Vibe que el motor marcó con hallazgo pero que no 
 - **Falla del motor:** `descartadoAntes` (p0.mjs) buscaba `descartad` y la fila decía `descartar`, así que no lo cortó. Corregido: ahora busca también `descartar` y `mal etiquetado`. Probado: `pasada0('rosen.cl')` devuelve `descartado-antes`. Efecto en el resto de `ventas/*.csv`: ninguna otra fila cambia.
 - **Falla mía:** lo presenté como «único hotel nuevo con hallazgo fuerte» sin cruzar esa lista. Sin borrador y fuera de la cola. Con él afuera, la hotelería deja **cero** leads nuevos con hallazgo fuerte.
 - **Cifras de hotelería corregidas** (Rosen estaba contado entre los 30): 29 sitios, 15 con cookies de seguimiento antes de preguntar, 8 con la de Meta, 3 formulario sin política, 12 sin herramienta de medición, 17 sin declarar el negocio, 15 con portada pesada. Corregido en `encargos-otras-sesiones/guiones-video-por-categoria-2026-10-29.md`; esa sesión recibió la versión con 30.
+
+## Re-medición de la tanda 3 antes de enviar (30-oct, 14:42 UTC)
+Ninguna de las 4 se había vuelto a medir desde el 19-oct. Resultado (`corridas/2026-10-30-remedicion-tanda3/`):
+
+| Sitio | Hoy | Decisión |
+|---|---|---|
+| resolaud.cl (V84) | C1 sigue: `_ga_0WG47H3LC6`, `_ga`, `_gcl_au` en fase A; sin aviso en A ni B; sin Consent Mode | Se puede enviar. Borrador revisado: solo afirma cookies de Google, coincide |
+| trustdoc.cl (V94) | F1 sigue: formulario que pide correo o teléfono, sin enlace a política | Se puede enviar técnicamente; decide Ramón por la duda de competidor |
+| audiprop.com (V67) | F1 ya no se repite | No enviar |
+| medicinachina.cl (V89) | El sitio ya no responde | No enviar |
+
+Lección: 2 de 4 se cayeron en 11 días. Todo borrador creado desde una medición de más de 4 a 5 días se re-mide antes de entregárselo a Ramón, no después.
