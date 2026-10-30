@@ -164,5 +164,66 @@ console.log('=== el rescate cuando el pago no se puede abrir (28-oct) ===');
   falso('ni cuando el sitio no se pudo medir', /no-se-pudo-medir/.test(lista));
 }
 
+/* ================================================================== */
+console.log('=== NINGUN TEXTO DEL PANEL NOMBRA UNA PASARELA (30-oct) ===');
+{
+  // Desde que cual cobra es un dato conmutable, un texto que dice «Mercado Pago» se vuelve
+  // falso el dia que se cambia el dato, sin que nadie toque el archivo.
+  //
+  // ⚠️ Pasó de verdad, y en el peor lugar. El 30-oct, con Flow ya cobrando, el panel seguia
+  // diciendo «Lo necesita Mercado Pago» justo encima del boton de pagar $177.310. Un dia antes
+  // se habia corregido exactamente esto en los textos del SERVIDOR (etapas.js) y nadie miro la
+  // pagina: el mismo punto ciego, dos veces en dos dias.
+  //
+  // Se mira el HTML entero y no solo el panel: la promesa vale para todo lo que lee la persona.
+  // ⚠️ SE MIRA LO QUE LA PERSONA LEE, no el codigo. La primera version de esta guardia
+  // revisaba el archivo entero y se puso roja por una expresion regular DENTRO de un script
+  // (la lista blanca de destinos de pago, que tiene que nombrar los dominios). Una guardia
+  // que no distingue el texto del codigo obliga a aflojarla, y aflojada no cuida nada.
+  const visible = texto(HTML.replace(/<script[\s\S]*?<\/script>/gi, ' ')
+                           .replace(/<!--[\s\S]*?-->/g, ' '));
+  for (const re of [/Mercado\s*Pago/i, /\bFlow\b/i, /Webpay/i, /Transbank/i]) {
+    const m = visible.match(re);
+    eq(`ningun texto visible dice ${re.source.slice(0, 18)}`, m && m[0], null);
+  }
+}
+
+/* ================================================================== */
+console.log('=== A DONDE PUEDE MANDARTE LA PAGINA (la lista blanca de destinos) ===');
+{
+  // ── POR QUE EXISTE (30-oct-2026) ───────────────────────────────────────────────────────
+  //
+  // Esta funcion rompio la compra ENTERA y no dejo ni un error que mirar. El servidor ya
+  // cobraba por Flow, creaba el pago correctamente y devolvia su URL; la pagina la rechazaba
+  // porque la lista solo nombraba a Mercado Pago. El pago quedaba creado del lado de Flow y la
+  // persona veia «Reintentar» sin explicacion.
+  //
+  // Desde el servidor todo se veia bien. Es el peor tipo de error: el que no se queja.
+  //
+  // La funcion se extrae del HTML y se EJECUTA. Comprobar con una expresion regular que el
+  // texto «flow.cl» aparece en el archivo no probaria que la funcion lo acepta.
+  const m = HTML.match(/function destinoDePagoValido\(u\)\s*\{[\s\S]*?\n  \}/);
+  cierto('la funcion existe y se puede extraer', Boolean(m));
+  const destinoValido = m && eval('(' + m[0].replace('function destinoDePagoValido', 'function') + ')');
+
+  const CASOS = [
+    ['https://www.flow.cl/app/web/pay.php?token=X', true, 'Flow en produccion'],
+    ['https://sandbox.flow.cl/app/web/pay.php?token=X', true, 'Flow en sandbox'],
+    ['https://www.mercadopago.cl/checkout/v1/redirect?pref=1', true, 'Mercado Pago, que sigue conmutable'],
+    ['https://www.mercadolibre.cl/x', true, 'y su dominio hermano'],
+    // ⚠️ El `(^|\.)` del patron es lo que separa un dominio de uno que se le parece. Sin el,
+    // cualquiera registra un dominio terminado en «flow.cl» y se lleva a los compradores.
+    ['https://malvadoflow.cl/pay', false, 'un dominio que TERMINA en flow.cl'],
+    ['https://flow.cl.evil.com/pay', false, 'uno que lo lleva al principio'],
+    ['https://evil.com/pay', false, 'cualquier otro'],
+    ['http://www.flow.cl/pay', false, 'y sin cifrar, aunque el dominio este bien'],
+    ['no-es-una-url', false, 'basura'],
+    ['', false, 'vacio'],
+  ];
+  for (const [u, esperado, porque] of CASOS) {
+    eq(`${esperado ? 'acepta' : 'rechaza'} ${porque}`, Boolean(destinoValido && destinoValido(u)), esperado);
+  }
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
