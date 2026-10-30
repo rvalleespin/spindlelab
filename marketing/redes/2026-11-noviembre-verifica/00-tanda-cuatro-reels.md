@@ -161,30 +161,67 @@ medido rompe la regla de cero prospecto nombrado. **Se tapa con un bloque lima**
 paso es un elemento de la marca haciendo un trabajo real. No sirve recortar: en el panel de Chrome
 el dominio va arriba de la lista.
 
-### Exteriores: tres escenas, y la que recomiendo
+### Exteriores: el patio del edificio (decidido el 30-oct)
 
-Ramón pidió grabar **en un parque o algo así** (30-oct). Es mejor que el living de octubre por luz y
-por frescura, y cambia cuatro cosas de la producción. Las escenas, de mejor a peor para esta tanda:
+Ramón primero pidió un parque y después lo cambió: *"creo que lo voy a hacer en el patio del
+edificio. me da menos vergüenza"*. **Es la mejor decisión y no solo por eso**, así que conviene dejar
+escritas las razones operativas para que nadie la "mejore" más adelante:
 
-| | Escena | A favor | En contra |
-|---|---|---|---|
-| **A** ✅ | **Banca en sombra sólida, con césped o arbustos a distancia detrás** | El tercio superior queda de tono medio y desenfocado, que es donde van los rótulos. Sentado, el plano se repite igual en las cuatro tomas | Hay que encontrar sombra continua, no de árbol ralo |
-| **B** | **Muro, reja o seto del parque** | La superficie plana es lo mejor que existe para que el texto se lea | Se ve menos "parque". Es el plan de respaldo si en A el texto no contrasta |
-| **C** | **Sendero con profundidad, de pie** | Se ve bonito, da profundidad | Pasa gente por detrás, y entre corte y corte el fondo cambia. Rompe la continuidad |
+1. **No hay caras de terceros que resolver.** En un parque hay que encuadrar para que no salga nadie,
+   y en esta campaña publicar la cara de alguien que no dio permiso se pelea con el argumento de la
+   marca.
+2. **Es repetible.** El plano de mañana calza con el de hoy. Un parque es una salida; el patio es
+   bajar. Para una tanda de cuatro piezas, y para rehacer una toma mala, eso vale más que un fondo
+   bonito.
+3. **Es la escena que sí se graba.** En octubre tres guiones no se grabaron nunca, y la causa no fue
+   el guion (ver la nota del 13-oct). **La puesta en escena que baja la fricción le gana a la que se
+   ve mejor**, porque la segunda no existe si no se graba.
 
-**Recomiendo A, con B de respaldo.** Y las cuatro tomas en la misma escena y la misma sesión: cambiar
-de lugar entre pieza y pieza es lo que hace que una tanda no se grabe nunca.
+**Dónde pararse, en orden de preferencia:** contra un muro parejo · con una jardinera o vegetación
+detrás · en el lado abierto del patio. **Lo que hay que evitar**: una esquina, un pasillo angosto
+entre dos muros, y el centro de un patio cerrado donde la luz entra solo por arriba.
 
-⚠️ **Nada de sombra de árbol ralo.** La luz moteada mueve manchas de sol por la cara, no se arregla
-en edición, y cambia entre corte y corte. **Sombra sólida y continua**, o sombra del lado de un muro.
+**El parque queda como alternativa**, no descartado: si alguna vez hay una pieza que gane con otro
+fondo, las notas de la versión anterior de esta sección están en el historial de git (commit
+`23ab9ba7`).
 
-⚠️ **Nada de juegos infantiles ni de gente identificable detrás.** Publicar un video con la cara de
-terceros que no dieron permiso, en una campaña cuyo argumento entero es el cuidado de los datos de
-las personas, se pelea consigo mismo. Encuadra para que no salga ninguna cara, o graba a hora de poco
-tránsito.
+### El eco, que en un patio es el riesgo principal
 
-Y que no se vea ningún letrero ni marca de un local en el fondo, por la misma regla de cero
-prospecto nombrado.
+**En el parque el enemigo era el viento. En un patio es el eco**, y tampoco se saca después.
+
+- **Mínimo metro y medio de la pared más cercana.** Nunca en una esquina ni en un pasillo angosto:
+  ahí el sonido rebota de los dos lados.
+- **Micrófono cerca.** En el pecho si es de corbata, a unos 30 cm si es de mano fuera de cuadro. La
+  distancia al micrófono es lo que decide cuánto eco entra.
+- **Si hay plantas o jardinera, ponte con la vegetación detrás.** Las plantas absorben, el estuco
+  rebota.
+- **La prueba de diez segundos con audífonos sigue siendo obligatoria**, ahora por el eco. Si te
+  escuchas "en un estacionamiento", muévete de lugar.
+- **Treinta segundos de ambiente, igual que afuera.** En un patio hay portón, ascensor y vecinos, y
+  sin ambiente de relleno los saltos de corte suenan a "clic".
+- **Cada guion, dos veces.** Un portón o una moto en la calle mata la toma completa.
+
+### La trampa de luz del patio
+
+Un patio cerrado recibe el cielo **por arriba**, y la luz vertical te hace ojeras y sombra bajo los
+ojos. Es el error típico de este lugar.
+
+- **Ponte cerca del lado abierto**, en el borde de la sombra, **mirando hacia la parte iluminada**.
+  Así la luz llega de adelante en diagonal y no desde el techo.
+- **Sol directo, nunca**, igual que afuera.
+- ⚠️ **Los valores de ajuste de color de octubre no sirven**: se midieron sobre el living. Con un
+  fotograma del patio se sacan los nuevos.
+
+### El fondo, y una ironía que hay que evitar
+
+**Un muro parejo detrás del tercio superior es el mejor fondo que existe para que los rótulos se
+lean**, bastante mejor que el follaje. **Y de paso desarma el choque del lima con el verde**: el
+problema del acento amarillo verdoso sobre hojas no aplica contra un muro. El lima igual se queda en
+la etiqueta chica, por disciplina de acento.
+
+⚠️ **Que no salgan patentes de auto, números de departamento, el nombre del edificio ni ventanas de
+vecinos.** Son datos identificables, y publicarlos en una pieza sobre el cuidado de los datos de las
+personas se pelea consigo mismo. **Se revisa el cuadro antes de grabar**, no al editar.
 
 ### Las dos grabaciones de pantalla se hacen aparte, adentro
 
