@@ -96,6 +96,11 @@ function conRed(contesta = () => ({ ok: true, status: 200 })) {
     try { cuerpo = JSON.parse(String((o && o.body) || '{}')); } catch { cuerpo = String(o && o.body); }
     llamadas.push({ host: new URL(String(u)).host, cuerpo });
     const r = contesta(llamadas.length);
+    // ⚠️ `lanza` existe porque sin él solo se probaba la falla AMABLE. El modo de falla real
+    // de Resend en producción no es un http-500: es la excepción —el AbortSignal.timeout de
+    // los 8 segundos, un DNS caído, la conexión cortada— y ese camino no lo corría ninguna
+    // aserción. Una entrega ya escrita en la base no se puede caer por ahí.
+    if (r.lanza) throw new Error(r.lanza === true ? 'conexión cortada' : String(r.lanza));
     return { ok: r.ok, status: r.status, json: async () => ({}) };
   };
   return { llamadas, soltar() { globalThis.fetch = antes; } };
@@ -138,11 +143,51 @@ console.log('\n=== 1 · EL TEXTO PARA REENVIAR (promesa 1) ===\n');
   cierto('habla en primera persona del cliente', /Contraté/.test(t));
   falso('no habla en primera persona nuestra', /Necesitamos un acceso/.test(t));
 
-  // Una plataforma sin ruta de menú nombrable cae en el permiso genérico, no en una ruta
-  // inventada para Webflow.
+  // Una plataforma sin ruta de menú nombrable cae en el permiso genérico.
   const w = AC.textoParaReenviar({ id: ID, dominio: 'ejemplo.cl', plataforma: 'webflow' });
   cierto('sin ruta nombrable, describe el permiso', w.includes(AC.LO_QUE_HACE_FALTA));
-  falso('y no inventa un menú de Webflow', /se hace desde Usuarios/.test(w));
+
+  // ⚠️ LAS DOS ASERCIONES DE ARRIBA NO ALCANZABAN, Y UNA ERA VACUA.
+  //
+  // `textoParaReenviar` tiene DOS ramas: con `pasos` y sin `pasos`. Todo lo de arriba corre
+  // sobre wordpress (rama con pasos) y el guardia del menú corría sobre webflow (rama SIN
+  // pasos), que por construcción no puede producir ese string: pasaba porque la rama no se
+  // toma, no porque el código no invente rutas.
+  //
+  // Mientras tanto la rama que SÍ nombraba una ruta la nombraba MAL: decía «En X se hace
+  // desde Usuarios» con «Usuarios» fijo, y los pasos de Wix mandan a «Roles y permisos» y los
+  // de Squarespace a la sección de permisos. El texto que el cliente le reenviaba a su
+  // agencia contradecía las instrucciones que él mismo estaba leyendo en pantalla.
+  //
+  // Lo encontró una revisión adversaria generando los nueve textos y leyéndolos. Esto es lo
+  // que debería haberlo encontrado antes.
+  const RUTAS = /se hace desde|Usuarios|Configuración|Roles y permisos|wp-admin|escritorio|men[úu]/i;
+  const TODAS = [...I.PLATAFORMAS, undefined, '', 'inventada'];
+  for (const plataforma of TODAS) {
+    const nombre = plataforma || '(sin declarar)';
+    const t = AC.textoParaReenviar({ id: ID, dominio: 'ejemplo.cl', plataforma });
+
+    // El id del pedido en CUALQUIER rama, no solo en la de wordpress.
+    falso(`${nombre}: sin el id del pedido`, t.includes(ID));
+    falso(`${nombre}: sin enlace al pedido`, /\/pedido\//.test(t));
+    // Ninguna rama nombra un menú. Si ninguna lo nombra, ninguna puede contradecir su ficha.
+    falso(`${nombre}: sin ruta de menú`, RUTAS.test(t));
+
+    // Y la rama con pasos tiene que decir el permiso REAL de su ficha, no uno de plantilla.
+    const ficha = AC.fichaDePlataforma(plataforma);
+    if (ficha.pasos) {
+      cierto(`${nombre}: nombra el permiso de su ficha`,
+        t.includes(`permiso de ${ficha.permiso}`));
+    }
+  }
+
+  // El permiso se enchufa después de «permiso de», así que tiene que leerse como frase
+  // nominal. Shopify salía «permiso de un usuario con permiso de Temas y de Aplicaciones».
+  for (const [nombre, f] of Object.entries(AC.POR_PLATAFORMA)) {
+    if (!f.pasos) continue;
+    falso(`${nombre}: el permiso no repite la palabra permiso`, /permiso/i.test(f.permiso));
+    falso(`${nombre}: el permiso no empieza con un artículo`, /^(un|una|el|la)\s/i.test(f.permiso));
+  }
 }
 
 console.log('\n=== 2 · LAS INSTRUCCIONES POR PLATAFORMA (promesa 2) ===\n');
@@ -300,18 +345,64 @@ console.log('\n=== 5 · EL CORREO DE CIERRE (promesa 3) ===\n');
   cierto('dice que no damos asesoría legal', /no damos asesoría legal/.test(m.text));
   cierto('recuerda borrar el acceso', /borrar el acceso/.test(m.text));
 
-  // Y sin informe final NO se inventa una mejora.
+  // ── LOS TRES CASOS SIN NÚMERO, QUE ANTES ERAN UNO SOLO ──────────────────────────────
+  //
+  // El texto viejo narraba los hechos de UNA situación y se mandaba en las tres. En la peor
+  // —entregar sin `informe_final`, que el endpoint acepta y documenta— le decía al cliente
+  // «Volvimos a correr el chequeo sobre la misma página» cuando la misma transacción acababa
+  // de escribir `informe_final_json: null`, o sea el dato de que NO se rehizo nada. Una
+  // afirmación falsa sobre trabajo ejecutado, en la última frase que lee quien pagó $177.310.
+  //
+  // Y esta prueba lo bendecía: comprobaba que el texto APARECIERA, no que fuera cierto.
+  eq('sin informe final: no se rehizo',
+    C.situacionDeLaMedicion(INFORME_ANTES, null).caso, 'sin-rehacer');
+  eq('con informe sin nota: el chequeo declinó',
+    C.situacionDeLaMedicion(INFORME_ANTES, { profundo: { puntaje: null } }).caso, 'declinado');
+  eq('con nota de otra vara: no comparable',
+    C.situacionDeLaMedicion({ rapido: { puntaje: 30 } }, { profundo: { puntaje: 95 } }).caso,
+    'otra-vara');
+  eq('con nota de la misma vara: comparable',
+    C.situacionDeLaMedicion(INFORME_ANTES, { profundo: { puntaje: 95 } }).caso, 'comparable');
+
   const sinNumero = C.correoDeEntrega(pedido, null, E.TITULOS);
   falso('sin medición nueva, ningún puntaje de después', /ahora da \d/.test(sinNumero.text));
-  cierto('y se dice por qué no hay número',
-    /no te damos un puntaje comparable/.test(sinNumero.text));
+  // ⚠️ LA ASERCIÓN QUE FALTABA: no se puede afirmar un trabajo que no se hizo.
+  falso('sin medición nueva, NO se afirma haber vuelto a correr el chequeo',
+    /[Vv]olvimos a correr el chequeo/.test(sinNumero.text));
+  cierto('se dice que no se alcanzó a rehacer',
+    /no alcanzamos a volver a correr el chequeo/.test(sinNumero.text));
+  cierto('y se da la salida', /respóndenos este correo y lo corremos/.test(sinNumero.text));
+  // Y tampoco se le echa la culpa al instrumento por algo que no hizo.
+  falso('sin medición nueva, no se culpa al chequeo',
+    /confirmar más de la mitad/.test(sinNumero.text));
+
+  const declinado = C.correoDeEntrega(pedido, { profundo: { puntaje: null } }, E.TITULOS);
+  cierto('declinado: sí se rehizo y se dice', /[Vv]olvimos a correr el chequeo/.test(declinado.text));
+  cierto('declinado: y acá SÍ corresponde explicar el instrumento',
+    /no puso nota.*confirmar más de la mitad/s.test(declinado.text));
+
+  const otraVara = C.correoDeEntrega(
+    { ...pedido, informe_json: JSON.stringify({ rapido: { puntaje: 30 } }) },
+    { profundo: { puntaje: 95 } }, E.TITULOS);
+  cierto('otra vara: sí se rehizo y se dice', /[Vv]olvimos a correr el chequeo/.test(otraVara.text));
+  cierto('otra vara: la razón es la escala, no el instrumento',
+    /no están en la misma escala/.test(otraVara.text));
+  falso('otra vara: no se culpa al chequeo', /confirmar más de la mitad/.test(otraVara.text));
+  falso('otra vara: no se muestra el 95 como si fuera comparable', /ahora da 95/.test(otraVara.text));
+
+  // Los tres textos viven juntos y ninguno se repite: si dos fueran iguales, volvería el
+  // defecto con otra forma.
+  eq('los tres textos son distintos', new Set(Object.values(C.SIN_NUMERO)).size, 3);
 
   // El HTML no puede quedar atrás del texto: hay clientes de correo que solo muestran uno.
   cierto('el HTML también lleva el enlace', m.html.includes(C.enlaceDelPedido(ID)));
   cierto('el HTML también manda al abogado', /tu abogado/.test(m.html));
-  cierto('el HTML sin número tampoco inventa',
-    /no te damos\s*\n?un puntaje comparable/.test(sinNumero.html.replace(/\s+/g, ' ')) ||
-    /no te damos un puntaje comparable/.test(sinNumero.html.replace(/\s+/g, ' ')));
+  // El HTML sale del MISMO texto que la versión plana: si se separaran, uno de los dos se
+  // quedaría atrás el día del cambio y la mitad de los clientes leería la versión vieja.
+  cierto('el HTML sin número dice lo mismo que el texto',
+    sinNumero.html.replace(/\s+/g, ' ').includes(C.SIN_NUMERO['sin-rehacer']));
+  falso('y tampoco afirma el re-chequeo en el HTML',
+    /[Vv]olvimos a correr el chequeo/.test(sinNumero.html));
   // Nada externo: ni imágenes, ni fuentes, ni scripts. En un producto sobre datos personales,
   // pedirle al navegador de alguien que llame a un tercero es lo que marcamos en rojo.
   falso('el HTML no carga nada de fuera', /<img|<script|@font-face|url\(http/i.test(m.html));
@@ -398,7 +489,10 @@ console.log('\n=== 7 · EL ENDPOINT DE ENTREGA: LO QUE SÍ HACE (promesa 3) ===\
   // vino a arreglar, con otro texto.
   falso('la etapa no afirma que el correo llegó',
     /Te mandamos el antes y el después por correo\./.test(j.etapa.detalle));
-  cierto('dice que se mandó y da la salida', /Si no te llegó, escríbenos/.test(j.etapa.detalle));
+  cierto('dice que se mandó y da la salida', /si no te llegó, escríbenos/i.test(j.etapa.detalle));
+  cierto('y afirma el re-chequeo porque SÍ hubo informe final',
+    /y volvimos a correr el chequeo/i.test(j.etapa.detalle));
+  falso('sin el «todavía no»', /todavía no volvimos/i.test(j.etapa.detalle));
   // Un pedido terminado no promete un paso más: es la otra regla que ya estaba escrita.
   eq('y no promete un paso siguiente', j.etapa.loQueSigue, null);
 
@@ -518,6 +612,80 @@ console.log('\n=== 9 · UN CORREO QUE NO SALE NO DESHACE LA ENTREGA, PERO SE DIC
   falso('pero la respuesta NO dice que el correo salió', j.correo_enviado);
 }
 
+console.log('\n=== 9 bis · LA RED QUE REVIENTA, Y LA ENTREGA SIN MEDICIÓN ===\n');
+{
+  // El modo de falla real de Resend no es un http-500: es la EXCEPCIÓN. El corte de tiempo de
+  // los 8 segundos, un DNS caído, la conexión cortada. Ese camino —el catch de
+  // `enviarCorreoDeEntrega`— no lo corría ninguna aserción, y `entregar.js` hace `await` sobre
+  // esa llamada DESPUÉS de haber escrito el estado: si se propagara, la entrega quedaría
+  // escrita y la respuesta sería un error.
+  const { db, sq } = await baseConPedido('pagado');
+  const env = { VYC_PEDIDOS: db, CLAVE_ENTREGA: 'c'.repeat(64), RESEND_API_KEY: 'k' };
+  const red = conRed(() => ({ lanza: true }));
+  // Se atrapa la excepción ACÁ para poder acusarla. Sin esto, una excepción que escapara del
+  // endpoint abortaría el archivo y las aserciones de abajo —las que nombran el problema— no
+  // correrían nunca: el síntoma sería «la prueba reventó», no «el endpoint deja escapar una
+  // excepción después de haber escrito el estado».
+  let r = null, escapo = null;
+  try { r = await EN.onRequestPost({ request: peticion({ id: ID }, 'c'.repeat(64)), env }); }
+  catch (e) { escapo = (e && e.message) || String(e); }
+  const j = r ? await r.json() : {};
+  red.soltar();
+
+  eq('ninguna excepción se escapa del endpoint', escapo, null);
+  eq('la red que revienta no rompe la entrega', r && r.status, 200);
+  cierto('la entrega vale', j.entregado);
+  falso('y la respuesta no miente sobre el correo', j.correo_enviado);
+  eq('el estado quedó escrito igual',
+    (sq.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID) || {}).estado, 'entregado');
+
+  // Y la pantalla NO puede afirmar un re-chequeo que no pasó. Acá se entregó sin
+  // `informe_final`, o sea `informe_final_json: null`, que es el dato de que no se rehizo.
+  // La subcadena NO distingue la afirmación de su negación: «Todavía no volvimos a correr el
+  // chequeo» contiene «volvimos a correr el chequeo», así que una aserción ingenua se pone
+  // roja sobre el texto correcto. (Me pasó acá mismo.) Se ancla a la conjunción, que es lo
+  // único que separa las dos frases.
+  //
+  // Y `|| ''`: si la llamada de arriba falla, `j` viene vacío y leer `.detalle` revienta el
+  // archivo entero, así que las tres aserciones de arriba acusan y estas tres no llegan a
+  // correr. Es la quinta vez hoy con la misma forma. La regla, sin excepciones: dentro de un
+  // bloque de aserciones, ningún campo de una respuesta se lee sin red.
+  const det = (j.etapa || {}).detalle || '';
+  falso('sin informe final, la etapa no afirma el re-chequeo', /y volvimos a correr el chequeo/i.test(det));
+  cierto('y lo dice', /todavía no volvimos a correr el chequeo/i.test(det));
+  cierto('con la salida', /escríbenos con este enlace y lo corremos/i.test(det));
+}
+
+console.log('\n=== 9 ter · EL INFORME FINAL EN TEXTO NO SE PIERDE ===\n');
+{
+  // Mandarlo como el texto JSON es la forma natural desde un script que acaba de leer la
+  // salida del chequeo de un archivo, y antes se descartaba EN SILENCIO: 200, y la medición
+  // que alguien sí corrió se perdía. `correoDeEntrega` ya toleraba las dos formas para el
+  // informe congelado, así que era una incoherencia, no un criterio.
+  eq('objeto', EN.interpretarInforme({ profundo: { puntaje: 95 } }), { profundo: { puntaje: 95 } });
+  eq('texto JSON', EN.interpretarInforme('{"profundo":{"puntaje":95}}'), { profundo: { puntaje: 95 } });
+  eq('un array no es un informe', EN.interpretarInforme([1, 2]), null);
+  eq('un texto roto tampoco', EN.interpretarInforme('{nope'), null);
+  eq('ni un número', EN.interpretarInforme(7), null);
+  eq('ni la ausencia', EN.interpretarInforme(undefined), null);
+
+  const { db, sq } = await baseConPedido('pagado');
+  const env = { VYC_PEDIDOS: db, CLAVE_ENTREGA: 'c'.repeat(64), RESEND_API_KEY: 'k' };
+  const red = conRed();
+  const r = await EN.onRequestPost({
+    request: peticion({ id: ID, informe_final: '{"profundo":{"puntaje":95}}' }, 'c'.repeat(64)),
+    env,
+  });
+  const j = await r.json();
+  red.soltar();
+
+  cierto('el endpoint lo reconoce', j.hubo_informe_final);
+  cierto('lo guarda',
+    String(sq.prepare('SELECT informe_final_json FROM pedidos WHERE id = ?').get(ID).informe_final_json).includes('95'));
+  cierto('y el correo sale con el antes y el después',
+    /41/.test(red.llamadas[0].cuerpo.text) && /95/.test(red.llamadas[0].cuerpo.text));
+}
+
 console.log('\n=== 10 · LA PANTALLA: LA AYUDA Y EL FIN DEL REFRESCO (promesas 1, 2 y 4) ===\n');
 {
   // La ayuda se dibuja con lo que manda el servidor, y antes del botón que declara el acceso.
@@ -533,10 +701,33 @@ console.log('\n=== 10 · LA PANTALLA: LA AYUDA Y EL FIN DEL REFRESCO (promesas 1
   // declaración del acceso. `dibujar` reemplaza todo el HTML, así que uno que falte deja un
   // botón muerto justo en ese camino. Es el mismo error que tuvo `montarBotonAcceso`, que
   // solo se enganchaba después de enviar el formulario.
-  // Con el punto y coma: `montarCopiar()` sin él también casa con la línea que la DEFINE, y
-  // entonces un camino que falte se compensa con la definición y el número sigue cuadrando.
-  eq('montarCopiar enganchado en los tres caminos',
-    (HTML.match(/montarCopiar\(\);/g) || []).length, 3);
+  // ⚠️ CONTAR LLAMADAS NO VE EL ÁMBITO, Y ESTA ASERCIÓN ERA UN CONTEO.
+  //
+  // Una revisión adversaria encontró dos mutaciones que la dejaban en verde: mover la llamada
+  // del camino de la carga inicial a un duplicado en el del formulario mantiene el conteo en
+  // 3 y deja el botón «Copiar el texto» muerto para todo el que simplemente abre el enlace de
+  // su pedido, que es el camino normal. El total cuadra y el producto está roto.
+  //
+  // Son tres caminos DISTINTOS porque `dibujar` reemplaza todo el HTML: cada repintado tiene
+  // que volver a enganchar. Se comprueba uno por uno, anclado a su contexto.
+  //
+  // (El comportamiento real está verificado aparte, en el navegador: con el servidor local
+  // corriendo, abrir el enlace del pedido y apretar el botón selecciona el texto. Un grep ve
+  // el nombre, no la ejecución; esto es el guardia de regresión, no la prueba.)
+  const CAMINOS = [
+    ['la carga inicial del enlace',
+      /fetch\('\/api\/pedido\?id=[\s\S]{0,2600}?montarCopiar\(\);/],
+    ['el envío de los datos de empresa',
+      /f\.addEventListener\('submit'[\s\S]{0,2600}?montarCopiar\(\);/],
+    ['la declaración del acceso',
+      /b\.addEventListener\('click'[\s\S]{0,1600}?montarCopiar\(\);/],
+  ];
+  for (const [nombre, patron] of CAMINOS) {
+    cierto(`montarCopiar engancha en ${nombre}`, patron.test(HTML));
+  }
+  // Y sigue siendo exactamente una por camino: dos enganches al mismo botón lo disparan dos
+  // veces.
+  eq('ni una llamada de más', (HTML.match(/montarCopiar\(\);/g) || []).length, CAMINOS.length);
   // Si el portapapeles no está disponible no se finge: se selecciona y se dice qué apretar.
   cierto('tiene salida sin portapapeles', /Ctrl\+C/.test(HTML));
   cierto('y avisa que el texto no lleva el enlace del pedido',
