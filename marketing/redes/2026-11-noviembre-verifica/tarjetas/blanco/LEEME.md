@@ -1,4 +1,21 @@
-# Tarjetas para fondo blanco — las que van con el material grabado
+# Tarjetas para fondo blanco — ⛔ NO son las que van con el material grabado
+
+> ## ⛔ Corrección del 30-oct, después de ver el fotograma real
+>
+> **Estas no se usan en la tanda de noviembre. Van las de `../`.**
+>
+> Se hicieron prediciendo que el fondo blanco del cuarto obligaba a un bloque de color. **El
+> fotograma de Ramón desmintió la predicción:** el bloque de texto no cae sobre la pared, cae sobre
+> su polera, que está a **luminancia 70**. O sea que detrás del texto hay fondo oscuro, que es
+> exactamente la condición para la que se hizo el set de `../` (texto blanco con sombra), y que
+> además es la que ya salió publicada en la campaña.
+>
+> **La lección, que es la que importa:** se eligió sobre una predicción de dónde caería el texto en
+> vez de medirlo. En un plano medio corto el tercio inferior es el torso, no el fondo, y eso se
+> mide con un fotograma, no se deduce de cómo se describe el cuarto.
+>
+> **Quedan como variante para fondo claro de verdad** (si alguna vez el texto cae sobre pared, o si
+> alguien usa ropa clara), no se borran.
 
 **30-oct-2026.** Ramón grabó finalmente **en un cuarto de su casa, fondo blanco**. Estas son las
 tarjetas de esa grabación. **Las de la carpeta de arriba (`../`) no sirven para este material**: son
