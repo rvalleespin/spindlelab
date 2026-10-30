@@ -1,0 +1,13 @@
+{
+  "id": "H17",
+  "dominio": "hotelalaia.com",
+  "motor": "v0",
+  "cuando": "2026-10-30T12:56:46.315Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "descartado:excluido",
+  "detalle": {
+    "tipo": "tope-alcanzado",
+    "motivo": "3 toques reales segun el conteo por direccion del copiloto en la corrida del 12-oct",
+    "fecha": "2026-10-13"
+  }
+}
