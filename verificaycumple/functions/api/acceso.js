@@ -81,7 +81,7 @@ export const POR_PLATAFORMA = {
 
   shopify: {
     nombre: 'Shopify',
-    permiso: 'un usuario con permiso de Temas y de Aplicaciones',
+    permiso: 'Temas y Aplicaciones',
     porQue: 'En Shopify el consentimiento se maneja con una app y con el código del tema, así ' +
       'que hacen falta esos dos permisos. No hace falta que veamos tus pedidos ni tus clientes.',
     pasos: [
@@ -226,8 +226,22 @@ export function fichaDePlataforma(plataforma) {
 export function textoParaReenviar(pedido) {
   const sitio = (pedido && pedido.dominio) || 'mi sitio';
   const ficha = fichaDePlataforma(pedido && pedido.plataforma);
+  // ⚠️ ACÁ TAMPOCO SE NOMBRA UN MENÚ, Y ESTA LÍNEA YA LO HACÍA MAL.
+  //
+  // Decía «En X se hace desde Usuarios», con «Usuarios» fijo para CUALQUIER plataforma que
+  // tuviera pasos. Era falso en dos de las cuatro: los pasos de Wix mandan a «Roles y
+  // permisos» y los de Squarespace a la sección de permisos o colaboradores, así que el
+  // texto que el cliente le reenvía a su agencia contradecía las instrucciones que ese mismo
+  // cliente estaba leyendo en pantalla, dos recuadros más arriba.
+  //
+  // Lo gracioso y lo grave: este archivo entero existe bajo la regla de «no se inventa una
+  // ruta de menú», y esta línea la rompía con una plantilla. Una regla escrita en un
+  // comentario no la hace cumplir nadie; la hace cumplir una prueba.
+  //
+  // Acá va el PERMISO, que sí sale de la ficha de cada plataforma y es lo único que quien
+  // administra el sitio necesita saber. Dónde se hace lo sabe él mejor que nosotros.
   const quePedir = ficha.pasos
-    ? `En ${ficha.nombre} se hace desde Usuarios: crear un acceso con permiso de ${ficha.permiso}.`
+    ? `Lo que necesitan crear en ${ficha.nombre} es un acceso con permiso de ${ficha.permiso}.`
     : `Lo que necesitan es ${LO_QUE_HACE_FALTA}.`;
 
   // ⚠️ SIN CORTES DE LÍNEA DENTRO DE UN PÁRRAFO, al revés que el correo de pago.

@@ -76,6 +76,14 @@ export function claveDeLaPeticion(request) {
   return m ? m[1].trim() : '';
 }
 
+/** El informe final, venga como objeto o como su texto JSON. `null` si no vino o no sirve. */
+export function interpretarInforme(v) {
+  if (typeof v === 'string') {
+    try { v = JSON.parse(v); } catch { return null; }
+  }
+  return (v && typeof v === 'object' && !Array.isArray(v)) ? v : null;
+}
+
 export async function onRequestPost(contexto) {
   const { request, env } = contexto;
 
@@ -128,9 +136,16 @@ export async function onRequestPost(contexto) {
     }, 409);
   }
 
-  const informeFinal = (cuerpo.informe_final && typeof cuerpo.informe_final === 'object')
-    ? cuerpo.informe_final
-    : null;
+  // El informe se acepta como objeto O como el texto JSON de un objeto. Lo segundo es la
+  // forma natural de mandarlo desde un script que acaba de leer la salida del chequeo de un
+  // archivo, y antes se descartaba EN SILENCIO: el cuerpo se aceptaba, la entrega salía 200,
+  // y la medición que alguien sí había corrido se perdía. El propio `correoDeEntrega` ya
+  // tolera las dos formas para `informe_json`, así que acá era una incoherencia, no un
+  // criterio.
+  //
+  // Un array no entra: `[]` es `typeof 'object'` y no es un informe. Y si el texto no parsea,
+  // tampoco: se trata igual que no haberlo mandado, y el correo lo dice.
+  const informeFinal = interpretarInforme(cuerpo.informe_final);
 
   const movido = await marcarEstado(env.VYC_PEDIDOS, id, ESTADOS.PAGADO, ESTADOS.ENTREGADO, {
     entregado_en: new Date().toISOString(),
@@ -147,9 +162,27 @@ export async function onRequestPost(contexto) {
   // El correo se ESPERA, al revés que los avisos internos. Acá quien está del otro lado no es
   // un cliente con una pantalla cargando: somos nosotros entregando, y lo único que queremos
   // saber es si el cierre le llegó. Esperarlo es el punto.
-  const correoEnviado = await enviarCorreoDeEntrega(
-    fresco, informeFinal, TITULOS, env.RESEND_API_KEY,
-  );
+  // ⚠️ EL try/catch ES DE ACÁ, AUNQUE EL QUE MANDA EL CORREO YA TENGA EL SUYO.
+  //
+  // `enviarCorreoDeEntrega` promete no lanzar nunca, y hoy cumple. Pero este `await` ocurre
+  // DESPUÉS de haber escrito el estado en la base: si algún día esa promesa se rompe —un
+  // cambio en el módulo del correo, una excepción antes de su propio try— el pedido quedaría
+  // marcado como entregado y la Function lanzaría, o sea un 500 que Cloudflare reemplaza por
+  // su página de error. Quien entregó vería un fallo sobre un trabajo que sí quedó entregado,
+  // y lo más probable es que reintentara.
+  //
+  // El invariante que importa es local: pasada la escritura, de acá no sale una excepción.
+  // Depender de que un módulo vecino siga cumpliendo su promesa es dejarlo escrito en otro
+  // archivo. Lo encontró una mutación: al hacer lanzar al mailer, la prueba ABORTABA en vez
+  // de acusar, que es justo lo que pasaría en producción.
+  let correoEnviado = false;
+  try {
+    correoEnviado = await enviarCorreoDeEntrega(
+      fresco, informeFinal, TITULOS, env.RESEND_API_KEY,
+    );
+  } catch (e) {
+    console.log(`[entregar] el correo de cierre lanzó: ${e && e.message}`);
+  }
 
   return json({
     ok: true,

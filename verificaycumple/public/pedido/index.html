@@ -94,7 +94,12 @@
             font: inherit; border-radius: 9px; border: 1px solid rgba(0,0,0,.22); background: #fff; }
   .intake button[disabled] { opacity: .6; cursor: progress; }
   .intake-estado { margin: 2px 0 0; font-size: .88rem; }
-  .intake-estado:empty { display: none; }
+  /* ⚠️ `display: none` NO, aunque esté vacío. Son regiones vivas (role="status"): un lector
+     de pantalla las anuncia cuando CAMBIAN, y una región que entra al árbol de accesibilidad
+     ya poblada —porque estaba oculta y apareció con texto en la misma mutación— es justo el
+     caso que los lectores no anuncian. El margen en cero le da altura cero mientras está
+     vacía, que es lo que queríamos, sin sacarla del árbol. */
+  .intake-estado:empty { margin: 0; }
   .boton.secundario { background: none; border: 1px solid currentColor; }
   .te-toca .boton {
     display: inline-block; margin: 14px 0 0; padding: 12px 20px; border-radius: 999px;
@@ -125,7 +130,7 @@
     font: inherit; font-weight: 700; font-size: 14.5px; cursor: pointer;
   }
   .ayuda .copiado { margin: 7px 0 0; font-size: .88rem; }
-  .ayuda .copiado:empty { display: none; }
+  .ayuda .copiado:empty { margin: 0; }  /* misma razón: es role="status" */
 
   /* Cuando la página deja de revisar sola. Ver el comentario del script: la etapa dice «esta
      página se actualiza sola» y eso dejaba de ser cierto a los dos minutos, sin avisar. */

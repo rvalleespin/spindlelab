@@ -183,6 +183,77 @@ export function puntajeComparable(informeAntes, informeDespues) {
 }
 
 /**
+ * Qué se le dice al cliente cuando el correo no lleva número, según POR QUÉ no lo lleva.
+ *
+ * Los tres salen del mismo molde —qué pasó, y qué puede hacer— y ninguno culpa al instrumento
+ * de algo que no hizo. Viven juntos para que se lean uno al lado del otro: era imposible
+ * notar que el texto viejo servía para uno solo mientras estaba escrito dentro del `else`.
+ */
+export const SIN_NUMERO = {
+  // No se rehizo la medición. Lo primero que se dice es eso, porque es lo que pasó.
+  'sin-rehacer':
+    'Esta vez no te mandamos un antes y un después: no alcanzamos a volver a correr el ' +
+    'chequeo sobre tu página. Si quieres el número, respóndenos este correo y lo corremos.',
+
+  // Se rehizo y el chequeo declinó. Acá sí corresponde explicar el comportamiento del
+  // instrumento, porque acá sí es la razón.
+  declinado:
+    'Volvimos a correr el chequeo sobre la misma página que medimos al principio, y esta vez ' +
+    'no puso nota. Solo la pone cuando alcanza a confirmar más de la mitad de lo que mide, y ' +
+    'en tu página no alcanzó. Si quieres, respóndenos y lo miramos contigo.',
+
+  // Se rehizo, hay número, y no se puede restar contra el de antes.
+  'otra-vara':
+    'Volvimos a correr el chequeo sobre la misma página que medimos al principio. La medición ' +
+    'nueva no se puede restar contra la del principio porque no están en la misma escala, así ' +
+    'que preferimos no darte dos números que parecen comparables y no lo son.',
+};
+
+/**
+ * En qué quedó la medición final. SON TRES SITUACIONES DISTINTAS Y SE DECÍAN IGUAL.
+ *
+ * ── EL DEFECTO (encontrado el 30-oct por una revisión adversaria) ────────────────────────
+ *
+ * La primera versión de este correo tenía dos ramas: hay número comparable, o no lo hay. Y
+ * cuando no lo había, decía siempre lo mismo:
+ *
+ *   «Volvimos a correr el chequeo sobre la misma página que medimos al principio. Esta vez
+ *    no te damos un puntaje comparable: el chequeo solo pone nota cuando alcanza a confirmar
+ *    más de la mitad de lo que mide…»
+ *
+ * Esa frase narra los hechos de UNA de las tres situaciones y se mandaba en las tres. En la
+ * peor —entregar sin mandar `informe_final`, que el endpoint acepta y documenta— le decía al
+ * cliente que volvimos a correr el chequeo sobre su página cuando la misma transacción acababa
+ * de escribir `informe_final_json: null`, que es el dato de que NO se rehizo la medición.
+ *
+ * O sea: una afirmación falsa sobre trabajo ejecutado, firmada por nosotros, en la última
+ * frase que lee alguien que pagó $177.310. Es exactamente la clase de cosa que este producto
+ * le marca en rojo a otros sitios, y exactamente la clase de cosa que este commit vino a
+ * arreglar. La prueba la bendecía porque comprobaba que el texto apareciera, no que fuera
+ * cierto.
+ *
+ * Los tres casos se distinguen con datos que la función YA tiene en la mano, así que no
+ * distinguirlos no era una limitación: era una rama de menos.
+ */
+export function situacionDeLaMedicion(informeAntes, informeDespues) {
+  // No se rehizo nada. Lo dice la ausencia del informe, que es un dato, no un hueco.
+  if (!informeDespues) return { caso: 'sin-rehacer' };
+
+  const comparable = puntajeComparable(informeAntes, informeDespues);
+  if (comparable) return { caso: 'comparable', comparable };
+
+  // Se rehizo y el chequeo DECLINÓ: ninguna medición trajo un número. Es el comportamiento
+  // documentado —solo pone nota cuando confirma más de la mitad del peso— y acá sí
+  // corresponde explicarlo, porque acá sí es lo que pasó.
+  if (!Object.keys(puntajesDe(informeDespues)).length) return { caso: 'declinado' };
+
+  // Se rehizo, hay número, y no se puede restar contra el del principio porque son varas
+  // distintas. Decir que el chequeo declinó acá sería culpar al instrumento de una decisión
+  // nuestra de no comparar peras con manzanas.
+  return { caso: 'otra-vara' };
+}
+
+/**
  * El mensaje de cierre. Puro, como el de pago, para poder leerlo en una prueba sin red.
  *
  * @param {object} pedido  el pedido ya en `entregado`, con su informe congelado
@@ -201,7 +272,8 @@ export function correoDeEntrega(pedido, informeFinal = null, titulos = {}) {
       : pedido.informe_json;
   } catch { congelado = null; }
 
-  const comparable = puntajeComparable(congelado, informeFinal);
+  const situacion = situacionDeLaMedicion(congelado, informeFinal);
+  const comparable = situacion.comparable || null;
   const cerradas = (pedido.senales_contratadas || []).map(nombrar);
   const fuera = (pedido.senales_fuera || []).map(nombrar);
 
@@ -225,14 +297,7 @@ export function correoDeEntrega(pedido, informeFinal = null, titulos = {}) {
       '',
     );
   } else {
-    // Y cuando no hay número, se dice por qué no hay número, en vez de callarlo.
-    lineas.push(
-      'Volvimos a correr el chequeo sobre la misma página que medimos al principio. Esta vez ' +
-        'no te damos un puntaje comparable: el chequeo solo pone nota cuando alcanza a ' +
-        'confirmar más de la mitad de lo que mide, y preferimos no darte un número que no se ' +
-        'pueda comparar con el de antes.',
-      '',
-    );
+    lineas.push(SIN_NUMERO[situacion.caso], '');
   }
 
   if (fuera.length) {
@@ -273,9 +338,7 @@ El chequeo que corrimos al principio sobre ${escapar(pedido.url_medida || sitio)
 <strong>${comparable.antes} de 100</strong>. Lo volvimos a correr sobre la misma página y ahora da
 <strong>${comparable.despues}</strong>.</p>`
     : `<p style="margin:0 0 24px;padding:14px 16px;background:#f4f4f5;border-radius:8px;font-size:15px">
-Volvimos a correr el chequeo sobre la misma página que medimos al principio. Esta vez no te damos
-un puntaje comparable: el chequeo solo pone nota cuando alcanza a confirmar más de la mitad de lo
-que mide, y preferimos no darte un número que no se pueda comparar con el de antes.</p>`}
+${escapar(SIN_NUMERO[situacion.caso])}</p>`}
 ${fuera.length ? `<p style="margin:0 0 8px"><strong>Esto queda fuera del kit</strong>, como estaba dicho desde antes de que pagaras:</p>
 <ul style="margin:0 0 24px;padding-left:20px">${fuera.map(li).join('')}</ul>` : ''}
 <p style="margin:0 0 12px"><strong>Dos cosas por hacer de tu lado:</strong></p>

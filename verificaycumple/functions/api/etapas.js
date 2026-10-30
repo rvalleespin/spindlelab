@@ -185,9 +185,21 @@ export function etapaDelPedido(pedido) {
       // hecho, así que la pantalla NO afirma que llegó: dice que se mandó y da la salida si no
       // apareció. Es cierto en los dos casos, que es la única forma de que siga siendo cierto
       // el día que falle.
-      detalle: 'Hicimos los cambios y volvimos a correr el chequeo sobre la misma página que ' +
-        'medimos al principio, y te mandamos el detalle por correo. Si no te llegó, ' +
-        'escríbenos con este enlace y te lo reenviamos.',
+      // ⚠️ Y ESTA FRASE TAMPOCO AFIRMA EL RE-CHEQUEO SIN SABER SI PASÓ.
+      //
+      // Decía «volvimos a correr el chequeo» sin condición ninguna, igual que el correo. Un
+      // pedido se puede entregar sin rehacer la medición —el endpoint lo acepta y lo deja
+      // escrito en `informe_final_json: null`— y entonces la pantalla afirmaba un trabajo que
+      // la misma fila desmiente, dos columnas más allá.
+      //
+      // El dato que lo decide ya estaba en el pedido. No distinguirlo no era una limitación.
+      detalle: pedido.informe_final_json
+        ? 'Hicimos los cambios y volvimos a correr el chequeo sobre la misma página que ' +
+          'medimos al principio. Te mandamos el detalle por correo; si no te llegó, ' +
+          'escríbenos con este enlace y te lo reenviamos.'
+        : 'Hicimos los cambios. Todavía no volvimos a correr el chequeo sobre tu página, así ' +
+          'que esta vez no va un antes y un después. Te mandamos el detalle por correo; si lo ' +
+          'quieres con el número, escríbenos con este enlace y lo corremos.',
       quienActua: ACTUA.NADIE,
       // ⚠️ NI `queHacer` NI `loQueSigue`, Y LAS DOS COSAS QUE EL CLIENTE TIENE QUE HACER VAN
       // EN `recordatorios`. Vale la pena explicar por qué son campos distintos.
