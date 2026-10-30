@@ -27,6 +27,27 @@ import { ESTADOS } from './pedidos.js';
 export const BASE_SANDBOX = 'https://sandbox.flow.cl/api';
 export const BASE_PRODUCCION = 'https://www.flow.cl/api';
 
+/**
+ * Las credenciales y el entorno, derivados del env UNA sola vez.
+ *
+ * ⚠️ **El valor por defecto es sandbox, y esa dirección está elegida.** Si el día de mañana se
+ * despliega a producción y alguien olvida poner `FLOW_ENTORNO`, lo que pasa es que nadie puede
+ * pagar: ruidoso, gratis y reversible. Al revés —producción por defecto— un error de
+ * configuración en una prueba cobraría de verdad.
+ *
+ * Y se deriva en un solo lugar a propósito: el entorno y la base son el MISMO hecho, y dos
+ * constantes del mismo hecho se contradicen en silencio.
+ */
+export function credencialesFlow(env) {
+  const produccion = String((env && env.FLOW_ENTORNO) || '').trim().toLowerCase() === 'produccion';
+  return {
+    apiKey: env && env.FLOW_API_KEY,
+    secretKey: env && env.FLOW_SECRET_KEY,
+    base: produccion ? BASE_PRODUCCION : BASE_SANDBOX,
+    produccion,
+  };
+}
+
 /** `9` significa «todos los medios de pago» en el parámetro `paymentMethod`. */
 export const TODOS_LOS_MEDIOS = 9;
 
