@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/desarrollo-web.json",
- "sha256": "5ae3b5fcedc725eed7a781538514c0704cde377c82efa473dd6e507c01ebec30",
+ "sha256": "6bbd35b6ad8129ac6b09188ac5f7cab56a4d69a6e9782cacc37b521b036732e5",
  "id": "desarrollo-web",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -215,7 +215,8 @@
       "texto": "Los cuatro planes van tal cual en oferta-v3.json momentos[0].planes: nombre, precio, línea y puntos, sin cambiar una palabra. Página de Campaña · Desde $390.000 + IVA · Sitio Esencial · Desde $690.000 + IVA · Sitio Completo · Desde $1.190.000 + IVA · Plataforma a Medida · Se cotiza.",
       "fuente": "oferta-v3.json",
       "estado": "queda",
-      "origen": "texto-paso2.json «dw.planes.lista»"
+      "origen": "texto-paso2.json «dw.planes.lista»",
+      "nota": "30-oct (tarde), Ramón: el panel para editar viene en todos los planes de Desarrollo web. En oferta-v3.json, la Página de Campaña y el Sitio Esencial suman el punto «Panel donde cambias textos y fotos»: las palabras del glosario (dw.planes.glosario, «CMS: el panel donde cambias textos, fotos o artículos sin tocar el código»), sin «artículos», porque esos dos planes no traen blog, y sin «sin tocar el código», que lo dice el glosario justo arriba (con esas palabras, el punto partía en dos líneas a 1440). El Sitio Completo ya decía «Blog o CMS que administras tú» y la Plataforma a Medida abre con «Todo lo del Sitio Completo, y más», así que no se les suma nada. Ningún importe cambió. El JSON-LD de la página (OFERTAS en desarrollo-web.astro) dice el panel en las mismas dos ofertas."
      },
      {
       "id": "dw.planes.nota",

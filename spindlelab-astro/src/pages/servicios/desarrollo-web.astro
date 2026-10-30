@@ -114,10 +114,11 @@ if (title.length > 60 || description.length < 120 || description.length > 160) {
   throw new Error(`desarrollo web: title (${title.length}) o description (${description.length}) fuera de los largos de senales-obra.md §1.2`);
 }
 const url = `${SITIO}/servicios/desarrollo-web/`;
-// Las cuatro ofertas del grafo de hoy, con su descripción de hoy; el nombre y el minPrice, de oferta-v3.json
+// Las cuatro ofertas del grafo de hoy, con su descripción de hoy; el nombre y el minPrice, de oferta-v3.json. Desde el
+// 30-oct (Ramón: el panel viene en todos los planes) las dos primeras dicen el panel, como sus puntos a la vista (Clara)
 const OFERTAS = [
-  'Una página a medida pensada para una campaña y una oferta, con SEO técnico y medición desde el primer día. Entrega en ~1 semana.',
-  'Home y hasta 5 páginas, SEO técnico base, un idioma. Entrega en ~3 semanas.',
+  'Una página a medida pensada para una campaña y una oferta, con SEO técnico y medición desde el primer día y un panel donde cambias textos y fotos. Entrega en ~1 semana.',
+  'Home y hasta 5 páginas, panel donde cambias textos y fotos, SEO técnico base, un idioma. Entrega en ~3 semanas.',
   'Home y hasta 12 páginas, blog/CMS, SEO técnico y puesta a punto AEO/GEO. Entrega en ~4 a 6 semanas.',
   'Todo lo del Sitio Completo y más: páginas sin tope, integraciones a medida, arquitectura propia, multi-idioma. Se cotiza tras una reunión.',
 ];

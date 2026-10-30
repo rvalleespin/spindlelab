@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/nosotros.json",
- "sha256": "662fd66d4b8f5b16df57f8f835e1d0eeb3bc1b6bc6c5772422533342f6056172",
+ "sha256": "c14e8dd14f8b16360174df9b3bef4a5a3e23c01e2e646812c7165a37b1f0f5ee",
  "id": "nosotros",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -191,10 +191,12 @@
      {
       "id": "nosotros.oficio.1.d",
       "rol": "parrafo",
-      "texto": "Trabaja con agentes de IA dentro del equipo. El código de cada entrega lo revisa y lo aprueba él.",
-      "estado": "nuevo",
-      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p3",
-      "condicion": "Lo afirma Ramón (texto base del 30-oct); ver home.quien.p3. «Agentes de IA» vive solo aquí y en la home (guía §3)."
+      "texto": "Responde él por cada entrega: el código lo revisa y lo aprueba antes de que llegue a tu sitio. Para escribirlo trabaja con agentes de IA dentro del equipo.",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p3; Ramón, 30-oct (tarde), eligió A1 (desvios/construccion-30oct.md §6.1 (a); acta de QA del 30-oct, mayor 3)",
+      "condicion": "Lo afirma Ramón (texto base del 30-oct); ver home.quien.p3. «Agentes de IA» vive solo aquí y en la home (guía §3).",
+      "antes": "Trabaja con agentes de IA dentro del equipo. El código de cada entrega lo revisa y lo aprueba él. (30-oct, el texto base de Ramón)",
+      "por_que": "Ramón, 30-oct, eligió A1, la misma frase de home.quien.p3, aquí en su forma de fila: las dos oraciones, sin lo que en la home viene después (las herramientas, que en esta página tienen su propia fila, nosotros.oficio.2). Primero quién responde por la entrega, después con qué trabaja; ningún hecho nuevo. El título de la fila («Agentes de IA, con su revisión») no cambia."
      },
      {
       "id": "nosotros.oficio.2.t",
