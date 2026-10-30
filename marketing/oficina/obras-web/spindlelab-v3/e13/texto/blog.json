@@ -82,11 +82,12 @@
     {
      "id": "blog.cierre.cta",
      "rol": "boton",
-     "texto": "Pedir la revisión de una página",
+     "texto": "Hablemos de tu sitio",
      "destino": "/contacto/",
-     "antes": "Correr el chequeo (botón principal) y «Escríbenos» (secundario)",
-     "origen": "brief de obra E13 §2 y §3 (una sola acción principal por ruta; el chequeo baja a enlace secundario)",
-     "estado": "cambia"
+     "antes": "Pedir la revisión de una página",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+     "estado": "cambia",
+     "por_que": "Ramón, 30-oct: la acción única del sitio pasa a «Hablemos de tu sitio». El cuerpo de arriba («Si prefieres que una persona mire tu sitio, pide la revisión de una página…») lo compara un guardián con paginas-v3.json y no cambia."
     },
     {
      "id": "blog.cierre.chequeo",
@@ -135,12 +136,12 @@
     {
      "id": "articulo.autor",
      "rol": "nota",
-     "texto": "Ramón Vallejos · Fundador de SpindleLab",
+     "texto": "Ramón Vallejos · Fundador y director de SpindleLab",
      "uso": "autor",
-     "antes": "Ramón · SEO técnico y GEO en SpindleLab",
-     "condicion": "Es su cargo (R5 del brief; senales-obra §1.1): lo confirma Ramón. Si no, queda el de hoy.",
-     "por_que": "El de hoy es el cargo de antes del giro.",
-     "estado": "cambia"
+     "antes": "Ramón Vallejos · Fundador de SpindleLab",
+     "por_que": "La misma firma que home.quien.pie y nosotros.rol (Ramón, 30-oct).",
+     "estado": "cambia",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
     },
     {
      "id": "articulo.indice.rotulo",

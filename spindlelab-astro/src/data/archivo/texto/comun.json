@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/comun.json",
- "sha256": "ec1eb9802aba21550da9e0468b4bf224216e823183d97dd7300d0c9210a9e256",
+ "sha256": "f2a199d11db8283e78eb12b894bc0a40988eb3b4a7bddb28e14ccbf6b461df84",
  "id": "comun",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -62,12 +62,14 @@
    {
     "id": "comun.nav.revision",
     "rol": "boton",
-    "texto": "Pedir la revisión",
-    "origen": "copy-secciones-v1.2 §3 (botón de la navegación); brief §3 (transversal)",
+    "texto": "Hablemos",
+    "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
     "destino": "/contacto/",
     "uso": "botón destacado del menú",
-    "estado": "nuevo",
-    "nota": "Es la acción única del sitio hecha botón. Lleva a /contacto/ (donde se dispara generate_lead) y no al chequeo. Decisión 3 del copy; el brief la da por hecha (§1)."
+    "estado": "cambia",
+    "nota": "Botón destacado del encabezado, a /contacto/ (donde se dispara generate_lead). AMARILLO LLENO #FFE800 con el texto en #060606, como el de la portada: desvío autorizado de spec §1.1 y §20.2, lo mide Lucía.",
+    "antes": "Pedir la revisión",
+    "por_que": "Ramón, 30-oct: el botón del encabezado dice «Hablemos». A secas porque en el encabezado no hay espacio para el complemento; la portada lo completa («Hablemos de tu sitio»)."
    },
    {
     "id": "comun.nav.escribenos",
@@ -77,7 +79,7 @@
     "destino": "/contacto/",
     "estado": "queda",
     "uso": "botón de cierre (heredado)",
-    "nota": "YA NO ES DEL MENÚ. Se deja porque lo leen como texto de un botón de cierre src/pages/v3/servicios/[slug].astro:147 y src/data/archivo/blog.mjs:36; si se borra el id, esas dos páginas caen. Cuando los roles de servicios y de blog lo cambien por «Pedir la revisión de una página» (comun.nav.revision o home.portada.boton), este id se retira."
+    "nota": "YA NO ES DEL MENÚ. Se deja porque lo lee src/pages/servicios/[slug].astro como texto del botón secundario de la cabecera de cada servicio; si se borra el id, esas páginas caen. Si ese botón pasa a «Hablemos de tu sitio», este id se retira."
    },
    {
     "id": "comun.nav.nombre",
@@ -120,11 +122,13 @@
    {
     "id": "comun.pie.marca",
     "rol": "nota",
-    "texto": "Marketing y crecimiento con IA para empresas que ya venden.",
+    "texto": "Sitios web a medida y marketing con IA.",
     "uso": "línea de marca",
-    "origen": "copy-secciones-v1.2 §3 (pie, línea de marca); v2-vigente/home.txt",
-    "estado": "nuevo",
-    "nota": "El pie de E12 no traía línea de marca (solo logo, correo y hora). Va una vez: la etiqueta no se repite en la columna de al lado, que el v2 ya había quitado por duplicada."
+    "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+    "estado": "cambia",
+    "nota": "Va una vez. Hoy Pie.astro no la pinta: si el pie la suma, es este texto.",
+    "antes": "Marketing y crecimiento con IA para empresas que ya venden.",
+    "por_que": "La línea de la marca es la del rótulo de la portada desde el 30-oct."
    },
    {
     "id": "comun.pie.correo",
@@ -167,22 +171,22 @@
    {
     "id": "comun.entidad.descripcion",
     "rol": "nota",
-    "texto": "Marketing y crecimiento con IA para empresas que ya venden: revisión del sitio y de la presencia en IA, implementación por fases y acompañamiento mensual.",
+    "texto": "Sitios web a medida y marketing con IA: diseñamos y programamos el sitio, con un panel para que lo edites tú, y le conectamos la búsqueda en Google y en las IA, los anuncios, las redes y la medición.",
     "uso": "JSON-LD, description del #org",
-    "origen": "copy-secciones-v1.2 §3 (descripción de la organización); v2-vigente/home.txt",
-    "estado": "nuevo",
-    "antes": "Estudio de diseño y tecnología en Santiago: diseñamos y programamos sitios y herramientas a medida, y hacemos SEO técnico y visibilidad en motores de IA (AEO/GEO) para que Google y ChatGPT puedan leerlos. (layout-a.ts, entidad.org.description)",
-    "por_que": "El v2 dice «para empresas en Chile» en esta descripción; aquí se saca el «en Chile» (relleno en una descripción) porque el país ya lo dice areaServed del mismo grafo. Propuesta para que Simón la reconfirme: la capa de señales es suya y el texto de layout-a.ts lo cambia Diego."
+    "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct) («descripción de #org en la misma línea»)",
+    "estado": "cambia",
+    "antes": "Marketing y crecimiento con IA para empresas que ya venden: revisión del sitio y de la presencia en IA, implementación por fases y acompañamiento mensual.",
+    "por_que": "La descripción de #org dice lo mismo que la portada: primero el sitio y después lo que se le conecta. Sin «en Chile» (lo dice areaServed). Propuesta para que Simón la reconfirme; el texto de layout-a.ts lo lee de aquí."
    },
    {
     "id": "comun.entidad.cargo",
     "rol": "nota",
-    "texto": "Consultor de marketing y crecimiento con IA",
+    "texto": "Fundador de SpindleLab: sitios web a medida y marketing con IA",
     "uso": "JSON-LD, jobTitle de Ramón (#autor-ramon)",
-    "origen": "copy-secciones-v1.2 §3 (cargo de Ramón); v2-vigente/home.txt",
-    "estado": "nuevo",
-    "antes": "Fundador de SpindleLab: diseño y desarrollo web, SEO técnico y visibilidad en IA (layout-a.ts, entidad.autor.jobTitle)",
-    "condicion": "R5 del brief: el cargo lo confirma Ramón. blog.json (articulo.autor) lleva otro cargo, «Fundador de SpindleLab», que decide el rol del blog; conviene que los dos digan lo mismo."
+    "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+    "estado": "cambia",
+    "antes": "Consultor de marketing y crecimiento con IA",
+    "por_que": "El jobTitle que fijó Ramón el 30-oct. En pantalla, la firma corta es «Fundador y director de SpindleLab» (home.quien.pie y nosotros.rol)."
    },
    {
     "id": "comun.entidad.sabe",

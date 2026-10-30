@@ -1,21 +1,21 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/nosotros.json",
- "sha256": "89d387b3c0f00cbc3e0bcf86ab9d1e6f8546c06bf88ff7d3b7b567aeda403076",
+ "sha256": "662fd66d4b8f5b16df57f8f835e1d0eeb3bc1b6bc6c5772422533342f6056172",
  "id": "nosotros",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
   "id": "nosotros",
   "ruta": "/nosotros/",
   "modo": "reescribe (E13)",
-  "regla": "E13, 26-oct-2026: el texto sale de e13/fuentes/v2-vigente/nosotros.txt (publicado y aprobado el 24-oct) y de copy-secciones-v1.2.md §2.7 y §7. Todo en singular de Ramón (la página entera es suya). Se saca «Por qué un solo sistema» (subordinaba redes y pauta al sitio) y todo lo que el documento manda borrar: «más de cinco años», «orquestando el motor», los partners, «el objetivo es que vendas… tu nombre ya esté ahí», «Sin humo» y «Con eso decides con información». El texto de E12 que se reemplaza va en «antes».",
-  "title": "Ramón Vallejos, marketing y crecimiento con IA · SpindleLab",
-  "description": "Detrás de SpindleLab está Ramón Vallejos. Marketing y crecimiento con IA, con evidencia antes que promesas. Revisión gratis de una página.",
-  "senales": "Simón, e12/senales-obra.md §2.10, con el cambio de e13: v2-vigente/nosotros.txt",
+  "regla": "E13, 30-oct (Ramón): la página entera pasa a tercera persona, el estudio presentando a su fundador, con el mismo tono que «Quién está detrás» de la home: profesional, serio, creativo, innovador, sin adjetivos de venta. Más extensa que la home: quién es, la trayectoria en general (sin agencias ni clientes por su nombre y sin cifras), la idea del sitio como eje (sin explicar la palabra spindle), cómo trabaja, la formación y las tres reglas en plural. Salen «SpindleLab soy yo», «tomo pocos proyectos a la vez» y todo lo que estaba en singular. Antes (26-oct): todo en singular de Ramón, con el texto de v2-vigente/nosotros.txt.",
+  "title": "Ramón Vallejos, fundador y director · SpindleLab",
+  "description": "Ramón Vallejos dirige SpindleLab: sitios web a medida y marketing con IA. Viene de años en agencias de medios y de marketing. Revisión gratis de una página.",
+  "senales": "Simón, e12/senales-obra.md §2.10, con el cambio de e13: v2-vigente/nosotros.txt 30-oct: title (48) y description (156) nuevos; antes «Ramón Vallejos, marketing y crecimiento con IA · SpindleLab» y «Detrás de SpindleLab está Ramón Vallejos. Marketing y crecimiento con IA, con evidencia antes que promesas. Revisión gratis de una página.». Los reconfirma Simón.",
   "secciones": [
    {
     "id": "cabecera",
-    "nombre": "Cabecera y bio",
-    "trabajo": "Decir quién está detrás, con qué herramientas trabaja y cuánto toma a la vez. La bio es la de v2-vigente, tal cual.",
+    "nombre": "Cabecera, bio y trayectoria",
+    "trabajo": "Decir qué hace SpindleLab y quién lo dirige, y respaldarlo con la trayectoria: de dónde viene, qué hizo y qué estudió.",
     "elementos": [
      {
       "id": "nosotros.miga",
@@ -28,18 +28,25 @@
      {
       "id": "nosotros.h1",
       "rol": "h1",
-      "texto": "No te prometo. Te muestro.",
-      "origen": "v2-vigente/nosotros.txt; copy-secciones-v1.2 §7",
-      "nota": "En una sola tinta: partirlo en dos dejaría una continuación de dos palabras (el lock §14 pide de 6 a 13) y no se le agrega nada a un texto de Ramón.",
-      "estado": "queda"
+      "texto": "Construimos el sitio como eje y le conectamos lo demás.",
+      "origen": "home.quien.p2 (texto base de Ramón, 30-oct: «Construimos el sitio como el eje del negocio y le conectamos todo lo demás»)",
+      "nota": "Una sola tinta (como antes): 9 palabras. La imagen al compartir og-e12-nosotros.jpg lleva el h1 escrito: se regenera con este y sube a ?v=3 (Diego); su alt sale solo («SpindleLab: » + h1).",
+      "estado": "cambia",
+      "antes": "No te prometo. Te muestro.",
+      "por_que": "Decisión de Clara, que el encargo dejaba abierta. «No te prometo. Te muestro.» está en singular en una página que pasa entera a tercera persona y al plural de la marca, y como cita de Ramón obligaría a un «él dice» que la debilita. Su versión en plural («Mostramos, no prometemos») ya la habían marcado los lectores en frío como eslogan vago (copy §2.6). El h1 nuevo dice la idea del estudio, que es lo que lo distingue, y deja el quién para la línea de abajo.",
+      "descartes": [
+       "«No te prometo. Te muestro.» como cita de Ramón: singular, y la cita pide atribución.",
+       "«Detrás de SpindleLab está Ramón Vallejos.»: es la línea de abajo; como h1 dice quién pero no qué piensa.",
+       "«Partimos por el sitio.»: correcto, pero ya cierra la sección 2 de la home y como h1 se queda corto."
+      ]
      },
      {
       "id": "nosotros.linea",
       "rol": "entradilla",
-      "texto": "Detrás de SpindleLab está Ramón Vallejos: marketing y crecimiento con IA para empresas que ya venden.",
-      "antes": "Detrás de SpindleLab está Ramón Vallejos: diseño y programación de sitios a medida, SEO técnico y visibilidad en IA.",
-      "origen": "meta description de v2-vigente/nosotros.txt («Detrás de SpindleLab está Ramón Vallejos. Marketing y crecimiento con IA…») y la línea sobre el titular de la home («Marketing y crecimiento con IA para empresas que ya venden.»)",
-      "por_que": "La plantilla v3 tiene una entradilla bajo el h1 y la de E12 decía la tesis anterior (sitios a medida). No es la bio.",
+      "texto": "Detrás de SpindleLab está Ramón Vallejos: sitios web a medida y marketing con IA.",
+      "antes": "Detrás de SpindleLab está Ramón Vallejos: marketing y crecimiento con IA para empresas que ya venden.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "por_que": "La línea que pidió Ramón: el quién, con la línea de la marca.",
       "estado": "cambia"
      },
      {
@@ -53,126 +60,237 @@
      {
       "id": "nosotros.boton1",
       "rol": "boton",
-      "texto": "Pedir la revisión de una página",
+      "texto": "Hablemos de tu sitio",
       "destino": "/contacto/",
-      "antes": "Revisar mi sitio gratis (a /diagnostico/) y «Escríbenos» (a /contacto/)",
-      "origen": "brief de obra §2: una sola acción principal por ruta, «Pedir la revisión de una página» hacia /contacto/",
-      "por_que": "E12 tenía dos botones en la cabecera. El chequeo baja a enlace secundario y la acción principal es una.",
+      "antes": "Pedir la revisión de una página",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "por_que": "Ramón, 30-oct: los botones que decían «Pedir la revisión de una página» pasan a «Hablemos de tu sitio».",
       "estado": "cambia"
      },
      {
       "id": "nosotros.bio",
       "rol": "parrafo",
-      "texto": "Soy Ramón Vallejos y SpindleLab soy yo. Uso agentes de IA para el trabajo que se repite y reviso yo lo que te entrego. Como soy una persona, tomo pocos proyectos a la vez. Atiendo a todo Chile por videollamada.",
-      "antes": "Soy Ramón Vallejos. SpindleLab soy yo al frente, orquestando el motor, con agentes de IA a mi lado y partners para lo que no hacemos en casa.",
-      "origen": "v2-vigente/nosotros.txt; copy-secciones-v1.2 §2.7 (P1)",
-      "por_que": "Sale «orquestando el motor» (jerga sin referente) y «partners para lo que no hacemos en casa» (los partners no tienen relación comercial documentada y la frase proyecta un equipo sobre una operación de una persona). «Agentes de IA» solo vive aquí y en «Quién está detrás» de la home.",
-      "condicion": "«Como soy una persona, tomo pocos proyectos a la vez» es una afirmación de capacidad que Ramón confirma (copy §12, decisión 6). Si no la confirma, sale la frase.",
-      "estado": "cambia"
+      "texto": "Antes de fundar SpindleLab, Ramón Vallejos trabajó años en agencias de medios y de marketing, algunas de ellas parte de redes globales, con marcas de alcance nacional y regional.",
+      "antes": "Soy Ramón Vallejos y SpindleLab soy yo. Uso agentes de IA para el trabajo que se repite y reviso yo lo que te entrego. Como soy una persona, tomo pocos proyectos a la vez. Atiendo a todo Chile por videollamada.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p1 de la home",
+      "por_que": "Tercera persona y sin nombres: de dónde viene quien dirige el estudio. No abre con «SpindleLab lo dirige…» porque la línea de arriba ya dice quién está detrás, y leídas seguidas se repetían. El detalle va en la lista de abajo.",
+      "estado": "cambia",
+      "fuente": "Universal McCann (red IPG Mediabrands) y Graphene IPG son las «redes globales»; Incrementa y Maggiore, las otras. Hechos de nosotros.trayectoria.1 a 3 del 26-oct."
      },
      {
       "id": "nosotros.rol",
       "rol": "nota",
-      "texto": "Ramón Vallejos · Consultor de marketing y crecimiento con IA · Chile",
-      "antes": "Ramón Vallejos · Fundador de SpindleLab: diseño y desarrollo web, SEO técnico y visibilidad en IA · Chile",
-      "origen": "v2-vigente/nosotros.txt (pie de la foto y jobTitle de #autor-ramon)",
-      "por_que": "El cargo de E12 era la tesis anterior. El jobTitle del JSON-LD sale de layout-a.ts (props del Layout, que no es de esta área) y tiene que decir lo mismo.",
+      "texto": "Ramón Vallejos · Fundador y director de SpindleLab · Chile",
+      "antes": "Ramón Vallejos · Consultor de marketing y crecimiento con IA · Chile",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "por_que": "El cargo que fijó Ramón el 30-oct, igual que home.quien.pie. interiores.mjs compara el nombre antes del primer « · ».",
       "estado": "cambia"
      },
      {
       "id": "nosotros.trayectoria.h2",
       "rol": "h2",
-      "texto": "Antes trabajé en agencias",
-      "antes": "Antes pasé más de cinco años en agencias",
-      "origen": "v2-vigente/nosotros.txt («Antes trabajé en agencias.»)",
-      "por_que": "«Más de cinco años» no se verifica contra el CV (las fechas suman entre 4 años y 4 años 9 meses). Regla de marca: el CV es un conjunto cerrado de hechos.",
+      "texto": "De dónde viene",
+      "antes": "Antes trabajé en agencias",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "por_que": "«Antes trabajé en agencias» estaba en primera persona. «De dónde viene» cubre las agencias y los estudios, que es lo que tiene la lista.",
       "nivel": 2,
       "estado": "cambia"
      },
      {
       "id": "nosotros.trayectoria.1",
       "rol": "parrafo",
-      "texto": "Coordiné la producción de piezas para ocho marcas nacionales en Universal McCann.",
-      "antes": "Empecé en Universal McCann, coordinando la producción de piezas para ocho marcas nacionales.",
-      "origen": "v2-vigente/nosotros.txt (P2)",
-      "estado": "cambia"
+      "texto": "Coordinó la producción de piezas para marcas nacionales.",
+      "antes": "Coordiné la producción de piezas para ocho marcas nacionales en Universal McCann.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "por_que": "Ramón, 30-oct: ninguna agencia ni cliente por su nombre, sin «ocho marcas» ni «cuatro países». Tercera persona.",
+      "fuente": "Universal McCann, «ocho marcas nacionales» (26-oct): sin la agencia y sin la cifra."
      },
      {
       "id": "nosotros.trayectoria.2",
       "rol": "parrafo",
-      "texto": "Trabajé la cuenta de LATAM Airlines en Graphene IPG, con campañas en cuatro países.",
-      "antes": "En Graphene IPG trabajé la cuenta de LATAM Airlines, con campañas en Chile, Perú, Ecuador y Colombia.",
-      "origen": "v2-vigente/nosotros.txt (P2)",
-      "por_que": "El documento de textos dice «cuatro países»; se usa su redacción.",
-      "estado": "cambia"
+      "texto": "Trabajó la cuenta de una aerolínea regional, con campañas en varios países.",
+      "antes": "Trabajé la cuenta de LATAM Airlines en Graphene IPG, con campañas en cuatro países.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "por_que": "Ramón, 30-oct: ninguna agencia ni cliente por su nombre, sin «ocho marcas» ni «cuatro países». Tercera persona.",
+      "estado": "cambia",
+      "fuente": "Graphene IPG, la cuenta de LATAM Airlines en cuatro países (26-oct): sin la agencia, sin el cliente por su nombre y sin la cifra. «Una aerolínea regional» es el hecho generalizado que pidió el encargo."
      },
      {
       "id": "nosotros.trayectoria.3",
       "rol": "parrafo",
-      "texto": "Después hice pauta de retail y B2B en Incrementa, y contenido y SEO en Maggiore.",
-      "antes": "Después vino la pauta de retail y B2B en Incrementa, y el contenido y el SEO de una cartera B2B en Maggiore.",
-      "origen": "v2-vigente/nosotros.txt (P2)",
-      "estado": "cambia"
+      "texto": "Hizo pauta de retail y B2B, y el contenido y el SEO de una cartera de empresas B2B.",
+      "antes": "Después hice pauta de retail y B2B en Incrementa, y contenido y SEO en Maggiore.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "por_que": "Ramón, 30-oct: ninguna agencia ni cliente por su nombre, sin «ocho marcas» ni «cuatro países». Tercera persona.",
+      "fuente": "Incrementa (pauta de retail y B2B) y Maggiore (contenido y SEO de una cartera B2B; v2-vigente/nosotros.txt): sin las agencias."
      },
      {
       "id": "nosotros.trayectoria.4",
       "rol": "parrafo",
-      "texto": "Estudié Comunicación Publicitaria en la Universidad Andrés Bello y un máster en Marketing Digital y E-commerce en la Universidad de Barcelona.",
-      "origen": "e12 (sin cambio); el JSON-LD de v2-vigente ya declara las dos universidades en alumniOf",
-      "condicion": "El texto de v2-vigente no trae esta línea. Se conserva porque es un hecho del CV ya público en el JSON-LD; si Ramón prefiere la página como en v2, sale.",
-      "estado": "queda"
+      "texto": "Estudió Comunicación Publicitaria en la Universidad Andrés Bello y tiene un máster en Marketing Digital y E-commerce de la Universidad de Barcelona.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "antes": "Estudié Comunicación Publicitaria en la Universidad Andrés Bello y un máster en Marketing Digital y E-commerce en la Universidad de Barcelona.",
+      "por_que": "Tercera persona, con la redacción del texto base (p4)."
+     }
+    ]
+   },
+   {
+    "id": "idea",
+    "nombre": "De dónde sale SpindleLab",
+    "trabajo": "Contar la idea que mueve al estudio, el sitio como eje, con lo que Ramón vio en las agencias. La palabra spindle no se explica: guía el texto.",
+    "componente": "Sugerido, ya existe: la sección de dos párrafos de la home («Para empresas que ya venden»): int-sec__cab con el h2 y int-sec__cuerpo con dos p.cuerpo.caja. Va después del retrato y la trayectoria.",
+    "elementos": [
+     {
+      "id": "nosotros.idea.h2",
+      "rol": "h2",
+      "texto": "De dónde sale SpindleLab",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
+     },
+     {
+      "id": "nosotros.idea.1",
+      "rol": "parrafo",
+      "texto": "En las agencias vio dónde se pierde lo que una marca invierte para atraer clientes: casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva. Un sitio que no explica bien lo que se vende, o un formulario que no avisa cuando alguien escribe, basta para perder lo que costó traer a esa persona.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p2 y home.problema.p",
+      "nota": "La segunda oración no suma hechos sobre Ramón: dice cómo se pierde, con las dos fallas de la sección 2 de la home."
+     },
+     {
+      "id": "nosotros.idea.2",
+      "rol": "parrafo",
+      "texto": "SpindleLab parte de esa idea. Diseñamos y programamos el sitio a medida, con un panel para que lo edites tú, y le conectamos la búsqueda en Google y en las IA, los anuncios, las redes y la medición de cada mes.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p2 y la entradilla de la portada"
+     }
+    ]
+   },
+   {
+    "id": "oficio",
+    "nombre": "Cómo trabaja",
+    "trabajo": "Mostrar lo que hace distinto el trabajo, con hechos que se pueden revisar: agentes de IA con su revisión, herramientas propias y abiertas, precios y método publicados.",
+    "componente": "Sugerido, ya existe: el de «Lo que puedes esperar» de esta misma página (int-sec__cab con el h2 y ul.int-sec__cuerpo.int-lista, cada li con h3.int-lista__t.tinta y p.cuerpo).",
+    "elementos": [
+     {
+      "id": "nosotros.oficio.h2",
+      "rol": "h2",
+      "texto": "Cómo trabaja",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
+     },
+     {
+      "id": "nosotros.oficio.1.t",
+      "rol": "h2",
+      "nivel": 3,
+      "texto": "Agentes de IA, con su revisión",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p3"
+     },
+     {
+      "id": "nosotros.oficio.1.d",
+      "rol": "parrafo",
+      "texto": "Trabaja con agentes de IA dentro del equipo. El código de cada entrega lo revisa y lo aprueba él.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p3",
+      "condicion": "Lo afirma Ramón (texto base del 30-oct); ver home.quien.p3. «Agentes de IA» vive solo aquí y en la home (guía §3)."
+     },
+     {
+      "id": "nosotros.oficio.2.t",
+      "rol": "h2",
+      "nivel": 3,
+      "texto": "Herramientas propias y abiertas",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p3"
+     },
+     {
+      "id": "nosotros.oficio.2.d",
+      "rol": "parrafo",
+      "texto": "Construyó el chequeo que mide si un sitio está preparado para que la IA lo entienda, y Verifica y Cumple, para la Ley 21.719 de datos personales. Cualquiera puede probarlos, gratis.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p3",
+      "fuente": "El chequeo de /diagnostico/ (21 chequeos, sin registro) y verifica.spindlelab.cl."
+     },
+     {
+      "id": "nosotros.oficio.3.t",
+      "rol": "h2",
+      "nivel": 3,
+      "texto": "Precios y método publicados",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct) («precios y método publicados»)"
+     },
+     {
+      "id": "nosotros.oficio.3.d",
+      "rol": "parrafo",
+      "texto": "Cada solución publica su precio de partida, y las fases del trabajo están escritas en la página del método para que las leas antes de contratar.",
+      "estado": "nuevo",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "fuente": "/servicios/ y cada página de servicio (precios de partida); /metodo/ (las fases)."
      }
     ]
    },
    {
     "id": "como",
-    "nombre": "Cómo trabajo",
-    "trabajo": "Las tres reglas de Ramón, en su voz. Reemplazan a «Por qué un solo sistema» y a las cinco reglas de E12.",
+    "nombre": "Lo que puedes esperar",
+    "trabajo": "Las tres reglas del estudio, en el plural de la marca: lo que hace contigo antes de cobrarte.",
     "elementos": [
      {
       "id": "nosotros.como.h2",
       "rol": "h2",
-      "texto": "Cómo trabajo",
-      "origen": "e12 (sin cambio)",
-      "estado": "queda"
+      "texto": "Lo que puedes esperar",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "antes": "Cómo trabajo",
+      "por_que": "«Cómo trabajo» estaba en singular y ahora «Cómo trabaja» es la sección del oficio. Las reglas dicen qué hace el estudio contigo."
      },
      {
       "id": "nosotros.como.1.t",
       "rol": "h2",
-      "texto": "Empiezo por mirar",
+      "texto": "Empezamos por mirar",
       "nivel": 3,
-      "origen": "v2-vigente/nosotros.txt; copy-secciones-v1.2 §2.7",
-      "estado": "nuevo"
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "antes": "Empiezo por mirar",
+      "por_que": "Las tres reglas pasan al plural de la marca (Ramón, 30-oct), iguales a las de la home."
      },
      {
       "id": "nosotros.como.1.d",
       "rol": "parrafo",
-      "texto": "Reviso tu sitio antes de cobrarte nada y te cuento lo que encontré.",
-      "origen": "v2-vigente/nosotros.txt",
-      "estado": "nuevo"
+      "texto": "Revisamos tu sitio antes de cobrarte nada y te contamos lo que encontramos.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "antes": "Reviso tu sitio antes de cobrarte nada y te cuento lo que encontré.",
+      "por_que": "Plural de la marca, igual a la home."
      },
      {
       "id": "nosotros.como.2.t",
       "rol": "h2",
-      "texto": "Te digo qué se puede mover y qué no",
+      "texto": "Te decimos qué se puede mover y qué no",
       "nivel": 3,
-      "origen": "v2-vigente/nosotros.txt",
-      "estado": "nuevo"
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "antes": "Te digo qué se puede mover y qué no",
+      "por_que": "Las tres reglas pasan al plural de la marca (Ramón, 30-oct), iguales a las de la home."
      },
      {
       "id": "nosotros.como.2.d",
       "rol": "parrafo",
-      "texto": "Si el problema no está en tu sitio, te lo digo, y la conversación de 20 minutos sirve para ver dónde mirar.",
-      "origen": "v2-vigente/nosotros.txt",
-      "estado": "nuevo"
+      "texto": "Si el problema no está en tu sitio, te lo decimos, y la conversación de 20 minutos sirve para ver dónde mirar.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "antes": "Si el problema no está en tu sitio, te lo digo, y la conversación de 20 minutos sirve para ver dónde mirar.",
+      "por_que": "Plural de la marca, igual a la home."
      },
      {
       "id": "nosotros.como.3.t",
       "rol": "h2",
-      "texto": "Lo dejo por escrito",
+      "texto": "Lo dejamos por escrito",
       "nivel": 3,
-      "origen": "v2-vigente/nosotros.txt",
-      "estado": "nuevo"
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "antes": "Lo dejo por escrito",
+      "por_que": "Las tres reglas pasan al plural de la marca (Ramón, 30-oct), iguales a las de la home."
      },
      {
       "id": "nosotros.como.3.d",
@@ -186,34 +304,35 @@
    {
     "id": "cierre",
     "nombre": "Cierre y siguiente",
-    "trabajo": "Un solo paso, en singular: escribirle a Ramón la dirección del sitio.",
+    "trabajo": "Un solo paso, el mismo de todo el sitio: hablar de tu sitio, lo tengas o no.",
     "elementos": [
      {
       "id": "nosotros.cierre.h2",
       "rol": "h2",
-      "texto": "Escríbeme la dirección de tu sitio.",
-      "antes": "¿Apareces cuando tus clientes preguntan?",
-      "origen": "v2-vigente/nosotros.txt; copy-secciones-v1.2 §7",
-      "por_que": "Era una pregunta retórica sobre la tesis anterior.",
+      "texto": "Partamos por tu sitio.",
+      "antes": "Escríbeme la dirección de tu sitio.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "por_que": "«Escríbeme la dirección de tu sitio.» estaba en singular y dejaba fuera a quien no tiene sitio. Es el mismo cierre de la home, que retoma «partimos por el sitio».",
       "estado": "cambia"
      },
      {
       "id": "nosotros.cierre.p",
       "rol": "parrafo",
-      "texto": "Te respondo con la revisión.",
-      "antes": "Lo primero es un diagnóstico. Reviso tu sitio, tu contenido y si la IA te nombra, y te entrego en una página qué te frena y qué mueve la aguja. Gratis, en 24 horas. Con eso decides con información, no a ciegas.",
-      "origen": "v2-vigente/nosotros.txt",
-      "por_que": "Sacaba «diagnóstico», «24 horas», «mueve la aguja» y «Con eso decides con información» (remate sin hecho). La bajada de E12 («Te lo muestro antes de que pagues nada.») sale porque el h1 de la página ya lo dice.",
+      "texto": "Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta.",
+      "antes": "Te respondo con la revisión.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct) (microcopy de la portada)",
+      "por_que": "El microcopy de la portada: lo que pasa en los dos casos.",
       "estado": "cambia"
      },
      {
       "id": "nosotros.cierre.boton",
       "rol": "boton",
-      "texto": "Escribirme",
+      "texto": "Hablemos de tu sitio",
       "destino": "/contacto/",
-      "antes": "Pedir el diagnóstico y Revisar mi sitio gratis",
-      "origen": "v2-vigente/nosotros.txt",
-      "estado": "cambia"
+      "antes": "Escribirme",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "por_que": "Alineado con la portada y el encabezado (Ramón, 30-oct)."
      },
      {
       "id": "nosotros.siguiente",

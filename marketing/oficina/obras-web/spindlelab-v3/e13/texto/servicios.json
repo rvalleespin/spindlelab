@@ -3,9 +3,9 @@
  "ruta": "/servicios/",
  "modo": "reescrita al mensaje nuevo (obra E13)",
  "regla": "Texto de v2-vigente/servicios.txt y copy-secciones-v1.2.md §4 adaptado a la plantilla de A (h1 en dos tintas, una sección por bloque). Los nombres de servicio y los montos son los de oferta-v3.json y servicios-v3.json: el build los compara como texto. Sin «diagnóstico», sin «24 horas», sin «partners».",
- "title": "Soluciones de marketing y crecimiento con IA · SpindleLab",
+ "title": "Soluciones: sitios web y marketing con IA · SpindleLab",
  "description": "Sitio web, SEO técnico, visibilidad en IA, Google Ads, redes y acompañamiento mensual, con precio de partida publicado. Empezamos con una revisión gratis.",
- "senales": "v2-vigente/servicios.txt (title y description publicados el 24-oct, aprobados por Ramón)",
+ "senales": "v2-vigente/servicios.txt (title y description publicados el 24-oct, aprobados por Ramón) 30-oct: title al rótulo nuevo de la marca (54; «Soluciones: sitios web a medida y marketing con IA · SpindleLab» medía 63 y el tope es 60); antes «Soluciones de marketing y crecimiento con IA · SpindleLab». La description ya nombraba el sitio primero y queda. Lo reconfirma Simón.",
  "estructura": "spec-visual.md §2.4, fila /servicios/: cabecera; una sección por bloque (cuatro, en el orden del documento de textos §4); «Lo que pones tú»; preguntas; cierre. Sin campo de color por servicio.",
  "secciones": [
   {
@@ -37,10 +37,10 @@
     {
      "id": "servicios.entradilla",
      "rol": "entradilla",
-     "texto": "Eliges una o varias de estas soluciones. Cada una dice qué incluye y desde cuánto.",
-     "antes": "Si tu sitio hay que hacerlo de nuevo, o no existe, lo diseñamos y lo programamos. Si ya tienes uno y funciona, revisamos qué le impide a Google y a ChatGPT leerlo, y lo arreglamos. Antes de contratar nada, puedes revisarlo gratis con el chequeo.",
-     "origen": "copy-secciones-v1.2.md §4 (subtítulo)",
-     "por_que": "Cae la entradilla que decía que la puerta es el sitio; el documento de textos pone una línea sobre cómo se elige.",
+     "texto": "Partimos por el sitio y le conectamos lo demás. Cada solución dice qué incluye y desde cuánto.",
+     "antes": "Eliges una o varias de estas soluciones. Cada una dice qué incluye y desde cuánto.",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+     "por_que": "La misma frase de enlace que la home: dice el orden antes de los bloques. «Eliges una o varias» sale porque la primera pregunta de abajo ya lo dice («Cada solución se contrata por separado»).",
      "estado": "cambia"
     },
     {
@@ -60,7 +60,7 @@
     {
      "id": "servicios.bloques.nota",
      "rol": "nota",
-     "texto": "Cuatro bloques en el orden del documento de textos §4: Búsqueda y visibilidad en IA (Auditoría SEO técnica, Visibilidad en IA) · Anuncios en Google y redes (Paid Media, Gestión de redes sociales) · Sitio web a medida (Desarrollo web) · Acompañamiento mensual. Nombres de servicio y montos, tal cual de oferta-v3.json y servicios-v3.json. El rótulo mono de cada bloque es su número de orden: «01» a «04». Reemplazan a las cuatro «situaciones» del v3 anterior («Tu sitio te frena, o no existe», etc.): el conflicto se resuelve con el orden y el texto, sin componente nuevo.",
+     "texto": "Cuatro bloques en el orden del documento de textos §4: Búsqueda y visibilidad en IA (Auditoría SEO técnica, Visibilidad en IA) · Anuncios en Google y redes (Paid Media, Gestión de redes sociales) · Sitio web a medida (Desarrollo web) · Acompañamiento mensual. Nombres de servicio y montos, tal cual de oferta-v3.json y servicios-v3.json. El rótulo mono de cada bloque es su número de orden: «01» a «04». Reemplazan a las cuatro «situaciones» del v3 anterior («Tu sitio te frena, o no existe», etc.): el conflicto se resuelve con el orden y el texto, sin componente nuevo. 30-oct (para Diego, si se alinea con la home): Ramón puso el sitio primero en la home. Aquí el orden lo fija ORDEN de servicios.mjs y lo compara el guardián «servicios, el orden», que también arma «Siguiente» entre servicios; moverlo es una decisión de Diego con Lucía, no un cambio de texto. Si se mueve, el rótulo de cada bloque sigue siendo su número de orden.",
      "uso": "referencia",
      "origen": "copy-secciones-v1.2.md §4; revisión 23-oct (claim central)",
      "estado": "nuevo"
@@ -217,9 +217,11 @@
     {
      "id": "servicios.m3.nota",
      "rol": "parrafo",
-     "texto": "Con panel para que edites tú y SEO técnico desde el diseño. Desde una página de campaña hasta un sitio de doce páginas.",
-     "origen": "v2-vigente/servicios.txt, bloque 03",
-     "estado": "cambia"
+     "texto": "Diseñado y programado para tu negocio, sin plantillas ni WordPress, con un panel para que edites tú. Desde una página de campaña hasta un sitio de doce páginas.",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct) (home.soluciones.sitio.texto)",
+     "estado": "cambia",
+     "antes": "Con panel para que edites tú y SEO técnico desde el diseño. Desde una página de campaña hasta un sitio de doce páginas.",
+     "por_que": "El mismo texto del bloque del sitio en la home (Ramón, 30-oct)."
     },
     {
      "id": "servicios.m3.s1.nombre",
@@ -242,10 +244,10 @@
     {
      "id": "servicios.m3.dw",
      "rol": "parrafo",
-     "texto": "Cuando el sitio actual no da para más, lo reconstruimos: a medida, hecho para tu negocio.",
-     "antes": "Lo diseñamos y lo programamos a medida, sin plantilla. Queda listo para que Google y la IA puedan leerlo, y antes de entregarlo le pasamos el chequeo gratis.",
-     "origen": "v2-vigente/servicios.txt; ronda 2 (desvios/ronda2-frases.md, frase 12)",
-     "por_que": "Sale «diseñamos y programamos» como claim, y la frase «le pasamos el chequeo» en presente de costumbre (el chequeo existe desde el 27-ago y ningún sitio entregado pasó por él antes de salir; revisión 23-oct). Ronda 2: «sin plantillas ni WordPress» (versión anterior del texto) se leyó como desventaja (2 de 3: «si no es WordPress, ¿después quién me lo toca?»); ahora dice lo que sí es.",
+     "texto": "Si no tienes sitio, o el que tienes ya no da para más, lo hacemos a medida para tu negocio.",
+     "antes": "Cuando el sitio actual no da para más, lo reconstruimos: a medida, hecho para tu negocio.",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+     "por_que": "La línea anterior («Cuando el sitio actual no da para más, lo reconstruimos») dejaba fuera a quien no tiene sitio.",
      "estado": "cambia"
     },
     {
@@ -376,28 +378,30 @@
     {
      "id": "servicios.cierre.h2",
      "rol": "h2",
-     "texto": "Con la revisión vemos cuál tiene sentido.",
-     "antes": "Empieza por el chequeo",
-     "origen": "copy-secciones-v1.2.md §4 (cierre)",
-     "estado": "cambia"
+     "texto": "Si no sabes cuál te sirve, partamos por tu sitio.",
+     "antes": "Con la revisión vemos cuál tiene sentido.",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+     "estado": "cambia",
+     "por_que": "«Con la revisión vemos cuál tiene sentido» suponía que todos tienen un sitio que revisar."
     },
     {
      "id": "servicios.cierre.p",
      "rol": "parrafo",
-     "texto": "Revisamos tu sitio y si Google y las IA pueden entenderlo, en un día hábil. Es gratis.",
-     "antes": "Revisamos tu sitio y si Google y las IA pueden visitarlo y entender a qué te dedicas, en un día hábil. Es gratis. (primera versión de la ronda 2; el original decía «pueden leerlo»)",
-     "origen": "copy-secciones-v1.2.md §4 (cierre) con el plazo de la guía de la obra («un día hábil»); ronda 2 (desvios/ronda2-frases.md, frase 2)",
-     "por_que": "Ronda 2, lectura en frío: «pueden leerlo» no se entendió (3 de 3).",
+     "texto": "Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta.",
+     "antes": "Revisamos tu sitio y si Google y las IA pueden entenderlo, en un día hábil. Es gratis.",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct) (microcopy de la portada)",
+     "por_que": "Lo que pasa en los dos casos, como en la portada.",
      "estado": "cambia"
     },
     {
      "id": "servicios.cierre.boton",
      "rol": "boton",
-     "texto": "Pedir la revisión",
-     "antes": "Revisar mi sitio gratis → /diagnostico/",
-     "origen": "copy-secciones-v1.2.md §4 (CTA); brief de obra §2 (una sola acción principal)",
+     "texto": "Hablemos de tu sitio",
+     "antes": "Pedir la revisión",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
      "destino": "/contacto/",
-     "estado": "cambia"
+     "estado": "cambia",
+     "por_que": "La acción única del sitio, con las palabras de la portada."
     },
     {
      "id": "servicios.cierre.boton2",

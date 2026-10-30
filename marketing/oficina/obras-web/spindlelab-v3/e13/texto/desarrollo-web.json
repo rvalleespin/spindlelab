@@ -58,10 +58,12 @@
     {
      "id": "dw.boton.escribir",
      "rol": "boton",
-     "texto": "Escribir a SpindleLab",
+     "texto": "Hablemos de tu sitio",
      "destino": "/contacto/",
-     "estado": "queda",
-     "origen": "texto-paso2.json «dw.boton.escribir»"
+     "estado": "cambia",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+     "antes": "Escribir a SpindleLab",
+     "por_que": "La acción única del sitio, con las palabras de la portada. La portada enlaza aquí con «Ver cómo hacemos un sitio y cuánto cuesta»: esta página es la que más sentido tiene para ese botón."
     },
     {
      "id": "dw.franja.alt",
@@ -431,11 +433,12 @@
     {
      "id": "dw.cierre.boton1",
      "rol": "boton",
-     "texto": "Conversar mi proyecto",
+     "texto": "Hablemos de tu sitio",
      "destino": "/contacto/",
      "estado": "cambia",
-     "origen": "v2-vigente/servicios__desarrollo-web.txt («Conversar mi proyecto»)",
-     "antes": "Escribir a SpindleLab"
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+     "antes": "Conversar mi proyecto",
+     "por_que": "El mismo botón de todo el sitio. El h2 de arriba («Cuéntanos qué necesita tu sitio. Te respondemos en un día hábil, tengas sitio o no.») ya cubre los dos casos."
     },
     {
      "id": "dw.cierre.boton2",

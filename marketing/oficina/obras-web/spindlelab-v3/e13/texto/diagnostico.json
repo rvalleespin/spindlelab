@@ -264,10 +264,13 @@
     {
      "id": "diagnostico.ley.p",
      "rol": "parrafo",
-     "texto": "Si tu sitio trata datos personales (un formulario de contacto ya cuenta), la Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Verifica y Cumple, nuestro chequeo gratuito para esa ley, revisa las señales técnicas básicas que se ven desde afuera, como si tu portada enlaza una política de privacidad y si usas un gestor de consentimiento.",
-     "origen": "e12 (sin cambio); v2-vigente/diagnostico.txt",
-     "condicion": "La fecha de entrada en vigencia tiene un proyecto de postergación en trámite: se vuelve a medir el día de publicar (revisión del 23-oct, «Datos que caducan»).",
-     "estado": "queda"
+     "texto": "Aplica a todo sitio que trate datos personales, y un formulario de contacto ya cuenta. El 28 de octubre el Senado aprobó un proyecto que posterga su entrada en vigencia (boletín 18.623-07), y ahora lo revisa la Cámara de Diputados. Mientras no se publique esa ley, la fecha legal sigue siendo el 1 de diciembre de 2026. El proyecto cambia cuándo, no qué. Verifica y Cumple, nuestro chequeo gratuito para esa ley, revisa las señales técnicas básicas que se ven desde afuera, como si tu portada enlaza una política de privacidad y si usas un gestor de consentimiento.",
+     "origen": "marketing/encargos-otras-sesiones/URGENTE-vyc-la-postergacion-avanzo-20oct.md (origin/main) y la ficha del boletín en el Senado, leída el 30-oct",
+     "condicion": "Dato que caduca. Releer la ficha el día de publicar y cada vez que se toque esta página: si la Cámara lo despacha o la ley se publica, esta frase cambia.",
+     "estado": "cambia",
+     "antes": "Si tu sitio trata datos personales (un formulario de contacto ya cuenta), la Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Verifica y Cumple, nuestro chequeo gratuito para esa ley, revisa las señales técnicas básicas que se ven desde afuera, como si tu portada enlaza una política de privacidad y si usas un gestor de consentimiento.",
+     "por_que": "Decía «entra en plena vigencia el 1 de diciembre de 2026» sin más, y esa fecha ya no es firme. Se califica con lo que dice la ficha del boletín y con la línea de Ramón («el proyecto cambia cuándo, no qué»). La primera oración deja de repetir el h2 («también te toca»).",
+     "fuente": "Ficha del boletín 18.623-07, leída el 30-oct-2026 en el servicio público del Senado (https://tramitacion.senado.cl/wspublico/tramitacion.php?boletin=18623): 20-oct, aprobado en general en la Comisión de Constitución; 28-oct, «Discusión general. Aprobado en general y particular a la vez» en la Sala; 29-oct, oficio N° 355/SEC/26 a la Cámara de Diputados (etapa: segundo trámite constitucional, urgencia «discusión inmediata»). El oficio cambia en el artículo primero transitorio la fecha de entrada en vigencia por «15 de octubre de 2027»; esa fecha no va en el sitio porque la Cámara todavía puede cambiarla. Sin ley publicada, la fecha legal sigue siendo el 1-dic-2026."
     },
     {
      "id": "diagnostico.ley.boton",
