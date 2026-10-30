@@ -20,6 +20,18 @@ for (const [v, f] of [
   ['ETAPAS_JS', 'etapas.js'], ['ELEGIBILIDAD_JS', 'elegibilidad.js'],
 ]) process.env[v] = `${RAIZ}/${f}`;
 
+/**
+ * ⚠️ ESTE ARCHIVO PRUEBA EL CAMINO DE MERCADO PAGO, Y LO DICE EN CADA `env`.
+ *
+ * Desde el 29-oct el endpoint elige pasarela con `PASARELA`, y el valor por defecto es Flow.
+ * Estas pruebas no lo declaraban —no hacia falta cuando habia una sola— y el dia del cambio
+ * el archivo REVENTO con un `TypeError` en vez de acusar: el endpoint no llamaba a Mercado
+ * Pago, asi que las cabeceras capturadas eran `undefined`.
+ *
+ * Una prueba que depende de un valor por defecto cambia de significado sin que nadie la toque.
+ * Por eso cada `env` de aca dice `PASARELA: 'mp'` explicito, aunque hoy coincidiera.
+ */
+
 import { DatabaseSync } from 'node:sqlite';
 import { readFileSync } from 'node:fs';
 import { rutaEnElRepo } from './rutas.mjs';
@@ -124,11 +136,22 @@ function conRed({ sitio = PORTADA, mp = null, mpEstado = 201, caeMP = false,
   // abierta vieja, así que el molde tiene que saber contestar las dos cosas. `leida` es lo que
   // devuelve esa lectura; `leidaEstado` su código HTTP; `caeLeida` simula que no se puede
   // preguntar.
-  leida = null, leidaEstado = 200, caeLeida = false } = {}) {
+  leida = null, leidaEstado = 200, caeLeida = false,
+  // Flow. `flow` es lo que devuelve `payment/create`; `caeFlow` simula que no contesta.
+  flow = { url: 'https://sandbox.flow.cl/app/web/pay.php', token: 'TOKFLOW123', flowOrder: 42 },
+  flowEstado = 200, caeFlow = false } = {}) {
   const antes = globalThis.fetch;
-  const llamadas = { sitio: 0, mp: 0, lecturas: 0, cuerposMP: [], cabecerasMP: [] };
+  const llamadas = { sitio: 0, mp: 0, flow: 0, lecturas: 0, cuerposMP: [], cabecerasMP: [], cuerposFlow: [] };
   globalThis.fetch = async (u, o = {}) => {
     const url = String(u && u.url ? u.url : u);
+    if (url.includes('flow.cl')) {
+      llamadas.flow++;
+      // El cuerpo va como formulario, asi que se desarma para poder mirarlo campo por campo.
+      llamadas.cuerposFlow.push(Object.fromEntries(new URLSearchParams(String(o.body || ''))));
+      if (caeFlow) throw new Error('ECONNRESET');
+      return { ok: flowEstado >= 200 && flowEstado < 300, status: flowEstado,
+        headers: { get: () => null }, json: async () => flow };
+    }
     if (url.includes('api.mercadopago.com')) {
       // Una lectura de orden es un GET sin cuerpo; crear es un POST con cuerpo.
       if (!o.body) {
@@ -168,7 +191,7 @@ console.log('=== 1. el camino feliz ===');
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
   const red = conRed();
-  const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' } });
+  const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' } });
   const j = await r.json();
   red.soltar();
 
@@ -224,7 +247,7 @@ console.log('=== 2. sin la revisión con navegador en caché no se vende ===');
   // medir», y los dos tienen que salir rojos en vez de matar la prueba.
   let r, j = null, lanzo = false;
   try {
-    r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'TEST-tok' } });
+    r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' } });
     j = await r.json();
   } catch (e) { lanzo = true; r = { status: 0 }; }
   red.soltar();
@@ -264,7 +287,7 @@ console.log('=== 3. si el sitio no abre AHORA, no se cotiza ===');
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
   const red = conRed({ sitio: null });
-  const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' } });
+  const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' } });
   red.soltar();
   const j = await r.json();
   eq('contesta 409', r.status, 409);
@@ -297,7 +320,7 @@ console.log('=== 4. la compuerta de elegibilidad manda, no el cliente ===');
   // Una portada SIN rastreadores y con gestor: el rápido tampoco deja pendiente nada del kit.
   const sinNada = PORTADA.replace(/<script[^>]*><\/script>/, '');
   const red = conRed({ sitio: sinNada });
-  const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' } });
+  const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' } });
   const j = await r.json();
   red.soltar();
   eq('contesta 409', r.status, 409);
@@ -314,7 +337,7 @@ console.log('=== 5. EL DOBLE CLIC: una sola orden y un solo pedido ===');
   // generara su id, habría dos órdenes y dos cobros posibles por el mismo kit.
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' };
   const red = conRed();
 
   const a = await E.onRequestPost({ request: pedir(BIEN), env });
@@ -342,7 +365,7 @@ console.log('=== 6. si Mercado Pago falla, el pedido NO se borra ===');
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
   const red = conRed({ caeMP: true });
-  const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' } });
+  const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' } });
   const j = await r.json();
   red.soltar();
 
@@ -368,7 +391,7 @@ console.log('=== 7. el cuerpo que se le manda a Mercado Pago ===');
   const { db } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
   const red = conRed();
-  await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' } });
+  await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' } });
   const c = red.llamadas.cuerposMP[0];
   const h = red.llamadas.cabecerasMP[0];
   red.soltar();
@@ -396,7 +419,7 @@ console.log('=== 8. el monto NO viene del cliente ===');
   const red = conRed();
   await E.onRequestPost({
     request: pedir({ ...BIEN, monto_total: 1, montoTotal: 1, monto_neto: 1, precio: 1 }),
-    env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' },
+    env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' },
   });
   red.soltar();
   eq('el pedido se guarda con el precio real', filas(crudo)[0].monto_total, 177310);
@@ -408,7 +431,7 @@ console.log('=== 9. los tres campos se validan ===');
 {
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' };
   const red = conRed();
 
   const sinConsentir = await E.onRequestPost({ request: pedir({ ...BIEN, consiento: false }), env });
@@ -445,7 +468,7 @@ console.log('=== 10. el tope de abuso ===');
 {
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' };
   const red = conRed();
 
   // Se llena el contador del día a mano, como si ya hubiera gastado sus intentos.
@@ -471,7 +494,7 @@ console.log('=== 11. el origen ===');
 {
   const { db } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' };
   const red = conRed();
 
   const ajeno = await E.onRequestPost({ request: pedir(BIEN, { origen: 'https://otro-sitio.cl' }), env });
@@ -506,7 +529,7 @@ console.log('=== 13. el pedido recién creado se puede leer y no filtra nada ===
   // El endpoint nuevo y el que ya existía tienen que calzar: lo que se crea se puede mirar.
   const { db } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' };
   const red = conRed();
   const creado = await (await E.onRequestPost({ request: pedir(BIEN), env })).json();
   red.soltar();
@@ -536,7 +559,7 @@ console.log('=== 14. el antidoble clic NO puede entregar el pedido de alguien qu
   // uno nuevo, no devolver el ajeno.
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' };
 
   // Alguien ya compró, con el mismo dominio y el mismo correo.
   const idPagado = 'vyc_' + 'a'.repeat(32);
@@ -578,7 +601,7 @@ console.log('=== 15. NUNCA dos órdenes pagables para el mismo sitio y correo ==
   // ventana vieja— el segundo intento tiene que seguir reusando el mismo pedido.
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' };
   const red = conRed();
   const primera = await (await E.onRequestPost({ request: pedir(BIEN), env })).json();
 
@@ -631,7 +654,7 @@ console.log('=== 16. LA CARRERA DE VERDAD: dos peticiones a la vez, no una tras 
     },
   };
 
-  const env = { VYC_PEDIDOS: dbConBarrera, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok' };
+  const env = { VYC_PEDIDOS: dbConBarrera, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' };
   const red = conRed();
   const [a, b] = await Promise.all([
     E.onRequestPost({ request: pedir(BIEN), env }),
@@ -674,7 +697,7 @@ console.log('=== 17. cuando Mercado Pago rechaza, se puede saber POR QUÉ ===');
   });
   const r = await E.onRequestPost({
     request: pedir(BIEN),
-    env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'APP_USR-token-secretisimo-123' },
+    env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'APP_USR-token-secretisimo-123', PASARELA: 'mp' },
   });
   const j = await r.json();
   red.soltar();
@@ -705,7 +728,7 @@ console.log('=== 17. cuando Mercado Pago rechaza, se puede saber POR QUÉ ===');
   const red2 = conRed({ mpEstado: 500, mp: null });
   let lanzo = false, r2;
   try {
-    r2 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok' } });
+    r2 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' } });
   } catch { lanzo = true; }
   red2.soltar();
   console.log = antesLog;
@@ -721,7 +744,7 @@ console.log('=== 18. el tope cobra lo que cuesta, no los rechazos nuestros ===')
   // por el resto del día: un fallo nuestro convertido en castigo para quien quería pagarnos.
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' };
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' };
   const dia = new Date().toISOString().slice(0, 10);
   const clave = `tope:pedido:ip:${dia}:5.5.5.5`;
   const conIp = (cuerpo) => new Request('https://verifica.spindlelab.cl/api/pedido', {
@@ -778,7 +801,7 @@ console.log('=== 19. ninguna respuesta de cara a la persona usa un 5xx ===');
   // de estado, y con campaña activa eso es gente que se va.
   const { db } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' };
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' };
   const codigos = [];
 
   const casos = [
@@ -810,7 +833,7 @@ console.log('=== 20. LA ATRIBUCIÓN: una venta tiene que saber qué campaña la 
   // anuncio funciona ni cuál apagar.
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' };
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' };
 
   const red = conRed();
   await E.onRequestPost({
@@ -840,7 +863,7 @@ console.log('=== 20. LA ATRIBUCIÓN: una venta tiene que saber qué campaña la 
       utm_campaign: 12345,
       inventado: 'no-deberia-entrar',
     } }),
-    env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok' },
+    env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
   });
   red2.soltar();
   const g = filas(c2)[0];
@@ -853,7 +876,7 @@ console.log('=== 20. LA ATRIBUCIÓN: una venta tiene que saber qué campaña la 
   const { db: db3, crudo: c3 } = baseNueva();
   const kv3 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
   const red3 = conRed();
-  await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db3, VYC_TOPES: kv3, MP_ACCESS_TOKEN: 'tok' } });
+  await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db3, VYC_TOPES: kv3, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' } });
   red3.soltar();
   eq('sin UTM, quedan nulas', filas(c3)[0].utm_source, null);
 }
@@ -866,7 +889,7 @@ console.log('=== 21. no se afirma sobre la plata de alguien lo que no se sabe ==
   const { db } = baseNueva();
   const red = conRed({ mpEstado: 400, mp: { message: 'bad request' } });
   const a = await (await E.onRequestPost({
-    request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kvBase(), MP_ACCESS_TOKEN: 'tok' },
+    request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kvBase(), MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
   })).json();
   red.soltar();
   cierto('con respuesta de Mercado Pago, se puede decir que no se cobró',
@@ -878,7 +901,7 @@ console.log('=== 21. no se afirma sobre la plata de alguien lo que no se sabe ==
   const { db: db2 } = baseNueva();
   const red2 = conRed({ caeMP: true });
   const b = await (await E.onRequestPost({
-    request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kvBase(), MP_ACCESS_TOKEN: 'tok' },
+    request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kvBase(), MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
   })).json();
   red2.soltar();
   falso('sin respuesta, NO se afirma que no se cobró', /No se te cobró nada/i.test(b.detalle));
@@ -913,7 +936,7 @@ console.log('=== 22. hasta cuándo una medición sirve para vender ===');
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO('clinicaejemplo.cl', 5 * 60 * 60 * 1000)) });
   const red = conRed();
   const r = await E.onRequestPost({
-    request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' },
+    request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
   });
   red.soltar();
   eq('con un informe de hace cinco horas sí se compra', r.status, 200);
@@ -924,7 +947,7 @@ console.log('=== 22. hasta cuándo una medición sirve para vender ===');
   const pasado = (PR.CACHE_HORAS + 1) * 60 * 60 * 1000;
   const kv2 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO('clinicaejemplo.cl', pasado)) });
   const red2 = conRed();
-  const r2 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok' } });
+  const r2 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db2, VYC_TOPES: kv2, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' } });
   const j2 = await r2.json();
   red2.soltar();
   eq('pasada su validez contesta 409', r2.status, 409);
@@ -943,7 +966,7 @@ console.log('=== 22. hasta cuándo una medición sirve para vender ===');
   delete sinFecha.revisadoEn;
   const kv3 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(sinFecha) });
   const red3 = conRed();
-  const r3 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db3, VYC_TOPES: kv3, MP_ACCESS_TOKEN: 'tok' } });
+  const r3 = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db3, VYC_TOPES: kv3, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' } });
   red3.soltar();
   eq('un informe sin fecha no se vende', (await r3.json()).motivo, 'medicion-vieja');
   eq('y tampoco deja pedido', filas(c3).length, 0);
@@ -971,7 +994,7 @@ console.log('=== 23. una compra abierta vieja: se cierra solo con evidencia de q
       '{}', 149000, 177310, 'contacto@clinicaejemplo.cl', ?)`,
   ).run(id, cuando, estado, orden);
   const kvCon = () => kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
-  const env = (db) => ({ VYC_PEDIDOS: db, VYC_TOPES: kvCon(), MP_ACCESS_TOKEN: 'TEST-tok' });
+  const env = (db) => ({ VYC_PEDIDOS: db, VYC_TOPES: kvCon(), MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' });
 
   // ── Una fila vieja que NUNCA llegó a tener orden: no hay nada que matar ───────────────
   {
@@ -1150,7 +1173,7 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const red = conMP(ORDEN_PAGADA(ID));
     const r = await E.onRequestGet({
       request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
-      env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' },
+      env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
     });
     const j = await r.json();
     red.soltar();
@@ -1173,7 +1196,7 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const red = conMP({ ...ORDEN_PAGADA(ID), status: 'created', status_detail: null,
       transactions: { payments: [] } });
     const kv = kvNuevo();
-    const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' };
+    const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' };
     const pedir = () => E.onRequestGet({
       request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`), env,
     });
@@ -1193,7 +1216,7 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const red = conMP(ORDEN_PAGADA(ID));
     const r = await E.onRequestGet({
       request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
-      env: { VYC_PEDIDOS: base.db, MP_ACCESS_TOKEN: 'tok' },
+      env: { VYC_PEDIDOS: base.db, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
     });
     red.soltar();
     eq('sin KV no se sale a Mercado Pago', red.llamadas.mp, 0);
@@ -1207,7 +1230,7 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const red = conMP(null, { estado: 500 });
     const r = await E.onRequestGet({
       request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
-      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
     });
     const j = await r.json();
     red.soltar();
@@ -1226,7 +1249,7 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const red = conMP(ORDEN_PAGADA('vyc_' + 'f'.repeat(32)));
     await E.onRequestGet({
       request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
-      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
     });
     red.soltar();
     eq('una orden ajena no lo mueve', filas(base.crudo).find((f) => f.id === ID).estado, 'creado');
@@ -1239,7 +1262,7 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const red = conMP({ ...ORDEN_PAGADA(ID), total_amount: '1000' });
     await E.onRequestGet({
       request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
-      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
     });
     red.soltar();
     eq('un monto que no calza no lo mueve', filas(base.crudo).find((f) => f.id === ID).estado, 'creado');
@@ -1252,7 +1275,7 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const red = conMP(ORDEN_PAGADA(ID));
     await E.onRequestGet({
       request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
-      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
     });
     red.soltar();
     eq('un pedido pagado no gasta una llamada', red.llamadas.mp, 0);
@@ -1278,7 +1301,7 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     });
     await E.onRequestGet({
       request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
-      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
     });
     red.soltar();
     const f = filas(base.crudo).find((x) => x.id === ID);
@@ -1313,7 +1336,7 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     };
     await E.onRequestGet({
       request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
-      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok' },
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
     });
     globalThis.fetch = antes; red.soltar();
 
@@ -1330,7 +1353,7 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const red = conMP({ ...ORDEN_PAGADA(ID), status: 'created', transactions: { payments: [] } });
     await E.onRequestGet({
       request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
-      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok' },
+      env: { VYC_PEDIDOS: base.db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp' },
     });
     red.soltar();
     const o = kv.opciones.get(`mp:visto:${ID}`);
@@ -1355,6 +1378,165 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     const sesionS = (cadaMs / 1000) * veces;
     const llamadas = Math.ceil(sesionS / E.ESPERA_RECONCILIAR_S);
     cierto(`una sesión entera (${sesionS}s) cuesta ${llamadas} llamadas, no más de 4`, llamadas <= 4);
+  }
+}
+
+/* ================================================================== */
+console.log('=== FLOW: el mismo endpoint, la otra pasarela ===');
+{
+  const CRED = { FLOW_API_KEY: 'clave', FLOW_SECRET_KEY: 'secreto', PASARELA: 'flow' };
+
+  /* -- el camino feliz -- */
+  {
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const red = conRed();
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+    red.soltar();
+    const j = await r.json();
+
+    eq('contesta 200', r.status, 200);
+    eq('y manda a la pantalla de pago de Flow', j.checkout_url,
+      'https://sandbox.flow.cl/app/web/pay.php?token=TOKFLOW123');
+    // ⚠️ La clave se llama `checkout_url` aunque la pasarela sea otra: es el contrato con la
+    // pagina, que ya la lee con ese nombre. Renombrarla romperia el checkout en el navegador
+    // sin que ninguna prueba del servidor se enterara.
+    cierto('con el nombre de clave que la pagina ya lee', 'checkout_url' in j);
+
+    const f = filas(crudo)[0];
+    eq('queda un solo pedido', filas(crudo).length, 1);
+    eq('en creado', f.estado, 'creado');
+    eq('con el token de Flow guardado', f.flow_token, 'TOKFLOW123');
+    eq('y sin referencia de la otra pasarela', f.mp_order_id, null);
+
+    // ⚠️ NO SE LLAMO A MERCADO PAGO. Es lo que prueba que el conmutador conmuta de verdad y
+    // no que simplemente ADEMAS llama a Flow.
+    eq('no se llamo a Mercado Pago', red.llamadas.mp, 0);
+    eq('y si a Flow, una vez', red.llamadas.flow, 1);
+
+    const enviado = red.llamadas.cuerposFlow[0];
+    eq('el pago es de ESTE pedido', enviado.commerceOrder, f.id);
+    // ⚠️ EL MONTO LO FIJA EL SERVIDOR. Nunca viene del cuerpo de la peticion.
+    eq('el monto es el del servidor', enviado.amount, '177310');
+    eq('en pesos', enviado.currency, 'CLP');
+    cierto('va firmado', typeof enviado.s === 'string' && enviado.s.length === 64);
+
+    // ⚠️⚠️ EL SECRETO NO PUEDE SALIR EN LA PETICION. Se firma CON el secretKey, no se MANDA.
+    // Lo descubrio una mutacion: agregar `secretKey` al cuerpo dejaba todo verde, porque
+    // ninguna asercion miraba lo que NO debia estar. Un secreto que viaja queda en registros,
+    // en proxies y en cualquier captura de red del camino.
+    // ⚠️⚠️ EL SECRETO NO PUEDE SALIR EN LA PETICION. Se firma CON el secretKey, no se MANDA.
+    // Lo descubrio una mutacion: agregar `secretKey` al cuerpo dejaba todo verde, porque
+    // ninguna asercion miraba lo que NO debia estar. Un secreto que viaja queda en registros,
+    // en proxies y en cualquier captura de red del camino.
+    falso('el secreto NO viaja en el cuerpo', JSON.stringify(enviado).includes('secreto'));
+    falso('ni como campo propio', 'secretKey' in enviado);
+    cierto('la apiKey si va, que es publica por diseño', enviado.apiKey === 'clave');
+
+    // ⚠️⚠️ LA ASERCION QUE CUIDA LA PANTALLA EN BLANCO.
+    //
+    // Flow devuelve a la persona con un POST. Si `urlReturn` apuntara a `/pedido/`, que es un
+    // archivo estatico, Cloudflare contestaria 405 con cero bytes: blanco absoluto justo
+    // despues de pagar $177.310. Paso de verdad el 29-oct en el sandbox.
+    eq('la vuelta pasa por el endpoint que sabe contestar un POST', enviado.urlReturn,
+      `https://verifica.spindlelab.cl/api/flow-vuelta?id=${f.id}`);
+    falso('y NO apunta a la pagina estatica', String(enviado.urlReturn).includes('/pedido/'));
+    eq('la confirmacion va al endpoint server a server', enviado.urlConfirmation,
+      'https://verifica.spindlelab.cl/api/flow-confirmacion');
+
+    // La vigencia sale de la MISMA constante que la del otro proveedor: dos pasarelas que
+    // caducan distinto serian dos reglas para el mismo trato.
+    eq('el pago caduca con la vigencia de la casa', enviado.timeout, String(P.VIGENCIA_ORDEN_HORAS * 3600));
+  }
+
+  /* -- el precio lo pone el servidor, diga lo que diga el cliente -- */
+  {
+    // ⚠️ Salio de una mutacion que NO acuso: el cuerpo de prueba no mandaba `monto`, asi que
+    // una version del endpoint que lo leyera del cliente habria pasado igual. Una compuerta
+    // sin un caso que la empuje no esta probada, esta supuesta.
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const red = conRed();
+    await E.onRequestPost({
+      request: pedir({ ...BIEN, monto: 1, monto_total: 1, amount: 1, precio: 1 }),
+      env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED },
+    });
+    red.soltar();
+    eq('el cliente pide pagar 1 peso y Flow recibe el precio real',
+      red.llamadas.cuerposFlow[0].amount, '177310');
+    eq('y el pedido se congela con el monto del servidor', filas(crudo)[0].monto_total, 177310);
+  }
+
+  /* -- si Flow no contesta, el pedido NO se borra -- */
+  {
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const red = conRed({ caeFlow: true });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+    red.soltar();
+    const j = await r.json();
+    eq('contesta 409 (no 502: Cloudflare se come los 5xx de una Function)', r.status, 409);
+    eq('con el motivo que dispara el rescate de la pagina', j.motivo, 'no-se-pudo-abrir-el-pago');
+    // ⚠️ La fila es el UNICO registro de que alguien intento comprar. Borrarla por limpieza
+    // borraria la evidencia justo del caso que hay que poder investigar.
+    eq('el pedido sigue ahi', filas(crudo).length, 1);
+    eq('en creado', filas(crudo)[0].estado, 'creado');
+    eq('y sin token, que es lo que distingue "no llego a pagar" de "te mandamos a pagar"',
+      filas(crudo)[0].flow_token, null);
+  }
+
+  /* -- Flow contesta sin token: el pago puede existir del otro lado -- */
+  {
+    const { db } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const red = conRed({ flow: { url: 'https://sandbox.flow.cl/app/web/pay.php' } });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+    red.soltar();
+    eq('se trata como fallo', r.status, 409);
+    eq('y se dice cual', (await r.json()).codigo, 'sin-url-ni-token');
+  }
+
+  /* -- sin credenciales no se inventa un pago -- */
+  {
+    const { db } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const red = conRed();
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, PASARELA: 'flow' } });
+    red.soltar();
+    eq('contesta 409', r.status, 409);
+    eq('sin haber llamado a nadie', red.llamadas.flow, 0);
+    eq('y lo dice', (await r.json()).codigo, 'sin-credenciales');
+  }
+
+  /* -- el conmutador, en la otra direccion -- */
+  {
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const red = conRed();
+    await E.onRequestPost({ request: pedir(BIEN),
+      env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp', ...{ FLOW_API_KEY: 'c', FLOW_SECRET_KEY: 's' } } });
+    red.soltar();
+    eq('con PASARELA=mp no se llama a Flow', red.llamadas.flow, 0);
+    eq('se llama a Mercado Pago', red.llamadas.mp, 1);
+    eq('y el pedido guarda SU referencia, no la otra', filas(crudo)[0].flow_token, null);
+  }
+
+  /* -- un valor raro NO manda los cobros a la pasarela que sabemos bloqueada -- */
+  {
+    // Lo que NO se reconoce cae en Flow, nunca en Mercado Pago: un valor mal escrito no debe
+    // mandar los cobros a la pasarela que sabemos bloqueada con un 403.
+    for (const raro of ['', 'mercadopago', 'mercado pago', undefined, 'xx', 'm p', null]) {
+      eq(`PASARELA=${JSON.stringify(raro)} cae en flow`, E.pasarelaDe({ PASARELA: raro }), 'flow');
+    }
+    eq('sin env tambien', E.pasarelaDe({}), 'flow');
+
+    // Y lo que SI se reconoce, incluido lo que un humano escribe de verdad: con mayusculas o
+    // con un espacio pegado. Recortar es a proposito — un espacio invisible en una variable de
+    // entorno no deberia cambiar en silencio quien cobra, que es de los errores mas dificiles
+    // de ver porque la variable "se ve bien" en cualquier panel.
+    for (const bueno of ['mp', 'MP', ' mp ', 'Mp', 'MP ']) {
+      eq(`PASARELA=${JSON.stringify(bueno)} es mp`, E.pasarelaDe({ PASARELA: bueno }), 'mp');
+    }
   }
 }
 
