@@ -1,6 +1,10 @@
-# Acta de QA · SpindleLab, sitio nuevo · cambios del 30-oct · vueltas 1 y 2
+# Acta de QA · SpindleLab, sitio nuevo · cambios del 30-oct · vueltas 1, 2 y 3
 
-> **Vuelta 2 (la última), sobre `4d794419`: al final de esta acta.** Veredicto: **Aprobado con reparos.** Los mayores 1 y 2 y
+> **Vuelta 3 (QA exprés de las respuestas de Ramón), sobre `284757fb`: al final de esta acta.** Veredicto: **Aprobado.** Lo que
+> eligió Ramón está en el `dist` frase por frase, el peso de la home se sostiene (1.398,8 kB, margen 1.236 bytes) y no hay
+> regresiones; queda 1 menor de documento (Mauro) y, para Ramón, que la frase de los agentes de IA sigue tropezando.
+
+> **Vuelta 2 (la última vuelta interna), sobre `4d794419`: más abajo, antes de la vuelta 3.** Veredicto: **Aprobado con reparos.** Los mayores 1 y 2 y
 > nueve menores quedan cerrados y medidos; siguen abiertos solo los cuatro que decide Ramón (mayor 3, menores 5, 6 y 7), con su
 > reparo y su plazo. Lo de abajo, hasta «Vuelta 2», es la vuelta 1 tal como se firmó.
 
@@ -374,3 +378,151 @@ Lo que cambió en la vuelta es texto de oficio (8, 9, 10, el «Siguiente» de De
 - `e13/capturas-qa-30oct/`: `10` las 22 tarjetas (franja del logo) y dos de las 19 antes y después con su diferencia (defecto 2); `11` `/servicios/` a 1440 con el sitio primero (defecto 11); `12` «Quién está detrás» a 1440 con 16 px entre párrafos (defecto 4); `13` la sección 2 a 1440 con «visitarlo y entenderlo» y el formulario de `/contacto/` a 390 con la ayuda nueva (defectos 8 y 10). De 62 a 114 kB.
 - `e13/lectura-fria/30oct-v2/`: `entrada.txt`, `instrucciones.txt`, `lector-1..3.txt`, `lectores.json`.
 - Mis herramientas (las de la vuelta 1 más `letras.mjs` y `cap-v2.mjs`) y sus salidas quedaron en el scratchpad (`…/scratchpad/javiera-30oct-v2/`), que se borra al reiniciar: lo que importa está en esta acta.
+
+---
+
+# Vuelta 3 · QA exprés de las respuestas de Ramón
+
+> La escribe Javiera (`/web-qa-critico`) en contexto limpio (subagente), a pedido de la orquestadora, 30-oct-2026 en la tarde. Leyó lo que Ramón decidió por escrito (el encargo de la orquestadora, que lo trae de su conversación con él), las vueltas 1 y 2 de esta acta, `desvios/construccion-30oct.md` §6 y §8 (Diego), `desvios/texto-30oct.md` §6 (Clara) y `lista-publicacion.md`. No vio cómo se escribió ni cómo se construyó. No arregló nada: escribe esta sección, las capturas `14` a `16` de `capturas-qa-30oct/` y `lectura-fria/30oct-v3/`. Es la QA exprés que pidió la vuelta 2 («El reparo, con nombre y plazo»).
+
+**Rama:** `claude/magical-franklin-ckfki2` · **Commit auditado:** `284757fb` (HEAD, igual a `origin`; árbol limpio), sacado con `git archive` a una copia en el scratchpad y construido con `npx astro build`: **22 páginas en 3,23 s, sale con 0, sin errores ni avisos**. Para comparar, `1f02ece6` (el cierre de Mauro, antes de las respuestas) construido igual: 22 páginas. Node v22.22.0, Chromium 1194 de Playwright, los dos `dist` servidos en local sin compresión (`python3 -m http.server`), la misma base que las vueltas 1 y 2. `origin/main` sigue en `840dc024`.
+
+## Veredicto de la vuelta 3
+
+**APROBADO.**
+
+Lo que Ramón eligió está en el `dist` **frase por frase** y no hay nada más que haya cambiado: entre los dos builds difieren **5 archivos** (`/`, `/nosotros/`, `/servicios/`, `/servicios/desarrollo-web/` y `llms.txt`), y en cada uno solo las líneas de texto que él decidió y las dos `Offer` del panel. El CSS y el JS son **idénticos byte a byte**. **El peso de la home se sostiene: 1.398,8 kB** en primera carga a 1440 (1.398.764 bytes, tres corridas iguales, con la herramienta de la obra y con la mía), bajo el tope de 1.400; **margen 1.236 bytes**. Los importes visibles y los del JSON-LD son **idénticos** a los de `1f02ece6` en los 30 archivos. **Ninguna regresión**: primera pantalla con el aviso abierto, botón amarillo, foco, enlaces, UTM con clic real, formulario, JSON-LD y protegidos dan lo mismo que en la vuelta 2.
+
+**La lectura en frío:** «sin plantillas ni WordPress» y el «yo» ya **no aparecen** (0 de 3 cada uno; antes 3 de 3 y 2 de 3). **«agentes de IA» sigue tropezando, 3 de 3**, ahora con la frase nueva: la mitad «Responde él por cada entrega» tranquiliza a **los tres**, y «Para escribirlo trabaja con agentes de IA dentro del equipo» los frena a los tres (para dos, entre sus tres mayores frenos). Es texto que Ramón eligió por escrito, tal cual, con la lectura de las vueltas 1 y 2 a la vista: **no es un defecto de oficio**, va primero en «Decisiones de Ramón (vuelta 3)» con el diagnóstico, para que lo confirme o lo cambie antes del corte.
+
+Conteo de la vuelta 3: **0 bloqueantes · 0 mayores · 1 menor (documento) · 0 desvíos no declarados.** Cerrados: **el mayor 3** (Ramón eligió A1, B1 y C1) y **los menores 5, 6 y 7** (panel en todos los planes, plural, 7A), y **la decisión 3 de la vuelta 2** (`Layout.astro`, ver abajo).
+
+## Cómo se verificó (vuelta 3)
+
+| Qué | Comando o herramienta | Resultado |
+|---|---|---|
+| Texto con huella | `node e13/herramientas/extraer-texto.mjs --comprobar` (en el repo) | **16 de 16 «igual»**, sale con 0 |
+| Build | `npx astro build` sobre la copia de `284757fb` (y de `1f02ece6`) | **22 páginas**, sale con 0, 0 errores, 0 avisos; no cae ningún guardián (precios y nombres contra `oferta-v3.json` y `servicios-v3.json`, largos, orden de servicios, «Siguiente», `.int-par`) |
+| `verificar` a 390 | `node scripts/verificar.mjs --excluir /privacidad/` | 22 páginas, **«Sin hallazgos»**, sale con 0 |
+| `verificar` a 1440 | `… --ancho 1440` | 22 páginas, **«Sin hallazgos»**, sale con 0 (6 nodos sobre imagen o degradado: la portada, igual que antes) |
+| **Peso, primera carga a 1440** | `node e13/herramientas/peso-30oct.mjs <url> --ancho 1440`, tres corridas sobre cada build | **`284757fb`: 1.398,8 kB las tres (1.398.764 bytes)** ≤ 1.400. `1f02ece6`: 1.398,9 las tres (1.398.863), el número de la vuelta 2: la herramienta sigue calibrada. Diferencia: −99 bytes. **Margen: 1.236 bytes** |
+| Peso, recorrida y 390 | la misma, `--recorrer` y `--ancho 390`, tres corridas cada una | **1.561,6 kB** recorrida (≤ 1.600) y **755,5 kB** a 390 (≤ 950), las tres iguales |
+| Peso, con otra herramienta | mi `peso.mjs` de las vueltas 1 y 2 (CDP, caché apagada, consentimiento puesto antes de cargar), tres corridas | **Los mismos bytes**: 1.398,8 · 1.561,6 a 1440 y 755,5 a 390; `1f02ece6` 1.398,9 · 1.561,7 · 755,6. El HTML de la home, 39,6 kB (antes 39,7) |
+| Qué cambió en el `dist` | `diff -rq` de los dos `dist` y comparación línea a línea del texto de los que difieren | **5 archivos** con contenido distinto: `/`, `/nosotros/`, `/servicios/`, `/servicios/desarrollo-web/`, `llms.txt`. Todo lo demás (las otras 25 páginas y archivos de texto, todo `_astro/` con su CSS y su JS, las imágenes) **idéntico byte a byte** (en mi build ni siquiera cambió el nombre del `hoisted`) |
+| Las decisiones, frase por frase | mi `frases.mjs` (`innerText` de 9 rutas en los dos builds) y `decisiones.py` (cada frase exacta, contada) | Ver «Las decisiones de Ramón en el `dist`» |
+| Los planes y sus `Offer` | mi `planes.mjs` sobre `/servicios/desarrollo-web/` (tarjetas, `Offer` del JSON-LD, glosario, «En todos los planes») | Ver abajo |
+| Importes | mi `importes.py`: todo `$NNN.NNN` y número con punto de miles en el texto visible (sin `<script>` ni `<style>`) y cada campo `price`/`minPrice`/`priceCurrency` del JSON-LD parseado, archivo por archivo, en los 30 `.html`, `.txt` y `.xml` de los dos `dist` | **93 visibles y 30 campos de JSON-LD en los dos; 0 archivos con diferencia.** En `/servicios/desarrollo-web/`: 390.000, 690.000 y 1.190.000 visibles y como `minPrice` en CLP, iguales. (Diego cuenta 137 y Clara 138 con otro patrón; lo que importa es la diferencia, y es 0 con los tres) |
+| `oferta-v3.json` | `git diff 1f02ece6 HEAD -- spindlelab-astro/src/data/oferta-v3.json` | **2 líneas añadidas** (el punto del panel en Campaña y Esencial); ningún `p` tocado |
+| Barrido de términos | `node e13/herramientas/barrer-terminos.mjs <dist> --resumen` sobre los dos `dist` | **0 rayas**; «agentes de IA» 3 (home 1, `/nosotros/` 2); total **130 en los dos**, resumen idéntico línea a línea |
+| «WordPress» y «sin plantillas» | `grep -rIoi` sobre el `dist` y búsqueda en los valores de `e13/texto/*.json` | «WordPress»: **2**, los dos en `/servicios/desarrollo-web/`: la pregunta «¿Usan plantillas o WordPress?» a la vista y la misma en el `FAQPage` (su respuesta dice «desde cero»). «sin plantillas»: **0**. En los JSON de Clara solo queda en `antes` y `por_que` (registro), y en `dw.faq.1` (la pregunta) |
+| Primera pantalla | mi `primera.mjs` y `e13/herramientas/portada-30oct.mjs` sin `--inyectar` | **Idéntica a la vuelta 2 al décimo:** con aviso 181,2 · 227,2 · 231,5 · 54,6 px de margen a 360×800, 390×844, 768×1024 y 1440×900; **0 de 5 puntos tapados en los 11 tamaños**; 320×568 sigue siendo la excepción de la spec (§12.1). Amarillo 16,20 · 13,39 · 11,03:1 en reposo, al pasar y apretado; foco 2 px blanco a 3 px. Encabezado plegado dentro de la placa en los 8 anchos. Sección 2 sin desfase de filetes (0 · 0 · 0) desde 834 |
+| Alto de la home | `portada-30oct.mjs` | **7.438** a 1440 · **7.402** a 1024 · **9.355** a 768 · **8.951** a 390, bajo los techos (7.800 · 7.800 · 9.700 · 9.300). Los mismos números que midió Diego |
+| Desborde | mi `desborde.mjs`: 22 rutas + `/privacidad/` × 360, 390, 768, 1024, 1440 y 1920, medido en la página | **0 de 138.** Igual que antes: la tabla del artículo de los 21 chequeos dentro de su contenedor desplazable (360 a 768) y `/privacidad/` con dos `h1` (la de `main`) |
+| Tab | mi `tab.mjs` por `/`, `/nosotros/` y `/servicios/desarrollo-web/`, a 1440 y 390, con y sin aviso, Tab y Shift+Tab | 24 pasadas, de 19 a 38 paradas: **0 sin indicador, 0 tapadas** |
+| Enlaces internos | mi `enlaces.py` sobre el `dist` | 24 páginas, **935 referencias, 0 que no resuelven, 0 anclas sin destino** (lo mismo que la vuelta 2) |
+| UTM de punta a punta | mi `utm.mjs`: `/?utm_source=google&utm_medium=cpc&utm_campaign=qa30oct` y seis recorridos con **clic real**, con y sin aviso | **12 de 12** con los tres `#f-utm-*` llenos (`google` / `cpc` / `qa30oct`) |
+| Formulario | `action`, `name` y ocultos contra `git show origin/main:spindlelab-astro/public/contacto/index.html`; envío con el endpoint interceptado (no salió ningún correo), «no tengo» en el sitio | `action` `https://api.web3forms.com/submit`, **los 12 `name` iguales y en el mismo orden**, los 6 ocultos iguales (mismo `access_key`). El cuerpo enviado lleva `Sitio web=no tengo` y los tres UTM; sale «Listo. Te escribimos dentro de un día hábil.» |
+| JSON-LD | mi `jsonld.mjs` (22 rutas del sitemap) | **44 bloques, 0 que no parsean** (45 con `/privacidad/`). **`FAQPage` igual a lo visible en las 16 páginas** que lo tienen; home 6 de 6 con la de Instagram primera. `jobTitle` y descripción de `#org` sin cambio (B1) |
+| Protegidos | `git diff origin/main -- spindlelab-astro/functions spindlelab-astro/public/_headers spindlelab-astro/public/_redirects spindlelab-astro/public/js` | **0 bytes** |
+| `Layout.astro`, `v3-contacto.js`, `servicios-v3.json` | `git diff 4d794419 HEAD --` esos más `public/assets/js` | **0 bytes**: `Layout.astro` es el de la vuelta 2, con gtag, consentimiento y Pixel idénticos y las 4 líneas de las hojas de letras como quedaron (`v3-contacto.js` no existe en `main`: se compara contra la vuelta 2) |
+| Lectura en frío | `lectura-fria-texto.mjs` (texto de `/` y `/contacto/` del build; solo cambié la ruta del Chromium) y `lectura-fria.py` (`claude -p` en directorio vacío, sin herramientas, skills, MCP ni ajustes; una conversación por lector), con las **mismas instrucciones** de las vueltas 1 y 2 (pregunta G incluida) | La entrada difiere de la de la vuelta 2 en **las cuatro frases decididas** más la hora del encabezado. Ver «Lectura en frío, vuelta 3». Íntegro en `lectura-fria/30oct-v3/` |
+| Capturas | mi `cap-v3.mjs`, por pieza, y Read de cada una | La sección 2 a 1440 y 390, «Quién está detrás» a 1440, Soluciones y «Lo que puedes revisar» a 1440, los planes de Desarrollo web a 1440 y 390, la fila de `/nosotros/`: **miradas**, desborde 0 en las 8 |
+
+## Las decisiones de Ramón en el `dist`
+
+| Decisión | Dónde | Resultado |
+|---|---|---|
+| **(a) A1** | `/`, «Quién está detrás», p3 | «Responde él por cada entrega: el código lo revisa y lo aprueba antes de que llegue a tu sitio. Para escribirlo trabaja con agentes de IA dentro del equipo.» **1 vez, exacta**, seguida sin cambio por «También construyó dos herramientas abiertas: …». «con él hablas de principio a fin»: **0** en el `dist` (A2 no entró). La frase anterior: 0 |
+| **(a) A1, en su forma de fila** | `/nosotros/`, «Cómo trabaja» | Las mismas dos oraciones, **exactas**, bajo el título «Agentes de IA, con su revisión» (sin cambio); las herramientas siguen en su fila propia |
+| **(b) B1** | rótulo, `title`, tarjeta, `jobTitle`, `#org`, pie, `llms.txt` | «Sitios web a medida y marketing con IA»: **las mismas apariciones en los mismos 24 archivos** que en `1f02ece6` (2 en `index.html`, 1 en cada uno de los otros); ninguno de esos archivos cambió en esas líneas |
+| **(c) C1** | home, Soluciones; `/servicios/`, bloque 01; `llms.txt` | «Diseñado y programado para tu negocio, con un panel para que edites tú. Desde una página de campaña hasta un sitio de doce páginas.» **exacta en la home y en `/servicios/`**; en `llms.txt` la línea de Desarrollo web sin «sin plantillas ni WordPress». Queda solo la pregunta del FAQ de Desarrollo web y su respuesta «desde cero», como pidió Ramón |
+| **(d) Plural** | home, «Probado primero en lo nuestro» | «Antes de publicar Verifica y Cumple, el chequeo de la Ley 21.719 de datos personales, lo corrimos sobre nuestro propio sitio. Salió mal. Al arreglarlo encontramos además un formulario que perdía mensajes sin avisar, y lo corregimos.» **exacta**. «lo corrí», «mi propio sitio», «encontré», «lo corregí»: **0** en las 9 rutas leídas. La home queda sin primera persona singular |
+| **(e) 7A** | home, sección 2 | «Si tu sitio no explica bien lo que haces, o el formulario no te avisa cuando alguien escribe, lo que pagaste para traer a esa persona se pierde ahí.» **exacta**; la lista «El anuncio en Google, el post en Instagram…»: 0. La entradilla de la portada, **idéntica** a la de `1f02ece6` |
+| **El panel en todos los planes** | `/servicios/desarrollo-web/`, tarjetas y `Offer` | Página de Campaña: «Panel donde cambias textos y fotos» (tercer punto). Sitio Esencial: el mismo (segundo). Sitio Completo: «Blog o CMS que administras tú», sin cambio. Plataforma a Medida: «Todo lo del Sitio Completo, y más», sin cambio (lo incluye por herencia; ver «Decisiones», 3). Las palabras son las del glosario de la misma página («CMS: el panel donde cambias textos, fotos o artículos sin tocar el código»), sin «artículos»: no promete un blog. **En una línea a 1440 y a 390** (`capturas-qa-30oct/15`). Las `Offer` de Campaña y Esencial dicen el panel, igual que sus tarjetas; Completo, «blog/CMS»; Plataforma, «Todo lo del Sitio Completo y más». **Ningún importe cambió** (tabla de arriba). La home, como estaba |
+| **`Layout.astro`** | las 4 líneas que sacaron `inter.css` y `manrope.css` del ramal `letras` | Quedan como están (0 bytes contra la vuelta 2). gtag, consentimiento y Pixel, idénticos. **Cierro la decisión 3 de la vuelta 2**: Ramón dio el visto por escrito el 30-oct, en su conversación con la orquestadora (lo trae el encargo de esta vuelta); queda registrado aquí |
+| **Los botones con texto propio** | `/metodo/`, `/diagnostico/`, cada servicio | Sin cambio: esos `index.html` son **idénticos byte a byte** a los de `1f02ece6` |
+
+## Los abiertos de la vuelta 2, uno por uno
+
+| # | Sev. | Estado | Qué medí |
+|---|---|---|---|
+| 3 | Mayor | **Cerrado: decidió Ramón** (A1, B1, C1) | (a) y (c) están en el `dist` tal cual; (b) no cambió. Lectura en frío: (c) **0 de 3** (antes 3 de 3); (b) **1 de 3** (igual que en la vuelta 2: L2 «no sé si usan IA para hacer marketing o si hacen marketing para que la IA los vea»); (a) **3 de 3**, ver «Decisiones de Ramón (vuelta 3)», 1 |
+| 5 | Menor | **Cerrado** | El panel está en la lista de cada plan (Campaña y Esencial explícito; Completo como CMS; Plataforma por herencia) y en las `Offer`; la home ya no promete algo que la lista de su plan de entrada no diga. Importes intactos |
+| 6 | Menor | **Cerrado** | Plural exacto; **0 de 3** lectores notan un «yo» (antes 2 de 3); los tres citan «Salió mal» como lo que les da confianza |
+| 7 | Menor | **Cerrado** | La lista se dice una vez, en la entradilla; **0 de 3** lectores tropiezan con la sección 2. En voz alta queda un eco leve de «lo que haces» entre el `h2` y el párrafo (observación) |
+| Decisión 3 de la vuelta 2 | | **Cerrada** | El visto de Ramón a las 4 líneas de `Layout.astro`, anotado arriba |
+
+### Desvíos no declarados (vuelta 3)
+
+Ninguno. Del sitio cambiaron **7 archivos** desde `1f02ece6`, todos en `0f5bf988` (Clara): `llms.txt`, los cuatro `src/data/archivo/texto/*.json` (las copias de `extraer-texto.mjs`), `oferta-v3.json` y `desarrollo-web.astro`. Los siete están en `desvios/texto-30oct.md` §6.1, con la decisión que los motivó; `284757fb` (Diego) no tocó el sitio. La edición en `desarrollo-web.astro` (las dos `Offer.description`) está declarada (§6.2): ver observaciones.
+
+## Lectura en frío, vuelta 3 (criterio 4 del brief)
+
+Los mismos tres perfiles (consultora, clínica, restaurante), con las mismas instrucciones de las vueltas 1 y 2 (incluida la pregunta G sobre «Quién está detrás»), sobre el texto de `/` y `/contacto/` del build de `284757fb`. Son personas simuladas por un modelo: sirven para ver dónde se tropieza, no para medir conversión. Íntegro en `lectura-fria/30oct-v3/`.
+
+**Lo sustancial sigue bien:** los tres dicen con sus palabras qué hace SpindleLab («hacen sitios web a medida y después te conectan Google, anuncios y redes»), se reconocen en el «para quién», saben que el primer paso es mandar la dirección, gratis y en un día hábil, y los tres harían la revisión o el chequeo antes de contratar. En `/contacto/` nadie tropieza con el formulario.
+
+**Quién está detrás (G):** los tres lo leen **serio** («seria, ordenada y que habla sin inflar»; «alguien que sabe de pauta como yo»; «alguien serio y que sabe de marketing»). **«Responde él por cada entrega» les da confianza a los tres** («me deja tranquila que haya una persona responsable»; «me dio confianza»; «me gusta, porque hay una cara responsable»). La frase siguiente los frena a los tres: «no sé si es bueno o malo que el código lo escriba una IA»; «me hizo dudar de quién hace realmente el sitio»; «¿quién escribe mi sitio, una persona o una máquina?». Los tres le harían la revisión; el sitio entero, «con cautela» o «todavía no».
+
+| Tropiezo | Vuelta 1 | Vuelta 2 | **Vuelta 3** | |
+|---|---|---|---|---|
+| «agentes de IA» | 3 de 3 (2 entre sus frenos) | 3 de 3 (1 entre sus frenos) | **3 de 3 (2 entre sus tres frenos: L2 y L3, los dos en el segundo lugar)** | Decide Ramón (A1 elegido). Ver «Decisiones», 1 |
+| La mitad que dice quién responde | tranquiliza a 2 de 3 | | **tranquiliza a 3 de 3** («Responde él por cada entrega») | Lo que A1 ganó |
+| «el código lo revisa y lo aprueba»: ¿quién? | | | **1 de 3** (L3: «¿Quién? ¿Él mismo?») | Nuevo, del sujeto tácito de A1 |
+| Que sea una sola persona con IA | 2 de 3 | 2 de 3 | **3 de 3** (L1: «diga "nosotros" todo el rato y después sea básicamente una persona más herramientas de IA») | Liga con «agentes de IA» |
+| Rótulo «marketing con IA» | 2 de 3 | 1 de 3 | **1 de 3** | B1: Ramón lo deja |
+| «sin plantillas ni WordPress» | 2 de 3 | 3 de 3 | **0 de 3** (ya no está en la home) | C1, cerrado |
+| «lo corrí sobre mi propio sitio» | 2 de 3 | 2 de 3 | **0 de 3**; los tres citan «Salió mal» como confianza | Plural, cerrado |
+| La lista dicha dos veces | 0 de 3 | 0 de 3 | **0 de 3** (ya no está) | 7A, cerrado |
+| «con un panel para que edites tú» | | 1 de 3 | **1 de 3** (L2: «no sé cómo es ese panel») | Leve |
+| «Si te vas, tus seguidores se quedan» | 1 de 3 al revés | 1 de 3 al revés | **1 de 3** (L2: «no lo entendí bien») | Leve, igual |
+| «Cookies: rechazadas» | 0 de 3 | 2 de 3 | **2 de 3** | Observación, mismo texto |
+| El caso único «no de crecimiento de ventas», los precios «desde», «Visibilidad en IA», «Search Console», «Paid Media», la ley | | | **2 a 3 de 3**; el caso y el «desde» están entre los tres frenos de los tres | Igual que en E13 y en las vueltas 1 y 2; escalados antes, fuera de lo del 30-oct |
+
+## Defectos (vuelta 3)
+
+Severidad como en la vuelta 1.
+
+| # | Sev. | Dueño | Dónde | Qué está mal | Contra qué | Cómo se reproduce | Cómo se cierra |
+|---|---|---|---|---|---|---|---|
+| 1 | Menor | Mauro | `e13/lista-publicacion.md`, filas 8 y 9 | Siguen diciendo **«(30-oct, abierto)»**: la 8, «Pendiente de Ramón, **antes del corte**», para las tres frases, el panel, el «yo» y la lista, que Ramón ya contestó y que están en el `dist`; la 9, el permiso de `Layout.astro` y las que Ramón dejó como las dejó el equipo. Quien arme el corte lee ahí que falta una respuesta que ya llegó | La lista de publicación tiene que describir lo que queda por hacer el día del corte | `grep -n '30-oct, abierto' e13/lista-publicacion.md` (líneas 36 y 37) | Fila 8: cerrada con lo que eligió Ramón (A1, B1, C1, plural, 7A, panel en todos los planes), remitiendo a `desvios/texto-30oct.md` §6, `desvios/construccion-30oct.md` §8 y esta vuelta. Fila 9: cerrar el visto de `Layout.astro` y lo que Ramón dejó como lo dejó el equipo; si queda algo, que sea solo lo de «Decisiones de Ramón (vuelta 3)». **Antes de armar el corte.** Solo documento, no toca el sitio |
+
+### Observaciones (no son defectos; quedan anotadas)
+
+- **Margen de peso: 1.236 bytes.** Cualquier frase que se sume a la home se vuelve a medir con `peso-30oct.mjs` antes del corte. Si Ramón cambia la frase de los agentes, eso incluido.
+- **Las `Offer.description` siguen escritas en `desarrollo-web.astro`**, no en `e13/texto/*.json`. Es el patrón que dejó Simón (`senales-obra.md` §2.7) y Clara cambió dos cadenas que ya vivían ahí, declarado (§6.2). El JSON-LD dice lo mismo que lo visible. Si Diego o Simón prefieren derivarlas de `puntos`, es suyo. La de Sitio Completo no dice los idiomas y su tarjeta sí («Uno o dos idiomas»): lo anotó Diego para Simón, es anterior al 30-oct.
+- **Eco leve en la sección 2:** «lo que haces» en el `h2` («Todo lo que haces para vender…») y en la primera línea del párrafo («…no explica bien lo que haces…»), con dos sentidos. Ningún lector lo citó; es la frase de Ramón tal cual.
+- **Fuera de la obra, para la troncal:** `.claude/skills/cotizaciones/SKILL.md` (método, paso 1) todavía lista el panel entre lo que cambia el precio. Con la decisión de Ramón, en Desarrollo web ya no.
+- **Las capturas `15` y `16`** muestran el encabezado fijo a mitad de la imagen: es la placa `fixed` que la captura por elemento deja donde estaba la ventana, no un solapamiento de la página.
+
+## Detector anti-slop y pruebas de fuego, sobre lo que cambió
+
+Lo que cambió es texto. **Copy:** sin verbos de folleto ni relleno; 0 rayas largas o medias en el `dist`; tuteo, 0 voseo; sin Title Case nuevo («Panel donde cambias textos y fotos» va como los demás puntos, sustantivo al frente y sin punto); 0 prueba social, cifras o clientes nuevos; ninguna promesa nueva (el panel lo respalda ahora la lista de cada plan). La home queda **sin primera persona singular** y sin la lista repetida (antislop A7 y A10, los menores 6 y 7 de la vuelta 1). **Dos puntos (voz, tic del 23-sep):** «Quién está detrás» queda con tres en dos párrafos seguidos (p2 «…para atraer clientes: casi nunca…»; p3 «Responde él por cada entrega: …» y «dos herramientas abiertas: …»). No son el motor de cada párrafo de la página, pero en esa sección se oyen; las dos frases de p3 están fijadas por Ramón (ver «Decisiones», 2). **Estructura, código y visual:** sin cambios (CSS y JS idénticos byte a byte; los cuatro `index.html` y `llms.txt` difieren solo en texto). **Pruebas de fuego:** logo tapado y rubro cambiado dan lo mismo que en la vuelta 2 (la composición no cambió). **En voz alta:** la sección 2 suena mejor sin la lista (el `h2` dice la premisa y el párrafo lo que se pierde); «Probado primero en lo nuestro» calza con su título y con «Construimos su sitio» del caso de abajo; p3 se oye en dos tiempos, él responde y después la herramienta, y el segundo tiempo es el que los lectores no pasan.
+
+## Lo que está bien (y no hay que perder)
+
+- **Cambiar cinco frases sin mover nada más:** 5 archivos distintos entre los dos `dist`, y en ellos solo las líneas decididas. CSS, JS y las otras 25 páginas, idénticos byte a byte (`capturas-qa-30oct/14` a `16`).
+- **El peso medido igual por tres manos**: Diego, la herramienta de la obra y la mía dan 1.398.764 bytes, y el build anterior da el número de la vuelta 2. Así se cierra un número.
+- **El panel resuelto sin tocar un peso**: la promesa de la home ahora la dice la lista de cada plan, con las palabras del glosario de la misma página y en una línea, y el JSON-LD dice lo mismo.
+- **«Responde él por cada entrega»** es la primera versión de esa idea que tranquiliza a los tres lectores.
+- **Nada se rompió:** primera pantalla, amarillo, foco, enlaces, UTM, formulario, JSON-LD y protegidos, igual que en la vuelta 2.
+
+## Lo que no pude medir
+
+- Safari, Firefox y un iPhone real; red real con `_headers` y Brotli de Cloudflare; Node 20 (producción).
+- `armar-corte.mjs` corrido de verdad (es del día de publicar y lo arma la orquestadora); el envío real del formulario, GA4 y Meta; un lector de pantalla.
+- `/nosotros/` en la lectura en frío: leí `/` y `/contacto/`, como en las vueltas 1 y 2, para que los números se puedan comparar. La fila de `/nosotros/` dice las mismas dos oraciones de A1 que la home.
+
+## Decisiones de Ramón (vuelta 3)
+
+1. **«Para escribirlo trabaja con agentes de IA dentro del equipo» (A1) no bajó el tropiezo.** Es la quinta lectura en que tropieza la idea (3 de 3, 2 de 3, 3 de 3, 3 de 3 y ahora 3 de 3; para 2 de los 3, entre sus tres mayores frenos). **Diagnóstico:** A1 acertó en poner primero quién responde («Responde él por cada entrega» tranquiliza a los 3, antes a 2), pero la segunda oración ahora dice de forma explícita que **la IA escribe el código** («Para escribirlo…»), y los tres la leen como «¿quién hace mi sitio, una persona o una máquina?». Además, a 1 de 3 el sujeto tácito de «el código lo revisa y lo aprueba» no le queda claro («¿Quién? ¿Él mismo?»). El hecho es verdadero y la frase es la que Ramón eligió por escrito, con la lectura de las vueltas anteriores a la vista. **Dos caminos:** publicar con A1 tal como está (decisión suya, no defecto), o pedirle a Clara una versión que diga qué gana el cliente con esa manera de trabajar sin esconder que hay agentes de IA; en ese caso, QA exprés de nuevo (texto, build, peso con 1.236 bytes de margen y lectura en frío). **Antes del corte.**
+2. **Dos puntos en «Quién está detrás»:** p3 queda con dos («Responde él por cada entrega:» y «dos herramientas abiertas:») y p2 trae otro. Ningún lector lo notó. Las dos de p3 están fijadas por su decisión (A1 tal cual y las herramientas se conservan); si quiere aflojarlo, lo más barato es el segundo («También construyó dos herramientas abiertas, un chequeo que…»), propuesta de Clara.
+3. **«En todos los planes»** (`/servicios/desarrollo-web/`) no nombra el panel, y la Plataforma a Medida lo trae solo por «Todo lo del Sitio Completo, y más». Ramón lo pidió plan por plan y así quedó; si quiere que se lea como algo de base, ese es su lugar natural (propuesta de Clara, §6.5).
+4. **El título de la fila de `/nosotros/`**, «Agentes de IA, con su revisión», sigue nombrando primero la herramienta mientras la descripción ahora parte por quién responde. No estaba en lo decidido.
+5. **La description de 157 caracteres** («y les conectamos») no la nombró; la tomo cerrada por su regla general («lo que no frena la publicación queda como lo dejó el equipo»). «El código de cada entrega lo revisa y lo aprueba él» para las entregas a clientes queda respondido por A1 («antes de que llegue a tu sitio»). El `h1` de `/nosotros/`, el gris del de `/contacto/`, «una aerolínea regional», «visitarlo y entenderlo», la ayuda del campo y el asunto «Hablemos de mi sitio»: **cerrados**, quedan como los dejó el equipo, por su decisión.
+
+## Evidencia de la vuelta 3 en el repositorio
+
+- `e13/capturas-qa-30oct/`: `14` la sección 2 y «Quién está detrás» a 1440 (7A y A1); `15` los planes de Desarrollo web a 1440 y 390, con el panel en una línea; `16` «Lo que puedes revisar» (el plural), Soluciones (C1) y la fila de `/nosotros/` (A1), a 1440. De 105 a 137 kB.
+- `e13/lectura-fria/30oct-v3/`: `entrada.txt`, `instrucciones.txt` (las de las vueltas 1 y 2), `lector-1..3.txt`, `lectores.json` (30-oct, 18:50 UTC).
+- Mis herramientas (`frases.mjs`, `decisiones.py`, `planes.mjs`, `importes.py`, `cap-v3.mjs`, más las de las vueltas 1 y 2 con la ruta puesta al día) y sus salidas quedaron en el scratchpad (`…/scratchpad/javiera-30oct-v3/`), que se borra al reiniciar: lo que importa está en esta acta.
