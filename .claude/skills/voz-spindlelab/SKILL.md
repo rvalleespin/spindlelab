@@ -11,6 +11,11 @@ escritas en varios lados; lo que faltaba era el sonido. Un texto se calibra mejo
 leyendo dos párrafos reales que diez viñetas de "evita la jerga".
 
 **El corpus completo está en [`corpus.md`](corpus.md)** (textos íntegros + procedencia).
+**Para guiones de video corto, lee además [`estructura-video-corto.md`](estructura-video-corto.md)**
+(método que entregó Ramón el 30-oct-2026 después de que tres versiones de un guion se cayeran
+seguidas: conectores "pero" y "por lo tanto" en vez de "y entonces", bucles abiertos, margen
+irregular, el final escrito primero, y el gancho visual que a esta casa le faltaba en todos los
+reels).
 Léelo antes de escribir algo largo. Lo de abajo es el mapa.
 
 **Al 5-oct-2026 el corpus tiene 15 fichas** y cubre todo lo publicado en el perfil personal y la

@@ -138,6 +138,29 @@ te tapaba la cara y solo se vio al montarlas sobre tu cuadro de verdad. **Mánda
 primer plano antes de grabar las cuatro** y lo verifico contra las tarjetas en 5 minutos. Es más
 barato que regrabar.
 
+### El gancho visual, que es lo que faltaba en todos los reels de esta casa
+
+El cerebro procesa imagen mucho más rápido que audio, así que la primera frase tiene que ir
+respaldada **desde el milisegundo cero** por una imagen que confirme el tema. Todos los reels de
+esta campaña abrieron con la cara de Ramón hablando y los rótulos encima, y eso desperdicia el
+segundo más caro de la pieza.
+
+**Esto cambia la grabación, no solo el texto. Hacen falta dos grabaciones de pantalla del teléfono,
+además de las tomas habladas:**
+
+| Plano | Cuándo | Qué se graba |
+|---|---|---|
+| **A** | 0 a 2 s, antes de que aparezca Ramón | Un sitio de café abierto en **ventana de incógnito**, el candado de la barra tocado, y la **lista de cookies a la vista**. Que se alcance a leer `_fbp`, que es la de Facebook. |
+| **B** | desde los 2 s | Ramón hablando. El plano de siempre. |
+| **C** | sobre *"se arregla con una línea abajo que pregunte"* | Un sitio cualquiera que **sí** tenga el aviso de cookies, mostrando la franja que pregunta. Es el "después". |
+
+Se graban con la grabadora de pantalla del propio teléfono, en vertical.
+
+⚠️ **El dominio no puede salir.** El panel de cookies muestra de qué sitio son, y nombrar a un café
+medido rompe la regla de cero prospecto nombrado. **Se tapa con un bloque lima** en CapCut, que de
+paso es un elemento de la marca haciendo un trabajo real. No sirve recortar: en el panel de Chrome
+el dominio va arriba de la lista.
+
 ### Luz
 
 De tu cuadro de octubre medí un promedio RGB de 134/122/113: **ya venía cálido**, por eso el ajuste
@@ -206,31 +229,45 @@ lo "arregle" al revés más adelante.
 Facebook/Instagram antes de que el visitante acepte nada. Casi la mitad.
 **Rubro pagado más cercano:** Restaurantes. **Sale primero.**
 
-> Tu café paga publicidad en **Instagram**. / Una clienta la **ve** / y entra a tu **sitio**. //
->
-> No alcanzó a tocar **nada** / y ya quedó en su teléfono / una cookie de **Facebook**. / La puso tu
-> **sitio**, / para medir tu **publicidad**. //
->
-> Ella nunca dijo que **sí**. //
->
-> Revisamos treinta y seis sitios / de cafés y pastelerías en **Chile**, / y en casi la **mitad**
-> pasa eso **mismo**. //
->
-> Y eso va a tener que **cambiar**. / La ley de datos personales / va a pedir que le **preguntes**
-> antes. / Lo que se discute en el Senado / es desde **cuándo**. //
->
-> Preguntar es una **línea** abajo de tu sitio. / Si ella dice que **sí**, / sigues midiendo tu
-> **publicidad**. / Si dice que **no**, / tu café funciona **igual**. //
->
-> Hice un chequeo **gratis** / que te dice si el tuyo **pregunta**. / Soy **Ramón**, de SpindleLab.
-> //
+Una frase por renglón, que es como manda leerlo el manual: el margen derecho tiene que quedar
+descompensado. Las `/` son respiraciones y las `//` cortes.
 
-**129 palabras. 45 segundos**, en el techo del formato. Si hay que acortarlo, lo que sale es la
-línea del Senado, y el costo es que la objeción de la postergación queda sin respuesta. Esa la
-decide Ramón: recortar por cuenta propia para cuadrar un número de palabras es justo lo que rompió
-la versión 3.
+> Una clienta entra a tu sitio a ver la **carta**. //
+> **Pero** se va con algo en el teléfono que no **pidió**. //
+> Es la cookie de **Facebook**, / la que mide si tu publicidad **funcionó**. //
+> No entra cuando ella **acepta**, / entra cuando abre la **página**. //
+> Nadie le preguntó **nada**. //
+> **Revisé** treinta y seis sitios de cafés y pastelerías en **Chile**. //
+> En casi la **mitad** pasa eso mismo. //
+> Esto va a dejar de ser **opcional**. //
+> La ley de datos personales lo va a **pedir**, / y lo que están discutiendo en el Senado / es desde
+> **cuándo**. //
+> Se arregla con una **línea** abajo que pregunte. //
+> Al que diga que **sí**, / lo mides **igual**. //
+> Hice un chequeo **gratis** / que te dice si el tuyo **pregunta**. //
+> Soy **Ramón**, de SpindleLab. //
+> Y si pagas para que **entre**, / lo mínimo es **preguntarle**. //
 
-**Versión 4, del 30-oct.** Las tres anteriores y por qué se cayeron, en la sección 8.
+**129 palabras, 44 segundos.** Largo de frase, renglón por renglón: 9, 11, 11, 10, **4**, 11, 7, 6,
+**19**, 8, 8, 11, **4**, 10. Margen irregular, que es la prueba del manual.
+
+**Versión 5, del 30-oct**, la primera escrita con el método que entregó Ramón
+(`.claude/skills/voz-spindlelab/estructura-video-corto.md`). Las cuatro anteriores y por qué se
+cayeron, en la sección 8. Lo que este guion hace y los otros no:
+
+- **La primera línea es contexto y la segunda es el conflicto, con "Pero".** Las cuatro versiones
+  anteriores unían todo con "y", que es la acumulación lineal que el manual señala como la causa de
+  que una narración se lea plana. Es el nombre técnico de lo que Ramón venía diciendo.
+- **Cinco bucles abiertos.** Cada respuesta abre la pregunta siguiente: qué se llevó → cuándo entró
+  → le pasa solo a mí → por qué tendría que moverme → y la postergación.
+- **El final se escribió primero.** *"Y si pagas para que entre, lo mínimo es preguntarle"* enlaza
+  con *"Una clienta entra a tu sitio"* del primer segundo, así que el loop de Instagram se siente
+  como continuación. **La firma quedó penúltima**: *"Soy Ramón, de SpindleLab"* es una firma, no un
+  gancho, y cerrar ahí desperdicia la última línea.
+- **"Revisé", en singular.** Es el prisma, y es lo único que ningún competidor puede decir.
+  Diluirlo en "revisamos" tiraba a la basura la única ventaja del guion.
+- **La prueba que falta es la de Ramón.** El manual dice que ningún guion es definitivo sin leerlo
+  en voz alta, y esa no la puede hacer una sesión de Claude. Si al decirlo se traba, se arregla ahí.
 
 **Texto en pantalla**
 
@@ -239,7 +276,7 @@ voz cuenta la escena, que es lo que hace que la pieza se entienda con el sonido 
 
 | Tarjeta | Tramo | Etiqueta | Línea grande | Cuerpo |
 |---|---|---|---|---|
-| 1 | 0 a 11 s | — | ELLA NUNCA / DIJO QUE SÍ. | La cookie de Facebook entró sola, al abrir tu sitio. |
+| 1 | sobre el plano A, 0 a 2 s | — | NADIE LE / PREGUNTÓ. | *(sin cuerpo: abajo está la lista de cookies y hay que poder leerla)* |
 | 2 | la cifra | **16 de 36** *(lima)* | CASI LA MITAD. | De los sitios de cafés y pastelerías que revisamos en Chile. |
 | 3 | la ley | — | SE DISCUTE / DESDE CUÁNDO. / NO EL PERMISO. | La ley de datos personales va a pedir que preguntes antes. |
 | 4 | el arreglo | — | UNA LÍNEA / ABAJO DE / TU SITIO. | Si dice que sí, mides igual. Si dice que no, tu café funciona igual. |
@@ -573,3 +610,21 @@ Dos defectos, los dos míos y los dos evitables:
 **Y una frase por idea en el tramo del arreglo.** Una línea abajo del sitio. Si dice que sí, mides.
 Si dice que no, el café funciona igual. El precio del esfuerzo se fue al caption, donde hay espacio
 para explicarlo.
+
+### 30-oct-2026 · versión 4: el método, por fin con nombre
+
+Ramón entregó el manual de storytelling
+(ahora en `.claude/skills/voz-spindlelab/estructura-video-corto.md`) y la versión 4 falla en cinco
+de sus ocho criterios. Vale anotar el fallo por fallo, porque es la primera vez que el defecto tiene
+nombre técnico en vez de "no se entiende".
+
+| Dimensión | Versión 4 | Versión 5 |
+|---|---|---|
+| **Conectores** | *"la ve **y** entra... **y** ya quedó... **y** en casi la mitad... **Y** eso va a tener que cambiar"*. Acumulación lineal pura, que es la causa exacta de que una narración se lea plana | un "Pero" en el giro de la segunda línea y consecuencia en el resto |
+| **Gancho verbal** | *"Tu café paga publicidad en Instagram"* es contexto, no conflicto. Ahí está el *"parte bien pero se debilita"* | contexto en la línea 1, conflicto en la línea 2 |
+| **Gancho visual** | no existía: abría con la cara de Ramón | abre con la lista de cookies en la pantalla del teléfono |
+| **Estructura del final** | cerraba en *"Soy Ramón, de SpindleLab"*, que es una firma y no enlaza con nada | cierra en *"lo mínimo es preguntarle"*, que enlaza con *"Una clienta entra a tu sitio"* y hace funcionar el loop |
+| **Lente** | *"Revisamos"* | *"Revisé"*, que es el prisma |
+| Ritmo | la cola medía 8, 9, 8, 11, 4 palabras, y es justo la que Ramón marcó como ilegible | 9, 11, 11, 10, 4, 11, 7, 6, 19, 8, 8, 11, 4, 10 |
+| Tono | *"La ley de datos personales va a pedir que le preguntes antes"* no pasa la prueba del WhatsApp | *"Esto va a dejar de ser opcional"* |
+| Locución | **no se puede verificar desde una sesión de Claude.** Es la prueba de Ramón y hay que decirlo, no darla por hecha | igual |
