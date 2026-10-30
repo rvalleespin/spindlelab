@@ -161,47 +161,94 @@ medido rompe la regla de cero prospecto nombrado. **Se tapa con un bloque lima**
 paso es un elemento de la marca haciendo un trabajo real. No sirve recortar: en el panel de Chrome
 el dominio va arriba de la lista.
 
+### Exteriores: tres escenas, y la que recomiendo
+
+Ramón pidió grabar **en un parque o algo así** (30-oct). Es mejor que el living de octubre por luz y
+por frescura, y cambia cuatro cosas de la producción. Las escenas, de mejor a peor para esta tanda:
+
+| | Escena | A favor | En contra |
+|---|---|---|---|
+| **A** ✅ | **Banca en sombra sólida, con césped o arbustos a distancia detrás** | El tercio superior queda de tono medio y desenfocado, que es donde van los rótulos. Sentado, el plano se repite igual en las cuatro tomas | Hay que encontrar sombra continua, no de árbol ralo |
+| **B** | **Muro, reja o seto del parque** | La superficie plana es lo mejor que existe para que el texto se lea | Se ve menos "parque". Es el plan de respaldo si en A el texto no contrasta |
+| **C** | **Sendero con profundidad, de pie** | Se ve bonito, da profundidad | Pasa gente por detrás, y entre corte y corte el fondo cambia. Rompe la continuidad |
+
+**Recomiendo A, con B de respaldo.** Y las cuatro tomas en la misma escena y la misma sesión: cambiar
+de lugar entre pieza y pieza es lo que hace que una tanda no se grabe nunca.
+
+⚠️ **Nada de sombra de árbol ralo.** La luz moteada mueve manchas de sol por la cara, no se arregla
+en edición, y cambia entre corte y corte. **Sombra sólida y continua**, o sombra del lado de un muro.
+
+⚠️ **Nada de juegos infantiles ni de gente identificable detrás.** Publicar un video con la cara de
+terceros que no dieron permiso, en una campaña cuyo argumento entero es el cuidado de los datos de
+las personas, se pelea consigo mismo. Encuadra para que no salga ninguna cara, o graba a hora de poco
+tránsito.
+
+Y que no se vea ningún letrero ni marca de un local en el fondo, por la misma regla de cero
+prospecto nombrado.
+
+### Las dos grabaciones de pantalla se hacen aparte, adentro
+
+**Los planos A y C no se graban en el parque.** Son grabaciones de la pantalla del teléfono, así que
+no dependen del lugar: se hacen en la casa, con calma, y se montan después. Una pantalla al aire
+libre no se ve por el reflejo.
+
+Es justamente lo que permite que el gancho visual sobreviva a grabar en exteriores.
+
 ### Luz
 
-De tu cuadro de octubre medí un promedio RGB de 134/122/113: **ya venía cálido**, por eso el ajuste
-de color terminó bajando la temperatura en vez de subirla. Y los píxeles más saturados no eran la
-lámpara, eran reflejos quemados.
+Afuera la luz es mejor que cualquier lámpara que tengas, si no es sol directo.
 
-- **Una fuente, a 45° de tu cara, no de frente.** De frente te aplana y mata el relieve.
-- **Si puedes, ventana a un costado** y la lámpara apagada. Luz de día con un lado en sombra es
-  mejor que cualquier lámpara que tengas.
-- **Apaga la luz de techo.** Es la que hizo los reflejos quemados.
-- Nada de luz detrás de ti: la cámara del teléfono cierra el diafragma y te deja en silueta.
+- **Sombra abierta**, con el cielo despejado **al frente** tuyo. El cielo es la fuente, y es suave y
+  parejo.
+- **Sol directo, nunca.** Sombras duras, ojos entrecerrados y reflejos quemados.
+- Si quieres el tono cálido, **una o dos horas antes del atardecer**, con el sol a tu espalda en
+  diagonal. Pero ahí necesitas algo blanco a la altura del pecho para devolver luz a la cara, o
+  quedas oscuro.
+- ⚠️ **Los valores de ajuste de color de octubre no sirven acá.** Se midieron sobre tu living. Mándame
+  un fotograma del parque y saco los nuevos.
 
-### Ropa, y es una indicación técnica, no de estilo
+### Sonido, que afuera es el riesgo principal
 
-**No uses verde limón ni rosado fuerte.** Los rótulos de Verifica son lima `#d6ff3d` y rosa
-`#ff3ea0`; un texto lima sobre una polera lima desaparece, y no se arregla en edición.
+El micrófono resuelve el nivel. Afuera el enemigo es el viento, y el viento no se arregla después.
 
-Lo que funciona: un color sólido, medio u oscuro, sin estampado ni rayas finas (las rayas finas
-hacen muaré en video). Azul oscuro, gris, café, negro.
+- **Espuma antiviento en el micrófono, obligatoria.** Sin eso, cualquier brisa arruina la toma.
+- **Temprano en la mañana suele ser la hora más calma.**
+- **Graba treinta segundos de ambiente**, sin hablar, antes de empezar. Sirve para rellenar los
+  cortes: sin eso, los saltos de corte afuera suenan a "clic" porque el ambiente se corta en seco.
+- **Prueba de diez segundos escuchada con audífonos** antes de las cuatro tomas. Si se oye el viento,
+  cambia de lugar.
+- **Una moto, un avión o una sopladora de hojas mata la toma completa.** Graba cada guion **dos
+  veces**; es gratis y te ahorra volver.
 
-### Fondo
+### El choque entre el parque y el sistema visual, que es real
 
-Pared lisa detrás del tercio superior del cuadro, que es donde va el texto. Si hay un cuadro, una
-repisa o una planta justo ahí, los rótulos se vuelven ilegibles. El resto del fondo puede tener
-vida.
+El lima `#d6ff3d` es amarillo verdoso. **Sobre follaje verde pierde contraste y se ve sucio**, y es el
+acento de la marca.
 
-### Sonido
+- **El lima se queda solo en la etiqueta chica** (la de la cifra). Las líneas grandes van en blanco
+  con sombra, como ya están especificadas.
+- **El texto no va nunca sobre cielo brillante.** Blanco sobre cielo blanco no existe.
+- Al elegir el lugar, mira el tercio superior del cuadro y pregúntate si es de **tono medio**. Ni
+  cielo quemado ni verde brillante.
 
-El micrófono resuelve el nivel, no la sala. **El riesgo real es el eco.**
+### Ropa
 
-- Graba en la pieza con más cosas blandas: cama, sillón, cortinas, alfombra.
-- Evita cocina, baño y cualquier lugar con pared desnuda enfrente.
-- Antes de las cuatro tomas, graba 10 segundos y escúchalos **con audífonos**. Si se oye el cuarto,
-  cámbiate de cuarto. Un eco no se saca después.
+Lo de siempre más dos cosas de exterior:
 
-### Cámara y gimbal
+- **Nada verde limón ni rosado fuerte**, que son los colores de los rótulos y se los comen.
+- **Nada verde**, de cualquier tono: te mezclas con el fondo.
+- **Nada blanco**, que afuera se quema.
+- **Azul medio u oscuro, gris o café**, color sólido, sin estampado ni rayas finas.
 
-**Para un plano fijo hablando, el gimbal va bloqueado o de trípode.** Un movimiento lento y
-constante en una pieza de 30 segundos se lee como plantilla de editor, que es justo el olor que
-estamos evitando. Cámara quieta, tú hablando: eso es lo que hizo creíble el reel de octubre, y la
-honestidad de "una toma, sin edición" fue parte del caption.
+### Cámara
+
+- **Cámara a la altura de tus ojos.** Más abajo te da cielo y papada; más arriba te achica.
+- **Gimbal bloqueado o de trípode.** Afuera da ganas de moverse, y un movimiento lento en una pieza
+  de 35 segundos se lee a plantilla de editor. La cámara quieta y tú hablando es lo que hizo creíble
+  el reel de octubre.
+- Coronilla cerca de los **420 px de 1920**, igual que lo ya especificado, y **30 cuadros por
+  segundo**.
+- Sentado en la banca, marca con algo dónde pusiste el trípode: las cuatro tomas tienen que calzar.
 
 ### Teleprompter
 
@@ -319,149 +366,167 @@ verifica.spindlelab.cl
 
 ---
 
-### Guion 2 · Salud · *entra a pedir una hora*
+### Guion 2 · Salud · *en una clínica eso pesa distinto*
 
-**Dato:** 20 de 40 sitios de clínicas, centros médicos y dentales (medición 14-19 oct) guardan
-cookies de seguimiento antes de que el visitante acepte. La mitad.
-**Rubro pagado:** Salud. **Tono: cuidadoso. Cero miedo, cero multa, cero "datos sensibles".**
+**Dato:** 20 de 40 sitios de clínicas, centros médicos y dentales guardan algo en el dispositivo del
+visitante antes de que acepte. La mitad. **Rubro pagado:** Salud, 9,1% de CTR con la creatividad B,
+de los mejores de la campaña.
 
-> Alguien entra al sitio de tu **clínica** / a pedir una **hora**. //
->
-> Antes de que toque **nada**, / tu sitio ya guardó en su navegador / cookies de **seguimiento**. /
-> Las que sirven para medir / y para **publicidad**. //
->
-> Y el que entra a pedir una hora / no eligió **eso**. //
->
-> Revisamos cuarenta sitios / de clínicas y centros de salud en **Chile**. / La **mitad** lo hace al
-> entrar. //
->
-> Lo que falta no es **grande**. / Un aviso que pregunta **antes**, / y el seguimiento esperando a
-> que diga que **sí**. //
->
-> Hice un chequeo **gratis** / que te muestra cómo está el **tuyo**. / Soy **Ramón**, de SpindleLab.
-> //
+> Saber de dónde llegan tus pacientes está **bien**. / Medirlo en tu sitio, **también**. //
+> **Pero** en una clínica eso pesa **distinto**. //
+> Que alguien entre a pedir una **hora** / ya dice algo de esa **persona**. //
+> Y tu sitio guarda algo en su teléfono para **reconocerlo**, / antes de que **acepte** nada. //
+> Revisé cuarenta sitios de clínicas y centros **médicos**, / y pasa en la **mitad**. //
+> Puedes seguir **midiendo** igual. / Solo hay que preguntarle al paciente **primero**. //
+> Y esa pregunta va a ser **obligatoria** por ley. //
+> Es una **franja** abajo de tu sitio / que le pregunta al paciente si **acepta**. //
+> Hice un chequeo **gratis** / que te dice si tu sitio tiene esa **franja**. //
+> Soy **Ramón**, de SpindleLab. //
+> **Medir** está bien. / Preguntar **primero**, también. //
 
-**99 palabras.** 35 a 38 segundos.
+**114 palabras, 39 segundos.** Largo por renglón: 7, 5, 6, 12, 14, 12, 4, 7, 9, 14, 13, 4, 7.
+
+**Lo propio de este guion, para que no sea el del café con las palabras cambiadas:**
+*"Que alguien entre a pedir una hora ya dice algo de esa persona."* Es el único rubro donde la visita
+misma significa algo, y es lo que sube la apuesta sin asustar a nadie.
+
+⚠️ **Lo que esa línea NO dice, y es a propósito:** no dice que el sitio guarde el motivo de la
+consulta ni nada clínico. **Guarda un identificador, no la razón de la visita**, y afirmar lo
+contrario sería falso y además rompería el límite de la medición. La línea habla de lo que significa
+la visita, no de lo que captura la cookie.
 
 **Texto en pantalla**
 
-| Tarjeta | Etiqueta | Línea grande | Cuerpo |
-|---|---|---|---|
-| 1 | — | ENTRA A PEDIR / UNA HORA. | Y el sitio ya guardó cookies de seguimiento. |
-| 2 | **20 de 40** *(lima)* | LA MITAD. | De los sitios de clínicas y centros de salud que revisamos. |
-| 3 | — | UN AVISO / QUE PREGUNTA / ANTES. | Y el seguimiento esperando el sí. |
-| 4 | *cierre* | — | el recuadro del dominio |
+| # | Tramo | Etiqueta | Línea grande | Cuerpo |
+|---|---|---|---|---|
+| 1 | plano A, 0 a 3 s | — | ESTO MIDE / TU SITIO. | *(sin cuerpo: la lista tiene que leerse)* |
+| 2 | la cifra | **20 de 40** *(lima)* | LA MITAD. | De los sitios de clínicas y centros médicos que revisé. |
+| 3 | la tesis | — | PUEDES SEGUIR / MIDIENDO. | Preguntándole al paciente primero. |
+| 4 | plano C | — | UNA FRANJA / QUE PREGUNTA. | Y mides a todos los que acepten. |
+| 5 | cierre | — | — | el recuadro del dominio |
 
 **Caption (plural)**
 
-Alguien entra al sitio de tu clínica a pedir una hora. Antes de que toque nada, muchos sitios ya guardaron cookies de seguimiento en su navegador.
+Saber de dónde llegan tus pacientes es legítimo. Medirlo en tu sitio, también.
 
-Revisamos 40 sitios de clínicas y centros de salud en Chile y la mitad lo hace al entrar.
+En una clínica eso pesa distinto. Que alguien entre a pedir una hora ya dice algo de esa persona.
 
-Lo que falta es chico: un aviso que pregunte antes, y el seguimiento esperando el sí.
+Revisamos 40 sitios de clínicas y centros médicos. En la mitad, el sitio guarda algo en el teléfono de quien entra antes de que acepte nada.
 
-Armamos un chequeo gratis que te muestra cómo está el tuyo, sin registro.
+Y puedes seguir midiendo igual. Una franja abajo de tu sitio que le pregunte al paciente si acepta, y mides a todos los que acepten. A los que no, no los mides, y eso es todo lo que cambia.
+
+Esa pregunta va a ser obligatoria por la ley de datos personales.
+
+Armamos un chequeo gratis que te dice si tu sitio tiene esa franja. Sin registro y sin guardar el dominio que revisas.
 verifica.spindlelab.cl
-
----
 
 ### Guion 3 · Contabilidad · *el abogado la escribe, tú la publicas*
 
-**Dato:** en 9 de 39 sitios de contadores y auditores, el formulario pide nombre y correo y **no se
-encontró el enlace a una política de privacidad en la portada**. Esa es la frase exacta: solo se
-miró la portada, así que no se puede decir que no tengan política.
-**Rubro pagado:** ninguno todavía. Ver sección 0.
+**Dato:** en 9 de 39 sitios de contadores y auditores el formulario pide nombre y correo y **no se
+encontró en la portada dónde leer qué se hace con esos datos.** Esa es la frase exacta: solo se miró
+la portada, así que no se puede decir que no tengan política.
+**Rubro pagado:** ninguno. Ver sección 0.
 
-> El formulario de tu sitio / pide **nombre**, / correo / y a veces **teléfono**. //
->
-> Quien los escribe ahí / está contando con que no terminen / en otra **parte**. //
->
-> Y al lado de ese formulario / debería estar el **enlace** / que dice qué haces con esos **datos**.
-> //
->
-> Revisamos treinta y nueve sitios / de contadores y auditores en **Chile**. / En **nueve**, / el
-> formulario pide los datos / y ese enlace no está / en la **portada**. //
->
-> La política la redacta un **abogado**. / Publicarla / y dejarla a la vista del formulario /
-> **eso** lo haces hoy. //
->
-> Hice un chequeo **gratis** / que te muestra qué tiene publicado el **tuyo**. / Soy **Ramón**, de
-> SpindleLab. //
+**Abre distinto a propósito.** Si los cuatro guiones abrieran con *"X está bien"* se leería como
+plantilla, que es justo lo que la skill de voz marca. Acá la concesión está, pero dicha de otra
+forma, y el problema no es el mismo (es el formulario, no la medición).
 
-**110 palabras.** 38 a 42 segundos. Es el más largo de los cuatro: si al grabarlo se siente
-apretado, la frase que sale es *"y a veces teléfono"*.
+> Tu formulario pide nombre, correo y a veces **teléfono**. //
+> Eso es **normal** y no tiene nada de malo. //
+> **Pero** el que los escribe / no sabe qué vas a hacer con **ellos**. //
+> Y debería poder leerlo ahí **mismo**, / al lado del **formulario**. //
+> Revisé treinta y nueve sitios de contadores y **auditores**. //
+> En **nueve**, / el formulario pide los datos / y en la portada no hay dónde leer **eso**. //
+> Y tener esa política publicada / va a ser **obligatoria** por ley. //
+> La política la escribe un **abogado**. / Publicarla y dejarla al lado del formulario / lo haces
+> **tú**. //
+> Hice un chequeo **gratis** / que te dice si tu sitio la tiene **publicada**. //
+> Soy **Ramón**, de SpindleLab. //
+> Pedir los datos está **bien**. / Decir qué haces con ellos, **también**. //
 
-**Texto en pantalla**
+**122 palabras, 42 segundos.** Largo por renglón: 9, 8, 13, 10, 9, 15, 10, 16, 13, 4, 11.
 
-| Tarjeta | Etiqueta | Línea grande | Cuerpo |
-|---|---|---|---|
-| 1 | — | NOMBRE, CORREO, / TELÉFONO. | Al lado debería estar el enlace que explica qué haces con ellos. |
-| 2 | **9 de 39** *(lima)* | SIN ESE ENLACE / EN LA PORTADA. | De los sitios de contadores y auditores que revisamos. |
-| 3 | — | EL ABOGADO / LA ESCRIBE. / TÚ LA PUBLICAS. | Y la dejas a la vista del formulario. |
-| 4 | *cierre* | — | el recuadro del dominio |
+**El arreglo es otro, y por eso no se nombra la franja.** Acá lo que falta es la política publicada y
+a la vista, no el permiso de los rastreadores. **El arreglo tiene que corresponder al hueco medido**,
+o la pieza promete algo que el chequeo no revisa.
 
-**Caption (plural)**
-
-Tu formulario pide nombre, correo y a veces teléfono. Al lado debería estar el enlace que dice qué haces con esos datos.
-
-Revisamos 39 sitios de contadores y auditores en Chile. En 9, el formulario pide los datos y no encontramos ese enlace en la portada.
-
-La política la redacta un abogado. Publicarla y dejarla a la vista del formulario lo haces hoy.
-
-Armamos un chequeo gratis que te muestra qué tiene publicado el tuyo, sin registro.
-verifica.spindlelab.cl
-
----
-
-### Guion 4 · Tutorial · *míralo tú mismo*
-
-**Sin cifra, así que no caduca.** Es el `donde_mirar` del motor y sirve para los nueve rubros.
-Apuesto a que es el que mejor rinde: en octubre la pieza de más alcance del lote no fue ninguna del
-chequeo, fue la que no vendía nada (84 impresiones contra 58 y 20).
-
-> Se puede ver qué guarda tu sitio / sin que nadie te lo **cuente**. //
->
-> Abre tu sitio / en una ventana de **incógnito**. / Espera diez **segundos** / y no toques **nada**.
-> //
->
-> Después haz clic en el **candado**, / arriba en la barra de direcciones, / y busca las
-> **cookies**. //
->
-> Lo que aparezca **ahí** / se guardó sin que **aceptaras** nada. / Si hay cookies de publicidad / o
-> de medición, / entraron **solas**. //
->
-> Eso es lo que pasa / con cualquiera que entre a tu sitio / por primera **vez**. //
->
-> Si te sale algo raro / y no cachas qué **hacer**, / escríbeme por **DM** / y lo miramos. / Soy
-> **Ramón**, de SpindleLab. //
-
-**106 palabras.** 36 a 40 segundos.
-
-**Cierra distinto a propósito.** Los otros tres cierran en el chequeo, y cuatro cierres iguales se
-leen como plantilla (la skill de voz lo marca, y venimos de cuatro posts seguidos cerrando ahí en
-octubre). Este cierra en el DM.
+**Y el límite legal queda dicho:** *"la política la escribe un abogado"*. SpindleLab no da asesoría
+legal y eso no se insinúa ni por omisión.
 
 **Texto en pantalla**
 
-| Tarjeta | Etiqueta | Línea grande | Cuerpo |
-|---|---|---|---|
-| 1 | **30 segundos** *(lima)* | MÍRALO TÚ / MISMO. | Sin que nadie te lo cuente. |
-| 2 | — | 1 · INCÓGNITO / 2 · DIEZ SEGUNDOS / 3 · EL CANDADO | Y busca las cookies. *(números en lima)* |
-| 3 | — | LO QUE SALGA AHÍ / NADIE LO ACEPTÓ. | Entró solo, al abrir la página. |
-| 4 | *cierre* | — | el recuadro del dominio |
+| # | Tramo | Etiqueta | Línea grande | Cuerpo |
+|---|---|---|---|---|
+| 1 | plano A, 0 a 3 s | — | NOMBRE. / CORREO. / TELÉFONO. | *(sobre un formulario real, sin dominio a la vista)* |
+| 2 | la cifra | **9 de 39** *(lima)* | SIN DÓNDE / LEERLO. | De los sitios de contadores y auditores que revisé, en la portada. |
+| 3 | la tesis | — | EL ABOGADO / LA ESCRIBE. | Publicarla la publicas tú. |
+| 4 | plano C | — | AL LADO DEL / FORMULARIO. | Ahí tiene que poder leerse. |
+| 5 | cierre | — | — | el recuadro del dominio |
 
 **Caption (plural)**
 
-Se puede ver qué guarda tu sitio sin que nadie te lo cuente.
+Tu formulario pide nombre, correo y a veces teléfono. Eso es normal y no tiene nada de malo.
 
-Abre tu sitio en una ventana de incógnito. Espera diez segundos sin tocar nada. Haz clic en el candado de la barra de direcciones y busca las cookies.
+Lo que pasa es que el que los escribe no sabe qué vas a hacer con ellos, y debería poder leerlo ahí mismo, al lado del formulario.
 
-Lo que aparezca ahí se guardó sin que aceptaras nada.
+Revisamos 39 sitios de contadores y auditores. En 9, el formulario pide los datos y en la portada no encontramos dónde leer eso.
 
-Si te sale algo raro y no cachas qué hacer, escríbenos por DM y lo miramos.
+Tener esa política publicada va a ser obligatorio por la ley de datos personales.
+
+La política la escribe un abogado, con tu operación a la vista. Publicarla y dejarla donde se vea lo haces tú, y es lo más barato de toda esta lista.
+
+Armamos un chequeo gratis que te dice si tu sitio la tiene publicada. Sin registro y sin guardar el dominio que revisas.
 verifica.spindlelab.cl
 
----
+### Guion 4 · Tutorial · *míralo tú*
+
+**Sin cifra, así que no caduca.** Sirve para los nueve rubros de la campaña y es el único que cierra
+en el DM y no en el chequeo, para que cuatro cierres iguales no se lean como plantilla.
+
+**No sigue la forma de los otros tres, y está bien.** Los otros son concesión, pero, prueba, arreglo.
+Este es una instrucción, y su defecto original era otro: seis pasos seguidos con el premio al final.
+**El premio va primero.**
+
+> Puedes ver qué guarda tu sitio / sin que nadie te lo **cuente**. //
+> Toma treinta **segundos**. //
+> Abre tu sitio en una ventana de **incógnito**. //
+> Espera diez segundos / y no toques **nada**. //
+> Después aprieta el **candado** / que está al lado de la dirección. //
+> Ahí sale todo lo que tu sitio guardó / en ese **teléfono**. //
+> Y eso se guardó **solo**, al abrir la página. / Nadie lo **aceptó**. //
+> Si te sale algo que no **entiendes**, / escríbeme por acá y lo **miramos**. //
+> Soy **Ramón**, de SpindleLab. //
+> Nadie te va a contar qué guarda tu **sitio**. / Míralo **tú**. //
+
+**91 palabras, 32 segundos.** Largo por renglón: 11, 3, 8, 7, 11, 11, 12, 13, 4, 11.
+
+**Este es el que más puede rendir**, y no es intuición: en octubre la pieza de más alcance del lote
+no fue ninguna del chequeo, fue la que no vendía nada (84 impresiones contra 58 y 20). Un tutorial
+que funciona sin comprar nada es exactamente esa forma.
+
+**El plano A de este guion es la pieza entera.** Acá la grabación de pantalla no es un gancho de dos
+segundos: es la demostración, y conviene que se vea el recorrido completo (incógnito, esperar, el
+candado, la lista). **Que se grabe a tamaño legible en un teléfono**, no una captura minúscula.
+
+**Texto en pantalla**
+
+| # | Tramo | Etiqueta | Línea grande | Cuerpo |
+|---|---|---|---|---|
+| 1 | 0 a 3 s | **30 segundos** *(lima)* | MÍRALO TÚ. | Sin que nadie te lo cuente. |
+| 2 | los pasos | — | 1 · INCÓGNITO / 2 · ESPERA / 3 · EL CANDADO | *(sobre la grabación de pantalla, siguiendo el recorrido)* |
+| 3 | el hallazgo | — | NADIE / LO ACEPTÓ. | Se guardó solo, al abrir la página. |
+| 4 | cierre | — | — | el recuadro del dominio |
+
+**Caption (plural)**
+
+Puedes ver qué guarda tu sitio sin que nadie te lo cuente, y toma treinta segundos.
+
+Abre tu sitio en una ventana de incógnito. Espera diez segundos sin tocar nada. Aprieta el candado que está al lado de la dirección y mira la lista.
+
+Todo lo que aparezca ahí se guardó solo, al abrir la página. Nadie lo aceptó.
+
+Si te sale algo que no entiendes, escríbenos por DM y lo miramos.
+verifica.spindlelab.cl
 
 ## 5. Edición y composición
 
