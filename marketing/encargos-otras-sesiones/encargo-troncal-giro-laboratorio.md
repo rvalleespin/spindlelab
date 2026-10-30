@@ -2,6 +2,8 @@
 
 **Fecha:** 16-oct-2026, 14:05 (Chile) · **actualizado a las 19:50** con la compuerta 1 de E12: el manual de marca
 antiguo queda sin efecto en diseño (§5) · **y el 19-oct, 09:55**, con la compuerta 2: la dirección elegida (§6)
+· **y el 30-oct en la tarde**, al cierre de E13: el panel en todos los planes de Desarrollo web (la skill `cotizaciones`)
+y lo que E13 cambió fuera del sitio (§7)
 **De:** el estudio web, al encuadrar la obra E12 del v3. Lo escribe Mauro.
 **Para:** la troncal (Tomás).
 **Decide y edita:** la troncal, con Ramón. Desde la rama del estudio web (`claude/magical-franklin-ckfki2`) no se
@@ -173,3 +175,44 @@ obra**, cuando la spec y el logo final estén construidos. Hasta entonces sigue 
 manual viejo, y lo decides tú con Ramón.
 
 **Desde aquí no se toca** el manual, `CLAUDE.md`, las fichas, el pipeline ni el plan.
+
+## 7 · Actualización del 30-oct, tarde: el panel en cotizaciones y lo que E13 cambió fuera del sitio
+
+**De:** Mauro, al cierre del día de E13 (el sitio en la raíz, con lo que Ramón eligió el 30-oct). **Nada está
+publicado:** el sitio vive en la rama `claude/magical-franklin-ckfki2` y llega a `main` cuando Ramón dé su OK al PR del
+corte (`marketing/oficina/obras-web/spindlelab-v3/e13/lista-publicacion.md`). Rutas de abajo relativas a
+`marketing/oficina/obras-web/spindlelab-v3/`.
+
+**Lo nuevo de hoy: el panel ya no cambia el precio en Desarrollo web.** Ramón decidió el 30-oct, por escrito en su
+conversación con la orquestadora del estudio web, que **el panel para editar viene en todos los planes de Desarrollo
+web**. El sitio ya lo dice: en `spindlelab-astro/src/data/oferta-v3.json`, la Página de Campaña y el Sitio Esencial suman
+«Panel donde cambias textos y fotos»; el Sitio Completo sigue con «Blog o CMS que administras tú» y la Plataforma a Medida
+con «Todo lo del Sitio Completo, y más». **Ningún importe cambió.** Fuente: `e13/desvios/texto-30oct.md` §6; revisado por
+Javiera en `e13/acta-qa-30oct.md`, vuelta 3 («Aprobado»).
+
+- **Lo desalineado:** `.claude/skills/cotizaciones/SKILL.md`, «Método», paso 1, dice «Si falta algo que cambia el precio
+  (idiomas, panel, e-commerce, cantidad de páginas), pregúntalo antes de armar nada». Para Desarrollo web el panel ya no
+  está en esa lista: viene en todos los planes. Una cotización armada con la skill tal como está podría preguntar por el
+  panel como extra, o cobrarlo, cuando el sitio lo promete en el plan de entrada.
+- **Cómo se reescribe** (y si toca también la línea de «Alcance y límites» sobre las páginas que el cliente crea desde el
+  panel, o la plantilla de la cotización) lo decides tú con Ramón. **Desde la rama del estudio web no se edita la
+  skill.** Recuerda que la copia del repo es la que manda y que una sesión ya abierta no ve el cambio hasta reiniciarse.
+
+**Lo demás de E13 que te toca** (ya anotado en `pendientes-traspaso-revisados.md`, «30-oct», «Para la troncal»; aquí
+para que te llegue por este canal):
+
+- **La línea de la casa** en el sitio pasó a «Sitios web a medida y marketing con IA» (Ramón, 30-oct). El outbound y las
+  bios de LinkedIn siguen con «Marketing y crecimiento con IA para empresas que ya venden» (`e13/desvios/texto-30oct.md`
+  §5).
+- **El logo cambió otra vez:** ya no es El huso (§6 de este encargo; `encargo-manual-marca-e12.md` §4) sino **«la i con
+  su disco»**, que Ramón eligió el 30-oct («logo 2 por ahora»). Lo terminó Bruno: `e13/logo/README.md`, con el avatar
+  para redes en `e13/logo/avatar/` y los documentos en `e13/logo/documentos/`. Subirlo a redes es tuyo, después de que
+  Ramón vea el avatar (Bruno avisa que se parece al ícono de «información»).
+- **Un color de acción nuevo:** el amarillo `#FFE800` con letra `#060606`, en dos botones del sitio y en nada más
+  (`spec-visual.md` §0.3, punto 11, y §1.1, `--a-accion`). Para el manual nuevo, junto con el logo, cambia lo que dice
+  `encargo-manual-marca-e12.md` §3 y §4.
+- **El primer paso se llama distinto:** el sitio dice «revisión» y «un día hábil»; los correos de outbound, «diagnóstico
+  gratis» y «24 horas» (`e13/lista-publicacion.md` §5).
+
+**Desde aquí no se toca** la skill `cotizaciones`, el manual, `CLAUDE.md`, las fichas, el pipeline, el plan ni las piezas
+de redes o de outbound.

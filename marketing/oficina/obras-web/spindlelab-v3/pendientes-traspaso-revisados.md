@@ -10,6 +10,15 @@ y 11-oct, con sus «Estado al…» de cada fecha; donde choque con §0, manda §
 
 ## 30-oct-2026 · Estado de E13 con los cambios del 30-oct (Mauro, cierre del día)
 
+> **Al cierre del 30-oct (tarde):** Ramón contestó las cuatro preguntas y dio su visto a `Layout.astro`, por escrito en la
+> conversación con la orquestadora (A1, B1, C1, el panel en todos los planes de Desarrollo web sin tocar un importe, el
+> plural, 7A; los botones con texto propio y lo que no frenaba, como estaban); Clara `0f5bf988`, Diego `284757fb`,
+> **Javiera vuelta 3 «Aprobado»** `12d327c2` (0 bloqueantes, 0 mayores; home 1.398,8 kB); capturas de cierre y lista de
+> publicación al día (Mauro, este commit); **nada publicado y el corte sin armar**; antes de armarlo, solo falta que Ramón
+> confirme o cambie la segunda oración de A1 («Para escribirlo trabaja con agentes de IA dentro del equipo», 3 de 3
+> lectores tropiezan), y el día del corte el sitemap con esa fecha y la ficha del boletín 18.623-07 releída
+> (`e13/lista-publicacion.md`, «30-oct, tarde»). Lo de abajo es el estado de la mañana.
+
 **Dónde está.** El sitio nuevo vive en la raíz de `spindlelab-astro/` en la rama `claude/magical-franklin-ckfki2`: la
 obra E13 (aprobada por Javiera el 26-oct) más lo que Ramón eligió el 30-oct sobre `e13/copy/maquetas-30oct/`. Último
 cambio del sitio en `4d794419`; acta de QA en `0d9bce8a`. **Nada está publicado**: `main` sigue en `840dc024` sin nada
@@ -35,9 +44,9 @@ errores de consola, pedidos fallidos ni desborde, un `h1` cada una; miradas). `e
 
 | # | Qué | Dueño | Cómo se da por cerrado |
 |---|---|---|---|
-| 1 | **Las cuatro preguntas** de `e13/desvios/construccion-30oct.md` §6: las tres frases donde tropiezan los lectores («agentes de IA», el rótulo, «sin plantillas ni WordPress»: mayor 3), si todo plan de Desarrollo web trae panel (menor 5), el «yo» de «Probado primero en lo nuestro» (menor 6) y la lista dicha dos veces (menor 7) | **Ramón** contesta; **Clara** lo pasa al texto | Su respuesta escrita, o su «publicar como está» por escrito |
-| 2 | **QA exprés** de lo que cambie con esas respuestas: `extraer-texto.mjs`, build, `verificar` a 390 y 1440, **peso de la home** (`peso-30oct.mjs`; queda 1,1 kB de margen) y una lectura en frío de la home | **Javiera** | Su visto en `e13/acta-qa-30oct.md` |
-| 3 | **El permiso por escrito de haber tocado `Layout.astro`** (solo las dos hojas de letras sin uso; gtag, consentimiento y Pixel idénticos, medido por Javiera) | **Ramón** | Su visto |
+| 1 | **Las cuatro preguntas** de `e13/desvios/construccion-30oct.md` §6: las tres frases donde tropiezan los lectores («agentes de IA», el rótulo, «sin plantillas ni WordPress»: mayor 3), si todo plan de Desarrollo web trae panel (menor 5), el «yo» de «Probado primero en lo nuestro» (menor 6) y la lista dicha dos veces (menor 7) | **Ramón** contesta; **Clara** lo pasa al texto | Su respuesta escrita, o su «publicar como está» por escrito. **Cerrado en la tarde** (ver arriba) |
+| 2 | **QA exprés** de lo que cambie con esas respuestas: `extraer-texto.mjs`, build, `verificar` a 390 y 1440, **peso de la home** (`peso-30oct.mjs`; queda 1,1 kB de margen) y una lectura en frío de la home | **Javiera** | Su visto en `e13/acta-qa-30oct.md`. **Cerrado: vuelta 3, «Aprobado»** |
+| 3 | **El permiso por escrito de haber tocado `Layout.astro`** (solo las dos hojas de letras sin uso; gtag, consentimiento y Pixel idénticos, medido por Javiera) | **Ramón** | Su visto. **Cerrado: por escrito el 30-oct en la tarde** |
 | 4 | **Rearmar el corte** desde la rama de la obra, con el sitemap fechado el día de publicar y los dos documentos del 30-oct (`e13/lista-publicacion.md`, sección «30-oct» y receta) | Quien publique, con la lista | La sección 3 de la lista, con 3.13 a 3.15 nuevos |
 | 5 | **La Ley 21.719 el día de publicar:** releer la ficha del boletín 18.623-07 y la frase de `/diagnostico/` (exacta al 30-oct) | **Clara** y quien publique | Paso 3.11 de la lista |
 | 6 | **El `dateModified` de los siete artículos** (hoy 26-oct; el 30-oct les cambió el botón del cierre, la firma y la imagen al compartir, no el cuerpo) | **Simón** | Que suba o que quede, escrito; el sitemap lo hereda |
@@ -76,6 +85,9 @@ y el avatar redondo para redes (Bruno). Todo con su detalle en `e13/resumen-30oc
   de la troncal, después de que Ramón vea lo del avatar.
 - El sitio dice «revisión» y «un día hábil»; los correos de outbound, «diagnóstico gratis» y «24 horas» (ya anotado el
   26-oct en la lista, §5).
+- **(30-oct, tarde)** La skill `cotizaciones` pone el panel entre lo que «cambia el precio»; Ramón dijo que todos los planes
+  de Desarrollo web lo traen. Va como encargo, con lo de arriba, en
+  `marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md` §7. La skill no la edito yo.
 
 ## 0 · Al cierre de E12 (23-oct-2026, 17:00 Chile · Mauro): el estado y lo que queda
 

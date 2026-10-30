@@ -2,6 +2,49 @@
 
 **30-oct-2026, tarde · Mauro (encuadre y cierre).** Rama `claude/magical-franklin-ckfki2`, último cambio del sitio en
 `4d794419`, el que auditó Javiera (su acta quedó en `0d9bce8a`). **Nada está publicado.** `main` y `claude/v3-publicacion` no se tocaron.
+**Puesto al día después de tus respuestas, el mismo 30-oct en la tarde** (la sección que sigue). Desde ahí para abajo es el resumen de antes
+de que contestaras, tal como lo leíste.
+
+## Lo que decidiste (30-oct, tarde)
+
+Contestaste por escrito, en la conversación con la orquestadora. Clara lo pasó al texto (`0f5bf988`), Diego lo construyó y
+lo midió (`284757fb`) y Javiera lo revisó en una conversación aparte (`12d327c2`). El sitio con tus respuestas es el de
+`0f5bf988`; después de eso solo cambiaron documentos.
+
+1. **Las cinco recomendaciones de Clara, tal cual.**
+   - **A1**, en «Quién está detrás» y en la fila de `/nosotros/`: «Responde él por cada entrega: el código lo revisa y lo
+     aprueba antes de que llegue a tu sitio. Para escribirlo trabaja con agentes de IA dentro del equipo.» Las dos
+     herramientas abiertas siguen después, en la home, como estaban.
+   - **B1:** el rótulo «Sitios web a medida y marketing con IA» queda igual en todas partes.
+   - **C1:** salió «sin plantillas ni WordPress» de la home, de `/servicios/` y de `llms.txt`. En Desarrollo web queda solo
+     la pregunta frecuente «¿Usan plantillas o WordPress?», con su respuesta «desde cero».
+   - **Plural** en «Probado primero en lo nuestro»: «lo corrimos sobre nuestro propio sitio… y lo corregimos». La home ya no
+     tiene ningún «yo».
+   - **7A:** la entradilla de la portada queda igual y el párrafo de la sección 2 dice «Si tu sitio no explica bien lo que
+     haces, o el formulario no te avisa cuando alguien escribe, lo que pagaste para traer a esa persona se pierde ahí.»
+2. **El panel viene en todos los planes de Desarrollo web.** La Página de Campaña y el Sitio Esencial suman «Panel donde
+   cambias textos y fotos» (las palabras del glosario de esa misma página, sin «artículos», para no prometer un blog que no
+   traen); el Sitio Completo sigue con «Blog o CMS que administras tú» y la Plataforma a Medida con «Todo lo del Sitio
+   Completo, y más». Los datos para Google de esa página dicen lo mismo que las tarjetas. **Ningún precio cambió.** La home
+   quedó como estaba.
+3. **Tu visto a `Layout.astro`:** las cuatro líneas que sacaron las dos hojas de letras quedan. Google Analytics, el aviso de
+   cookies y el Pixel de Meta no se tocaron. Quedó anotado en el acta de Javiera y en `lista-publicacion.md`.
+4. **Los botones con texto propio** de `/metodo/`, `/diagnostico/` y de cada servicio quedan como están.
+
+Lo que no frenaba la publicación queda como lo dejó el equipo: «visitarlo y entenderlo», la ayuda del campo, el asunto
+«Hablemos de mi sitio», el título de `/nosotros/`, el gris del título de `/contacto/` y «una aerolínea regional».
+
+**La revisión de Javiera (vuelta 3): aprobado.** 0 bloqueantes, 0 mayores. Lo que elegiste está en el sitio frase por frase
+y nada más se movió: entre el sitio de la mañana y el de ahora cambian 5 archivos (la home, `/nosotros/`, `/servicios/`,
+`/servicios/desarrollo-web/` y `llms.txt`), y en ellos solo esas frases. Los precios son los mismos en todo el sitio. La home
+pesa 1.398,8 kB, bajo el tope de 1.400 (queda 1,2 kB). En la lectura con los tres lectores ya nadie tropieza con «sin
+plantillas ni WordPress» ni con el «yo» (antes, 3 de 3 y 2 de 3). El único reparo de Javiera era de la lista de publicación, que decía que tus
+respuestas seguían pendientes: ya está corregida.
+
+**Queda una cosa para ti, antes del corte:** «Para escribirlo trabaja con agentes de IA dentro del equipo» sigue frenando a
+los tres lectores, aunque «Responde él por cada entrega» ahora tranquiliza a los tres; confirma que se publica así o pídele
+a Clara otra versión, que pasaría de nuevo por Javiera (el detalle y tres retoques opcionales, en `acta-qa-30oct.md`,
+«Decisiones de Ramón (vuelta 3)»).
 
 ## En tres líneas
 
@@ -9,6 +52,7 @@
 2. **Veredicto: aprobado con reparos.** No hay nada que rompa el sitio ni que deje a alguien sin poder escribirte.
 3. Para publicar faltan **cuatro respuestas tuyas** (abajo, «Lo que tienes que decidir»). Después de eso, una revisión
    corta de Javiera, armar el corte y tu OK.
+   **(Contestadas el 30-oct en la tarde, y Javiera ya hizo esa revisión: ver «Lo que decidiste», arriba.)**
 
 ## Lo que cambió
 
@@ -50,6 +94,9 @@ restaurante) que no saben nada del proyecto. Sirven para ver dónde se tropieza,
   una sola persona. Eso es la pregunta 1 de abajo.
 
 ## Lo que tienes que decidir antes de publicar
+
+> **Ya está contestado (30-oct, tarde).** Elegiste A1, B1 y C1, el panel en todos los planes, el plural y 7A. Queda abajo
+> como lo leíste, para que se vea de dónde salió cada frase. Lo que eligió, en «Lo que decidiste», arriba.
 
 Son cuatro. Las versiones son de Clara y no agregan hechos, salvo donde se dice. El detalle está en
 `desvios/construccion-30oct.md` §6.
@@ -93,6 +140,8 @@ medir antes de publicar.
 
 ## Lo que puedes confirmar o devolver (no frena la publicación)
 
+> **(30-oct, tarde)** Todo esto queda como lo dejó el equipo, por tu regla; el permiso de `Layout.astro`, con tu visto.
+
 - **Cambios de oficio:** «Google y las IA pueden **visitarlo y entenderlo**» (antes «leerlo y citarlo»); la ayuda del
   campo del sitio, que suma «y cuéntanos abajo qué vendes»; el asunto de los correos ya escritos, «Hablemos de mi sitio».
 - **El título de `/nosotros/`** es «Construimos el sitio como eje y le conectamos lo demás.» Salió «No te prometo. Te
@@ -107,9 +156,12 @@ medir antes de publicar.
   dos son ciertos, «Va en tu dominio.» puede pasar a «Va en tu dominio, a tu nombre.»
 - **Un permiso por escrito:** para bajar el peso de la home se sacaron dos hojas de letras que ya no se usaban del
   archivo común de todas las páginas (`Layout.astro`). Nada de Google Analytics, del aviso de cookies ni del Pixel de Meta
-  cambió. La regla decía no tocar ese archivo fuera de esos bloques; Javiera pide que quede tu visto.
+  cambió. La regla decía no tocar ese archivo fuera de esos bloques; Javiera pide que quede tu visto. **(Visto dado por escrito el 30-oct en la tarde.)**
 
 ## Las preguntas que dejó el equipo
+
+> **(30-oct, tarde)** Los botones de Clara quedan como están, por tu decisión. Lo de Lucía, Bruno y Diego sigue abierto
+> y no frena la publicación.
 
 - **Clara:** quedan botones con su propio texto en `/metodo/` («Enviar mi dirección», «Pedir mi revisión»),
   `/diagnostico/` («Pedir la revisión a mano») y al final de cada servicio («Pedir la revisión de mi sitio», «Pedir la
@@ -141,9 +193,12 @@ y lo del iPhone necesita tu teléfono.
 ## Dónde mirar
 
 - **El sitio de una mirada:** `capturas-30oct/hoja-primera-1440.jpg` (computador) y `capturas-30oct/hoja-primera-390.jpg`
-  (teléfono): las 22 páginas, como se ven al abrirlas.
+  (teléfono): las 22 páginas, como se ven al abrirlas. **Rehechas el 30-oct en la tarde** con tus respuestas, igual que la home
+  entera y la primera pantalla de `/servicios/` (`capturas-30oct/README.md`, «30-oct, tarde»).
+- **Tus respuestas, a la vista:** la sección 2, «Quién está detrás», «Probado primero en lo nuestro» y Soluciones en la home
+  entera (`capturas-30oct/completa/`); el panel en los planes y la fila de `/nosotros/` en `capturas-qa-30oct/15` y `16`.
 - **La home y `/contacto/` enteras:** `capturas-30oct/completa/`.
-- **El acta de Javiera:** `acta-qa-30oct.md` (la vuelta 2 está al final).
+- **El acta de Javiera:** `acta-qa-30oct.md` (la vuelta 3, la de tus respuestas, está al final; antes, la 2).
 - **Las cuatro preguntas con todo su detalle:** `desvios/construccion-30oct.md` §6.
 - **Cómo se publica cuando digas:** `lista-publicacion.md`, puesta al día hoy. La rama del corte del 26-oct no tiene nada
   de esto: se arma de nuevo, con el sitemap fechado el día que se publique.
