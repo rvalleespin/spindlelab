@@ -32,7 +32,7 @@ Ninguna de las 4 se había vuelto a medir desde el 19-oct. Resultado (`corridas/
 | Sitio | Hoy | Decisión |
 |---|---|---|
 | resolaud.cl (V84) | C1 sigue: `_ga_0WG47H3LC6`, `_ga`, `_gcl_au` en fase A; sin aviso en A ni B; sin Consent Mode | Se puede enviar. Borrador revisado: solo afirma cookies de Google, coincide |
-| trustdoc.cl (V94) | F1 sigue: formulario que pide correo o teléfono, sin enlace a política | Se puede enviar técnicamente; decide Ramón por la duda de competidor |
+| trustdoc.cl (V94) | F1 sigue: formulario que pide correo o teléfono, sin enlace a política | Se puede enviar. Revisado el 30-oct: TrustDoc es auditoría médico-legal (licencias médicas, peritajes), no vende protección de datos ni "documentos digitales" (mi descripción anterior era un error por el nombre). Declara "conforme a la Ley 19.628 y 21.719" bajo el formulario sin enlazar política. Borrador revisado contra el sitio |
 | audiprop.com (V67) | F1 ya no se repite | No enviar |
 | medicinachina.cl (V89) | El sitio ya no responde | No enviar |
 
