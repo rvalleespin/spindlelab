@@ -1079,6 +1079,68 @@
      fuerte para que se note que la tarjeta dice algo nuevo. */
   .profundo-espera p.espera-lenta { margin-top: 10px; font-size: 0.9rem; color: var(--texto); font-weight: 700; }
 
+  /* ── LA BARRA DE LA ESPERA ─────────────────────────────────────────────────────────
+     Mide NUESTRO procedimiento, no el avance del sitio ajeno. La diferencia no es
+     retórica: el chequeo es una sola llamada que vuelve cuando terminó, así que no hay
+     avance real que leer. Lo que sí conocemos son los tramos de nuestro propio guion
+     (11 s quieto, 7 s de gesto), y sobre eso se puede decir la verdad.
+     Cuando se pasa del estimado la barra DEJA de avanzar y pasa a rayas: admite que ya
+     no sabe, en vez de quedarse clavada en 95% fingiendo. */
+  .espera-barra {
+    margin-top: 14px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--arena-300);
+    overflow: hidden;
+  }
+  .espera-barra i {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: var(--sello);
+    transition: width 400ms linear;
+  }
+  /* Pasado el estimado: ya no se afirma cuánto falta. */
+  .profundo-espera.sin-estimado .espera-barra i {
+    width: 100% !important;
+    background: repeating-linear-gradient(135deg,
+      var(--sello) 0 10px, var(--arena-300) 10px 20px);
+    animation: espera-corre 900ms linear infinite;
+  }
+  @keyframes espera-corre { to { background-position: 28px 0; } }
+
+  .espera-estimado { margin: 8px 0 0 !important; font-size: 0.82rem !important; color: var(--texto-suave) !important; }
+  .espera-estimado .e-no { display: none; }
+  .profundo-espera.sin-estimado .espera-estimado .e-si { display: none; }
+  .profundo-espera.sin-estimado .espera-estimado .e-no { display: inline; }
+
+  .espera-pasos { list-style: none; margin: 12px 0 0; padding: 0; }
+  .espera-pasos li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.87rem;
+    color: var(--texto-suave);
+    opacity: .5;
+    transition: opacity 200ms ease-out, color 200ms ease-out;
+  }
+  .espera-pasos li + li { margin-top: 4px; }
+  .espera-pasos li::before {
+    content: '';
+    position: absolute; left: 4px; top: 0.52em;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor;
+  }
+  .espera-pasos li.ahora { opacity: 1; color: var(--texto); font-weight: 600; }
+  .espera-pasos li.hecho { opacity: .85; }
+  .espera-pasos li.hecho::before { background: var(--sello); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .espera-barra i { transition: none; }
+    .profundo-espera.sin-estimado .espera-barra i { animation: none; }
+    .espera-pasos li { transition: none; }
+  }
+
   /* La medición guardada. La función devuelve hasta 24 h después el mismo informe, y hasta
      acá eso se veía igual que uno recién hecho. La línea dice cuándo se midió y ofrece
      rehacerla; el botón es texto, porque no compite con el del kit. */
@@ -2400,6 +2462,73 @@
   let falloElNavegador = null;
   // El aviso de los 40 s, para poder cancelarlo.
   let avisoLentoProfundo = null;
+  let barraEspera = null;
+
+  /**
+   * Los tramos del guion del chequeo profundo.
+   *
+   * ⚠️ SON LOS MISMOS QUE EXPORTA `functions/api/profundo.js` (`TRAMO_PASIVO_MS` y
+   * `TRAMO_GESTO_MS`). Están repetidos acá porque esta página no puede importar del
+   * servidor, y eso es exactamente «dos constantes del mismo hecho»: el día que alguien
+   * cambie el guion allá, esta barra mentiría sin que nada se queje.
+   *
+   * Por eso hay una prueba que lee los dos archivos y se pone roja si dejan de calzar.
+   * La duplicación es inevitable; que sea silenciosa, no.
+   */
+  const ESPERA_TRAMO_PASIVO_MS = 11000;
+  const ESPERA_TRAMO_GESTO_MS = 7000;
+  // Abrir y leer no son constantes del servidor: son el resto del guion medido, que su
+  // propio comentario sitúa entre 21,6 y 25,4 s.
+  const ESPERA_ABRIR_MS = 4000;
+  const ESPERA_LEER_MS = 3000;
+  const ESPERA_ESTIMADO_MS =
+    ESPERA_ABRIR_MS + ESPERA_TRAMO_PASIVO_MS + ESPERA_TRAMO_GESTO_MS + ESPERA_LEER_MS;
+
+  /** Para la barra y la deja lista para la próxima medición. */
+  function pararBarraEspera() {
+    if (barraEspera) { clearInterval(barraEspera); barraEspera = null; }
+  }
+
+  /**
+   * Mueve la barra y enciende el paso que corresponde.
+   *
+   * No hay avance que consultar —el chequeo es una sola llamada que vuelve cuando
+   * terminó—, así que lo que se muestra es el TIEMPO contra un guion conocido. Eso se
+   * puede decir sin mentir. Lo que no se puede es quedarse en 95% fingiendo que falta
+   * poco: al pasar el estimado la barra cambia a rayas y deja de afirmar nada.
+   */
+  function arrancarBarraEspera(tarjeta) {
+    pararBarraEspera();
+    if (!tarjeta) return;
+    const relleno = tarjeta.querySelector('.espera-barra i');
+    const pasos = tarjeta.querySelectorAll('.espera-pasos li');
+    if (!relleno || !pasos.length) return;
+    const desde = Date.now();
+    const cortes = [
+      ESPERA_ABRIR_MS,
+      ESPERA_ABRIR_MS + ESPERA_TRAMO_PASIVO_MS,
+      ESPERA_ABRIR_MS + ESPERA_TRAMO_PASIVO_MS + ESPERA_TRAMO_GESTO_MS,
+    ];
+    const pintar = function () {
+      const ido = Date.now() - desde;
+      if (ido >= ESPERA_ESTIMADO_MS) {
+        tarjeta.classList.add('sin-estimado');
+        pasos.forEach(function (li) { li.classList.remove('ahora'); li.classList.add('hecho'); });
+        pararBarraEspera();
+        return;
+      }
+      // Tope en 96%: el 100% lo pone la llegada del informe, no el reloj.
+      relleno.style.width = Math.min(96, (ido / ESPERA_ESTIMADO_MS) * 100).toFixed(1) + '%';
+      let actual = 0;
+      while (actual < cortes.length && ido >= cortes[actual]) actual++;
+      pasos.forEach(function (li, i) {
+        li.classList.toggle('ahora', i === actual);
+        li.classList.toggle('hecho', i < actual);
+      });
+    };
+    pintar();
+    barraEspera = setInterval(pintar, 400);
+  }
   const AVISO_LENTO_PROFUNDO = 40000;
   // Si esta corrida salió de apretar "Volver a medirlo". Cambia lo que se dice cuando la
   // respuesta vuelve a venir de la medición guardada.
@@ -2859,8 +2988,23 @@
         '<div class="bloque"><h2>Y ahora lo abrimos de verdad</h2></div>' +
         '<div class="profundo-espera" aria-hidden="true"><span class="punto-vivo"></span><div class="espera-texto">' +
         '<p>Estamos abriendo tu sitio en un navegador de verdad, como lo vería un visitante.</p>' +
-        '<p>Lo dejamos cargar sin tocar nada y después movemos el mouse, que es cuando algunos sitios recién ' +
-        'despiertan sus rastreadores. Toma alrededor de medio minuto.</p>' +
+        '<div class="espera-barra"><i></i></div>' +
+        // ⚠️ ESTA LÍNEA ES DONDE LA HONESTIDAD SE VUELVE VISIBLE. Mientras la barra estima,
+        // dice cuánto estima. Cuando se pasa, lo admite en palabras en vez de dejar una
+        // barra clavada cerca del final insinuando que falta poco.
+        '<p class="espera-estimado"><span class="e-si">Toma alrededor de medio minuto.</span>' +
+        '<span class="e-no">Ya pasamos el medio minuto. Seguimos, y si no alcanzamos te lo decimos.</span></p>' +
+        // Los tres pasos son el guion real, en presente: lo que estamos haciendo AHORA, no
+        // una lista de casillas que se marcan solas. Y de paso dicen por qué este chequeo
+        // ve cosas que un escáner no: la espera explica el producto.
+        '<ul class="espera-pasos">' +
+          '<li data-paso="0">Abriendo tu sitio en un navegador de verdad</li>' +
+          '<li data-paso="1">Dejándolo cargar sin tocar nada</li>' +
+          '<li data-paso="2">Moviendo el mouse, que es cuando algunos sitios recién despiertan sus rastreadores</li>' +
+          // El cuarto cierra un hueco de tres segundos en que no había ningún paso
+          // encendido y la barra seguía avanzando sola. Lo vio el navegador, no el código.
+          '<li data-paso="3">Leyendo y sumando lo que encontramos</li>' +
+        '</ul>' +
         '</div></div>';
     });
     if (!rehacer) sinMoverLoQueLeen(seccionDoce, function () { seccionDoce.innerHTML = ''; });
@@ -2870,7 +3014,7 @@
     // Entre el segundo 30 y el 75 no cambiaba nada en pantalla: la misma tarjeta latiendo
     // y la misma frase de "medio minuto", ya vencida. A los 40 s se dice que va lento y
     // hasta cuándo esperamos, que es lo que el chequeo rápido ya hace a su escala.
-    clearTimeout(avisoLentoProfundo);
+    clearTimeout(avisoLentoProfundo); pararBarraEspera();
     avisoLentoProfundo = setTimeout(function () {
       if (mia !== corrida) return;
       const caja = seccionProfundo.querySelector('.profundo-espera .espera-texto');
@@ -2883,6 +3027,12 @@
       });
       avisoProfundo.textContent = 'La revisión con navegador está tardando más de lo normal. Seguimos esperando.';
     }, AVISO_LENTO_PROFUNDO);
+
+    // ⚠️ VA ACÁ Y NO ANTES, y el orden es el error que ya se cometió: arrancarla arriba del
+    // `clearTimeout(avisoLentoProfundo); pararBarraEspera()` la apagaba un instante después
+    // de encenderla. La barra quedaba 27 s clavada en 0% y leyendo el código parecía
+    // correcto — «la arranco, ahí está». Lo dijo el navegador, no el archivo.
+    arrancarBarraEspera(seccionProfundo.querySelector('.profundo-espera'));
 
     fetch('/api/profundo?dominio=' + encodeURIComponent(dominio) + (rehacer ? '&rehacer=1' : ''), {
       cache: 'no-store',
@@ -2928,7 +3078,7 @@
           : 'No pudimos terminar la revisión con navegador.';
         if (falloElNavegador && datosDoce) pintarDoce();
       })
-      .finally(function () { clearTimeout(plazo); clearTimeout(avisoLentoProfundo); });
+      .finally(function () { clearTimeout(plazo); clearTimeout(avisoLentoProfundo); pararBarraEspera(); });
 
     if (!rehacer) {
       fetch('/api/doce-puntos?dominio=' + encodeURIComponent(dominio), { cache: 'no-store' })
@@ -2979,7 +3129,7 @@
   function limpiarProfundo() {
     corrida++;
     if (abortarProfundo) { abortarProfundo.abort(); abortarProfundo = null; }
-    clearTimeout(avisoLentoProfundo);
+    clearTimeout(avisoLentoProfundo); pararBarraEspera();
     pendientesRapido = null;
     datosDoce = null;
     falloElNavegador = null;
