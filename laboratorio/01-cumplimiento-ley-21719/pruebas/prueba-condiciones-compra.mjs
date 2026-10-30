@@ -282,5 +282,37 @@ console.log('=== LA BARRA DE LA ESPERA MIDE EL GUION REAL (30-oct) ===');
   cierto('el reloj no puede llegar al 100%', tope && Number(tope[1]) < 100);
 }
 
+/* ================================================================== */
+console.log('=== LA ESPERA TIENE QUE VERSE, NO SOLO EXISTIR (30-oct) ===');
+{
+  // ── POR QUE EXISTE ────────────────────────────────────────────────────────────────────
+  //
+  // La barra se construyo, se probo y funcionaba perfecto... 3.252 px por debajo de la
+  // ventana, que mide 768. Medido en produccion: durante los 25 s de espera la persona NO la
+  // veia ni una vez. Estaba en el lugar correcto del documento y en ninguna parte de la
+  // pantalla.
+  //
+  // No se arregla con scroll automatico: el codigo tiene una regla explicita de no mover lo
+  // que la persona esta leyendo. Se arregla trayendo el aviso a donde ya mira.
+  cierto('existe la franja fija', /function crearFlotante/.test(HTML));
+  cierto('y se monta al arrancar la barra', /const flotante = crearFlotante\(\)/.test(HTML));
+
+  // ⚠️ QUE ESTE EN LA VENTANA, no en el documento. Un `position: absolute` volveria a dejarla
+  // donde nadie la ve, y leyendo el CSS se veria casi igual.
+  const css = (HTML.match(/\.espera-flotante\s*\{[^}]*\}/) || [''])[0];
+  cierto('va fija a la ventana', /position:\s*fixed/.test(css));
+  cierto('y anclada abajo', /bottom:\s*0/.test(css));
+
+  // ⚠️⚠️ LA QUE MAS CUIDA: que se BORRE al terminar. Una franja pegada para siempre tapando
+  // el pie de la pagina es peor que no tenerla, y es el tipo de fallo que nadie reporta
+  // porque parece parte del diseño.
+  const parar = (HTML.match(/function pararBarraEspera\(\)\s*\{[\s\S]*?\n  \}/) || [''])[0];
+  cierto('al parar, la franja se quita', /\.remove\(\)/.test(parar));
+  cierto('y se busca por su clase', /querySelector\('\.espera-flotante'\)/.test(parar));
+
+  // No duplica el anuncio hablado: la region viva ya lo da.
+  cierto('no se anuncia dos veces', /setAttribute\('aria-hidden', 'true'\)/.test(HTML));
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
