@@ -1110,6 +1110,35 @@
   }
   @keyframes espera-corre { to { background-position: 28px 0; } }
 
+  /* ── LA FRANJA FIJA, PORQUE LA BARRA ESTABA DONDE NADIE LA VEÍA ──────────────────────
+     Medido el 30-oct en producción: durante los 25 s de la espera, la tarjeta vivía 3.252 px
+     por debajo de la ventana (que mide 768). O sea que la barra funcionaba perfecto y la
+     persona no la veía NUNCA. Estaba en el lugar correcto del documento y en ninguna parte
+     de la pantalla.
+     No se resuelve con un scroll automático: el código tiene una regla explícita de no mover
+     lo que la persona está leyendo (`sinMoverLoQueLeen`), y llevarla a la fuerza a otra parte
+     de la página sería romperla. Se resuelve trayendo el aviso a donde ya está mirando. */
+  .espera-flotante {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 40;
+    background: var(--panel);
+    border-top: 1px solid var(--borde);
+    box-shadow: 0 -6px 20px rgba(0,0,0,.10);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .espera-flotante .ef-fila {
+    max-width: 680px; margin: 0 auto;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .espera-flotante .punto-vivo { flex: 0 0 auto; width: 10px; height: 10px; margin: 0; }
+  .espera-flotante .ef-texto {
+    flex: 1 1 auto; min-width: 0;
+    font-size: 0.85rem; color: var(--texto);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .espera-flotante .espera-barra { margin: 8px auto 0; max-width: 680px; }
+
   .espera-estimado { margin: 8px 0 0 !important; font-size: 0.82rem !important; color: var(--texto-suave) !important; }
   .espera-estimado .e-no { display: none; }
   .profundo-espera.sin-estimado .espera-estimado .e-si { display: none; }
@@ -2484,9 +2513,29 @@
   const ESPERA_ESTIMADO_MS =
     ESPERA_ABRIR_MS + ESPERA_TRAMO_PASIVO_MS + ESPERA_TRAMO_GESTO_MS + ESPERA_LEER_MS;
 
-  /** Para la barra y la deja lista para la próxima medición. */
+  /** Para la barra, borra la franja fija, y deja todo listo para la próxima medición. */
   function pararBarraEspera() {
     if (barraEspera) { clearInterval(barraEspera); barraEspera = null; }
+    const f = document.querySelector('.espera-flotante');
+    if (f) f.remove();
+  }
+
+  /**
+   * La franja fija abajo de la ventana. Misma barra, mismo paso, donde la persona SÍ mira.
+   *
+   * `aria-hidden` a propósito: el aviso hablado ya lo da la región viva de siempre, y
+   * anunciarlo dos veces no informa más, molesta.
+   */
+  function crearFlotante() {
+    let f = document.querySelector('.espera-flotante');
+    if (f) return f;
+    f = document.createElement('div');
+    f.className = 'espera-flotante';
+    f.setAttribute('aria-hidden', 'true');
+    f.innerHTML = '<div class="ef-fila"><span class="punto-vivo"></span>' +
+      '<span class="ef-texto"></span></div><div class="espera-barra"><i></i></div>';
+    document.body.appendChild(f);
+    return f;
   }
 
   /**
@@ -2509,22 +2558,34 @@
       ESPERA_ABRIR_MS + ESPERA_TRAMO_PASIVO_MS,
       ESPERA_ABRIR_MS + ESPERA_TRAMO_PASIVO_MS + ESPERA_TRAMO_GESTO_MS,
     ];
+    const flotante = crearFlotante();
+    const rellenoF = flotante.querySelector('.espera-barra i');
+    const textoF = flotante.querySelector('.ef-texto');
     const pintar = function () {
       const ido = Date.now() - desde;
       if (ido >= ESPERA_ESTIMADO_MS) {
         tarjeta.classList.add('sin-estimado');
+        flotante.classList.add('sin-estimado');
         pasos.forEach(function (li) { li.classList.remove('ahora'); li.classList.add('hecho'); });
-        pararBarraEspera();
+        textoF.textContent = 'Ya pasamos el medio minuto. Seguimos.';
+        rellenoF.style.width = '100%';
+        // ⚠️ Solo se detiene el RELOJ, no la franja: la persona sigue esperando y la franja
+        // tiene que seguir ahí diciéndoselo. Quien la borra es el final del chequeo.
+        if (barraEspera) { clearInterval(barraEspera); barraEspera = null; }
         return;
       }
       // Tope en 96%: el 100% lo pone la llegada del informe, no el reloj.
-      relleno.style.width = Math.min(96, (ido / ESPERA_ESTIMADO_MS) * 100).toFixed(1) + '%';
+      const ancho = Math.min(96, (ido / ESPERA_ESTIMADO_MS) * 100).toFixed(1) + '%';
+      relleno.style.width = ancho;
+      rellenoF.style.width = ancho;
       let actual = 0;
       while (actual < cortes.length && ido >= cortes[actual]) actual++;
       pasos.forEach(function (li, i) {
         li.classList.toggle('ahora', i === actual);
         li.classList.toggle('hecho', i < actual);
       });
+      const paso = pasos[Math.min(actual, pasos.length - 1)];
+      if (paso) textoF.textContent = paso.textContent;
     };
     pintar();
     barraEspera = setInterval(pintar, 400);
