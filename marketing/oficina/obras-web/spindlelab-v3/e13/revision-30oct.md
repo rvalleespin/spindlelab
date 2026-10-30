@@ -71,3 +71,11 @@ Ramón: «las frases no las entiendo. los puntos que entiendo son: el yo suelto 
 - «el código de cada entrega lo revisa y lo aprueba él»: hoy no se muestra en pantalla (el párrafo 3 no se pinta); no hay nada que decidir hasta que se muestre.
 - «a tu nombre» y entrega del código: era solo borrador; no está en el sitio y no se escribe mientras Ramón no confirme esos dos hechos.
 - «lo único que es tuyo», «Google y las IA pueden leerlo y citarlo» y los botones: se quedan como están; son decisiones suyas o de la otra sesión.
+
+## 7 · Segunda respuesta de Ramón (30-oct): la frase suavizada y los dos hechos
+
+Ramón: «ahora entiendo las frases. la uno me quedo con la versión suavizada, con posibilidad de mejora. el dominio y código se le pasa completo al cliente. los logos lo veo en la sesión».
+
+1. **Frase 1: queda la versión suavizada** («…muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva»). Ramón puede mejorarla después; no está cerrada. Va en `claude/magical-franklin-ckfki2` (Quién está detrás, en `home.quien.*`); en `claude/v3-modelo-nuevo` esa frase no existe.
+2. **Los dos hechos quedan confirmados por Ramón: el dominio queda a nombre del cliente y el código se le entrega completo.** Hechos corroborados: la skill de cotizaciones ya dice «todo contratado a nombre del cliente» (`.claude/skills/cotizaciones/SKILL.md`, línea 50) y en el caso Combeau el sitio vive en la cuenta de GitHub de Bernardo. Ya se pueden escribir. **Texto propuesto** para la otra rama (la columna «En tu sitio» de la sección 2 y, si Clara quiere, una línea en /servicios/desarrollo-web/): «Va en tu dominio, a tu nombre. Y te entregamos el código completo.» Es afirmación de hechos (no de resultados): Javiera debe comprobar en el cierre que ninguna otra página diga lo contrario (hoy no hay ninguna: «Publicamos el sitio en tu dominio» y «Para publicar, acceso a tu dominio» son compatibles). Esto refuerza el titular: es el argumento de propiedad más fuerte de la home.
+3. **Logo:** lo mira Ramón en la sesión de la otra rama; no hay nada que hacer aquí. Cuando elija, hay que regenerar las ~25 imágenes al compartir (llevan la cruz de la i horneada).
