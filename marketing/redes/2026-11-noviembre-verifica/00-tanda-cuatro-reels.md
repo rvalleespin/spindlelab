@@ -206,39 +206,46 @@ lo "arregle" al revés más adelante.
 Facebook/Instagram antes de que el visitante acepte nada. Casi la mitad.
 **Rubro pagado más cercano:** Restaurantes. **Sale primero.**
 
-> Tu café paga publicidad en **Instagram**. / Una clienta la **ve**, / le gusta, / y entra a tu
-> sitio a mirar la **carta**. //
+> Tu café paga publicidad en **Instagram**. / Una clienta la **ve** / y entra a tu **sitio**. //
 >
-> No alcanzó a tocar **nada** / y en su teléfono ya quedó / una cookie de **Facebook**. / La puso tu
-> **sitio**, / y sirve para reconocerla después / y medir tu **publicidad**. //
+> No alcanzó a tocar **nada** / y ya quedó en su teléfono / una cookie de **Facebook**. / La puso tu
+> **sitio**, / para medir tu **publicidad**. //
 >
-> Ella nunca dijo que **sí**. / Nadie le **preguntó**. //
+> Ella nunca dijo que **sí**. //
 >
 > Revisamos treinta y seis sitios / de cafés y pastelerías en **Chile**, / y en casi la **mitad**
 > pasa eso **mismo**. //
 >
-> El arreglo es **chico**. / Un aviso que le **pregunte**. / Si dice que **sí**, / mides igual que
-> **siempre**. / Si dice que **no**, / tu café sigue funcionando **igual**. //
+> Y eso va a tener que **cambiar**. / La ley de datos personales / va a pedir que le **preguntes**
+> antes. / Lo que se discute en el Senado / es desde **cuándo**. //
 >
-> Hice un chequeo **gratis** / que te dice si el tuyo lo **tiene**. / Soy **Ramón**, de SpindleLab.
+> Preguntar es una **línea** abajo de tu sitio. / Si ella dice que **sí**, / sigues midiendo tu
+> **publicidad**. / Si dice que **no**, / tu café funciona **igual**. //
+>
+> Hice un chequeo **gratis** / que te dice si el tuyo **pregunta**. / Soy **Ramón**, de SpindleLab.
 > //
 
-**113 palabras.** A ritmo hablado, 38 a 42 segundos.
+**129 palabras. 45 segundos**, en el techo del formato. Si hay que acortarlo, lo que sale es la
+línea del Senado, y el costo es que la objeción de la postergación queda sin respuesta. Esa la
+decide Ramón: recortar por cuenta propia para cuadrar un número de palabras es justo lo que rompió
+la versión 3.
 
-**Versión 2, del 30-oct.** La primera se cayó entera con los otros tres; el diagnóstico está en la
-sección 8. Lo que esta hace distinto: la clienta entra en la segunda línea y no se suelta hasta la
-cifra, *"la puso tu sitio"* traslada la responsabilidad del sitio a su dueño, *"ella nunca dijo que
-sí"* es el costo dicho sin amenazar a nadie, la cifra va pegada a lo que cuenta, y el arreglo es un
-objeto que se puede ver con la objeción muerta en la misma frase.
+**Versión 4, del 30-oct.** Las tres anteriores y por qué se cayeron, en la sección 8.
 
 **Texto en pantalla**
 
-| Tarjeta | Etiqueta | Línea grande | Cuerpo |
-|---|---|---|---|
-| 1 | — | LA COOKIE / ENTRA ANTES / QUE EL CLIENTE. | Pagas publicidad en Instagram y el sitio ya la guardó. |
-| 2 | **16 de 36** *(lima)* | CASI LA MITAD. | De los sitios de cafés y pastelerías que revisamos en Chile. |
-| 3 | — | NO APAGUES / LA PUBLICIDAD. | Pregunta primero y mide después. |
-| 4 | *cierre* | — | `recuadro-sitio-*.png` de `05-overlays-video`, con el dominio |
+Cinco tarjetas, no cuatro: el guion 4 tiene un tramo más. La tarjeta 1 lleva la tesis mientras la
+voz cuenta la escena, que es lo que hace que la pieza se entienda con el sonido apagado.
+
+| Tarjeta | Tramo | Etiqueta | Línea grande | Cuerpo |
+|---|---|---|---|---|
+| 1 | 0 a 11 s | — | ELLA NUNCA / DIJO QUE SÍ. | La cookie de Facebook entró sola, al abrir tu sitio. |
+| 2 | la cifra | **16 de 36** *(lima)* | CASI LA MITAD. | De los sitios de cafés y pastelerías que revisamos en Chile. |
+| 3 | la ley | — | SE DISCUTE / DESDE CUÁNDO. / NO EL PERMISO. | La ley de datos personales va a pedir que preguntes antes. |
+| 4 | el arreglo | — | UNA LÍNEA / ABAJO DE / TU SITIO. | Si dice que sí, mides igual. Si dice que no, tu café funciona igual. |
+| 5 | cierre | — | — | `recuadro-sitio-*.png` de `05-overlays-video`, con el dominio |
+
+Lima: solo la etiqueta de la cifra y el dominio del cierre. Dos usos.
 
 **Caption (plural, cuenta de empresa)**
 
@@ -527,3 +534,42 @@ sitio → la cifra, pegada a eso → el arreglo como objeto, con la objeción mu
 que sirve. Contabilidad hay que darlo vuelta entero, porque hoy su protagonista es un enlace que
 falta y un enlace que falta no le pasa a nadie. El tutorial tiene otro defecto, no este: son seis
 instrucciones seguidas con el premio al final, y el premio va primero.
+
+### 30-oct-2026 · versión 2: el problema sin motivo (sobrecorrección mía)
+
+Ramón: *"me gusta pero no queda claro por qué es importante hacer este cambio. recuerda que como
+guionista tus textos deben estar hechos para la venta."*
+
+**Saqué la ley completa cuando el aviso del 28-oct solo decía no anclar en la fecha.** Con eso saqué
+la razón para actuar, y quedó un guion que describe un problema y ofrece un arreglo sin decir nunca
+por qué habría que hacerlo. Eso no es un guion de venta.
+
+**La ley sin fecha sí se puede decir**, y es textualmente cómo lo describe el Senado: el proyecto
+posterga la vigencia *"sin modificar sus obligaciones sustantivas"*. Cambia el cuándo, no el qué.
+
+**La regla:** entre el problema y el arreglo va un tramo de "¿y qué?", y ese tramo es el que vende.
+Orden que queda: **problema, prueba, motivo, arreglo.** La prueba (la cifra) va pegada al problema;
+el motivo (la ley, sin fecha) va después, porque es lo que convierte un dato en una razón.
+
+### 30-oct-2026 · versión 3: el tramo del arreglo, ilegible
+
+Ramón: *"se ve como muy duro, por ejemplo, muy guía... es un aviso que pregunta, aquí dice que sí,
+no me da igual que siempre, una tarde de trabajo, esa parte está muy, no se entiende nada"*.
+
+Dos defectos, los dos míos y los dos evitables:
+
+1. **Tres ideas en diecinueve palabras.** *"Es un aviso que pregunta. Al que dice que sí lo mides
+   igual que siempre. Una tarde de trabajo."* son tres cosas distintas (qué es el arreglo, que la
+   medición sobrevive, que es barato) y ninguna alcanza a explicarse. Más *"una tarde de trabajo"*,
+   que es un fragmento sin verbo usado como golpe, prohibido por el manual.
+   **Causa real: estaba recortando para cuadrar el largo y recorté la comprensión.** Si el guion se
+   pasa de largo, se saca una idea entera, no palabras de todas.
+2. **El tramo de la ley perdió a la clienta.** Desaparece ella y aparecen "la ley" y "el Senado":
+   dos frases de información institucional sin nadie adentro, y eso es lo que suena a guía.
+   **La regla: la clienta no se suelta hasta la última línea**, ni en el tramo de la ley, porque el
+   permiso es a ella. *"Va a pedir que le preguntes antes"*, no *"va a pedir el consentimiento del
+   titular"*.
+
+**Y una frase por idea en el tramo del arreglo.** Una línea abajo del sitio. Si dice que sí, mides.
+Si dice que no, el café funciona igual. El precio del esfuerzo se fue al caption, donde hay espacio
+para explicarlo.
