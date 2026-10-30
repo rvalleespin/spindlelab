@@ -30,7 +30,7 @@ import { ESTADOS, transicionValida } from './pedidos.js';
 const COLUMNAS_CREAR = [
   'id', 'creado_en', 'estado', 'dominio', 'url_medida',
   'senales_contratadas', 'senales_fuera', 'informe_json', 'monto_neto', 'monto_total',
-  'correo', 'consentido_en', 'politica_version', 'mp_order_id',
+  'correo', 'consentido_en', 'politica_version', 'mp_order_id', 'flow_token',
   'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
 ];
 
@@ -58,6 +58,8 @@ export async function crearPedido(db, datos) {
     consentido_en: datos.consentido_en ?? null,
     politica_version: datos.politica_version ?? null,
     mp_order_id: datos.mp_order_id ?? null,
+    // Igual que arriba: ambas nacen en null y la que se llene dice con que pasarela se abrio.
+    flow_token: datos.flow_token ?? null,
     utm_source: datos.utm_source ?? null,
     utm_medium: datos.utm_medium ?? null,
     utm_campaign: datos.utm_campaign ?? null,
@@ -111,7 +113,7 @@ function hidratar(f) {
  * de afuera.
  */
 const EXTRA_PERMITIDO = new Set([
-  'mp_payment_id', 'mp_order_id', 'pagado_en', 'entregado_en', 'informe_final_json',
+  'mp_payment_id', 'mp_order_id', 'flow_token', 'pagado_en', 'entregado_en', 'informe_final_json',
 ]);
 
 /**

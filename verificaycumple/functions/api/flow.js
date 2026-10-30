@@ -21,7 +21,7 @@
  * Fuente: https://www.flow.cl/docs/api.html — leída el 29-oct-2026 antes de escribir una línea.
  */
 
-import { ESTADOS } from './pedidos.js';
+import { ESTADOS, ACCIONES as ACCIONES_FLOW } from './pedidos.js';
 
 /** Dónde vive la API. El sandbox no mueve plata; producción sí. */
 export const BASE_SANDBOX = 'https://sandbox.flow.cl/api';
@@ -222,8 +222,10 @@ const TEXTO_FLOW = {
   3: 'Flow rechazó el pago.',
 };
 
-/** Las acciones, con los mismos nombres que ya usa el webhook. */
-export const ACCIONES_FLOW = { MARCAR: 'marcar', REVISAR: 'revisar', NADA: 'nada', IGNORAR: 'ignorar' };
+// Las acciones son las mismas para toda pasarela y viven en `pedidos.js`. Se reexporta el
+// MISMO objeto con el nombre que ya usan las pruebas y el endpoint de confirmación: son el
+// mismo hecho, no una copia que pueda divergir.
+export { ACCIONES_FLOW };
 
 /** Un monto de Flow puede venir como número o como string. Se compara en enteros o no se compara. */
 function montoDe(v) {

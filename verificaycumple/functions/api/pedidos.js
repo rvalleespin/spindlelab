@@ -30,6 +30,22 @@
  */
 
 /** Los estados por los que pasa un pedido, y nada más. */
+/**
+ * Qué hacer con un pedido ante una notificación. Es el vocabulario que hablan TODAS las
+ * pasarelas y el webhook.
+ *
+ * ⚠️ Vive acá, y no en el módulo de una pasarela, porque es de todas. Estuvo duplicado entre
+ * `cobro.js` y `flow.js` un rato: los valores coincidían, pero eran dos constantes del mismo
+ * hecho. El día que alguien cambiara una, las comparaciones del otro módulo dejarían de calzar
+ * y ningún pago se marcaría — sin error, sin excepción, sin nada que mirar.
+ */
+export const ACCIONES = {
+  MARCAR: 'marcar',        // hay que cambiar el estado del pedido
+  NADA: 'nada',            // todo en orden, no hay nada que cambiar
+  IGNORAR: 'ignorar',      // la notificación no es para nosotros
+  REVISAR: 'revisar',      // algo no calza: no se toca el pedido y se avisa
+};
+
 export const ESTADOS = {
   CREADO: 'creado',        // existe el pedido y la orden en Mercado Pago; nadie pagó todavía
   PENDIENTE: 'pendiente',  // está pagando con un medio que no acredita al instante
@@ -367,9 +383,14 @@ CREATE TABLE IF NOT EXISTS pedidos (
   consentido_en       TEXT,
   politica_version    TEXT,
 
-  -- Mercado Pago
+  -- La pasarela. NO hay una columna que diga cual se uso, a proposito: la referencia misma lo
+  -- dice. Un pedido con flow_token se abrio con Flow, uno con mp_order_id con Mercado Pago, y
+  -- asi un cambio de proveedor con pedidos en vuelo relee cada uno contra el suyo. Una tercera
+  -- columna con el nombre seria el mismo hecho escrito dos veces, y dos constantes del mismo
+  -- hecho se contradicen en silencio.
   mp_order_id         TEXT,
   mp_payment_id       TEXT,
+  flow_token          TEXT,
   pagado_en           TEXT,
 
   -- De dónde vino, entero

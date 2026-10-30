@@ -45,6 +45,9 @@ import {
 import {
   crearOrdenMP, leerOrdenMP, decidirDesdeOrden, pagoDeLaOrden, ACCIONES, tacharCorreos,
 } from './cobro.js';
+import {
+  crearPagoFlow, leerPagoFlow, decidirDesdeFlow, credencialesFlow,
+} from './flow.js';
 import { avisarVenta } from './aviso.js';
 import { enviarCorreoDePago } from './correo.js';
 
@@ -105,12 +108,79 @@ const ORDEN_MUERTA = new Set(['expired', 'canceled', 'failed']);
  * de seguridad sobre la lectura de una pantalla, no puede romperla. El webhook sigue siendo el
  * camino principal.
  */
+/**
+ * Qué pasarela abre los pagos NUEVOS.
+ *
+ * ── POR QUÉ ES CONMUTABLE Y NO UNA DECISIÓN ESCRITA EN EL CÓDIGO (29-oct-2026) ──────────
+ *
+ * Porque hoy ninguna de las dos puede cobrar, y por motivos distintos que se resuelven en
+ * momentos distintos. Mercado Pago rechaza crear órdenes con un 403 de cuenta y contestó por
+ * escrito que no tiene plazo. Flow funciona de punta a punta en el sandbox, pero cobrar de
+ * verdad necesita una cuenta de producción que ellos tienen que aprobar.
+ *
+ * Con un `if` escrito en el código, el día que CUALQUIERA de las dos se destrabe habría que
+ * programar, probar y desplegar para aprovecharlo. Con un dato, se cambia el dato.
+ *
+ * ⚠️ Esto NO es «dos constantes del mismo hecho»: el hecho es uno —quién cobra— y vive en un
+ * solo lugar. Lo que hay son dos implementaciones de un mismo contrato.
+ *
+ * El valor por defecto es `flow` porque es la decisión que está tomada. Y un valor que no se
+ * reconozca cae en Flow también, no en Mercado Pago: un `PASARELA` mal escrito no debería
+ * mandar los cobros a la pasarela que sabemos bloqueada.
+ */
+export function pasarelaDe(env) {
+  return String((env && env.PASARELA) || '').trim().toLowerCase() === 'mp' ? 'mp' : 'flow';
+}
+
+/**
+ * Relee un pago contra la pasarela CON LA QUE SE ABRIÓ ESE PEDIDO, no contra la configurada hoy.
+ *
+ * ⚠️ La diferencia importa el día del cambio. Si se mira `PASARELA` en vez de la fila, todos
+ * los pedidos abiertos con el proveedor anterior se preguntarían al nuevo, que no los conoce:
+ * pagos reales quedando sin marcar justo durante la migración, que es cuando menos se mira.
+ *
+ * Por eso lo decide la referencia que el pedido tiene escrita, y por eso no hay una columna
+ * con el nombre de la pasarela: la referencia ya lo dice.
+ */
+async function releerPago(env, pedido) {
+  if (pedido.flow_token) {
+    const credenciales = credencialesFlow(env);
+    if (!credenciales.apiKey || !credenciales.secretKey) return null;
+    const lectura = await leerPagoFlow(pedido.flow_token, credenciales);
+    if (!lectura.ok) return { ok: false, error: lectura.error, estadoHttp: lectura.estadoHttp };
+    // `redecidir` deja volver a preguntar con la MISMA vista del pago contra una fila que
+    // cambió debajo. Va acá, y no en el llamador, porque es lo único que sabe qué proveedor
+    // contestó: sin esto el llamador tendría que mirar la pasarela otra vez, que es el
+    // acoplamiento que esta función existe para quitar.
+    return {
+      ok: true, extra: {},
+      decision: decidirDesdeFlow({ pedido, pago: lectura.pago }),
+      redecidir: (otro) => decidirDesdeFlow({ pedido: otro, pago: lectura.pago }),
+    };
+  }
+  if (pedido.mp_order_id && env.MP_ACCESS_TOKEN) {
+    const lectura = await leerOrdenMP(pedido.mp_order_id, env.MP_ACCESS_TOKEN);
+    if (!lectura.ok) return { ok: false, error: lectura.error, estadoHttp: lectura.estadoHttp };
+    const extra = { mp_order_id: lectura.orden.id || pedido.mp_order_id };
+    const pago = pagoDeLaOrden(lectura.orden);
+    if (pago && pago.id) extra.mp_payment_id = String(pago.id);
+    return {
+      ok: true, extra,
+      decision: decidirDesdeOrden({ pedido, orden: lectura.orden }),
+      redecidir: (otro) => decidirDesdeOrden({ pedido: otro, orden: lectura.orden }),
+    };
+  }
+  return null;
+}
+
 async function reconciliar(env, pedido, esperar) {
   // Solo donde Mercado Pago puede saber algo que nosotros no. `convieneRefrescar` ya define
   // exactamente eso —`pendiente`, o `creado` con orden abierta— y es la misma regla que decide
   // si la pantalla se repregunta. Que sean la misma no es casualidad: preguntar cuando la
   // pantalla ya no espera nada sería gastar llamadas sin que nadie las mire.
-  if (!convieneRefrescar(pedido) || !pedido.mp_order_id || !env.MP_ACCESS_TOKEN) return pedido;
+  // Sirve para cualquier pasarela: lo que hace falta es que el pedido tenga una referencia con
+  // la que preguntar, y `releerPago` elige el proveedor a partir de cuál tiene.
+  if (!convieneRefrescar(pedido) || !(pedido.flow_token || pedido.mp_order_id)) return pedido;
 
   // Sin KV no hay freno, y sin freno cada repregunta de la pantalla sería una llamada saliente
   // —y el enlace del pedido lo abren también los clientes de correo, que precargan—. Acá se
@@ -125,13 +195,14 @@ async function reconciliar(env, pedido, esperar) {
     return pedido;
   }
 
-  const lectura = await leerOrdenMP(pedido.mp_order_id, env.MP_ACCESS_TOKEN);
+  const lectura = await releerPago(env, pedido);
+  if (!lectura) return pedido;
   if (!lectura.ok) {
-    console.log(`[pedido] no se pudo releer la orden de ${pedido.id}: ${lectura.error}`);
+    console.log(`[pedido] no se pudo releer el pago de ${pedido.id}: ${lectura.error}`);
     return pedido;
   }
 
-  const decision = decidirDesdeOrden({ pedido, orden: lectura.orden });
+  const decision = lectura.decision;
   if (decision.accion !== ACCIONES.MARCAR) {
     // REVISAR es el caso que hay que poder ver: significa que la orden dice algo que no calza
     // con lo que vendimos, y eso lo tiene que mirar una persona.
@@ -141,9 +212,7 @@ async function reconciliar(env, pedido, esperar) {
     return pedido;
   }
 
-  const extra = { mp_order_id: lectura.orden.id || pedido.mp_order_id };
-  const pago = pagoDeLaOrden(lectura.orden);
-  if (pago && pago.id) extra.mp_payment_id = String(pago.id);
+  const extra = { ...lectura.extra };
   if (decision.estado === ESTADOS.PAGADO) extra.pagado_en = new Date().toISOString();
 
   let estadoFinal = decision.estado;
@@ -175,7 +244,7 @@ async function reconciliar(env, pedido, esperar) {
     try { actual = await leerPedido(env.VYC_PEDIDOS, pedido.id); } catch { actual = null; }
     if (!actual) return pedido;
 
-    const reintento = decidirDesdeOrden({ pedido: actual, orden: lectura.orden });
+    const reintento = lectura.redecidir(actual);
     if (reintento.accion !== ACCIONES.MARCAR) {
       // No hay nada que alcanzar: o el pedido ya está donde corresponde, o esta vista de la
       // orden es más vieja que lo guardado. Las dos son correctas y se devuelve lo que hay.
@@ -633,7 +702,40 @@ export async function onRequestPost(contexto) {
         } catch { vencida = null; }
 
         let cerrada = { movido: false };
-        if (vencida && vencida.mp_order_id && env.MP_ACCESS_TOKEN) {
+
+        // ── LA MISMA PREGUNTA PARA FLOW, Y UN CASO QUE NO SE PUEDE COPIAR A CIEGAS ──────
+        //
+        // Reusar: el pago anterior sigue pendiente (Flow lo da por `1`), o sea que su enlace
+        // todavía sirve y mandar a la persona ahí es mejor que abrirle un segundo cobro.
+        //
+        // Cerrar: el pago anterior fue rechazado. Ahí la fila no sirve para nada.
+        //
+        // ⚠️ **Y UN TERCER CASO QUE NO EXISTÍA CON EL OTRO PROVEEDOR: que el pago anterior
+        // esté PAGADO.** Un pedido en `creado` cuyo pago Flow da por cobrado significa que la
+        // confirmación no llegó o falló. Cerrarlo sería marcar como rechazada una venta que
+        // entró, y la plata ya está del otro lado. Así que no se cierra: se deja la fila viva
+        // para que la reconciliación de la pantalla o el aviso de revisión la recojan, y se le
+        // abre un pago nuevo a la persona. Perder un cobro por no cerrar una fila es
+        // recuperable; cerrar una venta cobrada no lo es.
+        if (vencida && vencida.flow_token) {
+          const lectura = await releerPago(env, vencida);
+          if (lectura && lectura.ok) {
+            const d = lectura.decision;
+            if (d.accion === ACCIONES.NADA) {
+              console.log(`[pedido] compra abierta ${vencida.id} sigue pendiente en Flow: se reusa`);
+              idPedido = vencida.id;
+              puesto = { creado: false, reusado: true };
+            } else if (d.estado !== ESTADOS.RECHAZADO) {
+              // Ni pendiente ni rechazada: no la tocamos.
+              console.log(`[pedido] compra abierta ${vencida.id} NO se cierra: Flow dice ${d.motivo}`);
+              vencida = null;
+            }
+          } else if (lectura && !lectura.ok) {
+            console.log(`[pedido] no se pudo consultar el pago de ${vencida.id}: ${lectura.error}`);
+            return jsonPost({ ok: false, motivo: 'no-se-pudo-consultar',
+              detalle: 'No pudimos comprobar el estado de tu compra anterior. No se te cobró nada. Inténtalo de nuevo en un momento.' }, 409);
+          }
+        } else if (vencida && vencida.mp_order_id && env.MP_ACCESS_TOKEN) {
           const lectura = await leerOrdenMP(vencida.mp_order_id, env.MP_ACCESS_TOKEN);
           const estadoOrden = lectura.ok && lectura.orden ? lectura.orden.status : null;
           if (lectura.ok && !ORDEN_MUERTA.has(String(estadoOrden))) {
@@ -676,6 +778,84 @@ export async function onRequestPost(contexto) {
 
   // ── Abrir el pago ─────────────────────────────────────────────────────────────────────
   const base = `${url.protocol}//${url.host}`;
+  const pasarela = pasarelaDe(env);
+
+  // ── FLOW ──────────────────────────────────────────────────────────────────────────────
+  //
+  // Va primero y sale por su cuenta, para no tocar una línea del camino de Mercado Pago, que
+  // está probado y puede volver a ser el que cobre.
+  if (pasarela === 'flow') {
+    // El mismo cobro del tope que hace el otro camino, y en el mismo momento: justo antes de
+    // la llamada saliente, que es lo que el tope existe para proteger.
+    if (kv && claveTope) {
+      try { await contar(kv, claveTope, TOPE_PEDIDOS_IP_DIA, TTL_TOPE_S); } catch {}
+    }
+
+    const creada = await crearPagoFlow({
+      idPedido,
+      correo,
+      monto: MONTO_TOTAL,
+      titulo: TITULO_KIT,
+      urls: {
+        // Server a server: acá Flow avisa el resultado, y es lo único que mueve el pedido.
+        confirmacion: `${base}/api/flow-confirmacion`,
+        // Y acá vuelve la PERSONA. No decide nada; solo la lleva a su pantalla.
+        // ⚠️ No apunta a `/pedido/` directo porque Flow vuelve con un POST y esa página es
+        // estática: Cloudflare contesta 405 con cero bytes. Ver `flow-vuelta.js`.
+        vuelta: `${base}/api/flow-vuelta?id=${encodeURIComponent(idPedido)}`,
+      },
+      // La misma vigencia que la orden del otro proveedor, derivada de la misma constante: dos
+      // pasarelas que caducan distinto serían dos reglas para el mismo trato.
+      timeoutSegundos: VIGENCIA_ORDEN_HORAS * 3600,
+    }, credencialesFlow(env));
+
+    if (!creada.ok) {
+      // El pedido se queda en `creado` SIN token. No se borra: la fila es el único registro de
+      // que alguien intentó comprar, y `etapaDelPedido` ya distingue ese caso.
+      //
+      // Se registra el detalle que devuelve Flow —su `code` y su `message`— porque un error que
+      // no se puede diagnosticar desde afuera obliga a adivinar. Nunca las credenciales, y los
+      // correos tachados: el cuerpo es de ellos, pero una API que valida puede devolver el
+      // campo que no le gustó, y el correo del comprador es uno de los que mandamos.
+      let detalleFlow = '(sin cuerpo)';
+      try { detalleFlow = tacharCorreos(JSON.stringify(creada.detalleFlow)).slice(0, 400); } catch {}
+      console.log(`[pedido] Flow rechazó el pago ${idPedido}: ${creada.error} · ${detalleFlow}`);
+
+      return jsonPost({
+        ok: false, motivo: 'no-se-pudo-abrir-el-pago', id: idPedido,
+        codigo: creada.error || null,
+        // ⚠️ EL TEXTO DEPENDE DE SI SABEMOS O NO. «No se te cobró nada» es una afirmación sobre
+        // la plata de alguien. Si la petición se cortó por tiempo o por red, el pago PUEDE
+        // haberse creado del otro lado y no alcanzamos a leer la respuesta: ahí lo honesto es
+        // decir que no lo pudimos confirmar, no tranquilizar con algo que no sabemos.
+        detalle: creada.estadoHttp > 0
+          ? 'No pudimos abrir el pago. No se te cobró nada. Vuelve a intentarlo en un momento, ' +
+            'y si te pasa de nuevo escríbenos con este enlace.'
+          : 'No alcanzamos a confirmar el pago. Si ves un cargo, escríbenos con este enlace y lo ' +
+            'revisamos de inmediato; si no ves nada, puedes volver a intentarlo.',
+      // 409 y no 502: Cloudflare reemplaza los 5xx de una Function por su propia página de
+      // texto plano, el navegador no la puede parsear y la persona termina leyendo «revisa tu
+      // conexión» cuando el problema era nuestro.
+      }, 409);
+    }
+
+    try {
+      // `creado → creado` es una transición válida a propósito, y existe exactamente para esto.
+      await marcarEstado(env.VYC_PEDIDOS, idPedido, ESTADOS.CREADO, ESTADOS.CREADO, {
+        flow_token: String(creada.token),
+      });
+    } catch {
+      // El pago ya existe y la persona puede pagar; no guardar el token es molesto, no grave:
+      // la confirmación encuentra el pedido por `commerceOrder`, no por esta columna.
+    }
+
+    // ⚠️ La clave se sigue llamando `checkout_url` a propósito: es el contrato con la página,
+    // que ya la lee con ese nombre. Renombrarla acá obligaría a tocar el navegador para no
+    // ganar nada, y es el tipo de cambio que rompe el checkout sin que ninguna prueba lo vea.
+    return jsonPost({ ok: true, id: idPedido, checkout_url: creada.destino });
+  }
+
+  // ── MERCADO PAGO ──────────────────────────────────────────────────────────────────────
   const destino = `${base}/pedido/?id=${encodeURIComponent(idPedido)}`;
   let orden;
   try {

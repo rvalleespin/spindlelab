@@ -37,7 +37,7 @@
  *   orden falla de forma rara, esto es lo primero que hay que mirar.
  */
 
-import { ESTADOS, transicionValida } from './pedidos.js';
+import { ESTADOS, transicionValida, ACCIONES } from './pedidos.js';
 
 /**
  * El enum literal de `status` de /v1/payments/{id}, con lo que significa cada uno.
@@ -56,12 +56,12 @@ export const ESTADOS_MP = {
   charged_back: 'Contracargo en la tarjeta',
 };
 
-export const ACCIONES = {
-  MARCAR: 'marcar',        // hay que cambiar el estado del pedido
-  NADA: 'nada',            // todo en orden, no hay nada que cambiar
-  IGNORAR: 'ignorar',      // la notificación no es para nosotros
-  REVISAR: 'revisar',      // algo no calza: no se toca el pedido y se avisa
-};
+// El vocabulario de acciones vive en `pedidos.js`: lo hablan todas las pasarelas, no solo
+// esta. Se reexporta para no romper a quien ya lo importa desde acá.
+// ⚠️ Se IMPORTA arriba y se exporta acá, no `export {...} from`: un reexport puro no crea
+// binding local, y este módulo usa `ACCIONES` internamente. `node --check` no lo ve, porque
+// no es sintaxis sino ámbito — lo encontró la batería al reventar tres archivos.
+export { ACCIONES };
 
 /**
  * A qué estado nuestro lleva cada estado de Mercado Pago.
