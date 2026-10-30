@@ -1,4 +1,8 @@
-# Acta de QA · SpindleLab, sitio nuevo · cambios del 30-oct · vuelta 1
+# Acta de QA · SpindleLab, sitio nuevo · cambios del 30-oct · vueltas 1 y 2
+
+> **Vuelta 2 (la última), sobre `4d794419`: al final de esta acta.** Veredicto: **Aprobado con reparos.** Los mayores 1 y 2 y
+> nueve menores quedan cerrados y medidos; siguen abiertos solo los cuatro que decide Ramón (mayor 3, menores 5, 6 y 7), con su
+> reparo y su plazo. Lo de abajo, hasta «Vuelta 2», es la vuelta 1 tal como se firmó.
 
 > La escribe Javiera (`/web-qa-critico`) en contexto limpio (subagente): leyó lo que decidió Ramón el 30-oct (el encargo de la orquestadora), `desvios/texto-30oct.md` (Clara), `desvios/construccion-30oct.md` (Diego), la fila del 30-oct de `spec-visual.md` §7, `spec-home.md` §6 y §12, el brief de E13 y el acta de E13 (`acta-qa.md`) para medir igual que antes. No vio cómo se construyó. No arregló nada: lo único que escribe en el repositorio es esta acta, `capturas-qa-30oct/` y `lectura-fria/30oct/`, que son su evidencia.
 
@@ -239,3 +243,134 @@ PRUEBAS    ver abajo
 - `e13/capturas-qa-30oct/` (9 JPEG, de 30 a 133 kB): `01` y `02` primera pantalla con el aviso abierto (bien); `03` el foco de los dos botones amarillos (bien); `04` el logo a 16, 24 y 48 px y los favicon e iconos (bien); `05` dos logos en las tarjetas al compartir (mayor 2); `06` las tres tarjetas regeneradas (bien); `07` la sección 2 y «Para quién» a 1440 (bien; menor 7); `08` «Quién está detrás» a 1440 (menor 4, el aire entre párrafos); `09` Soluciones con el panel y el precio de entrada (menor 5).
 - `e13/lectura-fria/30oct/`: `entrada.txt` (el texto de `/` y `/contacto/` del build), `instrucciones.txt` (con la pregunta G), `lector-1..3.txt`, `lectores.json`.
 - Mis herramientas (`desborde.mjs`, `primera.mjs`, `amarillo.mjs`, `tab.mjs`, `logo.mjs`, `enlaces.py`, `utm.mjs`, `formulario.mjs`, `jsonld.mjs`, `peso.mjs`, `capturas.mjs`) y sus salidas quedaron en el scratchpad de la sesión (`…/scratchpad/javiera-30oct/`), que se borra al reiniciar: lo que importa está en esta acta.
+
+---
+
+# Vuelta 2 · 30-oct-2026, tarde
+
+> La escribe Javiera (`/web-qa-critico`) en contexto limpio (subagente). Leyó lo que se pidió el 30-oct, la vuelta 1 de esta acta, `desvios/construccion-30oct.md` §5 a §7 (lo que hizo Diego con lo de Clara, Lucía y Bruno), `desvios/texto-30oct.md`, la fila del 30-oct de `spec-visual.md` §7 y §5.4, y `spec-home.md` §6 (criterios 10, 21 y 22). No vio cómo se arregló. No arregló nada: escribe esta sección, las capturas `10` a `13` de `capturas-qa-30oct/` y `lectura-fria/30oct-v2/`.
+
+**Rama:** `claude/magical-franklin-ckfki2` · **Commit auditado:** `4d794419` (árbol limpio), sacado con `git archive` a una copia en el scratchpad y construido con `npx astro build`: **22 páginas en 3,68 s, 0 errores, 0 avisos**, más `/privacidad/` y `404.html` estáticas. Node v22.22.0, Chromium 1194 de Playwright, servidor estático local. Para calibrar el peso volví a servir los dos `dist` de la vuelta 1 (`a84a1381` y `9039b521`). `origin/main` sigue en `840dc024`. **Ronda:** segunda y última vuelta interna; lo que siga vivo va a Ramón, no a una tercera.
+
+## Veredicto de la vuelta 2
+
+**APROBADO CON REPAROS.**
+
+Lo que el equipo podía cerrar está cerrado y lo medí: **la home vuelve bajo el tope de peso** (1.398,9 kB primera carga a 1440, en tres corridas iguales, con la herramienta calibrada contra los dos builds de la vuelta 1), **las 22 tarjetas al compartir llevan la i con su disco** (la franja del logo de las 20 de texto es idéntica píxel a píxel a la de `og-e12-marca.jpg`, la que se aprobó en la vuelta 1, y las 19 rehechas subieron su `?v=`), la spec dice lo construido y sus herramientas salen con 0, `/servicios/` pone el sitio primero en lo visible, en el `ItemList` y en los «Siguiente», y los textos de oficio (8, 9, 10, 12, 13, 14, 15) están en el `dist`. **Ninguna regresión**: primera pantalla, amarillo, foco, logo, desborde, `verificar`, enlaces, UTM, formulario, JSON-LD, precios y protegidos dan lo mismo que en la vuelta 1 o mejor. **Ningún defecto nuevo.**
+
+**El reparo, con nombre y plazo:** siguen abiertos el **mayor 3** (la lectura en frío tropieza en tres frases) y los **menores 5, 6 y 7**. No son de oficio: el texto o el hecho son de Ramón, y Diego los dejó escritos como preguntas con las versiones de Clara (`desvios/construccion-30oct.md` §6). **Plazo: Ramón contesta antes de armar el corte** (`armar-corte.mjs`, lista de publicación). Lo que cambie pasa por una **QA exprés**: `extraer-texto.mjs`, build, `verificar` a 390 y 1440, **peso de la home** (quedan **1,1 kB** de margen: casi cualquier frase que se sume lo cruza) y una lectura en frío de la home. Si Ramón decide publicar con las frases como están, lo dice por escrito y el mayor 3 queda como decisión suya, no como defecto.
+
+Conteo de la vuelta 2: **0 bloqueantes · 1 mayor abierto (3, decide Ramón) · 3 menores abiertos (5, 6 y 7, decide Ramón) · 0 nuevos.** Cerrados en esta vuelta: **mayores 1 y 2; menores 4, 8, 9, 10, 11, 12, 13, 14 y 15.**
+
+## Cómo se verificó (vuelta 2)
+
+| Qué | Comando o herramienta | Resultado |
+|---|---|---|
+| Texto con huella | `node e13/herramientas/extraer-texto.mjs --comprobar` (en el repo) | **16 de 16 «igual»**, sale con 0 |
+| Build | `npx astro build` sobre la copia de `4d794419` | 22 páginas, 0 errores, 0 avisos; pasan los guardianes de precios, nombres, largos, `.int-par`, el orden de servicios, los «Siguiente» y el nuevo del `mailto` de `/contacto/` |
+| `verificar` | `node scripts/verificar.mjs --excluir /privacidad/` y `… --ancho 1440` | **«Sin hallazgos»** a 390 y a 1440, 22 páginas, sale con 0 (6 nodos sobre imagen: la portada, igual que antes) |
+| Desborde | mi `desborde.mjs`: 22 rutas + `/privacidad/` × 360, 390, 768, 1024, 1440 y 1920, medido en la página | **0 de 138** con desborde. Igual que en la vuelta 1: la tabla del artículo de los 21 chequeos dentro de su contenedor desplazable (360 a 768) y `/privacidad/` con dos `h1` (es la de `main`) |
+| Primera pantalla | mi `primera.mjs` y `e13/herramientas/portada-30oct.mjs` sin `--inyectar` | **Idéntica a la vuelta 1 al décimo:** con aviso 181,2 · 227,2 · 231,5 · 54,6 px de margen a 360×800, 390×844, 768×1024 y 1440×900; sin aviso 333,8 · 360,9 · 346,3 · 123,6; **0 de 5 puntos tapados** en los 11 tamaños de la obra (320×568 sigue siendo la excepción de la spec §12.1). Encabezado plegado dentro de la placa en los 8 anchos |
+| El amarillo y el foco | `primera.mjs` y `amarillo.mjs` (22 rutas + `/privacidad/` + `404.html`, a 390 y 1440, con y sin aviso) | Reposo 16,20:1, al pasar 13,39:1, apretado 11,03:1, 167 ms; foco 2 px blanco a 3 px. Home **2** botones amarillos, otras 20 rutas **1**, `/contacto/` **0**; ningún otro amarillo |
+| Tab | `tab.mjs` por `/`, `/nosotros/` y `/contacto/`, 1440 y 390, con y sin aviso, Tab y Shift+Tab | 24 pasadas: **0 paradas sin indicador, 0 tapadas** |
+| Logo | `logo.mjs` (16, 24 y 48 px, 1x y 2x, favicon e iconos) y `e13/herramientas/logo-i-disco.mjs` (rehecha por Lucía) | El `<svg>` del build es **byte a byte** el de la vuelta 1 y su render a 1x y 2x es **idéntico píxel a píxel**. `logo-i-disco.mjs` sale con 0: 24 px a 1x, disco en 4 filas (0,25 · 1 · 1 · 0,44) y 1 fila limpia; 20 px a 1x, 3 filas y 1 limpia; a 2x, 3 limpias |
+| Letras que ya no se piden | mi `letras.mjs` (nueva): las 22 rutas × 390 y 1440 con el aviso abierto y después de «Rechazar» (que abre `#cookie-aviso`); primera familia computada de cada nodo con texto, caras cargadas y archivos de letra pedidos | **0 de 44** pasadas piden o dibujan Inter o Manrope. Familias en uso: Google Sans Flex y DM Mono, nada más. `#cookie-aviso` sale en Google Sans Flex. Solo `/404.html` y `/privacidad/` siguen enlazando `inter.css` (las estáticas de `main`, con su propio `<link>`) |
+| Peso | mi `peso.mjs` (el de la vuelta 1, sin cambios): CDP, caché apagada, aviso contestado, 4 s tras `networkidle` | Ver defecto 1 |
+| Tarjetas al compartir | `og:image` de cada ruta en el `dist`; comparación por píxel con PIL contra la versión de `a84a1381` y entre ellas; Read de la hoja | Ver defecto 2 y `capturas-qa-30oct/10` |
+| Enlaces internos | mi `enlaces.py` sobre el `dist` | 24 páginas, **935 referencias, 0 que no resuelven, 0 anclas sin destino**. Son 40 menos que en la vuelta 1 (975) y cuadra: −44 por las dos hojas de letras en 22 páginas, +4 por los iconos de A en `/404.html` y `/privacidad/` (5 en lugar de 3 cada una). Diego cuenta 957 con otro alcance de atributos |
+| UTM | mi `utm.mjs`: `/?utm_source=google&utm_medium=cpc&utm_campaign=qa30oct` y seis recorridos con clic real, con y sin aviso | **12 de 12** con los tres `#f-utm-*` llenos |
+| Formulario | mi `formulario.mjs` (envío interceptado, «no tengo» en el sitio) y los campos contra `origin/main` | `action`, los 12 `name` en el mismo orden y los ocultos **iguales a `main`**. La ayuda nueva va enlazada por `aria-describedby`; con «no tengo» el envío pasa y sale «Listo. Te escribimos dentro de un día hábil.» |
+| JSON-LD | mi `jsonld.mjs` (22 rutas del sitemap) | **44 bloques, 0 errores** (Diego cuenta 45 con `/privacidad/`). `FAQPage` igual a lo visible en las 16 páginas que lo tienen; home 6 de 6 con la de Instagram primera. `jobTitle` de `#autor-ramon`, uno solo en las 22: «Fundador de SpindleLab: sitios web a medida y marketing con IA». `logo` de `#org`: `icon-512.png?v=6`. `ItemList` de `/servicios/`: Desarrollo Web, Auditoría, Visibilidad, Paid Media, Redes, Acompañamiento. El `image` de cada `Article` del blog es su `og:image` (`?v=3`) |
+| Agencias, clientes y frases que no van | `grep -rIoi` sobre todo el `dist` | **0** McCann, Graphene, IPG, Universal, LATAM, Incrementa, Maggiore, «ocho marcas», «cuatro países», «soy yo», «pocos proyectos», «Te llegan consultas», «Pedir la revisión de una página», «Dónde puede caerse», «spindle es», «huso», «leerlo y citarlo» |
+| Barrido de términos y rayas | `node e13/herramientas/barrer-terminos.mjs <dist> --resumen` (30 archivos) | **0 rayas**, 0 «posicionamiento anterior», 0 «¿Listo para…?», 0 «sin compromiso», 0 promesa de citación. «agentes de IA» 3 (home y `/nosotros/`, donde vive). «mini-diagnóstico» 25 y «motor» 102 (el slug del artículo y «motores de IA»), como en la vuelta 1 |
+| Precios | importes visibles y `price`/`minPrice`/`maxPrice` del JSON-LD, página por página, contra el `dist` de `a84a1381` (que la vuelta 1 ya comparó con `origin/main`) | **0 páginas distintas** (82 importes visibles, 15 en JSON-LD). `oferta-v3.json` y `servicios-v3.json` sin diferencias |
+| Protegidos | `git diff origin/main -- spindlelab-astro/functions spindlelab-astro/public/_headers spindlelab-astro/public/_redirects spindlelab-astro/public/js` | **0 bytes.** Y contra `9039b521` y `a84a1381`, también `public/assets/js` (con `v3-contacto.js`): 0 bytes |
+| `Layout.astro` | `git diff 9039b521 HEAD` y `git diff origin/main HEAD`, filtrando gtag, consentimiento y Pixel | **No es solo lo de E13:** trae 4 líneas más, el ramal `letras` sin las dos hojas (mayor 1, la opción (a) que propuse en la vuelta 1). **gtag, consentimiento y Pixel: idénticos** a los de E13 (las únicas diferencias con `main` en esos bloques son los comentarios `<!-- -->` pasados a `{/* */}`, que ya traía E13). Declarado por Diego («autorizada por la orquestadora»); esa autorización no está escrita en el repositorio: ver «Decisiones de Ramón» |
+| Ley 21.719 | `grep` de «21.719», «diciembre», «vigencia» en el `dist` y `llms.txt`; la ficha del boletín releída por mí: `curl https://tramitacion.senado.cl/wspublico/tramitacion.php?boletin=18623` (30-oct, 16:37 UTC) | Se nombra en las mismas 7 rutas. **Solo `/diagnostico/` da fecha, y calificada**; 0 «entra en vigencia». La ficha es **byte a byte la de la vuelta 1** (28-oct aprobado en general y particular, 29-oct oficio a la Cámara, segundo trámite, sin número de ley ni Diario Oficial): la frase sigue exacta |
+| Lectura en frío | `e13/herramientas/lectura-fria-texto.mjs` (el texto de `/` y `/contacto/` del build) y `lectura-fria.py` (`claude -p` en directorio vacío, sin herramientas, skills, MCP ni ajustes; una conversación por lector), con las mismas instrucciones de la vuelta 1 (pregunta G incluida) | Ver «Lectura en frío, vuelta 2». La entrada difiere de la de la vuelta 1 en **dos líneas** (la de «visitarlo y entenderlo» y la ayuda del campo) más la hora del encabezado. Íntegro en `lectura-fria/30oct-v2/` |
+| Capturas | mi `cap-v2.mjs` (por sección) y las hojas de tarjetas | `/servicios/` a 1440 entera hasta el cierre, «Quién está detrás» a 1440, la sección 2 a 1440, el formulario de `/contacto/` a 390 y las 22 tarjetas: **miradas** |
+
+## Los defectos de la vuelta 1, uno por uno
+
+| # | Sev. | Dueño | Estado | Qué medí |
+|---|---|---|---|---|
+| 1 | Mayor | Diego | **Cerrado** | **1.398,9 kB** primera carga a 1440 (tope 1.400), **1.561,7** recorrida (tope 1.600), **755,6** a 390 (tope 950); **tres corridas, el mismo número al décimo**. Calibración con la misma herramienta: `a84a1381` 1.402,1 y `9039b521` 1.399,0, los números de la vuelta 1: la diferencia es real y no ruido. La home pide 14 respuestas (antes 16: las dos hojas). Que sacar las hojas no cambió nada a la vista lo medí aparte (`letras.mjs`: 0 de 44). **Queda 1,1 kB de margen**: es la condición del reparo |
+| 2 | Mayor | Diego (corte de Bruno) | **Cerrado** | Las 22 rutas apuntan a su tarjeta con **una sola versión**; las 19 rehechas subieron uno (`?v=` de 1→2, 2→3 o 3→4) y las 3 de la vuelta 1 siguen en `?v=3` sin cambiar el archivo; **0 referencias a versiones viejas**. La **franja del logo** de las 20 de texto es **idéntica píxel a píxel** (media 0,00, máximo 0) a la de `og-e12-marca.jpg`, y la de `/trabajo/` a la de Combeau. **Fuera del logo**, contra la versión de `a84a1381`: media 0,00 en 6 y 0,59 a 1,84 en 13, con las diferencias solo en el borde de las letras (mismo texto, otro suavizado). 24 a 66 kB cada una. `capturas-qa-30oct/10` |
+| 3 | Mayor | Clara propone, **decide Ramón** | **Abierto** | No se tocó (§6.1 de `construccion-30oct.md`, con A1/A2, B1 a B3 y C1/C2). Re-medido en la lectura en frío: «agentes de IA» **3 de 3** otra vez (para 1 de 3 entre sus tres frenos: L2 «dependencia de una sola persona y de la IA»; L3 «¿quién me hace el sitio, entonces?»); el rótulo «marketing con IA» **1 de 3** (antes 2); «sin plantillas ni WordPress» **3 de 3** (antes 2). Es la cuarta lectura en que tropieza «agentes de IA». **Ya está escalado con diagnóstico**; no vuelve a una vuelta interna: se cierra con la elección de Ramón y la QA exprés |
+| 4 | Menor | Lucía | **Cerrado** | `spec-visual.md` §5.4 dice lo construido (el `d` de Bruno, `?v=6`, sin `favicon.svg` en el `<head>`, `/favicon.ico`, las 22 tarjetas a 50,4 y 36,0 px), §2.1 fila 6 (cuatro párrafos, 16 px), §2.4 (`/nosotros/` confirmado, `/servicios/`) y fila nueva en §7; `spec-home.md` criterios 21 y 22. Corrí sus herramientas: `logo-i-disco.mjs` sale con 0 y `quien-aire-30oct.mjs` da **16 · 16 · 16 px** entre párrafos a 390 y 1440. La biografía se lee como un bloque (`capturas-qa-30oct/12`). Alto de la home 7.459 a 1440, 7.423 a 1024, 9.417 a 768 y 9.012 a 390, bajo sus techos |
+| 5 | Menor | Clara, **Ramón confirma** | **Abierto** | No se tocó (§6.2). En la lectura en frío, L2: «con un panel para que edites tú: no sé si lo voy a poder usar yo». La contradicción con la lista de planes de Desarrollo web sigue igual |
+| 6 | Menor | Clara, **decide Ramón** | **Abierto** | No se tocó (§6.3). «lo corrí sobre mi propio sitio»: **2 de 3** lo notan otra vez (L2 «de repente hablan en "yo"», L3 «no sé quién habla») |
+| 7 | Menor | Clara, **decide Ramón** | **Abierto** | No se tocó (§6.4). 0 de 3 lectores notan el eco (como en la vuelta 1); en voz alta sigue sonando a eco |
+| 8 | Menor | Clara | **Cerrado** | «Google y las IA pueden visitarlo y entenderlo.» en la home; «leerlo y citarlo», 0 en el `dist`; 0 de 3 lectores tropiezan. A 1194 y 1440 la frase pasa a dos líneas y los filetes de las dos columnas siguen alineados (desfase 0 · 0 · 0, `portada-30oct.mjs`). Cambio de oficio: Ramón lo puede devolver. `capturas-qa-30oct/13` |
+| 9 | Menor | Clara y Diego | **Cerrado en la obra** | `mailto` en el `dist`: **23** con «Hablemos de mi sitio» (los 22 pies y el cierre de la home) y **1** en `/contacto/` con asunto y cuerpo («Hola.» / «Mi sitio: » / «Lo que vendemos: »), leído del JSON de Clara; el build cae si no apunta al correo con su asunto. Quedan **2** con «Quiero mi revisión gratis», en los pies de `/404.html` y `/privacidad/`: las estáticas de `main`, fuera de la obra, declarado por Diego (§7). Anotado abajo como observación |
+| 10 | Menor | Clara | **Cerrado** | La ayuda dice «Si todavía no tienes sitio, escribe «no tengo» y cuéntanos abajo qué vendes.», enlazada por `aria-describedby`; el formulario es el de `main` campo por campo; «no tengo» pasa. `capturas-qa-30oct/13` |
+| 11 | Menor | Diego con Lucía | **Cerrado** | `/servicios/` a la vista: «01 Sitio web a medida», «02 Búsqueda y visibilidad en IA», «03 Anuncios en Google y redes», «04 Acompañamiento mensual»; el `ItemList` en ese orden; «Siguiente» en ciclo Desarrollo web → Auditoría → Visibilidad → Paid Media → Redes → Acompañamiento → Desarrollo web. La entradilla («Partimos por el sitio y le conectamos lo demás») y el orden dicen lo mismo. `capturas-qa-30oct/11` |
+| 12 | Menor | Clara | **Cerrado** | «posicionamiento anterior»: **0** en `4d794419`. La regla nueva sí encuentra **1** en el `dist` de `a84a1381` (el pie viejo de `/privacidad/`, que esta vuelta cambió): deja de dar falsos positivos y sigue atrapando lo anterior. `guia-para-roles.md` §3 al día |
+| 13 | Menor | Diego | **Cerrado** | El paso 3.11 de `lista-publicacion.md` pide releer la ficha del boletín (con la URL) y compararla con la frase de `/diagnostico/`, citada, el día de publicar |
+| 14 | Menor | Diego | **Cerrado** | `/favicon.ico` del `dist` tiene el mismo md5 que `/v3/marca/favicon.ico` y que `e13/logo/favicon.ico` (tres PNG de 16, 32 y 48). `/404.html` y `/privacidad/` enlazan los cinco iconos de A a `?v=6`, y los cinco resuelven. `armar-corte.mjs`: `node --check` bien; no lo corrí (es del día de publicar) |
+| 15 | Menor | Clara | **Cerrado** | `home.portada.chequeo` y `home.quien.cv` no los lee ningún `.astro` ni `.mjs`; solo quedan nombrados en las notas de `borrado` de `home.json`. `--comprobar` 16 de 16 |
+
+### Desvíos no declarados (vuelta 2)
+
+Ninguno. Los 37 archivos del sitio que tocó `4d794419` (código, textos, las 19 tarjetas, `favicon.ico`, `404.html`, `privacidad/`, `Layout.astro` y `archivo.css`) están en la tabla de §5 de `construccion-30oct.md`, cada uno en el defecto que lo motivó. El cambio de nombre de los `hoisted.*.js` y del CSS en `_astro/` es consecuencia de la regla nueva de `archivo.css` (el contenido de los scripts es el mismo salvo el nombre que importan).
+
+### Observaciones (no son defectos; quedan anotadas)
+
+- **Peso al límite.** 1,1 kB de margen. Lo siguiente que pesa sin aportar, según Diego, es el logo en línea dos veces (spec-home, criterio 10). Cualquier cambio de §6 se vuelve a medir antes del corte.
+- **`/404.html` y `/privacidad/`** siguen siendo páginas del v2 (encabezado y logo con el punto dorado, `inter.css`, pie con «Quiero mi revisión gratis»). Esta vuelta les cambió los iconos y, en `/privacidad/`, la línea de marca. Rehacerlas en A es otra obra.
+- **El campo del mensaje sigue diciendo «(opcional)»** mientras la ayuda del campo del sitio le pide a quien no tiene sitio que cuente ahí qué vende. Ningún lector tropezó. Si Ramón quiere apretarlo, es texto de la etiqueta, no del formulario.
+- **`armar-corte.mjs` avisa pero no se detiene** si `/favicon.ico` no es el de Bruno. Hoy lo es en la rama; `/favicon.ico` no lleva versión, así que un navegador que ya tenía el viejo puede mostrarlo un tiempo (declarado por Diego).
+- **«Cookies: rechazadas»** en el pie: 2 de 3 lectores no entienden qué hace ahí. Es el mismo texto de E13 y de la vuelta 1, donde nadie lo citó: lo tomo como variación entre lectores simulados, no como algo que cambió.
+
+## Lectura en frío, vuelta 2 (criterio 4 del brief)
+
+Los mismos tres perfiles de la vuelta 1 (consultora, clínica, restaurante), con las mismas instrucciones (incluida la pregunta G sobre «Quién está detrás»), sobre el texto de `/` y `/contacto/` del build de `4d794419`. Son personas simuladas por un modelo: sirven para ver dónde se tropieza, no para medir conversión. Íntegro en `lectura-fria/30oct-v2/`.
+
+**Lo sustancial sigue bien:** los tres dicen con sus palabras qué hace SpindleLab («hacen sitios web a medida y después les conectan Google, anuncios y redes»), se reconocen en el «para quién», saben que el primer paso es mandar la dirección, que es gratis y en un día hábil, y los tres pedirían la revisión. En `/contacto/` nadie tropieza con el formulario ni con la ayuda nueva.
+
+**Quién está detrás (G):** los tres lo leen **serio** («serio y sin humo»; «alguien que sabe, serio y bastante franco»; «alguien serio, con años en agencias, que explica sin inflar»). Los tres le harían la revisión; el sitio entero, «hablando antes con él», «todavía no» y «con cautela, después de ver la propuesta escrita». La frase de p2 («casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva»), que en la vuelta 1 un lector leyó como discurso de venta, ahora **2 de 3 la citan como lo que les hizo sentido**. Lo que frena sigue siendo «agentes de IA» y que parezca una sola persona.
+
+| Tropiezo | Ronda 1 E13 | Ronda 2 E13 | Vuelta 1 | **Vuelta 2** | |
+|---|---|---|---|---|---|
+| «agentes de IA» | 3 de 3 | 2 de 3 | 3 de 3 (2 entre sus frenos) | **3 de 3** (1 entre sus frenos) | Mayor 3a, abierto |
+| Rótulo «marketing con IA» | | | 2 de 3 | **1 de 3** | Mayor 3b, abierto |
+| «sin plantillas ni WordPress» | 2 de 3 | 0 de 3 | 2 de 3 | **3 de 3** | Mayor 3c, abierto |
+| «lo corrí sobre mi propio sitio» | 3 de 3 | 3 de 3 | 2 de 3 | **2 de 3** | Menor 6, abierto |
+| «visitarlo y entenderlo» (antes «leerlo y citarlo») | | | 0 de 3 | **0 de 3** | Menor 8, cerrado |
+| La ayuda del campo del sitio | | | 0 de 3 | **0 de 3** | Menor 10, cerrado |
+| «Si te vas, tus seguidores se quedan» | | | 1 de 3 al revés | **1 de 3 al revés** | Leve, igual |
+| «con un panel para que edites tú» | | | | **1 de 3** | Liga con el menor 5 |
+| «el eje del negocio» suena a discurso; «alcance nacional y regional» aleja a un negocio chico; «la revisión de una página», ¿una sola? | | | | **1 de 3 cada uno** | Leves, nuevos en la lectura; textos que ya estaban |
+| «Cookies: rechazadas» | | | 0 de 3 | **2 de 3** | Observación (mismo texto) |
+| «Search Console», «Auditoría SEO técnica», «Paid Media (Google)», «Visibilidad en IA» (no garantiza), «21 chequeos… puntos», Verifica y Cumple y la ley, el único caso «no de crecimiento de ventas», los precios «desde» | | escalados a Ramón | 2 a 3 de 3 | **2 a 3 de 3** | Igual que en E13; fuera de lo del 30-oct |
+
+## Detector anti-slop y pruebas de fuego, sobre lo que cambió en la vuelta
+
+Lo que cambió en la vuelta es texto de oficio (8, 9, 10, el «Siguiente» de Desarrollo web), el orden de `/servicios/`, el aire de la biografía y las tarjetas. **Copy:** sin verbos de folleto, sin raya (0 en el `dist`), sin Title Case nuevo (los nombres de plan y de servicio del `ItemList` son los de E13, defecto 12 de E13), tuteo, 0 voseo; el asunto «Hablemos de mi sitio» es el botón dicho por quien escribe. **Estructura:** `/servicios/` ahora dice con el orden lo que dice su entradilla. **Código:** una regla de CSS nueva (`.quien__txt > .cuerpo + .cuerpo`), del mismo patrón que ya usa el sitio; 0 comentarios HTML servidos (`verificar`). **Visual:** el amarillo sigue en dos botones y en nada más. Las tres pruebas de fuego dan lo mismo que en la vuelta 1: la composición no cambió; en voz alta, la biografía suena mejor sin los saltos de 32 px y el eco de la sección 2 (menor 7) sigue ahí.
+
+## Lo que está bien (y no hay que perder)
+
+- **El peso se cerró sin subir el techo** y con una medición que reproduce la de QA al décimo sobre los dos builds anteriores. Es la manera de cerrar un número: misma herramienta, misma base.
+- **Las 22 tarjetas, idénticas en el logo al píxel**, con una versión por archivo y ninguna vieja en el `dist` (`capturas-qa-30oct/10`).
+- **La spec y sus herramientas miden lo construido**: `logo-i-disco.mjs` y `quien-aire-30oct.mjs` salen con 0 y las corrí yo.
+- **`/servicios/` con el sitio primero** en lo que se ve, en el JSON-LD y en la navegación entre servicios (`capturas-qa-30oct/11`).
+- **Nada se rompió**: primera pantalla, amarillo, foco, logo y formulario medidos igual que en la vuelta 1.
+
+## Lo que no pude medir
+
+- Safari, Firefox y un iPhone real (tampoco el favicon nuevo en su pantalla de inicio); red real con `_headers` y Brotli de Cloudflare; Node 20.
+- `armar-corte.mjs` corrido de verdad (es del día de publicar); el envío real del formulario, GA4 y Meta; un lector de pantalla.
+- Verifica y Cumple (`verifica.spindlelab.cl`), que no está en este repositorio.
+
+## Decisiones que son de Ramón (vuelta 2)
+
+1. **Las cuatro preguntas de `desvios/construccion-30oct.md` §6**: las tres frases del mayor 3 (A1 o A2; B1, B2 o B3; C1 o C2), si todo plan trae panel (5), el «yo» de «Probado primero en lo nuestro» (6) y la lista dicha dos veces (7). **Antes del corte**, y después QA exprés con el peso.
+2. **Lo cambiado de oficio, que puede devolver:** «visitarlo y entenderlo» (8), la suma a su ayuda del campo (10) y el asunto «Hablemos de mi sitio» (9).
+3. **Confirmar por escrito que se podía tocar `Layout.astro`** fuera de gtag, consentimiento y Pixel (las 4 líneas de las hojas de letras). Diego lo declara autorizado por la orquestadora; en el repositorio no hay registro de esa autorización, y la regla que dio Ramón protege esos tres bloques, que están intactos.
+4. Las que la vuelta 1 ya listaba y siguen igual: la description de 157 («y les conectamos»), el `h1` de `/nosotros/` y el gris del de `/contacto/`, si «el código de cada entrega lo revisa y lo aprueba él» vale para las entregas a clientes, y «una aerolínea regional» en `/nosotros/`.
+
+## Evidencia de la vuelta 2 en el repositorio
+
+- `e13/capturas-qa-30oct/`: `10` las 22 tarjetas (franja del logo) y dos de las 19 antes y después con su diferencia (defecto 2); `11` `/servicios/` a 1440 con el sitio primero (defecto 11); `12` «Quién está detrás» a 1440 con 16 px entre párrafos (defecto 4); `13` la sección 2 a 1440 con «visitarlo y entenderlo» y el formulario de `/contacto/` a 390 con la ayuda nueva (defectos 8 y 10). De 62 a 114 kB.
+- `e13/lectura-fria/30oct-v2/`: `entrada.txt`, `instrucciones.txt`, `lector-1..3.txt`, `lectores.json`.
+- Mis herramientas (las de la vuelta 1 más `letras.mjs` y `cap-v2.mjs`) y sus salidas quedaron en el scratchpad (`…/scratchpad/javiera-30oct-v2/`), que se borra al reiniciar: lo que importa está en esta acta.
