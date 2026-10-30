@@ -16,7 +16,9 @@ cero dorado, cero `#0e141b`. Eso es SpindleLab, que es otra marca.
 | 4 · tutorial | `g4-1` a `g4-3` | el mismo |
 
 **La tarjeta de cierre no se rehízo**: ya existe, ya salió publicada y lleva el dominio en lima. Que
-las cuatro piezas cierren igual es continuidad de campaña, no pereza.
+las cuatro piezas cierren igual es continuidad de campaña, no pereza. Está copiada acá como
+`g0-cierre-COMPARTIDA.png` para que el montaje pueda arrastrar una sola carpeta a CapCut; **el
+original sigue siendo el de `05-overlays-video` y es el que manda** si alguna vez hay que cambiarlo.
 
 `g1-3`/`g2-3` y `g1-4`/`g2-4` dicen lo mismo con una palabra distinta (cliente / paciente), salvo
 `g1-4` y `g2-4` que son idénticas. Están duplicadas igual, una por guion, para que el montaje no
