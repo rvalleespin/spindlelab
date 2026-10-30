@@ -1,0 +1,24 @@
+{
+  "fijada": "2026-10-30T12:25:09.674Z",
+  "regla": "dominios del CSV en orden, sin duplicados ni correos gratuitos",
+  "leads": [
+    {
+      "dominio": "contotal.cl",
+      "correo": "corporativo@contotal.cl",
+      "empresa": "Contotal",
+      "id": "A01"
+    },
+    {
+      "dominio": "az400.cl",
+      "correo": "gmontealegre@az400.cl",
+      "empresa": "Azimut 400",
+      "id": "A02"
+    },
+    {
+      "dominio": "holding.wiki",
+      "correo": "nrozas@holding.wiki",
+      "empresa": "Ingeniería R / holding.wiki",
+      "id": "A03"
+    }
+  ]
+}

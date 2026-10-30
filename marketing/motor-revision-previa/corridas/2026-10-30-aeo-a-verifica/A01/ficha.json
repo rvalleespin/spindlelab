@@ -1,0 +1,13 @@
+{
+  "id": "A01",
+  "dominio": "contotal.cl",
+  "motor": "v0",
+  "cuando": "2026-10-30T12:25:09.862Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "descartado:excluido",
+  "detalle": {
+    "tipo": "direccion-invalida",
+    "motivo": "Rebote duro 550 No Such User al primer contacto del 30-sep. Bloquea SOLO la direccion: el dominio tiene alternativa viva (corporativo@contotal.cl), publicada en su propio sitio",
+    "fecha": "2026-09-30"
+  }
+}

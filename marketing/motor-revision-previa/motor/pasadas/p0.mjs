@@ -16,7 +16,8 @@ export function limpiarDominio(d) {
 // Solo lectura. Por correo Y por dominio: la baja es de la empresa, no del buzon.
 export function enExclusion(dominio, correo) {
   const filas = leerCsv(path.join(RAIZ, 'ventas/lista-exclusion.csv'));
-  const hit = filas.find((f) => limpiarDominio(f.dominio) === dominio || (correo && f.email && f.email.toLowerCase() === correo.toLowerCase()));
+  // `direccion-invalida` bloquea SOLO la direccion (ventas/LEEME-lista-exclusion.md: la empresa puede seguir valida por otra); el resto bloquea tambien por dominio.
+  const hit = filas.find((f) => (f.tipo !== 'direccion-invalida' && limpiarDominio(f.dominio) === dominio) || (correo && f.email && f.email.toLowerCase() === correo.toLowerCase()));
   return hit ? { tipo: hit.tipo, motivo: hit.motivo, fecha: hit.fecha } : null;
 }
 
