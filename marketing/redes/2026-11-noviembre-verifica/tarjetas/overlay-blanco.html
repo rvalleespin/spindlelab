@@ -1,0 +1,117 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Opcion B, bloque azul — Tarjetas — tanda de noviembre, Verifica y Cumple</title>
+<!--
+  TARJETAS TRANSPARENTES para los cuatro reels de noviembre.
+
+  Sistema visual de VERIFICA, no de SpindleLab: nada de #0e141b, hilo de oro,
+  Gabarito ni Manrope.
+
+  El CSS es el de 2026-10-octubre-verifica/06-overlays-reel-ramon/overlay.html,
+  literal, incluida la geometria (bloque abajo, bottom: 300px). Esa geometria
+  ya salio publicada el 16-oct y esta verificada sobre el cuadro real, asi que
+  no se reinventa aca.
+
+  Se elige la tarjeta con ?i=N. El indice es el de LEEME.md.
+-->
+<style>
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: block;
+    src: url("archivo-black-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+      U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+      U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: block;
+    src: url("archivo-black-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+      U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+      U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  :root {
+    --azul-600: #2e5bff;
+    --lima-400: #d6ff3d;
+    --rosa-500: #ff3ea0;
+    --tinta-900: #17163a;
+    --tinta-500: #56547a;
+    --crema-100: #fffaf0;
+    --blanco: #ffffff;
+    --display: "Archivo Black", Impact, sans-serif;
+    --cuerpo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  /* El fondo NO se declara: lo deja transparente el flag del render. Si acá pones
+     un background, el PNG sale opaco y el overlay tapa el video. */
+  html, body { margin: 0; padding: 0; background: transparent; }
+  body { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+
+  .etiqueta {
+    font-family: var(--cuerpo); font-size: 33px; font-weight: 700;
+    letter-spacing: .13em; text-transform: uppercase; color: var(--lima-400);
+    text-shadow: none;
+  }
+  .linea {
+    font-family: var(--display); font-size: 108px; line-height: .93;
+    letter-spacing: -.022em; color: var(--blanco);
+    text-shadow: none;
+  }
+  .linea.grande { font-size: 168px; line-height: .90; letter-spacing: -.04em; }
+  .cuerpo {
+    font-family: var(--cuerpo); font-size: 39px; line-height: 1.28; color: var(--blanco);
+    text-shadow: none;
+  }
+  .bloque { position: absolute; left: 60px; right: 60px; bottom: 300px;
+             background: var(--azul-600); padding: 56px 56px 60px; }
+  .bloque .etiqueta { margin: 0 0 22px; }
+  .bloque .cuerpo { margin: 26px 0 0; }
+</style>
+<style>
+  /* Unico agregado a la plantilla: numeros en lima dentro de la linea, para la
+     tarjeta de pasos del tutorial. */
+  .linea .n { color: var(--lima-400); }
+</style>
+
+<div class="bloque">
+  <div class="etiqueta" id="etiqueta"></div>
+  <div class="linea" id="linea"></div>
+  <div class="cuerpo" id="cuerpo"></div>
+</div>
+
+<script>
+  // Disciplina del acento, igual que el reel publicado: el lima solo en la
+  // etiqueta de la cifra (y los numeros de pasos del tutorial). La tarjeta de
+  // cierre, que trae el dominio en lima, ya existe en 05-overlays-video y no se
+  // rehace aca. Azul 0, rosa 0 en toda la tanda.
+  const T = [
+    // ---- Guion 1 · cafes ----
+    { id:'g1-1', etiqueta:'',             linea:'ESTO MIDE<br>TU PUBLICIDAD.',          cuerpo:'' },
+    { id:'g1-2', etiqueta:'16 de 36',     linea:'CASI<br>LA MITAD.',                    cuerpo:'Entra antes de que el cliente diga nada.' },
+    { id:'g1-3', etiqueta:'',             linea:'PUEDES SEGUIR<br>MIDIENDO.',           cuerpo:'Preguntándole al cliente primero.' },
+    { id:'g1-4', etiqueta:'',             linea:'UNA FRANJA<br>QUE PREGUNTA.',          cuerpo:'Y mides a todos los que acepten.' },
+    // ---- Guion 2 · salud ----
+    { id:'g2-1', etiqueta:'',             linea:'ESTO MIDE<br>TU SITIO.',               cuerpo:'' },
+    { id:'g2-2', etiqueta:'20 de 40',     linea:'LA<br>MITAD.',                         cuerpo:'De los sitios de clínicas y centros médicos que revisé.' },
+    { id:'g2-3', etiqueta:'',             linea:'PUEDES SEGUIR<br>MIDIENDO.',           cuerpo:'Preguntándole al paciente primero.' },
+    { id:'g2-4', etiqueta:'',             linea:'UNA FRANJA<br>QUE PREGUNTA.',          cuerpo:'Y mides a todos los que acepten.' },
+    // ---- Guion 3 · contabilidad ----
+    { id:'g3-1', etiqueta:'',             linea:'NOMBRE.<br>CORREO.<br>TELÉFONO.',      cuerpo:'' },
+    { id:'g3-2', etiqueta:'9 de 39',      linea:'SIN DÓNDE<br>LEERLO.',                 cuerpo:'De los sitios de contadores y auditores que revisé, en la portada.' },
+    { id:'g3-3', etiqueta:'',             linea:'EL ABOGADO<br>LA ESCRIBE.',            cuerpo:'Publicarla la publicas tú.' },
+    { id:'g3-4', etiqueta:'',             linea:'AL LADO DEL<br>FORMULARIO.',           cuerpo:'Ahí tiene que poder leerse.' },
+    // ---- Guion 4 · tutorial ----
+    { id:'g4-1', etiqueta:'30 segundos',  linea:'MÍRALO TÚ.',                           cuerpo:'Sin que nadie te lo cuente.' },
+    { id:'g4-2', etiqueta:'',             linea:'<span class="n">1</span> INCÓGNITO<br><span class="n">2</span> ESPERA<br><span class="n">3</span> CANDADO', cuerpo:'Y mira la lista.' },
+    { id:'g4-3', etiqueta:'',             linea:'NADIE<br>LO ACEPTÓ.',                   cuerpo:'Se guardó solo, al abrir la página.' },
+  ];
+  const i = Number(new URLSearchParams(location.search).get('i') || 0);
+  const c = T[Math.max(0, Math.min(T.length - 1, i))];
+  const e = document.getElementById('etiqueta');
+  e.innerHTML = c.etiqueta;
+  if (!c.etiqueta) e.style.display = 'none';
+  document.getElementById('linea').innerHTML = c.linea;
+  const b = document.getElementById('cuerpo');
+  b.innerHTML = c.cuerpo;
+  if (!c.cuerpo) b.style.display = 'none';
+  window.__id = c.id;
+  window.__n  = T.length;
+</script>
