@@ -1,0 +1,241 @@
+{
+ "fecha": "2026-10-30T14:52:15.556Z",
+ "piezas": [
+  {
+   "archivo": "favicon-32.png",
+   "ancho": 32,
+   "alto": 32,
+   "tipoColor": 2,
+   "bytes": 291,
+   "transparente": false,
+   "alfaOk": true
+  },
+  {
+   "archivo": "favicon-48.png",
+   "ancho": 48,
+   "alto": 48,
+   "tipoColor": 2,
+   "bytes": 408,
+   "transparente": false,
+   "alfaOk": true
+  },
+  {
+   "archivo": "apple-touch-icon.png",
+   "ancho": 180,
+   "alto": 180,
+   "tipoColor": 2,
+   "bytes": 1052,
+   "transparente": false,
+   "alfaOk": true,
+   "tinta": {
+    "caja": [
+     68,
+     31,
+     112,
+     150
+    ],
+    "altoFraccion": 0.661,
+    "radioMaxFraccion": 0.339,
+    "centroY": 0.503
+   }
+  },
+  {
+   "archivo": "icon-192.png",
+   "ancho": 192,
+   "alto": 192,
+   "tipoColor": 2,
+   "bytes": 1090,
+   "transparente": false,
+   "alfaOk": true,
+   "tinta": {
+    "caja": [
+     75,
+     39,
+     117,
+     154
+    ],
+    "altoFraccion": 0.599,
+    "radioMaxFraccion": 0.307,
+    "centroY": 0.503
+   }
+  },
+  {
+   "archivo": "icon-512.png",
+   "ancho": 512,
+   "alto": 512,
+   "tipoColor": 2,
+   "bytes": 3241,
+   "transparente": false,
+   "alfaOk": true,
+   "tinta": {
+    "caja": [
+     200,
+     103,
+     312,
+     410
+    ],
+    "altoFraccion": 0.6,
+    "radioMaxFraccion": 0.306,
+    "centroY": 0.501
+   }
+  },
+  {
+   "archivo": "avatar/avatar-cuadrado-1080.png",
+   "ancho": 1080,
+   "alto": 1080,
+   "tipoColor": 2,
+   "bytes": 8477,
+   "transparente": false,
+   "alfaOk": true,
+   "tinta": {
+    "caja": [
+     429,
+     238,
+     651,
+     843
+    ],
+    "altoFraccion": 0.56,
+    "radioMaxFraccion": 0.285,
+    "centroY": 0.5
+   }
+  },
+  {
+   "archivo": "avatar/avatar-redondo-1080.png",
+   "ancho": 1080,
+   "alto": 1080,
+   "tipoColor": 6,
+   "bytes": 28394,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "documentos/spindlelab-negro-2400.png",
+   "ancho": 2400,
+   "alto": 443,
+   "tipoColor": 6,
+   "bytes": 50445,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "documentos/spindlelab-blanco-2400.png",
+   "ancho": 2400,
+   "alto": 443,
+   "tipoColor": 6,
+   "bytes": 43102,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-blanco-12.png",
+   "ancho": 70,
+   "alto": 12,
+   "tipoColor": 6,
+   "bytes": 940,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-negro-12.png",
+   "ancho": 70,
+   "alto": 12,
+   "tipoColor": 6,
+   "bytes": 1098,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-blanco-12@2x.png",
+   "ancho": 140,
+   "alto": 24,
+   "tipoColor": 6,
+   "bytes": 2146,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-negro-12@2x.png",
+   "ancho": 140,
+   "alto": 24,
+   "tipoColor": 6,
+   "bytes": 2398,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-blanco-14.png",
+   "ancho": 81,
+   "alto": 14,
+   "tipoColor": 6,
+   "bytes": 1138,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-negro-14.png",
+   "ancho": 81,
+   "alto": 14,
+   "tipoColor": 6,
+   "bytes": 1292,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-blanco-14@2x.png",
+   "ancho": 162,
+   "alto": 28,
+   "tipoColor": 6,
+   "bytes": 2448,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-negro-14@2x.png",
+   "ancho": 162,
+   "alto": 28,
+   "tipoColor": 6,
+   "bytes": 2779,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-blanco-16.png",
+   "ancho": 93,
+   "alto": 16,
+   "tipoColor": 6,
+   "bytes": 1332,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-negro-16.png",
+   "ancho": 93,
+   "alto": 16,
+   "tipoColor": 6,
+   "bytes": 1497,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-blanco-16@2x.png",
+   "ancho": 186,
+   "alto": 32,
+   "tipoColor": 6,
+   "bytes": 2790,
+   "transparente": true,
+   "alfaOk": true
+  },
+  {
+   "archivo": "pequeno/spindlelab-pequeno-negro-16@2x.png",
+   "ancho": 186,
+   "alto": 32,
+   "tipoColor": 6,
+   "bytes": 3210,
+   "transparente": true,
+   "alfaOk": true
+  }
+ ],
+ "errores": [],
+ "alfaMal": [],
+ "fueraDelCirculoSeguro": []
+}

@@ -1,0 +1,1778 @@
+{
+ "menu--maqueta": {
+  "disco": {
+   "ancho": 1.837837837837838,
+   "alto": 0.7027027027027027,
+   "hueco": 0.7194594594594594,
+   "lleno": 1.0
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    34.0,
+    13.0
+   ],
+   "disco_en_astas": [
+    1.837837837837838,
+    0.7027027027027027
+   ],
+   "hueco": 13.31,
+   "hueco_en_astas": 0.719,
+   "disco_abajo": 85.0,
+   "disco_centro": 91.5,
+   "disco_arriba": 98.0,
+   "lleno": 1.0
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--punto-letra": {
+  "disco": null,
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   }
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--elegido-menu": {
+  "disco": {
+   "ancho": 1.62,
+   "alto": 0.9,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    29.97,
+    16.65
+   ],
+   "disco_en_astas": [
+    1.62,
+    0.9
+   ],
+   "hueco": 12.26,
+   "hueco_en_astas": 0.662,
+   "disco_abajo": 83.95,
+   "disco_centro": 92.28,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--menu-mas-redondo": {
+  "disco": {
+   "ancho": 1.5,
+   "alto": 0.96,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    27.75,
+    17.76
+   ],
+   "disco_en_astas": [
+    1.5,
+    0.96
+   ],
+   "hueco": 11.15,
+   "hueco_en_astas": 0.602,
+   "disco_abajo": 82.84,
+   "disco_centro": 91.72,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--elegido-grande": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    37.0,
+    13.69
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 15.22,
+   "hueco_en_astas": 0.822,
+   "disco_abajo": 86.91,
+   "disco_centro": 93.76,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--grande-mas-bajo": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "hueco": 0.66,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    37.0,
+    13.69
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 12.21,
+   "hueco_en_astas": 0.66,
+   "disco_abajo": 83.9,
+   "disco_centro": 90.75,
+   "disco_arriba": 97.59,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--grande-arriba-S": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "arriba": 102.33,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    37.0,
+    13.69
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 16.95,
+   "hueco_en_astas": 0.916,
+   "disco_abajo": 88.64,
+   "disco_centro": 95.49,
+   "disco_arriba": 102.33,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--grande-mas-plano": {
+  "disco": {
+   "ancho": 2.16,
+   "alto": 0.66,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    39.96,
+    12.21
+   ],
+   "disco_en_astas": [
+    2.16,
+    0.66
+   ],
+   "hueco": 16.7,
+   "hueco_en_astas": 0.902,
+   "disco_abajo": 88.39,
+   "disco_centro": 94.5,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--grande-elipse": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "arriba": 100.6,
+   "lleno": 1.0
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    37.0,
+    13.69
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 15.22,
+   "hueco_en_astas": 0.822,
+   "disco_abajo": 86.91,
+   "disco_centro": 93.76,
+   "disco_arriba": 100.6,
+   "lleno": 1.0
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--elegido-pequeno": {
+  "disco": {
+   "ancho": 1.6,
+   "alto": 1.1,
+   "hueco": 0.64,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    29.6,
+    20.35
+   ],
+   "disco_en_astas": [
+    1.6,
+    1.1
+   ],
+   "hueco": 11.84,
+   "hueco_en_astas": 0.64,
+   "disco_abajo": 83.53,
+   "disco_centro": 93.71,
+   "disco_arriba": 103.88,
+   "lleno": 1.04
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--pequeno-ronda-1": {
+  "disco": {
+   "ancho": 1.5,
+   "alto": 0.9,
+   "hueco": 0.68,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    27.75,
+    16.65
+   ],
+   "disco_en_astas": [
+    1.5,
+    0.9
+   ],
+   "hueco": 12.58,
+   "hueco_en_astas": 0.68,
+   "disco_abajo": 84.27,
+   "disco_centro": 92.6,
+   "disco_arriba": 100.92,
+   "lleno": 1.04
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--pequeno-redondo": {
+  "disco": {
+   "ancho": 1.36,
+   "alto": 1.0,
+   "hueco": 0.68,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    25.16,
+    18.5
+   ],
+   "disco_en_astas": [
+    1.36,
+    1.0
+   ],
+   "hueco": 12.58,
+   "hueco_en_astas": 0.68,
+   "disco_abajo": 84.27,
+   "disco_centro": 93.52,
+   "disco_arriba": 102.77,
+   "lleno": 1.04
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "menu--pequeno-160x105": {
+  "disco": {
+   "ancho": 1.6,
+   "alto": 1.05,
+   "hueco": 0.68,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    29.6,
+    19.42
+   ],
+   "disco_en_astas": [
+    1.6,
+    1.05
+   ],
+   "hueco": 12.58,
+   "hueco_en_astas": 0.68,
+   "disco_abajo": 84.27,
+   "disco_centro": 93.99,
+   "disco_arriba": 103.7,
+   "lleno": 1.04
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--maqueta": {
+  "disco": {
+   "ancho": 1.837837837837838,
+   "alto": 0.7027027027027027,
+   "hueco": 0.7194594594594594,
+   "lleno": 1.0
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    34.0,
+    13.0
+   ],
+   "disco_en_astas": [
+    1.837837837837838,
+    0.7027027027027027
+   ],
+   "hueco": 13.31,
+   "hueco_en_astas": 0.719,
+   "disco_abajo": 85.0,
+   "disco_centro": 91.5,
+   "disco_arriba": 98.0,
+   "lleno": 1.0
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--punto-letra": {
+  "disco": null,
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   }
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--elegido-menu": {
+  "disco": {
+   "ancho": 1.62,
+   "alto": 0.9,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    29.97,
+    16.65
+   ],
+   "disco_en_astas": [
+    1.62,
+    0.9
+   ],
+   "hueco": 12.26,
+   "hueco_en_astas": 0.662,
+   "disco_abajo": 83.95,
+   "disco_centro": 92.28,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--menu-mas-redondo": {
+  "disco": {
+   "ancho": 1.5,
+   "alto": 0.96,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    27.75,
+    17.76
+   ],
+   "disco_en_astas": [
+    1.5,
+    0.96
+   ],
+   "hueco": 11.15,
+   "hueco_en_astas": 0.602,
+   "disco_abajo": 82.84,
+   "disco_centro": 91.72,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--elegido-grande": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    37.0,
+    13.69
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 15.22,
+   "hueco_en_astas": 0.822,
+   "disco_abajo": 86.91,
+   "disco_centro": 93.76,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--grande-mas-bajo": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "hueco": 0.66,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    37.0,
+    13.69
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 12.21,
+   "hueco_en_astas": 0.66,
+   "disco_abajo": 83.9,
+   "disco_centro": 90.75,
+   "disco_arriba": 97.59,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--grande-arriba-S": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "arriba": 102.33,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    37.0,
+    13.69
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 16.95,
+   "hueco_en_astas": 0.916,
+   "disco_abajo": 88.64,
+   "disco_centro": 95.49,
+   "disco_arriba": 102.33,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--grande-mas-plano": {
+  "disco": {
+   "ancho": 2.16,
+   "alto": 0.66,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    39.96,
+    12.21
+   ],
+   "disco_en_astas": [
+    2.16,
+    0.66
+   ],
+   "hueco": 16.7,
+   "hueco_en_astas": 0.902,
+   "disco_abajo": 88.39,
+   "disco_centro": 94.5,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--grande-elipse": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "arriba": 100.6,
+   "lleno": 1.0
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    37.0,
+    13.69
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 15.22,
+   "hueco_en_astas": 0.822,
+   "disco_abajo": 86.91,
+   "disco_centro": 93.76,
+   "disco_arriba": 100.6,
+   "lleno": 1.0
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--elegido-pequeno": {
+  "disco": {
+   "ancho": 1.6,
+   "alto": 1.1,
+   "hueco": 0.64,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    29.6,
+    20.35
+   ],
+   "disco_en_astas": [
+    1.6,
+    1.1
+   ],
+   "hueco": 11.84,
+   "hueco_en_astas": 0.64,
+   "disco_abajo": 83.53,
+   "disco_centro": 93.71,
+   "disco_arriba": 103.88,
+   "lleno": 1.04
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--pequeno-ronda-1": {
+  "disco": {
+   "ancho": 1.5,
+   "alto": 0.9,
+   "hueco": 0.68,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    27.75,
+    16.65
+   ],
+   "disco_en_astas": [
+    1.5,
+    0.9
+   ],
+   "hueco": 12.58,
+   "hueco_en_astas": 0.68,
+   "disco_abajo": 84.27,
+   "disco_centro": 92.6,
+   "disco_arriba": 100.92,
+   "lleno": 1.04
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--pequeno-redondo": {
+  "disco": {
+   "ancho": 1.36,
+   "alto": 1.0,
+   "hueco": 0.68,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    25.16,
+    18.5
+   ],
+   "disco_en_astas": [
+    1.36,
+    1.0
+   ],
+   "hueco": 12.58,
+   "hueco_en_astas": 0.68,
+   "disco_abajo": 84.27,
+   "disco_centro": 93.52,
+   "disco_arriba": 102.77,
+   "lleno": 1.04
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "grande--pequeno-160x105": {
+  "disco": {
+   "ancho": 1.6,
+   "alto": 1.05,
+   "hueco": 0.68,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 18.5,
+   "altura_x": 71.69,
+   "cx": 184.374,
+   "asta_x": [
+    175.12,
+    193.62
+   ],
+   "punto_letra": {
+    "x": [
+     173.49,
+     195.19
+    ],
+    "y": [
+     83.88,
+     105.43
+    ]
+   },
+   "disco": [
+    29.6,
+    19.42
+   ],
+   "disco_en_astas": [
+    1.6,
+    1.05
+   ],
+   "hueco": 12.58,
+   "hueco_en_astas": 0.68,
+   "disco_abajo": 84.27,
+   "disco_centro": 93.99,
+   "disco_arriba": 103.7,
+   "lleno": 1.04
+  },
+  "caja": [
+   3.34,
+   -29.99,
+   719.66,
+   117.02
+  ]
+ },
+ "pequeno--maqueta": {
+  "disco": {
+   "ancho": 1.837837837837838,
+   "alto": 0.7027027027027027,
+   "hueco": 0.7194594594594594,
+   "lleno": 1.0
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    36.05,
+    13.78
+   ],
+   "disco_en_astas": [
+    1.837837837837838,
+    0.7027027027027027
+   ],
+   "hueco": 14.11,
+   "hueco_en_astas": 0.719,
+   "disco_abajo": 87.85,
+   "disco_centro": 94.74,
+   "disco_arriba": 101.63,
+   "lleno": 1.0
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--punto-letra": {
+  "disco": null,
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   }
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--elegido-menu": {
+  "disco": {
+   "ancho": 1.62,
+   "alto": 0.9,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    31.78,
+    17.65
+   ],
+   "disco_en_astas": [
+    1.62,
+    0.9
+   ],
+   "hueco": 9.21,
+   "hueco_en_astas": 0.469,
+   "disco_abajo": 82.95,
+   "disco_centro": 91.77,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--menu-mas-redondo": {
+  "disco": {
+   "ancho": 1.5,
+   "alto": 0.96,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    29.42,
+    18.83
+   ],
+   "disco_en_astas": [
+    1.5,
+    0.96
+   ],
+   "hueco": 8.03,
+   "hueco_en_astas": 0.409,
+   "disco_abajo": 81.77,
+   "disco_centro": 91.19,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--elegido-grande": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    39.23,
+    14.51
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 12.35,
+   "hueco_en_astas": 0.629,
+   "disco_abajo": 86.09,
+   "disco_centro": 93.34,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--grande-mas-bajo": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "hueco": 0.66,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    39.23,
+    14.51
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 12.95,
+   "hueco_en_astas": 0.66,
+   "disco_abajo": 86.68,
+   "disco_centro": 93.94,
+   "disco_arriba": 101.2,
+   "lleno": 1.06
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--grande-arriba-S": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "arriba": 102.33,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    39.23,
+    14.51
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 14.08,
+   "hueco_en_astas": 0.718,
+   "disco_abajo": 87.82,
+   "disco_centro": 95.07,
+   "disco_arriba": 102.33,
+   "lleno": 1.06
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--grande-mas-plano": {
+  "disco": {
+   "ancho": 2.16,
+   "alto": 0.66,
+   "arriba": 100.6,
+   "lleno": 1.06
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    42.37,
+    12.95
+   ],
+   "disco_en_astas": [
+    2.16,
+    0.66
+   ],
+   "hueco": 13.92,
+   "hueco_en_astas": 0.709,
+   "disco_abajo": 87.65,
+   "disco_centro": 94.13,
+   "disco_arriba": 100.6,
+   "lleno": 1.06
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--grande-elipse": {
+  "disco": {
+   "ancho": 2.0,
+   "alto": 0.74,
+   "arriba": 100.6,
+   "lleno": 1.0
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    39.23,
+    14.51
+   ],
+   "disco_en_astas": [
+    2.0,
+    0.74
+   ],
+   "hueco": 12.35,
+   "hueco_en_astas": 0.629,
+   "disco_abajo": 86.09,
+   "disco_centro": 93.34,
+   "disco_arriba": 100.6,
+   "lleno": 1.0
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--elegido-pequeno": {
+  "disco": {
+   "ancho": 1.6,
+   "alto": 1.1,
+   "hueco": 0.64,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    31.38,
+    21.58
+   ],
+   "disco_en_astas": [
+    1.6,
+    1.1
+   ],
+   "hueco": 12.55,
+   "hueco_en_astas": 0.64,
+   "disco_abajo": 86.29,
+   "disco_centro": 97.08,
+   "disco_arriba": 107.87,
+   "lleno": 1.04
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--pequeno-ronda-1": {
+  "disco": {
+   "ancho": 1.5,
+   "alto": 0.9,
+   "hueco": 0.68,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    29.42,
+    17.65
+   ],
+   "disco_en_astas": [
+    1.5,
+    0.9
+   ],
+   "hueco": 13.34,
+   "hueco_en_astas": 0.68,
+   "disco_abajo": 87.08,
+   "disco_centro": 95.9,
+   "disco_arriba": 104.73,
+   "lleno": 1.04
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--pequeno-redondo": {
+  "disco": {
+   "ancho": 1.36,
+   "alto": 1.0,
+   "hueco": 0.68,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    26.68,
+    19.61
+   ],
+   "disco_en_astas": [
+    1.36,
+    1.0
+   ],
+   "hueco": 13.34,
+   "hueco_en_astas": 0.68,
+   "disco_abajo": 87.08,
+   "disco_centro": 96.88,
+   "disco_arriba": 106.69,
+   "lleno": 1.04
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ },
+ "pequeno--pequeno-160x105": {
+  "disco": {
+   "ancho": 1.6,
+   "alto": 1.05,
+   "hueco": 0.68,
+   "lleno": 1.04
+  },
+  "medidas": {
+   "asta": 19.61,
+   "altura_x": 73.74,
+   "cx": 206.81,
+   "asta_x": [
+    197.0,
+    216.62
+   ],
+   "punto_letra": {
+    "x": [
+     195.27,
+     218.37
+    ],
+    "y": [
+     86.4,
+     109.21
+    ]
+   },
+   "disco": [
+    31.38,
+    20.59
+   ],
+   "disco_en_astas": [
+    1.6,
+    1.05
+   ],
+   "hueco": 13.34,
+   "hueco_en_astas": 0.68,
+   "disco_abajo": 87.08,
+   "disco_centro": 97.37,
+   "disco_arriba": 107.67,
+   "lleno": 1.04
+  },
+  "caja": [
+   5.05,
+   -30.52,
+   804.98,
+   109.21
+  ]
+ }
+}
