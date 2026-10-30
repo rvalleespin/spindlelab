@@ -1,0 +1,169 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/blog.json",
+ "sha256": "f4c5e8db7dcf2ee2507e1208ad23876bf87284a27daa1c1efd846055319bb516",
+ "id": "blog",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "blog",
+  "ruta": "/blog/",
+  "modo": "queda con ajustes",
+  "regla": "Lo que no se lista aquí queda tal cual, desde su dato. Cambia solo lo que pide el giro (brief §3 y §5), lo que la plantilla de A necesita (el h1 en dos tintas) y lo que dispara un detector. E13 (26-oct): también se corrige el cierre y, en los siete cuerpos, solo lo que afirmaba algo que no se sostiene; cada cambio está en e13/desvios/blog.md.",
+  "title": "Blog: SEO técnico y visibilidad en IA · SpindleLab",
+  "description": "Cómo funcionan el SEO técnico y la visibilidad en motores de IA, explicado con la metodología a la vista y sin promesas de primeros lugares.",
+  "senales": "Simón, e12/senales-obra.md §2.9: el índice y los siete artículos quedan; cambia solo su imagen al compartir",
+  "secciones": [
+   {
+    "id": "indice",
+    "nombre": "Índice (barra lateral y filas)",
+    "trabajo": "Nombrar el blog y llevar a cada artículo.",
+    "elementos": [
+     {
+      "id": "blog.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Blog",
+      "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios en src/ desde entonces)",
+      "uso": "miga",
+      "estado": "queda"
+     },
+     {
+      "id": "blog.h1",
+      "rol": "h1",
+      "tinta": "Blog.",
+      "gris": "Lo que escribimos sobre búsqueda e IA.",
+      "texto": "Blog. Lo que escribimos sobre búsqueda e IA.",
+      "antes": "Lo que escribimos sobre búsqueda e IA",
+      "origen": "spindlelab-astro/src/data/paginas-v3.json blog.h1",
+      "por_que": "La plantilla de A pone el h1 en dos tintas: el texto de hoy pasa a la continuación, sin cambiar una palabra.",
+      "estado": "cambia"
+     },
+     {
+      "id": "blog.conteo",
+      "rol": "rotulo",
+      "texto": "(7)",
+      "origen": "spec §2.5",
+      "nota": "Conteo verdadero de artículos; sale del dato.",
+      "estado": "queda"
+     },
+     {
+      "id": "blog.linea",
+      "rol": "entradilla",
+      "texto": "Cómo funciona esto por dentro, desde qué mira el chequeo hasta qué preguntar antes de contratar a alguien. La metodología está publicada a propósito.",
+      "origen": "spindlelab-astro/src/data/paginas-v3.json blog.linea",
+      "estado": "queda"
+     },
+     {
+      "id": "blog.filas",
+      "rol": "nota",
+      "texto": "Cada fila: la fecha y el tema en mono (el tema es el que ya trae cada artículo: Metodología, Visibilidad en IA, Guía de compra, Guía de precios, Guía para gerentes, Guía del método, SEO técnico) y el título del artículo, tal cual, enlazado.",
+      "uso": "referencia",
+      "origen": "blog-v3/_indice.json y la ficha de cada artículo en dist",
+      "estado": "queda"
+     },
+     {
+      "id": "blog.cierre.h2",
+      "rol": "h2",
+      "texto": "Leer ayuda; medir, más.",
+      "origen": "spindlelab-astro/src/data/paginas-v3.json blog.cierre.h2",
+      "estado": "queda"
+     },
+     {
+      "id": "blog.cierre.guia",
+      "rol": "entradilla",
+      "texto": "Son 21 chequeos concretos sobre tu sitio, en segundos y gratis. Cada chequeo que no pases viene con la instrucción para arreglarlo.",
+      "antes": "El chequeo revisa 21 señales de tu dominio en segundos, gratis. Cada señal que no pases viene con la instrucción para arreglarla.",
+      "origen": "e13/desvios/ronda2-frases.md, frase 8",
+      "por_que": "Los lectores en frío no entendieron «señal» ni «bloque» (lectura-fria/lector-1..3).",
+      "estado": "cambia"
+     },
+     {
+      "id": "blog.cierre.cuerpo",
+      "rol": "cuerpo",
+      "texto": "Si prefieres que una persona mire tu sitio, pide la revisión de una página: es gratis y llega en un día hábil.",
+      "antes": "Es el mismo chequeo con el que partimos cada proyecto.",
+      "origen": "e13/fuentes/v2-vigente/blog.txt (cierre del Taller: «En un día hábil te decimos dónde está parado tu sitio. Gratis.»)",
+      "por_que": "La frase de antes afirmaba una práctica que no está respaldada (revisión 23-oct, «sin_respaldo»): el chequeo existe desde el 27-ago y el único sitio entregado salió el 24-jul. El cierre pasa a la acción principal del sitio.",
+      "estado": "cambia"
+     },
+     {
+      "id": "blog.cierre.cta",
+      "rol": "boton",
+      "texto": "Hablemos de tu sitio",
+      "destino": "/contacto/",
+      "antes": "Pedir la revisión de una página",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "por_que": "Ramón, 30-oct: la acción única del sitio pasa a «Hablemos de tu sitio». El cuerpo de arriba («Si prefieres que una persona mire tu sitio, pide la revisión de una página…») lo compara un guardián con paginas-v3.json y no cambia."
+     },
+     {
+      "id": "blog.cierre.chequeo",
+      "rol": "boton",
+      "texto": "Correr el chequeo",
+      "destino": "/diagnostico/",
+      "nota": "Pasa de principal a secundario.",
+      "estado": "queda"
+     }
+    ]
+   },
+   {
+    "id": "articulo",
+    "nombre": "Plantilla del artículo (los siete)",
+    "trabajo": "Los cuerpos se corrigen solo donde afirmaban algo que no se sostiene (guía E13; detalle en e13/desvios/blog.md, una fila por afirmación); aquí lo que pone la plantilla de A.",
+    "elementos": [
+     {
+      "id": "articulo.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Blog · <nombre corto>",
+      "origen": "dist (el nombre corto de cada uno, igual a su BreadcrumbList)",
+      "uso": "miga",
+      "estado": "queda"
+     },
+     {
+      "id": "articulo.ficha",
+      "rol": "ficha",
+      "origen": "dist",
+      "uso": "ficha",
+      "campos": [
+       {
+        "rotulo": "Tema",
+        "valor": "<tema>"
+       },
+       {
+        "rotulo": "Fecha",
+        "valor": "<fecha de publicación>"
+       },
+       {
+        "rotulo": "Lectura",
+        "valor": "<n> min"
+       }
+      ],
+      "estado": "queda"
+     },
+     {
+      "id": "articulo.autor",
+      "rol": "nota",
+      "texto": "Ramón Vallejos · Fundador y director de SpindleLab",
+      "uso": "autor",
+      "antes": "Ramón Vallejos · Fundador de SpindleLab",
+      "por_que": "La misma firma que home.quien.pie y nosotros.rol (Ramón, 30-oct).",
+      "estado": "cambia",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
+     },
+     {
+      "id": "articulo.indice.rotulo",
+      "rol": "rotulo",
+      "texto": "En este artículo",
+      "nota": "Sobre el índice de sus h2 en la barra (nombre accesible: «Secciones»).",
+      "estado": "nuevo"
+     },
+     {
+      "id": "articulo.siguiente",
+      "rol": "rotulo",
+      "texto": "Siguiente artículo",
+      "nota": "Con el título del siguiente, enlazado.",
+      "estado": "nuevo"
+     }
+    ]
+   }
+  ]
+ }
+}

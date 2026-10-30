@@ -1,0 +1,289 @@
+{
+  "metodo": {
+    "slug": "metodo",
+    "canonical": "https://spindlelab.cl/metodo/",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://spindlelab.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Método",
+        "item": "https://spindlelab.cl/metodo/"
+      }
+    ],
+    "pasos": [
+      {
+        "t": "Revisión gratis",
+        "d": "Todo parte con la dirección de tu sitio. Revisamos lo más relevante que se ve desde afuera: acceso de los rastreadores, datos estructurados, títulos, señales de confianza y si Google y las IA pueden visitar tu sitio y entender a qué te dedicas. Te devolvemos una página con los hallazgos y por dónde partiríamos.",
+        "datos": [
+          {
+            "k": "Duración",
+            "v": [
+              "Un día hábil"
+            ]
+          },
+          {
+            "k": "Recibes",
+            "v": [
+              "Una página en lenguaje claro"
+            ]
+          }
+        ],
+        "cuesta": {
+          "t": "Gratis."
+        }
+      },
+      {
+        "t": "Conversación y propuesta",
+        "d": "Conversamos 20 minutos por videollamada sobre tu negocio, cómo te llegan las consultas y qué significa «ganar» para ti. Si hay trabajo que hacer, recibes una propuesta cerrada con alcance, fases, plazos y precio. Si antes hay que mirar más a fondo, lo cotizamos aparte.",
+        "datos": [
+          {
+            "k": "Duración",
+            "v": [
+              "20 minutos por videollamada"
+            ]
+          },
+          {
+            "k": "Recibes",
+            "v": [
+              "Una propuesta por escrito, con precio"
+            ]
+          }
+        ],
+        "cuesta": {
+          "t": "El precio queda en la propuesta, antes de empezar. La auditoría SEO técnica, que se cotiza aparte, parte desde $490.000 + IVA.",
+          "href": "/servicios/auditoria-seo-tecnica/",
+          "enlace": "Ver la auditoría",
+          "slug": "auditoria-seo-tecnica"
+        }
+      },
+      {
+        "t": "Implementación",
+        "d": "Hacemos lo acordado por fases, o te entregamos las especificaciones para que las implemente tu equipo. Tú decides el ritmo. Cada fase termina con algo que apruebas antes de seguir.",
+        "datos": [
+          {
+            "k": "Duración",
+            "v": [
+              "La fija la propuesta, fase por fase"
+            ]
+          },
+          {
+            "k": "Recibes",
+            "v": [
+              "Un entregable por fase, que apruebas antes de seguir"
+            ]
+          }
+        ],
+        "cuesta": {
+          "t": "Lo que diga la propuesta. Cada solución publica su precio de partida.",
+          "href": "/servicios/",
+          "enlace": "Ver las soluciones"
+        }
+      },
+      {
+        "t": "Acompañamiento mensual",
+        "d": "Si quieres seguir, medimos cada mes con el mismo criterio, te lo contamos en una página en lenguaje de negocio y la reunión mensual define las prioridades del mes siguiente.",
+        "datos": [
+          {
+            "k": "Frecuencia",
+            "v": [
+              "Informe mensual",
+              "Reunión mensual"
+            ]
+          },
+          {
+            "k": "Recibes",
+            "v": [
+              "Una página en lenguaje de negocio"
+            ]
+          }
+        ],
+        "cuesta": {
+          "t": "Desde $590.000/mes + IVA, mínimo 3 meses y después mes a mes, con aviso de 30 días.",
+          "href": "/servicios/acompanamiento-mensual/",
+          "enlace": "Ver el acompañamiento",
+          "slug": "acompanamiento-mensual"
+        }
+      }
+    ]
+  },
+  "diagnostico": {
+    "slug": "diagnostico",
+    "canonical": "https://spindlelab.cl/diagnostico/",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://spindlelab.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Chequeo gratis",
+        "item": "https://spindlelab.cl/diagnostico/"
+      }
+    ],
+    "faq": [
+      {
+        "p": "¿El chequeo es realmente gratis?",
+        "r": "Sí, y no pedimos tu correo. Escribes el dominio y ves el resultado completo en pantalla, con el detalle de cada chequeo."
+      },
+      {
+        "p": "¿Qué mide exactamente el puntaje?",
+        "r": "Mide si tu sitio está técnicamente preparado para que ChatGPT y otras IA puedan visitarlo, entender a qué te dedicas y citarlo. No mide si hoy te citan: eso depende de menciones en fuentes externas y no se ve desde tu sitio."
+      },
+      {
+        "p": "¿Un puntaje alto significa que ChatGPT me va a recomendar?",
+        "r": "No. Este chequeo mide si tu sitio está preparado, no si hoy te citan. Los motores arman sus respuestas con fuentes de terceros (rankings, directorios, artículos) además de tu sitio. Puedes estar impecable por dentro y aun así no aparecer. Qué fuentes te faltan no se ve desde tu sitio: hay que preguntarle a los motores."
+      },
+      {
+        "p": "¿Guardan mi dominio?",
+        "r": "No guardamos el dominio consultado ni te pedimos datos. El chequeo lee únicamente páginas públicas de tu sitio, las mismas que lee cualquier buscador."
+      },
+      {
+        "p": "¿En qué se diferencia de la revisión a mano?",
+        "r": "El chequeo es automático y revisa tu sitio. La revisión la hacemos a mano: una página con lo más importante que encontramos y por dónde partiríamos. Es gratis y llega en un día hábil."
+      }
+    ]
+  },
+  "contacto": {
+    "slug": "contacto",
+    "canonical": "https://spindlelab.cl/contacto/",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://spindlelab.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contacto",
+        "item": "https://spindlelab.cl/contacto/"
+      }
+    ],
+    "faq": [
+      {
+        "p": "¿La revisión es gratis?",
+        "r": "Sí. Es nuestra primera entrega y no te cobramos por ella."
+      },
+      {
+        "p": "¿Qué información necesitan para empezar?",
+        "r": "La dirección de tu sitio o, si todavía no tienes, qué vendes. Si avanzamos, te vamos a pedir acceso de lectura a Search Console y a tu analítica."
+      },
+      {
+        "p": "¿Firman acuerdos de confidencialidad?",
+        "r": "Podemos firmar uno si lo necesitas."
+      },
+      {
+        "p": "¿Atienden fuera de Santiago?",
+        "r": "Sí. El trabajo es remoto y atendemos a todo Chile. Nos juntamos por videollamada, en horario de oficina."
+      }
+    ]
+  },
+  "servicios": {
+    "_nota": "Lo lee src/pages/v3/servicios/index.astro, y solo dos campos: breadcrumb (el BreadcrumbList; la posición 2 dice «Soluciones», como la miga visible) e itemList (el ItemList del JSON-LD, con su nombre, en el orden de los cuatro bloques de la página, el de ORDEN en servicios.mjs; si le falta un servicio, el build cae). Son los nodos de la página publicada (public/servicios/index.html), con los dos nombres que la v3 corrigió (E8, paso 1): no borrar esta clave. El texto de la página vive en servicios/index.astro, en e13/texto/servicios.json y en oferta-v3.json; title, description, h1, lead y secciones se quitaron el 13-oct-2026 porque nada los leía. slug y canonical tampoco se leen.",
+    "slug": "servicios",
+    "breadcrumb": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://spindlelab.cl/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Soluciones",
+        "item": "https://spindlelab.cl/servicios/"
+      }
+    ],
+    "itemList": {
+      "@type": "ItemList",
+      "name": "Soluciones de SpindleLab",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/#service",
+            "name": "Auditoría SEO Técnica",
+            "url": "https://spindlelab.cl/servicios/auditoria-seo-tecnica/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/visibilidad-en-ia/#service",
+            "name": "Visibilidad en IA (AEO/GEO)",
+            "url": "https://spindlelab.cl/servicios/visibilidad-en-ia/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/paid-media/#service",
+            "name": "Paid Media (Google)",
+            "url": "https://spindlelab.cl/servicios/paid-media/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/redes-sociales/#service",
+            "name": "Gestión de Redes Sociales",
+            "url": "https://spindlelab.cl/servicios/redes-sociales/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/desarrollo-web/#service",
+            "name": "Desarrollo Web",
+            "url": "https://spindlelab.cl/servicios/desarrollo-web/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "@id": "https://spindlelab.cl/servicios/acompanamiento-mensual/#service",
+            "name": "Acompañamiento Mensual",
+            "url": "https://spindlelab.cl/servicios/acompanamiento-mensual/"
+          }
+        }
+      ]
+    },
+    "canonical": "https://spindlelab.cl/servicios/"
+  },
+  "blog": {
+    "_nota": "Lo lee src/pages/v3/blog/index.astro (todo) y src/pages/v3/blog/[slug].astro (solo cierre: es el mismo de los 7 artículos). Titulares, bajadas y fechas de los artículos NO van aquí: salen de data/blog-v3/_indice.json, que está cerrado.",
+    "title": "Blog: SEO técnico y visibilidad en IA · SpindleLab",
+    "description": "Cómo funcionan el SEO técnico y la visibilidad en motores de IA, explicado con la metodología a la vista y sin promesas de primeros lugares.",
+    "h1": "Lo que escribimos sobre búsqueda e IA",
+    "linea": "Cómo funciona esto por dentro, desde qué mira el chequeo hasta qué preguntar antes de contratar a alguien. La metodología está publicada a propósito.",
+    "cierre": {
+      "h2": "Leer ayuda; medir, más.",
+      "guia": "Son 21 chequeos concretos sobre tu sitio, en segundos y gratis. Cada chequeo que no pases viene con la instrucción para arreglarlo.",
+      "cuerpo": "Si prefieres que una persona mire tu sitio, pide la revisión de una página: es gratis y llega en un día hábil."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/redes-sociales.json",
+ "sha256": "b9b4e3ecf25d1841bd6cb1493cdcdf3c149ba8fc0eceec532e09fbacdf5894e5",
+ "id": "redes-sociales",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "redes-sociales",
+  "ruta": "/servicios/redes-sociales/",
+  "title": "Gestión de redes sociales para empresas · SpindleLab",
+  "description": "Gestión de redes en LinkedIn y Meta: calendario, pauta, comunidad y reporte. Piezas gráficas y video los pones tú; si no tienes quién los haga, te orientamos.",
+  "senales": "v2-vigente/servicios__redes-sociales.txt (title y description publicados el 24-oct)",
+  "modo": "reescrita al mensaje nuevo (obra E13)",
+  "regla": "Lo que no se lista aquí sale de servicios-v3.json, que esta obra corrigió a mano (partners → te orientamos, reporte mensual, sin «motor»). Ver e13/desvios/servicios.md.",
+  "secciones": [
+   {
+    "id": "cabecera",
+    "nombre": "Cabecera",
+    "trabajo": "Nombrar el servicio y decir qué le hace al cliente.",
+    "elementos": [
+     {
+      "id": "redes-sociales.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Soluciones · Gestión de redes sociales",
+      "origen": "v2-vigente/servicios__redes-sociales.txt (la miga dice «Soluciones»)",
+      "uso": "miga",
+      "antes": "Inicio · Servicios · Gestión de redes sociales",
+      "estado": "cambia"
+     },
+     {
+      "id": "redes-sociales.h1",
+      "rol": "h1",
+      "tinta": "Gestión de redes sociales.",
+      "gris": "Tus publicaciones y tu publicidad en LinkedIn, Instagram y Facebook.",
+      "texto": "Gestión de redes sociales. Tus publicaciones y tu publicidad en LinkedIn, Instagram y Facebook.",
+      "origen": "texto del v3 anterior",
+      "estado": "queda"
+     },
+     {
+      "id": "redes-sociales.resto",
+      "rol": "nota",
+      "texto": "Sale de servicios-v3.json (corregido a mano en esta obra): la línea con el precio («linea»), la nota de precios, el lead, las secciones con sus planes y precios, las preguntas, el cierre y «Siguiente».",
+      "uso": "referencia",
+      "origen": "spindlelab-astro/src/data/servicios-v3.json redes-sociales",
+      "estado": "cambia"
+     }
+    ]
+   },
+   {
+    "id": "cierre",
+    "nombre": "Cierre",
+    "trabajo": "Abrir la conversación sobre el caso; la revisión gratis es del sitio, no de las redes.",
+    "elementos": [
+     {
+      "id": "redes-sociales.cierre.boton",
+      "rol": "boton",
+      "texto": "Conversar mi caso",
+      "antes": "Pedir el diagnóstico",
+      "origen": "copy-secciones-v1.2.md §5.5 (cierre: «Conversar mi caso»; la oferta del mini-diagnóstico sale)",
+      "destino": "/contacto/",
+      "estado": "cambia"
+     }
+    ]
+   }
+  ]
+ }
+}

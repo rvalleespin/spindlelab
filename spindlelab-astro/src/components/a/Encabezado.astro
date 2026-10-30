@@ -1,0 +1,38 @@
+---
+// EL ENCABEZADO DE A (spec §2, «Lo común», 1; prototipo .cab; E13: spec-home §3.2). El logo El huso en el margen, el menú
+// en mono 11, la hora y el botón de la revisión a la derecha. Es pegajoso en todos los anchos y se pliega en la placa al
+// bajar (base.mjs): bajo 834 queda solo el logo y el botón, así que la acción principal está siempre a la vista. El menú
+// va en una segunda fila de 44 bajo 834 y no hay botón «Menú»; «Contacto» sale de esa fila porque el botón lleva al
+// mismo destino. Textos de Clara: comun.nav (los seis ítems, el botón y el nombre del nav, «Principal»).
+// La página actual va en blanco con aria-current: «page» si es esa página, «true» si es una de su sección (un caso
+// está dentro de Trabajo). El botón es una acción, no una página: no lleva aria-current, y no se dibuja en
+// /contacto/, donde está el formulario.
+// 30-oct: el botón dice «Hablemos» (comun.nav.revision) y va en amarillo, .boton--accion (spec-home §12.3; spec-visual
+// §0.3 punto 11 y §1.1, --a-accion): con #portada-cta, uno de los dos únicos botones con color del sitio.
+import Logo from './Logo.astro';
+import Hora from './Hora.astro';
+import { textoDe } from '../../data/archivo/texto.mjs';
+import comun from '../../data/archivo/texto/comun.json';
+
+const t = textoDe(comun);
+const menu = ['servicios', 'metodo', 'nosotros', 'trabajo', 'blog', 'contacto'].map((k) => {
+  const e = t(`comun.nav.${k}`);
+  return { href: e.destino as string, texto: e.texto as string, soloEscritorio: k === 'contacto' };
+});
+const revision = t('comun.nav.revision');
+const ruta = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/';
+const actual = (href: string) => (ruta === href ? 'page' : ruta.startsWith(href) ? 'true' : undefined);
+---
+<header class="cab">
+  <div class="cab__placa" aria-hidden="true"></div>
+  <div class="cab__fila">
+    <a class="cab__logo" href="/"><Logo /></a>
+    <nav class="cab__nav" aria-label={t('comun.nav.nombre').texto}>
+      <ul>{menu.map((m) => <li class={m.soloEscritorio ? 'cab__nav-contacto' : undefined}><a href={m.href} aria-current={actual(m.href)}>{m.texto}</a></li>)}</ul>
+    </nav>
+    <div class="cab__der">
+      <Hora />
+      {ruta !== revision.destino && <a class="boton boton--accion cab__cta" href={revision.destino}>{revision.texto}</a>}
+    </div>
+  </div>
+</header>

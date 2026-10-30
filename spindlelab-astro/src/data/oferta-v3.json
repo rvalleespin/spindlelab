@@ -1,0 +1,176 @@
+{
+  "momentos": [
+    {
+      "momento": "Tu sitio te frena, o no existe",
+      "items": [
+        {
+          "n": "Desarrollo web",
+          "p": "$390.000 · $690.000 · $1.190.000",
+          "href": "/servicios/desarrollo-web/",
+          "d": "El sitio nace listo para que Google y las IA puedan visitarlo y entender a qué te dedicas. Lo compruebas con el mismo chequeo, sobre tu dominio, antes y después.",
+          "dIndice": "El sitio nace listo para que Google y las IA puedan visitarlo y entender a qué te dedicas. Lo compruebas con el chequeo gratis, sobre tu dominio, antes y después."
+        }
+      ],
+      "nota": "",
+      "palabra": "Desarrollo",
+      "campo": "brasa",
+      "planes": [
+        {
+          "n": "Página de Campaña",
+          "p": "Desde $390.000 + IVA",
+          "d": "Una página hecha para convertir la pauta que ya estás pagando.",
+          "puntos": [
+            "Una página, para una campaña y una oferta",
+            "Diseño a medida, hecho para tu negocio",
+            "Panel donde cambias textos y fotos",
+            "SEO técnico y medición desde el primer día",
+            "Entrega en ~1 semana"
+          ]
+        },
+        {
+          "n": "Sitio Esencial",
+          "p": "Desde $690.000 + IVA",
+          "d": "Un sitio a medida, listo para funcionar.",
+          "puntos": [
+            "Home y hasta 5 páginas",
+            "Panel donde cambias textos y fotos",
+            "SEO técnico base: schema, velocidad, indexación",
+            "Un idioma",
+            "Entrega en ~3 semanas"
+          ]
+        },
+        {
+          "n": "Sitio Completo",
+          "p": "Desde $1.190.000 + IVA",
+          "d": "Más páginas y puesto a punto para que ChatGPT y otras IA puedan visitar tu sitio y entender a qué te dedicas.",
+          "puntos": [
+            "Home y hasta 12 páginas",
+            "Blog o CMS que administras tú",
+            "SEO técnico y puesta a punto AEO/GEO",
+            "Uno o dos idiomas",
+            "Entrega en ~4 a 6 semanas"
+          ]
+        },
+        {
+          "n": "Plataforma a Medida",
+          "p": "Se cotiza",
+          "d": "Para proyectos con integraciones o lógica propia.",
+          "puntos": [
+            "Todo lo del Sitio Completo, y más",
+            "Páginas sin tope",
+            "Integraciones a medida: reservas, pagos",
+            "Arquitectura propia",
+            "Multi-idioma"
+          ]
+        }
+      ]
+    },
+    {
+      "momento": "Tu sitio existe y no lo vas a rehacer",
+      "items": [
+        {
+          "n": "Visibilidad en IA",
+          "p": "$400.000",
+          "href": "/servicios/visibilidad-en-ia/",
+          "d": "Mide cómo te describen ChatGPT, Gemini y Perplexity y qué cambiar en tu sitio para que te entiendan mejor."
+        },
+        {
+          "n": "Auditoría SEO técnica",
+          "p": "$490.000 · $690.000 con Visibilidad en IA",
+          "href": "/servicios/auditoria-seo-tecnica/",
+          "d": "Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué arreglar primero."
+        }
+      ],
+      "palabra": "Visibilidad",
+      "campo": "navy",
+      "nota": "No hace falta reconstruir para que ChatGPT y otras IA puedan visitar tu sitio y entender a qué te dedicas.",
+      "planes": [
+        {
+          "n": "Visibilidad en IA",
+          "d": "Mide cómo te describen ChatGPT, Gemini y Perplexity y qué cambiar en tu sitio para que te entiendan mejor.",
+          "p": "$400.000",
+          "href": "/servicios/visibilidad-en-ia/",
+          "cta": "Ver Visibilidad en IA"
+        },
+        {
+          "n": "Auditoría SEO técnica",
+          "d": "Rastreo, indexación, Core Web Vitals y datos estructurados. Qué te frena y qué arreglar primero.",
+          "p": "$490.000 · $690.000 con Visibilidad IA",
+          "href": "/servicios/auditoria-seo-tecnica/",
+          "cta": "Ver Auditoría SEO técnica"
+        }
+      ]
+    },
+    {
+      "momento": "Ya giras y quieres sostenerlo",
+      "items": [
+        {
+          "n": "Acompañamiento mensual",
+          "p": "$590.000/mes · $790.000/mes Pro",
+          "href": "/servicios/acompanamiento-mensual/",
+          "d": "Implementación continua e informe mensual de SEO técnico o de visibilidad en IA."
+        }
+      ],
+      "palabra": "Continuidad",
+      "campo": "petroleo",
+      "planes": [
+        {
+          "n": "Esencial",
+          "d": "Sostener y mejorar un frente: técnico o visibilidad en IA.",
+          "p": "Desde $590.000/mes + IVA"
+        },
+        {
+          "n": "Pro",
+          "d": "Las dos capas juntas, con más cobertura y contenido.",
+          "p": "Desde $790.000/mes + IVA"
+        },
+        {
+          "n": "A medida",
+          "d": "Equipo dedicado y varios frentes a la vez.",
+          "p": "Se cotiza tras una reunión"
+        }
+      ]
+    }
+  ],
+  "tambien": [
+    {
+      "n": "Gestión de redes sociales",
+      "p": "$390.000/mes · $590.000/mes con pauta",
+      "href": "/servicios/redes-sociales/",
+      "d": "Orgánico y pauta social en LinkedIn y Meta."
+    },
+    {
+      "n": "Paid Media (Google)",
+      "p": "$350.000/mes · $550.000/mes Pro",
+      "href": "/servicios/paid-media/",
+      "d": "Google Ads para llegar a quien ya está buscando lo que ofreces."
+    }
+  ],
+  "fuera": [
+    "Contenido creativo: redacción y guiones de piezas.",
+    "Diseño gráfico: piezas visuales y arte final.",
+    "Producción de video: rodaje y edición."
+  ],
+  "tambienPanel": {
+    "palabra": "Alcance",
+    "campo": "ciruela",
+    "momento": "Ya tienes demanda y quieres más",
+    "nota": "",
+    "planes": [
+      {
+        "n": "Gestión de redes sociales",
+        "d": "Orgánico y pauta social en LinkedIn y Meta.",
+        "p": "$390.000/mes · $590.000/mes con pauta",
+        "href": "/servicios/redes-sociales/",
+        "cta": "Ver Gestión de redes sociales"
+      },
+      {
+        "n": "Paid Media (Google)",
+        "d": "Google Ads de alta intención: captura a quien ya está buscando lo que ofreces.",
+        "p": "$350.000/mes · $550.000/mes Pro",
+        "href": "/servicios/paid-media/",
+        "cta": "Ver Paid Media (Google)"
+      }
+    ]
+  }
+}

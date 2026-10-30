@@ -1,0 +1,68 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/visibilidad-en-ia.json",
+ "sha256": "62ef58e289b6abce5a23dd05fb1468b7db3c06d3e6d4342283a01758905d895b",
+ "id": "visibilidad-en-ia",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "visibilidad-en-ia",
+  "ruta": "/servicios/visibilidad-en-ia/",
+  "title": "Visibilidad en IA (AEO/GEO) · SpindleLab",
+  "description": "Medimos cómo te describen ChatGPT, Gemini y Perplexity y qué cambiar en tu sitio para que te entiendan mejor. Auditoría desde $400.000 + IVA.",
+  "senales": "v2-vigente/servicios__visibilidad-en-ia.txt (title y description publicados el 24-oct)",
+  "modo": "reescrita al mensaje nuevo (obra E13)",
+  "regla": "Lo que no se lista aquí sale de servicios-v3.json, que esta obra corrigió a mano (monitoreo, consultas medidas, share-of-voice, AI Overviews, compromiso de puntaje, «aumentar tu probabilidad de cita», mini-diagnóstico, 24 horas). Ver e13/desvios/servicios.md.",
+  "secciones": [
+   {
+    "id": "cabecera",
+    "nombre": "Cabecera",
+    "trabajo": "Nombrar el servicio y decir qué se mide, sin prometer que te citen.",
+    "elementos": [
+     {
+      "id": "visibilidad-en-ia.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Soluciones · Visibilidad en IA",
+      "origen": "v2-vigente/servicios__visibilidad-en-ia.txt (la miga dice «Soluciones»)",
+      "uso": "miga",
+      "antes": "Inicio · Servicios · Visibilidad en IA",
+      "estado": "cambia"
+     },
+     {
+      "id": "visibilidad-en-ia.h1",
+      "rol": "h1",
+      "tinta": "Visibilidad en IA.",
+      "gris": "Qué dicen ChatGPT, Gemini y Perplexity de tu empresa.",
+      "texto": "Visibilidad en IA. Qué dicen ChatGPT, Gemini y Perplexity de tu empresa.",
+      "antes": "Visibilidad en IA. Que ChatGPT, Gemini y Perplexity puedan leer tu sitio y nombrarte.",
+      "origen": "copy-secciones-v1.2.md §5.2 (H1: «Visibilidad en IA: qué dicen ChatGPT, Gemini y Perplexity de tu empresa.»)",
+      "por_que": "Sale «y nombrarte» (promesa de resultado, revisión 23-oct). La plantilla de A pone el h1 en dos tintas: el documento partido en su dos puntos.",
+      "estado": "cambia"
+     },
+     {
+      "id": "visibilidad-en-ia.resto",
+      "rol": "nota",
+      "texto": "Sale de servicios-v3.json (corregido a mano en esta obra): la línea con el precio («linea»), la nota de precios, el lead, las secciones con sus planes y precios, las preguntas, el cierre y «Siguiente».",
+      "uso": "referencia",
+      "origen": "spindlelab-astro/src/data/servicios-v3.json visibilidad-en-ia",
+      "estado": "cambia"
+     }
+    ]
+   },
+   {
+    "id": "cierre",
+    "nombre": "Cierre",
+    "trabajo": "Pedir la revisión del sitio.",
+    "elementos": [
+     {
+      "id": "visibilidad-en-ia.cierre.boton",
+      "rol": "boton",
+      "texto": "Pedir la revisión de mi sitio",
+      "antes": "Pedir el diagnóstico",
+      "origen": "copy-secciones-v1.2.md §5.2 (cierre: CTA «Pedir la revisión de mi sitio»)",
+      "destino": "/contacto/",
+      "estado": "cambia"
+     }
+    ]
+   }
+  ]
+ }
+}

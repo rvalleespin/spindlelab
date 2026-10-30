@@ -1,0 +1,144 @@
+---
+// LA PLANTILLA DE CASO DE A (spec §2.3; lock §21.5: la de Koto). Tanda 3, Diego, 19-oct-2026; recortada en la obra E13.
+//
+// Desde 1194: la barra lateral de 320 px, pegajosa (miga, h1 en dos tintas, ficha mono, índice de secciones con el punto
+// de 3 px, créditos abajo) y la columna: el medio principal 16:9, las cinco secciones con sus filas de medios y el
+// cierre. Bajo 1194: el medio principal arriba (desde 834, 16:9 con radio; bajo 834, 4:5 a sangre), el nombre, la
+// ficha y las secciones en una columna, y el índice en la barra flotante de abajo.
+//
+// E13: con un solo caso no hay «Siguiente». El cierre pide la revisión de una página y enlaza al índice de Trabajo.
+// E13, ronda 2 (acta de QA, defecto 5): el caso lleva el pie común (PaginaA con su pie, como las demás rutas). La spec decía
+// «el caso no tiene pie» (§2, lo común, 2) y la política de privacidad dice que el control de cookies y el enlace a ella están
+// al final de cualquier página. Bajo 1194 la página deja el alto de la barra flotante bajo el pie (archivo.css, `.a-pagina:has(.caso)`).
+//
+// Todo el texto es de Clara y todo medio sale de medios-casos.json: lo arma modelo() en casos.mjs, que hace fallar el
+// build si falta algo. Este archivo lo lee Tailwind: aquí no va lógica ni palabras sueltas (desvios.md, tanda 1).
+import PaginaA from './PaginaA.astro';
+import Miga from './Miga.astro';
+import Video from './Video.astro';
+import FilaCaso from './FilaCaso.astro';
+import Icono from './Icono.astro';
+import { modelo } from '../../data/archivo/casos.mjs';
+
+interface Props {
+  caso: string;
+}
+const m = modelo(Astro.props.caso);
+const ruta = `/trabajo/${m.caso}/`;
+---
+<PaginaA>
+  <div class="caso">
+    <header class="lateral">
+      <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1], href: '/trabajo/' }, { texto: m.miga[2] }]} />
+      <h1 class="t-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
+      <div class="lateral__ficha">
+        <p class="rotulo">{m.ficha.linea}</p>
+        {m.ficha.datos.length > 0 && (
+          <dl class="lateral__datos">
+            {m.ficha.datos.map((d) => (<><dt class="dato">{d.rotulo}</dt><dd class="dato">{d.valor}</dd></>))}
+          </dl>
+        )}
+      </div>
+      <nav class="lateral__indice" aria-label={m.nombreSecciones} data-secciones>
+        <span class="lateral__punto" aria-hidden="true"></span>
+        <ul>
+          {m.secciones.map((s, i) => (
+            <li><a href={`${ruta}#${s.id}`} aria-current={i === 0 ? 'location' : undefined}>{s.nombre}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <div class="lateral__creditos">
+        <p class="rotulo">{m.creditos.rotulo}</p>
+        <p class="chico">{m.creditos.texto}</p>
+      </div>
+    </header>
+
+    <div class="caso__columna">
+      <figure class="medio-principal">
+        <Video
+          poster={m.principal.poster.src}
+          ancho={m.principal.poster.ancho}
+          alto={m.principal.poster.alto}
+          posterAngosto={m.principal.posterAngosto ? { src: m.principal.posterAngosto.src, ancho: m.principal.posterAngosto.ancho, alto: m.principal.posterAngosto.alto } : undefined}
+          fuentes={m.principal.fuentes}
+          clase="p-169"
+          descripcion={m.principal.alt}
+          primeraPantalla
+        />
+        {(m.principal.pie || m.principal.descripcionOculta) && (
+          <figcaption class="pie">
+            {m.principal.descripcionOculta && <span class="solo-lector">{m.principal.descripcionOculta}</span>}
+            {m.principal.pie}
+          </figcaption>
+        )}
+      </figure>
+
+      {m.secciones.map((s) => (
+        <section class="caso-bloque" id={s.id} data-nombre={s.nombre} aria-labelledby={`h-${s.id}`}>
+          <div class="caso-sec">
+            <div class="caso-sec__izq">
+              <p class="rotulo">{s.nombre}</p>
+              <h2 id={`h-${s.id}`}>{s.h2}</h2>
+            </div>
+            {s.cuerpo.length > 0 && (
+              <div class="caso-sec__der">
+                {s.cuerpo.map((b) => (
+                  b.tipo === 'p' ? <p class="cuerpo">{b.texto}</p>
+                  : b.tipo === 'rotulo' ? <p class="rotulo caso-sec__rotulo">{b.texto}</p>
+                  : b.tipo === 'chico' ? <p class="chico">{b.texto}</p>
+                  : <ul class="ingredientes">{b.items.map((it) => <li>{it.texto}{it.dato && <span class="dato">{it.dato}</span>}</li>)}</ul>
+                ))}
+              </div>
+            )}
+          </div>
+          {s.filas.length > 0 && (
+            <div class="filas">
+              {s.filas.map((f, j) => <FilaCaso fila={f} entrada={j === 0} />)}
+            </div>
+          )}
+          {s.partes.map((parte, k) => (
+            <div class="caso-parte" id={parte.ancla}>
+              <div class="caso-sec caso-sec--parte">
+                <div class="caso-sec__izq"><h3>{parte.h3}</h3></div>
+                <div class="caso-sec__der">{parte.cuerpo.map((b) => <p class="cuerpo">{b.texto}</p>)}</div>
+              </div>
+              <div class="filas">
+                {parte.filas.map((f, j) => <FilaCaso fila={f} entrada={s.filas.length === 0 && k === 0 && j === 0} />)}
+              </div>
+            </div>
+          ))}
+        </section>
+      ))}
+
+      <section class="siguiente" aria-labelledby="h-cierre" data-entrada>
+        <div class="siguiente__contacto">
+          <p class="t-titulo t-display" id="h-cierre"><span class="tinta">{m.cierre.contacto.tinta}</span> <span class="gris">{m.cierre.contacto.gris}</span></p>
+          <a class="boton boton--claro" href={m.cierre.boton.destino}>{m.cierre.boton.texto}<Icono nombre="flecha" /></a>
+        </div>
+        <div class="siguiente__caso">
+          <a class="corchete" href={m.cierre.todo.destino}>{m.cierre.todo.texto}</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <nav class="barra" aria-label={m.nombreSecciones} data-secciones>
+    <details>
+      <summary>
+        <span class="rotulo">{m.nombreCorto}</span>
+        <span class="barra__activa rotulo" data-barra-activa>{m.secciones[0].nombre}</span>
+        <span class="barra__mas" aria-hidden="true">+</span>
+        <span class="solo-lector">{m.nombreBarra}</span>
+      </summary>
+      <ul>
+        {m.secciones.map((s, i) => (
+          <li><a href={`${ruta}#${s.id}`} aria-current={i === 0 ? 'location' : undefined}>{s.nombre}</a></li>
+        ))}
+      </ul>
+    </details>
+  </nav>
+</PaginaA>
+
+<script>
+  import '../../scripts/archivo/caso.mjs';
+</script>
