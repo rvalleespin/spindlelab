@@ -1,0 +1,782 @@
+{
+  "id": "H50",
+  "dominio": "cascada.travel",
+  "motor": "v0",
+  "cuando": "2026-10-30T14:18:36.554Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "hallazgo-capa-2",
+  "url": "https://www.cascada.travel/en/",
+  "hallazgo": {
+    "id": "C1",
+    "nombre": "Rastreadores que escriben antes de cualquier consentimiento",
+    "linea": "Verifica y Cumple",
+    "estado": "estable",
+    "quien_comprueba": "el dueño, en 30 segundos",
+    "donde_mirar": "Abrir el sitio en una ventana nueva, NO responder el aviso, y mirar las cookies (candado > Cookies, o F12 > Application > Cookies): ya hay de medición o publicidad.",
+    "condiciones": {
+      "1": {
+        "v": "si",
+        "razon": "Las cookies las escriben scripts de terceros; el dueño ve el sitio normal."
+      },
+      "2": {
+        "v": "si",
+        "razon": "Cookies de medición o publicidad escritas sin que nadie haya aceptado: _gcl_au, _clck, _clsk. Se describe la señal, no la obligación."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve en el panel de cookies del navegador."
+      },
+      "4": {
+        "v": "si",
+        "razon": "Exige dos tramos, atribuir cada cookie a su script y leer Consent Mode (gcs); no lo entrega una API."
+      }
+    },
+    "afirmable": "El sitio muestra un aviso de cookies, pero antes de elegir nada en él ya había guardado: _gcl_au, _clck, _clsk.",
+    "no_afirmable": [
+      "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics, Microsoft Clarity)",
+      "lo que la ley \"exige\"",
+      "cualquier cosa que no aparezca en las dos corridas",
+      "que el sitio \"no tiene aviso\" (sí lo tiene)",
+      "que el aviso sea ilegal o insuficiente",
+      "que las cookies se escriban aun después de pulsar Rechazar (no se probó)"
+    ],
+    "advertencias": [
+      "Hay peticiones a Google con gcs=G100 (Consent Mode, consentimiento denegado): no afirmar \"Analytics recibe la visita\" sin mirar las cookies."
+    ],
+    "variante": "con-aviso",
+    "propuesta": {
+      "en_castellano": "Tu sitio tiene aviso de cookies, pero antes de que yo eligiera nada ahí ya habían quedado en mi navegador cookies de Google y Microsoft.",
+      "problema_tecnico": "El sitio muestra un aviso de cookies, pero antes de elegir nada en él ya había guardado: _gcl_au, _clck, _clsk.",
+      "donde_mirar": "Abrir el sitio en una ventana nueva, NO responder el aviso, y mirar las cookies (candado > Cookies, o F12 > Application > Cookies): ya hay de medición o publicidad.",
+      "se_vende": {
+        "linea": "Verifica y Cumple",
+        "producto": "Kit de implementación de Verifica y Cumple",
+        "alcance": "Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.",
+        "vehiculo_publicado": "Desde $149.000 + IVA, una vez (correos aprobados 23-sep y estrategia §1)",
+        "precio_en_el_correo": "Desde $149.000 + IVA, una vez",
+        "linea_de_precio": null,
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "media",
+      "frase_de_arreglo": "Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.",
+      "apertura_a_reunion": "Vi 3 cosas más que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": "Gratis y sin registro: https://verifica.spindlelab.cl",
+      "estado_del_texto": "APROBADO: tomado de correos ya revisados.",
+      "por_definir": [],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F14",
+      "nombre": "El formulario de contacto pide demasiados datos",
+      "linea": "Desarrollo Web",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, mirando su formulario",
+      "donde_mirar": "Abrir el formulario de contacto y contar los campos que hay que llenar.",
+      "condiciones": {
+        "1": {
+          "v": "medias",
+          "razon": "El dueño no lo mira como lo mira un cliente."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Cada campo de más es una razón para no terminarlo."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se cuenta a simple vista."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Es capa 1."
+        }
+      },
+      "afirmable": "El formulario de contacto pide 13 datos o más.",
+      "no_afirmable": [
+        "cuántos de esos campos son obligatorios",
+        "cuánta gente lo abandona"
+      ],
+      "advertencias": [],
+      "datos": {
+        "campos": 13
+      },
+      "propuesta": {
+        "en_castellano": "Tu formulario de contacto pide 13 datos o más antes de poder enviarlo.",
+        "problema_tecnico": "El formulario de contacto pide 13 datos o más.",
+        "donde_mirar": "Abrir el formulario de contacto y contar los campos que hay que llenar.",
+        "se_vende": {
+          "linea": "Desarrollo Web",
+          "producto": "Desarrollo Web a medida",
+          "alcance": "Reducir el formulario de contacto a lo necesario y probarlo.",
+          "vehiculo_publicado": "Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Desarrollo Web a medida, página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "media",
+        "frase_de_arreglo": "Eso se arregla: lo dejo en lo mínimo para que te escriban y lo pruebo.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F12",
+      "nombre": "La portada descarga demasiado peso",
+      "linea": "Auditoría SEO Técnica",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "quien administra el sitio, con las herramientas del navegador",
+      "donde_mirar": "En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Nadie mira cuánto pesa su portada."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "En un celular con datos, una portada pesada tarda en abrir."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en la pestaña Network."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Cualquier medidor de velocidad lo ve: es capa 1."
+        }
+      },
+      "afirmable": "La portada descarga 15.6 MB solo al abrirse, sin bajar la página (mínimo de las 3 corridas).",
+      "no_afirmable": [
+        "cuánto tarda en abrir para un visitante real (se mide desde un datacenter)"
+      ],
+      "advertencias": [],
+      "datos": {
+        "mb": 15.6,
+        "mas_pesado": {
+          "url": "https://www.cascada.travel/hubfs/Hanging%20Bridge%20over%20Grey%20Glacier%2c%20Torres%20del%20Paine%20National%20Park.jpg",
+          "bytes": 5820675
+        }
+      },
+      "propuesta": {
+        "en_castellano": "Tu portada descarga 15.6 MB solo al abrirse; en un celular con datos eso tarda.",
+        "problema_tecnico": "La portada descarga 15.6 MB solo al abrirse, sin bajar la página (mínimo de las 3 corridas).",
+        "donde_mirar": "En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.",
+        "se_vende": {
+          "linea": "Arreglo puntual",
+          "producto": "Arreglo puntual de la portada",
+          "alcance": "Reducir el peso de la portada y medir el antes y el después.",
+          "vehiculo_publicado": "$149.000 + IVA, una vez (decisión de Ramón, 30-oct-2026)",
+          "precio_en_el_correo": "$149.000 + IVA, una vez",
+          "linea_de_precio": null,
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla: dejo la portada liviana y mido cuánto baja.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F8",
+      "nombre": "El negocio no está declarado como entidad en datos estructurados",
+      "linea": "Visibilidad en IA",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con una herramienta gratuita",
+      "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Los datos estructurados no se ven."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin entidad declarada, la IA y Google adivinan quién eres."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con una herramienta gratuita."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Los chequeos gratis lo muestran: es capa 1."
+        }
+      },
+      "afirmable": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+      "no_afirmable": [
+        "que \"Google no te entiende\""
+      ],
+      "advertencias": [],
+      "datos": {},
+      "propuesta": {
+        "en_castellano": "Tu sitio no le dice a Google ni a la IA qué negocio eres en el formato que ellos leen (datos estructurados).",
+        "problema_tecnico": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+        "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+        "se_vende": {
+          "linea": "Visibilidad en IA",
+          "producto": "Auditoría de Visibilidad en IA",
+          "alcance": "Declarar el negocio como entidad en datos estructurados.",
+          "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo declarado qué negocio eres, con tu dirección y tu contacto, en el formato que leen Google y la IA.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F14",
+    "F12",
+    "F8"
+  ],
+  "capa1": {
+    "consecuencia": [],
+    "higiene": [
+      "sin_llms_txt",
+      "sin_entidad_en_jsonld"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": [
+        "https://wa.me/56962050721"
+      ]
+    },
+    "analitica": {
+      "gtm": [
+        "GTM-PKJMJ3P"
+      ],
+      "ga4": [
+        "G-71K8Q5E1H2"
+      ],
+      "ua": [],
+      "ads": [
+        "AW-1072298599"
+      ],
+      "meta_pixel": false,
+      "clarity": true,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "cloudflare",
+      "cloudflare": true,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": false,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "TravelAgency",
+        "WebSite",
+        "WebPage"
+      ],
+      "org": []
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 2,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 2,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 19204908,
+      "al_abrir_bytes": 15644079,
+      "n_peticiones": 220,
+      "mas_pesados": [
+        {
+          "url": "https://www.cascada.travel/hubfs/Hanging%20Bridge%20over%20Grey%20Glacier%2c%20Torres%20del%20Paine%20National%20Park.jpg",
+          "bytes": 5820675
+        },
+        {
+          "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fscontent-ams4-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F869760845_18475099465142846_3352232784541048546_",
+          "bytes": 1058712
+        },
+        {
+          "url": "https://www.cascada.travel/hubfs/Laguna%20de%20los%20Dientes%2c%20Navarino%20Trek.jpg",
+          "bytes": 603272
+        },
+        {
+          "url": "https://www.cascada.travel/hubfs/Laguna%20Los%20Tres%2c%20Mt-Fitzroy%2c%20Los%20Glaciares%20NP.jpeg",
+          "bytes": 551244
+        }
+      ]
+    },
+    {
+      "total_bytes": 19204173,
+      "al_abrir_bytes": 15642892,
+      "n_peticiones": 220,
+      "mas_pesados": [
+        {
+          "url": "https://www.cascada.travel/hubfs/Hanging%20Bridge%20over%20Grey%20Glacier%2c%20Torres%20del%20Paine%20National%20Park.jpg",
+          "bytes": 5820815
+        },
+        {
+          "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fscontent-ams4-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F869760845_18475099465142846_3352232784541048546_",
+          "bytes": 1058719
+        },
+        {
+          "url": "https://www.cascada.travel/hubfs/Laguna%20de%20los%20Dientes%2c%20Navarino%20Trek.jpg",
+          "bytes": 603324
+        },
+        {
+          "url": "https://www.cascada.travel/hubfs/Laguna%20Los%20Tres%2c%20Mt-Fitzroy%2c%20Los%20Glaciares%20NP.jpeg",
+          "bytes": 551190
+        }
+      ]
+    },
+    {
+      "total_bytes": 19155340,
+      "al_abrir_bytes": 15594151,
+      "n_peticiones": 211,
+      "mas_pesados": [
+        {
+          "url": "https://www.cascada.travel/hubfs/Hanging%20Bridge%20over%20Grey%20Glacier%2c%20Torres%20del%20Paine%20National%20Park.jpg",
+          "bytes": 5820750
+        },
+        {
+          "url": "https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Fscontent-ams4-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F869760845_18475099465142846_3352232784541048546_",
+          "bytes": 1058698
+        },
+        {
+          "url": "https://www.cascada.travel/hubfs/Laguna%20de%20los%20Dientes%2c%20Navarino%20Trek.jpg",
+          "bytes": 603361
+        },
+        {
+          "url": "https://www.cascada.travel/hubfs/Laguna%20Los%20Tres%2c%20Mt-Fitzroy%2c%20Los%20Glaciares%20NP.jpeg",
+          "bytes": 551206
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [
+        {
+          "nombre": "_gcl_au",
+          "proveedor": "Google Ads",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_clck",
+          "proveedor": "Microsoft Clarity",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_clsk",
+          "proveedor": "Microsoft Clarity",
+          "primera_fase": "A"
+        }
+      ],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [
+        "Google Tag",
+        "HubSpot",
+        "Microsoft Clarity"
+      ],
+      "envio_en_ambas": [
+        "Google Analytics",
+        "Microsoft Clarity"
+      ],
+      "google_gcs": [
+        [
+          "G100"
+        ],
+        [
+          "G100"
+        ],
+        [
+          "G100"
+        ]
+      ],
+      "aviso_en_dom": [
+        {
+          "A": true,
+          "B": true,
+          "implicito": false
+        },
+        {
+          "A": true,
+          "B": true,
+          "implicito": false
+        },
+        {
+          "A": true,
+          "B": true,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": {
+      "gtm": [
+        "GTM-PKJMJ3P"
+      ],
+      "contenedores": [
+        {
+          "id": "GTM-PKJMJ3P",
+          "leido": true,
+          "funciones": [
+            "__e",
+            "__aev",
+            "__awec",
+            "__u",
+            "__v",
+            "__f",
+            "__googtag",
+            "__gclidw",
+            "__awct",
+            "__sp",
+            "__cl",
+            "__html"
+          ],
+          "tags_de_evento": [
+            "__awct"
+          ],
+          "html_personalizado": 1
+        }
+      ],
+      "eventos_inline": [],
+      "eventos_observados_en_sesion": [
+        "page_view",
+        "form_start"
+      ],
+      "ads_instalado": true
+    },
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 157984
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 157984
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 157984,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [
+          {
+            "action": "https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/4167864/fd9452dd-077c-478b-84af-255b207209a9",
+            "estado": "vivo",
+            "status": 405
+          },
+          {
+            "action": "https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/4167864/20ff36cc-ef57-4713-aeab-bc4a578d346b",
+            "estado": "vivo",
+            "status": 405
+          },
+          {
+            "action": "https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/4167864/c229cc1f-3f8f-4c02-9cfb-e8cd6af192cb",
+            "estado": "vivo",
+            "status": 405
+          },
+          {
+            "action": "https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/4167864/b9405adb-f5fe-4f83-8a7a-2a652274205d",
+            "estado": "vivo",
+            "status": 405
+          }
+        ],
+        "mails": []
+      },
+      {
+        "forms": [
+          {
+            "action": "https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/4167864/fd9452dd-077c-478b-84af-255b207209a9",
+            "estado": "vivo",
+            "status": 405
+          },
+          {
+            "action": "https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/4167864/20ff36cc-ef57-4713-aeab-bc4a578d346b",
+            "estado": "vivo",
+            "status": 405
+          },
+          {
+            "action": "https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/4167864/c229cc1f-3f8f-4c02-9cfb-e8cd6af192cb",
+            "estado": "vivo",
+            "status": 405
+          },
+          {
+            "action": "https://forms.hsforms.com/submissions/v3/public/submit/formsnext/multipart/4167864/b9405adb-f5fe-4f83-8a7a-2a652274205d",
+            "estado": "vivo",
+            "status": 405
+          }
+        ],
+        "mails": []
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "title",
+        "valor": "Patagonia Tours Travel, Chile, Argentina, Torres del Paine, Hiking"
+      },
+      {
+        "fuente": "title",
+        "valor": "Cascada Expediciones"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": null
+  },
+  "enlaces": {
+    "revisados": 30,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

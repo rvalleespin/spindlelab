@@ -1,0 +1,13 @@
+{
+  "id": "H47",
+  "dominio": "puertadelsur.cl",
+  "motor": "v0",
+  "cuando": "2026-10-30T14:16:13.040Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "descartado:excluido",
+  "detalle": {
+    "tipo": "tope-alcanzado",
+    "motivo": "3 toques reales segun el conteo por direccion del copiloto en la corrida del 12-oct",
+    "fecha": "2026-10-13"
+  }
+}

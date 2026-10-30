@@ -1,0 +1,567 @@
+{
+  "id": "H39",
+  "dominio": "tantakuy.cl",
+  "motor": "v0",
+  "cuando": "2026-10-30T14:11:35.144Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://tantakuy.cl/",
+  "hallazgo": {
+    "id": "F13",
+    "nombre": "La información de la portada está mal estructurada",
+    "linea": "Auditoría SEO Técnica",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, con el código de la página",
+    "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+    "condiciones": {
+      "1": {
+        "v": "si",
+        "razon": "La estructura del código no se ve."
+      },
+      "2": {
+        "v": "medias",
+        "razon": "Google y la IA usan esa estructura para entender de qué trata la página."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve en el código fuente."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Cualquier auditor SEO gratuito lo ve: es capa 1."
+      }
+    },
+    "afirmable": "La portada no tiene un título principal (H1).",
+    "no_afirmable": [
+      "que el resto del sitio tenga el mismo problema",
+      "que tenga poco texto en total: solo se cuentan las palabras visibles al cargar la portada, no el texto oculto"
+    ],
+    "advertencias": [],
+    "datos": {
+      "tipos": [
+        "sin-h1"
+      ],
+      "h1": 0,
+      "palabras": 1309
+    },
+    "propuesta": {
+      "en_castellano": "Tu portada no tiene un título principal.",
+      "problema_tecnico": "La portada no tiene un título principal (H1).",
+      "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+      "se_vende": {
+        "linea": "Auditoría SEO Técnica",
+        "producto": "Auditoría SEO Técnica, Completa",
+        "alcance": "Ordenar la información de la portada: un título principal claro y el contenido que explica la oferta.",
+        "vehiculo_publicado": "Desde $490.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría SEO Técnica, Completa, desde $490.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "débil",
+      "frase_de_arreglo": "Eso lo arreglo yo: dejo la información ordenada, con un título que diga qué haces y para quién.",
+      "apertura_a_reunion": "Vi otra cosa que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F12",
+      "nombre": "La portada descarga demasiado peso",
+      "linea": "Auditoría SEO Técnica",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "quien administra el sitio, con las herramientas del navegador",
+      "donde_mirar": "En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Nadie mira cuánto pesa su portada."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "En un celular con datos, una portada pesada tarda en abrir."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en la pestaña Network."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Cualquier medidor de velocidad lo ve: es capa 1."
+        }
+      },
+      "afirmable": "La portada descarga 9.5 MB solo al abrirse, sin bajar la página (mínimo de las 3 corridas).",
+      "no_afirmable": [
+        "cuánto tarda en abrir para un visitante real (se mide desde un datacenter)"
+      ],
+      "advertencias": [],
+      "datos": {
+        "mb": 9.5,
+        "mas_pesado": {
+          "url": "https://tantakuy.cl/wp-content/uploads/2026/06/programa-all-inclusive-768x916.png",
+          "bytes": 779550
+        }
+      },
+      "propuesta": {
+        "en_castellano": "Tu portada descarga 9.5 MB solo al abrirse; en un celular con datos eso tarda.",
+        "problema_tecnico": "La portada descarga 9.5 MB solo al abrirse, sin bajar la página (mínimo de las 3 corridas).",
+        "donde_mirar": "En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.",
+        "se_vende": {
+          "linea": "Arreglo puntual",
+          "producto": "Arreglo puntual de la portada",
+          "alcance": "Reducir el peso de la portada y medir el antes y el después.",
+          "vehiculo_publicado": "$149.000 + IVA, una vez (decisión de Ramón, 30-oct-2026)",
+          "precio_en_el_correo": "$149.000 + IVA, una vez",
+          "linea_de_precio": null,
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla: dejo la portada liviana y mido cuánto baja.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F12"
+  ],
+  "capa1": {
+    "consecuencia": [],
+    "higiene": [
+      "sin_llms_txt",
+      "sin_meta_description"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 1,
+      "mailto": [
+        "reserva@tantakuy.cl"
+      ],
+      "whatsapp": [
+        "https://wa.me/56920871457"
+      ]
+    },
+    "analitica": {
+      "gtm": [
+        "GTM-5HXFXH4C"
+      ],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "nginx",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "ausente": true
+    },
+    "llms_txt": false,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "WebPage",
+        "ImageObject",
+        "BreadcrumbList",
+        "WebSite",
+        "Organization"
+      ],
+      "org": [
+        {
+          "name": "Tantakuy"
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 2,
+      "fuente_minima_px": 14,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 2,
+      "fuente_minima_px": 14,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 9545507,
+      "al_abrir_bytes": 9545507,
+      "n_peticiones": 137,
+      "mas_pesados": [
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2026/06/programa-all-inclusive-768x916.png",
+          "bytes": 779550
+        },
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2022/03/tantakuy-domo-3-768x576.png",
+          "bytes": 771357
+        },
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2026/03/Programas-1-768x916.png",
+          "bytes": 738395
+        },
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2022/03/tantakuy-cabana-3-768x576.png",
+          "bytes": 685398
+        }
+      ]
+    },
+    {
+      "total_bytes": 9545498,
+      "al_abrir_bytes": 9545498,
+      "n_peticiones": 137,
+      "mas_pesados": [
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2026/06/programa-all-inclusive-768x916.png",
+          "bytes": 779550
+        },
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2022/03/tantakuy-domo-3-768x576.png",
+          "bytes": 771357
+        },
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2026/03/Programas-1-768x916.png",
+          "bytes": 738395
+        },
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2022/03/tantakuy-cabana-3-768x576.png",
+          "bytes": 685398
+        }
+      ]
+    },
+    {
+      "total_bytes": 9545512,
+      "al_abrir_bytes": 9545512,
+      "n_peticiones": 137,
+      "mas_pesados": [
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2026/06/programa-all-inclusive-768x916.png",
+          "bytes": 779550
+        },
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2022/03/tantakuy-domo-3-768x576.png",
+          "bytes": 771357
+        },
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2026/03/Programas-1-768x916.png",
+          "bytes": 738395
+        },
+        {
+          "url": "https://tantakuy.cl/wp-content/uploads/2022/03/tantakuy-cabana-3-768x576.png",
+          "bytes": 685398
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [
+        "Google Tag"
+      ],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": {
+      "gtm": [
+        "GTM-5HXFXH4C"
+      ],
+      "contenedores": [
+        {
+          "id": "GTM-5HXFXH4C",
+          "leido": true,
+          "funciones": [
+            "__u",
+            "__f",
+            "__e"
+          ],
+          "tags_de_evento": [],
+          "html_personalizado": 0
+        }
+      ],
+      "eventos_inline": [],
+      "eventos_observados_en_sesion": [],
+      "ads_instalado": false
+    },
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 402507
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 402507
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 402507,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "tantakuy.cl",
+            "dominio": "tantakuy.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "tantakuy.cl",
+            "dominio": "tantakuy.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Tantakuy Hotel"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tantakuy"
+      },
+      {
+        "fuente": "title",
+        "valor": "Inicio"
+      },
+      {
+        "fuente": "title",
+        "valor": "Tantakuy Hotel"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 28,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}
