@@ -51,3 +51,8 @@ Resultado (29-oct): en Gmail el correo llegó a Principal. En Hotmail los correo
 - No se compra dominio ni casilla nueva, ni listas de contactos. El dinero va a redes sociales.
 - Modo mantenimiento: terminar los toques en curso, ritmo de 15 a 20 por día sin ráfagas, nombre del remitente "Ramón Vallejos (SpindleLab)", y no mandar primeros toques nuevos a contactos alojados en Microsoft (ver `proveedor-correo.csv`).
 - Los hallazgos del motor sirven también para redes (datos agregados, sin nombrar empresas). Lectura de resultados del correo el jue 5-nov.
+
+## Coordinación con el copiloto (30-oct)
+- El copiloto (rutina aparte, misma cuenta hola@) usa otra cadencia: toque 2 a +4 días y toque 3 a +10 (`marketing/outbound/copiloto-outbound.md`), y exige 4 días entre toques. El motor usa +3 y +7 desde el primer toque. Para no cruzarse: el motor deja los borradores y Ramón los envía a partir del lunes 2-nov; el copiloto no escribe a quien ya tiene un borrador pendiente.
+- `gromero@ulloaycia.cl` rebotó el 23-oct (5.1.3, la casilla no existe) pero el copiloto no lo sabe y lo da como "toque 2 pendiente". Pendiente de agregar a la lista de exclusión (no la edita el motor).
+- Decisiones que el copiloto dejó a Ramón (ver su resumen del 30-oct): cerrar o medir de verdad a contotal.cl, az400.cl y holding.wiki (venían de la campaña AEO, sin hallazgo de Verifica); y de dónde salieron cespina@segal.cl y camilo@mba.legal.
