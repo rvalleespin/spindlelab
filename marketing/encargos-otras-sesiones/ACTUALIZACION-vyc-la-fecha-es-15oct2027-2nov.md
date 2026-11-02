@@ -24,7 +24,7 @@ La misma lista del aviso del 20-oct, con la fecha nueva: (1) piezas con plazo o 
 
 ## Cómo hablarlo
 
-La línea sigue siendo la misma y sigue sosteniéndose: **el proyecto cambia cuándo, no qué**. Ramón agregó el 2-nov un ángulo para el comentario: *"un arreglo sale mejor que la multa"*. Es decir, vender sobre la importancia y la consecuencia de no ordenar el sitio (costo del arreglo frente a una multa), y poco sobre el plazo legal. Lo publicado: `linkedin.com/feed/update/urn:li:activity:7523041354122379265/` (texto en `marketing/redes/2026-10-octubre-linkedin/2-nov-lun-el-senado-fijo-la-fecha/publicar.md`).
+La línea de fondo sigue siendo que el proyecto **cambia cuándo, no qué**. Pero el 2-nov Ramón pidió no promover el tema por el trámite ("no es relevante para la promoción del tema"): el post del 2-nov, tal como quedó editado, dice solo que hay un proyecto para postergar la ley y que **la ley original sigue diciendo que rige desde el 1-dic-2026**, y el resto es por qué importa: aplica a cualquier empresa con un formulario de contacto, una sanción queda anotada en un registro público durante cinco años (art. 39, verificado contra el Diario Oficial el 5-oct) y *"un arreglo sale mejor que la multa"*. Sin cifras de multas. Lo publicado: `linkedin.com/feed/update/urn:li:activity:7523041354122379265/` (texto en `marketing/redes/2026-10-octubre-linkedin/2-nov-lun-el-senado-fijo-la-fecha/publicar.md`).
 
 ## Decisión que es de Ramón
 

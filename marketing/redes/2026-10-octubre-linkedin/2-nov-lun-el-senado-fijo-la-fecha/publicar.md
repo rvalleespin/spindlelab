@@ -1,9 +1,25 @@
-# Publicado: el Senado fijó la fecha (15-oct-2027) y se corrige el post del 28-oct
+# Publicado y editado el 2-nov: la ley original sigue rigiendo el 1-dic-2026, y por qué importa
 
 **Cuándo:** LUNES 2-nov-2026 · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Escribe:** agente-copywriter (Renata) · **Aprobó:** Ramón, 2-nov ("si. apruebo el post. agrega un comentario corto…")
 **Estado:** ✅ PUBLICADO Y VERIFICADO (2-nov-2026). `linkedin.com/feed/update/urn:li:activity:7523041354122379265/`
 Texto leído del editor antes de publicar: 5 párrafos idénticos al aprobado (comparados por script), sin raya larga. Primer comentario de Ramón ("Autor") con los dos enlaces activos.
+
+> ⚠️ **EDITADO el 2-nov-2026 por la tarde, a pedido de Ramón.** La primera versión (abajo) salió con seis fechas del trámite. Reparos de Ramón: *"te encierras con algo que no es relevante para la promoción del tema"* y *"no me entregaste el borrador antes de publicar"* (el comentario del post del 28 salió sin que lo leyera). Su dirección: *"solo diría que aunque hay intenciones de modificación, la ley original aún dice que es hasta el 1 de diciembre. el resto es explicar la importancia. nadie está hablando de eso"*. Se editó el post en el lugar (LinkedIn lo marca «Editado») y se **borró** el comentario de actualización del post del 28-oct. El primer comentario (chequeo y noticia del Senado) se dejó.
+
+## Texto vigente en LinkedIn (editado y aprobado por Ramón el 2-nov)
+
+Aunque hay un proyecto para postergarla, la Ley 21.719, la nueva ley de datos personales de Chile, sigue diciendo hoy que rige desde el 1 de diciembre de 2026.
+
+Le aplica a cualquier empresa que maneje datos de personas, aunque sea con un formulario de contacto. Y una sanción no es solo una multa: queda anotada en un registro público que cualquiera puede consultar durante cinco años.
+
+En un sitio web se revisa algo concreto: qué servicios externos carga, si enlaza una política de privacidad que abre, si pide permiso antes de cargar rastreadores y si algún formulario trae la casilla de "acepto" ya marcada.
+
+Un arreglo a tiempo sale mejor que la multa y que esa anotación. El chequeo gratis de Verifica y Cumple muestra por dónde empezar y está en el primer comentario.
+
+Texto leído del editor antes de guardar: 4 párrafos idénticos al aprobado (comparados por script), sin raya larga. Verificado en la página: marca «Editado» y primer comentario intacto.
+
+**Trazabilidad del texto vigente:** "rige desde el 1-dic-2026" y "hay un proyecto": Garrigues 30-oct y Portal Legislativo, boletín 18623-07 (2-nov). "Le aplica a cualquier empresa que maneje datos de personas, aunque sea con un formulario de contacto": mismo enunciado del post del 5-oct (`05-lun-cuarto-mito-amonestacion/publicar.md`). "Sanción anotada en un registro público, cinco años": art. 39 de la ley, Registro Nacional de Sanciones y Cumplimiento, "público y su acceso gratuito", "acceso público por el período de cinco años" (verificado el 5-oct contra el Diario Oficial). Las cuatro cosas del sitio: `verifica.spindlelab.cl`, "Lo que sí revisamos" (19-oct). **Sin cifras de multas**, por la regla de la campaña y porque los techos son escalonados.
 
 ## Por qué salió
 
@@ -11,7 +27,7 @@ El post del 28-oct decía *"Todavía no se sabe cuánto se posterga"* y eso ya n
 
 **Qué falló en el proceso del 28-oct** (el post quedó con el dato viejo dos días): ese día se recortó la investigación por el cupo (una búsqueda y la lectura de la nota del Senado del 20-oct). La nota decía "cuánto se posterga sigue abierto" y se tomó por el estado de ese día. Había noticias del 26 y del 27. **Regla para una noticia en desarrollo:** el mínimo incluye mirar lo posterior a la fuente, y la ficha del boletín en el Portal Legislativo (etapa y línea de tiempo) antes de escribir "todavía no". Cuesta una lectura.
 
-## Cuerpo (publicado)
+## Primera versión (reemplazada; ya no está en LinkedIn)
 
 El Senado ya eligió la fecha: 15 de octubre de 2027 para que entre en vigencia la Ley 21.719, y no diciembre de 2027 como pedía el Gobierno.
 
@@ -28,7 +44,7 @@ Más de diez meses alcanzan para ordenar eso sin apuro. Para ver por dónde empe
 El chequeo: https://verifica.spindlelab.cl
 La noticia del Senado (28-oct): https://www.senado.cl/comunicaciones/noticias/segundo-tramite-proyecto-que-posterga-entrada-en-vigencia-de-ley-de
 
-## Comentario en el post del 28-oct (publicado 2-nov, a pedido de Ramón)
+## Comentario en el post del 28-oct (publicado y BORRADO el 2-nov)
 
 Actualización: el Senado fijó el 15 de octubre de 2027 y el detalle está en mi post de hoy. Con fecha nueva o sin ella, un arreglo a tiempo sale mejor que una multa: https://www.linkedin.com/feed/update/urn:li:activity:7523041354122379265/
 
