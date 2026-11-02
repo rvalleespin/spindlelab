@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/home.json",
- "sha256": "1debb3ae9bc97e2c11d802892ef2fd39e4afb21fbbfe012046a7746350b3d3c4",
+ "sha256": "72bc9908f63cb7fffb11ea7f182bb9aad448b527f7d8949e641fa3261ba1aab5",
  "id": "home",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -517,15 +517,6 @@
       "origen": "home.soluciones.acompanamiento.boton (E13)"
      },
      {
-      "id": "home.acompanamiento.pie",
-      "rol": "nota",
-      "uso": "pie",
-      "texto": "La foto está generada con IA.",
-      "donde": "Bajo la imagen de Acompañamiento mensual: las personas parecen reales y no lo son.",
-      "estado": "nuevo",
-      "origen": "Ramón, 2-nov-2026: imágenes v2 (e14-home-koto/imagenes-v2/LEEME.md) y «sin año» para las fichas."
-     },
-     {
       "id": "home.partimos.h2",
       "rol": "h2",
       "nivel": 3,
@@ -553,7 +544,7 @@
       "origen": "home.pruebas.metodo.boton (E13)"
      }
     ],
-    "medios": [
+    "medios_retirados": [
      {
       "archivo": "public/v3/medios/e14-banda-anuncios-169.webp",
       "forma": "16:9",
@@ -585,7 +576,8 @@
       "archivo_45": "public/v3/medios/e14-banda-como-partimos-45.webp",
       "antes_alt": "Un hilo plateado tendido recto sobre papel oscuro, con tres nudos repartidos a lo largo."
      }
-    ]
+    ],
+    "nota_medios": "Ramón, 2-nov-2026: la fila se publica sin imagen. Rechazó las del hilo plateado, las ilustraciones, la pizarra y una prueba de fotos editoriales (e14-home-koto/imagenes-v2/LEEME.md). Vuelven cuando se definan con referencias."
    },
    {
     "id": "contacto",

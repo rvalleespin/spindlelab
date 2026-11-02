@@ -1317,6 +1317,13 @@ html.a-mov .a-body [data-entra-in] > img { opacity: 1; transform: scale(calc(1 +
   .a-body .k-nota:first-child .t-titulo { font-size: var(--a-t-titulo); }
   .a-body .k-nota { padding-right: 12px; }
 }
+/* La fila sin imagen (2-nov): tres columnas iguales, cada nota bajo su propio filete, los tres títulos del mismo tamaño */
+.a-body .k-tres--texto { border-top: 0; padding-top: 0; }
+.a-body .k-tres--texto .k-nota { border-top: 1px solid var(--a-linea-seccion); padding-top: 20px; }
+@media (min-width: 834px) {
+  .a-body .k-tres--texto { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .a-body .k-tres--texto .k-nota .t-titulo, .a-body .k-tres--texto .k-nota:first-child .t-titulo { font-size: var(--a-t-titulo); }
+}
 
 /* 9 · Contacto en filas (§5): las filas aparecen atadas al scroll y la foto de Ramón escala al llegar */
 .a-body .k-contacto {

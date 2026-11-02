@@ -12,3 +12,13 @@ más creativo y didáctico, mezclando estilos como Koto.
 - La foto de acompañamiento muestra el equipo de un negocio cliente, no a SpindleLab, y lleva aviso de imagen
   generada con IA.
 - Aquí van en webp reducido (1600 px). Los PNG a 2K quedan en la cuenta de Higgsfield.
+
+## Cierre del 2-nov-2026 (noche)
+- Ramón rechazó también la mezcla (pizarra «ni pensarlo», ilustraciones «le quitan seriedad») y una prueba de fotos
+  editoriales sobrias (3 a 0,25 créditos). La fila de tres se publica **sin imagen**; vuelven cuando se definan con
+  referencias que él mande.
+- El spot de Verifica y Cumple sí queda, en su segunda versión: papel en blanco (sacado gratis del primer cuadro), el
+  trazo que se forma solo, acuarela fucsia y cielo azul (minimax_h3_max, 15 créditos). La primera versión (cuaderno y
+  lápiz a la vista, 15 créditos) se descartó por el recorte.
+- Gasto total de esta vuelta: ~50,5 créditos (1,5 + 6 + 4 + 2 cuadros + 15 + 15 + 0,75 + 6 de Bruno en la vuelta del hilo
+  aparte). Saldo aproximado: 194.

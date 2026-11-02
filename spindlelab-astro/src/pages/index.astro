@@ -139,22 +139,13 @@ const panel = medio('combeau-panel-colecciones-169.webp');
 const chequeo = medio('chequeo-spindlelab-169.webp');
 const chequeoEnlace = t('home.busqueda.chequeo');
 
-// ---- 6 a 8 · La fila de tres: las imágenes de Bruno (plan-imagenes.md §7), 16:9 desde 834 y 4:5 bajo 834. El alt es el
-// de Clara para cada columna, escrito mirando la -169 y la -45 (acta-qa-e14, defectos 1 y 2).
-const fila = (pagina.secciones as { id: string; medios?: Medio[] }[]).find((s) => s.id === 'fila')!.medios!;
-const altDe = (columna: string) => {
-  const x = fila.find((f) => f.columna === columna);
-  if (!x || !x.alt) throw new Error(`home, fila de tres: falta el alt de «${columna}»`);
-  return x.alt;
-};
+// ---- 6 a 8 · La fila de tres, sin imagen por ahora (Ramón, 2-nov-2026: ni las del hilo, ni ilustraciones, ni pizarra, ni
+// fotos de prueba lo convencieron; se publica solo con texto y las imágenes vuelven cuando se definan con referencias).
 const notas = [
-  { k: 'anuncios', img: 'anuncios', precio: anunciosPrecio, enlaces: [paid, redes] },
-  { k: 'acompanamiento', img: 'acompanamiento', precio: { a: precioAco, b: '' }, enlaces: [aco] },
-  { k: 'partimos', img: 'como-partimos', precio: null, enlaces: [{ texto: partimos.texto as string, href: partimos.destino as string }] },
-].map((n) => {
-  const pie = fila.find((f) => f.columna === n.k)?.pie;
-  return { ...n, h2: dos(`home.${n.k}.h2`), texto: tx(`home.${n.k}.texto`), alt: altDe(n.k), pie: pie ? tx(pie) : undefined };
-});
+  { k: 'anuncios', precio: anunciosPrecio, enlaces: [paid, redes] },
+  { k: 'acompanamiento', precio: { a: precioAco, b: '' }, enlaces: [aco] },
+  { k: 'partimos', precio: null, enlaces: [{ texto: partimos.texto as string, href: partimos.destino as string }] },
+].map((n) => ({ ...n, h2: dos(`home.${n.k}.h2`), texto: tx(`home.${n.k}.texto`) }));
 
 // ---- 9 · Contacto
 const quien = tx('home.contacto.quien.nombre');
@@ -282,17 +273,10 @@ const SIZES_BANDA = '(min-width: 1194px) 62vw, (min-width: 834px) 58vw, calc(100
       </figure>
     </section>
 
-    {/* 6 a 8 · LA FILA DE TRES, como las noticias de Koto (§4): una grande y dos chicas, sin ningún efecto */}
-    <section class="k-tres" aria-labelledby="h-anuncios">
+    {/* 6 a 8 · LA FILA DE TRES, por ahora solo texto: tres columnas iguales, cada una bajo su filete */}
+    <section class="k-tres k-tres--texto" aria-labelledby="h-anuncios">
       {notas.map((n, i) => (
         <article class="k-nota">
-          <div class="medio k-nota__medio">
-            <picture>
-              <source media="(max-width: 833.98px)" srcset={`/v3/medios/e14-banda-${n.img}-45.webp 900w`} sizes="calc(100vw - 32px)" width="900" height="1125" />
-              <img src={`/v3/medios/e14-banda-${n.img}-169.webp`} srcset={`/v3/medios/e14-banda-${n.img}-169.webp 1600w`} sizes={i === 0 ? '(min-width: 1194px) 44vw, 43vw' : '(min-width: 1194px) 28vw, 27vw'} alt={n.alt} width="1600" height="900" loading="lazy" decoding="async" />
-            </picture>
-          </div>
-          {n.pie && <p class="pie">{n.pie}</p>}
           <h2 class="t-titulo" id={i === 0 ? 'h-anuncios' : undefined}><span class="tinta">{n.h2.tinta}</span> <span class="gris">{n.h2.gris}</span></h2>
           <p class="chico caja">{n.texto}</p>
           {n.precio && <p class="k-precio">{n.precio.a}{n.precio.b && <> <span class="gris">{n.precio.b}</span></>}</p>}
