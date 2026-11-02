@@ -14,7 +14,7 @@ SpindleLab ofrece el kit "Verifica y Cumple" ($149.000 + IVA, una sola vez, no i
 | 1ª ola (5) | 16-oct | 19-oct | 23-oct, hecho |
 | 2ª ola y reactivación (21) | 19-oct | 23-oct | vencido desde el 26-oct, sin texto para las 15 R |
 | Tanda 1 Vibe (13 vivos; V28 y V44 rebotaron) | 23-oct | 27-oct | **vie 30-oct** |
-| Tanda 2 Vibe (15) | 26-oct | **jue 29-oct** | **lun 2-nov** |
+| Tanda 2 Vibe (15) | 26-oct | **jue 29-oct** (enviado, verificado en Gmail) | **lun 2-nov**: 15 borradores creados el 2-nov, sin enviar |
 | Tanda 3 Vibe (2 enviados: resolaud.cl V84 y trustdoc.cl V94; audiprop V67 y medicinachina V89 cayeron en la re-medición y sus borradores se borraron) | 30-oct 15:23 UTC | **mar 3-nov** | **lun 9-nov** |
 
 Sin respuestas ni rebotes de los motor desde el 23-oct. Una respuesta de terrantai.com llegó a un hilo del copiloto (no del motor): la lee Ramón.
