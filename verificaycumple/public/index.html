@@ -610,9 +610,39 @@
   .boton-ayuda.hero-cta-abajo { display: none; }
   @media (max-width: 600px) {
     .boton-ayuda.hero-cta-arriba { display: none; }
-    .boton-ayuda.hero-cta-abajo { display: flex; width: fit-content; margin: 10px auto 0; position: relative; z-index: 6; }
-    /* Los 20 px que necesita el botón para entrar en la primera pantalla salen de acá arriba,
-       del aire entre el header y la etiqueta, y no del titular ni del caballo. */
+
+    /* ── EN TELÉFONO EL CAMPO VA PRIMERO ──────────────────────────────────────────────
+     *
+     * Hasta el 2-nov-2026 el orden era: titular, caballo, enunciados, y recién entonces el
+     * formulario. Medido en producción: `#dominio` quedaba en y≈920, o sea entre 1,1 y 1,4
+     * pantallas más abajo del pliegue en TODOS los teléfonos. Lo que había sobre el pliegue
+     * era un botón ancla que bajaba hasta el formulario.
+     *
+     * Con la campaña de Meta corriendo eso se midió: 490 visitas pagadas produjeron entre 24
+     * y 35 chequeos, un 5-7%. El corte grande del embudo estaba acá, antes del botón de
+     * compra y antes de la espera. Un ancla sobre el pliegue no es lo mismo que el control:
+     * el anuncio promete «te mostramos qué hace tu sitio» y la primera pantalla no mostraba
+     * dónde escribirlo.
+     *
+     * Y hay un segundo motivo para que suba, no solo para que exista: el aviso de cookies
+     * ocupa 200 px fijos al fondo —el 25% de un iPhone y el 31% de un Android corriente— y
+     * tapaba el botón ancla. Se midió que acortar el aviso NO lo resuelve: una franja al
+     * fondo deja libre el centro de un control solo si mide menos de 15 px en 375x635, y
+     * ningún aviso legible mide eso. La salida no era achicar el aviso: era que el control
+     * esté arriba, donde el aviso no llega.
+     *
+     * Se hace con `order` y no moviendo el HTML: el formulario ya vive dentro del hero, y
+     * una segunda copia en otro sitio significaría dos elementos con el mismo id.
+     */
+    /* El reorden vive más abajo, después de las reglas base del hero: acá arriba
+       `.hero-accion` todavía no está declarada y la base la pisaría. */
+
+    /* El ancla ya no tiene a dónde llevar: el campo está sobre el pliegue. Dejarla sería un
+       botón que hace scroll hacia arriba. */
+    .boton-ayuda.hero-cta-abajo { display: none; }
+
+    /* Los 20 px que necesita el formulario para entrar en la primera pantalla salen de acá
+       arriba, del aire entre el header y la etiqueta, y no del titular ni del caballo. */
     section.hero { padding-top: 26px; }
     .hero-arriba { margin-bottom: 16px; }
   }
@@ -659,6 +689,26 @@
      porque `section.hero` tiene overflow:hidden y si no, se corta la palabra. */
   /* El titular ya no necesita media query de tamaño: al ir en vw y con las dos líneas en
      proporción fija, se ajusta solo en cualquier ancho. */
+  /* ── PANTALLAS CORTAS: EL TITULAR TAMBIÉN TIENE QUE ENCOGER POR ALTO ────────────────
+   *
+   * El comentario de arriba dice que al ir en vw «se ajusta solo en cualquier ancho», y es
+   * cierto — y ahí está el hueco: en cualquier ANCHO. En un teléfono de 375 px el titular
+   * mide 138 px de alto da igual que la pantalla tenga 812 px o 635.
+   *
+   * Los 635 y 664 px no son un caso raro: son el alto útil del navegador embebido de
+   * Instagram y Facebook, que es por donde llega el 90% del tráfico de la campaña. Ahí esos
+   * 138 px empujaban el botón de enviar hasta y=462, y el aviso de cookies empieza en 435.
+   * El campo quedaba tocable y el botón no, que es la mitad de un formulario.
+   *
+   * Se mantiene la proporción 1,2484 entre las dos líneas, que es lo que hace que midan lo
+   * mismo de ancho y es el gesto de la referencia: 18,73/15 = 1,2487.
+   */
+  @media (max-width: 600px) and (max-height: 700px) {
+    .titulo-absurdo .t-blanco { font-size: clamp(2.7rem, 18.73vw, 30rem); }
+    .titulo-absurdo .t-verde  { font-size: clamp(2.16rem, 15vw, 24rem); }
+    section.hero { padding-top: 16px; }
+    .hero-arriba { margin-bottom: 10px; }
+  }
   .titulo-absurdo .t-blanco { color: var(--blanco); }
   .titulo-absurdo .t-verde { color: var(--vivo-verde); }
 
@@ -762,6 +812,27 @@
   .hero-accion #resultado,
   .hero-accion #profundo,
   .hero-accion #doce-puntos { color: var(--vivo-tinta); text-align: left; }
+
+  /* ── EL REORDEN DEL HERO EN TELÉFONO ──────────────────────────────────────────────────
+   *
+   * ⚠️ VA ACÁ, DESPUÉS DE LAS REGLAS BASE, Y NO ARRIBA CON EL RESTO DEL BLOQUE DE TELÉFONO.
+   * Una media query no suma especificidad: a igualdad, gana la última. Escrito antes de
+   * `.hero-accion { margin: 32px auto 0; z-index: 2 }`, el `order` sí se aplicaba —la base no
+   * lo declara— pero el margen y el z-index no, y el fallo era mudo: el orden cambiaba y uno
+   * daba por hecho que el resto también.
+   */
+  @media (max-width: 600px) {
+    .hero-envoltura { display: flex; flex-direction: column; }
+    /* z-index 7 porque ahora el caballo viene JUSTO DESPUÉS, y tiene z-index 5. Con el orden
+       viejo nunca se tocaban; al subir el formulario, la nota de privacidad quedó debajo de la
+       imagen y se leía cortada. El 7 pasa también sobre los enunciados, que llevan 6.
+       Ojo con comprobarlo: la imagen tiene `pointer-events: none`, así que
+       `document.elementFromPoint` NO la ve y dice que no tapa nada. Se mira la geometría y el
+       z-index, o se mira la captura. */
+    .hero-accion { order: 1; margin: 16px auto 0; z-index: 7; }
+    .hero-imagen-centro { order: 2; margin: 8px auto 0; }
+    .hero-enunciados { order: 3; }
+  }
 
   @media (max-width: 640px) {
     /* El titular se queda centrado, como la burbuja, el caballo y el formulario.
