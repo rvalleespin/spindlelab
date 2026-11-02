@@ -56,6 +56,8 @@ Resultado (29-oct): en Gmail el correo llegó a Principal. En Hotmail los correo
 
 ## Coordinación con el copiloto (30-oct)
 - El copiloto (rutina aparte, misma cuenta hola@) usa otra cadencia: toque 2 a +4 días y toque 3 a +10 (`marketing/outbound/copiloto-outbound.md`), y exige 4 días entre toques. El motor usa +3 y +7 desde el primer toque. Para no cruzarse: el motor deja los borradores y Ramón los envía a partir del lunes 2-nov; el copiloto no escribe a quien ya tiene un borrador pendiente.
+- **Duplicado con el copiloto (2-nov):** el copiloto corre lun a vie a las 11:00 UTC y su cola de toque 2 (`in:sent before:HACE3 verifica.spindlelab.cl -label:copiloto/toque-2-listo`) incluye los hilos del motor con un solo mensaje enviado (tanda 3: resolaud y trustdoc). El motor debe dejar sus borradores **antes de las 11:05 UTC** del día del toque (mar 3-nov y lun 9-nov, recordatorios a las 10:00 UTC), para que el `list_drafts` del copiloto los vea y no escriba otro. Las tandas 1 y 2 ya tienen 3 mensajes y quedan por el tope.
+- **Ritmo (2-nov):** los 15 toques 3 de la tanda 2 salieron entre 12:35:55 y 12:36:59 UTC, junto a 10 del copiloto: 25 correos en unos 3 minutos. No fue repartido; 4 de los 15 están en Microsoft.
 - `gromero@ulloaycia.cl` rebotó el 23-oct (5.1.3, la casilla no existe) pero el copiloto no lo sabe y lo da como "toque 2 pendiente". Pendiente de agregar a la lista de exclusión (no la edita el motor).
 - Decisiones que el copiloto dejó a Ramón (ver su resumen del 30-oct): cerrar o medir de verdad a contotal.cl, az400.cl y holding.wiki (venían de la campaña AEO, sin hallazgo de Verifica); y de dónde salieron cespina@segal.cl y camilo@mba.legal.
 
