@@ -368,19 +368,15 @@ body.a-body.a-sin-js .medio > img { opacity: 1; }
 .a-body .pausa--arriba { top: 16px; right: var(--a-m); bottom: auto; }
 
 /* ------------------------------------------------------------------ cursor (§4.2) */
-/* Círculo de 88 px, blanco, texto en lienzo en mono 11; el anillo de 1 px en lienzo es un borde, no una sombra (§1.5).
-   Solo con (hover: hover) and (pointer: fine) y sin movimiento reducido: lo enciende el script con .con-circulo. */
-.a-body .circulo {
-  position: fixed; left: 0; top: 0; z-index: 40; width: 88px; height: 88px; margin: -44px 0 0 -44px;
-  display: none; place-items: center; text-align: center; padding: 8px; pointer-events: none;
-  border: 1px solid var(--a-lienzo); border-radius: 50%; background: var(--a-blanco); color: var(--a-lienzo);
-  font-family: var(--a-f-mono); font-weight: 500; font-size: 11px; line-height: 1.25; letter-spacing: 0.03em;
-  text-transform: uppercase; transform: scale(0); will-change: transform;
+/* Sin círculo desde el 2-nov (Ramón). La flecha queda normal y la imagen de la pieza se acerca un 3 % al pasar. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .a-body .medio-enlace .medio > img, .a-body .medio-enlace .medio > video, .a-body .medio-enlace .medio > picture {
+    transition: opacity var(--a-color), transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .a-body .medio-enlace:hover .medio > img, .a-body .medio-enlace:hover .medio > video,
+  .a-body .medio-enlace:hover .medio > picture { transform: scale(1.03); }
 }
-.a-body.con-circulo .circulo { display: grid; }
-.a-body.con-circulo .medio-enlace[data-ir] { cursor: none; }
-.a-body.con-circulo.teclado .medio-enlace[data-ir] { cursor: pointer; }
-/* Con teclado, el texto del círculo queda quieto dentro de la pieza enfocada, en un rótulo de placa (§4.1) */
+/* Con teclado, el rótulo de la pieza (data-ir) queda quieto dentro de la pieza enfocada, en un rótulo de placa (§4.1) */
 .a-body .medio-enlace { position: relative; display: block; }
 .a-body .medio-enlace .quieto { display: none; }
 .a-body .medio-enlace:focus-visible .quieto {
