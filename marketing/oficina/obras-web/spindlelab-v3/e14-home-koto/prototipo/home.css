@@ -1,0 +1,259 @@
+/* Home E14 · composición Koto. Prototipo de Lucía, 2-nov-2026.
+   Tokens, letras, botones, encabezado y pie: a-base.css (copia de la hoja de A). Aquí solo la composición nueva.
+   Medidas de Koto: ../medicion-koto-scroll.md (§ entre paréntesis). Espacios de la escala de A (spec §1.5).
+   Regla de esta hoja: todo estado de partida «escondido» va bajo html.mov, que el script pone solo si el movimiento
+   está permitido. Sin JS o con prefers-reduced-motion: reduce, todo está a la vista y quieto. */
+
+.a-body .saltar { position: absolute; left: 16px; top: -100px; z-index: 50; padding: 12px; background: var(--a-blanco); color: var(--a-lienzo); border-radius: 4px; }
+.a-body .saltar:focus { top: 8px; }
+.a-body .marca-prototipo {
+  position: fixed; right: 8px; bottom: 8px; z-index: 40; padding: 6px 8px 5px; border-radius: 2px;
+  background: var(--a-placa); color: var(--a-gris); font-size: 10px; pointer-events: none;
+}
+.a-body .cab__logo svg { height: 24px; width: auto; aspect-ratio: 716.32 / 147.01; }
+@media (max-width: 833.98px) { .a-body .cab__logo svg { height: 20px; } }
+.a-body .pie-sitio .cab__logo svg { height: 20px; }
+
+/* ================================================================== 1 · portada (§1) */
+/* El escenario es pegajoso y no ocupa lugar (margin-bottom: −100svh): el texto de la portada y la línea suben por encima.
+   Se suelta cuando termina la línea, con el video ya recogido en una franja arriba. */
+.a-body .portada { position: relative; }
+.a-body .portada__escenario { position: relative; }
+.a-body .portada__medio { position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: var(--a-lienzo); }
+.a-body .portada__medio > img, .a-body .portada__medio > video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+.a-body .portada__medio > video { opacity: 0; transition: opacity var(--a-color); }
+.a-body .portada__medio > video.corriendo { opacity: 1; }
+.a-body .portada__pausa { position: absolute; z-index: 3; top: 16px; right: var(--a-m); bottom: auto; }
+.a-body .portada__pie {
+  position: relative; z-index: 1; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--a-g);
+  row-gap: 24px; align-items: end; padding: 24px var(--a-m) 0;
+}
+.a-body .portada__decl { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; }
+.a-body .portada__decl .entradilla { max-width: var(--a-caja); }
+.a-body .portada__accion { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.a-body .portada__accion .chico { max-width: var(--a-caja); }
+@media (max-width: 833.98px) {
+  .a-body .portada__decl { display: contents; }
+  .a-body .portada__decl > * { grid-column: 1 / -1; }
+  .a-body .portada__accion { order: 1; }
+  .a-body .portada__decl > .entradilla { order: 2; }
+}
+
+@media (min-width: 834px) {
+  /* el fondo cubre toda la sección y el escenario se pega dentro: se suelta cuando el borde de abajo de la sección
+     llega al de la pantalla (scroll ≈ una pantalla), con el video ya recogido */
+  .a-body .portada__fondo { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .a-body .portada__escenario { position: sticky; top: 0; height: 100svh; }
+  .a-body .portada__pausa { pointer-events: auto; }
+  .a-body .portada__medio { position: absolute; inset: 0; aspect-ratio: auto; will-change: clip-path; }
+  .a-body .portada__medio::after {
+    content: ''; position: absolute; inset: 0 0 auto; z-index: 1; height: 48px; pointer-events: none;
+    background: linear-gradient(to bottom, #060606, rgba(6, 6, 6, 0));
+  }
+  /* la pausa queda bajo la placa del encabezado plegado (56 px) cuando el escenario está pegado */
+  .a-body .portada__pausa { top: 72px; }
+  .a-body .portada__pie {
+    min-height: calc(100svh - 64px); grid-template-columns: repeat(12, minmax(0, 1fr)); align-content: end;
+    padding: 176px var(--a-m) 24px; pointer-events: none;
+    background: linear-gradient(to bottom, rgba(6, 6, 6, 0) calc(100% - 420px), rgba(6, 6, 6, 0.88) calc(100% - 260px), rgba(6, 6, 6, 0.88) calc(100% - 48px), #060606 100%);
+  }
+  .a-body .portada__pie > * { pointer-events: auto; }
+  .a-body .portada__decl { grid-column: 1 / span 7; }
+  .a-body .portada__accion { grid-column: 8 / -1; }
+  .a-body .portada__accion .boton { width: 100%; }
+}
+@media (min-width: 1194px) {
+  .a-body .portada__pie { grid-template-columns: repeat(16, minmax(0, 1fr)); }
+  .a-body .portada__decl { grid-column: 1 / span 12; }
+  .a-body .portada__accion { grid-column: 13 / -1; }
+}
+
+/* ================================================================== 2 · la línea (§2) */
+/* Una pantalla de alto desde 834: la frase queda bajo la franja del video recogido (que mide 23,4 % de la pantalla). */
+.a-body .linea { position: relative; z-index: 1; padding: 80px var(--a-m) 0; }
+.a-body .linea__texto { max-width: 1100px; }
+@media (min-width: 834px) {
+  .a-body .linea { min-height: 100svh; padding-top: 34svh; padding-bottom: 120px; }
+  .a-body .linea__texto { width: calc((100% - 15 * var(--a-g)) / 16 * 11 + 10 * var(--a-g)); max-width: none; }
+}
+@media (min-width: 834px) and (max-width: 1193.98px) { .a-body .linea__texto { width: 100%; } }
+
+/* Líneas en máscara: el script parte el texto en .l > .l__in. La máscara deja 0,12 em abajo para los descendentes. */
+.a-body .l { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.a-body .l__in { display: block; will-change: transform; }
+
+/* ================================================================== 3 · trabajo (§3) */
+.a-body .trabajo {
+  position: relative; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--a-g);
+  padding: 80px var(--a-m) 0;
+}
+.a-body .trabajo__panel { grid-column: 1 / -1; padding-bottom: 24px; }
+.a-body .trabajo__nombre, .a-body .trabajo__abajo { display: none; }
+.a-body .trabajo__lista { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 12px; }
+
+.a-body .tarjeta { position: relative; display: block; border-radius: 4px; overflow: hidden; background: var(--a-placa); }
+.a-body .tarjeta__medio { position: relative; display: block; aspect-ratio: 4 / 3; }
+.a-body .tarjeta__medio > img, .a-body .tarjeta__medio > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.a-body .tarjeta__medio > video { opacity: 0; transition: opacity var(--a-color); }
+.a-body .tarjeta__medio > video.corriendo { opacity: 1; }
+.a-body .tarjeta__ver {
+  position: absolute; left: 50%; bottom: 16px; translate: -50% 0; padding: 7px 8px 6px; border-radius: 2px;
+  background: var(--a-placa); color: var(--a-blanco); opacity: 0; transition: opacity var(--a-color);
+}
+.a-body .tarjeta:hover .tarjeta__ver, .a-body .tarjeta:focus-visible .tarjeta__ver { opacity: 1; }
+.a-body .pieza-k { position: relative; }
+.a-body .tarjeta__pausa { position: absolute; z-index: 3; right: 12px; top: 12px; bottom: auto; }
+.a-body .pieza-k__pie { margin: 12px 0 24px; display: flex; flex-direction: column; gap: 8px; }
+.a-body .pieza-k__nombre { font-stretch: 100%; font-weight: 370; font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); }
+.a-body .pieza-k--sigue { margin-bottom: 24px; }
+.a-body .trabajo__todo {
+  justify-content: flex-end; align-items: flex-end; height: 120px; padding: 16px; border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.a-body .trabajo__corchetes span { display: inline-block; transition: translate 333ms linear; }
+.a-body .trabajo__todo:hover .trabajo__corchetes span:first-child { translate: -4px 0; }
+.a-body .trabajo__todo:hover .trabajo__corchetes span:last-child { translate: 4px 0; }
+
+@media (min-width: 834px) {
+  .a-body .trabajo { grid-template-columns: repeat(12, minmax(0, 1fr)); padding-top: 0; align-items: start; }
+  .a-body .trabajo__panel {
+    grid-column: 1 / span 5; position: sticky; top: 0; height: 100svh; padding: 30svh 12px 24px 0;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .a-body .trabajo__nombre { display: block; }
+  .a-body .trabajo__mascara { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+  .a-body .trabajo__mascara > span { display: block; }
+  .a-body .trabajo__abajo { display: flex; flex-direction: column; gap: 12px; max-width: 334px; min-height: 200px; justify-content: flex-end; }
+  .a-body .trabajo__lista { grid-column: 6 / -1; }
+  .a-body .tarjeta { border-radius: 6px; transition: opacity var(--a-color); }
+  .a-body .tarjeta__medio { aspect-ratio: 16 / 9; }
+  .a-body .pieza-k__pie { display: none; }
+  .a-body .pieza-k--sigue { margin-bottom: 0; }
+  .a-body .trabajo__todo { height: 158px; border-radius: 6px; margin-bottom: 160px; }
+  .a-body .tarjeta__pausa { top: auto; bottom: 12px; }
+}
+@media (min-width: 1194px) {
+  .a-body .trabajo { grid-template-columns: repeat(16, minmax(0, 1fr)); }
+  .a-body .trabajo__panel { grid-column: 1 / span 6; }
+  .a-body .trabajo__lista { grid-column: 7 / -1; }
+}
+/* el estado medido: una tarjeta encendida, las demás al 20 % (§3.3). Solo con movimiento y desde 834. */
+@media (min-width: 834px) {
+  html.mov .a-body .trabajo .tarjeta { opacity: 0.2; }
+  html.mov .a-body .trabajo .tarjeta.activa { opacity: 1; }
+  html.mov .a-body .trabajo__panel { opacity: var(--panel, 0); }
+}
+
+/* ================================================================== 4 y 5 · bandas grandes */
+.a-body .banda {
+  display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--a-g); row-gap: 24px;
+  margin: 0 var(--a-m); padding-top: 24px; border-top: 1px solid var(--a-linea-seccion);
+}
+.a-body .banda + .banda, .a-body .trabajo + .banda { margin-top: 80px; }
+.a-body .banda__txt { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; }
+.a-body .banda__txt h2 { margin-bottom: 8px; max-width: 520px; }
+.a-body .banda__precio { color: var(--a-blanco); font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); }
+.a-body .banda__enlaces { display: flex; flex-direction: column; gap: 4px; }
+.a-body .banda__enlaces a, .a-body .banda__txt .chico a, .a-body .nota .chico a { display: inline-flex; min-height: 32px; align-items: center; }
+.a-body .banda__medio { grid-column: 1 / -1; margin: 0; }
+.a-body .banda__medio .medio > img { opacity: 1; }
+@media (min-width: 834px) {
+  .a-body .banda { grid-template-columns: repeat(12, minmax(0, 1fr)); padding-top: 16px; }
+  .a-body .banda + .banda, .a-body .trabajo + .banda { margin-top: 120px; }
+  .a-body .banda__txt { grid-column: 1 / span 5; padding-right: 24px; }
+  .a-body .banda__medio { grid-column: 6 / -1; }
+}
+@media (min-width: 1194px) {
+  .a-body .banda { grid-template-columns: repeat(16, minmax(0, 1fr)); }
+  .a-body .banda__txt { grid-column: 1 / span 6; }
+  .a-body .banda__medio { grid-column: 7 / -1; }
+}
+/* La entrada de la imagen (pedido de Ramón, 2-nov): se abre desde abajo y desde el centro, atada al scroll, entre que el
+   marco asoma abajo y que llega a media pantalla. Koto no lo hace en sus noticias (§4): por eso aquí va solo en las dos
+   bandas grandes, y la fila de tres queda quieta como las noticias de Koto. */
+html.mov .a-body [data-entra-in] {
+  clip-path: inset(calc(var(--e, 1) * 22%) calc(var(--e, 1) * 7%) 0 calc(var(--e, 1) * 7%) round 6px);
+}
+html.mov .a-body [data-entra-in] > img { transform: scale(calc(1 + var(--e, 1) * 0.12)); transform-origin: 50% 100%; }
+
+/* Hueco marcado (encargo E14): fondo neutro, el tipo de material y el concepto. Nunca un falso de CSS. */
+.a-body .hueco {
+  display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; padding: 16px;
+  background: repeating-linear-gradient(135deg, #141414 0 14px, #171717 14px 28px);
+}
+.a-body .hueco__tipo { position: absolute; left: 12px; top: 12px; padding: 7px 8px 6px; border-radius: 2px; background: var(--a-lienzo); color: var(--a-gris); }
+.a-body .hueco--real .hueco__tipo { color: var(--a-blanco); }
+.a-body .hueco__que { color: var(--a-blanco); font-size: 12px; }
+.a-body .hueco__nota { max-width: 440px; }
+
+/* ================================================================== 6 a 8 · la fila de tres (las noticias de Koto, §4) */
+.a-body .tres {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; margin: 80px var(--a-m) 0; padding-top: 24px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+.a-body .nota { display: flex; flex-direction: column; gap: 12px; }
+.a-body .nota__medio { aspect-ratio: 4 / 5; margin-bottom: 4px; }
+.a-body .nota .banda__precio { font-size: var(--a-t-chico); }
+@media (min-width: 834px) {
+  .a-body .tres { grid-template-columns: 1.575fr 1fr 1fr; gap: 12px; margin-top: 160px; padding-top: 16px; }
+  .a-body .nota__medio { aspect-ratio: 16 / 9; }
+  .a-body .nota .t-titulo { font-size: 20px; }
+  .a-body .nota:first-child .t-titulo { font-size: var(--a-t-titulo); }
+  .a-body .nota { padding-right: 12px; }
+}
+
+/* ================================================================== 9 · contacto (§5) */
+.a-body .contacto {
+  display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--a-g); row-gap: 40px;
+  padding: 120px var(--a-m) 0;
+}
+.a-body .contacto__izq { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 40px; }
+.a-body .contacto__filas { grid-column: 1 / -1; }
+.a-body .contacto__foto { width: min(66%, 260px); margin: 0; border-radius: 4px; overflow: hidden; background: var(--a-placa); order: 2; }
+.a-body .contacto__foto img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+.a-body .fila { border-top: 1px solid var(--a-linea); }
+.a-body .fila__in { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 16px 0 40px; }
+.a-body .fila__cont { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.a-body .fila__rot { color: var(--a-blanco); }
+.a-body .fila__cont .cuerpo + .cuerpo { margin-top: 0; }
+@media (max-width: 833.98px) {
+  .a-body .contacto__izq { display: contents; }
+  .a-body .contacto h2 { grid-column: 1 / -1; order: 0; }
+  .a-body .contacto__filas { order: 1; }
+  .a-body .contacto__foto { grid-column: 1 / -1; order: 2; }
+}
+@media (min-width: 834px) {
+  .a-body .contacto { grid-template-columns: repeat(12, minmax(0, 1fr)); padding-top: 160px; }
+  .a-body .contacto__izq { grid-column: 1 / span 5; justify-content: space-between; }
+  .a-body .contacto__filas { grid-column: 6 / -1; }
+  .a-body .fila__in { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--a-g); padding-bottom: 48px; }
+  .a-body .fila__rot { grid-column: 1 / span 2; }
+  .a-body .fila__cont { grid-column: 3 / -1; }
+  .a-body .contacto__foto { width: min(100%, 366px); border-radius: 6px; }
+}
+@media (min-width: 1194px) {
+  .a-body .contacto { grid-template-columns: repeat(16, minmax(0, 1fr)); }
+  .a-body .contacto__izq { grid-column: 1 / span 6; }
+  .a-body .contacto__filas { grid-column: 7 / -1; }
+  .a-body .fila__in { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+  .a-body .fila__rot { grid-column: 1 / span 3; }
+  .a-body .fila__cont { grid-column: 4 / -1; }
+}
+/* filas atadas al scroll (240 px cada una, escalonadas 40) y la foto que escala desde su esquina inferior izquierda */
+html.mov .a-body .fila { opacity: var(--f, 0); }
+html.mov .a-body .fila__in { transform: translateY(calc((1 - var(--f, 0)) * 24px)); }
+html.mov .a-body .contacto__foto { transform: scale(0); transform-origin: 0 100%; transition: transform 300ms cubic-bezier(0, 0, 0, 1); }
+html.mov .a-body .contacto__foto.vista { transform: scale(1); }
+
+.a-body .pie-sitio { margin-top: 120px; }
+
+/* ================================================================== movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .a-body .portada__fondo { position: relative; }
+  .a-body .portada__escenario { position: relative; height: auto; }
+  .a-body .portada__medio { position: relative; aspect-ratio: 16 / 9; }
+  .a-body .portada__pie { min-height: 0; background: none; padding-top: 24px; }
+  .a-body .linea { min-height: 0; padding-top: 120px; }
+}

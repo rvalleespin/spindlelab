@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SpindleLab · home E14 (prototipo)</title>
+<meta name="robots" content="noindex, nofollow">
+<!-- Prototipo de la home nueva, composición Koto (obra E14, 2-nov-2026, Lucía). No es el sitio: no se publica.
+     Texto: ../texto-home-propuesta.md (Clara). Medios: ../plan-imagenes.md (Bruno). Movimiento: ../medicion-koto-scroll.md.
+     Los medios reales se leen de spindlelab-astro/public/v3/ por ruta relativa: servir desde la raíz del repo
+     (python3 -m http.server en /home/user/spindlelab y abrir esta ruta).
+     Decisiones de Lucía que Ramón tiene que ver (no están en el texto de Clara ni en el plan de Bruno):
+     1. Trabajo copia el mecanismo MEDIDO de Koto, no «tarjetas que se apilan y crecen»: la medición (66 posiciones y el
+        video de Ramón) mostró que en Koto ninguna tarjeta escala ni se apila. Panel fijo, activa 100 % / resto 20 %,
+        nombre por máscara. Desde 834; a 390 es una lista, como Koto.
+     2. Lo que sí entra al bajar: la portada se recoge, la línea sube renglón a renglón, las imágenes de las dos bandas
+        grandes se abren desde abajo, las filas del contacto aparecen y la foto de Ramón escala. La fila de tres queda
+        quieta, como las noticias de Koto. El h1 entra por renglones al cargar (600 ms): eso no es de Koto.
+     3. El botón «Hablemos de tu sitio» del contacto va blanco (la clase del botón claro), no amarillo: la spec deja el amarillo solo
+        en #portada-cta y .cab__cta, y el del encabezado está siempre a la vista. Si Ramón lo quiere amarillo, se cambia la
+        spec (spec-visual §1.1) primero.
+     4. La pieza spindlelab.cl (3c, opcional) no está: Clara recomienda que no entre todavía.
+     5. La captura del chequeo es nueva y real: /diagnostico/ publicado, resultado de spindlelab.cl (94/100), 2-nov-2026,
+        sin el botón amarillo (0,00 % de dorado con imagenes/medir-dorado.py). Archivo: chequeo-spindlelab-169.webp.
+     6. A 390 la portada no se recoge (queda la franja 16:9 con el texto debajo, como hoy).
+     7. Con prefers-reduced-motion: reduce, nada de lo anterior corre y los videos no arrancan solos. -->
+<link rel="preload" href="letras/google-sans-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="letras/dm-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="../../../../../../spindlelab-astro/public/v3/marca/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="a-base.css">
+<link rel="stylesheet" href="home.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body class="a-body">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="flecha" viewBox="0 0 12 12"><path d="M1 6h9.5M6.5 2l4 4-4 4"/></symbol>
+</svg>
+<a class="saltar rotulo" href="#contenido">Saltar al contenido</a>
+
+<header class="cab" id="cab">
+  <div class="cab__placa" aria-hidden="true"></div>
+  <div class="cab__fila">
+    <a class="cab__logo" href="https://spindlelab.cl/"><svg role="img" aria-label="SpindleLab" viewBox="3.34 -117.02 716.32 147.01"><title>SpindleLab</title><path fill="currentColor" d="M87.8 29.99H106.3L106.3 -8.62L106.68 -8.55Q109.68 -3.63 115.84 -0.65Q122.01 2.33 129.48 2.33Q144.1 2.33 153.64 -8.46Q163.19 -19.25 163.19 -36.03Q163.19 -53.15 153.68 -63.59Q144.17 -74.02 129.67 -74.02Q121.79 -74.02 115.45 -70.74Q109.11 -67.47 105.87 -62.26L105.46 -62.26V-71.69H87.8ZM685.96 2.33Q700.58 2.33 710.12 -8.46Q719.66 -19.25 719.66 -36.11Q719.66 -53.15 710.17 -63.59Q700.69 -74.02 686.18 -74.02Q678.95 -74.02 672.82 -70.95Q666.68 -67.88 663.15 -62.79L662.77 -62.72L662.77 -100H644.28V0H661.93V-9.53L662.35 -9.53Q665.97 -4.2 672.21 -0.94Q678.45 2.33 685.96 2.33ZM321.46 2.33Q329.13 2.33 335.48 -0.88Q341.82 -4.09 345.07 -9.44L345.48 -9.44V0H363.14V-100H344.82L344.82 -62.63L344.44 -62.7Q341.42 -67.73 335.37 -70.83Q329.32 -73.93 322.1 -73.93Q307.3 -73.93 297.62 -63.29Q287.93 -52.64 287.93 -35.73Q287.93 -18.65 297.43 -8.16Q306.92 2.33 321.46 2.33ZM586.58 2.33Q594.99 2.33 601.35 -1.37Q607.71 -5.06 610.59 -10.48H610.99V0H629.42V-45.49Q629.42 -59.18 620.73 -66.53Q612.03 -73.89 596.57 -73.89Q586.71 -73.89 579.01 -70.81Q571.31 -67.74 563.59 -60.6L572.92 -50.58Q577.49 -55.24 582.6 -57.67Q587.72 -60.1 594.33 -60.1Q601.91 -60.1 606.43 -56.25Q610.95 -52.39 610.95 -45.57V-41.62Q607.43 -43.08 602.31 -44.03Q597.18 -44.98 591.31 -44.98Q577.92 -44.98 569.56 -38.51Q561.2 -32.05 561.2 -20.56Q561.2 -10.22 568.16 -3.95Q575.13 2.33 586.58 2.33ZM40.82 2.33Q55.5 2.33 66.15 -5.96Q76.81 -14.25 76.81 -28.15Q76.81 -39.22 69.79 -46.98Q62.78 -54.73 47.48 -59.43Q32.81 -64.03 29.08 -67.14Q25.35 -70.25 25.35 -74.72Q25.35 -79.84 29.76 -83.11Q34.17 -86.38 40.05 -86.38Q46.52 -86.38 50.81 -83.56Q55.1 -80.75 58.34 -74.53L74.13 -81.09Q69.06 -91.91 60.73 -97.12Q52.41 -102.33 40.75 -102.33Q26.09 -102.33 16.55 -94.27Q7.02 -86.21 7.02 -73.77Q7.02 -63.81 13.73 -56.88Q20.45 -49.95 35.65 -44.87Q47.88 -40.77 53.09 -36.97Q58.3 -33.17 58.3 -27.59Q58.3 -21.37 53.62 -17.61Q48.94 -13.84 41.49 -13.84Q34.11 -13.84 28.85 -17.95Q23.59 -22.05 19.75 -31.09L3.34 -24.62Q8.66 -10.62 18.21 -4.15Q27.75 2.33 40.82 2.33ZM445.45 2.32Q457.11 2.32 465.04 -1.87Q472.97 -6.07 478.7 -14.25L467.59 -22.9Q463.6 -17.28 458.79 -14.56Q453.97 -11.84 447.67 -11.84Q438.18 -11.84 432.32 -18.42Q428.08 -23.17 426.91 -30.45L479.94 -30.48Q480.27 -32.6 480.39 -33.87Q480.5 -35.15 480.5 -36.88Q480.5 -53.63 470.58 -63.76Q460.66 -73.89 445.41 -73.89Q428.91 -73.89 418.64 -63.1Q408.38 -52.3 408.38 -35.72Q408.38 -18.96 418.54 -8.32Q428.7 2.32 445.45 2.32ZM209.79 0H228.29V-40.32Q228.29 -47.92 232.89 -53.21Q237.48 -58.5 244.35 -58.5Q251.53 -58.5 255.22 -54.52Q258.92 -50.54 258.92 -42.89V0H277.42V-46.88Q277.42 -59.45 270.49 -66.73Q263.55 -74.02 251.41 -74.02Q244.37 -74.02 237.83 -70.54Q231.29 -67.05 227.93 -61.23H227.5V-71.69H209.79ZM492.23 0H553.67V-17.51H510.94V-100H492.23ZM378.57 0H397.07V-100H378.57ZM325.66 -13.34Q317.3 -13.34 311.64 -19.65Q305.99 -25.96 305.99 -35.82Q305.99 -45.79 311.68 -51.98Q317.38 -58.17 325.66 -58.17Q333.92 -58.17 339.62 -51.96Q345.31 -45.76 345.31 -35.87Q345.31 -26.03 339.67 -19.68Q334.02 -13.34 325.66 -13.34ZM681.93 -13.43Q673.57 -13.43 667.91 -19.76Q662.26 -26.09 662.26 -36Q662.26 -45.93 667.96 -52.09Q673.67 -58.25 681.93 -58.25Q690.21 -58.25 695.87 -52.08Q701.52 -45.91 701.52 -35.97Q701.52 -26.02 695.9 -19.73Q690.29 -13.43 681.93 -13.43ZM125.46 -13.44Q117.11 -13.44 111.45 -19.75Q105.79 -26.07 105.79 -35.87Q105.79 -45.87 111.48 -52.07Q117.18 -58.26 125.46 -58.26Q133.73 -58.26 139.38 -52.09Q145.04 -45.92 145.04 -35.86Q145.04 -26.04 139.44 -19.74Q133.83 -13.44 125.46 -13.44ZM175.12 0H193.62V-71.69H175.12ZM592.84 -11.74Q586.79 -11.74 583.04 -14.58Q579.29 -17.42 579.29 -22.46Q579.29 -27.98 583.78 -30.91Q588.27 -33.84 595.48 -33.84Q599.98 -33.84 604.09 -32.86Q608.19 -31.87 610.95 -30.05V-29.77Q610.95 -22.14 605.89 -16.94Q600.83 -11.74 592.84 -11.74ZM199.36 -92.28C199.36 -97.15 193.15 -100.6 184.37 -100.6C175.6 -100.6 169.39 -97.15 169.39 -92.28C169.39 -87.4 175.6 -83.95 184.37 -83.95C193.15 -83.95 199.36 -87.4 199.36 -92.28ZM427.36 -44.37Q428.63 -49.5 431.71 -53.07Q436.97 -59.16 445.38 -59.16Q452.78 -59.16 457.26 -54.98Q461.74 -50.8 462.56 -44.37Z"/></svg></a>
+    <nav class="cab__nav" aria-label="Principal">
+      <ul>
+        <li><a href="https://spindlelab.cl/servicios/">Soluciones</a></li>
+        <li><a href="https://spindlelab.cl/metodo/">Método</a></li>
+        <li><a href="https://spindlelab.cl/nosotros/">Nosotros</a></li>
+        <li><a href="https://spindlelab.cl/trabajo/">Trabajo</a></li>
+        <li><a href="https://spindlelab.cl/blog/">Blog</a></li>
+        <li class="cab__nav-contacto"><a href="https://spindlelab.cl/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="cab__der">
+      <p class="cab__hora rotulo">Santiago <span data-hora></span></p>
+      <a class="boton boton--accion cab__cta" href="https://spindlelab.cl/contacto/">Hablemos</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- 1 · PORTADA + 2 · LA LÍNEA. El escenario del hilo es una capa pegajosa de una pantalla: el texto sube por encima,
+     y entre el scroll 120 y una pantalla el video se recoge en una franja arriba (clip-path atado al scroll, Koto §1). -->
+<section class="portada" aria-labelledby="h1">
+  <div class="portada__fondo">
+  <div class="portada__escenario" data-escenario>
+    <div class="portada__medio" data-recorte>
+      <img class="portada__quieta" src="../../../../../../spindlelab-astro/public/v3/portada/hilo-1920-poster.webp" alt="" width="1920" height="1080" fetchpriority="high">
+      <video class="portada__video" data-video data-paralaje muted loop playsinline preload="none"
+        poster="../../../../../../spindlelab-astro/public/v3/portada/hilo-1920-poster.webp"
+        data-src-ancho="../../../../../../spindlelab-astro/public/v3/portada/hilo-1920"
+        data-src-angosto="../../../../../../spindlelab-astro/public/v3/portada/hilo-960"></video>
+    </div>
+    <button class="pausa portada__pausa" type="button" aria-pressed="false" aria-label="Pausar el video" data-pausa>
+      <svg class="icono-pausa" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg>
+      <svg class="icono-seguir" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z"/></svg>
+    </button>
+  </div>
+  </div>
+
+  <div class="portada__pie">
+    <div class="portada__decl">
+      <p class="rotulo">Sitios web a medida y marketing con IA</p>
+      <h1 id="h1" class="t-portada" data-lineas-carga><span class="tinta">En redes arriendas.</span> <span class="gris">Tu sitio es lo único que es tuyo.</span></h1>
+      <p class="cuerpo entradilla">El anuncio, el post, la búsqueda en Google y la respuesta de ChatGPT llevan a la misma dirección. Diseñamos y programamos esa dirección a medida, con un panel para que la edites tú, y conectamos lo demás a ella.</p>
+    </div>
+    <div class="portada__accion">
+      <a class="boton boton--accion" id="portada-cta" href="https://spindlelab.cl/contacto/">Hablemos de tu sitio <svg class="icono-flecha" viewBox="0 0 12 12" aria-hidden="true"><use href="#flecha"/></svg></a>
+      <p class="chico">Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta.</p>
+      <p class="chico"><a href="https://spindlelab.cl/servicios/desarrollo-web/">Ver cómo hacemos un sitio y cuánto cuesta</a></p>
+    </div>
+  </div>
+
+  <div class="linea">
+    <p class="t-declaracion linea__texto" data-lineas-scroll><span class="tinta">Todo lo que haces para vender termina en tu sitio.</span> <span class="gris">Si ahí no se entiende lo que haces, o el formulario no te avisa cuando alguien escribe, lo que pagaste para traer a esa persona se pierde.</span></p>
+  </div>
+</section>
+
+<!-- 3 · TRABAJO. El mecanismo medido en Koto (§3): el panel de la izquierda queda fijo una pantalla, la tarjeta cuyo
+     borde cruza la mitad de la pantalla se enciende (100 %) y las otras quedan al 20 %; el nombre cambia por máscara
+     (133 ms fuera, 333 ms dentro) y la bajada entra con 333 ms de retardo. Ninguna tarjeta escala ni se apila. -->
+<section class="trabajo" aria-labelledby="trabajo-h" data-trabajo>
+  <div class="trabajo__panel" data-panel>
+    <div class="trabajo__arriba">
+      <h2 id="trabajo-h" class="t-declaracion"><span class="tinta">Trabajo</span></h2>
+      <p class="t-declaracion trabajo__nombre" aria-hidden="true"><span class="trabajo__mascara"><span class="gris" data-nombre>Bernardo Combeau</span></span></p>
+    </div>
+    <div class="trabajo__abajo" data-bajada aria-live="polite">
+      <!-- la bajada de la pieza activa; el script la copia del <template> de cada pieza -->
+    </div>
+  </div>
+
+  <div class="trabajo__lista">
+    <template id="bajada-0">
+      <p class="dato">Cliente · Sitio web · 2026</p>
+      <p class="cuerpo">Bernardo es fotógrafo de retrato y modelo. Tiene dos sitios en el mismo dominio y un panel donde él mismo sube sus series.</p>
+      <p class="chico"><a href="https://spindlelab.cl/trabajo/combeau/">Ver el caso</a></p>
+    </template>
+    <template id="bajada-1">
+      <p class="dato">Propio · Herramienta · 2026</p>
+      <p class="cuerpo">Revisa un sitio contra la Ley 21.719 de datos personales. Lo probamos primero en el nuestro y salió mal. Al arreglarlo apareció un formulario que perdía mensajes sin avisar.</p>
+      <p class="chico">No es asesoría legal ni certifica que cumples.</p>
+      <p class="chico"><a href="https://verifica.spindlelab.cl/" rel="noopener">Abrir Verifica y Cumple <svg class="icono-flecha icono-flecha--fuera" viewBox="0 0 12 12" aria-hidden="true"><use href="#flecha"/></svg></a></p>
+    </template>
+
+    <article class="pieza-k" data-pieza="0" data-nombre="Bernardo Combeau">
+      <a class="tarjeta" data-tarjeta href="https://spindlelab.cl/trabajo/combeau/" aria-label="Bernardo Combeau, ver el caso">
+        <span class="tarjeta__medio video">
+          <img class="video__quieta" src="../../../../../../spindlelab-astro/public/v3/trabajo/combeau/combeau-fotografia-recorrido-1440-poster.webp" alt="" width="1440" height="810" loading="lazy">
+          <video data-video muted loop playsinline preload="none"
+            poster="../../../../../../spindlelab-astro/public/v3/trabajo/combeau/combeau-fotografia-recorrido-1440-poster.webp"
+            data-src-ancho="../../../../../../spindlelab-astro/public/v3/trabajo/combeau/combeau-fotografia-recorrido-1440"></video>
+        </span>
+        <span class="tarjeta__ver rotulo" aria-hidden="true">Ver el caso</span>
+      </a>
+      <button class="pausa tarjeta__pausa" type="button" aria-pressed="false" aria-label="Pausar el video del sitio de Bernardo Combeau" data-pausa>
+        <svg class="icono-pausa" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg>
+        <svg class="icono-seguir" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z"/></svg>
+      </button>
+      <div class="pieza-k__pie">
+        <h3 class="pieza-k__nombre"><span class="tinta">Bernardo Combeau</span></h3>
+        <p class="dato">Cliente · Sitio web · 2026</p>
+        <p class="chico">Bernardo es fotógrafo de retrato y modelo. Tiene dos sitios en el mismo dominio y un panel donde él mismo sube sus series.</p>
+        <p class="chico"><a href="https://spindlelab.cl/trabajo/combeau/">Ver el caso</a></p>
+      </div>
+    </article>
+
+    <div class="pieza-k pieza-k--sigue" data-pieza="0" data-nombre="Bernardo Combeau">
+      <a class="tarjeta" data-tarjeta href="https://spindlelab.cl/trabajo/combeau/" aria-label="El book de Bernardo Combeau, ver el caso" tabindex="-1">
+        <span class="tarjeta__medio"><img src="../../../../../../spindlelab-astro/public/v3/trabajo/combeau/combeau-modelo-169.webp" alt="El book de Bernardo Combeau en su sitio." width="1600" height="900" loading="lazy"></span>
+        <span class="tarjeta__ver rotulo" aria-hidden="true">Ver el caso</span>
+      </a>
+    </div>
+
+    <article class="pieza-k" data-pieza="1" data-nombre="Verifica y Cumple">
+      <a class="tarjeta" data-tarjeta href="https://verifica.spindlelab.cl/" rel="noopener" aria-label="Verifica y Cumple, abrir la herramienta">
+        <span class="tarjeta__medio"><img src="../../../../../../spindlelab-astro/public/v3/medios/verifica-y-cumple-53.webp" alt="La portada de Verifica y Cumple." width="1050" height="630" loading="lazy"></span>
+        <span class="tarjeta__ver rotulo" aria-hidden="true">Abrir</span>
+      </a>
+      <div class="pieza-k__pie">
+        <h3 class="pieza-k__nombre"><span class="tinta">Verifica y Cumple</span></h3>
+        <p class="dato">Propio · Herramienta · 2026</p>
+        <p class="chico">Revisa un sitio contra la Ley 21.719 de datos personales. Lo probamos primero en el nuestro y salió mal. Al arreglarlo apareció un formulario que perdía mensajes sin avisar.</p>
+        <p class="chico">No es asesoría legal ni certifica que cumples.</p>
+        <p class="chico"><a href="https://verifica.spindlelab.cl/" rel="noopener">Abrir Verifica y Cumple <svg class="icono-flecha icono-flecha--fuera" viewBox="0 0 12 12" aria-hidden="true"><use href="#flecha"/></svg></a></p>
+      </div>
+    </article>
+
+    <a class="trabajo__todo corchete" href="https://spindlelab.cl/trabajo/"><span class="trabajo__corchetes"><span>[</span> Todo el trabajo <span>]</span></span>&nbsp;(2)</a>
+  </div>
+</section>
+
+<!-- 4 y 5 · LAS DOS BANDAS GRANDES. Texto a la izquierda (6 columnas), medio 16:9 a la derecha (10). La imagen entra
+     con el scroll: se abre desde abajo y desde el centro mientras el marco pasa del borde inferior a media pantalla. -->
+<section class="banda" aria-labelledby="b-sitio">
+  <div class="banda__txt">
+    <h2 id="b-sitio" class="t-siguiente"><span class="tinta">Sitio web a medida</span> <span class="gris">con un panel para que edites tú.</span></h2>
+    <p class="cuerpo caja">Diseñado y programado para tu negocio, desde una página de campaña hasta un sitio de doce páginas. Va en tu dominio, a tu nombre, y te entregamos el código completo.</p>
+    <p class="banda__precio">Desde $390.000 + IVA</p>
+    <p class="chico"><a href="https://spindlelab.cl/servicios/desarrollo-web/">Ver Desarrollo web</a></p>
+  </div>
+  <figure class="banda__medio" data-entra>
+    <div class="medio p-169 hueco hueco--real" data-entra-in>
+      <p class="hueco__tipo rotulo">Material real · pendiente</p>
+      <p class="hueco__que rotulo">Captura del panel de Combeau</p>
+      <p class="hueco__nota chico">El panel donde Bernardo edita su sitio. Ramón lo autorizó; las capturas no han llegado. Si no llegan antes de publicar, va combeau-panel-colecciones-169 (ya publicada en el caso).</p>
+    </div>
+  </figure>
+</section>
+
+<section class="banda" aria-labelledby="b-busqueda">
+  <div class="banda__txt">
+    <h2 id="b-busqueda" class="t-siguiente"><span class="tinta">Búsqueda y visibilidad en IA</span> <span class="gris">que Google y ChatGPT entiendan a qué te dedicas.</span></h2>
+    <p class="cuerpo caja">Revisamos si pueden visitar tu sitio y te dejamos un plan ordenado por impacto. Que puedan visitarlo es el requisito para que te nombren, no una garantía.</p>
+    <p class="banda__precio">Desde $400.000 + IVA · una vez</p>
+    <ul class="banda__enlaces chico">
+      <li><a href="https://spindlelab.cl/servicios/visibilidad-en-ia/">Ver Visibilidad en IA</a></li>
+      <li><a href="https://spindlelab.cl/servicios/auditoria-seo-tecnica/">Ver Auditoría SEO técnica</a></li>
+    </ul>
+  </div>
+  <figure class="banda__medio" data-entra>
+    <div class="medio p-169" data-entra-in><img src="chequeo-spindlelab-169.webp" alt="El chequeo de spindlelab.cl: 94 de 100, y la lista de lo que cumple." width="1600" height="900" loading="lazy"></div>
+    <figcaption class="pie">Chequeo abierto, gratis y sin registro · <a class="subrayado" href="https://spindlelab.cl/diagnostico/">Hacer el chequeo</a></figcaption>
+  </figure>
+</section>
+
+<!-- 6, 7 y 8 · TRES BANDAS EN FILA, como las noticias de Koto (§4): una grande y dos chicas, 16:9, sin ningún efecto.
+     Las tres imágenes se generan con IA (plan de Bruno, §2) solo cuando Ramón apruebe el prototipo y la cotización. -->
+<section class="tres" aria-label="Anuncios, acompañamiento y cómo partimos">
+  <article class="nota">
+    <div class="medio p-169 hueco hueco--ia nota__medio">
+      <p class="hueco__tipo rotulo">Imagen con IA · por generar</p>
+      <p class="hueco__que rotulo">Muchos hilos, un solo ojo</p>
+      <p class="hueco__nota chico">Hilos plateados que entran desde varios bordes y pasan todos por el ojo de una aguja. Macro, fondo casi negro, luz verde azulada. Sin oro. Opción de bucle de 5 s.</p>
+    </div>
+    <h2 class="t-titulo"><span class="tinta">Anuncios en Google y redes</span> <span class="gris">que llevan a tu sitio.</span></h2>
+    <p class="chico caja">Google Ads para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.</p>
+    <p class="banda__precio">Desde $350.000/mes + IVA. <span class="gris">La inversión en pauta va aparte.</span></p>
+    <ul class="banda__enlaces chico">
+      <li><a href="https://spindlelab.cl/servicios/paid-media/">Ver Paid Media (Google)</a></li>
+      <li><a href="https://spindlelab.cl/servicios/redes-sociales/">Ver Gestión de redes sociales</a></li>
+    </ul>
+  </article>
+  <article class="nota">
+    <div class="medio p-169 hueco hueco--ia nota__medio">
+      <p class="hueco__tipo rotulo">Imagen con IA · por generar</p>
+      <p class="hueco__que rotulo">Capa sobre capa</p>
+      <p class="hueco__nota chico">Un huso con su disco y el hilo plateado enrollado en vueltas parejas: un mes encima del otro. Bodegón en tres cuartos.</p>
+    </div>
+    <h2 class="t-titulo"><span class="tinta">Acompañamiento mensual</span> <span class="gris">para sostener lo que ya hiciste.</span></h2>
+    <p class="chico caja">Implementamos y medimos cada mes con el mismo criterio, con informe y reunión, y decidimos juntos qué toca después.</p>
+    <p class="banda__precio">Desde $590.000/mes + IVA</p>
+    <ul class="banda__enlaces chico"><li><a href="https://spindlelab.cl/servicios/acompanamiento-mensual/">Ver Acompañamiento mensual</a></li></ul>
+  </article>
+  <article class="nota">
+    <div class="medio p-169 hueco hueco--ia nota__medio">
+      <p class="hueco__tipo rotulo">Imagen con IA · por generar</p>
+      <p class="hueco__que rotulo">Se mide antes de cortar</p>
+      <p class="hueco__nota chico">Un hilo tendido recto sobre papel oscuro, con tres nudos que lo parten en tres tramos iguales. Cenital.</p>
+    </div>
+    <h2 class="t-titulo"><span class="tinta">Cómo partimos</span> <span class="gris">antes de cobrarte nada.</span></h2>
+    <p class="chico caja">Nos pasas la dirección de tu sitio y te devolvemos lo que encontramos. Después hablamos 20 minutos y, si hay trabajo, recibes por escrito qué hacemos, en qué fases y cuánto cuesta cada una.</p>
+    <ul class="banda__enlaces chico"><li><a href="https://spindlelab.cl/metodo/">Leer el método</a></li></ul>
+  </article>
+</section>
+
+<!-- 9 · CONTACTO, en filas como el de Koto (§5): las filas aparecen atadas al scroll (240 px cada una, escalonadas
+     40) y la foto de Ramón, donde Koto pone la del estudio, escala desde su esquina inferior izquierda al llegar. -->
+<section class="contacto" aria-labelledby="contacto-h">
+  <div class="contacto__izq">
+    <h2 id="contacto-h" class="t-declaracion"><span class="tinta">Contacto</span><br><span class="gris">Partamos por tu sitio, lo tengas o no.</span></h2>
+    <figure class="contacto__foto" data-foto>
+      <img src="../../../../../../spindlelab-astro/public/v3/medios/ramon-vallejos-34.webp" alt="Ramón Vallejos, de camisa celeste, sobre fondo oscuro." width="896" height="1200" loading="lazy">
+    </figure>
+  </div>
+  <div class="contacto__filas">
+    <div class="fila" data-fila><div class="fila__in">
+      <p class="fila__rot chico">Proyectos</p>
+      <div class="fila__cont">
+        <p class="cuerpo"><span class="tinta">Te respondemos dentro de un día hábil.</span></p>
+        <a class="boton boton--claro fila__boton" href="https://spindlelab.cl/contacto/">Hablemos de tu sitio <svg class="icono-flecha" viewBox="0 0 12 12" aria-hidden="true"><use href="#flecha"/></svg></a>
+      </div>
+    </div></div>
+    <div class="fila" data-fila><div class="fila__in">
+      <p class="fila__rot chico">Correo</p>
+      <div class="fila__cont"><p class="cuerpo"><a href="mailto:hola@spindlelab.cl?subject=Hablemos%20de%20mi%20sitio">hola@spindlelab.cl</a></p></div>
+    </div></div>
+    <div class="fila" data-fila><div class="fila__in">
+      <p class="fila__rot chico">Quién responde</p>
+      <div class="fila__cont">
+        <p class="cuerpo"><span class="tinta">Ramón Vallejos</span> · Fundador</p>
+        <p class="cuerpo caja">Viene de años en agencias de medios y de marketing. Ahí vio dónde se pierde lo que una marca invierte para atraer clientes: muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva.</p>
+        <p class="cuerpo caja">Escribe el código con agentes de IA, y lo revisa y aprueba él antes de que llegue a tu sitio.</p>
+        <p class="chico"><a href="https://spindlelab.cl/nosotros/">Conocer a Ramón</a></p>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie-sitio">
+  <a class="cab__logo" href="https://spindlelab.cl/"><svg role="img" aria-label="SpindleLab" viewBox="3.34 -117.02 716.32 147.01"><title>SpindleLab</title><path fill="currentColor" d="M87.8 29.99H106.3L106.3 -8.62L106.68 -8.55Q109.68 -3.63 115.84 -0.65Q122.01 2.33 129.48 2.33Q144.1 2.33 153.64 -8.46Q163.19 -19.25 163.19 -36.03Q163.19 -53.15 153.68 -63.59Q144.17 -74.02 129.67 -74.02Q121.79 -74.02 115.45 -70.74Q109.11 -67.47 105.87 -62.26L105.46 -62.26V-71.69H87.8ZM685.96 2.33Q700.58 2.33 710.12 -8.46Q719.66 -19.25 719.66 -36.11Q719.66 -53.15 710.17 -63.59Q700.69 -74.02 686.18 -74.02Q678.95 -74.02 672.82 -70.95Q666.68 -67.88 663.15 -62.79L662.77 -62.72L662.77 -100H644.28V0H661.93V-9.53L662.35 -9.53Q665.97 -4.2 672.21 -0.94Q678.45 2.33 685.96 2.33ZM321.46 2.33Q329.13 2.33 335.48 -0.88Q341.82 -4.09 345.07 -9.44L345.48 -9.44V0H363.14V-100H344.82L344.82 -62.63L344.44 -62.7Q341.42 -67.73 335.37 -70.83Q329.32 -73.93 322.1 -73.93Q307.3 -73.93 297.62 -63.29Q287.93 -52.64 287.93 -35.73Q287.93 -18.65 297.43 -8.16Q306.92 2.33 321.46 2.33ZM586.58 2.33Q594.99 2.33 601.35 -1.37Q607.71 -5.06 610.59 -10.48H610.99V0H629.42V-45.49Q629.42 -59.18 620.73 -66.53Q612.03 -73.89 596.57 -73.89Q586.71 -73.89 579.01 -70.81Q571.31 -67.74 563.59 -60.6L572.92 -50.58Q577.49 -55.24 582.6 -57.67Q587.72 -60.1 594.33 -60.1Q601.91 -60.1 606.43 -56.25Q610.95 -52.39 610.95 -45.57V-41.62Q607.43 -43.08 602.31 -44.03Q597.18 -44.98 591.31 -44.98Q577.92 -44.98 569.56 -38.51Q561.2 -32.05 561.2 -20.56Q561.2 -10.22 568.16 -3.95Q575.13 2.33 586.58 2.33ZM40.82 2.33Q55.5 2.33 66.15 -5.96Q76.81 -14.25 76.81 -28.15Q76.81 -39.22 69.79 -46.98Q62.78 -54.73 47.48 -59.43Q32.81 -64.03 29.08 -67.14Q25.35 -70.25 25.35 -74.72Q25.35 -79.84 29.76 -83.11Q34.17 -86.38 40.05 -86.38Q46.52 -86.38 50.81 -83.56Q55.1 -80.75 58.34 -74.53L74.13 -81.09Q69.06 -91.91 60.73 -97.12Q52.41 -102.33 40.75 -102.33Q26.09 -102.33 16.55 -94.27Q7.02 -86.21 7.02 -73.77Q7.02 -63.81 13.73 -56.88Q20.45 -49.95 35.65 -44.87Q47.88 -40.77 53.09 -36.97Q58.3 -33.17 58.3 -27.59Q58.3 -21.37 53.62 -17.61Q48.94 -13.84 41.49 -13.84Q34.11 -13.84 28.85 -17.95Q23.59 -22.05 19.75 -31.09L3.34 -24.62Q8.66 -10.62 18.21 -4.15Q27.75 2.33 40.82 2.33ZM445.45 2.32Q457.11 2.32 465.04 -1.87Q472.97 -6.07 478.7 -14.25L467.59 -22.9Q463.6 -17.28 458.79 -14.56Q453.97 -11.84 447.67 -11.84Q438.18 -11.84 432.32 -18.42Q428.08 -23.17 426.91 -30.45L479.94 -30.48Q480.27 -32.6 480.39 -33.87Q480.5 -35.15 480.5 -36.88Q480.5 -53.63 470.58 -63.76Q460.66 -73.89 445.41 -73.89Q428.91 -73.89 418.64 -63.1Q408.38 -52.3 408.38 -35.72Q408.38 -18.96 418.54 -8.32Q428.7 2.32 445.45 2.32ZM209.79 0H228.29V-40.32Q228.29 -47.92 232.89 -53.21Q237.48 -58.5 244.35 -58.5Q251.53 -58.5 255.22 -54.52Q258.92 -50.54 258.92 -42.89V0H277.42V-46.88Q277.42 -59.45 270.49 -66.73Q263.55 -74.02 251.41 -74.02Q244.37 -74.02 237.83 -70.54Q231.29 -67.05 227.93 -61.23H227.5V-71.69H209.79ZM492.23 0H553.67V-17.51H510.94V-100H492.23ZM378.57 0H397.07V-100H378.57ZM325.66 -13.34Q317.3 -13.34 311.64 -19.65Q305.99 -25.96 305.99 -35.82Q305.99 -45.79 311.68 -51.98Q317.38 -58.17 325.66 -58.17Q333.92 -58.17 339.62 -51.96Q345.31 -45.76 345.31 -35.87Q345.31 -26.03 339.67 -19.68Q334.02 -13.34 325.66 -13.34ZM681.93 -13.43Q673.57 -13.43 667.91 -19.76Q662.26 -26.09 662.26 -36Q662.26 -45.93 667.96 -52.09Q673.67 -58.25 681.93 -58.25Q690.21 -58.25 695.87 -52.08Q701.52 -45.91 701.52 -35.97Q701.52 -26.02 695.9 -19.73Q690.29 -13.43 681.93 -13.43ZM125.46 -13.44Q117.11 -13.44 111.45 -19.75Q105.79 -26.07 105.79 -35.87Q105.79 -45.87 111.48 -52.07Q117.18 -58.26 125.46 -58.26Q133.73 -58.26 139.38 -52.09Q145.04 -45.92 145.04 -35.86Q145.04 -26.04 139.44 -19.74Q133.83 -13.44 125.46 -13.44ZM175.12 0H193.62V-71.69H175.12ZM592.84 -11.74Q586.79 -11.74 583.04 -14.58Q579.29 -17.42 579.29 -22.46Q579.29 -27.98 583.78 -30.91Q588.27 -33.84 595.48 -33.84Q599.98 -33.84 604.09 -32.86Q608.19 -31.87 610.95 -30.05V-29.77Q610.95 -22.14 605.89 -16.94Q600.83 -11.74 592.84 -11.74ZM199.36 -92.28C199.36 -97.15 193.15 -100.6 184.37 -100.6C175.6 -100.6 169.39 -97.15 169.39 -92.28C169.39 -87.4 175.6 -83.95 184.37 -83.95C193.15 -83.95 199.36 -87.4 199.36 -92.28ZM427.36 -44.37Q428.63 -49.5 431.71 -53.07Q436.97 -59.16 445.38 -59.16Q452.78 -59.16 457.26 -54.98Q461.74 -50.8 462.56 -44.37Z"/></svg></a>
+  <a class="pie-sitio__correo rotulo" href="mailto:hola@spindlelab.cl?subject=Hablemos%20de%20mi%20sitio">hola@spindlelab.cl</a>
+  <p class="cab__hora rotulo">Santiago <span data-hora></span></p>
+  <nav class="pie-sitio__enlaces" aria-label="Pie">
+    <ul>
+      <li><a class="rotulo" href="https://spindlelab.cl/diagnostico/">Chequeo gratis</a></li>
+      <li><a class="rotulo" href="https://spindlelab.cl/privacidad/">Política de privacidad</a></li>
+      <li><a class="rotulo" href="https://www.linkedin.com/company/spindlelab/" rel="noopener">LinkedIn<svg class="icono-flecha icono-flecha--fuera" viewBox="0 0 12 12" aria-hidden="true"><use href="#flecha"/></svg></a></li>
+      <li><a class="rotulo" href="https://www.instagram.com/spindlelab.cl/" rel="noopener">Instagram<svg class="icono-flecha icono-flecha--fuera" viewBox="0 0 12 12" aria-hidden="true"><use href="#flecha"/></svg></a></li>
+    </ul>
+  </nav>
+</footer>
+
+<p class="marca-prototipo rotulo" aria-hidden="true">Prototipo E14 · no publicado</p>
+<script src="mov.js"></script>
+</body>
+</html>
