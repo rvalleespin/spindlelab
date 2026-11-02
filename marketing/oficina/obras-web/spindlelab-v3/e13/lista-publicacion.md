@@ -36,6 +36,21 @@
 
 **Llega a `main` cuando Ramón aprieta «Merge pull request»,** con método `merge`.
 
+**PUBLICADO el 2-nov-2026 a las 15:55 (Chile).**
+- Ramón fusionó con el botón el PR rvalleespin/spindlelab#56 (corte `d75d2366`).
+- El check «Workers Builds: spindlelab» salió rojo, como en todos los PR. Es un proyecto de Workers conectado aparte en el
+  panel, no el que publica; está comentado en el PR. La vista previa de Pages (`spindlelab-v2`) salió verde.
+- **En vivo, a los ~105 s:**
+  - las 22 URL del sitemap en 200 (15 con fecha 2026-11-02 y 7 con 2026-10-26);
+  - 0 «fundador y director», 0 «director de SpindleLab» y 0 «casi nunca en el anuncio» en las 22 páginas y en
+    `llms.txt`;
+  - la frase nueva en `/` y `/nosotros/`;
+  - «a tu nombre» y el código completo en `/` y `/servicios/desarrollo-web/`;
+  - la firma «Fundador de SpindleLab» en los 7 artículos;
+  - el title de `/nosotros/` dice «Ramón Vallejos, fundador · SpindleLab».
+- **IndexNow (15:57):** se enviaron las 10 URL que cambiaron (`/`, `/nosotros/`, los 7 artículos y
+  `/servicios/desarrollo-web/`). `api.indexnow.org` respondió 200 y `www.bing.com/indexnow` también 200.
+
 ## PUBLICADO · 30-oct-2026, 18:23 (Chile)
 
 - **OK de Ramón:** por escrito, el 30-oct en la tarde («Confirmo la frase» sobre A1 y «Sí, publica hoy»). Con eso se cierra
