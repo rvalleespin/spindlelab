@@ -317,10 +317,10 @@ Una frase por renglón, que es como manda leerlo el manual. Las `/` son respirac
 cortes.
 
 > Pagar publicidad en Instagram está **bien**. / Medir si **funcionó**, también. //
-> **Pero** para medir, / tu sitio guarda algo en el teléfono del **cliente**, / para reconocerlo
-> cuando **vuelva**. //
-> Y lo guarda antes de que **acepte** nada. //
-> Revisé treinta y seis sitios de cafés y pastelerías, / y eso pasa en casi la **mitad**. //
+> **Pero** para medir, / tu sitio le guarda algo en el teléfono al **cliente** / sin
+> **preguntarle**. //
+> En casi la **mitad** de los cafés y pastelerías que **revisé**, / pasa eso mismo. //
+> No es que tu sitio esté **mal hecho**. / Es lo que instalaste para **medir**, funcionando. //
 > Puedes seguir **midiendo** igual. / Solo hay que preguntarle al cliente **primero**. //
 > Y esa pregunta va a ser **obligatoria** por ley. //
 > Es una **franja** abajo de tu sitio / que le pregunta al cliente si **acepta**. //
@@ -328,7 +328,7 @@ cortes.
 > Soy **Ramón**, de SpindleLab. //
 > **Medir** está bien. / Preguntar **primero**, también. //
 
-**108 palabras, 37 segundos.** Largo por renglón: 6, 4, 16, 8, 16, 4, 7, 9, 14, 13, 4, 7.
+**112 palabras, 38 segundos.** Largo por renglón: 6, 4, 15, 15, 16, 11, 9, 14, 13, 4, 7.
 
 **Versión 9, del 30-oct.** Ramón tiene aprobada la apertura, la costura y todo lo que va de la
 franja hacia abajo. **La palabra «cookie» no aparece en ningún guion hablado de esta campaña**, por
@@ -382,7 +382,7 @@ voz cuenta la escena, que es lo que hace que la pieza se entienda con el sonido 
 
 | Tarjeta | Tramo | Etiqueta | Línea grande | Cuerpo |
 |---|---|---|---|---|
-| 1 | plano A, 0 a 3 s | — | ESTO MIDE / TU PUBLICIDAD. | *(sin cuerpo: la lista de cookies tiene que leerse)* |
+| 1 | plano A, 0 a 3 s | — | LO GUARDA / SIN PREGUNTAR. | *(sin cuerpo: la lista de cookies tiene que leerse)* |
 | 2 | la cifra | **16 de 36** *(lima)* | CASI LA MITAD. | Entra antes de que el cliente diga nada. |
 | 3 | la tesis | — | PUEDES SEGUIR / MIDIENDO. | Preguntándole al cliente primero. |
 | 4 | plano C | — | UNA FRANJA / QUE PREGUNTA. | Y mides a todos los que acepten. |
@@ -797,3 +797,30 @@ sinergia verbal/visual del manual, y de paso resuelve el problema de jerga sin p
 al que vive en él. El número de sitios **sí se queda**: es la autoridad del guion y la regla del
 encargo del motor pide siempre decir de cuántos sitios se habla. En texto escrito tampoco hace
 falta, y salió también de ahí.
+
+### 2-nov-2026 · la zona de enganche: la prueba estaba enterrada
+
+Ramón entregó la guía de ganchos y zona de enganche (ahora en
+`.claude/skills/voz-spindlelab/zona-de-enganche.md`). **El gancho estaba bien; fallaban tres de las
+dimensiones que la guía mide**, y la peor es la primera:
+
+1. **La prueba estaba en la frase 5.** La guía dice frase 2 a 4 cuando hay una cifra real, y la
+   tenemos: la medición propia es el activo más fuerte del guion y estaba enterrada en la mitad del
+   video. **Subió a la frase 4**, entrando por el hallazgo (*"en casi la mitad de los cafés que
+   revisé"*) y **no por la metodología** (*"pero revisé treinta y seis sitios"*), que es la forma que
+   Ramón ya había rechazado el 30-oct por desconectada. Subir la prueba no obliga a resucitarla.
+2. **No había quita-excusas.** La objeción inmediata del dueño de un café es *"a mí no me pasa, mi
+   sitio está bien hecho"*, y nadie la desarmaba. Queda: *"No es que tu sitio esté mal hecho. Es lo
+   que instalaste para medir, funcionando."* Mata la objeción **y lo deja del lado correcto**: no
+   hizo nada malo, que es lo que permite vender sin acusar.
+3. **El rótulo de apertura era un pie de foto.** *"ESTO MIDE TU PUBLICIDAD"* rotulaba la imagen en
+   vez de prometer algo. Queda **«LO GUARDA / SIN PREGUNTAR»**, que para quien mira en silencio
+   cuenta el video entero junto con la lista de cookies de abajo.
+
+**Lo que no se tomó de la guía, y queda escrito en la skill:** la fórmula de «la caja mágica»
+(bautizar un método propio con un nombre pegajoso) sería fabricar autoridad, que es justo lo que esta
+marca no hace. Y los ejemplos de la guía son de alcance masivo frío; esto va a rubros segmentados por
+pago. **Se toma la arquitectura, no el tono.**
+
+⚠️ **Pendiente: los otros tres guiones no tienen quita-excusas ni la prueba subida.** Salud,
+contabilidad y tutorial se escribieron antes de esta guía y hay que pasarlos por el mismo chequeo.
