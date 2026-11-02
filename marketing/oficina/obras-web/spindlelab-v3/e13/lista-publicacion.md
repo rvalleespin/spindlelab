@@ -51,7 +51,15 @@
 
   La home a 1440 y 390 carga sin errores de página.
 - **Pendiente de Ramón (§5):**
-  - un envío real del formulario con UTM;
+  - ~~un envío real del formulario con UTM~~ **hecho** (Ramón, con captura del correo). Entró por el enlace de prueba y
+    el correo de Web3Forms («Nuevo contacto desde spindlelab.cl», remitente `notify@web3forms.com`) llegó con:
+    - Nombre, Email y Sitio web;
+    - Mensaje vacío, porque es opcional;
+    - **UTM Source `test`, UTM Medium `publicacion` y UTM Campaign `sitio-nuevo`**;
+    - Consiento `on`.
+
+    Con esto, la atribución funciona de punta a punta en producción. (Este punto se registró el 2-nov, con la captura
+    que mandó Ramón.)
   - Search Console y Bing: reenviar el sitemap;
   - LinkedIn Post Inspector y Facebook Sharing Debugger;
   - el favicon y el ícono en un iPhone.
