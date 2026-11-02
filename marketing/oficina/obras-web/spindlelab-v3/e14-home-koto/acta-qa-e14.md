@@ -163,3 +163,82 @@ PRUEBAS         ver abajo
 - La home bajó a menos de la mitad del texto sin perder precios ni lo decidido por Ramón, y el FAQPage solo existe
   donde hay preguntas visibles.
 - Nada de lo protegido cambió.
+
+---
+
+# Ronda 2 (segunda y última): reparos cerrados y regresión
+
+**2-nov-2026 · Javiera (QA crítica) · contexto limpio (subagente).** Audité HEAD `9a182d9d` (Clara y Diego, reparos de la
+ronda 1) en una copia limpia: `git worktree` de HEAD en el scratchpad, `npx astro build` y `dist/` servido en local. No
+repetí lo que el commit no podía cambiar: `9a182d9d` toca solo `e13/texto/home.json`, su copia en `src/data/archivo/texto/`,
+un comentario de `index.astro` y `desvios-construccion.md`. No hay imágenes, CSS, JS ni datos de oferta nuevos.
+
+## Veredicto ronda 2
+
+**Aprobado.** Los cuatro reparos de oficio (1, 2, 3 y 5) quedaron cerrados y medidos. El movimiento, el peso, los precios y
+lo protegido no cambiaron. Quedan abiertas dos preguntas de texto que decide Ramón (defectos 4 y 6). Ninguna de las dos
+bloquea mostrar la home ni publicarla.
+
+## Defectos de la ronda 1, re-medidos
+
+| # | Estado | Evidencia |
+|---|---|---|
+| 1 · alt de anuncios | **Cerrado** | En `dist/index.html` dice: «Cuatro hilos plateados que entran por la izquierda, pasan juntos por el ojo de una aguja y salen por la derecha como uno solo, sobre fondo casi negro.» Lo comparé con la -169 y la -45 (`qa-javiera/acta-r2/alt-anuncios-y-nudos.jpg`) y en las dos son cuatro hilos que entran por la izquierda. «varios bordes» aparece 0 veces |
+| 2 · alt de cómo partimos | **Cerrado** | «Un hilo plateado tendido recto sobre papel oscuro, con tres nudos repartidos a lo largo.» Vale para las dos versiones. «tres tramos iguales» aparece 0 veces |
+| 3 · rótulo «Proyectos» | **Cerrado** | Ahora dice «Si tienes un proyecto». Ocupa una línea a 390 (358 × 18 px), 768 y 1440, con opacidad 1 en su lugar (`acta-r2/rotulo-390.jpg`, `-768`, `-1440`). En la lectura en frío nueva, **0 de 3** lectores lo nombran. En la ronda 1 fueron 2 de 3. El cambio de texto sobre algo que Ramón vio en el prototipo está anotado como pregunta 2 en `desvios-construccion.md` |
+| 4 · h2 de Búsqueda | **Abierto, decide Ramón** | Sigue frenando a **3 de 3** lectores, igual que en la ronda 1, y aparece en el top 3 de frenos de los lectores 1 y 3. La propuesta de Clara («…en IA **para** que Google…») está bien escalada en `desvios-construccion.md` («Preguntas para Ramón», 1) y en `home.busqueda.h2.pendiente`. Ya no es trabajo del equipo. No se cambia sin respuesta |
+| 5 · nombres y notas de home.json | **Cerrado** | `grep retiradas_e14` en el HTML construido y en las notas `antes` da 0. La fila de tres apunta a `public/v3/medios/e14-banda-*-169.webp` con su `archivo_45`. El comentario «provisorio» de `index.astro` ya no está |
+
+## Hallazgo nuevo
+
+| # | Severidad | Dueño | Dónde | Qué | Contra qué | Cierre |
+|---|---|---|---|---|---|---|
+| 6 | menor (decide Ramón) | Clara → Ramón | Home, contacto, fila «Quién responde»: «Escribe el código con agentes de IA, y lo revisa y aprueba él antes de que llegue a tu sitio.» | Los 3 lectores la nombran como duda en **las dos** rondas, y en esta ronda queda en el top 3 de frenos de 2 de ellos («me deja dudando de quién hace realmente el trabajo», «una sola persona revisando todo, y no sé si eso es bueno o malo»). En la ronda 1 se me pasó: también estaba (3/3 la nombraban y 1/3 la ponía en su top 3) | Lectura en frío, ronda 1 y ronda 2 (`acta/lectura-fria/` y `acta/lectura-fria-r2/`) | Es texto aprobado y honesto, así que no lo cambio por regla. Clara lo suma a «Preguntas para Ramón» con una alternativa que diga lo que gana el cliente (que una persona responde por cada línea). Si no, Ramón confirma el texto tal cual y queda escrito |
+
+No hay desvíos nuevos sin declarar: lo que cambió en `9a182d9d` está en `desvios-construccion.md`, «Ronda de reparos».
+
+## Regresión
+
+| Qué | Resultado |
+|---|---|
+| `extraer-texto.mjs --comprobar` | Sale con código 0. Todos los JSON «igual» |
+| `npx astro build` | 22 páginas, con los guardianes en verde |
+| `verificar.mjs --excluir /privacidad/` a 390, 768 y 1440 | **Sin hallazgos** en los tres anchos: contraste, desborde, h1, JSON-LD, alt, enlaces internos y comentarios |
+| Movimiento al bajar (`qa-javiera/acta-mov.mjs`, 1440 y 390, con y sin movimiento reducido) | **Igual paso a paso a la ronda 1** en las cuatro corridas: recorte de la portada, renglones de la línea, panel, opacidad de cada tarjeta, nombre, `--e` de las bandas, filas del contacto y foto. El alto recorrible es el mismo (5849, 5517, 7002 y 7042 px). Cero errores de consola. `scrollWidth − clientWidth = 0` en cada paso. Hojas de cuadros: `acta-r2/hoja-1440-mov.jpg`, `hoja-1440-red.jpg` y `hoja-390-mov.jpg` |
+| Texto visible de la home (`lectura-fria-texto.mjs`, ronda 1 contra ronda 2) | El diff tiene exactamente **3 líneas**: los dos alt y el rótulo. Nada más cambió |
+| Lo decidido por Ramón | Exacto en el HTML: el rótulo, el h1 (uno solo, «En redes arriendas. Tu sitio es lo único que es tuyo.»), «Hablemos de tu sitio», la frase del anuncio, «Fundador», «Va en tu dominio, a tu nombre. Y te entregamos el código completo.» con punto, y el pie de IA de Verifica y Cumple (1 vez) |
+| JSON-LD | Las 22 páginas parsean sin error. En la home hay **0 FAQPage** (ProfessionalService, WebPage, WebSite, Person, Service y Offer) |
+| Peso de la home (`peso-30oct.mjs`) | **1.396,2 kB** a 1440 (tope 1.400) y 816,7 kB a 390. Sube 0,1 kB por el texto más largo. El margen sigue en 3,8 kB |
+| Precios | Home: $350.000, $390.000, $400.000 y $590.000. Las otras 21 páginas tienen los mismos precios que el build de origin/main (`8b6d2375`). `oferta-v3.json`, `servicios-v3.json` y `paginas-v3.json` no tienen diff |
+| Protegidos contra origin/main | `functions/`, `public/_headers`, `public/_redirects`, `public/js/` y `src/layouts/Layout.astro`: **diff vacío**. Las páginas de /contacto/ y /diagnostico/ también tienen diff vacío. Sus `<form>` construidos son idénticos al build de origin/main |
+| Imágenes | No hay imágenes nuevas desde la ronda 1. Siguen valiendo el 0,00 % de dorado fuera de la portada, la ausencia de personas y de letras falsas, y las dimensiones y la carga diferida |
+
+## Lectura en frío, ronda 2 (los mismos 3 lectores y las mismas herramientas)
+
+Las respuestas están en `qa-javiera/acta/lectura-fria-r2/`. `lectura-fria-texto.mjs` trae escrita la ruta del Chrome del
+Mac, así que la corrí con una copia en el scratchpad que solo cambia esa ruta por la de Chromium. Lo demás es idéntico.
+
+- **Se arregló:** el rótulo del contacto (de 2/3 a 0/3).
+- **Sigue igual que en la ronda 1, sin cambio de texto:** el h2 de Búsqueda (3/3, defecto 4). La frase de los agentes
+  de IA (3/3, defecto 6). Un solo caso y de otro rubro (3/3, por el alcance del portafolio). «94 de 100» sin saber qué
+  mide (3/3). «dirección» leída como domicilio (2/3, decisión de Ramón). El pie de IA les pareció raro (2/3: es
+  obligatorio y se queda). No distinguir «chequeo», «revisión» y «auditoría» (2/3, encuadre de la oferta, no de esta
+  obra). «Paid Media (Google)» en inglés (3/3, es el nombre del servicio en su página).
+- **Lo que les da confianza, igual en los tres:** precios a la vista, lo que no se promete, «salió mal» en el sitio
+  propio, revisión gratis en un día hábil, una persona con nombre y cara.
+
+## Lo que queda abierto (sin defecto, con su porqué)
+
+- **Preguntas para Ramón:** el h2 de Búsqueda (defecto 4), el rótulo «Si tienes un proyecto» (pregunta 2 de los desvíos)
+  y la frase de los agentes de IA (defecto 6). Cualquier cambio de texto que salga de ahí vuelve a pasar por
+  `extraer-texto.mjs`, `--comprobar` y una medición de una línea a 390. No hace falta otra ronda de QA completa.
+- Siguen igual que en la ronda 1: el margen de peso de 3,8 kB, los conflictos de fusión con origin/main en
+  `public/sitemap.xml` y en los documentos de `marketing/`, la captura del chequeo con el botón pintado dentro (para
+  Lucía) y el panel de Combeau de septiembre mientras Ramón no decida una captura nueva.
+
+## Lo que está bien (que no se pierda)
+
+- Los arreglos fueron quirúrgicos: tres líneas de texto visible y nada más, sin tocar el movimiento, el peso, los precios
+  ni lo protegido. Así se cierra una ronda de reparos.
+- El texto aprobado por Ramón no se tocó a escondidas. Lo que hacía falta cambiar se escaló como pregunta, con propuesta.
+- Los alt se escribieron mirando las dos versiones de cada imagen, y el `desvios` explica por qué no se nombran los tramos.
