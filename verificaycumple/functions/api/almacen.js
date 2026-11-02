@@ -371,3 +371,42 @@ export function vistaPublica(pedido) {
     falta_acceso: pedido.estado === ESTADOS.PAGADO && !pedido.acceso_recibido_en,
   };
 }
+
+/**
+ * La cola de trabajo: los pedidos más nuevos primero, con lo que hace falta para atenderlos.
+ *
+ * ⚠️ ESTA NO ES `vistaPublica`, Y LA DIFERENCIA ES EL PUNTO. Esa deja fuera el correo del
+ * cliente y sus datos de facturación porque la pide quien tenga el enlace del pedido. Esta la
+ * pide quien tiene `CLAVE_ENTREGA`, o sea nosotros, y son justamente esos campos los que
+ * obligaban a abrir la base de producción a mano: el id completo para poder cerrar el pedido,
+ * el correo para escribirle, y la razón social con su RUT para emitir la factura.
+ *
+ * Lo que sí queda fuera es `informe_json`, el informe entero congelado: pesa más que todo el
+ * resto junto y para decidir a quién atender no aporta nada. `informe_final_json` sí se lee,
+ * porque `etapaDelPedido` lo necesita para saber si la entrega llevó medición nueva; quien
+ * llama decide si lo devuelve o no.
+ *
+ * Columnas explícitas y no `*`: lo que no se pide no se puede filtrar después por olvido.
+ */
+export async function listarPedidos(db, { estado, tope } = {}) {
+  // Ninguna consulta sin techo. El tope se acota en los dos extremos en vez de confiar en
+  // quien llama, porque `?tope=999999` es un parámetro de la URL y lo escribe cualquiera.
+  const limite = Math.min(Math.max(Math.floor(Number(tope)) || 25, 1), 200);
+
+  const cols = [
+    'id', 'estado', 'creado_en', 'dominio', 'url_medida', 'correo',
+    'senales_contratadas', 'senales_fuera', 'monto_total',
+    'mp_order_id', 'flow_token', 'pagado_en',
+    'razon_social', 'rut', 'giro', 'direccion', 'plataforma', 'acceso_recibido_en',
+    'entregado_en', 'informe_final_json',
+    'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+  ].join(', ');
+
+  // El índice `idx_pedidos_estado (estado, creado_en)` cubre las dos formas de la consulta.
+  const sql = estado
+    ? `SELECT ${cols} FROM pedidos WHERE estado = ? ORDER BY creado_en DESC LIMIT ?`
+    : `SELECT ${cols} FROM pedidos ORDER BY creado_en DESC LIMIT ?`;
+
+  const r = await db.prepare(sql).bind(...(estado ? [estado, limite] : [limite])).all();
+  return (r && r.results) || [];
+}
