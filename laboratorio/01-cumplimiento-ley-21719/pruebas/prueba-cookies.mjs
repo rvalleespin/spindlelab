@@ -160,6 +160,46 @@ console.log('=== 4. pie sin enlace a la política (el 404) ===');
   eq('el control aparece igual', !!m.control(), true);
 }
 
+console.log('=== 4 bis. el ID del Pixel es el de la cuenta, y es el mismo en todas las páginas ===');
+{
+  /* ⚠️ POR QUÉ ESTO ESTÁ FIJADO A UN NÚMERO, QUE NORMALMENTE SERÍA UNA MALA IDEA.
+   *
+   * Del 20-jul al 2-nov-2026 el sitio cargó el Pixel `2885353628478565`, que NO es de la
+   * cuenta de anuncios de Ramón: `ads_get_datasets` devuelve un solo dataset,
+   * `1027024050073502`, y el ID viejo ni se puede leer con su token. Tres meses y medio de
+   * visitas —las de quien aceptaba el aviso— yéndose a un dataset ajeno.
+   *
+   * Nadie lo notó porque no había nada que lo notara: el dataset propio marcaba
+   * `last_fired_time` en epoch 0 y eso solo se ve entrando al panel de Meta. Lo que sí se
+   * notó, y se atribuyó a otra cosa, fue que el público de remarketing nunca creció pese a
+   * los $20.656 de la campaña de julio.
+   *
+   * Un número fijado en una prueba es feo, y aquí vale la pena: es el único lugar del
+   * repositorio donde un ID equivocado deja de ser silencioso. Si algún día cambia la
+   * cuenta, esta prueba se pone roja y obliga a mirar, que es exactamente lo que faltó.
+   */
+  const PIXEL = '1027024050073502';
+  // Se lee de la RAMA que despliega, que es lo que de verdad se sirve. Las variables de
+  // entorno permiten apuntarlas a la copia de trabajo mientras se desarrolla.
+  const paginas = [
+    ['portada', 'verificaycumple/public/index.html', 'VYC_INDEX_HTML'],
+    ['privacidad', 'verificaycumple/public/privacidad/index.html', 'VYC_PRIVACIDAD_HTML'],
+  ];
+  const ids = {};
+  for (const [nombre, rel, env] of paginas) {
+    const txt = fuenteEnLaRama(rel, 'laboratorio/ley-21719', env).texto;
+    const enCodigo = [...txt.matchAll(/fbq\(\s*'(?:init|set)'[^)]*'(\d{10,})'/g)].map((m) => m[1]);
+    ids[nombre] = [...new Set(enCodigo)];
+    eq(`${nombre}: el Pixel es el de la cuenta`, ids[nombre], [PIXEL]);
+    // Y detrás de la compuerta: el disparo no puede estar fuera de `__spindlelabInitMeta`.
+    eq(`${nombre}: solo arranca con permiso guardado`,
+      /if\(__spindlelabConsent === 'granted'\)\{ __spindlelabInitMeta\(\); \}/.test(txt), true);
+  }
+  // Las dos páginas tienen que llevar el MISMO, o una mitad del sitio mide en otra parte.
+  eq('todas las páginas con Pixel llevan el mismo',
+    [...new Set(Object.values(ids).flat())], [PIXEL]);
+}
+
 console.log('=== 5. el Pixel corriendo manda sobre de dónde venía la decisión ===');
 {
   // La página cargó con el permiso ya dado, así que el Pixel arrancó desde el <head>. Otra
