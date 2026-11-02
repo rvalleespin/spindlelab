@@ -404,6 +404,19 @@
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     position: relative;
+    /* ── EL AVISO DE COOKIES TAPABA EL ÚNICO BOTÓN DE LA PRIMERA PANTALLA ──────────────
+       Medido el 2-nov-2026 en producción, con el aviso recién mostrado:
+         · en 375x812 (iPhone) el aviso mide 200 px, el 25% de la pantalla, y tapaba 36 de
+           los 55 px del botón «Revisar mi sitio gratis» — el 65%;
+         · en 360x640 (un Android corriente) mide el 31% y lo tapaba ENTERO.
+       Y no era solo verlo: `document.elementFromPoint` en el centro del botón devolvía el
+       aviso, no el enlace. En un Android el único camino a la acción no se podía tocar.
+       Eso le pasaba a cada visitante NUEVO, que es exactamente el que llega de la campaña.
+
+       `--alto-aviso` lo escribe /js/consent-banner.js, que es quien sabe cuánto mide el
+       aviso en cada ancho. Acá solo se reserva el espacio. Con el aviso cerrado vale 0 y
+       no cambia nada. */
+    padding-bottom: var(--alto-aviso, 0px);
   }
   /* Textura de grano sutil, vía filtro SVG en línea: cero imágenes, cero peticiones externas. */
   body::before {
@@ -1120,7 +1133,11 @@
      de la página sería romperla. Se resuelve trayendo el aviso a donde ya está mirando. */
   .espera-flotante {
     position: fixed;
-    left: 0; right: 0; bottom: 0;
+    /* Sube por encima del aviso de cookies mientras esté abierto. El aviso tiene z-index
+       999 y esta franja 40, así que para un visitante nuevo quedaba tapada: o sea que el
+       arreglo del 30-oct —traer la barra a donde la persona está mirando— quedaba anulado
+       justo para quien llega de la campaña y todavía no ha respondido el aviso. */
+    left: 0; right: 0; bottom: var(--alto-aviso, 0px);
     z-index: 40;
     background: var(--panel);
     border-top: 1px solid var(--borde);
