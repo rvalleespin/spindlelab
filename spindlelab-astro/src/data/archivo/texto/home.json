@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/home.json",
- "sha256": "50ac386477f5aed83359e6af38069033fb7fd90d461cc09dad55b1864068c12a",
+ "sha256": "4673e662b86f7f6317776346aad41598c18afe3728730a9d2ad7007b47feb927",
  "id": "home",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -9,7 +9,7 @@
   "title": "SpindleLab · Sitios web a medida y marketing con IA",
   "description": "Diseñamos y programamos sitios a medida, con panel para que edites tú, y les conectamos tu búsqueda, tus anuncios y tus redes. Revisión gratis de una página.",
   "senales": "Title y description sin cambios (Ramón, 30-oct; ver el historial de este archivo). E14, 2-nov: la home deja de tener preguntas visibles, así que el FAQPage del JSON-LD de la home SE SACA (un FAQPage sin preguntas visibles es marcado engañoso). Las preguntas que se movieron entran al FAQPage de la página que las recibe: home.faq.sitio → dw.faq.sitio (/servicios/desarrollo-web/, primera), home.faq.3 → servicios.faq.4 y home.faq.4 → servicios.faq.5 (/servicios/). Lo reconfirma Simón en la capa de señales.",
-  "estructura": "E14, composición Koto (texto aprobado por Ramón el 2-nov-2026, e14-home-koto/texto-home-propuesta.md): portada (igual) → la línea → trabajo (Combeau y Verifica y Cumple) → banda Sitio web a medida → banda Búsqueda y visibilidad en IA → fila de tres (anuncios, acompañamiento, cómo partimos) → contacto en filas, con quién responde. Sin preguntas frecuentes. Qué id va en qué componente: e14-home-koto/texto-construccion.md. Las secciones de E13 que salen están en «retiradas_e14» solo para que index.astro de E13 siga compilando hasta que Diego lo rehaga; se borran en el mismo commit en que index.astro deja de leerlas.",
+  "estructura": "E14, composición Koto (texto aprobado por Ramón el 2-nov-2026, e14-home-koto/texto-home-propuesta.md): portada (igual) → la línea → trabajo (Combeau y Verifica y Cumple) → banda Sitio web a medida → banda Búsqueda y visibilidad en IA → fila de tres (anuncios, acompañamiento, cómo partimos) → contacto en filas, con quién responde. Sin preguntas frecuentes. Qué id va en qué componente: e14-home-koto/texto-construccion.md. Las secciones de E13 que salieron de la home ya no están en este archivo: el bloque «retiradas_e14» se borró cuando index.astro dejó de leerlo (Diego, desvios-construccion.md); el texto anterior queda en el historial de git.",
   "secciones": [
    {
     "id": "portada",
@@ -133,7 +133,7 @@
       "texto": "Todo lo que haces para vender termina en tu sitio. Si ahí no se entiende lo que haces, o el formulario no te avisa cuando alguien escribe, lo que pagaste para traer a esa persona se pierde.",
       "estado": "cambia",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 2",
-      "antes": "home.problema.h2 («Todo lo que haces para vender termina en tu sitio») + home.problema.p («Si tu sitio no explica bien lo que haces…»), ahora en retiradas_e14",
+      "antes": "home.problema.h2 («Todo lo que haces para vender termina en tu sitio») + home.problema.p («Si tu sitio no explica bien lo que haces…») (E13; salió de la home en E14)",
       "por_que": "La sección 2 de la home de E13 (h2, párrafo, dos columnas y cierre) se condensa en la frase grande de Koto. «Si tu sitio no explica bien» pasa a «Si ahí no se entiende»: el sujeto ya está en la primera parte.",
       "nota": "Una sola frase en dos tintas; el gris pasa del máximo de 13 palabras del lock §14 a propósito: es la frase grande de Koto (lock-koto §2.8), que sube renglón a renglón, no un h2 de sección. Si Lucía la deja como párrafo y no como h2, el rol cambia sin cambiar el texto."
      }
@@ -175,7 +175,7 @@
       "estado": "nuevo",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 3a",
       "fuente": "caso-combeau.json (los dos sitios, fotografía y book de modelo, y el panel de colecciones).",
-      "antes": "home.pruebas.caso.texto, ahora en retiradas_e14",
+      "antes": "home.pruebas.caso.texto (E13; salió de la home en E14)",
       "por_que": "La aclaración «es un caso de sitio web, no de crecimiento de ventas» sale de la home porque la home ya no afirma nada sobre ventas; sigue en /trabajo/combeau/ («Sin métrica»)."
      },
      {
@@ -208,7 +208,7 @@
       "estado": "nuevo",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 3b",
       "fuente": "El mismo hecho que home.pruebas.propio.texto (E13), que ya estaba publicado y confirmado por Ramón en plural el 30-oct.",
-      "antes": "home.pruebas.propio.texto, ahora en retiradas_e14"
+      "antes": "home.pruebas.propio.texto (E13; salió de la home en E14)"
      },
      {
       "id": "home.trabajo.verifica.aviso",
@@ -298,7 +298,7 @@
       "estado": "cambia",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 4; la segunda y tercera frase son las de home.problema.sitio.2 (decisión de Ramón, 30-oct, dicha de nuevo el 2-nov)",
       "fuente": "oferta-v3.json momentos[0] (de la Página de Campaña al Sitio Completo); dominio y código: Ramón, 30-oct-2026 (dw.incluye.7).",
-      "antes": "home.soluciones.sitio.texto, ahora en retiradas_e14. En la propuesta: «Va en tu dominio, a tu nombre, y te entregamos el código completo.»",
+      "antes": "home.soluciones.sitio.texto (E13; salió de la home en E14). En la propuesta: «Va en tu dominio, a tu nombre, y te entregamos el código completo.»",
       "por_que": "La frase de dominio y código va con las palabras y el punto que decidió Ramón («Va en tu dominio, a tu nombre. Y te entregamos el código completo.»), no con la coma de la propuesta."
      },
      {
@@ -344,7 +344,8 @@
       "texto": "Búsqueda y visibilidad en IA que Google y ChatGPT entiendan a qué te dedicas.",
       "estado": "cambia",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 5",
-      "antes": "home.soluciones.busqueda.nombre «Búsqueda y visibilidad en IA»"
+      "antes": "home.soluciones.busqueda.nombre «Búsqueda y visibilidad en IA»",
+      "pendiente": "Pregunta abierta a Ramón (acta-qa-e14, defecto 4; desvios-construccion.md, «Preguntas para Ramón»): los 3 lectores tropezaron con este h2. Propuesta de Clara: gris «para que Google y ChatGPT entiendan a qué te dedicas.» (suma «para»; el resto igual). Hasta que Ramón conteste, queda como lo aprobó."
      },
      {
       "id": "home.busqueda.texto",
@@ -352,7 +353,7 @@
       "texto": "Revisamos si pueden visitar tu sitio y te dejamos un plan ordenado por impacto. Que puedan visitarlo es el requisito para que te nombren, no una garantía.",
       "estado": "cambia",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 5",
-      "antes": "home.soluciones.busqueda.texto, ahora en retiradas_e14"
+      "antes": "home.soluciones.busqueda.texto (E13; salió de la home en E14)"
      },
      {
       "id": "home.busqueda.precio",
@@ -400,11 +401,11 @@
     ],
     "medios": [
      {
-      "archivo": "e14-home-koto/prototipo/chequeo-spindlelab-169.webp",
+      "archivo": "public/v3/medios/chequeo-spindlelab-169.webp",
       "forma": "16:9",
       "alt": "El chequeo de SpindleLab con el resultado de spindlelab.cl: 94 de 100, listo por el lado técnico, y la lista de lo que revisa para que la IA pueda entrar.",
       "fuente": "Captura real de /diagnostico/ publicado, resultado de spindlelab.cl, 2-nov-2026 (nota 5 del prototipo de Lucía). Nunca el resultado de un prospecto.",
-      "nota": "Alt escrito mirando la imagen. Diego la copia a public/v3/ con el resto de los medios."
+      "nota": "Alt escrito mirando la imagen. Diego la copió del prototipo (e14-home-koto/prototipo/chequeo-spindlelab-169.webp) a public/v3/medios/; la página la busca por este nombre."
      }
     ]
    },
@@ -430,7 +431,7 @@
       "texto": "Google Ads para quien ya está buscando lo que vendes, y gestión de redes con calendario, pauta y reporte.",
       "estado": "cambia",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 6",
-      "antes": "home.soluciones.anuncios.texto, ahora en retiradas_e14"
+      "antes": "home.soluciones.anuncios.texto (E13; salió de la home en E14)"
      },
      {
       "id": "home.anuncios.precio",
@@ -477,7 +478,7 @@
       "texto": "Implementamos y medimos cada mes con el mismo criterio, con informe y reunión, y decidimos juntos qué toca después.",
       "estado": "cambia",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 7",
-      "antes": "home.soluciones.acompanamiento.texto, ahora en retiradas_e14"
+      "antes": "home.soluciones.acompanamiento.texto (E13; salió de la home en E14)"
      },
      {
       "id": "home.acompanamiento.precio",
@@ -526,28 +527,31 @@
     ],
     "medios": [
      {
-      "archivo": "e14-home-koto/imagenes/06-anuncios-16x9.webp",
+      "archivo": "public/v3/medios/e14-banda-anuncios-169.webp",
       "forma": "16:9",
       "columna": "anuncios",
-      "estado": "por generar",
-      "alt": "Hilos plateados que entran desde varios bordes y pasan todos por el ojo de una aguja, sobre fondo casi negro.",
-      "nota": "Alt provisorio, escrito sobre el concepto de Bruno (plan-imagenes.md §2, «Muchos hilos, un solo ojo»). Se reescribe mirando la imagen que salga. Sin personas: no lleva aviso de imagen generada; si sale una persona, lleva el pie como la de Verifica."
+      "estado": "generada (Bruno, plan-imagenes.md §7)",
+      "alt": "Cuatro hilos plateados que entran por la izquierda, pasan juntos por el ojo de una aguja y salen por la derecha como uno solo, sobre fondo casi negro.",
+      "nota": "Alt escrito mirando la -169 y la -45 (Clara, 2-nov-2026, acta-qa-e14 defectos 1 y 2); describe las dos, porque un <img> lleva un solo alt. Sin personas: no lleva aviso de imagen generada. La página busca el medio por «columna».",
+      "archivo_45": "public/v3/medios/e14-banda-anuncios-45.webp"
      },
      {
-      "archivo": "e14-home-koto/imagenes/07-acompanamiento-16x9.webp",
+      "archivo": "public/v3/medios/e14-banda-acompanamiento-169.webp",
       "forma": "16:9",
       "columna": "acompanamiento",
-      "estado": "por generar",
+      "estado": "generada (Bruno, plan-imagenes.md §7)",
       "alt": "Un huso con su disco y un hilo plateado enrollado en vueltas parejas.",
-      "nota": "Alt provisorio sobre el concepto de Bruno («Capa sobre capa»). Se reescribe mirando la imagen."
+      "nota": "Alt revisado mirando la -169 y la -45 (Clara, 2-nov-2026): calza, queda igual. Sin personas: no lleva aviso de imagen generada. La página busca el medio por «columna».",
+      "archivo_45": "public/v3/medios/e14-banda-acompanamiento-45.webp"
      },
      {
-      "archivo": "e14-home-koto/imagenes/08-partimos-16x9.webp",
+      "archivo": "public/v3/medios/e14-banda-como-partimos-169.webp",
       "forma": "16:9",
       "columna": "partimos",
-      "estado": "por generar",
-      "alt": "Un hilo tendido recto sobre papel oscuro, con tres nudos que lo parten en tres tramos iguales.",
-      "nota": "Alt provisorio sobre el concepto de Bruno («Se mide antes de cortar»). Se reescribe mirando la imagen. El nombre de archivo lo fija Bruno."
+      "estado": "generada (Bruno, plan-imagenes.md §7)",
+      "alt": "Un hilo plateado tendido recto sobre papel oscuro, con tres nudos repartidos a lo largo.",
+      "nota": "Alt escrito mirando la -169 y la -45 (Clara, 2-nov-2026, acta-qa-e14 defectos 1 y 2); describe las dos, porque un <img> lleva un solo alt. Sin personas: no lleva aviso de imagen generada. La página busca el medio por «columna».",
+      "archivo_45": "public/v3/medios/e14-banda-como-partimos-45.webp"
      }
     ]
    },
@@ -564,16 +568,18 @@
       "texto": "Contacto Partamos por tu sitio, lo tengas o no.",
       "estado": "cambia",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 9",
-      "antes": "home.contacto.h2 «Partamos por tu sitio. Tengas uno o no, te respondemos dentro de un día hábil.» (ahora en retiradas_e14)",
-      "por_que": "El plazo pasa a la fila «Proyectos», junto al botón.",
+      "antes": "home.contacto.h2 «Partamos por tu sitio. Tengas uno o no, te respondemos dentro de un día hábil.» (E13; salió de la home en E14)",
+      "por_que": "El plazo pasa a la primera fila («Si tienes un proyecto»), junto al botón.",
       "nota": "En el texto de la página hay espacio entre las dos tintas; en «texto» va sin punto porque el lector de pantalla lee «Contacto» y sigue."
      },
      {
       "id": "home.contacto.proyectos.rotulo",
       "rol": "rotulo",
-      "texto": "Proyectos",
-      "estado": "nuevo",
-      "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 9"
+      "texto": "Si tienes un proyecto",
+      "estado": "cambia",
+      "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 9",
+      "antes": "«Proyectos» (texto-home-propuesta.md §1, bloque 9; la «New business» de Koto)",
+      "por_que": "En la lectura en frío de la home construida, 2 de 3 lectores no supieron si «Proyectos» era un campo o un título (acta-qa-e14, defecto 3). Dicho como frase se lee como lo que es: a quién le habla la fila. Va en el mismo registro que «Quién responde»."
      },
      {
       "id": "home.contacto.proyectos.texto",

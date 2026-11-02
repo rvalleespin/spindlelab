@@ -84,3 +84,39 @@ y «Lo que construimos» de `/servicios/desarrollo-web/`. Aquí va **todo lo que
   `desarrollo-web-1440.jpg`, `desarrollo-web-390.jpg` (una pantalla por cuadro, bajando con la rueda) y
   `tira-trabajo-1440.jpg` (8 posiciones del trabajo fijo; el estado de cada una en `datos-capturas.json`).
 - No me apruebo: el veredicto es de Javiera en contexto limpio.
+
+## Ronda de reparos (Clara y Diego, 2-nov-2026, sobre acta-qa-e14.md)
+
+Todo en `e13/texto/home.json` y copiado con `extraer-texto.mjs home`; no se escribió texto a mano en `.astro` (solo
+cambió un comentario de `index.astro`). Sin imágenes nuevas: las tres de Bruno quedan como están.
+
+1. **Alt de anuncios (defecto 1), cerrado.** Escrito mirando la -169 y la -45: «Cuatro hilos plateados que entran por la
+   izquierda, pasan juntos por el ojo de una aguja y salen por la derecha como uno solo, sobre fondo casi negro.» En las
+   dos son cuatro hilos y todos entran por la izquierda.
+2. **Alt de cómo partimos (defecto 2), cerrado.** «Un hilo plateado tendido recto sobre papel oscuro, con tres nudos
+   repartidos a lo largo.» No dice tramos: en la -169 son cuatro y desiguales (las puntas, más largas y deshilachadas), y
+   en la -45 las puntas quedan fuera del cuadro. Un `<img>` lleva un solo alt, así que tiene que valer para las dos.
+   El de acompañamiento se revisó igual y calza; queda.
+3. **Rótulo «Proyectos» (defecto 3), cambiado a «Si tienes un proyecto».** Dicho como frase se lee como a quién le habla
+   la fila y no como un campo, en el mismo registro que «Quién responde». Medido: una línea a 390 (358 × 18 px) y a 1440,
+   sin desborde. Falta que lo confirme la próxima lectura en frío; no la volví a correr para no gastar.
+4. **Nombres y notas de `home.json` (defecto 5), cerrado.** La fila de tres apunta a `public/v3/medios/e14-banda-*-169.webp`
+   y a su `-45` (`archivo_45`), con estado «generada»; la captura del chequeo, a `public/v3/medios/`; las ocho notas
+   «ahora en retiradas_e14» dicen «E13; salió de la home en E14», y `estructura` dice que ese bloque se borró.
+5. **h2 de Búsqueda (defecto 4): no se cambió.** Es texto aprobado; va como pregunta abajo y anotado en
+   `home.json → home.busqueda.h2.pendiente`.
+
+Verificación: `extraer-texto.mjs --comprobar` sale 0; `npx astro build`, 22 páginas; `verificar.mjs --excluir
+/privacidad/` a 390 y 1440, **sin hallazgos**; los tres alt y el rótulo, leídos en `dist/index.html`. El peso no cambia
+(solo texto).
+
+## Preguntas para Ramón
+
+1. **h2 de la banda de Búsqueda.** Hoy: «**Búsqueda y visibilidad en IA** que Google y ChatGPT entiendan a qué te
+   dedicas.» Los 3 lectores en frío tropezaron ahí («la frase está rara», «pura jerga»): leído de corrido, el «que» se
+   pega a «IA» y la frase queda sin verbo que la una. Propuesta de Clara, una sola palabra más y en el mismo molde que las
+   otras bandas («con un panel para que edites tú», «para sostener lo que ya hiciste»):
+   «**Búsqueda y visibilidad en IA** para que Google y ChatGPT entiendan a qué te dedicas.»
+   ¿La cambiamos o la dejas como está? Cualquiera de las dos respuestas queda escrita aquí y en `home.json`.
+2. **Rótulo «Si tienes un proyecto».** Lo cambié por el defecto 3 (antes «Proyectos», que tú habías visto en el
+   prototipo). Si prefieres otro, se cambia en `home.json` en un minuto.

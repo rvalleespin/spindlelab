@@ -130,7 +130,7 @@ const chequeo = medio('chequeo-spindlelab-169.webp');
 const chequeoEnlace = t('home.busqueda.chequeo');
 
 // ---- 6 a 8 · La fila de tres: las imágenes de Bruno (plan-imagenes.md §7), 16:9 desde 834 y 4:5 bajo 834. El alt es el
-// de Clara para cada columna (provisorio hasta que lo reescriba mirándolas: desvios-construccion.md).
+// de Clara para cada columna, escrito mirando la -169 y la -45 (acta-qa-e14, defectos 1 y 2).
 const fila = (pagina.secciones as { id: string; medios?: Medio[] }[]).find((s) => s.id === 'fila')!.medios!;
 const altDe = (columna: string) => {
   const x = fila.find((f) => f.columna === columna);
