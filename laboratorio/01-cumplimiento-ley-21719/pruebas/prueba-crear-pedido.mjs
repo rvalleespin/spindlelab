@@ -863,6 +863,55 @@ console.log('=== 20. LA ATRIBUCIÓN: una venta tiene que saber qué campaña la 
   eq('el contenido', f.utm_content, 'video-1');
   eq('el término', f.utm_term, 'ley-21719');
 
+  /* ── Y LA MITAD DEL CLIENTE, QUE ES LA QUE NADIE MIRABA ────────────────────────────
+   *
+   * Todo lo de arriba comprueba que el SERVIDOR guarda lo que le mandan. Que la página lea
+   * los utm de SU url y los ponga en el cuerpo no lo tocaba ninguna aserción, y es
+   * exactamente la forma del bug que el 2-nov tuvo ciego al contador de origen diez días:
+   * la función existía, estaba bien escrita, y el llamador le pasaba la URL equivocada.
+   *
+   * Se EJECUTA la función de la página, no se greppea. Un grep ve el nombre y no ve ni el
+   * ámbito ni el valor, y acá el modo de falla es mudo: se manda `{}` y la venta queda sin
+   * atribuir, que se ve igual que una venta que de verdad no vino de campaña.
+   */
+  {
+    const INDEX = rutaEnElRepo('verificaycumple/public/index.html', 'VYC_INDEX_HTML');
+    const html = readFileSync(INDEX, 'utf8');
+
+    const ini = html.indexOf('const UTMS = (function () {');
+    let i = html.indexOf('{', ini), nivel = 0, fin = i;
+    for (; i < html.length; i++) {
+      if (html[i] === '{') nivel++;
+      else if (html[i] === '}') { nivel--; if (nivel === 0) { fin = html.indexOf(';', i) + 1; break; } }
+    }
+    const fuente = html.slice(ini, fin);
+    eq('se pudo sacar la captura de utm de la página', fuente.startsWith('const UTMS ='), true);
+
+    const capturar = (busqueda) => new Function('location', `${fuente}; return UTMS;`)({ search: busqueda });
+
+    eq('la página captura los cinco',
+      capturar('?utm_source=meta&utm_medium=paid&utm_campaign=vyc&utm_content=C%20doce&utm_term=VyC%201%20Legal'),
+      { utm_source: 'meta', utm_medium: 'paid', utm_campaign: 'vyc', utm_content: 'C doce', utm_term: 'VyC 1 Legal' });
+    eq('sin utm no inventa nada', capturar(''), {});
+    eq('los que falten no se rellenan', capturar('?utm_source=meta'), { utm_source: 'meta' });
+    // Meta manda el nombre del conjunto con · y espacios; tiene que llegar decodificado.
+    eq('decodifica lo que Meta codifica',
+      capturar('?utm_term=VyC%20%C2%B7%202%20Salud').utm_term, 'VyC · 2 Salud');
+    eq('y recorta a 200, igual que el servidor',
+      capturar('?utm_source=' + 'x'.repeat(900)).utm_source.length, 200);
+
+    // Y que de verdad viajen en el cuerpo del POST.
+    eq('los utm van en el cuerpo del pedido', /utms:\s*UTMS\b/.test(html), true);
+
+    /* ⚠️ Y EN EL MISMO ÁMBITO QUE EL ENVÍO. El <script> grande tiene varias funciones
+     * anónimas que se ejecutan solas y no se ven entre sí; el 2-nov una función quedó en la
+     * equivocada y rompió el chequeo entero sin un error en consola. Si `UTMS` quedara
+     * fuera del ámbito del POST, esto se caería con ReferenceError en producción y acá no
+     * se vería: el `try` de la página se lo traga. */
+    const entre = html.slice(html.indexOf('const UTMS ='), html.indexOf('utms: UTMS'));
+    eq('UTMS y su uso viven en el mismo bloque', /^\}\)\(\);$/m.test(entre), false);
+  }
+
   // Y lo que el navegador manda se acota: es dato de campaña, pero no texto libre sin límite.
   const { db: db2, crudo: c2 } = baseNueva();
   const kv2 = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
