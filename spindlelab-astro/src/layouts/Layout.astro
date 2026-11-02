@@ -157,7 +157,19 @@ const jsonLd = {
 
     {/* Meta Pixel Code — no tiene consent mode propio, así que no se inicializa hasta
          que haya consentimiento. Sin noscript: no se puede pedir consentimiento sin
-         JavaScript, así que tampoco se rastrea sin JavaScript. */}
+         JavaScript, así que tampoco se rastrea sin JavaScript.
+
+         ⚠️ EL ID CAMBIÓ EL 2-NOV-2026, Y EL ANTERIOR NO ERA NUESTRO.
+         Hasta hoy acá decía 2885353628478565. La cuenta de anuncios (2050319242539058) tiene
+         UN solo dataset, 1027024050073502 «SpindleLab», creado el 20-jul-2026; el viejo ni
+         se puede leer con el token de Ramón («Invalid dataset_id»). O sea que desde julio las
+         visitas de quien aceptaba el aviso se iban a un dataset ajeno.
+         Eso explica dos cosas que se habían atribuido a otra causa: el dataset propio marcaba
+         `last_fired_time` en epoch 0 —nunca había recibido un evento— y el público de
+         remarketing no creció pese a los $20.656 de la campaña de julio.
+         Y corrige la política de privacidad sin tocarla: decía que cargamos el Pixel «para
+         saber si los anuncios traen visitas», y con el ID viejo eso era imposible de cumplir.
+         El mismo cambio se hizo el 2-nov en verifica.spindlelab.cl (commit 542621ec). */}
     <script is:inline>
       function __spindlelabInitMeta() {
         if (window.__spindlelabMetaInited) return;
@@ -178,7 +190,7 @@ const jsonLd = {
           s = b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t, s);
         })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '2885353628478565');
+        fbq('init', '1027024050073502');
         fbq('track', 'PageView');
       }
       if (__spindlelabConsent === 'granted') {
