@@ -137,7 +137,7 @@ documento sale como siempre y no cambia nada para las cotizaciones que no vienen
   garantía de 30 días (solo errores de funcionamiento), qué no incluye la tienda (comisiones,
   envíos). Si el plan tiene tope de páginas y el cliente crea contenido desde el panel, aclara
   que esas páginas no cuentan en el tope.
-- **Firma final:** `SpindleLab · Ramón Vallejos Espíndola · Fundador y director · hola@spindlelab.cl`.
+- **Firma final:** `SpindleLab · Ramón Vallejos Espíndola · Fundador · hola@spindlelab.cl`.
 
 ## El correo
 

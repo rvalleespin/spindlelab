@@ -14,7 +14,7 @@
 
 ## Aprendido a pulso (gotchas)
 - **La cadencia y las voces canónicas viven en `oficina/clientes/spindlelab.md`** (sección "Estado operacional — Redes"): página mar+jue 09:00 en plural; personal de Ramón mié 12:30 en singular y **texto puro** (una imagen lo hace parecer publicidad); IG viernes 19:00. Links siempre en el primer comentario.
-- **El CTA vigente de las piezas es el chequeo**: "Chequea tu sitio gratis · spindlelab.cl/diagnostico" (desde el 28-ago; el sitio entero apunta ahí). El mini-diagnóstico 24h es el segundo paso, no el gancho de la pieza.
+- **El CTA vigente de las piezas es el chequeo**: "Chequea tu sitio gratis · spindlelab.cl/diagnostico" (desde el 28-ago; el sitio entero apunta ahí). La revisión gratis de una página (respuesta en un día hábil) es el segundo paso, no el gancho de la pieza. *(2-nov-2026: con la línea del 30-oct, la acción principal de la casa pasó a «Hablemos de tu sitio» y el chequeo es secundario; el CTA de las piezas de octubre se realinea, ver las notas «Antes de publicar (2-nov)» en `marketing/redes/2026-10-octubre-posicionamiento/`.)*
 - **El puntaje propio del test de menciones (0/15) JAMÁS se publica** (decisión de Ramón, 28-ago). Sí se puede hablar del protocolo (es público en /diagnostico/#medicion-mensual).
 - Las familias de ganchos A–D (`estrategia-ganchos-agosto.md`) no se repiten dos piezas seguidas.
 - Las piezas llevan etiqueta de serie y firma **quemadas en el HTML fuente**: reciclar una pieza = pedir re-render a Bruno, nunca republicar el PNG con la firma vieja.
@@ -34,8 +34,8 @@
 - 2026-08-31 (nota de la coordinación) — **Carpeta `marketing/redes/` reordenada y estilo v2 aplicado.**
   Referencias que cambiaron: `PLAN-AGOSTO-PIEZAS.md`, `estrategia-ganchos-agosto.md` y
   `_carga-metricool/` viven ahora en `marketing/redes/_archivo/2026-jul-ago/`. Las familias de
-  ganchos A–D siguen vigentes como doctrina (el doc está en el archivo). El "48 horas" de
-  `grilla-agosto-2026.md` quedó corregido a 24. TODAS las piezas de septiembre se migraron al
+  ganchos A–D siguen vigentes como doctrina (el doc está en el archivo). El plazo en horas de
+  `grilla-agosto-2026.md` quedó corregido (hoy se dice «respuesta en un día hábil»). TODAS las piezas de septiembre se migraron al
   estilo live del sitio (fondo #0e141b + hilo del hero + etiquetas verde petróleo + Manrope):
   el mapa completo está en `marketing/redes/README.md`.
 

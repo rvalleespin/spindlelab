@@ -12,7 +12,7 @@
   chequeo.
 - **Fuente de verdad del texto:** el sitio vivo y
   `spindlelab-astro/src/data/archivo/texto/*.json` + `src/data/oferta-v3.json`.
-- **Quién está detrás:** Ramón Vallejos, fundador y director; años en agencias de medios y
+- **Quién está detrás:** Ramón Vallejos, fundador (cargo «Fundador», sin «director»: decisión de Ramón, 2-nov-2026); años en agencias de medios y
   de marketing, **sin nombrar agencias ni clientes**; agentes de IA dentro del equipo y él
   responde por cada entrega; dos herramientas abiertas (el chequeo y Verifica y Cumple);
   Comunicación Publicitaria (UNAB) y máster en Marketing Digital y E-commerce (U. de

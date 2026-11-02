@@ -1,5 +1,7 @@
 # Contexto SpindleLab — brief para agente de Claude Code
 
+> **Registro histórico (cabecera agregada el 2-nov-2026).** Superado en la línea pública el 30-oct-2026, ver `marketing/oficina/clientes/spindlelab.md`. Este brief es del 5-jul-2026 y se conserva tal como estaba; la oferta, el rótulo y el plazo que describe ya no rigen.
+
 ## Quién es el usuario
 Ramón Vallejos Espíndola (manuvalleespin@gmail.com), Chile. Está lanzando **SpindleLab**, consultoría unipersonal de SEO técnico + visibilidad en motores de IA (AEO/GEO) para empresas B2B y financieras chilenas (fintechs, asesoras de inversión — sector YMYL). Opera bajo marca separada de su nombre por discreción frente a su empleador actual (Maggiore); en el sitio NO aparece su nombre ni foto ("consultor anónimo", primera persona singular). No es desarrollador: explicarle los pasos técnicos de forma simple y ejecutar por él lo que se pueda.
 

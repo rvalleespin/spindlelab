@@ -16,7 +16,7 @@
 - Voz singular (observado) / plural (lo que entrega el negocio). Blog y cuenta personal = singular.
 - **Cero em-dash muletilla** (tell #1 de IA), cero prueba social inventada, prospectos generalizados.
 - Entrego texto, **no publico**: blog → Diego; ad copy → Gonzalo/Fran; guiones → Bruno.
-- Ad copy sube calidad por **diversidad temática** de títulos, no por repetir "gratis/48h".
+- Ad copy sube calidad por **diversidad temática** de títulos, no por repetir "gratis/un día hábil".
 - **2026-08-22 — El em-dash separador de listas también es tell.** En las fichas, el
   patrón "Etiqueta — definición" (listas "qué incluye") es guion de IA, y encima estaba
   INCONSISTENTE (unas fichas con "—", otras con ":"). Regla: separador etiqueta→def
@@ -29,10 +29,11 @@
   y "Consultoría Mensual" mientras las páginas decían "Visibilidad en IA (AEO/GEO)" y
   "Acompañamiento Mensual". El rótulo de un link SIEMPRE = nombre de la página destino (y del
   schema). "de punta a punta" = muletilla de agencia, fuera.
-- **2026-08-22 — El diagnóstico es 24h, nunca 48h** (el manual tiene el ejemplo viejo; ignorarlo en copy).
+- **2026-08-22, actualizado 2-nov-2026: el plazo se dice «respuesta en un día hábil», nunca en horas.** La oferta es la revisión gratis de una página (antes «mini-diagnóstico») y no promete plazos en horas. El manual y las plantillas viejas con horas se ignoran en copy.
 - **2026-08-28 — Los posts personales de Ramón tienen reglas propias** (encargo marca personal):
   voz singular, texto puro, sin cifras ni precios (suenan robóticas), CV = conjunto cerrado
-  (UMcCann/Graphene/Incrementa/Maggiore/UB/UNAB), jamás contraste con esas agencias, no abrir
+  (formación: UNAB y U. de Barcelona; **desde el 30-oct-2026 no se nombran agencias ni clientes del
+  pasado en texto público**), jamás contraste con agencias, no abrir
   con "revisé el sitio de…"/"le pregunté a ChatGPT…", link siempre en el 1er comentario.
 - **2026-08-28 — Las corridas agregadas del chequeo NO existen todavía** (Research #10 es de
   octubre). Ningún copy puede citar "X de cada 10 sitios" del chequeo hasta que estén; la

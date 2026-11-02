@@ -12,8 +12,9 @@ para que Ramón apruebe y envíe. NUNCA envía.
 ## Estado 28-ago-2026 (relanzamiento del motor)
 - **Canon de envíos (decisión de Ramón 28-ago):** máx 3 toques · 10/día · tope 50/sem. 2ª ola catch-all (abogados: 142) solo en lotes de 10-15/sem midiendo rebote; corte si >5%.
 - **Gancho nuevo disponible: el chequeo público.** "Corrimos tu dominio por nuestro chequeo de visibilidad en IA: X/100; el detalle acá y puedes reproducirlo tú en spindlelab.cl/diagnostico". Verificable con `GET https://spindlelab.cl/api/chequeo?dominio=X` — cero fabricación. El gancho sigue siendo el hallazgo verificable, pero **la oferta presenta el motor completo desde el toque 1** (regla de Ramón 31-ago: solo la IA deja la oferta débil): "armamos el motor completo, tu sitio, tu SEO, tus redes y tu pauta funcionando juntos, con la visibilidad en Google y en la IA como eje; precios publicados en el sitio". NO abrir outbound frío cuyo gancho sea web/redes/paid en septiembre.
-- CTA: mini-diagnóstico gratis en **24h** (versión rehecha del 25-ago). Antes de escribir a cualquiera: buscar su dominio en Gmail (el estado real vive ahí).
+- CTA: **revisión gratis de una página, respuesta en un día hábil** (actualizado el 2-nov-2026; el CTA anterior era el mini-diagnóstico, versión rehecha del 25-ago). Antes de escribir a cualquiera: buscar su dominio en Gmail (el estado real vive ahí).
 - Semana de Fiestas Patrias (15-21 sep): cero lotes.
+- 2026-11-02: **La línea de la casa cambió el 30-oct y deja superado el «motor completo desde el toque 1» de arriba.** La oferta de SpindleLab es «Hablemos de tu sitio»: con sitio, revisión gratis de una página, respuesta en un día hábil; sin sitio, se le cuenta cómo se haría y cuánto cuesta. El sitio a medida es el negocio principal y lo demás se le conecta. Fuente: `marketing/oficina/clientes/spindlelab.md` y la skill `agente-outbound`. El gancho sigue siendo el hallazgo real; el canon de envíos del 28-ago sigue vigente.
 
 ## Gancho candidato (sin probar) — el rediseño no solicitado (3-sep-2026)
 
