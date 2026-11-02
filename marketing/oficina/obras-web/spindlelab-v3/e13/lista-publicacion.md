@@ -70,8 +70,9 @@
       `https://api.indexnow.org/indexnow` con `host` = `spindlelab.cl`, `key` = la clave,
       `keyLocation` = `https://spindlelab.cl/<clave>.txt` y `urlList` = las URL que cambiaron. Si la clave deja de
       responder en esa dirección, el aviso se rechaza.
-  - Search Console (Google): reenviar el sitemap y pedir indexación de `/`, `/servicios/` y `/contacto/`. Lo hace Ramón,
-    porque necesita su cuenta. Google encuentra el sitemap solo, porque `robots.txt` lo declara;
+  - ~~Search Console (Google): reenviar el sitemap~~ **hecho por Ramón el 2-nov.**
+  - Search Console, opcional: pedir indexación de `/`, `/servicios/` y `/contacto/` en «Inspeccionar cualquier URL». Solo
+    lo apura, porque Google ya tiene el sitemap y `robots.txt` lo declara;
 
   - LinkedIn Post Inspector y Facebook Sharing Debugger;
   - el favicon y el ícono en un iPhone.
