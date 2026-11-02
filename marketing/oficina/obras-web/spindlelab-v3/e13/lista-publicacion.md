@@ -86,6 +86,17 @@
     - Se armó una simulación de la pantalla de inicio y se ve bien.
     - Falta solo mirarlo en un iPhone real, que no es bloqueante.
 - **Sigue igual que antes:** `www.spindlelab.cl` responde 200 sin redirigir al dominio sin www (§8).
+- **2-nov · El Pixel correcto, también en la obra.**
+  - Otra sesión corrigió en `main` el ID del Pixel de Meta: `92db1219`, PR rvalleespin/spindlelab#53, de
+    `2885353628478565`, ajeno a la cuenta, a `1027024050073502`, el dataset «SpindleLab».
+  - El arreglo se trajo a esta rama (`f36ad716`, cherry-pick con `-x`), porque `armar-corte.mjs` toma `Layout.astro` de
+    la obra y no de `main`. Sin eso, el próximo corte habría vuelto al ID ajeno.
+  - Build verificado: los 24 HTML del `dist` llevan el ID nuevo y ninguno el viejo. El Pixel sigue detrás del
+    consentimiento.
+- **2-nov · La línea de la casa, fuera del sitio:** PR rvalleespin/spindlelab#54 (merge `1605e9a4`).
+  - Lleva la línea a la ficha, el manual, las skills de outbound, cotizaciones y revisión, las plantillas, el kit de
+    LinkedIn e Instagram, y las notas en las piezas de octubre.
+  - Lo que es de la troncal quedó en `marketing/encargos-otras-sesiones/linea-de-la-casa-30oct-para-la-troncal.md`.
 
 **Escrita el 26-oct-2026 · ensayada el 26-oct sobre `origin/main` `ba49edbd` y la rama `claude/v3-modelo-nuevo` (`078ceefe`) · puesta al día el 30-oct por Mauro (sección «30-oct», justo abajo), sin ejecutar el corte; y otra vez el 30-oct en la tarde, con las respuestas de Ramón y el visto a `Layout.astro` (sección «30-oct, tarde», la primera).** La rama del corte que se armó el 26-oct, `claude/v3-publicacion` (`762b7295` más `2895a0ce`, los documentos), **ya no sirve tal cual: lleva la E13 del 26-oct y nada de lo del 30-oct.** Publicar ahora es volver a armarla con la receta de la sección 2 desde la rama de la obra, que hoy es `claude/magical-franklin-ckfki2`, forzar el push de esa rama y abrir el PR (URL: `https://github.com/rvalleespin/spindlelab/pull/new/claude/v3-publicacion`), que Ramón confirme y el merge. Reemplaza a `../lista-publicacion.md` (la de E7, escrita para un v3 anterior). Nada de esto se ejecuta sin el OK de Ramón; **publicar es llegar a `main`**.
 
