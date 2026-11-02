@@ -39,11 +39,30 @@
  * alcance. Las dos listas tienen que decir lo mismo o el informe final va a prometer algo que
  * la entrega no hizo.
  */
-export const CIERRA_EL_KIT = new Set(['cmp', 'carga', 'cookies', 'envio', 'aviso']);
+/* ── `politica` ENTRÓ EL 2-NOV-2026, POR DECISIÓN DE RAMÓN ─────────────────────────────
+ *
+ * Estaba fuera a propósito, con este argumento: la política la publica el cliente, después de
+ * que su abogado revise el borrador que entregamos. Cierto, y seguía dejando sin oferta a un
+ * balde grande.
+ *
+ * Lo que lo movió fue una medición: de 40 sitios reales de las listas de prospección, cerca
+ * de la mitad llegaba al resultado SIN botón de compra, y el caso dominante no era «no le
+ * falta nada» sino «no tiene un solo rastreador y le falta publicar la política». De cuatro
+ * validados con el chequeo profundo, tres salieron 100/100 con la política como único
+ * pendiente. Con la ley en vigencia el 1 de diciembre, esa gente tiene un problema real y el
+ * kit sí hace algo por ella: le entrega el borrador y vuelve a verificar.
+ *
+ * ⚠️ LO QUE ESTO OBLIGA, y está hecho: que la pantalla del pedido diga qué se entrega
+ * exactamente cuando `politica` viene contratada. En la lista de «lo que incluye tu kit» el
+ * título es «Enlace a tu política de privacidad», y sin una nota al lado se lee como si
+ * nosotros la publicáramos. No la publicamos: la revisa su abogado y la publica él.
+ */
+export const CIERRA_EL_KIT = new Set(['cmp', 'carga', 'cookies', 'envio', 'aviso', 'politica']);
 
 /** Lo que el kit NO cierra, y de quién es cada uno. Se usa para explicarlo, no para decidir. */
 export const NO_LO_CIERRA_EL_KIT = {
-  politica: 'la publica el cliente, después de que su abogado revise el borrador que entregamos',
+  // `politica` salió de acá el 2-nov al entrar en CIERRA_EL_KIT: tenerla en las dos listas
+  // sería decirle al cliente que el kit la cierra y, dos líneas más abajo, que no.
   https: 'es del hosting del cliente',
   // `casilla` es la cuarta señal del chequeo rápido y aparece solo cuando el sitio tiene un
   // formulario. Faltaba acá, así que caía en el texto de reserva «no es parte del kit», que es
@@ -182,9 +201,17 @@ export function elegibilidad({ rapido = null, profundo = null } = {}) {
     cierra,
     tambien,
     noCierra,
-    detalle: noCierra.length
-      ? `El kit cierra ${cierra.length === 1 ? 'la señal pendiente' : `${cierra.length} de las señales pendientes`}. ` +
+    // Cuando es UNA sola, se nombra. Este texto se congela en el contrato del pedido, así que
+    // es parte del registro de qué se vendió: «la señal pendiente» no dice cuál, y desde que
+    // el kit también se vende a quien solo le falta la política, cuál es importa.
+    detalle: (noCierra.length
+      ? `El kit cierra ${cierra.length === 1 ? `la señal pendiente, «${cierra[0].titulo}»` : `${cierra.length} de las señales pendientes`}. ` +
         `${noCierra.length === 1 ? 'La otra queda' : 'Las otras quedan'} fuera del kit y se dice cuál en la oferta.`
-      : `El kit cierra ${cierra.length === 1 ? 'la señal pendiente' : `las ${cierra.length} señales pendientes`}.`,
+      : `El kit cierra ${cierra.length === 1 ? `la señal pendiente, «${cierra[0].titulo}»` : `las ${cierra.length} señales pendientes`}.`)
+      // Y si una de ellas es la política, qué se entrega exactamente. No la publicamos.
+      + (cierra.some((i) => i.id === 'politica')
+        ? ' De la política entregamos el borrador, con los datos de tu empresa y lo que la ley' +
+          ' pide publicar: lo revisa tu abogado y lo publicas tú.'
+        : ''),
   };
 }

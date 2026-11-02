@@ -1792,7 +1792,15 @@
         <form id="compra" class="compra" hidden>
           <p class="compra-kicker">Comprar el kit</p>
           <p class="compra-monto">$177.310 <span>IVA incluido · una vez</span></p>
-          <p class="compra-que">Dejamos instalado el gestor de consentimiento, arreglamos la casilla de consentimiento de tus formularios si hace falta, te entregamos el borrador de tu política para que lo revise tu abogado, y volvemos a correr el chequeo al final sobre la misma página.</p>
+          <!-- ⚠️ CONDICIONAL EN LAS DOS PRIMERAS, Y NO ES UN MATIZ.
+               Decía «Dejamos instalado el gestor de consentimiento» en seco. Desde el 2-nov el
+               kit se le ofrece también a un sitio al que solo le falta publicar la política, y
+               a ese sitio no se le instala ningún gestor: no tiene un rastreador que retener.
+               Prometer en firme lo que no se va a hacer, justo en la pantalla donde la persona
+               pone su correo y paga $177.310, es la clase de cosa que este producto le marca en
+               rojo a otros sitios. El «si» lo hace cierto para los dos casos sin volverlo vago:
+               las tres cosas siguen nombradas. -->
+          <p class="compra-que">Arreglamos lo que el chequeo dejó pendiente de tu lado: dejamos instalado el gestor de consentimiento si tu sitio carga rastreadores, arreglamos la casilla de consentimiento de tus formularios si hace falta, y te entregamos el borrador de tu política para que lo revise tu abogado. Al final volvemos a correr el chequeo sobre la misma página.</p>
           <ul class="compra-condiciones">
             <li><strong>Necesitamos acceso temporal a tu sitio, con permisos mínimos</strong> (hosting, repositorio o gestor de contenidos). Después del pago te guiamos para darlo.</li>
             <li><strong>Te devolvemos el 100%</strong> si no puedes darnos el acceso, o si desistes antes de que toquemos tu sitio.</li>
@@ -2259,7 +2267,10 @@
   // verdad. Acá vive solo para no OFRECER lo que el servidor va a rechazar. Si agregas una
   // señal, va en los dos lados; `prueba-compuerta-boton.mjs` compara las dos y se pone roja si
   // se separan. Es el mismo arreglo que ya tiene la lista de orígenes más abajo.
-  var CIERRA_EL_KIT = ['cmp', 'carga', 'cookies', 'envio', 'aviso'];
+  // ⚠️ Esta lista decide si sale «Quiero el kit», y su gemela vive en
+  // `functions/api/elegibilidad.js`. Las dos se mueven juntas o el botón promete algo que el
+  // servidor después niega. `politica` entró el 2-nov; ver el porqué largo allá.
+  var CIERRA_EL_KIT = ['cmp', 'carga', 'cookies', 'envio', 'aviso', 'politica'];
 
   /**
    * ¿Este informe permite ofrecer el kit?

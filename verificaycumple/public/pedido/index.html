@@ -551,6 +551,26 @@
       html += '<ul class="senales">';
       s.incluidas.forEach(function (i) { html += '<li>' + escapar(i.titulo) + '</li>'; });
       html += '</ul>';
+
+      /* ⚠️ QUÉ SIGNIFICA EXACTAMENTE «la política» DENTRO DEL KIT.
+       *
+       * `politica` entró a lo que el kit cierra el 2-nov-2026, porque cerca de la mitad de los
+       * sitios reales llegaba al resultado sin nada que comprar y su único pendiente era ese.
+       * Pero el título de la señal es «Enlace a tu política de privacidad», y en una lista
+       * titulada «lo que incluye tu kit» eso se lee como si nosotros la publicáramos.
+       *
+       * No la publicamos. Entregamos el borrador, lo revisa SU abogado y lo publica él: es lo
+       * que dice la oferta, lo que dice el correo de cierre y lo que decía la nota de «lo que
+       * queda fuera» cuando la política estaba del otro lado. Al cambiarla de lista, esa nota
+       * dejó de salir para quien no tiene señales fuera — que es justo este caso. Sin esto, el
+       * cambio de hoy convierte una venta honesta en una promesa que no cumplimos.
+       */
+      if ((s.incluidas || []).some(function (i) { return i.id === 'politica'; })) {
+        html += '<p class="nota">De la política te entregamos el <strong>borrador</strong>, ' +
+          'armado con los datos de tu empresa y con lo que la ley pide publicar. La revisa tu ' +
+          'abogado y la publicas tú: nosotros no damos asesoría legal y el texto final no es ' +
+          'nuestro.</p>';
+      }
     }
     if (s.fuera.length) {
       html += '<p class="etiqueta" style="margin-top:22px">Lo que queda fuera del kit</p>';
