@@ -42,25 +42,27 @@ es lo que hace que el loop se sienta continuo.
   En casi la mitad de los cafés y pastelerías
   que revisé, / pasa eso mismo.                     [ÉNFASIS: casi la mitad]
 
-  No es que tu sitio esté mal hecho.                [ENTONACIÓN SUSPENDIDA]
-  Es lo que instalaste para medir, funcionando.     [REMATE ABAJO]
-
 [DESARROLLO]
 [TEXTO EN PANTALLA]: g1-3 · PUEDES SEGUIR MIDIENDO
-  Puedes seguir midiendo igual.                     [REMATE ABAJO]
-  Solo hay que preguntarle al cliente primero.      [ÉNFASIS: primero]
-
-  Y esa pregunta va a ser obligatoria por ley.      [REMATE ABAJO]
+  No es que tu sitio esté mal hecho.                [ENTONACIÓN SUSPENDIDA]
+  La herramienta de medición trabaja
+  apenas alguien entra.                             [ENTONACIÓN SUSPENDIDA]
+  Nadie le dijo que preguntara primero.             [ÉNFASIS: preguntara]
+                                                    [REMATE ABAJO]
 
 [SOLUCIÓN]
-[TEXTO EN PANTALLA]: g1-4 · UNA FRANJA QUE PREGUNTA
-  Es una franja abajo de tu sitio / que le
-  pregunta al cliente si acepta.                    [REMATE ABAJO]
+[TEXTO EN PANTALLA]: g1-4 · el cartel maquetado (sin bloque, aunque la ropa sea de color)
+  Y se arregla con un cartel abajo /
+  que pregunta antes.                               [ENTONACIÓN SUSPENDIDA]
+  El mismo que ves en cualquier sitio europeo.      [ÉNFASIS: europeo]
+  Si dice que sí, / mides igual.                    [REMATE ABAJO]
+
+  Y esa pregunta va a ser obligatoria por ley.      [REMATE ABAJO]
 
 [CIERRE]
 [TEXTO EN PANTALLA]: g0-cierre · verifica.spindlelab.cl
   Hice un chequeo gratis / que te dice si tu
-  sitio tiene esa franja.
+  sitio lo tiene.
   Soy Ramón, de SpindleLab.                         [REMATE ABAJO]
 
 [ÚLTIMO GANCHO · enlaza con el inicio]
