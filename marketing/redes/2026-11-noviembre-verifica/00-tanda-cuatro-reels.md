@@ -410,10 +410,10 @@ visitante antes de que acepte. La mitad. **Rubro pagado:** Salud, 9,1% de CTR co
 de los mejores de la campaña.
 
 > Saber de dónde llegan tus pacientes está **bien**. / Medirlo en tu sitio, **también**. //
-> **Pero** en una clínica eso pesa **distinto**. //
+> **Pero** en la mitad de las clínicas y centros médicos que **revisé**, / el sitio le guarda algo en
+> el teléfono al **paciente** / sin **preguntarle**. //
+> No lo decidió nadie en tu **clínica**. / Vino con la herramienta de **medición**. //
 > Que alguien entre a pedir una **hora** / ya dice algo de esa **persona**. //
-> Y tu sitio guarda algo en su teléfono para **reconocerlo**, / antes de que **acepte** nada. //
-> Revisé cuarenta sitios de clínicas y centros **médicos**, / y pasa en la **mitad**. //
 > Puedes seguir **midiendo** igual. / Solo hay que preguntarle al paciente **primero**. //
 > Y esa pregunta va a ser **obligatoria** por ley. //
 > Es una **franja** abajo de tu sitio / que le pregunta al paciente si **acepta**. //
@@ -421,7 +421,7 @@ de los mejores de la campaña.
 > Soy **Ramón**, de SpindleLab. //
 > **Medir** está bien. / Preguntar **primero**, también. //
 
-**114 palabras, 39 segundos.** Largo por renglón: 7, 5, 6, 12, 14, 12, 4, 7, 9, 14, 13, 4, 7.
+**120 palabras**114 palabras, 39 segundos.** Largo por renglón: 7, 5, 6, 12, 14, 12, 4, 7, 9, 14, 13, 4, 7.
 
 **Lo propio de este guion, para que no sea el del café con las palabras cambiadas:**
 *"Que alguien entre a pedir una hora ya dice algo de esa persona."* Es el único rubro donde la visita
@@ -470,18 +470,17 @@ forma, y el problema no es el mismo (es el formulario, no la medición).
 
 > Tu formulario pide nombre, correo y a veces **teléfono**. //
 > Eso es **normal** y no tiene nada de malo. //
-> **Pero** el que los escribe / no sabe qué vas a hacer con **ellos**. //
-> Y debería poder leerlo ahí **mismo**, / al lado del **formulario**. //
-> Revisé treinta y nueve sitios de contadores y **auditores**. //
-> En **nueve**, / el formulario pide los datos / y en la portada no hay dónde leer **eso**. //
-> Y tener esa política publicada / va a ser **obligatoria** por ley. //
-> La política la escribe un **abogado**. / Publicarla y dejarla al lado del formulario / lo haces
-> **tú**. //
+> **Pero** en nueve de los treinta y nueve sitios de contadores que **revisé**, / al lado del
+> formulario no hay dónde leer qué haces con esos **datos**. //
+> Y no hace falta un **abogado** para notarlo. / Es un enlace que está o no **está**. //
+> La política **sí** la escribe un abogado. //
+> Publicarla y dejarla donde se **vea** / lo haces **tú**. //
+> Y tenerla publicada va a ser **obligatorio** por ley. //
 > Hice un chequeo **gratis** / que te dice si tu sitio la tiene **publicada**. //
 > Soy **Ramón**, de SpindleLab. //
 > Pedir los datos está **bien**. / Decir qué haces con ellos, **también**. //
 
-**122 palabras, 42 segundos.** Largo por renglón: 9, 8, 13, 10, 9, 15, 10, 16, 13, 4, 11.
+**112 palabras**122 palabras, 42 segundos.** Largo por renglón: 9, 8, 13, 10, 9, 15, 10, 16, 13, 4, 11.
 
 **El arreglo es otro, y por eso no se nombra la franja.** Acá lo que falta es la política publicada y
 a la vista, no el permiso de los rastreadores. **El arreglo tiene que corresponder al hueco medido**,
@@ -525,17 +524,18 @@ Este es una instrucción, y su defecto original era otro: seis pasos seguidos co
 **El premio va primero.**
 
 > Puedes ver qué guarda tu sitio / sin que nadie te lo **cuente**. //
-> Toma treinta **segundos**. //
+> Toma treinta **segundos** / y no hay que saber nada **técnico**. //
+> Lo que te va a aparecer ahí / no lo aceptó **nadie**. //
 > Abre tu sitio en una ventana de **incógnito**. //
 > Espera diez segundos / y no toques **nada**. //
 > Después aprieta el **candado** / que está al lado de la dirección. //
 > Ahí sale todo lo que tu sitio guardó / en ese **teléfono**. //
-> Y eso se guardó **solo**, al abrir la página. / Nadie lo **aceptó**. //
+> Y se guardó **solo**, al abrir la página. //
 > Si te sale algo que no **entiendes**, / escríbeme por acá y lo **miramos**. //
 > Soy **Ramón**, de SpindleLab. //
 > Nadie te va a contar qué guarda tu **sitio**. / Míralo **tú**. //
 
-**91 palabras, 32 segundos.** Largo por renglón: 11, 3, 8, 7, 11, 11, 12, 13, 4, 11.
+**105 palabras**91 palabras, 32 segundos.** Largo por renglón: 11, 3, 8, 7, 11, 11, 12, 13, 4, 11.
 
 **Este es el que más puede rendir**, y no es intuición: en octubre la pieza de más alcance del lote
 no fue ninguna del chequeo, fue la que no vendía nada (84 impresiones contra 58 y 20). Un tutorial
