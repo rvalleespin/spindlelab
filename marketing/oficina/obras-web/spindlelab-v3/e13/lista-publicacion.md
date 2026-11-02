@@ -74,8 +74,17 @@
   - Search Console, opcional: pedir indexación de `/`, `/servicios/` y `/contacto/` en «Inspeccionar cualquier URL». Solo
     lo apura, porque Google ya tiene el sitemap y `robots.txt` lo declara;
 
-  - LinkedIn Post Inspector y Facebook Sharing Debugger;
-  - el favicon y el ícono en un iPhone.
+  - ~~LinkedIn Post Inspector y Facebook Sharing Debugger~~ **no hacen falta (revisado el 2-nov).**
+    - Según `marketing/redes/QUE-HAY-PUBLICADO.md` (en `origin/main`), ningún post reciente enlaza a spindlelab.cl. Los
+      últimos van a Verifica y Cumple o no llevan enlace, y la bio de Instagram no muestra vista previa.
+    - Sin una vista previa guardada de las páginas, la primera vez que se comparta una URL del sitio nuevo LinkedIn y
+      Facebook la leen desde cero.
+    - Si una vista previa sale vieja, recién ahí se pasa por el inspector.
+  - **Ícono en iPhone: comprobado desde el sitio en vivo el 2-nov, sin el teléfono.**
+    - `apple-touch-icon.png?v=6` mide 180 × 180, es RGB opaco (sin transparencia, así que iOS no le agrega fondo) y tiene
+      el fondo `#060606` con la i y su disco en blanco.
+    - Se armó una simulación de la pantalla de inicio y se ve bien.
+    - Falta solo mirarlo en un iPhone real, que no es bloqueante.
 - **Sigue igual que antes:** `www.spindlelab.cl` responde 200 sin redirigir al dominio sin www (§8).
 
 **Escrita el 26-oct-2026 · ensayada el 26-oct sobre `origin/main` `ba49edbd` y la rama `claude/v3-modelo-nuevo` (`078ceefe`) · puesta al día el 30-oct por Mauro (sección «30-oct», justo abajo), sin ejecutar el corte; y otra vez el 30-oct en la tarde, con las respuestas de Ramón y el visto a `Layout.astro` (sección «30-oct, tarde», la primera).** La rama del corte que se armó el 26-oct, `claude/v3-publicacion` (`762b7295` más `2895a0ce`, los documentos), **ya no sirve tal cual: lleva la E13 del 26-oct y nada de lo del 30-oct.** Publicar ahora es volver a armarla con la receta de la sección 2 desde la rama de la obra, que hoy es `claude/magical-franklin-ckfki2`, forzar el push de esa rama y abrir el PR (URL: `https://github.com/rvalleespin/spindlelab/pull/new/claude/v3-publicacion`), que Ramón confirme y el merge. Reemplaza a `../lista-publicacion.md` (la de E7, escrita para un v3 anterior). Nada de esto se ejecuta sin el OK de Ramón; **publicar es llegar a `main`**.
