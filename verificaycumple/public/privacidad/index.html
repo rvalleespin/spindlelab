@@ -11,7 +11,20 @@
      Solo se manda PageView. `autoConfig` en falso apaga los eventos automáticos del Pixel
      (clics en botones y lectura de metadatos de la página), para que lo que se escribe en el
      chequeo o en el formulario no viaje a Meta por una opción que nadie pidió.
-     El mismo Pixel (2885353628478565) que usa spindlelab.cl: es el de la cuenta de anuncios. -->
+     ⚠️ EL ID CAMBIÓ EL 2-NOV-2026, Y EL ANTERIOR NO ERA NUESTRO.
+     Hasta hoy acá decía 2885353628478565. `ads_get_datasets` de la cuenta de anuncios
+     (2050319242539058) devuelve UN solo dataset, 1027024050073502 «SpindleLab», creado el
+     20-jul-2026; el ID viejo ni siquiera se puede leer con el token de Ramón («Invalid
+     dataset_id»). O sea que durante tres meses y medio las visitas de quien aceptaba el aviso
+     se iban a un dataset ajeno.
+     Dos cosas que eso explica: el dataset propio marca `last_fired_time` en epoch 0 —no ha
+     recibido un solo evento desde que se creó—, y el público de remarketing de julio nunca
+     creció pese a los $20.656 de esa campaña.
+     Y una que corrige: la política de privacidad dice que cargamos el Pixel «para saber si los
+     anuncios traen visitas a este sitio». Con el ID viejo eso era imposible de cumplir. Con
+     este, es cierto.
+     ⚠️ spindlelab.cl TODAVÍA carga el ID viejo. Su código no es `spindlelab-site/` de este
+     repositorio, que ya no se publica: el sitio vivo es Astro y vive en otra parte. -->
 <script>
   var __spindlelabConsent = (function(){
     try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
@@ -27,8 +40,8 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('set', 'autoConfig', false, '2885353628478565');
-    fbq('init', '2885353628478565');
+    fbq('set', 'autoConfig', false, '1027024050073502');
+    fbq('init', '1027024050073502');
     fbq('track', 'PageView');
   }
   if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
