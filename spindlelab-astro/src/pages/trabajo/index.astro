@@ -4,8 +4,8 @@
 // La URL no cambia: /trabajo/ pasó de src/pages/v3/trabajo.astro (la página de driftime, que A reemplaza) a
 // una carpeta, para que los casos vivan al lado (/trabajo/<caso>/); desde el corte a la raíz (E13), en src/pages/trabajo/.
 //
-// Contrato: spec-visual.md §2.2 (barra lateral desde 1194, muro de dos columnas en el orden de Clara, adónde lleva cada
-// entrada), §3.3 (las portadas), §3.4 (techo de campo del índice) y §4.
+// Contrato: spec-visual.md §2.2 (adónde lleva cada entrada), §3.3 (las portadas) y §4; desde E14, el trabajo fijo del
+// prototipo de la home aprobado por Ramón (e14-home-koto/prototipo/).
 //
 // E13 (brief §1, decisión 3): el índice queda con dos entradas, el sitio de Combeau (un caso, con página) y Verifica y
 // Cumple (una pieza propia que enlaza a verifica.spindlelab.cl). Salieron Praxi, los cuatro conceptos, el chequeo y
@@ -17,15 +17,14 @@
 // señales, de Simón (senales-obra.md §2.2): CollectionPage + ItemList + BreadcrumbList; el ItemList sigue el orden del
 // muro y cada entrada va con su url (la de Verifica y Cumple, externa).
 //
-// El muro va en el orden de Clara en el documento (así lo lee el teclado y el lector de pantalla) y se reparte en dos
-// columnas con la retícula: cada pieza a la columna más corta (muro.mjs; sin JS, la columna que le toca con las alturas
-// de su proporción). desvios.md, tanda 2.
+// E14 (2-nov-2026): el muro dejó paso al trabajo fijo de la home; ver el comentario «E14» más abajo.
 import Layout from '../../layouts/Layout.astro';
 import PaginaA from '../../components/a/PaginaA.astro';
-import Pieza from '../../components/a/Pieza.astro';
+import TrabajoFijo from '../../components/a/TrabajoFijo.astro';
 import Miga from '../../components/a/Miga.astro';
 import { LAYOUT_A } from '../../components/a/layout-a';
-import { textoDe, igualQue } from '../../data/archivo/texto.mjs';
+import { textoDe, igualQue, medioDe } from '../../data/archivo/texto.mjs';
+import caso from '../../data/archivo/texto/caso-combeau.json';
 import comun from '../../data/archivo/texto/comun.json';
 import trabajo from '../../data/archivo/texto/trabajo.json';
 import medios from '../../data/archivo/medios.json';
@@ -35,32 +34,50 @@ const pagina = trabajo.texto;
 const m = medios.medios;
 const externo = t('comun.externo').texto;
 
-// Las dos portadas, parejas, en 5:3 (spec §2.2, en el orden de Clara). Commit 1c65e6a6: Combeau usa la captura de escritorio
-// (la 16:9, recortada al marco) y no la del teléfono en 4:5, para que las dos tarjetas arranquen a la misma altura.
-const PORTADAS: Record<string, { medio: string; forma: 'p-53' }> = {
-  'combeau-fotografia': { medio: 'combeau-fotografia-169', forma: 'p-53' },
-  'verifica-y-cumple': { medio: 'verifica-y-cumple-53', forma: 'p-53' },
+// E14 (2-nov): el muro de dos columnas pasa al trabajo fijo de la home (TrabajoFijo.astro, el mecanismo medido en Koto):
+// el panel fijo con la miga, el h1, el conteo y la entradilla arriba, y abajo el nombre de la pieza activa, que cambia por
+// máscara, con su bajada; a la derecha las tarjetas, la activa al 100 % y el resto al 20 %; bajo 834, una lista en 4:5.
+// Las mismas tres tarjetas que la home (el recorrido de Combeau en video, su book y Verifica y Cumple con su pie); el texto
+// de cada pieza es el de su entrada en trabajo.json, tal cual. desvios-construccion.md (E14).
+type Entrada = { id: string; nombre: string; bajada: string; linea: string; destino: string; cursor: string; pie?: string; pie_video?: string; descripcion_video?: string };
+const entradas = pagina.entradas as Entrada[];
+const V = '/v3/trabajo/combeau/combeau-fotografia-recorrido';
+const S = '/v3/trabajo/verifica/verifica-spot';
+const TARJETAS: Record<string, unknown[]> = {
+  'combeau-fotografia': [
+    {
+      ancha: { src: `${V}-1440-poster.webp`, ancho: 1440, alto: 810, chica: { src: `${V}-960-poster.webp`, ancho: 960 } },
+      angosta: { src: `${V}-390-poster.webp`, ancho: 780, alto: 1688 },
+      video: { ancho: { webm: `${V}-1440.webm`, mp4: `${V}-1440.mp4` }, angosto: { webm: `${V}-390.webm`, mp4: `${V}-390.mp4` } },
+    },
+    {
+      ancha: { src: '/v3/trabajo/combeau/combeau-modelo-169.webp', ancho: 1600, alto: 900, chica: { src: '/v3/trabajo/combeau/combeau-modelo-960.webp', ancho: 960 } },
+      angosta: { src: '/v3/medios/combeau-modelo-45.webp', ancho: 780, alto: 975 },
+      alt: (medioDe(caso, 'combeau-modelo-169.webp') as { alt: string }).alt,
+    },
+  ],
+  'verifica-y-cumple': [
+    // el spot (Ramón, 2-nov), con su pie (pie_video de trabajo.json); la portada va después, con el suyo
+    {
+      ancha: { src: `${S}-1280-poster.webp`, ancho: 1280, alto: 720, chica: { src: `${S}-960-poster.webp`, ancho: 960 } },
+      angosta: { src: `${S}-390-poster.webp`, ancho: 624, alto: 780 },
+      video: { ancho: { webm: `${S}-1280.webm`, mp4: `${S}-1280.mp4` }, angosto: { webm: `${S}-390.webm`, mp4: `${S}-390.mp4` } },
+    },
+    {
+      ancha: { src: m['verifica-y-cumple-53'].src, ancho: m['verifica-y-cumple-53'].ancho, alto: m['verifica-y-cumple-53'].alto },
+      angosta: { src: m['verifica-y-cumple-45'].src, ancho: m['verifica-y-cumple-45'].ancho, alto: m['verifica-y-cumple-45'].alto },
+      alt: m['verifica-y-cumple-53'].alt,
+    },
+  ],
 };
-const ALTO = { 'p-53': 3 / 5 } as const;
-
-type Entrada = { id: string; nombre: string; bajada: string; linea: string; destino: string; cursor: string; pie?: string };
-const entradas = (pagina.entradas as Entrada[]).map((e) => {
-  const p = PORTADAS[e.id];
-  if (!p) throw new Error(`/trabajo/: la entrada «${e.id}» no tiene portada`);
-  return { ...e, ...p, medio: m[p.medio as keyof typeof m] };
+const piezas = entradas.map((e) => {
+  const tarjetas = TARJETAS[e.id] as { pie?: string }[] | undefined;
+  if (!tarjetas) throw new Error(`/trabajo/: la entrada «${e.id}» no tiene tarjetas`);
+  // el pie de la persona generada (Verifica y Cumple), bajo su imagen
+  if (e.pie) tarjetas[tarjetas.length - 1].pie = e.pie;
+  if (e.pie_video) tarjetas[0].pie = e.pie_video;
+  return { id: e.id, nombre: e.nombre, ficha: e.linea, texto: e.bajada, descripcion: e.descripcion_video, enlace: { texto: e.cursor, destino: e.destino }, tarjetas };
 });
-
-// La columna de cada pieza sin JS: la más corta, con el alto de su proporción y unas líneas de texto (como el
-// prototipo, data-alto). muro.mjs la vuelve a calcular con el alto medido.
-{
-  const cols = [0, 0];
-  for (const e of entradas as (typeof entradas[number] & { columna?: number })[]) {
-    const c = cols[0] <= cols[1] ? 0 : 1;
-    e.columna = c + 1;
-    cols[c] += ALTO[e.forma] + 0.2 + (e.pie ? 0.05 : 0);
-  }
-}
-
 const conteo = t('trabajo.conteo').texto;
 // El conteo (spec §2.2; Clara: «sale del dato»): el total, igual al texto de Clara.
 igualQue(conteo, `(${entradas.length})`, '/trabajo/, el conteo del título');
@@ -75,7 +92,7 @@ const URL_FINAL = 'https://spindlelab.cl/trabajo/';
 // La URL final (sin /) de adonde lleva cada entrada; la de fuera (Verifica y Cumple), tal cual.
 const final = (d: string) => (/^https?:/.test(d) ? d : `https://spindlelab.cl${d.replace(/^\/\//, '/')}`);
 // El nombre del ListItem (Simón): Combeau con su nombre completo (la entrada dice «Combeau»).
-const nombreLista = (e: (typeof entradas)[number]) => (e.id.startsWith('combeau-') ? `Bernardo ${e.nombre}` : e.nombre);
+const nombreLista = (e: Entrada) => (e.id.startsWith('combeau-') ? `Bernardo ${e.nombre}` : e.nombre);
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -106,48 +123,19 @@ const jsonLd = {
     },
   ],
 };
-// Las portadas que caen en la primera pantalla: desde 834 las dos (el muro va en dos columnas); bajo 834, solo la de
-// Combeau, y la de Verifica y Cumple (40 kB) se pide igual. Van sin espera (§3.3; acta de la obra, vuelta 1, defecto 6).
-const EN_PRIMERA = 2;
 const h1 = t('trabajo.h1') as { tinta: string; gris: string };
 const miga = (t('trabajo.miga').texto as string).split(' · ');
 ---
 <Layout title={title} description={description} ogImage="/assets/img/og-e12-trabajo.jpg?v=3" ogImageAlt="Dos piezas de SpindleLab: la portada del sitio de un fotógrafo, en luz verde, y «Las 12 cosas que tu sitio tiene que dejar publicadas», de Verifica y Cumple, en blanco sobre azul." {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <PaginaA>
-    <div class="indice">
-      {/* La barra lateral (desde 1194, pegajosa; bajo 1194, arriba del muro): miga, h1 en dos tintas, conteo y entradilla. */}
-      <div class="indice__lateral">
+    <TrabajoFijo id="piezas" idTitulo="h-trabajo" piezas={piezas} arriba nivel="h2" externo={externo} primeraPantalla>
+      <Fragment slot="cabeza">
         <Miga items={[{ texto: miga[0], href: '/' }, { texto: miga[1] }]} />
-        <h1 class="t-titulo"><span class="tinta">{h1.tinta}</span> <span class="gris">{h1.gris}</span></h1>
+        <h1 class="t-declaracion" id="h-trabajo"><span class="tinta">{h1.tinta}</span> <span class="gris">{h1.gris}</span></h1>
         <p class="rotulo">{conteo}</p>
         <p class="chico">{t('trabajo.entradilla').texto}</p>
-      </div>
-      {/* El muro: dos columnas desde 834, una bajo 834; en el documento, el orden de Clara. */}
-      <div class="muro" data-muro>
-        {entradas.map((e, i) => (
-          <Pieza
-            id={e.id}
-            nombre={e.nombre}
-            bajada={e.bajada}
-            linea={e.linea}
-            destino={e.destino}
-            cursor={e.cursor}
-            pie={e.pie}
-            medio={e.medio}
-            forma={e.forma}
-            externo={externo}
-            nivel="h2"
-            indice
-            columna={(e as { columna?: number }).columna}
-            primeraPantalla={i < EN_PRIMERA}
-          />
-        ))}
-      </div>
-    </div>
+      </Fragment>
+    </TrabajoFijo>
   </PaginaA>
 </Layout>
-
-<script>
-  import '../../scripts/archivo/muro.mjs';
-</script>

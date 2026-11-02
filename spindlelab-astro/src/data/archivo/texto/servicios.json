@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/servicios.json",
- "sha256": "5b63f8b6d4e96233f8aeeb9ebad728edbe063566c3c8dd0b3a414741633dfc3f",
+ "sha256": "97cabb2a323feaff414f8ba782f8bda9851c3125a9e9259493892e1b9cfe237f",
  "id": "servicios",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -10,7 +10,7 @@
   "regla": "Texto de v2-vigente/servicios.txt y copy-secciones-v1.2.md §4 adaptado a la plantilla de A (h1 en dos tintas, una sección por bloque). Los nombres de servicio y los montos son los de oferta-v3.json y servicios-v3.json: el build los compara como texto. Sin «diagnóstico», sin «24 horas», sin «partners».",
   "title": "Soluciones: sitios web y marketing con IA · SpindleLab",
   "description": "Sitio web, SEO técnico, visibilidad en IA, Google Ads, redes y acompañamiento mensual, con precio de partida publicado. Empezamos con una revisión gratis.",
-  "senales": "v2-vigente/servicios.txt (title y description publicados el 24-oct, aprobados por Ramón) 30-oct: title al rótulo nuevo de la marca (54; «Soluciones: sitios web a medida y marketing con IA · SpindleLab» medía 63 y el tope es 60); antes «Soluciones de marketing y crecimiento con IA · SpindleLab». La description ya nombraba el sitio primero y queda. Lo reconfirma Simón.",
+  "senales": "v2-vigente/servicios.txt (title y description publicados el 24-oct, aprobados por Ramón) 30-oct: title al rótulo nuevo de la marca (54; «Soluciones: sitios web a medida y marketing con IA · SpindleLab» medía 63 y el tope es 60); antes «Soluciones de marketing y crecimiento con IA · SpindleLab». La description ya nombraba el sitio primero y queda. Lo reconfirma Simón. E14, 2-nov: el FAQPage de /servicios/ pasa de 3 a 5 preguntas (servicios.faq.1 a 5, en el orden visible). Lo reconfirma Simón.",
   "estructura": "spec-visual.md §2.4, fila /servicios/: cabecera; una sección por bloque (cuatro, en el orden del documento de textos §4); «Lo que pones tú»; preguntas; cierre. Sin campo de color por servicio.",
   "secciones": [
    {
@@ -319,7 +319,7 @@
    {
     "id": "preguntas",
     "nombre": "Preguntas",
-    "trabajo": "Contestar las tres dudas de quien compara soluciones antes de escribir.",
+    "trabajo": "Contestar las dudas de quien compara soluciones antes de escribir. Desde E14 recibe dos preguntas que salen de la home (servicios.faq.4 y 5) y lo de «Para quién» de la home, junto con «¿Atienden solo ciertos rubros?».",
     "elementos": [
      {
       "id": "servicios.faq.h2",
@@ -369,9 +369,44 @@
      {
       "id": "servicios.faq.3.r",
       "rol": "parrafo",
-      "texto": "No. El método sirve para cualquier empresa que ya venda. Si tu caso no calza, la revisión te lo dice.",
-      "origen": "copy-secciones-v1.2.md §4 (FAQ)",
-      "estado": "nuevo"
+      "texto": "No. Sirve, por ejemplo, para una consultora, una clínica o un restaurante, con equipos de dos o tres personas o más que ya responden consultas. Si estás partiendo y todavía no tienes sitio, también es por acá: es lo primero que hacemos. Si tu caso no calza, la revisión te lo dice.",
+      "origen": "copy-secciones-v1.2.md §4 (FAQ); home.paraquien.p1 y p2 (E13)",
+      "estado": "cambia",
+      "antes": "No. El método sirve para cualquier empresa que ya venda. Si tu caso no calza, la revisión te lo dice.",
+      "por_que": "Sale de la home con la composición Koto (E14; texto aprobado por Ramón el 2-nov-2026, e14-home-koto/texto-home-propuesta.md §2): home.paraquien.p1 y p2 se juntan con esta respuesta (tabla §2). «Para cualquier empresa que ya venda» sale porque la home invita también a quien está partiendo (decisión de Ramón, 30-oct, home.paraquien.p2, que entra tal cual). «Y cerraron ventas este año» sale por lo mismo.",
+      "condicion": "Los tres ejemplos de rubro los confirma Ramón (venía de home.paraquien.p1). Son ejemplos de cliente ideal, no clientes atendidos: ninguno de los tres lo ha sido, por eso «sirve para» y no «trabajamos con»."
+     },
+     {
+      "id": "servicios.faq.4.p",
+      "rol": "h2",
+      "nivel": 3,
+      "texto": "¿Y si el problema no es mi sitio?",
+      "estado": "nuevo",
+      "origen": "home.faq.3.p (E13), tal cual. Sale de la home con la composición Koto (E14; texto aprobado por Ramón el 2-nov-2026, e14-home-koto/texto-home-propuesta.md §2)",
+      "nota": "La tabla de la propuesta lo mandaba a /metodo/, que no tiene preguntas (sus tres reglas son fijas). Va aquí, en «Antes de escribirnos», que es cuando se pregunta."
+     },
+     {
+      "id": "servicios.faq.4.r",
+      "rol": "parrafo",
+      "texto": "Entonces te lo decimos. La revisión puede mostrar que tu sitio está en orden, y en ese caso la conversación de 20 minutos sirve para ver dónde mirar.",
+      "estado": "nuevo",
+      "origen": "home.faq.3.r (E13), tal cual"
+     },
+     {
+      "id": "servicios.faq.5.p",
+      "rol": "h2",
+      "nivel": 3,
+      "texto": "¿Prometen resultados?",
+      "estado": "nuevo",
+      "origen": "home.faq.4.p (E13), tal cual. Sale de la home con la composición Koto (E14; texto aprobado por Ramón el 2-nov-2026, e14-home-koto/texto-home-propuesta.md §2)"
+     },
+     {
+      "id": "servicios.faq.5.r",
+      "rol": "parrafo",
+      "texto": "No. Lo que dejamos por escrito es el método, los entregables y los plazos. Lo que responde una IA o lo que decide un cliente no lo controla nadie.",
+      "estado": "nuevo",
+      "origen": "home.faq.4.r (E13), tal cual",
+      "nota": "Con la home sin preguntas, este pasa a ser el lugar del sitio que dice el límite de lo que se promete (copy §1.4), junto a metodo.reglas.3."
      }
     ]
    },

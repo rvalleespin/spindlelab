@@ -1,7 +1,7 @@
 // LO COMÚN DE TODA PÁGINA DE A (spec §2 «Lo común», §4.2, §5.5, §1.6). Lo carga PaginaA.astro.
 //   · la hora de Santiago con su huso, que escribe el navegador (§5.5);
 //   · cada medio aparece en 167 ms cuando carga (§3.3);
-//   · el cursor: un círculo solo sobre las piezas enlazadas, con puntero fino y sin movimiento reducido (§4.2);
+//   · las piezas enlazadas responden al mouse (§4.2; sin el círculo desde el 2-nov);
 //   · el encabezado que se pliega en la placa al bajar, desde 834 (§2, lo común, 1);
 //   · la entrada: un bloque por sección, una vez, sube 50 px con el resorte «entrada» (§1.6).
 import { inView } from 'motion';
@@ -40,41 +40,8 @@ document.querySelectorAll('.medio > img').forEach((img) => {
   }
 });
 
-// ---- El cursor (§4.2). Se esconde con el primer Tab y vuelve con el primer movimiento REAL del mouse: el aviso que da
-// el navegador cuando la página se desplaza bajo un mouse quieto llega con la misma posición, y no cuenta (lock §19,
-// 16-oct).
-const circulo = document.querySelector('.circulo');
-let dentro = false;
-let ultimo = null;
-function modo() {
-  cuerpo.classList.toggle('con-circulo', !!circulo && fino.matches && !reducir.matches);
-}
-modo();
-[reducir, fino].forEach((q) => q.addEventListener && q.addEventListener('change', modo));
-function esconder(seco) {
-  dentro = false;
-  if (!circulo) return;
-  if (seco || !mover()) animate(circulo, { scale: 0 }, { duration: 0 });
-  else animate(circulo, { scale: 0 }, RESORTES.estado);
-}
-function entrar(ev, pieza) {
-  if (!circulo) return;
-  dentro = true;
-  circulo.textContent = pieza.getAttribute('data-ir') || '';
-  animate(circulo, { x: ev.clientX, y: ev.clientY }, { duration: 0 });
-  animate(circulo, { scale: 1 }, RESORTES.estado);
-}
-document.addEventListener('keydown', (ev) => {
-  if (ev.key === 'Tab') { cuerpo.classList.add('teclado'); esconder(true); }
-});
-document.addEventListener('pointermove', (ev) => {
-  if (ev.pointerType !== 'mouse') return;
-  const real = ultimo && (ev.clientX !== ultimo.x || ev.clientY !== ultimo.y);
-  ultimo = { x: ev.clientX, y: ev.clientY };
-  if (real) cuerpo.classList.remove('teclado');
-}, { passive: true });
-if (circulo) animate(circulo, { scale: 0 }, { duration: 0 });
-
+// ---- El cursor (§4.2): el círculo que seguía al mouse se sacó el 2-nov (Ramón: «no está bien logrado»). Queda la
+// flecha normal; la pieza responde con el acercamiento de la imagen (archivo.css) y el recorte del índice.
 document.querySelectorAll('.medio-enlace[data-ir]').forEach((enlace) => {
   const medio = enlace.querySelector('.medio');
   const acortar = enlace.hasAttribute('data-acortar');
@@ -92,20 +59,12 @@ document.querySelectorAll('.medio-enlace[data-ir]').forEach((enlace) => {
       },
     });
   }
-  const conCirculo = () => cuerpo.classList.contains('con-circulo') && !cuerpo.classList.contains('teclado');
   enlace.addEventListener('pointerenter', (ev) => {
     if (ev.pointerType !== 'mouse') return;
     recortar(24);
-    if (conCirculo()) entrar(ev, enlace);
-  });
-  enlace.addEventListener('pointermove', (ev) => {
-    if (ev.pointerType !== 'mouse' || !conCirculo()) return;
-    if (!dentro) { entrar(ev, enlace); return; }
-    animate(circulo, { x: ev.clientX, y: ev.clientY }, RESORTES.cursor);
   });
   enlace.addEventListener('pointerleave', () => {
     recortar(0);
-    if (dentro) esconder(false);
   });
 });
 

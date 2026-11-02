@@ -34,10 +34,13 @@ interface Props {
   primeraPantalla?: boolean;
   /** La imagen quieta bajo 834 px, si es otra (el medio principal de un caso). */
   posterAngosto?: { src: string; ancho: number; alto: number };
+  /** E14: el srcset y el sizes de la imagen quieta (la portada: una versión de 1440 para no bajar la de 1920 de más) */
+  posterSrcset?: string;
+  posterSizes?: string;
 }
 const {
   poster, ancho, alto, webm, mp4, fuentes, clase, sangre = false, descripcion = '', pausaArriba = false,
-  primeraPantalla = false, posterAngosto,
+  primeraPantalla = false, posterAngosto, posterSrcset, posterSizes,
 } = Astro.props;
 ---
 <div class:list={['medio', 'video', clase, { 'medio--sangre': sangre }]} data-video data-fuentes={fuentes ? JSON.stringify(fuentes) : undefined}>
@@ -47,7 +50,7 @@ const {
       <img src={poster} alt={descripcion} width={ancho} height={alto} loading={primeraPantalla ? 'eager' : 'lazy'} fetchpriority={primeraPantalla ? 'high' : undefined} decoding="async" />
     </picture>
   ) : (
-    <img class="video__quieta" src={poster} alt={descripcion} width={ancho} height={alto} loading={primeraPantalla ? 'eager' : 'lazy'} fetchpriority={primeraPantalla ? 'high' : undefined} decoding="async" />
+    <img class="video__quieta" src={poster} srcset={posterSrcset} sizes={posterSrcset ? posterSizes : undefined} alt={descripcion} width={ancho} height={alto} loading={primeraPantalla ? 'eager' : 'lazy'} fetchpriority={primeraPantalla ? 'high' : undefined} decoding="async" />
   )}
   <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
     {!fuentes && webm && <source src={webm} type="video/webm" />}
