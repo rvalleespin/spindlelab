@@ -23,8 +23,12 @@ Todo lo de acá salió de hacer esas dos, no de teoría.
 ## Método
 
 1. **Aterriza la solicitud.** Quién es (nombre completo), cómo llegó (referido de quién, canal),
-   qué pidió de verdad, qué dudas tiene. Si falta algo que cambia el precio (idiomas, panel,
-   e-commerce, cantidad de páginas), pregúntalo antes de armar nada.
+   qué pidió de verdad, qué dudas tiene. Si falta algo que cambia el precio (idiomas, tienda o
+   pagos en línea, integraciones, cantidad de páginas), pregúntalo antes de armar nada. El
+   panel para editar textos y fotos viene en todos los planes de Desarrollo web (Ramón,
+   30-oct-2026): no se pregunta como extra ni se cotiza aparte. Lo que sí mueve el plan es lo
+   que se administra desde él más allá de textos y fotos (blog, colecciones como obras o
+   artistas, stock, reservas).
 2. **Número correlativo: el máximo de los tres lugares + 1.** Hay cotizaciones en
    `COTIZACIONES/` (014, 015), en `marketing/cotizaciones/` (016, Cortes Zamora, ago) y otras
    que solo existen como adjunto enviado (propuesta a Soya, 10-sep). Revisa las dos carpetas
@@ -127,6 +131,8 @@ documento sale como siempre y no cambia nada para las cotizaciones que no vienen
 - **Cifras de mercado honestas:** compara el precio **con IVA** contra el rango. En la 015 el
   borrador decía "parte baja" y era falso; decía la verdad "bajo el rango de agencias y dentro
   del rango freelance local".
+- **Cada plan de Desarrollo web lista el panel**; lo que cambia entre planes es qué se edita
+  desde él (textos y fotos, blog, colecciones). Nunca va como servicio adicional.
 - **Alcance y límites siempre:** tope de carga inicial, qué provee el cliente, qué cubre la
   garantía de 30 días (solo errores de funcionamiento), qué no incluye la tienda (comisiones,
   envíos). Si el plan tiene tope de páginas y el cliente crea contenido desde el panel, aclara

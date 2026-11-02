@@ -1,0 +1,14 @@
+---
+// EL BOTÓN DE PAUSA (spec §3.1.3, §3.5.3, §4.1; prototipo .pausa): 44 × 44, placa, radio 4, el icono en blanco;
+// apretado (en pausa), fondo blanco e icono en lienzo. Dice su estado: aria-pressed y aria-label «Pausar el video» /
+// «Seguir el video» (Clara, comun.pausa). Nace con `hidden`: lo muestra video.mjs, porque sin JS no hay video.
+// arriba: la portada (arriba a la derecha, a 16 px del borde); si no, la esquina de abajo a la derecha.
+import Icono from './Icono.astro';
+interface Props {
+  arriba?: boolean;
+  pausar?: string;
+  seguir?: string;
+}
+const { arriba = false, pausar = 'Pausar el video', seguir = 'Seguir el video' } = Astro.props;
+---
+<button class:list={['pausa', { 'pausa--arriba': arriba }]} type="button" aria-pressed="false" aria-label={pausar} data-pausar={pausar} data-seguir={seguir} hidden><Icono nombre="pausa" /><Icono nombre="seguir" /></button>

@@ -108,3 +108,6 @@ el estado compartido (reporto al troncal). Google Ads es de otro rol.
 > reinicio headless; para automatizar, usar `CronCreate` (no reinicia el proceso) y
 > mantener la ventana abierta, reprogramando cada 7 días.*
 > **Respaldo:** SpindleLab, 23-jul-2026 — probado en esta misma sesión de Meta.
+
+## Antes de montar una campaña (obligatorio, 23-oct-2026)
+Lee la sección **«Receta para montar una campaña de Meta»** de la skill `persona-paid-media`: los conjuntos y anuncios se arman en el editor de Ads Manager (no por la MCP), se prueba UN conjunto primero, nunca se escribe `targeting` por API, y el encendido va de arriba abajo con OK explícito. Se perdieron horas y muchos tokens por no hacerlo así en VyC.

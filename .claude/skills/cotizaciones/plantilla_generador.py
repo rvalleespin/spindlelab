@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """PLANTILLA de cotización PDF · SpindleLab.
 
-Es la SPL-COT-2026-015 (galería de arte, sep-2026), enviada tal cual. Para una nueva:
+Es la SPL-COT-2026-015 (galería de arte, sep-2026), enviada tal cual, salvo el encabezado y la
+firma, puestos al día el 2-nov-2026 con la línea publicada el 30-oct («Sitios web a medida y
+marketing con IA») y el cargo «Fundador», sin «director» (decisión de Ramón, 2-nov). El panel ya va en los tres planes. Para una nueva:
   1. Copiar a COTIZACIONES/SPL-COT-AAAA-NNN_generador.py (junto a logo-spindlelab-nuevo.png).
   2. Cambiar: SALIDA, REFERENCIAS, N.º/Proyecto/Fecha/Cliente del encabezado, "El proyecto",
      la tabla de planes (precios SOLO los publicados en el sitio), fases (qué se hace),
@@ -85,7 +87,7 @@ logo = Image(os.path.join(AQUI, "logo-spindlelab-nuevo.png"), width=50*mm, heigh
 logo.hAlign = "LEFT"
 head = Table([
     [logo,
-     Paragraph("SEO, visibilidad en IA y desarrollo web<br/>Ramón Vallejos Espíndola<br/>"
+     Paragraph("Sitios web a medida y marketing con IA<br/>Ramón Vallejos Espíndola<br/>"
                "hola@spindlelab.cl", ParagraphStyle("hd", parent=st_small, alignment=TA_RIGHT))],
 ], colWidths=[95*mm, 71*mm])
 head.setStyle(TableStyle([("VALIGN", (0,0), (-1,-1), "TOP")]))

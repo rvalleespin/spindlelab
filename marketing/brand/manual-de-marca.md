@@ -1,10 +1,25 @@
-# Manual de marca SpindleLab — v1.3 (julio 2026)
+# Manual de marca SpindleLab — v1.4 (noviembre 2026)
 
 > Fuente de verdad del sistema de marca. La versión visual está publicada como Artifact (enlace en el chat). Todo activo nuevo se deriva de estas reglas.
 
 ## 01 · Esencia
 
-- **Posicionamiento:** SpindleLab hace que las empresas aparezcan cuando sus clientes preguntan — en Google y en los motores de IA.
+- **Línea vigente (decidida por Ramón y publicada en spindlelab.cl el 30-oct-2026):**
+  - **Rótulo:** *Sitios web a medida y marketing con IA.*
+  - **Titular de la home:** *En redes arriendas. Tu sitio es lo único que es tuyo.*
+  - **El negocio principal es Desarrollo web:** el sitio es el eje y lo demás se le conecta
+    (búsqueda y visibilidad en IA, anuncios en Google y redes, acompañamiento mensual). El
+    mensaje no es dejar las redes, sino que lo que traen termine en algo tuyo.
+  - **Acción principal:** *Hablemos de tu sitio* (→ spindlelab.cl/contacto). Con sitio: revisión
+    gratis de una página, respuesta en un día hábil. Sin sitio: le contamos cómo lo haríamos y
+    cuánto cuesta. El chequeo automático de `/diagnostico/` sigue y se llama *chequeo*.
+  - **Fuente de verdad del texto publicado:** el sitio vivo y
+    `spindlelab-astro/src/data/archivo/texto/*.json` + `src/data/oferta-v3.json`.
+- **Líneas anteriores (historia, no se usan):** *Marketing y crecimiento con IA para empresas
+  que ya venden* (23-oct-2026) · *Un motor de adquisición, SEO técnico y visibilidad en IA como
+  eje* (ago-sep 2026) · *SEO técnico + visibilidad en IA* (julio) · el posicionamiento de julio,
+  que sigue abajo tal como se escribió.
+- **Posicionamiento (julio 2026, historia):** SpindleLab hace que las empresas aparezcan cuando sus clientes preguntan — en Google y en los motores de IA.
 - **Sensación objetivo ("solidez cercana"):** *confío en él, y además se entiende lo que dice*.
 - **Personalidad:** cercano, preciso y con vida — un laboratorio de creatividad que optimiza la maquinaria de un negocio. Nunca: robots, cerebros, circuitos, degradados neón, jerga startup.
 - **Idea rectora del sistema visual:** ser **el punto donde te encuentran** → el punto dorado como única firma gráfica.
@@ -91,7 +106,7 @@ convierte. Después del corte no pasa energía.
 Afirmaciones verificables, ejemplos concretos, valentía de decir «esto no lo necesitas». La persona gramatical es híbrida, y la regla es precisa — no es una preferencia de estilo, cambia el significado:
 
 - **Primera persona singular** para lo observacional/evidencial: probar algo, revisar, investigar. Es el gesto que hace creíble el gancho («hice la prueba yo mismo»). Ej.: *«Le pregunté a ChatGPT por tu negocio.»*
-- **Primera persona plural** para todo lo que la empresa entrega, ofrece o hace como servicio — «entregamos», «revisamos», «buscamos», «conversemos», «trabajamos». Es la voz de negocio, no de individuo. Ej.: *«Te lo entregamos gratis, en 24 horas.»*
+- **Primera persona plural** para todo lo que la empresa entrega, ofrece o hace como servicio — «entregamos», «revisamos», «buscamos», «conversemos», «trabajamos». Es la voz de negocio, no de individuo. Ej.: *«Te lo revisamos gratis y en un día hábil te mandamos lo que encontramos.»* (Hasta oct-2026 el ejemplo decía «en 24 horas»; el plazo publicado es un día hábil.)
 
 | Sí | No |
 |---|---|
@@ -105,7 +120,7 @@ Afirmaciones verificables, ejemplos concretos, valentía de decir «esto no lo n
 |---|---|---|
 | Logo (todas las variantes) | Horizontal · apilada · monograma, positivo/invertido | `logo/` |
 | Firma correo (conocidos) | Wordmark apilado + regla dorada + nombre/cargo | `firmas/firma-a-nombre.png` |
-| Firma correo (outbound) | Wordmark + tagline 3 servicios | `firmas/firma-b-marca.png` |
+| Firma correo (outbound) | Wordmark + rótulo de la casa (*Sitios web a medida y marketing con IA*). ⚠️ El PNG actual todavía dice el tagline de julio («SEO técnico · Visibilidad en IA · Desarrollo web»): rehacerlo antes de volver a usarlo | `firmas/firma-b-marca.png` |
 | Perfil LinkedIn e Instagram | Monograma S. sobre papel | `redes/perfil-avatar.png` |
 | Banner LinkedIn | Foto agencia (velo de tinta) + wordmark + promesa | `redes/banner-linkedin.png` (alt tipográfico: `redes/banner-linkedin-alt-tipografico.png`) |
 | Posts Instagram (1080×1080) | Plantilla tipográfica y con foto — editar el HTML y re-renderizar | `redes/post-tipografico.*` · `redes/post-foto.*` |
@@ -113,11 +128,12 @@ Afirmaciones verificables, ejemplos concretos, valentía de decir «esto no lo n
 
 **Fotografía de marca:** foto del banner en `redes/fuentes/foto-banner-original.jpg` (Unsplash — licencia gratuita para uso comercial, sin atribución obligatoria). Tratamiento SIEMPRE con velo de tinta ≥50 % para que la marca mande sobre la foto.
 
-**Sitio web — aplicado (8 jul 2026):** el sitio usaba Manrope como tipografía única (no Fraunces — esa era una nota desactualizada de una versión anterior del brief). Se reemplazó por Gabarito en las 13 páginas; wordmark del header/footer ya seguía el patrón `SpindleLab<span>.</span>` con punto dorado, solo cambió la fuente. Favicon reemplazado por el monograma S. Se agregó la 4ª línea de servicio «Desarrollo Web» (tarjeta en `/servicios/`, página `/servicios/desarrollo-web/`, JSON-LD y sitemap actualizados). El hero de la home y su meta description no se tocaron a propósito — el mensaje central sigue siendo visibilidad, desarrollo web es secundario.
+**Sitio web — aplicado (8 jul 2026):** el sitio usaba Manrope como tipografía única (no Fraunces — esa era una nota desactualizada de una versión anterior del brief). Se reemplazó por Gabarito en las 13 páginas; wordmark del header/footer ya seguía el patrón `SpindleLab<span>.</span>` con punto dorado, solo cambió la fuente. Favicon reemplazado por el monograma S. Se agregó la 4ª línea de servicio «Desarrollo Web» (tarjeta en `/servicios/`, página `/servicios/desarrollo-web/`, JSON-LD y sitemap actualizados). El hero de la home y su meta description no se tocaron a propósito — el mensaje central sigue siendo visibilidad, desarrollo web es secundario. *(Eso era julio. Desde el 30-oct-2026 es al revés: desarrollo web es el negocio principal; ver §01.)*
 
 
 ## Historial
 
+- **v1.4 (2-nov-2026):** §01 suma la línea vigente publicada el 30-oct-2026 (*Sitios web a medida y marketing con IA*; titular *En redes arriendas. Tu sitio es lo único que es tuyo.*; acción *Hablemos de tu sitio*) y pasa a historia el posicionamiento de julio y las líneas intermedias. §07: el ejemplo de plural deja de prometer «24 horas». §08: la firma de outbound queda marcada para rehacer.
 - **v1.3 (8 jul 2026):** regla de voz refinada — plural («entregamos», «revisamos») para todo lo que la empresa ofrece o hace como servicio; singular se reserva para lo observacional («le pregunté a ChatGPT»). Aplicado al carrusel 01; pendiente revisar `plantillas/emails-fase0.md` y `plantillas/linkedin-posts.md` para consistencia.
 - **v1.2 (8 jul 2026):** sistema aplicado a spindlelab-site — tipografía, favicon, 4ª línea de servicio (Desarrollo Web) con página propia. Corrección: el sitio nunca usó Fraunces, usaba Manrope.
 - **v1.1 (8 jul 2026):** tipografía de marca pasa de Fraunces Display a **Gabarito** (feedback: la serif era demasiado solemne). Kit de logo en `logo/`: horizontal, apilada y monograma, en positivo e invertido (PNG transparente).

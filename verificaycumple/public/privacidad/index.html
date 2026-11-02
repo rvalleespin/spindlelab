@@ -3,6 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Meta Pixel (23-oct-2026). NO se carga hasta que la persona acepta el aviso de cookies:
+     __spindlelabInitMeta la llama /js/consent-banner.js al pulsar Aceptar, o este mismo bloque
+     si el permiso ya estaba guardado al abrir la página. Sin permiso no se pide ni
+     fbevents.js, así que Meta no recibe nada de la visita. Sin <noscript>: no se puede pedir
+     consentimiento sin JavaScript, así que tampoco se rastrea sin él.
+     Solo se manda PageView. `autoConfig` en falso apaga los eventos automáticos del Pixel
+     (clics en botones y lectura de metadatos de la página), para que lo que se escribe en el
+     chequeo o en el formulario no viaje a Meta por una opción que nadie pidió.
+     El mismo Pixel (2885353628478565) que usa spindlelab.cl: es el de la cuenta de anuncios. -->
+<script>
+  var __spindlelabConsent = (function(){
+    try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
+  })();
+  function __spindlelabInitMeta(){
+    if(window.__spindlelabMetaInited) return;
+    window.__spindlelabMetaInited = true;
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('set', 'autoConfig', false, '2885353628478565');
+    fbq('init', '2885353628478565');
+    fbq('track', 'PageView');
+  }
+  if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
+</script>
 <title>Política de privacidad · Verifica y Cumple</title>
 <meta name="description" content="Qué datos pasan por Verifica y Cumple, para qué los usamos y quién más los procesa. Punto por punto, siguiendo los 12 que exige la Ley 21.719.">
 <link rel="canonical" href="https://verifica.spindlelab.cl/privacidad/">
@@ -144,7 +174,7 @@
   <div class="envoltura">
     <p class="eyebrow">Los 12 puntos que pide la ley</p>
     <h1>Política de privacidad</h1>
-    <p class="version">Versión 1.4 · actualizada el 23 de septiembre de 2026.</p>
+    <p class="version">Versión 1.5 · actualizada el 23 de octubre de 2026.</p>
     <!-- Hasta la 1.2 decía "los mismos 12 puntos que el chequeo le pide a cualquier otro
          sitio", y no es cierto: el chequeo mira si hay una política enlazada, no lee su
          contenido. Los 12 puntos son los que el Art. 14 ter pide publicar (brief §2.6). -->
@@ -158,8 +188,9 @@
     <div class="punto">
       <span class="punto-num">01 · Política de tratamiento</span>
       <h2>Esta política</h2>
-      <p>Esta es la versión 1.4. Si la cambiamos, actualizamos la fecha de arriba.</p>
-      <p>En esta versión contamos qué pasa cuando te escribimos nosotros primero: qué datos tuyos tratamos, de dónde salieron y cómo pedirnos que dejemos de hacerlo (puntos 04 y 10). Faltaba, y era justo el caso en que la iniciativa es nuestra y no tuya.</p>
+      <p>Esta es la versión 1.5. Si la cambiamos, actualizamos la fecha de arriba.</p>
+      <p>En esta versión sumamos el Pixel de Meta, que mide si nuestros anuncios en Instagram y Facebook traen visitas. Solo funciona si lo aceptas con el aviso de cookies (puntos 04, 08, 09 y 11).</p>
+      <p>La 1.4, del 23 de septiembre, contó qué pasa cuando te escribimos nosotros primero: qué datos tuyos tratamos, de dónde salieron y cómo pedirnos que dejemos de hacerlo (puntos 04 y 10). Faltaba, y era justo el caso en que la iniciativa es nuestra y no tuya.</p>
       <p>La 1.3, del mismo día, nombró a Google, donde vive nuestro correo, contó dónde procesa tus datos cada proveedor y con qué términos trabajamos con cada uno (punto 08), aclaró que Web3Forms guarda una copia de lo que envías (punto 09) y sumó las preguntas, porque el formulario ya no recibe solo pedidos.</p>
       <p>La 1.2, del 22 de septiembre, sumó el conteo de visitas sin cookies. La 1.1, del mismo día, sumó el formulario para pedir el kit o la revisión trimestral. La 1.0 es del 21 de septiembre.</p>
     </div>
@@ -192,6 +223,10 @@
       <p>Al enviarlo, Web3Forms, el servicio que lo procesa, registra además datos técnicos del envío, como tu dirección IP y la hora. Usamos todo eso solo para responderte. Si pediste el kit o la revisión trimestral, para decirte qué incluye y cuánto sale; si nos preguntaste algo, para contestarte.</p>
       <p>La base de legitimidad es tu propia solicitud, y además te pedimos un acto de consentimiento explícito con una casilla que viene sin marcar (punto 11). De los tres proveedores del punto 08, estos datos pasan por dos. Web3Forms nos lo reenvía, y Google es donde vive nuestro correo.</p>
       <p><strong>El conteo de visitas.</strong> Contamos cuántas personas entran al sitio con Cloudflare Web Analytics, que no usa cookies ni guarda nada en tu navegador. Registra qué página se vio, desde qué sitio llegaste, el país, el tipo de dispositivo, el navegador y cuánto tardó en cargar. Nosotros lo vemos siempre sumado, sin saber quién eres. Lo usamos solo para saber si el chequeo le sirve a alguien.</p>
+      <!-- 1.5, 23-oct-2026. Se escribe después de leer lo que de verdad se manda: solo PageView, con
+           autoConfig apagado. Si algún día se suma otro evento (Lead al enviar el formulario), esto
+           se actualiza ANTES de encenderlo. -->
+      <p><strong>La medición de los anuncios.</strong> Si aceptas el aviso de cookies, cargamos el Pixel de Meta para saber si los anuncios que publicamos en Instagram y Facebook traen visitas a este sitio. Si lo rechazas, o no eliges nada, el Pixel no se carga y Meta no recibe nada de tu visita. Si lo aceptas, Meta recibe que viste una página de este sitio, tu dirección IP, datos de tu navegador y dispositivo, y una cookie (<code>_fbp</code>) que reconoce tu navegador; si llegaste desde un anuncio, recibe también el identificador de ese clic. Solo le mandamos la visita a la página: no le enviamos a propósito lo que escribes en el chequeo ni en el formulario. Lo usamos solo para medir nuestros anuncios, y para eso no te pedimos nombre ni correo.</p>
       <!-- Punto agregado en la 1.4. Faltaba, y es el tratamiento donde SpindleLab toma la
            iniciativa: escribirle a alguien que no nos buscó. El Art. 14 ter d) y j) piden
            declarar las categorías, el universo de personas, la finalidad, la base y de dónde
@@ -259,10 +294,11 @@
       <p><strong>Cloudflare</strong> (Cloudflare, Inc., de Estados Unidos) sirve el sitio, corre el chequeo y hace el conteo de visitas del punto 04. Para eso procesa datos técnicos de tu conexión, como tu dirección IP, y el dominio que revisas. Lo hace en su red de centros de datos repartidos por el mundo, así que tu visita puede pasar por servidores fuera de Chile.</p>
       <p><strong>Web3Forms</strong> (un servicio de la empresa Web3Creative, que opera desde India) recibe lo que escribes en el formulario, nos lo reenvía por correo y guarda una copia (punto 09). Según su documentación, sus servidores están en Estados Unidos. Según su acuerdo de tratamiento de datos, se apoya además en otros proveedores, con servidores en Estados Unidos, en la Unión Europea y en otros países. Dos de ellos, CleanTalk y Akismet, reciben tu correo y tu IP para filtrar spam.</p>
       <p><strong>Google</strong> (Google Workspace) es donde vive nuestro correo, <!--email_off-->hola@spindlelab.cl<!--/email_off-->. Ahí llegan los pedidos y las preguntas del formulario, y cualquier correo que nos escribas directo. Según sus términos, Google puede procesar esos datos en cualquier país donde Google o sus proveedores tengan instalaciones.</p>
+      <p><strong>Meta</strong> (Meta Platforms, Inc., de Estados Unidos) solo recibe datos de tu visita si aceptas las cookies de medición (punto 04). Es un cuarto proveedor, y distinto de los tres de arriba: no nos presta el sitio, nos mide los anuncios. Según sus términos, procesa esos datos en los centros de datos que Meta tiene en distintos países.</p>
       <p><strong>Con qué protección.</strong> Cuando los datos salen de Chile, que es lo que la ley llama una transferencia internacional, el Art. 27-28 pide cláusulas contractuales o un nivel adecuado de protección.</p>
       <p>Lo que hoy tenemos con cada uno de estos tres proveedores son sus términos de tratamiento de datos. Esos términos dicen que forman parte del contrato de servicio, y en ellos cada proveedor se compromete a procesar los datos solo por cuenta nuestra y según nuestras instrucciones, y a tomar medidas de seguridad que incluyen cifrarlos.</p>
-      <p>Esos términos no están escritos para la ley chilena. Puedes leerlos tú mismo: los de <a href="https://www.cloudflare.com/cloudflare-customer-dpa/">Cloudflare</a>, los de <a href="https://web3forms.com/dpa">Web3Forms</a> y los de <a href="https://cloud.google.com/terms/data-processing-addendum">Google</a> (en inglés).</p>
-      <p>Fuera de estos tres proveedores, y de los proveedores que cada uno usa y declara en esos términos, no compartimos, vendemos ni cedemos tus datos a nadie.</p>
+      <p>Esos términos no están escritos para la ley chilena. Puedes leerlos tú mismo: los de <a href="https://www.cloudflare.com/cloudflare-customer-dpa/">Cloudflare</a>, los de <a href="https://web3forms.com/dpa">Web3Forms</a> y los de <a href="https://cloud.google.com/terms/data-processing-addendum">Google</a> (en inglés). Con Meta, que solo participa si aceptas las cookies, lo que hay son sus <a href="https://www.facebook.com/legal/terms/businesstools">términos de las herramientas de negocio</a>, también en inglés y también sin estar escritos para la ley chilena.</p>
+      <p>Fuera de estos proveedores, de Meta (solo si aceptas) y de los que cada uno usa y declara en sus términos, no compartimos, vendemos ni cedemos tus datos a nadie.</p>
     </div>
 
     <div class="punto">
@@ -271,6 +307,7 @@
       <p>El dominio que revisas y el resultado de tu chequeo no se guardan en ninguna parte.</p>
       <p>Los pedidos y las preguntas del formulario quedan en nuestro correo (Google Workspace) mientras sirvan para la conversación que empezaste, o hasta que nos pidas borrarlos. Web3Forms guarda además una copia de cada envío, y según su acuerdo de tratamiento de datos la conserva hasta tres años. Si nos pides borrar tus datos, los borramos de nuestro correo y le pedimos a Web3Forms que borre su copia.</p>
       <p>Los registros técnicos de conexión y el conteo de visitas los mantiene Cloudflare (no nosotros), con su propia política de retención.</p>
+      <p>Si aceptas las cookies, la cookie <code>_fbp</code> del Pixel queda en tu navegador hasta 90 días, según Meta, o hasta que cambies tu decisión con el enlace «Cookies» del pie de la página: al rechazar, la borramos. Lo que Meta registra de la visita lo conserva con su propia política de retención.</p>
     </div>
 
     <div class="punto">
@@ -300,6 +337,7 @@
            formulario" — es un hecho cierto, pero ya está contado en el punto 01 (la 1.1 sumó el
            formulario) y acá solo servía para felicitarse. Si se quiere de vuelta, va en el punto 01,
            no acá. -->
+      <p>La medición de los anuncios con el Pixel de Meta sí te pide permiso, con el aviso de cookies que aparece abajo la primera vez que entras. Hasta que respondes, el Pixel no se carga, y si no eliges, no se carga. Puedes cambiar tu decisión cuando quieras con el enlace «Cookies» del pie de la página: si la cambias a rechazar, borramos la cookie del Pixel y recargamos la página.</p>
       <p>Si algún día sumamos algo más que te pida datos, actualizamos esta política antes de encenderlo.</p>
     </div>
 
@@ -323,5 +361,30 @@
   </div>
 </footer>
 
+<div id="cookie-banner" hidden>
+  <style>
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#17163a;border-top:1px solid rgba(255,255,255,.18);padding:18px 20px}
+    #cookie-banner .cb-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:14px;color:rgba(255,255,255,.88);line-height:1.5;max-width:660px}
+    #cookie-banner a{color:#d6ff3d;font-weight:700}
+    #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+    #cookie-banner button{font-family:inherit;font-size:13px;font-weight:700;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+    #cookie-reject{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+    #cookie-reject:hover{background:rgba(255,255,255,.1)}
+    #cookie-accept{background:#d6ff3d;color:#17163a;border-color:#d6ff3d}
+    #cookie-accept:hover{background:#e6ff7a}
+    #cookie-banner button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    #cookie-banner[hidden]{display:none}
+    @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+  </style>
+  <div class="cb-inner">
+    <p>Usamos el Pixel de Meta para saber si nuestros anuncios en Instagram y Facebook traen visitas a este sitio. Puedes aceptarlo o rechazarlo: el chequeo funciona igual. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+    <div class="cb-actions">
+      <button type="button" id="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="/js/consent-banner.js?v=1" defer></script>
 </body>
 </html>

@@ -3,7 +3,17 @@
 **Cuándo:** LUNES 19-oct-2026 · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Pieza visual:** ninguna. Texto puro.
 **Escribe:** agente-copywriter (Renata), a pedido directo de Ramón ("no publiques hoy, prepara el del lunes", 16-oct)
-**Estado:** 📝 BORRADOR v2 (la v1 se corrigió el 16-oct por la apertura repetida), esperando la aprobación de Ramón. No publicado.
+**Estado:** ✅ PUBLICADO Y VERIFICADO (19-oct-2026, el día previsto), perfil personal de Ramón, a pedido suyo ("deja así el post. publiquemos hoy").
+`linkedin.com/feed/update/urn:li:activity:7517930145773514752/`. Texto leído del editor antes de publicar: 5 párrafos, idénticos a la v2 aprobada
+(comparados uno a uno por script), sin raya larga. Captura posterior: "1 comentario", autor Ramón, tarjeta del artículo de Search Engine Roundtable.
+Primer comentario: los dos artículos (ChatGPT y Google) y el diagnóstico gratis, tal como estaba escrito.
+
+**Checklist del día, hecho (19-oct):** artículo de ChatGPT releído (sin cambios desde la actualización del 15-oct: era un error) · artículo de Google sobre AI Mode releído (sigue pidiendo clics) ·
+página de ayuda de Google del informe de IA releída (misma longitud, sin mención de clics ni métricas) · `spindlelab.cl/diagnostico/` releído ("Una página, gratis, en 24 horas") ·
+canal revisado (el último post original era el del 15-oct, "hace 3 días").
+
+**Se vio en la actividad del perfil, no hecho por esta sesión:** dos reposts recientes de Ramón (Cerebro Digital, 1 semana; The Clinic, 2 días). Aparecen arriba de sus posts en la pestaña
+"Publicaciones". Se le avisó.
 
 ## Origen del encargo
 

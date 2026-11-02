@@ -4,6 +4,11 @@ Del 7 de julio al 5 de octubre de 2026. Meta comercial: **1–2 clientes cerrado
 Presupuesto de horas humanas: **6–10 h/semana de supervisión** (original) — la producción la ejecutan agentes de Claude Code (división de trabajo en §6.5 de la estrategia).
 **Nota 21 jul:** Ramón pasó a dedicarse a SpindleLab a tiempo completo — el presupuesto de horas reales disponibles sube respecto al supuesto original, no baja. Ajustar expectativas de ritmo en consecuencia: hay más margen para sumar iniciativas (como contenido en video) sin que compitan entre sí.
 
+> **Estado 19-oct-2026 (día 104; el plan venció el 5-oct sin retrospectiva).** Dos clientes en toda la historia, ambos de Desarrollo Web (Bernardo, por contacto directo; María Loreto, por referido de Bernardo, 26-sep). Del funnel SEO/AEO: 142 correos fríos, 0 clientes. El embudo se corta después de que alguien responde, no en la entrada. Evaluación completa, con la estrategia ganadora y su criterio de corte: `marketing/evaluacion-captacion-2026-10-19.md`.
+> **Decisiones de Ramón el 19-oct:** (1) **cerrar el frente EE.UU.** (76 días en día 0); (2) aplicar la estrategia de conversión y seguimiento; (3) registrar a Carlos Soya, Eduardo (focuscontable.cl) y legalprisma en `ventas/pipeline.md`. La cola diaria de calientes vive en `ventas/cola-calientes.md`.
+> **Corte vigente:** ≥3 llamadas de venta sostenidas al 19-nov y ≥1 cliente nuevo al 3-dic. Mientras haya calientes sin trabajar, no se abre ningún frente nuevo.
+> **Actualización 2-nov-2026:** el sitio nuevo salió el vie 30-oct con la línea «Sitios web a medida y marketing con IA» (fuente de verdad: `marketing/oficina/clientes/spindlelab.md`). Lo verificado, lo reportado sin verificar y los pendientes de Ramón están al final de la Fase 4, en «Registro del 30-oct al 2-nov: el sitio nuevo».
+
 Convención de los checklists: **[CC]** = lo produce Claude Code (tú revisas/apruebas) · **[TÚ]** = solo humano.
 Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa semana, que sea esa.
 
@@ -61,7 +66,7 @@ Cada semana tiene un **"hecho = avanzamos"**: si solo se logra una cosa esa sema
 
 ### Semana 3 (21–27 jul)
 - [~] [TÚ] Enviar 30 contactos: 20 Frente A + **Frente B (lanzamiento dental/estética)** ← **hecho = avanzamos** — Frente A ya está en 15/15 (falta ampliar más allá de la lista original si se decide). **Frente B: CSV de Apollo recibido 21 jul** — vino más amplio de lo pedido (42 contactos en vez de los 10 priorizados; solo 3 de esos 10 llegaron — Zaror, Terré, Beladent). Decisión: usar los 42 tal cual. **Tanda 1 (8 contactos) ya redactada** con hallazgo técnico real por sitio en `outbound/semana-03/lote-1-frente-b.md` (incluye un hallazgo fuerte: Clínica OPIA bloquea explícitamente a GPTBot/ClaudeBot/etc. en su robots.txt) → falta que Ramón revise y envíe. Tandas 2 y 3 (26 contactos) y 2ª ola de dominios catch-all (7) pendientes del mismo proceso.
-- [ ] [TÚ] Regla sagrada: todo interesado recibe su mini-diagnóstico en ≤48 h ([CC] produce el borrador en horas; apuntar a entregar en 24)
+- [ ] [TÚ] Regla sagrada: todo interesado recibe su mini-diagnóstico en ≤48 h ([CC] produce el borrador en horas; apuntar a entregar en 24) (superado 2-nov: hoy la promesa es una revisión gratis de una página con respuesta en un día hábil)
 - [ ] [CC] Artículo 3: «SEO para clínicas dentales en Chile: lo que cambió con la IA» → [TÚ] editar y publicar
 - [ ] [CC] Panel semanal de métricas (rebotes <3 %, tasa de respuesta) → [TÚ] leer 15 min
 
@@ -162,6 +167,35 @@ El centro de gravedad cambia: entregar impecable a los clientes cerrados (Claude
 - [ ] [CC] Borrador de estrategia v2.0 con lo aprendido → [TÚ] decidir ← **hecho = avanzamos**
 - [ ] [CC] Artículo 12 → [TÚ] editar y publicar
 
+### Registro del 30-oct al 2-nov: el sitio nuevo (aparte de las semanas; el plan venció el 5-oct)
+
+Línea vigente: rótulo «Sitios web a medida y marketing con IA», titular «En redes arriendas. Tu sitio es lo único que es tuyo.», acción principal «Hablemos de tu sitio» (`/contacto/`). Fuente de verdad: `marketing/oficina/clientes/spindlelab.md`. **Decisión de Ramón, 2-nov-2026:** el cargo es «Fundador», sin «director».
+
+**Verificado por la troncal el 2-nov-2026**
+- [x] [CC] Sitio nuevo publicado el vie 30-oct-2026 (PR #51, «Publica el sitio nuevo: sitios web a medida y marketing con IA»; el OK escrito de Ramón lo reporta la sesión del sitio). Verificado en git: el merge `f0e1b019` (30-oct, 18:23 hora de Chile) está en `origin/main`.
+- [x] [CC] Sitio vivo, leído con `curl` el 2-nov: spindlelab.cl responde 200; `<title>` «SpindleLab · Sitios web a medida y marketing con IA»; H1 «En redes arriendas. Tu sitio es lo único que es tuyo.»; el sitemap lista 22 URLs; `/contacto/` responde 200 con «Hablemos de tu sitio», los campos UTM Source, UTM Medium y UTM Campaign y el formulario apuntando a Web3Forms (eso prueba que los campos están, no que un envío los lleve; ver abajo).
+- [x] [CC] Archivo de la clave de IndexNow publicado: el PR #52 (merge `8d99b18e`, 2-nov, 10:07 hora de Chile) está en `origin/main` y el archivo responde 200 en la raíz del sitio con la clave. Prueba que el archivo está, no que el aviso a Bing se haya enviado.
+- Las 3 correcciones de texto siguen sin aplicarse en el sitio vivo (detalle en «Pendientes de Ramón», abajo). La troncal lo comprobó el 2-nov; al escribir este registro se volvieron a leer en el sitio vivo dos de las tres: el cargo (home y `/nosotros/` dicen todavía «Fundador y director de SpindleLab») y lo del dominio y el código (`/servicios/desarrollo-web/` no dice que el dominio queda a nombre del cliente ni que se entrega el código completo).
+
+**Reportado por la sesión del sitio, sin verificar por la troncal**
+
+Fuente: `marketing/oficina/obras-web/spindlelab-v3/e13/lista-publicacion.md`, en la rama `claude/magical-franklin-ckfki2`. Los tres commits están solo en esa rama (no en `main`) y cada uno cambia solo ese archivo: anotan lo que la sesión dice que pasó, sin adjuntar la captura ni la respuesta del servidor. Prueban que la sesión lo registró el 2-nov, no que ocurrió.
+- [~] [TÚ] Envío real del formulario con los tres UTM (`88cd0d7d`, 2-nov, 12:59 UTC): la nota dice que Ramón lo envió y mandó la captura del correo de Web3Forms, con UTM Source `test`, UTM Medium `publicacion`, UTM Campaign `sitio-nuevo` y Consiento `on`. La troncal no vio ese correo ni la captura. Para darlo por hecho hay que ver el correo original o la captura.
+- [~] [CC] Aviso a Bing y a los demás buscadores de IndexNow (`b7211e63`, 2-nov, 13:13 UTC): la nota dice que se enviaron las 22 URL del sitemap el 2-nov a las 10:13 (Chile), con `api.indexnow.org` respondiendo 202 y `www.bing.com/indexnow` 200. Las respuestas no están en el commit y la troncal no las vio.
+- [~] [TÚ] Sitemap reenviado en Search Console (`6e414c1b`, 2-nov, 13:27 UTC): la nota dice «hecho por Ramón el 2-nov». El commit no trae captura ni otra evidencia.
+
+**Pendientes de Ramón**
+- [ ] [TÚ] Las 3 correcciones de texto del sitio, aún sin aplicar (el sitio lo edita la sesión del sitio, no la troncal):
+  - Cargo «Fundador»: la home y `/nosotros/` dicen «Fundador y director de SpindleLab», y el título de la pestaña de `/nosotros/` dice «Ramón Vallejos, fundador y director · SpindleLab» (visto en el HTML vivo del 2-nov; hay otras apariciones del cargo en el sitio que esta pasada no recorrió).
+  - «A tu nombre» / «código completo»: `/servicios/desarrollo-web/` dice solo «Lo publicamos en tu dominio» y «Para publicar necesitamos acceso a tu dominio». Falta decir que el dominio queda a nombre del cliente y que se entrega el código completo.
+  - Frase de «Quién está detrás» (home) y su gemela de «De dónde sale SpindleLab» (`/nosotros/`): hoy dice «casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva»; la cláusula que eligió Ramón es «muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva». Sin aplicar al 2-nov. Archivo, línea y clave en `marketing/encargos-otras-sesiones/encargo-sitio-tres-correcciones-2nov.md` (corrección 1).
+- [ ] [TÚ] Decisiones A a D del plan de Instagram de octubre (`marketing/redes/2026-10-octubre-posicionamiento/PLAN.md`, escrito el 23-oct; la nota del 2-nov de ese plan las da por abiertas). Cada una detiene algo:
+  - A. Pieza 3 «probado primero en lo nuestro», que toca el chequeo de la Ley 21.719 (pertenece a Verifica y Cumple). Detiene producir y programar esa pieza.
+  - B. Orden del bio y de los fijados mientras corre la campaña paga de Verifica y Cumple (hasta el 30-nov, tope $100.000). Detiene el orden de los enlaces del día 1 y los fijados.
+  - C. Precios en la imagen: levantar o no la regla del 31-ago. Detiene la lámina 2 de la pieza 2.
+  - D. Pieza 1 con tres hallazgos reales de prospectos que recibieron un correo en julio y podrían reconocerse. Detiene programar la pieza 1.
+- [ ] [TÚ] Pegar a mano los perfiles nuevos de LinkedIn (el de Ramón y la página de SpindleLab) e Instagram, desde el kit `marketing/redes/marca-personal/perfil-linkedin.md` (versión 2-nov-2026). Ninguna sesión entra a esas cuentas.
+
 ---
 
 ## Rutina semanal tipo (horas de supervisión)
@@ -177,5 +211,5 @@ El centro de gravedad cambia: entregar impecable a los clientes cerrados (Claude
 **Reglas fijas (las que evitan el colapso):**
 - Tope duro de 50 contactos/semana **aunque los agentes puedan producir más** — el límite es la reputación del dominio, no la producción.
 - 2 clientes activos → outbound en pausa · 1 cliente → 25/semana · 0 clientes → 50/semana.
-- La promesa «mini-diagnóstico en 48 h» nunca se rompe (apuntar a 24 h como estándar interno).
+- La promesa «revisión gratis de una página, respuesta en un día hábil» no se rompe jamás.
 - Nada producido por IA se publica ni se envía sin pasada humana. Sin excepciones: la marca vende criterio experto.

@@ -1,0 +1,416 @@
+/* ============================================================================
+   driftime.css — el sistema del sitio en el lenguaje de driftime.com (5-oct-2026)
+
+   Contrato: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md
+   Referencia medida: …/referencia-driftime/lock-driftime.md
+   Implementación de referencia: …/tableros/driftime-home y driftime-desarrollo
+
+   TODO lleva prefijo d-, clases y variables. La v3 ya tiene .campo, .filete, .rotulo y
+   variables --bg, --gold en :root; sin prefijo, una página que cargue las dos hojas se
+   rompe en silencio.
+
+   La regla que manda: .d-display (Manrope 800 en mayúsculas) aparece en CINCO lugares del
+   sitio y en ninguno más — el titular del hero y las cuatro palabras de campo. Las páginas
+   internas tienen cero. Así lo hace driftime: 5 elementos contra 517.
+   ============================================================================ */
+
+:root {
+  --d-noche: #000;
+  --d-modulo: #161616;
+  --d-filete: rgba(247, 245, 240, 0.12);
+  --d-papel: #f7f5f0;
+  --d-gris: #9aa4b0;      /* 6,9:1 sobre negro */
+  --d-gris-2: #6b7580;
+  --d-oro: #c9a227;       /* solo el punto del wordmark del módulo */
+  /* Campos, todos AA de cuerpo (WCAG): navy 12,56:1, petróleo 5,03:1, ciruela 13,40:1 y
+     brasa 4,70:1. Brasa lleva blanco puro: driftime falla ahí (3,70:1) y no se copia. */
+  --d-brasa: #da3400;    --d-brasa-t: #ffffff;
+  --d-navy: #0e2a47;     --d-navy-t: #e4f1ec;
+  --d-petroleo: #0f766e; --d-petroleo-t: #fff4e2;
+  --d-ciruela: #341f34;  --d-ciruela-t: #ffefdd;
+  --d-r: 6px;            /* el único radio; 4 px solo dentro de un control */
+  --d-m: 40px;
+  --d-g: 16px;
+}
+@media (max-width: 767px) { :root { --d-m: 20px; --d-g: 10px; } }
+
+.d-body { background: var(--d-noche); color: var(--d-papel); font-family: 'Manrope', system-ui, sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; }
+.d-body a { color: inherit; }
+.d-body :focus-visible { outline: 2px solid var(--d-papel); outline-offset: 3px; }
+.d-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------------------------------------------------------------- escala */
+.d-display { font-weight: 800; text-transform: uppercase; font-size: clamp(2.4rem, 10vw, 7.5rem); line-height: 0.9; letter-spacing: -0.005em; margin: 0; }
+.d-h1 { font-size: clamp(2.25rem, 4.17vw, 3.75rem); line-height: 1.1; font-weight: 500; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }   /* 60 px */
+.d-h2 { font-size: clamp(1.375rem, 2.08vw, 1.875rem); line-height: 1.4; font-weight: 500; letter-spacing: -0.02em; margin: 0; } /* 30 px */
+.d-h3 { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.4; font-weight: 500; margin: 0; }                             /* 24 px */
+.d-guia { font-size: clamp(1.25rem, 1.67vw, 1.5rem); line-height: 1.5; font-weight: 400; margin: 0; }                           /* 24 / 20 px */
+.d-cuerpo { font-size: clamp(1.0625rem, 1.25vw, 1.125rem); line-height: 1.6; color: var(--d-gris); margin: 0; }                /* 18 px */
+.d-chico { font-size: 0.875rem; line-height: 1.5; }
+.d-gris { color: var(--d-gris); }
+.d-rot { font-size: 0.8125rem; font-weight: 500; color: var(--d-gris); margin: 0; }  /* rótulo: caja normal, nunca mayúsculas espaciadas */
+
+/* ---------------------------------------------------------------- piezas chicas */
+.d-btn { display: inline-flex; align-items: center; height: 36px; padding: 0 14px; border-radius: var(--d-r); background: var(--d-papel); color: #000 !important; font: 500 0.875rem/1 'Manrope', sans-serif; text-decoration: none; border: 0; cursor: pointer; white-space: nowrap; }
+.d-btn:hover { background: #fff; }
+.d-btn--alt { background: var(--d-modulo); color: var(--d-papel) !important; }
+.d-btn--alt:hover { background: #222; }
+.d-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.d-pills { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 4px; border-radius: var(--d-r); background: rgba(0, 0, 0, 0.22); align-self: flex-start; }
+.d-pill { height: 30px; padding: 0 12px; border-radius: 4px; border: 0; background: transparent; color: inherit; opacity: 0.62; font: 500 0.8125rem/1 'Manrope', sans-serif; cursor: pointer; }
+.d-pill[aria-selected='true'] { background: rgba(255, 255, 255, 0.14); opacity: 1; }
+/* Un campo con un solo servicio no tiene pestañas: la píldora es un rótulo, no un control
+   (QA final, técnica #7). Se ve como la activa. */
+.d-pill--rotulo { display: inline-flex; align-items: center; background: rgba(255, 255, 255, 0.14); opacity: 1; cursor: default; }
+
+/* ---------------------------------------------------------------- piezas de imagen */
+.d-pieza { position: relative; margin: 0; border-radius: var(--d-r); overflow: hidden; background: var(--d-modulo); }
+.d-pieza picture { display: contents; }
+.d-pieza img, .d-pieza video { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Etiquetas ARRIBA: abajo las tapa el aviso de cookies (medido a 1440x900: aviso desde
+   y=827), y el rótulo de una pieza de concepto tiene que verse sin scroll. */
+.d-etq { position: absolute; left: 10px; top: 10px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.d-etq span { background: rgba(0, 0, 0, 0.66); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); color: var(--d-papel); font-size: 0.75rem; font-weight: 500; padding: 5px 8px; border-radius: 4px; }
+.d-etq .d-etq--concepto { background: var(--d-papel); color: #000; }
+/* Capturas planas: arriba está la cabecera del sitio retratado y la etiqueta le tapaba el
+   wordmark (re-verificación de la QA final). Van abajo; están lejos del primer pantallazo,
+   así que la regla del 5-oct (arriba, por el aviso de cookies) no aplica. */
+.d-pieza--etq-abajo .d-etq { top: auto; bottom: 10px; }
+@media (min-width: 1025px), (min-width: 768px) and (orientation: landscape) { .d-pieza--etq-abajo-esc .d-etq { top: auto; bottom: 10px; } }
+
+.d-fila { display: grid; gap: var(--d-g); }
+.d-fila--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.d-fila--4 .d-pieza { aspect-ratio: 0.91; }          /* el ratio medido en driftime */
+.d-fila--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.d-fila--3 .d-pieza { aspect-ratio: 4 / 3; }
+.d-fila--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.d-fila--2 .d-pieza { aspect-ratio: 16 / 9; }
+@media (max-width: 767px) {
+  /* Celular: carrusel con la siguiente pieza asomándose, como driftime. */
+  .d-fila { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; margin-right: calc(var(--d-m) * -1); padding-right: var(--d-m); scrollbar-width: none; }
+  .d-fila::-webkit-scrollbar { display: none; }
+  .d-fila .d-pieza { flex: 0 0 78%; scroll-snap-align: start; }
+  .d-fila--2 .d-pieza, .d-fila--3 .d-pieza { flex-basis: 86%; }
+}
+
+/* ---------------------------------------------------------------- hero de la home */
+.d-hero { min-height: 100svh; padding: 112px var(--d-m) 28px; display: flex; flex-direction: column; }
+.d-instr { max-width: 720px; }
+.d-instr .d-rot { margin-bottom: 10px; }
+.d-dom { display: flex; align-items: stretch; height: 64px; background: var(--d-papel); border-radius: var(--d-r); padding: 6px; }
+.d-dom input { flex: 1; min-width: 0; border: 0; background: transparent; color: #000; font: 500 1.375rem/1 'Manrope', sans-serif; padding: 0 14px; outline: none; }
+.d-dom input::placeholder { color: #6b6b6b; }
+.d-dom:focus-within { box-shadow: 0 0 0 2px var(--d-noche), 0 0 0 4px var(--d-papel); }
+.d-dom button { flex: none; border: 0; border-radius: 4px; background: #000; color: var(--d-papel); font: 500 0.9375rem/1 'Manrope', sans-serif; padding: 0 20px; cursor: pointer; }
+.d-dom button:disabled { opacity: 0.6; cursor: progress; }
+.d-instr .d-nota { margin: 10px 0 0; font-size: 0.9375rem; line-height: 1.5; color: var(--d-gris); }
+.d-instr .d-nota b { color: var(--d-papel); font-weight: 600; }
+.d-titular { margin-top: auto; padding-top: 40px; }
+.d-ojillo { margin: 0 0 clamp(14px, 2.2vw, 30px);   /* el acento de la Í sobresale de la interlínea 0,9 */
+   font-size: clamp(1rem, 1.4vw, 1.25rem); font-weight: 500; }
+.d-hero .d-fila { margin-top: 24px; }
+/* El titular también escala por alto, como el de los campos (QA final, mirada #3): en los
+   notebooks de 720 y 768 de alto quedaba en 120 px y de la obra asomaban solo las etiquetas
+   (el lock §5.1 pide la obra arriba del pliegue). Bajo 800 px de alto, menos aire arriba. */
+.d-hero .d-display { font-size: clamp(2.4rem, min(10vw, 14svh), 7.5rem); }
+@media (min-width: 768px) and (max-height: 800px) { .d-hero { padding-top: 96px; } .d-titular { padding-top: 24px; } }
+/* FILA DEL HERO EN PROPORCIONES MIXTAS (QA final, mirada #5): cada pieza en su proporción
+   (--r), todas del mismo alto, de margen a margen y sin recorte: el alto sale del ancho de la
+   fila menos los tres huecos, dividido por la suma de las proporciones (--suma). */
+.d-fila--hero { display: flex; align-items: flex-end; gap: var(--d-g); container-type: inline-size; }
+.d-fila--hero .d-pieza { flex: none; aspect-ratio: var(--r, 1); width: auto; height: calc((100cqw - 3 * var(--d-g) - 1px) / var(--suma, 4)); }
+/* Etiquetas en fila cuando caben (la pieza de concepto lleva dos): apiladas tapaban un
+   cuarto de la pieza ancha. Si no caben, se apilan solas. */
+.d-hero .d-etq { flex-direction: row; flex-wrap: wrap; }
+/* Celular y TABLETA VERTICAL (QA final, mirada #1: a 768 × 1024 quedaban cuatro miniaturas de
+   160 × 176 y 380 px de negro sobre el titular): carrusel con el alto común y la siguiente
+   asomándose. El alto se fija para que la pieza ancha quepa entera al detenerse. */
+@media (max-width: 767px), (max-width: 1024px) and (orientation: portrait) {
+  .d-fila--hero { overflow-x: auto; scroll-snap-type: x mandatory; margin-right: calc(var(--d-m) * -1); padding-right: var(--d-m); scrollbar-width: none; container-type: normal; }
+  .d-fila--hero::-webkit-scrollbar { display: none; }
+  .d-fila--hero .d-pieza { flex: none; height: calc((100vw - var(--d-m)) * 0.68); scroll-snap-align: start; }
+}
+/* En carrusel el titular ya no se ancla al fondo de la pantalla: con la fila más baja, el
+   margen automático abría un hueco negro entre el chequeo y el titular (a 768 × 1024 eran
+   ~380 px). El hero mide lo que trae y la presentación sigue debajo. */
+/* Solo en TABLETA: en celular el hero vuelve a llenar la pantalla con el titular anclado
+   abajo (re-verificación de la QA final: aplicado también al celular, la obra bajaba de
+   273 × 300 a 229 × 252 y quedaban 99 px de negro bajo la fila). */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .d-hero { min-height: 0; }
+  .d-hero .d-titular { margin-top: 0; }
+}
+/* Celular: el alto común más grande con el que la pieza ancha (4:3) todavía cabe entera al
+   detenerse el carrusel (ancho visible = 100vw − margen). */
+@media (max-width: 767px) { .d-fila--hero .d-pieza { height: calc((100vw - var(--d-m)) * 0.74); } }
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .d-fila--hero .d-pieza { height: calc((100vw - var(--d-m)) * 0.4); }
+  .d-hero .d-titular { padding-top: clamp(48px, 8svh, 96px); }
+}
+@media (max-width: 767px) {
+  .d-hero { padding-top: 96px; }
+  .d-dom { height: auto; flex-direction: column; gap: 6px; }
+  /* flex: none: en columna, el flex: 1 (base 0 %) le ganaba al height y dejaba el campo en
+     24 px (spec §7, 6-oct; aplicado en la revisión cruzada). */
+  .d-dom input { flex: none; height: 52px; font-size: 1.125rem; }
+  .d-dom button { height: 48px; }
+}
+
+/* ---------------------------------------------------------------- bloques de texto */
+.d-pres { padding: 180px var(--d-m) 200px; }
+.d-pres .d-guia { max-width: 780px; }
+.d-pres .d-btns { margin-top: 28px; }
+@media (max-width: 767px) { .d-pres { padding: 110px var(--d-m) 130px; } }
+
+/* ---------------------------------------------------------------- campos pegajosos */
+/* Cada campo tapa al anterior. min-height y no altura fija: en celular crece en vez de
+   recortar. El z-index sube campo a campo. */
+.d-campo { position: sticky; top: 0; height: 100svh; padding: 92px var(--d-m) 32px; display: flex; flex-direction: column; }   /* arriba: libra el módulo de nav fijo (termina en ~74 px) */
+/* UNA PANTALLA EXACTA (5-oct, pedido de Ramón: «las imágenes quedan fuera del navegador").
+   Medido antes en 8 pantallas reales: en notebook la fila recortaba de 25 a 73 % de cada
+   imagen, y en celular la segunda pieza quedaba 244 px fuera del borde derecho.
+   Ahora: la fila llena exactamente lo que deja la cabecera (flex 1). En escritorio cada
+   pieza mantiene SU proporción (--r, ancho/alto natural) y las dos comparten alto; si a lo
+   ancho no caben, el alto baja hasta que quepan (--suma = r1 + r2, en cqw de la fila). */
+.d-campo .d-fila { flex: 1 1 0; min-height: 0; margin-top: 0; padding-top: 28px; display: flex; align-items: flex-end; gap: var(--d-g); container-type: inline-size; }
+/* Escritorio = desde 1025 px, o desde 768 en horizontal. Una tableta vertical va como
+   celular (QA final, mirada #1: a 768 × 1024 quedaban 357 a 433 px de color vacío y tiras de
+   imagen de 166 a 242 px). */
+@media (min-width: 1025px), (min-width: 768px) and (orientation: landscape) {
+  .d-campo .d-fila .d-pieza { flex: none; aspect-ratio: var(--r, 1.7778); width: auto; height: min(100%, calc((100cqw - var(--d-g)) / var(--suma, 3.5556))); }
+}
+@media (min-width: 768px) {
+  .d-campo .d-display { font-size: clamp(2.4rem, min(10vw, 14svh), 7.5rem); }   /* en pantallas bajas el titular cede alto a las imágenes */
+}
+.d-campo__cab { display: flex; flex-direction: column; gap: 18px; max-width: 720px; }
+.d-campo .d-display { margin-bottom: 6px; }
+.d-desc { font-size: clamp(1.125rem, 1.67vw, 1.5rem); line-height: 1.5; margin: 0; }   /* 24 px, como driftime */
+.d-desc b { font-weight: 600; }
+.d-campo .d-fila { margin-top: auto; padding-top: 32px; }
+.d-campo--brasa { background: var(--d-brasa); color: var(--d-brasa-t); z-index: 2; }
+.d-campo--navy { background: var(--d-navy); color: var(--d-navy-t); z-index: 3; }
+.d-campo--petroleo { background: var(--d-petroleo); color: var(--d-petroleo-t); z-index: 4; }
+.d-campo--ciruela { background: var(--d-ciruela); color: var(--d-ciruela-t); z-index: 5; }
+.d-panel[hidden] { display: none; }
+/* Foco no oculto en la pila (spec §3): sin JS, el campo con el foco sube encima de los demás y
+   de lo que lo tapa. FocoPila marca cada campo con data-foco="js" y esto se apaga. */
+.d-campo:not([data-foco]):focus-within { z-index: 7; }
+@media (max-width: 767px) { .d-campo { padding: 84px var(--d-m) 24px; } .d-campo__cab { gap: 14px; } }
+@media (max-width: 767px), (max-width: 1024px) and (orientation: portrait) {
+  /* Celular y tableta vertical: las dos piezas lado a lado, dentro de la pantalla (no
+     carrusel: en un campo pegajoso la que asomaba quedaba cortada contra el borde). Celdas
+     verticales que llenan el alto que queda, con tope para que en teléfonos altos no se
+     estiren. */
+  .d-campo .d-fila { display: grid; grid-template-columns: 1fr 1fr; align-items: end; overflow: visible; margin-right: 0; padding-right: 0; scroll-snap-type: none; padding-top: 22px; }
+  .d-campo .d-fila .d-pieza { height: 100%; max-height: calc((100cqw - var(--d-g)) / 2 * 1.35); aspect-ratio: auto; flex: none; }
+}
+/* Tableta vertical: sin tope, la fila llena lo que deja la cabecera (a 768 × 1024, celdas de
+   336 × 555; con el tope de celular quedaban ~120 px de color vacío entre los botones y la
+   fila, y con 1,75 todavía 91 a 118 en 820 × 1180 y 1024 × 1366). */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .d-campo .d-fila .d-pieza { max-height: none; }
+}
+/* Pantallas muy bajas: el campo no cabe en una pantalla aunque las imágenes se achiquen. Ahí
+   deja de pegarse y se lee de corrido; nada queda escondido bajo el campo siguiente. */
+@media (min-width: 768px) and (max-height: 679px), (max-width: 767px) and (max-height: 599px) {
+  .d-campo { position: relative; height: auto; }
+  .d-campo .d-fila { flex: none; height: clamp(180px, 42vw, 320px); }
+}
+
+/* Flujo en línea, no flex: con flex, a 390 el separador quedaba solo al final de una línea y
+   «+ IVA» huérfano en la siguiente. «+ IVA» va pegado a la última cifra y no se parte.
+   Sin opacidad en los rótulos: a 0,72 «Desde» medía 3,05:1 sobre brasa (verificar.mjs). */
+.d-precio { display: block; font-size: 1rem; line-height: 1.6; margin: 0; }
+.d-precio .d-pre-sep { display: inline-block; width: 1px; height: 0.875em; vertical-align: -0.08em; margin: 0 0.75em; background: currentColor; opacity: 0.35; }
+.d-precio .d-pre-rot:last-child { margin-left: 0.5em; white-space: nowrap; }
+.d-precio b { font-weight: 600; }
+/* Marcado con una alternativa por trozo (`.d-pre-alt`, el del índice de servicios; QA final,
+   conversión #4): cada alternativa con su plan no se parte, y entre las piezas hay espacios
+   reales (sin CSS se leía «Desde$390.000…+ IVA»). Los márgenes descuentan ese espacio. */
+.d-precio .d-pre-alt { white-space: nowrap; }
+.d-precio .d-pre-alt .d-pre-sep { margin: 0 0.5em 0 0.75em; }
+.d-precio .d-pre-alt .d-pre-rot:last-child { margin-left: 0.25em; }
+
+/* Lo que va después de los campos tapa al último campo. */
+.d-tapa { position: relative; z-index: 6; background: var(--d-noche); }
+
+/* ---------------------------------------------------------------- quién (home) */
+.d-quien { padding: 180px var(--d-m) 160px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); align-items: end; }
+.d-quien .d-pieza { aspect-ratio: 3 / 4; }
+.d-quien__txt { padding-left: clamp(0px, 4vw, 64px); display: flex; flex-direction: column; gap: 22px; }
+@media (max-width: 767px) { .d-quien { grid-template-columns: 1fr; padding: 110px var(--d-m) 100px; } .d-quien__txt { padding-left: 0; } }
+
+/* ---------------------------------------------------------------- índice editorial */
+.d-indice { padding: 40px var(--d-m) 160px; }
+.d-indice__cab { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
+.d-indice ol, .d-indice ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--d-filete); }
+.d-indice li > a { display: grid; grid-template-columns: 120px minmax(0, 1fr) 24px; gap: var(--d-g); align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--d-filete); text-decoration: none; }
+.d-indice li > a:hover .d-h3 { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.d-indice time { color: var(--d-gris); font-size: 0.9375rem; }
+.d-flecha { color: var(--d-gris); }
+@media (max-width: 767px) { .d-indice li > a { grid-template-columns: 1fr; gap: 6px; } .d-flecha { display: none; } .d-indice__cab { flex-direction: column; align-items: flex-start; } }
+
+/* ---------------------------------------------------------------- páginas internas */
+.d-cab { padding: min(34vh, 300px) var(--d-m) 40px; max-width: 1100px; }
+.d-miga { font-size: 0.8125rem; color: var(--d-gris); margin: 0 0 22px; }
+.d-miga a { text-decoration: none; } .d-miga a:hover { text-decoration: underline; }
+.d-cab .d-linea { margin: 14px 0 26px; font-size: clamp(1rem, 1.25vw, 1.125rem); line-height: 1.5; color: var(--d-gris); max-width: 560px; }
+.d-sangre { margin: 0 var(--d-m); border-radius: var(--d-r); overflow: hidden; aspect-ratio: 2.39; }
+.d-sangre img, .d-sangre video { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 767px) { .d-sangre { aspect-ratio: 4 / 3; } }
+.d-entrada { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); padding: 28px var(--d-m) 0; }
+.d-nota-card { align-self: start; background: var(--d-modulo); border-radius: var(--d-r); padding: 14px 16px; font-size: 0.875rem; line-height: 1.5; color: var(--d-gris); max-width: 360px; margin: 0; }
+.d-nota-card b { color: var(--d-papel); font-weight: 600; }
+@media (max-width: 767px) { .d-entrada { grid-template-columns: 1fr; gap: 24px; } .d-entrada .d-guia { order: -1; } }
+
+/* Sección con etiqueta pegajosa: el h2 queda fijo a la izquierda mientras el texto corre. */
+.d-sec { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--d-g); padding: 180px var(--d-m) 0; }
+.d-eti { position: sticky; top: 120px; align-self: start; }
+.d-sec--quieta .d-eti { position: static; }   /* sección corta: la etiqueta no se pega (se corría bajo el texto) */
+.d-eti .d-chico { margin-top: 10px; color: var(--d-gris); max-width: 300px; }
+@media (max-width: 767px) { .d-sec { grid-template-columns: 1fr; padding-top: 110px; gap: 28px; } .d-eti { position: static; } }
+.d-filas { display: flex; flex-direction: column; }
+.d-filas > * { padding: 22px 0; border-top: 1px solid var(--d-filete); margin: 0; }
+.d-filas > *:last-child { border-bottom: 1px solid var(--d-filete); }
+
+/* planes: filas editoriales, NUNCA tarjetas iguales (tell B1 del detector) */
+.d-plan { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 24px; align-items: baseline; }
+.d-plan .d-plan__precio { font-weight: 600; font-size: clamp(1.0625rem, 1.25vw, 1.125rem); white-space: nowrap; }
+.d-plan .d-cuerpo, .d-plan ul { grid-column: 1 / -1; }
+.d-plan ul { margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.d-plan li { font-size: 0.8125rem; background: var(--d-modulo); border-radius: 4px; padding: 6px 9px; color: var(--d-papel); }
+@media (max-width: 767px) { .d-plan { grid-template-columns: 1fr; } .d-plan .d-plan__precio { white-space: normal; } }
+.d-fase { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 4px 16px; }
+.d-fase .d-fase__n { color: var(--d-gris); font-variant-numeric: tabular-nums; padding-top: 4px; }
+.d-fase .d-cuerpo { grid-column: 2; }
+@media (max-width: 767px) { .d-fase { grid-template-columns: 1fr; } .d-fase .d-cuerpo { grid-column: 1; } }   /* la columna de 56 px dejaba el texto en ~270 px */
+.d-faq .d-h3 { margin-bottom: 8px; }
+
+/* Galería asimétrica, como los casos de driftime. */
+.d-galeria { padding: 180px var(--d-m) 0; display: grid; gap: var(--d-g); grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.d-galeria__cab { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 12px; }
+/* Una pieza ancha que trae su proporción (`proporcion` en Pieza → --r) la respeta y no se
+   recorta; sin ella, 16:9. Para la captura de Combeau (2,34) en la galería de Desarrollo web. */
+.d-g-ancha { grid-column: 1 / -1; aspect-ratio: var(--r, 16 / 9); }
+.d-g-alta { grid-column: span 4; aspect-ratio: 3 / 4; }
+.d-g-media { grid-column: span 8; aspect-ratio: 4 / 3; }
+.d-g-mitad { grid-column: span 6; aspect-ratio: 4 / 3; }
+@media (max-width: 767px) { .d-galeria { padding-top: 110px; grid-template-columns: 1fr; } .d-g-ancha, .d-g-alta, .d-g-media, .d-g-mitad { grid-column: 1 / -1; } .d-g-alta { aspect-ratio: 4 / 5; } .d-galeria__cab { flex-direction: column; align-items: flex-start; } }
+
+.d-siguiente { margin: 200px var(--d-m) 0; padding: 28px 0 36px; border-top: 1px solid var(--d-filete); display: flex; justify-content: space-between; align-items: baseline; gap: 16px; text-decoration: none; }
+.d-siguiente:hover .d-h1 { text-decoration: underline; text-underline-offset: 8px; text-decoration-thickness: 2px; }
+/* Celular: el rótulo sobre el título, siempre (QA final, mirada #7). En línea, el título
+   quedaba alineado a la derecha en una columna de ~270 px, partido en dos. */
+@media (max-width: 767px) { .d-siguiente { flex-direction: column; align-items: flex-start; gap: 6px; } }
+
+/* ---------------------------------------------------------------- pie */
+.d-pie { position: relative; z-index: 6; background: #0e0e0e; padding: 72px var(--d-m) 28px; margin-top: 120px; overflow: hidden; container-type: inline-size; }
+.d-pie__arriba { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--d-g); }
+.d-pie__nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; font-size: 0.9375rem; align-content: start; }
+.d-pie__nav a { text-decoration: none; opacity: 0.9; } .d-pie__nav a:hover { text-decoration: underline; }
+/* Medido: el texto mide 4,744 veces su tamaño de letra. Ancho del CONTENEDOR (cqi, no vw:
+   así no se pasa con una barra de scroll visible) / 4,78. Su punto va en papel: el oro de
+   esta vista ya está en el módulo de navegación. Un oro por vista. */
+.d-gigante { font-family: 'Gabarito', sans-serif; font-weight: 800; font-size: calc(100cqi / 4.78); line-height: 0.78; letter-spacing: -0.035em; margin: 96px 0 calc(0.16em + 16px); white-space: nowrap; }   /* la «p» baja 0,15 em bajo la caja (interlínea 0,78): medido */
+.d-pie__legal { display: flex; justify-content: space-between; gap: 16px; font-size: 0.8125rem; color: var(--d-gris); }   /* gris-2 daba 4,12:1 a 13 px */
+@media (max-width: 767px) { .d-pie__arriba { grid-template-columns: 1fr; gap: 48px; } .d-gigante { margin-top: 64px; } }
+.d-home .d-pie { margin-top: 0; }
+
+@media (prefers-reduced-motion: reduce) { .d-fila { scroll-behavior: auto; } }
+
+/* ---------------------------------------------------------------- aviso de cookies */
+/* El aviso vive en Layout.astro (spec §6: no se toca) y traía el sistema anterior: fondo azul
+   grisáceo, enlace verde azulado y texto en Inter, el único Inter de la v3 (QA final, mirada
+   #8 y técnica #5). Aquí se pinta en la paleta v3, solo en las páginas del sistema. Los
+   selectores llevan `html body` y el contenedor intermedio porque Astro aísla el <style> del
+   aviso con atributos (`#cookie-banner[data-astro-cid-…] a[data-astro-cid-…]`, 1-2-1): con
+   `.d-body #cookie-banner a` (1-1-1) ganaba el verde azulado. */
+html body.d-body #cookie-banner { background: var(--d-modulo); border-top: 1px solid var(--d-filete); }
+html body.d-body #cookie-banner .cb-inner p { font-family: 'Manrope', system-ui, sans-serif; color: var(--d-gris); }
+html body.d-body #cookie-banner .cb-inner a { color: var(--d-papel); font: inherit; font-weight: 500; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+html body.d-body #cookie-banner .cb-actions button { font: 500 0.875rem/1 'Manrope', sans-serif; letter-spacing: 0; height: 36px; padding: 0 14px; border-radius: var(--d-r); }
+html body.d-body #cookie-banner #cookie-accept { background: var(--d-papel); border-color: var(--d-papel); color: #000; }
+html body.d-body #cookie-banner #cookie-accept:hover { background: #fff; border-color: #fff; }
+html body.d-body #cookie-banner #cookie-reject { background: transparent; color: var(--d-papel); border-color: rgba(247, 245, 240, 0.32); }
+html body.d-body #cookie-banner #cookie-reject:hover { background: rgba(247, 245, 240, 0.08); }
+/* PANTALLAS BAJAS (E1, 13-oct). En la primera carga el aviso medía 109 a 146 px en pantallas
+   de 320 a 430 de alto y tapaba el chequeo: en /diagnostico/ el botón entero a 320 × 568 y
+   el campo o el botón en los siete teléfonos apaisados medidos; en la home, 26 px del botón a
+   568 × 320. Se compacta solo por alto, nunca por ancho: texto a 12 px (el tamaño de la
+   etiqueta de pieza), menos relleno y, en horizontal, el texto y los botones en una fila.
+   Los botones siguen en 36 px. Medido: 53 a 67 px en horizontal (568 × 320 a 1440 × 500) y
+   99 a 132 en vertical (480 × 600 a 320 × 568); antes, 109 a 146.
+   `.cb-inner` y `.cb-actions` llevan la clase doble porque Astro los deja en 1-3-0. */
+@media (orientation: landscape) and (max-height: 500px) {
+  html body.d-body #cookie-banner { padding: 8px 16px; }
+  html body.d-body #cookie-banner .cb-inner.cb-inner { flex-direction: row; flex-wrap: nowrap; align-items: center; gap: var(--d-g); }
+  html body.d-body #cookie-banner .cb-inner p { flex: 1 1 auto; min-width: 0; max-width: none; font-size: 0.75rem; line-height: 1.4; }
+  html body.d-body #cookie-banner .cb-actions.cb-actions { gap: 8px; }
+}
+@media (orientation: portrait) and (max-height: 600px) {
+  html body.d-body #cookie-banner { padding: 10px 16px; }
+  html body.d-body #cookie-banner .cb-inner.cb-inner { gap: 8px; }
+  html body.d-body #cookie-banner .cb-inner p { font-size: 0.75rem; line-height: 1.4; }
+}
+/* El aviso que confirma la elección (#cookie-aviso) lo crea consent-banner.js al pulsar Aceptar
+   o Rechazar, con estilo en línea: radio 16, sombra, fondo #161D26 y letra Inter (P63; medido,
+   81 glifos de Inter en la vista). Dura 5 s, salvo el que avisa de un cambio hecho en otra
+   pestaña, que trae dos botones («Recargar ahora» y «Cerrar») y queda puesto. Por venir en
+   línea, aquí todo va con !important. */
+html body.d-body #cookie-aviso { background: var(--d-modulo) !important; border: 1px solid var(--d-filete) !important; border-radius: var(--d-r) !important; box-shadow: none !important; color: var(--d-papel) !important; font-family: 'Manrope', system-ui, sans-serif !important; font-size: 0.875rem !important; line-height: 1.5 !important; }
+html body.d-body #cookie-aviso button { display: inline-flex; align-items: center; height: 36px; padding: 0 14px !important; border-radius: var(--d-r) !important; font: 500 0.875rem/1 'Manrope', sans-serif !important; }
+html body.d-body #cookie-aviso button:first-child { background: var(--d-papel) !important; color: #000 !important; }
+html body.d-body #cookie-aviso button:first-child:hover { background: #fff !important; }
+html body.d-body #cookie-aviso button:last-child { background: transparent !important; color: var(--d-papel) !important; border: 1px solid rgba(247, 245, 240, 0.32) !important; }
+html body.d-body #cookie-aviso button:last-child:hover { background: rgba(247, 245, 240, 0.08) !important; }
+
+/* ---------------------------------------------------------------- foco bajo lo fijo */
+/* Ningún control enfocado queda bajo el aviso de cookies ni bajo el módulo de navegación
+   (WCAG 2.2 SC 2.4.11; QA final, técnica #2: con el aviso abierto, 111 de 1.259 paradas
+   quedaban tapadas, entre ellas el consentimiento de contacto a 390 y la primera pestaña de la
+   home a 1440).
+   · ABAJO, el aviso: scroll-padding-bottom con el alto del aviso + ~18 px, mientras está
+     abierto. No mueve ninguna ancla (las anclas se alinean arriba). El aviso mide 78 px desde
+     885 px de ancho (una fila), 134 entre 681 y 884 (el texto y los botones en dos filas),
+     109 a 128 entre 360 y 680 y 146 a 320 (medido en /contacto/). En pantallas
+     bajas el aviso se compacta y lleva sus propios valores (al final del bloque).
+   · ARRIBA, el módulo: scroll-padding-top de 100 px SOLO mientras hay foco de teclado
+     (`:focus-visible`). Siempre puesto, corría 100 px cada ancla que ya tiene su propio
+     scroll-margin medido (medido: #planes de 180 a 280, #contacto-form de 88 a 188, el índice
+     del artículo de 104 a 204, las bandas del índice de servicios de 128 a 227). Con
+     `:focus-visible`, un clic, un toque o Enter sobre un enlace caen donde caían (medido:
+     #planes 180 y 110, #contacto-form 88 y 96). Lo único que se corre es el resultado del
+     chequeo enviado con Enter desde el campo, que sigue con foco de teclado: cae en 196 y no
+     en 96 (con clic, en 96).
+   Probado antes como scroll-margin de los controles: Chrome no hace scroll cuando el control
+   ya está entero dentro de la ventana aunque esté bajo el aviso (quedaba 1 de 38 en la home).
+   · EL PANEL DEL MENÚ, con el aviso abierto (cierre de la QA 13-oct): su relleno de abajo
+     pasa a ese mismo valor, así que todo su contenido se puede subir hasta ~18 px sobre el
+     aviso. Antes el final quedaba bajo el aviso sin scroll que lo subiera: «…leerlo.» 6 px
+     a 1280 × 650 (el panel no hacía scroll), 19 a 568 × 320 y 80 a 84 en celular vertical.
+     Las filas y el aire de arriba no se mueven; sin aviso, el relleno es el de NavV3.
+   Por eso el valor vive en una variable, --d-bajo-aviso: una sola tabla de altos del aviso
+   para el scroll-padding y para el panel. */
+html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 96px; }
+@media (max-width: 899px) {
+  html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 152px; }
+}
+@media (max-width: 680px) {
+  html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 146px; }
+}
+@media (max-width: 359px) {
+  html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 164px; }
+}
+/* Pantallas bajas, con el aviso compacto (más arriba): 67 + 19 en horizontal y 132 + 18 en
+   vertical. Van después de las de ancho para ganarles. */
+@media (orientation: landscape) and (max-height: 500px) {
+  html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 86px; }
+}
+@media (orientation: portrait) and (max-height: 600px) {
+  html:has(body.d-body):has(#cookie-banner:not([hidden])) { --d-bajo-aviso: 150px; }
+}
+html:has(body.d-body):has(#cookie-banner:not([hidden])),
+html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay { scroll-padding-bottom: var(--d-bajo-aviso); }
+html:has(#cookie-banner:not([hidden])) .d-body #menu-overlay .menu-nav { padding-bottom: var(--d-bajo-aviso); }
+html:has(body.d-body):has(:focus-visible),
+.d-body #menu-overlay { scroll-padding-top: 100px; }

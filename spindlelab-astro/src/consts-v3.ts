@@ -1,0 +1,47 @@
+// Rutas de la MAQUETA v3.
+//
+// Existe aparte de consts.ts a propósito: ese archivo lo usa el sitio vivo, y cambiarle
+// las rutas para que la maqueta navegue habría movido los enlaces de producción.
+//
+// El síntoma que esto arregla: el menú, el pie y todos los botones de «Conversemos tu
+// proyecto» apuntaban a /contacto/, /servicios/..., /blog/ — las rutas publicadas. Al
+// recorrer la maqueta, el primer clic en el menú te sacaba del v3 y te dejaba en el sitio
+// en vivo, que es justo lo que no sirve para evaluar una propuesta.
+export const CONTACTO_V3 = '/contacto/';
+
+// UN NOMBRE POR SERVICIO, en caja de oración (antislop A6: sin Title Case, tampoco en la nav).
+// Es el mismo nombre del h1, la miga, el «Siguiente» de cada servicio, la home y el índice
+// (oferta-v3.json). «Paid Media (Google)» y no «Paid Media»: así se llama en el h1, la miga y
+// el índice. El <title> y el nodo Service del JSON-LD conservan el nombre de producto.
+// Revisión cruzada, 6-oct (spec §7).
+export const SERVICIOS_V3 = [
+  { href: '/servicios/desarrollo-web/', label: 'Desarrollo web' },
+  { href: '/servicios/visibilidad-en-ia/', label: 'Visibilidad en IA' },
+  { href: '/servicios/auditoria-seo-tecnica/', label: 'Auditoría SEO técnica' },
+  { href: '/servicios/acompanamiento-mensual/', label: 'Acompañamiento mensual' },
+  { href: '/servicios/redes-sociales/', label: 'Gestión de redes sociales' },
+  { href: '/servicios/paid-media/', label: 'Paid Media (Google)' },
+];
+
+export const CASA_V3 = [
+  { href: '/trabajo/', label: 'Trabajo' },
+  { href: '/metodo/', label: 'Método' },
+  { href: '/nosotros/', label: 'Nosotros' },
+  { href: '/diagnostico/', label: 'Chequeo gratis' },
+  { href: '/blog/', label: 'Blog' },
+  { href: CONTACTO_V3, label: 'Contacto' },
+  // Privacidad no tiene versión v3: se deja apuntando a la publicada, que sí existe.
+  { href: '/privacidad/', label: 'Privacidad' },
+];
+
+// Imagen al compartir de la v3 (marketing/brand/og-v3/). La de titular va por defecto; la de
+// obra, solo donde se habla de sitios construidos. Raigal no está en la de obra: sin su rótulo
+// de concepto sería mostrar una clínica inventada como trabajo real.
+export const OG_V3 = {
+  imagen: '/assets/img/og-v3.jpg',
+  alt: 'SpindleLab. Estás pagando para que lleguen a tu sitio. Ahí se corta el circuito.',
+};
+export const OG_V3_OBRA = {
+  imagen: '/assets/img/og-v3-desarrollo-web.jpg',
+  alt: 'Tres sitios hechos por SpindleLab: el de fotografía y el book de modelo de Bernardo Combeau (cliente) y Verifica y Cumple, producto propio',
+};

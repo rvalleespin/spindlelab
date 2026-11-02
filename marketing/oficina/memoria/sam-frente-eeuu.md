@@ -3,8 +3,11 @@
 > Memoria de empleado del repo (la ve cualquier sesión). Actualizar al cerrar cada corrida.
 
 ## Estado
+- **⏹ CERRADO el 2026-10-19 por decisión de Ramón.** No retomar sin una decisión nueva y escrita de él.
 - **Creado:** 2026-08-04. Frente fundado por Tomás (troncal) con Ramón el mismo día.
-- **Fase:** arranque (día 0). Aún sin lista, sin audit piloto, sin Loom enviado.
+- **Cómo terminó:** 76 días en día 0. Sin lista, sin audit piloto, sin Loom enviado. No hubo aprendizaje del canal porque no hubo ejecución.
+- **Por qué se cierra:** la evaluación del 19-oct (`marketing/evaluacion-captacion-2026-10-19.md`) mostró que el cuello está en la conversión de los leads que ya responden. Abrir un mercado nuevo repetía el patrón de abrir un frente cada vez que una métrica se pone roja.
+- **Lo que se rescata:** el video-audit corto (Loom) como re-toque a un prospecto tibio en Chile.
 - **Fundamento (fuente de verdad):** `marketing/frente-eeuu/fundamento-frente-eeuu.md`.
 
 ## Decisiones ya tomadas (no re-litigar)

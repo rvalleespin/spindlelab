@@ -1,0 +1,131 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/trabajo.json",
+ "sha256": "0672568030eeaa98377de9f7c762d7de4c9200ce67a25b7dbeee29b3a031f4ef",
+ "id": "trabajo",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "trabajo",
+  "ruta": "/trabajo/",
+  "title": "Trabajo: un sitio de cliente y una herramienta · SpindleLab",
+  "description": "El sitio de un fotógrafo, que hicimos para un cliente, y Verifica y Cumple, una herramienta propia. Cada entrada dice de quién es.",
+  "senales": "Title y description nuevos de E13 (Clara): los de E12 hablaban de «diseño y desarrollo web» y de «cuatro marcas inventadas para rubros que atendemos» (esa frase insinuaba clientela: fila «medio» de la revisión del 23-oct). Los reconfirma Simón en la capa de señales.",
+  "estructura": "spec-visual.md §2.2: barra lateral con el h1, el conteo, la entradilla y el filtro; a la derecha el muro. Con dos entradas el muro queda en dos piezas; el filtro no se usa (desvios/home.md, sección 3, punto 8).",
+  "secciones": [
+   {
+    "id": "cabecera",
+    "nombre": "Título, bajada y filtro",
+    "trabajo": "Decir qué hay y cómo leer el tipo de cada entrada.",
+    "elementos": [
+     {
+      "id": "trabajo.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Trabajo",
+      "uso": "miga",
+      "estado": "queda"
+     },
+     {
+      "id": "trabajo.h1",
+      "rol": "h1",
+      "tinta": "Trabajo.",
+      "gris": "Un sitio hecho para un cliente y una herramienta propia.",
+      "texto": "Trabajo. Un sitio hecho para un cliente y una herramienta propia.",
+      "estado": "cambia",
+      "origen": "brief-de-obra E13 §3 (/trabajo/ queda con dos entradas)",
+      "antes": "Trabajo. Lo que diseñamos y programamos, y cómo lo resolveríamos en tu rubro.",
+      "por_que": "«Cómo lo resolveríamos en tu rubro» hablaba de los cuatro conceptos, que salen. Lock §14: gris de 10 palabras (rango 6 a 13)."
+     },
+     {
+      "id": "trabajo.entradilla",
+      "rol": "entradilla",
+      "texto": "Cada entrada dice de quién es. Cliente es un encargo pagado: hoy hay uno con caso publicado, con sus dos sitios. Propio lo hicimos para nosotros, sin encargo.",
+      "estado": "cambia",
+      "origen": "texto-paso2.json «trabajo.entradilla» (E12)",
+      "antes": "Cada entrada dice de quién es. Cliente es un encargo pagado: hoy hay uno con caso publicado, con sus dos sitios. Propio lo hicimos para nosotros, sin encargo. Concepto es una marca inventada para mostrar cómo trabajaríamos un rubro: no existe, no tuvo clientes y no lleva cifras.",
+      "por_que": "Sale la explicación de «Concepto»: ya no hay conceptos en el índice (decisión 3 del brief)."
+     },
+     {
+      "id": "trabajo.conteo",
+      "rol": "rotulo",
+      "texto": "(2)",
+      "nota": "Conteo verdadero de entradas; sale del dato, no se escribe a mano.",
+      "estado": "cambia",
+      "antes": "(10)"
+     },
+     {
+      "id": "trabajo.filtro",
+      "rol": "rotulo",
+      "uso": "filtro",
+      "opciones": [
+       "Todo (2)",
+       "Cliente (1)",
+       "Propio (1)"
+      ],
+      "nota": "Los conteos son verdaderos con dos entradas (una de cliente y una propia). Pero un filtro que reparte dos piezas en 1 y 1 no filtra nada: la recomendación es que Diego lo saque de la plantilla (y con él trabajo.filtro.nombre). Los dejo escritos para que el build, que compara estos conteos con las entradas, pase si Diego decide mantenerlo.",
+      "estado": "cambia",
+      "antes": [
+       "Todo (10)",
+       "Cliente (2)",
+       "Propio (4)",
+       "Concepto (4)"
+      ]
+     },
+     {
+      "id": "trabajo.filtro.nombre",
+      "rol": "nota",
+      "texto": "Filtrar por tipo",
+      "uso": "nombre accesible",
+      "donde": "aria-label del grupo de botones del filtro (cada botón con aria-pressed)",
+      "estado": "queda",
+      "nota": "Sale junto con el filtro si Diego lo saca."
+     }
+    ],
+    "borrado": [
+     "La explicación de «Concepto» en la entradilla y su opción en el filtro: los cuatro conceptos (Sesenta, Ocelo, Doceavo, Tonela) salen del índice, de las descripciones y del JSON-LD. Quedan en el historial de git.",
+     "Las entradas de Praxi, «El chequeo de 21 señales», spindlelab.cl y las dos de concepto restantes: el brief deja dos entradas (Combeau y Verifica y Cumple). El chequeo sigue en /diagnostico/ y en la home; spindlelab.cl como pieza se retira del índice."
+    ]
+   }
+  ],
+  "entradas": [
+   {
+    "id": "combeau-fotografia",
+    "nombre": "Combeau",
+    "bajada": "Los dos sitios de un fotógrafo de retrato: el de fotografía y su book de modelo, en inglés. Él sube sus series desde un panel, y el sitio las publica con cada foto ajustada a la pantalla de quien la mira.",
+    "tipo": "Cliente",
+    "anio": "2026",
+    "linea": "Cliente · 2026",
+    "destino": "/trabajo/combeau/",
+    "cursor": "Ver el caso",
+    "fuente": "inventario-casos §2.1 y §2.2 (las dos etiquetas y su efecto: «él carga sus series solo», «805 kB → 95 kB», «0 kB de video en la carga inicial»)",
+    "estado": "cambia",
+    "origen": "texto-paso2.json trabajo.entradas «combeau-fotografia» y «combeau-modelo», unidas en una",
+    "antes": "Dos entradas: «Combeau, fotografía» (→ #fotografia) y «Combeau, modelo» (→ #modelo).",
+    "por_que": "El brief deja dos entradas en el índice y Combeau es un solo caso con dos partes: una tarjeta que lleva a la página, sin ancla. Se conserva el id «combeau-fotografia» porque lo leen src/pages/v3/servicios/desarrollo-web.astro:59 y :69 (entrada('combeau-fotografia')); el id no se renombra en esta obra.",
+    "herramientas_fuera": [
+     "Decap CMS",
+     "Netlify Image CDN",
+     "Video con carga diferida"
+    ],
+    "nota": "Portada de la tarjeta: la de fotografía (combeau-fotografia-45). El nombre ya no lleva «, fotografía»: el JSON-LD de la plantilla anteponía «Bernardo » a los ids que empiezan por «combeau-»; con el nombre «Combeau» el ListItem sigue diciendo «Bernardo Combeau»."
+   },
+   {
+    "id": "verifica-y-cumple",
+    "nombre": "Verifica y Cumple",
+    "bajada": "Revisa gratis las señales técnicas que la Ley 21.719, de datos personales, le pide a un sitio con formulario. No es asesoría legal ni certifica que cumples.",
+    "tipo": "Propio",
+    "anio": "2026",
+    "linea": "Propio · 2026",
+    "destino": "https://verifica.spindlelab.cl/",
+    "cursor": "Ver el sitio",
+    "fuente": "inventario-casos §2.3 y §4.1 y §7 («describe señales; no certifica»). Sin puntajes: ni el 36, ni el 73, ni el 100.",
+    "estado": "queda",
+    "origen": "texto-paso2.json trabajo.entradas «verifica-y-cumple»",
+    "herramientas_fuera": [
+     "Cloudflare Pages Functions"
+    ],
+    "pie": "La persona a caballo de esta portada está generada con IA.",
+    "nota": "Enlaza al producto, que responde; con la flecha ↗ en SVG junto al nombre y, oculto a la vista, «(sitio aparte: verifica.spindlelab.cl)»."
+   }
+  ],
+  "orden": "Combeau primero y Verifica y Cumple después: el único caso con página, y la pieza propia que enlaza afuera."
+ }
+}

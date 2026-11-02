@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="es-CL"><head><meta charset="utf-8">
+<link rel="stylesheet" href="base.css"><link rel="stylesheet" href="bots.css"></head><body>
+<div class="post a dark">
+
+  <div class="top">
+    <div class="eyebrow">Robots de IA y tu robots.txt</div>
+  </div>
+  <div class="rule"></div>
+
+  <div class="cuerpo">
+    <div class="h gancho">Bloquear a GPTBot<br>no te saca de las respuestas<br>de ChatGPT de hoy.</div>
+
+    <div class="code robots">
+      <div class="com"># entrenamiento de modelos</div>
+      <div class="reg">User-agent: <b>GPTBot</b></div>
+      <div class="reg">Disallow: <b>/</b></div>
+      <div class="efecto">Pide que no usen tu texto para entrenar modelos.</div>
+
+      <div class="sep"></div>
+
+      <div class="com"># búsqueda de ChatGPT</div>
+      <div class="reg">User-agent: <b>OAI-SearchBot</b></div>
+      <div class="reg">Disallow: <b>/</b></div>
+      <div class="efecto"><b>Este sí te saca</b> de las respuestas de búsqueda de ChatGPT.</div>
+    </div>
+
+    <div class="nota">Anthropic separa igual a sus robots: ClaudeBot entrena, Claude-SearchBot es de búsqueda y Claude-User lee cuando alguien pregunta.</div>
+  </div>
+
+  <div class="foot">
+    <div class="wm">SpindleLab<span class="pt">.</span></div>
+    <div class="cta2"><span>Mira cuáles de estos bloquea tu sitio</span><b>spindlelab.cl/diagnostico</b></div>
+  </div>
+
+</div></body></html>

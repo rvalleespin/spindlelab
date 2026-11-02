@@ -1,5 +1,10 @@
 # Plan de reposicionamiento — "Mostramos, no prometemos" (ago 2026)
 
+> **Superado el 30-oct-2026.** La línea pública vigente es «Sitios web a medida y marketing con IA»
+> y Desarrollo web es el negocio principal, no cross-sell: ver `marketing/oficina/clientes/spindlelab.md`.
+> Este plan se conserva como registro del posicionamiento de agosto; el cuerpo no se edita.
+> De lo que dice abajo, solo sigue la regla de fondo que la ficha mantiene: evidencia por sobre promesa.
+
 > **Qué es esto.** La bajada estratégica del estudio de competencia
 > (`marketing/inteligencia-mercado/2026-08-estudio-agencias-ia.md`) a un plan
 > coordinado de ejecución en tres superficies: **sitio web, comunicación en redes

@@ -1,0 +1,274 @@
+{
+ "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/contacto.json",
+ "sha256": "57d2368028a63af27d756f7fe553d2678e94f1a66c7577e62a209b263cd535c3",
+ "id": "contacto",
+ "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
+ "texto": {
+  "id": "contacto",
+  "ruta": "/contacto/",
+  "modo": "reescribe (E13)",
+  "regla": "E13, 26-oct-2026: el texto sale de e13/fuentes/v2-vigente/contacto.txt (publicado y aprobado el 24-oct) y de copy-secciones-v1.2.md §8. Aquí vive todo el texto visible de la página, salvo las cuatro preguntas frecuentes, que son datos de página porque de ellas sale también el FAQPage del JSON-LD: viven en spindlelab-astro/src/data/paginas-v3.json, clave «contacto», y lo que se ve es lo mismo que lo que dice el FAQPage. El texto de E12 que se reemplaza va en «antes». 30-oct (Ramón): la página calza con el botón «Hablemos de tu sitio» de la portada y del encabezado; sirve para quien tiene sitio (recibe la revisión) y para quien no (le decimos cómo lo haríamos y cuánto cuesta). El formulario no se toca: el campo del sitio sigue obligatorio y sus name, iguales.",
+  "title": "Contacto: hablemos de tu sitio · SpindleLab",
+  "description": "Si ya tienes sitio, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te decimos cómo lo haríamos y cuánto cuesta.",
+  "senales": "Simón, e12/senales-obra.md §2.11, con el cambio de e13: v2-vigente/contacto.txt 30-oct: title (43) y description (144) al botón nuevo; antes «Contacto: pide tu revisión gratis · SpindleLab» y «Escríbenos la dirección de tu sitio y en un día hábil recibes una revisión de una página con lo más importante que encontramos.». Los reconfirma Simón.",
+  "protegido": "No cambian los nombres de los campos, .contact-form, #f-utm-*, .form-status, .form-success, v3-contacto.js ni generate_lead (brief de obra §6.2). Solo cambia el texto visible.",
+  "secciones": [
+   {
+    "id": "cabecera",
+    "nombre": "Cabecera",
+    "trabajo": "Recibir a quien apretó «Hablemos de tu sitio», tenga sitio o no, y decir qué recibe cada uno y cuándo.",
+    "elementos": [
+     {
+      "id": "contacto.miga",
+      "rol": "rotulo",
+      "texto": "Inicio · Contacto",
+      "origen": "e12 (sin cambio)",
+      "uso": "miga",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.h1",
+      "rol": "h1",
+      "tinta": "Hablemos de tu sitio.",
+      "gris": "Del que ya tienes o del que todavía no.",
+      "texto": "Hablemos de tu sitio. Del que ya tienes o del que todavía no.",
+      "antes": "Escríbenos la dirección de tu sitio y te respondemos con una revisión.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct) (h1 «Hablemos de tu sitio.»)",
+      "por_que": "Calza con el botón que trae a la persona hasta aquí. Lock §14: tinta 4 palabras, gris 9 (rango 6 a 13).",
+      "estado": "cambia",
+      "nota": "Ramón dio el h1 «Hablemos de tu sitio.» solo. La parte gris es mía y tiene una razón de código: interiores.mjs, contacto(), lee el h1 con dos(), que corta el build si no hay gris, y la plantilla lo pinta en dos tintas. Si Ramón lo prefiere solo, Diego pasa contacto() a una tinta (como nosotros.h1), el gris se borra y la línea de abajo ya dice los dos caminos."
+     },
+     {
+      "id": "contacto.linea",
+      "rol": "entradilla",
+      "texto": "Si ya tienes uno, déjanos la dirección: te lo revisamos gratis y en un día hábil te mandamos una página con lo que encontramos. Si todavía no tienes, cuéntanos qué vendes y te decimos cómo lo haríamos y cuánto cuesta.",
+      "antes": "Te respondemos con una página con lo más importante que encontramos. Es gratis y llega en un día hábil.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "por_que": "Dice qué recibe cada uno, con sitio y sin sitio. El plazo y el «gratis» siguen.",
+      "estado": "cambia"
+     }
+    ]
+   },
+   {
+    "id": "formulario",
+    "nombre": "El formulario",
+    "trabajo": "Que llenarlo sea obvio, sin tocar lo que mide.",
+    "elementos": [
+     {
+      "id": "contacto.form.h2",
+      "rol": "h2",
+      "texto": "Cuéntanos de tu proyecto",
+      "antes": "Cuéntanos qué necesitas",
+      "origen": "v2-vigente/contacto.txt",
+      "estado": "cambia"
+     },
+     {
+      "id": "contacto.form.nombre",
+      "rol": "rotulo",
+      "texto": "Nombre",
+      "origen": "e12 (sin cambio)",
+      "uso": "label",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.form.correo",
+      "rol": "rotulo",
+      "texto": "Correo",
+      "origen": "e12 (sin cambio)",
+      "uso": "label",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.form.sitio",
+      "rol": "rotulo",
+      "texto": "La dirección de tu sitio",
+      "origen": "e12 (sin cambio). El name del campo sigue siendo «Sitio web».",
+      "uso": "label",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.form.sitio.placeholder",
+      "rol": "nota",
+      "texto": "tuempresa.cl",
+      "origen": "e12 (sin cambio)",
+      "uso": "placeholder",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.form.sitio.ayuda",
+      "rol": "nota",
+      "texto": "Si todavía no tienes sitio, escribe «no tengo» y cuéntanos abajo qué vendes.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); acta de QA del 30-oct, menor 10",
+      "uso": "ayuda",
+      "estado": "cambia",
+      "antes": "Si todavía no tienes sitio, escribe «no tengo». (30-oct, la frase de Ramón; antes de eso: «Si partes de cero, escribe «no tengo» y cuéntanos tu proyecto abajo.»)",
+      "por_que": "El campo sigue obligatorio (el formulario no se toca); la ayuda le dice a quien no tiene sitio qué poner. Acta de QA del 30-oct, menor 10: con solo «no tengo», quien no tiene sitio podía mandar el formulario sin decir qué vende (el único campo donde cabe es el opcional de abajo), y lo que se le promete («te decimos cómo lo haríamos y cuánto cuesta») lo necesita. La frase de Ramón queda entera y se le suma lo que falta; «abajo» es el campo «Cuéntanos brevemente», que va justo después."
+     },
+     {
+      "id": "contacto.form.mensaje",
+      "rol": "rotulo",
+      "texto": "Cuéntanos brevemente (opcional)",
+      "origen": "e12 (sin cambio)",
+      "uso": "label",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.form.mensaje.placeholder",
+      "rol": "nota",
+      "texto": "Qué vende tu empresa y cómo te llegan hoy las consultas",
+      "antes": "Qué hace tu empresa y qué necesitas de tu sitio…",
+      "origen": "copy-secciones-v1.2 §8",
+      "por_que": "Pide lo que el método necesita para la conversación: qué vende y cómo llegan las consultas.",
+      "uso": "placeholder",
+      "estado": "cambia"
+     },
+     {
+      "id": "contacto.form.consiento",
+      "rol": "rotulo",
+      "texto": "Acepto que estos datos se usen para responder mi solicitud, según la política de privacidad.",
+      "origen": "e12 (sin cambio)",
+      "uso": "label",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.form.boton",
+      "rol": "boton",
+      "texto": "Enviar",
+      "antes": "Enviar la dirección",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "por_que": "«Enviar la dirección» no le calzaba a quien escribe «no tengo». Si el envío falla, el script le pone «Enviar →» y contacto.mjs le devuelve este texto con su flecha: ahora son la misma palabra.",
+      "estado": "cambia"
+     },
+     {
+      "id": "contacto.form.enviando",
+      "rol": "nota",
+      "texto": "Enviando…",
+      "origen": "v3-contacto.js",
+      "uso": "estado",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.form.error",
+      "rol": "nota",
+      "texto": "Algo falló al enviar. Escríbenos directo a hola@spindlelab.cl mientras lo revisamos.",
+      "origen": "v3-contacto.js; copy-secciones-v1.2 §8",
+      "uso": "error",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.form.listo.t",
+      "rol": "h2",
+      "texto": "Listo.",
+      "nivel": 3,
+      "origen": "e12 (sin cambio)",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.form.listo.d",
+      "rol": "parrafo",
+      "texto": "Te escribimos dentro de un día hábil.",
+      "antes": "Te escribimos dentro de un día hábil con tu revisión.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "por_que": "Sirve para los dos casos: quien no tiene sitio no recibe una revisión. Cierra la decisión que había quedado abierta en e13/desvios/interiores.md.",
+      "estado": "cambia"
+     },
+     {
+      "id": "contacto.form.directo",
+      "rol": "nota",
+      "texto": "O escríbenos directo a hola@spindlelab.cl",
+      "destino": "mailto:hola@spindlelab.cl?subject=Hablemos%20de%20mi%20sitio&body=Hola.%0AMi%20sitio%3A%20%0ALo%20que%20vendemos%3A%20",
+      "origen": "e12 (sin cambio); v2-vigente/contacto.txt. El destino, desde el 30-oct (acta de QA del 30-oct, menor 9)",
+      "estado": "cambia",
+      "antes": "Sin destino en el JSON: el mailto estaba escrito en el código (interiores.mjs), con asunto «Revisión de mi sitio» y cuerpo «Hola, mi sitio es: ».",
+      "por_que": "El texto vive en el JSON (regla de la obra), así que el asunto y el cuerpo ya escritos pasan aquí y contacto() los lee. El asunto es el mismo del pie y de la home («Hablemos de mi sitio»). El cuerpo deja dos líneas para completar: la dirección del sitio (o «no tengo») y qué vende, que es lo que necesitamos para contestar en los dos caminos: revisar el sitio o decir cómo lo haríamos y cuánto cuesta.",
+      "nota": "Decodificado, el cuerpo es: «Hola.» / «Mi sitio: » / «Lo que vendemos: », en tres líneas."
+     }
+    ]
+   },
+   {
+    "id": "despues",
+    "nombre": "Qué pasa después",
+    "trabajo": "Bajar el miedo a escribir: qué pasa, en cuánto y quién decide.",
+    "elementos": [
+     {
+      "id": "contacto.despues.h2",
+      "rol": "h2",
+      "texto": "Qué pasa después",
+      "origen": "e12 (sin cambio); v2-vigente/contacto.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.despues.1.t",
+      "rol": "h2",
+      "texto": "Nos escribes",
+      "nivel": 3,
+      "origen": "e12 (sin cambio)",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.despues.1.d",
+      "rol": "parrafo",
+      "texto": "Con la dirección de tu sitio basta. Si todavía no tienes uno, cuéntanos qué vendes.",
+      "antes": "Con la dirección de tu sitio basta. Si quieres, agrega qué vendes y cómo te llegan las consultas.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "por_que": "El primer paso también para quien no tiene sitio, como la línea de arriba."
+     },
+     {
+      "id": "contacto.despues.2.t",
+      "rol": "h2",
+      "texto": "Te respondemos en un día hábil",
+      "nivel": 3,
+      "antes": "Recibes la revisión",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "por_que": "El paso 2 ya no puede decir «Recibes la revisión» para todos: quien no tiene sitio recibe otra cosa. Lo común a los dos es la respuesta y su plazo."
+     },
+     {
+      "id": "contacto.despues.2.d",
+      "rol": "parrafo",
+      "texto": "Si tienes sitio, te mandamos la revisión, una página en lenguaje claro con lo más importante que encontramos y por dónde partiríamos. Si no, te contamos cómo lo haríamos y cuánto cuesta.",
+      "antes": "Una página en lenguaje claro, con los hallazgos más importantes y por dónde partiríamos.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "estado": "cambia",
+      "por_que": "Lo que recibe cada uno, como pidió Ramón para el paso 2."
+     },
+     {
+      "id": "contacto.despues.3.t",
+      "rol": "h2",
+      "texto": "Tú decides",
+      "nivel": 3,
+      "antes": "Decides con calma",
+      "origen": "v2-vigente/contacto.txt; copy-secciones-v1.2 §8 («Se borra… «Decides con calma»»)",
+      "por_que": "El documento manda sacar «Decides con calma».",
+      "estado": "cambia"
+     },
+     {
+      "id": "contacto.despues.3.d",
+      "rol": "parrafo",
+      "texto": "Si quieres avanzar, conversamos 20 minutos y te mandamos una propuesta por escrito. Si no, lo que te mandamos queda contigo.",
+      "antes": "Si quieres avanzar, conversamos 20 minutos y te mandamos una propuesta por escrito. Si no, la revisión queda contigo.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
+      "por_que": "«La revisión queda contigo» no le sirve a quien no tiene sitio.",
+      "estado": "cambia"
+     },
+     {
+      "id": "contacto.antes.h2",
+      "rol": "h2",
+      "texto": "Antes de escribir",
+      "origen": "e12 (sin cambio); v2-vigente/contacto.txt",
+      "estado": "queda"
+     },
+     {
+      "id": "contacto.antes.referencia",
+      "rol": "nota",
+      "texto": "Las cuatro preguntas y sus respuestas están en paginas-v3.json, clave «contacto», faq, y son las mismas del FAQPage del JSON-LD (texto de v2-vigente/contacto.txt).",
+      "uso": "referencia",
+      "origen": "spindlelab-astro/src/data/paginas-v3.json contacto.faq",
+      "estado": "cambia"
+     }
+    ]
+   }
+  ]
+ }
+}

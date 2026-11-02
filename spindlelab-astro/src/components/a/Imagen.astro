@@ -1,0 +1,19 @@
+---
+// UNA IMAGEN DEL TRABAJO EN SU MARCO (spec §3.3): plana, radio 6, espera en su placa y aparece en 167 ms al cargar.
+// WebP con width y height, loading="lazy" salvo en la primera pantalla, decoding="async". El alt lo escribe quien mira
+// la imagen (Clara, «medios»); nunca nombra las medidas de Combeau (§6.10).
+interface Props {
+  src: string;
+  alt: string;
+  ancho: number;
+  alto: number;
+  /** Clase de la proporción del marco (p-169, p-45, p-43, p-53, p-162, p-34, p-239). */
+  clase?: string;
+  sangre?: boolean;
+  primeraPantalla?: boolean;
+}
+const { src, alt, ancho, alto, clase, sangre = false, primeraPantalla = false } = Astro.props;
+---
+<div class:list={['medio', clase, { 'medio--sangre': sangre }]}>
+  <img src={src} alt={alt} width={ancho} height={alto} loading={primeraPantalla ? 'eager' : 'lazy'} fetchpriority={primeraPantalla ? 'high' : undefined} decoding="async" />
+</div>

@@ -4,7 +4,7 @@
 > un empleado con **nombre, rol, memoria y carpeta de trabajo** — igual que una
 > oficina real, pero cada empleado es una sesión de Claude Code activada por una
 > *skill*. Este documento es el único lugar donde se ve la oficina completa de un
-> vistazo. Última actualización: 2026-09-21.
+> vistazo. Última actualización: 2026-11-02 (línea del 30-oct: el negocio principal es el sitio).
 >
 > **Nomenclatura híbrida.** Cada agente tiene un nombre humano (para hablar de él
 > como "empleado") y, entre paréntesis, la skill técnica real que lo activa. El
@@ -28,7 +28,7 @@ RED PRESENCIAL      Inés (agente-red-presencial) ★  ← el canal que empieza 
 VENTAS              Raquel (agente-crm) ★
 MARCA & CONTENIDO   Cata (persona-social-media) · Bruno (persona-director-creativo) · Renata (agente-copywriter) ★ · Marta (agente-calendario-editorial) ★
 PAID MEDIA          Gonzalo (persona-paid-media) · Fran (persona-meta-ads)
-ENTREGA             Diego (persona-disenador-web) · Simón (agente-seo-aeo) ★  ← el servicio core que se cobra
+ENTREGA             Diego (persona-disenador-web)  ← el negocio principal: el sitio · Simón (agente-seo-aeo) ★  ← búsqueda y visibilidad en IA, que se conecta al sitio
 ESTUDIO WEB         Mauro (web-encuadre) ★ · Lucía (web-direccion-arte) ★ · Clara (web-copy-interfaz) ★ · Javiera (web-qa-critico) ★
                     + Diego construye · Simón pone las señales — orquesta `estudio-web` ★ (2 compuertas, QA independiente)
 PRODUCTO & DISEÑO   Nadia (producto-ui-ux) ★ · Pía (agente-growth-producto) ★   (cross-proyecto: Praxi + web)
@@ -52,6 +52,7 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 | **Dereck** | Captación | `buscar-leads` | `marketing/listas/frente-*.md`, `ventas/leads-*.csv` | `oficina/memoria/dereck-buscar-leads.md` | Frente/ICP → CSV de leads (`nombre,cargo,empresa,email,estado`) | ✅ |
 | **Valen** | Captación | `mini-diagnostico` | `marketing/diagnosticos/SPL-DIAG-*/` | `oficina/memoria/valen-mini-diagnostico.md` | Prospecto interesado + URL → diagnóstico 1 pág (&lt;24h) | ✅ |
 | **Emilia** ★ | Captación | `agente-outbound` | `marketing/outbound/semana-*/` | `oficina/memoria/emilia-outbound.md` | CSV de Dereck → secuencia de emails redactada + tracker (NO envía) | ★ nuevo |
+| ~~Sam~~ | ~~Captación (Frente EE.UU.)~~ | `persona-frente-eeuu` | `marketing/frente-eeuu/` | `oficina/memoria/sam-frente-eeuu.md` | **Cerrado el 19-oct-2026 por decisión de Ramón.** Fundado el 4-ago, nunca salió del día 0 (sin lista, sin audit, sin envíos). No usar; ver `marketing/evaluacion-captacion-2026-10-19.md` | ⏹ cerrado |
 | **Inés** ★ | Red presencial | `agente-red-presencial` | `marketing/red-presencial/` | `oficina/memoria/ines-red-presencial.md` | Evento/hub/contacto presencial → perfil listo antes + correos de seguimiento en 24 h + contactos entregados al CRM; también evalúa plataformas externas (NO envía) | ★ nuevo |
 | **Raquel** ★ | Ventas | `agente-crm` | `ventas/pipeline.md`, `ventas/proyectos-en-curso.md` | `oficina/memoria/raquel-crm.md` | Respuestas/avances → CRM al día + follow-ups pendientes | ★ nuevo |
 | **Cata** | Marca & Contenido | `persona-social-media` | `marketing/outbound/semana-*/posts-*.md`, RRSS | `oficina/memoria/cata-social.md` | Tema/hallazgo real → post LinkedIn/IG con pase de tono | ✅ |
@@ -61,7 +62,7 @@ Estado: **✅ trabajando** · **★ nuevo (esta pasada)** · **○ vacante** · 
 | **Gonzalo** | Paid Media | `persona-paid-media` | Google Ads (navegador) + cron semanal | `oficina/memoria/gonzalo-google-ads.md` | Presupuesto/objetivo → campañas Google (nunca escribe sin OK) | ✅ |
 | **Fran** | Paid Media | `persona-meta-ads` | Meta Ads Manager (navegador) | `oficina/memoria/fran-meta-ads.md` | Presupuesto/objetivo → campañas Meta (nunca escribe sin OK) | ✅ |
 | **Diego** | Entrega | `persona-disenador-web` | `spindlelab-site/`, sitios de clientes | `oficina/memoria/diego-web.md` | Encargo → sitio/blog publicado (JSON-LD, versionado de assets) | ✅ |
-| **Simón** ★ | Entrega | `agente-seo-aeo` | `ventas/entregas/<cliente>/`, plugins searchfit | `oficina/memoria/simon-seo-aeo.md` (a crear) | Cliente ganado → auditoría técnica + visibilidad en IA + plan implementado (el servicio core) | ★ nuevo |
+| **Simón** ★ | Entrega | `agente-seo-aeo` | `ventas/entregas/<cliente>/`, plugins searchfit | `oficina/memoria/simon-seo-aeo.md` (a crear) | Cliente ganado → auditoría técnica + visibilidad en IA + plan implementado (la línea de búsqueda y visibilidad en IA, que se conecta al sitio) | ★ nuevo |
 | **Mauro** ★ | Estudio Web | `web-encuadre` | `marketing/oficina/obras-web/<cliente>-<obra>/` | `oficina/memoria/mauro-encuadre-web.md` | Encargo en prosa → `brief-de-obra.md` (compuerta 1: rutas, jerarquía, activos reales, criterios verificables, lo que NO se hace) + cierre de obra | ★ nuevo |
 | **Lucía** ★ | Estudio Web | `web-direccion-arte` | ídem (`referencias.md`, `tableros/`, `spec-visual.md`) | `oficina/memoria/lucia-direccion-arte.md` | Brief → lock de referencias reales + **dos** direcciones como tablero renderizado (compuerta 2) → `spec-visual.md` auditable | ★ nuevo |
 | **Clara** ★ | Estudio Web | `web-copy-interfaz` | ídem (`copy-secciones.md`) | `oficina/memoria/clara-copy-interfaz.md` | Brief → copy de pantalla en la voz del sitio (headline, CTA, labels, errores, vacíos, 404) + afirmaciones por verificar | ★ nuevo |
@@ -150,8 +151,8 @@ que **lanza sus propios productos** (Praxi, etc.). ✅ cubierto · ◐ parcial �
 | Copy long-form / guion / ad copy | Renata | ✅ ★ |
 | Creatividad visual | Bruno | ✅ |
 | Paid — Google / Meta | Gonzalo / Fran | ✅ |
-| **Entrega SEO/AEO (el servicio core)** | Simón | ✅ ★ |
-| Entrega web | Diego | ✅ |
+| Entrega de búsqueda y visibilidad en IA | Simón | ✅ ★ |
+| **Entrega web (el negocio principal)** | Diego | ✅ |
 | **Medición & analítica / reporte a cliente** | Nora | ✅ ★ |
 | Admin / finanzas | Monse | ○ vacante |
 
@@ -176,7 +177,7 @@ disponible (repo + global).
 | # | Puesto | Skill | Qué cerró | Estado |
 |---|---|---|---|---|
 | 1 | **Nora — Medición & Analítica** | `agente-analitica` | GA4, atribución, reporte mensual. Cierra el loop: mide qué produjo cada frente. Sirve a agencia **y** a los productos. | ★ construido |
-| 2 | **Simón — Entrega SEO/AEO** | `agente-seo-aeo` | La entrega del servicio core al cliente ganado (no solo el diagnóstico de Valen). Apalanca `searchfit`. Es lo que se cobra. | ★ construido |
+| 2 | **Simón — Entrega SEO/AEO** | `agente-seo-aeo` | La entrega del servicio core al cliente ganado (no solo el diagnóstico de Valen). Apalanca `searchfit`. Es lo que se cobra. *(Así era el 29-jul. Desde el 30-oct-2026 el negocio principal es el sitio, que entrega Diego, y Simón entrega búsqueda y visibilidad en IA.)* | ★ construido |
 | 3 | **Renata — Copy & Guion** | `agente-copywriter` | Long-form, ad copy, guiones, email. Descarga a Tomás, que redactaba a mano. | ★ construido |
 | 4 | **Pía — Growth de producto** | `agente-growth-producto` | Onboarding, activación, lifecycle, retención de los productos propios (Praxi). | ★ construido |
 

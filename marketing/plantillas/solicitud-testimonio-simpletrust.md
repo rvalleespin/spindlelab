@@ -1,5 +1,11 @@
 # Solicitud de testimonio / permiso — SimpleTrust
 
+> **RETIRADA el 2-nov-2026. No usar para escribir.** Es de julio: habla de «formalizando la
+> consultoría», de la línea de SEO técnico y visibilidad en IA, y de cambiar «una asesora de
+> inversiones chilena» en plantillas de correo que también quedaron retiradas. Queda como
+> registro. Si se vuelve a pedir el permiso, se escribe de nuevo con la línea vigente
+> (30-oct-2026: sitios web a medida y marketing con IA; ver `marketing/brand/manual-de-marca.md` §01).
+
 **Acción #1 de la semana 1.** Objetivo: poder usar el caso con nombre en el sitio, LinkedIn y emails. Pedir en dos niveles para que decir «sí» sea fácil: si el nivel completo incomoda, que el nivel mínimo salga igual.
 
 ---

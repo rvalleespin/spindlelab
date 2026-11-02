@@ -1,5 +1,9 @@
 # Brief de reposicionamiento → estrategia de comunicación (v2 — 2026-08-28)
 
+> **Superado el 30-oct-2026.** El mensaje de este brief («motor de adquisición», chequeo como puerta de entrada)
+> ya no es la línea pública. La vigente es «Sitios web a medida y marketing con IA», con «Hablemos de tu sitio»
+> como acción principal: ver `marketing/oficina/clientes/spindlelab.md`. Se conserva como registro; el cuerpo no se edita.
+
 **De:** Tomás (troncal) · **Para:** Marta (calendario) + Renata (copy) + Cata (social) + Bruno (visual) · **Fecha v1:** 2026-08-26 · **v2:** 2026-08-28
 
 > **Qué cambió en la v2:** el sitio terminó de reposicionarse al **motor de adquisición**

@@ -1,0 +1,121 @@
+---
+// CONTACTO SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 5; ajustado en la obra E13, 26-oct-2026).
+//
+// Contrato: spindlelab-v3/spec-visual.md §2.4, fila «/contacto/»: cabecera corta (el formulario entero sobre el
+// pliegue a 1440 × 900, como hoy); el formulario en c1-c8, con los campos de §4.1; «Qué pasa después» (tres pasos como
+// filas); «Antes de escribir» (preguntas). Sin franja. Lo que la spec no cubría está en spindlelab-v3/desvios.md, tanda 5.
+//
+// EL FORMULARIO ES EL DE PRODUCCIÓN, y no se toca lo que mide (brief §6.7 y criterio 11; spec §6.16): el mismo action,
+// los mismos hidden (access_key, subject, from_name), el honeypot, los mismos name e id de cada campo, los tres UTM
+// ocultos (#f-utm-*), la casilla de consentimiento, .contact-form, .form-status, .form-success y su script,
+// /assets/js/v3-contacto.js, que dispara generate_lead. Cambia solo el texto visible (Clara) y cómo se ve (archivo.css).
+// Lo que la página de driftime hacía por su cuenta sigue, en contacto.mjs: el dominio que llega del chequeo
+// (?sitio=), el texto del botón que el script cambia al fallar, el foco en «Listo.» y «Escríbenos» que no recarga.
+//
+// El texto lo arma contacto() en interiores.mjs. Señales de Simón, senales-obra.md §2.11.
+import Layout from '../layouts/Layout.astro';
+import PaginaA from '../components/a/PaginaA.astro';
+import Miga from '../components/a/Miga.astro';
+import Icono from '../components/a/Icono.astro';
+import { LAYOUT_A } from '../components/a/layout-a';
+import { contacto } from '../data/archivo/interiores.mjs';
+
+const m = contacto();
+const f = m.form;
+---
+<Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
+  <PaginaA>
+    {/* 1 · CABECERA CORTA (§2.4.1) */}
+    <section class="reticula int-cab" aria-labelledby="h-titulo">
+      <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1] }]} />
+      <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
+      <p class="cuerpo caja">{m.linea}</p>
+    </section>
+
+    {/* 2 · EL FORMULARIO (c1-c8): los campos de §4.1 */}
+    <section class="reticula form-sec" id="contacto-form" aria-labelledby="h-form">
+      <div class="form-zona">
+        <h2 class="t-titulo" id="h-form">{f.h2}</h2>
+        <form class="contact-form formulario" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="f3a309f5-cbe6-4cf1-b77f-cfd0ee92685f" />
+          <input type="hidden" name="subject" value="Nuevo contacto desde spindlelab.cl" />
+          <input type="hidden" name="from_name" value="Formulario spindlelab.cl" />
+          {/* Honeypot: invisible para personas, tentador para bots. No quitar. */}
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
+
+          <div class="formulario__par">
+            <div class="campo">
+              <label class="rotulo" for="f-nombre">{f.nombre}</label>
+              <input type="text" id="f-nombre" name="Nombre" autocomplete="name" required />
+            </div>
+            <div class="campo">
+              <label class="rotulo" for="f-email">{f.correo}</label>
+              <input type="email" id="f-email" name="Email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="campo">
+            <label class="rotulo" for="f-sitio">{f.sitio}</label>
+            <input type="text" id="f-sitio" name="Sitio web" placeholder={f.sitioEjemplo} autocomplete="url" aria-describedby="f-sitio-ayuda" required />
+            <p class="chico" id="f-sitio-ayuda">{f.sitioAyuda}</p>
+          </div>
+
+          <div class="campo">
+            <label class="rotulo" for="f-mensaje">{f.mensaje}</label>
+            <textarea id="f-mensaje" name="Mensaje" rows="3" placeholder={f.mensajeEjemplo}></textarea>
+          </div>
+
+          {/* Los rellena v3-contacto.js con los UTM de la visita. */}
+          <input type="hidden" name="UTM Source" id="f-utm-source" />
+          <input type="hidden" name="UTM Medium" id="f-utm-medium" />
+          <input type="hidden" name="UTM Campaign" id="f-utm-campaign" />
+
+          <label class="consiento chico">
+            <input type="checkbox" id="f-consiento" name="Consiento" required />
+            <span>{m.consiento.map((p) => (p.href ? <a href={p.href} target="_blank" rel="noopener">{p.texto}</a> : p.texto))}</span>
+          </label>
+
+          <div class="formulario__envio">
+            <button type="submit" class="boton boton--claro">{f.boton}<Icono nombre="flecha" /></button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <div class="form-success formulario__listo" role="status" aria-live="polite" hidden>
+          <h3 class="t-titulo">{f.listo.h3}</h3>
+          <p class="cuerpo">{f.listo.p}</p>
+        </div>
+
+        <p class="chico formulario__directo">{f.directo.texto} <a href={f.mailto}>{f.directo.correo}</a></p>
+      </div>
+    </section>
+
+    {/* 3 · QUÉ PASA DESPUÉS: tres pasos como filas (c5-c12) */}
+    <section class="seccion reticula" aria-labelledby="h-despues">
+      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-despues">{m.despues.h2}</h2></div>
+      <ol class="int-sec__cuerpo">
+        {m.despues.lista.map((b, i) => (
+          <li class="fase">
+            <h3 class="t-fase"><span aria-hidden="true">{String(i + 1).padStart(2, '0')} · </span>{b.t}</h3>
+            <p class="cuerpo">{b.d}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    {/* 4 · ANTES DE ESCRIBIR (preguntas, c5-c12): las mismas del FAQPage */}
+    <section class="seccion reticula" aria-labelledby="h-antes">
+      <div class="int-sec__cab"><h2 class="t-declaracion" id="h-antes">{m.preguntas.h2}</h2></div>
+      <div class="int-sec__cuerpo">
+        {m.preguntas.lista.map((q) => <div class="pregunta"><h3>{q.p}</h3><p class="cuerpo">{q.r}</p></div>)}
+      </div>
+    </section>
+  </PaginaA>
+
+  <script is:inline src="/assets/js/v3-contacto.js?v=2" defer></script>
+</Layout>
+
+<script>
+  import '../scripts/archivo/contacto.mjs';
+</script>

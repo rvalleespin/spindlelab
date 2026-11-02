@@ -1,0 +1,54 @@
+{
+ "nota": "Los medios de la home y de /trabajo/: de dónde sale cada uno y su alt. El alt describe la imagen mirándola; nunca nombra las medidas de Combeau (spec §3.3, §6.10). Los archivos están en public/v3/medios/. E13: salieron los de Praxi y los cuatro conceptos.",
+ "medios": {
+  "combeau-fotografia-169": {
+   "src": "/v3/medios/combeau-fotografia-169.webp",
+   "ancho": 1600,
+   "alto": 900,
+   "alt": "Portada del sitio de fotografía de Bernardo Combeau a 1440: un retrato en luz verde con su frase encima.",
+   "altDe": "Clara, texto-obra.json caso-combeau, medios de «La pieza»"
+  },
+  "combeau-fotografia-45": {
+   "src": "/v3/medios/combeau-fotografia-45.webp",
+   "ancho": 780,
+   "alto": 975,
+   "alt": "La portada del sitio de fotografía de Bernardo Combeau en un celular.",
+   "altDe": "Clara, texto-obra.json caso-combeau, medios de «La pieza»"
+  },
+  "combeau-modelo-45": {
+   "src": "/v3/medios/combeau-modelo-45.webp",
+   "ancho": 780,
+   "alto": 975,
+   "alt": "El book de modelo de Bernardo Combeau en un celular: su nombre, el menú y su retrato de traje.",
+   "altDe": "Clara, texto-obra.json caso-combeau, medios de «La pieza»"
+  },
+  "verifica-y-cumple-45": {
+   "src": "/v3/medios/verifica-y-cumple-45.webp",
+   "ancho": 780,
+   "alto": 975,
+   "alt": "La portada de verifica.spindlelab.cl en un celular: «¿Estás seguro?» en letras enormes, blanco y lima sobre azul, y una persona de traje y sombrero rosados que lee un papel, a caballo.",
+   "altDe": "Clara, texto-obra.json auditoria-seo-tecnica.franja.alt (la de 5:3), con «en un celular» del prototipo"
+  },
+  "verifica-y-cumple-53": {
+   "src": "/v3/medios/verifica-y-cumple-53.webp",
+   "ancho": 1050,
+   "alto": 630,
+   "alt": "La portada de verifica.spindlelab.cl: «¿Estás seguro?» en letras enormes, blanco y lima sobre azul, y una persona de traje y sombrero rosados que lee un papel, a caballo.",
+   "altDe": "Clara, texto-obra.json auditoria-seo-tecnica.franja.alt"
+  },
+  "verifica-y-cumple-12-169": {
+   "src": "/v3/medios/verifica-y-cumple-12-169.webp",
+   "ancho": 1600,
+   "alto": 900,
+   "alt": "La sección «Las 12 cosas que tu sitio tiene que dejar publicadas» de verifica.spindlelab.cl, en blanco sobre azul, con los doce puntos en dos columnas.",
+   "altDe": "prototipo de A (proto/a), revisado mirando la imagen"
+  },
+  "ramon-vallejos-34": {
+   "src": "/v3/medios/ramon-vallejos-34.webp",
+   "ancho": 896,
+   "alto": 1200,
+   "alt": "Ramón Vallejos, de camisa celeste, sobre fondo oscuro.",
+   "altDe": "Clara, texto-obra.json home.quien.retrato"
+  }
+ }
+}

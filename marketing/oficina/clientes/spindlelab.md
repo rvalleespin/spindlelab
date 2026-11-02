@@ -1,14 +1,31 @@
 # SpindleLab (la casa)
 
-- **Quién es / qué se le vende:** la propia agencia. Consultoría de **SEO técnico
-  + visibilidad en motores de IA (AEO/GEO)** para empresas B2B y YMYL chilenas, más
-  la línea de **Desarrollo Web**. Cuando la oficina trabaja "para SpindleLab" (su
-  sitio, sus redes, su outbound), SpindleLab es el cliente.
+- **Quién es / qué se le vende:** la propia casa. **Sitios web a medida y marketing con
+  IA** (línea decidida por Ramón y publicada el 30-oct-2026). El negocio principal es
+  **Desarrollo web**: el sitio es el eje y lo demás se le conecta (búsqueda y visibilidad
+  en IA, anuncios en Google y redes, acompañamiento mensual). Cuando la oficina trabaja
+  "para SpindleLab" (su sitio, sus redes, su outbound), SpindleLab es el cliente.
+- **Titular de la casa:** *En redes arriendas. Tu sitio es lo único que es tuyo.*
+- **Acción principal:** **«Hablemos de tu sitio»**, a https://spindlelab.cl/contacto/. Con
+  sitio: revisión gratis de una página, respuesta en un día hábil. Sin sitio: le contamos
+  cómo lo haríamos y cuánto cuesta. El chequeo de `/diagnostico/` es secundario y se llama
+  chequeo.
+- **Fuente de verdad del texto:** el sitio vivo y
+  `spindlelab-astro/src/data/archivo/texto/*.json` + `src/data/oferta-v3.json`.
+- **Quién está detrás:** Ramón Vallejos, fundador (cargo «Fundador», sin «director»: decisión de Ramón, 2-nov-2026); años en agencias de medios y
+  de marketing, **sin nombrar agencias ni clientes**; agentes de IA dentro del equipo y él
+  responde por cada entrega; dos herramientas abiertas (el chequeo y Verifica y Cumple);
+  Comunicación Publicitaria (UNAB) y máster en Marketing Digital y E-commerce (U. de
+  Barcelona).
 - **Marca y tono (dónde vive el contrato):**
-  - Manual de marca: `marketing/brand/manual-de-marca.md` (fuente de verdad).
-  - Posicionamiento vigente: **"Mostramos, no prometemos"** —
-    `marketing/plan-reposicionamiento-2026-08.md`. Evidencia por sobre promesa;
-    nada de hype de "agencia con IA".
+  - Manual de marca: `marketing/brand/manual-de-marca.md` (fuente de verdad; §01 trae la
+    línea vigente).
+  - *Historia:* el posicionamiento **"Mostramos, no prometemos"**
+    (`marketing/plan-reposicionamiento-2026-08.md`, ago-2026) y la decisión del 28-sep (más
+    abajo) quedan como registro. La regla de fondo sigue: evidencia por sobre promesa, nada
+    de hype de "agencia con IA". Lo que la línea del 30-oct dejó atrás de la decisión del
+    28-sep es la idea de que «a medida» es higiene y no argumento: el rótulo vigente lo dice
+    literal.
   - Voz: primera persona **singular** para lo observado/evidencial, **plural** para
     lo que entrega el negocio. Oro `#C9A227` escaso (un uso por pieza). Cero prueba
     social inventada; prospectos/clientes sin nombrar sin permiso.
@@ -63,7 +80,7 @@ Búsqueda únicamente (sin Máx. rendimiento), $1.500 CLP/día. 4 keywords en fr
 dentales». Display y Socios desactivados. 7 sitelinks (los 4 servicios + Método + Blog +
 Visibilidad en IA). UTM `utm_source=google&utm_medium=cpc&utm_campaign=auditoria-seo`.
 Negativa activa: `"seoptimer"` (frase). **NO** negativizar "gratis": la oferta real *es*
-un mini-diagnóstico gratis. **Chequeo de rutina cada revisión: que IA Max siga apagada**
+una revisión gratis (hasta oct-2026, «mini-diagnóstico»). **Chequeo de rutina cada revisión: que IA Max siga apagada**
 (la reintroduce Google) — se ve en la columna "Tipo de concordancia" del informe de
 términos de búsqueda.
 
@@ -87,8 +104,10 @@ header/footer, clase `.prose` para el cuerpo, `.nota` para callouts, `.faq` con
 siempre `{"@id":"https://spindlelab.cl/#autor-ramon"}`; enlaces internos reales a
 `/servicios/...`. Al publicar, actualizar **tres cosas**: el archivo, la tarjeta en
 `blog/index.html` y la línea en `sitemap.xml`. El formulario de contacto **ya captura
-UTM** (sessionStorage) y dispara `generate_lead` — no reconstruirlo. Los 4 servicios:
-Auditoría SEO Técnica · Visibilidad en IA · Acompañamiento Mensual · Desarrollo Web.
+UTM** (sessionStorage) y dispara `generate_lead` — no reconstruirlo. Las soluciones
+publicadas (orden del 30-oct-2026): Desarrollo web, el eje (el panel para editar textos y
+fotos va en todos sus planes) · Auditoría SEO técnica · Visibilidad en IA · Paid Media
+(Google) · Gestión de redes sociales · Acompañamiento mensual.
 
 ---
 
@@ -129,22 +148,42 @@ SPL-DIAG-2026-006):
 - **El documento habla el idioma del dueño, no el del técnico** (regla de Ramón, 31-ago): abre
   con lo que está en juego en SU negocio (cómo le llega un cliente nuevo y quién se lo está
   llevando), los hallazgos técnicos son la evidencia, y el cierre dice qué gana en sus términos.
-  Nunca abrir con lo que NO se hizo (eso va en la letra chica).
+  Nunca abrir con lo que NO se hizo (eso va en la letra chica). En la plantilla (2-nov-2026) lo
+  que está en juego va en la primera frase del hallazgo que lo sostiene y, entero, en la lámina 4
+  de la llamada.
 - **Regala el paso 1 y haz visible la ruta completa** (tabla de 4 pasos con estado real:
   abrir la puerta → ser entendible → ser citable → medir entero). Si lo regalado es la única
-  necesidad visible, el prospecto lo arregla solo y la venta muere. Molde: SPL-DIAG-2026-006 v3.
-- **El cierre presenta el motor** (regla de Ramón 31-ago): 2 líneas con el motor completo +
-  "precios publicados en el sitio" + CTA de 20 minutos + el link del chequeo.
-- Tagline del encabezado: "Un motor de adquisición · SEO técnico y visibilidad en IA como eje"
-  (la vieja "SEO técnico · Visibilidad en IA · Desarrollo web" quedó atrás).
+  necesidad visible, el prospecto lo arregla solo y la venta muere. Molde: el bloque «La ruta
+  completa» de la plantilla (2-nov-2026), que toma la estructura de la SPL-DIAG-2026-006 v3.
+  Paso 4: medir consultas y tráfico (Search Console, analítica del sitio); no se promete
+  seguimiento mensual de si las IA los nombran (regla de capacidad), así que el «Qué logra» del
+  paso 4 de la 006 no se copia.
+- **Desde el 30-oct-2026 se llama «revisión gratis de una página»** y sale en **un día hábil**
+  desde que llega el pedido por `/contacto/`. A quien no tiene sitio no se le hace revisión:
+  se le responde cómo lo haríamos y cuánto cuesta.
+- **El cierre presenta la oferta entera** (regla de Ramón 31-ago, puesta al día el 2-nov), no
+  solo la especialidad del hallazgo: por dónde partiríamos, con su precio, y en una línea lo
+  demás que se conecta al sitio, con sus precios (todo leído del sitio ese día, + IVA); si no se
+  parte por el sitio, esa línea nombra también Desarrollo web con su precio de partida; después
+  «Hablemos de tu sitio» y la conversación de 20 minutos. *(Hasta oct-2026 «presentaba el
+  motor».)*
+- Encabezado: **«Sitios web a medida y marketing con IA»**. *(Historia: "Un motor de
+  adquisición · SEO técnico y visibilidad en IA como eje", ago-sep; antes "SEO técnico ·
+  Visibilidad en IA · Desarrollo web".)*
 - Sigue igual: cero hallazgos inventados, todo verificado con curl, UNA corrección (no lista),
   render mirado antes de entregar, numeración correlativa **verificada contra `git log --all`**
   (las carpetas 003-005 existen solo en historial; no reutilizar esos números).
-- Plantilla de referencia: `marketing/diagnosticos/SPL-DIAG-2026-006-legalprisma/` (v2).
+- **Un solo molde:** la plantilla `marketing/plantillas/mini-diagnostico/`, puesta al día el
+  2-nov-2026, con la tabla de ruta. La `marketing/diagnosticos/SPL-DIAG-2026-006-legalprisma/`
+  queda como registro y no se copia (lleva el encabezado y el cierre del motor). Presentación de
+  la llamada: `marketing/plantillas/presentacion-llamada/` (sus láminas 5 a 7 salen de la
+  revisión, la 7 de la tabla de ruta).
 
 ## Estado operacional — Entrega SEO/AEO (Simón)
 
-Servicio core que se cobra. Apalanca los plugins de **searchfit** (`ai-visibility` =
+Línea de búsqueda y visibilidad en IA (Auditoría SEO técnica y Visibilidad en IA), que se
+conecta al sitio. *(Hasta el 30-oct-2026 era «el servicio core»; hoy el negocio principal es
+Desarrollo web.)* Apalanca los plugins de **searchfit** (`ai-visibility` =
 el diferencial, `seo-audit`, `technical-seo`, `on-page-seo`, `schema-markup`,
 `competitor-analyzer`, `keyword-clustering`). Entregables por cliente en
 `ventas/entregas/<cliente>/`; detalle de fases en `ventas/proyectos-en-curso.md`. Los
@@ -320,6 +359,11 @@ cumple el umbral; el corte del embudo está aguas abajo (0 llamadas). Más entra
 problema de salida. *(Revisión de esta regla: al cerrar el plan, el 5-oct.)*
 
 ### 🔴 DECISIÓN DE POSICIONAMIENTO — 28-sep-2026 (Ramón). Reemplaza el eje anterior.
+
+> **Historia (2-nov-2026).** Lo que sigue quedó superado por la línea publicada el 30-oct-2026
+> (ver la cabecera de esta ficha y el §01 del manual). Sigue vigente que el sitio es el eje; lo
+> que cambió es el argumento: el rótulo dice «a medida» literal, y la acción principal es
+> «Hablemos de tu sitio», no el chequeo.
 
 **El centro del motor pasa a ser EL SITIO WEB.** Textual de Ramón: *«el centro de este motor se
 debe centrar en la importancia de tener un buen sitio web. Un sitio que no sale plantilla sino que

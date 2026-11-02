@@ -1,0 +1,18 @@
+---
+// LOS TRES ICONOS DE A (spec §1.6): SVG propios, en línea, en currentColor, sin librería. La flecha (12 × 12, trazo
+// 1,5), la pausa y seguir (14 × 14). «fuera» es la misma flecha girada: marca un enlace que sale del sitio (spec §2.2,
+// «la flecha ↗ en SVG»). Van siempre con aria-hidden: el nombre lo lleva el control o el enlace que los contiene.
+interface Props {
+  nombre: 'flecha' | 'fuera' | 'pausa' | 'seguir';
+}
+const { nombre } = Astro.props;
+---
+{(nombre === 'flecha' || nombre === 'fuera') && (
+  <svg class:list={['icono-flecha', { 'icono-flecha--fuera': nombre === 'fuera' }]} viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M1 6h9.5M6.5 2l4 4-4 4" /></svg>
+)}
+{nombre === 'pausa' && (
+  <svg class="icono-pausa" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><rect x="2" y="1" width="3.5" height="12" /><rect x="8.5" y="1" width="3.5" height="12" /></svg>
+)}
+{nombre === 'seguir' && (
+  <svg class="icono-seguir" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M3 1.5v11l9-5.5z" /></svg>
+)}

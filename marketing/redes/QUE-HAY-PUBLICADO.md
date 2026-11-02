@@ -8,7 +8,7 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 > `linkedin.com/company/135255820/admin/page-posts/published/` para la página ·
 > `linkedin.com/in/me/recent-activity/all/` para el perfil personal.
 
-## Página de empresa (12 seguidores)
+## Página de empresa (15 seguidores)
 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
@@ -17,8 +17,9 @@ estaba en el aire, y eso costó un post: el 22-sep se publicó en la página un 
 | ~1-sep | "Estás pagando para que lleguen" (el circuito / dominó) | 1 reacción · 1 comentario · 2 compartidos | corpus §2 + `01-mar-circuito-domino/` |
 | **22-sep** | ⛔ Explicador Ley 21.719 (plural) — **publicado y retirado el mismo día, por repetido** | 53 impresiones en ~40 min | `24-jue-ley-21719/publicar.md` |
 | **✅ 13-oct** | "Si en tu empresa alguien preguntó si aparecen en ChatGPT..." — qué se puede medir gratis de la visibilidad en IA (Search Console), en plural; adaptación del post personal del 7-oct | publicado, verificado (urn 7515830695420821504) | `2026-10-octubre-linkedin/13-mar-pagina-visibilidad-en-ia/publicar.md` |
-| **✅ 15-oct** | "Si tu negocio aparece en Google Maps con un nombre y en tu sitio con otro, conviene dejarlos iguales..." — el nombre del perfil de empresa en Google y en el sitio, en plural; adaptación del post personal del mismo día | publicado, verificado (urn 7516494396259962881; 1 comentario como SpindleLab) | `2026-10-octubre-linkedin/15-jue-pagina-nombre-del-negocio/publicar.md` |
-| **✅ 25-sep** | Los tres mitos de la Ley 21.719 (delegado voluntario, sin 72h, el 4% con dos condiciones) | **398 impresiones** · ✏️ **editado esa tarde: el 4% es solo de las gravísimas** | `24-jue-tres-mitos-ley21719/publicar.md` · corpus ficha 9 (texto corregido) |
+| **✅ 15-oct** | "Si tu negocio aparece en Google Maps con un nombre y en tu sitio con otro, conviene dejarlos iguales..." — el nombre del perfil de empresa en Google y en el sitio, en plural; adaptación del post personal del mismo día | publicado, verificado (urn 7516494396259962881; 1 comentario como SpindleLab; 10 impresiones al 23-oct) | `2026-10-octubre-linkedin/15-jue-pagina-nombre-del-negocio/publicar.md` |
+| **✅ 19-oct** | Reel cara a cámara de Ramón, video nativo de 28 s: "Hay una ley nueva en Chile que protege los datos de las personas..." — un sitio con formulario de contacto entra en la ley y casi nunca hay que rehacerlo; cierre en el chequeo de Verifica y Cumple; plural. Mismo video que salió en Instagram el 16-oct | publicado, verificado (ugcPost 7517938366471020544 / activity 7517938438629752832; 1 comentario como SpindleLab; al 23-oct: 13 impresiones, 29 visualizaciones, 0 clics, 0 reacciones; el compartir de Ramón, 42 impresiones) | `marketing/encargos-otras-sesiones/reel-linkedin-publicado-19oct.md` (el texto original vive en la rama `claude/relanzamiento-sep-social-wygda1`) |
+| **✅ 25-sep** | Los tres mitos de la Ley 21.719 (delegado voluntario, sin 72h, el 4% con dos condiciones) | **398 impresiones** · ✏️ **editado esa tarde: el 4% es solo de las gravísimas** | `24-jue-tres-mitos-ley21719/publicar.md` |
 
 ## Cómo se mide si esto sirvió (desde el 30-sep-2026)
 
@@ -65,29 +66,6 @@ primera lectura con sentido es **mañana**.
 
 ## Instagram · cuenta `spindlelab.cl` (19 seguidores)
 
-### Publicado
-
-| Publicado | Pieza | Enlace |
-|---|---|---|
-| **✅ 16-oct-2026** | **Reel cara a cámara de Ramón** — "Tu sitio lleva años sin que nadie lo revise". Primer video con su cara en toda la operación. Una toma, interior, 50 s. Overlays en el **sistema visual de Verifica** (Archivo Black, acento lima), no en el de SpindleLab. Caption en **plural**, con la ley explicada antes de la conclusión y sin ninguna fecha de vigencia | [instagram.com/reel/DekpyOSRqtD](https://www.instagram.com/reel/DekpyOSRqtD/) |
-| **oct** | Reel "¿Estás seguro?" — campaña de Verifica | [instagram.com/reel/Dd6dAemM6E2](https://www.instagram.com/reel/Dd6dAemM6E2/) |
-| **oct** | Carrusel "Las 12 cosas" — campaña de Verifica | [instagram.com/p/Dd3uPldESqj](https://www.instagram.com/p/Dd3uPldESqj/) |
-
-**Fuentes en el repo:** el reel del 16-oct en
-`marketing/redes/2026-10-octubre-linkedin/20-reel-sitio-sin-revisar/publicar.md` (guion, caption,
-chequeo de duplicación y las cuatro versiones rechazadas); sus overlays en
-`marketing/redes/2026-10-octubre-verifica/06-overlays-reel-ramon/`.
-
-⚠️ **El reel del 16-oct se subió como material orgánico y no se puede promocionar** (Ramón,
-16-oct). Para la sesión de paid media: **no es candidato a pauta**, aunque el conector de Meta
-tenga una herramienta para promocionar publicaciones de Instagram. Y es coherente con la decisión
-del 5-oct de que octubre va solo en orgánico.
-
-⚠️ **Los enlaces van limpios, sin los parámetros de seguimiento** (`utm_source`, `psln`, `srtk`)
-que Instagram agrega al copiar. Esos identifican la sesión de quien copió el link y no tienen nada
-que hacer en un archivo del repo.
-
-
 **Capturado del canal el 25-sep-2026.** ⚠️ **Verifica y Cumple pasó a tener línea editorial
 propia ese día** (decisión de Ramón): su campaña NO usa el sistema oscuro de SpindleLab. Ver
 `marketing/encargos-otras-sesiones/verifica-campana-linea-propia.md`. Esta sección existe porque el repo estaba equivocado
@@ -105,6 +83,8 @@ entra sin chocar.
 
 | Publicado | Pieza | Enlace |
 |---|---|---|
+| **✅ 2-nov** | **«Caso cafés»**, reel cara a cámara de ~48 s, campaña de Verifica. «Pagar publicidad en Instagram está bien. Medir si funcionó, también. Pero para medir, tu sitio instala un rastreador de Facebook en el teléfono del cliente…». Cifra: **16 de 36** sitios de cafés y pastelerías medidos el 29-oct. Cuatro tarjetas con bloque azul + el recuadro de cierre. Guion, tarjetas, tiempos y capa de color en `2026-11-noviembre-verifica/`. **Subido como orgánico**, igual que el del 16-oct: no es candidato a pauta. **No lo he visto yo**: lo reporta Ramón y da este enlace | `instagram.com/reel/DfQPdeMSXFC/` |
+| **16-oct** | **Reel nuevo de la campaña de Verifica**, con guion y montaje de otra sesión. Los overlays salieron de `marketing/redes/2026-10-octubre-verifica/05-overlays-video/`, que replica el sistema visual de las piezas anteriores (azul/lima + Archivo Black, cero SpindleLab). El recuadro del cierre es el mismo `.tarjeta` del reel del 30-sep, por eso los dos cierran igual. **No lo he visto yo**: lo reporta Ramón | `instagram.com/reel/DekpyOSRqtD/` |
 | **30-sep** | **Historias de las dos piezas**, compartidas por Ramón a mano **en las dos cuentas**: la personal y la de la empresa. Es el empujón que el plan pedía: la pieza vive en la grilla, la historia es lo que mueve gente | — |
 | **30-sep** | **Reel "¿Estás seguro?"** de la campaña de Verifica, 16 s. Encuadre 9:16, portada en la pregunta, **etiqueta de IA activada**, y **sin audio de tendencia**: salió con una pista de silencio que hubo que agregarle para que el subidor web lo aceptara | `instagram.com/reel/Dd6dAemM6E2/` |
 | **29-sep** | **Carrusel "Las 12 cosas"** de la campaña de Verifica, 6 láminas. Con **etiqueta de IA activada** (la sheriff es una imagen fotorrealista generada con IA). Fuente en `marketing/redes/2026-10-octubre-verifica/03-carrusel-las-12-cosas/` | `instagram.com/p/Dd3uPldESqj/` |
@@ -141,20 +121,24 @@ o que son suyas:**
 
 ---
 
-## Perfil personal de Ramón (380 seguidores)
+## Perfil personal de Ramón (383 seguidores al 2-nov)
 
 | Publicado | Pieza | Métricas | Registrado en |
 |---|---|---|---|
-| **✅ 15-oct** | "Si tu negocio aparece en Google Maps con un nombre y en tu sitio con otro, conviene dejarlos iguales..." — qué pide Google del nombre del perfil de empresa (el real, sin eslogan, horario, teléfono, servicio ni ubicación) y el consejo de una especialista de SEO local de igualarlo en el sitio; cierre en el diagnóstico a mano gratis | publicado, verificado (urn 7516492052893868032; 1 comentario; programado para el 16-oct, salió el 15) | `2026-10-octubre-linkedin/16-vie-nombre-del-negocio-en-google/publicar.md` |
-| **✅ 14-oct** | "Si en tu empresa dijeron "esperemos, que la nueva ley de datos personales la postergan", esto es lo que hay hoy..." — el proyecto del Senado para postergar la Ley 21.719 (1-dic-2027 el del Gobierno, seis meses la oposición); mientras no se apruebe rige el 1-dic-2026; cierre en el chequeo de Verifica y Cumple | publicado, verificado (urn 7516116736371339265; 1 comentario) | `2026-10-octubre-linkedin/14-mie-la-postergacion-de-la-ley-21719/publicar.md` |
-| **✅ 13-oct** | "Si la página de tu servicio dice lo mismo que la de tus competidores, una IA tiene poco que sacar de ella..." — método de Search Engine Land (9-oct) para ver qué le falta a una página de servicio con las preguntas que sugiere la IA; cierre con el diagnóstico a mano y el chequeo | publicado, verificado (urn 7515818558875017216; programado para el 12-oct, salió el 13) | `2026-10-octubre-linkedin/12-lun-que-le-falta-a-tu-pagina-de-servicio/publicar.md` |
+| **✅ 2-nov** | "Aunque hay un proyecto para postergarla, la Ley 21.719, la nueva ley de datos personales de Chile, sigue diciendo hoy que rige desde el 1 de diciembre de 2026." — la importancia, no el trámite: aplica a cualquier empresa con un formulario de contacto, la sanción queda en un registro público cinco años, un arreglo a tiempo sale mejor que la multa; cierre en el chequeo. **Editado el mismo día** (la primera versión llevaba seis fechas del trámite del Senado) | publicado, verificado, editado (urn 7523041354122379265; primer comentario de Ramón con el chequeo y la nota del Senado) | `2026-10-octubre-linkedin/2-nov-lun-el-senado-fijo-la-fecha/publicar.md` |
+| **✅ 30-oct** | "Las visitas desde buscadores bajaron 13,2% en EE.UU. y 24,4% en Francia en dos años. La IA, en cambio, manda una de cada 200." — análisis de Similarweb en Growth Memo (26-oct); el sitio sigue importando, uno armado para que la gente y las IA lo encuentren; diseño de sitios y revisión de los existentes; cierre en el chequeo | publicado, verificado (urn 7521940001706749953; primer comentario de Ramón con el análisis y el chequeo); **al 2-nov (3 días): 69 impresiones, 0 reacciones, 1 comentario (el de Ramón)** | `2026-10-octubre-linkedin/30-vie-el-sitio-sigue-importando/publicar.md` |
+| **✅ 28-oct** | "El 20 de octubre la Comisión de Constitución del Senado aprobó por unanimidad, en general, el proyecto que posterga hasta diciembre de 2027 la entrada en vigencia de la Ley 21.719..." — la postergación avanzó, sigue abierto cuánto, y lo que exige la ley no cambia; cierre en el chequeo | publicado, verificado (urn 7521224976192913408; primer comentario de Ramón con el chequeo y la fuente del Senado); **al 2-nov (5 días): 55 impresiones, 0 reacciones; quedó desactualizado el mismo día (la comisión ya había fijado el 15-oct-2027 el 26-oct); el dato viejo sigue en el post y Ramón decidió no corregirlo con un comentario (ver 2-nov)** | `2026-10-octubre-linkedin/28-mie-la-comision-aprobo-la-postergacion/publicar.md` |
+| **✅ 19-oct** | "Tu informe de analítica puede mostrar una caída de ChatGPT entre el 9 y el 13 de octubre que en buena parte fue un error de medición..." — el error de etiquetas de ChatGPT (visitas contadas como directas, 31.000 menos al día y 26.000 más de directas en unas 500 páginas, según Search Engine Roundtable) y que el informe de IA de Google solo da impresiones; cierre en el diagnóstico a mano | publicado, verificado (urn 7517930145773514752; 1 comentario; 58 impresiones al 23-oct) | `2026-10-octubre-linkedin/19-lun-trafico-de-chatgpt-como-directo/publicar.md` |
+| **✅ 15-oct** | "Si tu negocio aparece en Google Maps con un nombre y en tu sitio con otro, conviene dejarlos iguales..." — qué pide Google del nombre del perfil de empresa (el real, sin eslogan, horario, teléfono, servicio ni ubicación) y el consejo de una especialista de SEO local de igualarlo en el sitio; cierre en el diagnóstico a mano gratis | publicado, verificado (urn 7516492052893868032; 1 comentario; programado para el 16-oct, salió el 15; 35 impresiones al 16-oct, 50 al 23-oct) | `2026-10-octubre-linkedin/16-vie-nombre-del-negocio-en-google/publicar.md` |
+| **✅ 14-oct** | "Si en tu empresa dijeron "esperemos, que la nueva ley de datos personales la postergan", esto es lo que hay hoy..." — el proyecto del Senado para postergar la Ley 21.719 (1-dic-2027 el del Gobierno, seis meses la oposición); mientras no se apruebe rige el 1-dic-2026; cierre en el chequeo de Verifica y Cumple | publicado, verificado (urn 7516116736371339265; 1 comentario; 60 impresiones al 16-oct, 76 al 23-oct) | `2026-10-octubre-linkedin/14-mie-la-postergacion-de-la-ley-21719/publicar.md` |
+| **✅ 13-oct** | "Si la página de tu servicio dice lo mismo que la de tus competidores, una IA tiene poco que sacar de ella..." — método de Search Engine Land (9-oct) para ver qué le falta a una página de servicio con las preguntas que sugiere la IA; cierre con el diagnóstico a mano y el chequeo | publicado, verificado (urn 7515818558875017216; programado para el 12-oct, salió el 13; 51 impresiones al 16-oct, 61 al 23-oct) | `2026-10-octubre-linkedin/12-lun-que-le-falta-a-tu-pagina-de-servicio/publicar.md` |
 | **✅ 7-oct** | "Si en tu empresa alguien preguntó si aparecen en ChatGPT, es probable que ya te hayan ofrecido un panel para medirlo..." — qué se puede medir gratis de la visibilidad en IA (informe de IA generativa de Search Console) y lo que ningún panel puede prometer; cierre con el chequeo y el diagnóstico de 24 h | publicado, verificado (urn 7513591632873730048) | `2026-10-octubre-linkedin/07-mie-visibilidad-en-ia-lo-que-se-mide/publicar.md` |
-| **✅ 5-oct** | "La Ley 21.719, la nueva ley de datos personales de Chile, le aplica a cualquier empresa que maneje datos de personas..." — el cuarto mito: la amonestación del primer año es una facultad, no un derecho, y queda en un registro público; cierre con el chequeo | publicado, verificado (urn 7512857562887786496) | `2026-10-octubre-linkedin/05-lun-cuarto-mito-amonestacion/publicar.md` · corpus ficha 13 (con las dos versiones rechazadas) |
-| **✅ 2-oct** | "Si llevas meses buscando el video que se haga viral, tu sitio web probablemente lleva esos mismos meses sin tocarse..." — el sitio es la tienda principal, las redes la vitrina; cierre de Desarrollo Web a medida | publicado, verificado (urn 7511845341839953921; 102 impresiones el 5-oct) | `2026-10-octubre-linkedin/02-vie-el-sitio-es-la-tienda/publicar.md` · corpus ficha 12 |
-| **✅ 30-sep** | "Cuando el chequeo de Verifica y Cumple no alcanza a ver algo... lo dice" — el mecanismo de declinar en vez de inventar un puntaje | publicado, verificado (94 impresiones el 2-oct) | `30-mie-lo-que-no-vemos/publicar.md` · corpus ficha 11 |
-| **✅ 28-sep** | "Me gusta construir sitios bien hechos..." — buenas prácticas desde el origen, ligado a Verifica y Cumple | publicado, verificado | `28-lun-buenas-practicas-desde-el-origen/publicar.md` · corpus ficha 10 |
-| **✅ 25-sep** | "Construí Verifica y Cumple..." — post propio con el link directo en el cuerpo, no compartir | publicado, verificado · 45 impresiones al 5-oct, el de menor alcance | `24-jue-tres-mitos-ley21719/publicar.md` · corpus ficha 8 |
-| **23-sep** | Query fan-out: el mecanismo de las respuestas con IA de Google, con fuente primaria | recién publicado | `23-mie-query-fan-out/` · corpus ficha 7 |
+| **✅ 5-oct** | "La Ley 21.719, la nueva ley de datos personales de Chile, le aplica a cualquier empresa que maneje datos de personas..." — el cuarto mito: la amonestación del primer año es una facultad, no un derecho, y queda en un registro público; cierre con el chequeo | publicado, verificado (urn 7512857562887786496) | `2026-10-octubre-linkedin/05-lun-cuarto-mito-amonestacion/publicar.md` |
+| **✅ 2-oct** | "Si llevas meses buscando el video que se haga viral, tu sitio web probablemente lleva esos mismos meses sin tocarse..." — el sitio es la tienda principal, las redes la vitrina; cierre de Desarrollo Web a medida | publicado, verificado (urn 7511845341839953921; 102 impresiones el 5-oct) | `2026-10-octubre-linkedin/02-vie-el-sitio-es-la-tienda/publicar.md` |
+| **✅ 30-sep** | "Cuando el chequeo de Verifica y Cumple no alcanza a ver algo... lo dice" — el mecanismo de declinar en vez de inventar un puntaje | publicado, verificado (94 impresiones el 2-oct) | `30-mie-lo-que-no-vemos/publicar.md` |
+| **✅ 28-sep** | "Me gusta construir sitios bien hechos..." — buenas prácticas desde el origen, ligado a Verifica y Cumple | publicado, verificado | `28-lun-buenas-practicas-desde-el-origen/publicar.md` |
+| **✅ 25-sep** | "Construí Verifica y Cumple..." — post propio con el link directo en el cuerpo, no compartir | publicado, verificado | `24-jue-tres-mitos-ley21719/publicar.md` |
+| **23-sep** | Query fan-out: el mecanismo de las respuestas con IA de Google, con fuente primaria | recién publicado | `23-mie-query-fan-out/` |
 | **21-sep, editado el 22-sep** | "Soy fundador de SpindleLab y armé un chequeo gratis para la Ley 21.719…" | 58 impresiones · 1 comentario | corpus §3 |
 | **21-sep** | Compartir del post de la página, con comentario propio ("la parte incómoda no es el puntaje") | 20 impresiones | corpus §4 |
 | **21-sep** | "Si te están cobrando GEO como una línea aparte del SEO…" (el VP de Search de Google, junio) | **84 impresiones** · 1 comentario — **el de mejor alcance** | corpus §5 |
@@ -178,16 +162,7 @@ verificable y sin nada que vender. Vale la pena mirarlo antes de decidir el pró
   comentar, que sí tiene selector). Solución: navegar a la URL pública del post
   (`linkedin.com/feed/update/urn:li:activity:<id>/`) y compartir desde ahí. Detalle completo en
   `24-jue-tres-mitos-ley21719/publicar.md`.
-- **Corpus de voz al día (5-oct-2026).** Todo lo publicado en el perfil personal y la página
-  hasta el 5-oct está en `.claude/skills/voz-spindlelab/corpus.md`, literal: 15 fichas, con el
-  texto corregido del 25-sep (el que está en el aire, no el original) y, para el post del 5-oct,
-  los motivos de los dos rechazos. **Lo que no quedó guardado y ya no se puede recuperar:** el
-  texto íntegro de las versiones 1 y 2 del post del 5-oct. En el corpus están los motivos y los
-  fragmentos citados en su `publicar.md`, que es lo verificable; no se reconstruyen de memoria.
-- **Octubre reflejado en el calendario editorial (5-oct-2026).** `marketing/calendario-editorial.md`
-  tiene ahora una sección de octubre con los slots reales (2-oct y 5-oct publicados, 7-oct en cola,
-  9-oct candidato), el banco de temas con el requisito pendiente de cada uno, y una nota en la
-  sección de septiembre aclarando que ese plan no se ejecutó como está escrito.
+- **Ya no falta capturar nada**: los cuatro textos vivos están en el corpus (§1 a §6), literales.
 - El 22-sep, LinkedIn tuvo **las escrituras caídas para la página** durante al menos una hora:
   dos envíos de comentario colgados sin error y tres guardados de edición fallidos
   (*"no hemos podido completar tu solicitud"*). Descartado que fuera un permiso. Si vuelve a

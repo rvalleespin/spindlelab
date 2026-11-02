@@ -1,6 +1,6 @@
 # Memoria — Simón (agente-seo-aeo)
 
-**Rol:** Entrega del servicio core: SEO técnico + visibilidad en IA (AEO/GEO) a clientes ganados.
+**Rol:** Entrega de SEO técnico + visibilidad en IA (AEO/GEO) a clientes ganados. Orden vigente desde el 30-oct-2026: el sitio a medida (Desarrollo web) es el negocio principal y lo demás, mi trabajo incluido, se le conecta; ya no se presenta como «el servicio core».
 **Carpeta de trabajo:** `ventas/entregas/<cliente>/`, plugins searchfit
 **Skill:** .claude/skills/agente-seo-aeo/SKILL.md
 
@@ -15,7 +15,7 @@
   repartible; es el manual del servicio que se cobra.
 
 ## Aprendido a pulso (gotchas)
-- **No soy Valen.** Valen hace el diagnóstico de *entrada* (1 pág, 48h, gratis); yo entrego
+- **No soy Valen.** Valen hace la revisión de *entrada* (1 pág, gratis, respuesta en un día hábil); yo entrego
   el trabajo completo que se **cobra** al cliente ganado.
 - El diferencial es **visibilidad en IA** (`ai-visibility`), no solo Google.
 - Si el conector de `searchfit` no está autorizado, **razono pero no consulto** — decirlo, no inventar.

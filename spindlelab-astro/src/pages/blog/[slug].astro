@@ -1,0 +1,101 @@
+---
+// LOS SIETE ARTÍCULOS SOBRE A · ARCHIVO (obra E12, corrida 2, tanda 5). Diego, 19-oct-2026.
+//
+// Contrato: spindlelab-v3/spec-visual.md §2.5: la plantilla del caso (§2.3) con otro contenido. Desde 1194, la barra
+// lateral pegajosa: miga («Inicio · Blog · <nombre corto>»), el h1 a Título, la ficha en dato mono, el autor (su nombre,
+// su rol y el retrato que ya existe, a 44 px y radio 6) y el índice del artículo (sus h2, el punto en la activa). En la
+// columna, el cuerpo verbatim con tope de 493 y sus h2 a Título con su borde, en las secciones del caso; al final, el
+// mismo paso de conversión del índice y «Siguiente artículo». Bajo 1194, una columna y el índice en la barra flotante.
+// Sin imagen editorial. Lo que la spec no cubría está en spindlelab-v3/desvios.md, tanda 5.
+//
+// Todo lo arma articulo() en blog.mjs (el cuerpo partido en sus secciones sin cambiar una letra, los enlaces con su
+// ruta, el grafo del post). El índice de secciones y la barra los mueve caso.mjs, el mismo de los casos.
+import Layout from '../../layouts/Layout.astro';
+import PaginaA from '../../components/a/PaginaA.astro';
+import Miga from '../../components/a/Miga.astro';
+import Icono from '../../components/a/Icono.astro';
+import { LAYOUT_A } from '../../components/a/layout-a';
+import { articulo, SLUGS } from '../../data/archivo/blog.mjs';
+
+export function getStaticPaths() {
+  return SLUGS.map((slug) => ({ params: { slug } }));
+}
+const a = articulo(Astro.params.slug as string);
+---
+<Layout title={a.meta.title} description={a.meta.description} ogImage={a.og.src} ogImageAlt={a.og.alt} ogType="article" {...LAYOUT_A}>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(a.jsonLd)} />
+  <PaginaA>
+    <article class="caso articulo" data-linea="120">
+      <header class="lateral">
+        <Miga items={[{ texto: a.miga[0], href: '/' }, { texto: a.miga[1], href: '/blog/' }, { texto: a.miga[2] }]} />
+        <h1 class="t-titulo" set:html={a.h1} />
+        <dl class="lateral__datos">
+          {a.ficha.map((d) => (<><dt class="dato">{d.rotulo}</dt><dd class="dato">{d.iso ? <time datetime={d.iso}>{d.valor}</time> : d.valor}</dd></>))}
+        </dl>
+        <div class="autor">
+          <img src={a.autor.src} alt="" width="132" height="132" loading="eager" decoding="async" />
+          <p class="chico"><span class="tinta">{a.autor.nombre}</span><span class="autor__rol">{a.autor.rol}</span></p>
+        </div>
+        <nav class="lateral__indice" aria-label={a.nombreSecciones} data-secciones>
+          <p class="rotulo lateral__rot">{a.indiceRotulo}</p>
+          <span class="lateral__punto" aria-hidden="true"></span>
+          <ul>
+            {a.secciones.map((s, i) => (
+              <li><a href={`${a.ruta}#${s.id}`} aria-current={i === 0 ? 'location' : undefined}>{s.nombre}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+
+      <div class="caso__columna">
+        <div class="articulo__intro">
+          {a.intro.map((p) => <div class:list={[p.tipo === 'tabla' ? 'prosa-tabla' : 'prosa']} set:html={p.html} />)}
+        </div>
+        {a.secciones.map((s) => (
+          <section class="caso-bloque" id={s.id} data-nombre={s.nombre} aria-labelledby={`h-${s.id}`}>
+            <div class="caso-sec caso-sec--articulo">
+              <div class="caso-sec__izq"><h2 id={`h-${s.id}`} set:html={s.h2} /></div>
+              {s.partes.map((p) => <div class:list={[p.tipo === 'tabla' ? 'prosa-tabla' : 'caso-sec__der prosa']} set:html={p.html} />)}
+            </div>
+          </section>
+        ))}
+
+        <section class="siguiente" aria-labelledby="h-cierre" data-entrada>
+          <div class="siguiente__contacto">
+            <h2 class="t-titulo" id="h-cierre">{a.cierre.h2}</h2>
+            <p class="cuerpo caja">{a.cierre.guia}</p>
+            <p class="cuerpo caja">{a.cierre.cuerpo}</p>
+            <div class="botones">
+              <a class="boton boton--claro" href={a.cierre.botones[0].href}>{a.cierre.botones[0].texto}<Icono nombre="flecha" /></a>
+              <a class="boton boton--placa" href={a.cierre.botones[1].href}>{a.cierre.botones[1].texto}</a>
+            </div>
+          </div>
+          <div class="siguiente__caso">
+            <p class="rotulo">{a.siguiente.rotulo}</p>
+            <a class="t-siguiente t-display subrayado" href={a.siguiente.href}>{a.siguiente.titulo}<Icono nombre="flecha" /></a>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <nav class="barra barra--articulo" aria-label={a.nombreSecciones} data-secciones>
+      <details>
+        <summary>
+          <span class="rotulo">{a.indiceRotulo}</span>
+          <span class="barra__activa barra__activa--frase" data-barra-activa>{a.secciones[0].nombre}</span>
+          <span class="barra__mas" aria-hidden="true">+</span>
+          <span class="solo-lector">{a.nombreBarra}</span>
+        </summary>
+        <ul>
+          {a.secciones.map((s, i) => (
+            <li><a href={`${a.ruta}#${s.id}`} aria-current={i === 0 ? 'location' : undefined}>{s.nombre}</a></li>
+          ))}
+        </ul>
+      </details>
+    </nav>
+  </PaginaA>
+</Layout>
+
+<script>
+  import '../../scripts/archivo/caso.mjs';
+</script>

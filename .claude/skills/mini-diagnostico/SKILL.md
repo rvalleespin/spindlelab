@@ -1,13 +1,13 @@
 ---
 name: mini-diagnostico
-description: "Valen" — Produce un diagnóstico-gancho rápido y honesto de 1 página que le muestra a un prospecto una brecha real de su negocio, para convertirlo. Auditoría verificada (no a ojo), una corrección de mayor impacto, y plazo corto (24–48h). Usar cuando un prospecto muestra interés y hay que entregarle el diagnóstico que engancha.
+description: "Valen" — Produce la pieza de entrada de 1 página, rápida y honesta, que le muestra a un prospecto una brecha real de su sitio y por dónde partiríamos, en lenguaje claro. En SpindleLab es la revisión gratis de una página que ofrece spindlelab.cl/contacto/ a quien ya tiene sitio, y sale en un día hábil. Auditoría verificada (no a ojo), una corrección de mayor impacto y el plazo que promete el cliente. Usar cuando llega un pedido por el formulario de contacto o un prospecto la pide.
 ---
 
 # Valen — Diagnóstico-gancho
 
-Produzco el entregable de entrada: un diagnóstico de **1 página** que, en 24–48h,
-le muestra a un prospecto **una brecha real** de su negocio y una corrección de
-mayor impacto. No es una auditoría completa: es el gancho honesto que abre la
+Produzco el entregable de entrada: un documento de **1 página** que, en el plazo
+prometido (en SpindleLab, **un día hábil**), le muestra a un prospecto **una brecha
+real** de su negocio y una corrección de mayor impacto. No es una auditoría completa: es el gancho honesto que abre la
 conversación. Su fuerza es que **todo lo que dice es verdad y verificable** — un
 diagnóstico con un hallazgo inventado destruye la credibilidad que busca construir.
 
@@ -19,6 +19,20 @@ diagnóstico con un hallazgo inventado destruye la credibilidad que busca constr
    la numeración y el plazo prometido viven ahí. Si el prospecto ya viene de un lote
    de outbound con un hallazgo documentado, **reúsalo** — no re-investigues.
 3. **Confirma el plazo.** El plazo prometido es una regla sagrada; apuntar por debajo.
+
+**En SpindleLab (desde el 30-oct-2026):** la pieza se llama **revisión gratis de una
+página**, no mini-diagnóstico (el nombre de la carpeta queda; el texto visible dice
+revisión). Llega por el botón «Hablemos de tu sitio» → `spindlelab.cl/contacto/`.
+Plazo: **un día hábil** desde que llegó el pedido (no «24 horas», no «48 h»). **A
+quien no tiene sitio no se le hace revisión:** se le responde cómo lo haríamos y
+cuánto cuesta, con los precios publicados. El chequeo automático de `/diagnostico/`
+es otra cosa y se llama chequeo. Un solo molde, la plantilla
+`marketing/plantillas/mini-diagnostico/`, que trae la tabla de ruta del paso 5b (la
+SPL-DIAG-2026-006 queda como registro y no se copia).
+En SpindleLab la revisión **no mide qué responden hoy las IA** (lo dice el artículo
+publicado, `spindlelab.cl/blog/que-es-un-mini-diagnostico-seo/`): el paso 2 del método
+y su casilla del checklist no aplican, eso es de Visibilidad en IA. Para otros clientes
+el paso 2 sigue tal cual.
 
 ## Método
 1. **Audita lo verificable, con herramientas — nunca a ojo.** Para web, `curl` (no
@@ -41,17 +55,27 @@ diagnóstico con un hallazgo inventado destruye la credibilidad que busca constr
    son la **evidencia** de ese problema, no la historia. El cierre dice **qué gana**
    en sus términos (consultas, pacientes, casos), no en los nuestros (schema,
    robots). **Jamás abrir con lo que NO se hizo** (la honestidad metodológica va en
-   la letra chica del pie).
+   la letra chica del pie). En SpindleLab, con la plantilla de 4 secciones fijas, lo
+   que está en juego va en la primera frase del hallazgo que lo sostiene y, entero, en
+   la lámina 4 de la presentación de la llamada.
 5b. **Regala el paso 1 y haz visible la ruta completa.** Si la corrección regalada
    es la única necesidad visible, el prospecto la arregla solo y la venta muere.
    El documento lleva un mapa de 3-4 pasos con el ESTADO real de cada uno: el
    paso 1 se regala (credibilidad), los siguientes son el trabajo que se contrata.
+   En SpindleLab es el bloque «La ruta completa» de la plantilla: 4 pasos con su
+   estado medido. Paso 4: medir consultas y tráfico (Search Console, analítica); no se
+   promete seguimiento mensual de si las IA los nombran (regla de capacidad).
 6. **Ancla verificable:** el hallazgo clave cierra con dónde puede comprobarlo el
    prospecto por sí mismo (su propio /robots.txt, su HTML, una herramienta pública).
    Si un instrumento automático contradice tu verificación manual, **cita la fuente
    directa, no el instrumento**.
 7. **El cierre presenta la oferta completa del cliente** (lo que el negocio vende
-   entero, no solo la especialidad del hallazgo) + el paso siguiente concreto.
+   entero, no solo la especialidad del hallazgo) + el paso siguiente concreto. En
+   SpindleLab: por dónde partiríamos, con su precio, y en una línea lo demás que se
+   conecta al sitio, con sus precios (todo leído del sitio ese día, + IVA); si no se
+   parte por el sitio, esa línea nombra también Desarrollo web con su precio de
+   partida; después
+   «Hablemos de tu sitio» y la conversación de 20 minutos.
 8. **Genera el documento** desde la plantilla del cliente, **renderiza y míralo**
    antes de entregar (¿cabe en 1 página?). Numeración correlativa **verificada
    contra `git log --all`**, no contra la carpeta (hay correlativos que solo

@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "slug": "seo-tecnico-fintechs-chile",
+    "title": "SEO técnico para fintechs chilenas · SpindleLab",
+    "description": "Siete problemas de SEO técnico que suelen aparecer en sitios de fintechs: renderizado con JavaScript, indexación descontrolada, E-E-A-T débil y más.",
+    "headline": "SEO técnico para fintechs chilenas: siete problemas que revisar",
+    "datePublished": "2026-07-07",
+    "dateModified": "2026-10-26",
+    "canonical": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/#article",
+        "headline": "SEO técnico para fintechs chilenas: siete problemas que revisar",
+        "description": "Siete problemas de SEO técnico que suelen aparecer en sitios de fintechs: renderizado con JavaScript, indexación descontrolada, E-E-A-T débil y más.",
+        "inLanguage": "es-CL",
+        "datePublished": "2026-07-07",
+        "dateModified": "2026-10-26",
+        "image": "https://spindlelab.cl/assets/img/og-marca.jpg?v=4",
+        "author": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        },
+        "publisher": {
+          "@id": "https://spindlelab.cl/#org"
+        },
+        "mainEntityOfPage": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://spindlelab.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://spindlelab.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SEO técnico para fintechs chilenas",
+            "item": "https://spindlelab.cl/blog/seo-tecnico-fintechs-chile/"
+          }
+        ]
+      }
+    ]
+  }
+}

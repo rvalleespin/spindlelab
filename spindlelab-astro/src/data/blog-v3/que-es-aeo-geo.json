@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "slug": "que-es-aeo-geo",
+    "title": "AEO y GEO explicados para gerentes no técnicos · SpindleLab",
+    "description": "Qué es AEO y GEO, en qué se diferencian del SEO tradicional y cómo decidir si tu empresa necesita actuar ahora. Guía sin jerga para gerentes.",
+    "headline": "AEO y GEO explicados para gerentes que no son técnicos",
+    "datePublished": "2026-07-07",
+    "dateModified": "2026-10-26",
+    "canonical": "https://spindlelab.cl/blog/que-es-aeo-geo/"
+  },
+  "jsonLd": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": "https://spindlelab.cl/blog/que-es-aeo-geo/#article",
+        "headline": "AEO y GEO explicados para gerentes que no son técnicos",
+        "description": "Qué es AEO y GEO, en qué se diferencian del SEO tradicional y cómo decidir si tu empresa necesita actuar ahora. Guía sin jerga para gerentes.",
+        "inLanguage": "es-CL",
+        "datePublished": "2026-07-07",
+        "dateModified": "2026-10-26",
+        "image": "https://spindlelab.cl/assets/img/og-marca.jpg?v=4",
+        "author": {
+          "@id": "https://spindlelab.cl/#autor-ramon"
+        },
+        "publisher": {
+          "@id": "https://spindlelab.cl/#org"
+        },
+        "mainEntityOfPage": "https://spindlelab.cl/blog/que-es-aeo-geo/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://spindlelab.cl/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://spindlelab.cl/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Qué es AEO y GEO",
+            "item": "https://spindlelab.cl/blog/que-es-aeo-geo/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿AEO reemplaza al SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Google sigue moviendo la mayor parte del tráfico y la base técnica es compartida. AEO agrega un segundo campo de visibilidad que se trabaja con la misma inversión de base."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Esto aplica a empresas chilenas o es tema de mercados grandes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aplica. La base técnica que necesita una empresa mediana es la misma que la de una grande: que los robots puedan visitar el sitio, que quede claro quién eres y que tu contenido afirme cosas concretas. Lo que no se puede prometer es cuántas respuestas vas a ganar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta empezar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Partir cuesta cero: la revisión gratis de una página mira si Google y las IA pueden visitar tu sitio y entender a qué te dedicas, y llega en un día hábil. Desde ahí, cualquier propuesta se dimensiona según tu caso."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

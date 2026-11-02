@@ -107,7 +107,7 @@ a{color:inherit}
 @media(min-width:768px){.site-header .wrap{padding:0 40px}}
 /* Header full-width + píldora centrada, coherente con el home (Nav.astro):
    un spacer de ancho 0 a la derecha hace que la píldora quede centrada como 3er hijo. */
-@media(min-width:681px){.site-header .wrap::after{content:"";width:0;flex:0 0 auto}}
+@media(min-width:1024px){.site-header .wrap::after{content:"";width:0;flex:0 0 auto}}
 .logo{font-size:20px;font-weight:700;letter-spacing:-.025em;text-decoration:none;color:var(--ink);display:flex;align-items:center;font-family:var(--headline);line-height:1}
 @media(min-width:640px){.logo{font-size:24px}}
 .logo span{color:var(--gold)}
@@ -130,17 +130,40 @@ a{color:inherit}
 .menu-btn[aria-expanded="true"] .bars::before{transform:rotate(-90deg) translateX(-7px)}
 .menu-btn[aria-expanded="true"] .bars::after{opacity:0}
 
-/* Menú estilo píldora (igual que el home). */
-@media(min-width:681px){
+/* Menú estilo píldora (igual que el home). Desde 1024 px, el mismo corte (lg) que el home:
+   entre 681 y 1023 la barra no cabía y «Pedir la revisión» se partía en dos líneas. */
+.nav-links .nav-links-cta{display:none}
+@media(min-width:1024px){
   .nav-pill{display:flex;align-items:center;gap:4px;background:rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-pill);padding:4px 4px 4px 24px;box-shadow:0 1px 2px rgba(0,0,0,.06)}
   .nav-pill .nav-links{gap:4px}
-  .nav-pill .nav-links a{text-transform:none;letter-spacing:0;font-weight:500;font-size:14px;color:var(--ink-70);padding:8px 12px;border-radius:var(--r-pill);box-shadow:none}
+  .nav-pill .nav-links a{text-transform:none;letter-spacing:0;font-weight:500;font-size:14px;color:var(--ink-70);padding:8px 12px;border-radius:var(--r-pill);box-shadow:none;white-space:nowrap}
   .nav-pill .nav-links a:hover{color:var(--ink)}
   .nav-pill .nav-links a[aria-current="page"]{color:var(--ink);box-shadow:none}
-  .nav-pill .nav-cta{margin-left:8px;text-transform:none;letter-spacing:0;font-weight:600;font-size:14px;padding:10px 20px}
+  .nav-pill .nav-cta{margin-left:8px;text-transform:none;letter-spacing:0;font-weight:600;font-size:14px;padding:10px 20px;white-space:nowrap}
 }
-/* En móvil la píldora desaparece: links vuelven a ser hijos directos (dropdown). */
-@media(max-width:680px){.nav-pill{display:contents}}
+/* Bajo 1024 px la píldora desaparece: burger + cajón desplegable. El botón «Pedir la
+   revisión» de la barra se oculta y vuelve como último ítem del cajón (li.nav-links-cta). */
+@media(max-width:1023px){
+  .nav-pill{display:contents}
+  .nav-pill>.nav-cta{display:none}
+  .menu-btn{display:block}
+  .nav-links{
+    display:none;position:absolute;top:68px;left:0;right:0;
+    background:var(--surface-2);border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:flex-start;gap:0;padding:12px 32px 20px;
+    max-height:calc(100vh - 68px);overflow-y:auto;
+  }
+  .nav-links.open{display:flex}
+  .nav-links li{width:100%}
+  .nav-links a{display:block;padding:13px 0;font-size:13px}
+  .nav-links .nav-links-cta{display:block;margin-top:12px}
+  .nav-links .nav-links-cta a{
+    display:flex;justify-content:center;padding:13px 20px;
+    font-size:14px;font-weight:600;letter-spacing:0;text-transform:none;
+  }
+  .nav-links .nav-links-cta a:hover{color:#12201A}
+}
+@media(min-width:768px) and (max-width:1023px){.nav-links{padding-left:40px;padding-right:40px}}
 
 /* ---------- Hero ---------- */
 .hero{padding:120px 0 96px;background:var(--bg)}
@@ -355,9 +378,19 @@ h1 .ia{color:var(--teal)}
 /* Hero de página full-bleed con video de fondo (como el home). */
 .page-hero-video{position:relative;overflow:hidden;padding:132px 0 108px;border-bottom:0}
 .page-hero-video .ph-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.page-hero-video .ph-veil{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(14,20,27,.72) 0%,rgba(14,20,27,.5) 42%,rgba(14,20,27,.88) 100%)}
+/* Velo sobre el video: .72/.50/.88 dejaba el texto chico (bajada, miga de pan) bajo 4,5:1 donde el
+   hilo de oro pasa por detrás. Con .80/.76/.90 la bajada queda sobre 4,5:1 hasta en el peor píxel de
+   todos los fotogramas (medido a 1440, 768 y 390 px en las 11 páginas con video). */
+.page-hero-video .ph-veil{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(14,20,27,.8) 0%,rgba(14,20,27,.76) 42%,rgba(14,20,27,.9) 100%)}
 .page-hero-video>.wrap{position:relative;z-index:1}
 @media(max-width:680px){.page-hero-video{padding:92px 0 72px}}
+/* Texto chico sobre el video: el verde petróleo solo no alcanza 4,5:1 donde pasa el hilo de oro
+   (llegaba a 2,9:1). Va sobre un chip de tinta, el mismo patrón de .media-tag. Con el chip, el peor
+   píxel medido queda en 6,0:1. La miga de pan sube de ink-50 a ink-70 (con ink-50 el techo era 4,8:1). */
+.page-hero-video .note{display:inline-block;padding:7px 14px;border-radius:var(--r-pill);background:rgba(14,20,27,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+@media(max-width:680px){.page-hero-video .note{border-radius:14px}}
+.page-hero-video .crumbs,.page-hero-video .crumbs a,.page-hero-video .crumbs li+li::before{color:var(--ink-70)}
+.page-hero-video .crumbs a:hover{color:var(--ink)}
 .hero-media .media-tag{
   position:absolute;left:18px;bottom:18px;z-index:1;
   background:rgba(14,20,27,.82);color:var(--paper);
@@ -518,6 +551,9 @@ h1 .ia{color:var(--teal)}
 .prose pre{background:var(--surface-2);color:var(--ink);border:1px solid var(--line);border-radius:var(--r-card);padding:20px 22px;overflow-x:auto;font-size:13px;line-height:1.6}
 .prose pre code{background:none;color:inherit;padding:0}
 .prose table{width:100%;border-collapse:collapse;font-size:14px}
+/* En pantallas chicas la tabla (610 px) es más ancha que la columna y se recortaba sin remedio: scroll
+   horizontal propio. El corte es 680 px, el mismo del resto del sitio: a 601 px todavía desbordaba. */
+@media(max-width:680px){.prose table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}}
 .prose th,.prose td{border:1px solid var(--line);padding:11px 13px;text-align:left;vertical-align:top}
 .prose th{background:var(--surface-2);font-weight:700;color:var(--ink)}
 .prose .nota{
@@ -617,16 +653,6 @@ h1 .ia{color:var(--teal)}
   .metric{padding-left:0;border-left:0}
   .split-copy{padding:56px 32px}
   .services,.cta{padding:72px 0}
-  .nav-cta{display:none}
-  .menu-btn{display:block}
-  .nav-links{
-    display:none;position:absolute;top:68px;left:0;right:0;
-    background:var(--surface-2);border-bottom:1px solid var(--line);
-    flex-direction:column;align-items:flex-start;gap:0;padding:12px 32px 20px;
-  }
-  .nav-links.open{display:flex}
-  .nav-links li{width:100%}
-  .nav-links a{display:block;padding:13px 0;font-size:13px}
   .contact-form{padding:28px 22px}
   .contact-form .field.row2{grid-template-columns:1fr}
 }

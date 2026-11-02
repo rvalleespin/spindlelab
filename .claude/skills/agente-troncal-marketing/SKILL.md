@@ -76,7 +76,7 @@ Fuente de verdad: `oficina/organigrama-oficina.md`. En corto:
 - **Ventas:** Raquel (CRM/pipeline).
 - **Marca & Contenido:** Renata (copy/guion) · Cata (redes) · Bruno (visual).
 - **Paid Media:** Gonzalo (Google/SEM) · Fran (Meta).
-- **Entrega:** Diego (web) · Simón (SEO/AEO, el servicio core).
+- **Entrega:** Diego (web, el negocio principal) · Simón (búsqueda y visibilidad en IA).
 - **Producto & Diseño:** Nadia (UI/UX) · Pía (growth). *(cross-proyecto)*
 - **Supervisión / dirección:** El Sueño (dream).
 

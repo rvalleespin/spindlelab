@@ -46,8 +46,11 @@ reportar hacia el plan operativo, no editarlo directo.
 ## Criterios de calidad (bueno vs. aceptable)
 - **Gancho:** algo concreto y verificable del prospecto. ⚠️ "vi que tienen una web
   muy linda" = relleno, no gancho.
-- **CTA:** suave, a la oferta del cliente (ej. un diagnóstico gratis), no "agendemos
-  30 min" en el primer toque.
+- **CTA:** suave, a la oferta del cliente (ej. una revisión gratis), no "agendemos
+  30 min" en el primer toque. La oferta vigente sale de la ficha, no de un lote
+  viejo: en SpindleLab, desde el 30-oct-2026, es **«Hablemos de tu sitio»** (con
+  sitio, la revisión gratis de una página, que responde en un día hábil; sin sitio,
+  cómo lo haríamos y cuánto cuesta). Ya no es «diagnóstico gratis en 24 horas».
 - **Voz:** la del cliente. Un email frío de una persona abre en singular; lo que
   entrega el negocio, en plural — según el contrato del cliente.
 - **Largo:** corto. Si el prospecto tiene que scrollear, ya perdiste.
@@ -91,8 +94,9 @@ quien corresponde.
 ## Aprendido a golpes (principio + respaldo)
 > ✅ **Principio:** *el gancho de un email frío es un hallazgo real del prospecto;
 > si no lo tienes, se pide o se reusa, nunca se inventa. Una marca que vende criterio
-> no puede abrir con una mentira.* **Respaldo:** SpindleLab — la CTA es un
-> mini-diagnóstico que muestra una brecha real.
+> no puede abrir con una mentira.* **Respaldo:** SpindleLab — la CTA es la
+> revisión gratis de una página, que muestra una brecha real (hasta oct-2026 se
+> llamó mini-diagnóstico).
 
 > ✅ **Principio:** *los emails catch-all van en una segunda ola; mezclarlos en la
 > primera dispara rebotes y quema la reputación de envío.* **Respaldo:** outbound

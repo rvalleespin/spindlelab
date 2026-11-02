@@ -1,0 +1,91 @@
+---
+// Pie en el lenguaje de driftime (5-oct-2026). Spec: marketing/oficina/obras-web/spindlelab-v3/spec-visual.md
+//
+// Lo que cambió respecto del pie de la v3, y por qué:
+// · El wordmark pasa a ir a TODO el ancho, como el de driftime. Su punto va en PAPEL, no en
+//   oro: el módulo de navegación está fijo y su punto dorado se ve en esta misma vista. El
+//   pie anterior tenía un segundo punto dorado, o sea dos oros por vista.
+// · Los títulos de columna dejan las mayúsculas espaciadas (manual §05, 5-oct): caja normal.
+// · Se agrega el llamado a escribir, que es la única conversión medida del sitio.
+// · No hay enlaces a redes: no hay URL verificada de la página de LinkedIn en el repo, y no
+//   se inventa.
+//
+// MovimientoV3 se queda: es el que mueve todas las páginas del v3.
+import { EMAIL } from '../../consts';
+import { CONTACTO_V3 as CONTACTO, SERVICIOS_V3, CASA_V3 } from '../../consts-v3';
+import MovimientoV3 from './MovimientoV3.astro';
+import '../../styles/driftime.css';
+
+// Dónde estás, también en el pie (QA final, técnica 12): la página exacta lleva
+// aria-current="page", comparando Astro.url.pathname, como el menú de NavV3. Estado visual
+// sin oro: el enlace a opacidad plena y subrayado a 1 px.
+const conBarra = (p: string) => (p.endsWith('/') ? p : `${p}/`);
+const aqui = conBarra(Astro.url.pathname);
+const actual = (href: string) => (href === aqui ? 'page' : undefined);
+---
+<MovimientoV3 />
+<footer class="d-pie">
+  <div class="d-pie__arriba">
+    <div style="display:flex;flex-direction:column;gap:18px;align-items:flex-start">
+      <p class="d-guia" style="max-width:520px">Hablemos de tu sitio.</p>
+      <a class="d-btn" href={CONTACTO}>Escríbenos</a>
+      <a href={`mailto:${EMAIL}`} class="d-chico d-gris" style="text-decoration:none">{EMAIL}</a>
+    </div>
+    <div class="d-pie__nav">
+      {/* Los enlaces van en ul/li, como en el menú (NavV3): sueltos, el texto plano del pie
+           salía pegado («Desarrollo webVisibilidad en IA…»). El <li> va en varias líneas a
+           propósito: el espacio que queda alrededor del enlace es lo que separa los nombres
+           en el texto plano. La lista también es flex en columna con el mismo gap, así que
+           nada se mueve (rescate del v3 viejo, 13-oct). */}
+      <nav aria-label="Servicios" style="display:flex;flex-direction:column;gap:6px">
+        <h2 class="d-rot" style="margin-bottom:8px">Servicios</h2>
+        <ul class="d-pie__lista">
+          {SERVICIOS_V3.map((s) => (
+            <li>
+              <a href={s.href} aria-current={actual(s.href)}>{s.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <nav aria-label="La casa" style="display:flex;flex-direction:column;gap:6px">
+        <h2 class="d-rot" style="margin-bottom:8px">La casa</h2>
+        <ul class="d-pie__lista">
+          {CASA_V3.map((s) => (
+            <li>
+              <a href={s.href} aria-current={actual(s.href)}>{s.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <p class="d-gigante" aria-hidden="true">SpindleLab.</p>
+  <div class="d-pie__legal"><span>Santiago, Chile · SpindleLab SpA</span><span>© 2026</span></div>
+</footer>
+
+<style>
+  .d-pie__lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  /* block: suelto, el enlace era un ítem flex estirado a lo ancho de la columna; así el área
+     de clic sigue igual. Solo el hijo directo: consent-banner.js mete «Privacidad» en un
+     span junto a «Cookies», y ahí tiene que seguir en línea. */
+  .d-pie__lista > li > a { display: block; }
+  .d-pie__nav a[aria-current] {
+    opacity: 1;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  /* «Privacidad · Cookies» con el mismo trato (QA final, mirada 8). consent-banner.js (de
+     Layout, que no se toca) cuelga el control «Cookies» junto a «Privacidad» con un estilo
+     en línea que lo subraya, y quedaban en la misma línea uno subrayado y el otro no. Aquí
+     se iguala al resto de la columna: sin subrayar, opacidad 0,9 y subrayado solo al pasar
+     el cursor. El !important es lo único que le gana a un estilo en línea; el control se
+     inyecta en tiempo de ejecución, por eso :global. */
+  .d-pie__nav :global(#cookie-preferencias) {
+    text-decoration: none !important;
+    opacity: 0.9;
+  }
+  .d-pie__nav :global(#cookie-preferencias:hover) {
+    text-decoration: underline !important;
+  }
+</style>

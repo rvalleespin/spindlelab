@@ -1,5 +1,22 @@
 # Banco de posts personales — Ramón en LinkedIn
 
+> ## Antes de publicar (2-nov): la línea cambió
+>
+> *Nota de Renata, lunes 2-nov-2026. Los posts no se reescriben: estas son las frases que cambian. Los números de línea son los de antes de esta nota.*
+>
+> Desde el 30-oct la línea es **«Sitios web a medida y marketing con IA»**, con el titular «En redes arriendas. Tu sitio es lo único que es tuyo.» y la acción «Hablemos de tu sitio». Los diez posts de este banco giran en torno a que la IA te lea y te cite. Siguen sirviendo para la parte de búsqueda y visibilidad en IA, pero **antes de programar uno, que el cierre lleve al sitio como eje y no solo a la IA**. Ninguno figura como publicado en `marketing/redes/QUE-HAY-PUBLICADO.md`.
+>
+> | Dónde | Dice hoy | Cambia a |
+> |---|---|---|
+> | L11, CTA rotado | «mini-diagnóstico 24h (P3, P4, P7)» | «revisión gratis de una página, un día hábil (P3, P4, P7)» |
+> | L75, cierre de P3 | «Un mini-diagnóstico te lo muestra en una página, gratis y en 24 horas. Link en el primer comentario.» | «Si quieres, reviso tu sitio gratis y en un día hábil te mando lo que encontré. El enlace va en el primer comentario.» |
+> | L97, cierre de P4 | «…un mini-diagnóstico te lo muestra en una página, gratis y en 24 horas. Link en el primer comentario.» | «…puedo revisarlo gratis y mandarte lo que encuentre en un día hábil. El enlace va en el primer comentario.» («revisarlo» y no «revisar tu sitio», porque la frase ya dice «tu sitio» antes de la coma) |
+> | L162, cierre de P7 | «Un mini-diagnóstico te lo muestra en una página, gratis y en 24 horas. Link en el primer comentario.» | «Si quieres, reviso tu sitio gratis y en un día hábil te mando lo que encontré. El enlace va en el primer comentario.» |
+> | L77, L99 y L164, primer comentario de P3, P4 y P7 | «Se pide acá: https://spindlelab.cl/contacto» | «Hablemos de tu sitio: https://spindlelab.cl/contacto/» |
+> | L144, nota de coordinación de P6 | «cambiar CTA a mini-diagnóstico» | «cambiar el cierre a la revisión gratis (un día hábil) o al chequeo». El mini-diagnóstico ya no se ofrece con ese nombre |
+>
+> **Ojo con la fuente de P1 a P5.** Se apoyan en hallazgos reales de prospectos de julio (comentario FUENTE de cada uno). Antes de programarlos, revisarlos con el mismo criterio de la decisión D del plan de Instagram (`marketing/redes/2026-10-octubre-posicionamiento/PLAN.md`): en un nicho chico, generalizar el rubro puede no alcanzar para que el prospecto no se reconozca.
+
 **Preparado por:** Renata (agente-copywriter) · 28-ago-2026
 **Encargo:** `marketing/encargos-otras-sesiones/marca-personal-ramon-linkedin.md`
 **Para:** los slots personales de los miércoles 12:30 (~1/semana) **desde octubre en adelante**; Marta los ordena. Los miércoles de septiembre (3, 10, 24) ya tienen pieza asignada en `marketing/calendario-editorial.md` y este banco NO los duplica.

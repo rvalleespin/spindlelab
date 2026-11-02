@@ -1,0 +1,73 @@
+---
+// UNA ENTRADA DEL TRABAJO (spec §2.1, fila 3, y §2.2): la pieza plana en su marco y, debajo, el nombre en blanco y la
+// bajada en gris en una sola frase, y la línea mono (tipo · año). La usan el índice corto de la home y el muro de
+// /trabajo/. Prototipo: .pieza-dest (home) y .pieza (índice) de proto/a.
+//   · Con destino, el marco es el enlace (medio-enlace): el círculo del cursor dice adónde lleva (data-ir, §4.2) y, con
+//     el teclado, el mismo texto queda quieto en un rótulo de placa dentro de la pieza (§4.1). Su nombre es el del
+//     encabezado de la pieza (aria-labelledby).
+//   · Un destino de fuera del sitio (Verifica y Cumple) lleva la flecha ↗ junto al nombre y, oculto a la vista, el
+//     aviso de Clara («(sitio aparte: …)», comun.externo), que entra en el nombre del enlace.
+//   · Sin destino (spindlelab.cl, que es este sitio) la pieza no es un enlace: sin círculo y sin velo (§2.2).
+//   · indice: la pieza se acorta 24 px al pasar el mouse y las demás quedan bajo el velo (§2.2, §4.1). Solo en el muro.
+//   · pie: el aviso de persona generada, bajo la imagen (Clara).
+//   · columna: la columna del muro que le toca sin JS (la reparte muro.mjs al cargar y al filtrar).
+//   · entrada: el marco entra a la vista una vez con el resorte «entrada» (§1.6: el medio, nunca el texto de lectura).
+//   · primeraPantalla: la imagen cae en la primera pantalla en algún tamaño de la obra y no espera a acercarse (§3.3;
+//     acta de la obra, vuelta 1, defecto 6). Las demás, sí.
+import Icono from './Icono.astro';
+
+interface Medio {
+  src: string;
+  ancho: number;
+  alto: number;
+  alt: string;
+}
+interface Props {
+  id: string;
+  nombre: string;
+  bajada: string;
+  linea: string;
+  medio: Medio;
+  /** Clase de la proporción del marco: p-169, p-45, p-43, p-53. */
+  forma: string;
+  destino?: string;
+  cursor?: string;
+  pie?: string;
+  externo?: string;
+  nivel?: 'h2' | 'h3';
+  indice?: boolean;
+  tipo?: string;
+  columna?: number;
+  entrada?: boolean;
+  primeraPantalla?: boolean;
+}
+const {
+  id, nombre, bajada, linea, medio, forma, destino, cursor, pie, externo, nivel = 'h3', indice = false, tipo, columna, entrada = false, primeraPantalla = false,
+} = Astro.props;
+const carga = primeraPantalla ? 'eager' : 'lazy';
+const Nombre = nivel;
+const fuera = !!destino && /^https?:/.test(destino);
+const idNombre = `p-${id}`;
+const idFuera = `p-${id}-fuera`;
+---
+<article class:list={['pieza', { 'pieza--indice': indice }]} data-tipo={tipo} data-col={columna}>
+  {destino ? (
+    <a class="medio-enlace" href={destino} data-ir={cursor} data-acortar={indice ? '' : undefined} data-entrada={entrada ? '' : undefined} aria-labelledby={fuera ? `${idNombre} ${idFuera}` : idNombre}>
+      <div class:list={['medio', forma]}>
+        <img src={medio.src} alt={medio.alt} width={medio.ancho} height={medio.alto} loading={carga} decoding="async" />
+        {indice && <span class="pieza__velo" />}
+      </div>
+      <span class="quieto rotulo" aria-hidden="true">{cursor}</span>
+      {fuera && <span class="solo-lector" id={idFuera}>{externo}</span>}
+    </a>
+  ) : (
+    <div class:list={['medio', forma]} data-entrada={entrada ? '' : undefined}>
+      <img src={medio.src} alt={medio.alt} width={medio.ancho} height={medio.alto} loading={carga} decoding="async" />
+    </div>
+  )}
+  {pie && <p class="pie">{pie}</p>}
+  <div class="pieza__txt">
+    <Nombre class="pieza__nombre" id={idNombre}><span class="tinta">{nombre}{fuera && <Icono nombre="fuera" />}</span> <span class="gris">{bajada}</span></Nombre>
+    <p class="rotulo">{linea}</p>
+  </div>
+</article>
