@@ -2190,6 +2190,16 @@
     return _origen ? '&origen=' + encodeURIComponent(_origen) : '';
   }
 
+  /* ⚠️ LA CASILLA DE CONTACTO VIVE ACÁ POR LO MISMO, y porque ya estaba mal (2-nov-2026).
+     Estaba declarada dentro del primer IIFE y la usaban TRES líneas del segundo: las dos del
+     `catch` de la compra y la de «No pudimos abrir el pago». O sea que cuando el pago no se
+     podía abrir —el único caso donde la página ofrece el rescate— en vez del mensaje saltaba
+     `ReferenceError: CONTACTO is not defined` y la persona se quedaba sin mensaje y sin
+     rescate, justo después de apretar «Ir a pagar».
+     No lo vio ninguna prueba del fuente: el nombre está escrito y el archivo parsea. Lo dijo
+     la consola del navegador, sirviendo la página contra un servidor que devolvía 409. */
+  var CONTACTO = 'hola@spindlelab.cl';
+
 (function () {
   const form = document.getElementById('form-chequeo');
   const input = document.getElementById('dominio');
@@ -2202,7 +2212,6 @@
   // API, una señal pendiente chica (como la casilla) puede dejar el puntaje sobre 80. Este
   // umbral queda de red para una respuesta sin estados (una versión anterior de la API).
   const UMBRAL_BIEN = 80;
-  const CONTACTO = 'hola@spindlelab.cl';
 
   function escapar(s) {
     const d = document.createElement('div');
@@ -2287,9 +2296,24 @@
    * En los cuatro, el servidor contesta que no se puede cotizar lo que no se vio o que no hay
    * nada que el kit cierre. Ofrecerlo igual es cobrarle a alguien su tiempo por un «no».
    */
-  function sePuedeVender(data) {
+  /**
+   * ¿Este informe alcanzó a MEDIR el sitio?
+   *
+   * Es la mitad de `sePuedeVender`, y está aparte porque hace falta en otro lado: el botón de
+   * pagar del panel se suelta mirando el estado del informe profundo, no el informe que se
+   * está pintando, y sin esta pregunta se soltaba igual cuando no habíamos visto nada.
+   *
+   * Es el gemelo de `noSePudoMedir` en `functions/api/elegibilidad.js`, negado. Los dos tienen
+   * que decir lo mismo: si acá dice que sí y allá que no, el botón promete y el servidor niega,
+   * que es exactamente el defecto que esto arregla.
+   */
+  function seAlcanzoAMedir(data) {
     if (!data || data.puntaje === null || data.puntaje === undefined) return false;
-    if (data.bloqueado || data.parcial) return false;
+    return !data.bloqueado && !data.parcial;
+  }
+
+  function sePuedeVender(data) {
+    if (!seAlcanzoAMedir(data)) return false;
     var items = data.items || [];
     for (var i = 0; i < items.length; i++) {
       if (estadoDe(items[i]) === 'pendiente' && CIERRA_EL_KIT.indexOf(items[i].id) >= 0) return true;
@@ -2662,7 +2686,7 @@
    * Un atributo en `<html>` más un evento sí cruzan esa frontera, y además se pueden mirar
    * desde fuera, que es lo que permite comprobarlo de verdad.
    */
-  function anunciarProfundo(estado) {   // 'en-vuelo' · 'listo' · 'fallo'
+  function anunciarProfundo(estado) {   // 'en-vuelo' · 'listo' · 'sin-medir' · 'fallo'
     document.documentElement.setAttribute('data-profundo', estado);
     try { document.dispatchEvent(new CustomEvent('vyc:profundo', { detail: { estado: estado } })); }
     catch (e) { /* un navegador sin CustomEvent igual deja el atributo puesto */ }
@@ -3295,7 +3319,20 @@
         avisoProfundo.textContent = '';
         if (data && data.ok === true) {
           falloElNavegador = false;
-          anunciarProfundo('listo');
+          // ⚠️ DOS COSAS DISTINTAS, Y CONFUNDIRLAS ERA EL DEFECTO (2-nov-2026).
+          //
+          // «La revisión terminó y hay algo que mostrar» no es «la revisión midió lo suficiente
+          // para cotizar». `/api/profundo` devuelve SIEMPRE `ok: true` y pone `parcial` y
+          // `bloqueado` como banderas aparte, así que un sitio que no terminó de cargar, o que
+          // nos cerró la puerta, volvía por acá con `ok: true`, se anunciaba «listo», y el
+          // panel soltaba «Ir a pagar». La persona escribía su correo, apretaba, y el servidor
+          // contestaba 409 `no-se-pudo-medir` —con razón: `elegibilidad.js` declina cuando no
+          // se midió—. Y era callejón sin salida, porque ese motivo no está en `FALLO_NUESTRO`,
+          // así que tampoco salía el botón de rescate.
+          //
+          // El informe igual se pinta y el aviso igual dice que está listo para leer: las dos
+          // cosas son ciertas. Lo que cambia es el estado que mira el botón.
+          anunciarProfundo(seAlcanzoAMedir(data) ? 'listo' : 'sin-medir');
           sinMoverLoQueLeen(seccionProfundo, function () { renderProfundo(data); });
           avisoProfundo.textContent = 'La revisión con navegador ya está lista, debajo del resultado.';
         } else {
@@ -3636,6 +3673,15 @@
       b.textContent = 'No se pudo revisar';
       mensajeCompra('No pudimos terminar la revisión con navegador de tu sitio, y sin ella no ' +
         'podemos cotizar lo que no vimos. Apreta «Volver a medirlo» en el resultado.');
+    } else if (estado === 'sin-medir') {
+      // La revisión volvió, pero sin ver el sitio completo: no terminó de cargar en los
+      // segundos que esperamos, o el sitio nos cerró la puerta. El informe está abajo y se
+      // puede leer; lo que no se puede es cotizar sobre él, y el servidor lo rechazaría.
+      // Decirlo acá y no dejar que lo diga un 409 después de escribir el correo.
+      b.textContent = 'No alcanzamos a medirlo';
+      mensajeCompra('La revisión con navegador no alcanzó a ver tu sitio completo, y no podemos ' +
+        'cotizar lo que no vimos. Vuelve a medirlo desde el resultado: casi siempre es que tu ' +
+        'sitio tardó más de lo que alcanzamos a esperar.');
     } else {
       b.textContent = 'Revisando tu sitio…';
       mensajeCompra('Estamos terminando de revisar tu sitio con un navegador. Son unos segundos ' +
@@ -3743,6 +3789,12 @@
   if (panelCompra) panelCompra.addEventListener('submit', async function (ev) {
     ev.preventDefault();
     if (!panelCompra.reportValidity()) return;
+
+    // Sin medición no se envía, y no se confía en que el botón deshabilitado alcance: la
+    // tecla Enter dentro del campo del correo también envía un formulario, y que el navegador
+    // la frene depende de un detalle de la especificación. En un camino que termina en un
+    // cobro eso no se deja al azar. `pintarEspera` vuelve a dejar el botón como corresponde.
+    if (estadoDelProfundo() !== 'listo') { pintarEspera(); return; }
 
     // PRIMERA sentencia del envío, antes del fetch: es la capa barata contra el doble clic. La
     // de verdad está en el servidor, que busca un pedido reciente antes de crear otro.
