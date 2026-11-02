@@ -1,5 +1,9 @@
 # Montaje · Reel 1, cafés y pastelerías
 
+> **Nombre de la pieza: «caso cafés»**, así la llamó Ramón el 2-nov. Es el nombre con el que
+> aparece su archivo de video. Se anota acá para que el repo y su escritorio digan lo mismo:
+> «caso cafés» = guion 1 = las tarjetas `g1-*`.
+
 **Grabado el 2-nov** en el cuarto de la repisa, polera verde oscura.
 **Set de tarjetas: `bloque` (azul).** El motivo está abajo, en «por qué estas y no las otras».
 

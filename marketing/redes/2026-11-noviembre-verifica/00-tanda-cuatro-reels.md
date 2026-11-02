@@ -234,7 +234,7 @@ lo "arregle" al revés más adelante.
 
 ---
 
-### Guion 1 · Cafés y pastelerías · *la cookie entra antes que el cliente*
+### Guion 1 · Cafés y pastelerías · «caso cafés»
 
 **Dato:** 16 de 36 sitios de cafés y pastelerías medidos el 29-oct guardan la cookie de
 Facebook/Instagram antes de que el visitante acepte nada. Casi la mitad.
