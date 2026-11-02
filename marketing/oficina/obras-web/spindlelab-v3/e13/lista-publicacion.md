@@ -60,7 +60,19 @@
 
     Con esto, la atribución funciona de punta a punta en producción. (Este punto se registró el 2-nov, con la captura
     que mandó Ramón.)
-  - Search Console y Bing: reenviar el sitemap;
+  - **Bing y los demás buscadores de IndexNow: hecho el 2-nov, 10:13 (Chile), sin entrar a la cuenta.**
+    - La clave `41b16b5d6ec2b1278596f9599c0850cb` vive en `spindlelab-astro/public/41b16b5d6ec2b1278596f9599c0850cb.txt`.
+      Se publicó con el PR rvalleespin/spindlelab#52 (merge `8d99b18e`, con el OK de Ramón) y también va en la obra
+      (`bb640a57`), para que `armar-corte.mjs` no la borre.
+    - Se enviaron las 22 URL del sitemap: `api.indexnow.org` respondió 202 (aceptado, valida la clave después) y
+      `www.bing.com/indexnow` respondió 200.
+    - **Para avisar un cambio de nuevo** (por ejemplo, después del próximo corte): un `POST` JSON a
+      `https://api.indexnow.org/indexnow` con `host` = `spindlelab.cl`, `key` = la clave,
+      `keyLocation` = `https://spindlelab.cl/<clave>.txt` y `urlList` = las URL que cambiaron. Si la clave deja de
+      responder en esa dirección, el aviso se rechaza.
+  - Search Console (Google): reenviar el sitemap y pedir indexación de `/`, `/servicios/` y `/contacto/`. Lo hace Ramón,
+    porque necesita su cuenta. Google encuentra el sitemap solo, porque `robots.txt` lo declara;
+
   - LinkedIn Post Inspector y Facebook Sharing Debugger;
   - el favicon y el ícono en un iPhone.
 - **Sigue igual que antes:** `www.spindlelab.cl` responde 200 sin redirigir al dominio sin www (§8).
