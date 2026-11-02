@@ -31,10 +31,11 @@
  * Ruta: PROFUNDO_JS, o se busca en el repo (rutas.mjs).
  */
 import fs from 'node:fs';
+import { pathToFileURL } from 'node:url';
 import { rutaEnElRepo } from './rutas.mjs';
 
 const RUTA = rutaEnElRepo('verificaycumple/functions/api/profundo.js', 'PROFUNDO_JS');
-const { origenDeLaVisita, anotarUso, TTL_USO_S } = await import(RUTA);
+const { origenDeLaVisita, origenDeLaPagina, ORIGENES_VALIDOS, anotarUso, TTL_USO_S } = await import(RUTA);
 
 let ok = 0, malo = 0;
 const eq = (n, r, e) => {
@@ -45,6 +46,88 @@ const eq = (n, r, e) => {
 // Un `url` de mentira con los parámetros que haga falta.
 const conUtm = (v) => new URL('https://verifica.spindlelab.cl/?utm_source=' + encodeURIComponent(v));
 const sinUtm = new URL('https://verifica.spindlelab.cl/');
+
+/* ================================================================== *
+ * EL CALL SITE, QUE ES DONDE VIVÍA EL BUG                             *
+ *                                                                     *
+ * Las dos piezas pueden estar perfectas y el endpoint seguir ciego si *
+ * no le pasa el parámetro. Eso es literalmente lo que pasó: la        *
+ * función existía y el call site le daba el referer de la llamada a   *
+ * la API. Diez días de campaña contados como `propio`.                *
+ * ================================================================== */
+{
+  const CHEQUEO = rutaEnElRepo('verificaycumple/functions/api/chequeo.js', 'CHEQUEO_JS');
+  const Q = await import(pathToFileURL(CHEQUEO).href);
+
+  const pedir = async (query, referer) => {
+    const kv = kvFalso();
+    const antes = globalThis.fetch;
+    // El sitio de afuera, fingido: una página mínima que el chequeo pueda leer sin red.
+    globalThis.fetch = async () => new Response(
+      '<!doctype html><html lang="es"><head><title>x</title></head><body><p>hola</p></body></html>',
+      { status: 200, headers: { 'Content-Type': 'text/html' } });
+    try {
+      const headers = new Headers();
+      if (referer) headers.set('Referer', referer);
+      // Sin `waitUntil`: así el contador se espera y se puede leer al volver.
+      await Q.onRequestGet({
+        request: new Request(`https://verifica.spindlelab.cl/api/chequeo?${query}`, { headers }),
+        env: { VYC_TOPES: kv },
+      });
+    } finally { globalThis.fetch = antes; }
+    return [...kv.datos.keys()].filter((k) => k.startsWith('uso:origen:')).map((k) => k.split(':').pop());
+  };
+
+  const hoy = new Date().toISOString().slice(0, 10);
+  eq('el endpoint anota el origen que manda la página',
+    await pedir('dominio=x.cl&origen=meta', 'https://verifica.spindlelab.cl/'), ['meta']);
+  // ⚠️ El caso exacto del bug: la llamada viene de nuestra propia página. Sin el parámetro,
+  // el referer la delata como `propio` y la campaña desaparece.
+  eq('sin el parámetro vuelve a ser propio, que era el defecto',
+    await pedir('dominio=x.cl', 'https://verifica.spindlelab.cl/'), ['propio']);
+  eq('un origen inventado no llega a la llave',
+    await pedir('dominio=x.cl&origen=loquesea', 'https://verifica.spindlelab.cl/'), ['propio']);
+  eq('y la llave lleva la fecha de hoy', hoy.length, 10);
+}
+
+/* ================================================================== *
+ * EL ORIGEN QUE DECLARA LA PÁGINA                                     *
+ *                                                                     *
+ * `origenDeLaVisita` mira el referer y la URL de la LLAMADA A LA API, *
+ * que la hace nuestra propia página: su referer es siempre el sitio y *
+ * su URL no lleva utm. Por eso TODO caía en `propio` y el contador    *
+ * por origen no podía ver una campaña pagada.                         *
+ * ================================================================== */
+{
+  const api = new URL('https://verifica.spindlelab.cl/api/chequeo?dominio=x.cl');
+  const refPropio = 'https://verifica.spindlelab.cl/';
+
+  // Sin lo declarado, es exactamente el defecto: la llamada de nuestra página es «propio».
+  eq('el respaldo sigue siendo lo de antes', origenDeLaVisita(refPropio, api), 'propio');
+
+  // Con lo declarado, manda la página.
+  for (const v of ['meta', 'instagram', 'linkedin', 'facebook', 'whatsapp', 'correo',
+    'buscador', 'propio', 'directo', 'otro']) {
+    eq(`declarado ${v}`, origenDeLaPagina(v, refPropio, api), v);
+  }
+  eq('se acepta con mayúsculas y espacios', origenDeLaPagina('  META ', refPropio, api), 'meta');
+
+  // ⚠️ Y NADA FUERA DE LA LISTA, porque esto termina siendo una llave de KV y lo escribe
+  // quien visita. Sin la lista, un bucle fabricaría miles de llaves.
+  for (const malo of ['', null, undefined, 'loquesea', '../../x', 'meta2', 'a b',
+    'uso:rapido:2026-11-02', '__proto__', 'constructor']) {
+    eq(`${JSON.stringify(malo)} no se cree: cae al respaldo`,
+      origenDeLaPagina(malo, refPropio, api), 'propio');
+  }
+
+  // El respaldo es el de antes, no un valor fijo: sin referer tiene que dar directo.
+  eq('sin nada declarado y sin referer, directo', origenDeLaPagina('', '', api), 'directo');
+
+  // La lista blanca y la lista cerrada declarada en el comentario son la misma.
+  const marcaServidor = fs.readFileSync(RUTA.replace('file://', ''), 'utf8')
+    .match(/ORIGENES-CERRADOS:([^\n]*)/)[1].trim().split(/\s+/).sort();
+  eq('ORIGENES_VALIDOS es la lista declarada', [...ORIGENES_VALIDOS].sort(), marcaServidor);
+}
 
 /* ================================================================== *
  * 1. El referer, traducido a una palabra.                             *
@@ -253,6 +336,86 @@ function kvFalso() {
   eq('la página declara su lista cerrada', Array.isArray(listaCliente) && listaCliente.length > 0, true);
   eq('el servidor declara la suya', Array.isArray(listaServidor) && listaServidor.length > 0, true);
   eq('y las dos listas son la misma', listaCliente, listaServidor);
+
+  /* ── EL ORIGEN TIENE QUE VIAJAR A LA API (2-nov-2026) ──────────────────────────────
+   *
+   * El contador por origen era ciego: `origenDeLaVisita` recibía el referer y la URL de la
+   * LLAMADA A LA API, que la hace esta misma página con `fetch`. Su referer es siempre
+   * verifica.spindlelab.cl y su URL no lleva ningún utm, así que TODO caía en `propio`.
+   * Comprobado en el KV de producción: desde el 23-oct no existe una llave que no sea
+   * `propio`, con una campaña pagada corriendo.
+   *
+   * El arreglo es que la página mande su propio origen. Esto lo comprueba EJECUTANDO la
+   * función de la página, no grepeándola: un grep ve el nombre y no el ámbito ni el valor,
+   * y acá el modo de falla es silencioso —el parámetro sale vacío y todo vuelve a contarse
+   * como `propio`, que se ve igual que el bug original—.
+   */
+  {
+    const sacar = (nombre) => {
+      const ini = html.indexOf(`function ${nombre}(`);
+      if (ini < 0) return null;
+      let i = html.indexOf('{', ini), nivel = 0, fin = i;
+      for (; i < html.length; i++) {
+        if (html[i] === '{') nivel++;
+        else if (html[i] === '}') { nivel--; if (nivel === 0) { fin = i + 1; break; } }
+      }
+      return html.slice(ini, fin);
+    };
+    const fuenteParam = sacar('paramOrigen');
+    const fuenteExterno = sacar('origenExterno');
+    eq('la página tiene paramOrigen', typeof fuenteParam === 'string', true);
+
+    // Se arma con las MISMAS dependencias que tiene en la página, inyectadas.
+    const hacer = (referer, busqueda) => new Function('document', 'location', `
+      var _origen = null;
+      ${fuenteExterno}
+      ${fuenteParam}
+      return paramOrigen;
+    `)({ referrer: referer }, { search: busqueda })();
+
+    eq('un utm de meta viaja como meta', hacer('', '?utm_source=meta'), '&origen=meta');
+    eq('instagram orgánico viaja como instagram',
+      hacer('https://instagram.com/', ''), '&origen=instagram');
+    eq('sin referer viaja como directo', hacer('', ''), '&origen=directo');
+    eq('un utm inventado viaja como otro', hacer('', '?utm_source=loquesea'), '&origen=otro');
+    // Y nunca un valor fuera de la lista cerrada: es parte de una llave de KV.
+    const sueltos = ['../../x', 'a b', '"', 'meta;rm -rf'].map((v) => hacer('', '?utm_source=' + encodeURIComponent(v)));
+    eq('nada fuera de la lista llega a la llave', [...new Set(sueltos)], ['&origen=otro']);
+
+    /* ⚠️ Y TIENE QUE ESTAR EN UN ÁMBITO QUE LOS FETCH VEAN.
+     *
+     * El <script> grande de la página tiene DOS funciones anónimas que se ejecutan solas y
+     * no se ven entre sí: la primera lleva el chequeo y hace los fetch; la segunda lleva el
+     * formulario. El 2-nov-2026 `paramOrigen` se escribió dentro de la segunda y el chequeo
+     * entero dejó de funcionar: ReferenceError en el call site, que el `try` de la página
+     * convertía en «No pudimos completar el chequeo».
+     *
+     * No lo vio la revisión de sintaxis (el archivo parsea perfecto), no lo vio la consola
+     * (el error quedaba atrapado), y no lo habría visto ninguna de las aserciones de arriba,
+     * que comprueban que la función EXISTE y qué DEVUELVE. Un grep ve el nombre, no el
+     * ámbito. Se vio sirviendo la versión anterior en el mismo servidor y comparando las
+     * peticiones del navegador: tres contra cero.
+     *
+     * Esto lo ata de la única forma estática que de verdad corresponde: las dos funciones
+     * se definen ANTES de que se abra el primer IIFE, o sea en el ámbito del script, que es
+     * el único que las dos mitades comparten.
+     */
+    const abreIIFE = html.indexOf("(function () {\n  const form = document.getElementById('form-chequeo')");
+    eq('se encontró dónde abre el primer IIFE', abreIIFE > 0, true);
+    eq('origenExterno se define fuera de los IIFE',
+      html.indexOf('function origenExterno(') < abreIIFE, true);
+    eq('paramOrigen también', html.indexOf('function paramOrigen()') < abreIIFE, true);
+    eq('y hay una sola copia de cada una',
+      [html.split('function origenExterno(').length - 1,
+       html.split('function paramOrigen()').length - 1], [1, 1]);
+
+    // Y las dos llamadas a la API lo tienen que mandar. Esto SÍ es un grep, y es un guardia:
+    // la prueba de arriba demuestra que la función produce el valor, esta que se usa.
+    eq('el chequeo rápido manda el origen',
+      /api\/chequeo\?dominio='[\s\S]{0,80}paramOrigen\(\)/.test(html), true);
+    eq('el profundo también',
+      /api\/profundo\?dominio='[\s\S]{0,120}paramOrigen\(\)/.test(html), true);
+  }
 
   // Se saca la función de la página tal cual está y se corre acá.
   const inicio = html.indexOf('function origenExterno(');
