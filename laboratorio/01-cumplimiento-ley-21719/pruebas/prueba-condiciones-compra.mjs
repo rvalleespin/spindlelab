@@ -29,6 +29,7 @@
  */
 
 import { readFileSync } from 'node:fs';
+import fs from 'node:fs';
 import { rutaEnElRepo } from './rutas.mjs';
 
 const HTML = readFileSync(rutaEnElRepo('verificaycumple/public/index.html', 'VYC_INDEX_HTML'), 'utf8');
@@ -301,7 +302,21 @@ console.log('=== LA ESPERA TIENE QUE VERSE, NO SOLO EXISTIR (30-oct) ===');
   // donde nadie la ve, y leyendo el CSS se veria casi igual.
   const css = (HTML.match(/\.espera-flotante\s*\{[^}]*\}/) || [''])[0];
   cierto('va fija a la ventana', /position:\s*fixed/.test(css));
-  cierto('y anclada abajo', /bottom:\s*0/.test(css));
+  // Anclada abajo, pero POR ENCIMA del aviso de cookies cuando lo hay. El 2-nov se midió
+  // que el aviso (z-index 999) tapaba entera esta franja (z-index 40) para todo visitante
+  // nuevo: o sea que el arreglo de arriba quedaba anulado justo para quien llega de la
+  // campaña. El valor por defecto de la variable es 0, así que sin aviso no cambia nada.
+  cierto('y anclada abajo', /bottom:\s*(0|var\(--alto-aviso,\s*0px\))/.test(css));
+  cierto('y sube si el aviso de cookies está abierto', /bottom:[^;]*var\(--alto-aviso/.test(css));
+  // El que publica la variable es el propio aviso, que es quien sabe cuánto mide.
+  const BANNER = fs.readFileSync(
+    rutaEnElRepo('verificaycumple/public/js/consent-banner.js', 'VYC_BANNER_JS'), 'utf8');
+  cierto('el aviso publica su alto', /setProperty\('--alto-aviso'/.test(BANNER));
+  // ⚠️ Observando, no llamando desde cada sitio que toca `banner.hidden`: hay tres, y el
+  // día que aparezca un cuarto nadie se va a acordar de actualizar la variable.
+  cierto('y lo mantiene al día observando el elemento',
+    /ResizeObserver|MutationObserver/.test(BANNER));
+  cierto('el cuerpo reserva el espacio', /padding-bottom:\s*var\(--alto-aviso/.test(HTML));
 
   // ⚠️⚠️ LA QUE MAS CUIDA: que se BORRE al terminar. Una franja pegada para siempre tapando
   // el pie de la pagina es peor que no tenerla, y es el tipo de fallo que nadie reporta
