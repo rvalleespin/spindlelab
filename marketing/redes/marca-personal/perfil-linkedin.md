@@ -34,7 +34,28 @@ Fundador de SpindleLab · Sitios web a medida y marketing con IA · Parto por tu
 
 *Recomendación: la A.* Es, palabra por palabra, el `jobTitle` que el sitio declara para Ramón en sus datos estructurados (`/nosotros/` y la home), así que LinkedIn y el sitio describen igual a la misma persona. Y es corta: en comentarios y en resultados de búsqueda LinkedIn suele recortar el titular, y la A se lee entera. La B explica el método, pero eso ya lo hace el Acerca de.
 
-#### Acerca de (máx. 2.600 caracteres) · 1.161 caracteres, 209 palabras contando las dos direcciones
+#### Acerca de (máx. 2.600 caracteres) · 1.289 caracteres · **Publicado por Ramón en su perfil el 2-nov-2026**
+
+```
+Soy fundador de SpindleLab, donde diseñamos y programamos sitios web a medida. Construyo herramientas que encuentran en un sitio los errores que nadie ve y que cuestan clientes.
+
+Vengo de años de producción, pauta, contenido y SEO en agencias de medios y de marketing. Ahí vi dónde se pierde lo que una marca invierte para atraer clientes: muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva.
+
+Construí un chequeo de visibilidad en IA. Detecta, por ejemplo, un plugin de seguridad que bloquea a los robots de las IA sin que nadie lo decidiera, y saca al sitio de las respuestas de ChatGPT.
+
+Después armé Verifica y Cumple (verifica.spindlelab.cl) para la Ley 21.719 de datos personales, que aplica a todo sitio con formulario de contacto. Lo corrí primero en el mío y encontró Analytics y el Pixel de Meta cargando sin permiso. Arreglando eso apareció algo peor: el formulario perdía mensajes sin avisar.
+
+Esos tres hallazgos parecen problemas de sistemas, legales y de ventas, pero están en el sitio. En SpindleLab los arreglamos o, si hace falta, hacemos uno nuevo a medida. Respondo yo por cada entrega.
+
+Para ver qué le muestra tu sitio a la IA: spindlelab.cl/diagnostico
+Para un proyecto: spindlelab.cl/contacto
+Para cualquier otra conversación, escríbeme por acá.
+```
+
+*De dónde sale.* Ramón pidió el 2-nov que las herramientas no sonaran a regalo, sino a instrumentos que construyó y cuyos hallazgos se vuelven trabajo para una empresa («ahí entro yo con la agencia»), y después que fuera más corto. Lo trabajó Renata en dos direcciones, con lectura en frío de una reclutadora y un gerente simulados, y una revisión editorial que lo dejó en la mitad. Cada hecho sale del sitio vivo o de lo ya publicado por Ramón (chequeo de /diagnostico/, Verifica y Cumple, su propio sitio con Analytics y el Pixel sin permiso y el formulario que perdía mensajes). Lleva el cargo «Fundador» y la frase «muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva», los dos del 2-nov. La formación va en la sección Educación de LinkedIn. El chequeo y Verifica y Cumple conviene ponerlos también en «Destacados», porque los enlaces del Acerca de no se pueden cliquear.
+
+<details><summary>Versión anterior del 2-nov en la mañana (superada, no usar)</summary>
+
 
 ```
 Soy Ramón Vallejos, fundador de SpindleLab. Hago sitios web a medida y marketing con IA.
@@ -54,6 +75,8 @@ spindlelab.cl/contacto
 ```
 
 *Notas de tono.* La primera línea es lo que se ve antes del «ver más», y por eso ya dice qué hace. El párrafo de las redes concede antes de contradecir, que es como habla Ramón en lo publicado («No te pido que dejes las redes, pero ahí arriendas»). Sin cifras, sin clientes, sin agencias por su nombre, sin raya, y los dos puntos aparecen solo dos veces. Si hay que cortar para llegar a 200 palabras, sale «El código lo reviso antes de que llegue a tu sitio.», pero es la frase que contesta la duda obvia sobre los agentes de IA.
+
+</details>
 
 #### Experiencia: el cargo en SpindleLab
 
