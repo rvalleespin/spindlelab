@@ -120,3 +120,16 @@ Verificación: `extraer-texto.mjs --comprobar` sale 0; `npx astro build`, 22 pá
    ¿La cambiamos o la dejas como está? Cualquiera de las dos respuestas queda escrita aquí y en `home.json`.
 2. **Rótulo «Si tienes un proyecto».** Lo cambié por el defecto 3 (antes «Proyectos», que tú habías visto en el
    prototipo). Si prefieres otro, se cambia en `home.json` en un minuto.
+
+## Desvíos del cierre (2-nov-2026, noche), decididos por Ramón
+1. **Fila de tres sin imagen.** La spec pedía «una grande y dos chicas», con imagen. Ramón rechazó las del hilo plateado,
+   las ilustraciones, la pizarra y una prueba de fotos editoriales (`imagenes-v2/LEEME.md`). Se publica con tres columnas
+   iguales, cada una bajo su filete (`.k-tres--texto` en `archivo.css`). Las imágenes vuelven cuando se definan con
+   referencias.
+2. **Spot de Verifica y Cumple.** Es idea de Ramón: el caballo de la portada se dibuja solo sobre papel en blanco, toma
+   color y sale galopando. Va como primera tarjeta de esa pieza en la home y en /trabajo/, con un pie de IA y su
+   descripción para el lector de pantalla.
+   - Al final del video hay un fundido al color del papel, para que el bucle no salte seco.
+   - La mancha de abajo a la izquierda está tapada con `delogo` desde los 3,8 s.
+   - El póster es el cuadro de 3,9 s, la acuarela a medio abrir.
+3. **Fichas sin año** («Cliente · Sitio web», «Propio · Herramienta»), en la home y en /trabajo/.
