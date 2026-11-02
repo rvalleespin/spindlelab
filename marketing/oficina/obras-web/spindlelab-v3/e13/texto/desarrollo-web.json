@@ -458,53 +458,5 @@
     }
    ]
   }
- ],
- "retirados_e14": {
-  "nota": "NO SE USAN DESDE E14. Salen de la página en el recorte del 2-nov: dw.incluye.6 (lo dicen el título de las fases y dw.fase.3) dw.faq.4 (lo dice dw.planes.nota, justo arriba de las preguntas) y dw.faq.3, «¿El sitio incluye SEO?» (lo dicen dw.incluye.3, en la misma página, y la entradilla, que manda a Visibilidad en IA). Quedan aquí solo porque desarrollo-web.astro todavía los lee; Diego los borra en el mismo commit en que deja de leerlos.",
-  "elementos": [
-   {
-    "id": "dw.incluye.6",
-    "rol": "parrafo",
-    "texto": "Revisión humana en cada fase antes de avanzar.",
-    "fuente": "desarrollo-web.astro, «Construcción con IA, revisión humana en cada fase antes de avanzar»",
-    "estado": "sale (E14)",
-    "origen": "v2-vigente/servicios__desarrollo-web.txt («Revisión humana en cada fase antes de avanzar.»)",
-    "antes": "Lo programamos con agentes de IA, y Ramón revisa cada fase antes de avanzar.",
-    "por_que": "«Agentes de IA» solo vive en «Quién está detrás» (guía E13 §3); «Ramón revisa cada fase» es un hecho que el inventario no sostiene (en Praxi, 50 de 219 cambios fueron directo; revisión 23-oct), y queda como método, que es lo que dice la versión publicada el 24-oct."
-   },
-   {
-    "id": "dw.faq.4.p",
-    "rol": "h2",
-    "nivel": 3,
-    "texto": "¿Qué necesitan de mí para partir?",
-    "estado": "sale (E14)",
-    "origen": "texto-paso2.json «dw.faq.5.p»"
-   },
-   {
-    "id": "dw.faq.4.r",
-    "rol": "parrafo",
-    "texto": "El anticipo, los textos y las imágenes: el plazo de tu plan cuenta desde que nos llegan. Para publicar, acceso a tu dominio.",
-    "fuente": "desarrollo-web.astro #planes, nota",
-    "estado": "sale (E14)",
-    "origen": "texto-paso2.json «dw.faq.5.r»"
-   },
-   {
-    "id": "dw.faq.3.p",
-    "rol": "h2",
-    "nivel": 3,
-    "texto": "¿El sitio incluye SEO?",
-    "estado": "sale (E14)",
-    "origen": "texto-paso2.json «dw.faq.4.p»"
-   },
-   {
-    "id": "dw.faq.3.r",
-    "rol": "parrafo",
-    "texto": "Sí, el SEO técnico va en todos los planes. Cómo te nombran ChatGPT, Gemini y Perplexity se trabaja aparte, en Visibilidad en IA.",
-    "estado": "sale (E14)",
-    "origen": "texto-paso2.json «dw.faq.4.r»",
-    "antes": "Sí. El SEO técnico va en todos los planes y se piensa desde el diseño. Si además quieres trabajar cómo te nombran ChatGPT, Gemini y Perplexity, eso se profundiza en Visibilidad en IA.",
-    "por_que": "E14, 2-nov-2026: recorte de alrededor de 25 % pedido junto con la home Koto (sin tocar precios, planes ni dw.incluye.7, dominio y código). «Se piensa desde el diseño» lo dice dw.incluye."
-   }
-  ]
- }
+ ]
 }

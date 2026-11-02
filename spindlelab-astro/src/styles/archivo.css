@@ -305,8 +305,7 @@ body.a-body {
      márgenes negativos del correo, que le pisaban 3 px de área al enlace de la fila de abajo (Instagram) */
   html body.a-body .pie-sitio .pie-sitio__enlaces #cookie-preferencias { margin-block: 0 !important; padding: 0 !important; }
   .a-body .portada-v__accion > .chico:last-child, .a-body .fase__der > .chico:has(> a), .a-body .int-lista__pie:not(.chico) { margin-block: -13px; }
-  .a-body .portada-v__accion > .chico:last-child a, .a-body .fase__der > .chico > a, .a-body .int-lista__pie:not(.chico) a,
-  .a-body .servicio__precio .chico a { display: flex; width: fit-content; align-items: center; min-height: 44px; }
+  .a-body .portada-v__accion > .chico:last-child a, .a-body .fase__der > .chico > a, .a-body .int-lista__pie:not(.chico) a { display: flex; width: fit-content; align-items: center; min-height: 44px; }
   .a-body .pie-sitio .cab__logo { margin-block: -12px; }
   .a-body .pie-sitio__correo { display: inline-flex; align-items: center; min-height: 44px; padding-top: 6px; margin-block: -18px -12px; }
   /* el botón «Cookies» que consent-banner.js cuelga junto al correo trae su estilo en línea: va con !important */
@@ -613,48 +612,9 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bot
   .a-body .portada-v__decl { grid-column: 1 / span 12; }
   .a-body .portada-v__accion { grid-column: 13 / -1; }
 }
-
-/* Una entrada del trabajo (/trabajo/): bajo el medio, nombre en blanco y bajada en gris en una sola frase, a
-   cuerpo, y la línea mono. Sin borde ni caja. (E13: la cinta y el índice corto de la home salieron; esto lo usa /trabajo/.) */
-.a-body .pieza { position: relative; min-width: 0; }
-.a-body .pieza__txt { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; }
-.a-body .pieza__nombre {
-  font-stretch: 100%; font-weight: 370; font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); text-wrap: pretty;
-}
-.a-body .pieza__nombre .icono-flecha { margin-left: 4px; }
-
-/* E13 · Los bloques de «Lo que podemos hacer por ti» (spec-home §1, fila 5): el nombre del bloque a Título (c1–c4), el
-   texto (c5–c11) y el precio en blanco con un enlace por servicio (c13–c16); de 834 a 1193, c1–c4, c5–c9 y c10–c12;
-   apilado bajo 834. Cuatro bloques de peso parecido: una lista de filas con línea, no tarjetas ni botones. */
-.a-body .servicios__cab { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px; }
-@media (min-width: 1194px) { .a-body .servicios__cab { grid-column: 1 / span 6; } }
-.a-body .servicio { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; row-gap: 12px; padding: 16px 0 40px; }
-.a-body .servicio__sit, .a-body .servicio__cuerpo, .a-body .servicio__precio { grid-column: 1 / -1; }
-.a-body .servicio__cuerpo { display: flex; flex-direction: column; gap: 12px; }
-.a-body .servicio__precio { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
-.a-body .servicio__precio .valor { color: var(--a-blanco); }
-/* Búsqueda y visibilidad en IA (ronda 2 de E13): un precio sobre cada enlace, en pares. Dentro del par, el precio y su enlace
-   juntos; entre pares, el aire que los separa. Bajo 834 los enlaces miden 44 y llevan 13 px de aire propio sobre el texto, así
-   que el par no suma separación y entre pares queda más. */
-.a-body .servicio__precio--pares { gap: 24px; }
-.a-body .servicio__par { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
-@media (max-width: 833.98px), (pointer: coarse) {
-  .a-body .servicio__precio--pares { gap: 16px; }
-  .a-body .servicio__par { gap: 0; }
-  .a-body .servicio__par .chico { margin-top: -6px; }
-}
 /* la flecha de los enlaces de texto de la home (bloques de servicios, filas de pruebas, enlace al método): 4 px, como en
    los datos de las fases del método y en el nombre de la pieza */
-.a-body .servicio__precio .icono-flecha, .a-body .fase__der .icono-flecha, .a-body .int-lista__pie .icono-flecha { margin-left: 4px; }
-@media (min-width: 834px) {
-  .a-body .servicio__sit { grid-column: 1 / span 4; }
-  .a-body .servicio__cuerpo { grid-column: 5 / span 5; }
-  .a-body .servicio__precio { grid-column: 10 / -1; }
-}
-@media (min-width: 1194px) {
-  .a-body .servicio__cuerpo { grid-column: 5 / span 7; }
-  .a-body .servicio__precio { grid-column: 13 / -1; }
-}
+.a-body .fase__der .icono-flecha, .a-body .int-lista__pie .icono-flecha { margin-left: 4px; }
 
 /* 6 · Quién está detrás: el retrato 3:4 entero en c1–c5; el texto en c7–c14 (c6–c12 de 834 a 1193), apoyado abajo */
 .a-body .quien__retrato { grid-column: 1 / -1; }
@@ -671,14 +631,6 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bot
    columna ya los separa, y el 1em de .cuerpo + .cuerpo se sumaba encima. Con cuatro párrafos se leía en bloques sueltos */
 .a-body .quien__txt > .cuerpo + .cuerpo { margin-top: 0; }
 
-/* 7 · Contacto, en c1–c9 */
-.a-body .contacto__txt { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
-@media (min-width: 1194px) { .a-body .contacto__txt { grid-column: 1 / span 9; } }
-/* el correo suelto, con su área de 44 bajo 834 y con puntero grueso (§4.3; prototipo: 17 de alto en 44) */
-@media (max-width: 833.98px), (pointer: coarse) {
-  .a-body .contacto__txt a[href^='mailto:'] { display: inline-flex; align-items: center; min-height: 44px; margin-block: -13.5px; }
-}
-
 /* ================================================================== ÍNDICE DE TRABAJO (spec §2.2) · tanda 2 */
 /* Desde 1194: la barra lateral de 320 px pegajosa a 80 px del borde de arriba y el muro a la derecha, con 16 px entre
    los dos. Bajo 1194, el título, el conteo y la entradilla arriba del muro. */
@@ -694,26 +646,6 @@ html:has(body.a-body):has(#cookie-banner:not([hidden])) .pie-sitio { padding-bot
     position: sticky; top: 80px; align-self: start; max-height: calc(100svh - 96px); overflow: auto;
     padding: 48px 8px 8px; margin-inline: -8px;
   }
-}
-
-/* El muro: una columna bajo 834; desde 834, dos de igual ancho con 8 px entre ellas, en las tres proporciones de Koto.
-   muro.mjs reparte cada pieza a la columna más corta y le da tantas filas de 1 px como mide (+ 32 de separación);
-   sin JS, cada pieza en su columna (data-col) con las filas alineadas. */
-.a-body .muro { display: grid; grid-template-columns: minmax(0, 1fr); row-gap: 40px; align-items: start; }
-@media (min-width: 834px) {
-  .a-body .muro { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--a-g); row-gap: 32px; grid-auto-flow: row dense; }
-  .a-body .muro .pieza[data-col='1'] { grid-column: 1; }
-  .a-body .muro .pieza[data-col='2'] { grid-column: 2; }
-  .a-body .muro.muro--armado { grid-auto-rows: 1px; row-gap: 0; }
-}
-/* Al pasar el mouse (solo puntero fino desde 834): las demás piezas bajo --a-velo en 167 ms; la del mouse se acorta 24 px
-   con el resorte «estado» (base.mjs). spindlelab.cl no es un enlace: no lleva velo. */
-.a-body .pieza__velo {
-  position: absolute; inset: 0; z-index: 2; background: var(--a-velo); opacity: 0; pointer-events: none;
-  transition: opacity var(--a-color);
-}
-@media (hover: hover) and (pointer: fine) and (min-width: 834px) {
-  .a-body .muro:has(.medio-enlace:hover) .pieza:not(:has(.medio-enlace:hover)) .pieza__velo { opacity: 1; }
 }
 
 /* ================================================================== CASO (spec §2.3; lock §21.5) · tanda 3 */
@@ -918,24 +850,6 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
 }
 .a-body .int-lista__pie { margin-top: 16px; max-width: var(--a-caja); }
 
-/* 30-oct · la sección 2 de la home (spec-home §12.2): «En redes» | «En tu sitio». Dos .int-lista lado a lado desde 834,
-   con las filas alineadas entre columnas (subgrid, como .servicio); apiladas bajo 834, «En redes» primero. Sin caja,
-   sin fondo y sin borde alrededor: los filetes son los de .int-lista. */
-.a-body .int-par { display: grid; grid-template-columns: minmax(0, 1fr); margin-block: 32px; }
-.a-body .int-par__t { margin-bottom: 12px; }
-.a-body .int-par__lista + .int-par__t { margin-top: 32px; }
-@media (min-width: 834px) {
-  /* 1 fila para los títulos + tantas como la lista más larga (hoy, 4). Si Clara cambia cuántas son, cambian el 4 y el 6 */
-  .a-body .int-par { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto repeat(4, auto); column-gap: var(--a-g); }
-  .a-body .int-par__lista + .int-par__t { margin-top: 0; }
-  .a-body .int-par > .int-par__t:nth-of-type(1) { grid-area: 1 / 1; }
-  .a-body .int-par > .int-par__t:nth-of-type(2) { grid-area: 1 / 2; }
-  .a-body .int-par > .int-par__lista:nth-of-type(1) { grid-area: 2 / 1 / 6 / 2; }
-  .a-body .int-par > .int-par__lista:nth-of-type(2) { grid-area: 2 / 2 / 6 / 3; }
-  .a-body .int-par__lista { display: grid; grid-template-rows: subgrid; }
-  .a-body .int-par__lista > li { padding-right: 24px; }
-}
-
 /* Las filas de servicios de /servicios/ (una por servicio del momento): el nombre a Título con la flecha, la línea de qué
    hace y el precio en blanco, con la línea de sección como los planes. Desde 834, sobre las doce columnas de la retícula
    que ocupa la lista (c5–c16 desde 1194; todas de 834 a 1193): el nombre en 3, la línea en 5 y el precio en las 3
@@ -959,12 +873,6 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
   .a-body .fila-servicio__linea { grid-column: 4 / span 5; }
   .a-body .fila-servicio__precio { grid-column: 10 / span 3; }
 }
-
-/* «Sitios que construimos» (Desarrollo web): tres portadas 4:5 en c5–c16, una columna bajo 834 */
-.a-body .obra3 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px var(--a-g); }
-@media (min-width: 834px) { .a-body .obra3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.a-body .obra3__pie { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; margin-top: 24px; }
-.a-body .obra3__pie .chico { max-width: var(--a-caja); }
 
 /* El glosario de los planes (Desarrollo web): antes de los planes (Clara), su rótulo y la lista en dos columnas desde 834 */
 .a-body .glosario { margin-bottom: 40px; }
@@ -1242,3 +1150,233 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
   .a-body .medio > img { opacity: 1; }
   .a-body .circulo { display: none !important; }
 }
+
+/* ================================================================== HOME E14 · composición Koto (2-nov-2026, Diego) */
+/* Del prototipo aprobado por Ramón el 2-nov (e14-home-koto/prototipo/home.css, de Lucía) con las medidas de Koto
+   (e14-home-koto/medicion-koto-scroll.md, § entre paréntesis). Clases con prefijo k- para no pisar las de E13 (.fila,
+   .nota, .contacto ya existen). Regla: todo estado de partida «escondido» va bajo html.a-mov, que pone un script en línea
+   solo si el movimiento está permitido; sin JS o con prefers-reduced-motion: reduce, todo está a la vista y quieto.
+   Los desvíos contra el prototipo: e14-home-koto/desvios-construccion.md. */
+
+/* 1 · La portada se recoge (§1). El escenario del hilo es pegajoso dentro de un fondo que cubre la portada y la línea:
+   el texto sube por encima y, entre el scroll 120 y una pantalla, el video se recoge en una franja arriba (home.mjs).
+   Conserva .portada-v, .portada-v__medio y .portada-v__pie, que miden las herramientas de portada de E12. */
+.a-body .portada-v--recoge { display: block; min-height: 0; }
+@media (min-width: 834px) {
+  .a-body .portada-v__fondo { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .a-body .portada-v__escenario { position: sticky; top: 0; height: 100svh; }
+  .a-body .portada-v--recoge .portada-v__medio { z-index: 0; will-change: clip-path; }
+  .a-body .portada-v--recoge .pausa { pointer-events: auto; }
+  /* la pausa queda bajo la placa del encabezado plegado (56 px) cuando el escenario está pegado */
+  .a-body .portada-v--recoge .pausa--arriba { top: 72px; }
+  .a-body .portada-v--recoge .portada-v__pie {
+    z-index: 1; min-height: calc(100svh - 64px); align-content: end;
+    background: linear-gradient(to bottom, rgba(6, 6, 6, 0) calc(100% - 420px), rgba(6, 6, 6, 0.88) calc(100% - 260px), rgba(6, 6, 6, 0.88) calc(100% - 48px), #060606 100%);
+  }
+}
+
+/* 2 · La línea (§2): una pantalla de alto desde 834; la frase queda bajo la franja del video recogido */
+.a-body .k-linea { position: relative; z-index: 1; padding: 80px var(--a-m) 0; }
+.a-body .k-linea__texto { max-width: 1100px; }
+@media (min-width: 834px) {
+  .a-body .k-linea { min-height: 100svh; padding-top: 34svh; padding-bottom: 120px; }
+  .a-body .k-linea__texto { width: calc((100% - 15 * var(--a-g)) / 16 * 11 + 10 * var(--a-g)); max-width: none; }
+}
+@media (min-width: 834px) and (max-width: 1193.98px) { .a-body .k-linea__texto { width: 100%; } }
+/* cada renglón en su máscara (home.mjs); la máscara deja 0,12 em abajo para los descendentes */
+.a-body .k-l { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.a-body .k-l__in { display: block; will-change: transform; }
+
+/* 3 · El trabajo fijo (§3; TrabajoFijo.astro). Bajo 834, una lista con la tarjeta en 4:5 y su texto debajo. */
+.a-body .k-tf {
+  position: relative; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--a-g);
+  padding: 80px var(--a-m) 0;
+}
+.a-body .k-tf--arriba { padding-top: 8px; }
+.a-body .k-tf__panel { grid-column: 1 / -1; padding-bottom: 24px; }
+.a-body .k-tf__arriba { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.a-body .k-tf__arriba .chico { max-width: var(--a-caja); }
+.a-body .k-tf__nombre, .a-body .k-tf__abajo { display: none; }
+.a-body .k-tf__lista { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 12px; }
+.a-body .k-tf__pieza { position: relative; display: flex; flex-direction: column; gap: 12px; }
+.a-body .k-tf__marco { position: relative; }
+.a-body .k-tf__tarjeta { display: block; border-radius: 4px; }
+.a-body .k-tf__medio { aspect-ratio: 4 / 5; border-radius: 4px; }
+.a-body .k-tf__medio > picture { position: absolute; inset: 0; display: block; }
+.a-body .k-tf__ver {
+  position: absolute; z-index: 2; left: 50%; bottom: 16px; translate: -50% 0; padding: 7px 8px 6px; border-radius: 2px;
+  background: var(--a-placa); color: var(--a-blanco); opacity: 0; transition: opacity var(--a-color); white-space: nowrap;
+}
+.a-body .k-tf__tarjeta:hover .k-tf__ver, .a-body .k-tf__tarjeta:focus-visible .k-tf__ver { opacity: 1; }
+.a-body .k-tf__marco > .pausa { top: 12px; bottom: auto; }
+.a-body .k-tf__texto { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.a-body .k-tf__pnombre { font-stretch: 100%; font-weight: 370; font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); }
+.a-body .k-tf__texto .chico + .chico { margin-top: 0; }
+.a-body .k-tf__bajada { display: flex; flex-direction: column; gap: 12px; }
+.a-body .k-tf__bajada .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .k-tf__enlace a .icono-flecha, .a-body .k-tf__bajada a .icono-flecha { display: inline-block; margin-left: 4px; }
+/* el corchete al índice: una barra al final de la columna (§3.1) */
+.a-body .k-tf__todo {
+  display: flex; justify-content: flex-end; align-items: flex-end; height: 120px; padding: 16px; border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1); color: var(--a-blanco-70);
+}
+.a-body .k-tf__corchetes span { display: inline-block; transition: translate 333ms linear; }
+.a-body .k-tf__todo:hover .k-tf__corchetes span:first-child { translate: -4px 0; }
+.a-body .k-tf__todo:hover .k-tf__corchetes span:last-child { translate: 4px 0; }
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .k-tf__enlace a, .a-body .k-tf__bajada .chico a { display: inline-flex; align-items: center; min-height: 44px; margin-block: -13px; }
+}
+@media (min-width: 834px) {
+  .a-body .k-tf { grid-template-columns: repeat(12, minmax(0, 1fr)); padding-top: 0; align-items: start; }
+  .a-body .k-tf__panel {
+    grid-column: 1 / span 5; position: sticky; top: 0; height: 100svh; padding: 30svh 12px 24px 0;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  /* arriba de la página: el panel arranca bajo el encabezado plegado */
+  .a-body .k-tf--arriba .k-tf__panel { padding-top: 88px; }
+  .a-body .k-tf__nombre { display: block; }
+  .a-body .k-tf__mascara { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+  .a-body .k-tf__mascara > span { display: block; }
+  .a-body .k-tf__abajo { display: flex; flex-direction: column; justify-content: flex-end; gap: 16px; max-width: 334px; min-height: 200px; }
+  .a-body .k-tf__lista { grid-column: 6 / -1; padding-bottom: 160px; }
+  .a-body .k-tf__tarjeta, .a-body .k-tf__medio { border-radius: 6px; }
+  .a-body .k-tf__medio { aspect-ratio: 16 / 9; }
+  .a-body .k-tf__marco > .pausa { top: auto; bottom: 12px; }
+  .a-body .k-tf__pieza { gap: 12px; }
+  .a-body .k-tf__todo { height: 158px; border-radius: 6px; }
+  /* con JS, el texto de cada pieza queda para el lector de pantalla y lo que se ve es la copia del panel; su enlace sale
+     del Tab (la tarjeta lleva al mismo destino). Sin JS, el panel no muestra bajada y cada pieza lleva la suya. */
+  body.a-body:not(.a-sin-js) .k-tf__texto {
+    position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  body.a-body:not(.a-sin-js) .k-tf__enlace { display: none; }
+  body.a-body.a-sin-js .k-tf__abajo { display: none; }
+}
+@media (min-width: 1194px) {
+  .a-body .k-tf { grid-template-columns: repeat(16, minmax(0, 1fr)); }
+  .a-body .k-tf__panel { grid-column: 1 / span 6; }
+  .a-body .k-tf__lista { grid-column: 7 / -1; }
+}
+/* el estado medido: una tarjeta encendida, las demás al 20 % (§3.3), en 167 ms lineales. El pie de la imagen no se apaga. */
+@media (min-width: 834px) {
+  html.a-mov .a-body .k-tf__marco > .k-tf__tarjeta, html.a-mov .a-body .k-tf__marco > .pausa {
+    opacity: 0.2; transition: opacity var(--a-color), background-color var(--a-color), color var(--a-color);
+  }
+  html.a-mov .a-body .k-tf__marco.activa > .k-tf__tarjeta, html.a-mov .a-body .k-tf__marco.activa > .pausa { opacity: 1; }
+  html.a-mov .a-body .k-tf--aparece .k-tf__panel { opacity: var(--panel, 0); }
+}
+
+/* 4 y 5 · Las dos bandas grandes: texto a la izquierda (6 de 16 columnas), medio 16:9 a la derecha (10) */
+.a-body .k-banda {
+  display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--a-g); row-gap: 24px;
+  margin: 80px var(--a-m) 0; padding-top: 24px; border-top: 1px solid var(--a-linea-seccion);
+}
+.a-body .k-banda__txt { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.a-body .k-banda__txt h2 { margin-bottom: 8px; max-width: 520px; }
+.a-body .k-precio { color: var(--a-blanco); font-size: var(--a-t-cuerpo); line-height: var(--a-i-cuerpo); }
+.a-body .k-enlaces { display: flex; flex-direction: column; gap: 4px; }
+.a-body .k-enlaces a { display: inline-flex; align-items: center; min-height: 32px; }
+.a-body .k-banda__medio { grid-column: 1 / -1; margin: 0; }
+.a-body .k-banda__medio .pie a { color: var(--a-blanco); }
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .k-enlaces { gap: 0; }
+  .a-body .k-enlaces a { min-height: 44px; }
+  .a-body .k-banda__medio .pie a { display: inline-flex; align-items: center; min-height: 44px; margin-block: -13px; }
+}
+@media (min-width: 834px) {
+  .a-body .k-banda { grid-template-columns: repeat(12, minmax(0, 1fr)); margin-top: 120px; padding-top: 16px; }
+  .a-body .k-banda__txt { grid-column: 1 / span 5; padding-right: 24px; }
+  .a-body .k-banda__medio { grid-column: 6 / -1; }
+}
+@media (min-width: 1194px) {
+  .a-body .k-banda { grid-template-columns: repeat(16, minmax(0, 1fr)); }
+  .a-body .k-banda__txt { grid-column: 1 / span 6; }
+  .a-body .k-banda__medio { grid-column: 7 / -1; }
+}
+/* la imagen se abre desde abajo y desde el centro, atada al scroll (pedido de Ramón, 2-nov; Koto no lo hace en sus
+   noticias, por eso solo las dos bandas grandes) */
+html.a-mov .a-body [data-entra-in] {
+  clip-path: inset(calc(var(--e, 1) * 22%) calc(var(--e, 1) * 7%) 0 calc(var(--e, 1) * 7%) round 6px);
+}
+html.a-mov .a-body [data-entra-in] > img { opacity: 1; transform: scale(calc(1 + var(--e, 1) * 0.12)); transform-origin: 50% 100%; }
+
+/* 6 a 8 · La fila de tres, como las noticias de Koto (§4): una grande y dos chicas, sin ningún efecto. 4:5 bajo 834. */
+.a-body .k-tres {
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; margin: 80px var(--a-m) 0; padding-top: 24px;
+  border-top: 1px solid var(--a-linea-seccion);
+}
+.a-body .k-nota { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; min-width: 0; }
+.a-body .k-nota__medio { width: 100%; aspect-ratio: 4 / 5; margin-bottom: 4px; }
+.a-body .k-nota__medio > picture { position: absolute; inset: 0; display: block; }
+.a-body .k-nota .k-precio { font-size: var(--a-t-chico); }
+@media (min-width: 834px) {
+  .a-body .k-tres { grid-template-columns: 1.575fr 1fr 1fr; gap: 12px; margin-top: 160px; padding-top: 16px; }
+  .a-body .k-nota__medio { aspect-ratio: 16 / 9; }
+  .a-body .k-nota .t-titulo { font-size: 20px; }
+  .a-body .k-nota:first-child .t-titulo { font-size: var(--a-t-titulo); }
+  .a-body .k-nota { padding-right: 12px; }
+}
+
+/* 9 · Contacto en filas (§5): las filas aparecen atadas al scroll y la foto de Ramón escala al llegar */
+.a-body .k-contacto {
+  display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--a-g); row-gap: 40px;
+  padding: 120px var(--a-m) 0;
+}
+.a-body .k-contacto__izq { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 40px; }
+.a-body .k-contacto h2 .gris { display: block; }
+.a-body .k-contacto__filas { grid-column: 1 / -1; }
+.a-body .k-contacto__foto { width: min(66%, 260px); margin: 0; }
+.a-body .k-contacto__foto .medio { border-radius: 4px; }
+.a-body .k-fila { border-top: 1px solid var(--a-linea); }
+.a-body .k-fila__in { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 16px 0 40px; }
+.a-body .k-fila__cont { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.a-body .k-fila__rot { color: var(--a-blanco); }
+.a-body .k-fila__cont .cuerpo + .cuerpo { margin-top: 0; }
+.a-body .k-fila__cont .chico a .icono-flecha { display: inline-block; margin-left: 4px; }
+@media (max-width: 833.98px), (pointer: coarse) {
+  .a-body .k-fila__cont a[href^='mailto:'], .a-body .k-fila__cont .chico a { display: inline-flex; align-items: center; min-height: 44px; margin-block: -13px; }
+}
+@media (max-width: 833.98px) {
+  .a-body .k-contacto__izq { display: contents; }
+  .a-body .k-contacto h2 { grid-column: 1 / -1; order: 0; }
+  .a-body .k-contacto__filas { order: 1; }
+  .a-body .k-contacto__foto { grid-column: 1 / -1; order: 2; }
+}
+@media (min-width: 834px) {
+  .a-body .k-contacto { grid-template-columns: repeat(12, minmax(0, 1fr)); padding-top: 160px; }
+  .a-body .k-contacto__izq { grid-column: 1 / span 5; justify-content: space-between; }
+  .a-body .k-contacto__filas { grid-column: 6 / -1; }
+  .a-body .k-fila__in { grid-template-columns: repeat(7, minmax(0, 1fr)); column-gap: var(--a-g); padding-bottom: 48px; }
+  .a-body .k-fila__rot { grid-column: 1 / span 2; }
+  .a-body .k-fila__cont { grid-column: 3 / -1; }
+  .a-body .k-contacto__foto { width: min(100%, 366px); }
+  .a-body .k-contacto__foto .medio { border-radius: 6px; }
+}
+@media (min-width: 1194px) {
+  .a-body .k-contacto { grid-template-columns: repeat(16, minmax(0, 1fr)); }
+  .a-body .k-contacto__izq { grid-column: 1 / span 6; }
+  .a-body .k-contacto__filas { grid-column: 7 / -1; }
+  .a-body .k-fila__in { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+  .a-body .k-fila__rot { grid-column: 1 / span 3; }
+  .a-body .k-fila__cont { grid-column: 4 / -1; }
+}
+html.a-mov .a-body .k-fila { opacity: var(--f, 0); }
+html.a-mov .a-body .k-fila__in { transform: translateY(calc((1 - var(--f, 0)) * 24px)); }
+html.a-mov .a-body .k-contacto__foto { transform: scale(0); transform-origin: 0 100%; transition: transform 300ms cubic-bezier(0, 0, 0, 1); }
+html.a-mov .a-body .k-contacto__foto.vista { transform: scale(1); }
+
+/* movimiento reducido: la portada en su franja 16:9 con el texto debajo, todo quieto */
+@media (prefers-reduced-motion: reduce) {
+  .a-body .portada-v__fondo { position: relative; }
+  .a-body .portada-v__escenario { position: relative; height: auto; }
+  .a-body .portada-v--recoge .portada-v__medio { position: relative; inset: auto; aspect-ratio: 16 / 9; }
+  .a-body .portada-v--recoge .pausa--arriba { top: 16px; }
+  .a-body .portada-v--recoge .portada-v__pie { min-height: 0; background: none; padding-top: 24px; }
+  .a-body .k-linea { min-height: 0; padding-top: 120px; }
+}
+/* el trabajo fijo dentro de una página interior (Desarrollo web): el aire de una sección arriba, el botón al final */
+@media (min-width: 834px) { .a-body .seccion + .k-tf { margin-top: 120px; } }
+.a-body .k-tf__final { padding-top: 12px; }
+/* sin JS, la imagen diferida no tiene src: la reemplaza la del <noscript> */
+body.a-body.a-sin-js img[data-diferida] { display: none; }
