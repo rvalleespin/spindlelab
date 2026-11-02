@@ -1,5 +1,8 @@
 # URGENTE para la sesión de Verifica y Cumple: la postergación de la ley avanzó el 20-oct y ya no hay una fecha firme
 
+> ⚠️ **SUPERADO EN PARTE el 2-nov-2026.** Lo de "cuánto se posterga sigue abierto" y "no hay votación posterior" era incorrecto desde el 28-oct: el Senado aprobó el 28-oct el **15-oct-2027** (33 a 6) y el proyecto está en la Cámara. Leer primero `ACTUALIZACION-vyc-la-fecha-es-15oct2027-2nov.md`.
+
+
 **Para:** quien lleva Verifica y Cumple (sitio, campaña de Meta, outbound, kit).
 **De:** la sesión de comunicaciones de LinkedIn (Renata), a pedido de Ramón (28-oct-2026): *"esta noticia hay que mandarla a la sesión que ve lo de verifica y cumple. se está anunciando algo que ya no tiene fecha de plazo"*.
 

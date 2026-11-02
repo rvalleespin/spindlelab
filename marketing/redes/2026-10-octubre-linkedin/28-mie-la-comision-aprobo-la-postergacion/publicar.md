@@ -1,5 +1,8 @@
 # Publicado: la Comisión de Constitución aprobó en general la postergación de la Ley 21.719
 
+> ⚠️ **ACTUALIZACIÓN 2-nov-2026: el dato de este post quedó viejo el mismo día.** Decía *"Todavía no se sabe cuánto se posterga"*; el 26-oct la comisión ya había fijado el 15-oct-2027 y el 28-oct la Sala lo aprobó (33 a 6). Se corrigió con un post nuevo (`2-nov-lun-el-senado-fijo-la-fecha/publicar.md`) y un comentario de actualización en este. El texto de abajo se deja como salió.
+
+
 **Cuándo:** MIÉRCOLES 28-oct-2026 · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Escribe:** agente-copywriter (Renata) · **Aprobó:** Ramón, 28-oct ("publícalo así. está bien")
 **Estado:** ✅ PUBLICADO Y VERIFICADO (28-oct-2026). `linkedin.com/feed/update/urn:li:activity:7521224976192913408/`.
