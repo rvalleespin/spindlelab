@@ -2,8 +2,10 @@
 
 **Qué es:** la presentación que se comparte en pantalla durante la llamada de 20 minutos
 posterior al mini-diagnóstico. Primera instancia: Sebastián Escudero / Legal Prisma.
-**Es también el molde reutilizable** para cualquier cliente que venga del mini-diagnóstico
-(ver "Cómo clonar" abajo).
+~~Es también el molde reutilizable para cualquier cliente que venga del mini-diagnóstico~~
+**Ya no es molde (2-nov-2026):** nombra agencias y usa la línea anterior («poner el motor a
+funcionar entero»). Queda como registro de la llamada del 11-sep. El molde vigente es
+`marketing/plantillas/presentacion-llamada/`, con la línea publicada el 30-oct-2026.
 
 ## Qué hay en esta carpeta
 

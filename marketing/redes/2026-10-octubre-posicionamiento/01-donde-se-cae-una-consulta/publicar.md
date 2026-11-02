@@ -1,5 +1,29 @@
 # Publicar · Carrusel «Dónde se cae una consulta»
 
+> ## Antes de publicar (2-nov): la línea cambió
+>
+> *Nota de Renata, lunes 2-nov-2026. La pieza no se reescribe: estas son las frases que cambian. Los números de línea son los de antes de las notas del 2-nov, aquí y en `caption.md`.*
+>
+> El sitio salió el viernes 30-oct con la línea de Ramón: rótulo «Sitios web a medida y marketing con IA», titular «En redes arriendas. Tu sitio es lo único que es tuyo.» y acción «Hablemos de tu sitio». La revisión gratis de una página está publicada y se responde en un día hábil. La pieza no salió (no está en `QUE-HAY-PUBLICADO.md`; confirmarlo en el canal).
+>
+> | Dónde | Dice hoy | Cambia a |
+> |---|---|---|
+> | `lamina-5.html` L12, titular | «Pide la revisión de una página de tu sitio.» | «Hablemos de tu sitio.» |
+> | `lamina-5.html` L13, bajada | «Nos pasas la dirección y te devolvemos por escrito lo más importante que vimos y por dónde partiríamos. Es gratis.» | «Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta.» (143 caracteres contra 114: mirar al re-renderizar que no choque con la caja de cierre) |
+> | `lamina-5.html` L16, rótulo de la caja | «Para pedirla» (se queda sin «la revisión» a la que se refería) | «Escríbenos en» |
+> | Pie de foto, último párrafo (L44 aquí y `caption.md` L26) | «Si quieres que miremos una página de tu sitio, nos pasas la dirección y te devolvemos por escrito lo más importante que vimos y por dónde partiríamos. Es gratis.» | «Hablemos de tu sitio. Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta.» |
+> | Historia de la cuenta personal de Ramón (L63 aquí y `caption.md` L79) | «Si quieres que mire una página de tu sitio, el enlace va acá.» | «Si quieres que revise tu sitio, el enlace va acá.» (se revisa el sitio y lo que se entrega es una página, como dice `/contacto/`) |
+> | Sticker de la historia (L64 aquí y `caption.md` L53) | «Pedir la revisión de una página» | «Hablemos de tu sitio». La URL y el UTM no cambian |
+> | `caption.md` L54, título del enlace del bio | «Pedir la revisión» | «Hablemos de tu sitio» |
+> | `caption.md` L45, alt de la lámina 5 | «Pide la revisión de una página de tu sitio. Es gratis. Para pedirla: spindlelab.cl/contacto.» | «Hablemos de tu sitio. Si ya tienes uno, lo revisamos gratis y respondemos en un día hábil: spindlelab.cl/contacto.» (114 de 120) |
+> | Hashtags (L49 aquí y `caption.md` L35) | `#SEOtecnico #SitioWeb #MarketingConIA #Chile` | `#SitioWeb #SEOtecnico #MarketingConIA #Chile` (el sitio va primero, igual que en la pieza 2) |
+> | Checklist, L73 | «Reconfirmar por escrito que la revisión gratis está encendida» | cerrado por el sitio: la revisión está publicada desde el 30-oct |
+> | L9 y checklist L74, go-live | `grep -c 'Te llegan consultas'`; el `<title>` de `/contacto/` sin «diagnóstico» | `curl -s https://spindlelab.cl/ \| grep -c 'En redes arriendas'` da 1 o más; el `<title>` de `/contacto/` es «Contacto: hablemos de tu sitio · SpindleLab»; siguen los tres campos de UTM. **Comprobado el 2-nov: las tres cosas se cumplen** |
+>
+> Después de cambiar el HTML, **re-renderizar la lámina 5** con el comando de *Producción*; no se sube el PNG viejo.
+>
+> **Orden.** Esta pieza nació del H1 del 23-oct («Te llegan consultas»). Recomiendo que la primera pieza después del go-live lleve el titular publicado y que esta pase a segundo o tercer lugar (`PLAN.md`, nota del 2-nov).
+
 **Canal:** Instagram `spindlelab.cl` · carrusel de 5 láminas, **1080x1350 (4:5)**
 **Estado:** v2, rehecha el 23-oct-2026 (noche). LISTA PARA REVISIÓN DE RAMÓN. **No publicada.** Nada sale de un borrador generado.
 **Pieza 1 de 3** del plan `marketing/redes/2026-10-octubre-posicionamiento/PLAN.md` (día 1 del calendario). La pieza 3 queda fuera de la primera tanda (decisión A, opción segura).

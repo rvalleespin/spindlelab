@@ -27,20 +27,24 @@ aprieta "enviar". Esto es la regla sagrada del pipeline, no una opción de confi
 ### 1. Barrido de bandeja (lo más importante)
 Busca en `hola@spindlelab.cl` respuestas nuevas desde la última corrida a los correos de
 outbound. Clasifica cada una:
-- **Interesado / pide diagnóstico** → prioridad máxima.
-- **Pregunta / objeción** → responder con las "Respuestas tipo" de `plantillas/emails-fase0.md`.
+- **Interesado / pide la revisión** → prioridad máxima.
+- **Pregunta / objeción** → responder con la oferta vigente, no con las "Respuestas tipo" de
+  `plantillas/emails-fase0.md` (retirada el 2-nov-2026): «Hablemos de tu sitio»; con sitio, la
+  revisión gratis de una página en un día hábil; sin sitio, cómo lo haríamos y cuánto cuesta,
+  con los precios publicados. Objeciones: `ventas/objeciones-y-perdidas.md`.
 - **Negativa** → registrar y cerrar limpio.
 - **Rebote / fuera de oficina** → marcar y reprogramar o descartar.
 
 ### 2. Para cada respuesta interesada
 - **Avisa a Ramón de inmediato** (no espera a la mañana siguiente si se puede).
-- **Pre-arma el mini-diagnóstico** de ese sitio (skill `mini-diagnostico`) para que salga dentro
-  de las 24 h prometidas — deja el 1-pager listo, Ramón lo revisa y envía.
+- **Pre-arma la revisión gratis de una página** de ese sitio (skill `mini-diagnostico`) para que
+  salga dentro del día hábil prometido — deja el 1-pager listo, Ramón lo revisa y envía. Si no
+  tiene sitio, no hay revisión: borrador con cómo lo haríamos y cuánto cuesta.
 - Mueve el prospecto a la etapa correcta en `ventas/pipeline.md` (Contactado → Interesado).
 
 ### 3. Follow-ups que vencen hoy
 Lee las tablas de seguimiento (`re-toque-relanzamiento.md`, lotes) y calcula quién está en día
-+4 o +10 sin respuesta según la cadencia de `emails-fase0.md`. Redacta esos follow-ups (toque 2
++4 o +10 sin respuesta (toque 2 a +4 días, toque 3 a +10; ver *Decisiones de arquitectura*). Redacta esos follow-ups (toque 2
 / toque 3, con la voz humana ya afinada) y los deja **como borradores en Gmail**.
 
 ### 4. Lista de envío del día
@@ -53,7 +57,7 @@ en un log diario. Una sola fuente de verdad, sin bookkeeping a mano.
 
 ## Salida (el "briefing" de la mañana)
 Un mensaje corto a Ramón:
-- 🔴 Respuestas que necesitan acción hoy (con el diagnóstico ya pre-armado).
+- 🔴 Respuestas que necesitan acción hoy (con la revisión ya pre-armada).
 - 📤 Qué enviar hoy (borradores listos, respetando rampa).
 - ⏰ Follow-ups redactados y en borradores.
 - 📊 Estado: cuántos enviados, cuántos en vuelo, cuántos cerrados.

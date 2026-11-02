@@ -1,5 +1,13 @@
 # Plantillas de email frío — Fase 0
 
+> **RETIRADA el 2-nov-2026. No usar para escribir.** Es de julio: línea de SEO técnico y
+> visibilidad en IA, «mini-diagnóstico en 48 horas», firma vieja y un caso («una asesora de
+> inversiones chilena») sin permiso público. Queda como registro de lo que se envió.
+> **Para responder a un interesado hoy:** «Hablemos de tu sitio». Si tiene sitio, la revisión
+> gratis de una página, que sale en un día hábil; si no tiene, le contamos cómo lo haríamos y
+> cuánto cuesta, con los precios publicados en spindlelab.cl. La línea vigente (30-oct-2026)
+> está en `marketing/brand/manual-de-marca.md` §01 y en la ficha `marketing/oficina/clientes/spindlelab.md`.
+
 Reglas generales:
 - Enviar desde `hola@spindlelab.cl`. Firma: «SpindleLab — SEO técnico y visibilidad en IA · spindlelab.cl» (sin nombre, coherente con la marca).
 - Máximo 120 palabras por email. Sin adjuntos en el toque 1. Sin links acortados.

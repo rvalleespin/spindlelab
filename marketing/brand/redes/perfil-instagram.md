@@ -1,5 +1,14 @@
 # Perfil de Instagram — SpindleLab
 
+> **Superado el 2-nov-2026: la línea cambió el 30-oct.** La bio de abajo («SEO técnico y visibilidad en IA…», enlace a `/diagnostico/`) es la del 25-sep y, según `marketing/redes/QUE-HAY-PUBLICADO.md`, la que está en el aire hasta que Ramón la cambie. La vigente, con sus enlaces, el nombre opcional y el porqué, está en `marketing/redes/marca-personal/perfil-linkedin.md` §3:
+>
+> ```
+> Sitios web a medida y marketing con IA.
+> En redes arriendas. Tu sitio es lo único que es tuyo.
+> Hablemos de tu sitio ↓
+> ```
+> (116 de 150.) Enlace 1, «Hablemos de tu sitio»: `https://spindlelab.cl/contacto/?utm_source=instagram&utm_medium=social&utm_campaign=bio`. Enlace 2, «Chequeo gratis»: `https://spindlelab.cl/diagnostico/?utm_source=instagram&utm_medium=social&utm_campaign=bio-chequeo`. Lo aplica Ramón desde el teléfono y después se anota en `marketing/redes/QUE-HAY-PUBLICADO.md`. Si el texto cambia, se cambia allá primero.
+
 **Nombre de la cuenta:** SpindleLab
 
 **Biografía** (respeta el límite de ~150 caracteres):

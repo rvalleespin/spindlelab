@@ -15,3 +15,7 @@ spindlelab-astro/.wrangler/
 # y el cache de cualquier proyecto wrangler del repo: guarda el id y el nombre de
 # la cuenta de Cloudflare, y en Pages con raiz "." se publica solo (16-oct)
 .wrangler/
+
+# bytecode de Python: el generador de cotizaciones lo crea al correr, y sin esta regla
+# la excepción de .claude/skills/** lo volvería a incluir (2-nov)
+__pycache__/

@@ -1,5 +1,25 @@
 # Publicar · Carrusel "Probado primero en lo nuestro"
 
+> ## Antes de publicar (2-nov): la línea cambió
+>
+> *Nota de Renata, lunes 2-nov-2026. La pieza sigue **en reserva** (`RESERVA.md`, decisión A sin responder). Esto solo aplica si Ramón la libera. Los números de línea son los de antes de esta nota.*
+>
+> El sitio salió el viernes 30-oct con la línea de Ramón: rótulo «Sitios web a medida y marketing con IA», titular «En redes arriendas. Tu sitio es lo único que es tuyo.» y acción «Hablemos de tu sitio». La revisión gratis de una página está publicada, con respuesta en un día hábil.
+>
+> | Dónde | Dice hoy | Cambia a |
+> |---|---|---|
+> | `lamina-5.html` L12, titular | «Pídenos la revisión de una página de tu sitio.» | «Hablemos de tu sitio.» |
+> | `lamina-5.html` L13, bajada | «Es gratis y te respondemos por escrito.» | «Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos.» (a 40 px; si no cabe con la dirección grande, queda así, sin la segunda oración) |
+> | `caption.md` L22, último párrafo del pie | «Si quieres que miremos una página de tu sitio, pídenos la revisión en spindlelab.cl/contacto. Es gratis y te respondemos por escrito.» | «Hablemos de tu sitio. Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta. spindlelab.cl/contacto» |
+> | `caption.md` L30, variante B | «Si quieres que miremos una página de tu sitio, pídenos la revisión. Es gratis y te respondemos por escrito. Comenta REVISIÓN y te mandamos el enlace.» | «Hablemos de tu sitio. Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Comenta REVISIÓN y te mandamos el enlace.» |
+> | `caption.md` L44, título del enlace del perfil | «Pedir la revisión» | «Hablemos de tu sitio» |
+> | `caption.md` L58, alt de la lámina 5 | «Pídenos la revisión de una página de tu sitio. Es gratis y te respondemos por escrito en spindlelab.cl/contacto.» | «Cierre: hablemos de tu sitio. Si tienes uno, lo revisamos gratis y respondemos en un día hábil. spindlelab.cl/contacto» (118 de 120) |
+> | `caption.md` L46, por qué a `/contacto/` | «el script que guarda los UTM vive solo en esa página… el UTM se pierde» | ya no es así: desde el 30-oct todas las páginas guardan el UTM y el formulario lo lee (comprobado el 2-nov). El enlace sigue yendo a `/contacto/`, que es donde se habla |
+> | L67, go-live | la home trae el H1 «Te llegan consultas. Veamos dónde se cae el resto.» | `curl -s https://spindlelab.cl/ \| grep -c 'En redes arriendas'` da 1 o más (dio 1 el 2-nov) |
+> | L103, plazo | «"un día hábil" está sin decidir» | «un día hábil» está publicado y se puede decir; «24 horas» no |
+>
+> Ojo con L71 (el chequeo de aperturas y cierres del feed): con estos cambios la 01 también cierra en «Hablemos de tu sitio», y la 02 lo trae como segunda opción. Si esta sale pegada a la 01, conviene que una de las dos cierre en el chequeo. Re-renderizar la lámina 5 después de tocar el HTML.
+
 **Canal:** Instagram `spindlelab.cl` · carrusel de 5 láminas, 1080x1350 (4:5, como las piezas 01 y 02) · voz plural
 **Estado:** BORRADOR PARA REVISIÓN DE RAMÓN. No publicado. Nada sale de un borrador generado y el clic de publicar es suyo.
 **NO PROGRAMABLE hasta que Ramón responda la decisión A** (primer punto del checklist). Esta pieza toca contenido de la Ley 21.719, y el plan lo lista como línea de Verifica y Cumple.
