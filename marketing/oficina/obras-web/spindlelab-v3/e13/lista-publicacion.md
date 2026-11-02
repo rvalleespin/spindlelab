@@ -1,5 +1,139 @@
 # Lista de publicación E13: el sitio nuevo en la raíz de spindlelab.cl
 
+## 2-nov-2026 · Corte de las tres correcciones (leer primero si se vuelve a armar)
+
+**Qué lleva.** Las tres correcciones que decidió Ramón y que pidió la troncal en
+`marketing/encargos-otras-sesiones/encargo-sitio-tres-correcciones-2nov.md`:
+- la frase «muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva», en `/` y en `/nosotros/`;
+- «Va en tu dominio, a tu nombre. Y te entregamos el código completo.» en `/`, y lo mismo en el ítem 7 de
+  `/servicios/desarrollo-web/`;
+- el cargo «Fundador», sin «director», en `/`, `/nosotros/` (title, og:title y firma), los 7 artículos y `llms.txt`.
+
+**Commits:** texto de Clara `d97814c6`, medición de Diego `e6067c6b` y QA de Javiera `2d00b8f5`, con el acta en
+`acta-qa-2nov.md`: «Aprobado», 0 bloqueantes y 0 mayores; el único menor era esta entrada.
+
+**La receta de la sección 2, con tres ajustes:**
+1. **Rama del corte: `claude/v3-publicacion`, en fast-forward y sin force.**
+   - El paso 2 de abajo dice `-B` y `--force-with-lease`. Ya no hace falta, porque esa rama está dentro de `main`.
+   - El corte se arma en un worktree desechable desde `origin/main` y su commit tiene un solo padre: `origin/main`.
+   - Por eso empujarlo a `claude/v3-publicacion` es un fast-forward. Sin force, no se pierde nada.
+   - El encargo §4.7 sugería una rama nueva para evitar justamente el force. Con el fast-forward no hay riesgo, y es la
+     rama que Ramón autorizó para el corte.
+2. **Sitemap con la fecha del día en que se publica** (paso 4): `generar-sitemap.mjs dist <AAAA-MM-DD>`.
+   - Hoy es 2026-11-02. Si el merge pasa a otro día, se regenera.
+   - Los 7 artículos se quedan con su `dateModified`, que es 2026-10-26.
+3. **Documentos del 2-nov:** `acta-qa-2nov.md` y `desvios/texto-2nov.md` se copian a mano después del paso 3, porque
+   `armar-corte.mjs` no los lleva.
+
+**Lo verifica la orquestadora sobre el corte:**
+- build;
+- `verificar` a 390, 768 y 1440;
+- enlaces;
+- protegido idéntico a `main`;
+- precios iguales a `main`;
+- cero «fundador y director» en el `dist` y en `llms.txt`;
+- el peso de la home.
+
+**Llega a `main` cuando Ramón aprieta «Merge pull request»,** con método `merge`.
+
+## PUBLICADO · 30-oct-2026, 18:23 (Chile)
+
+- **OK de Ramón:** por escrito, el 30-oct en la tarde («Confirmo la frase» sobre A1 y «Sí, publica hoy»). Con eso se cierra
+  la fila 10.
+- **Corte:**
+  - `efa98323` en `claude/v3-publicacion`;
+  - armado con `armar-corte.mjs` desde `origin/main` `840dc024` y la obra en `b8410d43`;
+  - es un commit de fusión: primer padre `2895a0ce`, el corte del 26-oct, que no se reescribió; segundo padre
+    `origin/main`. El push fue fast-forward y sin force;
+  - el árbol tiene 290 archivos y 11,6 MB;
+  - el sitemap lleva 2026-10-30 en las 15 páginas que no son artículos.
+- **Antes de armarlo:** el contenedor en la nube no traía `rsync`. Se instaló con `apt-get install rsync`.
+- **Verificación sobre el corte:**
+  - build de 22 páginas;
+  - `verificar` «Sin hallazgos» a 390, 768 y 1440;
+  - 913 referencias internas y 0 rotas;
+  - `wrangler pages dev`: las 22 URL y `/privacidad/` en 200; `/no-existe/` 404, `/indice` 301, `/diagnostico` 308,
+    `/v3/` 404 y la API 400;
+  - las UTM, 12 de 12 con clic real;
+  - el peso de la home: 1.398,8, 1.561,6 y 755,5 kB;
+  - los precios iguales a `main` en las seis páginas de servicio;
+  - lo protegido, idéntico;
+  - el favicon con el mismo md5 que `/v3/marca/`;
+  - las 22 imágenes al compartir, cada una en una sola versión.
+
+  La ficha del boletín 18.623-07, releída el 30-oct, sigue en el segundo trámite en la Cámara y sin número de ley: la
+  frase de `/diagnostico/` es exacta.
+- **Vista previa de Cloudflare antes del merge** (`claude-v3-publicacion.spindlelab-v2.pages.dev`, es decir, el build
+  real de Cloudflare):
+  - las 23 rutas en 200, con las mismas redirecciones y códigos;
+  - el favicon, con el mismo md5;
+  - el `action` del formulario, igual.
+
+  «Workers Builds: spindlelab» falló como en todo PR de este repo (se vio igual en rvalleespin/spindlelab#41); no lo
+  causa esta obra.
+- **Merge:** PR rvalleespin/spindlelab#51, con método `merge`. Merge `f0e1b019`, y su árbol es idéntico al del corte.
+- **En vivo, a los ~90 s del merge:**
+  - las 22 URL del sitemap en 200;
+  - `/privacidad/` 200, `/no-existe/` 404, `/indice` 301 y `/diagnostico` 308;
+  - la API: 400 con `localhost`; con `spindlelab.cl`, `ok:true` y puntaje 94;
+  - `favicon.ico`, `llms.txt` y `sitemap.xml` con el mismo md5 que el corte;
+  - el formulario apunta a Web3Forms;
+  - ningún `noindex`.
+
+  **Consentimiento:**
+  - al rechazar hay 0 pedidos a Google o Meta;
+  - antes de contestar, también 0;
+  - al aceptar aparecen GTM, GA4 y el Pixel.
+
+  La home a 1440 y 390 carga sin errores de página.
+- **Pendiente de Ramón (§5):**
+  - ~~un envío real del formulario con UTM~~ **hecho** (Ramón, con captura del correo). Entró por el enlace de prueba y
+    el correo de Web3Forms («Nuevo contacto desde spindlelab.cl», remitente `notify@web3forms.com`) llegó con:
+    - Nombre, Email y Sitio web;
+    - Mensaje vacío, porque es opcional;
+    - **UTM Source `test`, UTM Medium `publicacion` y UTM Campaign `sitio-nuevo`**;
+    - Consiento `on`.
+
+    Con esto, la atribución funciona de punta a punta en producción. (Este punto se registró el 2-nov, con la captura
+    que mandó Ramón.)
+  - **Bing y los demás buscadores de IndexNow: hecho el 2-nov, 10:13 (Chile), sin entrar a la cuenta.**
+    - La clave `41b16b5d6ec2b1278596f9599c0850cb` vive en `spindlelab-astro/public/41b16b5d6ec2b1278596f9599c0850cb.txt`.
+      Se publicó con el PR rvalleespin/spindlelab#52 (merge `8d99b18e`, con el OK de Ramón) y también va en la obra
+      (`bb640a57`), para que `armar-corte.mjs` no la borre.
+    - Se enviaron las 22 URL del sitemap: `api.indexnow.org` respondió 202 (aceptado, valida la clave después) y
+      `www.bing.com/indexnow` respondió 200.
+    - **Para avisar un cambio de nuevo** (por ejemplo, después del próximo corte): un `POST` JSON a
+      `https://api.indexnow.org/indexnow` con `host` = `spindlelab.cl`, `key` = la clave,
+      `keyLocation` = `https://spindlelab.cl/<clave>.txt` y `urlList` = las URL que cambiaron. Si la clave deja de
+      responder en esa dirección, el aviso se rechaza.
+  - ~~Search Console (Google): reenviar el sitemap~~ **hecho por Ramón el 2-nov.**
+  - Search Console, opcional: pedir indexación de `/`, `/servicios/` y `/contacto/` en «Inspeccionar cualquier URL». Solo
+    lo apura, porque Google ya tiene el sitemap y `robots.txt` lo declara;
+
+  - ~~LinkedIn Post Inspector y Facebook Sharing Debugger~~ **no hacen falta (revisado el 2-nov).**
+    - Según `marketing/redes/QUE-HAY-PUBLICADO.md` (en `origin/main`), ningún post reciente enlaza a spindlelab.cl. Los
+      últimos van a Verifica y Cumple o no llevan enlace, y la bio de Instagram no muestra vista previa.
+    - Sin una vista previa guardada de las páginas, la primera vez que se comparta una URL del sitio nuevo LinkedIn y
+      Facebook la leen desde cero.
+    - Si una vista previa sale vieja, recién ahí se pasa por el inspector.
+  - **Ícono en iPhone: comprobado desde el sitio en vivo el 2-nov, sin el teléfono.**
+    - `apple-touch-icon.png?v=6` mide 180 × 180, es RGB opaco (sin transparencia, así que iOS no le agrega fondo) y tiene
+      el fondo `#060606` con la i y su disco en blanco.
+    - Se armó una simulación de la pantalla de inicio y se ve bien.
+    - Falta solo mirarlo en un iPhone real, que no es bloqueante.
+- **Sigue igual que antes:** `www.spindlelab.cl` responde 200 sin redirigir al dominio sin www (§8).
+- **2-nov · El Pixel correcto, también en la obra.**
+  - Otra sesión corrigió en `main` el ID del Pixel de Meta: `92db1219`, PR rvalleespin/spindlelab#53, de
+    `2885353628478565`, ajeno a la cuenta, a `1027024050073502`, el dataset «SpindleLab».
+  - El arreglo se trajo a esta rama (`f36ad716`, cherry-pick con `-x`), porque `armar-corte.mjs` toma `Layout.astro` de
+    la obra y no de `main`. Sin eso, el próximo corte habría vuelto al ID ajeno.
+  - Build verificado: los 24 HTML del `dist` llevan el ID nuevo y ninguno el viejo. El Pixel sigue detrás del
+    consentimiento.
+- **2-nov · La línea de la casa, fuera del sitio:** PR rvalleespin/spindlelab#54 (merge `1605e9a4`).
+  - Lleva la línea a la ficha, el manual, las skills de outbound, cotizaciones y revisión, las plantillas, el kit de
+    LinkedIn e Instagram, y las notas en las piezas de octubre.
+  - Lo que es de la troncal quedó en `marketing/encargos-otras-sesiones/linea-de-la-casa-30oct-para-la-troncal.md`.
+
 **Escrita el 26-oct-2026 · ensayada el 26-oct sobre `origin/main` `ba49edbd` y la rama `claude/v3-modelo-nuevo` (`078ceefe`) · puesta al día el 30-oct por Mauro (sección «30-oct», justo abajo), sin ejecutar el corte; y otra vez el 30-oct en la tarde, con las respuestas de Ramón y el visto a `Layout.astro` (sección «30-oct, tarde», la primera).** La rama del corte que se armó el 26-oct, `claude/v3-publicacion` (`762b7295` más `2895a0ce`, los documentos), **ya no sirve tal cual: lleva la E13 del 26-oct y nada de lo del 30-oct.** Publicar ahora es volver a armarla con la receta de la sección 2 desde la rama de la obra, que hoy es `claude/magical-franklin-ckfki2`, forzar el push de esa rama y abrir el PR (URL: `https://github.com/rvalleespin/spindlelab/pull/new/claude/v3-publicacion`), que Ramón confirme y el merge. Reemplaza a `../lista-publicacion.md` (la de E7, escrita para un v3 anterior). Nada de esto se ejecuta sin el OK de Ramón; **publicar es llegar a `main`**.
 
 ## 30-oct, tarde · Lo que decidió Ramón y el corte de hoy (leer primero)
