@@ -244,18 +244,23 @@ Una frase por renglón, que es como manda leerlo el manual. Las `/` son respirac
 cortes.
 
 > Pagar publicidad en Instagram está **bien**. / Medir si **funcionó**, también. //
-> **Pero** para medir, / tu sitio guarda algo / en el teléfono del **cliente**. //
-> Y lo guarda / antes de que **acepte** nada. //
+> **Pero** para medir, / tu sitio instala un **rastreador** de Facebook / en el teléfono del
+> **cliente**. //
+> Sirve para reconocerlo cuando **vuelva**. //
+> Y se instala antes de que el cliente **acepte** nada. //
 > En casi la **mitad** de los cafés y pastelerías que **revisé**, / pasa eso mismo. //
-> No es que tu sitio esté **mal hecho**. / Es lo que instalaste para **medir**, funcionando. //
-> Puedes seguir **midiendo** igual. / Solo hay que preguntarle al cliente **primero**. //
-> Y esa pregunta va a ser **obligatoria** por ley. //
-> Es una **franja** abajo de tu sitio / que le pregunta al cliente si **acepta**. //
-> Hice un chequeo **gratis** / que te dice si tu sitio tiene esa **franja**. //
+> No es que tu sitio esté **mal hecho**. //
+> El rastreador vino con la **publicidad**, / y trabaja apenas alguien **entra**. //
+> Nadie le dijo que **esperara**. //
+> Se arregla con ese **cartel** / que le pregunta al cliente / si acepta las **cookies**. //
+> El que **ves** en cualquier sitio europeo. //
+> Si el cliente **acepta**, / mides igual que **hoy**. //
+> Y preguntar **primero** va a ser obligatorio por ley. //
+> Hice un chequeo **gratis** / que te dice si tu sitio lo **tiene**. //
 > Soy **Ramón**, de SpindleLab. //
 > **Medir** está bien. / Preguntar **primero**, también. //
 
-**118 palabras, 41 segundos.** Largo por renglón: 6, 4, 15, 15, 16, 11, 9, 14, 13, 4, 7.
+**133 palabras, 46 segundos.**
 
 **Versión 9, del 30-oct.** Ramón tiene aprobada la apertura, la costura y todo lo que va de la
 franja hacia abajo. **La palabra «cookie» no aparece en ningún guion hablado de esta campaña**, por
@@ -751,3 +756,36 @@ pago. **Se toma la arquitectura, no el tono.**
 
 ⚠️ **Pendiente: los otros tres guiones no tienen quita-excusas ni la prueba subida.** Salud,
 contabilidad y tutorial se escribieron antes de esta guía y hay que pasarlos por el mismo chequeo.
+
+### 2-nov-2026 · nombrar la cosa, y el «tú» que cambiaba de dueño
+
+Dos rechazos de Ramón ensayando en voz alta, y los dos valen como regla.
+
+**(a) «Algo» no es una palabra.** Ramón: *"tu sitio guarda algo en el teléfono del cliente. ¿Qué es
+eso? ¿Guarda un seguimiento?... ¿qué es lo peligroso? Entonces no se entiende ahí"*. Y después, en
+cadena: *"la herramienta de medición, ahí no entiendo"*, *"se arregla con un cartel, ahí tampoco"*.
+
+**Era un solo defecto, no cuatro.** El 30-oct saqué la palabra «cookie» por técnica y la reemplacé
+por «algo». **Pasé de demasiado técnico a vacío**, y desde ahí todas las frases siguientes apuntaban
+a un hueco: *se arregla* ¿qué?, *la herramienta* ¿cuál?, *si dice que sí* ¿quién?
+
+La palabra que sirve es **«rastreador»**: cualquiera la entiende y **carga el peligro ella sola**, sin
+que el guion tenga que explicar por qué es malo. Y la frase siguiente dice para qué sirve (*reconocerlo
+cuando vuelva*), que es lo que Ramón pedía.
+
+⚠️ **Y «cookies» vuelve, pero en otro lugar.** Se usa **solo para nombrar el cartel**, que es como
+todo el mundo lo reconoce, no para describir el peligro. **Una palabra técnica puede estorbar en un
+tramo y ayudar en otro**; la regla del 30-oct («cookie no va en ningún guion hablado») queda matizada
+así.
+
+**(b) El «tú» cambiaba de dueño a mitad de frase.** Ramón: *"se arregla con ese cartel que pregunta
+si aceptas cookies. Ahí cambia la figura. ¿A quién le estamos hablando?"*. Tenía razón: todo el guion
+le habla al dueño del café (*tu sitio*, *mides*, *ves*), pero *«si aceptas cookies»* le habla al
+visitante. Queda *«que le pregunta al cliente si acepta las cookies»*.
+
+**Regla: un guion tiene un solo «tú», y es el que compra.** Todos los demás van en tercera persona.
+Se revisaron los dieciséis renglones y esa era la única fuga.
+
+✅ **Lo que NO es una fuga, y conviene que nadie lo «arregle»:** la tarjeta del cartel sí le habla al
+visitante (*«¿Medimos tu visita?»*). Ahí no habla Ramón, habla el cartel. **Son dos voces distintas y
+tiene que notarse.**
