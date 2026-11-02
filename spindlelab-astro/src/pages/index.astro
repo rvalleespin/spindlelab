@@ -79,6 +79,8 @@ const partimos = t('home.partimos.boton');
 const recorrido = medio('combeau-fotografia-recorrido-1440.webm');
 const modelo = medio('combeau-modelo-169.webp');
 const verifica = medio('verifica-y-cumple-53.webp');
+const spot = medio('verifica-spot-1280.webm');
+const S = '/v3/trabajo/verifica/verifica-spot';
 const V = '/v3/trabajo/combeau/combeau-fotografia-recorrido';
 const piezas = [
   {
@@ -107,8 +109,16 @@ const piezas = [
     ficha: tx('home.trabajo.verifica.ficha'),
     texto: tx('home.trabajo.verifica.texto'),
     aviso: tx('home.trabajo.verifica.aviso'),
+    descripcion: spot.descripcion,
     enlace: { texto: tx('home.trabajo.verifica.boton'), destino: t('home.trabajo.verifica.boton').destino as string },
     tarjetas: [
+      // el spot (idea de Ramón, 2-nov): el caballo a lápiz en un cuaderno toma color y sale galopando; la portada, después
+      {
+        ancha: { src: `${S}-1280-poster.webp`, ancho: 1280, alto: 720, chica: { src: `${S}-960-poster.webp`, ancho: 960 } },
+        angosta: { src: `${S}-390-poster.webp`, ancho: 624, alto: 780 },
+        video: { ancho: { webm: `${S}-1280.webm`, mp4: `${S}-1280.mp4` }, angosto: { webm: `${S}-390.webm`, mp4: `${S}-390.mp4` } },
+        pie: tx(spot.pie as string),
+      },
       {
         ancha: { src: m['verifica-y-cumple-53'].src, ancho: m['verifica-y-cumple-53'].ancho, alto: m['verifica-y-cumple-53'].alto },
         angosta: { src: m['verifica-y-cumple-45'].src, ancho: m['verifica-y-cumple-45'].ancho, alto: m['verifica-y-cumple-45'].alto },
@@ -141,7 +151,10 @@ const notas = [
   { k: 'anuncios', img: 'anuncios', precio: anunciosPrecio, enlaces: [paid, redes] },
   { k: 'acompanamiento', img: 'acompanamiento', precio: { a: precioAco, b: '' }, enlaces: [aco] },
   { k: 'partimos', img: 'como-partimos', precio: null, enlaces: [{ texto: partimos.texto as string, href: partimos.destino as string }] },
-].map((n) => ({ ...n, h2: dos(`home.${n.k}.h2`), texto: tx(`home.${n.k}.texto`), alt: altDe(n.k) }));
+].map((n) => {
+  const pie = fila.find((f) => f.columna === n.k)?.pie;
+  return { ...n, h2: dos(`home.${n.k}.h2`), texto: tx(`home.${n.k}.texto`), alt: altDe(n.k), pie: pie ? tx(pie) : undefined };
+});
 
 // ---- 9 · Contacto
 const quien = tx('home.contacto.quien.nombre');
@@ -279,6 +292,7 @@ const SIZES_BANDA = '(min-width: 1194px) 62vw, (min-width: 834px) 58vw, calc(100
               <img src={`/v3/medios/e14-banda-${n.img}-169.webp`} srcset={`/v3/medios/e14-banda-${n.img}-169.webp 1600w`} sizes={i === 0 ? '(min-width: 1194px) 44vw, 43vw' : '(min-width: 1194px) 28vw, 27vw'} alt={n.alt} width="1600" height="900" loading="lazy" decoding="async" />
             </picture>
           </div>
+          {n.pie && <p class="pie">{n.pie}</p>}
           <h2 class="t-titulo" id={i === 0 ? 'h-anuncios' : undefined}><span class="tinta">{n.h2.tinta}</span> <span class="gris">{n.h2.gris}</span></h2>
           <p class="chico caja">{n.texto}</p>
           {n.precio && <p class="k-precio">{n.precio.a}{n.precio.b && <> <span class="gris">{n.precio.b}</span></>}</p>}

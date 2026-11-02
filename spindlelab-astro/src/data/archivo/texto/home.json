@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/home.json",
- "sha256": "4673e662b86f7f6317776346aad41598c18afe3728730a9d2ad7007b47feb927",
+ "sha256": "1debb3ae9bc97e2c11d802892ef2fd39e4afb21fbbfe012046a7746350b3d3c4",
  "id": "home",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -163,10 +163,11 @@
      {
       "id": "home.trabajo.combeau.ficha",
       "rol": "rotulo",
-      "texto": "Cliente · Sitio web · 2026",
+      "texto": "Cliente · Sitio web",
       "estado": "nuevo",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 3a",
-      "condicion": "El año lo confirma Ramón (propuesta §4.1: deducido del historial, los medios de Combeau entran el 19-oct-2026). Si no lo confirma, la ficha queda «Cliente · Sitio web»."
+      "antes": "Cliente · Sitio web · 2026",
+      "por_que": "Ramón, 2-nov-2026: las fichas van sin año."
      },
      {
       "id": "home.trabajo.combeau.texto",
@@ -196,10 +197,11 @@
      {
       "id": "home.trabajo.verifica.ficha",
       "rol": "rotulo",
-      "texto": "Propio · Herramienta · 2026",
+      "texto": "Propio · Herramienta",
       "estado": "nuevo",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 3b",
-      "condicion": "El año lo confirma Ramón (propuesta §4.1: el post de la Ley 21.719 es de sep-2026). Si no lo confirma, la ficha queda «Propio · Herramienta»."
+      "antes": "Propio · Herramienta · 2026",
+      "por_que": "Ramón, 2-nov-2026: las fichas van sin año."
      },
      {
       "id": "home.trabajo.verifica.texto",
@@ -229,6 +231,15 @@
       "origen": "home.pruebas.pie-verifica (E13), que viene de home.obra.pie-verifica (E12); convenciones-e12.json (todo medio de Verifica y Cumple donde se vea la persona a caballo lleva el pie)",
       "antes": "En texto-home-propuesta.md (bloque 3b) el pie se borraba con la -53.",
       "por_que": "Javiera (comparacion-koto.md §5, punto 1): en la -53 la jinete y el caballo se ven enteros, así que el pie es obligatorio. Era el único cambio contra una regla decidida."
+     },
+     {
+      "id": "home.trabajo.verifica.spot.pie",
+      "rol": "nota",
+      "uso": "pie",
+      "texto": "Este video está generado con IA, a partir de la portada.",
+      "donde": "Bajo el spot de Verifica y Cumple (la primera tarjeta de la pieza). La jinete y el caballo son generados.",
+      "estado": "nuevo",
+      "origen": "Ramón, 2-nov-2026: imágenes v2 (e14-home-koto/imagenes-v2/LEEME.md) y «sin año» para las fichas."
      },
      {
       "id": "home.trabajo.verifica.boton",
@@ -265,6 +276,14 @@
       "pieza": "combeau",
       "alt": "Portada del book de modelo de Bernardo Combeau: él, de traje azul, apoyado en una columna.",
       "nota": "El alt de caso-combeau.json, tal cual (el prototipo decía «El book de Bernardo Combeau en su sitio.»)."
+     },
+     {
+      "archivo": "public/v3/trabajo/verifica/verifica-spot-1280.webm",
+      "forma": "16:9",
+      "pieza": "verifica",
+      "descripcion": "Un dibujo a lápiz de una persona a caballo, en un cuaderno, toma color fucsia y sale galopando por un cielo azul.",
+      "pie": "home.trabajo.verifica.spot.pie",
+      "nota": "El spot de Verifica y Cumple (idea de Ramón, 2-nov-2026; Higgsfield minimax_h3_max, 15 créditos). Video con aria-hidden; la descripción va para el lector de pantalla. El póster quieto lleva alt vacío."
      },
      {
       "archivo": "public/v3/medios/verifica-y-cumple-53.webp",
@@ -498,6 +517,15 @@
       "origen": "home.soluciones.acompanamiento.boton (E13)"
      },
      {
+      "id": "home.acompanamiento.pie",
+      "rol": "nota",
+      "uso": "pie",
+      "texto": "La foto está generada con IA.",
+      "donde": "Bajo la imagen de Acompañamiento mensual: las personas parecen reales y no lo son.",
+      "estado": "nuevo",
+      "origen": "Ramón, 2-nov-2026: imágenes v2 (e14-home-koto/imagenes-v2/LEEME.md) y «sin año» para las fichas."
+     },
+     {
       "id": "home.partimos.h2",
       "rol": "h2",
       "nivel": 3,
@@ -530,28 +558,32 @@
       "archivo": "public/v3/medios/e14-banda-anuncios-169.webp",
       "forma": "16:9",
       "columna": "anuncios",
-      "estado": "generada (Bruno, plan-imagenes.md §7)",
-      "alt": "Cuatro hilos plateados que entran por la izquierda, pasan juntos por el ojo de una aguja y salen por la derecha como uno solo, sobre fondo casi negro.",
-      "nota": "Alt escrito mirando la -169 y la -45 (Clara, 2-nov-2026, acta-qa-e14 defectos 1 y 2); describe las dos, porque un <img> lleva un solo alt. Sin personas: no lleva aviso de imagen generada. La página busca el medio por «columna».",
-      "archivo_45": "public/v3/medios/e14-banda-anuncios-45.webp"
+      "estado": "generada (Bruno, imágenes v2, e14-home-koto/imagenes-v2/LEEME.md)",
+      "alt": "Ilustración: una mujer en un paradero de Santiago busca algo en su celular, y una línea punteada cruza la calle desde el teléfono hasta la puerta abierta de una tienda, donde la dueña la invita a entrar.",
+      "nota": "Alt escrito mirando la -169 y la -45 (2-nov-2026). Ramón rechazó las del hilo plateado y eligió mezclar estilos: anuncios en ilustración, acompañamiento en foto con trazos de tiza, cómo partimos en pizarra.",
+      "archivo_45": "public/v3/medios/e14-banda-anuncios-45.webp",
+      "antes_alt": "Cuatro hilos plateados que entran por la izquierda, pasan juntos por el ojo de una aguja y salen por la derecha como uno solo, sobre fondo casi negro."
      },
      {
       "archivo": "public/v3/medios/e14-banda-acompanamiento-169.webp",
       "forma": "16:9",
       "columna": "acompanamiento",
-      "estado": "generada (Bruno, plan-imagenes.md §7)",
-      "alt": "Un huso con su disco y un hilo plateado enrollado en vueltas parejas.",
-      "nota": "Alt revisado mirando la -169 y la -45 (Clara, 2-nov-2026): calza, queda igual. Sin personas: no lleva aviso de imagen generada. La página busca el medio por «columna».",
-      "archivo_45": "public/v3/medios/e14-banda-acompanamiento-45.webp"
+      "estado": "generada (Bruno, imágenes v2, e14-home-koto/imagenes-v2/LEEME.md)",
+      "alt": "Tres personas de un negocio familiar revisan una hoja en su mesa de trabajo; encima, dibujada a mano, una flecha da la vuelta a su alrededor como un ciclo, junto a un calendario.",
+      "nota": "Alt escrito mirando la -169 y la -45 (2-nov-2026). Ramón rechazó las del hilo plateado y eligió mezclar estilos: anuncios en ilustración, acompañamiento en foto con trazos de tiza, cómo partimos en pizarra.",
+      "archivo_45": "public/v3/medios/e14-banda-acompanamiento-45.webp",
+      "antes_alt": "Un huso con su disco y un hilo plateado enrollado en vueltas parejas.",
+      "pie": "home.acompanamiento.pie"
      },
      {
       "archivo": "public/v3/medios/e14-banda-como-partimos-169.webp",
       "forma": "16:9",
       "columna": "partimos",
-      "estado": "generada (Bruno, plan-imagenes.md §7)",
-      "alt": "Un hilo plateado tendido recto sobre papel oscuro, con tres nudos repartidos a lo largo.",
-      "nota": "Alt escrito mirando la -169 y la -45 (Clara, 2-nov-2026, acta-qa-e14 defectos 1 y 2); describe las dos, porque un <img> lleva un solo alt. Sin personas: no lleva aviso de imagen generada. La página busca el medio por «columna».",
-      "archivo_45": "public/v3/medios/e14-banda-como-partimos-45.webp"
+      "estado": "generada (Bruno, imágenes v2, e14-home-koto/imagenes-v2/LEEME.md)",
+      "alt": "Esquema en tiza, en tres pasos: alguien echa una carta a un buzón, después conversa con otra persona con un reloj de arena entre las dos, y al final lee un plan dividido en tres partes.",
+      "nota": "Alt escrito mirando la -169 y la -45 (2-nov-2026). Ramón rechazó las del hilo plateado y eligió mezclar estilos: anuncios en ilustración, acompañamiento en foto con trazos de tiza, cómo partimos en pizarra.",
+      "archivo_45": "public/v3/medios/e14-banda-como-partimos-45.webp",
+      "antes_alt": "Un hilo plateado tendido recto sobre papel oscuro, con tres nudos repartidos a lo largo."
      }
     ]
    },

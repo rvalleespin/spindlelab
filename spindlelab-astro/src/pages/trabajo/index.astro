@@ -39,9 +39,10 @@ const externo = t('comun.externo').texto;
 // máscara, con su bajada; a la derecha las tarjetas, la activa al 100 % y el resto al 20 %; bajo 834, una lista en 4:5.
 // Las mismas tres tarjetas que la home (el recorrido de Combeau en video, su book y Verifica y Cumple con su pie); el texto
 // de cada pieza es el de su entrada en trabajo.json, tal cual. desvios-construccion.md (E14).
-type Entrada = { id: string; nombre: string; bajada: string; linea: string; destino: string; cursor: string; pie?: string };
+type Entrada = { id: string; nombre: string; bajada: string; linea: string; destino: string; cursor: string; pie?: string; pie_video?: string; descripcion_video?: string };
 const entradas = pagina.entradas as Entrada[];
 const V = '/v3/trabajo/combeau/combeau-fotografia-recorrido';
+const S = '/v3/trabajo/verifica/verifica-spot';
 const TARJETAS: Record<string, unknown[]> = {
   'combeau-fotografia': [
     {
@@ -56,6 +57,12 @@ const TARJETAS: Record<string, unknown[]> = {
     },
   ],
   'verifica-y-cumple': [
+    // el spot (Ramón, 2-nov), con su pie (pie_video de trabajo.json); la portada va después, con el suyo
+    {
+      ancha: { src: `${S}-1280-poster.webp`, ancho: 1280, alto: 720, chica: { src: `${S}-960-poster.webp`, ancho: 960 } },
+      angosta: { src: `${S}-390-poster.webp`, ancho: 624, alto: 780 },
+      video: { ancho: { webm: `${S}-1280.webm`, mp4: `${S}-1280.mp4` }, angosto: { webm: `${S}-390.webm`, mp4: `${S}-390.mp4` } },
+    },
     {
       ancha: { src: m['verifica-y-cumple-53'].src, ancho: m['verifica-y-cumple-53'].ancho, alto: m['verifica-y-cumple-53'].alto },
       angosta: { src: m['verifica-y-cumple-45'].src, ancho: m['verifica-y-cumple-45'].ancho, alto: m['verifica-y-cumple-45'].alto },
@@ -68,7 +75,8 @@ const piezas = entradas.map((e) => {
   if (!tarjetas) throw new Error(`/trabajo/: la entrada «${e.id}» no tiene tarjetas`);
   // el pie de la persona generada (Verifica y Cumple), bajo su imagen
   if (e.pie) tarjetas[tarjetas.length - 1].pie = e.pie;
-  return { id: e.id, nombre: e.nombre, ficha: e.linea, texto: e.bajada, enlace: { texto: e.cursor, destino: e.destino }, tarjetas };
+  if (e.pie_video) tarjetas[0].pie = e.pie_video;
+  return { id: e.id, nombre: e.nombre, ficha: e.linea, texto: e.bajada, descripcion: e.descripcion_video, enlace: { texto: e.cursor, destino: e.destino }, tarjetas };
 });
 const conteo = t('trabajo.conteo').texto;
 // El conteo (spec §2.2; Clara: «sale del dato»): el total, igual al texto de Clara.

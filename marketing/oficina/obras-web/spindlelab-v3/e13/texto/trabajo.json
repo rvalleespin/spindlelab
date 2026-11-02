@@ -87,7 +87,7 @@
    "bajada": "Los dos sitios de un fotógrafo de retrato: el de fotografía y su book de modelo, en inglés. Él sube sus series desde un panel, y el sitio las publica con cada foto ajustada a la pantalla de quien la mira.",
    "tipo": "Cliente",
    "anio": "2026",
-   "linea": "Cliente · 2026",
+   "linea": "Cliente · Sitio web",
    "destino": "/trabajo/combeau/",
    "cursor": "Ver el caso",
    "fuente": "inventario-casos §2.1 y §2.2 (las dos etiquetas y su efecto: «él carga sus series solo», «805 kB → 95 kB», «0 kB de video en la carga inicial»)",
@@ -100,7 +100,9 @@
     "Netlify Image CDN",
     "Video con carga diferida"
    ],
-   "nota": "Portada de la tarjeta: la de fotografía (combeau-fotografia-45). El nombre ya no lleva «, fotografía»: el JSON-LD de la plantilla anteponía «Bernardo » a los ids que empiezan por «combeau-»; con el nombre «Combeau» el ListItem sigue diciendo «Bernardo Combeau»."
+   "nota": "Portada de la tarjeta: la de fotografía (combeau-fotografia-45). El nombre ya no lleva «, fotografía»: el JSON-LD de la plantilla anteponía «Bernardo » a los ids que empiezan por «combeau-»; con el nombre «Combeau» el ListItem sigue diciendo «Bernardo Combeau».",
+   "antes_linea": "Cliente · 2026",
+   "por_que_linea": "Ramón, 2-nov-2026: las fichas van sin año (igual que en la home, que usa el mismo componente)."
   },
   {
    "id": "verifica-y-cumple",
@@ -108,7 +110,7 @@
    "bajada": "Revisa gratis las señales técnicas que la Ley 21.719, de datos personales, le pide a un sitio con formulario. No es asesoría legal ni certifica que cumples.",
    "tipo": "Propio",
    "anio": "2026",
-   "linea": "Propio · 2026",
+   "linea": "Propio · Herramienta",
    "destino": "https://verifica.spindlelab.cl/",
    "cursor": "Ver el sitio",
    "fuente": "inventario-casos §2.3 y §4.1 y §7 («describe señales; no certifica»). Sin puntajes: ni el 36, ni el 73, ni el 100.",
@@ -118,7 +120,11 @@
     "Cloudflare Pages Functions"
    ],
    "pie": "La persona a caballo de esta portada está generada con IA.",
-   "nota": "Enlaza al producto, que responde; con la flecha ↗ en SVG junto al nombre y, oculto a la vista, «(sitio aparte: verifica.spindlelab.cl)»."
+   "nota": "Enlaza al producto, que responde; con la flecha ↗ en SVG junto al nombre y, oculto a la vista, «(sitio aparte: verifica.spindlelab.cl)».",
+   "antes_linea": "Propio · 2026",
+   "por_que_linea": "Ramón, 2-nov-2026: las fichas van sin año (igual que en la home, que usa el mismo componente).",
+   "pie_video": "Este video está generado con IA, a partir de la portada.",
+   "descripcion_video": "Un dibujo a lápiz de una persona a caballo, en un cuaderno, toma color fucsia y sale galopando por un cielo azul."
   }
  ],
  "orden": "Combeau primero y Verifica y Cumple después: el único caso con página, y la pieza propia que enlaza afuera."
