@@ -34,8 +34,9 @@ es lo que hace que el loop se sienta continuo.
 
 [ZONA DE ENGANCHE]
 
-  Pero para medir, tu sitio le guarda algo
-  en el teléfono al cliente / sin preguntarle.      [ÉNFASIS: sin preguntarle]
+  Pero para medir, tu sitio guarda algo
+  en el teléfono del cliente.                       [ENTONACIÓN SUSPENDIDA]
+  Y lo guarda / antes de que acepte nada.           [ÉNFASIS: antes]
                                                     [REMATE ABAJO]
 [TEXTO EN PANTALLA]: g1-2 · CASI LA MITAD
   En casi la mitad de los cafés y pastelerías
@@ -87,9 +88,11 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
 [ZONA DE ENGANCHE]
 [TEXTO EN PANTALLA]: g2-2 · LA MITAD
 
-  Pero en la mitad de las clínicas y centros
-  médicos que revisé, / el sitio le guarda algo
-  en el teléfono al paciente / sin preguntarle.     [ÉNFASIS: la mitad]
+  Pero tu sitio guarda algo en el teléfono
+  del paciente, / antes de que acepte nada.         [ÉNFASIS: antes]
+                                                    [ENTONACIÓN SUSPENDIDA]
+  Y en la mitad de las clínicas y centros
+  médicos que revisé, / pasa eso mismo.             [ÉNFASIS: la mitad]
                                                     [REMATE ABAJO]
 
   No lo decidió nadie en tu clínica.                [ENTONACIÓN SUSPENDIDA]

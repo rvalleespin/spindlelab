@@ -244,8 +244,8 @@ Una frase por renglón, que es como manda leerlo el manual. Las `/` son respirac
 cortes.
 
 > Pagar publicidad en Instagram está **bien**. / Medir si **funcionó**, también. //
-> **Pero** para medir, / tu sitio le guarda algo en el teléfono al **cliente** / sin
-> **preguntarle**. //
+> **Pero** para medir, / tu sitio guarda algo / en el teléfono del **cliente**. //
+> Y lo guarda / antes de que **acepte** nada. //
 > En casi la **mitad** de los cafés y pastelerías que **revisé**, / pasa eso mismo. //
 > No es que tu sitio esté **mal hecho**. / Es lo que instalaste para **medir**, funcionando. //
 > Puedes seguir **midiendo** igual. / Solo hay que preguntarle al cliente **primero**. //
@@ -255,7 +255,7 @@ cortes.
 > Soy **Ramón**, de SpindleLab. //
 > **Medir** está bien. / Preguntar **primero**, también. //
 
-**112 palabras, 38 segundos.** Largo por renglón: 6, 4, 15, 15, 16, 11, 9, 14, 13, 4, 7.
+**118 palabras, 41 segundos.** Largo por renglón: 6, 4, 15, 15, 16, 11, 9, 14, 13, 4, 7.
 
 **Versión 9, del 30-oct.** Ramón tiene aprobada la apertura, la costura y todo lo que va de la
 franja hacia abajo. **La palabra «cookie» no aparece en ningún guion hablado de esta campaña**, por
@@ -337,8 +337,8 @@ visitante antes de que acepte. La mitad. **Rubro pagado:** Salud, 9,1% de CTR co
 de los mejores de la campaña.
 
 > Saber de dónde llegan tus pacientes está **bien**. / Medirlo en tu sitio, **también**. //
-> **Pero** en la mitad de las clínicas y centros médicos que **revisé**, / el sitio le guarda algo en
-> el teléfono al **paciente** / sin **preguntarle**. //
+> **Pero** tu sitio guarda algo / en el teléfono del **paciente**, / antes de que **acepte** nada. //
+> Y en la mitad de las clínicas y centros médicos que **revisé**, / pasa eso **mismo**. //
 > No lo decidió nadie en tu **clínica**. / Vino con la herramienta de **medición**. //
 > Que alguien entre a pedir una **hora** / ya dice algo de esa **persona**. //
 > Puedes seguir **midiendo** igual. / Solo hay que preguntarle al paciente **primero**. //
