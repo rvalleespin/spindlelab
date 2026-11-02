@@ -1,5 +1,41 @@
 # Lista de publicación E13: el sitio nuevo en la raíz de spindlelab.cl
 
+## 2-nov-2026 · Corte de las tres correcciones (leer primero si se vuelve a armar)
+
+**Qué lleva.** Las tres correcciones que decidió Ramón y que pidió la troncal en
+`marketing/encargos-otras-sesiones/encargo-sitio-tres-correcciones-2nov.md`:
+- la frase «muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva», en `/` y en `/nosotros/`;
+- «Va en tu dominio, a tu nombre. Y te entregamos el código completo.» en `/`, y lo mismo en el ítem 7 de
+  `/servicios/desarrollo-web/`;
+- el cargo «Fundador», sin «director», en `/`, `/nosotros/` (title, og:title y firma), los 7 artículos y `llms.txt`.
+
+**Commits:** texto de Clara `d97814c6`, medición de Diego `e6067c6b` y QA de Javiera `2d00b8f5`, con el acta en
+`acta-qa-2nov.md`: «Aprobado», 0 bloqueantes y 0 mayores; el único menor era esta entrada.
+
+**La receta de la sección 2, con tres ajustes:**
+1. **Rama del corte: `claude/v3-publicacion`, en fast-forward y sin force.**
+   - El paso 2 de abajo dice `-B` y `--force-with-lease`. Ya no hace falta, porque esa rama está dentro de `main`.
+   - El corte se arma en un worktree desechable desde `origin/main` y su commit tiene un solo padre: `origin/main`.
+   - Por eso empujarlo a `claude/v3-publicacion` es un fast-forward. Sin force, no se pierde nada.
+   - El encargo §4.7 sugería una rama nueva para evitar justamente el force. Con el fast-forward no hay riesgo, y es la
+     rama que Ramón autorizó para el corte.
+2. **Sitemap con la fecha del día en que se publica** (paso 4): `generar-sitemap.mjs dist <AAAA-MM-DD>`.
+   - Hoy es 2026-11-02. Si el merge pasa a otro día, se regenera.
+   - Los 7 artículos se quedan con su `dateModified`, que es 2026-10-26.
+3. **Documentos del 2-nov:** `acta-qa-2nov.md` y `desvios/texto-2nov.md` se copian a mano después del paso 3, porque
+   `armar-corte.mjs` no los lleva.
+
+**Lo verifica la orquestadora sobre el corte:**
+- build;
+- `verificar` a 390, 768 y 1440;
+- enlaces;
+- protegido idéntico a `main`;
+- precios iguales a `main`;
+- cero «fundador y director» en el `dist` y en `llms.txt`;
+- el peso de la home.
+
+**Llega a `main` cuando Ramón aprieta «Merge pull request»,** con método `merge`.
+
 ## PUBLICADO · 30-oct-2026, 18:23 (Chile)
 
 - **OK de Ramón:** por escrito, el 30-oct en la tarde («Confirmo la frase» sobre A1 y «Sí, publica hoy»). Con eso se cierra
