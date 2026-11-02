@@ -72,3 +72,49 @@ malo, que es lo que permite vender sin acusar.
 - [ ] ¿Está dicha la objeción inmediata del que mira, y muerta?
 - [ ] ¿El rótulo de apertura promete algo, o solo rotula la imagen?
 - [ ] ¿El gancho visual confirma el tema en el primer segundo?
+
+---
+
+# Formato de entrega y cadencia (ampliación del 2-nov-2026)
+
+Ramón entregó después el bloque de rol completo de la misma fuente. Lo que agrega sobre lo de
+arriba, y que **cambia cómo se entregan los guiones en este proyecto**:
+
+## Las anotaciones tácticas, que son el cambio real
+
+Hasta ahora los guiones de esta casa llevaban respiraciones (`/`), cortes (`//`) y palabras en
+negrita. **Faltaba dirección de entonación**, y es justo lo que Ramón necesita: el 19-oct dijo
+*"tengo un problema de modulación"*. Van entre corchetes, en su propia columna:
+
+| Marca | Qué indica |
+|---|---|
+| `[TEXTO EN PANTALLA]` | qué tarjeta entra ahí |
+| `[ACCIÓN/VISUAL]` | el plano o el objeto que se muestra |
+| `[ENTONACIÓN SUSPENDIDA]` | la voz queda arriba: la frase no cierra, engancha con la siguiente |
+| `[REMATE ABAJO]` | la voz baja: cierra la idea con autoridad |
+| `[ÉNFASIS]` | qué palabra alargar o frenar |
+
+**Y el último gancho repite la entonación de la apertura, no solo las palabras.** Si el guion abre
+con suspendida + remate, cierra igual. Eso es lo que hace que el loop se sienta continuo.
+
+El guion también declara **arriba y por su nombre qué fórmula de zona de enganche usa**. Si no se
+puede nombrar, no hay zona de enganche.
+
+## Tres reglas de sintaxis
+
+- **La metáfora del boxeador.** Alternar frases muy cortas y directas con frases medias. Es el
+  margen irregular dicho desde el oído en vez de desde la página, y **es la misma regla**.
+- **La regla de tres.** Al enumerar, conjuntos de tres con estructura paralela. ⚠️ **No se fuerza**:
+  si la pieza no tiene una enumeración natural, meterla es relleno. En la tanda de noviembre solo el
+  tutorial la cumple, y porque sus pasos ya eran tres.
+- **La regla del 2x.** En video largo, una explicación formal seguida de una metáfora simple. **En
+  video corto va solo la metáfora simple, sin tecnicismos.** Esta regla **valida a posteriori** la
+  decisión del 30-oct de sacar la palabra «cookie» del hablado y dejar *"tu sitio guarda algo en el
+  teléfono del cliente"*.
+
+## Lo que sigue sin adoptarse
+
+Además de «la caja mágica», que ya estaba descartada: **el encuadre de "guiones virales" y de
+"respuesta rápida" no es el de esta casa.** Se toma la ingeniería (arquitectura de dos etapas,
+cadencia, anotaciones) y no la postura. Siguen rigiendo cero miedo, cero cifra de multa, cero
+urgencia fabricada, cero dato inventado y máximo dos remates figurados por pieza.
