@@ -34,10 +34,12 @@ es lo que hace que el loop se sienta continuo.
 
 [ZONA DE ENGANCHE]
 
-  Pero para medir, tu sitio guarda algo
-  en el teléfono del cliente.                       [ENTONACIÓN SUSPENDIDA]
-  Y lo guarda / antes de que acepte nada.           [ÉNFASIS: antes]
-                                                    [REMATE ABAJO]
+  Pero para medir, tu sitio instala
+  un rastreador de Facebook
+  en el teléfono del cliente.                       [ÉNFASIS: rastreador]
+  Sirve para reconocerlo cuando vuelva.             [ENTONACIÓN SUSPENDIDA]
+  Y se instala antes de que el cliente
+  acepte nada.                                      [ÉNFASIS: antes] [REMATE ABAJO]
 [TEXTO EN PANTALLA]: g1-2 · CASI LA MITAD
   En casi la mitad de los cafés y pastelerías
   que revisé, / pasa eso mismo.                     [ÉNFASIS: casi la mitad]
@@ -45,19 +47,20 @@ es lo que hace que el loop se sienta continuo.
 [DESARROLLO]
 [TEXTO EN PANTALLA]: g1-3 · PUEDES SEGUIR MIDIENDO
   No es que tu sitio esté mal hecho.                [ENTONACIÓN SUSPENDIDA]
-  La herramienta de medición trabaja
-  apenas alguien entra.                             [ENTONACIÓN SUSPENDIDA]
-  Nadie le dijo que preguntara primero.             [ÉNFASIS: preguntara]
+  El rastreador vino con la publicidad,
+  y trabaja apenas alguien entra.                   [ENTONACIÓN SUSPENDIDA]
+  Nadie le dijo que esperara.                       [ÉNFASIS: esperara]
                                                     [REMATE ABAJO]
 
 [SOLUCIÓN]
 [TEXTO EN PANTALLA]: g1-4 · el cartel maquetado (sin bloque, aunque la ropa sea de color)
-  Y se arregla con un cartel abajo /
-  que pregunta antes.                               [ENTONACIÓN SUSPENDIDA]
-  El mismo que ves en cualquier sitio europeo.      [ÉNFASIS: europeo]
-  Si dice que sí, / mides igual.                    [REMATE ABAJO]
+  Se arregla con ese cartel que le pregunta
+  al cliente si acepta las cookies.                 [ENTONACIÓN SUSPENDIDA]
+  El que ves en cualquier sitio europeo.            [ÉNFASIS: europeo]
+  Si el cliente acepta, / mides igual que hoy.      [REMATE ABAJO]
 
-  Y esa pregunta va a ser obligatoria por ley.      [REMATE ABAJO]
+  Y preguntar primero va a ser obligatorio
+  por ley.                                          [REMATE ABAJO]
 
 [CIERRE]
 [TEXTO EN PANTALLA]: g0-cierre · verifica.spindlelab.cl
@@ -90,15 +93,18 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
 [ZONA DE ENGANCHE]
 [TEXTO EN PANTALLA]: g2-2 · LA MITAD
 
-  Pero tu sitio guarda algo en el teléfono
-  del paciente, / antes de que acepte nada.         [ÉNFASIS: antes]
-                                                    [ENTONACIÓN SUSPENDIDA]
-  Y en la mitad de las clínicas y centros
+  Pero para medir, tu sitio instala
+  un rastreador en el teléfono del paciente.        [ÉNFASIS: rastreador]
+  Sirve para reconocerlo cuando vuelva.             [ENTONACIÓN SUSPENDIDA]
+  Y se instala antes de que acepte nada.            [ÉNFASIS: antes] [REMATE ABAJO]
+
+  En la mitad de las clínicas y centros
   médicos que revisé, / pasa eso mismo.             [ÉNFASIS: la mitad]
                                                     [REMATE ABAJO]
 
   No lo decidió nadie en tu clínica.                [ENTONACIÓN SUSPENDIDA]
-  Vino con la herramienta de medición.              [REMATE ABAJO]
+  Vino instalado con el sitio, / y trabaja
+  apenas alguien entra.                             [REMATE ABAJO]
 
   Que alguien entre a pedir una hora /
   ya dice algo de esa persona.                      [ÉNFASIS: ya dice algo]
@@ -109,17 +115,20 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
   Puedes seguir midiendo igual.                     [REMATE ABAJO]
   Solo hay que preguntarle al paciente primero.     [ÉNFASIS: primero]
 
-  Y esa pregunta va a ser obligatoria por ley.      [REMATE ABAJO]
+  Y preguntar primero va a ser obligatorio
+  por ley.                                          [REMATE ABAJO]
 
 [SOLUCIÓN]
-[TEXTO EN PANTALLA]: g2-4 · UNA FRANJA QUE PREGUNTA
-  Es una franja abajo de tu sitio / que le
-  pregunta al paciente si acepta.                   [REMATE ABAJO]
+[TEXTO EN PANTALLA]: g2-4 · el cartel maquetado (sin bloque)
+  Se arregla con ese cartel que le pregunta
+  al paciente si acepta las cookies.                [ENTONACIÓN SUSPENDIDA]
+  El que ves en cualquier sitio europeo.            [ÉNFASIS: europeo]
+  Si el paciente acepta, / mides igual que hoy.     [REMATE ABAJO]
 
 [CIERRE]
 [TEXTO EN PANTALLA]: g0-cierre · verifica.spindlelab.cl
   Hice un chequeo gratis / que te dice si tu
-  sitio tiene esa franja.
+  sitio lo tiene.
   Soy Ramón, de SpindleLab.                         [REMATE ABAJO]
 
 [ÚLTIMO GANCHO]
@@ -221,9 +230,10 @@ paralela, suspendida-suspendida-abajo, que es lo que hace que suenen como una se
 [EL HALLAZGO]
 [TEXTO EN PANTALLA]: g4-3 · NADIE LO ACEPTÓ
 
-  Ahí sale todo lo que tu sitio guardó / en
-  ese teléfono.                                     [REMATE ABAJO]
-  Y se guardó solo, al abrir la página.             [ÉNFASIS: solo] [REMATE ABAJO]
+  Ahí salen los rastreadores / que tu sitio
+  dejó en tu teléfono.                              [ÉNFASIS: rastreadores]
+                                                    [REMATE ABAJO]
+  Y se instalaron solos, al abrir la página.        [ÉNFASIS: solos] [REMATE ABAJO]
 
 [CIERRE]
 [TEXTO EN PANTALLA]: g0-cierre · verifica.spindlelab.cl
