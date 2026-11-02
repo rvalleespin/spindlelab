@@ -42,17 +42,20 @@ const falso = (n, v) => eq(n, Boolean(v), false);
  */
 const mLista = HTML.match(/var CIERRA_EL_KIT = (\[[^\]]*\]);/);
 const mFn = HTML.match(/function sePuedeVender\(data\) \{[\s\S]*?\n  \}/);
-if (!mLista || !mFn) {
-  console.log('  FALLA no encontré CIERRA_EL_KIT o sePuedeVender en index.html');
+// `sePuedeVender` delega en `seAlcanzoAMedir` desde el 2-nov, así que se extraen las dos. Si
+// faltara, la prueba reventaría con un ReferenceError en vez de fallar: se aborta a propósito
+// con un mensaje, que es la diferencia entre acusar y morirse.
+const mMedir = HTML.match(/function seAlcanzoAMedir\(data\) \{[\s\S]*?\n  \}/);
+if (!mLista || !mFn || !mMedir) {
+  console.log('  FALLA no encontré CIERRA_EL_KIT, sePuedeVender o seAlcanzoAMedir en index.html');
   console.log('\n0 bien, 1 mal');
   process.exit(1);
 }
 const listaHtml = JSON.parse(mLista[1].replace(/'/g, '"'));
 // `estadoDe` también vive en la página; acá se usa la versión mínima equivalente, porque lo que
 // se está probando es la compuerta, no el normalizador de estados.
-const sePuedeVender = new Function('CIERRA_EL_KIT', 'estadoDe', `${mFn[0]}; return sePuedeVender;`)(
-  listaHtml, (i) => i.estado,
-);
+const sePuedeVender = new Function('CIERRA_EL_KIT', 'estadoDe',
+  `${mMedir[0]}; ${mFn[0]}; return sePuedeVender;`)(listaHtml, (i) => i.estado);
 
 const item = (id, estado = 'pendiente') => ({ id, estado, ok: estado === 'ok', titulo: id, peso: 3 });
 const informe = (items, extra = {}) => ({
@@ -143,7 +146,12 @@ console.log('=== 3 bis. vender la política obliga a decir qué se entrega ===')
     /gestor de consentimiento si tu sitio carga rastreadores/.test(HTML));
 
   // Y la pantalla del pedido explica qué llega, porque es donde se mira después de pagar.
-  const PEDIDO = fs.readFileSync(
+  // ⚠️ `readFileSync`, no `fs.readFileSync`: arriba se importa el nombre suelto, no el módulo.
+  // Decía `fs.` y reventaba con `ReferenceError: fs is not defined` justo en esta línea, así
+  // que el archivo moría acá y las 61 aserciones que vienen después NUNCA SE CORRÍAN —entre
+  // ellas las que cuidan el panel de compra—. Nadie lo notó porque una prueba que revienta no
+  // acusa: no reporta fallas, no reporta nada. Arreglado el 2-nov-2026.
+  const PEDIDO = readFileSync(
     rutaEnElRepo('verificaycumple/public/pedido/index.html', 'VYC_PEDIDO_HTML'), 'utf8');
   cierto('la pantalla del pedido lo aclara cuando la política viene contratada',
     /i\.id === 'politica'[\s\S]{0,400}borrador/.test(PEDIDO));
@@ -269,12 +277,27 @@ console.log('=== el panel de compra espera a la revisión con navegador ===');
   cierto('y además lo avisa con un evento', /new CustomEvent\('vyc:profundo'/.test(HTML));
   cierto('sin romperse en un navegador sin CustomEvent', /catch \(e\) \{[^}]*\}/.test(HTML));
 
-  // Los tres momentos, cada uno con su anuncio.
-  eq('hay un anuncio por cada desenlace', (HTML.match(/anunciarProfundo\('/g) || []).length, 4);
+  // Los momentos, cada uno con su anuncio.
   cierto('al empezar una corrida: en vuelo', /anunciarProfundo\('en-vuelo'\)/.test(HTML));
-  cierto('cuando la revisión vuelve bien: listo',
-    /data\.ok === true\)\s*\{[\s\S]{0,160}anunciarProfundo\('listo'\)/.test(HTML));
   eq('y dos caminos de fallo lo dicen', (HTML.match(/anunciarProfundo\('fallo'\)/g) || []).length, 2);
+
+  /* ⚠️ LA ASERCIÓN QUE ESTABA ACÁ FIJABA EL DEFECTO COMO SI FUERA LO CORRECTO.
+   *
+   * Exigía literalmente que `data.ok === true` llevara a `anunciarProfundo('listo')`, y eso es
+   * justo lo que había que cambiar: `/api/profundo` devuelve SIEMPRE `ok: true` y pone
+   * `parcial` y `bloqueado` como banderas aparte, así que un sitio que no se pudo medir
+   * entraba por ahí, se anunciaba «listo», y el panel soltaba «Ir a pagar» para después
+   * comerse un 409 del servidor. La aserción no solo no lo cazaba: lo defendía.
+   *
+   * Y ni siquiera llegaba a correr, porque el archivo moría antes (ver la línea del `fs`).
+   * Las dos cosas juntas son la lección: una prueba que revienta no acusa, y una prueba que
+   * copia el código en vez de describir la intención aprueba el error.
+   */
+  cierto('cuando la revisión vuelve, el anuncio depende de si se alcanzó a MEDIR',
+    /data\.ok === true\)[\s\S]{0,1400}anunciarProfundo\(seAlcanzoAMedir\(data\) \? 'listo' : 'sin-medir'\)/.test(HTML));
+  cierto('«sin-medir» es un estado de verdad, no una cadena suelta',
+    /anunciarProfundo\(estado\)\s*\{[\s\S]{0,40}'sin-medir'/.test(HTML) ||
+    /'en-vuelo' · 'listo' · 'sin-medir' · 'fallo'/.test(HTML));
 
   // El panel LEE EL DOM. Si volviera a leer una variable, el fallo de ámbito podría repetirse.
   cierto('el panel lee el estado del documento',
@@ -283,8 +306,10 @@ console.log('=== el panel de compra espera a la revisión con navegador ===');
     /addEventListener\('vyc:profundo', pintarEspera\)/.test(HTML));
   cierto('al abrir el panel se pinta la espera', /pintarEspera\(\);\s*\n\s*\}/.test(HTML));
 
+  // 2200 y no 1300: la rama de «sin-medir» alargó la función, y con la ventana corta las dos
+  // aserciones del final daban falso sin que nada estuviera roto.
   const i = HTML.indexOf('function pintarEspera');
-  const bloque = i > 0 ? HTML.slice(i, i + 1300) : '';
+  const bloque = i > 0 ? HTML.slice(i, i + 2200) : '';
   cierto('con la medición lista, el botón se suelta', /estado === 'listo'[\s\S]{0,120}soltarBotonCompra\(\)/.test(bloque));
   cierto('y si no, queda deshabilitado', /b\.disabled = true;/.test(bloque));
   cierto('diciendo que está revisando', /Revisando tu sitio/.test(bloque));
@@ -296,6 +321,149 @@ console.log('=== el panel de compra espera a la revisión con navegador ===');
   const j = SRV.indexOf("motivo: 'sin-medicion'");
   const msg = j > 0 ? SRV.slice(j, SRV.indexOf('}, 409)', j)) : '';
   cierto('el 409 nombra la segunda parte del chequeo', /segunda parte/.test(msg));
+}
+
+/* ==================================================================================
+ *
+ * EL CALLEJÓN SIN SALIDA DEL INFORME QUE NO MIDIÓ (2-nov-2026)
+ *
+ * Reproducido en el navegador antes de arreglarlo, sirviendo la página contra un servidor
+ * que devolvía un informe profundo real marcado `parcial`:
+ *
+ *   versión anterior → data-profundo="listo", botón «Ir a pagar» HABILITADO,
+ *                      y un POST de verdad a /api/pedido (el 409 en producción)
+ *   versión nueva    → data-profundo="sin-medir", botón «No alcanzamos a medirlo»
+ *                      deshabilitado, y CERO POST (ni con Enter ni con requestSubmit)
+ *
+ * Lo de abajo es el centinela de ese arreglo. Lo que lo probó fue el navegador.
+ */
+console.log('=== el informe que no midió no suelta el botón ===');
+{
+  const i = HTML.indexOf('function pintarEspera');
+  const bloque = i > 0 ? HTML.slice(i, i + 2200) : '';
+
+  cierto('hay una rama propia para «no se pudo medir»', /estado === 'sin-medir'/.test(bloque));
+  cierto('y el botón lo dice en vez de invitar a pagar', /No alcanzamos a medirlo/.test(bloque));
+  // Ojo: el texto está partido por una concatenación en el fuente, así que la frase completa
+  // no existe como una sola cadena. Se busca el trozo que no se parte.
+  cierto('el mensaje explica que no se cotiza lo que no se vio',
+    /cotizar lo que no vimos/.test(bloque));
+  cierto('y ofrece la salida, que es volver a medir', /Vuelve a medirlo/.test(bloque));
+
+  // La rama tiene que estar ANTES del `else` genérico, o «sin-medir» cae en «Revisando tu
+  // sitio…» y la persona espera para siempre una medición que ya volvió.
+  const iSinMedir = bloque.indexOf("estado === 'sin-medir'");
+  const iRevisando = bloque.indexOf('Revisando tu sitio');
+  cierto('y va antes del mensaje de espera, no después', iSinMedir > 0 && iSinMedir < iRevisando);
+
+  // El envío no confía en el botón deshabilitado.
+  cierto('el envío se corta si la medición no está lista',
+    /estadoDelProfundo\(\) !== 'listo'\) \{ pintarEspera\(\); return; \}/.test(HTML));
+  const iGuarda = HTML.indexOf("estadoDelProfundo() !== 'listo'");
+  const iFetch = HTML.indexOf("fetch('/api/pedido'");
+  cierto('y la guarda está antes del fetch, no después', iGuarda > 0 && iGuarda < iFetch);
+
+  // El criterio es UNO y se usa en los dos lados: el botón del resultado y el del panel.
+  cierto('existe `seAlcanzoAMedir` como criterio único', /function seAlcanzoAMedir\(data\)/.test(HTML));
+  cierto('y `sePuedeVender` se apoya en él en vez de repetirlo',
+    /function sePuedeVender\(data\) \{\s*\n\s*if \(!seAlcanzoAMedir\(data\)\) return false;/.test(HTML));
+
+  // El gemelo del servidor. Si uno de los dos cambia de criterio, el botón vuelve a prometer
+  // lo que el servidor niega: es la misma razón por la que se compara `CIERRA_EL_KIT`.
+  const ELEG = readFileSync(`${RAIZ}/functions/api/elegibilidad.js`, 'utf8');
+  cierto('el servidor sigue declinando por `parcial`', /informe\.parcial/.test(ELEG));
+  cierto('y por `bloqueado`', /informe\.bloqueado/.test(ELEG));
+  cierto('y por un puntaje nulo', /informe\.puntaje === null/.test(ELEG));
+}
+
+/* ==================================================================================
+ *
+ * LAS DOS IIFE NO SE VEN ENTRE SÍ (y ya costó caro tres veces)
+ *
+ * El <script> grande tiene dos funciones anónimas que se ejecutan solas. Un nombre declarado
+ * dentro de una y usado dentro de la otra parsea perfecto, pasa `node --check`, y revienta en
+ * el navegador con `ReferenceError`.
+ *
+ * Pasó con `paramOrigen` (el chequeo entero dejó de funcionar) y estaba pasando con
+ * `CONTACTO`: declarado en la primera IIFE y usado en TRES líneas de la segunda, todas en el
+ * camino del error de la compra. O sea que cuando el pago no se podía abrir, en vez del
+ * mensaje saltaba un ReferenceError y la persona se quedaba sin mensaje y sin rescate.
+ *
+ * Esto no es una lista de nombres a mano: busca TODO lo declarado en la primera IIFE y usado
+ * en la segunda. Una prueba con una lista curada solo encuentra lo que ya sabíamos.
+ */
+console.log('=== nada declarado en una IIFE se usa desde la otra ===');
+{
+  // Las fronteras: las dos IIFE empiezan en una línea que es exactamente `(function () {`.
+  const lineas = HTML.split('\n');
+  const aperturas = [];
+  const cierres = [];
+  lineas.forEach((l, n) => {
+    if (l === '(function () {') aperturas.push(n);
+    if (l === '})();') cierres.push(n);
+  });
+  eq('hay exactamente dos IIFE en el bloque grande', aperturas.length, 2);
+
+  const trozo = (desde, hasta) => lineas.slice(desde, hasta).join('\n');
+  const A = trozo(aperturas[0], cierres.find((c) => c > aperturas[0]));
+  const B = trozo(aperturas[1], cierres.find((c) => c > aperturas[1]));
+  cierto('la primera IIFE tiene cuerpo', A.length > 1000);
+  cierto('la segunda también', B.length > 1000);
+
+  // Lo declarado arriba de todo (fuera de las dos) es el terreno compartido y está permitido.
+  const COMPARTIDO = trozo(0, aperturas[0]);
+
+  /* Los comentarios y las cadenas NO son código, y confundirlos da falsos rojos ruidosos: la
+   * primera versión de esto acusó `anunciarProfundo` porque el nombre aparece dentro de un
+   * comentario de la segunda IIFE que dice «ver `anunciarProfundo`». Se vacían antes de mirar. */
+  const sinRuido = (t) => t
+    .replace(/\/\*[\s\S]*?\*\//g, ' ')
+    .replace(/(^|[^:])\/\/[^\n]*/g, '$1 ')
+    .replace(/'(?:[^'\\]|\\.)*'/g, "''")
+    .replace(/"(?:[^"\\]|\\.)*"/g, '""')
+    .replace(/`(?:[^`\\]|\\.)*`/g, '``');
+
+  /* Lo que un trozo DECLARA: no solo `const/let/var/function`, también los parámetros de las
+   * funciones y las flechas, el `catch (e)` y el `for (const x ...)`. Sin los parámetros, cada
+   * función de la segunda IIFE que recibe un `data` o un `input` se contaba como uso de la
+   * variable homónima de la primera, y el detector era inservible de puro ruidoso. */
+  const declarados = (t) => {
+    const s = new Set();
+    let m;
+    const re = /(?:^|[\n;{(,])\s*(?:const|let|var|function)\s+([A-Za-z_$][\w$]*)/g;
+    while ((m = re.exec(t))) s.add(m[1]);
+    const rp = /function\s*[A-Za-z_$\w]*\s*\(([^)]*)\)|\(([^)]*)\)\s*=>|(?:^|[^\w$])([A-Za-z_$][\w$]*)\s*=>/g;
+    while ((m = rp.exec(t))) {
+      (m[1] || m[2] || m[3] || '').split(',').forEach((p) => {
+        const n = p.trim().replace(/[=:].*$/, '').replace(/^\.\.\./, '').trim();
+        if (/^[A-Za-z_$][\w$]*$/.test(n)) s.add(n);
+      });
+    }
+    const rc = /catch\s*\(\s*([A-Za-z_$][\w$]*)/g;
+    while ((m = rc.exec(t))) s.add(m[1]);
+    const rf = /for\s*\(\s*(?:const|let|var)\s+([A-Za-z_$][\w$]*)/g;
+    while ((m = rf.exec(t))) s.add(m[1]);
+    return s;
+  };
+
+  const Bc = sinRuido(B);
+  const enA = declarados(sinRuido(A));
+  const enB = declarados(Bc);
+  const compartidos = declarados(sinRuido(COMPARTIDO));
+
+  // Un nombre es sospechoso si lo declara A, NO lo declara B, y aparece como palabra suelta en
+  // el código de B. Se quitan los del terreno compartido —ahí sí los ve todo el mundo— y los
+  // de uno o dos caracteres, que son contadores y parámetros y solo generan ruido.
+  const fugados = [...enA].filter((n) => {
+    if (n.length < 3) return false;
+    if (enB.has(n) || compartidos.has(n)) return false;
+    return new RegExp(`(?:^|[^\\w$.])${n}(?:[^\\w$]|$)`).test(Bc);
+  });
+
+  /* ⚠️ VALIDADO ROMPIÉNDOLO, que es lo único que distingue un detector de un adorno: corrido
+   * contra la versión anterior de la página (la que estaba desplegada el 2-nov), esta misma
+   * aserción se pone roja y nombra `CONTACTO`. Contra la arreglada, da lista vacía. */
+  eq('ningún nombre de la primera IIFE se usa en la segunda', fugados, []);
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
