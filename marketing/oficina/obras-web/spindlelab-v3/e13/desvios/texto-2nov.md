@@ -96,3 +96,68 @@ Las mediciones de Diego (`portada-30oct.mjs` sin `--inyectar`) y de Javiera (pes
 - **La frase de 1a y 1b** la aprobó Ramón y puede afinarla después.
 - **El verbo «dirige»**, si Ramón lo quiere cambiar (encargo §5).
 - **QA de Javiera** en conversación aparte, el corte y el PR: los hace la orquestadora. Nada de esto se publicó.
+
+## 6 · Construcción y medición (Diego, 2-nov)
+
+**Diego (diseño y desarrollo web), 2-nov-2026.** Sobre `d97814c6` (el commit de Clara, igual en `origin`). No toqué texto
+ni código del sitio: esta sección es solo lo medido. Ningún guardián cayó, así que no hubo nada que arreglar.
+
+**Cómo.** Dos copias limpias en el scratchpad, cada una con `node_modules` enlazado: `git archive HEAD spindlelab-astro` (la
+rama) y `git archive origin/main spindlelab-astro` (`cd16cf71`, que ya trae el PR #55 de la troncal). Entre las dos, el árbol
+`spindlelab-astro/` difiere solo en los 5 JSON de texto de Clara, `llms.txt` y el sitemap (`git diff --stat`). Los dos `dist`
+servidos con `python3 -m http.server` en 127.0.0.1 (puertos 8761 y 8762, PID guardado y cerrado con `kill` al terminar).
+**Chromium 1243** (`/opt/pw-browsers/chromium-1243/chrome-linux64/chrome`): el 1194 que traen fijo las herramientas no
+existe en este contenedor. `peso-30oct.mjs` lo recibe con `--chrome`; `portada-30oct.mjs` no tiene esa opción y la corrí
+desde una copia en el scratchpad con **solo esa línea cambiada** (`diff`: la línea 107). La herramienta de la obra no la toqué.
+Lo que dejaron las herramientas está en `e13/medicion-2nov/`.
+
+| # | Qué | Comando | Resultado |
+|---|---|---|---|
+| 1 | Build y guardianes | `npx astro build` en las dos copias | **22 páginas** en las dos, sale con 0. Los guardianes son `throw` que corren en el build (`index.astro`, `interiores.mjs`, `blog.mjs`, `servicios.mjs`, `texto.mjs`, las plantillas de servicios y trabajo): ninguno cae, incluido el de las 4 filas de la sección 2 |
+| 1b | Copias iguales a sus fuentes | `extraer-texto.mjs --comprobar` en la rama | 16 «igual», sale con 0 |
+| 2 | `verificar` | `node scripts/verificar.mjs --excluir /privacidad/` (390), `… --ancho 768`, `… --ancho 1440` | **«Sin hallazgos»** en los tres, 22 páginas, sale con 0. A 1440, 6 nodos sobre imagen o degradado (la portada), igual que el 30-oct |
+| 3 | **Peso, primera carga a 1440** | `peso-30oct.mjs <url> --ancho 1440 --chrome <1243>`, tres corridas por build | **Rama: 1.398,8 kB (1.398.800 bytes) las tres.** `origin/main`: 1.398.764 las tres, el número exacto del acta del 30-oct: la herramienta sigue calibrada con el Chromium nuevo. **+36 bytes**, que son justo lo que crece el HTML de la home (39.564 → 39.600; la fila de 2a suma, la frase de 1a y el cargo de 3a restan). Tope 1.400 kB: **no cruza. Margen: 1.200 bytes** (antes 1.236). La fila va entera, como la dejó Clara: no hizo falta partirla |
+| 3b | Peso, recorrida a 1440 | `… --ancho 1440 --recorrer`, dos corridas | Rama **1.561,6 kB** (1.561.648) ≤ 1.600; `origin/main` 1.561.612 |
+| 3c | Peso a 390 × 844 | `… --ancho 390 --alto 844`, dos corridas | Rama **755,5 kB** (755.517) ≤ 950; `origin/main` 755.481 |
+| 4 | Sección 2, con la fila nueva | `portada-30oct.mjs <url> <salida>` **sin** `--inyectar`, sobre los dos builds | Tabla de abajo: filetes alineados (desfase 0 · 0 · 0) desde 834 y 0 desborde en los 8 anchos. Capturas miradas a 390, 834 y 1440 (`e13/medicion-2nov/s2-*.png`) |
+| 4b | Primera pantalla y encabezado | la misma corrida | **Idénticos al décimo** entre los dos builds (`diff` vacío fuera de la sección 2 y del alto): con el aviso abierto, margen del botón 181,1 · 227,2 · 54,6 a 360 × 800, 390 × 844 y 1440 × 900, 0 de 5 puntos tapados |
+| 4c | Alto de la home | la misma corrida | **7.459 · 7.423 · 9.355 · 8.972** (1440 · 1024 · 768 · 390), bajo los techos del criterio 5 (7.800 · 7.800 · 9.700 · 9.300). Son 21 px más que `origin/main` en cada ancho salvo 768 (la fila cabe en una línea) |
+| 5 | Imágenes para compartir y retratos | hojas de contacto de las 22 `og-e12-*.jpg` del `dist` y de los 3 retratos (`ramon-vallejos-avatar.jpg`, `ramon-vallejos.jpg`, `v3/medios/ramon-vallejos-34.webp`), miradas una por una; `cmp` contra `origin/main`; lectura de `og-30oct.mjs` | **Ninguna lleva el cargo.** Las tarjetas llevan logo y titular (las 6 de servicio suman su precio; `/trabajo/` y `/trabajo/combeau/`, capturas de los casos); el rótulo mono solo en la de la home. Los retratos son fotos sin texto. Idénticas byte a byte a las de `origin/main`: no se rehacen ni se les sube el `?v=`. `og-30oct.mjs` lee solo `home.portada.rotulo`, `home.portada.h1`, `nosotros.h1` y `contacto.h1` |
+| 6 | **Precios contra `origin/main`** | script en el scratchpad sobre los dos `dist`, archivo por archivo: cada importe `$…` del texto (fuera de `<script>`) y cada clave con «price» de cada JSON-LD parseado | **Idénticos.** 93 importes visibles en 10 archivos y 30 valores de JSON-LD (`price`, `minPrice`, `priceCurrency`) en 6 archivos: 0 diferencias. Los `href` de los 24 HTML, también: 909, 0 diferencias |
+| 6b | Qué páginas cambian | `diff -rq` de los dos `dist`, y luego cada HTML con los nombres `hoisted.*.js` igualados | Texto distinto solo en `/`, `/nosotros/`, los 7 artículos, `/servicios/desarrollo-web/` y `llms.txt` (más el `sitemap.xml`, que el corte regenera). Ver la nota de abajo sobre el JS |
+| 6c | Textos y barrido | `grep` sobre el `dist`; `barrer-terminos.mjs <dist> --resumen` en los dos | 0 «fundador y director» (sin importar mayúsculas, con `llms.txt`), 0 «casi nunca en el anuncio». La cláusula nueva 1 vez en `/` y 1 en `/nosotros/`; la fila de 2a 1 vez en `/`; la línea de 2b 1 vez en `/servicios/desarrollo-web/`; el title nuevo en `/nosotros/`. El barrido solo difiere en «cargo con «director»»: 0 en la rama, 13 en 10 archivos en `origin/main`; rayas largas o medias, 0 |
+
+**Sección 2, medida sobre el build** (`e13/medicion-2nov/seccion-2.txt` y `.json`):
+
+| Ancho | Líneas de la fila nueva | Alto de la sección (main → rama) | Filetes entre columnas | Fuera · desborde |
+|---|---|---|---|---|
+| 360 | 2 | 863,6 → 883,9 | apiladas | 0 · 0 |
+| 390 | 2 | 843,4 → 863,6 | apiladas | 0 · 0 |
+| 768 | 1 | 787 → 787 | apiladas | 0 · 0 |
+| 834 | 2 | 640,3 → 661,1 | 0 · 0 · 0 | 0 · 0 |
+| 1024 | 2 | 625 → 646,1 | 0 · 0 · 0 | 0 · 0 |
+| 1194 | 2 | 601,6 → 622,9 | 0 · 0 · 0 | 0 · 0 |
+| 1440 | 2 | 605,5 → 627,1 | 0 · 0 · 0 | 0 · 0 |
+| 1920 | 2 | 562,3 → 583,9 | 0 · 0 · 0 | 0 · 0 |
+
+Lo mismo que midió Clara a 390, 768, 834, 1024, 1194 y 1440. A 1440 la fila corta en «Va en tu dominio, a tu nombre. Y te /
+entregamos el código completo.» y comparte alto con «La plataforma decide a quién le muestra lo / que publicas.»; a 390, en
+«…Y te entregamos el / código completo.».
+
+**Notas para Javiera** (no son defectos que yo haya encontrado; son cosas que conviene saber al medir):
+
+- **El JS compartido sale con otro nombre en cada build.** Los `hoisted.*.js` de los dos `dist` tienen nombres distintos y el
+  trozo común (78.123 bytes en los dos) trae los mismos bytes en otro orden (mismo tamaño y mismos bytes ordenados). Ningún
+  archivo de código cambió entre `origin/main` y la rama (`git diff --stat` solo muestra JSON, `llms.txt` y el sitemap), así
+  que es el orden en que Rollup arma el trozo, no texto. Por eso un `diff -rq` crudo marca las 22 páginas: hay que comparar
+  con los nombres igualados.
+- **A 1920** (fuera del criterio 5, que mide 4 anchos) la home mide 7.799 en la corrida de la sección 2 de `portada-30oct.mjs`
+  (`origin/main`, 7.777).
+- **Chromium 1194 no está** en este contenedor: `portada-30oct.mjs` (y `og-30oct.mjs` sin argumento) lo piden por ruta fija.
+
+**Qué quedó abierto (de construcción):**
+
+- **El margen de peso de la home queda en 1.200 bytes.** Lo siguiente que pesa sin aportar sigue siendo el logo en línea dos
+  veces (`spec-home.md`, criterio 10). Cualquier texto que se sume a la home se vuelve a medir con `peso-30oct.mjs`.
+- La QA de Javiera en un subagente nuevo (con su lectura en frío, si la pide), el corte con el sitemap regenerado y el PR: los
+  hace la orquestadora. Nada se publicó.

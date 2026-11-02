@@ -1,0 +1,17 @@
+# peso-30oct.mjs, Chromium 1243, dist servido con python3 -m http.server. rama = d97814c6, main = origin/main cd16cf71
+# primera carga a 1440, tres corridas
+rama 1 {"url":"http://127.0.0.1:8761/","ancho":1440,"alto":900,"recorrida":false,"respuestas":11,"bytes":1398800,"kB":1398.8}
+main 1 {"url":"http://127.0.0.1:8762/","ancho":1440,"alto":900,"recorrida":false,"respuestas":11,"bytes":1398764,"kB":1398.8}
+rama 2 {"url":"http://127.0.0.1:8761/","ancho":1440,"alto":900,"recorrida":false,"respuestas":11,"bytes":1398800,"kB":1398.8}
+main 2 {"url":"http://127.0.0.1:8762/","ancho":1440,"alto":900,"recorrida":false,"respuestas":11,"bytes":1398764,"kB":1398.8}
+rama 3 {"url":"http://127.0.0.1:8761/","ancho":1440,"alto":900,"recorrida":false,"respuestas":11,"bytes":1398800,"kB":1398.8}
+main 3 {"url":"http://127.0.0.1:8762/","ancho":1440,"alto":900,"recorrida":false,"respuestas":11,"bytes":1398764,"kB":1398.8}
+# recorrida a 1440 y primera carga a 390 x 844, dos corridas
+rama recorrida 1 {"url":"http://127.0.0.1:8761/","ancho":1440,"alto":900,"recorrida":true,"respuestas":14,"bytes":1561648,"kB":1561.6}
+rama 390 1 {"url":"http://127.0.0.1:8761/","ancho":390,"alto":844,"recorrida":false,"respuestas":11,"bytes":755517,"kB":755.5}
+main recorrida 1 {"url":"http://127.0.0.1:8762/","ancho":1440,"alto":900,"recorrida":true,"respuestas":14,"bytes":1561612,"kB":1561.6}
+main 390 1 {"url":"http://127.0.0.1:8762/","ancho":390,"alto":844,"recorrida":false,"respuestas":11,"bytes":755481,"kB":755.5}
+rama recorrida 2 {"url":"http://127.0.0.1:8761/","ancho":1440,"alto":900,"recorrida":true,"respuestas":14,"bytes":1561648,"kB":1561.6}
+rama 390 2 {"url":"http://127.0.0.1:8761/","ancho":390,"alto":844,"recorrida":false,"respuestas":11,"bytes":755517,"kB":755.5}
+main recorrida 2 {"url":"http://127.0.0.1:8762/","ancho":1440,"alto":900,"recorrida":true,"respuestas":14,"bytes":1561612,"kB":1561.6}
+main 390 2 {"url":"http://127.0.0.1:8762/","ancho":390,"alto":844,"recorrida":false,"respuestas":11,"bytes":755481,"kB":755.5}
