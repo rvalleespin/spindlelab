@@ -139,7 +139,12 @@ function conRed({ sitio = PORTADA, mp = null, mpEstado = 201, caeMP = false,
   leida = null, leidaEstado = 200, caeLeida = false,
   // Flow. `flow` es lo que devuelve `payment/create`; `caeFlow` simula que no contesta.
   flow = { url: 'https://sandbox.flow.cl/app/web/pay.php', token: 'TOKFLOW123', flowOrder: 42 },
-  flowEstado = 200, caeFlow = false, flowPago = null } = {}) {
+  flowEstado = 200, caeFlow = false, flowPago = null,
+  // Una página de política SERVIDA APARTE. Sin esto el molde devuelve la portada para
+  // cualquier URL, y el chequeo lo detecta y lo dice: «lleva de vuelta a tu página de
+  // inicio», así que `politica` sale pendiente SIEMPRE. Daba igual mientras la política
+  // estaba fuera de lo que el kit cierra; desde el 2-nov decide si hay venta.
+  politica = null } = {}) {
   const antes = globalThis.fetch;
   const llamadas = { sitio: 0, mp: 0, flow: 0, lecturas: 0, lecturasFlow: 0, avisos: [], cuerposMP: [], cabecerasMP: [], cuerposFlow: [] };
   globalThis.fetch = async (u, o = {}) => {
@@ -180,7 +185,8 @@ function conRed({ sitio = PORTADA, mp = null, mpEstado = 201, caeMP = false,
     }
     llamadas.sitio++;
     if (sitio === null) throw new Error('no-abre');
-    return { ok: true, status: 200, url, headers: { get: () => null }, text: async () => sitio };
+    const cuerpo = (politica && /privacidad|politica|pol%C3%ADtica/i.test(url)) ? politica : sitio;
+    return { ok: true, status: 200, url, headers: { get: () => null }, text: async () => cuerpo };
   };
   return { llamadas, soltar: () => { globalThis.fetch = antes; } };
 }
@@ -232,8 +238,11 @@ console.log('=== 1. el camino feliz ===');
 
   // Las señales contratadas salen de los DOS informes, no de uno.
   const contratadas = JSON.parse(f.senales_contratadas).sort();
-  eq('contrata lo que el kit cierra, de los dos informes', contratadas, ['carga', 'cmp', 'cookies']);
-  eq('y deja fuera lo que no cierra', JSON.parse(f.senales_fuera), ['politica']);
+  // `politica` entró a lo que el kit cierra el 2-nov-2026 (decisión de Ramón; el porqué largo
+  // está en elegibilidad.js). Antes figuraba del otro lado, en `senales_fuera`.
+  eq('contrata lo que el kit cierra, de los dos informes', contratadas,
+    ['carga', 'cmp', 'cookies', 'politica']);
+  eq('y no queda nada fuera', JSON.parse(f.senales_fuera), []);
 
   // El contrato congela LOS DOS informes.
   const informe = JSON.parse(f.informe_json);
@@ -328,9 +337,31 @@ console.log('=== 4. la compuerta de elegibilidad manda, no el cliente ===');
   limpio.items = limpio.items.map((i) => ({ ...i, estado: 'ok', ok: true }));
   limpio.pendientes = 0;
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(limpio) });
-  // Una portada SIN rastreadores y con gestor: el rápido tampoco deja pendiente nada del kit.
-  const sinNada = PORTADA.replace(/<script[^>]*><\/script>/, '');
-  const red = conRed({ sitio: sinNada });
+  /* Una portada SIN rastreadores Y con su política publicada: el rápido tampoco deja
+   * pendiente nada del kit.
+   *
+   * ⚠️ Lo segundo hizo falta desde el 2-nov: con `politica` dentro de lo que el kit cierra,
+   * quitar el rastreador ya no alcanza para que no haya nada que vender — la política sin
+   * confirmar es ahora, ella sola, motivo de venta. El molde de red devuelve la MISMA página
+   * para cualquier URL, así que el documento tiene que servir a la vez de portada y de
+   * política para que el chequeo la pueda dar por buena. */
+  const sinNada = PORTADA.replace(/<script[^>]*><\/script>/, '') +
+    '<h2>Política de privacidad</h2>' +
+    '<p>Última actualización: enero de 2026. Versión 1.0. Responsable del tratamiento de ' +
+    'datos personales: Clínica Ejemplo. Finalidad: responder tus consultas. Base de ' +
+    'legitimación: tu consentimiento. Destinatarios: no compartimos tus datos con terceros. ' +
+    'Conservación: dos años. Derechos de acceso, rectificación, cancelación y oposición: ' +
+    'escribe a datos@clinicaejemplo.cl. Puedes reclamar ante la Agencia de Protección de ' +
+    'Datos Personales. No hacemos decisiones automatizadas ni transferencias internacionales.</p>';
+  const POLITICA = `<!doctype html><html lang="es"><head><title>Política de privacidad</title>
+</head><body><h1>Política de privacidad</h1>
+<p>Última actualización: enero de 2026. Versión 1.0. Responsable del tratamiento: Clínica
+Ejemplo. Finalidad: responder tus consultas. Base de legitimación: tu consentimiento.
+Destinatarios: no compartimos tus datos. Conservación: dos años. Derechos de acceso,
+rectificación, cancelación y oposición: escribe a datos@clinicaejemplo.cl.</p>
+<p>Puedes reclamar ante la Agencia de Protección de Datos Personales. No tomamos decisiones
+automatizadas ni hacemos transferencias internacionales de tus datos.</p></body></html>`;
+  const red = conRed({ sitio: sinNada, politica: POLITICA });
   const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, MP_ACCESS_TOKEN: 'TEST-tok', PASARELA: 'mp' } });
   const j = await r.json();
   red.soltar();
@@ -781,7 +812,19 @@ console.log('=== 18. el tope cobra lo que cuesta, no los rechazos nuestros ===')
   limpio.items = limpio.items.map((i) => ({ ...i, estado: 'ok', ok: true }));
   await kv.put('cache:clinicaejemplo.cl', JSON.stringify(limpio));
   red.soltar();
-  const redLimpia = conRed({ sitio: PORTADA.replace(/<script[^>]*><\/script>/, '') });
+  // ⚠️ Y desde el 2-nov hay que servir también la política aparte. Con `politica` dentro de
+  // lo que el kit cierra, un sitio sin rastreadores pero con la política sin confirmar SÍ es
+  // vendible: el rechazo que esta prueba necesita dejó de ocurrir, y la aserción medía otra
+  // cosa. Es la misma trampa que ya anota el comentario de arriba, una capa más abajo.
+  const redLimpia = conRed({
+    sitio: PORTADA.replace(/<script[^>]*><\/script>/, ''),
+    politica: `<!doctype html><html lang="es"><head><title>Política de privacidad</title></head>
+<body><h1>Política de privacidad</h1><p>Última actualización: enero de 2026. Versión 1.0.
+Responsable: Clínica Ejemplo. Finalidad: responder consultas. Base de legitimación: tu
+consentimiento. Conservación: dos años. Derechos de acceso, rectificación, cancelación y
+oposición: datos@clinicaejemplo.cl. Reclamo ante la Agencia de Protección de Datos.</p>
+</body></html>`,
+  });
   await E.onRequestPost({ request: conIp(BIEN), env });
   redLimpia.soltar();
   eq('un rechazo de la compuerta tampoco', await gastado(), 0);

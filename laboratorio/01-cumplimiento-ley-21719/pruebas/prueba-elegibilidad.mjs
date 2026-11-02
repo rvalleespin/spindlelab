@@ -128,16 +128,41 @@ console.log('=== 5. EL CASO NUEVO: hay pendientes, pero ninguno lo cierra el kit
       ],
     },
   };
+  /* ⚠️ ESTE CASO CAMBIÓ DE RESPUESTA EL 2-NOV-2026, POR DECISIÓN DE RAMÓN.
+   *
+   * Hasta entonces la compuerta decía que NO: `politica` estaba fuera de lo que el kit
+   * cierra, con el argumento de que la publica el cliente después de que su abogado revise
+   * el borrador. El argumento sigue siendo cierto; lo que lo movió fue una medición.
+   *
+   * De 40 sitios reales de las listas de prospección, cerca de la mitad llegaba al resultado
+   * SIN botón de compra, y el caso dominante era exactamente este: ni un rastreador y la
+   * política sin publicar. De cuatro validados con el chequeo profundo, tres salieron 100/100
+   * con la política como único pendiente. Con la ley en vigencia el 1 de diciembre, esa gente
+   * tiene un problema real y el kit sí hace algo: le entrega el borrador y vuelve a verificar.
+   *
+   * Lo que esto OBLIGA está probado en prueba-pantalla-pedido: que la pantalla del pedido
+   * diga que de la política entregamos el BORRADOR, no la publicación. Sin eso, este cambio
+   * convierte una venta honesta en una promesa que no cumplimos.
+   */
   const r = m.elegibilidad(tuane);
-  cierto('la regla vieja habría dicho que sí', [...tuane.rapido.items, ...tuane.profundo.items]
-    .filter((i) => i.estado === 'pendiente').length > 0);
-  falso('la compuerta dice que NO', r.puede);
-  eq('el motivo lo nombra', r.motivo, m.MOTIVOS.NADA_QUE_EL_KIT_CIERRE);
-  eq('no cierra ninguna', r.cierra.length, 0);
-  eq('y nombra la que queda fuera', r.noCierra.map((i) => i.id), ['politica']);
-  cierto('el texto explica de quién es esa señal', /abogado/i.test(r.detalle));
-  cierto('y la nombra con las mismas palabras del chequeo',
+  cierto('ahora la compuerta dice que sí', r.puede);
+  eq('el motivo', r.motivo, m.MOTIVOS.PUEDE);
+  eq('y lo que cierra es la política', r.cierra.map((i) => i.id), ['politica']);
+  eq('nada queda fuera', r.noCierra.map((i) => i.id), []);
+  cierto('la nombra con las mismas palabras del chequeo',
     /Enlace a tu política de privacidad/.test(r.detalle));
+
+  // Y el caso que SIGUE sin venderse: lo único pendiente es de otro (el hosting).
+  const soloHttps = {
+    rapido: { puntaje: 50, items: [
+      item('politica', 'Enlace a tu política de privacidad', 'ok', 8),
+      item('https', 'Conexión cifrada (HTTPS)', 'pendiente', 6),
+    ] },
+  };
+  const h = m.elegibilidad(soloHttps);
+  falso('solo https pendiente: no se vende', h.puede);
+  eq('y lo dice', h.motivo, m.MOTIVOS.NADA_QUE_EL_KIT_CIERRE);
+  cierto('explicando de quién es', /hosting/i.test(h.detalle));
 }
 
 /* ================================================================== */
@@ -165,9 +190,10 @@ console.log('=== 6. el caso que SÍ se vende ===');
   });
   cierto('puede comprar', r.puede);
   eq('el motivo', r.motivo, m.MOTIVOS.PUEDE);
-  eq('cierra las cinco del gestor', r.cierra.map((i) => i.id).sort(), ['aviso', 'carga', 'cmp', 'cookies', 'envio']);
-  eq('y deja fuera la política', r.noCierra.map((i) => i.id), ['politica']);
-  cierto('el texto avisa que algo queda fuera', /fuera del kit/i.test(r.detalle));
+  eq('cierra las seis, con la política adentro', r.cierra.map((i) => i.id).sort(),
+    ['aviso', 'carga', 'cmp', 'cookies', 'envio', 'politica']);
+  eq('y no queda nada fuera', r.noCierra.map((i) => i.id), []);
+  falso('así que no avisa de nada fuera', /fuera del kit/i.test(r.detalle));
 }
 
 /* ================================================================== */
@@ -193,9 +219,16 @@ console.log('=== 8. las dos señales que el kit no cierra están declaradas, no 
 {
   // Si alguien agrega una señal al chequeo y olvida decidir si el kit la cierra, cae del lado
   // de "no la cierra", que es el lado seguro: no se promete.
-  falso('politica no la cierra el kit', m.CIERRA_EL_KIT.has('politica'));
-  falso('https no la cierra el kit', m.CIERRA_EL_KIT.has('https'));
-  eq('y las cinco que sí', [...m.CIERRA_EL_KIT].sort(), ['aviso', 'carga', 'cmp', 'cookies', 'envio']);
+  cierto('politica SÍ la cierra el kit desde el 2-nov', m.CIERRA_EL_KIT.has('politica'));
+  falso('https sigue fuera: es del hosting del cliente', m.CIERRA_EL_KIT.has('https'));
+  eq('y las seis que sí', [...m.CIERRA_EL_KIT].sort(),
+    ['aviso', 'carga', 'cmp', 'cookies', 'envio', 'politica']);
+  // Y no puede estar en las dos listas: sería decirle al cliente que el kit la cierra y, dos
+  // líneas más abajo, que no.
+  falso('y ya no figura entre las que NO cierra',
+    Object.prototype.hasOwnProperty.call(m.NO_LO_CIERRA_EL_KIT, 'politica'));
+  eq('ninguna señal está en las dos listas',
+    Object.keys(m.NO_LO_CIERRA_EL_KIT).filter((k) => m.CIERRA_EL_KIT.has(k)), []);
   cierto('cada una de las que no cierra tiene dicho de quién es',
     Object.keys(m.NO_LO_CIERRA_EL_KIT).every((k) => typeof m.NO_LO_CIERRA_EL_KIT[k] === 'string'));
 

@@ -78,8 +78,12 @@ console.log('=== 2. los cuatro casos que el servidor rechaza ya no muestran el b
   // lo habría rechazado. Si solo se mirara lo primero, la prueba fijaría la compuerta sin
   // comprobar que coincide con la verdad.
   const casos = [
-    ['solo la política pendiente', informe([item('politica'), item('https', 'ok')])],
+    // `politica` SALIÓ de esta lista el 2-nov-2026: por decisión de Ramón el kit también se le
+    // ofrece a quien solo tiene eso pendiente, porque medido sobre 40 sitios reales ese era el
+    // caso dominante entre los que llegaban al resultado sin nada que comprar. Pasó a la
+    // sección 3. Lo que sigue acá son los que de verdad no se venden.
     ['solo la casilla pendiente', informe([item('casilla'), item('https', 'ok')])],
+    ['solo el HTTPS pendiente, que es del hosting', informe([item('https'), item('politica', 'ok')])],
     ['sin puntaje, con pendientes', informe([item('cmp')], { puntaje: null })],
     ['informe parcial, con pendientes', informe([item('carga')], { parcial: true })],
     ['informe bloqueado, con pendientes', informe([item('carga')], { bloqueado: 'portero' })],
@@ -100,11 +104,49 @@ console.log('=== 3. y donde sí se puede vender, se ofrece ===');
     ['cookies sin permiso', informe([item('cookies'), item('https', 'ok')])],
     ['datos que ya salieron', informe([item('envio')])],
     ['sin aviso al entrar', informe([item('aviso')])],
+    // El caso nuevo, y el que más importa de los cinco: sitio sin un solo rastreador al que
+    // solo le falta publicar la política. Era el que se iba sin oferta.
+    ['solo la política pendiente', informe([item('politica'), item('https', 'ok')])],
   ];
   for (const [nombre, inf] of casos) {
     cierto(`${nombre}: la página ofrece el kit`, sePuedeVender(inf));
     cierto(`${nombre}: y el servidor lo vendería`, EL.elegibilidad({ rapido: inf }).puede);
   }
+}
+
+/* ================================================================== */
+console.log('=== 3 bis. vender la política obliga a decir qué se entrega ===');
+{
+  /* El kit NO publica la política: entrega el borrador, lo revisa el abogado del cliente y lo
+   * publica él. Mientras `politica` estuvo fuera de lo que el kit cierra, eso lo decía la nota
+   * de «lo que queda fuera». Al moverla adentro, esa nota deja de salir para quien no tiene
+   * señales fuera — que es justo este comprador. Sin estas aserciones, el cambio del 2-nov
+   * convierte una venta honesta en una promesa que no cumplimos. */
+  const soloPolitica = EL.elegibilidad({ rapido: informe([item('politica'), item('https', 'ok')]) });
+  cierto('se vende', soloPolitica.puede);
+  // El ayudante `item` de este archivo pone el id como título, así que lo que se comprueba es
+  // el invariante: que el detalle nombre la señal con SU título, sea cual sea. Con los títulos
+  // de verdad lo cubre prueba-elegibilidad.
+  cierto('el contrato nombra la señal con su título', /«politica»/.test(soloPolitica.detalle));
+  cierto('y dice que es el BORRADOR', /borrador/i.test(soloPolitica.detalle));
+  cierto('y que lo revisa su abogado', /abogado/i.test(soloPolitica.detalle));
+  cierto('y que lo publica él', /lo publicas tú/i.test(soloPolitica.detalle));
+
+  // Y cuando la política NO entra, no se cuela esa coletilla.
+  const sinPolitica = EL.elegibilidad({ rapido: informe([item('cmp'), item('politica', 'ok')]) });
+  falso('sin política contratada no se habla del borrador', /borrador/i.test(sinPolitica.detalle));
+
+  // El panel de compra no puede prometer en firme el gestor: a este sitio no se le instala.
+  falso('el panel no promete el gestor en seco',
+    /Dejamos instalado el gestor de consentimiento,/.test(HTML));
+  cierto('lo dice condicionado a que haya rastreadores',
+    /gestor de consentimiento si tu sitio carga rastreadores/.test(HTML));
+
+  // Y la pantalla del pedido explica qué llega, porque es donde se mira después de pagar.
+  const PEDIDO = fs.readFileSync(
+    rutaEnElRepo('verificaycumple/public/pedido/index.html', 'VYC_PEDIDO_HTML'), 'utf8');
+  cierto('la pantalla del pedido lo aclara cuando la política viene contratada',
+    /i\.id === 'politica'[\s\S]{0,400}borrador/.test(PEDIDO));
 }
 
 /* ================================================================== */
