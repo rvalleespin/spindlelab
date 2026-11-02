@@ -2,7 +2,7 @@
 <html lang="es-CL">
 <head>
 <meta charset="UTF-8">
-<title>[[N.º DOCUMENTO]] — Mini-diagnóstico SpindleLab</title>
+<title>[[N.º DOCUMENTO]] · Revisión de tu sitio · SpindleLab</title>
 <style>
 @font-face { font-family:'Gabarito'; src:url('Gabarito.woff2') format('woff2'); font-weight:400 800; }
 @font-face { font-family:'Inter'; src:url('inter.woff2') format('woff2'); font-weight:400 700; }
@@ -22,9 +22,9 @@ body{
   color:var(--tinta);
   background:var(--papel);
   width:794px; /* A4 @ 96dpi */
-  padding:48px 56px;
-  font-size:13.5px;
-  line-height:1.5;
+  padding:36px 56px;
+  font-size:12px;
+  line-height:1.42;
 }
 
 .wordmark{
@@ -41,7 +41,7 @@ header{
   align-items:flex-start;
   border-bottom:2px solid var(--tinta);
   padding-bottom:16px;
-  margin-bottom:24px;
+  margin-bottom:18px;
 }
 
 .encabezado-derecha{ text-align:right; }
@@ -64,11 +64,11 @@ h1.titulo-doc{
 .subtitulo-doc{
   font-size:12px;
   color:var(--gris);
-  margin-bottom:24px;
+  margin-bottom:18px;
 }
 
 section.bloque{
-  margin-bottom:18px;
+  margin-bottom:10px;
   break-inside:avoid;
 }
 
@@ -101,8 +101,8 @@ section.bloque{
   background:var(--blanco);
   border:1px solid rgba(19,26,34,0.12);
   border-radius:8px;
-  padding:12px 16px;
-  margin-top:6px;
+  padding:9px 14px;
+  margin-top:4px;
 }
 
 /* La corrección de mayor impacto — único uso del dorado en la pieza */
@@ -110,8 +110,8 @@ section.bloque{
   background:var(--tinta);
   color:var(--papel);
   border-radius:10px;
-  padding:20px 22px;
-  margin-top:22px;
+  padding:14px 18px;
+  margin-top:12px;
   position:relative;
 }
 .bloque-impacto .num-etiqueta{ color:var(--dorado); }
@@ -122,12 +122,43 @@ section.bloque{
   font-size:15px;
   margin-bottom:8px;
 }
-.bloque-impacto p{ margin-bottom:0; font-size:13px; }
+.bloque-impacto p{ margin-bottom:0; font-size:12.5px; }
 .bloque-impacto .punto-final{ color:var(--dorado); }
 
+/* La ruta completa: estructura de la SPL-DIAG-2026-006 v3 (4 pasos con su estado) */
+.bloque-ruta{ margin-top:12px; }
+table.ruta{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:4px;
+  background:var(--blanco);
+  border:1px solid rgba(19,26,34,0.12);
+  border-radius:8px;
+  overflow:hidden;
+  font-size:11.5px;
+}
+table.ruta th{
+  font-family:'Gabarito', sans-serif;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--gris);
+  text-align:left;
+  padding:6px 10px;
+  border-bottom:1px solid rgba(19,26,34,0.12);
+}
+table.ruta td{
+  padding:5px 10px;
+  border-bottom:1px solid rgba(19,26,34,0.07);
+  vertical-align:top;
+  line-height:1.35;
+}
+table.ruta tr:last-child td{ border-bottom:none; }
+table.ruta td.paso{ font-family:'Gabarito', sans-serif; font-weight:700; white-space:nowrap; }
+
 footer{
-  margin-top:26px;
-  padding-top:16px;
+  margin-top:14px;
+  padding-top:10px;
   border-top:1px solid rgba(19,26,34,0.15);
   display:flex;
   justify-content:space-between;
@@ -144,10 +175,14 @@ footer{
   color:var(--gris);
   text-align:right;
 }
+.siguiente{
+  font-size:12px;
+  margin-top:12px;
+}
 .footnote{
   font-size:9.5px;
   color:var(--gris);
-  margin-top:14px;
+  margin-top:8px;
   font-style:italic;
 }
 
@@ -162,7 +197,7 @@ footer{
 <header>
   <div>
     <div class="wordmark">SpindleLab<span class="punto">.</span></div>
-    <div class="tagline">SEO técnico · Visibilidad en IA (AEO/GEO) · Desarrollo web</div>
+    <div class="tagline">Sitios web a medida y marketing con IA</div>
   </div>
   <div class="encabezado-derecha">
     <div class="meta-box">
@@ -174,9 +209,12 @@ footer{
   </div>
 </header>
 
-<h1 class="titulo-doc">Mini-diagnóstico de visibilidad</h1>
-<p class="subtitulo-doc">Cómo ve [[NOMBRE EMPRESA]] un buscador y un motor de IA hoy — y la única corrección que más impacto tendría.</p>
+<h1 class="titulo-doc">Revisión de tu sitio</h1>
+<p class="subtitulo-doc">Lo más importante que encontramos y por dónde partiríamos.</p>
 
+<!-- Lo que está en juego en el negocio del prospecto (skill mini-diagnostico, paso 5) no tiene
+     sección propia: va en la primera frase del hallazgo que lo sostiene y, entero, en la lámina 4
+     de la presentación de la llamada. -->
 <section class="bloque">
   <div class="num-etiqueta"><span class="num">1</span> Estado técnico esencial</div>
   <div class="hallazgo">
@@ -185,9 +223,9 @@ footer{
 </section>
 
 <section class="bloque">
-  <div class="num-etiqueta"><span class="num">2</span> Visibilidad en motores de IA</div>
+  <div class="num-etiqueta"><span class="num">2</span> Si ChatGPT y otras IA pueden visitar tu sitio y entender a qué te dedicas</div>
   <div class="hallazgo">
-    <p>[[RESULTADO REAL de preguntarle a ChatGPT/Perplexity/Gemini la pregunta de categoría — quién aparece, si aparece o no la empresa. Si no se ejecutó la prueba, describir el riesgo en términos generales sin inventar un resultado.]]</p>
+    <p>[[HALLAZGO VERIFICADO con curl: si los robots de ChatGPT, Gemini y Perplexity están bloqueados (robots.txt o el servidor), y si lo que dice la página alcanza para entender qué hace, para quién y dónde. La revisión NO mide qué responden hoy esas IA: no afirmar quién aparece ni quién no.]]</p>
   </div>
 </section>
 
@@ -199,17 +237,38 @@ footer{
 </section>
 
 <div class="bloque-impacto">
-  <div class="num-etiqueta"><span class="num">4</span> La corrección de mayor impacto</div>
+  <div class="num-etiqueta"><span class="num">4</span> La corrección que más pesa</div>
   <h2>[[TÍTULO CORTO DE LA CORRECCIÓN]]</h2>
   <p>[[1-2 frases: si solo pudieran arreglar una cosa este mes, cuál y por qué — la síntesis de un especialista, no una lista de tareas.]]<span class="punto-final">.</span></p>
 </div>
 
+<!-- La ruta: 4 pasos con su estado medido (con curl, como los bloques 1 a 3). El paso 1 va
+     regalado; del 2 al 4 es el trabajo que se contrata (skill mini-diagnostico, paso 5b).
+     Estado en pocas palabras, con el porqué entre paréntesis. Ej. de la SPL-DIAG-2026-006:
+     «Cerrada (bloqueo en robots.txt)», «1 de 9 áreas, con errores». Si un paso está sano, se
+     dice. La lámina 7 de la presentación de la llamada se copia de esta tabla.
+     Paso 4: medir consultas y tráfico (Search Console, analítica del sitio). No prometer
+     seguimiento mensual de si las IA los nombran (ficha, regla de capacidad): el «Qué logra»
+     del paso 4 de la 006 no se copia. -->
+<section class="bloque bloque-ruta">
+  <div class="num-etiqueta">La ruta completa, con el estado de cada paso</div>
+  <table class="ruta">
+    <tr><th style="width:25%">Paso</th><th>Qué logra</th><th style="width:34%">Estado hoy</th></tr>
+    <tr><td class="paso">1 · Abrir la puerta</td><td>[[QUÉ LOGRA, en sus términos]]</td><td><b>[[ESTADO MEDIDO]]</b></td></tr>
+    <tr><td class="paso">2 · Ser entendible</td><td>[[QUÉ LOGRA, en sus términos]]</td><td><b>[[ESTADO MEDIDO]]</b></td></tr>
+    <tr><td class="paso">3 · Ser citable</td><td>[[QUÉ LOGRA, en sus términos]]</td><td><b>[[ESTADO MEDIDO]]</b></td></tr>
+    <tr><td class="paso">4 · Medir entero</td><td>[[QUÉ LOGRA, en sus términos]]</td><td><b>[[ESTADO MEDIDO]]</b></td></tr>
+  </table>
+</section>
+
+<p class="siguiente">[[Por dónde partiríamos, con su precio, y en una línea lo demás que se conecta al sitio, con sus precios publicados (+ IVA), leídos de spindlelab.cl el día que sale; si no se parte por el sitio, la línea nombra también Desarrollo web con su precio de partida. Ej.: «Partiríamos por una Auditoría SEO técnica, desde $490.000. Al sitio se le conectan Visibilidad en IA (desde $400.000), Paid Media (desde $350.000/mes), redes sociales (desde $390.000/mes) y Acompañamiento mensual (desde $590.000/mes). Y si el sitio hay que rehacerlo, Desarrollo web desde $390.000. Todo + IVA.»]] Si quieres avanzar, conversamos 20 minutos y te mandamos una propuesta por escrito.</p>
+
 <footer>
-  <div class="cta">¿Conversamos 20 minutos, sin costo<span class="punto">?</span></div>
-  <div class="contacto">hola@spindlelab.cl · spindlelab.cl</div>
+  <div class="cta">Hablemos de tu sitio</div>
+  <div class="contacto">spindlelab.cl/contacto · hola@spindlelab.cl</div>
 </footer>
 
-<p class="footnote">Este documento es un diagnóstico inicial elaborado desde información pública — no reemplaza una auditoría técnica completa. Válido como fotografía del estado del sitio al [[FECHA]].</p>
+<p class="footnote">Esta revisión se hizo desde información pública y no reemplaza una auditoría técnica completa. Muestra el estado del sitio al [[FECHA]].</p>
 
 </body>
 </html>

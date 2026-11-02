@@ -79,15 +79,15 @@ footer.firma .pt { color:var(--dorado); font-weight:700; }
 </head>
 <body>
 
-<div class="instruccion">Plantilla de cotización SpindleLab. Reemplazar todo lo marcado <code>[[ ]]</code>. Ver <code>guia-cotizaciones.md</code> para las reglas de cada sección. Este aviso no se imprime.</div>
+<div class="instruccion">Plantilla de cotización SpindleLab. Reemplazar todo lo marcado <code>[[ ]]</code>. Ver <code>guia-cotizaciones.md</code> para las reglas de cada sección. Lo vigente para armar una cotización es la skill <code>cotizaciones</code> y su generador; si esta plantilla la contradice, manda la skill. En Desarrollo web, el panel para editar textos y fotos va en los tres planes (30-oct-2026). Este aviso no se imprime.</div>
 
 <header class="doc-header">
   <div>
     <div class="wordmark">SpindleLab<span class="pt">.</span></div>
   </div>
   <div class="contacto-header">
-    SEO, visibilidad en IA y desarrollo web<br>
-    <b>[[Nombre completo]]</b>
+    Sitios web a medida y marketing con IA<br>
+    <b>Ramón Vallejos Espíndola</b>
     hola@spindlelab.cl
   </div>
 </header>
@@ -103,7 +103,7 @@ footer.firma .pt { color:var(--dorado); font-weight:700; }
 <section>
   <h2>El proyecto</h2>
   <p>[[Párrafo 1 — qué se hace y con qué enfoque/dirección. Sé específico: a quién sirve, qué problema resuelve, qué lo hace distinto.]]</p>
-  <p>[[Párrafo 2 — cómo se hace: mención del método/agente SpindleLab sobre Claude Code, supervisión humana, y la honestidad de precio — el ahorro de la ejecución asistida por IA se traslada al cliente.]]</p>
+  <p>[[Párrafo 2: cómo crece el proyecto y qué va a manejar el cliente. Nada del método interno ni de otros clientes.]]</p>
 </section>
 
 <section>
@@ -121,6 +121,7 @@ footer.firma .pt { color:var(--dorado); font-weight:700; }
   <h2>Opciones de inversión</h2>
   <table class="precios">
     <tr>
+      <th></th>
       <th>[[NIVEL 1]]</th>
       <th class="recomendado">[[NIVEL 2]] ★</th>
       <th>[[NIVEL 3]]</th>
@@ -150,19 +151,13 @@ footer.firma .pt { color:var(--dorado); font-weight:700; }
       <td>[[N]] rondas</td>
     </tr>
     <tr>
-      <td class="row-label">Valor lista (CLP)</td>
-      <td>$[[monto]]</td>
-      <td class="recomendado-col">$[[monto]]</td>
-      <td>$[[monto]]</td>
-    </tr>
-    <tr>
-      <td class="row-label">Oferta vigente</td>
-      <td><span class="precio-lista">$[[monto lista]]</span><span class="precio-oferta">$[[monto oferta]]</span></td>
-      <td class="recomendado-col"><span class="precio-lista">$[[monto lista]]</span><span class="precio-oferta">$[[monto oferta]]</span></td>
-      <td><span class="precio-lista">$[[monto lista]]</span><span class="precio-oferta">$[[monto oferta]]</span></td>
+      <td class="row-label">Valor (CLP + IVA)</td>
+      <td><span class="precio-oferta">$[[monto publicado]]</span></td>
+      <td class="recomendado-col"><span class="precio-oferta">$[[monto publicado]]</span></td>
+      <td><span class="precio-oferta">$[[monto publicado]]</span></td>
     </tr>
   </table>
-  <p class="nota-oferta"><span class="pt">★</span> Opción recomendada. [[Condición de la oferta si aplica — ej. "20% de descuento aplica a proyectos confirmados dentro de la validez de esta cotización".]] Todos los valores indicados incluyen IVA.</p>
+  <p class="nota-oferta"><span class="pt">★</span> Opción recomendada. [[Por qué ese plan cubre lo que pidió.]] Los precios son los publicados en spindlelab.cl y no incluyen IVA (19%).</p>
 </section>
 
 <section>
@@ -182,7 +177,7 @@ footer.firma .pt { color:var(--dorado); font-weight:700; }
   <div class="instruccion">Sección opcional — eliminar si no hay up-sells relevantes para este proyecto.</div>
   <h2>Servicios adicionales (opcionales)</h2>
   <table class="doc-table">
-    <tr><th>Servicio</th><th>Descripción</th><th>Valor (CLP)</th></tr>
+    <tr><th>Servicio</th><th>Descripción</th><th>Valor (CLP + IVA)</th></tr>
     <tr><td>[[Servicio]]</td><td>[[Descripción]]</td><td>desde $[[monto]]</td></tr>
     <tr><td>[[Servicio]]</td><td>[[Descripción]]</td><td>$[[monto]]</td></tr>
   </table>
@@ -199,7 +194,7 @@ footer.firma .pt { color:var(--dorado); font-weight:700; }
 
 <section>
   <h2>Condiciones comerciales</h2>
-  <p>Forma de pago por fases: [[detalle 30/40/30 o el esquema que aplique]]. Transferencia bancaria. Los plazos comienzan a correr una vez recibido [[qué se necesita para empezar]] y el anticipo. La propiedad intelectual del [[código/diseño/entregable]] se transfiere al cliente con el pago final. Todos los valores de esta cotización, incluidos los servicios adicionales, [[incluyen IVA / son brutos y se descuenta la retención de boleta de honorarios — elegir uno, nunca dejarlo ambiguo]]. Esta cotización tiene una validez de 30 días desde su emisión.</p>
+  <p>Forma de pago por fases: [[detalle 30/40/30 o el esquema que aplique]]. Transferencia bancaria. Los plazos comienzan a correr una vez recibido [[qué se necesita para empezar]] y el anticipo. La propiedad intelectual del [[código/diseño/entregable]] se transfiere al cliente con el pago final. Todos los valores de esta cotización, incluidos los servicios adicionales, son netos y se les suma IVA (19%). Esta cotización tiene una validez de 30 días desde su emisión.</p>
 </section>
 
 <section>
@@ -213,7 +208,7 @@ footer.firma .pt { color:var(--dorado); font-weight:700; }
 </section>
 
 <footer class="firma">
-  SpindleLab <span class="pt">·</span> [[Nombre completo]] <span class="pt">·</span> [[Cargo]] <span class="pt">·</span> hola@spindlelab.cl
+  SpindleLab <span class="pt">·</span> Ramón Vallejos Espíndola <span class="pt">·</span> Fundador y director <span class="pt">·</span> hola@spindlelab.cl
 </footer>
 
 </body>

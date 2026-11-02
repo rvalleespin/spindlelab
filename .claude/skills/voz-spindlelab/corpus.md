@@ -12,7 +12,13 @@
 5. [Registro singular — el post de GEO, 21-sep-2026](#5-geo)
 6. [Registro plural — "Un motor de adquisición", ~8-sep-2026](#6-motor)
 7. [El descarte del outbound, 30-sep y 1-oct-2026](#8-outbound-rechazado)
-8. [Dónde hay más material](#3-mas)
+8. [Registro plural — la home del sitio nuevo, 30-oct-2026](#9-home-30oct)
+9. [Registro singular — «el sitio sigue importando», 30-oct-2026](#10-sitio-importa)
+10. [Dónde hay más material](#3-mas)
+
+> **Línea vigente desde el 30-oct-2026:** *Sitios web a medida y marketing con IA*. El sitio es
+> el eje y lo demás se le conecta. Las piezas 1 a 7 son anteriores: sirven por su **voz**, no
+> por su línea. Para la línea, las referencias son la 8 y la 9.
 
 ---
 
@@ -268,6 +274,10 @@ Así que si te llega una propuesta con GEO como línea nueva, la pregunta no es 
 
 ## <a id="6-motor"></a>6. Registro plural — "Un motor de adquisición" (~8-sep-2026)
 
+> **Registro.** Desde el 30-oct-2026 la línea es *Sitios web a medida y marketing con IA* y el
+> eje es el sitio. «Motor de adquisición» y «el eje es que la IA pueda leerte» no se usan como
+> línea. La pieza sigue valiendo por la voz plural y la imagen de la fila de fichas.
+
 **Estado:** ✅ publicado y en el aire. Texto capturado literal el 22-sep-2026.
 **Canal:** página de empresa. Carrusel (4 imágenes). Sin métricas públicas visibles.
 
@@ -331,7 +341,9 @@ Dos movimientos que sí están en los textos publicados y los correos no usaban:
    en las demás."* Los correos la habían reemplazado por *"soy el motor que cierra ese círculo:
    que tu sitio esté en orden y convierta al que llega, que Google y la IA te recomienden, y que
    lo que inviertes en pauta no se escape por una fuga"*. Tres cláusulas abstractas en vez de una
-   imagen concreta. **Ahí se perdía la venta.**
+   imagen concreta. **Ahí se perdía la venta.** *(Desde el 30-oct-2026: la fila de fichas sirve
+   como imagen si el sitio es la ficha que recibe todo lo demás, no si el eje es «que la IA
+   pueda leerte». Ver la pieza 8.)*
 
 ### Y el seguimiento que era una ficha técnica
 
@@ -343,7 +355,77 @@ está resuelto de entrada"*) y un cierre que no empuja.
 
 ---
 
-## <a id="3-mas"></a>8. Dónde hay más material
+## <a id="9-home-30oct"></a>8. Registro plural — la home del sitio nuevo (vie 30-oct-2026)
+
+**Estado:** ✅ publicado en spindlelab.cl el 30-oct-2026; titular, rótulo y acción principal
+decididos por Ramón. Texto leído del sitio vivo el 2-nov-2026.
+**Fuente:** `spindlelab-astro/src/data/archivo/texto/home.json` (claves `home.portada.*`,
+`home.problema.*`, `home.contacto.*`).
+**Por qué es buena referencia:** es la línea nueva dicha por la marca, en plural, sin un
+adjetivo de venta. Concede antes de afirmar (*«No te decimos que dejes las redes»*), dice lo
+que no hace y cierra con una acción que sirve tenga o no sitio quien lee.
+
+### Portada
+
+*Rótulo:* Sitios web a medida y marketing con IA
+
+**En redes arriendas. Tu sitio es lo único que es tuyo.**
+
+El anuncio, el post, la búsqueda en Google y la respuesta de ChatGPT llevan a la misma dirección. Diseñamos y programamos esa dirección a medida, con un panel para que la edites tú, y conectamos lo demás a ella.
+
+*Botón:* Hablemos de tu sitio
+
+*Bajo el botón:* Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta.
+
+### La sección que sigue
+
+**Todo lo que haces para vender termina en tu sitio**
+
+Si tu sitio no explica bien lo que haces, o el formulario no te avisa cuando alguien escribe, lo que pagaste para traer a esa persona se pierde ahí.
+
+Por eso partimos por el sitio. Después le conectamos lo demás: que Google y ChatGPT lo entiendan, los anuncios en Google, tus redes y la medición de cada mes. No te decimos que dejes las redes: también las gestionamos.
+
+### Cierre de la página
+
+Partamos por tu sitio. Tengas uno o no, te respondemos dentro de un día hábil.
+
+*Botón:* Hablemos de tu sitio
+
+---
+
+## <a id="10-sitio-importa"></a>9. Registro singular — «el sitio sigue importando» (vie 30-oct-2026)
+
+**Estado:** ✅ publicado y verificado el 30-oct-2026, aprobado por Ramón («publícalo así») tras
+dos rondas de edición suyas. `urn:li:activity:7521940001706749953`.
+**Canal:** LinkedIn, perfil personal. Texto puro + dos enlaces en el primer comentario.
+**Fuente:** `marketing/redes/2026-10-octubre-linkedin/30-vie-el-sitio-sigue-importando/publicar.md`
+(con la tabla de trazabilidad de cada cifra).
+**Por qué es buena referencia:** es la línea nueva en singular el mismo día del lanzamiento, y
+sin anunciarla. Abre con un hecho con cifra y fuente, dice lo que el estudio **no** puede
+afirmar antes de sacar la conclusión, y la conclusión es un hecho lógico (toda visita termina
+en un sitio), no un resultado inflado. El cierre baja: nombra el límite de los datos.
+
+### Cuerpo
+
+Las visitas desde buscadores bajaron 13,2% en EE.UU. y 24,4% en Francia en dos años. La IA, en cambio, manda una de cada 200.
+
+Las cifras salen de un análisis de datos de Similarweb publicado el 26 de octubre en el boletín Growth Memo, que sigue a 10.000 sitios de cada país. La caída compara agosto de 2024 con agosto de 2026. La IA es el canal que más crece, pero desde muy abajo.
+
+El análisis no puede decir si la causa es la IA o la búsqueda pagada. Lo que sí muestra es adónde llega cada visita, venga de Google, de una IA o de un enlace directo: a un sitio web.
+
+Por eso el sitio sigue importando. No cualquiera: uno armado para que la gente y las IA lo encuentren y lo entiendan. Eso es lo que hago cuando diseño un sitio y cuando reviso uno que ya existe. Para empezar, armé un chequeo gratis que revisa si ChatGPT, Gemini y Perplexity pueden leer el tuyo, entender qué haces y citarte.
+
+Son datos de EE.UU. y Francia, no de Chile, y un promedio esconde sitios con resultados muy distintos. El análisis completo y el chequeo están en el primer comentario.
+
+### Primer comentario
+
+El análisis de Growth Memo (26-oct): https://www.growth-memo.com/p/organic-traffic-is-down-but-its-not
+
+El chequeo gratis: https://spindlelab.cl/diagnostico/
+
+---
+
+## <a id="3-mas"></a>10. Dónde hay más material
 
 - **Piezas listas y pasadas por revisión, aún no publicadas:**
   `marketing/redes/2026-09-septiembre/*/publicar.md`. Útiles para ver la intención y el

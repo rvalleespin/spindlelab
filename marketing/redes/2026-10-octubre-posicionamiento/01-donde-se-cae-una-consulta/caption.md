@@ -1,5 +1,7 @@
 # Caption · Carrusel «Dónde se cae una consulta»
 
+> **Antes de publicar (2-nov): la línea cambió.** El último párrafo del pie (L26), el alt de la lámina 5 (L45), los títulos de los enlaces (L53-54), el orden de los hashtags (L35) y la historia de la cuenta personal de Ramón (L79) cambian (líneas de antes de esta nota). Las frases exactas y su reemplazo están en la nota del 2-nov al inicio de `publicar.md`. No pegar este pie sin aplicarlas.
+
 **Cuenta:** `spindlelab.cl` en Instagram · voz de marca, plural · 5 láminas de 1080x1350 (4:5)
 **Versión:** v2, rehecha el 23-oct-2026 (noche) con `PLAN.md` v2 §5 y las opciones seguras de las decisiones A, C y D. Reemplaza a la v1 completa: gancho nuevo, láminas 2 y 3 sin ningún caso de un prospecto, todas las láminas re-renderizadas desde el HTML.
 **Corregida el 23-oct-2026 (noche) tras la revisión independiente:** las láminas 2 y 3 ya no implican una pérdida que no muestran. La 2 quita la cifra dorada de 210 px y dice qué revisa el chequeo (el largo del título); la 3 nombra a quien recibe la portada vacía (quien no ejecuta JavaScript, como nuestro chequeo). El marco de la portada («puede caerse») no cambia. Detalle en `fuentes.md` §6.

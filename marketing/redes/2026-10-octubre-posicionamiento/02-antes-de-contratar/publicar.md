@@ -1,5 +1,26 @@
 # Publicar · Carrusel «Antes de contratar» (pieza 2) · v2, 23-oct-2026
 
+> ## Antes de publicar (2-nov): la línea cambió
+>
+> *Nota de Renata, lunes 2-nov-2026. La pieza no se reescribe: estas son las frases que cambian. Los números de línea son los de antes de las notas del 2-nov, aquí y en `caption.md`.*
+>
+> El sitio salió el viernes 30-oct con la línea de Ramón: rótulo «Sitios web a medida y marketing con IA», titular «En redes arriendas. Tu sitio es lo único que es tuyo.» y acción «Hablemos de tu sitio». El negocio principal es el sitio, y la revisión gratis de una página está publicada, con respuesta en un día hábil. La pieza no salió (no está en `QUE-HAY-PUBLICADO.md`; confirmarlo en el canal).
+>
+> **Qué versión sube.** Con el sitio publicado va la **completa** (6 láminas). La 2A era el puente para antes del go-live y la 2B solo salía si la 2A había salido primero, así que las dos quedan sin uso salvo que Ramón quiera partirla. Si se usa la 2B, aplican los mismos cambios en `2b-lamina-2.html` y `2b-lamina-4.html`.
+>
+> | Dónde | Dice hoy | Cambia a |
+> |---|---|---|
+> | `lamina-2.html` L17-22, orden de la lista (igual en `2b-lamina-2.html`) | Auditoría SEO técnica · Visibilidad en IA · Google Ads · Gestión de redes · **Sitio web a medida** · Acompañamiento mensual | **Sitio web a medida** · Auditoría SEO técnica · Visibilidad en IA · Google Ads · Gestión de redes · Acompañamiento mensual (el orden de la home: el sitio primero y lo demás conectado a él). En el sitio, «Google Ads» se llama «Paid Media (Google)»; cambiar el nombre es opcional |
+> | `lamina-6.html` L20, la línea chica | «Si prefieres que lo veamos nosotros, pide la revisión de una página, también gratis.» | «Si prefieres que lo veamos nosotros, hablemos de tu sitio. La revisión de una página también es gratis.» (103 caracteres contra 84: mirarlo al re-renderizar) |
+> | `caption.md` L123, alt de la lámina 6 | «Cierre: corre el chequeo en spindlelab.cl/diagnostico o pide la revisión de una página en spindlelab.cl/contacto.» | «Cierre: corre el chequeo en spindlelab.cl/diagnostico, o escríbenos en spindlelab.cl/contacto y hablemos de tu sitio.» (117 de 120) |
+> | `2b-lamina-4.html` L12 y L20, solo si sube la 2B | «Escríbenos la dirección de tu sitio.» / «Te respondemos con una página con lo más importante que encontramos.» | «Hablemos de tu sitio.» / «Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta.» Alt (`caption.md` L135): «Cierre: hablemos de tu sitio. Si tienes uno, lo revisamos gratis y respondemos en un día hábil. spindlelab.cl/contacto» (118) |
+> | `caption.md` L66, por qué esos hashtags | «alineados con el posicionamiento nuevo («marketing y crecimiento con IA para empresas que ya venden»)» | «alineados con la línea publicada el 30-oct («Sitios web a medida y marketing con IA»)», y el orden pasa a `#SitioWeb #SEOtecnico #MarketingConIA #Chile` en los tres pies (`caption.md` L31, L45 y L61, y sus copias aquí) |
+> | `caption.md` L139 y aquí L37, plazo | «Ningún plazo («un día hábil» y «24 horas» están sin decidir…)» | «un día hábil» está decidido y publicado desde el 30-oct y se puede decir; «24 horas» no. La completa sigue sin decir plazo, y está bien así |
+> | Aquí L36 y checklist L138 | «Ramón reconfirma por escrito que la revisión está encendida» | cerrado por el sitio: la revisión está publicada desde el 30-oct |
+> | Checklist L137, go-live | «la home trae el H1 «Te llegan consultas. Veamos dónde se cae el resto.»» | `curl -s https://spindlelab.cl/ \| grep -c 'En redes arriendas'` da 1 o más. **Comprobado el 2-nov:** da 1; `/contacto/` trae los tres campos de UTM; `/metodo/` dice «Cada fase termina con algo que apruebas antes de seguir.» |
+>
+> La lámina 3 (los cuatro pasos) calza con `/metodo/` publicado y no cambia. Después de tocar el HTML, **re-renderizar** las láminas 2 y 6; no se sube el PNG viejo. Las decisiones C (precios en la imagen) y B (bio y fijados) siguen siendo de Ramón.
+
 **Canal:** Instagram `spindlelab.cl` · 1080x1350 (4:5)
 **Estado:** BORRADOR PARA REVISIÓN DE RAMÓN. No publicado. Nada sale de un borrador generado, y lo que sube lo sube él.
 **Plan:** `marketing/redes/2026-10-octubre-posicionamiento/PLAN.md` v2, §3 (día 3) y §5 (pieza 2, partida en 2A y 2B). Pilar 3, «lo que se ve antes de contratar».

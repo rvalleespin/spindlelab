@@ -1,5 +1,7 @@
 # Caption · Carrusel «Antes de contratar» (pieza 2) · v2, 23-oct-2026
 
+> **Antes de publicar (2-nov): la línea cambió.** Cambian el alt de la lámina 6 (L123), el de la 2B lámina 4 si se usa (L135), el orden y la justificación de los hashtags (L31, L45, L61 y L66) y la nota del plazo (L139); líneas de antes de esta nota. Las frases exactas y su reemplazo están en la nota del 2-nov al inicio de `publicar.md`. Con el sitio publicado sube la versión completa.
+
 **Cuenta:** Instagram `spindlelab.cl` · **Voz:** plural de marca · **Formato:** 1080x1350 (4:5)
 **Estado:** BORRADOR PARA REVISIÓN DE RAMÓN. Nada está publicado.
 **Corregida el 23-oct-2026 (noche) tras la revisión independiente:** lámina 2 sin ninguna cifra, paso 04 sin cadencia, bajada de la 2A acotada a lo que la pantalla muestra, y lámina del límite con su cláusula completa. Detalle en `publicar.md` §9.

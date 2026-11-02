@@ -1,5 +1,29 @@
 # Instagram del posicionamiento nuevo: plan de los primeros 10 días hábiles
 
+> ## Antes de publicar (2-nov): la línea cambió
+>
+> *Nota de Renata, lunes 2-nov-2026. No reescribe el plan: dice qué frase cambiar y por cuál. Los números de línea son los de antes de esta nota.*
+>
+> El sitio nuevo salió el **viernes 30-oct** con una línea distinta de la que usa este plan (el H1 del 23-oct). Decidida por Ramón: rótulo **«Sitios web a medida y marketing con IA»**, titular **«En redes arriendas. Tu sitio es lo único que es tuyo.»** y acción principal **«Hablemos de tu sitio»** (`/contacto/`). La revisión gratis de una página está publicada, con respuesta en **un día hábil**. Según `marketing/redes/QUE-HAY-PUBLICADO.md`, ninguna pieza de este plan salió; **confirmarlo en el canal** antes de programar.
+>
+> | Dónde | Dice hoy | Cambia a |
+> |---|---|---|
+> | §2.1, L66-68, bio A | «Marketing y crecimiento con IA para empresas que ya venden. / Te llegan consultas. Veamos dónde se cae el resto. / Revisión gratis de una página ↓» | «Sitios web a medida y marketing con IA. / En redes arriendas. Tu sitio es lo único que es tuyo. / Hablemos de tu sitio ↓» (116 de 150). Texto vigente y enlaces en `marketing/redes/marca-personal/perfil-linkedin.md` §3 |
+> | §2.1, L71 y L73, versión B y su condición | B con «Chequea tu sitio gratis ↓» mientras Ramón no reconfirme la revisión | Se borran las dos. La revisión gratis está publicada desde el 30-oct |
+> | §2.2, L84, enlace 1 | «Pedir la revisión (solo con la reconfirmación de 2.1…)» | «Hablemos de tu sitio». La URL no cambia |
+> | §2.3, L92, nombre | `SpindleLab \| Marketing con IA` | `SpindleLab · Sitios a medida` (28 de 30), o dejar el actual. Decide Ramón |
+> | §3, L134, historia del día 1 | captura de la home «y su H1», segundo cuadro «Empieza por una página» | captura de la home con «En redes arriendas»; segundo cuadro «Hablemos de tu sitio» |
+> | §3.3, L171, go-live | «la home trae el H1 «Te llegan consultas. Veamos dónde se cae el resto.»» | `curl -s https://spindlelab.cl/ \| grep -c 'En redes arriendas'` da 1 o más, y `/contacto/` conserva `UTM Source`, `UTM Medium` y `UTM Campaign`. **Comprobado el 2-nov: da 1 y están los tres** |
+> | L6, de dónde sale el mensaje | `obras-web/spindlelab-posicionamiento-v1/copy-secciones.md` | el sitio vivo y `spindlelab-astro/src/data/archivo/texto/*.json` |
+> | L22 y L29, estado del sitio y decisiones del copy | «hoy `/contacto/` dice «diagnóstico gratis»»; decisiones 1 y 2 abiertas | ya no es cierto. El sitio cerró la 1 («revisión») y la 2 («un día hábil»). Las decisiones **A, B, C y D** de este plan siguen abiertas y son de Ramón |
+> | L78 y §6, L284, plazo | «24 h» o cualquier plazo, vetado | «un día hábil» se puede decir; «24 horas» no |
+> | L23, la trampa del UTM | el UTM se pierde si el enlace cae en la home | ya no pasa: desde el 30-oct todas las páginas guardan el UTM y el formulario lo lee (comprobado el 2-nov). Los enlaces siguen yendo a `/contacto/`, que es donde se habla |
+> | L5, ventana | día 1 tentativo el martes 27-oct | el go-live fue el vie 30-oct; el día 1 pasa al primer día hábil después del OK de Ramón, y todo el calendario se corre igual |
+>
+> **Qué pieza abre.** La pieza 1 nació del H1 del 23-oct («dónde se cae una consulta»). Recomiendo que la cuenta abra con una pieza que lleve el titular publicado y que la 1 pase a segundo o tercer lugar. Lo ordenan Marta y Ramón.
+>
+> Cada pieza (01, 02 y 03) trae su propia nota «Antes de publicar (2-nov)» con las frases de sus láminas y de su pie de foto.
+
 **Cuenta:** `spindlelab.cl` en Instagram · **Hecho por:** Marta (calendario) con Cata (texto) · **Fecha:** viernes 23-oct-2026 · **Versión:** v2, corregida el mismo día tras una revisión independiente (19 hallazgos al plan)
 **Estado:** BORRADOR PARA REVISIÓN DE RAMÓN. Nada está publicado y nada se publica solo: todo lo que sube lo sube él.
 **Ventana:** el día 1 es el primer día hábil después de que el sitio nuevo esté publicado. Fecha tentativa: **martes 27-oct-2026**, a confirmar. Los 10 días hábiles van del martes 27-oct al lunes 9-nov.

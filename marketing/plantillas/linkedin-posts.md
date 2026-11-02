@@ -15,6 +15,10 @@ Regla de anonimato de prospectos: se usa el hallazgo, nunca el nombre de la empr
 
 ## Perfil de la página
 
+> **El texto vigente de la página (eslogan y descripción, línea del 30-oct) está en `marketing/redes/marca-personal/perfil-linkedin.md` §2**, junto al perfil personal de Ramón e Instagram. Es la única fuente: acá no se repite.
+
+*Historia (v2, 28-ago-2026), no usar:*
+
 **Tagline:** Un motor de adquisición, no cuatro servicios sueltos. SEO técnico y visibilidad en IA como eje.
 
 **Acerca de:**

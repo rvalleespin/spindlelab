@@ -1,6 +1,8 @@
-# Guía del mini-diagnóstico SpindleLab
+# Guía de la revisión gratis de una página (antes «mini-diagnóstico») · SpindleLab
 
-**Documento base:** el mini-diagnóstico es la promesa central del outbound — está descrito públicamente en `marketing/articulos/2026-07-articulo-01-que-es-un-mini-diagnostico-seo.md` y comprometido en cada email de `plantillas/emails-fase0.md` ("¿te preparo un mini-diagnóstico de 1 página en 48 horas?"). Esta guía documenta cómo se construye, para que sea repetible en vez de improvisado cada vez que alguien responde interesado.
+**Documento base (al día desde el 30-oct-2026):** la revisión gratis de una página es lo que ofrece `spindlelab.cl/contacto/` a quien ya tiene sitio, detrás del botón «Hablemos de tu sitio». El pedido llega por ese formulario y la revisión sale **en un día hábil**. A quien no tiene sitio no se le hace revisión: se le responde cómo lo haríamos y cuánto cuesta. Está descrita en público en `spindlelab.cl/blog/que-es-un-mini-diagnostico-seo/` («¿Qué es la revisión gratis de una página y qué incluye?»), que manda sobre el borrador de julio en `marketing/articulos/2026-07-articulo-01-que-es-un-mini-diagnostico-seo.md`. Esta guía documenta cómo se construye, para que sea repetible en vez de improvisada cada vez que llega un pedido.
+
+*Historia:* hasta oct-2026 se llamaba mini-diagnóstico y nacía de los correos de `plantillas/emails-fase0.md` («¿te preparo un mini-diagnóstico de 1 página en 48 horas?»). Esa plantilla está retirada; el nombre de la carpeta queda.
 
 Usar junto con `plantilla-mini-diagnostico.html` (la plantilla editable) y el Skill `/mini-diagnostico` (`.claude/skills/mini-diagnostico/`), que automatiza el flujo completo.
 
@@ -8,18 +10,20 @@ Usar junto con `plantilla-mini-diagnostico.html` (la plantilla editable) y el Sk
 
 ## 1. Estructura fija (4 secciones, este orden, siempre)
 
-Definida en el artículo público — no se improvisa ni se agregan secciones:
+Definida en el artículo público (texto vivo leído el 2-nov-2026) — no se improvisa ni se agregan secciones:
 
 1. **Estado técnico esencial** — lo que un buscador ve al llegar al sitio: rastreo, indexación, meta description, datos estructurados, errores HTTP evidentes.
-2. **Visibilidad en motores de IA** — resultado real de preguntarle a ChatGPT/Perplexity/Gemini la pregunta de categoría del prospecto. Si no se aparece, quién aparece en su lugar.
+2. **Si ChatGPT y otras IA pueden visitar tu sitio y entender a qué te dedicas** — si los robots de ChatGPT, Gemini y Perplexity no están bloqueados, y si lo que dice la página alcanza para que entiendan qué hace, para quién y dónde. El artículo dice que la revisión **no** mide qué responden hoy esas IA; eso es de la auditoría de visibilidad en IA.
 3. **Señales de confianza** — en rubros YMYL (finanzas, salud) qué pruebas de autoridad existen y cuáles faltan (E-E-A-T: autoría, prensa, certificaciones).
-4. **La corrección de mayor impacto** — una sola cosa, no una lista. Es el único bloque con acento dorado en todo el documento (ver §3).
+4. **La corrección que más pesa** — una sola cosa, no una lista. Es el único bloque con acento dorado en todo el documento (ver §3).
+
+Después de las cuatro va el «por dónde partiríamos» que el artículo promete, y no se numera como sección: la tabla **«La ruta completa, con el estado de cada paso»** (4 pasos con su estado medido; el paso 1 va regalado, del 2 al 4 es el trabajo que se contrata) y un párrafo con por dónde partiríamos, su precio, y en una línea lo demás que se conecta al sitio, con sus precios publicados (+ IVA); si no se parte por el sitio, esa línea nombra también Desarrollo web con su precio de partida. La lámina 7 de la presentación de la llamada se copia de esa tabla.
 
 ## 2. Reglas de contenido — no fabricar nada
 
 - **Cada hallazgo debe venir de una verificación real**, no de una suposición. Método probado en `outbound/semana-02/lote-1-frente-*.md`: `curl` directo con user-agent explícito para status HTTP, título, meta description, conteo de JSON-LD; nunca solo "mirar" el sitio.
 - ⚠️ **Advertencia del entorno:** las peticiones HTTPS salientes pasan por un proxy que inyecta su propio certificado (`Anthropic Egress Gateway`). Si `curl` sin `-k` falla por "certificado autofirmado", **no es un hallazgo real del sitio del prospecto** — es el proxy. Repetir con `curl -k` para verificar el sitio real antes de reportar cualquier problema de SSL.
-- La **sección 2 (visibilidad en IA) depende del humano**: Claude no puede consultar ChatGPT/Perplexity/Gemini directamente. Si Ramón no ejecuta la prueba, la sección se redacta describiendo el riesgo en términos generales — nunca inventando qué "apareció" o no.
+- La **sección 2 se verifica con curl, igual que la 1** (robots.txt, respuesta del servidor a cada robot, lo que dice la página). No se afirma qué "apareció" o no en ChatGPT: la revisión publicada no lo mide, y Claude tampoco puede consultarlo.
 - Si un hallazgo técnico ya existe (el prospecto viene de un lote de outbound ya investigado), **reutilizarlo** en vez de re-auditar desde cero — ya está verificado y documentado.
 
 ## 3. Sistema visual — reglas de marca aplicadas
@@ -45,8 +49,10 @@ Definida en el artículo público — no se improvisa ni se agregan secciones:
 
 - [ ] Número de documento único (`SPL-DIAG-AAAA-NNN`, correlativo)
 - [ ] Los 4 hallazgos son reales y verificados — ninguno inventado o genérico
-- [ ] La sección 2 (IA) tiene un resultado real, o está redactada sin inventar uno
+- [ ] La sección 2 dice si las IA pueden entrar y entender el sitio, verificado; no afirma qué responden hoy
 - [ ] Un solo acento dorado en todo el documento (sección 4)
 - [ ] Remitente: **hola@spindlelab.cl**
-- [ ] Enviado dentro de 48 horas desde que el prospecto respondió (apuntar a 24h)
+- [ ] Enviada dentro de un día hábil desde que llegó el pedido
+- [ ] La tabla de ruta trae los 4 pasos con su estado medido, sin dorado
+- [ ] El cierre dice por dónde partiríamos y lo demás que se conecta al sitio, con los precios publicados leídos del sitio ese día (+ IVA), nombra Desarrollo web con su precio de partida si no se parte por el sitio, y «Hablemos de tu sitio»
 - [ ] `ventas/pipeline.md` actualizado a la nueva etapa
