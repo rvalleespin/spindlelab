@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/desarrollo-web.json",
- "sha256": "6bbd35b6ad8129ac6b09188ac5f7cab56a4d69a6e9782cacc37b521b036732e5",
+ "sha256": "baef452fc98c1fe4c125af1fc97f45eec065387b1b779295ad9705ec359cf8af",
  "id": "desarrollo-web",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -150,11 +150,13 @@
      {
       "id": "dw.incluye.7",
       "rol": "parrafo",
-      "texto": "Lo publicamos en tu dominio, con certificado de seguridad (el candado junto a la dirección) y medición de visitas. Después tienes 30 días de garantía: si algo no funciona como se aprobó, lo corregimos.",
-      "fuente": "desarrollo-web.astro, «Dominio, SSL, analítica y 30 días de garantía post-lanzamiento»",
+      "texto": "Lo publicamos en tu dominio, a tu nombre, con certificado de seguridad (el candado junto a la dirección) y medición de visitas. Te entregamos el código completo. Después tienes 30 días de garantía: si algo no funciona como se aprobó, lo corregimos.",
+      "fuente": "desarrollo-web.astro, «Dominio, SSL, analítica y 30 días de garantía post-lanzamiento». «A tu nombre» y «el código completo»: Ramón, 30-oct-2026, dicho de nuevo en el bloque que él pegó a la sesión del sitio el 2-nov (encargo-sitio-tres-correcciones-2nov.md, punto 2).",
       "condicion": "Si «Dominio» en el texto anterior quería decir que el plan incluye comprarlo, Ramón lo dice y se agrega. Hoy la nota de los planes pide «acceso a tu dominio», o sea que el dominio es del cliente.",
-      "estado": "queda",
-      "origen": "texto-paso2.json «dw.incluye.7»"
+      "estado": "cambia",
+      "antes": "Lo publicamos en tu dominio, con certificado de seguridad (el candado junto a la dirección) y medición de visitas. Después tienes 30 días de garantía: si algo no funciona como se aprobó, lo corregimos. (hasta el 2-nov)",
+      "por_que": "Ramón confirmó el 30-oct-2026 que el dominio queda a nombre del cliente y que el código se le entrega completo. Es la línea opcional del encargo del 2-nov (2b), con las mismas palabras que la home (home.problema.sitio.2), para que la página del servicio no diga menos que la portada. Nada de hosting, licencias ni plazos de traspaso: no están confirmados. La condicion de arriba (si el plan incluye comprar el dominio) sigue abierta y no la cierra este cambio.",
+      "origen": "texto-paso2.json «dw.incluye.7»; Ramón confirmó el 30-oct-2026; aplicado el 2-nov (marketing/encargos-otras-sesiones/encargo-sitio-tres-correcciones-2nov.md, 2b)"
      }
     ]
    },

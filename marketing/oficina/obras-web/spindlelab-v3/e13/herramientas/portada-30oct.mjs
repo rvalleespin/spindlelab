@@ -262,7 +262,7 @@ const PROY = {
   faqP: '¿Por qué un sitio, si ya tengo Instagram?',
   faqR: 'Porque Instagram es de Instagram. Sirve para que te conozcan, y está bien usarlo. Pero el alcance lo decide la plataforma, y la cuenta depende de sus reglas. El sitio va en tu dominio: ahí llegan tus anuncios, ahí te encuentra Google y ahí te escriben.',
   paraquien2: 'Si estás partiendo y todavía no tienes sitio, también es por acá: es lo primero que hacemos.',
-  pie: 'Ramón Vallejos · Fundador y director de SpindleLab',
+  pie: 'Ramón Vallejos · Fundador de SpindleLab', // 2-nov: sin «director» (Decisión de Ramón, 2-nov-2026; desvios/texto-2nov.md)
   quien: [
     'SpindleLab lo dirige Ramón Vallejos. Viene de años en agencias de medios y de marketing, algunas parte de redes globales, donde hizo producción, pauta, contenido y SEO para marcas de alcance nacional y regional, con campañas en varios países.',
     'Ahí vio dónde se pierde lo que una marca invierte para atraer clientes: casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva. SpindleLab parte de esa idea. Construimos el sitio como el eje del negocio y le conectamos todo lo demás: la búsqueda, la pauta, las redes y la medición.',

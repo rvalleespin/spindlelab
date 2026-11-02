@@ -3,9 +3,9 @@
  "ruta": "/nosotros/",
  "modo": "reescribe (E13)",
  "regla": "E13, 30-oct (Ramón): la página entera pasa a tercera persona, el estudio presentando a su fundador, con el mismo tono que «Quién está detrás» de la home: profesional, serio, creativo, innovador, sin adjetivos de venta. Más extensa que la home: quién es, la trayectoria en general (sin agencias ni clientes por su nombre y sin cifras), la idea del sitio como eje (sin explicar la palabra spindle), cómo trabaja, la formación y las tres reglas en plural. Salen «SpindleLab soy yo», «tomo pocos proyectos a la vez» y todo lo que estaba en singular. Antes (26-oct): todo en singular de Ramón, con el texto de v2-vigente/nosotros.txt.",
- "title": "Ramón Vallejos, fundador y director · SpindleLab",
+ "title": "Ramón Vallejos, fundador · SpindleLab",
  "description": "Ramón Vallejos dirige SpindleLab: sitios web a medida y marketing con IA. Viene de años en agencias de medios y de marketing. Revisión gratis de una página.",
- "senales": "Simón, e12/senales-obra.md §2.10, con el cambio de e13: v2-vigente/nosotros.txt 30-oct: title (48) y description (156) nuevos; antes «Ramón Vallejos, marketing y crecimiento con IA · SpindleLab» y «Detrás de SpindleLab está Ramón Vallejos. Marketing y crecimiento con IA, con evidencia antes que promesas. Revisión gratis de una página.». Los reconfirma Simón.",
+ "senales": "Simón, e12/senales-obra.md §2.10, con el cambio de e13: v2-vigente/nosotros.txt 30-oct: title (48) y description (156) nuevos; antes «Ramón Vallejos, marketing y crecimiento con IA · SpindleLab» y «Detrás de SpindleLab está Ramón Vallejos. Marketing y crecimiento con IA, con evidencia antes que promesas. Revisión gratis de una página.». Los reconfirma Simón. 2-nov (Decisión de Ramón, 2-nov-2026: el cargo es «Fundador», sin «director»; encargo-sitio-tres-correcciones-2nov.md, 3b): el title pasa a «Ramón Vallejos, fundador · SpindleLab» (37); antes, del 30-oct al 2-nov, «Ramón Vallejos, fundador y director · SpindleLab» (48). El og:title sale del mismo title. La description no cambia: su «dirige» se queda (la decisión es sobre el cargo, no sobre el verbo).",
  "secciones": [
   {
    "id": "cabecera",
@@ -75,10 +75,10 @@
     {
      "id": "nosotros.rol",
      "rol": "nota",
-     "texto": "Ramón Vallejos · Fundador y director de SpindleLab · Chile",
-     "antes": "Ramón Vallejos · Consultor de marketing y crecimiento con IA · Chile",
-     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
-     "por_que": "El cargo que fijó Ramón el 30-oct, igual que home.quien.pie. interiores.mjs compara el nombre antes del primer « · ».",
+     "texto": "Ramón Vallejos · Fundador de SpindleLab · Chile",
+     "antes": "Ramón Vallejos · Fundador y director de SpindleLab · Chile (publicado del 30-oct al 2-nov). Antes de eso: «Ramón Vallejos · Consultor de marketing y crecimiento con IA · Chile».",
+     "origen": "Decisión de Ramón, 2-nov-2026 (marketing/encargos-otras-sesiones/encargo-sitio-tres-correcciones-2nov.md, 3c). El cambio de cargo del 30-oct venía de e13/copy/sitio-propio-direcciones.md («Lo que eligió Ramón») y del encargo a Clara del 30-oct, y salió con «director».",
+     "por_que": "Decisión de Ramón, 2-nov-2026: el cargo es «Fundador», sin «director», igual que home.quien.pie y articulo.autor (ver el por_que de home.quien.pie: «director» no fue lo decidido el 30-oct). interiores.mjs compara el nombre antes del primer « · »; el formato no cambia.",
      "estado": "cambia"
     },
     {
@@ -148,9 +148,11 @@
     {
      "id": "nosotros.idea.1",
      "rol": "parrafo",
-     "texto": "En las agencias vio dónde se pierde lo que una marca invierte para atraer clientes: casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva. Un sitio que no explica bien lo que se vende, o un formulario que no avisa cuando alguien escribe, basta para perder lo que costó traer a esa persona.",
-     "estado": "nuevo",
-     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p2 y home.problema.p",
+     "texto": "En las agencias vio dónde se pierde lo que una marca invierte para atraer clientes: muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva. Un sitio que no explica bien lo que se vende, o un formulario que no avisa cuando alguien escribe, basta para perder lo que costó traer a esa persona.",
+     "estado": "cambia",
+     "antes": "En las agencias vio dónde se pierde lo que una marca invierte para atraer clientes: casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva. Un sitio que no explica bien lo que se vende, o un formulario que no avisa cuando alguien escribe, basta para perder lo que costó traer a esa persona. (30-oct al 2-nov)",
+     "por_que": "Decisión de Ramón, aprobada el 2-nov-2026 (puede afinarla después): la misma cláusula que home.quien.p2, cambiada igual («muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva»). El resto del párrafo queda como estaba. La lectura de por qué (que es de Clara, no de Ramón) está en el por_que de home.quien.p2.",
+     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p2 y home.problema.p; Decisión de Ramón, aprobada el 2-nov-2026 (puede afinarla después) (marketing/encargos-otras-sesiones/encargo-sitio-tres-correcciones-2nov.md, 1b)",
      "nota": "La segunda oración no suma hechos sobre Ramón: dice cómo se pierde, con las dos fallas de la sección 2 de la home."
     },
     {

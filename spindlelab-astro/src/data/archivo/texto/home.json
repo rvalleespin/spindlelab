@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/home.json",
- "sha256": "b54b67fdc8b310906f1eb8a96d3a62d9edd2bd2ae27fc530e9052253368ca248",
+ "sha256": "783da67e05e00d9393775e1651db732052c2b0547fe1950bad1ac0481369321b",
  "id": "home",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -199,11 +199,13 @@
      {
       "id": "home.problema.sitio.2",
       "rol": "parrafo",
-      "texto": "Va en tu dominio.",
-      "estado": "nuevo",
-      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
-      "fuente": "desarrollo-web.json, dw.fase.5 y dw.incluye.7: «Publicamos el sitio en tu dominio».",
-      "nota": "«A tu nombre» no va: que el dominio quede registrado a nombre del cliente y que se le entregue el código no están confirmados (sitio-propio-direcciones.md). Si Ramón los confirma, son el mejor argumento de propiedad."
+      "texto": "Va en tu dominio, a tu nombre. Y te entregamos el código completo.",
+      "estado": "cambia",
+      "antes": "Va en tu dominio. (30-oct al 2-nov)",
+      "por_que": "Ramón confirmó el 30-oct-2026 los dos hechos que faltaban: el dominio queda a nombre del cliente y el código se le entrega completo. Son el argumento de propiedad de la columna «En tu sitio», frente a «En redes» (ahí arriendas). Las palabras son la propuesta de la troncal del 2-nov y Ramón puede ajustarlas. Va en UNA fila y no en dos («Va en tu dominio, a tu nombre.» y una home.problema.sitio.5 «Te entregamos el código completo.»): index.astro tiene un guardián que cae si la lista más larga deja de tener 4 filas, y la regla .int-par de archivo.css las cuenta (spec-home §12.2); partirla obligaba a tocar código y a medir de nuevo una sección de 5 filas contra 3. Sin hosting, licencias ni plazos de traspaso: no está confirmado.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); Ramón confirmó el 30-oct-2026; aplicado el 2-nov (marketing/encargos-otras-sesiones/encargo-sitio-tres-correcciones-2nov.md, 2a)",
+      "fuente": "«En tu dominio»: desarrollo-web.json, dw.fase.5 y dw.incluye.7 («Publicamos el sitio en tu dominio»). «A tu nombre» y «el código completo»: Ramón, 30-oct-2026, dicho de nuevo en el bloque que él pegó a la sesión del sitio el 2-nov (encargo-sitio-tres-correcciones-2nov.md, punto 2: «el dominio queda a nombre del cliente y el código se entrega completo»). Compatible con dw.planes.nota y dw.faq.4.r («Para publicar necesitamos acceso a tu dominio») y con /trabajo/combeau/ (el sitio se guarda en la cuenta de GitHub del cliente).",
+      "nota": "Hasta el 2-nov esta nota decía que «a tu nombre» no iba porque el dominio a nombre del cliente y la entrega del código no estaban confirmados (sitio-propio-direcciones.md; desvios/texto-30oct.md §5 punto 4). Ya están confirmados: desvios/texto-2nov.md cierra ese pendiente. «Código propio» en dw.incluye.2 quiere decir hecho a medida, no del cliente; leído junto a esta fila no choca."
      },
      {
       "id": "home.problema.sitio.3",
@@ -735,11 +737,11 @@
       "id": "home.quien.pie",
       "rol": "nota",
       "uso": "pie",
-      "texto": "Ramón Vallejos · Fundador y director de SpindleLab",
+      "texto": "Ramón Vallejos · Fundador de SpindleLab",
       "estado": "cambia",
-      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)",
-      "antes": "Ramón Vallejos · Consultor de marketing y crecimiento con IA",
-      "por_que": "El cargo que fijó Ramón el 30-oct. El jobTitle del JSON-LD (comun.entidad.cargo) dice «Fundador de SpindleLab: sitios web a medida y marketing con IA»."
+      "origen": "Decisión de Ramón, 2-nov-2026 (marketing/encargos-otras-sesiones/encargo-sitio-tres-correcciones-2nov.md, 3a). El cambio de cargo del 30-oct venía de e13/copy/sitio-propio-direcciones.md («Lo que eligió Ramón») y del encargo a Clara del 30-oct, y salió con «director».",
+      "antes": "Ramón Vallejos · Fundador y director de SpindleLab (publicado del 30-oct al 2-nov). Antes de eso: «Ramón Vallejos · Consultor de marketing y crecimiento con IA».",
+      "por_que": "Decisión de Ramón, 2-nov-2026: el cargo es «Fundador», sin «director». Según la troncal, el 30-oct Ramón dijo «dejar en fundador» y el sitio salió con «Fundador y director»; la decisión explícita es la del 2-nov, así que «director» no fue lo decidido. Queda como el jobTitle del JSON-LD (comun.entidad.cargo: «Fundador de SpindleLab: sitios web a medida y marketing con IA»). El formato «nombre · rol» no cambia, y el verbo «dirige» de home.quien.p1 se queda: la decisión es sobre el cargo."
      },
      {
       "id": "home.quien.p1",
@@ -754,9 +756,11 @@
      {
       "id": "home.quien.p2",
       "rol": "parrafo",
-      "texto": "Ahí vio dónde se pierde lo que una marca invierte para atraer clientes: casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva. SpindleLab parte de esa idea. Construimos el sitio como el eje del negocio y le conectamos la búsqueda, la pauta, las redes y la medición.",
-      "estado": "nuevo",
-      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p2",
+      "texto": "Ahí vio dónde se pierde lo que una marca invierte para atraer clientes: muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva. SpindleLab parte de esa idea. Construimos el sitio como el eje del negocio y le conectamos la búsqueda, la pauta, las redes y la medición.",
+      "estado": "cambia",
+      "antes": "Ahí vio dónde se pierde lo que una marca invierte para atraer clientes: casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva. SpindleLab parte de esa idea. Construimos el sitio como el eje del negocio y le conectamos la búsqueda, la pauta, las redes y la medición. (30-oct al 2-nov)",
+      "por_que": "Decisión de Ramón, aprobada el 2-nov-2026 (puede afinarla después): cambia solo la cláusula «casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva», que pasa a «muchas veces no en el anuncio, sino en el lugar al que el anuncio lleva». El resto del párrafo queda igual, y la gemela de /nosotros/ (nosotros.idea.1) cambia igual. Ramón no dejó escrita la razón. Lectura de Clara, no de Ramón: «casi nunca» y «casi siempre» afirmaban una proporción sin dato, y el sitio ya sacó otra afirmación así de /diagnostico/ (fuentes/desvios-v2.md). Cambia el tono, no la idea: en la QA del 30-oct (vuelta 2) 2 de 3 lectores en frío citaron esta frase como lo que les hizo sentido (acta-qa-30oct.md), así que se vuelve a medir.",
+      "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct); texto base p2; Decisión de Ramón, aprobada el 2-nov-2026 (puede afinarla después) (marketing/encargos-otras-sesiones/encargo-sitio-tres-correcciones-2nov.md, 1a)",
       "nota": "Es la idea del nombre (el sitio como eje) sin explicar la palabra: el spindle guía el texto, no se define. Pasa del «él» al «nosotros» en la tercera oración, como el texto base: lo que vio es de él, lo que se entrega es del estudio."
      },
      {

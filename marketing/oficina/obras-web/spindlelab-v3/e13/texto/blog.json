@@ -136,12 +136,12 @@
     {
      "id": "articulo.autor",
      "rol": "nota",
-     "texto": "Ramón Vallejos · Fundador y director de SpindleLab",
+     "texto": "Ramón Vallejos · Fundador de SpindleLab",
      "uso": "autor",
-     "antes": "Ramón Vallejos · Fundador de SpindleLab",
-     "por_que": "La misma firma que home.quien.pie y nosotros.rol (Ramón, 30-oct).",
+     "antes": "Ramón Vallejos · Fundador y director de SpindleLab (publicado del 30-oct al 2-nov). Antes de eso, la misma firma de hoy: «Ramón Vallejos · Fundador de SpindleLab».",
+     "por_que": "Decisión de Ramón, 2-nov-2026: el cargo es «Fundador», sin «director». La misma firma que home.quien.pie y nosotros.rol, en los 7 artículos (una sola clave); vuelve a la que había antes del 30-oct. «Director» no fue lo decidido el 30-oct (ver el por_que de home.quien.pie). blog.mjs parte el autor en el primer « · »; el formato no cambia.",
      "estado": "cambia",
-     "origen": "Decisión de Ramón, 30-oct (e13/copy/sitio-propio-direcciones.md, «Lo que eligió Ramón», y el encargo a Clara del 30-oct)"
+     "origen": "Decisión de Ramón, 2-nov-2026 (marketing/encargos-otras-sesiones/encargo-sitio-tres-correcciones-2nov.md, 3d). El cambio de cargo del 30-oct venía de e13/copy/sitio-propio-direcciones.md («Lo que eligió Ramón») y del encargo a Clara del 30-oct, y salió con «director»."
     },
     {
      "id": "articulo.indice.rotulo",
