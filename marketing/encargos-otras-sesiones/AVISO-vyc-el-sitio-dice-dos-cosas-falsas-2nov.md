@@ -67,3 +67,19 @@ El aviso del 28-oct dio por abierto *"cuánto se posterga"* cuando el Senado ya 
 día, y su propia corrección del 2-nov lo reconoce (*"la búsqueda de ese día fue demasiado corta"*).
 Este aviso evita repetirlo de la única forma que funciona: **citando el sitio en vivo con la fecha de
 lectura al lado**, en vez de describir lo que decía la última vez que alguien lo miró.
+
+---
+
+## Pendiente aparte, para cuando Ramón entre a Ads Manager
+
+**El anuncio D `formulario-vigencia` de la campaña `🧪 VyC · Laboratorio · Tráfico · por rubro` sí
+lleva la fecha.** Su cuerpo dice: *"Entra en plena vigencia el 1 de diciembre de 2026, y hay un
+proyecto en el Senado que todavía podría moverla a 2027."* Después del 28-oct eso se quedó corto por
+partida doble: el Senado ya votó, y la fecha que fijó es octubre y no diciembre.
+
+**Pero antes de alarmarse, el dato:** al 30-oct ese anuncio llevaba **~26 impresiones y 0 clics** en
+nueve conjuntos. Meta no lo está entregando. **El daño es prácticamente nulo y pausarlo es por orden,
+no por urgencia.** Decisión de Ramón, que es quien controla el gasto.
+
+Las otras tres creatividades (A `ley-formulario`, B `datos-confianza`, C `doce-cosas`) se revisaron y
+**no nombran ninguna fecha**: no les pasa nada con esto.
