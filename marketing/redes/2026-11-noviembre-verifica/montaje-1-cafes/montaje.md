@@ -83,3 +83,21 @@ tarjetas**, o apaga el lima.
 - [ ] Una sola tarjeta en pantalla a la vez.
 - [ ] Mirar el MP4 de salida entero, no solo el primer segundo.
 - [ ] Ramón aprueba antes de publicar. Publica él.
+
+## Portada
+
+**Recomendada: A, la de la cifra.** El fotograma donde está puesta `g1-2`, o sea entre los **14,1 y
+los 19,3 segundos**. Se elige desde el selector de portada de Instagram, sin trabajo extra.
+
+**Por qué la cifra y no la tesis.** «16 DE 36 · CASI LA MITAD» es evidencia; «UN RASTREADOR SIN
+PREGUNTAR» es una afirmación. Para alguien que no conoce la cuenta, un número específico frena el
+scroll mejor que una declaración, y es lo único que ningún competidor puede poner en su portada.
+
+⚠️ **Hay que buscar un fotograma con la boca cerrada.** En los dos que se maquetaron
+(`PORTADAS-opciones.png`) Ramón está a media palabra, y eso en una portada se nota de inmediato. Si
+dentro de esa ventana de cinco segundos no hay ninguno limpio, se arma la portada a mano con la
+tarjeta compuesta sobre un buen fotograma.
+
+**Las dos opciones sobreviven al recorte de la grilla**, comprobado maquetando el recorte 4:5
+centrado. Y la misma imagen sirve para la pestaña de Reels, donde se ve completa en vertical, así que
+no hay que elegir distinto para cada lugar.
