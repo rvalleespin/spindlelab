@@ -284,6 +284,48 @@ console.log('=== LA BARRA DE LA ESPERA MIDE EL GUION REAL (30-oct) ===');
 }
 
 /* ================================================================== */
+console.log('=== EL CAMPO DEL DOMINIO VA SOBRE EL PLIEGUE EN TELEFONO (2-nov) ===');
+{
+  /* Medido en producción el 2-nov: `#dominio` quedaba en y≈920, entre 1,1 y 1,4 pantallas
+   * bajo el pliegue en TODOS los teléfonos. Lo que había arriba era un botón ancla que
+   * bajaba hasta él. Con la campaña corriendo, 490 visitas pagadas dieron 24-35 chequeos:
+   * el corte grande del embudo estaba ahí, antes del botón de compra y antes de la espera.
+   */
+  const bloqueTel = (HTML.match(/@media \(max-width: 600px\) \{[\s\S]*?\n  \}/g) || []);
+  const reorden = bloqueTel.find((b) => /\.hero-accion\s*\{[^}]*order:\s*1/.test(b));
+  cierto('en teléfono el formulario va primero', Boolean(reorden));
+  cierto('y la envoltura es una columna flexible',
+    Boolean(reorden) && /\.hero-envoltura\s*\{[^}]*flex-direction:\s*column/.test(reorden));
+  cierto('el caballo va después', Boolean(reorden) && /\.hero-imagen-centro\s*\{[^}]*order:\s*2/.test(reorden));
+  cierto('y el ancla sobra, así que se esconde',
+    /\.boton-ayuda\.hero-cta-abajo \{ display: none; \}/.test(HTML));
+
+  /* ⚠️ Y EL ORDEN DE LAS REGLAS, que es donde esto falló en silencio la primera vez.
+   * Una media query NO suma especificidad: a igualdad gana la última del archivo. Escrito
+   * antes de `.hero-accion { margin: 32px auto 0; z-index: 2 }`, el `order` SÍ se aplicaba
+   * —la base no lo declara— pero el margen y el z-index no. O sea: el reorden se veía
+   * funcionando y la mitad del arreglo estaba muerta. Un grep que solo busque la regla no
+   * puede ver esto; hay que mirar DÓNDE está. */
+  const iBase = HTML.indexOf('.hero-accion { max-width: 560px;');
+  const iReorden = HTML.indexOf('.hero-accion { order: 1;');
+  cierto('se encontraron las dos reglas', iBase > 0 && iReorden > 0);
+  cierto('el reorden va DESPUÉS de la regla base, o no gana', iReorden > iBase);
+
+  /* El titular se dimensiona en vw, así que no encogía en pantallas bajas —635 y 664 px son
+   * el alto útil del navegador embebido de Instagram y Facebook— y empujaba el botón de
+   * enviar bajo el aviso de cookies. */
+  cierto('hay un techo por alto para pantallas cortas',
+    /@media \(max-width: 600px\) and \(max-height: 700px\)/.test(HTML));
+  cierto('y achica el titular ahí',
+    /@media \(max-width: 600px\) and \(max-height: 700px\)[\s\S]{0,400}t-blanco \{ font-size: clamp\(2\.7rem/.test(HTML));
+
+  /* La nota de privacidad quedó debajo del caballo al subir el formulario: la imagen lleva
+   * z-index 5. Ojo al comprobarlo a mano: la imagen tiene `pointer-events: none`, así que
+   * `elementFromPoint` NO la ve y jura que no tapa nada. */
+  cierto('el bloque del formulario pasa por encima del caballo',
+    Boolean(reorden) && /\.hero-accion\s*\{[^}]*z-index:\s*7/.test(reorden));
+}
+
 console.log('=== LA ESPERA TIENE QUE VERSE, NO SOLO EXISTIR (30-oct) ===');
 {
   // ── POR QUE EXISTE ────────────────────────────────────────────────────────────────────
