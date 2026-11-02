@@ -4,6 +4,12 @@
 declarada arriba, anotaciones tácticas entre corchetes y **dirección de entonación**, que es lo que
 faltaba (Ramón, 19-oct: *"tengo un problema de modulación"*).
 
+**Decisión del 2-nov: sin insertos.** Ramón: *"solo con mi cara y las tarjetas. no quiero darle
+tanta vuelta"*. Se descartaron las grabaciones de pantalla (los planos A y C) y cualquier b-roll.
+**Las cuatro piezas son una sola toma a cámara, con cortes de salto y las tarjetas encima**, que es
+exactamente como se montó el reel del 16-oct que sí salió. Las `[ACCIÓN/VISUAL]` que quedan son las
+que importan: dónde entra cada tarjeta.
+
 **Cómo se leen las marcas.** `[ENTONACIÓN SUSPENDIDA]` la voz queda arriba, la frase no cierra y
 engancha con la siguiente. `[REMATE ABAJO]` la voz baja y la idea cierra con autoridad. `[ÉNFASIS]`
 la palabra se alarga o se frena. Las `/` siguen siendo respiraciones.
@@ -21,13 +27,12 @@ es lo que hace que el loop se sienta continuo.
 ```
 [GANCHO · 0 a 3 s]
 [TEXTO EN PANTALLA]: g1-1 · LO GUARDA / SIN PREGUNTAR.
-[ACCIÓN/VISUAL]: plano A, lista de cookies en incógnito. Dominio tapado con bloque lima.
+[ACCIÓN/VISUAL]: Ramón a cámara desde el primer fotograma. Sin inserto.
 
   Pagar publicidad en Instagram está bien.          [ENTONACIÓN SUSPENDIDA]
   Medir si funcionó, también.                       [REMATE ABAJO]
 
 [ZONA DE ENGANCHE]
-[ACCIÓN/VISUAL]: corte a Ramón
 
   Pero para medir, tu sitio le guarda algo
   en el teléfono al cliente / sin preguntarle.      [ÉNFASIS: sin preguntarle]
@@ -47,7 +52,6 @@ es lo que hace que el loop se sienta continuo.
   Y esa pregunta va a ser obligatoria por ley.      [REMATE ABAJO]
 
 [SOLUCIÓN]
-[ACCIÓN/VISUAL]: plano C, un sitio que sí tiene la franja
 [TEXTO EN PANTALLA]: g1-4 · UNA FRANJA QUE PREGUNTA
   Es una franja abajo de tu sitio / que le
   pregunta al cliente si acepta.                    [REMATE ABAJO]
@@ -75,13 +79,12 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
 ```
 [GANCHO · 0 a 3 s]
 [TEXTO EN PANTALLA]: g2-1 · SIN PREGUNTAR / AL PACIENTE.
-[ACCIÓN/VISUAL]: plano A, lista de cookies en incógnito. Dominio tapado.
+[ACCIÓN/VISUAL]: Ramón a cámara desde el primer fotograma. Sin inserto.
 
   Saber de dónde llegan tus pacientes está bien.    [ENTONACIÓN SUSPENDIDA]
   Medirlo en tu sitio, también.                     [REMATE ABAJO]
 
 [ZONA DE ENGANCHE]
-[ACCIÓN/VISUAL]: corte a Ramón
 [TEXTO EN PANTALLA]: g2-2 · LA MITAD
 
   Pero en la mitad de las clínicas y centros
@@ -104,7 +107,6 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
   Y esa pregunta va a ser obligatoria por ley.      [REMATE ABAJO]
 
 [SOLUCIÓN]
-[ACCIÓN/VISUAL]: plano C, un sitio que sí tiene la franja
 [TEXTO EN PANTALLA]: g2-4 · UNA FRANJA QUE PREGUNTA
   Es una franja abajo de tu sitio / que le
   pregunta al paciente si acepta.                   [REMATE ABAJO]
@@ -132,14 +134,13 @@ Acá el quita-excusas es el principal porque el freno del rubro es doble: *"esto
 ```
 [GANCHO · 0 a 3 s]
 [TEXTO EN PANTALLA]: g3-1 · NOMBRE. / CORREO. / TELÉFONO.
-[ACCIÓN/VISUAL]: plano A, un formulario de contacto real. SIN dominio a la vista.
+[ACCIÓN/VISUAL]: Ramón a cámara desde el primer fotograma. Sin inserto.
 
   Tu formulario pide nombre, correo y a veces
   teléfono.                                         [ENTONACIÓN SUSPENDIDA]
   Eso es normal y no tiene nada de malo.            [REMATE ABAJO]
 
 [ZONA DE ENGANCHE]
-[ACCIÓN/VISUAL]: corte a Ramón
 [TEXTO EN PANTALLA]: g3-2 · SIN DÓNDE LEERLO
 
   Pero en nueve de los treinta y nueve sitios
@@ -160,7 +161,6 @@ Acá el quita-excusas es el principal porque el freno del rubro es doble: *"esto
   Y tenerla publicada va a ser obligatorio por ley. [REMATE ABAJO]
 
 [SOLUCIÓN]
-[ACCIÓN/VISUAL]: plano C, un formulario con el enlace a la política visible al lado
 [TEXTO EN PANTALLA]: g3-4 · AL LADO DEL FORMULARIO
 
 [CIERRE]
@@ -181,9 +181,11 @@ Acá el quita-excusas es el principal porque el freno del rubro es doble: *"esto
 **Fórmula:** 5 · Quitar la Excusa (frase 2) · 1 · Enseñar la Prueba, **visual y no numérica**: la
 grabación de pantalla es la prueba.
 
-⚠️ **Este se graba distinto a los otros tres.** Ramón aparece al principio y al final; **el medio es
-la grabación de pantalla con su voz encima.** O sea que hay que grabar ese tramo de audio aparte,
-mirando la pantalla, no a cámara.
+⚠️ **Este es el que más perdió al sacar los insertos**, y vale saberlo: su prueba iba a ser visual
+(la grabación de pantalla demostrando los pasos) y ahora son instrucciones dichas a cámara. **La
+tarjeta `g4-2`, la de los tres pasos, pasa a hacer el trabajo de la demostración**, y es la única de
+la tanda que alguien va a querer guardar o volver a mirar. Si una pieza de las cuatro se cae, es
+esta.
 
 ✅ **Es el único donde la regla de tres aplica sola**: los tres pasos. Se dicen con cadencia
 paralela, suspendida-suspendida-abajo, que es lo que hace que suenen como una serie y se recuerden.
@@ -204,7 +206,6 @@ paralela, suspendida-suspendida-abajo, que es lo que hace que suenen como una se
   no lo aceptó nadie.                               [ÉNFASIS: nadie] [REMATE ABAJO]
 
 [LOS TRES PASOS · regla de tres, cadencia paralela]
-[ACCIÓN/VISUAL]: empieza la grabación de pantalla. Voz encima, no a cámara.
 [TEXTO EN PANTALLA]: g4-2 · 1 INCÓGNITO / 2 ESPERA / 3 CANDADO
 
   Abre tu sitio en una ventana de incógnito.        [ENTONACIÓN SUSPENDIDA]
@@ -213,14 +214,13 @@ paralela, suspendida-suspendida-abajo, que es lo que hace que suenen como una se
   lado de la dirección.                             [REMATE ABAJO]
 
 [EL HALLAZGO]
-[ACCIÓN/VISUAL]: la lista de cookies, a tamaño legible en un teléfono
 [TEXTO EN PANTALLA]: g4-3 · NADIE LO ACEPTÓ
 
   Ahí sale todo lo que tu sitio guardó / en
   ese teléfono.                                     [REMATE ABAJO]
   Y se guardó solo, al abrir la página.             [ÉNFASIS: solo] [REMATE ABAJO]
 
-[CIERRE · vuelve Ramón a cámara]
+[CIERRE]
 [TEXTO EN PANTALLA]: g0-cierre · verifica.spindlelab.cl
   Si te sale algo que no entiendes, /
   escríbeme por acá y lo miramos.                   [REMATE ABAJO]

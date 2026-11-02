@@ -138,98 +138,25 @@ te tapaba la cara y solo se vio al montarlas sobre tu cuadro de verdad. **Mánda
 primer plano antes de grabar las cuatro** y lo verifico contra las tarjetas en 5 minutos. Es más
 barato que regrabar.
 
-### El gancho visual, que es lo que faltaba en todos los reels de esta casa
+### Sin insertos: una sola toma a cámara (decidido el 2-nov)
 
-El cerebro procesa imagen mucho más rápido que audio, así que la primera frase tiene que ir
-respaldada **desde el milisegundo cero** por una imagen que confirme el tema. Todos los reels de
-esta campaña abrieron con la cara de Ramón hablando y los rótulos encima, y eso desperdicia el
-segundo más caro de la pieza.
+Se evaluaron grabaciones de pantalla como gancho visual (la lista de cookies, un formulario, un
+sitio con la franja) y se maquetaron para verlas compuestas
+(`planos-referencia/COMPARA-con-y-sin-captura.png`). **Ramón las descartó:** *"solo con mi cara y las
+tarjetas. no quiero darle tanta vuelta"*.
 
-**Esto cambia la grabación, no solo el texto. Hacen falta dos grabaciones de pantalla del teléfono,
-además de las tomas habladas:**
+**Qué se pierde, dicho sin dramatismo:** la prueba visual. Con la captura el espectador *ve* que el
+navegador guardó la cookie; sin ella, le cree a Ramón. **La cifra hablada y la tarjeta siguen
+haciendo ese trabajo**, menos fuerte pero suficiente, y es exactamente como se montó el reel del
+16-oct que sí salió y funcionó.
 
-| Plano | Cuándo | Qué se graba |
-|---|---|---|
-| **A** | 0 a 2 s, antes de que aparezca Ramón | Un sitio de café abierto en **ventana de incógnito**, el candado de la barra tocado, y la **lista de cookies a la vista**. Que se alcance a leer `_fbp`, que es la de Facebook. |
-| **B** | desde los 2 s | Ramón hablando. El plano de siempre. |
-| **C** | sobre *"se arregla con una línea abajo que pregunte"* | Un sitio cualquiera que **sí** tenga el aviso de cookies, mostrando la franja que pregunta. Es el "después". |
+**Qué se gana:** se graba en una sentada, sin material que preparar aparte, y la pieza no depende de
+doce capturas que podrían no hacerse nunca. Dado que en octubre tres guiones no se grabaron por
+fricción, eso no es menor.
 
-Se graban con la grabadora de pantalla del propio teléfono, en vertical.
-
-⚠️ **El dominio no puede salir.** El panel de cookies muestra de qué sitio son, y nombrar a un café
-medido rompe la regla de cero prospecto nombrado. **Se tapa con un bloque lima** en CapCut, que de
-paso es un elemento de la marca haciendo un trabajo real. No sirve recortar: en el panel de Chrome
-el dominio va arriba de la lista.
-
-### Exteriores: el patio del edificio (decidido el 30-oct)
-
-Ramón primero pidió un parque y después lo cambió: *"creo que lo voy a hacer en el patio del
-edificio. me da menos vergüenza"*. **Es la mejor decisión y no solo por eso**, así que conviene dejar
-escritas las razones operativas para que nadie la "mejore" más adelante:
-
-1. **No hay caras de terceros que resolver.** En un parque hay que encuadrar para que no salga nadie,
-   y en esta campaña publicar la cara de alguien que no dio permiso se pelea con el argumento de la
-   marca.
-2. **Es repetible.** El plano de mañana calza con el de hoy. Un parque es una salida; el patio es
-   bajar. Para una tanda de cuatro piezas, y para rehacer una toma mala, eso vale más que un fondo
-   bonito.
-3. **Es la escena que sí se graba.** En octubre tres guiones no se grabaron nunca, y la causa no fue
-   el guion (ver la nota del 13-oct). **La puesta en escena que baja la fricción le gana a la que se
-   ve mejor**, porque la segunda no existe si no se graba.
-
-**Dónde pararse, en orden de preferencia:** contra un muro parejo · con una jardinera o vegetación
-detrás · en el lado abierto del patio. **Lo que hay que evitar**: una esquina, un pasillo angosto
-entre dos muros, y el centro de un patio cerrado donde la luz entra solo por arriba.
-
-**El parque queda como alternativa**, no descartado: si alguna vez hay una pieza que gane con otro
-fondo, las notas de la versión anterior de esta sección están en el historial de git (commit
-`23ab9ba7`).
-
-### El eco, que en un patio es el riesgo principal
-
-**En el parque el enemigo era el viento. En un patio es el eco**, y tampoco se saca después.
-
-- **Mínimo metro y medio de la pared más cercana.** Nunca en una esquina ni en un pasillo angosto:
-  ahí el sonido rebota de los dos lados.
-- **Micrófono cerca.** En el pecho si es de corbata, a unos 30 cm si es de mano fuera de cuadro. La
-  distancia al micrófono es lo que decide cuánto eco entra.
-- **Si hay plantas o jardinera, ponte con la vegetación detrás.** Las plantas absorben, el estuco
-  rebota.
-- **La prueba de diez segundos con audífonos sigue siendo obligatoria**, ahora por el eco. Si te
-  escuchas "en un estacionamiento", muévete de lugar.
-- **Treinta segundos de ambiente, igual que afuera.** En un patio hay portón, ascensor y vecinos, y
-  sin ambiente de relleno los saltos de corte suenan a "clic".
-- **Cada guion, dos veces.** Un portón o una moto en la calle mata la toma completa.
-
-### La trampa de luz del patio
-
-Un patio cerrado recibe el cielo **por arriba**, y la luz vertical te hace ojeras y sombra bajo los
-ojos. Es el error típico de este lugar.
-
-- **Ponte cerca del lado abierto**, en el borde de la sombra, **mirando hacia la parte iluminada**.
-  Así la luz llega de adelante en diagonal y no desde el techo.
-- **Sol directo, nunca**, igual que afuera.
-- ⚠️ **Los valores de ajuste de color de octubre no sirven**: se midieron sobre el living. Con un
-  fotograma del patio se sacan los nuevos.
-
-### El fondo, y una ironía que hay que evitar
-
-**Un muro parejo detrás del tercio superior es el mejor fondo que existe para que los rótulos se
-lean**, bastante mejor que el follaje. **Y de paso desarma el choque del lima con el verde**: el
-problema del acento amarillo verdoso sobre hojas no aplica contra un muro. El lima igual se queda en
-la etiqueta chica, por disciplina de acento.
-
-⚠️ **Que no salgan patentes de auto, números de departamento, el nombre del edificio ni ventanas de
-vecinos.** Son datos identificables, y publicarlos en una pieza sobre el cuidado de los datos de las
-personas se pelea consigo mismo. **Se revisa el cuadro antes de grabar**, no al editar.
-
-### Las dos grabaciones de pantalla se hacen aparte, adentro
-
-**Los planos A y C no se graban en el parque.** Son grabaciones de la pantalla del teléfono, así que
-no dependen del lugar: se hacen en la casa, con calma, y se montan después. Una pantalla al aire
-libre no se ve por el reflejo.
-
-Es justamente lo que permite que el gancho visual sobreviva a grabar en exteriores.
+**Consecuencia para el montaje:** la única variación visual son los cortes de salto y el cambio de
+tarjeta. **Por eso los tramos sin texto importan más que antes**: si las tarjetas se encadenan sin
+aire, la pieza se vuelve una presentación de diapositivas.
 
 ### Luz
 
