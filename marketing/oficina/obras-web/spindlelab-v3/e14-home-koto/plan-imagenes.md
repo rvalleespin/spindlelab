@@ -4,6 +4,10 @@
 se gastó ningún crédito.** En Higgsfield solo se usaron `balance`, `show_plans_and_credits` y `models_explore`
 (lectura). Ninguna herramienta `generate_*` ni `execute_preset`. Nada de `spindlelab-astro/` ni de lo publicado se tocó.
 
+> **Actualización, 2-nov-2026, después de que Ramón aprobó el prototipo:** las tres bandas generadas ya existen.
+> Gasto real: **6 créditos** (saldo 250 → 244, plan lite). Una sola pasada, sin segundo intento. El detalle está en
+> **§7**. Lo que sigue en §1-§6 es el plan tal como se propuso, y la cotización de §3 quedó superada: había cuenta.
+
 Se apoya en: el texto de Clara (`texto-home-propuesta.md`, en esta carpeta, nueve bloques), el lock de Koto
 (`../e12/lock-koto.md`, que no se volvió a medir), la regla del dorado (`../e13/spec-home.md` §5) y el video que mandó
 Ramón (`hoja.jpg` del scratchpad: showreel, la línea, «Our work» con tarjetas grandes que se apilan, noticias con foto,
@@ -281,3 +285,105 @@ bucle de la 6, después el video de Combeau pasa a póster con «reproducir» al
   portada, 960 × 1080, 0,00 % de dorado).
 - `imagenes/medir-dorado.py`: la medición del dorado para imágenes y videos, para que Javiera la repita sobre cada medio
   nuevo (`spec-home.md` §5 lo exige cada vez que cambia un medio).
+
+---
+
+## 7 · Generación (2-nov-2026, Bruno)
+
+Ramón aprobó el prototipo y pidió «ser inteligentes para no gastar más de lo necesario». Encargo: solo las tres
+bandas (6, 7 y 8), **imagen fija, sin el bucle de video**, tope de 25 créditos, máximo 2 intentos por banda. Para
+«Sitio web a medida» (banda 4) no se generó nada: va `combeau-panel-colecciones-169`, que es real y ya está publicada.
+
+### Gasto
+
+| | |
+|---|---|
+| Saldo antes | **250** créditos, plan lite |
+| Preflight (`get_cost: true`, 2K, 16:9, con la referencia) | `nano_banana` 1 · `nano_banana_pro` 2 · `nano_banana_2_1` 2 · `flux_3_image` 3 |
+| Modelo elegido | **`nano_banana_pro`, 2K, 16:9**, con `ref-luz-hilo-sin-oro.webp` como `image_references` |
+| Intentos | **1 por banda** (3 en total, `count: 1`). Ninguna pidió segundo intento |
+| Gastado | **6 créditos** (3 × 2) |
+| Saldo después | **244** créditos (consultado con `balance` al terminar) |
+
+**Por qué no el de 1 crédito:** `nano_banana` no tiene parámetro de resolución y entrega unos 1344 px de ancho en
+16:9, bajo los 1600 que pide la banda: habría que agrandarlo, y una imagen agrandada se ve blanda justo en el detalle
+macro del hilo. La diferencia en total eran 3 créditos. **Dato raro, anotado tal cual:** se pidió
+`nano_banana_pro` y se cobró como tal (2 créditos), pero `jobs_wait` informó el trabajo como `nano_banana_2`. La salida
+mide 2752 × 1536.
+
+Trabajos en Higgsfield: 06 `5437bb68-f480-4c53-91aa-9a2d4565be0b` · 07 `b5adc73c-b09f-42c9-9de1-980be99025bc` ·
+08 `a4f2d8ba-0cec-4dae-8a7b-4509ff114ecf`. Referencia subida: `6aaf4624-5346-4d6f-aeaa-30446cb84cfd`.
+
+### Prompts finales
+
+Los de §2, con tres cambios: se agregó «no letters» a los tres; a la 6 y la 7, que el motivo vaya en el 45 % central
+del ancho; y a la 8, que los tres nudos queden juntos en el 40 % central (así entran en el recorte 4:5).
+
+**6 · Anuncios**
+```
+Extreme macro photograph of the eye of a single plain steel sewing needle, standing upright in the exact horizontal
+centre of the frame, against a near-black background (#060606). Five very fine pale silver-white threads enter the
+frame from different edges (top left, left, bottom left, bottom, top), each softly out of focus, and all of them
+converge to pass through the same needle eye, emerging on the other side as one single tight strand. Cold low-key
+lighting: a deep teal-green rim light from behind, like light caught inside glass fibres; shallow depth of field, only
+the needle eye in sharp focus, soft bokeh. Quiet, editorial, cinematic still life; about 85 percent of the frame is
+near-black; the subject sits inside the central 45 percent of the width. Palette strictly black, graphite, teal and
+silver-white. No gold, no amber, no yellow, no orange, no warm tones, no text, no letters, no logos, no screens, no
+people, no hands. Use the reference image only for its light and colour; do not copy its shapes.
+```
+
+**7 · Acompañamiento mensual**
+```
+Still life photograph of a hand spindle lying on its side on a matte black surface, centred in the frame: a slim
+ebonized black wooden shaft with a flat round whorl disc near one end, and pale silver-grey thread wound around the
+shaft in many neat, even layers, like rings added one at a time. A single loose end of thread runs out of the frame to
+the left, held taut. Three-quarter view from slightly above; the spindle sits inside the central 45 percent of the
+width. Low-key cold light from the upper right, soft teal-green reflections on the edge of the whorl disc; everything
+else falls into near-black (#060606). Shallow depth of field, focus on the wound layers. Restrained, editorial,
+museum-object feel. Palette strictly black, charcoal, teal and silver-grey. No gold, no amber, no brass, no warm wood
+tones, no text, no letters, no logos, no people, no hands. Use the reference image only for its light and colour; do
+not copy its shapes.
+```
+
+**8 · Cómo partimos**
+```
+Overhead flat-lay photograph of a sheet of matte charcoal paper that fills the frame. A single pale silver-white
+thread is laid in one straight horizontal line across the centre of the sheet, with three small, evenly spaced knots
+close together near the middle that divide its central part into three equal short segments, all three knots inside
+the central 40 percent of the width; its two ends are slightly frayed. Raking low-key light from the left, so the
+paper fibre and the knots cast tiny soft shadows; the edges of the frame fall to near-black (#060606), with a faint
+cool teal tint in the shadows. Minimal, precise, editorial, a lot of empty space. No writing, no numbers, no printed
+text, no letters, no rulers, no gold, no amber, no yellow, no warm tones, no logos, no people, no hands. Use the
+reference image only for its light and colour; do not copy its shapes.
+```
+
+### Lo que salió, mirado
+
+- **6, la aguja:** cuatro hilos entran por la izquierda y salen como uno solo por el ojo. La aguja va centrada, a
+  sangre, con un solo motivo. Se usa tal cual; el 4:5 es el centro.
+- **7, el huso:** huso de madera negra con su disco, hilo enrollado en capas y el cabo tenso hacia la izquierda. La
+  madera salió negra, como pedía el prompt (era el riesgo de dorado). El huso quedó a la derecha del centro, así que el
+  4:5 se corta centrado en el 62,5 % del ancho para que entren el enrollado y el disco.
+- **8, los nudos:** el modelo no le hizo caso a «paper that fills the frame» y puso la hoja sobre un fondo verde
+  azulado, con los bordes a la vista, lo que se leía como maqueta. **No se pidió un segundo intento:** se recortó en
+  16:9 dentro de la hoja (caja 300,214 → 2460,1429 del original), que la deja a sangre. Se le suavizó el grano del
+  papel (desenfoque gaussiano de 1 px antes de reducir) porque solo ese ruido la llevaba a 146 kB y 166 kB; ahora pesa
+  44 kB y 30 kB, sin perder el detalle de los nudos.
+- **Ninguna trae personas, manos, pantallas, letras ni texto.**
+
+### Archivos (`spindlelab-astro/public/v3/medios/`)
+
+| Archivo | Medida | Peso | Dorado (`imagenes/medir-dorado.py`) |
+|---|---|---|---|
+| `e14-banda-anuncios-169.webp` | 1600 × 900 | 25 kB | 0,00 % |
+| `e14-banda-anuncios-45.webp` | 900 × 1125 | 22 kB | 0,00 % |
+| `e14-banda-acompanamiento-169.webp` | 1600 × 900 | 34 kB | 0,00 % |
+| `e14-banda-acompanamiento-45.webp` | 900 × 1125 | 34 kB | 0,00 % |
+| `e14-banda-como-partimos-169.webp` | 1600 × 900 | 44 kB | 0,00 % |
+| `e14-banda-como-partimos-45.webp` | 900 × 1125 | 30 kB | 0,00 % |
+
+Las tres 16:9 suman **103 kB**, contra los ~160 kB estimados en §4. Los PNG originales (2752 × 1536) no se subieron
+al repositorio porque pesan varios MB; quedan en la cuenta de Higgsfield con los ids de arriba.
+
+**No se tocaron** el prototipo ni ningún `.astro`: conectar estas imágenes a las bandas le toca a Diego. Tampoco se hizo
+upscale, video ni lote de variantes. Nada se publica.
