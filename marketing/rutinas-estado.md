@@ -44,8 +44,19 @@ nadie los retomara (ver `ventas/pipeline-reconstruido-2026-09-22.md`).
 - Limpieza: la línea 160 tenía las comillas doble-escapadas (`\"Inicio\"`), un artefacto del
   original. Ahora son comillas normales.
 
-**Copia del prompt vigente:** `marketing/rutinas-prompt-copiloto-2026-09-22.txt` (27.068 chars,
-cotejado por hash contra lo que quedó en producción).
+**Copia del prompt del 22-sep: SUPERADA (2-nov-2026).** `marketing/rutinas-prompt-copiloto-2026-09-22.txt`
+(27.068 chars, cotejado por hash contra lo que había en producción *ese día*) ya no es el prompt
+vigente: vende un «MOTOR DE ADQUISICION» y ofrece un «diagnóstico gratis», y la rutina se reescribió
+el 24-sep (campaña Verifica y Cumple) y se corrigió varias veces en octubre. **La fuente es la
+rutina programada, no este archivo ni esa copia** (`RemoteTrigger get` sobre
+`trig_012i6WEJU12aAVfSCsNMVAVX`). La línea de la casa vigente está en
+`marketing/oficina/clientes/spindlelab.md`, y lo que hoy hace el copiloto en
+`marketing/outbound/copiloto-outbound.md`. Leído en vivo el 2-nov: cron `0 11 * * 1-5` (08:00 Chile
+con UTC-3), activa, prompt de 25.502 chars; la tabla de arriba, con `0 12`, es la foto del 22-sep.
+
+**Firma:** la del copiloto dice «FUNDADOR», que coincide con la decisión de Ramón del 2-nov
+(«Fundador», sin «director»). Cambiar cualquier texto de la rutina exige reenviar el prompt completo
+(ver más abajo) y es acción de Ramón.
 
 ## Cómo se diagnostica una rutina desde una sesión
 

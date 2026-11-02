@@ -27,17 +27,17 @@ Lo que Ramón pega a mano en los perfiles. Arriba va la versión vigente; abajo 
 Fundador de SpindleLab: sitios web a medida y marketing con IA
 ```
 
-**B (168 de 220):**
+**B (157 de 220):**
 ```
-Fundador y director de SpindleLab · Sitios web a medida y marketing con IA · Parto por tu sitio y le conecto la búsqueda en Google y en las IA, los anuncios y las redes
+Fundador de SpindleLab · Sitios web a medida y marketing con IA · Parto por tu sitio y le conecto la búsqueda en Google y en las IA, los anuncios y las redes
 ```
 
 *Recomendación: la A.* Es, palabra por palabra, el `jobTitle` que el sitio declara para Ramón en sus datos estructurados (`/nosotros/` y la home), así que LinkedIn y el sitio describen igual a la misma persona. Y es corta: en comentarios y en resultados de búsqueda LinkedIn suele recortar el titular, y la A se lee entera. La B explica el método, pero eso ya lo hace el Acerca de.
 
-#### Acerca de (máx. 2.600 caracteres) · 1.172 caracteres, 211 palabras contando las dos direcciones
+#### Acerca de (máx. 2.600 caracteres) · 1.161 caracteres, 209 palabras contando las dos direcciones
 
 ```
-Soy Ramón Vallejos, fundador y director de SpindleLab. Hago sitios web a medida y marketing con IA.
+Soy Ramón Vallejos, fundador de SpindleLab. Hago sitios web a medida y marketing con IA.
 
 Trabajé años en agencias de medios y de marketing. Ahí vi dónde se pierde lo que una marca invierte para atraer clientes: casi nunca en el anuncio, casi siempre en el lugar al que el anuncio lleva.
 
@@ -57,7 +57,7 @@ spindlelab.cl/contacto
 
 #### Experiencia: el cargo en SpindleLab
 
-**Cargo (máx. 100):** `Fundador y director` (19)
+**Cargo (máx. 100):** `Fundador` (8)
 **Empresa:** SpindleLab (la página de la empresa, para que salga el logo) · fecha de inicio: la real, la pone Ramón.
 **Descripción (máx. 2.000) · 369 caracteres:**
 ```
@@ -105,7 +105,7 @@ Hablemos de tu sitio. Si ya tienes uno, te lo revisamos gratis y en un día háb
 spindlelab.cl/contacto
 ```
 
-*Larga, opcional (1.753 de 2.000):*
+*Larga, opcional (1.758 de 2.000):*
 ```
 En redes arriendas. Tu sitio es lo único que es tuyo.
 
@@ -115,7 +115,7 @@ Hacemos sitios web a medida, desde una página de campaña hasta una plataforma 
 
 Partimos por una revisión gratis. Después conversamos 20 minutos por videollamada y, si hay trabajo que hacer, te mandamos por escrito qué hacemos, en qué fases y cuánto cuesta. Cada fase termina con algo que apruebas antes de seguir. Cada solución publica su precio de partida en spindlelab.cl, más IVA. No prometemos consultas, ventas ni menciones en una IA. Lo que dejamos por escrito es el método, los entregables y los plazos.
 
-SpindleLab lo dirige Ramón Vallejos, su fundador, que viene de años en agencias de medios y de marketing. Trabaja con agentes de IA dentro del equipo y responde por cada entrega. También construyó dos herramientas abiertas y gratis: el chequeo de spindlelab.cl/diagnostico y Verifica y Cumple, para la Ley 21.719 de datos personales.
+Detrás de SpindleLab está Ramón Vallejos, su fundador, que viene de años en agencias de medios y de marketing. Trabaja con agentes de IA dentro del equipo y responde por cada entrega. También construyó dos herramientas abiertas y gratis: el chequeo de spindlelab.cl/diagnostico y Verifica y Cumple, para la Ley 21.719 de datos personales.
 
 Hablemos de tu sitio. Si ya tienes uno, te lo revisamos gratis y en un día hábil te mandamos lo que encontramos. Si no, te contamos cómo lo haríamos y cuánto cuesta.
 spindlelab.cl/contacto

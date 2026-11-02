@@ -73,3 +73,7 @@
    SpindleLab como «consultora de SEO técnico, visibilidad en IA y cumplimiento web» y firma «FUNDADOR». Avísale.
 10. **Piezas gráficas por rehacer:** la firma PNG de outbound y el banner de LinkedIn (Bruno).
 11. **Las skills cambiaron en `main`.** Recrea las sesiones largas (tú incluida) para que las carguen.
+
+## Corrección de la troncal (2-nov-2026)
+
+Ramón decidió el cargo: **«Fundador», sin «director»**. Las dos menciones de «Fundador y director» de esta nota (L17 y L59) quedan sustituidas por «Fundador». La firma de la tarea programada («FUNDADOR») ya era la correcta y no hay que cambiarla.

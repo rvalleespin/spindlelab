@@ -8,8 +8,9 @@ y usa la línea anterior («poner el motor a funcionar entero»).
 
 **Qué cambió respecto de la de Legal Prisma:**
 
-- La lámina 2 («Quién está al otro lado») sale tal cual de `/nosotros/`, publicado el
-  30-oct-2026: Ramón Vallejos, fundador y director; años en agencias de medios y de marketing,
+- La lámina 2 («Quién está al otro lado») sale de `/nosotros/`, publicado el
+  30-oct-2026, salvo el cargo: Ramón decidió el 2-nov «Fundador», sin «director». Ramón
+  Vallejos, fundador; años en agencias de medios y de marketing,
   **sin nombrar agencias ni clientes**; agentes de IA dentro del equipo y él responde por cada
   entrega; UNAB y máster de la U. de Barcelona. Cierra con «Construimos el sitio como eje y le
   conectamos lo demás.» No se le agregan cargos, cifras ni nombres.

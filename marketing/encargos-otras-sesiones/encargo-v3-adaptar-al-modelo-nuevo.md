@@ -1,5 +1,7 @@
 # Encargo a la sesión del v3: adaptar el sitio nuevo al modelo de negocio nuevo
 
+**ESTADO (2-nov-2026): CERRADO.** El sitio salió el 30-oct con otra línea (PR #51, f0e1b019); este encargo ya no aplica. Lo que quedó de la obra está en `marketing/oficina/obras-web/spindlelab-v3/e13/`.
+
 **De:** la troncal, a pedido de Ramón · **Fecha:** 23-oct-2026 · **Para:** la sesión que construye el v3 (rama `claude/magical-franklin-ckfki2`)
 **Estado:** propuesta de la troncal. Las cuatro decisiones de la sección 3 son de Ramón y están sin cerrar: pregúntaselas.
 

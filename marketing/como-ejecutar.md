@@ -1,5 +1,10 @@
 # Cómo ejecutar el plan — manual de operación
 
+> **Nota del 2-nov-2026.** La línea pública cambió el 30-oct-2026 («Sitios web a medida y marketing con IA»;
+> fuente de verdad: `marketing/oficina/clientes/spindlelab.md`). Donde este manual describe la línea de julio,
+> manda la ficha. Lo único que se actualizó en el cuerpo es el plazo de la oferta de entrada: hoy es una
+> «revisión gratis de una página, respuesta en un día hábil», antes «mini-diagnóstico en 48 h».
+
 La mecánica es simple: **abres una sesión de Claude Code sobre este repo, pegas el prompt del día, revisas lo que produce y tú haces el paso final** (enviar, publicar, llamar). Este repo es la memoria del proyecto: todo lo que los agentes produzcan se guarda aquí, así cada sesión nueva retoma donde quedó la anterior.
 
 ## Convención de carpetas (donde los agentes guardan su trabajo)
@@ -70,5 +75,5 @@ Todo lo demás es delegable a las sesiones de Claude Code.
 
 - Tope de **50 emails/semana** aunque el agente pueda producir 500 — el límite es la reputación del dominio.
 - **Nada** producido por IA se envía o publica sin tu pasada.
-- La promesa «mini-diagnóstico en 48 h» no se rompe jamás (estándar interno: 24 h).
+- La promesa «revisión gratis de una página, respuesta en un día hábil» no se rompe jamás.
 - Con 2 clientes activos, el outbound se pausa; con 1, baja a 25/semana.

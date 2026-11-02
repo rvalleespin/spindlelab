@@ -5,7 +5,7 @@
 ## Etapas
 
 1. **Contactado** — hubo primer contacto (email, mensaje, conversación), sin compromiso aún.
-2. **Diagnóstico/propuesta enviada** — se envió el mini-diagnóstico gratis o una cotización.
+2. **Diagnóstico/propuesta enviada** — se envió la revisión gratis o una cotización.
 3. **Llamada agendada** — hay conversación de 20 min agendada o realizada.
 4. **Propuesta formal enviada** — cotización cerrada enviada (usar `marketing/plantillas/cotizaciones/`).
 5. **Ganado ✅** — proyecto confirmado.

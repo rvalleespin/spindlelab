@@ -4,13 +4,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this repo actually is
 
-This is **not a software project** — it is the operations repository for **SpindleLab**, a solo consultancy (SEO técnico + visibilidad en motores de IA / AEO/GEO) run by Ramón Vallejos Espíndola for Chilean B2B and YMYL companies. It holds three distinct things:
+This is **not a software project** — it is the operations repository for **SpindleLab**, a solo consultancy whose line since 30-oct-2026 is «Sitios web a medida y marketing con IA» (Desarrollo web is the main business; SEO técnico + visibilidad en motores de IA / AEO/GEO now connect to the site instead of being the core; see **Línea vigente** below) run by Ramón Vallejos Espíndola for Chilean B2B and YMYL companies. It holds three distinct things:
 
 - **`spindlelab-site/`** — the public marketing website (static HTML, deployed to Cloudflare Pages).
 - **`marketing/`** — the brand system, 90-day strategy, content production (LinkedIn/Instagram), cold-outbound material, and cross-session coordination docs.
 - **`ventas/`** — sales pipeline (`pipeline.md`) and delivered-project tracking (`proyectos-en-curso.md` — deliberately a separate document: pipeline tracks a prospect until won/lost, proyectos-en-curso tracks delivery phases of an already-won project). The "Desarrollo Web" client-site work itself (e.g. Bernardo Combeau's site) is reported to live in a sibling repo, not here.
 
 Most work is **content and marketing operations**, not coding. `contexto-agente-spindlelab.md` at the root is the founding brief; read it plus `marketing/brand/manual-de-marca.md` before producing anything public. `marketing/estrategia-marketing-spindlelab.md` is the strategy itself — §8 defines the day-30/45/60 decision checkpoints and kill-criteria for paid channels; `marketing/como-ejecutar.md` is the original operating manual and explains the `marketing/` subfolder conventions (`listas/`, `outbound/semana-XX/`, `diagnosticos/`, `metricas/`, `articulos/`).
+
+### Línea vigente (desde el 30-oct-2026)
+
+- **Rótulo:** «Sitios web a medida y marketing con IA».
+- **Titular:** «En redes arriendas. Tu sitio es lo único que es tuyo.»
+- **Acción principal:** «Hablemos de tu sitio» (`/contacto/`). Con sitio: revisión gratis de una página, respuesta en **un día hábil** (never «24 horas» or «48 h»). Sin sitio: se le cuenta cómo se haría y cuánto cuesta. El chequeo de `/diagnostico/` es secundario.
+- **Cargo de Ramón:** «Fundador» (decisión de Ramón, 2-nov-2026), sin «director». No se nombran agencias ni clientes del pasado.
+- **Fuente de verdad:** `marketing/oficina/clientes/spindlelab.md`. Documents older than this line (founding brief, Aug-2026 repositioning plan, strategy) carry a header pointing there; where they disagree, the ficha wins.
 
 ## Architecture: a trunk session + specialized persona sessions, running in different environments
 
@@ -22,7 +30,7 @@ The defining structure here is that **multiple Claude Code sessions work on this
 - `persona-disenador-web` — `spindlelab-site/` and client web-dev delivery. For anything
   with its own composition (a site, a redesign, a landing) this session is now one role
   inside a pipeline, not the whole job — see **The web team** below.
-- `mini-diagnostico` — generates the 1-page SEO/AI-visibility audit promised to prospects within 48h.
+- `mini-diagnostico` — generates the free one-page review («revisión gratis de una página») offered to prospects who already have a site, answered within one business day («un día hábil»). Until oct-2026 it was the «mini-diagnóstico en 48 h».
 - `buscar-leads`, `agente-outbound`, `agente-crm` — recurring task workflows (lead sourcing, outbound sequencing, pipeline updates).
 
 The full org chart of these agents (who does what, their working folder, memory, and open vacancies) is in **`marketing/oficina/organigrama-oficina.md`**; per-agent memory lives in `marketing/oficina/memoria/`.

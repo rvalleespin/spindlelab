@@ -3,7 +3,7 @@
 
 Es la SPL-COT-2026-015 (galería de arte, sep-2026), enviada tal cual, salvo el encabezado y la
 firma, puestos al día el 2-nov-2026 con la línea publicada el 30-oct («Sitios web a medida y
-marketing con IA»; «Fundador y director»). El panel ya va en los tres planes. Para una nueva:
+marketing con IA») y el cargo «Fundador», sin «director» (decisión de Ramón, 2-nov). El panel ya va en los tres planes. Para una nueva:
   1. Copiar a COTIZACIONES/SPL-COT-AAAA-NNN_generador.py (junto a logo-spindlelab-nuevo.png).
   2. Cambiar: SALIDA, REFERENCIAS, N.º/Proyecto/Fecha/Cliente del encabezado, "El proyecto",
      la tabla de planes (precios SOLO los publicados en el sitio), fases (qué se hace),
@@ -387,7 +387,7 @@ A(KeepTogether([
     Spacer(1, 14),
     HRFlowable(width="100%", thickness=1, color=LINEA),
     Spacer(1, 6),
-    Paragraph("SpindleLab · Ramón Vallejos Espíndola · Fundador y director · hola@spindlelab.cl", st_small),
+    Paragraph("SpindleLab · Ramón Vallejos Espíndola · Fundador · hola@spindlelab.cl", st_small),
 ]))
 
 doc.build(E)

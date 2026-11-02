@@ -19,7 +19,7 @@ Usar junto con `plantilla-cotizacion.html` (la plantilla editable) y `marketing/
 7. **Referencias de precios de mercado** — 1 párrafo + fuentes citadas con enlace. Ancla el valor mostrando que el precio propio está deliberadamente bajo el rango de mercado, con evidencia verificable — no una afirmación de vendedor.
 8. **Condiciones comerciales** — forma de pago (medio, cuándo empiezan a correr los plazos), transferencia de propiedad intelectual al pago final, **aclaración explícita de si los valores incluyen IVA o son brutos/netos** (nunca dejarlo ambiguo — fue el error real corregido en SPL-COT-2026-014; hoy los precios publicados son + IVA y así se escribe), validez de la cotización.
 9. **Alcance y límites** — lista de topes concretos: cantidades máximas incluidas (fotos por galería, rondas, horas), qué provee el cliente vs. qué provee SpindleLab, y **qué cubre exactamente la garantía post-entrega** (corrección de errores de funcionamiento — nunca "cambios" sin definir, porque eso invita a pedir rediseños gratis). Esta sección es la que evita el proyecto que nunca termina.
-10. **Firma final** — una sola línea: `SpindleLab · Ramón Vallejos Espíndola · Fundador y director · hola@spindlelab.cl`. Sin foto, sin redes, sin adornos.
+10. **Firma final** — una sola línea: `SpindleLab · Ramón Vallejos Espíndola · Fundador · hola@spindlelab.cl`. Sin foto, sin redes, sin adornos.
 
 ## 2. Registro de lenguaje (la voz en documentos comerciales)
 

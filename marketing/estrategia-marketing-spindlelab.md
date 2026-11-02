@@ -1,5 +1,10 @@
 # Estrategia de Marketing — SpindleLab (spindlelab.cl)
 
+> **Nota del 2-nov-2026.** La línea pública cambió el 30-oct-2026 («Sitios web a medida y marketing con IA»;
+> fuente de verdad: `marketing/oficina/clientes/spindlelab.md`). Donde este documento describe la línea de julio,
+> manda la ficha. Lo único que se actualizó en el cuerpo es la oferta de entrada y su plazo («revisión gratis de
+> una página, respuesta en un día hábil», antes «mini-diagnóstico en 48 h»). Los puntos de decisión de día 30/45/60 y los criterios de corte (§8) quedan como estaban.
+
 **Versión 1.1 — 7 de julio de 2026** (v1.1: plazos comprimidos por ejecución asistida con Claude Code, ver §6.5)
 Horizonte: 90 días (julio → principios de octubre 2026), con la meta comercial adelantada al día 60
 
@@ -32,7 +37,7 @@ SpindleLab es una consultoría unipersonal y anónima de SEO técnico + visibili
 | Método propietario documentado (Workflow v2.1) | Cero presencia en LinkedIn (ni página ni actividad) |
 | Caso real ejecutado (SimpleTrust) | Sin Google Search Console ni medición configurada |
 | Apollo.io operativo con nicho financiero mapeado | Blog sin cadencia; 3 artículos estáticos |
-| Oferta de entrada clara: mini-diagnóstico gratis en 48 h → llamada de 20 min | Un solo nicho prospectado; sin listas para nichos nuevos |
+| Oferta de entrada clara: revisión gratis de una página, respuesta en un día hábil → llamada de 20 min | Un solo nicho prospectado; sin listas para nichos nuevos |
 | Dominio y correo hola@spindlelab.cl funcionando | Marca desconocida; cero prueba social visible |
 
 ---
@@ -101,7 +106,7 @@ Criterios de puntuación (1–5 cada uno, mayor = mejor para SpindleLab):
 Sin cambios en la oferta — está bien diseñada. Se formaliza el funnel:
 
 ```
-Email frío (Apollo) ──► Mini-diagnóstico gratis 1 página / 48 h ──► Llamada 20 min ──► Propuesta ──► Cierre
+Email frío (Apollo) ──► Revisión gratis de 1 página / un día hábil ──► Llamada 20 min ──► Propuesta ──► Cierre
 LinkedIn + Blog + Ads ──────────────────────────┘ (alimentan el mismo embudo)
 ```
 
@@ -152,7 +157,7 @@ La regla general: **los agentes producen, tú decides y das la cara.** Nada que 
 | Construcción y verificación de listas (Apollo/fuentes públicas) | Arma, depura, verifica emails | Apruebas el segmento |
 | Evidencia personalizada (pruebas en ChatGPT/Perplexity por prospecto) | Ejecuta las consultas y documenta resultados por lote | Muestreas que sean reales |
 | Borradores de emails fase 0 | Redacta con las plantillas + evidencia | Revisas, ajustas tono, envías |
-| Mini-diagnósticos | Corre el workflow v2.1 (Capa 1 y 2) y arma el borrador de 1 página | Validas hallazgos y firmas el criterio; **promete 48 h, entrega en 24** — es parte del pitch |
+| Mini-diagnósticos | Corre el workflow v2.1 (Capa 1 y 2) y arma el borrador de 1 página | Validas hallazgos y firmas el criterio; **promete respuesta en un día hábil** (revisión gratis de una página) — es parte del pitch |
 | Artículos del blog | Borrador completo en formato AEO | Edición con criterio propio (~45 min) |
 | Posts de LinkedIn | Lote semanal de borradores | Apruebas y publicas |
 | Panel de métricas | Recolecta GSC/Analytics/Apollo/Ads y arma el resumen semanal | Lees 15 min y decides |
