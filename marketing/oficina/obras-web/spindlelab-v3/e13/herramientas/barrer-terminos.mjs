@@ -39,6 +39,9 @@ const TERMINOS = [
   ['posicionamiento anterior', /estudio de dise[ñn]o y tecnolog[ií]a|no es una agencia de marketing|marketing y crecimiento con IA|te llegan consultas/gi],
   ['¿Listo para…?', /¿\s*listo para/gi],
   ['mismo chequeo que a cada sitio', /mismo chequeo (que|con el que)[^.<]{0,80}(construimos|proyecto)|le pasamos este chequeo antes/gi],
+  // 2-nov (Decisión de Ramón, 2-nov-2026): el cargo es «Fundador», sin «director». Del 30-oct al 2-nov salió «Fundador y
+  // director» en la home, /nosotros/, los 7 artículos y llms.txt (desvios/texto-2nov.md). No toca «directorios».
+  ['cargo con «director»', /fundador y director|director de SpindleLab/gi],
   ['rayas largas o medias', /[—–]/g],
 ];
 
