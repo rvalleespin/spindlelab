@@ -1607,14 +1607,24 @@ export const TTL_USO_S = 60 * 60 * 24 * 90;
  * aceptara tal cual, cualquiera podría fabricar miles de llaves distintas con
  * un bucle. Lo que no está en la lista es 'otro'.
  */
+// ORIGENES-CERRADOS: instagram linkedin facebook whatsapp correo buscador meta propio directo otro
+// ⚠️ Esta misma lista está repetida en `index.html`, porque el formulario la necesita del
+// lado del cliente y no puede preguntarle al servidor. `prueba-uso.mjs` compara las dos y
+// se pone roja si se separan. Si agregas un origen, va en los dos lados.
+//
+// `meta` entró el 2-nov-2026: la campaña de Meta llevaba diez días corriendo y no había forma
+// de contarla. Ojo con el nombre: `facebook` e `instagram` salen del REFERER de un enlace
+// orgánico; `meta` es el tráfico PAGADO, y solo llega si el enlace del anuncio trae
+// `utm_source=meta`. Son tres cosas distintas y conviene que se cuenten aparte.
+export const ORIGENES_CONOCIDOS = new Set([
+  'instagram', 'linkedin', 'facebook', 'whatsapp', 'correo', 'buscador', 'meta', 'propio',
+]);
+
+/** Todo lo que `origenDeLaVisita` puede devolver. Es la lista blanca de las llaves de KV. */
+export const ORIGENES_VALIDOS = new Set([...ORIGENES_CONOCIDOS, 'directo', 'otro']);
+
 export function origenDeLaVisita(referer, url) {
-  // ORIGENES-CERRADOS: instagram linkedin facebook whatsapp correo buscador propio directo otro
-  // ⚠️ Esta misma lista está repetida en `index.html`, porque el formulario la necesita del
-  // lado del cliente y no puede preguntarle al servidor. `prueba-uso.mjs` compara las dos y
-  // se pone roja si se separan. Si agregas un origen, va en los dos lados.
-  const CONOCIDOS = new Set([
-    'instagram', 'linkedin', 'facebook', 'whatsapp', 'correo', 'buscador', 'propio',
-  ]);
+  const CONOCIDOS = ORIGENES_CONOCIDOS;
 
   // Un utm_source explícito manda sobre el referer: es lo que nosotros pusimos en el enlace.
   try {
@@ -1636,6 +1646,32 @@ export function origenDeLaVisita(referer, url) {
   if (host === 'verifica.spindlelab.cl') return 'propio';
   if (host === 'spindlelab.cl' || host.endsWith('.spindlelab.cl')) return 'propio';
   return 'otro';
+}
+
+/**
+ * El origen que declara LA PÁGINA, con el de la petición como respaldo.
+ *
+ * ── POR QUÉ HACÍA FALTA (2-nov-2026) ────────────────────────────────────────────────────
+ *
+ * `origenDeLaVisita` recibía el referer y la URL de la LLAMADA A LA API, no los de la página.
+ * Esa llamada la hace nuestro propio sitio con `fetch`, así que su referer es siempre
+ * verifica.spindlelab.cl y su URL es `/api/chequeo?dominio=…`, sin ningún utm. Resultado: TODO
+ * caía en `propio`, y el único contador por origen que teníamos no podía distinguir nada.
+ *
+ * Se comprobó en el KV de producción: desde el 23-oct no existe una sola llave que no sea
+ * `uso:origen:<día>:propio`. Diez días de campaña pagada contados como tráfico interno.
+ *
+ * El dato correcto solo lo tiene el navegador —`document.referrer` y el `location.search` de
+ * la PÁGINA—, y la página ya lo calcula para el formulario. Esto lo recibe.
+ *
+ * ⚠️ Y SE VALIDA CONTRA LA LISTA CERRADA, por la misma razón de siempre: esto termina siendo
+ * parte de una llave de KV, y lo escribe quien visita. Sin la lista, un bucle podría fabricar
+ * miles de llaves. Lo que no está en la lista no se cree: se cae al respaldo.
+ */
+export function origenDeLaPagina(declarado, referer, url) {
+  const d = String(declarado || '').toLowerCase().trim();
+  if (ORIGENES_VALIDOS.has(d)) return d;
+  return origenDeLaVisita(referer, url);
 }
 
 /**
@@ -1755,7 +1791,7 @@ export async function onRequestGet({ request, env }) {
   // una que declinó por falta de cupo no es uso, es un rebote, y contarla mentiría.
   if (r.ok && !r.deCache) {
     await anotarUso(env && env.VYC_TOPES, 'profundo',
-      origenDeLaVisita(request.headers.get('Referer'), url));
+      origenDeLaPagina(url.searchParams.get('origen'), request.headers.get('Referer'), url));
   }
 
   return new Response(JSON.stringify(r), {

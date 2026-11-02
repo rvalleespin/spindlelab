@@ -26,7 +26,7 @@
  * 'entrada' si lo que se escribió no es un dominio revisable, 'sitio' si no pudimos leerlo.
  */
 
-import { anotarUso, origenDeLaVisita } from './profundo.js';
+import { anotarUso, origenDeLaPagina } from './profundo.js';
 
 const TIMEOUT_MS = 8000;
 // Presupuestos de espera. El reloj de 8 s es por cadena de redirecciones (ver `traer`), pero
@@ -1837,7 +1837,7 @@ export async function onRequestGet(contexto) {
     // chequeos que salieron bien: los errores de entrada no son uso.
     if (r.ok) {
       const tarea = anotarUso(env && env.VYC_TOPES, 'rapido',
-        origenDeLaVisita(request.headers.get('Referer'), url));
+        origenDeLaPagina(url.searchParams.get('origen'), request.headers.get('Referer'), url));
       if (contexto.waitUntil) contexto.waitUntil(tarea); else await tarea;
     }
     return new Response(JSON.stringify(r), { status: r.ok ? 200 : 400, headers: CABECERAS });
