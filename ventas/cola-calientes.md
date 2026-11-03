@@ -9,16 +9,16 @@ Ningún caliente pasa **48 h sin un toque humano registrado o una decisión de P
 Cada toque lleva algo nuevo (un dato verificado, una respuesta útil), nunca «¿alguna novedad?».
 Ramón revisa la cola 10 minutos cada mañana y decide. Nada se envía sin su aprobación, mensaje por mensaje.
 
-## En juego hoy (estado al 19-oct-2026)
+## En juego hoy (estado al 3-nov-2026, leído de Gmail)
 
-**Ramón ya envió los correos de reencuentro a Carlos (12:20), legalprisma y Chef & Hotel (12:41, hora Chile) el 19-oct.** El de Eduardo salió a las 14:07 (hora Chile), **él respondió a las 15:02** (quiere reunirse el miércoles 21 a las 12:00 o más tarde y cotizar mejoras de su sitio) y **Ramón le contestó a las 15:46**, con copia a Dana. Cada uno retoma la historia y pregunta si se retoma o en qué está el tema.
+**Qué pasó desde el 19-oct (todo verificado en Gmail el 3-nov):** de los cuatro reencuentros, **tres respondieron** (Carlos, Eduardo, Sebastián) y **uno no** (Chef & Hotel).
 
 | Quién | Dónde está | Pelota | Borrador | Nota para decidir cuándo enviar |
 |---|---|---|---|---|
-| **Carlos Soya** (srsoya.com) | Plan Arranque $200.000/mes. Pendiente de sus 2 respuestas desde el 28-sep. Dijo que escribiría el 20-oct | Carlos | **Enviado el 19-oct.** Preguntó por Chile primero y el precio en dólares, y ofreció coordinar el primer pago | Esperar su respuesta. Si no hay señal el 22-oct, llamar |
-| **Eduardo** (focuscontable.cl) | Respondió el 19-oct 15:02: propone reunirse el mié 21 a las 12:00 o más tarde y quiere **cotizar mejoras del sitio** (enfoque de cliente desactualizado, página sin terminar, sección de cursos sin uso). Copia a Dana (`Danaesp@hbcontadores.cl`) | Eduardo (cuando conteste lo que se le preguntó) | **Ramón respondió el 19-oct 15:46**: confirmó el mié 21 a las 12:00 y preguntó qué cliente quieren atraer y qué quieren mantener | **Pendiente: enviarle el enlace de Meet antes del mié 21 a las 12:00** (se lo prometió en el correo). Oportunidad de **Desarrollo Web**: llevar `ventas/guion-llamada-20min.md` y la skill de cotizaciones |
-| **Sebastián** (legalprisma.cl) | Canceló la llamada del 11-sep. Ramón lo retomó el 22-sep. Sin respuesta | Sebastián | **Enviado el 19-oct (12:41 Chile).** Dato nuevo verificado ese día: el robots.txt ya no bloquea a los buscadores de IA y estos reciben 200 (el 9-sep recibían 403); la portada sigue sin declararlo como estudio de abogados | Esperar respuesta. Si no hay, cierre con Silencio hacia el 28-oct |
-| **Chef & Hotel** (Ricardo Hurtado) | Llamada 14-ago, propuesta 15-ago. Él pidió aire el 17-ago. Ramón insistió el 22-sep sin respuesta | Ricardo | **Enviado el 19-oct (12:41 Chile).** Retoma con 1 o 2 socios y deja salida amable | Si no responde, probar por teléfono (+56 9 9822 3392, está en su firma) |
+| **Carlos Soya** (srsoya.com) | Cambió a **academia vocal online** (19-oct). Ramón le mandó la cotización SPL-COT-2026-016 y la nota técnica el 20-oct, y hubo reunión el 28-oct. Lo acordado ahí **no consta por correo** | Ramón | Ninguno | **Confirmar si llegó el primer pago:** Gmail no tiene comprobante. Sin pago, el trabajo no parte |
+| **Eduardo** (focuscontable.cl) | Reunión el 22-oct. **Cotización del Sitio Completo enviada el 23-oct** (SPL-COT-2026-017). **11 días sin respuesta.** Pendiente: quién maneja el dominio y el hosting | Eduardo | **Sí, en el hilo de la cotización (3-nov), sin enviar** | Ramón lo revisa y lo envía hoy. Lleva un dato verificado: NIC Chile registra el dominio a nombre de **Minivita SpA**. Si no responde, llamarlo (+56 9 6167 3894) |
+| **Sebastián** (legalprisma.cl) | **Respondió el 19-oct (14:45):** «no hemos cambiado nada»; está en un cambio de marca con otra consultora, primero diseño y luego SEO. «Lo tengo en stand by» | Ramón (no ha contestado) | Ninguno | **Contestarle con amabilidad**, agradeciendo y dejando la puerta abierta. Pasó a «casos en pausa» en el pipeline. Retomar con la marca ya publicada |
+| **Chef & Hotel** (Ricardo Hurtado) | Propuesta del 15-ago. Pidió aire el 17-ago. Ramón insistió el 22-sep y el 19-oct. **Sin respuesta, 15 días desde el último** | Ricardo | Ninguno | **Llamar por teléfono** (+56 9 9822 3392, está en su firma). Si no contesta, cerrar con Silencio |
 
 ## Quién hace qué (confirmado por Ramón el 19-oct-2026)
 - **Sesión «Busqueda de Leads»:** busca los contactos, redacta los correos y hace el seguimiento.
