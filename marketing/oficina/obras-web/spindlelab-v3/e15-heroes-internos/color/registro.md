@@ -21,3 +21,10 @@ agregar más color. Quizás dentro de los conceptos me puedas dar opciones con c
 - las finales de esa paleta en calidad medium (~3 créditos);
 - después, con su OK, si la paleta pasa también a los heroes de Paid Media, Acompañamiento y Chequeo gratis, para que
   la home y la página destino sigan coincidiendo.
+
+**Lectura de Ramón (3-nov):**
+- Le gustan más B (terracota y petróleo) y C (afiche vivo), pero las encuentra «parecidas a lo que ya está», porque
+  siguen siendo los mismos conceptos y el mismo oficio, solo con otra paleta.
+- Va a mandar referencias nuevas. Con ellas se replantea la imagen, no solo el color.
+- Mientras tanto, la fila de tres sigue publicada solo con texto; la prueba con imágenes (commit `816a15e6`) queda sin
+  publicar.
