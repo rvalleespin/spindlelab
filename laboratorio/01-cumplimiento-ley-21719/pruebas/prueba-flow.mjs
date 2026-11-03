@@ -261,5 +261,138 @@ console.log('=== 4. QUE CADA ESTADO DE FLOW HAGA LO QUE SE OBSERVO, Y NADA MAS =
     F.ACCIONES_FLOW.MARCAR);
 }
 
+/* ================================================================== */
+console.log('=== 5. LA PAGINA DE PAGO, PARA DEVOLVER A ALGUIEN A SU PAGO YA ABIERTO ===');
+{
+  // ── POR QUE HAY QUE ARMAR ESTA DIRECCION (3-nov-2026) ────────────────────────────────
+  //
+  // Flow no tiene idempotencia: con el mismo `commerceOrder` abre un pago NUEVO cada vez. Asi
+  // que cuando alguien vuelve dentro de las 24 h, lo correcto es devolverle SU pago, no abrirle
+  // otro. Y para eso hay que saber su direccion:
+  //
+  //   - `payment/getStatus` NO devuelve ninguna URL. Comprobado leyendo el cuerpo entero de
+  //     tres pagos del sandbox: trae flowOrder, commerceOrder, status, amount, payer,
+  //     pending_info y paymentData, y nada mas.
+  //   - de la fila del pedido solo guardamos el token.
+  //
+  // ⚠️⚠️ ESTA ES LA ASERCION QUE IMPIDE QUE LA RUTA SEA UNA SUPOSICION. Se compara la
+  // reconstruccion contra el `url` que Flow devolvio DE VERDAD en el sandbox, textual de los
+  // tres `payment/create` del experimento:
+  //
+  //     "url": "https://sandbox.flow.cl/app/web/pay.php"
+  const URL_OBSERVADA_EN_SANDBOX = 'https://sandbox.flow.cl/app/web/pay.php';
+
+  eq('la pagina reconstruida es la que Flow devolvio en el sandbox',
+    F.paginaDePagoFlow('TOK123', { base: F.BASE_SANDBOX }),
+    `${URL_OBSERVADA_EN_SANDBOX}?token=TOK123`);
+
+  // Y contra lo que arma el camino feliz con esa MISMA respuesta. Son el mismo enlace por dos
+  // vias —una se la pregunta a Flow, la otra la reconstruye— y el dia que se separen, quien
+  // vuelve a su pago aterriza en otra parte.
+  {
+    const red = async () => ({
+      ok: true, status: 200, headers: { get: () => null },
+      json: async () => ({ url: URL_OBSERVADA_EN_SANDBOX, token: 'TOK123', flowOrder: 11463040 }),
+    });
+    const creado = await F.crearPagoFlow(
+      { idPedido: 'vyc_' + 'a'.repeat(32), correo: 'a@b.cl', monto: 177310, titulo: 'Kit',
+        urls: { confirmacion: 'https://v.cl/c', vuelta: 'https://v.cl/v' } },
+      { apiKey: 'AK', secretKey: SECRETO, base: F.BASE_SANDBOX }, red);
+    eq('el enlace del camino feliz y el reconstruido son el mismo',
+      F.paginaDePagoFlow(creado.token, { base: F.BASE_SANDBOX }), creado.destino);
+  }
+
+  // ⚠️ EL ENTORNO MANDA, Y NO SE ESCRIBE DOS VECES. La pagina sale de la MISMA base de la que
+  // sale la API, que es la que `credencialesFlow` deriva de `FLOW_ENTORNO`. Si el host quedara
+  // escrito a mano, un despliegue a produccion mandaria a la gente a pagar al sandbox: su pago
+  // no existiria ahi y no se cobraria nada, en silencio.
+  const enProduccion = F.paginaDePagoFlow('T', { base: F.BASE_PRODUCCION });
+  cierto('en produccion apunta al host de produccion',
+    String(enProduccion).startsWith('https://www.flow.cl/'));
+  falso('y nunca al sandbox', String(enProduccion).includes('sandbox'));
+  eq('la ruta es la misma en los dos entornos',
+    new URL(enProduccion).pathname, new URL(F.paginaDePagoFlow('T', { base: F.BASE_SANDBOX })).pathname);
+
+  // El token va en el query, escapado: es un valor ajeno y acaba dentro de una URL.
+  eq('el token se escapa', F.paginaDePagoFlow('a b&c=d', { base: F.BASE_SANDBOX }),
+    `${URL_OBSERVADA_EN_SANDBOX}?token=a%20b%26c%3Dd`);
+
+  // Sin token no hay pago al que volver, y una direccion sin token lleva a una pagina de Flow
+  // que no sabe de quien es. Mejor nada, que quien llame lo pueda ver.
+  for (const vacio of ['', null, undefined]) {
+    eq(`sin token (${JSON.stringify(vacio)}) no hay enlace`,
+      F.paginaDePagoFlow(vacio, { base: F.BASE_SANDBOX }), null);
+  }
+  eq('y sin base tampoco', F.paginaDePagoFlow('TOK123', {}), null);
+  eq('ni sin credenciales', F.paginaDePagoFlow('TOK123'), null);
+}
+
+/* ================================================================== */
+console.log('=== 6. DE QUIEN ES LA CULPA CUANDO FLOW RECHAZA EL PAGO ===');
+{
+  // ── POR QUE EXISTE (3-nov-2026) ───────────────────────────────────────────────────────
+  //
+  // Flow valida el correo del comprador y rechaza algunos. Cuando eso pasa tenemos el motivo
+  // exacto en la mano y la persona leia «vuelve a intentarlo en un momento»: un consejo que la
+  // manda a reintentar con el mismo correo. Para poder decirle algo util hay que saber ANTES
+  // si el rechazo es suyo o nuestro, y el HTTP no sirve para distinguirlo: TODOS son 400.
+  //
+  // Los codigos de abajo estan medidos contra el sandbox, un caso provocado por linea. La
+  // especificacion publica de Flow (apiFlow.yaml, que alimenta su pagina de docs) NO los trae:
+  // documenta `code` y `message` como esquema y nada mas.
+  const rechazo = (code, estadoHttp = 400) =>
+    F.rechazoDelComprador({ ok: false, estadoHttp, error: `http-${estadoHttp}`, detalleFlow: { code, message: 'x' } });
+
+  // EL CASO QUE MOTIVA TODO: el unico campo de `payment/create` que escribe la persona.
+  eq('el correo que la pasarela no acepta es cosa del comprador', rechazo(1620), 'correo');
+
+  // ── LO QUE SALE DE CAMPOS QUE FIJA EL SERVIDOR NO SE LE ACHACA A NADIE DE AFUERA ──────
+  //
+  // Estos ocho se provocaron de verdad: clave mala, firma mala, moneda inexistente, monto 0,
+  // monto con decimales, urlConfirmation vacia, subject vacio y un medio de pago no
+  // contratado. Ninguno lo puede tocar quien compra, y mandarlo a «revisa tu correo» seria
+  // hacerle perder el tiempo por una configuracion nuestra.
+  for (const nuestro of [108, 109, 1603, 1615, 1680, 1682, 1901, 1990]) {
+    eq(`el codigo ${nuestro} es nuestro, no suyo`, rechazo(nuestro), null);
+  }
+
+  // ⚠️ LA DIRECCION DEL ERROR ESTA ELEGIDA. Un codigo que nunca vimos cae del lado nuestro:
+  // disculparse de mas cuesta una frase; acusar de mas manda a alguien a corregir un correo
+  // que estaba bien, por algo que el no puede arreglar.
+  eq('un codigo que nunca observamos no acusa al comprador', rechazo(4242), null);
+  for (const basura of [null, undefined, '', 'constructor', 'toString', true, {}, []]) {
+    eq(`un code ${JSON.stringify(basura)} tampoco acusa a nadie`, rechazo(basura), null);
+  }
+
+  // Un proveedor que cambia el tipo del campo no deberia convertir el error del comprador en
+  // uno nuestro: el mensaje volveria a ser el inutil de antes sin que nada se ponga rojo.
+  eq('el codigo tambien se reconoce si viene como texto', rechazo('1620'), 'correo');
+
+  // ── LO QUE NO ES UN VEREDICTO DE FLOW SOBRE EL COMPRADOR ──────────────────────────────
+  //
+  // `sin-url-ni-token` es un 200 con el cuerpo raro: ahi el problema es nuestro aunque el
+  // cuerpo traiga un numero. Y un corte de red no trae veredicto ninguno.
+  eq('un 200 con cuerpo raro no acusa al comprador',
+    F.rechazoDelComprador({ ok: false, error: 'sin-url-ni-token', detalleFlow: { code: 1620 } }), null);
+  eq('un corte de red tampoco',
+    F.rechazoDelComprador({ ok: false, error: 'red: ECONNRESET' }), null);
+  eq('ni un fallo anterior a la llamada',
+    F.rechazoDelComprador({ ok: false, error: 'sin-credenciales' }), null);
+
+  // Un pago que SI se abrio no es el rechazo de nadie.
+  eq('un pago abierto no es rechazo de nadie',
+    F.rechazoDelComprador({ ok: true, token: 'T', destino: 'https://x' }), null);
+  eq('y sin resultado no se inventa una culpa', F.rechazoDelComprador(undefined), null);
+
+  // ⚠️ LA GUARDA CONTRA AMPLIAR LA LISTA SIN MEDIR. Si alguien agrega a la lista del comprador
+  // uno de los codigos que YA medimos como nuestros, esto se pone rojo. Es el error caro:
+  // decirle «es tu correo» a quien tiene nuestra apiKey mal puesta.
+  const MEDIDOS_NUESTROS = [108, 109, 1603, 1615, 1680, 1682, 1901, 1990];
+  const enLaLista = Object.keys(F.RECHAZOS_DEL_COMPRADOR).map(Number);
+  cierto('ningun codigo medido como nuestro esta en la lista del comprador',
+    enLaLista.every((c) => !MEDIDOS_NUESTROS.includes(c)));
+  cierto('y la lista no esta vacia, o no clasificaria nada', enLaLista.length >= 1);
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);

@@ -291,5 +291,57 @@ console.log('=== la versión de la política, contra la página publicada ===');
   eq('y es el mismo que se guarda en cada pedido', hallada && hallada[1], m.VERSION_POLITICA);
 }
 
+/* ================================================================== */
+console.log('=== lo que la tabla permite y aun asi no se hace solo ===');
+{
+  /* ── POR QUE SON DOS PREGUNTAS Y NO UNA (3-nov-2026) ────────────────────────────────────
+   *
+   * `TRANSICIONES` dice que es POSIBLE. Hasta hoy el proyecto usaba esa respuesta tambien para
+   * «¿se puede hacer sin que lo mire una persona?», y las dos no son la misma pregunta.
+   *
+   * Lo mostro `contracargado → pagado`: esta en la tabla con razon —una disputa se puede
+   * ganar— y mientras la tabla fue la unica guarda, una notificacion de la pasarela alcanzaba
+   * a reabrir sola un pedido contracargado, disparar el aviso de venta y mandarle al comprador
+   * el correo de «recibimos tu pago» por una plata que el emisor ya se habia llevado.
+   */
+  cierto('un contracargo se puede revertir', m.transicionValida(m.ESTADOS.CONTRACARGADO, m.ESTADOS.PAGADO));
+  cierto('pero no lo hace ningun manejador solo', m.soloAMano(m.ESTADOS.CONTRACARGADO, m.ESTADOS.PAGADO));
+
+  // Y la lista es CORTA a proposito: si contestara que si a todo, nada se marcaria nunca solo
+  // y la venta normal se quedaria esperando a una persona.
+  falso('una venta normal no pasa por nadie', m.soloAMano(m.ESTADOS.CREADO, m.ESTADOS.PAGADO));
+  falso('ni el reintento con otra tarjeta', m.soloAMano(m.ESTADOS.RECHAZADO, m.ESTADOS.PAGADO));
+  falso('ni el pendiente que acredita', m.soloAMano(m.ESTADOS.PENDIENTE, m.ESTADOS.PAGADO));
+  falso('ni la entrega', m.soloAMano(m.ESTADOS.PAGADO, m.ESTADOS.ENTREGADO));
+  falso('ni el contracargo en si, que si se registra solo', m.soloAMano(m.ESTADOS.PAGADO, m.ESTADOS.CONTRACARGADO));
+  falso('ni una transicion que no existe', m.soloAMano(m.ESTADOS.DEVUELTO, m.ESTADOS.PAGADO));
+  falso('ni un estado inventado', m.soloAMano('inventado', m.ESTADOS.PAGADO));
+
+  // El texto que lee quien recibe el aviso vive en la tabla, no en el manejador: hay dos
+  // manejadores y dos copias dirian cosas distintas de la misma situacion.
+  const por = m.porQueSoloAMano(m.ESTADOS.CONTRACARGADO, m.ESTADOS.PAGADO);
+  cierto('hay un porque escrito', typeof por === 'string' && por.length > 80);
+  cierto('que nombra el estado de partida', /CONTRACARGADO/.test(por));
+  cierto('y explica el riesgo concreto, no solo que no se hace',
+    /aviso de venta|recibimos tu pago/i.test(por));
+  eq('y no hay porque para lo que si se hace solo',
+    m.porQueSoloAMano(m.ESTADOS.RECHAZADO, m.ESTADOS.PAGADO), null);
+
+  /* ⚠️ LA INVARIANTE QUE MANTIENE LAS DOS TABLAS HABLANDO DE LO MISMO.
+   *
+   * Marcar «a mano» una transicion que la tabla NO permite seria una compuerta sobre una
+   * puerta tapiada: no cambia nada y da la impresion de que el caso esta cubierto. Si alguien
+   * borrara la fila de `TRANSICIONES` creyendo que la compuerta la reemplaza, esto se pone
+   * rojo — que es exactamente el dia en que hay que enterarse.
+   */
+  for (const de of Object.values(m.ESTADOS)) {
+    for (const a of Object.values(m.ESTADOS)) {
+      if (m.soloAMano(de, a)) {
+        cierto(`${de} → ${a}: marcada de a mano Y posible en la tabla`, m.transicionValida(de, a));
+      }
+    }
+  }
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);

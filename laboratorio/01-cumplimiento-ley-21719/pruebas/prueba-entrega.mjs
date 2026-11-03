@@ -26,12 +26,19 @@ import { DatabaseSync } from 'node:sqlite';
 import fs from 'node:fs';
 import { rutaEnElRepo } from './rutas.mjs';
 
-const RAIZ = '/Users/ramon/vyc-ley21719/verificaycumple/functions/api';
-for (const [v, f] of [['PEDIDOS_JS', 'pedidos.js'], ['ALMACEN_JS', 'almacen.js'],
-  ['ETAPAS_JS', 'etapas.js'], ['ACCESO_JS', 'acceso.js'], ['CORREO_JS', 'correo.js'],
-  ['ENTREGAR_JS', 'entregar.js'], ['INTAKE_JS', 'intake.js']]) {
-  if (!process.env[v]) process.env[v] = `${RAIZ}/${f}`;
-}
+// ⚠️ ACÁ HABÍA UNA RUTA DE MÁQUINA ESCRITA A MANO (quitada el 3-nov-2026).
+//
+// Este archivo rellenaba las siete variables de entorno desde un `/Users/ramon/vyc-ley21719/…`
+// literal, y con eso `rutaEnElRepo` nunca llegaba a ejecutar su guarda: siempre encontraba la
+// variable puesta. El efecto es que esta prueba elegía un repositorio sin preguntar, y hoy
+// acertaba por casualidad.
+//
+// Importa porque existe un worktree hermano, `/Users/ramon/vyc-pixel-consentimiento`, con
+// copias DISTINTAS de estos archivos. La guarda de `rutas.mjs` se planta a propósito cuando hay
+// más de uno, porque elegir el primero significaría probar el repositorio equivocado y
+// reportarlo en verde. Saltársela convertía esa protección en nada justo para este archivo.
+//
+// Ahora se corre como los demás: `VYC_REPO=/Users/ramon/vyc-ley21719 node prueba-entrega.mjs`.
 
 const P = await import(rutaEnElRepo('verificaycumple/functions/api/pedidos.js', 'PEDIDOS_JS'));
 const A = await import(rutaEnElRepo('verificaycumple/functions/api/almacen.js', 'ALMACEN_JS'));
@@ -78,12 +85,39 @@ async function baseConPedido(estado = 'pagado', extra = {}) {
   return { db, sq };
 }
 
-/** Un `request` como el que recibe una Pages Function. */
+/**
+ * Un borrador de política que pasa por uno.
+ *
+ * Desde el 3-nov-2026 `/api/entregar` no cierra un pedido sin el borrador: era el hueco más
+ * grande del tramo entre pagar y recibir, y el endpoint podía marcar «entregado» sobre un
+ * pedido cuyo correo de cierre promete que un abogado revise un texto que nunca salió.
+ */
+const BORRADOR = [
+  'POLÍTICA DE PRIVACIDAD DE EJEMPLO SPA',
+  '',
+  '1. Quién trata tus datos. Ejemplo SpA, RUT 76.086.428-5, con domicilio en Calle 1.',
+  '2. Qué datos tratamos y para qué. Los que escribes en el formulario de contacto, para',
+  '   responderte, y los de navegación cuando aceptas las cookies de medición.',
+  '3. Por cuánto tiempo los guardamos y cuándo los borramos.',
+  '4. Tus derechos: acceso, rectificación, supresión, oposición y portabilidad, y el correo',
+  '   por el que los ejerces.',
+].join('\n');
+
+/**
+ * Un `request` como el que recibe una Pages Function.
+ *
+ * ⚠️ LLEVA EL BORRADOR POR DEFECTO, porque sin él el cierre se rechaza y ninguna de las
+ * aserciones de más abajo hablaría de lo que dice hablar. Para probar el rechazo en sí se
+ * pasa `borrador_politica: null`, que es lo que lo saca del cuerpo: un `undefined` se cae
+ * solo al serializar y no se distinguiría de un olvido.
+ */
 function peticion(cuerpo, clave) {
   const h = new Headers({ 'Content-Type': 'application/json' });
   if (clave !== undefined) h.set('Authorization', `Bearer ${clave}`);
+  const body = { borrador_politica: BORRADOR, ...cuerpo };
+  if (body.borrador_politica === null) delete body.borrador_politica;
   return new Request('https://verifica.spindlelab.cl/api/entregar', {
-    method: 'POST', headers: h, body: JSON.stringify(cuerpo),
+    method: 'POST', headers: h, body: JSON.stringify(body),
   });
 }
 

@@ -359,5 +359,66 @@ console.log('=== buscarCompraAbierta: el piso de tiempo ===');
     await A.buscarCompraAbierta(db, { dominio: 'sitio.cl', correo: 'uno@sitio.cl' }), null);
 }
 
+/* ══════════════════════════════════════════════════════════════════════════════════════ *
+ * `vistaPublica.falta_acceso` y la etapa tienen que decir LO MISMO (3-nov-2026)           *
+ * ══════════════════════════════════════════════════════════════════════════════════════ *
+ *
+ * `falta_acceso` calculaba su propio criterio —«pagado y sin acceso»— sin mirar qué se había
+ * contratado. Desde que `politica` entra sola al kit, un pedido de solo-política va a la etapa
+ * `redactando` y este campo seguía diciendo `true`: dos verdades del mismo hecho,
+ * contradiciéndose en silencio. Y no era interno: `vistaPublica` es lo que devuelven
+ * `/api/pedido`, `/api/intake` y `/api/entregar` al navegador del cliente.
+ *
+ * La aserción NO comprueba que `falta_acceso` llame a `hayQueEntrarAlSitio`, que sería
+ * transcribir la implementación. Comprueba la INTENCIÓN: que los dos lados coincidan para los
+ * dos compradores. Si mañana se reescribe de otra forma, la prueba sigue valiendo.
+ */
+{
+  const E = await import(rutaEnElRepo('verificaycumple/functions/api/etapas.js', 'ETAPAS_JS'));
+  const base = {
+    id: `vyc_${'a'.repeat(32)}`, estado: P.ESTADOS.PAGADO, creado_en: '2026-11-03T00:00:00Z',
+    dominio: 'sitio.cl', url_medida: 'https://sitio.cl/', monto_total: 177310,
+    pagado_en: '2026-11-03T00:00:00Z', razon_social: 'Equis SpA', rut: '1-9',
+    giro: 'giro', direccion: 'calle 1', plataforma: 'wordpress',
+    acceso_recibido_en: null, entregado_en: null,
+  };
+
+  // El contrato llega como TEXTO JSON desde la consulta cruda, y como arreglo desde
+  // `leerPedido`, que hidrata. Las dos formas tienen que dar el mismo resultado: confundirlas
+  // es el defecto que ya apareció en `correoDeEntrega`.
+  for (const [forma, envolver] of [['texto', (v) => JSON.stringify(v)], ['arreglo', (v) => v]]) {
+    const soloPolitica = { ...base, senales_contratadas: envolver(['politica']) };
+    const normal = { ...base, senales_contratadas: envolver(['cmp', 'carga']) };
+
+    eq(`solo-política (${forma}): no se le pide acceso`,
+      A.vistaPublica(soloPolitica).falta_acceso, false);
+    eq(`solo-política (${forma}): la etapa dice lo mismo`,
+      (E.etapaDelPedido(soloPolitica) || {}).etapa === 'falta-acceso',
+      A.vistaPublica(soloPolitica).falta_acceso);
+
+    eq(`comprador normal (${forma}): sí se le pide acceso`,
+      A.vistaPublica(normal).falta_acceso, true);
+    eq(`comprador normal (${forma}): la etapa dice lo mismo`,
+      (E.etapaDelPedido(normal) || {}).etapa === 'falta-acceso',
+      A.vistaPublica(normal).falta_acceso);
+  }
+
+  // Con el acceso ya recibido nadie pide nada, se haya contratado lo que se haya contratado.
+  eq('con el acceso dado ya no se pide',
+    A.vistaPublica({ ...base, senales_contratadas: ['cmp'], acceso_recibido_en: '2026-11-03T01:00:00Z' }).falta_acceso,
+    false);
+
+  // Sin pagar no se pide acceso aunque el contrato lo necesite.
+  eq('sin pagar no se pide acceso',
+    A.vistaPublica({ ...base, estado: P.ESTADOS.CREADO, senales_contratadas: ['cmp'] }).falta_acceso,
+    false);
+
+  // Falla hacia «sí hace falta»: si el contrato no se puede leer, pedir el acceso es el error
+  // barato (se le pide a alguien que no lo necesitaba) y no pedirlo es el caro (nadie instala
+  // el gestor que pagó, sin síntoma).
+  eq('contrato ilegible: se pide igual',
+    A.vistaPublica({ ...base, senales_contratadas: '{roto' }).falta_acceso, true);
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);

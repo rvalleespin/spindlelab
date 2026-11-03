@@ -53,6 +53,24 @@ function comoD1(sq) {
 }
 
 const CLAVE = 'c'.repeat(64);
+/**
+ * Un borrador de politica que pasa por uno.
+ *
+ * Desde el 3-nov-2026 `/api/entregar` no cierra un pedido sin el borrador: era el hueco mas
+ * grande del tramo entre pagar y recibir. Sin esto, el cierre contesta 409 y las aserciones de
+ * mas abajo medirian el rechazo en vez del cierre.
+ */
+const BORRADOR = [
+  'POLITICA DE PRIVACIDAD DE EJEMPLO SPA',
+  '',
+  '1. Quien trata tus datos. Ejemplo SpA, con su RUT y su domicilio.',
+  '2. Que datos tratamos y para que: los del formulario de contacto, para responderte, y los',
+  '   de navegacion cuando aceptas las cookies de medicion.',
+  '3. Por cuanto tiempo los guardamos y cuando los borramos.',
+  '4. Tus derechos: acceso, rectificacion, supresion, oposicion y portabilidad, y el correo',
+  '   por el que los ejerces.',
+].join('\n');
+
 const hex = (c) => 'vyc_' + c.repeat(32);
 
 /** Una base con tres pedidos en tres situaciones distintas y fechas distintas. */
@@ -315,7 +333,7 @@ console.log('=== 6. con el id de la cola SÍ se puede entregar; con el del aviso
     request: new Request('https://verifica.spindlelab.cl/api/entregar', {
       method: 'POST',
       headers: new Headers({ 'Content-Type': 'application/json', Authorization: `Bearer ${CLAVE}` }),
-      body: JSON.stringify({ id: elQueVoyAEntregar.id }),
+      body: JSON.stringify({ id: elQueVoyAEntregar.id, borrador_politica: BORRADOR }),
     }),
     env,
   });

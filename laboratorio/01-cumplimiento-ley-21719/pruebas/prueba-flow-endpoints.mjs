@@ -96,13 +96,31 @@ function conRed({ pago = PAGO(), flowCae = false } = {}) {
       return new Response(JSON.stringify(pago), { status: 200, headers: { 'Content-Type': 'application/json' } });
     }
     // Todo lo demas son avisos: el correo al comprador y el aviso de venta.
-    avisos.push({ host: new URL(u).host, cuerpo: (opciones && opciones.body) ? String(opciones.body).slice(0, 400) : '' });
+    //
+    // ⚠️ SE GUARDA EL DESTINATARIO, NO EL HOST (3-nov-2026). Hasta hoy el aviso interno salia
+    // por Web3Forms y el correo al comprador por Resend, asi que el host alcanzaba para saber
+    // cual era cual. Ahora los dos salen por Resend y el host los iguala: una asercion sobre
+    // el host daria verde con el aviso interno mandado al comprador, o al reves.
+    //
+    // Y se guarda el cuerpo ENTERO, no un recorte de 400 caracteres: con Resend el texto del
+    // mensaje va dentro del JSON y lo que hay que leer —el motivo, el «que hacer»— cae mas
+    // alla de ese corte.
+    const enviado = (opciones && opciones.body) ? String(opciones.body) : '';
+    let destino = '(sin destinatario)';
+    try { destino = String([].concat(JSON.parse(enviado).to)[0] || destino); } catch { /* queda el de arriba */ }
+    avisos.push({ destino, texto: enviado });
     return new Response('{}', { status: 200, headers: { 'Content-Type': 'application/json' } });
   };
   return { avisos, soltar() { globalThis.fetch = viejo; } };
 }
 
-const CRED = { FLOW_API_KEY: 'clave-de-prueba', FLOW_SECRET_KEY: 'secreto-de-prueba' };
+// Las credenciales que el endpoint necesita para hacer su trabajo completo. `RESEND_API_KEY`
+// entro el 3-nov-2026: desde que los avisos internos salen por Resend, un entorno sin ella deja
+// al endpoint sin poder avisar, y entonces «se avisa a una persona» acusaria la falta de la
+// clave en vez del defecto que la asercion vigila. Va en el entorno de TODAS las secciones por
+// eso; que la clave ausente se note es cosa de `prueba-aviso.mjs`.
+const CRED = { FLOW_API_KEY: 'clave-de-prueba', FLOW_SECRET_KEY: 'secreto-de-prueba',
+  RESEND_API_KEY: 'clave-de-prueba' };
 const notificar = (token = 'TOK123') =>
   new Request('https://verifica.spindlelab.cl/api/flow-confirmacion', {
     method: 'POST',
@@ -230,7 +248,7 @@ console.log('=== 4. EL PAGO BUENO: marca, fecha y avisa ===');
   const { db, crudo } = baseNueva();
   await pedidoNuevo(db, 'creado');
   const red = conRed();
-  const { ctx, listo } = contexto(notificar(), { VYC_PEDIDOS: db, RESEND_API_KEY: 'k', ...CRED });
+  const { ctx, listo } = contexto(notificar(), { VYC_PEDIDOS: db, ...CRED });
   const r = await C.onRequestPost(ctx);
   await listo();
   red.soltar();
@@ -247,9 +265,9 @@ console.log('=== 4. EL PAGO BUENO: marca, fecha y avisa ===');
   // La primera version decia `avisos.length >= 1`. Al mutar el codigo para quitar el aviso de
   // venta, la prueba siguio VERDE: el correo al comprador tapaba la ausencia del otro, porque
   // contar no es identificar. Son dos destinos distintos y se exigen los dos.
-  const hosts = red.avisos.map((a) => a.host);
-  cierto('sale el aviso de venta (a quien vende)', hosts.includes('api.web3forms.com'));
-  cierto('y el correo al comprador (a quien compro)', hosts.includes('api.resend.com'));
+  const destinos = red.avisos.map((a) => a.destino);
+  cierto('sale el aviso de venta (a quien vende)', destinos.includes('hola@spindlelab.cl'));
+  cierto('y el correo al comprador (a quien compro)', destinos.includes('alguien@ejemplo.cl'));
 }
 
 /* ================================================================== */
@@ -286,11 +304,11 @@ console.log('=== 6. LA SEGUNDA ENTREGA DEL MISMO AVISO NO HACE NADA ===');
   await pedidoNuevo(db, 'creado');
 
   const red = conRed();
-  const a = contexto(notificar(), { VYC_PEDIDOS: db, RESEND_API_KEY: 'k', ...CRED });
+  const a = contexto(notificar(), { VYC_PEDIDOS: db, ...CRED });
   await C.onRequestPost(a.ctx); await a.listo();
   const avisosPrimera = red.avisos.length;
 
-  const b = contexto(notificar(), { VYC_PEDIDOS: db, RESEND_API_KEY: 'k', ...CRED });
+  const b = contexto(notificar(), { VYC_PEDIDOS: db, ...CRED });
   const r2 = await C.onRequestPost(b.ctx); await b.listo();
   red.soltar();
 
@@ -301,9 +319,9 @@ console.log('=== 6. LA SEGUNDA ENTREGA DEL MISMO AVISO NO HACE NADA ===');
   eq('el pedido sigue pagado', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
   // Mismo criterio que arriba: por destino, no por cantidad. Si la segunda entrega repitiera
   // el correo, el comprador recibiria dos veces el mismo mensaje de que su pago entro.
-  const porDestino = (d) => red.avisos.filter((a) => a.host === d).length;
-  eq('no se repite el aviso de venta', porDestino('api.web3forms.com'), 1);
-  eq('ni el correo al comprador', porDestino('api.resend.com'), 1);
+  const porDestino = (d) => red.avisos.filter((a) => a.destino === d).length;
+  eq('no se repite el aviso de venta', porDestino('hola@spindlelab.cl'), 1);
+  eq('ni el correo al comprador', porDestino('alguien@ejemplo.cl'), 1);
   eq('y no salio nada mas', red.avisos.length, avisosPrimera);
 }
 
@@ -322,7 +340,171 @@ console.log('=== 7. UN PEDIDO RESUELTO QUE RECIBE OTRA COSA SE MIRA A MANO ===')
   eq('contesta 200', r.status, 200);
   eq('pero manda a revisar', (await r.json()).accion, 'revisar');
   eq('y NO cambia el pedido', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
-  cierto('avisando a una persona', red.avisos.length >= 1);
+  cierto('avisando a una persona', red.avisos.some((a) => a.destino === 'hola@spindlelab.cl'));
+  // Y sin mandarle al comprador el correo de «recibimos tu pago» por un pago rechazado.
+  falso('y sin escribirle al comprador', red.avisos.some((a) => a.destino === 'alguien@ejemplo.cl'));
+}
+
+/* ================================================================== */
+console.log('=== 9. UN RECHAZO SEGUIDO DE UN PAGO: LA VENTA SE MARCA ===');
+{
+  // ── EL DEFECTO (3-nov-2026) ───────────────────────────────────────────────────────────
+  //
+  // Reintentar con otra tarjeta despues de un rechazo es el camino NORMAL de una compra
+  // chilena. La transicion `rechazado → pagado` existe y se escribio para este caso exacto: el
+  // comentario de `TRANSICIONES` en pedidos.js dice textual que sin ella «el pedido se quedaba
+  // en `rechazado` con la plata ya cobrada».
+  //
+  // Este manejador no la alcanzaba. Cortaba antes, en «el pedido ya esta resuelto y `rechazado`
+  // esta en ESTADOS_RESUELTOS», contestaba 200 con `resuelto-y-no-calza` y mandaba un aviso de
+  // revision. O sea: cobrado, sin marcar y sin entregar. Y no habia red abajo —
+  // `convieneRefrescar` solo mira `pendiente` o `creado`, asi que la reconciliacion de la
+  // pantalla no volvia a pasar nunca por un pedido en `rechazado`— mientras el manejador de
+  // Mercado Pago, que no tiene este corte, si lo rescataba.
+  //
+  // Ninguna de las aserciones que ya existian en este archivo se puso roja por esto.
+  const { db, crudo } = baseNueva();
+  await pedidoNuevo(db, 'rechazado');
+  const red = conRed();   // PAGO() por defecto: status 2, monto exacto
+  const { ctx, listo } = contexto(notificar(), { VYC_PEDIDOS: db, ...CRED });
+  const r = await C.onRequestPost(ctx);
+  await listo();
+  red.soltar();
+  const j = await r.json();
+
+  eq('contesta 200', r.status, 200);
+  // ⚠️⚠️ LA ASERCION QUE CUIDA LA PLATA. Lo que importa no es el codigo de la respuesta: es
+  // donde queda el pedido. Un 200 con el pedido todavia en `rechazado` es exactamente el
+  // defecto.
+  const f = crudo.prepare('SELECT estado, pagado_en FROM pedidos WHERE id = ?').get(ID);
+  eq('el pedido queda PAGADO, no en rechazado', f.estado, 'pagado');
+  cierto('con fecha de pago escrita', Boolean(f.pagado_en));
+  falso('y no se despacha como "no calza"', j.motivo === 'resuelto-y-no-calza');
+
+  // ⚠️ Y QUE LA VENTA LE LLEGUE A UNA PERSONA. Un pedido marcado del que nadie se entera es
+  // media funcion: nadie empieza a entregar.
+  //
+  // ⚠️⚠️ Y SE MIRA QUE EL AVISO SEA EL DE VENTA, NO SOLO QUE LLEGUE ALGO A ESA CASILLA. Lo delato
+  // la mutacion: con el corte incondicional puesto de vuelta, «sale el aviso de venta» seguia
+  // VERDE, porque el aviso de REVISION que mandaba el defecto llega al mismo buzon. Mirar el
+  // destinatario identifica el canal, no el mensaje — es el mismo error que contar en vez de
+  // identificar, un nivel mas abajo. Los dos asuntos los pone `aviso.js`: «Venta de Verifica y
+  // Cumple ·» y «REVISAR ·».
+  const internos = red.avisos.filter((a) => a.destino === 'hola@spindlelab.cl');
+  cierto('sale un aviso a quien vende', internos.length >= 1);
+  cierto('y es el de una VENTA', internos.some((a) => a.texto.includes('Venta de Verifica y Cumple')));
+  falso('no el de «esto hay que revisarlo»', internos.some((a) => a.texto.includes('REVISAR')));
+  cierto('y le llega el correo al comprador (a quien compro)',
+    red.avisos.some((a) => a.destino === 'alguien@ejemplo.cl'));
+}
+
+/* ================================================================== */
+console.log('=== 10. LO QUE LA TABLA NO PERMITE REABRIR SIGUE SIN REABRIRSE ===');
+{
+  // ⚠️ LA OTRA CARA, Y LA QUE IMPIDE «ARREGLARLO» ABRIENDO LA PUERTA DEL TODO.
+  //
+  // Lo que decide si un pedido resuelto se puede reabrir es `TRANSICIONES`, que es la misma
+  // tabla que `marcarEstado` consulta — no una segunda lista escrita en el manejador. Si el
+  // corte se borrara en vez de darle criterio, un aviso tardio degradaria un pedido ya
+  // entregado o reabriria uno devuelto, y eso se mira a mano.
+  //
+  // `pagado → rechazado` NO existe en la tabla a proposito: una vez confirmado contra la API,
+  // una notificacion posterior que diga otra cosa no degrada el pedido sola.
+  //
+  // Para llegar a `entregado` hay que pasar por `pagado`: `creado → entregado` no es una
+  // transicion valida, y ahorrarse el salto intermedio dejaria el pedido en `creado` y la
+  // prueba probando otra cosa.
+  const casos = [
+    // estado de partida, camino para llegar, lo que dice Flow, y el estado en que tiene que quedar
+    ['devuelto', ['devuelto'], PAGO(), 'devuelto'],
+    ['entregado', ['pagado', 'entregado'], PAGO(), 'entregado'],
+    ['pagado', ['pagado'], PAGO({ status: 3, paymentData: { amount: null } }), 'pagado'],
+  ];
+  for (const [nombre, camino, pago, esperado] of casos) {
+    const { db, crudo } = baseNueva();
+    await pedidoNuevo(db, null);
+    let actual = 'creado';
+    for (const paso of camino) { await A.marcarEstado(db, ID, actual, paso, {}); actual = paso; }
+    eq(`${nombre}: el pedido arranca ahi`, crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, nombre);
+
+    const red = conRed({ pago });
+    const { ctx, listo } = contexto(notificar(), { VYC_PEDIDOS: db, ...CRED });
+    const r = await C.onRequestPost(ctx);
+    await listo();
+    red.soltar();
+    const j = await r.json();
+
+    eq(`${nombre}: contesta 200 (no se le pide reintentar a Flow)`, r.status, 200);
+    eq(`${nombre}: NO se mueve el pedido`, crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, esperado);
+    eq(`${nombre}: lo mira una persona`, j.accion, 'revisar');
+    cierto(`${nombre}: y se le avisa`, red.avisos.some((a) => a.destino === 'hola@spindlelab.cl'));
+    // ⚠️ Y NO se manda el correo de «tu pago entro» a quien no acaba de pagar.
+    falso(`${nombre}: sin correo al comprador`, red.avisos.some((a) => a.destino === 'alguien@ejemplo.cl'));
+  }
+}
+
+/* ================================================================== */
+console.log('=== 11. UN CONTRACARGADO NO SE REABRE SOLO ===');
+{
+  /* ── LA CELDA QUE ABRIO EL ARREGLO DE LA SECCION 9 (3-nov-2026) ─────────────────────────
+   *
+   * La seccion 9 cambio el corte «todo estado resuelto se queda quieto» por una consulta a
+   * `TRANSICIONES`. Correcto: rescato `rechazado → pagado`. Pero `contracargado → pagado`
+   * tambien esta en esa tabla, asi que quedo alcanzable SOLA — y eso no es mover una fila:
+   * dispara el aviso interno de VENTA y le manda al comprador el correo de «recibimos tu
+   * pago» por una plata que el emisor de la tarjeta ya se llevo.
+   *
+   * ⚠️ ESTA SECCION Y LA 9 SON PAREJA. Las dos parten de un pedido resuelto y reciben la misma
+   * notificacion de pago, y tienen que terminar DISTINTO. Una guarda que cerrara las dos
+   * pasaria esta y rompería la 9; una que no cerrara ninguna pasaria la 9 y rompería esta.
+   */
+  const { db, crudo } = baseNueva();
+  await pedidoNuevo(db, null);
+  // Hay que pasar por `pagado`: `creado → contracargado` existe, pero el camino real de un
+  // contracargo es un cobro que despues se revierte, y partir de ahi prueba el caso de verdad.
+  await A.marcarEstado(db, ID, 'creado', 'pagado', { pagado_en: new Date().toISOString() });
+  await A.marcarEstado(db, ID, 'pagado', 'contracargado', {});
+  eq('el pedido arranca contracargado',
+    crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'contracargado');
+
+  const red = conRed();   // PAGO() por defecto: status 2 (pagado), monto exacto
+  const { ctx, listo } = contexto(notificar(), { VYC_PEDIDOS: db, ...CRED });
+  const r = await C.onRequestPost(ctx);
+  await listo();
+  red.soltar();
+  const j = await r.json();
+
+  // 200, porque el asunto quedo cerrado: no hay nada que Flow pueda arreglar reintentando.
+  eq('contesta 200', r.status, 200);
+  eq('lo mira una persona', j.accion, 'revisar');
+  // ⚠️ Y CON SU PROPIO MOTIVO. «resuelto-y-no-calza» seria falso: la transicion SI calza, lo
+  // que no corresponde es hacerla sola. Quien lea el aviso tiene que distinguirlo sin venir
+  // al codigo.
+  eq('con el motivo que corresponde', j.motivo, 'reapertura-a-mano');
+
+  // ⚠️⚠️ LA ASERCION QUE CUIDA EL DINERO AL REVES QUE LA SECCION 9: aca lo que no puede pasar
+  // es que el pedido se mueva.
+  eq('el pedido SIGUE contracargado',
+    crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'contracargado');
+
+  const internos = red.avisos.filter((a) => a.destino === 'hola@spindlelab.cl');
+  eq('sale un aviso a quien vende, y uno solo', internos.length, 1);
+  // ⚠️ CON GUARDA, y no por prolijidad: al mutar el destino del aviso `internos` queda vacio y
+  // `internos[0].texto` revienta el archivo. Una prueba que revienta acusa una sola vez; las
+  // aserciones que nombran el resto del problema —y la seccion que viene— no corren.
+  const elPrimero = (internos[0] || { texto: '' }).texto;
+  cierto('que grita REVISAR', elPrimero.includes('REVISAR'));
+  // ⚠️ Y NO el de venta. Es el mismo error que la seccion 9 ya cazo, en el otro sentido:
+  // contar avisos no identifica cual salio, y los dos llegan al mismo buzon.
+  falso('y NO el de una venta', elPrimero.includes('Venta de Verifica y Cumple'));
+  cierto('el aviso explica que paso, sin que haya que investigar', /CONTRACARGADO/.test(elPrimero));
+  cierto('y que hay que comprobar antes de moverlo',
+    /panel de la pasarela|plata volvi/i.test(elPrimero));
+
+  // ⚠️ LO MAS CARO DE TODO: el correo que le diria al comprador que su pago entro, cuando su
+  // emisor acaba de revertirlo.
+  falso('al comprador NO se le dice que recibimos su pago',
+    red.avisos.some((a) => a.destino === 'alguien@ejemplo.cl'));
 }
 
 /* ================================================================== */

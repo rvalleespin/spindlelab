@@ -164,6 +164,14 @@ console.log('=== el rescate cuando el pago no se puede abrir (28-oct) ===');
   // propia salida. Ofrecerle encima un formulario es ruido, y entrena a ignorar la pantalla.
   falso('no ofrece rescate cuando falta la medicion', /sin-medicion/.test(lista));
   falso('ni cuando el sitio no se pudo medir', /no-se-pudo-medir/.test(lista));
+
+  // ⚠️ Y TAMPOCO CUANDO LA PASARELA RECHAZO SU CORREO (3-nov-2026). El bloque de rescate
+  // empieza diciendo «No es cosa tuya, el problema esta de nuestro lado». A quien escribio un
+  // correo que la pasarela no acepta eso le afirma lo contrario de lo que pasa, y encima lo
+  // manda a un formulario en vez de al campo que tiene al lado y puede corregir solo.
+  falso('ni cuando la pasarela rechazo el correo del comprador', /correo-no-aceptado/.test(lista));
+  cierto('y el rescate sigue diciendo que no es cosa suya, que es por lo que ese motivo no va ahi',
+    /No es cosa tuya/.test(PANEL_HTML));
 }
 
 /* ================================================================== */

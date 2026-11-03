@@ -476,5 +476,86 @@ console.log('=== tachar correos antes de registrar nada (privacidad) ===');
     m.tacharCorreos('{"e":"alguien@clinicaprivada.cl"}').includes('clinicaprivada'));
 }
 
+/* ================================================================== */
+console.log('=== EL CONTRACARGO NO SALE SOLO DEL POZO (3-nov-2026) ===');
+{
+  /* ── QUE SE ARREGLO Y QUE SE ABRIO ──────────────────────────────────────────────────────
+   *
+   * Hoy se corrigio que el manejador de Flow consultara `TRANSICIONES` en vez de cortar para
+   * todo estado resuelto. Eso rescato `rechazado → pagado` —reintentar con otra tarjeta— pero
+   * dejo alcanzable automaticamente otra celda de la misma tabla: `contracargado → pagado`.
+   *
+   * Reabrir un contracargado no es solo mover una fila. Dispara el aviso interno de VENTA y le
+   * manda al comprador el correo de «recibimos tu pago» por una plata que el emisor de la
+   * tarjeta ya se llevo. Es el estado del que MENOS conviene salir solo, porque es justamente
+   * el caso en que alguien de afuera esta moviendo el dinero sin nosotros.
+   *
+   * ⚠️ LA PRUEBA TIENE QUE DISTINGUIR LOS DOS, no solo cerrar el contracargo. Una guarda que
+   * mandara a revision cualquier reapertura rompería el arreglo de hoy y pasaría igual si solo
+   * se comprobara el contracargo. Por eso cada caso de abajo exige SU resultado.
+   */
+  const CONTRACARGADO = { ...PEDIDO, estado: P.ESTADOS.CONTRACARGADO };
+  const RECHAZADO = { ...PEDIDO, estado: P.ESTADOS.RECHAZADO };
+
+  const ORD = (extra = {}) => ({
+    id: 'ORD01ABC', external_reference: 'vyc_abc123',
+    total_amount: '177310', total_paid_amount: '177310',
+    status: 'processed', status_detail: 'accredited',
+    transactions: { payments: [{ id: 'PAY01', amount: '177310', status: 'processed' }] },
+    ...extra,
+  });
+
+  // ── El camino de las ORDENES, que es el que esta en produccion ──────────────────────────
+  {
+    const d = m.decidirDesdeOrden({ pedido: CONTRACARGADO, orden: ORD() });
+    eq('un contracargado que recibe «pagada» NO se marca solo', d.accion, m.ACCIONES.REVISAR);
+    eq('y no propone ningun estado', d.estado, null);
+    eq('con su propio motivo, distinto de «no existe esa transicion»', d.motivo, 'reapertura-a-mano');
+    // El motivo tiene que explicarse solo: quien lo lea en el correo no va a venir al codigo.
+    cierto('el detalle dice que el pedido estaba contracargado', /CONTRACARGADO/.test(d.detalle));
+    cierto('y por que no se hace solo', /no se hace sola|a mano/i.test(d.detalle));
+    cierto('y que hay que comprobar antes de moverlo', /panel de la pasarela|plata volvi/i.test(d.detalle));
+    cierto('diciendo ademas que dice la pasarela', /La orden dice processed/.test(d.detalle));
+  }
+
+  // ── Y EL ARREGLO DE HOY SIGUE EN PIE ───────────────────────────────────────────────────
+  {
+    const d = m.decidirDesdeOrden({ pedido: RECHAZADO, orden: ORD() });
+    eq('un rechazado que recibe «pagada» SI se marca', d.accion, m.ACCIONES.MARCAR);
+    eq('y queda pagado', d.estado, P.ESTADOS.PAGADO);
+  }
+
+  // ── El camino de los PAGOS, que es el legacy que la cuenta tambien ofrece ──────────────
+  //
+  // Tenia la MISMA exposicion y por la misma razon: los dos preguntan `transicionValida` y
+  // nada mas. Arreglar uno solo habría dejado el otro esperando, que es el modo en que este
+  // proyecto ya se equivoco una vez (el corte de estados resueltos existia en Flow y no en
+  // Mercado Pago).
+  {
+    const d = m.decidirDesdeNotificacion({ pedido: CONTRACARGADO, pago: pago() });
+    eq('tambien por el camino de los pagos: no se marca solo', d.accion, m.ACCIONES.REVISAR);
+    eq('con el mismo motivo', d.motivo, 'reapertura-a-mano');
+    cierto('y el mismo detalle de fondo', /CONTRACARGADO/.test(d.detalle));
+    cierto('diciendo que dice Mercado Pago', /Mercado Pago dice approved/.test(d.detalle));
+
+    const r = m.decidirDesdeNotificacion({ pedido: RECHAZADO, pago: pago() });
+    eq('y el rechazado sigue pasando a pagado', r.accion, m.ACCIONES.MARCAR);
+    eq('con su estado', r.estado, P.ESTADOS.PAGADO);
+  }
+
+  // ── LO QUE NO SE TOCO, Y ES LA MITAD DE LA DECISION ────────────────────────────────────
+  //
+  // La fila de `TRANSICIONES` sigue existiendo. Si se hubiera borrado, la reversion de una
+  // disputa ganada quedaria imposible TAMBIEN a mano: `marcarEstado` consulta esa misma tabla.
+  cierto('la transicion sigue siendo posible', P.transicionValida(P.ESTADOS.CONTRACARGADO, P.ESTADOS.PAGADO));
+  cierto('y a la vez marcada como de a mano', P.soloAMano(P.ESTADOS.CONTRACARGADO, P.ESTADOS.PAGADO));
+  // Repetir la notificacion de un contracargo sigue siendo inofensivo: no es una reapertura.
+  {
+    const d = m.decidirDesdeOrden({ pedido: CONTRACARGADO, orden: ORD({ status: 'charged_back' }) });
+    eq('la notificacion repetida del contracargo no manda a revisar', d.accion, m.ACCIONES.NADA);
+    eq('porque ya estaba', d.motivo, 'ya-estaba');
+  }
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);

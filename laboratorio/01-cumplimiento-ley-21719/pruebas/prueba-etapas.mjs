@@ -176,10 +176,15 @@ console.log('=== 6. NO se inventan etapas que el sistema no sabe ===');
   // El brief proponía «revisión del alcance» y «verificación final». Ninguna de las dos tiene
   // un dato detrás: ocurren en la cabeza de quien entrega. Mostrarlas sería teatro.
   const etapas = Object.values(E.ETAPAS);
-  // Nueve desde el 24-oct: entraron `sin-orden`, `pago-pendiente` y `falta-datos`. El
-  // número se fija a propósito para que agregar una etapa obligue a pasar por acá y a
-  // decidir si de verdad hace falta otra pantalla distinta.
-  eq('son diez etapas, y ni una más', etapas.length, 10);
+  // El número se fija a propósito para que agregar una etapa obligue a pasar por acá y a
+  // decidir si de verdad hace falta otra pantalla distinta. Las que entraron y con qué dato:
+  //   24-oct: `sin-orden` (hay orden en la pasarela o no), `pago-pendiente` (el estado de la
+  //           notificación) y `falta-datos` (razón social escrita o no).
+  //    3-nov: `redactando` — qué señales se contrataron. Sin ella, a quien compró solo el
+  //           borrador de su política se le pedía un acceso de administrador a su sitio que su
+  //           compra no requiere. Es una pantalla distinta porque dice algo distinto y, en la
+  //           cola de trabajo, porque se atiende distinto: no hay nada que instalar.
+  eq('son once etapas, y ni una más', etapas.length, 11);
   falso('no existe «revisión del alcance»', etapas.some((e) => /alcance/i.test(e)));
   falso('no existe «verificación final»', etapas.some((e) => /verificacion|verificación/i.test(e)));
 
@@ -187,6 +192,17 @@ console.log('=== 6. NO se inventan etapas que el sistema no sabe ===');
   const conAcceso = E.etapaDelPedido(ped({ estado: P.ESTADOS.PAGADO, acceso_recibido_en: '2026-10-23' }));
   const sinAcceso = E.etapaDelPedido(ped({ estado: P.ESTADOS.PAGADO, acceso_recibido_en: null }));
   falso('el único dato que las separa cambia la etapa', conAcceso.etapa === sinAcceso.etapa);
+
+  // La etapa nueva cumple la misma regla, y se comprueba igual: el ÚNICO campo que cambia
+  // entre estos dos pedidos es qué se contrató, y la etapa tiene que cambiar con él. Si no
+  // cambiara, sería una etapa sin dato detrás — o peor, un dato sin etapa.
+  const soloPolitica = E.etapaDelPedido(ped({
+    estado: P.ESTADOS.PAGADO, senales_contratadas: ['politica'],
+  }));
+  const conGestor = E.etapaDelPedido(ped({
+    estado: P.ESTADOS.PAGADO, senales_contratadas: ['cmp'],
+  }));
+  falso('lo contratado también separa etapas', soloPolitica.etapa === conGestor.etapa);
 }
 
 /* ================================================================== */

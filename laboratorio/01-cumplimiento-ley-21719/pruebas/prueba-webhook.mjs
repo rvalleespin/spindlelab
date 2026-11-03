@@ -100,6 +100,32 @@ function conFetch(resp) {
   globalThis.fetch = resp;
   return () => { globalThis.fetch = antes; };
 }
+
+/** La casilla del negocio: a donde llegan los avisos internos. */
+const CASILLA = 'hola@spindlelab.cl';
+
+/**
+ * El entorno minimo para que un aviso pueda salir. Desde el 3-nov-2026 los avisos internos
+ * salen por Resend, asi que un `env` sin esta clave deja al webhook sin poder avisar — y una
+ * asercion de «no avisa» pasaria por la falta de la clave en vez de por lo que vigila.
+ */
+const CLAVE_RESEND = { RESEND_API_KEY: 'clave-de-prueba' };
+
+/**
+ * ¿Esta peticion es el aviso INTERNO?
+ *
+ * ── POR QUE NO ALCANZA EL HOST (3-nov-2026) ──────────────────────────────────────────────
+ *
+ * Hasta hoy el aviso interno salia por Web3Forms y el correo al comprador por Resend, asi que
+ * el host decia cual era cual. Los avisos se mudaron a Resend —el otro canal no acepta envios
+ * de servidor en el plan que tenemos y contestaba 403 a los tres— y ahora los dos salen por el
+ * mismo host. Lo que los distingue es a QUIEN le llegan, que es ademas lo que importa: un
+ * aviso interno mandado al comprador pasaria una asercion sobre el host.
+ */
+function esAvisoInterno(u, o) {
+  if (!String(u && u.url ? u.url : u).includes('api.resend.com')) return false;
+  try { return [].concat(JSON.parse((o && o.body) || '{}').to)[0] === CASILLA; } catch { return false; }
+}
 const respondeCon = (cuerpo, status = 200) => async () => ({
   ok: status >= 200 && status < 300, status, json: async () => cuerpo,
 });
@@ -124,7 +150,7 @@ console.log('=== 1. el camino feliz: firma válida, orden procesada, pedido paga
   const id = await unPedido(db);
   const soltar = conFetch(respondeCon(ORDEN(id)));
 
-  const r = await W.onRequestPost({ request: await peticion(), env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+  const r = await W.onRequestPost({ request: await peticion(), env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
   const j = await r.json();
   soltar();
 
@@ -146,7 +172,7 @@ console.log('=== 2. firma inválida: 401 y no se toca NADA ===');
   let llamoALaApi = false;
   const soltar = conFetch(async () => { llamoALaApi = true; return respondeCon(ORDEN(id))(); });
 
-  const r = await W.onRequestPost({ request: await peticion({ firmaRota: true }), env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+  const r = await W.onRequestPost({ request: await peticion({ firmaRota: true }), env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
   soltar();
 
   eq('401', r.status, 401);
@@ -162,7 +188,7 @@ console.log('=== 2. firma inválida: 401 y no se toca NADA ===');
   // Y con otra clave secreta.
   const otraClave = await peticion({ secreto: 'otra-clave-distinta' });
   eq('firmada con otra clave, 401',
-    (await W.onRequestPost({ request: otraClave, env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } })).status, 401);
+    (await W.onRequestPost({ request: otraClave, env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } })).status, 401);
 }
 
 /* ================================================================== */
@@ -172,9 +198,9 @@ console.log('=== 3. la notificación repetida no hace el trabajo dos veces ===')
   const id = await unPedido(db);
   let llamadas = 0;
   // Se cuentan SOLO las lecturas de la orden. Desde el 24-oct una venta dispara además un aviso
-  // a Web3Forms, que es otra llamada de red y no tiene nada que ver con lo que esta prueba mide.
-  const soltar = conFetch(async (u) => {
-    if (String(u && u.url ? u.url : u).includes('web3forms')) return { ok: true, status: 200, json: async () => ({ success: true }) };
+  // interno, que es otra llamada de red y no tiene nada que ver con lo que esta prueba mide.
+  const soltar = conFetch(async (u, o = {}) => {
+    if (esAvisoInterno(u, o)) return { ok: true, status: 200, json: async () => ({ success: true }) };
     llamadas++;
     return respondeCon(ORDEN(id))();
   });
@@ -200,7 +226,7 @@ console.log('=== 4. action_required NO paga, aunque la firma sea buena ===');
   const { db, crudo } = baseNueva();
   const id = await unPedido(db);
   const soltar = conFetch(respondeCon(ORDEN(id, { status: 'action_required', total_paid_amount: '0' })));
-  const r = await W.onRequestPost({ request: await peticion(), env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+  const r = await W.onRequestPost({ request: await peticion(), env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
   soltar();
   eq('contesta 200', r.status, 200);
   // «revisar» y no «nada»: `action_required` es falta una acción NUESTRA —capturar un pago
@@ -271,7 +297,7 @@ console.log('=== 6. un 404 solo se cierra cuando se sabe de qué pedido se trata
     await unPedido(db);
     const soltar = conFetch(respondeCon({ message: 'not found' }, 404));
     const r = await W.onRequestPost({ request: await peticion(),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
     soltar();
     eq('pide reintento', r.status, 503);
     // Lo decisivo: el evento NO queda cerrado, que es lo único que permite reprocesarlo.
@@ -288,7 +314,7 @@ console.log('=== 6. un 404 solo se cierra cuando se sabe de qué pedido se trata
     url.searchParams.set('data.external_reference', 'vyc_' + '0'.repeat(32));
     const r = await W.onRequestPost({
       request: new Request(url, { method: 'POST', headers: req.headers, body: await req.text() }),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND },
     });
     soltar();
     eq('contesta 200, no 503', r.status, 200);
@@ -330,7 +356,7 @@ console.log('=== 8. un monto que no calza no paga nada ===');
   const { db } = baseNueva();
   const id = await unPedido(db);
   const soltar = conFetch(respondeCon(ORDEN(id, { total_amount: '1000', total_paid_amount: '1000' })));
-  const r = await W.onRequestPost({ request: await peticion(), env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+  const r = await W.onRequestPost({ request: await peticion(), env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
   soltar();
   eq('200: reintentar no lo arregla', r.status, 200);
   eq('pero se marca para revisar', (await r.json()).motivo, 'monto-no-calza');
@@ -795,7 +821,7 @@ console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave 
     const url = new URL(req.url); url.searchParams.set('type', 'payment');
     const r = await W.onRequestPost({
       request: new Request(url, { method: 'POST', headers: req.headers, body: JSON.stringify(SIN_ID) }),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND },
     });
     eq('contesta 200', r.status, 200);
     eq('diciendo que no lo atiende', (await r.json()).motivo, 'tipo-no-atendido:payment');
@@ -811,7 +837,7 @@ console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave 
     const url = new URL(req.url); url.searchParams.set('data.external_reference', ID);
     const r = await W.onRequestPost({
       request: new Request(url, { method: 'POST', headers: req.headers, body: JSON.stringify(SIN_ID) }),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND },
     });
     soltar();
     eq('pide reintento con 503', r.status, 503);
@@ -838,7 +864,7 @@ console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave 
     const url = new URL(req.url); url.searchParams.set('data.external_reference', ID);
     const r = await W.onRequestPost({
       request: new Request(url, { method: 'POST', headers: req.headers, body: JSON.stringify(SIN_ID) }),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND },
     });
     soltar();
     eq('un pedido vivo de hace una hora pide reintento', r.status, 503);
@@ -852,15 +878,15 @@ console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave 
     sembrar(crudo, ID, new Date(Date.now() - 60 * 60 * 1000).toISOString());
     crudo.prepare('UPDATE pedidos SET estado = ? WHERE id = ?').run('pagado', ID);
     let avisos = 0;
-    const soltar = conFetch(async (u) => {
-      if (String(u && u.url ? u.url : u).includes('web3forms')) { avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
+    const soltar = conFetch(async (u, o = {}) => {
+      if (esAvisoInterno(u, o)) { avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
       return { ok: false, status: 404, json: async () => ({}) };
     });
     const req = await peticion({ cuerpo: SIN_ID });
     const url = new URL(req.url); url.searchParams.set('data.external_reference', ID);
     const r = await W.onRequestPost({
       request: new Request(url, { method: 'POST', headers: req.headers, body: JSON.stringify(SIN_ID) }),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND },
     });
     soltar();
     eq('con el pedido ya resuelto se cierra con 200', r.status, 200);
@@ -880,15 +906,15 @@ console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave 
   {
     const { db, crudo } = baseNueva();
     let avisos = 0;
-    const soltar = conFetch(async (u) => {
-      if (String(u && u.url ? u.url : u).includes('web3forms')) { avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
+    const soltar = conFetch(async (u, o = {}) => {
+      if (esAvisoInterno(u, o)) { avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
       return { ok: false, status: 404, json: async () => ({}) };
     });
     const req = await peticion({ cuerpo: SIN_ID });
     const url = new URL(req.url); url.searchParams.set('data.external_reference', 'vyc_' + '0'.repeat(32));
     const r = await W.onRequestPost({
       request: new Request(url, { method: 'POST', headers: req.headers, body: JSON.stringify(SIN_ID) }),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN },
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND },
     });
     soltar();
     eq('una referencia que no es de ningún pedido nuestro se cierra', r.status, 200);
@@ -907,7 +933,7 @@ console.log('=== 19. un 404 temprano, un tópico ajeno, y el rastro de la clave 
       ok: true, status: 200, json: async () => ORDEN(ID, { total_amount: '999' }),
     }));
     const r = await W.onRequestPost({ request: await peticion({ cuerpo: SIN_ID }),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
     soltar();
     eq('contesta 200', r.status, 200);
     const ev = crudo.prepare('SELECT * FROM eventos_mp').all();
@@ -959,7 +985,7 @@ console.log('=== 20. si otra entrega ya lo dejó donde esta quería, no es un er
   const soltar = conFetch(respondeCon(ORDEN(ID)));
   const r = await W.onRequestPost({ request: await peticion({
     cuerpo: { type: 'order', action: 'order.processed', data: { id: ID_ORDEN } } }),
-    env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+    env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
   soltar();
 
   eq('contesta 200, no 503', r.status, 200);
@@ -989,7 +1015,7 @@ console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de m�
     const antes = globalThis.fetch;
     const visto = { avisos: 0, cuerpos: [] };
     globalThis.fetch = async (u, o = {}) => {
-      if (String(u && u.url ? u.url : u).includes('web3forms')) {
+      if (esAvisoInterno(u, o)) {
         visto.avisos++;
         visto.cuerpos.push(o.body ? JSON.parse(o.body) : null);
         if (avisoCae) throw new Error('ECONNRESET');
@@ -1006,20 +1032,23 @@ console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de m�
     sembrar(crudo);
     const red = conDos();
     const r = await W.onRequestPost({ request: await peticion(),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
     red.soltar();
 
     eq('el pedido quedó pagado', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
     eq('y salió UN aviso', red.visto.avisos, 1);
     eq('sin romper la respuesta a Mercado Pago', r.status, 200);
 
-    const texto = JSON.stringify(red.visto.cuerpos[0]);
+    // ⚠️ CON GUARDA. Al mutar el destino del aviso, `cuerpos` queda vacio y un
+    // `JSON.stringify(undefined)` deja `texto` sin valor: el `.includes` de abajo revienta el
+    // archivo y las aserciones que nombran el resto del problema no corren.
+    const texto = JSON.stringify(red.visto.cuerpos[0] || {});
     // ── LO QUE EL AVISO NO PUEDE LLEVAR ────────────────────────────────────────────────
     //
-    // Web3Forms guarda una copia de lo que recibe. El correo del comprador no va porque la
-    // política dice que la base de pedidos no la comparte nadie más; el id completo no va
-    // porque esos 32 hex son la ÚNICA credencial de su pantalla privada, y dejarlos guardados
-    // en un tercero es dejar una llave puesta.
+    // Un correo se queda en un buzon, se reenvia y se indexa. El correo del comprador no va
+    // porque la política dice que la base de pedidos no la comparte nadie más; el id completo
+    // no va porque esos 32 hex son la ÚNICA credencial de su pantalla privada, y dejarlos
+    // guardados en una casilla es dejar una llave puesta.
     falso('NUNCA el correo del comprador', texto.includes('persona@clinicaejemplo.cl'));
     falso('NUNCA el id completo del pedido', texto.includes(ID));
     // Y lo que sí tiene que llevar, o el aviso no sirve para nada.
@@ -1036,7 +1065,7 @@ console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de m�
     const { db, crudo } = baseNueva();
     sembrar(crudo);
     const red = conDos();
-    const env = { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN };
+    const env = { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND };
     for (let k = 0; k < 4; k++) await W.onRequestPost({ request: await peticion(), env });
     red.soltar();
     eq('cuatro entregas, un solo aviso', red.visto.avisos, 1);
@@ -1053,7 +1082,7 @@ console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de m�
     let r = null, lanzo = false;
     try {
       r = await W.onRequestPost({ request: await peticion(),
-        env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+        env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
     } catch { lanzo = true; }
     red.soltar();
     falso('el handler no deja escapar el fallo del aviso', lanzo);
@@ -1067,12 +1096,12 @@ console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de m�
     sembrar(crudo);
     const antes = globalThis.fetch;
     let avisos = 0;
-    globalThis.fetch = async (u) => {
-      if (String(u && u.url ? u.url : u).includes('web3forms')) { avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
+    globalThis.fetch = async (u, o = {}) => {
+      if (esAvisoInterno(u, o)) { avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
       return { ok: true, status: 200, json: async () => ORDEN(ID, { status: 'processing', status_detail: null, transactions: { payments: [] } }) };
     };
     await W.onRequestPost({ request: await peticion(),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
     globalThis.fetch = antes;
     eq('un pago pendiente no se anuncia como venta', avisos, 0);
     eq('el pedido queda pendiente', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pendiente');
@@ -1089,22 +1118,28 @@ console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de m�
     const antes = globalThis.fetch;
     const cuerpos = [];
     globalThis.fetch = async (u, o = {}) => {
-      if (String(u && u.url ? u.url : u).includes('web3forms')) {
+      if (esAvisoInterno(u, o)) {
         cuerpos.push(o.body ? JSON.parse(o.body) : null);
         return { ok: true, status: 200, json: async () => ({ success: true }) };
       }
       return { ok: true, status: 200, json: async () => ORDEN(ID, { status_detail: 'partially_refunded' }) };
     };
     const r = await W.onRequestPost({ request: await peticion(),
-      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN } });
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
     globalThis.fetch = antes;
 
     eq('una devolucion parcial NO deja el pedido pagado',
       crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'creado');
     eq('pero si sale un aviso', cuerpos.length, 1);
     cierto('que grita REVISAR', String(cuerpos[0] && cuerpos[0].subject).startsWith('REVISAR'));
-    cierto('y dice el motivo', String(cuerpos[0] && cuerpos[0].Motivo).includes('detalle-de-pago-desconocido'));
-    falso('sin el correo del comprador', JSON.stringify(cuerpos[0]).includes('persona@clinicaejemplo.cl'));
+    // El motivo viaja en el texto del correo desde que el aviso sale por Resend: antes era un
+    // campo del cuerpo y lo convertia en linea el proveedor.
+    cierto('y dice el motivo',
+      String((cuerpos[0] || {}).text).includes('Motivo: detalle-de-pago-desconocido'));
+    // Con guarda, igual que arriba: sin aviso esta linea reventaba el archivo y se llevaba
+    // consigo las secciones que vienen despues.
+    falso('sin el correo del comprador',
+      JSON.stringify(cuerpos[0] || {}).includes('persona@clinicaejemplo.cl'));
     eq('y Mercado Pago recibe 200 igual', r && r.status, 200);
   }
 
@@ -1118,39 +1153,49 @@ console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de m�
     const c = AV.cuerpoDeRevisar(
       { id: ID, dominio: 'otro.cl', correo: 'secreto@otro.cl', estado: 'creado' },
       { motivo: 'detalle-de-pago-desconocido', detalle: 'La orden dice algo raro.' });
-    eq('usa la misma clave publica', c.access_key, AV.CLAVE_WEB3FORMS);
+    // Ya no hay clave de acceso en el cuerpo: desde el 3-nov el aviso sale por Resend, que
+    // autentica por cabecera. Lo que si tiene que seguir cierto es a donde llega y de donde
+    // sale, y eso se mira en el mensaje armado, no en los campos.
+    const m = AV.mensajeDeAviso(c);
+    eq('llega a la casilla del negocio', m.to, [CASILLA]);
+    falso('y no arrastra la clave del proveedor viejo', /access_key/i.test(JSON.stringify(m)));
     cierto('el asunto grita REVISAR', c.subject.startsWith('REVISAR'));
     cierto('y dice el motivo en el asunto', c.subject.includes('detalle-de-pago-desconocido'));
     cierto('y de que sitio es', c.subject.includes('otro.cl'));
     eq('lleva el motivo', c.Motivo, 'detalle-de-pago-desconocido');
     cierto('y el detalle redactado', String(c.Detalle).includes('algo raro'));
     cierto('dice que hacer', String(c['Que hacer'] || c['Qué hacer']).length > 40);
+    // Y todo eso tiene que SOBREVIVIR al armado del correo: los rotulos ahora se imprimen en
+    // el texto, y un campo que se pierda ahi no lo nota ninguna asercion sobre el objeto.
+    cierto('y el motivo llega al texto del correo', m.text.includes('Motivo: detalle-de-pago-desconocido'));
+    cierto('igual que el detalle', m.text.includes('algo raro'));
 
     // LAS MISMAS DOS REGLAS DE PRIVACIDAD QUE EL AVISO DE VENTA, y por los mismos motivos: el
     // id entero es la UNICA credencial del comprador, y su correo no tiene por que viajar a
     // un tercero para contarnos que algo no calzo.
-    falso('nunca va el correo del comprador', JSON.stringify(c).includes('secreto@otro.cl'));
-    falso('ni el id entero', JSON.stringify(c).includes(ID));
+    falso('nunca va el correo del comprador', JSON.stringify(m).includes('secreto@otro.cl'));
+    falso('ni el id entero', JSON.stringify(m).includes(ID));
     eq('solo el prefijo', c['Pedido (prefijo)'], ID.slice(0, AV.LARGO_PREFIJO) + '…');
 
     // Y que no lance, afirmado donde vive, por la misma razon que el de venta: una prueba que
     // revienta no esta diciendo lo mismo que una que falla.
     let lanzo = false, r = null;
     try {
-      r = await AV.avisarRevisar({ id: ID, dominio: 'x.cl' }, { motivo: 'm' },
+      r = await AV.avisarRevisar({ id: ID, dominio: 'x.cl' }, { motivo: 'm' }, CLAVE_RESEND,
         async () => { throw new Error('la red se cayo'); });
     } catch { lanzo = true; }
     falso('avisarRevisar no lanza aunque la red falle', lanzo);
     eq('y devuelve false', r, false);
     eq('sin pedido devuelve false sin llamar', await AV.avisarRevisar(null, { motivo: 'm' },
-      async () => { throw new Error('no deberia llamarse'); }), false);
+      CLAVE_RESEND, async () => { throw new Error('no deberia llamarse'); }), false);
   }
 
   // ── El cuerpo del aviso, como unidad ──────────────────────────────────────────────────
   {
     const c = AV.cuerpoDelAviso({ id: ID, dominio: 'otro.cl', monto_total: 177310,
       correo: 'secreto@otro.cl', pagado_en: '2026-10-24T16:17:21.765Z' });
-    eq('lleva la clave pública del formulario', c.access_key, AV.CLAVE_WEB3FORMS);
+    const m = AV.mensajeDeAviso(c);
+    eq('llega a la casilla del negocio', m.to, [CASILLA]);
     cierto('el asunto dice de qué sitio', c.subject.includes('otro.cl'));
     falso('y en ningún campo va el correo', JSON.stringify(c).includes('secreto@otro.cl'));
     eq('el prefijo tiene el largo declarado', c['Pedido (prefijo)'], ID.slice(0, AV.LARGO_PREFIJO) + '…');
@@ -1165,14 +1210,14 @@ console.log('=== 21. una venta le llega a una persona, y el aviso no lleva de m�
     let lanzo = false, resultado = null;
     try {
       resultado = await AV.avisarVenta({ id: ID, dominio: 'otro.cl', monto_total: 177310 },
-        async () => { throw new Error('la red se cayó'); });
+        CLAVE_RESEND, async () => { throw new Error('la red se cayó'); });
     } catch { lanzo = true; }
     falso('avisarVenta NUNCA lanza, pase lo que pase', lanzo);
     eq('y dice que no pudo', resultado, false);
 
-    // Lo mismo si Web3Forms contesta mal en vez de caerse.
+    // Lo mismo si Resend contesta mal en vez de caerse.
     const conError = await AV.avisarVenta({ id: ID, dominio: 'otro.cl', monto_total: 1 },
-      async () => ({ ok: false, status: 500, json: async () => ({}) }));
+      CLAVE_RESEND, async () => ({ ok: false, status: 500, json: async () => ({}) }));
     eq('un error del servicio tampoco lanza', conError, false);
   }
 }
@@ -1197,7 +1242,7 @@ console.log('=== 22. al comprador le llega su enlace, que es su única credencia
     const visto = { correos: 0, cuerpos: [], cabeceras: [], avisos: 0 };
     globalThis.fetch = async (u, o = {}) => {
       const url = String(u && u.url ? u.url : u);
-      if (url.includes('web3forms')) { visto.avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
+      if (esAvisoInterno(u, o)) { visto.avisos++; return { ok: true, status: 200, json: async () => ({}) }; }
       if (url.includes('api.resend.com')) {
         visto.correos++;
         visto.cuerpos.push(o.body ? JSON.parse(o.body) : null);
@@ -1221,7 +1266,11 @@ console.log('=== 22. al comprador le llega su enlace, que es su única credencia
     red.soltar();
 
     eq('salió UN correo', red.visto.correos, 1);
-    const c = red.visto.cuerpos[0];
+    // ⚠️ CON GUARDA, y el motivo no es teorico: al mutar el destinatario del aviso interno
+    // —que desde el 3-nov sale por el mismo proveedor que este correo— el primer cuerpo deja
+    // de tener `html`, el `.includes` revienta el archivo y las secciones que vienen despues
+    // no corren. Acusar once veces es lo que hace falta; caerse una vez, no.
+    const c = red.visto.cuerpos[0] || {};
     eq('al comprador, no a otro lado', c.to, [CORREO]);
     eq('desde el subdominio de envíos', c.from, CO.REMITENTE);
     // Sin esto, una respuesta del cliente caería en una casilla que no existe.
@@ -1229,13 +1278,14 @@ console.log('=== 22. al comprador le llega su enlace, que es su única credencia
 
     // LO QUE EL CORREO TIENE QUE LLEVAR SÍ O SÍ: su enlace, en las dos versiones.
     const enlace = CO.enlaceDelPedido(ID);
-    cierto('el texto lleva su enlace', c.text.includes(enlace));
-    cierto('y el HTML también', c.html.includes(enlace));
-    cierto('le dice que lo guarde', /guarda este correo/i.test(c.text));
-    cierto('y hay versión de texto, no solo HTML', c.text.length > 200);
+    cierto('el texto lleva su enlace', String(c.text).includes(enlace));
+    cierto('y el HTML también', String(c.html).includes(enlace));
+    cierto('le dice que lo guarde', /guarda este correo/i.test(String(c.text)));
+    cierto('y hay versión de texto, no solo HTML', String(c.text).length > 200);
 
     // La clave va en la cabecera, nunca en el cuerpo.
-    cierto('autentica con la clave', String(red.visto.cabeceras[0].Authorization || '').startsWith('Bearer '));
+    cierto('autentica con la clave',
+      String((red.visto.cabeceras[0] || {}).Authorization || '').startsWith('Bearer '));
     falso('y la clave NO viaja en el cuerpo', JSON.stringify(c).includes('re_clave_de_prueba'));
 
     // Nada externo: un correo sobre datos personales no puede pedirle al cliente que cargue
@@ -1245,6 +1295,11 @@ console.log('=== 22. al comprador le llega su enlace, que es su única credencia
   }
 
   // ── Sin clave cargada, no se cae nada ─────────────────────────────────────────────────
+  //
+  // ⚠️ Esta seccion es la unica de este archivo cuyo `env` va SIN `RESEND_API_KEY`, y es a
+  // proposito: lo que prueba es justamente eso. Agregarsela —como hizo por un momento el
+  // cambio del 3-nov que metio la clave en todos los entornos— deja la asercion diciendo lo
+  // contrario de su titulo y en verde.
   {
     const { db, crudo } = baseNueva();
     sembrar(crudo);
@@ -1255,8 +1310,13 @@ console.log('=== 22. al comprador le llega su enlace, que es su única credencia
     eq('no intenta mandar nada', red.visto.correos, 0);
     eq('el pago igual se marca', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
     eq('y se contesta 200', r.status, 200);
-    // El aviso interno no depende de Resend, así que ese sí sale.
-    eq('y el aviso interno igual sale', red.visto.avisos, 1);
+    // ⚠️ ESTA LINEA DECIA LO CONTRARIO HASTA HOY: «el aviso interno no depende de Resend, así
+    // que ese sí sale». Dejó de ser cierto el 3-nov-2026, cuando los tres avisos se mudaron a
+    // Resend: ahora los DOS salen con la misma clave, así que sin ella no sale ninguno. El
+    // precio de haber quedado con un solo proveedor, y lo que hay que exigir en cambio es lo
+    // de siempre: que eso no toque el cobro. Que la falta se NOTE en el registro lo cuida
+    // `prueba-aviso.mjs`, que es donde vive.
+    eq('y tampoco el aviso interno, que usa la misma clave', red.visto.avisos, 0);
   }
 
   // ── Si Resend falla, el cobro no se cae ───────────────────────────────────────────────
@@ -1299,6 +1359,108 @@ console.log('=== 22. al comprador le llega su enlace, que es su única credencia
     cierto('el remitente sale del subdominio de envíos', CO.REMITENTE.includes('@envios.spindlelab.cl>'));
     falso('y NO del dominio raíz', /@spindlelab\.cl>/.test(CO.REMITENTE));
     cierto('pero las respuestas sí llegan al raíz', CO.RESPONDER_A.endsWith('@spindlelab.cl'));
+  }
+}
+
+/* ================================================================== */
+console.log('=== 23. UN CONTRACARGADO NO SE REABRE SOLO (3-nov-2026) ===');
+{
+  /* ── POR QUE ESTE MANEJADOR TAMBIEN, Y NO SOLO EL DE FLOW ───────────────────────────────
+   *
+   * El corte «un pedido resuelto no se vuelve a tocar» existia en el manejador de Flow y NO
+   * aca; por eso `rechazado → pagado` funcionaba en Mercado Pago y se perdia en Flow. Cuando
+   * hoy se arreglo alla, quedo expuesta una celda de `TRANSICIONES` que aca estuvo expuesta
+   * desde el principio: `contracargado → pagado` pasaba la unica guarda que habia
+   * (`transicionValida`) y se marcaba sola.
+   *
+   * O sea que este archivo probaba un manejador con el agujero abierto y en verde. Arreglar
+   * solo el que lo acababa de abrir habria dejado este esperando — que es la forma exacta en
+   * que este proyecto ya se equivoco una vez.
+   *
+   * Lo que pasaba: una notificacion reabria el pedido, salia el aviso interno de VENTA y al
+   * comprador le llegaba el correo de «recibimos tu pago» por una plata que el emisor de la
+   * tarjeta ya se habia llevado.
+   */
+  const ID = 'vyc_' + '3'.repeat(32);
+  const CORREO = 'persona@clinicaejemplo.cl';
+  const sembrar = (crudo) => crudo.prepare(
+    `INSERT INTO pedidos (id, creado_en, estado, dominio, url_medida, senales_contratadas,
+      senales_fuera, informe_json, monto_neto, monto_total, correo, mp_order_id)
+     VALUES (?, ?, 'contracargado', 'clinicaejemplo.cl', 'https://www.clinicaejemplo.cl/', '[]',
+      '[]', '{}', 149000, 177310, ?, ?)`,
+  ).run(ID, new Date().toISOString(), CORREO, ID_ORDEN);
+
+  // Las dos salidas, separadas por destinatario: el aviso interno a la casilla del negocio y
+  // el correo al comprador. Contarlas juntas deja que una tape la ausencia de la otra.
+  const conSalidas = () => {
+    const antes = globalThis.fetch;
+    const visto = { internos: [], alComprador: [] };
+    globalThis.fetch = async (u, o = {}) => {
+      const url = String(u && u.url ? u.url : u);
+      if (url.includes('api.resend.com')) {
+        const c = o.body ? JSON.parse(o.body) : {};
+        if ([].concat(c.to)[0] === CASILLA) visto.internos.push(c); else visto.alComprador.push(c);
+        return { ok: true, status: 200, json: async () => ({ id: 'x' }) };
+      }
+      return { ok: true, status: 200, json: async () => ORDEN(ID) };
+    };
+    return { visto, soltar: () => { globalThis.fetch = antes; } };
+  };
+
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo);
+    const red = conSalidas();
+    const r = await W.onRequestPost({ request: await peticion(),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
+    red.soltar();
+    const j = await r.json();
+
+    // ⚠️⚠️ LA ASERCION QUE CUIDA EL DINERO: el pedido no se mueve.
+    eq('el pedido SIGUE contracargado',
+      crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'contracargado');
+    eq('a Mercado Pago se le contesta 200', r.status, 200);
+    eq('y la decision es mirarlo', j.accion, 'revisar');
+    eq('con su propio motivo', j.motivo, 'reapertura-a-mano');
+
+    // Y queda escrito en el registro del evento, que es lo que se audita despues.
+    cierto('el evento queda anotado con el motivo',
+      crudo.prepare('SELECT * FROM eventos_mp').all()
+        .some((e) => String(e.resultado || '').includes('reapertura-a-mano')));
+
+    eq('sale un aviso a quien vende, y uno solo', red.visto.internos.length, 1);
+    // Con guarda, por lo mismo que arriba: si el aviso no sale, estas tres tienen que ACUSAR.
+    const aviso = red.visto.internos[0] || {};
+    cierto('que grita REVISAR', String(aviso.subject).startsWith('REVISAR'));
+    falso('y NO es el de una venta', String(aviso.subject).includes('Venta de Verifica y Cumple'));
+    cierto('el aviso dice que paso, sin que haya que investigar', /CONTRACARGADO/.test(String(aviso.text)));
+
+    // ⚠️ LO MAS CARO: el correo que le diria al comprador que su pago entro, justo cuando su
+    // emisor acaba de revertirlo.
+    eq('al comprador NO se le dice que recibimos su pago', red.visto.alComprador.length, 0);
+  }
+
+  // ── Y LO QUE SI SE MARCA SOLO SIGUE MARCANDOSE ─────────────────────────────────────────
+  //
+  // La pareja de la asercion de arriba. Una guarda que mandara a revision cualquier reapertura
+  // dejaria el contracargo cerrado Y rompería el reintento con otra tarjeta, que es el camino
+  // normal de una compra chilena. La mutacion tiene que poder distinguirlas.
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo);
+    crudo.prepare('UPDATE pedidos SET estado = ? WHERE id = ?').run('rechazado', ID);
+    const red = conSalidas();
+    const r = await W.onRequestPost({ request: await peticion(),
+      env: { VYC_PEDIDOS: db, MP_WEBHOOK_SECRET: SECRETO, MP_ACCESS_TOKEN: TOKEN, ...CLAVE_RESEND } });
+    red.soltar();
+
+    eq('un rechazado que vuelve a pagar SI queda pagado',
+      crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
+    eq('y se contesta 200', r.status, 200);
+    eq('sale el aviso, y es el de una venta', red.visto.internos.length, 1);
+    cierto('con el asunto de venta',
+      String((red.visto.internos[0] || {}).subject).includes('Venta de Verifica y Cumple'));
+    eq('y al comprador le llega su correo', red.visto.alComprador.length, 1);
   }
 }
 

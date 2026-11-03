@@ -61,20 +61,51 @@ async function basePagada() {
 }
 function conRed() {
   const antes = globalThis.fetch;
-  const avisos = [];
+  const todos = [];
   globalThis.fetch = async (u, o) => {
-    avisos.push({ host: new URL(String(u)).host, cuerpo: JSON.parse(String(o.body || '{}')) });
+    todos.push({ host: new URL(String(u)).host, cuerpo: JSON.parse(String(o.body || '{}')) });
     return { ok: true, status: 200, json: async () => ({ success: true }) };
   };
-  return { avisos, soltar() { globalThis.fetch = antes; } };
+  /* ⚠️ SEPARADOS POR DESTINATARIO, Y NO ES COSMÉTICA (3-nov-2026).
+   *
+   * Hasta hoy por acá salía un solo correo, el aviso interno, y la prueba contaba peticiones.
+   * Desde el aviso de inicio al cliente (art. 5 del Decreto 52 de 2024) salen dos por el mismo
+   * proveedor, así que un conteo de peticiones ya no dice de qué habla: con `avisos.length`
+   * valiendo 1 podía estar faltando el interno y sobrando el del cliente, o al revés.
+   *
+   * `internos` son los que van a la casilla del negocio y `alCliente` los que van a su correo.
+   * Mirar el host no distingue nada desde que los avisos internos también salen por Resend.
+   */
+  const paraHola = (a) => JSON.stringify((a.cuerpo && a.cuerpo.to) || []) === '["hola@spindlelab.cl"]';
+  return {
+    todos,
+    get internos() { return todos.filter(paraHola); },
+    get alCliente() { return todos.filter((a) => !paraHola(a)); },
+    soltar() { globalThis.fetch = antes; },
+  };
 }
 const postear = (cuerpo, db) => {
   const fondo = [];
   return { fondo, p: I.onRequestPost({
     request: new Request('https://verifica.spindlelab.cl/api/intake', { method: 'POST',
       headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(cuerpo) }),
-    env: { VYC_PEDIDOS: db }, waitUntil: (x) => fondo.push(x) }) };
+    env: { VYC_PEDIDOS: db, RESEND_API_KEY: 'clave-de-prueba' },
+    waitUntil: (x) => fondo.push(x) }) };
 };
+/**
+ * El valor de un rotulo del aviso interno.
+ *
+ * Desde el 3-nov-2026 los avisos salen por Resend y no por Web3Forms, asi que el cuerpo ya no
+ * es un objeto de campos que el proveedor convertia en lineas: es el texto del correo, que
+ * armamos nosotros. Se lee por rotulo igual que antes, para que la asercion siga hablando de
+ * lo que el aviso DICE y no de la forma de la peticion.
+ */
+const campo = (cuerpo, rotulo) => {
+  const esc = rotulo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const m = new RegExp(`^${esc}: (.*)$`, 'm').exec(String((cuerpo && cuerpo.text) || ''));
+  return m ? m[1] : undefined;
+};
+
 const DATOS = { razon_social: 'Clinica Ejemplo SpA', rut: '76.086.428-5',
   giro: 'Servicios medicos', direccion: 'Av. Siempre Viva 742', plataforma: 'wordpress' };
 
@@ -102,18 +133,21 @@ console.log('=== 2. manda sus datos: avanza Y SE AVISA ===');
   eq('la razon social quedo escrita', sq.prepare('SELECT razon_social r FROM pedidos WHERE id=?').get(ID).r, DATOS.razon_social);
 
   // ⚠️ LA ASERCION QUE CIERRA EL HUECO. Antes la fila quedaba escrita y nadie lo sabia.
-  eq('sale un aviso, y a un solo destino', red.avisos.map((a) => a.host), ['api.web3forms.com']);
+  eq('sale un aviso interno, y uno solo', red.internos.length, 1);
+  // Y al cliente NO se le avisa nada todavia: a este le hay que entrar al sitio, asi que
+  // mandarle sus datos no arranca la prestacion. El aviso de inicio es de la seccion 3.
+  eq('y al cliente todavia no se le avisa ningun inicio', red.alCliente.length, 0);
   // Misma guarda, mismo motivo: sin aviso, lo que sigue reventaria en vez de acusar.
-  const av = (red.avisos[0] || { cuerpo: {} }).cuerpo;
+  const av = (red.internos[0] || { cuerpo: {} }).cuerpo;
   cierto('el asunto dice que llegaron los datos', /Datos de empresa/.test(av.subject));
-  eq('trae la empresa, para no tener que abrir la base', av.Empresa, DATOS.razon_social);
-  eq('y la plataforma', av.Plataforma, 'wordpress');
+  eq('trae la empresa, para no tener que abrir la base', campo(av, 'Empresa'), DATOS.razon_social);
+  eq('y la plataforma', campo(av, 'Plataforma'), 'wordpress');
 
   // Las mismas reglas de privacidad que el resto de los avisos.
   falso('NO va el correo del comprador', JSON.stringify(av).includes('a@b.cl'));
   falso('NI el id completo del pedido', JSON.stringify(av).includes(ID));
   cierto('va el prefijo, que sirve para buscarlo y no para abrir nada',
-    String(av['Pedido (prefijo)']).startsWith(ID.slice(0, 12)));
+    String(campo(av, 'Pedido (prefijo)')).startsWith(ID.slice(0, 12)));
 }
 
 /* ================================================================== */
@@ -143,13 +177,41 @@ console.log('=== 3. declara el acceso: el pedido SE DESTRABA ===');
   cierto('con fecha de acceso escrita',
     Boolean(sq.prepare('SELECT acceso_recibido_en a FROM pedidos WHERE id=?').get(ID).a));
 
-  eq('y se avisa', red.avisos.map((a) => a.host), ['api.web3forms.com']);
-  const av2 = (red.avisos[0] || { cuerpo: {} }).cuerpo;
+  eq('y se avisa adentro', red.internos.length, 1);
+  const av2 = (red.internos[0] || { cuerpo: {} }).cuerpo;
   cierto('el asunto habla del acceso', /Acceso declarado/.test(av2.subject || ''));
   // ⚠️ El aviso tiene que decir que es una DECLARACION, no una comprobacion: quien lo reciba
   // tiene que probar el acceso antes de darlo por bueno.
   cierto('y pide probarlo antes de darlo por bueno',
-    /PRU[EÉ]BALO|prueba/i.test(av2['Qué hacer'] || ''));
+    /PRU[EÉ]BALO|prueba/i.test(campo(av2, 'Qué hacer') || ''));
+
+  /* ═══ Y AL CLIENTE SE LE AVISA QUE EMPEZAMOS (3-nov-2026) ═══════════════════════════════
+   *
+   * Es el momento exacto en que el pedido pasa a nuestras manos, y el articulo 5 del Decreto
+   * 52 de 2024 dice que la prestacion se entiende iniciada «desde el momento en que el
+   * proveedor notifique esta circunstancia al consumidor». Hasta hoy eso no pasaba nunca: el
+   * cliente declaraba el acceso, el aviso interno salia, y a el no se le decia nada. Su plazo
+   * de retracto quedaba abierto mientras le trabajabamos el sitio.
+   */
+  eq('al cliente le llega un aviso de inicio, y uno solo', red.alCliente.length, 1);
+  const alCl = (red.alCliente[0] || { cuerpo: {} }).cuerpo;
+  eq('a su propio correo', alCl.to, ['a@b.cl']);
+  cierto('el asunto dice que empezamos', /Empezamos/i.test(alCl.subject || ''));
+  // ⚠️ LA FECHA SE ESCRIBE, PORQUE ES LA QUE HABRIA QUE PROBAR DESPUES.
+  const anotado = sq.prepare('SELECT inicio_avisado_en i FROM pedidos WHERE id=?').get(ID).i;
+  cierto('y queda anotada con su fecha', Boolean(anotado));
+  eq('que es la que viaja a la pantalla', (j.pedido || {}).inicio_avisado_en, anotado);
+  // Lo que el aviso le CAMBIA, dicho en el correo: sin esto es un tramite que no se entiende.
+  cierto('el correo explica que de ahi corre su derecho a retractarse',
+    /retract/i.test(alCl.text || ''));
+  // Y no se le manda dos veces: un segundo envio del formulario no reabre el aviso.
+  const red2 = conRed();
+  const otra = postear({ id: ID, acceso_listo: true }, db);
+  await otra.p; await Promise.all(otra.fondo);
+  red2.soltar();
+  eq('un segundo envio no vuelve a avisarle el inicio', red2.alCliente.length, 0);
+  eq('y la fecha anotada sigue siendo la primera',
+    sq.prepare('SELECT inicio_avisado_en i FROM pedidos WHERE id=?').get(ID).i, anotado);
 }
 
 /* ================================================================== */

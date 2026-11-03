@@ -147,20 +147,73 @@ function conRed({ sitio = PORTADA, mp = null, mpEstado = 201, caeMP = false,
   politica = null } = {}) {
   const antes = globalThis.fetch;
   const llamadas = { sitio: 0, mp: 0, flow: 0, lecturas: 0, lecturasFlow: 0, avisos: [], cuerposMP: [], cabecerasMP: [], cuerposFlow: [] };
+
+  /**
+   * ⚠️⚠️ CADA `payment/create` DEVUELVE UN TOKEN DISTINTO, Y ESO NO ES UN DETALLE DEL DOBLE.
+   *
+   * Hasta el 3-nov-2026 este molde contestaba SIEMPRE el mismo token. Con eso, un endpoint que
+   * abriera dos pagos por el mismo pedido era indistinguible de uno que reusara el que ya
+   * estaba: los dos enlaces salian identicos y ninguna asercion podia separarlos. O sea que el
+   * doble de red tapaba exactamente el defecto que habia que encontrar.
+   *
+   * Flow hace lo contrario, y se midio: tres `payment/create` seguidos con el MISMO
+   * `commerceOrder` contestaron `ok` con `flowOrder` 11463040, 11463041 y 11463042 y tres
+   * tokens distintos, y los tres `getStatus` devolvieron ese mismo `commerceOrder` con
+   * `status: 1`. Tres enlaces de pago vivos a la vez.
+   *
+   * Por eso el molde ahora mintea un token por llamada y RECUERDA cada pago que creo, para que
+   * `getStatus` pueda contestar sobre el pago que de verdad se abrio en vez de sobre un dato
+   * fijo escrito en la prueba.
+   */
+  const pagosFlow = new Map();
+  let creadosFlow = 0;
+
   globalThis.fetch = async (u, o = {}) => {
     const url = String(u && u.url ? u.url : u);
     if (url.includes('flow.cl')) {
       // Leer el estado de un pago (GET a getStatus) no es lo mismo que crear uno (POST), y el
       // endpoint hace las dos cosas: antes de abrir un cobro nuevo le pregunta a la pasarela
       // por la compra abierta vieja.
-      if (url.includes('getStatus')) { llamadas.lecturasFlow++; return { ok: true, status: 200,
-        headers: { get: () => null }, json: async () => flowPago }; }
+      if (url.includes('getStatus')) {
+        llamadas.lecturasFlow++;
+        // Lo que la prueba fije manda: es como se monta un pago que ya estaba ahi antes de
+        // empezar (una compra vieja, un pago pagado o rechazado).
+        if (flowPago) return { ok: true, status: 200, headers: { get: () => null }, json: async () => flowPago };
+        const t = new URL(url).searchParams.get('token');
+        const abierto = pagosFlow.get(t);
+        // Un token que este molde nunca creo y que la prueba no fijo: no se inventa una
+        // respuesta. Contestar «existe y nadie pago» sobre un pago desconocido seria el molde
+        // decidiendo por el proveedor.
+        if (!abierto) return { ok: false, status: 500, headers: { get: () => null }, json: async () => ({ code: 1700, message: 'Transaction not found' }) };
+        return { ok: true, status: 200, headers: { get: () => null },
+          json: async () => ({
+            flowOrder: abierto.flowOrder, commerceOrder: abierto.commerceOrder,
+            // `1` es lo que Flow contesta de un pago recien abierto que nadie pago: observado
+            // en los tres pagos del experimento.
+            status: 1, currency: 'CLP', amount: abierto.amount, payer: abierto.email,
+            paymentData: { date: null, media: null, amount: null, fee: null, balance: null },
+          }) };
+      }
       llamadas.flow++;
       // El cuerpo va como formulario, asi que se desarma para poder mirarlo campo por campo.
-      llamadas.cuerposFlow.push(Object.fromEntries(new URLSearchParams(String(o.body || ''))));
+      const enviado = Object.fromEntries(new URLSearchParams(String(o.body || '')));
+      llamadas.cuerposFlow.push(enviado);
       if (caeFlow) throw new Error('ECONNRESET');
+      creadosFlow++;
+      // El primero conserva el token que la prueba espera; del segundo en adelante cambia,
+      // como cambia de verdad. Si la prueba fijo un `flow` sin token (el caso «Flow contesta
+      // sin token»), no hay nada que mintear y se devuelve tal cual.
+      const cuerpo = (flow && flow.token && creadosFlow > 1)
+        ? { ...flow, token: `${flow.token}-${creadosFlow}`, flowOrder: (flow.flowOrder || 0) + creadosFlow - 1 }
+        : flow;
+      if (cuerpo && cuerpo.token) {
+        pagosFlow.set(cuerpo.token, {
+          flowOrder: cuerpo.flowOrder || 0, commerceOrder: enviado.commerceOrder,
+          amount: enviado.amount, email: enviado.email,
+        });
+      }
       return { ok: flowEstado >= 200 && flowEstado < 300, status: flowEstado,
-        headers: { get: () => null }, json: async () => flow };
+        headers: { get: () => null }, json: async () => cuerpo };
     }
     if (url.includes('api.mercadopago.com')) {
       // Una lectura de orden es un GET sin cuerpo; crear es un POST con cuerpo.
@@ -179,8 +232,15 @@ function conRed({ sitio = PORTADA, mp = null, mpEstado = 201, caeMP = false,
     }
     // Los avisos (al vendedor y al comprador) no son "el sitio": se apartan para poder
     // comprobarlos POR DESTINO. Contarlos juntos deja que uno tape la ausencia del otro.
-    if (url.includes('web3forms') || url.includes('resend')) {
-      llamadas.avisos.push(new URL(url).host);
+    //
+    // ⚠️ Y EL DESTINO YA NO ES EL HOST (3-nov-2026). Hasta hoy el aviso interno salia por
+    // Web3Forms y el correo al comprador por Resend, asi que bastaba el host para saber cual
+    // era cual. Ahora los dos salen por Resend: el host los iguala y una asercion sobre el
+    // host daria verde con el aviso interno mandado al cliente. Se guarda a quien le llega.
+    if (url.includes('resend')) {
+      let a = '(sin destinatario)';
+      try { a = [].concat(JSON.parse(o.body).to)[0]; } catch { /* queda el texto de arriba */ }
+      llamadas.avisos.push(a);
       return { ok: true, status: 200, json: async () => ({ success: true }) };
     }
     llamadas.sitio++;
@@ -1290,6 +1350,53 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
     falso('ya no hay nada que refrescar', j.refrescar);
   }
 
+  // ── Y LA VENTA QUE DESCUBRE TIENE QUE LLEGARLE A ALGUIEN (3-nov-2026) ────────────────
+  //
+  // Esta reconciliación es el ÚNICO camino que encuentra una venta cuya notificación nunca
+  // llegó —es justo el caso del 24-oct— así que descubrirla y no avisar es media función:
+  // el pedido queda pagado en la base y nadie empieza a entregar.
+  //
+  // ⚠️ No estaba probado. Al quitarle el `env` a ese aviso, la batería entera seguía verde:
+  // la unidad estaba cubierta y el CABLEADO de ESTE llamador no. Es el mismo hueco que el
+  // webhook ya había tenido, un camino más abajo.
+  {
+    const { db, crudo } = baseNueva();
+    sembrar(crudo, ID, 'creado', 'ORDTST01');
+    const salidas = { internos: [], alComprador: [] };
+    const antes = globalThis.fetch;
+    globalThis.fetch = async (u, o = {}) => {
+      const url = String(u && u.url ? u.url : u);
+      if (url.includes('api.mercadopago.com')) {
+        return { ok: true, status: 200, json: async () => ORDEN_PAGADA(ID) };
+      }
+      if (url.includes('api.resend.com')) {
+        const c = o.body ? JSON.parse(o.body) : {};
+        if ([].concat(c.to)[0] === 'hola@spindlelab.cl') salidas.internos.push(c);
+        else salidas.alComprador.push(c);
+        return { ok: true, status: 200, json: async () => ({ id: 'x' }) };
+      }
+      throw new Error('no deberia salir a otro lado');
+    };
+    const fondo = [];
+    await E.onRequestGet({
+      request: new Request(`https://verifica.spindlelab.cl/api/pedido?id=${ID}`),
+      env: { VYC_PEDIDOS: db, VYC_TOPES: kvNuevo(), MP_ACCESS_TOKEN: 'tok', PASARELA: 'mp',
+             RESEND_API_KEY: 'clave-de-prueba' },
+      waitUntil: (x) => fondo.push(x),
+    });
+    await Promise.all(fondo.map((x) => Promise.resolve(x).catch(() => null)));
+    globalThis.fetch = antes;
+
+    eq('el pedido queda pagado', filas(crudo)[0].estado, 'pagado');
+    eq('y sale UN aviso a la casilla del negocio', salidas.internos.length, 1);
+    cierto('diciendo que hubo una venta',
+      String((salidas.internos[0] || {}).subject).includes('Venta de Verifica y Cumple'));
+    // Y el comprador recibe su enlace, que es su única credencial: si la notificación nunca
+    // llegó, este es el único momento en que se le puede mandar.
+    eq('y al comprador le llega su correo', salidas.alComprador.length, 1);
+    eq('a su dirección, no a otra', (salidas.alComprador[0] || {}).to, ['contacto@clinicaejemplo.cl']);
+  }
+
   // ── El freno: no se le pregunta a Mercado Pago en cada recarga ────────────────────────
   {
     const { db, crudo } = baseNueva();
@@ -1490,7 +1597,8 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
 /* ================================================================== */
 console.log('=== FLOW: el mismo endpoint, la otra pasarela ===');
 {
-  const CRED = { FLOW_API_KEY: 'clave', FLOW_SECRET_KEY: 'secreto', PASARELA: 'flow' };
+  const CRED = { FLOW_API_KEY: 'clave', FLOW_SECRET_KEY: 'secreto', PASARELA: 'flow',
+    RESEND_API_KEY: 'clave-de-prueba' };
 
   /* -- el camino feliz -- */
   {
@@ -1602,6 +1710,144 @@ console.log('=== FLOW: el mismo endpoint, la otra pasarela ===');
     eq('y se dice cual', (await r.json()).codigo, 'sin-url-ni-token');
   }
 
+  /* -- CUANDO FLOW RECHAZA EL CORREO, LA PERSONA TIENE QUE SABER QUE ARREGLAR (3-nov) -- */
+  {
+    // ── EL HECHO ──────────────────────────────────────────────────────────────────────
+    //
+    // Flow valida el correo del comprador y rechaza algunos: medido contra su sandbox, cuatro
+    // correos distintos (`control@ejemplo.cl`, `a@b.cl`, `prueba@gmail.con` y uno de dominio
+    // inexistente) dieron los cuatro `400 {"code":1620,"message":"The userEmail: … is not
+    // valid."}`. Nuestra propia expresion los acepta, asi que llegan hasta la pasarela.
+    //
+    // Hasta hoy esa persona leia «no pudimos abrir el pago, vuelve a intentarlo en un
+    // momento» y se iba: reintentar con el mismo correo vuelve a fallar, y el consejo era un
+    // callejon sin salida teniendo nosotros el motivo exacto en la mano.
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const dicho = [];
+    const antesLog = console.log;
+    console.log = (...a) => { dicho.push(a.join(' ')); };
+    const red = conRed({
+      flowEstado: 400,
+      flow: { code: 1620, message: `The userEmail: ${BIEN.correo} is not valid.` },
+    });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+    red.soltar();
+    console.log = antesLog;
+    const j = await r.json();
+    const crudoJson = JSON.stringify(j);
+
+    eq('sigue siendo 409, que es lo unico que el navegador puede leer', r.status, 409);
+
+    // ── LO QUE LA PERSONA LEE ─────────────────────────────────────────────────────────
+    //
+    // No alcanza con que el mensaje cambie: tiene que decirle QUE hacer. Lo que arregla este
+    // caso es escribir otro correo, y eso es lo que la frase tiene que dejar claro.
+    cierto('el mensaje apunta al correo', /correo/i.test(j.detalle));
+    cierto('y le dice que escriba otro', /otro correo/i.test(j.detalle));
+    cierto('se le confirma que no hubo cobro, porque la pasarela contesto y no creo nada',
+      /no se te cobr/i.test(j.detalle));
+
+    // ⚠️ EL TEXTO DEL PROVEEDOR NO SE LE MUESTRA. Viene en ingles, trae su propio correo
+    // adentro y nombra campos nuestros. El crudo va al registro, no a la pantalla.
+    falso('no se le muestra el texto crudo de la pasarela', /userEmail|is not valid/i.test(crudoJson));
+    falso('ni el codigo de error del proveedor', crudoJson.includes('1620'));
+    falso('ni se le devuelve su correo dentro de la respuesta', crudoJson.includes(BIEN.correo));
+    falso('y no se nombra a la pasarela', /flow/i.test(crudoJson));
+
+    // ── DE QUIEN ES LA CULPA, QUE ES LO QUE DECIDE LA PANTALLA ────────────────────────
+    //
+    // ⚠️ ESTA ES LA ASERCION QUE DE VERDAD CUIDA ALGO. `no-se-pudo-abrir-el-pago` dispara el
+    // bloque de rescate de la pagina, que empieza diciendo «No es cosa tuya, el problema esta
+    // de nuestro lado». Con ese motivo, a quien escribio mal su correo se le afirmaria lo
+    // contrario de lo que pasa y se le ofreceria un formulario en vez del campo que tiene que
+    // corregir.
+    eq('lleva un motivo propio', j.motivo, 'correo-no-aceptado');
+    falso('y NO el que hace decir «no es cosa tuya»', j.motivo === 'no-se-pudo-abrir-el-pago');
+
+    // ── EL REGISTRO SI TIENE QUE PODER DIAGNOSTICARSE ─────────────────────────────────
+    const registro = dicho.join(' | ');
+    cierto('queda registrado que la pasarela rechazo', /rechaz/i.test(registro));
+    cierto('con el codigo que permite saber cual fue', registro.includes('1620'));
+    falso('pero sin el correo de quien compro', registro.includes(BIEN.correo));
+
+    // ── EL INTENTO NO DESAPARECE ──────────────────────────────────────────────────────
+    //
+    // La fila es el unico rastro de que alguien quiso comprar y no pudo. Sin token, que es lo
+    // que distingue «no llego a pagar» de «lo mandamos a pagar».
+    // ⚠️ La fila se lee UNA vez y con red: una mutacion que borraba el pedido hacia que la
+    // linea siguiente reventara con «no se puede leer de undefined», el archivo moria ahi y el
+    // recuento no se imprimia nunca. Una prueba que revienta no acusa: acusa la que falla y
+    // sigue contando.
+    const fila = filas(crudo)[0] || {};
+    eq('el intento queda registrado en la base', filas(crudo).length, 1);
+    eq('en creado', fila.estado, 'creado');
+    eq('y sin token', fila.flow_token, null);
+  }
+
+  /* -- y cuando el rechazo es NUESTRO, no se le echa la culpa a el -- */
+  {
+    // El contraste es lo que prueba que la rama discrimina en vez de cambiar el texto para
+    // todos. `109 Invalid ApiKey` esta medido contra el sandbox igual que el 1620, y sale de
+    // una credencial nuestra: el comprador no tiene nada que corregir.
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const red = conRed({ flowEstado: 400, flow: { code: 109, message: 'Invalid ApiKey' } });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+    red.soltar();
+    const j = await r.json();
+
+    eq('conserva el motivo que ofrece el rescate', j.motivo, 'no-se-pudo-abrir-el-pago');
+    falso('y NO lo manda a cambiar su correo', /otro correo/i.test(j.detalle));
+    cierto('se le dice que no se le cobro', /no se te cobr/i.test(j.detalle));
+    falso('sin mostrarle el texto del proveedor', /ApiKey|Invalid/i.test(JSON.stringify(j)));
+    eq('y el intento tambien queda en la base', filas(crudo).length, 1);
+  }
+
+  /* -- EL CAMINO QUE EL MENSAJE NUEVO INVITA A RECORRER (3-nov) -- */
+  {
+    // ── POR QUE SE PRUEBA EL RECORRIDO Y NO SOLO EL MENSAJE ───────────────────────────
+    //
+    // El mensaje nuevo le dice «escribe otro correo tuyo y vuelve a intentarlo». Un consejo
+    // es una promesa sobre lo que pasa despues: si cambiar el correo chocara con el
+    // antidoble-clic, o abriera un segundo cobro pagable, el texto estaria mandando a la
+    // gente a un muro y ninguna asercion sobre el texto lo veria.
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+
+    const rechazo = conRed({
+      flowEstado: 400, flow: { code: 1620, message: `The userEmail: ${BIEN.correo} is not valid.` },
+    });
+    const primera = await (await E.onRequestPost({
+      request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED },
+    })).json();
+    rechazo.soltar();
+    eq('el primer intento se rechaza por el correo', primera.motivo, 'correo-no-aceptado');
+
+    // Y ahora hace lo que le dijimos: el mismo sitio, otro correo.
+    const OTRO = { ...BIEN, correo: 'otro@clinicaejemplo.cl' };
+    const buena = conRed();
+    const r2 = await E.onRequestPost({
+      request: pedir(OTRO), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED },
+    });
+    buena.soltar();
+    const j2 = await r2.json();
+
+    eq('con otro correo el pago SI se abre', r2.status, 200);
+    cierto('y se le entrega un enlace para pagar', typeof j2.checkout_url === 'string' && j2.checkout_url.length > 0);
+    eq('se llamo a la pasarela una vez mas', buena.llamadas.flow, 1);
+    eq('con el correo nuevo, no con el que la pasarela rechazo',
+      buena.llamadas.cuerposFlow[0].email, OTRO.correo);
+
+    // ⚠️ Y LO QUE NO PUEDE PASAR: dos cobros pagables por el mismo kit. El intento rechazado
+    // queda como rastro, pero sin token no se puede pagar; el unico pagable es el nuevo.
+    const conToken = filas(crudo).filter((f) => f.flow_token);
+    eq('queda un solo pedido pagable', conToken.length, 1);
+    eq('y es el que se acaba de abrir', conToken[0].id, j2.id);
+    falso('el intento rechazado no quedo pagable',
+      filas(crudo).some((f) => f.id === primera.id && f.flow_token));
+  }
+
   /* -- sin credenciales no se inventa un pago -- */
   {
     const { db } = baseNueva();
@@ -1661,7 +1907,8 @@ console.log('=== LA COMPRA VIEJA QUE RESULTA ESTAR PAGADA ===');
   // repetia lo mismo: quedaba bloqueada para comprar, indefinidamente.
   //
   // Lo encontro una revision adversaria. Ninguna de las 3.752 aserciones de la bateria lo vio.
-  const CRED = { FLOW_API_KEY: 'clave', FLOW_SECRET_KEY: 'secreto', PASARELA: 'flow' };
+  const CRED = { FLOW_API_KEY: 'clave', FLOW_SECRET_KEY: 'secreto', PASARELA: 'flow',
+    RESEND_API_KEY: 'clave-de-prueba' };
   const { db, crudo } = baseNueva();
   const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
 
@@ -1694,11 +1941,245 @@ console.log('=== LA COMPRA VIEJA QUE RESULTA ESTAR PAGADA ===');
   // `red.avisos` no existia en este arnes: era verdadera SIEMPRE. Una asercion muerta es peor
   // que ninguna, porque ocupa el lugar de la que haria falta y se cuenta como cobertura.
   // Lo delato una mutacion que quito el aviso del codigo y no puso nada rojo.
-  eq('se avisa a una persona, y se sabe a cual', red.llamadas.avisos, ['api.web3forms.com']);
+  eq('se avisa a una persona, y se sabe a cual', red.llamadas.avisos, ['hola@spindlelab.cl']);
 
   eq('NO se abrio un segundo cobro', red.llamadas.flow, 0);
   eq('y sigue habiendo un solo pedido', filas(crudo).length, 1);
   eq('que no se cerro como rechazado', filas(crudo)[0].estado, 'creado');
+}
+
+/* ================================================================== */
+console.log('=== FLOW NO TIENE IDEMPOTENCIA: EL DOBLE CLIC NO PUEDE ABRIR DOS PAGOS ===');
+{
+  // ── POR QUE NO EXISTIA ESTA PRUEBA, QUE ES LA MITAD DEL HALLAZGO (3-nov-2026) ─────────
+  //
+  // La prueba del doble clic (seccion 5) esta fijada a `PASARELA: 'mp'`, asi que el camino de
+  // Flow nunca se corrio contra dos clics. Y aunque se hubiera corrido, el molde de red mentia:
+  // devolvia siempre el mismo token, con lo cual abrir un segundo pago y reusar el primero se
+  // veian IDENTICOS desde afuera.
+  //
+  // El defecto: el antidoble clic reusa el id del pedido anterior, y con Mercado Pago eso
+  // alcanzaba porque el id viajaba como `X-Idempotency-Key` y la API devolvia la orden que ya
+  // existia. `crearPagoFlow` no manda ninguna cabecera de idempotencia, porque Flow no tiene.
+  //
+  // Lo que decia el propio repo (`herramientas/sonda-flow.mjs`): «Flow rechaza un
+  // `commerceOrder` repetido». Se fue a comprobar al sandbox el 3-nov-2026 y es FALSO: tres
+  // `payment/create` con el MISMO `commerceOrder` contestaron `ok`, con `flowOrder` 11463040,
+  // 11463041 y 11463042 y tres tokens distintos, y los tres `getStatus` devolvieron ese mismo
+  // `commerceOrder` con `status: 1`. Tres enlaces de pago vivos y cobrables por un solo kit, y
+  // la fila guardando solo el ultimo token: los otros dos quedaban cobrables e invisibles.
+  const CRED = { FLOW_API_KEY: 'clave', FLOW_SECRET_KEY: 'secreto', PASARELA: 'flow',
+    RESEND_API_KEY: 'clave-de-prueba' };
+
+  /* -- primero: que el molde no pueda tapar el defecto -- */
+  {
+    // Si el molde volviera a dar el mismo token, TODAS las aserciones de abajo pasarian con un
+    // endpoint que abre dos cobros. Esta es la que vigila a la prueba misma.
+    const red = conRed();
+    const a = await fetch('https://sandbox.flow.cl/api/payment/create', { method: 'POST', body: 'commerceOrder=vyc_x&amount=1' });
+    const b = await fetch('https://sandbox.flow.cl/api/payment/create', { method: 'POST', body: 'commerceOrder=vyc_x&amount=1' });
+    const ta = (await a.json()).token, tb = (await b.json()).token;
+    red.soltar();
+    cierto('los dos pagos del molde traen token', Boolean(ta && tb));
+    falso('y son distintos, como lo son en Flow de verdad', ta === tb);
+  }
+
+  /* -- dos clics: un pago, un enlace -- */
+  {
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED };
+    const red = conRed();
+    const a = await E.onRequestPost({ request: pedir(BIEN), env });
+    const b = await E.onRequestPost({ request: pedir(BIEN), env });
+    const ja = await a.json(), jb = await b.json();
+    red.soltar();
+
+    eq('las dos contestan 200', [a.status, b.status], [200, 200]);
+    eq('con el MISMO id de pedido', ja.id, jb.id);
+    // ⚠️⚠️ LA ASERCION QUE CUIDA EL DOBLE COBRO. Dos enlaces distintos son dos pagos vivos por
+    // el mismo kit. Y si se pagan los dos, el segundo aviso ni chilla: el pedido ya quedo en
+    // `pagado`, la confirmacion contesta `ya-resuelto` y nadie se entera de que se cobro dos
+    // veces.
+    eq('y las dos llevan al MISMO enlace de pago', ja.checkout_url, jb.checkout_url);
+    eq('se abrio UN solo pago en Flow', red.llamadas.flow, 1);
+    eq('queda UN solo pedido', filas(crudo).length, 1);
+    // El token guardado sigue siendo el del pago que de verdad esta abierto. Si el endpoint
+    // hubiera abierto otro, la fila guardaria el nuevo y el primero quedaria cobrable sin que
+    // tengamos forma de verlo.
+    eq('la fila guarda el token del unico pago abierto', filas(crudo)[0].flow_token, 'TOKFLOW123');
+    cierto('y el enlace que se devuelve lleva ESE token', String(ja.checkout_url).includes('TOKFLOW123'));
+
+    // El enlace tiene que ser uno que la pagina acepte seguir: `destinoDePagoValido` exige
+    // https y un host de flow.cl. Uno que no pase ese filtro deja a la persona mirando
+    // «Reintentar» con el pago abierto del otro lado — paso de verdad el 30-oct.
+    const u = new URL(ja.checkout_url);
+    eq('por https', u.protocol, 'https:');
+    cierto('y a un host de flow.cl', /(^|\.)flow\.cl$/.test(u.hostname));
+
+    // Reusar cuesta UNA lectura (la del segundo clic), no una creacion.
+    eq('se le pregunto al pago abierto una sola vez', red.llamadas.lecturasFlow, 1);
+  }
+
+  /* -- el pago abierto resulta estar PAGADO: no se cobra de nuevo -- */
+  {
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const IDA = 'vyc_' + 'e'.repeat(32);
+    await A.crearPedido(db, {
+      id: IDA, dominio: 'clinicaejemplo.cl', correo: 'contacto@clinicaejemplo.cl',
+      senales_contratadas: [], senales_fuera: [], informe_json: '{}',
+      monto_neto: 149000, monto_total: 177310, flow_token: 'TOKABIERTO',
+    });
+    const red = conRed({ flowPago: { commerceOrder: IDA, amount: '177310', status: 2,
+      paymentData: { amount: '177310.00', date: '2026-11-03 10:00:00' } } });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+    red.soltar();
+    const j = await r.json();
+
+    eq('NO se abre un segundo cobro', red.llamadas.flow, 0);
+    eq('contesta 409', r.status, 409);
+    eq('con un motivo que no es el generico', j.motivo, 'ya-pagaste');
+    // ⚠️⚠️ No se le puede afirmar a alguien que no se le cobro cuando la pasarela acaba de
+    // decir que si.
+    falso('NO se le dice que no se le cobro nada', /no se te cobr/i.test(j.detalle || ''));
+    cierto('se le da el enlace de SU pedido', String(j.detalle).includes(IDA));
+    eq('y se avisa a una persona, y se sabe a cual', red.llamadas.avisos, ['hola@spindlelab.cl']);
+    eq('el pedido no se cerro como rechazado', filas(crudo)[0].estado, 'creado');
+  }
+
+  /* -- una compra VIEJA cuyo pago no calza: no se cierra Y SE AVISA -- */
+  {
+    // ── POR QUE ESTE CAMINO NECESITABA SU PROPIA PRUEBA (3-nov-2026) ──────────────────────
+    //
+    // Es el otro aviso de `respuestaYaPagaste` y su vecino: la fila vieja cuyo pago en Flow no
+    // es ni pendiente, ni pagado, ni rechazado —acá, un monto que no calza con lo vendido—. El
+    // codigo decide no tocarla y abrirle un cobro nuevo a la persona, y el comentario del
+    // bloque dice textual por que: dejarla viva sin que nadie se entere es dejarla perdida.
+    //
+    // Esa segunda mitad no estaba probada. Al quitarle el `env` a ese aviso, la bateria seguia
+    // entera en verde: la fila quedaba viva, la persona compraba igual, y el aviso que es la
+    // unica forma de enterarse no salia.
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const IDX = 'vyc_' + '2'.repeat(32);
+    await A.crearPedido(db, {
+      id: IDX, dominio: 'clinicaejemplo.cl', correo: 'contacto@clinicaejemplo.cl',
+      senales_contratadas: [], senales_fuera: [], informe_json: '{}',
+      monto_neto: 149000, monto_total: 177310, flow_token: 'TOKVIEJO',
+    });
+    // La fila tiene que ser VIEJA: `buscarCompraAbierta` solo mira las de antes de la ventana,
+    // y una recien creada entra por el otro camino (el pago abierto de este mismo pedido).
+    const haceMucho = new Date(Date.now() - (P.VIGENCIA_ORDEN_HORAS + 2) * 60 * 60 * 1000).toISOString();
+    crudo.prepare('UPDATE pedidos SET creado_en = ? WHERE id = ?').run(haceMucho, IDX);
+
+    // Flow dice que ese pago es de $1.000 y vendimos $177.310: no es ninguno de los tres casos
+    // que el codigo sabe resolver solo.
+    const red = conRed({ flowPago: { commerceOrder: IDX, amount: '1000', status: 1,
+      paymentData: { amount: null } } });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+    red.soltar();
+    const j = await r.json();
+
+    // La fila vieja NO se cierra: cerrarla podria estar marcando como rechazada una venta que
+    // entro, y la plata ya esta del otro lado. Eso es lo que el codigo decide, y esta bien.
+    eq('la fila vieja sigue viva', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(IDX).estado, 'creado');
+    eq('y no se abrio ningun cobro', red.llamadas.flow, 0);
+
+    // ⚠️ Y LO QUE DE VERDAD PASA CON LA PERSONA, que no es lo que el comentario del codigo
+    // decia. El comentario afirmaba que «se le abre un pago nuevo»; no se le abre: el insert
+    // ya habia chocado contra la fila vieja antes del rescate, y solo se reintenta cuando esa
+    // fila se cierra. Con la fila viva, la respuesta es un 409 y la persona se queda sin poder
+    // comprar — y como `buscarCompraAbierta` va a seguir encontrando esa misma fila, cada
+    // reintento vuelve a dar lo mismo.
+    //
+    // Se afirma lo que hace, no lo que decia el comentario. Que esto SEA lo correcto es otra
+    // decision, y no es la que vino a tomar este cambio: queda dicho en el informe.
+    eq('a la persona se le contesta 409', r.status, 409);
+    eq('con el motivo de que no se pudo guardar', j.motivo, 'no-se-pudo-guardar');
+    cierto('diciendole que no se le cobro nada', /no se te cobr/i.test(j.detalle || ''));
+
+    // ⚠️⚠️ LA MITAD QUE FALTABA: que alguien se entere de esa fila.
+    eq('sale el aviso, a la casilla del negocio', red.llamadas.avisos, ['hola@spindlelab.cl']);
+  }
+
+  /* -- el pago abierto fue RECHAZADO: ese enlace ya no cobra, se abre uno nuevo -- */
+  {
+    // ⚠️ LA OTRA CARA, Y LA QUE IMPIDE «ARREGLARLO» NEGANDOSE A TODO. Un arreglo que se plante
+    // ante cualquier pago abierto deja encerrado a quien le rechazaron la tarjeta y quiere
+    // reintentar con otra, que es el camino normal de una compra chilena. Un enlace rechazado
+    // ya no cobra, asi que abrir uno nuevo deja UNO vivo, no dos.
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const IDR = 'vyc_' + 'f'.repeat(32);
+    await A.crearPedido(db, {
+      id: IDR, dominio: 'clinicaejemplo.cl', correo: 'contacto@clinicaejemplo.cl',
+      senales_contratadas: [], senales_fuera: [], informe_json: '{}',
+      monto_neto: 149000, monto_total: 177310, flow_token: 'TOKRECHAZADO',
+    });
+    const red = conRed({ flowPago: { commerceOrder: IDR, amount: '177310', status: 3,
+      paymentData: { amount: null } } });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+    red.soltar();
+    const j = await r.json();
+
+    eq('se puede volver a pagar', r.status, 200);
+    eq('se abrio un pago nuevo', red.llamadas.flow, 1);
+    eq('sobre la MISMA fila, sin crear otra', [j.id, filas(crudo).length], [IDR, 1]);
+    eq('y la fila pasa a guardar el token del pago nuevo', filas(crudo)[0].flow_token, 'TOKFLOW123');
+    cierto('el enlace es el del pago nuevo', String(j.checkout_url).includes('TOKFLOW123'));
+    falso('y NO el del rechazado', String(j.checkout_url).includes('TOKRECHAZADO'));
+  }
+
+  /* -- no se pudo preguntar por el pago abierto: no se cobra a ciegas -- */
+  {
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const IDQ = 'vyc_' + '1'.repeat(32);
+    await A.crearPedido(db, {
+      id: IDQ, dominio: 'clinicaejemplo.cl', correo: 'contacto@clinicaejemplo.cl',
+      senales_contratadas: [], senales_fuera: [], informe_json: '{}',
+      monto_neto: 149000, monto_total: 177310, flow_token: 'TOKDESCONOCIDO',
+    });
+    // El molde no conoce ese token y la prueba no fija respuesta: contesta error, como Flow
+    // cuando no puede leer el pago.
+    const red = conRed();
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+    red.soltar();
+    const j = await r.json();
+
+    eq('se pregunto', red.llamadas.lecturasFlow, 1);
+    eq('y antes que arriesgar un segundo cobro, no se abre ninguno', red.llamadas.flow, 0);
+    eq('contesta 409', r.status, 409);
+    eq('diciendo que no se pudo comprobar', j.motivo, 'no-se-pudo-consultar');
+    cierto('con una explicacion para la persona', String(j.detalle).length > 40);
+    eq('y la fila queda como estaba', filas(crudo)[0].flow_token, 'TOKDESCONOCIDO');
+  }
+
+  /* -- el pago abierto no calza con lo vendido: no se cobra y lo mira alguien -- */
+  {
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const IDM = 'vyc_' + '2'.repeat(32);
+    await A.crearPedido(db, {
+      id: IDM, dominio: 'clinicaejemplo.cl', correo: 'contacto@clinicaejemplo.cl',
+      senales_contratadas: [], senales_fuera: [], informe_json: '{}',
+      monto_neto: 149000, monto_total: 177310, flow_token: 'TOKRARO',
+    });
+    const red = conRed({ flowPago: { commerceOrder: IDM, amount: '1000', status: 2,
+      paymentData: { amount: '1000.00' } } });
+    const r = await E.onRequestPost({ request: pedir(BIEN), env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...CRED } });
+    red.soltar();
+    const j = await r.json();
+
+    eq('no se abre otro cobro', red.llamadas.flow, 0);
+    eq('contesta 409', r.status, 409);
+    eq('y lo dice sin inventar un estado', j.motivo, 'pago-abierto-no-calza');
+    // ⚠️ No se toca la fila Y se avisa. Dejarla viva sin que nadie se entere es dejarla
+    // perdida: es la mitad que ya falto una vez en este mismo archivo.
+    eq('se avisa a una persona', red.llamadas.avisos, ['hola@spindlelab.cl']);
+    eq('y la fila no se movio', filas(crudo)[0].estado, 'creado');
+  }
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
