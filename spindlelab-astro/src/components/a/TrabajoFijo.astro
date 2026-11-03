@@ -1,0 +1,169 @@
+---
+// EL TRABAJO FIJO (obra E14, 2-nov-2026, Diego): el mecanismo MEDIDO de «Our work» de Koto
+// (e14-home-koto/medicion-koto-scroll.md §3), tal como lo dejó el prototipo aprobado por Ramón (e14-home-koto/prototipo/).
+// Lo usan la home, /trabajo/ y «Lo que construimos» de /servicios/desarrollo-web/.
+//   · Desde 834: el panel de la izquierda queda fijo (sticky, una pantalla); la tarjeta cuyo borde de arriba cruza la mitad
+//     de la pantalla se enciende (100 %) y las demás quedan al 20 %; el nombre cambia por máscara (133 ms fuera, 333 ms
+//     dentro) y la bajada entra con 333 ms de retardo. Ninguna tarjeta escala ni se apila. Lo mueve trabajo-fijo.mjs.
+//   · Bajo 834: una lista, cada tarjeta en 4:5 con su nombre y su bajada debajo, sin apagar nada (Koto §3.4).
+//   · Con movimiento reducido o sin JS: todas al 100 %; sin JS, además, cada pieza con su texto debajo.
+//   · Accesible: el texto de cada pieza vive bajo su tarjeta (encabezado, ficha, bajada). Desde 834, con JS, queda solo
+//     para el lector de pantalla y lo que se ve es la copia del panel, con aria-hidden y sus enlaces fuera del Tab: la
+//     tarjeta es el enlace, con el nombre de la pieza (los enlaces de la bajada llevan al mismo destino).
+//   · El pie de una imagen con persona generada (Verifica y Cumple) va bajo su tarjeta y no se apaga con ella: se lee
+//     siempre que la imagen se ve.
+// El texto llega hecho (de los JSON de Clara, por quien lo usa): este componente no escribe ninguno.
+import Icono from './Icono.astro';
+import Pausa from './Pausa.astro';
+
+interface Img { src: string; ancho: number; alto: number; /** una versión más angosta, para el srcset */ chica?: { src: string; ancho: number } }
+interface Tarjeta {
+  /** 16:9 desde 834 */
+  ancha: Img;
+  /** 4:5 bajo 834 (el póster de 390 en un video) */
+  angosta: Img;
+  alt?: string;
+  /** Un video: sus fuentes desde 834 y bajo 834 (la imagen quieta es su póster, alt vacío) */
+  video?: { ancho: { webm: string; mp4: string }; angosto: { webm: string; mp4: string } };
+  /** El pie de la imagen (persona generada con IA) */
+  pie?: string;
+}
+interface Pieza {
+  id: string;
+  nombre: string;
+  ficha: string;
+  texto: string;
+  aviso?: string;
+  /** La descripción del video, para el lector de pantalla */
+  descripcion?: string;
+  enlace: { texto: string; destino: string };
+  tarjetas: Tarjeta[];
+}
+interface Props {
+  id: string;
+  piezas: Pieza[];
+  /** El nombre arriba, en gris bajo el título (la home, como Koto); si no, abajo en blanco sobre la bajada */
+  nombreArriba?: boolean;
+  /** El panel aparece mientras sube la primera tarjeta (la home, Koto §3.2) */
+  aparece?: boolean;
+  /** Arriba de la página (/trabajo/): el panel arranca bajo el encabezado y no a un 30 % de la pantalla */
+  arriba?: boolean;
+  nivel?: 'h2' | 'h3';
+  externo: string;
+  pausar?: string;
+  seguir?: string;
+  /** La primera tarjeta cae en la primera pantalla */
+  primeraPantalla?: boolean;
+  /** La home: las imágenes se piden recién a media pantalla de distancia (trabajo-fijo.mjs) y no a los ~1250 px de la carga
+   *  diferida del navegador, que en la home las bajaba en la primera carga (peso, desvios-construccion.md). Sin JS, el
+   *  <noscript> trae la imagen de siempre. */
+  diferir?: boolean;
+  /** El id del encabezado que va en la ranura «cabeza»: nombra la sección */
+  idTitulo: string;
+}
+const {
+  id, piezas, nombreArriba = false, aparece = false, arriba = false, nivel = 'h3', externo, pausar, seguir,
+  primeraPantalla = false, idTitulo, diferir = false,
+} = Astro.props;
+const Nombre = nivel;
+const fuera = (d: string) => /^https?:/.test(d);
+const ANGOSTO = '(max-width: 833.98px)';
+// El ancho de la tarjeta en la pantalla: 10 de 16 columnas desde 1194, 7 de 12 de 834 a 1193, entera bajo 834
+const SIZES_ANCHA = '(min-width: 1194px) 62vw, 58vw';
+const SIZES_ANGOSTA = 'calc(100vw - 32px)';
+let n = 0;
+const srcsetAncha = (a: Img) => `${a.chica ? `${a.chica.src} ${a.chica.ancho}w, ` : ''}${a.src} ${a.ancho}w`;
+---
+<script is:inline>if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('a-mov');</script>
+<section class:list={['k-tf', { 'k-tf--aparece': aparece, 'k-tf--arriba': arriba }]} id={id} aria-labelledby={idTitulo} data-trabajo-fijo>
+  <div class="k-tf__panel" data-panel>
+    <div class="k-tf__arriba">
+      <slot name="cabeza" />
+      {nombreArriba && (
+        <p class="t-declaracion k-tf__nombre" aria-hidden="true"><span class="k-tf__mascara"><span class="gris" data-nombre>{piezas[0].nombre}</span></span></p>
+      )}
+    </div>
+    <div class="k-tf__abajo" aria-hidden="true">
+      {!nombreArriba && (
+        <p class="t-titulo k-tf__nombre"><span class="k-tf__mascara"><span class="tinta" data-nombre>{piezas[0].nombre}</span></span></p>
+      )}
+      <div class="k-tf__bajada" data-bajada></div>
+    </div>
+  </div>
+
+  <div class="k-tf__lista">
+    {piezas.map((p, ip) => {
+      const idNombre = `${id}-${p.id}`;
+      const idFuera = `${id}-${p.id}-fuera`;
+      const sale = fuera(p.enlace.destino);
+      return (
+        <article class="k-tf__pieza" data-pieza={ip} data-nombre={p.nombre}>
+          {/* la copia que muestra el panel (aria-hidden allí, enlaces fuera del Tab) */}
+          <template data-plantilla>
+            <p class="dato">{p.ficha}</p>
+            <p class="cuerpo">{p.texto}</p>
+            {p.aviso && <p class="chico">{p.aviso}</p>}
+            <p class="chico"><a href={p.enlace.destino} tabindex="-1" rel={sale ? 'noopener' : undefined}>{p.enlace.texto}{sale ? <Icono nombre="fuera" /> : <Icono nombre="flecha" />}</a></p>
+          </template>
+          {p.tarjetas.map((tj, it) => {
+            const primera = primeraPantalla && n++ === 0;
+            const carga = primera ? 'eager' : 'lazy';
+            const fuentes = tj.video ? JSON.stringify([{ desde: 834, ...tj.video.ancho }, tj.video.angosto]) : undefined;
+            return (
+              <div class="k-tf__marco" data-tarjeta data-video={tj.video ? '' : undefined} data-fuentes={fuentes}>
+                <a
+                  class="k-tf__tarjeta medio-enlace"
+                  href={p.enlace.destino}
+                  rel={sale ? 'noopener' : undefined}
+                  tabindex={it > 0 ? '-1' : undefined}
+                  aria-labelledby={sale ? `${idNombre} ${idFuera}` : idNombre}
+                >
+                  <div class:list={['medio', 'k-tf__medio', { video: !!tj.video }]}>
+                    {diferir && !primera ? (
+                      <>
+                        <picture class:list={{ video__quieta: !!tj.video }}>
+                          <source media={ANGOSTO} data-srcset={`${tj.angosta.src} ${tj.angosta.ancho}w`} sizes={SIZES_ANGOSTA} width={tj.angosta.ancho} height={tj.angosta.alto} />
+                          <img data-diferida data-src={tj.ancha.src} data-srcset={srcsetAncha(tj.ancha)} sizes={SIZES_ANCHA} alt={tj.video ? '' : (tj.alt ?? '')} width={tj.ancha.ancho} height={tj.ancha.alto} decoding="async" />
+                        </picture>
+                        <noscript>
+                          <picture class:list={{ video__quieta: !!tj.video }}>
+                            <source media={ANGOSTO} srcset={`${tj.angosta.src} ${tj.angosta.ancho}w`} sizes={SIZES_ANGOSTA} width={tj.angosta.ancho} height={tj.angosta.alto} />
+                            <img src={tj.ancha.src} srcset={srcsetAncha(tj.ancha)} sizes={SIZES_ANCHA} alt={tj.video ? '' : (tj.alt ?? '')} width={tj.ancha.ancho} height={tj.ancha.alto} loading="lazy" decoding="async" />
+                          </picture>
+                        </noscript>
+                      </>
+                    ) : (
+                      <picture class:list={{ video__quieta: !!tj.video }}>
+                        <source media={ANGOSTO} srcset={`${tj.angosta.src} ${tj.angosta.ancho}w`} sizes={SIZES_ANGOSTA} width={tj.angosta.ancho} height={tj.angosta.alto} />
+                        <img src={tj.ancha.src} srcset={srcsetAncha(tj.ancha)} sizes={SIZES_ANCHA} alt={tj.video ? '' : (tj.alt ?? '')} width={tj.ancha.ancho} height={tj.ancha.alto} loading={carga} fetchpriority={primera ? 'high' : undefined} decoding="async" />
+                      </picture>
+                    )}
+                    {tj.video && <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1" />}
+                  </div>
+                  <span class="k-tf__ver rotulo" aria-hidden="true">{p.enlace.texto}</span>
+                </a>
+                {tj.video && <Pausa pausar={pausar} seguir={seguir} />}
+                {tj.pie && <p class="pie k-tf__pie-medio">{tj.pie}</p>}
+              </div>
+            );
+          })}
+          <div class="k-tf__texto">
+            <Nombre class="k-tf__pnombre" id={idNombre}><span class="tinta">{p.nombre}</span></Nombre>
+            {sale && <span class="solo-lector" id={idFuera}>{externo}</span>}
+            <p class="dato">{p.ficha}</p>
+            <p class="chico">{p.texto}</p>
+            {p.descripcion && <p class="solo-lector">{p.descripcion}</p>}
+            {p.aviso && <p class="chico">{p.aviso}</p>}
+            <p class="chico k-tf__enlace"><a href={p.enlace.destino} rel={sale ? 'noopener' : undefined}>{p.enlace.texto}{sale ? <><Icono nombre="fuera" /><span class="solo-lector"> {externo}</span></> : <Icono nombre="flecha" />}</a></p>
+          </div>
+        </article>
+      );
+    })}
+    <slot name="final" />
+  </div>
+</section>
+
+<script>
+  import '../../scripts/archivo/trabajo-fijo.mjs';
+  import '../../scripts/archivo/video.mjs';
+</script>

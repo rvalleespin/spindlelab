@@ -6,8 +6,8 @@
 // prototipo (tableros/e12-direcciones/proto/a/servicios/desarrollo-web/); donde difieren, manda la spec. Lo que la spec
 // no cubría está en spindlelab-v3/desvios.md, tanda 4.
 //
-// En orden: cabecera; franja; «En todos los planes» (lista); «Lo que construimos» (dos portadas 4:5 en c5 a c16, con el
-// círculo del cursor); el glosario y los cuatro planes; «Cinco fases» (la fase a la vista pasa del gris al blanco:
+// En orden: cabecera; franja; «En todos los planes» (lista); «Lo que construimos» (desde E14, el trabajo fijo de la home:
+// TrabajoFijo.astro); el glosario y los cuatro planes; «Cinco fases» (la fase a la vista pasa del gris al blanco:
 // fases.mjs); preguntas; cierre con «Siguiente».
 //
 // El texto es de Clara, tal cual (src/data/archivo/texto/desarrollo-web.json). Los planes salen tal cual de
@@ -20,10 +20,11 @@ import Layout from '../../layouts/Layout.astro';
 import PaginaA from '../../components/a/PaginaA.astro';
 import Miga from '../../components/a/Miga.astro';
 import Imagen from '../../components/a/Imagen.astro';
-import Pieza from '../../components/a/Pieza.astro';
+import TrabajoFijo from '../../components/a/TrabajoFijo.astro';
 import Icono from '../../components/a/Icono.astro';
 import { LAYOUT_A } from '../../components/a/layout-a';
-import { textoDe, igualQue, contiene } from '../../data/archivo/texto.mjs';
+import { textoDe, igualQue, contiene, medioDe } from '../../data/archivo/texto.mjs';
+import caso from '../../data/archivo/texto/caso-combeau.json';
 import { SITIO, trozos, siguiente, soloMontosDe, monto } from '../../data/archivo/servicios.mjs';
 import comun from '../../data/archivo/texto/comun.json';
 import dw from '../../data/archivo/texto/desarrollo-web.json';
@@ -59,20 +60,38 @@ const entrada = (id: string) => {
 const franja = { medio: m['combeau-fotografia-169'], alt: t('dw.franja.alt').texto, pieza: entrada('combeau-fotografia') };
 
 // ---- En todos los planes
-const incluye = ['1', '2', '3', '4', '6', '7'].map((n) => {
+// E14: sale dw.incluye.6 (Clara, recorte del 2-nov)
+const incluye = ['1', '2', '3', '4', '7'].map((n) => {
   const e = t(`dw.incluye.${n}`);
   return trozos(e.texto, e.enlaces);
 });
 
-// ---- Lo que construimos (obra E13): las dos entradas que quedan en /trabajo/, Combeau y Verifica y Cumple, con su destino
-// de A. Verifica y Cumple es un sitio aparte: lleva la flecha ↗, el aviso para el lector de pantalla y el pie de la persona
-// generada con IA, como en el muro.
+// ---- Lo que construimos (E14, 2-nov): el trabajo fijo de la home (TrabajoFijo.astro), con las dos entradas de /trabajo/,
+// Combeau y Verifica y Cumple, y su destino de A. Una tarjeta por pieza: 16:9 desde 834 y 4:5 bajo 834. Verifica y Cumple
+// es un sitio aparte: la flecha ↗, el aviso para el lector de pantalla y el pie de la persona generada con IA.
+// Combeau va con su book de modelo y no con la portada de fotografía: esa ya es la franja de esta misma página.
+const libro = { src: '/v3/trabajo/combeau/combeau-modelo-169.webp', ancho: 1600, alto: 900, chica: { src: '/v3/trabajo/combeau/combeau-modelo-960.webp', ancho: 960 }, alt: (medioDe(caso, 'combeau-modelo-169.webp') as { alt: string }).alt };
 const obra = [
-  { id: 'combeau-fotografia', medio: m['combeau-fotografia-45'] },
-  { id: 'verifica-y-cumple', medio: m['verifica-y-cumple-45'] },
-].map((p) => ({ ...p, e: entrada(p.id) }));
+  { id: 'combeau-fotografia', ancha: libro, angosta: { src: '/v3/medios/combeau-modelo-45.webp', ancho: 780, alto: 975 } },
+  { id: 'verifica-y-cumple', ancha: m['verifica-y-cumple-53'], angosta: m['verifica-y-cumple-45'] },
+].map((p) => {
+  const e = entrada(p.id);
+  return {
+    id: p.id,
+    nombre: e.nombre,
+    ficha: e.linea,
+    texto: e.bajada,
+    enlace: { texto: e.cursor, destino: e.destino },
+    tarjetas: [{
+      ancha: { src: p.ancha.src, ancho: p.ancha.ancho, alto: p.ancha.alto, chica: (p.ancha as { chica?: { src: string; ancho: number } }).chica },
+      angosta: { src: p.angosta.src, ancho: p.angosta.ancho, alto: p.angosta.alto },
+      alt: p.ancha.alt,
+      pie: e.pie,
+    }],
+  };
+});
 const refObra = t('dw.obra.entradas').texto;
-for (const p of obra) contiene(refObra, p.e.destino, `desarrollo web, destino de «${p.e.nombre}»`);
+for (const p of obra) contiene(refObra, p.enlace.destino, `desarrollo web, destino de «${p.nombre}»`);
 const bObra = t('dw.obra.boton');
 const externo = t('comun.externo').texto as string;
 
@@ -95,7 +114,8 @@ const fases = [1, 2, 3, 4, 5].map((n) => {
 });
 
 // ---- Preguntas
-const preguntas = [1, 2, 3, 4, 5].map((n) => ({ p: t(`dw.faq.${n}.p`).texto, r: t(`dw.faq.${n}.r`).texto }));
+// E14: entra la del sitio (sale de la home) y salen la 3 y la 4 (Clara, recorte del 2-nov)
+const preguntas = ['sitio', 1, 2, 5].map((n) => ({ p: t(`dw.faq.${n}.p`).texto, r: t(`dw.faq.${n}.r`).texto }));
 soloMontosDe(preguntas.map((q) => q.r).join(' '), 'desarrollo-web', 'desarrollo web, las preguntas');
 
 // ---- Cierre y «Siguiente» (el de Clara, que es el que sigue en el orden de servicios.mjs). La flecha del texto de
@@ -195,22 +215,13 @@ const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=4', alt: `SpindleLab:
       </ul>
     </section>
 
-    {/* 4 · LO QUE CONSTRUIMOS: dos portadas 4:5 en c5 a c16, con el círculo del cursor (§4.2) */}
-    <section class="seccion reticula" aria-labelledby="h-obra">
-      <div class="int-sec__cab">
-        <h2 class="t-declaracion" id="h-obra"><span class="tinta">{dos('dw.obra.h2').tinta}</span> <span class="gris">{dos('dw.obra.h2').gris}</span></h2>
+    {/* 4 · LO QUE CONSTRUIMOS (E14): el trabajo fijo de la home, con el h2 en el panel y el nombre de la pieza abajo */}
+    <TrabajoFijo id="obra" idTitulo="h-obra" piezas={obra} externo={externo}>
+      <h2 slot="cabeza" class="t-declaracion" id="h-obra"><span class="tinta">{dos('dw.obra.h2').tinta}</span> <span class="gris">{dos('dw.obra.h2').gris}</span></h2>
+      <div slot="final" class="k-tf__final">
+        <a class="boton boton--placa" href={bObra.destino}>{bObra.texto}<Icono nombre="flecha" /></a>
       </div>
-      <div class="int-sec__cuerpo int-sec__cuerpo--ancho">
-        <div class="obra3">
-          {obra.map((p, i) => (
-            <Pieza id={`o-${p.id}`} nombre={p.e.nombre} bajada={p.e.bajada} linea={p.e.linea} destino={p.e.destino} cursor={p.e.cursor} medio={p.medio} forma="p-45" pie={p.e.pie} externo={externo} entrada={i === 0} />
-          ))}
-        </div>
-        <div class="obra3__pie">
-          <a class="boton boton--placa" href={bObra.destino}>{bObra.texto}<Icono nombre="flecha" /></a>
-        </div>
-      </div>
-    </section>
+    </TrabajoFijo>
 
     {/* 5 · PLANES (c5 a c16): el glosario antes de los planes (Clara), los cuatro planes y la nota */}
     <section class="seccion reticula" id="planes" aria-labelledby="h-planes">

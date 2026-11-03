@@ -86,7 +86,7 @@ const partir = (texto: string) => {
 const fuera = oferta.fuera.map(partir);
 
 // ---- Preguntas: las del FAQPage del JSON-LD son estas mismas
-const preguntas = [1, 2, 3].map((n) => ({ p: t(`servicios.faq.${n}.p`).texto as string, r: t(`servicios.faq.${n}.r`).texto as string }));
+const preguntas = [1, 2, 3, 4, 5].map((n) => ({ p: t(`servicios.faq.${n}.p`).texto as string, r: t(`servicios.faq.${n}.r`).texto as string }));
 
 // ---- Cierre: la revisión es la acción; el chequeo, el enlace secundario
 const b1 = t('servicios.cierre.boton');
