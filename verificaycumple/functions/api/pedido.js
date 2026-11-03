@@ -53,6 +53,7 @@ import {
 } from './flow.js';
 import { avisarVenta, avisarRevisar } from './aviso.js';
 import { enviarCorreoDePago } from './correo.js';
+import { mismoSecreto } from './entregar.js';
 
 
 const NO_EXISTE = { ok: false, motivo: 'no-existe' };
@@ -423,6 +424,43 @@ export const MONTO_TOTAL = 177310;  // 149.000 + 19% de IVA
 export const TITULO_KIT = 'Kit de implementación · Verifica y Cumple';
 
 /**
+ * EL MONTO DEL ENSAYO (3-nov-2026), y por qué existe sin abrirle un hueco a lo de arriba.
+ *
+ * Todo el camino del dinero está escrito y nunca ha corrido con plata: por Flow no se ha
+ * completado un pago jamás. Probarlo exige una compra real, y las seis cosas que esa compra
+ * tiene que demostrar —que Flow acepte la petición en producción, que su aviso vuelva, que la
+ * firma calce, que el pedido pase a pagado, que salga el correo del comprador, que llegue el
+ * aviso interno— **no dependen del monto**. A precio completo el ensayo cuesta la comisión
+ * perdida y, sobre todo, deja una venta hecha de verdad, con su IVA y su retiro detrás.
+ *
+ * ⚠️ ESTO NO CONTRADICE LA REGLA DE ARRIBA, Y LA DISTINCIÓN ES TODO. El navegador sigue sin
+ * poder elegir cuánto paga: lo que habilita el precio de ensayo es un SECRETO que solo tenemos
+ * nosotros, no un campo del cuerpo ni un parámetro de la URL. Quien no lo tiene paga 177.310,
+ * aunque mande la cabecera, aunque la mande vacía, aunque la copie mal.
+ *
+ * Reusa `CLAVE_ENTREGA` en vez de crear un secreto nuevo, por la misma razón que `/api/cola`:
+ * un segundo secreto vence por su cuenta, hay que acordarse de rotarlo aparte, y el 3-nov esa
+ * bomba ya estalló una vez. Quien tenga esa clave puede además cerrar cualquier pedido como
+ * entregado, que es peor que abrir uno de 1.190, así que reusarla no agranda el daño posible.
+ *
+ * Falla hacia el precio real: sin `CLAVE_ENTREGA` cargada, sin cabecera, o con una que no
+ * calza, se cobra lo de siempre. El error barato es cobrarle el precio real a Ramón; el caro
+ * sería cobrarle 1.190 a un cliente.
+ */
+export const MONTO_PRUEBA_NETO = 1000;
+export const MONTO_PRUEBA_TOTAL = 1190;  // 1.000 + 19% de IVA, con la misma aritmética exacta
+export const CABECERA_PRUEBA = 'X-Prueba-Monto';
+
+export function precioDeLaCompra(request, env) {
+  const real = { neto: MONTO_NETO, total: MONTO_TOTAL, esPrueba: false };
+  const esperado = typeof (env && env.CLAVE_ENTREGA) === 'string' ? env.CLAVE_ENTREGA.trim() : '';
+  if (!esperado) return real;
+  const dada = (request && request.headers && request.headers.get(CABECERA_PRUEBA)) || '';
+  if (!mismoSecreto(String(dada).trim(), esperado)) return real;
+  return { neto: MONTO_PRUEBA_NETO, total: MONTO_PRUEBA_TOTAL, esPrueba: true };
+}
+
+/**
  * Cuántas órdenes puede abrir una misma IP en un día.
  *
  * ── POR QUÉ ESTE NÚMERO SUBIÓ, Y POR QUÉ SE CUENTA DISTINTO (24-oct-2026) ────────────────
@@ -554,6 +592,10 @@ function origenPropio(request, url) {
 export async function onRequestPost(contexto) {
   const { request, env } = contexto;
   const url = new URL(request.url);
+
+  // El precio se decide UNA vez por petición y de acá lo leen los tres lugares que lo usan.
+  // Tenerlo tres veces es como se separan en silencio.
+  const precio = precioDeLaCompra(request, env);
 
   if (!origenPropio(request, url)) return jsonPost({ ok: false, motivo: 'origen' }, 403);
   if (!env.VYC_PEDIDOS) return jsonPost({ ok: false, motivo: 'sin-base',
@@ -706,6 +748,17 @@ export async function onRequestPost(contexto) {
 
   let idPedido = anterior ? anterior.id : nuevoIdPedido();
 
+  // ⚠️ EL MONTO DE UN PEDIDO REUSADO SALE DE SU FILA, NO DE LA CONSTANTE (3-nov-2026).
+  //
+  // Con un solo precio en el mundo daba lo mismo y nadie lo habría notado. Con dos, un pedido
+  // abierto a un precio y recobrado a otro deja el cobro sin calzar con lo vendido, y
+  // `decidirDesdeFlow` compara justamente eso: lo rechazaría y mandaría el pedido a revisión.
+  // Lo que se cobra es lo que dice el contrato congelado, que es el único registro de qué se
+  // vendió.
+  const montoACobrar = anterior && Number.isInteger(anterior.monto_total)
+    ? anterior.monto_total
+    : precio.total;
+
   // ── Congelar y crear ──────────────────────────────────────────────────────────────────
   if (!anterior) {
     // Se congelan LOS DOS informes. `cierra` mezcla ids de ambos, así que guardar solo el
@@ -714,8 +767,8 @@ export async function onRequestPost(contexto) {
     const contrato = congelarContrato({
       informe: { rapido, profundo },
       elegibilidad: puede,
-      montoNeto: MONTO_NETO,
-      montoTotal: MONTO_TOTAL,
+      montoNeto: precio.neto,
+      montoTotal: precio.total,
       urlMedida: profundo.revisado || rapido.revisado || null,
     });
 
@@ -975,7 +1028,7 @@ export async function onRequestPost(contexto) {
     const creada = await crearPagoFlow({
       idPedido,
       correo,
-      monto: MONTO_TOTAL,
+      monto: montoACobrar,
       titulo: TITULO_KIT,
       urls: {
         // Server a server: acá Flow avisa el resultado, y es lo único que mueve el pedido.
@@ -1072,7 +1125,7 @@ export async function onRequestPost(contexto) {
     orden = armarOrdenMP({
       idPedido,
       correo,
-      montoTotal: MONTO_TOTAL,
+      montoTotal: montoACobrar,
       titulo: TITULO_KIT,
       // Las tres vuelven a la misma pantalla: es la que sabe en qué está el pedido, y lo sabe
       // leyendo la base, no el parámetro con el que Mercado Pago la llamó. Lo que el navegador
