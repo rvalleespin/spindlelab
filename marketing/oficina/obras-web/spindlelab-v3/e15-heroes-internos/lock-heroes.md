@@ -1,5 +1,11 @@
 # E15 · Heroes de las páginas internas · lock de estilos y escenas
 
+> **RONDA 3 · 3-nov-2026 · Lucía (dirección de arte) con Bruno (dirección creativa).** Ramón aprobó la ronda 3 tal
+> como se propuso. Se rehacen **cuatro** imágenes (diagnostico, metodo, trabajo, contacto) y se hace post sin costo a
+> los cuatro afiches y a contacto. Todo lo nuevo está en **§R3**, justo abajo; lo que reemplaza queda en el historial
+> (§6). Las otras nueve quedan aprobadas y no se regeneran. El resto de este archivo (lock de estilos §1, reglas §0,
+> revisión §4) sigue vigente tal como quedó en la ronda 2.
+>
 > **RONDA 2 · 3-nov-2026 · Lucía (dirección de arte) con Bruno (dirección creativa).**
 > Ramón aprobó rehacer las 7 imágenes que Javiera rechazó en la ronda 1, como ella recomendó. Este archivo es el lock
 > vigente: los cambios de la ronda 2 están marcados **R2** y lo que se reemplazó queda en el historial (§6).
@@ -22,6 +28,177 @@ Se apoya en: el texto de cada página (`spindlelab-astro/src/data/archivo/texto/
 citar 30), las cuatro referencias de estilo que Ramón aprobó en Higgsfield, lo que ya se rechazó en E14
 (`../e14-home-koto/imagenes-v2/LEEME.md`) y la revisión de Javiera sobre la hoja de la ronda 1 (`pruebas/hoja.jpg`,
 job ids en `pruebas/registro.md`).
+
+---
+
+## R3 · Ronda 3 · las cuatro que se rehacen y el post sin costo
+
+Lo que manda, en palabras de Ramón (sin cambio): **cada imagen obedece al contexto de su página; conceptual pero no
+aburrida, divertida, creativa, con una idea visual ingeniosa; a color; fina y curada como Koto; nada que huela a IA,
+a caricatura o a foto de banco.** Rigen todas las reglas de §0 y el lock de estilo de §1 (R2) sin cambios.
+
+| Estado en la ronda 3 | Páginas |
+|---|---|
+| **Aprobadas, no se tocan** | nosotros, servicios (isométrico) · auditoria-seo-tecnica, visibilidad-en-ia (retro) · desarrollo-web, acompanamiento-mensual (foto) |
+| **Aprobadas, solo post de color (R3.6)** | paid-media, redes-sociales, blog (afiche) |
+| **Se rehacen** | diagnostico (retro), metodo (isométrico), trabajo (afiche, y después el mismo post de color), contacto (foto, y después grano §1.6) |
+
+### R3.0 · Lo que se aprendió en la ronda 2 y obliga desde aquí
+
+1. **R3 · Ninguna escena que un filtro lea como artefacto.** Diagnóstico se bloqueó 7 veces: maleta abierta + cables
+   con pinzas + botón grande + reloj describe, para un clasificador, una bomba de película. Ninguna escena junta
+   **cables con pinzas, botón, temporizador o reloj, y una caja que se abre**. Si un objeto de época necesita
+   conectarse, va con un tubo de goma o un hilo, no con cables.
+2. **R3 · El 50 % central es el límite, no la sugerencia.** El recorte 4:5 del celular sobre un 16:9 de 1344 × 752 deja
+   **601 px de ancho, el 44,8 %** del cuadro. «Mitad central» quedaba justo en el borde y método se salió. En los
+   prompts de la ronda 3 se pide **el 40 % central del ancho**, para tener margen, y la escena es **un solo objeto
+   compacto** cuando el estilo tiende a desparramarse (isométrico).
+3. **R3 · Física posible.** Lo que cuelga, cuelga de algo y cae a plomo; lo que se apoya, se apoya en algo. Nada flota
+   ni se sostiene de un objeto que no aguantaría (en trabajo, el cuadro colgaba del nivel).
+4. **R3 · Nada moderno en un set de época.** En afiche y retro, todo objeto es anterior a los 70 (en trabajo salió una
+   cámara moderna).
+5. **R3 · La fila foto es un solo set.** Fondo oliva liso sin costuras, manos con manga de pana oliva, materiales
+   crema y papel. **Sin mesas de madera de otro color** (la de contacto salió naranja) y sin materiales que se lean
+   como otra cosa (la greda se leyó piedra).
+
+### R3.1 · `/diagnostico/` · retro · **Le tomamos la presión al sitio** (idea fijada por Ramón)
+
+- **Qué quiere expresar** (`diagnostico.json`, h1 y línea): «Chequeo gratis. Mira si ChatGPT y otras IA pueden
+  visitar tu sitio y entenderlo.» «Escribe la dirección de tu sitio y en segundos ves si ChatGPT y otras IA pueden
+  visitarlo y entender a qué te dedicas.» El trabajo de la cabecera: «la prueba de que lo que decimos se mide».
+- **La metáfora:** un **tensiómetro de pera de los años 50**, de los de consulta, puesto en una **página doblada como
+  un brazo**: una hoja enrollada suave, apoyada en el cojincito de cuero donde uno apoya el brazo en la consulta, con
+  el manguito de tela abrochado alrededor. Un tubo de goma va a la pera y una mano la aprieta. Hay **una sola
+  esfera**, enganchada al manguito, con la aguja subiendo sobre un anillo de marcas sin números. Nada más en el
+  escritorio.
+- **Por qué dice eso:** un chequeo es justamente eso: un control rápido, de rutina, que se hace afuera y sin abrir a
+  nadie, y te dice si estás bien. Tomarle la presión a una página es el chiste: tratar al sitio como paciente, con el
+  gesto que todos conocen de la consulta. Se separa de la auditoría de la misma fila, que abre el motor: aquí no se
+  abre nada, se mide desde afuera, como el chequeo. «En segundos» queda dicho por el objeto (tomar la presión dura un
+  minuto), sin reloj.
+- **Lo que resuelve:** sin cables, sin botón, sin reloj y sin maleta (R3.0.1); un instrumento médico de mano que no se
+  confunde con nada. La página no lleva círculo ni montañita. Ninguna lupa ni estetoscopio: un solo instrumento.
+
+### R3.2 · `/metodo/` · isometrico · **El archivador que se abre de a un cajón**
+
+- **Qué quiere expresar** (`metodo.json`, h1 y línea; pasos en `paginas-v3.json`): «Cómo trabajamos. Partimos por una
+  revisión gratis y seguimos por fases.» «Alcance y precio quedan escritos antes de empezar.» Los pasos: revisión
+  gratis → conversación y propuesta por escrito → implementación por fases, «cada fase termina con algo que apruebas
+  antes de seguir» → acompañamiento.
+- **La metáfora:** un **archivador metálico de cuatro cajones**, alto y angosto, solo en el centro, que además es un
+  edificio chico: cada cajón es un piso con una pieza en miniatura adentro. El cajón de abajo está **abierto entero y
+  no tiene frente**, como una pieza sin puerta, iluminado en coral, con una figura de espaldas ya sentada en un
+  escritorio leyendo una hoja (la revisión gratis, abierta para cualquiera). El segundo **se está abriendo ahora**:
+  una figura subida a una escalerita acaba de meter en el portaetiqueta del cajón una tarjeta en blanco **sellada con
+  un lacre coral**, y la luz de adentro se enciende. El tercero y el cuarto siguen cerrados y apagados, cada uno con
+  su portaetiqueta vacío esperando su tarjeta. Un sendero punteado sube de cajón en cajón por el costado.
+- **Por qué dice eso:** «por fases, cada una aprobada por escrito» es exactamente cómo funciona un archivador bien
+  llevado: un cajón por asunto, y cada uno se rotula y se abre cuando corresponde. El lacre es la firma sin letras: la
+  fase siguiente se abre **después** de que se aprueba por escrito, no antes. La primera no tiene frente porque es
+  gratis y no hay nada que firmar. El chiste es que el método, que suena a trámite, se ve como una casa de muñecas
+  ordenada: un objeto de oficina que tiene vida adentro.
+- **Lo que resuelve de Javiera:** la ronda 2 se leía pero era un parque «cozy» desparramado en diagonal que no cabía
+  en el recorte. Ahora es **un solo objeto vertical**, que es la forma natural del 4:5.
+- **Todo cabe en el 50 % central, y explícitamente:** el archivador mide unas **cuatro quintas partes del alto** del
+  cuadro y **menos de un cuarto del ancho**; la escalerita, las figuras y el sendero van pegados al mueble; **nada de
+  la escena sale del 40 % central del ancho** (R3.0.2). A los lados queda violeta vacío: en 16:9 es aire de afiche, y
+  en el recorte 4:5 (44,8 %) el archivador entra entero con margen por los dos lados. Se verifica recortando el 4:5 al
+  recibirla (§4).
+
+### R3.3 · `/trabajo/` · afiche · **Colgado a secar: la foto y la plomada**
+
+- **Qué quiere expresar** (`trabajo.json`, h1, entradilla y description): «Trabajo. Un sitio hecho para un cliente y
+  una herramienta propia.» «Cada entrada dice de quién es.» El cliente es un fotógrafo; la herramienta propia es
+  Verifica y Cumple, que revisa si un sitio cumple la ley de datos.
+- **La metáfora:** un **cordel de cuarto oscuro** cruza el afiche de lado a lado entre dos clavos. De él cuelgan, con
+  dos perros de ropa de madera, **dos cosas**: una **copia fotográfica** recién revelada (un bodegón: una jarra y un
+  paño, con su borde blanco), y una **plomada de albañil**, que cae perfectamente vertical por su propio peso. Cada
+  una lleva atada una etiquetita de papel con **una sola barra negra** donde iría el nombre. Una mano acaba de soltar
+  el segundo perro.
+- **Por qué dice eso:** las dos entradas de la página colgadas en el mismo cordel, cada una con su etiqueta que dice
+  de quién es. La foto es lo que hicimos para otro (y el otro es fotógrafo: colgar copias a secar es su oficio). La
+  plomada es la herramienta propia: es la herramienta más antigua que existe para **verificar** que algo **cumple**,
+  y en Chile «a plomo» quiere decir que está bien puesto. El chiste es que la plomada es lo único del afiche que
+  cuelga **perfectamente** derecho. Física posible: el cordel se comba un poco, todo cuelga a plomo, nada flota.
+- **Lo que resuelve de Javiera:** fuera el cuadro que colgaba del nivel (R3.0.3) y fuera la cámara moderna (R3.0.4):
+  no hay ninguna cámara; el fotógrafo se dice con la copia colgada a secar.
+
+### R3.4 · `/contacto/` · foto · **La tienda armada y la tienda por armar**
+
+- **Qué quiere expresar** (`contacto.json`, h1 y línea): «Hablemos de tu sitio. Del que ya tienes o del que todavía
+  no.» «Si ya tienes uno, déjanos la dirección: te lo revisamos gratis […]. Si todavía no tienes, cuéntanos qué vendes
+  y te decimos cómo lo haríamos y cuánto cuesta.» El trabajo de la cabecera: recibir a quien apretó «Hablemos de tu
+  sitio», tenga sitio o no.
+- **La metáfora:** dos manos con manga de pana oliva vienen hacia quien mira, palmas arriba, lado a lado, sobre el
+  mismo fondo oliva liso de las otras fotos. En una palma, una **maqueta de papel de una tienda** ya armada, de
+  cartulina crema, con su toldo a rayas oliva y crema, su puerta y su letrero en blanco. En la otra palma, **la misma
+  tienda todavía plana**: la lámina troquelada, con las líneas de doblez punteadas y las pestañas para pegar, sin
+  doblar. Nada más en el cuadro.
+- **Por qué dice eso:** «del que ya tienes o del que todavía no» en un solo material y un solo diseño: la que existe
+  y la que todavía es plano. El plano es justo lo que ofrece la página a quien no tiene sitio («te decimos cómo lo
+  haríamos»), y la armada es lo que se revisa. Las dos manos ofrecen las dos, como quien pregunta «¿de cuál
+  hablamos?»: eso es el botón que trajo a la persona hasta aquí. Es una tienda y no una casa, para que no vuelva la
+  lectura inmobiliaria de las llaves.
+- **Lo que resuelve de Javiera:** el mismo set que desarrollo-web y acompañamiento (fondo oliva liso, pana oliva, papel
+  crema), sin mesa de madera naranja; y nada que pueda leerse como piedra: es papel, y el papel se lee papel.
+  Cartulina crema y oliva, sin latón ni madera brillante, para que el dorado dé ~0 %.
+
+### R3.5 · Los prompts (lock §1 R2 + escena + cierre §1.5)
+
+Modelo `gpt_image_2_5`, 16:9, una variante por página; `image_references` como en la ronda 2 (`pruebas-r2/registro.md`):
+retro con auditoría recoloreada (media `0f889dc7-f8da-4808-bdfa-8b8b8ed9d9d3`), afiche con redes-sociales recoloreada
+(media `05e29c01-6f4f-45cb-967f-122e9f5bc2c9`), isométrico con el job `f55e938d-5a96-47be-b703-71faa9c89ea9`, foto con
+el job `33df342a-94c9-42c9-a837-141b11e17a7d`. Preflight con `get_cost` antes de lanzar. **Diagnóstico:** si el filtro
+la bloquea una vez con referencia, un solo reintento sin `image_references`; si vuelve a bloquear, se para y se avisa.
+
+#### R3.5.1 · `/diagnostico/` · retro
+
+```
+Highly detailed retro-technical illustration in a deep bottle-green palette and nothing else: a near-black bottle-green ground, forms shaded in muted forest and olive green, linework and highlights in a soft pale light green. No yellow, no lime, no chartreuse, no other colour. Precise vector line like a 1960s engineering manual or patent drawing, halftone dot shading, visible film grain, three-quarter view, every bolt, hinge and cable drawn with care. Dense, mechanical, quietly funny. Scene: a routine check-up at the doctor's, but the patient is a web page. On a plain wooden desk lies a small padded leather armrest cushion, the kind a doctor uses when taking blood pressure. Resting on it, exactly where a forearm would lie, is a single sheet of paper rolled loosely into a soft tube like an arm: it is a tiny web page, and its visible side shows only a top strip and a few horizontal blank bars, with no pictures. Wrapped snugly around the middle of the rolled page is the stitched cloth cuff of an antique 1950s aneroid blood pressure monitor. One soft rubber tube runs from the cuff to a rubber squeeze bulb, and one human hand in a rolled shirt sleeve enters from the right and gently squeezes the bulb. Clipped to the cuff is one single round gauge, the only dial in the picture, its pointer rising over a ring of plain tick marks with no numerals. Nothing else on the desk: no wires, no buttons, no clocks, no boxes, no other instruments. Keep the rolled page, the cuff and the gauge within the central 40 percent of the width. No text, no letters, no numbers, no logos, no legible interface: any screen, page or label shows only blank or abstract blocks, and any dial or scale shows only plain tick marks. No magnifying glass, no megaphone, no placeholder picture icon of a circle and a mountain. No robots, no robotic or mechanical arms, no brains, no circuit boards, no neon, no electric tech blue, no gold. No visible faces.
+```
+
+#### R3.5.2 · `/metodo/` · isometrico
+
+```
+Isometric editorial illustration in full colour, strict 30-degree isometric projection, precise hairline outlines, flat colour fills with a fine film grain and a subtle risograph texture. Limited palette: deep violet and soft lilac, glowing coral and burnt orange, turquoise-green accents, set on a deep dark violet ground. Many small objects in motion, linked to one another by dotted paths, thin signal rings and arcs; tiny anonymous figures seen from behind, no bigger than a fingernail. Intricate, calm and witty, curated like a double-page magazine spread. Scene: one tall, narrow vintage metal filing cabinet with four drawers stands alone in the very centre of the frame, and it is also a tiny building: every drawer is a floor with a miniature furnished room inside. The bottom drawer is pulled fully open and has no front panel at all, like a room with no door; it glows warm coral, and a tiny figure seen from behind already sits inside at a little desk, reading one sheet of paper. The second drawer is sliding open right now: a tiny figure seen from behind, standing on a small step ladder leaning against the cabinet, has just slipped a small blank card closed with a round coral wax seal into the metal label holder on the drawer front, and the light inside that drawer is switching on in coral, spilling a warm patch of light. The third and fourth drawers are still shut and unlit in dark violet, each with its own empty label holder waiting for a card. One dotted path climbs up the side of the cabinet from drawer to drawer. The progression must read at a glance: one open, one opening, two still shut. Composition: a single compact vertical object. The cabinet is about four fifths of the frame height and less than a quarter of the frame width, perfectly centred; the ladder, the figures and the dotted path stay close to the cabinet. Everything in the scene stays within the central 40 percent of the width, with wide empty dark violet space on both sides and nothing else in the picture. No text, no letters, no numbers, no logos, no legible interface: any screen, page or label shows only blank or abstract blocks, and any dial or scale shows only plain tick marks. No magnifying glass, no megaphone, no placeholder picture icon of a circle and a mountain. No robots, no robotic or mechanical arms, no brains, no circuit boards, no neon, no electric tech blue, no gold. No visible faces.
+```
+
+#### R3.5.3 · `/trabajo/` · afiche
+
+```
+Underground magazine poster: fresh leaf-green lime paper background, a green-leaning lime clearly greener than lemon or chartreuse and never yellow, with heavy grain; black halftone photographic cut-outs with hard scissor edges, solid black rectangular blocks set on a strict modular grid, thin black rules, crop marks and printer's registration marks in the corners. Wherever text would go there are only solid black bars. Two inks only, green lime and black. Bold, witty, editorial, with generous empty paper. Scene: one thin black clothesline crosses the poster from side to side between two small nails, like the drying line in a photographer's darkroom, sagging slightly in the middle. Near the centre, two plain wooden clothespins grip the line with a small gap between them. The left clothespin holds a single halftone photographic print with a white border, hanging straight down by its top edge to dry: a quiet still life of a ceramic jug and a folded cloth on a table. The right clothespin holds the string of an old dark iron plumb bob, which hangs perfectly vertical under its own weight, its point aimed straight down. A small paper tag is tied with thread to each of the two items, and each tag carries only one short solid black bar where a name would go. A halftone hand enters from the top right, just letting go of the second clothespin. Everything obeys gravity: nothing floats, nothing hangs from something that could not hold it. Period objects only, nothing modern, and no cameras anywhere. Around it only two thin black rules and the crop marks, with plenty of empty lime paper. Keep the print and the plumb bob within the central 40 percent of the width. No text, no letters, no numbers, no logos, no legible interface: any screen, page or label shows only blank or abstract blocks, and any dial or scale shows only plain tick marks. No magnifying glass, no megaphone, no placeholder picture icon of a circle and a mountain. No robots, no robotic or mechanical arms, no brains, no circuit boards, no neon, no electric tech blue, no gold. No visible faces.
+```
+
+#### R3.5.4 · `/contacto/` · foto
+
+```
+Commercial studio photograph on a seamless flat olive-green background, soft natural window light from one side casting a crisp, defined shadow. Hands and forearms in an olive corduroy sleeve enter the frame; real physical objects arranged with precise order and spacing. Tactile textures of wood, paper, metal, clay and fabric; muted palette of olive, cream, raw wood and paper. Editorial still life shot on medium-format colour film, with a fine, even film grain visible across the whole frame, never smooth, glossy or plastic. Scene: frontal view at hand height, with no table and no wooden surface anywhere: only the same seamless olive-green backdrop. Two hands in olive corduroy sleeves come towards the viewer from the bottom of the frame, palms up and side by side, each offering one object, as if asking which one we are going to talk about. In the left palm: a small finished paper model of a little shop, made of matte cream card, folded and glued, with a striped olive-and-cream paper awning, a door and a blank sign. In the right palm: the very same little shop still completely flat, a sheet of matte cream card with only its die-cut outline, faint dashed fold lines and glue tabs, not yet folded. Same card, same size, same design: one already built, one still to be built. Nothing else in the frame. Keep both hands and both objects within the central 40 percent of the width. No text, no letters, no numbers, no logos, no legible interface: any screen, page or label shows only blank or abstract blocks, and any dial or scale shows only plain tick marks. No magnifying glass, no megaphone, no placeholder picture icon of a circle and a mountain. No robots, no robotic or mechanical arms, no brains, no circuit boards, no neon, no electric tech blue, no gold. No visible faces.
+```
+
+El lock de foto (§1.4) nombra «wood» y «clay» entre las texturas: se deja tal cual (el lock no se edita por página) y
+la escena los niega de forma explícita («no table and no wooden surface»). Si aun así sale madera o greda, se descarta.
+
+### R3.6 · Post sin costo
+
+- **Los cuatro afiches (paid-media, redes-sociales, trabajo, blog) bajan de fluorescente a impreso.** Javiera los vio
+  neón: el lima a 90° con S ≈ 0,87 brilla como marcador. Sobre el `.webp` actual de `pruebas-r2/` (y sobre trabajo
+  nuevo después de su `paper_shift` a ~90°), en HSV, el papel queda en **saturación ≈ 0,6 y brillo ≈ 0,85**
+  (desde S ≈ 0,87), aplicado **igual en las cuatro** y **sin tocar el tono** (que queda en 90 ± 1°). Se aplica solo al papel (los
+  mismos píxeles claros y saturados que movió `paper_shift`, con su peso suave), para que el negro y la trama no se
+  laven. Se mide después: tono, S y V del papel en las cuatro, que tienen que quedar parejos.
+- **Contacto:** grano de §1.6 (σ = 6, `seed=15`, el mismo de las otras dos fotos).
+- **Ninguna otra aprobada se toca.**
+- La función va en `pruebas-r2/post/post.py` para que el post siga siendo reproducible; salida a webp de 1200 px,
+  calidad 88, sin PNG en el repo.
+
+### R3.7 · Costo y revisión
+
+- **4 imágenes × 0,25 = 1,00 crédito** (más 0,25 por reintento si el filtro bloquea diagnóstico una vez). Tope duro:
+  2 créditos. El post no cuesta.
+- Al recibir cada una rige §4 entero, más: **método recortado al 4:5 central (601 × 752 sobre 1344 × 752) y el
+  archivador entero adentro**; **trabajo sin cámara y con todo colgando a plomo**; **contacto sin madera ni greda** y
+  con el oliva igual a las otras dos fotos (comparar el fondo medido); **diagnóstico con una sola esfera y sin
+  cifras**. Hoja de contactos nueva con las trece y revisión de Javiera en un subagente limpio antes de Ramón.
 
 ---
 
@@ -174,35 +351,38 @@ Las dos van a `pruebas/` como `<slug>.webp` nuevo; el anterior queda en git.
 
 Composición por estilo, para que dentro de cada uno ninguna se repita:
 
-- **isometrico:** ciudad densa en anillo (Nosotros) · vista despiezada de módulos flotando (Servicios) · **R2:** fila
-  de pabellones en diagonal sobre una base flotante (Método).
+- **isometrico:** ciudad densa en anillo (Nosotros) · vista despiezada de módulos flotando (Servicios) · **R3:** un solo
+  mueble vertical al centro con mucho aire a los lados (Método).
 - **retro:** objeto abierto en corte (Auditoría) · **R2:** mueble de época visto de frente con manos que eligen
-  (Visibilidad) · **R2:** maletín abierto con instrumentos (Diagnóstico).
+  (Visibilidad) · **R3:** un solo instrumento sobre un escritorio, de tres cuartos (Diagnóstico).
 - **afiche:** **R2:** bloque negro gigante cortado por un cono de papel (Paid Media) · retícula de muchas celdas
-  (Redes) · **R2:** un objeto colgado al centro con mucho papel vacío (Trabajo) · objeto en sección con una mano que
+  (Redes) · **R3:** un cordel de lado a lado con dos cosas colgando al centro (Trabajo) · objeto en sección con una mano que
   señala (Blog).
-- **foto:** cenital sobre la mesa (Desarrollo web) · tres cuartos a la altura del objeto (Acompañamiento) · frontal y
-  bajo, la mano viene hacia ti (Contacto).
+- **foto:** cenital sobre la mesa (Desarrollo web) · tres cuartos a la altura del objeto (Acompañamiento) · **R3:**
+  frontal, sin mesa, dos manos que vienen hacia ti con una cosa en cada palma (Contacto).
 
 | Página | Estilo | Estado | La idea |
 |---|---|---|---|
 | `/nosotros/` | isometrico | aprobada R1 | La ciudad que gira en torno a un sitio. |
 | `/servicios/` | isometrico | aprobada R1 | El catálogo de piezas. |
-| `/metodo/` | isometrico | **R2, idea nueva** | **Las luces que se encienden de a una.** |
+| `/metodo/` | isometrico | **R3, idea nueva** (§R3.2) | **El archivador que se abre de a un cajón.** (R2: las luces que se encienden de a una) |
 | `/servicios/auditoria-seo-tecnica/` | retro | aprobada R1, recolor | El sitio en el banco del mecánico. |
-| `/servicios/visibilidad-en-ia/` | retro | **R2, idea nueva** | **La operadora del conmutador.** |
-| `/diagnostico/` | retro | **R2, idea nueva** | **El maletín de pruebas.** |
-| `/servicios/paid-media/` | afiche | **R2, idea nueva** | **La linterna.** |
-| `/servicios/redes-sociales/` | afiche | aprobada R1, recolor | El calendario se arma a mano. |
-| `/trabajo/` | afiche | **R2, idea nueva** | **El cuadro y el nivel.** |
-| `/blog/` | afiche | **R2, misma idea, ejecución corregida** | **Se explica el truco.** |
+| `/servicios/visibilidad-en-ia/` | retro | aprobada R2 | **La operadora del conmutador.** |
+| `/diagnostico/` | retro | **R3, idea fijada** (§R3.1) | **Le tomamos la presión al sitio.** (R2: el maletín de pruebas, bloqueado por el filtro) |
+| `/servicios/paid-media/` | afiche | aprobada R2, post de color (§R3.6) | **La linterna.** |
+| `/servicios/redes-sociales/` | afiche | aprobada R1, recolor R2, post de color (§R3.6) | El calendario se arma a mano. |
+| `/trabajo/` | afiche | **R3, idea nueva** (§R3.3) | **Colgado a secar: la foto y la plomada.** (R2: el cuadro y el nivel) |
+| `/blog/` | afiche | aprobada R2, post de color (§R3.6) | **Se explica el truco.** |
 | `/servicios/desarrollo-web/` | foto | aprobada R1, grano | Hecho a la medida, como un traje. |
 | `/servicios/acompanamiento-mensual/` | foto | aprobada R1, grano | El jardinero de cada mes. |
-| `/contacto/` | foto | **R2, idea nueva** | **La taza que ya tienes y la que todavía no.** |
+| `/contacto/` | foto | **R3, idea nueva** (§R3.4) | **La tienda armada y la tienda por armar.** (R2: la taza y la greda) |
 
 Las fichas de las seis aprobadas (qué expresa, idea y por qué) están en el historial (§6), tal como se aprobaron.
 
 ### 2.1 · Las siete de la ronda 2
+
+> **R3:** diagnostico, metodo, trabajo y contacto se reemplazaron en la ronda 3 (§R3.1-R3.4). Sus fichas de la ronda 2
+> quedan aquí abajo como registro; los prompts vigentes de esas cuatro son los de §R3.5, no los de §3A.
 
 #### `/metodo/` · isometrico · **Las luces que se encienden de a una**
 
@@ -446,6 +626,31 @@ Commercial studio photograph on a seamless flat olive-green background, soft nat
 
 Cada corrección marcada como **regla** (pasa a §0 y obliga desde aquí) o **preferencia** (se aplica a esa imagen y no
 vuelve a discutirse).
+
+### Ronda 3 · 3-nov-2026 · revisión de Javiera sobre la hoja de la ronda 2, aprobada por Ramón
+
+| # | Corrección | Tipo | Dónde quedó |
+|---|---|---|---|
+| 1 | Diagnóstico bloqueado 7 veces por el filtro (maleta + cables con pinzas + botón + reloj = artefacto explosivo). Ninguna escena junta esos elementos. | **regla** | §R3.0.1 |
+| 2 | Método no cabía en el recorte 4:5. El recorte deja el 44,8 % del ancho: los prompts piden el 40 % central y, si el estilo se desparrama, un solo objeto compacto. | **regla** | §R3.0.2 |
+| 3 | Trabajo: el cuadro colgaba del nivel. Física posible en toda escena. | **regla** | §R3.0.3 |
+| 4 | Trabajo: cámara moderna en un afiche de época. Nada posterior a los 70 en afiche y retro. | **regla** | §R3.0.4 |
+| 5 | Contacto: mesa de madera naranja y greda que parecía piedra. La fila foto es un solo set: oliva liso, pana oliva, papel crema. | **regla** | §R3.0.5 |
+| 6 | Los cuatro afiches quedaron fluorescentes. Papel a S ≈ 0,6 y V ≈ 0,85, igual en los cuatro, sin tocar el tono. | **regla** | §R3.6 |
+| 7 | Diagnóstico: idea fijada, el tensiómetro de pera en una página doblada como brazo, una sola esfera sin números. | preferencia | §R3.1, §R3.5.1 |
+| 8 | Método: idea nueva, el archivador de cuatro cajones que se abren de a uno con una tarjeta lacrada. | preferencia | §R3.2, §R3.5.2 |
+| 9 | Trabajo: idea nueva, la copia y la plomada colgadas a secar en el mismo cordel, cada una con su etiqueta. | preferencia | §R3.3, §R3.5.3 |
+| 10 | Contacto: idea nueva, la tienda de papel armada y la misma tienda todavía plana. | preferencia | §R3.4, §R3.5.4 |
+| 11 | Contacto lleva el grano de §1.6, igual que las otras dos fotos. | preferencia | §R3.6 |
+
+### Ronda 2 · las ideas que se reemplazaron en la ronda 3 (para no volver a ellas)
+
+| Página | Idea de la ronda 2 | Por qué salió |
+|---|---|---|
+| `/diagnostico/` | **El maletín de pruebas.** Equipo de pruebas en maleta con tres diales, cables con caimanes a una tarjeta-página, botón de baquelita y reloj de arena. | El filtro la bloqueó 7 veces sin generar (se leía como explosivo). Job ids en `pruebas-r2/registro.md`. |
+| `/metodo/` | **Las luces que se encienden de a una.** Cuatro pabellones en diagonal por una loma sobre una base flotante. | Se leía, pero no cabía en el 50 % central y parecía un parque «cozy» genérico. |
+| `/trabajo/` | **El cuadro y el nivel.** Cuadro colgado con foto de una cámara; nivel de carpintero apoyado en el canto. | El cuadro colgaba del nivel (física imposible) y la cámara salió moderna. |
+| `/contacto/` | **La taza y la greda.** Tabla de madera con una taza de café y una bola de greda con huella. | La greda parecía piedra y la mesa de madera naranja rompía el set de la fila. |
 
 ### Ronda 2 · 3-nov-2026 · revisión de Javiera sobre la hoja de la ronda 1, aprobada por Ramón
 
