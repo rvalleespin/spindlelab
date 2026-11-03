@@ -37,7 +37,7 @@
  *   orden falla de forma rara, esto es lo primero que hay que mirar.
  */
 
-import { ESTADOS, transicionValida, ACCIONES } from './pedidos.js';
+import { ESTADOS, transicionValida, soloAMano, porQueSoloAMano, ACCIONES } from './pedidos.js';
 
 /**
  * El enum literal de `status` de /v1/payments/{id}, con lo que significa cada uno.
@@ -152,6 +152,15 @@ export function decidirDesdeNotificacion({ pedido, pago }) {
     return {
       accion: ACCIONES.REVISAR, estado: null, motivo: 'transicion-invalida',
       detalle: `No se pasa de ${pedido.estado} a ${destino} solo. Mercado Pago dice ${estadoMP}.`,
+    };
+  }
+
+  // Y una transición que existe no es una transición que se haga sola. Hoy la única es
+  // `contracargado → pagado`: ver `SOLO_A_MANO` en pedidos.js, donde está escrito por qué.
+  if (soloAMano(pedido.estado, destino)) {
+    return {
+      accion: ACCIONES.REVISAR, estado: null, motivo: 'reapertura-a-mano',
+      detalle: `${porQueSoloAMano(pedido.estado, destino)} Mercado Pago dice ${estadoMP}.`,
     };
   }
 
@@ -457,6 +466,16 @@ export function decidirDesdeOrden({ pedido, orden }) {
     return {
       accion: ACCIONES.REVISAR, estado: null, motivo: 'transicion-invalida',
       detalle: `No se pasa de ${pedido.estado} a ${destino} solo. La orden dice ${estadoOrden}.`,
+    };
+  }
+
+  // Misma compuerta que el otro camino, y por la misma tabla: el manejador de órdenes tenía
+  // exactamente la misma exposición —`transicionValida` le daba verde a `contracargado →
+  // pagado`— y es el que está en producción. Las dos la consultan; no hay una segunda lista.
+  if (soloAMano(pedido.estado, destino)) {
+    return {
+      accion: ACCIONES.REVISAR, estado: null, motivo: 'reapertura-a-mano',
+      detalle: `${porQueSoloAMano(pedido.estado, destino)} La orden dice ${estadoOrden}.`,
     };
   }
 

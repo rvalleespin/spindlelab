@@ -107,6 +107,69 @@ export async function firmarFlow(params, secretKey) {
  */
 export const FALLOS_ANTES_DE_LA_RED = new Set(['sin-credenciales', 'sin-id', 'sin-correo']);
 
+/**
+ * DE QUIÉN ES LA CULPA CUANDO FLOW RECHAZA EL `payment/create` (3-nov-2026).
+ *
+ * ── EL HECHO QUE LO MOTIVA ──────────────────────────────────────────────────────────────
+ *
+ * Se intentó abrir un pago con el correo `control@ejemplo.cl` y Flow contestó
+ * `400 {"code": 1620, "message": "The userEmail: … is not valid."}`. O sea: **Flow valida el
+ * correo del comprador y rechaza algunos**, y hasta hoy esa persona leía «no se pudo abrir el
+ * pago, vuelve a intentarlo» y se iba sin comprar, teniendo nosotros el motivo exacto en la
+ * mano. Reintentar con el mismo correo vuelve a fallar: el consejo era un callejón.
+ *
+ * ── POR QUÉ HACE FALTA EL CÓDIGO Y NO BASTA EL HTTP ─────────────────────────────────────
+ *
+ * Porque **todo es 400**. Medido contra el sandbox el 3-nov-2026, un caso por línea:
+ *
+ *   1620 · `control@ejemplo.cl`, `a@b.cl`, `prueba@gmail.con` y un dominio inexistente: los
+ *          CUATRO dieron `1620 The userEmail: … is not valid`. Es del comprador.
+ *    108 · secretKey equivocada → `Invalid Signature`.          ← nuestra
+ *    109 · apiKey equivocada    → `Invalid ApiKey`.             ← nuestra
+ *   1603 · `urlConfirmation` vacía → `is not valid URL`.        ← nuestra
+ *   1615 · `subject` vacío.                                      ← nuestra
+ *   1680 · moneda `XXX` no soportada.                            ← nuestra
+ *   1682 · monto con decimales.                                  ← nuestra
+ *   1901 · monto 0 → «The minimum amount is 350 CLP».            ← nuestra
+ *   1990 · medio de pago que el comercio no tiene contratado.    ← nuestra
+ *
+ * Los ocho últimos salen de campos que **fija el servidor**, no la persona. El único campo de
+ * este `payment/create` que escribe el comprador es el correo, y tiene su propio código.
+ *
+ * ⚠️ **La especificación pública de Flow NO trae esta tabla.** Se leyó `apiFlow.yaml`, que es
+ * lo que alimenta https://www.flow.cl/docs/api.html: documenta el esquema del error (`code` y
+ * `message`), que 400 es «error del Api» y 401 «error de negocio», y una tabla de códigos de
+ * *intento de pago* (-1, -2, …) que es de otra cosa. Los 16xx no están escritos en ninguna
+ * parte. Por eso esto se midió, igual que `ESTADOS_FLOW`, en vez de suponerse.
+ *
+ * ⚠️ **La lista es de lo que es DEL COMPRADOR, y lo que no está en ella es NUESTRO.** La
+ * dirección está elegida: equivocarse hacia «es nuestro» produce una disculpa de más;
+ * equivocarse hacia «es tuyo» manda a alguien a corregir un correo que estaba bien, por un
+ * problema de configuración que él no puede tocar. Para agregar un código: provocarlo contra
+ * el sandbox y escribirlo con su evidencia, uno por vez.
+ */
+export const RECHAZOS_DEL_COMPRADOR = { 1620: 'correo' };
+
+/**
+ * Qué campo del comprador rechazó Flow, o `null` si el rechazo es nuestro o no lo conocemos.
+ *
+ * Solo cuenta un rechazo de verdad: si Flow contestó `200` y el cuerpo salió raro
+ * (`sin-url-ni-token`), eso no es un veredicto suyo sobre quien compra, es un problema
+ * nuestro aunque el cuerpo traiga un `code`.
+ */
+export function rechazoDelComprador(resultado) {
+  if (!resultado || resultado.ok) return null;
+  if (!(resultado.estadoHttp >= 400)) return null;
+  const c = resultado.detalleFlow && resultado.detalleFlow.code;
+  // El código llega como número en todo lo observado, pero se acepta la forma string por lo
+  // mismo que `montoDe` más abajo: un proveedor que cambia el tipo de un campo no debería
+  // convertir un error del comprador en uno nuestro.
+  const n = typeof c === 'number' ? c
+    : (typeof c === 'string' && c.trim() !== '' && Number.isFinite(Number(c)) ? Number(c) : null);
+  if (n === null || !Object.prototype.hasOwnProperty.call(RECHAZOS_DEL_COMPRADOR, n)) return null;
+  return RECHAZOS_DEL_COMPRADOR[n];
+}
+
 export async function crearPagoFlow({ idPedido, correo, monto, titulo, urls, timeoutSegundos },
   { apiKey, secretKey, base }, fetchImpl = fetch) {
   if (!apiKey || !secretKey) return { ok: false, error: 'sin-credenciales' };
@@ -164,6 +227,47 @@ export async function crearPagoFlow({ idPedido, correo, monto, titulo, urls, tim
     flowOrder: cuerpo.flowOrder || null,
     destino: `${cuerpo.url}?token=${encodeURIComponent(cuerpo.token)}`,
   };
+}
+
+/**
+ * La página donde paga la persona, armada desde la base de la API.
+ *
+ * ── POR QUÉ HAY QUE ARMARLA, SI FLOW YA LA DEVUELVE (3-nov-2026) ─────────────────────────
+ *
+ * Para el camino feliz no hace falta: `payment/create` devuelve `url` y de ahí sale el
+ * `destino` de acá arriba. Hace falta para REUSAR un pago que ya está abierto, y ahí no hay a
+ * quién preguntárselo:
+ *
+ *   - `payment/getStatus` NO devuelve ninguna URL. Comprobado leyendo el cuerpo entero de tres
+ *     pagos del sandbox el 3-nov-2026: trae `flowOrder`, `commerceOrder`, `status`, `amount`,
+ *     `payer`, `pending_info` y `paymentData`, y nada más.
+ *   - de la fila del pedido solo guardamos el token. Guardar además la URL pedía una columna
+ *     nueva —un ALTER TABLE sobre una base que ya está en producción— para repetir un dato que
+ *     es el MISMO para todos los pagos del entorno.
+ *
+ * ⚠️ **LA RUTA ES OBSERVADA, NO SUPUESTA, Y SOLO EN EL SANDBOX.** Los tres `payment/create` del
+ * experimento del 3-nov devolvieron `url: "https://sandbox.flow.cl/app/web/pay.php"`: el mismo
+ * origen de `BASE_SANDBOX`, con esta ruta. De producción no tenemos ningún pago observado,
+ * porque la cuenta todavía no está aprobada.
+ *
+ * Así que la dirección en que esto puede equivocarse está elegida, igual que el entorno por
+ * defecto de `credencialesFlow`: si en producción la ruta fuera otra, lo que se rompe es el
+ * enlace de quien abandonó el pago y volvió dentro de las 24 h —una página de Flow que no
+ * carga, visible y reclamable—. Lo que NO pasa es cobrarle dos veces, que es lo que pasaba
+ * antes de esto y no se puede deshacer.
+ *
+ * Y no queda sin vigilancia: hay una prueba que compara esta ruta contra el `url` que Flow
+ * devolvió de verdad en el sandbox, así que el día que cambie, se pone rojo.
+ */
+export const RUTA_PAGINA_DE_PAGO = '/app/web/pay.php';
+
+export function paginaDePagoFlow(token, { base } = {}) {
+  if (!token || !base) return null;
+  let pagina;
+  try { pagina = new URL(RUTA_PAGINA_DE_PAGO, base).href; } catch { return null; }
+  // La concatenación es la misma que la del camino feliz, y por el mismo motivo: Flow no
+  // entrega una URL lista, el token va pegado en el query.
+  return `${pagina}?token=${encodeURIComponent(token)}`;
 }
 
 /**

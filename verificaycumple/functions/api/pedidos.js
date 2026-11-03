@@ -131,12 +131,65 @@ const TRANSICIONES = {
   [ESTADOS.RECHAZADO]: [ESTADOS.RECHAZADO, ESTADOS.CREADO, ESTADOS.PENDIENTE, ESTADOS.PAGADO],
   [ESTADOS.DEVUELTO]: [ESTADOS.DEVUELTO],
   // Un contracargo se puede revertir si la disputa se gana, así que no es un pozo sin salida.
+  // ⚠️ Pero `contracargado → pagado` NO la hace ningún manejador solo: está en `SOLO_A_MANO`,
+  // más abajo (3-nov-2026). Acá sigue porque acá se escribe lo que es posible, no lo que se
+  // automatiza — y sin esta fila la reversión sería imposible también a mano.
   [ESTADOS.CONTRACARGADO]: [ESTADOS.CONTRACARGADO, ESTADOS.PAGADO, ESTADOS.DEVUELTO],
   [ESTADOS.ENTREGADO]: [ESTADOS.ENTREGADO, ESTADOS.DEVUELTO, ESTADOS.CONTRACARGADO],
 };
 
 export function transicionValida(de, a) {
   return Boolean(TRANSICIONES[de] && TRANSICIONES[de].includes(a));
+}
+
+/**
+ * LAS TRANSICIONES QUE LA TABLA PERMITE Y QUE NINGÚN MANEJADOR AUTOMÁTICO HACE SOLO.
+ *
+ * ── POR QUÉ EXISTE (3-nov-2026) ───────────────────────────────────────────────────────────
+ *
+ * `TRANSICIONES` dice qué es POSIBLE. Eso no es lo mismo que qué se puede hacer SIN QUE LO
+ * MIRE UNA PERSONA, y hasta hoy el proyecto trataba las dos preguntas como una sola.
+ *
+ * El caso que lo mostró: `contracargado → pagado` está en la tabla, y con razón —un contracargo
+ * se revierte si la disputa se gana— pero mientras fue la tabla la única guarda, una
+ * notificación de la pasarela alcanzaba a reabrir sola un pedido contracargado. Y reabrirlo no
+ * es solo mover una fila: dispara el aviso interno de VENTA y le manda al comprador el correo
+ * de «recibimos tu pago» por una plata que el emisor de la tarjeta ya se llevó. Un contracargo
+ * es, por definición, el caso en que alguien de afuera está moviendo el dinero sin nosotros;
+ * es el último estado del que conviene salir solo.
+ *
+ * ⚠️ LA FILA DE `TRANSICIONES` NO SE BORRA, Y ES EL PUNTO ENTERO. Borrarla haría que la
+ * reversión de una disputa ganada fuera imposible también a mano, y dejaría a `marcarEstado`
+ * rechazando una transición que el negocio sí tiene. Lo que se saca es el camino AUTOMÁTICO.
+ *
+ * Y vive acá, al lado de la tabla y no dentro de un manejador, porque la pregunta es la misma
+ * para los dos: Mercado Pago entra por `cobro.js` y Flow por `flow-confirmacion.js`. Escrita
+ * en uno, el otro habría quedado con el agujero abierto —que es exactamente lo que pasó con el
+ * corte de estados resueltos, que existía en Flow y no en Mercado Pago.
+ *
+ * El valor es el texto que lee quien recibe el aviso. Va acá y no en el manejador por lo mismo:
+ * si fueran dos, dirían cosas distintas de la misma situación.
+ */
+const SOLO_A_MANO = {
+  [ESTADOS.CONTRACARGADO]: {
+    [ESTADOS.PAGADO]:
+      'El pedido estaba CONTRACARGADO —el emisor de la tarjeta revirtió el cobro tras una ' +
+      'disputa— y llegó una notificación que lo pondría de vuelta en pagado. Puede ser cierto, ' +
+      'si la disputa se ganó, y por eso la transición existe. Pero NO se hace sola: marcarlo ' +
+      'pagado dispara el aviso de venta y le manda al comprador el correo de «recibimos tu ' +
+      'pago». Comprueba en el panel de la pasarela que la plata volvió de verdad, y recién ahí ' +
+      'mueve el pedido a mano.',
+  },
+};
+
+/** ¿Esta transición existe pero tiene que pasar por una persona? */
+export function soloAMano(de, a) {
+  return Boolean(SOLO_A_MANO[de] && SOLO_A_MANO[de][a]);
+}
+
+/** Qué se le dice a quien recibe el aviso. `null` si esa transición no es de las de a mano. */
+export function porQueSoloAMano(de, a) {
+  return (SOLO_A_MANO[de] && SOLO_A_MANO[de][a]) || null;
 }
 
 /**
@@ -283,8 +336,16 @@ export function congelarContrato({ informe, elegibilidad, montoNeto, montoTotal,
  * daba por cierto un hecho que la otra constante desmentía.
  *
  * El invariante que de verdad importa, escrito una sola vez: **nunca puede haber dos órdenes
- * pagables para el mismo sitio y el mismo correo a la vez.** Eso se cumple si, y solo si, la
- * ventana de reutilización dura por lo menos lo que dura la orden.
+ * pagables para el mismo sitio y el mismo correo a la vez.** Para eso la ventana de
+ * reutilización tiene que durar por lo menos lo que dura la orden.
+ *
+ * ⚠️ Decía «se cumple si, y solo si». No era cierto, y la mitad que faltaba costó plata
+ * (3-nov-2026): la ventana logra que el segundo intento REUSE el id, pero que reusar el id no
+ * abra un segundo cobro lo ponía la pasarela, devolviendo la orden que ya existía ante la misma
+ * clave de idempotencia. Flow no tiene idempotencia y abría un pago nuevo por cada llamada, así
+ * que con la ventana cumplida igual quedaban dos enlaces vivos. La condición completa es: la
+ * ventana dura al menos lo que la orden, **y** el que abre el pago no abre uno nuevo cuando el
+ * pedido ya tiene uno vivo (ver `pagoFlowAbierto` en pedido.js).
  *
  * El costo de la regla, dicho: reutilizar una orden creada hace 23 horas le deja a la persona
  * una hora para pagarla. Es incómodo y es mucho menos malo que la alternativa, que es cobrarle
@@ -312,7 +373,34 @@ export const VIGENCIA_ORDEN_HORAS = 24;
  * estuvo publicada, y nadie se entera. Por eso hay una prueba que los compara: no se cambia
  * uno sin el otro.
  */
-export const VERSION_POLITICA = '1.8';
+export const VERSION_POLITICA = '1.9';
+
+/**
+ * La versión de las CONDICIONES DE VENTA que estaban publicadas cuando se escribió esto.
+ *
+ * ── POR QUÉ APARECE AHORA (3-nov-2026) ───────────────────────────────────────────────────
+ *
+ * El artículo 12 A de la Ley 19.496 obliga a mandar, una vez perfeccionado el contrato, una
+ * «confirmación escrita» con «una copia íntegra, clara y legible del contrato». Y el artículo
+ * 3° bis dice que si esa confirmación no sale, el plazo de retracto no es de 10 días sino de
+ * 90. El correo que sale al confirmarse el pago no decía qué se había comprado ni bajo qué
+ * condiciones, así que toda venta quedaba con la ventana larga.
+ *
+ * Ese correo ahora lleva las condiciones en el CUERPO, no solo el enlace: un enlace apunta a
+ * la página de hoy, y la página de hoy puede no ser la que la persona aceptó. Por eso también
+ * lleva este número, que es lo que permite decir después cuál era.
+ *
+ * ⚠️ Este número y el que imprime `public/terminos/index.html` son DOS COPIAS DEL MISMO
+ * HECHO, exactamente igual que `VERSION_POLITICA` y la página de privacidad. Hay una prueba
+ * que los compara: no se cambia uno sin el otro.
+ *
+ * ⚠️ Y NO SE GUARDA POR PEDIDO, todavía. La política sí se congela en su columna
+ * (`politica_version`), y lo análogo acá pediría una columna `terminos_version` —o sea un
+ * ALTER TABLE sobre la base de producción, que no se hace desde acá—. Mientras tanto la copia
+ * que vale es la que viaja en el correo del comprador, que es justamente lo que el artículo
+ * 12 A pide y lo que nadie puede editarle después.
+ */
+export const VERSION_TERMINOS = '1.0';
 
 /**
  * Hasta cuántas cuotas se le ofrecen al comprador.
@@ -434,8 +522,25 @@ CREATE TABLE IF NOT EXISTS pedidos (
   plataforma          TEXT,
   acceso_recibido_en  TEXT,
 
+  -- EL AVISO DE QUE LA PRESTACIÓN EMPEZÓ (3-nov-2026). El artículo 5 del Decreto 52 de 2024
+  -- del Ministerio de Economía dice que un servicio contratado a distancia se entiende
+  -- iniciado desde que el proveedor se lo NOTIFICA al consumidor, no desde que se pone a
+  -- trabajar. O sea que mientras esta columna esté vacía, el derecho a retracto sigue
+  -- abierto aunque el trabajo ya esté hecho.
+  -- Se escribe solo cuando el correo de aviso salió de verdad: ver marcarInicioAvisado en
+  -- almacen.js. Una fecha acá sin correo detrás le acortaría el plazo a alguien que nunca
+  -- se enteró, que es justo lo que el Decreto prohíbe.
+  inicio_avisado_en   TEXT,
+
   entregado_en        TEXT,
-  informe_final_json  TEXT
+  informe_final_json  TEXT,
+
+  -- EL BORRADOR DE LA POLÍTICA, tal como se le entregó al cliente. Es TEXTO, no un archivo:
+  -- una política de privacidad son unas pocas decenas de KB de prosa, así que no hace falta
+  -- ningún almacenamiento aparte. Vive con el pedido porque es lo que se entregó, y de los
+  -- dos caminos por los que le llega es el único que no depende de que un correo salga: la
+  -- pantalla privada lo muestra siempre.
+  borrador_politica   TEXT
 );
 
 -- Para que el webhook encuentre el pedido por el id de Mercado Pago sin recorrer la tabla.

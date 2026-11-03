@@ -23,9 +23,20 @@
  *
  *   1. **`marcarEstado` es condicional.** Mueve solo si el pedido está donde esperábamos, así
  *      que dos entregas simultáneas no se pisan: una mueve y la otra no, sin candado.
- *   2. **Un pedido ya resuelto no se vuelve a tocar.** Es la idempotencia que Flow necesita,
- *      porque reintenta hasta recibir un 200.
+ *   2. **La segunda entrega del MISMO resultado no hace nada.** Es la idempotencia que Flow
+ *      necesita, porque reintenta hasta recibir un 200.
+ *
+ *      ⚠️ Decía «un pedido ya resuelto no se vuelve a tocar», y así estaba escrito: cortaba
+ *      para todo estado resuelto sin mirar a dónde iba la notificación. Eso no era idempotencia,
+ *      era una puerta cerrada de más, y se comía el caso `rechazado → pagado` —reintentar con
+ *      otra tarjeta— dejando el pedido en `rechazado` con la plata cobrada (3-nov-2026). Lo que
+ *      decide si un pedido resuelto se puede reabrir es la tabla `TRANSICIONES`, no este
+ *      archivo.
  *   3. **Lo que no calza no se decide solo**: va a revisión Y se avisa.
+ *   4. **Y lo que la tabla permite tampoco se hace siempre solo.** `contracargado → pagado` es
+ *      posible —una disputa se puede ganar— y aun así no lo ejecuta ningún manejador: una
+ *      notificación no reabre un pedido cuyo dinero se llevó el emisor de la tarjeta. Esa
+ *      lista es `SOLO_A_MANO`, en pedidos.js, y la consultan los dos manejadores (3-nov-2026).
  *
  * ── EL CÓDIGO DE RESPUESTA DECIDE SI FLOW REINTENTA ──────────────────────────────────────
  *
@@ -39,7 +50,9 @@
 
 import { leerPagoFlow, decidirDesdeFlow, credencialesFlow, ACCIONES_FLOW } from './flow.js';
 import { leerPedido, marcarEstado } from './almacen.js';
-import { ESTADOS, ESTADOS_RESUELTOS, ID_PEDIDO_NUESTRO } from './pedidos.js';
+import {
+  ESTADOS, ESTADOS_RESUELTOS, ID_PEDIDO_NUESTRO, transicionValida, soloAMano, porQueSoloAMano,
+} from './pedidos.js';
 import { avisarVenta, avisarRevisar } from './aviso.js';
 import { enviarCorreoDePago } from './correo.js';
 
@@ -124,22 +137,81 @@ export async function onRequestPost(contexto) {
   // ── 4. La decisión ────────────────────────────────────────────────────────────────────
   const decision = decidirDesdeFlow({ pedido, pago });
 
-  // Un pedido ya resuelto no se vuelve a tocar: Flow reintenta hasta recibir un 200, así que
-  // la segunda entrega del MISMO resultado tiene que ser inofensiva.
+  // Un pedido ya resuelto se toca SOLO si la tabla de transiciones lo permite. Flow reintenta
+  // hasta recibir un 200, así que la segunda entrega del MISMO resultado tiene que ser
+  // inofensiva; eso lo resuelve la comparación de abajo, no un corte para todo.
+  //
+  // ⚠️ Esta línea decía «un pedido ya resuelto no se vuelve a tocar» y quedó describiendo lo
+  // contrario de lo que hace el bloque desde el arreglo de hoy (ver :143 y siguientes).
+  // Corregida el 3-nov-2026: arreglar solo donde te señalaron deja el texto contradiciéndose
+  // solo, y el que lea esta línea primero entiende al revés.
   if (ESTADOS_RESUELTOS.has(pedido.estado)) {
     if (decision.estado === pedido.estado) {
       return responder(200, { ok: true, accion: ACCIONES_FLOW.NADA, motivo: 'ya-resuelto' });
     }
-    // Pero si la notificación quiere llevarlo a OTRO lado, eso no se decide solo. Un pedido
-    // pagado que de pronto recibe otra cosa es justo el caso que hay que mirar.
-    console.log(`[flow] REVISAR ${pedido.id}: resuelto en ${pedido.estado} y la notificación dice ${decision.estado}`);
-    await alFondo(contexto, avisarRevisar(pedido, decision));
-    return responder(200, { ok: true, accion: ACCIONES_FLOW.REVISAR, motivo: 'resuelto-y-no-calza' });
+
+    // ── EL CORTE QUE COBRABA SIN MARCAR LA VENTA (3-nov-2026) ───────────────────────────
+    //
+    // Hasta hoy este bloque cortaba acá para TODO estado resuelto, sin mirar a dónde quería ir
+    // la notificación, y eso dejaba afuera justo la transición que existe para este caso:
+    // `rechazado → pagado`. El comentario que la justifica está en `TRANSICIONES`, en
+    // pedidos.js, y dice textual que sin ella «el pedido se quedaba en `rechazado` con la plata
+    // ya cobrada». Este manejador nunca la alcanzaba.
+    //
+    // No es un caso de borde: reintentar con otra tarjeta después de un rechazo es el camino
+    // normal de una compra chilena. Y nada más lo rescataba — el manejador de Mercado Pago no
+    // tiene este corte y por eso allá sí funcionaba, mientras que acá la segunda notificación
+    // se iba en un 200 con `resuelto-y-no-calza`; y `convieneRefrescar` solo mira `pendiente` o
+    // `creado`, así que la red de seguridad de la pantalla tampoco volvía a pasar nunca por un
+    // pedido en `rechazado`. Quedaba cobrado, sin entregar, y con la pantalla diciéndole a la
+    // persona que su pago fue rechazado.
+    //
+    // ⚠️ EL CORTE NO SE BORRA: SE LE DA EL CRITERIO QUE LE FALTABA. Lo que protege sigue
+    // protegiendo —una notificación tardía no reabre un pedido cerrado— porque lo que decide
+    // ahora es si ESA transición concreta está permitida.
+    //
+    // ⚠️⚠️ Y NO SE ESCRIBE UNA SEGUNDA LISTA DE «QUÉ SE PUEDE REABRIR». Esa lista ya existe,
+    // es `TRANSICIONES`, y es la misma que `marcarEstado` va a consultar unas líneas más abajo.
+    // Un `Set` propio acá serían dos constantes del mismo hecho: el día que una cambiara, la
+    // otra seguiría contestando lo de antes, sin error y sin nada que mirar.
+    if (!transicionValida(pedido.estado, decision.estado)) {
+      console.log(`[flow] REVISAR ${pedido.id}: resuelto en ${pedido.estado} y la notificación dice ${decision.estado}`);
+      await alFondo(contexto, avisarRevisar(pedido, decision, env));
+      return responder(200, { ok: true, accion: ACCIONES_FLOW.REVISAR, motivo: 'resuelto-y-no-calza' });
+    }
+
+    // ── QUE LA TABLA LO PERMITA NO ES QUE SE HAGA SOLO (3-nov-2026) ────────────────────
+    //
+    // El arreglo de arriba —consultar `TRANSICIONES` en vez de cortar para todo estado
+    // resuelto— rescató `rechazado → pagado`, que es el reintento con otra tarjeta. Y de paso
+    // abrió una celda que antes el corte tapaba sin querer: `contracargado → pagado` también
+    // está en la tabla, así que una notificación quedaba pudiendo reabrir sola un pedido
+    // contracargado, disparar el aviso de VENTA y mandarle al comprador el correo de «tu pago
+    // entró» por una plata que el emisor ya se llevó.
+    //
+    // Se saca del camino automático, no de la tabla: la reversión de una disputa ganada sigue
+    // existiendo, pero la hace una persona que fue a mirar el panel. El criterio vive en
+    // `SOLO_A_MANO`, en pedidos.js, que es la misma que consulta el manejador de Mercado Pago.
+    //
+    // Y el motivo es PROPIO, no `resuelto-y-no-calza`: las dos situaciones son distintas —una
+    // es una transición que no existe, la otra una que existe y no se automatiza— y quien lea
+    // el aviso tiene que poder distinguirlas sin investigar.
+    if (soloAMano(pedido.estado, decision.estado)) {
+      const aMano = {
+        motivo: 'reapertura-a-mano',
+        detalle: `${porQueSoloAMano(pedido.estado, decision.estado)} Flow dice ${decision.motivo}.`,
+      };
+      console.log(`[flow] REVISAR ${pedido.id}: ${pedido.estado} → ${decision.estado} no se hace solo`);
+      await alFondo(contexto, avisarRevisar(pedido, aMano, env));
+      return responder(200, { ok: true, accion: ACCIONES_FLOW.REVISAR, motivo: 'reapertura-a-mano' });
+    }
+
+    console.log(`[flow] ${pedido.id} estaba resuelto en ${pedido.estado} y se reabre a ${decision.estado}: la tabla de transiciones lo permite`);
   }
 
   if (decision.accion === ACCIONES_FLOW.REVISAR) {
     console.log(`[flow] REVISAR ${pedido.id}: ${decision.motivo}`);
-    await alFondo(contexto, avisarRevisar(pedido, decision));
+    await alFondo(contexto, avisarRevisar(pedido, decision, env));
     return responder(200, { ok: true, accion: ACCIONES_FLOW.REVISAR, motivo: decision.motivo });
   }
   if (decision.accion !== ACCIONES_FLOW.MARCAR) {
@@ -174,7 +246,7 @@ export async function onRequestPost(contexto) {
     let pagado = pedido;
     try { pagado = (await leerPedido(env.VYC_PEDIDOS, pedido.id)) || pedido; } catch {}
     await alFondo(contexto, Promise.all([
-      avisarVenta(pagado),
+      avisarVenta(pagado, env),
       enviarCorreoDePago(pagado, env.RESEND_API_KEY),
     ]));
   }

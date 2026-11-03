@@ -49,6 +49,7 @@ import {
 } from './cobro.js';
 import {
   crearPagoFlow, leerPagoFlow, decidirDesdeFlow, credencialesFlow, FALLOS_ANTES_DE_LA_RED,
+  paginaDePagoFlow, rechazoDelComprador,
 } from './flow.js';
 import { avisarVenta, avisarRevisar } from './aviso.js';
 import { enviarCorreoDePago } from './correo.js';
@@ -175,6 +176,86 @@ async function releerPago(env, pedido) {
   return null;
 }
 
+/**
+ * ¿Este pedido YA tiene un pago de Flow abierto, y qué corresponde hacer con él?
+ *
+ * ── POR QUÉ EXISTE: FLOW NO TIENE IDEMPOTENCIA (3-nov-2026) ──────────────────────────────
+ *
+ * El antidoble clic reusa el id del pedido anterior, y con Mercado Pago eso cerraba el círculo:
+ * el mismo id viajaba como `X-Idempotency-Key` y la API devolvía la orden que ya existía, con
+ * su mismo enlace. **`crearPagoFlow` no manda ninguna cabecera de idempotencia, porque Flow no
+ * tiene ninguna.**
+ *
+ * La herramienta de este repo afirmaba lo contrario —«Flow rechaza un `commerceOrder`
+ * repetido», en `herramientas/sonda-flow.mjs`—, así que se fue a mirar en vez de suponer.
+ * Experimento en el sandbox, 3-nov-2026: tres `payment/create` seguidos con el MISMO
+ * `commerceOrder`. Los tres contestaron ok, con `flowOrder` 11463040, 11463041 y 11463042 y un
+ * token DISTINTO cada uno; los tres `getStatus` devolvieron ese mismo `commerceOrder` y
+ * `status: 1`. O sea tres enlaces de pago vivos y cobrables por el mismo kit, con la fila
+ * guardando solo el último token: los otros dos quedaban cobrables e invisibles para nosotros.
+ *
+ * Y si se pagaban dos, el segundo aviso no chillaba: el pedido ya estaba en `pagado`, la
+ * confirmación contestaba `ya-resuelto` y nadie se enteraba del doble cobro.
+ *
+ * ── SE PREGUNTA POR LA FILA, NO POR LA RAMA ──────────────────────────────────────────────
+ *
+ * Hay DOS caminos que reusan un id —el antidoble clic de la ventana de 24 h, y la compra
+ * abierta vencida que Flow da por pendiente— y los dos desembocan en abrir el pago. Mirar «por
+ * qué rama vine» serían dos comprobaciones, y la segunda implementación es exactamente lo que
+ * deja el `if` viejo sin cubrir. Lo que se mira es el único dato que vale en los dos casos: si
+ * la fila de este pedido ya tiene un `flow_token`.
+ *
+ * Devuelve `null` cuando se puede abrir un pago nuevo sin dejar dos cobrables a la vez: porque
+ * no hay ninguno abierto, o porque el que había fue RECHAZADO, y un enlace rechazado ya no
+ * cobra.
+ */
+async function pagoFlowAbierto(env, idPedido) {
+  let fila = null;
+  try { fila = await leerPedido(env.VYC_PEDIDOS, idPedido); } catch { fila = null; }
+  // Sin token, este pedido nunca llegó a Flow: no hay nada abierto que se pueda pagar.
+  if (!fila || !fila.flow_token) return null;
+
+  const lectura = await releerPago(env, fila);
+  // Sin credenciales no se puede preguntar, y tampoco se va a poder crear: se deja seguir para
+  // que el camino normal conteste `sin-credenciales`, que es el error de verdad.
+  if (!lectura) return null;
+  if (!lectura.ok) return { accion: 'no-se-pudo-consultar', pedido: fila, error: lectura.error };
+
+  const d = lectura.decision;
+  // Sigue pendiente: su enlace todavía sirve, y abrir otro sería el segundo cobro.
+  if (d.accion === ACCIONES.NADA) return { accion: 'reusar', pedido: fila, decision: d };
+  // Ya se pagó. No se cobra de nuevo y no se le dice que no se le cobró nada.
+  if (d.estado === ESTADOS.PAGADO) return { accion: 'ya-pagaste', pedido: fila, decision: d };
+  // Rechazado: ese enlace ya no cobra, así que abrir uno nuevo deja UNO vivo, no dos.
+  if (d.estado === ESTADOS.RECHAZADO) return null;
+  // Cualquier otra cosa —el monto no calza, un estado que no hemos observado— no se decide
+  // sola: no se abre un cobro y lo mira una persona.
+  return { accion: 'revisar', pedido: fila, decision: d };
+}
+
+/**
+ * «Tu compra anterior sí se pagó»: la respuesta y el aviso, en un solo lugar.
+ *
+ * Hay DOS caminos que llegan a esta conclusión —la compra abierta vencida que la pasarela da
+ * por cobrada, y el pago ya abierto de este mismo pedido—, y lo que la persona lee no puede
+ * depender de cuál de los dos la trajo. Escrito dos veces, el día que se corrigiera uno el otro
+ * seguiría diciendo lo de antes.
+ *
+ * ⚠️ El aviso va JUNTO con la respuesta, no al lado. La versión anterior de este caso dejaba la
+ * fila viva confiando en que «la reconciliación o el aviso de revisión la recogen», y ninguna
+ * de las dos la recogía: la venta seguía sin marcar y nadie se enteraba.
+ */
+async function respuestaYaPagaste(contexto, pedido, decision) {
+  const aviso = avisarRevisar(pedido, decision, contexto && contexto.env);
+  if (contexto && contexto.waitUntil) contexto.waitUntil(aviso); else await aviso;
+  return jsonPost({
+    ok: false, motivo: 'ya-pagaste', id: pedido.id,
+    detalle: 'Tu compra anterior sí se pagó, así que no te vamos a cobrar de nuevo. ' +
+      `Puedes ver su estado acá: ${new URL(contexto.request.url).origin}/pedido/?id=${encodeURIComponent(pedido.id)} ` +
+      '— ya avisamos para que la revisemos.',
+  }, 409);
+}
+
 async function reconciliar(env, pedido, esperar) {
   // Solo donde Mercado Pago puede saber algo que nosotros no. `convieneRefrescar` ya define
   // exactamente eso —`pendiente`, o `creado` con orden abierta— y es la misma regla que decide
@@ -276,7 +357,7 @@ async function reconciliar(env, pedido, esperar) {
   if (estadoFinal === ESTADOS.PAGADO) {
     const pagado = { ...pedido, estado: estadoFinal, pagado_en: new Date().toISOString() };
     const envios = Promise.all([
-      avisarVenta(pagado),
+      avisarVenta(pagado, env),
       enviarCorreoDePago(pagado, env.RESEND_API_KEY),
     ]);
     if (esperar) esperar(envios); else await envios;
@@ -374,6 +455,11 @@ const TTL_TOPE_S = 60 * 60 * 30;
  *
  * El invariante: la ventana dura por lo menos lo que dura la orden. Mientras la anterior siga
  * pagable, no se abre otra.
+ *
+ * ⚠️ Y LA VENTANA SOLA NO ALCANZA PARA CUMPLIRLO. Reconoce que es la misma persona y le reusa
+ * el id del pedido; que eso además no abra un segundo cobro dependía de que la pasarela
+ * respondiera lo mismo ante el mismo id. Mercado Pago lo hace (clave de idempotencia); Flow
+ * no. Ver `pagoFlowAbierto`, que es lo que lo cumple del lado de Flow.
  */
 export const VENTANA_DOBLE_CLIC_MS = VIGENCIA_ORDEN_HORAS * 60 * 60 * 1000;
 
@@ -606,6 +692,12 @@ export async function onRequestPost(contexto) {
   //
   // Reusando el id del pedido anterior, las dos peticiones traen la misma clave y Mercado Pago
   // devuelve la orden que ya existía.
+  //
+  // ⚠️ **ESO ES CIERTO DE MERCADO PAGO Y SOLO DE MERCADO PAGO** (3-nov-2026). Reusar el id es
+  // la mitad de la defensa: la otra mitad la ponía la idempotencia de la pasarela, y Flow no
+  // tiene ninguna — con el mismo `commerceOrder` abre un pago nuevo cada vez. Por eso el camino
+  // de Flow, antes de abrir nada, pregunta si este pedido ya tiene un pago vivo: ver
+  // `pagoFlowAbierto`. Sin esa compuerta, reusar el id acá era abrir el segundo cobro.
   const desdeIso = new Date(Date.now() - VENTANA_DOBLE_CLIC_MS).toISOString();
   let anterior = null;
   try {
@@ -723,9 +815,18 @@ export async function onRequestPost(contexto) {
         // esté PAGADO.** Un pedido en `creado` cuyo pago Flow da por cobrado significa que la
         // confirmación no llegó o falló. Cerrarlo sería marcar como rechazada una venta que
         // entró, y la plata ya está del otro lado. Así que no se cierra: se deja la fila viva
-        // para que la reconciliación de la pantalla o el aviso de revisión la recojan, y se le
-        // abre un pago nuevo a la persona. Perder un cobro por no cerrar una fila es
+        // para que el aviso de revisión la recoja. Perder un cobro por no cerrar una fila es
         // recuperable; cerrar una venta cobrada no lo es.
+        //
+        // ⚠️ Y ACÁ ESTE COMENTARIO DECÍA ALGO FALSO (corregido el 3-nov-2026). Decía que
+        // además «se le abre un pago nuevo a la persona», y no se le abre: el insert ya había
+        // chocado contra esta fila ANTES del rescate, y solo se reintenta cuando la fila se
+        // cierra (ver `if (cerrada.movido)` más abajo). Con la fila viva, la respuesta es un
+        // 409 `no-se-pudo-guardar`, y como `buscarCompraAbierta` va a seguir encontrando esa
+        // misma fila, cada reintento vuelve a dar lo mismo: queda sin poder comprar. Lo
+        // encontró una prueba que recién hoy pasó por este camino; está afirmado tal cual en
+        // `prueba-crear-pedido.mjs` («una compra VIEJA cuyo pago no calza»). Si eso tiene que
+        // cambiar es una decisión aparte, no un arreglo escondido en un comentario.
         if (vencida && vencida.flow_token) {
           const lectura = await releerPago(env, vencida);
           if (lectura && lectura.ok) {
@@ -747,23 +848,21 @@ export async function onRequestPost(contexto) {
               // 409 — quedaba bloqueada para comprar, indefinidamente. El comentario de este
               // bloque justificaba no cerrar la fila diciendo que «la reconciliación o el
               // aviso de revisión la recogen», y ninguna de las dos la recogía.
+              //
+              // ⚠️ El texto y el aviso viven en `respuestaYaPagaste`, no acá. Hay un segundo
+              // camino que llega a la misma conclusión —el pago ya abierto de este mismo
+              // pedido, más abajo— y dos copias del mismo mensaje se separan sin que nadie lo
+              // note. Ahí también está escrito por qué el aviso NO puede quedar para después:
+              // `base` se declara más abajo en este mismo ámbito, así que armar la URL acá a
+              // mano reventaría en ejecución sin que `node --check` dijera nada.
               console.log(`[pedido] compra abierta ${vencida.id} ya está pagada: no se abre otra`);
-              const avisoPagada = avisarRevisar(vencida, d);
-              if (contexto && contexto.waitUntil) contexto.waitUntil(avisoPagada); else await avisoPagada;
-              return jsonPost({
-                ok: false, motivo: 'ya-pagaste', id: vencida.id,
-                detalle: 'Tu compra anterior sí se pagó, así que no te vamos a cobrar de nuevo. ' +
-                  // ⚠️ `base` se declara MUCHO más abajo (es un `const` del mismo ámbito), así
-                  // que acá reventaría en ejecución sin que `node --check` dijera nada.
-                  `Puedes ver su estado acá: ${new URL(request.url).origin}/pedido/?id=${encodeURIComponent(vencida.id)} ` +
-                  '— ya avisamos para que la revisemos.',
-              }, 409);
+              return respuestaYaPagaste(contexto, vencida, d);
             } else if (d.estado !== ESTADOS.RECHAZADO) {
               // Ni pendiente, ni pagada, ni rechazada: algo no calza (monto, estado sin
               // confirmar). No se toca la fila Y se avisa a una persona, que es la mitad que
               // faltaba: dejarla viva sin que nadie se entere es dejarla perdida.
               console.log(`[pedido] compra abierta ${vencida.id} NO se cierra: ${d.motivo}`);
-              const avisoRaro = avisarRevisar(vencida, d);
+              const avisoRaro = avisarRevisar(vencida, d, env);
               if (contexto && contexto.waitUntil) contexto.waitUntil(avisoRaro); else await avisoRaro;
               vencida = null;
             }
@@ -822,6 +921,51 @@ export async function onRequestPost(contexto) {
   // Va primero y sale por su cuenta, para no tocar una línea del camino de Mercado Pago, que
   // está probado y puede volver a ser el que cobre.
   if (pasarela === 'flow') {
+    // ── NO SE ABRE UN SEGUNDO PAGO SOBRE UN PEDIDO QUE YA TIENE UNO (3-nov-2026) ────────
+    //
+    // Flow no tiene idempotencia: con el MISMO `commerceOrder` abre un pago nuevo cada vez, con
+    // su propio token y cobrable por separado. La nota larga, con el experimento del sandbox que
+    // lo comprobó, está en `pagoFlowAbierto`.
+    //
+    // Esto va ANTES de cobrar el tope a propósito: reusar un enlace que ya existe no abre
+    // ningún cobro, así que no es lo que el tope protege. La única llamada saliente que hace
+    // este camino es la lectura del pago, igual que la del rescate de la compra vencida.
+    const abierto = await pagoFlowAbierto(env, idPedido);
+
+    if (abierto && abierto.accion === 'reusar') {
+      // SU enlace, no uno nuevo. Es el equivalente de lo que Mercado Pago hacía solo al recibir
+      // la misma clave de idempotencia: devolver el pago que ya estaba abierto.
+      console.log(`[pedido] ${idPedido} ya tiene un pago pendiente en Flow: se devuelve ese enlace`);
+      return jsonPost({
+        ok: true, id: idPedido,
+        checkout_url: paginaDePagoFlow(abierto.pedido.flow_token, credencialesFlow(env)),
+      });
+    }
+
+    if (abierto && abierto.accion === 'ya-pagaste') {
+      console.log(`[pedido] ${idPedido} ya está pagado en Flow: no se abre otro cobro`);
+      return respuestaYaPagaste(contexto, abierto.pedido, abierto.decision);
+    }
+
+    if (abierto && abierto.accion === 'no-se-pudo-consultar') {
+      // Mismo lado seguro que el rescate de la compra vencida: antes que abrir un cobro que
+      // podría ser el segundo, se dice que no se pudo y la persona reintenta.
+      console.log(`[pedido] no se pudo consultar el pago abierto de ${idPedido}: ${abierto.error}`);
+      return jsonPost({ ok: false, motivo: 'no-se-pudo-consultar', id: idPedido,
+        detalle: 'No pudimos comprobar el estado del pago que ya tenías abierto. No se te cobró nada. Inténtalo de nuevo en un momento.' }, 409);
+    }
+
+    if (abierto && abierto.accion === 'revisar') {
+      // El pago abierto dice algo que no calza con lo vendido. No se abre otro Y se avisa: dejar
+      // la fila así sin que nadie se entere es dejarla perdida.
+      console.log(`[pedido] el pago abierto de ${idPedido} NO calza: ${abierto.decision.motivo}`);
+      const avisoRaro = avisarRevisar(abierto.pedido, abierto.decision, env);
+      if (contexto && contexto.waitUntil) contexto.waitUntil(avisoRaro); else await avisoRaro;
+      return jsonPost({ ok: false, motivo: 'pago-abierto-no-calza', id: idPedido,
+        detalle: 'Encontramos un pago abierto de este pedido que no cuadra con lo que vendimos, ' +
+          'así que no te vamos a cobrar de nuevo. Ya avisamos para revisarlo; escríbenos con este enlace.' }, 409);
+    }
+
     // El mismo cobro del tope que hace el otro camino, y en el mismo momento: justo antes de
     // la llamada saliente, que es lo que el tope existe para proteger.
     if (kv && claveTope) {
@@ -857,6 +1001,30 @@ export async function onRequestPost(contexto) {
       let detalleFlow = '(sin cuerpo)';
       try { detalleFlow = tacharCorreos(JSON.stringify(creada.detalleFlow)).slice(0, 400); } catch {}
       console.log(`[pedido] Flow rechazó el pago ${idPedido}: ${creada.error} · ${detalleFlow}`);
+
+      // ── CUANDO EL RECHAZO ES DEL COMPRADOR Y ÉL LO PUEDE ARREGLAR (3-nov-2026) ────────
+      //
+      // Flow valida el correo y rechaza algunos (`code 1620`). Hasta hoy esa persona leía «no
+      // pudimos abrir el pago, vuelve a intentarlo en un momento»: un consejo que la manda a
+      // reintentar con el MISMO correo, que vuelve a fallar. Se iba sin comprar sabiendo
+      // nosotros, exactamente, que le bastaba cambiar una letra.
+      //
+      // ⚠️ NO SE LE MUESTRA EL TEXTO DE FLOW. Viene en inglés, trae su correo adentro y nombra
+      // campos nuestros. El crudo ya quedó en el registro de arriba, tachado; acá va un mensaje
+      // nuestro que dice qué hacer, sin código de error y sin nombrar a la pasarela.
+      //
+      // Y lleva un `motivo` propio a propósito: `no-se-pudo-abrir-el-pago` es el que dispara el
+      // rescate de la página, cuyo texto empieza con «No es cosa tuya, el problema está de
+      // nuestro lado». Reusarlo acá le diría eso a alguien que SÍ puede resolverlo solo, y
+      // encima le ofrecería un formulario en vez del campo que tiene que corregir.
+      if (rechazoDelComprador(creada) === 'correo') {
+        return jsonPost({
+          ok: false, motivo: 'correo-no-aceptado', id: idPedido, codigo: creada.error || null,
+          detalle: 'No pudimos abrir el pago porque el sistema de cobro no acepta ese correo, y ' +
+            'no se te cobró nada. Revísalo por si tiene una errata, o escribe otro correo tuyo y ' +
+            'vuelve a intentarlo: ahí te llega el comprobante y el enlace de tu pedido.',
+        }, 409);
+      }
 
       return jsonPost({
         ok: false, motivo: 'no-se-pudo-abrir-el-pago', id: idPedido,

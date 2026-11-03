@@ -211,7 +211,8 @@ export async function onRequestPost(contexto) {
         { motivo: 'orden-inexistente',
           detalle: `Mercado Pago avisó de una orden que su propia API no nos deja leer (404) y ` +
             `el evento se cerró por «${porque}». Si esto coincidió con un cobro real, ese pago ` +
-            `NO quedó registrado: búscalo en el panel de Mercado Pago.` });
+            `NO quedó registrado: búscalo en el panel de Mercado Pago.` },
+        env);
       if (contexto && contexto.waitUntil) contexto.waitUntil(avisoCierre); else await avisoCierre;
 
       await anotarResultado(env.VYC_PEDIDOS, clave,
@@ -259,7 +260,7 @@ export async function onRequestPost(contexto) {
       console.log(`[webhook] REVISAR ${pedido.id}: ${decision.motivo}`);
       // Y además se avisa. El registro queda igual, pero dejar de depender de que alguien lo
       // consulte es la diferencia entre un estado que existe y uno que no.
-      const envio = avisarRevisar(pedido, decision);
+      const envio = avisarRevisar(pedido, decision, env);
       if (contexto && contexto.waitUntil) contexto.waitUntil(envio); else await envio;
     }
     await anotarResultado(env.VYC_PEDIDOS, clave,
@@ -360,7 +361,7 @@ export async function onRequestPost(contexto) {
     // correo con su enlace a quien compró. Se lanzan juntos y ninguno espera al otro: si uno
     // falla, el otro igual sale.
     const envios = Promise.all([
-      avisarVenta(pagado),
+      avisarVenta(pagado, env),
       enviarCorreoDePago(pagado, env.RESEND_API_KEY),
     ]);
     if (contexto.waitUntil) contexto.waitUntil(envios); else await envios;
