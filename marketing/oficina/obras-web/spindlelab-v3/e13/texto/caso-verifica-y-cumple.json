@@ -1,0 +1,371 @@
+{
+ "id": "caso-verifica-y-cumple",
+ "ruta": "/trabajo/verifica-y-cumple/",
+ "title": "Verifica y Cumple: chequeo de la Ley 21.719 · SpindleLab",
+ "description": "Construimos un chequeo gratuito de las señales técnicas que la Ley 21.719 le pide a un sitio con formulario. Lo probamos primero en el nuestro.",
+ "senales": "Simón, e12/senales-obra.md §1.2 (largos) y §2.4 (la plantilla de caso), aplicadas igual que en caso-combeau",
+ "estructura": "La plantilla de caso (spec §2.3), la misma de Combeau. El medio principal es el spot de Verifica y Cumple (Ramón, 3-nov-2026: «con el video ahora en el hero»). Sin partes dentro de «La pieza».",
+ "autoria": "Clara, obra E16 (3-nov-2026), en voz de la marca (plural). Solo hechos con fuente; cada párrafo dice la suya.",
+ "reglas": [
+  "Ningún puntaje del chequeo (ni el 36, ni el 73, ni el 100, ni el 54 → 94): inventario-casos §4.1 y §7, compuerta 2, pregunta 6.",
+  "Nunca que certifica cumplimiento ni que es asesoría legal (inventario-casos §7; home.trabajo.verifica.aviso).",
+  "Ningún precio del kit ni de la suscripción: la obra no toca precios.",
+  "Todo medio donde se vea la persona a caballo lleva su aviso de IA (convenciones-e12.json)."
+ ],
+ "secciones": [
+  {
+   "id": "lateral",
+   "nombre": "Barra lateral",
+   "trabajo": "Nombrar la pieza: qué es, de quién es y cuándo salió.",
+   "elementos": [
+    {
+     "id": "verifica.miga",
+     "rol": "rotulo",
+     "texto": "Inicio · Trabajo · Verifica y Cumple",
+     "uso": "miga",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.h1",
+     "rol": "h1",
+     "tinta": "Verifica y Cumple.",
+     "gris": "Un chequeo de la Ley 21.719 para sitios con formulario.",
+     "texto": "Verifica y Cumple. Un chequeo de la Ley 21.719 para sitios con formulario.",
+     "fuente": "inventario-casos §2.3 («Chequeo gratuito de las señales de la Ley 21.719 que se ven desde afuera»); trabajo.json, entrada verifica-y-cumple («a un sitio con formulario»)",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.ficha",
+     "rol": "ficha",
+     "campos": [
+      {
+       "rotulo": "Tipo",
+       "valor": "Propio"
+      },
+      {
+       "rotulo": "Año",
+       "valor": "2026"
+      },
+      {
+       "rotulo": "Qué es",
+       "valor": "Chequeo de la Ley 21.719"
+      },
+      {
+       "rotulo": "En línea desde",
+       "valor": "23-sep-2026"
+      }
+     ],
+     "linea": "Propio · 2026",
+     "fuente": "inventario-casos §2 (tabla: producto propio, 2026, «En producción desde el 23-sep») y §2.3",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.indice",
+     "rol": "rotulo",
+     "uso": "índice de secciones",
+     "opciones": [
+      "Problema",
+      "Hipótesis",
+      "Solución",
+      "La pieza",
+      "Sin métrica"
+     ],
+     "nota": "Las mismas cinco de Combeau: la plantilla las ancla a #problema, #hipotesis, #solucion, #la-pieza y #sin-metrica.",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.creditos.rotulo",
+     "rol": "rotulo",
+     "texto": "Quién lo hizo",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.creditos",
+     "rol": "nota",
+     "texto": "Diseño, programación y textos: SpindleLab. La persona a caballo está generada con IA.",
+     "fuente": "inventario-casos §2 (producto propio); convenciones-e12.json y home.trabajo.verifica.pie (la persona a caballo es generada)",
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "medio",
+   "nombre": "Medio principal",
+   "trabajo": "Abrir con el spot, como la tarjeta que lleva hasta aquí.",
+   "elementos": [
+    {
+     "id": "verifica.medio.descripcion",
+     "rol": "nota",
+     "texto": "Un dibujo a lápiz de una persona a caballo se forma solo sobre papel en blanco, toma color fucsia como acuarela y sale galopando por un cielo azul.",
+     "uso": "alt",
+     "donde": "verifica-spot-1280 (a 390, el -390); video con aria-hidden, este texto en la figura, para el lector de pantalla",
+     "origen": "trabajo.json, entrada verifica-y-cumple, «descripcion_video», tal cual",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.medio.poster",
+     "rol": "nota",
+     "texto": "Una jinete de traje y sombrero fucsia galopa en un caballo del mismo color, con un papel en alto, sobre un cielo azul pintado en acuarela.",
+     "uso": "alt",
+     "donde": "póster del spot (verifica-spot-1280-poster y -390-poster), revisado mirando la imagen",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.medio.pie",
+     "rol": "nota",
+     "uso": "pie",
+     "texto": "Este video está generado con IA, a partir de la portada.",
+     "origen": "home.trabajo.verifica.spot.pie y trabajo.json «pie_video», tal cual",
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "problema",
+   "nombre": "Problema",
+   "trabajo": "Decir a quién le toca la ley y qué parte se puede revisar desde afuera.",
+   "elementos": [
+    {
+     "id": "verifica.problema.rotulo",
+     "rol": "rotulo",
+     "texto": "Problema",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.problema.h2",
+     "rol": "h2",
+     "texto": "Un formulario ya trata datos.",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.problema.p1",
+     "rol": "parrafo",
+     "texto": "La Ley 21.719, de protección de datos personales, entra en plena vigencia el 1 de diciembre de 2026 y alcanza a cualquier organización que trate datos de personas, sin importar su tamaño. Un sitio con formulario de contacto ya recibe nombres y correos.",
+     "fuente": "ventas/casos-de-exito/verifica-y-cumple.md (en main), «Los hechos»: vigencia el 1-dic-2026; «una pyme con formulario de contacto ya cuenta»",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.problema.p2",
+     "rol": "parrafo",
+     "texto": "Parte de lo que la ley pide se ve en el propio sitio, sin entrar a nada: si hay una política de privacidad, si se pide permiso antes de cargar rastreadores, si el formulario tiene una casilla para aceptar. Queríamos que cualquiera pudiera revisar esa parte gratis.",
+     "fuente": "inventario-casos §2.3 («las señales de la Ley 21.719 que se ven desde afuera (política enlazada, HTTPS, permiso antes de rastreadores, casilla de consentimiento)»; chequeo gratuito)",
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "hipotesis",
+   "nombre": "Hipótesis",
+   "trabajo": "Decir qué se creyó y cómo se iba a probar.",
+   "elementos": [
+    {
+     "id": "verifica.hipotesis.rotulo",
+     "rol": "rotulo",
+     "texto": "Hipótesis",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.hipotesis.h2",
+     "rol": "h2",
+     "texto": "Mostrar señales, no prometer cumplimiento.",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.hipotesis.p1",
+     "rol": "parrafo",
+     "texto": "Decirle «cumples» a quien no cumple lo deja expuesto a una multa. Por eso el chequeo describe qué señales están y cuáles faltan, y dice en voz alta lo que no puede ver. No es asesoría legal ni certifica que cumples.",
+     "fuente": "ventas/casos-de-exito/verifica-y-cumple.md, «Los hechos» («Nunca certifica cumplimiento. Solo describe señales…»; «cuando no podemos verificar algo, lo decimos»); home.trabajo.verifica.aviso, tal cual en la última frase",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.hipotesis.p2",
+     "rol": "parrafo",
+     "texto": "La primera prueba iba a ser nuestro propio sitio. Si el chequeo encontraba algo ahí, iba a servirle a cualquiera.",
+     "fuente": "home.trabajo.verifica.texto («Lo probamos primero en el nuestro», aprobado por Ramón el 2-nov); caso de éxito, «El hallazgo incómodo»",
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "solucion",
+   "nombre": "Solución",
+   "trabajo": "Qué revisa, cómo, y lo que no ve; cada ingrediente después de lo que hace.",
+   "elementos": [
+    {
+     "id": "verifica.solucion.rotulo",
+     "rol": "rotulo",
+     "texto": "Solución",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.solucion.h2",
+     "rol": "h2",
+     "texto": "Un chequeo que dice lo que no ve.",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.solucion.p1",
+     "rol": "parrafo",
+     "texto": "Escribes un dominio y el chequeo lee la página pública de ese sitio desde nuestro servidor, en segundos, sin ejecutar nada ni entrar a nada privado. Revisa si hay una política de privacidad enlazada, si el sitio usa HTTPS, si declara su idioma, si tiene un gestor de consentimiento conocido y qué servicios de terceros carga, como Google Analytics o el Pixel de Meta.",
+     "fuente": "caso de éxito, «Los hechos» (lo que revisa) y «Cómo se construyó» («fetch + regex sobre el HTML público — sin ejecutar nada, sin acceder a nada privado»); inventario-casos §2.3 (Pages Functions: «en segundos, sobre el dominio que escribas»)",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.solucion.p2",
+     "rol": "parrafo",
+     "texto": "Hay cosas que una página no muestra, como si un rastreador se carga antes o después de que la persona acepte. Para eso hay un chequeo profundo, que abre un navegador de verdad. Y cuando no puede confirmar algo, lo dice en vez de darlo por bueno.",
+     "fuente": "caso de éxito, «Los hechos» (qué no puede revisar el chequeo rápido); inventario-casos §2.3 (Cloudflare Browser Rendering: «abre un navegador de verdad para ver qué se dispara antes del permiso»; respaldado por el repo, no corrido el 16-oct)",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.solucion.p3",
+     "rol": "parrafo",
+     "texto": "Antes de construirlo contrastamos cada punto con el texto oficial de la ley, en Ley Chile, y no con resúmenes de blogs.",
+     "fuente": "caso de éxito, «Los hechos» («Verificado contra el texto oficial (BCN/Ley Chile) antes de construir»)",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.solucion.ingredientes.rotulo",
+     "rol": "rotulo",
+     "texto": "Con qué está hecho",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.solucion.ingredientes.intro",
+     "rol": "nota",
+     "texto": "El detalle, para quien quiera mostrárselo a su técnico.",
+     "origen": "combeau.solucion.ingredientes.intro, tal cual",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.solucion.ingredientes",
+     "rol": "nota",
+     "uso": "lista",
+     "items": [
+      "Una sola página, escrita a mano y sin generador. (HTML y CSS)",
+      "El chequeo corre en el servidor, en segundos, sobre el dominio que escribas. (Cloudflare Pages Functions)",
+      "El chequeo profundo abre un navegador de verdad para ver qué se carga antes del permiso. (Cloudflare Browser Rendering)",
+      "Un tope para que nadie abuse del chequeo profundo. (Cloudflare KV)",
+      "Google y la IA pueden entender qué es y quién lo hace. (Datos estructurados)",
+      "Los buscadores encuentran sus archivos de guía en vez de la portada. (robots.txt, llms.txt y sitemap)"
+     ],
+     "fuente": "inventario-casos §2.3, tabla de ingredientes (los que tienen efecto que contar; Cloudflare Pages, Web Analytics y Web3Forms quedan fuera por no tenerlo)",
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "pieza",
+   "nombre": "La pieza",
+   "trabajo": "Mostrar el sitio y llevar a él.",
+   "elementos": [
+    {
+     "id": "verifica.pieza.rotulo",
+     "rol": "rotulo",
+     "texto": "La pieza",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.pieza.h2",
+     "rol": "h2",
+     "texto": "Una página, en su propio dominio.",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.pieza.p1",
+     "rol": "parrafo",
+     "texto": "Vive en verifica.spindlelab.cl. Abre con «¿Estás seguro?» en letras enormes, blanco y lima sobre azul, y una persona a caballo que lee un papel, generada con IA. En la misma página están el chequeo y «Las 12 cosas que tu sitio tiene que dejar publicadas», los puntos del artículo 14 ter de la ley.",
+     "fuente": "medios.json, alt de verifica-y-cumple-53 y de verifica-y-cumple-12-169; caso de éxito, aviso del 16-oct («los 12 puntos del Art. 14 ter»); inventario-casos §2 (verifica.spindlelab.cl)",
+     "estado": "nuevo"
+    }
+   ],
+   "medios": [
+    {
+     "archivo": "public/v3/medios/verifica-y-cumple-12-169.webp",
+     "forma": "16:9",
+     "alt": "La sección «Las 12 cosas que tu sitio tiene que dejar publicadas» de verifica.spindlelab.cl, en blanco sobre azul, con los doce puntos en dos columnas.",
+     "origen": "medios.json, alt de verifica-y-cumple-12-169, tal cual",
+     "enlace": {
+      "texto": "Abrir Verifica y Cumple",
+      "destino": "https://verifica.spindlelab.cl/",
+      "externo": "comun.externo"
+     },
+     "nota": "El enlace sale del sitio: lleva la flecha ↗ y, oculto a la vista, comun.externo «(sitio aparte: verifica.spindlelab.cl)». El texto es el del botón que tenía la home hasta E16."
+    }
+   ]
+  },
+  {
+   "id": "resultado",
+   "nombre": "Sin métrica",
+   "trabajo": "Lo que encontró al probarlo en casa, y lo que no tenemos para mostrar.",
+   "elementos": [
+    {
+     "id": "verifica.resultado.rotulo",
+     "rol": "rotulo",
+     "texto": "Sin métrica",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.resultado.h2",
+     "rol": "h2",
+     "texto": "Lo primero que encontró fue nuestro.",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.resultado.p1",
+     "rol": "parrafo",
+     "texto": "El 9 de septiembre de 2026 pasamos el chequeo por spindlelab.cl y salió mal. No teníamos política de privacidad ni gestor de consentimiento, Google Analytics y el Pixel de Meta cargaban sin pedir permiso, y el formulario mandaba nombre y correo a un tercero sin una casilla para aceptarlo.",
+     "fuente": "caso de éxito, «El hallazgo incómodo» (9-sep; sin política, sin gestor, GA4 + Meta Pixel sin permiso, formulario sin checkbox); perfil-linkedin.md, «Acerca de» publicado (Analytics y Pixel sin permiso)",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.resultado.p2",
+     "rol": "parrafo",
+     "texto": "Al revisar el formulario para arreglarlo apareció algo sin relación con la ley. Un error dejaba el botón en «Enviando…» para siempre, y el mensaje no llegaba a ningún lado. No hay forma de saber cuántos se perdieron antes de encontrarlo.",
+     "fuente": "caso de éxito, «El hallazgo incómodo» (el botón «Enviando…» pegado; «No hay forma de saber cuántos correos se perdieron»); home.trabajo.verifica.texto («un formulario que perdía mensajes sin avisar»)",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.resultado.p3",
+     "rol": "parrafo",
+     "texto": "Lo arreglamos: hoy el sitio tiene su política, el formulario funciona, pide permiso antes de tratar datos, y Analytics y el Pixel esperan a que alguien acepte. No mostramos puntajes del chequeo, porque la forma de puntuar cambió el 23 de septiembre, y no tenemos datos de uso ni de ventas que mostrar.",
+     "fuente": "caso de éxito, «El hallazgo incómodo» (lo arreglado) y aviso del 16-oct (repuntuación del 23-sep); inventario-casos §2.6 (GA4 y Meta Pixel tras el aviso de cookies, servido), §4.1 y §7 (sin puntajes) y §4.4 (ningún kit ni suscripción registrado)",
+     "estado": "nuevo"
+    }
+   ]
+  },
+  {
+   "id": "siguiente",
+   "nombre": "Cierre",
+   "trabajo": "Pedir la conversación y volver al índice.",
+   "elementos": [
+    {
+     "id": "verifica.siguiente.contacto",
+     "rol": "parrafo",
+     "tinta": "Si quieres saber qué le falta a tu sitio,",
+     "gris": "escríbenos y te respondemos en un día hábil, tengas formulario o no.",
+     "texto": "Si quieres saber qué le falta a tu sitio, escríbenos y te respondemos en un día hábil, tengas formulario o no.",
+     "origen": "combeau.siguiente.contacto (decisión de Ramón, 30-oct: «te respondemos en un día hábil»), con el sujeto de esta pieza",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.siguiente.boton",
+     "rol": "boton",
+     "texto": "Hablemos de tu sitio",
+     "destino": "/contacto/",
+     "origen": "combeau.siguiente.boton, tal cual",
+     "estado": "nuevo"
+    },
+    {
+     "id": "verifica.siguiente.todo",
+     "rol": "boton",
+     "texto": "[ Todo el trabajo ] (2)",
+     "destino": "/trabajo/",
+     "origen": "combeau.siguiente.todo",
+     "nota": "El 2 es el conteo verdadero de trabajo.entradas (casos.mjs lo compara con trabajo.conteo).",
+     "estado": "nuevo"
+    }
+   ]
+  }
+ ]
+}

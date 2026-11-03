@@ -181,11 +181,13 @@
      "id": "dw.obra.entradas",
      "rol": "nota",
      "uso": "referencia",
-     "texto": "Dos entradas del índice, con su nombre, bajada y la línea corta (tipo · año): Combeau (→ /trabajo/combeau/) · Verifica y Cumple (→ https://verifica.spindlelab.cl/). Ver «trabajo.entradas».",
+     "texto": "Dos entradas del índice, con su nombre, bajada y la línea corta (tipo · año): Combeau (→ /trabajo/combeau/) · Verifica y Cumple (→ /trabajo/verifica-y-cumple/). Ver «trabajo.entradas».",
      "estado": "cambia",
      "antes": "Tres entradas del índice: Combeau (→ /trabajo/combeau/#fotografia) · Praxi (→ /trabajo/praxi/) · Sesenta, concepto (→ /trabajo/sesenta/).",
      "por_que": "Praxi y Sesenta salen (brief de obra §3 y §5). Combeau es un solo caso con dos partes y su entrada lleva a la página, sin ancla.",
-     "origen": "texto-paso2.json «dw.obra.entradas»"
+     "origen": "texto-paso2.json «dw.obra.entradas»",
+     "antes_e16": "Verifica y Cumple (→ https://verifica.spindlelab.cl/)",
+     "por_que_e16": "E16: Verifica y Cumple tiene página de caso y su entrada de trabajo.json lleva ahí (es una nota de referencia que el build compara con el destino)."
     },
     {
      "id": "dw.obra.boton",

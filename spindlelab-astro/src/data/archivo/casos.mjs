@@ -23,13 +23,15 @@ import { textoDe, medioDe, igualQue } from './texto.mjs';
 import comun from './texto/comun.json';
 import trabajo from './texto/trabajo.json';
 import tCombeau from './texto/caso-combeau.json';
+import tVerifica from './texto/caso-verifica-y-cumple.json';
 import manifiesto from './medios-casos.json';
 
 const uno = (a) => ({ forma: '169', medios: [a] });
 const par = (a, b) => ({ forma: 'par', medios: [a, b] });
 
 // Los casos que tienen página, en el orden del índice (/trabajo/). [caso].astro genera una ruta por cada uno.
-export const ORDEN = ['combeau'];
+// E16 (3-nov-2026, Ramón): Verifica y Cumple pasa de enlazar afuera a tener su página, con el spot en el medio principal.
+export const ORDEN = ['combeau', 'verifica-y-cumple'];
 
 const urlDe = (caso) => `https://spindlelab.cl/trabajo/${caso}/`;
 
@@ -105,6 +107,54 @@ export const CASOS = {
     },
     og: { imagen: '/assets/img/og-e12-combeau.jpg?v=2', alt: 'La portada del sitio de Bernardo Combeau, fotógrafo de retrato.' },
   },
+  // E16 (3-nov-2026): la pieza propia. El medio principal es el spot de la home y de /trabajo/ (los mismos archivos de
+  // public/v3/trabajo/verifica/): desde 834 el de 1280 (16:9); bajo 834 el de 390 (624 × 780, 4:5), con su póster.
+  // Una sola fila de medios: la sección de las 12 cosas en «La pieza», con el enlace al sitio aparte.
+  'verifica-y-cumple': {
+    copia: tVerifica,
+    prefijo: 'verifica',
+    corto: 'Verifica y Cumple',
+    principal: {
+      fuentes: [
+        { desde: 834, webm: 'verifica-spot-1280.webm', mp4: 'verifica-spot-1280.mp4' },
+        { webm: 'verifica-spot-390.webm', mp4: 'verifica-spot-390.mp4' },
+      ],
+      poster: 'verifica-spot-1280-poster.webp',
+      posterAngosto: 'verifica-spot-390-poster.webp',
+    },
+    filas: {
+      problema: [],
+      hipotesis: [],
+      solucion: [],
+      pieza: [uno('verifica-y-cumple-12-169.webp')],
+      resultado: [],
+    },
+    // Solo lo que consta (inventario-casos §2 y §2.3): en producción desde el 23-sep en verifica.spindlelab.cl, de SpindleLab.
+    jsonLd: (t) => {
+      const u = urlDe('verifica-y-cumple');
+      return [
+        {
+          '@type': 'CreativeWork',
+          '@id': `${u}#caso`,
+          name: 'Verifica y Cumple: chequeo de la Ley 21.719',
+          description: t.bajada,
+          creator: { '@id': 'https://spindlelab.cl/#org' },
+          datePublished: '2026-09-23',
+          inLanguage: 'es-CL',
+          image: 'https://spindlelab.cl/assets/img/og-e16-verifica.jpg?v=1',
+          about: { '@id': `${u}#sitio` },
+        },
+        {
+          '@type': 'WebSite',
+          '@id': `${u}#sitio`,
+          name: 'Verifica y Cumple',
+          url: 'https://verifica.spindlelab.cl/',
+          publisher: { '@id': 'https://spindlelab.cl/#org' },
+        },
+      ];
+    },
+    og: { imagen: '/assets/img/og-e16-verifica.jpg?v=1', alt: 'Una jinete de traje y sombrero fucsia galopa en un caballo del mismo color sobre un cielo azul en acuarela. La imagen está generada con IA.' },
+  },
 };
 
 // El grafo de la página (senales-obra.md §2.3 y §2.4): WebPage + los nodos del caso + BreadcrumbList igual a la miga.
@@ -159,7 +209,9 @@ function medio(caso, ref, copia) {
   const deClara = medioDe(copia, r.clara || f.clara || r.m);
   const alt = deClara.alt || deClara.descripcion;
   if (!alt) throw new Error(`Caso ${caso}: Clara no le escribió alt a «${r.m}»`);
-  const salida = { src: f.src, ancho: f.ancho, alto: f.alto, alt, pie: deClara.pie || '', enlace: deClara.enlace || null };
+  // E16: un enlace que sale del sitio (el de Verifica y Cumple) trae el aviso oculto de comun.json por su id («externo»).
+  const enlace = deClara.enlace ? { ...deClara.enlace, externo: deClara.enlace.externo ? textoDe(comun)(deClara.enlace.externo).texto : '' } : null;
+  const salida = { src: f.src, ancho: f.ancho, alto: f.alto, alt, pie: deClara.pie || '', enlace };
   if (/\.webm$/.test(r.m)) {
     const p = reg[r.poster];
     const m4 = reg[r.mp4];
