@@ -352,3 +352,20 @@ Dos veces: una al principio, sobre `1c65e6a6`, para depurar el script; y la defi
 | **(30-oct)** `public/v3/marca/favicon.svg` se redibujó con la i con su disco pero ninguna página lo pide | Diego, sin apuro | Se puede quitar en la próxima pasada; no molesta |
 | **(30-oct, tarde)** La skill `cotizaciones` (`.claude/skills/cotizaciones/SKILL.md`, método, paso 1) lista el panel entre lo que cambia el precio; Ramón dijo que todos los planes de Desarrollo web lo traen | La troncal | Sumado al encargo que ya tiene la troncal sobre el v3: `marketing/encargos-otras-sesiones/encargo-troncal-giro-laboratorio.md` §7. No frena el corte: el sitio ya dice lo decidido |
 | **(30-oct, tarde)** Tres retoques opcionales de la vuelta 3: los dos puntos de «Quién está detrás», «En todos los planes» sin el panel y el título de la fila de `/nosotros/` | Ramón decide; Clara los escribe | `acta-qa-30oct.md`, «Decisiones de Ramón (vuelta 3)», 2 a 4. Cada uno pasa por `peso-30oct.mjs` si toca la home |
+
+## 3-nov-2026 · PUBLICADA la home E14 (estilo Koto)
+- **PR** rvalleespin/spindlelab#58: `claude/v3-publicacion` → `main`, corte `6664ea04` sobre `8b6d2375`. Ramón lo fusionó con el
+  botón el 3-nov a las 09:12 (hora de Chile). Cloudflare Pages (`spindlelab-v2`) lo publicó unos 45 s después.
+- **Verificado en vivo**:
+  - `/`, `/trabajo/` y `/servicios/desarrollo-web/` responden 200;
+  - el spot de Verifica y Cumple (`verifica-spot-1280.webm`) responde 200;
+  - la fila de tres va solo con texto (`k-tres--texto`), sin ninguna referencia a `e14-banda`;
+  - las fichas van sin año («Cliente · Sitio web», «Propio · Herramienta»).
+  - Precios de Desarrollo web sin cambios: $1.190.000, $390.000 y $690.000 + IVA. Los de la home salen de los mismos JSON
+    que revisó QA.
+- **IndexNow**: `/`, `/trabajo/`, `/servicios/desarrollo-web/` y `/servicios/`. api.indexnow.org respondió 200 y
+  bing.com/indexnow también 200.
+- **Lo que quedó pendiente**:
+  - las imágenes de la fila de tres, a la espera de referencias de Ramón;
+  - el giro dentro de verifica.spindlelab.cl, en otro repo;
+  - el h2 de Búsqueda, que decide Ramón.
