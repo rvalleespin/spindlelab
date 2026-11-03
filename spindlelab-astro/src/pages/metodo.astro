@@ -29,7 +29,7 @@ const hero = heroDe('metodo', tHeroMet);
       <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1] }]} />
       <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
       {/* LA IMAGEN DE CABECERA (E15; 3-nov, Ramón: franja bajo el título, como el hero de la home) */}
-      <HeroImagen slug='metodo' alt={hero.alt} pie={hero.pie} enCabecera />
+      <HeroImagen slug='metodo' alt={hero.alt} pie={hero.pie} enCabecera animado />
       <p class="cuerpo caja">{m.linea}</p>
       <div class="botones">
         {m.botones.map((b) => <a class={`boton boton--${b.clase}`} href={b.href}>{b.texto}</a>)}
