@@ -1809,7 +1809,16 @@
           </ul>
           <label>Correo <input type="email" name="correo" required autocomplete="email" placeholder="tu@empresa.cl"></label>
           <p class="compra-ayuda">Lo necesita el medio de pago, y es donde te escribimos para pedirte el acceso a tu sitio. <strong>Después de pagar vuelves solo a la pantalla de tu pedido: guarda ese enlace</strong>, es la única forma de volver y no hace falta ninguna cuenta.</p>
-          <label class="pedir-consiento"><input type="checkbox" name="consiento" required> <span>Acepto que mis datos se usen para gestionar mi compra, según la <a href="/privacidad/">política de privacidad</a>.</span></label>
+          <!-- ⚠️ EL ENLACE A LAS CONDICIONES VA ACÁ, NO SOLO EN EL PIE (3-nov-2026).
+               La página /terminos/ se escribió hoy y un `grep` de «/terminos» en `public/` y
+               en `functions/` devolvía CERO: existía y no la alcanzaba nadie. Una condición
+               de venta que no se puede leer antes de contratar no cumple su función, y el
+               art. 12 A de la Ley 19.496 pide justamente que estén accesibles antes.
+               Y hay una segunda razón, interna: el punto 05 de esa misma página dice que
+               marcar esta casilla es la aceptación de esas condiciones. Mientras el enlace no
+               estuviera acá, esa frase era falsa. Si se saca el enlace, hay que sacar también
+               esa frase. -->
+          <label class="pedir-consiento"><input type="checkbox" name="consiento" required> <span>Acepto las <a href="/terminos/">condiciones de venta</a> y que mis datos se usen para gestionar mi compra, según la <a href="/privacidad/">política de privacidad</a>.</span></label>
           <button type="submit" class="boton-ayuda">Ir a pagar</button>
           <p class="pedir-estado" role="status"></p>
           <!-- Se muestra solo cuando el pago no se pudo abrir por algo NUESTRO. Quien llega
@@ -2104,7 +2113,7 @@
            Cloudflare, que cambia la dirección por "[email protected]" y un script. Sin
            JavaScript, o en un lector que no lo ejecute, el medio de contacto desaparecía. -->
       <p>SpindleLab SpA · RUT 78.474.925-8 · <!--email_off--><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a><!--/email_off--></p>
-      <p>Este chequeo no requiere registro. El resultado rápido no se guarda; la revisión con navegador queda 24 horas y después se borra sola. <a href="/privacidad/">Política de privacidad</a>.</p>
+      <p>Este chequeo no requiere registro. El resultado rápido no se guarda; la revisión con navegador queda 24 horas y después se borra sola. <a href="/privacidad/">Política de privacidad</a> · <a href="/terminos/">Condiciones de venta</a>.</p>
     </div>
   </div>
 </footer>
@@ -3746,6 +3755,13 @@
    * kit»— ya traen su propia salida y es clara. Ofrecerle encima un formulario a quien solo
    * tiene que apretar un botón es ruido, y entrena a la gente a ignorar lo que la pantalla
    * dice. Acá se ofrece únicamente cuando la persona no tiene nada que arreglar de su lado.
+   *
+   * ⚠️ Por eso `correo-no-aceptado` NO está en esta lista, y su ausencia es la decisión
+   * (3-nov-2026). Ese 409 sale cuando la pasarela rechaza el correo del comprador: él lo
+   * arregla escribiendo otro, el campo está ahí mismo y el botón vuelve a quedar activo.
+   * Meterlo acá le mostraría «No es cosa tuya, el problema está de nuestro lado» —el texto
+   * del bloque de rescate— a quien sí puede resolverlo en dos segundos, y lo mandaría a un
+   * formulario en vez de al campo que tiene que corregir.
    */
   const FALLO_NUESTRO = ['no-se-pudo-abrir-el-pago', 'no-se-pudo-guardar'];
 

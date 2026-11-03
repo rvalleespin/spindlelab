@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Meta Pixel (23-oct-2026). NO se carga hasta que la persona acepta el aviso de cookies:
+     __spindlelabInitMeta la llama /js/consent-banner.js al pulsar Aceptar, o este mismo bloque
+     si el permiso ya estaba guardado al abrir la página. Sin permiso no se pide ni
+     fbevents.js, así que Meta no recibe nada de la visita. Sin <noscript>: no se puede pedir
+     consentimiento sin JavaScript, así que tampoco se rastrea sin él.
+     Solo se manda PageView. `autoConfig` en falso apaga los eventos automáticos del Pixel
+     (clics en botones y lectura de metadatos de la página), para que lo que se escribe en el
+     chequeo o en el formulario no viaje a Meta por una opción que nadie pidió.
+     ⚠️ EL ID CAMBIÓ EL 2-NOV-2026, Y EL ANTERIOR NO ERA NUESTRO.
+     Hasta hoy acá decía 2885353628478565. `ads_get_datasets` de la cuenta de anuncios
+     (2050319242539058) devuelve UN solo dataset, 1027024050073502 «SpindleLab», creado el
+     20-jul-2026; el ID viejo ni siquiera se puede leer con el token de Ramón («Invalid
+     dataset_id»). O sea que durante tres meses y medio las visitas de quien aceptaba el aviso
+     se iban a un dataset ajeno.
+     Dos cosas que eso explica: el dataset propio marca `last_fired_time` en epoch 0 —no ha
+     recibido un solo evento desde que se creó—, y el público de remarketing de julio nunca
+     creció pese a los $20.656 de esa campaña.
+     Y una que corrige: la política de privacidad dice que cargamos el Pixel «para saber si los
+     anuncios traen visitas a este sitio». Con el ID viejo eso era imposible de cumplir. Con
+     este, es cierto.
+     ⚠️ spindlelab.cl TODAVÍA carga el ID viejo. Su código no es `spindlelab-site/` de este
+     repositorio, que ya no se publica: el sitio vivo es Astro y vive en otra parte. -->
+<script>
+  var __spindlelabConsent = (function(){
+    try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
+  })();
+  function __spindlelabInitMeta(){
+    if(window.__spindlelabMetaInited) return;
+    window.__spindlelabMetaInited = true;
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('set', 'autoConfig', false, '1027024050073502');
+    fbq('init', '1027024050073502');
+    fbq('track', 'PageView');
+  }
+  if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
+</script>
+<title>Condiciones de venta · Verifica y Cumple</title>
+<meta name="description" content="Qué vendemos, cómo se compra, tu derecho a retracto y cómo devolvemos el dinero. Las condiciones de venta del kit de Verifica y Cumple, de SpindleLab SpA.">
+<link rel="canonical" href="https://verifica.spindlelab.cl/terminos/">
+<meta name="robots" content="index, follow">
+
+<!-- El mismo ícono en línea que la portada (index.html). Sin él, el navegador pide
+     /favicon.ico, que acá no existe: en local es un error 404 en la consola, y en Pages
+     vuelve la portada entera como si fuera el ícono. Si cambia allá, cambia acá. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23ff3ea0'/%3E%3Cpath d='M30 52 L44 66 L72 36' fill='none' stroke='%23fff' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<!-- Tarjeta para cuando alguien comparte esta página (WhatsApp, LinkedIn, correo). Sin esto
+     LinkedIn arma la vista previa sola y sin imagen. Todas las URL van al dominio nuevo, no a
+     pages.dev, para que ningún link compartido quede apuntando al dominio viejo.
+     ⚠️ Corregido el 3-nov-2026: esta página se armó copiando la de privacidad y estas tres
+     etiquetas se quedaron con el título, la bajada y la URL de aquella. Quien compartía las
+     condiciones de venta publicaba una tarjeta que decía «Política de privacidad» y que, al
+     pulsarla, llevaba a otra página. El canonical de arriba sí apuntaba acá, así que el
+     error no se veía en el buscador: solo en lo que se comparte. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Verifica y Cumple">
+<meta property="og:title" content="Condiciones de venta · Verifica y Cumple">
+<meta property="og:description" content="Qué vendemos, cómo se compra, tu derecho a retracto y cómo devolvemos el dinero. Las condiciones de venta del kit de Verifica y Cumple, de SpindleLab SpA.">
+<meta property="og:url" content="https://verifica.spindlelab.cl/terminos/">
+<meta property="og:locale" content="es_CL">
+<meta property="og:image" content="https://verifica.spindlelab.cl/assets/img/og-verificaycumple.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="Verifica y Cumple, chequeo técnico gratuito para la Ley 21.719. Una fiscalizadora a caballo bajo la pregunta ¿Estás seguro?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://verifica.spindlelab.cl/assets/img/og-verificaycumple.jpg">
+
+<style>
+  /* Misma fuente propia que la portada, servida desde este dominio — nada de Google Fonts. */
+  @font-face {
+    font-family: "Archivo Black";
+    font-style: normal; font-weight: 400; font-display: swap;
+    src: url("../assets/fonts/archivo-black-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Archivo Black";
+    font-style: normal; font-weight: 400; font-display: swap;
+    src: url("../assets/fonts/archivo-black-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  :root {
+    --vivo-azul: #2e5bff;
+    --vivo-rosa: #ff3ea0;
+    --vivo-rosa-osc: #c21e78;
+    --vivo-verde: #d6ff3d;
+    --vivo-tinta: #17163a;
+    --vivo-panel: #fffaf0;
+    --vivo-suave: #56547a;
+    --borde: rgba(23,22,58,.14);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--vivo-panel);
+    color: var(--vivo-tinta);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--vivo-rosa-osc); }
+  a:focus-visible { outline: 3px solid var(--vivo-rosa); outline-offset: 2px; }
+  .envoltura { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  header.sitio {
+    background: var(--vivo-azul);
+    border-top: 8px solid var(--vivo-verde);
+    padding: 20px 0;
+  }
+  header.sitio .envoltura { display: flex; align-items: center; gap: 10px; }
+  .marca {
+    display: flex; align-items: center; gap: 10px; text-decoration: none;
+    color: #fff; font-family: "Archivo Black", Impact, serif; text-transform: uppercase;
+    font-size: .98rem; letter-spacing: 0;
+  }
+  .marca svg { width: 28px; height: 28px; flex: 0 0 auto; }
+  .sello-anillo { fill: none; stroke: #fff; stroke-width: 6; opacity: .7; }
+  .sello-nucleo { fill: var(--vivo-rosa); stroke: none; }
+  .sello-check { fill: none; stroke: #fff; stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+
+  main { padding: 56px 0 70px; }
+  .eyebrow {
+    display: inline-block; font-family: "Archivo Black", Impact, serif;
+    font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+    background: var(--vivo-rosa); color: #fff;
+    padding: 6px 12px; border-radius: 999px; margin: 0 0 16px;
+  }
+  /* ⚠️ NO LE AGREGUES UN TAMAÑO MÁS CHICO «PARA QUE QUEPA EN EL CELULAR» (3-nov-2026).
+     Acá hubo un `clamp(1.75rem, 7.2vw, 2.6rem)` extra al final de esta hoja, puesto para
+     arreglar un texto cortado a 390 px. Ese corte no existe: era el método de medición.
+     En este Mac, `Chrome --headless --window-size=390,…` NO rinde a 390 px. Una página de
+     prueba que imprime `innerWidth` devuelve 500: la ventana tiene un ancho mínimo, maqueta
+     a 500 y recorta la captura a 390. O sea que todo se ve cortado por la derecha, incluida
+     la página de privacidad, que nadie reporta como rota. Medido a 390 px de verdad (el
+     navegador de la sesión, con la fuente ya cargada), `scrollWidth` y `clientWidth` del
+     documento dan 390 los dos y ningún elemento se sale: ni con este tamaño ni con el otro.
+     Para mirar un ancho de celular, emula el viewport en un navegador real; la captura
+     headless sirve de 500 px para arriba. */
+  h1 {
+    font-family: "Archivo Black", Impact, serif; font-weight: 400;
+    text-transform: uppercase;
+    font-size: clamp(2rem, 6vw, 3.2rem); line-height: .96;
+    margin: 0 0 12px; letter-spacing: -.03em;
+  }
+  .version { font-size: .85rem; color: var(--vivo-suave); margin: 0 0 34px; }
+  .intro { color: var(--vivo-suave); margin: 0 0 40px; font-size: 1.04rem; }
+
+  .punto { border-top: 1px solid var(--borde); padding: 26px 0; }
+  .punto:first-of-type { border-top: none; padding-top: 0; }
+  /* El rosa vivo sobre la crema da 3,1:1 y el rótulo es chico: no se lee bien. El rosa
+     oscuro de los enlaces da más de 4,5:1 y sigue siendo el mismo color de marca. */
+  .punto-num {
+    font-family: "Archivo Black", Impact, serif; font-size: .78rem;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: var(--vivo-rosa-osc); display: block; margin: 0 0 6px;
+  }
+  .punto h2 { font-size: 1.15rem; margin: 0 0 10px; letter-spacing: -.01em; }
+  .punto p { margin: 0 0 10px; color: var(--vivo-suave); }
+  .punto p:last-child { margin-bottom: 0; }
+  .punto strong { color: var(--vivo-tinta); }
+
+  .aviso-legal {
+    background: var(--vivo-tinta); color: rgba(255,255,255,.82);
+    border: none; border-radius: 0;
+    padding: 22px 24px; margin: 40px 0; font-size: .93rem; line-height: 1.6;
+  }
+  .aviso-legal strong { color: var(--vivo-verde); }
+
+  footer.sitio { background: var(--vivo-tinta); padding: 34px 0 42px; }
+  footer.sitio p { font-size: .85rem; color: rgba(255,255,255,.72); margin: 0 0 6px; }
+  footer.sitio a { color: var(--vivo-verde); }
+</style>
+</head>
+<body>
+
+<header class="sitio">
+  <div class="envoltura">
+    <a class="marca" href="/">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle class="sello-anillo" cx="50" cy="50" r="45"></circle>
+        <circle class="sello-nucleo" cx="50" cy="50" r="36"></circle>
+        <path class="sello-check" d="M32 52 L44 64 L70 36"></path>
+      </svg>
+      <span>Verifica y Cumple</span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="envoltura">
+    <p class="eyebrow">Lo que acordamos al vender</p>
+    <h1>Condiciones de venta</h1>
+    <p class="version">Versión 1.0 · 3 de noviembre de 2026.</p>
+    <p class="intro">
+      Acá está lo que vendemos, cómo se compra, qué pasa si te arrepientes y cómo devolvemos el
+      dinero. Esta página es parte del contrato: puedes guardarla o imprimirla, y conviene
+      leerla antes de pagar. Si algo no queda claro, escríbenos a
+      <!--email_off-->hola@spindlelab.cl<!--/email_off--> y lo respondemos antes de que compres.
+    </p>
+
+    <div class="punto">
+      <span class="punto-num">01 · Quién vende</span>
+      <h2>Con quién estás contratando</h2>
+      <p>Vende <strong>SpindleLab SpA</strong>, RUT <strong>78.474.925-8</strong>, con domicilio en
+      Chile. «Verifica y Cumple» es el nombre de este servicio, no de otra empresa.</p>
+      <p>Para cualquier cosa relacionada con tu compra, incluido ejercer los derechos de esta
+      página, el correo es <!--email_off-->hola@spindlelab.cl<!--/email_off-->. Si necesitas una
+      dirección postal para un trámite formal, pídela por ese correo y te la damos por escrito.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">02 · Qué compras</span>
+      <h2>El kit, y qué queda incluido</h2>
+      <p>El kit de implementación es un trabajo sobre <strong>tu sitio web</strong>, acotado a lo
+      que el chequeo encontró en él. Según lo que te falte, incluye:</p>
+      <p>Instalar y configurar un <strong>gestor de consentimiento</strong>, para que los
+      rastreadores de tu sitio no carguen antes de que la persona acepte. Aplicar los
+      <strong>ajustes técnicos</strong> que el chequeo detectó. Y entregarte un
+      <strong>borrador de política de privacidad</strong> escrito con los datos de tu empresa.</p>
+      <p><strong>El borrador es un borrador.</strong> Te lo entregamos para que lo revise tu
+      abogado y lo publiques tú. No lo publicamos nosotros, no es asesoría legal, y no somos
+      abogados. Esto importa y por eso va temprano en esta página.</p>
+      <p>Cuando terminamos, corremos el mismo chequeo público sobre tu sitio y te mandamos el
+      resultado, para que lo que hicimos se pueda verificar desde afuera.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">03 · Qué NO incluye</span>
+      <h2>Lo que queda fuera, dicho antes</h2>
+      <p><strong>La revisión legal de tu caso.</strong> El chequeo mira tu sitio desde afuera y el
+      kit arregla lo que se ve. Si cumples o no la Ley 21.719 depende de cómo tratas los datos en
+      toda tu operación, y eso lo evalúa un abogado con tu empresa a la vista.</p>
+      <p><strong>El HTTPS.</strong> Depende de tu proveedor de hosting. Si falta, te decimos qué
+      pedirle.</p>
+      <p><strong>Publicar tu política.</strong> Te entregamos el borrador; publicarlo es tuyo,
+      después de que tu abogado lo revise.</p>
+      <p><strong>Los casos fuera de alcance.</strong> Una tienda con carro de compras, varios
+      dominios o integraciones a medida no se resuelven con este kit. Si tu sitio es uno de esos,
+      escríbenos y lo vemos caso a caso, con otro precio.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">04 · El precio</span>
+      <h2>Cuánto cuesta</h2>
+      <p><strong>$177.310 pesos chilenos, IVA incluido</strong> ($149.000 más IVA). Es un pago
+      único y es el precio total: no hay cobros adicionales, ni mensualidades, ni recargos por
+      medio de pago.</p>
+      <p>La revisión trimestral es otro servicio, con otro precio, y no va incluida acá. No se
+      contrata sola desde este sitio ni se te cobra sin que la pidas.</p>
+    </div>
+
+    <!-- ⚠️ ACÁ SÍ SE NOMBRA LA PASARELA, Y EN LA POLÍTICA TAMBIÉN (3-nov-2026).
+         `functions/api/etapas.js` tiene la regla contraria para las pantallas del pedido:
+         ningún texto que lee la persona nombra una pasarela, porque cuál cobra es un dato
+         conmutable (`PASARELA`) y el texto se vuelve falso el día que se cambia. En estas
+         dos páginas la regla no aplica: la política de privacidad tiene que decir quién
+         procesa los datos —es justo lo que este producto le revisa a otros sitios— y las
+         condiciones de venta tienen que decir dónde se paga.
+         LO QUE ESO OBLIGA: si `PASARELA` cambia, estas dos páginas cambian con él, en el
+         mismo paso. `prueba-paginas-legales.mjs` ata las dos cosas y se pone roja si el
+         valor por omisión de `pasarelaDe()` deja de ser Flow. -->
+    <div class="punto">
+      <span class="punto-num">05 · Cómo se compra</span>
+      <h2>Los pasos, en orden</h2>
+      <p><strong>1.</strong> Escribes tu dominio en el chequeo y esperas el resultado.
+      <strong>2.</strong> Si tu sitio tiene algo que este kit resuelve, aparece el botón de compra
+      con el precio. <strong>3.</strong> Escribes tu correo y marcas la casilla de consentimiento.
+      La casilla viene sin marcar y marcarla es tu aceptación de estas condiciones.
+      <strong>4.</strong> Te llevamos a <strong>Flow</strong>, que es quien procesa el pago. Los
+      datos de tu tarjeta no pasan por este sitio.
+      <strong>5.</strong> Vuelves a una pantalla propia de tu pedido, con su enlace.</p>
+      <p><strong>Si te equivocaste en algo</strong>, en el dominio o en el correo, escríbenos a
+      <!--email_off-->hola@spindlelab.cl<!--/email_off--> y lo corregimos. Antes de pagar puedes
+      volver atrás y cambiar lo que escribiste; después de pagar lo arreglamos nosotros.</p>
+      <p><strong>Tu pedido queda archivado y accesible para ti</strong> en el enlace que te
+      mandamos por correo. Ese enlace es la única forma de volver a él: no hay cuenta ni
+      contraseña, así que guárdalo. Ahí queda también la versión de nuestra política de privacidad
+      que estaba vigente el día de tu compra.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">06 · La confirmación</span>
+      <h2>El correo que te tenemos que mandar</h2>
+      <p>Cuando el pago se confirma te mandamos por correo una <strong>confirmación escrita</strong>
+      con copia de lo que compraste y de estas condiciones. No es una cortesía: la ley nos obliga
+      (artículo 12 A de la Ley 19.496) y además de ella depende el plazo del punto siguiente.</p>
+      <p>Si no te llega, escríbenos y te la mandamos de nuevo.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">07 · Derecho a retracto</span>
+      <h2>Puedes arrepentirte</h2>
+      <p>Tienes <strong>derecho a retracto</strong>: puedes poner término a este contrato
+      <strong>sin tener que explicar por qué</strong>, dentro de <strong>10 días corridos</strong>
+      contados desde que compraste, y siempre antes de que haya empezado la prestación del
+      servicio. Es el derecho del artículo 3° bis de la Ley 19.496 y lo tienes porque compraste a
+      distancia, por internet.</p>
+      <p><strong>No lo excluimos.</strong> La ley nos permitiría hacerlo tratándose de un servicio,
+      y decidimos no hacerlo.</p>
+      <p>Para ejercerlo basta con decírnoslo. Puedes responder el correo de confirmación, escribir
+      a <!--email_off-->hola@spindlelab.cl<!--/email_off-->, o usar cualquier otra vía que nos
+      permita enterarnos: no te obligamos a un formulario ni a un canal único.</p>
+      <p><strong>Y una parte que nos conviene decir aunque juegue en contra:</strong> si no te
+      mandamos la confirmación escrita del punto 06, el plazo para retractarte no es de 10 días
+      sino de <strong>90</strong>. Lo dice el mismo artículo 3° bis y lo escribimos acá porque es
+      un derecho tuyo que de otro modo no tendrías cómo saber.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">08 · Cuándo empieza el trabajo</span>
+      <h2>El aviso que cierra el plazo</h2>
+      <p>La prestación del servicio <strong>empieza cuando te avisamos que empezó</strong>, no
+      cuando nosotros nos ponemos a trabajar. Te lo avisamos por correo, al mismo con el que
+      compraste, y queda anotado en la pantalla de tu pedido con su fecha y hora.</p>
+      <p>Mientras no te hayamos avisado, tu derecho a retracto sigue abierto. Así lo exige el
+      artículo 5 del Decreto 52 de 2024 del Ministerio de Economía, y nos parece la regla
+      correcta: no puedes perder un derecho por algo que pasó sin que lo supieras.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">09 · Devoluciones</span>
+      <h2>Cuándo devolvemos el dinero, y cuánto</h2>
+      <p><strong>Te devolvemos el 100% si no puedes darnos el acceso a tu sitio, o si desistes
+      antes de que lo hayamos tocado.</strong> Sin descuentos y sin retención de gastos.</p>
+      <p>Lo devolvemos <strong>a la misma tarjeta o cuenta con la que pagaste</strong>, lo antes
+      posible y en todo caso dentro de los <strong>45 días</strong> siguientes a que nos avises,
+      que es el tope que fija la ley. El abono puede tardar algunos días hábiles más en aparecer
+      en tu cartola, según tu banco.</p>
+      <p>Si el trabajo ya empezó y decides terminarlo igual, la ley dice que la devolución no
+      alcanza a los servicios ya prestados. En ese caso te decimos por escrito qué parte se
+      devuelve y qué parte no, y por qué, antes de hacer nada.</p>
+      <p>Si somos nosotros los que no podemos entregar, por cualquier motivo, te devolvemos el
+      100% sin que tengas que pedirlo.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">10 · Qué necesitamos de ti</span>
+      <h2>El acceso, y qué pasa si no lo das</h2>
+      <p>Para trabajar en tu sitio necesitamos un <strong>acceso temporal con permisos
+      mínimos</strong>: tu hosting, tu repositorio o tu gestor de contenidos, según cuál sea el
+      caso. Después del pago te damos las instrucciones para crearlo, y un texto que puedes
+      reenviarle a quien te administre el sitio.</p>
+      <p>Lo usamos solo para este trabajo y <strong>te pedimos que lo revoques cuando terminemos</strong>.
+      También necesitamos los datos de tu empresa (razón social, RUT, giro y dirección) para la
+      boleta o factura y para escribir tu borrador.</p>
+      <p>Si no puedes darnos el acceso, no hay trabajo que hacer y se te devuelve el 100%. No te
+      cobramos por el intento.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">11 · Por cuánto respondemos</span>
+      <h2>El plazo de nuestra responsabilidad</h2>
+      <p>Nos hacemos responsables del kit por <strong>90 días corridos</strong> contados desde que
+      te avisamos que quedó entregado. Dentro de ese plazo, si algo de lo que instalamos o
+      ajustamos dejó de funcionar por causa nuestra, lo arreglamos sin costo.</p>
+      <p>Esto es además de lo que te da la ley: el artículo 41 de la Ley 19.496 te permite reclamar
+      por un servicio defectuoso dentro de <strong>30 días hábiles</strong> desde que terminó la
+      prestación, y pedir que se preste de nuevo sin costo o que se te devuelva lo pagado.</p>
+      <p>No limitamos nuestra responsabilidad por lo que nos corresponde. Si trabajando en tu sitio
+      rompemos algo, lo arreglamos.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">12 · Lo que no prometemos</span>
+      <h2>Dónde está el límite de lo que vendemos</h2>
+      <p><strong>No prometemos que vas a cumplir la ley.</strong> Nadie puede prometerte eso
+      mirando tu sitio desde afuera, y quien te lo prometa te está vendiendo algo que no puede
+      entregar. Lo que hacemos es arreglar lo que se ve y entregarte el borrador para que tu
+      abogado lo revise.</p>
+      <p><strong>No somos abogados</strong> y nada de lo que entregamos es asesoría legal.</p>
+      <p>El chequeo mide lo que un visitante puede ver de tu sitio. Si tu sitio cambia después, o
+      si tiene partes que no se pueden medir desde afuera, el resultado cambia con él.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">13 · Boleta o factura</span>
+      <h2>El documento de tu compra</h2>
+      <p>Te emitimos el documento tributario que corresponda según quién compre: factura
+      electrónica si eres una empresa con giro, boleta si no. Para eso necesitamos los datos del
+      punto 10.</p>
+      <p>Si hay una devolución, emitimos la nota de crédito correspondiente.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">14 · Tus datos</span>
+      <h2>Qué hacemos con tus datos personales</h2>
+      <p>Está todo en la <a href="/privacidad/">política de privacidad</a>: qué datos pasan por el
+      sitio, para qué los usamos, quién más los procesa y cuánto tiempo los guardamos. La versión
+      vigente el día de tu compra queda guardada con tu pedido.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">15 · Reclamos</span>
+      <h2>Si algo sale mal</h2>
+      <p>Escríbenos primero a <!--email_off-->hola@spindlelab.cl<!--/email_off-->: es lo más rápido
+      y es donde podemos arreglarlo. Pero <strong>no te obligamos a reclamar solo por ahí</strong>:
+      puedes usar cualquier vía, incluido el SERNAC cuando corresponda.</p>
+      <p>Y puedes acudir al tribunal que la ley determine. No restringimos eso ni te pedimos
+      renunciar a nada: los derechos que te da la Ley 19.496 son irrenunciables, y si alguna frase
+      de esta página pareciera decir lo contrario, vale la ley.</p>
+    </div>
+
+    <div class="punto">
+      <span class="punto-num">16 · Cambios</span>
+      <h2>Si cambiamos estas condiciones</h2>
+      <p>Podemos cambiar esta página para ventas futuras, pero <strong>lo que te aplica a ti es la
+      versión que estaba vigente el día que compraste</strong>. Por eso lleva número de versión y
+      fecha arriba: para que se pueda saber cuál era.</p>
+      <p>No nos reservamos el derecho a cambiarte el contrato después de que lo firmaste.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="sitio">
+  <div class="envoltura">
+    <p>Verifica y Cumple es un servicio de <a href="https://spindlelab.cl">SpindleLab</a>. Arreglamos la parte técnica de los sitios web.</p>
+    <p><a href="/">← Volver al chequeo</a></p>
+  </div>
+</footer>
+
+<div id="cookie-banner" hidden>
+  <style>
+    #cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:999;background:#17163a;border-top:1px solid rgba(255,255,255,.18);padding:18px 20px}
+    #cookie-banner .cb-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    #cookie-banner p{margin:0;font-size:14px;color:rgba(255,255,255,.88);line-height:1.5;max-width:660px}
+    #cookie-banner a{color:#d6ff3d;font-weight:700}
+    #cookie-banner .cb-actions{display:flex;gap:10px;flex:none}
+    #cookie-banner button{font-family:inherit;font-size:13px;font-weight:700;padding:10px 20px;border-radius:999px;cursor:pointer;border:1.5px solid transparent}
+    #cookie-reject{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+    #cookie-reject:hover{background:rgba(255,255,255,.1)}
+    #cookie-accept{background:#d6ff3d;color:#17163a;border-color:#d6ff3d}
+    #cookie-accept:hover{background:#e6ff7a}
+    #cookie-banner button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    #cookie-banner[hidden]{display:none}
+    @media(max-width:680px){#cookie-banner .cb-inner{flex-direction:column;align-items:stretch}#cookie-banner .cb-actions{justify-content:flex-end}}
+  </style>
+  <div class="cb-inner">
+    <p>Usamos el Pixel de Meta para saber si nuestros anuncios en Instagram y Facebook traen visitas a este sitio. Puedes aceptarlo o rechazarlo: el chequeo funciona igual. Más detalle en la <a href="/privacidad/">política de privacidad</a>.</p>
+    <div class="cb-actions">
+      <button type="button" id="cookie-reject">Rechazar</button>
+      <button type="button" id="cookie-accept">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script src="/js/consent-banner.js?v=1" defer></script>
+</body>
+</html>
