@@ -179,6 +179,28 @@
   ul.senales.fuera li::before { background: var(--arena-300); }
   .nota { font-size: 14.5px; color: var(--tinta-500); margin: 12px 0 0; }
 
+  /* La tarjeta del borrador. El texto va en un textarea y no en un <pre> a propósito: el
+     botón de copiar necesita poder seleccionarlo, y un campo de solo lectura se recorre con el
+     teclado y se puede ampliar arrastrando. La advertencia lleva color porque es la frase que
+     no se puede perder de vista: entregamos un borrador, no una política publicada. */
+  .aviso-borrador {
+    margin: 0 0 12px; padding: 13px 15px; border-radius: 12px;
+    background: var(--ambar-100); border: 1px solid #e8c49b;
+    font-size: 15.5px;
+  }
+  .tarjeta > textarea {
+    width: 100%; margin: 14px 0 0; padding: 13px; font: inherit; font-size: 14.5px;
+    line-height: 1.55; border-radius: 10px; border: 1px solid rgba(0,0,0,.22);
+    background: var(--crema-50); resize: vertical;
+  }
+  .tarjeta > .copiar {
+    margin: 10px 0 0; padding: 10px 18px; border-radius: 999px; background: none;
+    border: 1px solid var(--tinta-900); color: var(--tinta-900);
+    font: inherit; font-weight: 700; font-size: 15px; cursor: pointer;
+  }
+  .tarjeta > .copiado { margin: 8px 0 14px; font-size: .9rem; }
+  .tarjeta > .copiado:empty { margin: 0 0 14px; }  /* misma razón que las otras: es role="status" */
+
   .cargando, .error { text-align: center; padding: 50px 0; color: var(--tinta-500); }
   .pie { margin: 36px 0 0; font-size: 14.5px; color: var(--tinta-500); text-align: center; }
   .pie a { color: var(--tinta-500); }
@@ -222,6 +244,18 @@
     if (!iso) return '';
     try {
       return new Date(iso).toLocaleDateString('es-CL', { day: 'numeric', month: 'long', year: 'numeric' });
+    } catch (e) { return ''; }
+  }
+
+  /* La fecha CON HORA, que se usa en un solo dato y por un motivo concreto: el aviso de que
+     el trabajo empezó. Las condiciones de venta dicen que queda anotado acá con su fecha y su
+     hora, y de ese instante depende hasta cuándo se podía retractar. Para el resto de las
+     fechas la hora no le aporta nada a nadie. */
+  function fechaYHora(iso) {
+    if (!iso) return '';
+    try {
+      return new Date(iso).toLocaleString('es-CL',
+        { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
     } catch (e) { return ''; }
   }
 
@@ -346,9 +380,10 @@
 
     h += '<details><summary>Lo administra otra persona o una agencia</summary>';
     h += '<p>Copia este texto y mándaselo. Está escrito para que no tengas que editar nada.</p>';
-    h += '<textarea readonly rows="16" data-texto-reenviar>' +
+    h += '<textarea readonly rows="16" data-texto-reenviar data-caja-copiable>' +
       escapar(a.textoParaReenviar) + '</textarea>';
-    h += '<button type="button" class="copiar" data-copiar>Copiar el texto</button>';
+    h += '<button type="button" class="copiar" data-copiar ' +
+      'data-copiado="Copiado. Pégalo en un correo o un WhatsApp.">Copiar el texto</button>';
     h += '<p class="copiado" role="status"></p>';
     // Se dice en voz alta, porque es la pregunta que alguien se hace al reenviar algo de su
     // pedido a un tercero: ese texto NO lleva el enlace de su pedido (ver el comentario de
@@ -374,21 +409,63 @@
    * le dice qué apretar. Un «¡Copiado!» que no copió nada es peor que no tener botón.
    */
   function montarCopiar() {
-    var b = contenido.querySelector('[data-copiar]');
-    if (!b) return;
-    var caja = b.parentNode.querySelector('[data-texto-reenviar]');
-    var dicho = b.parentNode.querySelector('.copiado');
-    b.addEventListener('click', function () {
-      function aMano() {
-        caja.focus();
-        caja.select();
-        dicho.textContent = 'Lo dejamos seleccionado. Cópialo con Ctrl+C (o Cmd+C en Mac).';
-      }
-      if (!navigator.clipboard || !navigator.clipboard.writeText) { aMano(); return; }
-      navigator.clipboard.writeText(caja.value).then(function () {
-        dicho.textContent = 'Copiado. Pégalo en un correo o un WhatsApp.';
-      }).catch(aMano);
+    /* ⚠️ ESTO TUVO QUE DEJAR DE SER UNA FUNCIÓN DE UN SOLO BOTÓN (3-nov-2026).
+       Era un `querySelector('[data-copiar]')` que buscaba su caja con
+       `querySelector('[data-texto-reenviar]')`, o sea con el nombre del ÚNICO texto copiable
+       que existía: el que se le reenvía a quien administra el sitio. Desde que el borrador de
+       la política se muestra en esta misma pantalla hay dos textos copiables, y el del
+       borrador no es un texto para reenviar: con el código viejo su botón encontraba `caja`
+       en `null` y el clic reventaba con un TypeError. En pantalla eso no se ve: el botón
+       simplemente no copia, en la página de alguien que ya pagó y que lo que tiene que copiar
+       es lo que compró.
+       Son dos arreglos y conviene no confundirlos. El atributo genérico (`data-caja-copiable`)
+       es el que repara el defecto de hoy. El `querySelectorAll` es por lo que viene: hoy las
+       dos cajas no coinciden nunca en la misma pantalla —el borrador aparece en `entregado` y
+       el texto del acceso en `falta-acceso`, que se excluyen— pero el día que coincidan, el
+       segundo botón quedaría muerto sin que nada se ponga rojo.
+       Cada botón busca su caja y su aviso DENTRO de su propio contenedor, así que los dos no
+       se pisan ni copian el texto del otro. */
+    var botones = contenido.querySelectorAll('[data-copiar]');
+    Array.prototype.forEach.call(botones, function (b) {
+      var caja = b.parentNode.querySelector('[data-caja-copiable]');
+      var dicho = b.parentNode.querySelector('.copiado');
+      if (!caja || !dicho) return;
+      // Qué se dice al copiar depende de para qué sirve el texto: el del acceso se reenvía a
+      // quien administra el sitio, y el borrador va a su abogado. Lo manda el HTML que dibuja
+      // la caja, porque es el que sabe cuál es cuál.
+      var listo = b.getAttribute('data-copiado') || 'Copiado.';
+      b.addEventListener('click', function () {
+        function aMano() {
+          caja.focus();
+          caja.select();
+          dicho.textContent = 'Lo dejamos seleccionado. Cópialo con Ctrl+C (o Cmd+C en Mac).';
+        }
+        if (!navigator.clipboard || !navigator.clipboard.writeText) { aMano(); return; }
+        navigator.clipboard.writeText(caja.value).then(function () {
+          dicho.textContent = listo;
+        }).catch(aMano);
+      });
     });
+  }
+
+  /* ⚠️ LAS SEÑALES QUE SE ENTREGAN SIN ENTRAR AL SITIO DEL CLIENTE.
+   *
+   * Es la MISMA regla que `SIN_ENTRAR_AL_SITIO` en `functions/api/etapas.js`, y está repetida
+   * acá porque este formulario corre en el navegador y no puede importar nada del servidor
+   * —igual que `PLATAFORMAS`, que también vive en los dos lados—.
+   *
+   * Las dos se revisan juntas, y no por buena voluntad: hay una prueba que las compara y se
+   * pone roja si se separan. Un comentario no obliga a nadie; una prueba sí.
+   */
+  var SIN_ENTRAR_AL_SITIO = ['politica'];
+
+  function hayQueEntrarAlSitio(pedido) {
+    var s = (pedido && pedido.senales_contratadas) || [];
+    // Falla hacia «sí hace falta», igual que el servidor: ver el comentario de
+    // `hayQueEntrarAlSitio` en etapas.js. Equivocarse hacia pedir el acceso es una molestia;
+    // hacia no pedirlo, es un pedido que nadie puede trabajar.
+    if (!s.length) return true;
+    return s.some(function (id) { return SIN_ENTRAR_AL_SITIO.indexOf(id) === -1; });
   }
 
   function montarIntake(data) {
@@ -400,6 +477,20 @@
       return '<option value="' + o[0] + '">' + escapar(o[1]) + '</option>';
     }).join('');
 
+    /* ⚠️ LA PLATAFORMA SOLO SE PREGUNTA CUANDO SIRVE PARA ALGO (3-nov-2026).
+     *
+     * El campo existe para poder decirle dónde crear la invitación de acceso. A quien compró
+     * solo el borrador de su política no le vamos a pedir ninguna invitación, así que
+     * obligarlo a elegir una plataforma —con `required`, antes de poder enviar— es pedirle un
+     * dato que su compra no necesita, que es el mismo defecto que el arreglo de hoy vino a
+     * sacar de la etapa siguiente.
+     *
+     * Y hay una razón más dura: la etapa está escrita bajo la regla de «esta frase nombra
+     * EXACTAMENTE los campos que el formulario pide». Su texto ya no nombra la plataforma. Si
+     * el campo se quedara, la pantalla pediría cinco cosas diciendo cuatro.
+     */
+    var pideLaPlataforma = hayQueEntrarAlSitio(data.pedido);
+
     var f = document.createElement('form');
     f.className = 'intake';
     f.innerHTML =
@@ -407,9 +498,11 @@
       '<label>RUT de la empresa <input name="rut" required maxlength="12" placeholder="76.086.428-5" inputmode="text"></label>' +
       '<label>Giro <input name="giro" required maxlength="200"></label>' +
       '<label>Dirección <input name="direccion" required maxlength="200" autocomplete="street-address"></label>' +
-      '<label>¿En qué está hecho tu sitio? <select name="plataforma" required>' +
-        '<option value="" selected disabled>Elige una</option>' + opciones +
-      '</select></label>' +
+      (pideLaPlataforma
+        ? '<label>¿En qué está hecho tu sitio? <select name="plataforma" required>' +
+          '<option value="" selected disabled>Elige una</option>' + opciones +
+          '</select></label>'
+        : '') +
       '<button type="submit" class="boton">Enviar mis datos</button>' +
       '<p class="intake-estado" role="status"></p>';
     hueco.replaceWith(f);
@@ -424,8 +517,11 @@
       estado.textContent = '';
 
       var cuerpo = { id: id };
+      // Solo los campos que el formulario de VERDAD dibujó. Recorrer una lista fija y leer
+      // `.value` de un campo que no existe revienta con un TypeError, y el envío se moriría en
+      // silencio justo después de que la persona apretó el botón.
       ['razon_social', 'rut', 'giro', 'direccion', 'plataforma'].forEach(function (c) {
-        cuerpo[c] = f.elements[c].value.trim();
+        if (f.elements[c]) cuerpo[c] = f.elements[c].value.trim();
       });
 
       fetch('/api/intake', {
@@ -539,6 +635,18 @@
     if (p.pagado_en) {
       html += '<div class="dato"><span>Pagado el</span><span>' + escapar(fecha(p.pagado_en)) + '</span></div>';
     }
+    /* ⚠️ EL DATO DEL QUE DEPENDE SU PLAZO PARA RETRACTARSE (3-nov-2026).
+     *
+     * El artículo 5 del Decreto 52 de 2024 dice que un servicio contratado a distancia se
+     * entiende iniciado cuando el proveedor se lo NOTIFICA al consumidor, no cuando se pone a
+     * trabajar. Hasta ese aviso el retracto sigue abierto. Las condiciones de venta prometen,
+     * literal, que el aviso queda anotado acá con su fecha y hora, así que acá está: con hora,
+     * porque el plazo se cuenta desde un instante y no desde un día.
+     */
+    if (p.inicio_avisado_en) {
+      html += '<div class="dato"><span>Te avisamos que empezamos</span><span>' +
+        escapar(fechaYHora(p.inicio_avisado_en)) + '</span></div>';
+    }
     if (p.entregado_en) {
       html += '<div class="dato"><span>Entregado el</span><span>' + escapar(fecha(p.entregado_en)) + '</span></div>';
     }
@@ -583,6 +691,42 @@
         'El texto final de tu política lo revisa tu abogado.</p>';
     }
     html += '</div>';
+
+    /* ── EL BORRADOR DE LA POLÍTICA (3-nov-2026) ───────────────────────────────────────────
+     *
+     * Era el hueco más grande entre pagar y recibir: el documento central del kit no tenía
+     * ningún camino hasta el cliente. El correo de cierre no llevaba adjuntos, no había
+     * columna que lo guardara, y esta pantalla afirmaba «lo que dejamos hecho» sin mostrar lo
+     * único que se dejó hecho.
+     *
+     * Vive acá y no solo en el correo porque este camino NO depende de que un correo salga.
+     * Resend puede estar caído, la clave puede estar vencida, el filtro del cliente puede
+     * comerse un mensaje con cuatro páginas de prosa legal: el enlace de su pedido es su
+     * credencial y acá el texto está siempre.
+     *
+     * ⚠️ LA ADVERTENCIA VA ARRIBA Y ABAJO, y no es insistencia: quien copie el texto va a
+     * seleccionar desde donde empieza, así que una advertencia que estuviera solo arriba se
+     * quedaría fuera de lo que pega en su sitio. Es la decisión del 2-nov y es lo que separa
+     * entregar un borrador de ejercer el derecho sin ser abogado.
+     */
+    if (p.borrador_politica) {
+      html += '<div class="tarjeta">';
+      html += '<p class="etiqueta">El borrador de tu política de privacidad</p>';
+      html += '<p class="aviso-borrador">Es un <strong>borrador para que lo revise tu ' +
+        'abogado</strong>. No está publicado, no lo publicamos nosotros y no es asesoría legal.</p>';
+      html += '<p class="nota">Está escrito con los datos de tu empresa y con los puntos que ' +
+        'la ley pide publicar. Cópialo, mándaselo a tu abogado, y publica el texto que él te ' +
+        'devuelva.</p>';
+      html += '<textarea readonly rows="18" data-caja-copiable aria-label="Borrador de tu ' +
+        'política de privacidad">' + escapar(p.borrador_politica) + '</textarea>';
+      html += '<button type="button" class="copiar" data-copiar ' +
+        'data-copiado="Copiado. Mándaselo a tu abogado antes de publicarlo.">' +
+        'Copiar el borrador</button>';
+      html += '<p class="copiado" role="status"></p>';
+      html += '<p class="aviso-borrador">Hasta que tu abogado lo revise y lo publiques, sigue ' +
+        'siendo un borrador: no es asesoría legal y el texto final no es nuestro.</p>';
+      html += '</div>';
+    }
 
     html += '<p class="nota" style="text-align:center">Guarda este enlace. Es la forma de volver ' +
       'a esta página, y no hace falta ninguna cuenta.</p>';

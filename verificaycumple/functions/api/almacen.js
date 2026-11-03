@@ -25,6 +25,7 @@
  */
 
 import { ESTADOS, transicionValida } from './pedidos.js';
+import { hayQueEntrarAlSitio } from './etapas.js';
 
 /** Las columnas que se escriben al crear. En un solo lugar, para que el INSERT no se desfase. */
 const COLUMNAS_CREAR = [
@@ -114,7 +115,48 @@ function hidratar(f) {
  */
 const EXTRA_PERMITIDO = new Set([
   'mp_payment_id', 'mp_order_id', 'flow_token', 'pagado_en', 'entregado_en', 'informe_final_json',
+  // El borrador de la política viaja por acá y no por `guardarIntake`, y la diferencia es
+  // quién escribe: el intake lo escribe el cliente con su enlace, y esto lo escribimos
+  // nosotros en la misma transacción que marca la entrega. Un borrador que el comprador
+  // pudiera reemplazar no sería la constancia de lo que se le entregó.
+  'borrador_politica',
 ]);
+
+/**
+ * Deja escrito que al cliente se le AVISÓ que su trabajo empezó, y cuándo.
+ *
+ * ── POR QUÉ ES UNA COLUMNA Y NO UNA DEDUCCIÓN (3-nov-2026) ───────────────────────────────
+ *
+ * El artículo 5 del Decreto 52 de 2024 del Ministerio de Economía dice que la prestación de
+ * un servicio contratado a distancia se entiende iniciada «desde el momento en que el
+ * proveedor notifique esta circunstancia al consumidor». No desde que empezamos a trabajar:
+ * desde que se lo decimos. Mientras no se lo digamos, su derecho a retracto sigue abierto
+ * aunque el trabajo esté hecho.
+ *
+ * O sea que la fecha que importa no se puede deducir de `acceso_recibido_en` ni de ninguna
+ * otra columna existente: ninguna de ellas dice que la persona se enteró. Y es una fecha que
+ * algún día puede haber que mostrarle a un tercero, así que tiene que estar escrita.
+ *
+ * ⚠️ EL `IS NULL` DEL WHERE ES LA REGLA, NO UNA OPTIMIZACIÓN. Si dos envíos simultáneos
+ * mandan los dos el aviso, el primero que escriba se queda con la fecha y el segundo no la
+ * pisa. Queremos la MÁS TEMPRANA de las dos, porque es la que cierra el plazo antes y es la
+ * que de verdad ocurrió primero: quedarse con la última le recortaría días al comprador.
+ *
+ * ⚠️ Y SOLO SOBRE UN PEDIDO PAGADO. Avisar el inicio de una prestación que nadie compró no
+ * significa nada, y dejar la fecha escrita en un pedido que después se paga arrancaría su
+ * plazo antes de que existiera.
+ */
+export async function marcarInicioAvisado(db, id, cuando) {
+  if (!id || !cuando) return { anotado: false, motivo: 'sin-datos' };
+  const r = await db.prepare(
+    `UPDATE pedidos SET inicio_avisado_en = ?
+      WHERE id = ? AND inicio_avisado_en IS NULL AND estado = ?`,
+  ).bind(String(cuando), id, ESTADOS.PAGADO).run();
+  const cambios = (r && r.meta && r.meta.changes) || 0;
+  return cambios > 0
+    ? { anotado: true, motivo: 'ok', cuando: String(cuando) }
+    : { anotado: false, motivo: 'ya-estaba-o-no-corresponde' };
+}
 
 /**
  * El pedido en `creado` más nuevo de una pareja (dominio, correo), dentro de una ventana.
@@ -367,8 +409,37 @@ export function vistaPublica(pedido) {
     senales_fuera: pedido.senales_fuera,
     monto_total: pedido.monto_total,
     pagado_en: pedido.pagado_en,
+    // Cuándo se le avisó que el trabajo empezaba. Va a la pantalla porque las condiciones de
+    // venta dicen, literal, que queda anotado ahí con su fecha: es el dato del que depende su
+    // plazo para retractarse, así que no puede vivir solo en nuestra base.
+    inicio_avisado_en: pedido.inicio_avisado_en,
     entregado_en: pedido.entregado_en,
-    falta_acceso: pedido.estado === ESTADOS.PAGADO && !pedido.acceso_recibido_en,
+    // ── EL BORRADOR VIAJA, Y ES LA ÚNICA FORMA EN QUE LLEGA SIN DEPENDER DE UN CORREO ─────
+    //
+    // El resto de esta vista es deliberadamente flaca: deja fuera el informe congelado y los
+    // datos de facturación porque la pide quien tenga el enlace y lo que no se manda no se
+    // puede filtrar. El borrador es el caso contrario: es LO QUE SE COMPRÓ, escrito para esa
+    // persona, y hasta hoy no tenía ningún camino hasta ella. Si un correo no sale, el texto
+    // tiene que seguir estando en su pantalla.
+    borrador_politica: pedido.borrador_politica,
+    // ── LA SEGUNDA VERDAD QUE DECÍA QUE SÍ (3-nov-2026) ───────────────────────────────
+    //
+    // Esto calculaba su propio criterio —«pagado y sin acceso»— sin mirar QUÉ se contrató, y
+    // desde que `politica` entra sola al kit (decisión del 2-nov) eso es falso: a quien solo
+    // compró el borrador de su política no hay que entrar a su sitio, así que su pedido pasa
+    // por `redactando` y nunca por `falta-acceso`. Medido: con el contrato `["politica"]`,
+    // `etapaDelPedido` decía `redactando` y este campo decía `falta_acceso: true` a la vez.
+    //
+    // Y no era un dato interno: `vistaPublica` es lo que devuelven `/api/pedido`,
+    // `/api/intake` y `/api/entregar`, o sea que el campo falso VIAJABA AL NAVEGADOR del
+    // cliente en cada respuesta. Hoy no lo lee nadie; mañana alguien lo lee y le pide a un
+    // comprador un acceso que su compra no necesita.
+    //
+    // Se arregla consultando la MISMA función que decide la etapa, no copiando su regla acá.
+    // Dos listas del mismo hecho se contradicen en silencio, que es justo lo que pasó.
+    falta_acceso: pedido.estado === ESTADOS.PAGADO
+      && hayQueEntrarAlSitio(pedido)
+      && !pedido.acceso_recibido_en,
   };
 }
 
@@ -398,6 +469,9 @@ export async function listarPedidos(db, { estado, tope } = {}) {
     'senales_contratadas', 'senales_fuera', 'monto_total',
     'mp_order_id', 'flow_token', 'pagado_en',
     'razon_social', 'rut', 'giro', 'direccion', 'plataforma', 'acceso_recibido_en',
+    // Se lee para poder ver de un vistazo a quién le falta el aviso de inicio: un pedido en
+    // curso sin esta fecha es uno al que todavía le corre el plazo de retracto entero.
+    'inicio_avisado_en',
     'entregado_en', 'informe_final_json',
     'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
   ].join(', ');

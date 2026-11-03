@@ -76,6 +76,69 @@ export function claveDeLaPeticion(request) {
   return m ? m[1].trim() : '';
 }
 
+/* ══════════════════════════════════════════════════════════════════════════════════════════ *
+ * EL BORRADOR DE LA POLÍTICA, QUE AHORA VIAJA POR ACÁ
+ *
+ * ── POR QUÉ ES OBLIGATORIO PARA CERRAR (3-nov-2026) ──────────────────────────────────────
+ *
+ * Era el hueco más grande entre pagar y recibir: el documento central del kit no tenía forma
+ * de llegar. Este endpoint cerraba el pedido, el correo de cierre decía qué quedó cerrado y el
+ * antes y el después, la pantalla afirmaba «lo que dejamos hecho», y el texto por el que la
+ * persona pagó $177.310 no salía por ningún camino implementado. Sin adjunto, sin columna, sin
+ * nada.
+ *
+ * Y no es solo del que compró la señal `politica`. TODO pedido lo lleva: el correo de pago le
+ * pide los datos de su empresa «para armar el borrador de tu política», las condiciones de
+ * venta lo listan dentro del kit, y `recordatoriosDeCierre` le dice a los dos tipos de
+ * comprador que lo tiene que revisar su abogado. O sea que cerrar un pedido sin borrador deja
+ * al producto afirmando por escrito, tres veces, algo que no entregó.
+ *
+ * Por eso cerrar sin él no es un descuido que se avise: es un 409. Es el mismo criterio de
+ * «falla cerrado» de la clave de arriba, aplicado a lo que se entrega en vez de a quién
+ * entrega. Si alguna vez hace falta cerrar un pedido sin borrador, la respuesta dice cómo.
+ *
+ * ── Y NO HACE FALTA NINGÚN ALMACENAMIENTO NUEVO ──────────────────────────────────────────
+ *
+ * Es texto. Una política de privacidad son unas decenas de KB de prosa, así que viaja en el
+ * mismo JSON que ya trae `informe_final`, se guarda en su columna del pedido, se muestra en la
+ * pantalla privada y va en el correo de cierre. Nada de buckets ni de servicios aparte.
+ * ══════════════════════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Lo más corto que puede ser un borrador de política para que sea uno.
+ *
+ * El número es arbitrario y el motivo no: sin un piso, un `borrador_politica: "listo"` pasaría
+ * la validación, se guardaría como entregado, y el correo de cierre le mandaría al cliente una
+ * palabra bajo el rótulo «el borrador de tu política de privacidad». Los doce puntos que la
+ * ley pide publicar no caben en 200 caracteres ni escribiéndolos en clave.
+ */
+export const MINIMO_BORRADOR = 200;
+
+/**
+ * Y el techo. No es una restricción de la base —D1 aguanta mucho más— sino del correo: el
+ * borrador viaja en el cuerpo, y un texto de megabytes lo hace rebotar en vez de llegar.
+ * 60.000 caracteres son unas quince páginas, bastante más de lo que ocupa cualquier política.
+ */
+export const MAXIMO_BORRADOR = 60000;
+
+/**
+ * El borrador tal como se va a guardar, o `null` si lo que vino no sirve.
+ *
+ * Se normalizan los saltos de Windows y se quitan los caracteres de control que no son salto
+ * ni tabulación: este texto termina en un correo HTML y en una pantalla, y un byte de control
+ * ahí no aporta nada y sí puede estropear el render. Los saltos de línea SÍ se conservan, que
+ * es lo que distingue un documento de un párrafo.
+ */
+export function interpretarBorrador(v) {
+  if (typeof v !== 'string') return null;
+  const limpio = v
+    .replace(/\r\n?/g, '\n')
+    // eslint-disable-next-line no-control-regex
+    .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, '')
+    .trim();
+  return limpio ? limpio : null;
+}
+
 /** El informe final, venga como objeto o como su texto JSON. `null` si no vino o no sirve. */
 export function interpretarInforme(v) {
   if (typeof v === 'string') {
@@ -147,11 +210,46 @@ export async function onRequestPost(contexto) {
   // tampoco: se trata igual que no haberlo mandado, y el correo lo dice.
   const informeFinal = interpretarInforme(cuerpo.informe_final);
 
+  // ── EL BORRADOR. Ver el bloque de arriba: sin él no se cierra. ─────────────────────────
+  //
+  // Un borrador ya guardado también vale, para que un cierre que haya fallado después de
+  // escribirlo se pueda repetir sin volver a mandar el texto entero.
+  const borrador = interpretarBorrador(cuerpo.borrador_politica)
+    || interpretarBorrador(pedido.borrador_politica);
+  if (!borrador) {
+    return json({
+      ok: false, motivo: 'falta-borrador',
+      detalle: 'Este pedido no se cierra sin el borrador de la política. Manda el texto en ' +
+        '"borrador_politica". Todo kit lo incluye: el correo de pago se lo prometió y el ' +
+        'correo de cierre le va a decir que lo revise su abogado, así que cerrar sin él deja ' +
+        'al producto afirmando algo que no entregó.',
+    }, 409);
+  }
+  if (borrador.length < MINIMO_BORRADOR) {
+    return json({
+      ok: false, motivo: 'borrador-muy-corto',
+      detalle: `El borrador trae ${borrador.length} caracteres y el mínimo son ` +
+        `${MINIMO_BORRADOR}. Lo que la ley pide publicar no cabe en menos.`,
+    }, 400);
+  }
+  if (borrador.length > MAXIMO_BORRADOR) {
+    return json({
+      ok: false, motivo: 'borrador-muy-largo',
+      detalle: `El borrador trae ${borrador.length} caracteres y el tope son ` +
+        `${MAXIMO_BORRADOR}: va en el cuerpo del correo de cierre, y uno más largo rebota.`,
+    }, 400);
+  }
+
   const movido = await marcarEstado(env.VYC_PEDIDOS, id, ESTADOS.PAGADO, ESTADOS.ENTREGADO, {
     entregado_en: new Date().toISOString(),
     // Se guarda incluso cuando no vino: `null` es el dato de que no se pudo rehacer la
     // medición, y es distinto de una columna que nadie escribió nunca.
     informe_final_json: informeFinal ? JSON.stringify(informeFinal) : null,
+    // En la MISMA transacción que marca la entrega, a propósito. Si el borrador se escribiera
+    // después, un fallo entre las dos escrituras dejaría un pedido entregado cuya pantalla
+    // afirma el trabajo y no tiene el texto que lo justifica, que es exactamente el estado del
+    // que venimos.
+    borrador_politica: borrador,
   });
   if (!movido.movido) {
     return json({ ok: false, motivo: movido.motivo }, 409);
@@ -188,9 +286,16 @@ export async function onRequestPost(contexto) {
     ok: true,
     entregado: true,
     correo_enviado: correoEnviado,
-    // Dos cosas que quien entrega necesita ver sin ir a la base.
+    // Tres cosas que quien entrega necesita ver sin ir a la base.
     hubo_informe_final: Boolean(informeFinal),
+    // El largo y no el texto: es la constancia de que el borrador quedó guardado, y devolver
+    // el documento entero en la respuesta de un cierre no le sirve a nadie.
+    borrador_guardado: borrador.length,
     sin_acceso_declarado: !fresco.acceso_recibido_en,
+    // ⚠️ El que se entrega SIN que nadie le haya avisado que empezamos. Su plazo de retracto
+    // nunca se cerró (art. 5 del Decreto 52 de 2024), así que el cierre le llega con el
+    // derecho a retractarse todavía abierto. No se arregla mandando el aviso ahora: se mira.
+    sin_aviso_de_inicio: !fresco.inicio_avisado_en,
     pedido: vistaPublica(fresco),
     etapa: etapaDelPedido(fresco),
     señales: señalesDelPedido(fresco, TITULOS),

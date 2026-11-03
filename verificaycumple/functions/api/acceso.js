@@ -287,6 +287,16 @@ export function textoParaReenviar(pedido) {
  * formulario— y los dos tienen que decidir idéntico. Si la condición estuviera en los dos, la
  * pantalla del cliente mostraría la ayuda al cargar y la perdería justo después de enviar sus
  * datos, que es el momento en que la necesita.
+ *
+ * ⚠️ Y POR ESO ACÁ NO SE PREGUNTA QUÉ SE VENDIÓ (3-nov-2026).
+ *
+ * Desde el 2-nov el kit también se le vende a quien solo le falta publicar su política, y a ese
+ * comprador no se le pide ningún acceso. La tentación es agregar acá un segundo `if` sobre
+ * `senales_contratadas`. No hace falta y sería el error de arriba otra vez: un pedido de
+ * solo-política NUNCA llega a la etapa `falta-acceso` —`etapaDelPedido` lo desvía a
+ * `redactando`— así que la única guarda que existe ya decide bien. Dos condiciones sobre el
+ * mismo hecho se contradicen el día que una cambia, y la de este archivo no tendría prueba
+ * propia que la pillara.
  */
 export function ayudaDeAcceso(pedido, etapa) {
   if (!pedido || !etapa || etapa.etapa !== ETAPAS.FALTA_ACCESO) return null;

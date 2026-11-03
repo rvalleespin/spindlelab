@@ -46,11 +46,14 @@
 // webhook es la excepción y ahí 503 es correcto: quien lo lee es Mercado Pago, que necesita un
 // 5xx para reintentar, y no hay ninguna persona mirando.
 
-import { leerPedido, guardarIntake, vistaPublica } from './almacen.js';
-import { etapaDelPedido, señalesDelPedido, convieneRefrescar, TITULOS } from './etapas.js';
+import { leerPedido, guardarIntake, marcarInicioAvisado, vistaPublica } from './almacen.js';
+import {
+  etapaDelPedido, señalesDelPedido, convieneRefrescar, yaEmpezoElTrabajo, TITULOS,
+} from './etapas.js';
 import { ID_PEDIDO_NUESTRO } from './pedidos.js';
 import { clavesDeTope, contar } from './profundo.js';
 import { avisarAvance } from './aviso.js';
+import { enviarCorreoDeInicio } from './correo.js';
 import { ayudaDeAcceso } from './acceso.js';
 
 /** Cuántos envíos admite una IP por día. Generoso: alguien corrigiendo su dirección no es un abuso. */
@@ -113,6 +116,68 @@ export function normalizarRut(v) {
   const esperado = resto === 11 ? '0' : resto === 10 ? 'K' : String(resto);
 
   return dado === esperado ? `${cuerpo}-${esperado}` : null;
+}
+
+/**
+ * Le avisa al cliente que su trabajo empezó, y recién entonces lo deja anotado.
+ *
+ * ── POR QUÉ ESTO VIVE EN EL CAMINO DEL INTAKE (3-nov-2026) ───────────────────────────────
+ *
+ * El artículo 5 del Decreto 52 de 2024 del Ministerio de Economía dice que la prestación de un
+ * servicio contratado a distancia se entiende iniciada «desde el momento en que el proveedor
+ * notifique esta circunstancia al consumidor». Mientras no se avise, el derecho a retracto
+ * sigue abierto por mucho que el trabajo esté hecho. Y nadie avisaba nunca.
+ *
+ * El instante en que un pedido pasa a nuestras manos lo decide SIEMPRE este endpoint, porque
+ * los dos caminos pasan por acá: el que declara el acceso y el que compró solo el borrador y
+ * manda los datos de su empresa. Cuál de los dos es se lo pregunta a `yaEmpezoElTrabajo`, que
+ * es el único lugar donde está escrito; acá no se vuelve a decidir.
+ *
+ * ── EL ORDEN: PRIMERO EL CORREO, DESPUÉS LA FECHA ────────────────────────────────────────
+ *
+ * Al revés, un correo que no sale deja escrito que avisamos cuando no avisamos, y con eso le
+ * recortamos el plazo de retracto a alguien que nunca se enteró. Es justo lo que el Decreto
+ * viene a impedir, así que la fecha se escribe SOLO si Resend aceptó el envío. Si no salió, el
+ * pedido queda sin aviso y el siguiente envío del formulario lo vuelve a intentar.
+ *
+ * ── Y SE ESPERA, AL REVÉS QUE EL AVISO INTERNO ───────────────────────────────────────────
+ *
+ * El aviso a la casilla del negocio va al fondo y no se espera: si no sale, no le cambia nada
+ * al cliente. Este sí, por dos motivos. Uno, la fecha que escribe tiene que estar en la misma
+ * respuesta que repinta la pantalla, porque las condiciones de venta dicen que queda anotada
+ * ahí. Dos, la etapa a la que acaba de pasar NO se refresca sola (ver `convieneRefrescar`),
+ * así que una fecha escrita después no aparecería hasta que la persona volviera a abrir su
+ * enlace. El costo es el tope de 8 segundos de Resend en el peor caso, sobre un formulario que
+ * ya está esperando una escritura en la base.
+ *
+ * NUNCA LANZA: el intake del cliente ya quedó guardado y nada de esto puede deshacerlo.
+ */
+export async function avisarInicioDelTrabajo(env, pedido) {
+  if (!pedido || !pedido.id) return { avisado: false, motivo: 'sin-pedido' };
+  if (pedido.inicio_avisado_en) return { avisado: false, motivo: 'ya-avisado' };
+  if (!yaEmpezoElTrabajo(pedido)) return { avisado: false, motivo: 'todavia-no-empieza' };
+
+  const cuando = new Date().toISOString();
+  let salio = false;
+  try {
+    salio = await enviarCorreoDeInicio(pedido, cuando, env.RESEND_API_KEY);
+  } catch (e) {
+    console.log(`[intake] el aviso de inicio lanzó: ${e && e.message}`);
+    return { avisado: false, motivo: 'el-correo-lanzo' };
+  }
+  if (!salio) return { avisado: false, motivo: 'el-correo-no-salio' };
+
+  try {
+    const r = await marcarInicioAvisado(env.VYC_PEDIDOS, pedido.id, cuando);
+    // El correo SALIÓ, así que para la persona la prestación empezó, le hayamos podido anotar
+    // la fecha o no. Se dice que se avisó y se registra que la nota falló: fingir que no se
+    // avisó sería lo contrario de lo que pasó.
+    if (!r.anotado) console.log(`[intake] aviso de inicio mandado y NO anotado (${r.motivo})`);
+    return { avisado: true, motivo: r.anotado ? 'ok' : `mandado-sin-anotar:${r.motivo}`, cuando };
+  } catch (e) {
+    console.log(`[intake] no se pudo anotar el aviso de inicio: ${e && e.message}`);
+    return { avisado: true, motivo: 'mandado-sin-anotar', cuando };
+  }
 }
 
 export async function onRequestPost(contexto) {
@@ -213,7 +278,15 @@ export async function onRequestPost(contexto) {
   // Se devuelve el estado NUEVO, con la misma forma que `GET /api/pedido`. Así la pantalla no
   // tiene que pedir otra vez para saber en qué quedó, y no hay forma de que pinte el estado
   // viejo después de haber escrito.
-  const fresco = await leerPedido(env.VYC_PEDIDOS, id);
+  let fresco = await leerPedido(env.VYC_PEDIDOS, id);
+
+  // ── Y EL CLIENTE TIENE QUE ENTERARSE DE QUE EMPEZAMOS ──────────────────────────────────
+  //
+  // Ver `avisarInicioDelTrabajo`: es el aviso del que depende su plazo de retracto, y hasta
+  // hoy no existía. Cuando sale, la fila cambia, así que se vuelve a leer para que la pantalla
+  // pinte la fecha recién escrita en vez de la respuesta de hace un instante.
+  const inicio = await avisarInicioDelTrabajo(env, fresco);
+  if (inicio.avisado) fresco = (await leerPedido(env.VYC_PEDIDOS, id)) || fresco;
 
   // ── Y ALGUIEN TIENE QUE ENTERARSE ───────────────────────────────────────────────────────
   //
@@ -224,7 +297,7 @@ export async function onRequestPost(contexto) {
   //
   // Va al fondo y nunca se espera: los datos del cliente YA están guardados, y un aviso que
   // no sale no puede deshacer eso ni demorarle la pantalla.
-  const aviso = avisarAvance(fresco, guardado.campos.includes('acceso_recibido_en') ? 'acceso' : 'datos')
+  const aviso = avisarAvance(fresco, guardado.campos.includes('acceso_recibido_en') ? 'acceso' : 'datos', env)
     .catch(() => false);
   if (contexto && contexto.waitUntil) contexto.waitUntil(aviso);
 
@@ -238,6 +311,10 @@ export async function onRequestPost(contexto) {
     ok: true,
     guardado: true,
     campos: guardado.campos,
+    // Si este envío fue el que arrancó la prestación, se dice. La pantalla no lo usa para
+    // dibujar nada —la fecha ya viaja en `pedido.inicio_avisado_en`— pero sin esto el único
+    // rastro de que el correo salió, o de que no salió, sería el registro de la Function.
+    aviso_de_inicio: inicio.motivo,
     pedido: vistaPublica(fresco),
     etapa,
     señales: señalesDelPedido(fresco, TITULOS),
