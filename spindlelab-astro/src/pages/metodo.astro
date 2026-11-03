@@ -14,8 +14,12 @@ import Miga from '../components/a/Miga.astro';
 import Icono from '../components/a/Icono.astro';
 import { LAYOUT_A } from '../components/a/layout-a';
 import { metodo } from '../data/archivo/interiores.mjs';
+import HeroImagen from '../components/a/HeroImagen.astro';
+import { heroDe } from '../data/archivo/texto.mjs';
+import tHeroMet from '../data/archivo/texto/metodo.json';
 
 const m = metodo();
+const hero = heroDe('metodo', tHeroMet);
 ---
 <Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
@@ -29,6 +33,9 @@ const m = metodo();
         {m.botones.map((b) => <a class={`boton boton--${b.clase}`} href={b.href}>{b.texto}</a>)}
       </div>
     </section>
+
+    {/* LA IMAGEN DE CABECERA (obra E15) */}
+    <HeroImagen slug='metodo' alt={hero.alt} pie={hero.pie} />
 
     {/* 2 · DE LA REVISIÓN AL TRABAJO DE CADA MES: los cuatro pasos en la forma de las fases de Desarrollo web (c5-c12) */}
     <section class="seccion reticula" id="fases" aria-labelledby="h-fases">

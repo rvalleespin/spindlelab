@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/paid-media.json",
- "sha256": "687b1f8a87233cac3fa34648f4ba780e8ec0497e99a94330c8df30c661f728d1",
+ "sha256": "60fcd09c96b2fa830c263803095787909ebe4811a5f36ef2bf1c10bae482584e",
  "id": "paid-media",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -42,6 +42,14 @@
       "uso": "referencia",
       "origen": "spindlelab-astro/src/data/servicios-v3.json paid-media",
       "estado": "cambia"
+     },
+     {
+      "id": "paid-media.hero.alt",
+      "rol": "nota",
+      "texto": "En la oscuridad, una mano apunta una linterna a un paquete que sostiene otra mano: la pauta pone la luz justo sobre lo que se ofrece.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/paid-media-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
      }
     ]
    },

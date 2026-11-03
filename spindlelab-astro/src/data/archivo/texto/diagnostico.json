@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/diagnostico.json",
- "sha256": "4b0979cc012d6ba65ee42c216f4e75931898f0b0d6d9470f5e87b36b42ef9c48",
+ "sha256": "e3f3f07831beedc627ddfbb38c210d6e3a036e1075a3b2e903af072313204f9d",
  "id": "diagnostico",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -87,6 +87,14 @@
       "origen": "e13: ya estaba decidido en E12 («El mismo de la home») y no se había aplicado al script",
       "por_que": "El campo se llama «La dirección de tu sitio»; el error decía «tu dominio».",
       "estado": "cambia"
+     },
+     {
+      "id": "diagnostico.hero.alt",
+      "rol": "nota",
+      "texto": "Una mano infla un medidor de presión cuyo manguito envuelve una página web enrollada: tomarle la presión al sitio antes de decidir nada.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/diagnostico-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
      }
     ]
    },

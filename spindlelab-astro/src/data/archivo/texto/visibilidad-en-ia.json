@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/visibilidad-en-ia.json",
- "sha256": "62ef58e289b6abce5a23dd05fb1468b7db3c06d3e6d4342283a01758905d895b",
+ "sha256": "5f6ddc9c90d01c9570eba119bf641d318f586038bd91405b9fa24d4e5acbefb7",
  "id": "visibilidad-en-ia",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -44,6 +44,14 @@
       "uso": "referencia",
       "origen": "spindlelab-astro/src/data/servicios-v3.json visibilidad-en-ia",
       "estado": "cambia"
+     },
+     {
+      "id": "visibilidad-en-ia.hero.alt",
+      "rol": "nota",
+      "texto": "Una mano conecta cables en un tablero con seis tiendas mientras la otra recorre un catálogo de locales: la respuesta se arma con los negocios que se pueden encontrar.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/visibilidad-en-ia-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
      }
     ]
    },

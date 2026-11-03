@@ -1,0 +1,26 @@
+---
+// LA IMAGEN DE CABECERA DE UNA PÁGINA INTERNA (obra E15, 3-nov-2026): bajo la cabecera (miga, h1, entradilla) y antes
+// del primer bloque, al ancho de la caja de la cabecera. Radio 6, como los .medio del sistema (spec §3.3); 4:5 bajo 834
+// y 16:9 desde 834, las dos que aprobó Ramón en public/v3/heroes/. Es la primera pantalla: eager, fetchpriority high.
+// El alt y el pie los escribe Clara en texto/<pagina>.json (<pagina>.hero.alt y .hero.pie, que leen con heroDe()):
+// aquí no se escribe una letra. Va en un <picture>, así que el fundido de carga de .medio > img no la toca: se ve de
+// entrada, que es lo que se quiere en la imagen más grande de la primera pantalla.
+interface Props {
+  slug: string;
+  alt: string;
+  pie?: string;
+  /** Dentro de una columna que ya tiene su retícula (el índice del blog): sin la retícula ni el margen propio. */
+  enColumna?: boolean;
+}
+const { slug, alt, pie, enColumna = false } = Astro.props;
+const base = `/v3/heroes/${slug}`;
+---
+<figure class:list={['hero-int', { reticula: !enColumna, 'hero-int--columna': enColumna }]}>
+  <div class="medio">
+    <picture>
+      <source media="(max-width: 833px)" srcset={`${base}-45.webp`} width="900" height="1125" type="image/webp" />
+      <img src={`${base}-169.webp`} alt={alt} width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" />
+    </picture>
+  </div>
+  {pie && <figcaption class="pie">{pie}</figcaption>}
+</figure>

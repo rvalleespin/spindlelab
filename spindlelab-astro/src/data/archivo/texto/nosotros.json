@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/nosotros.json",
- "sha256": "f17dc09e4c447d06594efc8b839e13da314e74b58f66776c1c8f54fddd790838",
+ "sha256": "194395779f81c1af28a7c1edf837b544cfcd2581d0dd2080cd5da66b88fae1fa",
  "id": "nosotros",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -134,6 +134,14 @@
       "estado": "cambia",
       "antes": "Estudié Comunicación Publicitaria en la Universidad Andrés Bello y un máster en Marketing Digital y E-commerce en la Universidad de Barcelona.",
       "por_que": "Tercera persona, con la redacción del texto base (p4)."
+     },
+     {
+      "id": "nosotros.hero.alt",
+      "rol": "nota",
+      "texto": "Una ciudad pequeña con un sitio web en el centro, unido por líneas punteadas a un faro, una antena, un tren, un camión y un avión de papel: el sitio como eje y lo demás conectado.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/nosotros-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
      }
     ]
    },

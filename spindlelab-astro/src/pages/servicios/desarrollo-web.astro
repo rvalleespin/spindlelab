@@ -23,7 +23,7 @@ import Imagen from '../../components/a/Imagen.astro';
 import TrabajoFijo from '../../components/a/TrabajoFijo.astro';
 import Icono from '../../components/a/Icono.astro';
 import { LAYOUT_A } from '../../components/a/layout-a';
-import { textoDe, igualQue, contiene, medioDe } from '../../data/archivo/texto.mjs';
+import { textoDe, heroDe, igualQue, contiene, medioDe } from '../../data/archivo/texto.mjs';
 import caso from '../../data/archivo/texto/caso-combeau.json';
 import { SITIO, trozos, siguiente, soloMontosDe, monto } from '../../data/archivo/servicios.mjs';
 import comun from '../../data/archivo/texto/comun.json';
@@ -31,6 +31,7 @@ import dw from '../../data/archivo/texto/desarrollo-web.json';
 import trabajo from '../../data/archivo/texto/trabajo.json';
 import medios from '../../data/archivo/medios.json';
 import oferta from '../../data/oferta-v3.json';
+import HeroImagen from '../../components/a/HeroImagen.astro';
 
 const t = textoDe(dw, comun);
 const pagina = dw.texto;
@@ -184,6 +185,7 @@ const jsonLd = {
   ],
 };
 const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=4', alt: `SpindleLab: ${dos('dw.h1').tinta} ${dos('dw.h1').gris}` };
+const hero = heroDe('dw', dw);
 ---
 <Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
@@ -199,9 +201,12 @@ const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=4', alt: `SpindleLab:
       </div>
     </section>
 
+    {/* LA IMAGEN DE CABECERA (obra E15) */}
+    <HeroImagen slug='desarrollo-web' alt={hero.alt} pie={hero.pie} />
+
     {/* 2 · LA FRANJA (§2.4.2, §3.4): Combeau fotografía a 2,39 desde 834 y 16:9 bajo 834, recortada al centro */}
     <figure class="reticula franja" data-entrada>
-      <Imagen src={franja.medio.src} alt={franja.alt} ancho={franja.medio.ancho} alto={franja.medio.alto} primeraPantalla />
+      <Imagen src={franja.medio.src} alt={franja.alt} ancho={franja.medio.ancho} alto={franja.medio.alto} />
       <figcaption class="pie"><span class="tinta">{franja.pieza.nombre}</span> <span class="rotulo">· {franja.pieza.linea}</span></figcaption>
     </figure>
 

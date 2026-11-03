@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/servicios.json",
- "sha256": "97cabb2a323feaff414f8ba782f8bda9851c3125a9e9259493892e1b9cfe237f",
+ "sha256": "5eae39ca326e0d41cf01a3bc032b029cb52d7ba8f22887bb7b85e24aa5495d83",
  "id": "servicios",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -54,6 +54,14 @@
       "texto": "Valores en pesos, + IVA. Los publicamos para que compares antes de escribirnos.",
       "origen": "spindlelab-astro/dist/v3 (build del 16-oct; sin cambios)",
       "estado": "queda"
+     },
+     {
+      "id": "servicios.hero.alt",
+      "rol": "nota",
+      "texto": "El plano de un sitio web, del que suben hilos a un faro, una antena, un letrero de carretera y dos locales, cada uno con su etiqueta: todos los canales amarrados al mismo sitio.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/servicios-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
      }
     ]
    },
