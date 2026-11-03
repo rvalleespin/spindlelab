@@ -862,7 +862,12 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
 /* 3-nov (Ramón): bajo el título, como franja ancha y baja, a la altura del hero de la home; el título y la imagen caben
    juntos en la primera pantalla y el resto de la cabecera baja después. La imagen se recorta al centro. */
 .a-body .hero-int--cab { grid-column: 1 / -1; margin: 24px 0 8px; }
-.a-body .hero-int--cab .medio > picture > img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+.a-body .hero-int--cab .medio > picture > img, .a-body .hero-int--cab .medio img,
+.a-body .hero-int--cab .medio video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+/* La franja recorta arriba y abajo: en Nosotros el faro y el teleférico van arriba, así que el encuadre sube */
+@media (min-width: 834px) {
+  .a-body .hero-int--cab[data-hero="nosotros"] .medio img, .a-body .hero-int--cab[data-hero="nosotros"] .medio video { object-position: 50% 22%; }
+}
 @media (min-width: 834px) {
   .a-body .hero-int--cab .medio { aspect-ratio: auto; height: clamp(320px, 56svh, 640px); }
 }
