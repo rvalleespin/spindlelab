@@ -116,11 +116,11 @@ export const CASOS = {
     corto: 'Verifica y Cumple',
     principal: {
       fuentes: [
-        { desde: 834, webm: 'verifica-spot-1280.webm', mp4: 'verifica-spot-1280.mp4' },
-        { webm: 'verifica-spot-390.webm', mp4: 'verifica-spot-390.mp4' },
+        { desde: 834, webm: 'verifica-spot2-1280.webm', mp4: 'verifica-spot2-1280.mp4' },
+        { webm: 'verifica-spot2-390.webm', mp4: 'verifica-spot2-390.mp4' },
       ],
-      poster: 'verifica-spot-1280-poster.webp',
-      posterAngosto: 'verifica-spot-390-poster.webp',
+      poster: 'verifica-spot2-1280-poster.webp',
+      posterAngosto: 'verifica-spot2-390-poster.webp',
     },
     filas: {
       problema: [],
@@ -293,7 +293,9 @@ export function modelo(caso) {
     pie: nota('.medio.pie') ? nota('.medio.pie').texto : '',
   };
 
-  const secciones = SECCIONES.map(([clave, ancla], i) => {
+  // 3-nov (Ramón): un caso puede no traer «Sin métrica» (Verifica y Cumple: lo de nuestro sitio es interno y no le
+  // aporta a un cliente). Se pintan solo las secciones que Clara escribió; el índice de la ficha cuenta las mismas.
+  const secciones = SECCIONES.filter(([clave]) => tx.secciones.some((x) => x.id === clave)).map(([clave, ancla], i) => {
     const s = cuerpoDe(sec(clave), p);
     igualQue(s.rotulo, indice[i], `${copia.id}, el rótulo de la sección ${i + 1} contra el índice`);
     const filas = (c.filas[clave] || []).map((f) => fila(caso, f, copia));

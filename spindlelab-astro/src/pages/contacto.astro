@@ -34,11 +34,10 @@ const hero = heroDe('contacto', tHeroCont);
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1] }]} />
       <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
+      {/* LA IMAGEN DE CABECERA (E15; 3-nov, Ramón: franja bajo el título, como el hero de la home) */}
+      <HeroImagen slug='contacto' alt={hero.alt} pie={hero.pie} enCabecera />
       <p class="cuerpo caja">{m.linea}</p>
     </section>
-
-    {/* LA IMAGEN DE CABECERA (obra E15) */}
-    <HeroImagen slug='contacto' alt={hero.alt} pie={hero.pie} />
 
     {/* 2 · EL FORMULARIO (c1-c8): los campos de §4.1 */}
     <section class="reticula form-sec" id="contacto-form" aria-labelledby="h-form">

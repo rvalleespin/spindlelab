@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/caso-verifica-y-cumple.json",
- "sha256": "1b51b37391f6644b88af0affbdc777eba5e8fde06ad0bdad3cf59500c2ee5c77",
+ "sha256": "b44d0f6e641dfcd70cfb3dfe6030a8e6e885a6ac37810d95687380f78a09debc",
  "id": "caso-verifica-y-cumple",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -72,11 +72,18 @@
        "Problema",
        "Hipótesis",
        "Solución",
+       "La pieza"
+      ],
+      "nota": "Las mismas cinco de Combeau: la plantilla las ancla a #problema, #hipotesis, #solucion, #la-pieza y #sin-metrica.",
+      "estado": "nuevo",
+      "antes_opciones": [
+       "Problema",
+       "Hipótesis",
+       "Solución",
        "La pieza",
        "Sin métrica"
       ],
-      "nota": "Las mismas cinco de Combeau: la plantilla las ancla a #problema, #hipotesis, #solucion, #la-pieza y #sin-metrica.",
-      "estado": "nuevo"
+      "por_que": "Ramón, 3-nov: sale «Sin métrica» (lo de nuestro sitio es interno y no le aporta a un cliente)."
      },
      {
       "id": "verifica.creditos.rotulo",
@@ -103,7 +110,7 @@
       "rol": "nota",
       "texto": "Un dibujo a lápiz de una persona a caballo se forma solo sobre papel en blanco, toma color fucsia como acuarela y sale galopando por un cielo azul.",
       "uso": "alt",
-      "donde": "verifica-spot-1280 (a 390, el -390); video con aria-hidden, este texto en la figura, para el lector de pantalla",
+      "donde": "verifica-spot2-1280 (a 390, el -390); video con aria-hidden, este texto en la figura, para el lector de pantalla",
       "origen": "trabajo.json, entrada verifica-y-cumple, «descripcion_video», tal cual",
       "estado": "nuevo"
      },
@@ -112,14 +119,14 @@
       "rol": "nota",
       "texto": "Una jinete de traje y sombrero fucsia galopa en un caballo del mismo color, con un papel en alto, sobre un cielo azul pintado en acuarela.",
       "uso": "alt",
-      "donde": "póster del spot (verifica-spot-1280-poster y -390-poster), revisado mirando la imagen",
+      "donde": "póster del spot (verifica-spot2-1280-poster y -390-poster), revisado mirando la imagen",
       "estado": "nuevo"
      },
      {
       "id": "verifica.medio.pie",
       "rol": "nota",
       "uso": "pie",
-      "texto": "Este video está generado con IA, a partir de la portada.",
+      "texto": "Este video está generado con IA.",
       "origen": "home.trabajo.verifica.spot.pie y trabajo.json «pie_video», tal cual",
       "estado": "nuevo"
      }
@@ -296,46 +303,6 @@
        "externo": "comun.externo"
       },
       "nota": "El enlace sale del sitio: lleva la flecha ↗ y, oculto a la vista, comun.externo «(sitio aparte: verifica.spindlelab.cl)». El texto es el del botón que tenía la home hasta E16."
-     }
-    ]
-   },
-   {
-    "id": "resultado",
-    "nombre": "Sin métrica",
-    "trabajo": "Lo que encontró al probarlo en casa, y lo que no tenemos para mostrar.",
-    "elementos": [
-     {
-      "id": "verifica.resultado.rotulo",
-      "rol": "rotulo",
-      "texto": "Sin métrica",
-      "estado": "nuevo"
-     },
-     {
-      "id": "verifica.resultado.h2",
-      "rol": "h2",
-      "texto": "Lo primero que encontró fue nuestro.",
-      "estado": "nuevo"
-     },
-     {
-      "id": "verifica.resultado.p1",
-      "rol": "parrafo",
-      "texto": "El 9 de septiembre de 2026 pasamos el chequeo por spindlelab.cl y salió mal. No teníamos política de privacidad ni gestor de consentimiento, Google Analytics y el Pixel de Meta cargaban sin pedir permiso, y el formulario mandaba nombre y correo a un tercero sin una casilla para aceptarlo.",
-      "fuente": "caso de éxito, «El hallazgo incómodo» (9-sep; sin política, sin gestor, GA4 + Meta Pixel sin permiso, formulario sin checkbox); perfil-linkedin.md, «Acerca de» publicado (Analytics y Pixel sin permiso)",
-      "estado": "nuevo"
-     },
-     {
-      "id": "verifica.resultado.p2",
-      "rol": "parrafo",
-      "texto": "Al revisar el formulario para arreglarlo apareció algo sin relación con la ley. Un error dejaba el botón en «Enviando…» para siempre, y el mensaje no llegaba a ningún lado. No hay forma de saber cuántos se perdieron antes de encontrarlo.",
-      "fuente": "caso de éxito, «El hallazgo incómodo» (el botón «Enviando…» pegado; «No hay forma de saber cuántos correos se perdieron»); home.trabajo.verifica.texto («un formulario que perdía mensajes sin avisar»)",
-      "estado": "nuevo"
-     },
-     {
-      "id": "verifica.resultado.p3",
-      "rol": "parrafo",
-      "texto": "Lo arreglamos: hoy el sitio tiene su política, el formulario funciona, pide permiso antes de tratar datos, y Analytics y el Pixel esperan a que alguien acepte. No mostramos puntajes del chequeo, porque la forma de puntuar cambió el 23 de septiembre, y no tenemos datos de uso ni de ventas que mostrar.",
-      "fuente": "caso de éxito, «El hallazgo incómodo» (lo arreglado) y aviso del 16-oct (repuntuación del 23-sep); inventario-casos §2.6 (GA4 y Meta Pixel tras el aviso de cookies, servido), §4.1 y §7 (sin puntajes) y §4.4 (ningún kit ni suscripción registrado)",
-      "estado": "nuevo"
      }
     ]
    },
