@@ -23,12 +23,13 @@ import PaginaA from '../../components/a/PaginaA.astro';
 import Miga from '../../components/a/Miga.astro';
 import Icono from '../../components/a/Icono.astro';
 import { LAYOUT_A } from '../../components/a/layout-a';
-import { textoDe, igualQue, contiene } from '../../data/archivo/texto.mjs';
+import { textoDe, heroDe, igualQue, contiene } from '../../data/archivo/texto.mjs';
 import { ORDEN, SITIO, comprobarPrecio } from '../../data/archivo/servicios.mjs';
 import comun from '../../data/archivo/texto/comun.json';
 import servicios from '../../data/archivo/texto/servicios.json';
 import oferta from '../../data/oferta-v3.json';
 import paginas from '../../data/paginas-v3.json';
+import HeroImagen from '../../components/a/HeroImagen.astro';
 
 const t = textoDe(servicios, comun);
 const pagina = servicios.texto;
@@ -124,6 +125,7 @@ const jsonLd = {
   ],
 };
 const og = { src: '/assets/img/og-e12-servicios.jpg?v=3', alt: `SpindleLab: ${dos('servicios.h1').tinta} ${dos('servicios.h1').gris}` };
+const hero = heroDe('servicios', servicios);
 ---
 <Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
@@ -135,6 +137,9 @@ const og = { src: '/assets/img/og-e12-servicios.jpg?v=3', alt: `SpindleLab: ${do
       <p class="cuerpo caja">{entradilla.texto}</p>
       <p class="chico caja">{t('servicios.nota').texto}</p>
     </section>
+
+    {/* LA IMAGEN DE CABECERA (obra E15) */}
+    <HeroImagen slug='servicios' alt={hero.alt} pie={hero.pie} />
 
     {/* 2 · UNA SECCIÓN POR BLOQUE (§2.4, fila /servicios/): su número y su nombre a la izquierda (pegajosos desde
          1194), sus servicios a la derecha, en c5 a c16, como filas enlazadas */}

@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/trabajo.json",
- "sha256": "e0fe09f89514274be3c989bb322fad7a5e11d91b02b40dd768dc839a53ef8961",
+ "sha256": "135df16c77755aef1057e1a06e97a389ea0ba340032ab5cb680c096521ce8a87",
  "id": "trabajo",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -77,6 +77,14 @@
       "donde": "aria-label del grupo de botones del filtro (cada botón con aria-pressed)",
       "estado": "queda",
       "nota": "Sale junto con el filtro si Diego lo saca."
+     },
+     {
+      "id": "trabajo.hero.alt",
+      "rol": "nota",
+      "texto": "La foto de una jarra colgada de un cordel con un perro de ropa, y al lado una mano que cuelga una plomada: trabajo terminado y medido.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/trabajo-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
      }
     ],
     "borrado": [

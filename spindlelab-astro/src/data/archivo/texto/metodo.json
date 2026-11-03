@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/metodo.json",
- "sha256": "223eb8eea62b67cd930930b234d3502329f39db98870108b09bdb4b658e4be72",
+ "sha256": "ab8cf19818d1d67fea845bfe7ccc8a7f154d046ab8951b37850aab024bf24ab8",
  "id": "metodo",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -64,6 +64,16 @@
       "origen": "e12; el documento de textos habla de «pasos»",
       "por_que": "El mismo nombre que el HowTo: son cuatro pasos.",
       "estado": "cambia"
+     },
+     {
+      "id": "metodo.hero.alt",
+      "rol": "nota",
+      "texto": "Un archivador alto de cuatro cajones: los dos de abajo, abiertos y encendidos, con gente trabajando adentro; los dos de arriba, todavía cerrados. Una línea punteada los une: cada paso se abre después del anterior.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/metodo-169.webp, aprobada por Ramón)",
+      "estado": "nuevo",
+      "antes": "Un archivador con los cajones abiertos y encendidos por dentro, donde hay gente trabajando, unidos de arriba abajo por una línea punteada: cada paso lleva al siguiente.",
+      "por_que": "acta-qa E15, defectos 3 y 4: el alt debe decir lo que se ve."
      }
     ]
    },
