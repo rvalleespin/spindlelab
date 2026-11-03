@@ -232,33 +232,39 @@ body.a-body {
   .a-body .cab__nav ul { gap: 24px; }
   .a-body .cab__der .cab__hora { display: none; }  /* solo la del encabezado: la del pie se queda */
 }
+/* 3-nov (Ramón, como Koto, medicion/koto-1440 y0450): plegado, el encabezado deja de ser una placa a todo el ancho y pasa
+   a una placa chica a la izquierda, con el logo y «Soluciones» (.cab__nav-queda); a la derecha, solo el botón amarillo (la
+   hora se va: sobre una imagen clara no se leería). Pasar el mouse o el foco por la placa la abre con el menú entero. */
+.a-body .cab__izq { position: relative; display: flex; align-items: center; gap: 56px; min-width: 0; }
+.a-body .cab__izq > .cab__logo, .a-body .cab__izq > .cab__nav { position: relative; }  /* encima de su placa */
+.a-body .cab { position: sticky; top: 0; }
+.a-body .cab__placa {
+  display: block; position: absolute; top: 50%; left: -12px; right: -16px; height: 48px; margin-top: -24px; border-radius: 4px;
+  background: var(--a-placa); opacity: 0; pointer-events: none; transition: opacity var(--a-color);
+}
+.a-body .cab--plegada .cab__placa { opacity: 1; }
+.a-body .cab--plegada .cab__fila { padding-inline: calc(var(--a-m) + 12px); }
+.a-body .cab--plegada .cab__izq { gap: 24px; }
+.a-body .cab--plegada .cab__nav li:not(.cab__nav-queda) { display: none; }
+.a-body .cab--plegada .cab__der .cab__hora { display: none; }
 @media (min-width: 834px) {
-  .a-body .cab { position: sticky; top: 0; }
-  .a-body .cab__placa {
-    display: block; position: absolute; inset: 8px var(--a-m) auto; height: 48px; border-radius: 4px;
-    background: var(--a-placa); opacity: 0; pointer-events: none;
-  }
-  .a-body .cab--plegada .cab__placa { opacity: 1; }
-  .a-body .cab--plegada .cab__fila { padding-inline: calc(var(--a-m) + 12px); }
+  .a-body .cab--plegada .cab__izq:hover .cab__nav li, .a-body .cab--plegada .cab__izq:focus-within .cab__nav li { display: list-item; }
+  .a-body .cab--plegada .cab__nav ul { gap: 24px; }
 }
 @media (max-width: 833.98px) {
   /* padding-top 2: el logo mide 44 de alto (área de toque) y su dibujo queda a 14 px del borde; 2 + 44 + 44 = 90 */
   .a-body .cab__fila { flex-wrap: wrap; gap: 0 16px; min-height: 0; padding-top: 2px; }
+  .a-body .cab__izq { display: contents; }
   .a-body .cab__logo svg { height: 20px; }
   .a-body .cab__nav { order: 3; width: 100%; }
   .a-body .cab__nav ul { justify-content: space-between; gap: 8px; }
   /* E13 (spec-home §3.2): la fila 1 es el logo y el botón (en el lugar de la hora); la fila 2, cinco ítems («Contacto»
-     sale: el botón lleva al mismo destino). El encabezado es pegajoso en todos los anchos y se pliega en la placa de 64
-     al bajar: el botón de la revisión queda siempre a la vista, y plegarse no mueve la página (90 − 64 = 26). */
+     sale: el botón lleva al mismo destino). Pegajoso; al bajar, la placa chica con el logo y «Soluciones» y el botón a la
+     derecha, en 64 de alto: plegarse no mueve la página (90 − 64 = 26). */
   .a-body .cab__der .cab__hora, .a-body .cab__nav-contacto { display: none; }  /* la hora del pie se queda */
-  .a-body .cab { position: sticky; top: 0; }
-  .a-body .cab__placa {
-    display: block; position: absolute; inset: 8px var(--a-m) auto; height: 48px; border-radius: 4px;
-    background: var(--a-placa); opacity: 0; pointer-events: none; transition: opacity var(--a-color);
-  }
-  .a-body .cab--plegada .cab__placa { opacity: 1; }
-  .a-body .cab--plegada .cab__fila { min-height: 64px; padding: 0 calc(var(--a-m) + 12px); flex-wrap: nowrap; align-items: center; }
-  .a-body .cab--plegada .cab__nav { display: none; }
+  .a-body .cab--plegada .cab__fila { min-height: 64px; flex-wrap: nowrap; align-items: center; padding-top: 0; }
+  .a-body .cab--plegada .cab__izq { display: flex; gap: 16px; }
+  .a-body .cab--plegada .cab__nav { order: 0; width: auto; }
   .a-body .cab--plegada { margin-bottom: 26px; }
 }
 
