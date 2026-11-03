@@ -377,3 +377,12 @@ Dos veces: una al principio, sobre `1c65e6a6`, para depurar el script; y la defi
   - plegado, queda solo «Soluciones» junto al logo y el botón «Hablemos», sin desborde;
   - con el foco dentro del encabezado, Tab no sube la página.
 - **IndexNow** de `/`: api.indexnow.org y bing.com/indexnow respondieron 200.
+
+## 3-nov-2026 · PUBLICADOS el menú animado y las imágenes de las páginas internas (PR #61)
+- **El PR** rvalleespin/spindlelab#61 llevaba el menú animado (corte `d7385618`) y las imágenes E15 (merge `e94839ae`, al
+  día con `main`). Ramón lo fusionó a las 13:38 (hora de Chile).
+- **Verificado en vivo:**
+  - 12 páginas internas responden 200 y cada una trae su imagen en `/v3/heroes/`;
+  - /trabajo/ queda sin imagen, como se decidió;
+  - la home sirve el menú plegable.
+- **IndexNow:** se avisaron la home y las 12 páginas; api.indexnow.org y bing.com/indexnow respondieron 200.

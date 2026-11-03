@@ -1,13 +1,13 @@
 ---
 // UNA FILA DE MEDIOS DEL CASO (spec §2.3; lock §21.2): una 16:9 a todo el ancho o un par 4:5 | 4:5, con el pie de Clara
-// debajo de la fila. `entrada`: la fila entra a la vista una vez con el resorte «entrada» (§1.6: una por sección).
+// debajo de la fila. E16: el enlace del pie lleva el aviso oculto de sitio aparte cuando Clara lo pide (Verifica y Cumple). `entrada`: la fila entra a la vista una vez con el resorte «entrada» (§1.6: una por sección).
 // Tanda 3; recortada en la obra E13: las filas apiladas (4:5 con dos 1,62) y el hueco nombrado eran de Praxi y de los
 // conceptos, que salieron del build; ningún caso las pide y quedan en el historial de git.
 import MedioCaso from './MedioCaso.astro';
 import Icono from './Icono.astro';
 
 interface Props {
-  fila: { forma: string; medios: any[]; pie: string; enlace?: { texto: string; destino: string } | null };
+  fila: { forma: string; medios: any[]; pie: string; enlace?: { texto: string; destino: string; externo?: string } | null };
   entrada?: boolean;
 }
 const { fila: f, entrada = false } = Astro.props;
@@ -21,7 +21,7 @@ const e = entrada ? '' : undefined;
   {(f.pie || f.enlace) && (
     <figcaption class="pie">
       {f.pie}
-      {f.enlace && <> <a class="subrayado" href={f.enlace.destino}>{f.enlace.texto}<Icono nombre="fuera" /></a></>}
+      {f.enlace && <> <a class="subrayado" href={f.enlace.destino} rel="noopener">{f.enlace.texto}<Icono nombre="fuera" />{f.enlace.externo && <span class="solo-lector"> {f.enlace.externo}</span>}</a></>}
     </figcaption>
   )}
 </figure>
