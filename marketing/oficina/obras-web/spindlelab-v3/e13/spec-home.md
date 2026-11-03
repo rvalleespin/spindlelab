@@ -102,6 +102,18 @@ Encabezado de 90 px, **`position: relative`**: a 390 px, con la página a 1200 p
 > - Desde 834, el hover o el foco sobre la placa la abre con el menú entero.
 > - Bajo 834, plegado, también va el logo con «Soluciones» y el botón, en 64 de alto, sin salto de página.
 > - El foco dentro del encabezado no aplica el `scroll-padding-top` de 80.
+>
+> **Segunda vuelta, 3-nov-2026** (Ramón: «es un corte, no una animación» y «muy a la orilla»; medido en Koto con
+> `e14-home-koto/medicion/herramientas/cab-koto.mjs` y `cab-umbral.mjs`; QA en `acta-qa-encabezado-v2.md`):
+> - **Cuándo se pliega:** pasado el 36 % del alto de pantalla, y se despliega bajo el 30 %. En Koto el cambio ocurre entre
+>   300 y 340 px a 900 de alto.
+> - **Al plegarse:** los ítems se apagan escalonados, 150 ms cada uno con 22 ms entre uno y otro. Después la placa crece
+>   desde el logo con un `clip-path` de 520 ms y «Soluciones» entra deslizándose 28 px. Al subir, la placa se recoge y los
+>   ítems vuelven de a uno. La animación es interrumpible y, con movimiento reducido, el cambio es inmediato.
+> - **Márgenes:** el encabezado va a 32 px del borde desde 834 y a 24 bajo 834.
+> - **Bajo 834:** plegada, la placa va a todo el ancho, a 8 px del borde, como Koto a 390.
+> - **En código:** `base.mjs` (`plegar`/`desplegar`) y `.cab__fila`/`.cab__placa` en `archivo.css`. Lo que dicen §3.2 y la
+>   fila de < 834 más abajo queda reemplazado por esta nota.
 
 ```astro
 const menu = [
