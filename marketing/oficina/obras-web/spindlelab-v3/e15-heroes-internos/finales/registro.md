@@ -155,3 +155,22 @@ No es algo del post: el PNG está dentro de la banda. A simple vista, la fila se
 - `hoja.jpg`: las trece en 16:9, a 640 × 360 cada una, en 4 filas por estilo, sobre #060606 y con «estilo · slug».
 - `hoja-45.jpg`: las trece **4:5 finales tal como salieron**, no un recorte, a 288 × 360 cada una.
 - `../pruebas-r2/post/build_finales.py` y `../pruebas-r2/post/hoja_finales.py`.
+
+## E15b · Rehechas en 21:9 para la franja bajo el h1 (3-nov-2026)
+
+Ramón: «Es la imagen que no fue hecha para el encuadre. El ancho estaba bien.» La franja a todo el ancho de la caja
+(1408×504 a 1440×900) recortaba las 16:9 arriba y abajo, y a las animaciones les cortaba el motivo. El PR #66 (enteras
+pero más angostas) se cerró sin fusionar. Se rehízo el material en vez de cambiar el encuadre.
+
+- **11 imágenes 21:9** con `gpt_image_2_5` medium 2K, cada una con su final 16:9 como referencia (misma idea y estilo),
+  motivo en la banda central y aire arriba y abajo; mismo post (verde botella, papel impreso, grano). Salen en
+  `public/v3/heroes/<slug>-219.webp` (2400×1029; las retro, 1920×823). Las 4:5 de celular no se tocaron.
+- **Imágenes de inicio y fin de los videos:** nosotros `b2235a3a-d2c0-4ede-b094-6ed73609cc59`, servicios
+  `97d7fc50-dbd9-41a4-bfba-5eb9e56124b3`, metodo `a43ab0df-42b9-4d89-b665-f1773997699f`.
+- **3 videos** `minimax_h3_max`, 6 s, 768p, inicio = fin (bucle sin salto): nosotros
+  `8abbf8cf-7274-4937-a2d2-2a200de4fc73`, servicios `53988a21-958f-4fed-9cf9-cce529cf579b`, metodo
+  `52ed2a02-dd4d-41ec-baa0-25cf7d621d9b`. Salen a 1536×672 y se recortan a 21:9 exacto (1536×658) → 1600×686,
+  `-anim-219.webm` (VP9 perfil 0, yuv420p) y `.mp4` (H.264). Se borraron los `-anim-1280`.
+- **Gasto:** ~11 créditos las imágenes y 45 los videos (tope 60).
+- **Medido:** la franja da 1408×504 a 1440×900 y 1248×403 a 1280×720 (tope 56svh). El motivo entra entero en las 11,
+  y a 1280×720 queda más justo arriba (el faro de Soluciones). Hoja: `hoja-219.jpg` (izquierda 1440, derecha 1280).

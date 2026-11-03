@@ -18,3 +18,8 @@
 6. `heroDe(prefijo, ...copias)` en `src/data/archivo/texto.mjs` lee `<prefijo>.hero.alt` (obligatorio: si falta, el build
    falla) y `.hero.pie` (opcional). Los alt de Clara se agregaron al final de la sección `cabecera` (blog: `indice`) de
    cada JSON, con `rol`, `uso`, `origen` y `estado`, como el resto.
+
+## 3-nov · E15b: la franja usa material 21:9 propio
+- Desde 834 la franja bajo el h1 es `aspect-ratio: 21/9` con tope de 56svh y usa `<slug>-219.webp` / `-anim-219`; el
+  blog sigue con la 16:9 (`enColumna`). Se quitó el `object-position` especial de Nosotros, porque la 21:9 ya trae el
+  motivo centrado. Se conserva el fondo del encabezado desplegado que entró con el #66.

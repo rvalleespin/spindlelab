@@ -860,17 +860,16 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
 .a-body .hero-int .medio > picture { display: block; width: 100%; height: 100%; }
 @media (min-width: 834px) { .a-body .hero-int .medio { aspect-ratio: 16 / 9; } }
 .a-body .hero-int--columna { margin: 0 0 32px; }
-/* 3-nov (Ramón): bajo el título y entera, sin recorte: la imagen (y el video) se ve completa en su proporción (16:9 desde
-   834, 4:5 bajo 834). Para que el título y la imagen quepan en la primera pantalla, se achica el ANCHO (no se recorta el
-   alto): como mucho el alto que queda bajo el encabezado y el título. Segunda vuelta del mismo día: con la franja recortada
-   las animaciones no se entendían. */
+/* 3-nov (Ramón): bajo el título, como franja a todo el ancho de la caja (la de la home). Desde 834 las imágenes y los
+   videos están hechos en 21:9 para esa franja (<slug>-219), con el motivo en el centro y aire arriba y abajo: la franja
+   puede bajar de alto (tope 56svh) sin cortar el motivo. Bajo 834, la 4:5 entera. */
 .a-body .hero-int--cab { grid-column: 1 / -1; margin: 24px 0 8px; }
-.a-body .hero-int--cab .medio img, .a-body .hero-int--cab .medio video { width: 100%; height: 100%; object-fit: cover; }
+.a-body .hero-int--cab .medio img, .a-body .hero-int--cab .medio video { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
 @media (min-width: 834px) {
-  .a-body .hero-int--cab .medio { aspect-ratio: 16 / 9; width: min(100%, calc((100svh - 300px) * 16 / 9)); }
+  .a-body .hero-int--cab .medio { aspect-ratio: 21 / 9; max-height: 56svh; width: 100%; }
 }
 @media (max-width: 833.98px) {
-  .a-body .hero-int--cab .medio { aspect-ratio: 4 / 5; width: min(100%, calc((100svh - 240px) * 4 / 5)); }
+  .a-body .hero-int--cab .medio { aspect-ratio: 4 / 5; width: 100%; }
 }
 
 /* 3 · Las secciones: el h2 a Declaración en c1–c4, pegajoso a 88 px desde 1194 (bajo 1194, arriba de su contenido); el
