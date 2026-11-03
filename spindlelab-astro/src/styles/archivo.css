@@ -266,6 +266,10 @@ body.a-body {
   .a-body .cab--plegada .cab__izq { display: flex; gap: 16px; }
   .a-body .cab--plegada .cab__nav { order: 0; width: auto; }
   .a-body .cab--plegada { margin-bottom: 26px; }
+  /* acta-qa-encabezado, defecto 3: al desplegarse, la placa se va sin fundido (la caja vuelve a ser display: contents y la
+     placa quedaría 167 ms a todo el ancho), y el botón va encima de ella */
+  .a-body .cab:not(.cab--plegada) .cab__placa { transition: none; }
+  .a-body .cab__der { position: relative; }
 }
 
 /* ------------------------------------------------------------------ miga (§2, lo común, 5) */
@@ -517,7 +521,9 @@ html body.a-body #cookie-aviso button:last-child { background: var(--a-placa-act
 /* ------------------------------------------------------------------ nada tapado por lo fijo (§4.3) */
 /* Arriba, el encabezado pegajoso (64; E13: en todos los anchos): solo mientras hay foco de teclado, para no correr las
    anclas que ya tienen su scroll-margin. Abajo, el aviso de cookies mientras está abierto. */
-html:has(body.a-body):has(:focus-visible) { scroll-padding-top: 80px; }
+html:has(body.a-body):has(:focus-visible):not(:has(.cab :focus-visible)) { scroll-padding-top: 80px; }
+/* 3-nov (acta-qa-encabezado, defecto 1): el foco dentro del encabezado pegajoso no aplica el margen de 80: con él, cada Tab
+   por el menú plegado subía la página ~430 px y lo desplegaba. El encabezado ya está siempre a la vista. */
 /* El alto del aviso, medido en esta hoja (tanda 1): 69 px en una fila (desde 834 desde el 23-oct; antes, desde ~850),
    115 de 600 a 833, 134 de 390 a 414 y 153 a 360 y 320. El relleno es ese alto más unos 20 px. */
 html:has(body.a-body):has(#cookie-banner:not([hidden])) { scroll-padding-bottom: 96px; }

@@ -94,6 +94,15 @@ Encabezado de 90 px, **`position: relative`**: a 390 px, con la página a 1200 p
 
 ### 3.2 · Encabezado nuevo (`Encabezado.astro` y `.cab` en `archivo.css`)
 
+> **Corrección del 3-nov-2026 (Ramón, como Koto; `e14-home-koto/acta-qa-encabezado.md`).** El plegado de abajo queda
+> reemplazado en todos los anchos:
+> - La placa ya no va a todo el ancho. Es una placa chica a la izquierda (48 de alto, radio 4, a 16 del borde) con el logo
+>   y «Soluciones» (`.cab__izq`, `.cab__nav-queda`).
+> - A la derecha va solo el botón amarillo; la hora se esconde al plegar.
+> - Desde 834, el hover o el foco sobre la placa la abre con el menú entero.
+> - Bajo 834, plegado, también va el logo con «Soluciones» y el botón, en 64 de alto, sin salto de página.
+> - El foco dentro del encabezado no aplica el `scroll-padding-top` de 80.
+
 ```astro
 const menu = [
   { href: '/v3/servicios/', texto: 'Soluciones' }, { href: '/v3/metodo/', texto: 'Método' },

@@ -69,6 +69,8 @@ document.querySelectorAll('.medio-enlace[data-ir]').forEach((enlace) => {
 });
 
 // ---- El encabezado se pliega en la placa al bajar, desde 834, con el resorte «entrada» (§2, lo común, 1)
+// 3-nov (Ramón, como Koto): la placa ya no va a todo el ancho; es la chica de la izquierda, con el logo y «Soluciones»
+// (Encabezado.astro, .cab__izq). Este resorte la sigue encendiendo igual.
 const cab = document.querySelector('.cab');
 const placa = cab && cab.querySelector('.cab__placa');
 const fila = cab && cab.querySelector('.cab__fila');
