@@ -386,3 +386,17 @@ Dos veces: una al principio, sobre `1c65e6a6`, para depurar el script; y la defi
   - /trabajo/ queda sin imagen, como se decidió;
   - la home sirve el menú plegable.
 - **IndexNow:** se avisaron la home y las 12 páginas; api.indexnow.org y bing.com/indexnow respondieron 200.
+
+## 3-nov-2026 · PUBLICADOS #63, #64 y #65 (tras destrabar la cola de Cloudflare)
+- **Cola de Cloudflare.** Los despliegues de producción de #63 y #64 quedaron «En cola» detrás de muchas vistas previas,
+  porque cada push a la rama de la obra arma una y el plan gratis construye de a una. Ramón canceló las vistas previas en
+  el panel y producción avanzó.
+  - **Para que no se repita:** en `spindlelab-v2` → Settings → Builds & deployments → Preview deployments, dejar solo
+    `claude/v3-publicacion` o ninguna.
+- **Verificado en vivo, a 1440 y a 390:**
+  - `/trabajo/verifica-y-cumple/`: el video corre y no aparece «Sin métrica»;
+  - home, /trabajo/ y Desarrollo web: la tarjeta de Verifica es el video `verifica-spot2` y lleva al caso;
+  - el `verifica-spot2-1280.webm` nuevo (VP9 perfil 0, 464 kB) se sirve;
+  - la franja bajo el título está en las páginas internas;
+  - Nosotros, Soluciones y Método: el video del hero corre desde 834, y a 390 queda la imagen.
+- **IndexNow:** se avisaron 14 URL. api.indexnow.org y bing.com/indexnow respondieron 200.
