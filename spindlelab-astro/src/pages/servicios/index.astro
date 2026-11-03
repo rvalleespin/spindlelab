@@ -134,12 +134,11 @@ const hero = heroDe('servicios', servicios);
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: migaClara[0], href: '/' }, { texto: migaClara[1] }]} />
       <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{dos('servicios.h1').tinta}</span> <span class="gris">{dos('servicios.h1').gris}</span></h1>
+      {/* LA IMAGEN DE CABECERA (E15; 3-nov, Ramón: franja bajo el título, como el hero de la home) */}
+      <HeroImagen slug='servicios' alt={hero.alt} pie={hero.pie} enCabecera />
       <p class="cuerpo caja">{entradilla.texto}</p>
       <p class="chico caja">{t('servicios.nota').texto}</p>
     </section>
-
-    {/* LA IMAGEN DE CABECERA (obra E15) */}
-    <HeroImagen slug='servicios' alt={hero.alt} pie={hero.pie} />
 
     {/* 2 · UNA SECCIÓN POR BLOQUE (§2.4, fila /servicios/): su número y su nombre a la izquierda (pegajosos desde
          1194), sus servicios a la derecha, en c5 a c16, como filas enlazadas */}

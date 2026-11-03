@@ -18,6 +18,8 @@
 // muro y cada entrada va con su url (la de Verifica y Cumple, externa).
 //
 // E14 (2-nov-2026): el muro dejó paso al trabajo fijo de la home; ver el comentario «E14» más abajo.
+// E16 (3-nov-2026, Ramón): Verifica y Cumple tiene página de caso (/trabajo/verifica-y-cumple/) y su entrada lleva ahí, con
+// una sola tarjeta (el spot); el JSON-LD la lista con esa url, interna.
 import Layout from '../../layouts/Layout.astro';
 import PaginaA from '../../components/a/PaginaA.astro';
 import TrabajoFijo from '../../components/a/TrabajoFijo.astro';
@@ -27,11 +29,9 @@ import { textoDe, igualQue, medioDe } from '../../data/archivo/texto.mjs';
 import caso from '../../data/archivo/texto/caso-combeau.json';
 import comun from '../../data/archivo/texto/comun.json';
 import trabajo from '../../data/archivo/texto/trabajo.json';
-import medios from '../../data/archivo/medios.json';
 
 const t = textoDe(trabajo, comun);
 const pagina = trabajo.texto;
-const m = medios.medios;
 const externo = t('comun.externo').texto;
 
 // E14 (2-nov): el muro de dos columnas pasa al trabajo fijo de la home (TrabajoFijo.astro, el mecanismo medido en Koto):
@@ -42,7 +42,7 @@ const externo = t('comun.externo').texto;
 type Entrada = { id: string; nombre: string; bajada: string; linea: string; destino: string; cursor: string; pie?: string; pie_video?: string; descripcion_video?: string };
 const entradas = pagina.entradas as Entrada[];
 const V = '/v3/trabajo/combeau/combeau-fotografia-recorrido';
-const S = '/v3/trabajo/verifica/verifica-spot';
+const S = '/v3/trabajo/verifica/verifica-spot2';
 const TARJETAS: Record<string, unknown[]> = {
   'combeau-fotografia': [
     {
@@ -57,24 +57,19 @@ const TARJETAS: Record<string, unknown[]> = {
     },
   ],
   'verifica-y-cumple': [
-    // el spot (Ramón, 2-nov), con su pie (pie_video de trabajo.json); la portada va después, con el suyo
+    // el spot (Ramón, 2-nov), con su pie (pie_video de trabajo.json); E16 (Ramón, 3-nov): la única tarjeta, la portada salió
     {
       ancha: { src: `${S}-1280-poster.webp`, ancho: 1280, alto: 720, chica: { src: `${S}-960-poster.webp`, ancho: 960 } },
       angosta: { src: `${S}-390-poster.webp`, ancho: 624, alto: 780 },
       video: { ancho: { webm: `${S}-1280.webm`, mp4: `${S}-1280.mp4` }, angosto: { webm: `${S}-390.webm`, mp4: `${S}-390.mp4` } },
-    },
-    {
-      ancha: { src: m['verifica-y-cumple-53'].src, ancho: m['verifica-y-cumple-53'].ancho, alto: m['verifica-y-cumple-53'].alto },
-      angosta: { src: m['verifica-y-cumple-45'].src, ancho: m['verifica-y-cumple-45'].ancho, alto: m['verifica-y-cumple-45'].alto },
-      alt: m['verifica-y-cumple-53'].alt,
     },
   ],
 };
 const piezas = entradas.map((e) => {
   const tarjetas = TARJETAS[e.id] as { pie?: string }[] | undefined;
   if (!tarjetas) throw new Error(`/trabajo/: la entrada «${e.id}» no tiene tarjetas`);
-  // el pie de la persona generada (Verifica y Cumple), bajo su imagen
-  if (e.pie) tarjetas[tarjetas.length - 1].pie = e.pie;
+  // el pie del spot (Verifica y Cumple), bajo su tarjeta. E16: sin la portada, «pie» (el de la portada) ya no va aquí;
+  // lo sigue leyendo /servicios/desarrollo-web/, que muestra la portada.
   if (e.pie_video) tarjetas[0].pie = e.pie_video;
   return { id: e.id, nombre: e.nombre, ficha: e.linea, texto: e.bajada, descripcion: e.descripcion_video, enlace: { texto: e.cursor, destino: e.destino }, tarjetas };
 });

@@ -75,12 +75,12 @@ const precioAco = igualQue(precioDe('acompanamiento-mensual', 0), tx('home.acomp
 igualQue(aco.nombre, dos('home.acompanamiento.h2').tinta, 'home, el nombre del Acompañamiento mensual');
 const partimos = t('home.partimos.boton');
 
-// ---- 3 · Trabajo: dos piezas, tres tarjetas (el recorrido de Combeau en video, su book y Verifica y Cumple)
+// ---- 3 · Trabajo: dos piezas, tres tarjetas (el recorrido de Combeau en video, su book y el spot de Verifica y Cumple).
+// E16 (Ramón, 3-nov): Verifica y Cumple queda con una sola tarjeta, el spot, y lleva a su página de caso.
 const recorrido = medio('combeau-fotografia-recorrido-1440.webm');
 const modelo = medio('combeau-modelo-169.webp');
-const verifica = medio('verifica-y-cumple-53.webp');
-const spot = medio('verifica-spot-1280.webm');
-const S = '/v3/trabajo/verifica/verifica-spot';
+const spot = medio('verifica-spot2-1280.webm');
+const S = '/v3/trabajo/verifica/verifica-spot2';
 const V = '/v3/trabajo/combeau/combeau-fotografia-recorrido';
 const piezas = [
   {
@@ -112,19 +112,12 @@ const piezas = [
     descripcion: spot.descripcion,
     enlace: { texto: tx('home.trabajo.verifica.boton'), destino: t('home.trabajo.verifica.boton').destino as string },
     tarjetas: [
-      // el spot (idea de Ramón, 2-nov): el caballo a lápiz en un cuaderno toma color y sale galopando; la portada, después
+      // el spot (idea de Ramón, 2-nov): el caballo a lápiz en un cuaderno toma color y sale galopando. La portada salió en E16
       {
         ancha: { src: `${S}-1280-poster.webp`, ancho: 1280, alto: 720, chica: { src: `${S}-960-poster.webp`, ancho: 960 } },
         angosta: { src: `${S}-390-poster.webp`, ancho: 624, alto: 780 },
         video: { ancho: { webm: `${S}-1280.webm`, mp4: `${S}-1280.mp4` }, angosto: { webm: `${S}-390.webm`, mp4: `${S}-390.mp4` } },
         pie: tx(spot.pie as string),
-      },
-      {
-        ancha: { src: m['verifica-y-cumple-53'].src, ancho: m['verifica-y-cumple-53'].ancho, alto: m['verifica-y-cumple-53'].alto },
-        angosta: { src: m['verifica-y-cumple-45'].src, ancho: m['verifica-y-cumple-45'].ancho, alto: m['verifica-y-cumple-45'].alto },
-        alt: verifica.alt,
-        // obligatorio con la -53 y con la -45: en las dos se ve la persona a caballo (comparacion-koto.md §5.1)
-        pie: tx(verifica.pie as string),
       },
     ],
   },

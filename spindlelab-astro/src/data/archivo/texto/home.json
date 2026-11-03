@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/home.json",
- "sha256": "350ca9dd0b2ad719e0e3e15791d7748d3618432196f823c0c33a44b3e22292d8",
+ "sha256": "c5e26d500b36f382681349dc67b881f0d1784f09fed6746aee36021b54c0f123",
  "id": "home",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -230,13 +230,14 @@
       "estado": "cambia",
       "origen": "home.pruebas.pie-verifica (E13), que viene de home.obra.pie-verifica (E12); convenciones-e12.json (todo medio de Verifica y Cumple donde se vea la persona a caballo lleva el pie)",
       "antes": "En texto-home-propuesta.md (bloque 3b) el pie se borraba con la -53.",
-      "por_que": "Javiera (comparacion-koto.md §5, punto 1): en la -53 la jinete y el caballo se ven enteros, así que el pie es obligatorio. Era el único cambio contra una regla decidida."
+      "por_que": "Javiera (comparacion-koto.md §5, punto 1): en la -53 la jinete y el caballo se ven enteros, así que el pie es obligatorio. Era el único cambio contra una regla decidida.",
+      "uso_e16": "Sin lector en la home desde E16: la tarjeta de la portada salió y queda solo el spot, con home.trabajo.verifica.spot.pie. Se conserva por si la portada vuelve."
      },
      {
       "id": "home.trabajo.verifica.spot.pie",
       "rol": "nota",
       "uso": "pie",
-      "texto": "Este video está generado con IA, a partir de la portada.",
+      "texto": "Este video está generado con IA.",
       "donde": "Bajo el spot de Verifica y Cumple (la primera tarjeta de la pieza). La jinete y el caballo son generados.",
       "estado": "nuevo",
       "origen": "Ramón, 2-nov-2026: imágenes v2 (e14-home-koto/imagenes-v2/LEEME.md) y «sin año» para las fichas."
@@ -244,13 +245,13 @@
      {
       "id": "home.trabajo.verifica.boton",
       "rol": "boton",
-      "texto": "Abrir Verifica y Cumple",
-      "destino": "https://verifica.spindlelab.cl/",
+      "texto": "Ver el caso",
+      "destino": "/trabajo/verifica-y-cumple/",
       "estado": "cambia",
       "origen": "Texto aprobado por Ramón el 2-nov-2026 («me gusta este acercamiento a la referencia… listo»): e14-home-koto/texto-home-propuesta.md §1, bloque 3b",
-      "antes": "Ver Verifica y Cumple (home.pruebas.propio.boton)",
-      "por_que": "«Abrir» dice lo que pasa: se abre otro sitio, no una página de este.",
-      "nota": "Enlace externo: lleva la flecha ↗ y, oculto a la vista, comun.externo «(sitio aparte: verifica.spindlelab.cl)»."
+      "antes": "Abrir Verifica y Cumple → https://verifica.spindlelab.cl/",
+      "por_que": "Ramón, 3-nov-2026 (obra E16): «para verifica solo dejaría el video como tarjeta de vista previa. de ahí pasa a la descripción completa del proyecto con el video ahora en el hero». La pieza lleva a su página de caso, como Combeau («Ver el caso», comun.cursor.caso); el enlace al sitio aparte pasa a esa página (caso-verifica-y-cumple.json, «La pieza»).",
+      "nota": "Enlace interno: lleva la flecha → como el de Combeau."
      },
      {
       "id": "home.trabajo.todo",
@@ -278,7 +279,7 @@
       "nota": "El alt de caso-combeau.json, tal cual (el prototipo decía «El book de Bernardo Combeau en su sitio.»)."
      },
      {
-      "archivo": "public/v3/trabajo/verifica/verifica-spot-1280.webm",
+      "archivo": "public/v3/trabajo/verifica/verifica-spot2-1280.webm",
       "forma": "16:9",
       "pieza": "verifica",
       "descripcion": "Un dibujo a lápiz de una persona a caballo se forma solo sobre papel en blanco, toma color fucsia como acuarela y sale galopando por un cielo azul.",
@@ -291,7 +292,8 @@
       "pieza": "verifica",
       "alt": "La portada de verifica.spindlelab.cl: «¿Estás seguro?» en letras enormes, blanco y lima sobre azul, y una persona de traje y sombrero rosados que lee un papel, a caballo.",
       "pie": "home.trabajo.verifica.pie",
-      "nota": "El alt de medios.json (verifica-y-cumple-53), tal cual. Si va la -45, su alt de medios.json. El pie es obligatorio con las dos."
+      "nota": "El alt de medios.json (verifica-y-cumple-53), tal cual. Si va la -45, su alt de medios.json. El pie es obligatorio con las dos.",
+      "uso_e16": "Sin uso en la home desde E16 (Ramón, 3-nov: solo el video como tarjeta)."
      }
     ]
    },

@@ -175,6 +175,8 @@ const hero = heroDe(slug, copia);
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: miga[0], href: '/' }, { texto: miga[1], href: '/servicios/' }, { texto: miga[2] }]} />
       <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{h1.tinta}</span> <span class="gris">{h1.gris}</span></h1>
+      {/* LA IMAGEN DE CABECERA (E15; 3-nov, Ramón: franja bajo el título, como el hero de la home) */}
+      <HeroImagen slug={slug} alt={hero.alt} pie={hero.pie} enCabecera />
       <p class="cuerpo caja">{s.linea}</p>
       {s.lead && <p class="cuerpo caja">{comillas(s.lead)}</p>}
       <p class="chico caja">{s.nota.join(' ')}</p>
@@ -183,9 +185,6 @@ const hero = heroDe(slug, copia);
         <a class="boton boton--placa" href="/contacto/">{escribenos}<Icono nombre="flecha" /></a>
       </div>
     </section>
-
-    {/* LA IMAGEN DE CABECERA (obra E15) */}
-    <HeroImagen slug={slug} alt={hero.alt} pie={hero.pie} />
 
     {/* 2 · LO QUE INCLUYE (lista, c5 a c12) */}
     {secIncluye && (

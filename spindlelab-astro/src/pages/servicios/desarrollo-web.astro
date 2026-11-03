@@ -72,9 +72,12 @@ const incluye = ['1', '2', '3', '4', '7'].map((n) => {
 // es un sitio aparte: la flecha ↗, el aviso para el lector de pantalla y el pie de la persona generada con IA.
 // Combeau va con su book de modelo y no con la portada de fotografía: esa ya es la franja de esta misma página.
 const libro = { src: '/v3/trabajo/combeau/combeau-modelo-169.webp', ancho: 1600, alto: 900, chica: { src: '/v3/trabajo/combeau/combeau-modelo-960.webp', ancho: 960 }, alt: (medioDe(caso, 'combeau-modelo-169.webp') as { alt: string }).alt };
+const S = '/v3/trabajo/verifica/verifica-spot2';
 const obra = [
   { id: 'combeau-fotografia', ancha: libro, angosta: { src: '/v3/medios/combeau-modelo-45.webp', ancho: 780, alto: 975 } },
-  { id: 'verifica-y-cumple', ancha: m['verifica-y-cumple-53'], angosta: m['verifica-y-cumple-45'] },
+  // 3-nov (Ramón): Verifica y Cumple va con su spot, como en la home y en /trabajo/, y lleva a su caso
+  { id: 'verifica-y-cumple', ancha: { src: `${S}-1280-poster.webp`, ancho: 1280, alto: 720, chica: { src: `${S}-960-poster.webp`, ancho: 960 }, alt: '' }, angosta: { src: `${S}-390-poster.webp`, ancho: 624, alto: 780 },
+    video: { ancho: { webm: `${S}-1280.webm`, mp4: `${S}-1280.mp4` }, angosto: { webm: `${S}-390.webm`, mp4: `${S}-390.mp4` } } },
 ].map((p) => {
   const e = entrada(p.id);
   return {
@@ -87,8 +90,10 @@ const obra = [
       ancha: { src: p.ancha.src, ancho: p.ancha.ancho, alto: p.ancha.alto, chica: (p.ancha as { chica?: { src: string; ancho: number } }).chica },
       angosta: { src: p.angosta.src, ancho: p.angosta.ancho, alto: p.angosta.alto },
       alt: p.ancha.alt,
-      pie: e.pie,
+      pie: (p as { video?: unknown }).video ? (e as { pie_video?: string }).pie_video : e.pie,
+      video: (p as { video?: { ancho: { webm: string; mp4: string }; angosto: { webm: string; mp4: string } } }).video,
     }],
+    descripcion: (p as { video?: unknown }).video ? (e as { descripcion_video?: string }).descripcion_video : undefined,
   };
 });
 const refObra = t('dw.obra.entradas').texto;
@@ -194,15 +199,14 @@ const hero = heroDe('dw', dw);
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: miga[0], href: '/' }, { texto: miga[1], href: '/servicios/' }, { texto: miga[2] }]} />
       <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{dos('dw.h1').tinta}</span> <span class="gris">{dos('dw.h1').gris}</span></h1>
+      {/* LA IMAGEN DE CABECERA (E15; 3-nov, Ramón: franja bajo el título, como el hero de la home) */}
+      <HeroImagen slug='desarrollo-web' alt={hero.alt} pie={hero.pie} enCabecera />
       <p class="cuerpo caja">{trozosEntradilla.map((p) => (p.href ? <a href={p.href}>{p.texto}</a> : p.texto))}</p>
       <div class="botones">
         <a class="boton boton--claro" href={aPlanes}>{bPlanes.texto}</a>
         <a class="boton boton--placa" href={bEscribir.destino}>{bEscribir.texto}<Icono nombre="flecha" /></a>
       </div>
     </section>
-
-    {/* LA IMAGEN DE CABECERA (obra E15) */}
-    <HeroImagen slug='desarrollo-web' alt={hero.alt} pie={hero.pie} />
 
     {/* 2 · LA FRANJA (§2.4.2, §3.4): Combeau fotografía a 2,39 desde 834 y 16:9 bajo 834, recortada al centro */}
     <figure class="reticula franja" data-entrada>

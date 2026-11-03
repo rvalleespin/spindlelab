@@ -859,6 +859,16 @@ html:has(#cookie-banner:not([hidden])) body.a-body .barra { bottom: calc(var(--a
 .a-body .hero-int .medio > picture { display: block; width: 100%; height: 100%; }
 @media (min-width: 834px) { .a-body .hero-int .medio { aspect-ratio: 16 / 9; } }
 .a-body .hero-int--columna { margin: 0 0 32px; }
+/* 3-nov (Ramón): bajo el título, como franja ancha y baja, a la altura del hero de la home; el título y la imagen caben
+   juntos en la primera pantalla y el resto de la cabecera baja después. La imagen se recorta al centro. */
+.a-body .hero-int--cab { grid-column: 1 / -1; margin: 24px 0 8px; }
+.a-body .hero-int--cab .medio > picture > img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+@media (min-width: 834px) {
+  .a-body .hero-int--cab .medio { aspect-ratio: auto; height: clamp(320px, 56svh, 640px); }
+}
+@media (max-width: 833.98px) {
+  .a-body .hero-int--cab .medio { aspect-ratio: 4 / 5; max-height: 64svh; width: 100%; }
+}
 
 /* 3 · Las secciones: el h2 a Declaración en c1–c4, pegajoso a 88 px desde 1194 (bajo 1194, arriba de su contenido); el
    contenido en c5–c12 (listas, fases, preguntas) o en c5–c16 (planes, piezas, las filas de servicios). */
