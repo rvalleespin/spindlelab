@@ -23,3 +23,21 @@ un poco Bauhaus… dame alternativas con eso»).
 - La 1 es la más clara y la más cercana a la referencia.
 - La 2 es la más cálida y la que mejor se integra con el negro del sitio.
 - En la 3, la de Acompañamiento (columnas que crecen) es la más elegante, pero la de Anuncios se lee peor.
+
+## Ronda 2: conceptos nuevos (3-nov)
+Ramón: «me gusta, pero expresa de otra manera los conceptos… el diseño se ve forzado al concepto que elegiste».
+- Se descartan la linterna, el bonsái y el tensiómetro. Ahora la idea sale de la composición, no de un objeto dibujado.
+- Hay tres ideas por columna, todas en el lenguaje 1 (Bauhaus geométrico sobre crema), para comparar ideas y no estilos.
+- **Costo:** 9 imágenes en calidad low, 2,25 créditos. El índice 5 dio 429 y se reintentó una vez. Hoja:
+  `hoja-conceptos.jpg`.
+
+| Columna | Idea 1 | Idea 2 | Idea 3 |
+|---|---|---|---|
+| Anuncios | imán que atrae puntos · 7b8dfdc7-99fb-4d65-bbfa-c943467d3bd5 | flechas que convergen en un círculo · e84d8a3c-8237-4102-9266-8eb6b95fb62d | megáfono y personas que se voltean · a1b60db2-30c0-400e-8637-cf247cc35292 |
+| Acompañamiento | sol que sube en 12 casillas · 22a17d9e-98de-42fb-b790-29a9189fc289 | dos figuras que caminan juntas · 0f56ccb7-5fb0-4a0c-ab16-800e6286a1c1 | regadera sobre lomas que crecen · dee1d655-d210-4185-b5bf-fdf81183b559 |
+| Cómo partimos | apretón de manos · 2b8b4320-134d-475a-b8f8-853b712a17c0 | carta que se abre en tres paneles · 4e6bab09-bedb-4e26-a03f-d00955385d95 | dos globos de diálogo encajados y reloj de arena · b4e80377-6b04-42cd-9442-fefe306f8a96 |
+
+**Lectura de Bruno:**
+- La regadera no se lee como regadera (círculo más cono).
+- El apretón de manos es el más directo, pero también el más visto.
+- La carta en tres paneles dice exactamente «recibes por escrito qué hacemos y en qué fases».
