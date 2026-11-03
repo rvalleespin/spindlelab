@@ -74,3 +74,28 @@ def paper_shift(im, base, target=90):
     p=V*(1-S); q=V*(1-S*f); t=V*(1-S*(1-f))
     R=np.choose(i,[V,q,p,p,t,V]); G=np.choose(i,[t,V,V,q,p,p]); B=np.choose(i,[p,p,t,V,V,q])
     return Image.fromarray((np.clip(np.stack([R,G,B],-1),0,1)*255).round().astype(np.uint8))
+
+# R3 · Afiches de fluorescente a impreso (lock R3.6). Solo el papel: los mismos píxeles
+# claros y saturados que mueve paper_shift (peso suave), con el tono intacto. Escala S y V
+# para que la mediana del papel quede en s_t / v_t, igual en las cuatro.
+def _hsv(a):
+    mx=a.max(-1); mn=a.min(-1); d=mx-mn; S=np.where(mx>0,d/np.maximum(mx,1e-6),0)
+    r,g,b=a[...,0],a[...,1],a[...,2]; dd=np.maximum(d,1e-6)
+    h=np.where(mx==r,((g-b)/dd)%6,np.where(mx==g,(b-r)/dd+2,(r-g)/dd+4))*60
+    return h,S,mx
+def _rgb(h,S,V):
+    nh=(h%360)/60; i=np.floor(nh).astype(int)%6; f=nh-np.floor(nh)
+    p=V*(1-S); q=V*(1-S*f); t=V*(1-S*(1-f))
+    return np.stack([np.choose(i,[V,q,p,p,t,V]),np.choose(i,[t,V,V,q,p,p]),np.choose(i,[p,p,t,V,V,q])],-1)
+def papel(im, hue=90):
+    a=np.asarray(im.convert('RGB'),float)/255; h,S,V=_hsv(a)
+    w=np.clip((S-0.35)/0.2,0,1)*np.clip((V-0.35)/0.15,0,1)*np.clip(1-np.abs(h-hue)/35,0,1)
+    return a,h,S,V,w
+def medir_papel(im):
+    a,h,S,V,w=papel(im); m=w>0.99
+    return round(float(np.median(h[m])),1), round(float(np.median(S[m])),3), round(float(np.median(V[m])),3)
+def paper_print(im, s_t=0.6, v_t=0.85):
+    a,h,S,V,w=papel(im); m=w>0.99
+    ks=s_t/np.median(S[m]); kv=v_t/np.median(V[m])
+    S2=S*(1-w)+np.clip(S*ks,0,1)*w; V2=V*(1-w)+np.clip(V*kv,0,1)*w
+    return Image.fromarray((np.clip(_rgb(h,S2,V2),0,1)*255).round().astype(np.uint8))
