@@ -13,16 +13,25 @@ interface Props {
   enColumna?: boolean;
   /** Dentro de la cabecera, justo bajo el h1 (3-nov, Ramón): franja ancha y baja, como el hero de la home. */
   enCabecera?: boolean;
+  /** 3-nov (Ramón): las isométricas van animadas desde 834 (<slug>-anim-1280.webm/.mp4, bucle de ~6,6 s). Bajo 834 queda
+   *  la imagen quieta 4:5. Usa el Video de A: arranca a la vista, se pausa con su botón y no corre con movimiento reducido. */
+  animado?: boolean;
 }
-const { slug, alt, pie, enColumna = false, enCabecera = false } = Astro.props;
+const { slug, alt, pie, enColumna = false, enCabecera = false, animado = false } = Astro.props;
 const base = `/v3/heroes/${slug}`;
+import Video from './Video.astro';
 ---
-<figure class:list={['hero-int', { reticula: !enColumna && !enCabecera, 'hero-int--columna': enColumna, 'hero-int--cab': enCabecera }]}>
-  <div class="medio">
-    <picture>
-      <source media="(max-width: 833px)" srcset={`${base}-45.webp`} width="900" height="1125" type="image/webp" />
-      <img src={`${base}-169.webp`} alt={alt} width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" />
-    </picture>
-  </div>
+<figure class:list={['hero-int', { reticula: !enColumna && !enCabecera, 'hero-int--columna': enColumna, 'hero-int--cab': enCabecera }]} data-hero={slug}>
+  {animado ? (
+    <Video poster={`${base}-169.webp`} ancho={1600} alto={900} fuentes={[{ desde: 834, webm: `${base}-anim-1280.webm`, mp4: `${base}-anim-1280.mp4` }]}
+      posterAngosto={{ src: `${base}-45.webp`, ancho: 900, alto: 1125 }} descripcion={alt} primeraPantalla />
+  ) : (
+    <div class="medio">
+      <picture>
+        <source media="(max-width: 833px)" srcset={`${base}-45.webp`} width="900" height="1125" type="image/webp" />
+        <img src={`${base}-169.webp`} alt={alt} width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" />
+      </picture>
+    </div>
+  )}
   {pie && <figcaption class="pie">{pie}</figcaption>}
 </figure>
