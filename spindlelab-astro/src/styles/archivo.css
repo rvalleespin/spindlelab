@@ -238,22 +238,29 @@ body.a-body {
 .a-body .cab__izq { position: relative; display: flex; align-items: center; gap: 56px; min-width: 0; }
 .a-body .cab__izq > .cab__logo, .a-body .cab__izq > .cab__nav { position: relative; }  /* encima de su placa */
 .a-body .cab { position: sticky; top: 0; }
+@keyframes cab-abre { from { opacity: 0; transform: translateX(-12px); } }
+@media (prefers-reduced-motion: reduce) { .a-body .cab__nav li { animation: none !important; } }
+/* 3-nov, segunda vuelta (Ramón: «muy a la orilla»; Koto: el logo a 30 del borde, la placa a 16): el encabezado va a 32 del
+   borde desde 834 y a 24 bajo 834, y la placa sale 14 px por delante del logo. La placa no se funde: la abre y la cierra
+   base.mjs con un clip-path de izquierda a derecha. */
+.a-body .cab__fila { padding-inline: 32px; }
 .a-body .cab__placa {
-  display: block; position: absolute; top: 50%; left: -12px; right: -16px; height: 48px; margin-top: -24px; border-radius: 4px;
-  background: var(--a-placa); opacity: 0; pointer-events: none; transition: opacity var(--a-color);
+  display: block; position: absolute; top: 50%; left: -14px; right: -18px; height: 48px; margin-top: -24px; border-radius: 4px;
+  background: var(--a-placa); visibility: hidden; pointer-events: none;
 }
-.a-body .cab--plegada .cab__placa { opacity: 1; }
-.a-body .cab--plegada .cab__fila { padding-inline: calc(var(--a-m) + 12px); }
+.a-body .cab--plegada .cab__placa { visibility: visible; }
 .a-body .cab--plegada .cab__izq { gap: 24px; }
 .a-body .cab--plegada .cab__nav li:not(.cab__nav-queda) { display: none; }
 .a-body .cab--plegada .cab__der .cab__hora { display: none; }
 @media (min-width: 834px) {
   .a-body .cab--plegada .cab__izq:hover .cab__nav li, .a-body .cab--plegada .cab__izq:focus-within .cab__nav li { display: list-item; }
+  .a-body .cab--plegada .cab__izq:hover .cab__nav li:not(.cab__nav-queda),
+  .a-body .cab--plegada .cab__izq:focus-within .cab__nav li:not(.cab__nav-queda) { animation: cab-abre 360ms cubic-bezier(0.22, 1, 0.36, 1) backwards; }
   .a-body .cab--plegada .cab__nav ul { gap: 24px; }
 }
 @media (max-width: 833.98px) {
   /* padding-top 2: el logo mide 44 de alto (área de toque) y su dibujo queda a 14 px del borde; 2 + 44 + 44 = 90 */
-  .a-body .cab__fila { flex-wrap: wrap; gap: 0 16px; min-height: 0; padding-top: 2px; }
+  .a-body .cab__fila { flex-wrap: wrap; gap: 0 16px; min-height: 0; padding-top: 2px; padding-inline: 24px; }
   .a-body .cab__izq { display: contents; }
   .a-body .cab__logo svg { height: 20px; }
   .a-body .cab__nav { order: 3; width: 100%; }
@@ -263,12 +270,14 @@ body.a-body {
      derecha, en 64 de alto: plegarse no mueve la página (90 − 64 = 26). */
   .a-body .cab__der .cab__hora, .a-body .cab__nav-contacto { display: none; }  /* la hora del pie se queda */
   .a-body .cab--plegada .cab__fila { min-height: 64px; flex-wrap: nowrap; align-items: center; padding-top: 0; }
-  .a-body .cab--plegada .cab__izq { display: flex; gap: 16px; }
+  .a-body .cab--plegada .cab__izq { display: flex; gap: 16px; position: static; }
+  /* Koto a 390 (medicion/koto-390 y1000): plegado, la placa va a todo el ancho, a 8 del borde, para que el texto de la
+     página no se vea pasar entre el logo y el botón */
+  .a-body .cab--plegada .cab__placa { left: 8px; right: 8px; }
   .a-body .cab--plegada .cab__nav { order: 0; width: auto; }
   .a-body .cab--plegada { margin-bottom: 26px; }
   /* acta-qa-encabezado, defecto 3: al desplegarse, la placa se va sin fundido (la caja vuelve a ser display: contents y la
      placa quedaría 167 ms a todo el ancho), y el botón va encima de ella */
-  .a-body .cab:not(.cab--plegada) .cab__placa { transition: none; }
   .a-body .cab__der { position: relative; }
 }
 
