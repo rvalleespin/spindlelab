@@ -369,3 +369,11 @@ Dos veces: una al principio, sobre `1c65e6a6`, para depurar el script; y la defi
   - las imágenes de la fila de tres, a la espera de referencias de Ramón;
   - el giro dentro de verifica.spindlelab.cl, en otro repo;
   - el h2 de Búsqueda, que decide Ramón.
+
+## 3-nov-2026 · PUBLICADO el encabezado que se achica (como Koto)
+- **PR** rvalleespin/spindlelab#59: corte `bc0e7c34` sobre `e2f47425`. Ramón lo fusionó con el botón a las 09:55 (hora de
+  Chile).
+- **Verificado en vivo**, a 1440 y a 390:
+  - plegado, queda solo «Soluciones» junto al logo y el botón «Hablemos», sin desborde;
+  - con el foco dentro del encabezado, Tab no sube la página.
+- **IndexNow** de `/`: api.indexnow.org y bing.com/indexnow respondieron 200.
