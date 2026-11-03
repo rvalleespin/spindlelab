@@ -28,6 +28,6 @@
 ## Reglas para no estropear el negocio
 - Es un negocio de **Desarrollo Web**, no de Verifica y Cumple. El copiloto y el motor ven estos hilos por el pie de privacidad y los tratan como VyC. No enviarle toques de VyC mientras la cotización siga abierta.
 - Hoy lo protege solo la etiqueta `copiloto/entregable-avisado` del hilo del diagnóstico. Si se quita, el copiloto lo vuelve a ver. El troncal puede decidir si conviene dejarlo en la lista de exclusión del copiloto con un motivo; el tipo `en-negociacion` no existe en `ventas/LEEME-lista-exclusion.md`, no inventarlo.
-- La ficha del motor para focuscontable.cl dice "NO ENVIAR: falta verificación a mano. OFERTA DÉBIL" (`marketing/motor-revision-previa/entregas/para-emilia-2026-10-16-contactos-existentes/para-emilia.csv`, línea 57). Es solo un hallazgo de portada pesada; no es la oferta de este negocio.
+- La ficha del motor para focuscontable.cl dice "NO ENVIAR: falta verificación a mano. OFERTA DÉBIL" (`marketing/motor-revision-previa/entregas/para-emilia-2026-10-16-contactos-existentes/para-emilia.csv`, línea 57; ese archivo vive en la rama `claude/motor-revision-previa-build` y todavía no está en `main`). Es solo un hallazgo de portada pesada; no es la oferta de este negocio.
 - Antes de escribir la fila, verificar las fechas con Gmail; no copiar este resumen sin comprobarlo (regla del repo sobre "ya está hecho").
 - Sincronizar primero: `git fetch origin main && git diff origin/main HEAD -- ventas/pipeline.md`.
