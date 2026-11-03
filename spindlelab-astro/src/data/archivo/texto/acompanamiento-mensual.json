@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/acompanamiento-mensual.json",
- "sha256": "bee7559083c8cae1c495444500093d23ce910b20be93c19936f9e04f6fc2a75b",
+ "sha256": "710f2d120d2ab52142819556f94fc6fa228997188ad18623c09d1a03548b05c1",
  "id": "acompanamiento-mensual",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -42,6 +42,22 @@
       "uso": "referencia",
       "origen": "spindlelab-astro/src/data/servicios-v3.json acompanamiento-mensual",
       "estado": "cambia"
+     },
+     {
+      "id": "acompanamiento-mensual.hero.alt",
+      "rol": "nota",
+      "texto": "Unas manos podan un bonsái con tijera y giran su base, con las herramientas ordenadas al lado: un cuidado que se hace de a poco, todos los meses.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/acompanamiento-mensual-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "acompanamiento-mensual.hero.pie",
+      "rol": "pie",
+      "texto": "Imagen generada con IA.",
+      "uso": "pie",
+      "origen": "E15, 3-nov-2026: la foto lleva manos y se lee como fotografía; el pie lo dice.",
+      "estado": "nuevo"
      }
     ]
    },

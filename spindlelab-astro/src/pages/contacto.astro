@@ -19,9 +19,13 @@ import Miga from '../components/a/Miga.astro';
 import Icono from '../components/a/Icono.astro';
 import { LAYOUT_A } from '../components/a/layout-a';
 import { contacto } from '../data/archivo/interiores.mjs';
+import HeroImagen from '../components/a/HeroImagen.astro';
+import { heroDe } from '../data/archivo/texto.mjs';
+import tHeroCont from '../data/archivo/texto/contacto.json';
 
 const m = contacto();
 const f = m.form;
+const hero = heroDe('contacto', tHeroCont);
 ---
 <Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
@@ -32,6 +36,9 @@ const f = m.form;
       <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
       <p class="cuerpo caja">{m.linea}</p>
     </section>
+
+    {/* LA IMAGEN DE CABECERA (obra E15) */}
+    <HeroImagen slug='contacto' alt={hero.alt} pie={hero.pie} />
 
     {/* 2 · EL FORMULARIO (c1-c8): los campos de §4.1 */}
     <section class="reticula form-sec" id="contacto-form" aria-labelledby="h-form">

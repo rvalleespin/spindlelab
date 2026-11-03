@@ -21,7 +21,7 @@ import PaginaA from '../../components/a/PaginaA.astro';
 import Miga from '../../components/a/Miga.astro';
 import Icono from '../../components/a/Icono.astro';
 import { LAYOUT_A } from '../../components/a/layout-a';
-import { textoDe, igualQue } from '../../data/archivo/texto.mjs';
+import { textoDe, heroDe, igualQue } from '../../data/archivo/texto.mjs';
 import { SITIO, siguiente, soloMontosDe } from '../../data/archivo/servicios.mjs';
 import comun from '../../data/archivo/texto/comun.json';
 import textoServicios from '../../data/archivo/texto/servicios.json';
@@ -32,6 +32,7 @@ import aco from '../../data/archivo/texto/acompanamiento-mensual.json';
 import redes from '../../data/archivo/texto/redes-sociales.json';
 import paid from '../../data/archivo/texto/paid-media.json';
 import servicios from '../../data/servicios-v3.json';
+import HeroImagen from '../../components/a/HeroImagen.astro';
 
 export function getStaticPaths() {
   return Object.keys(servicios).map((slug) => ({ params: { slug } }));
@@ -165,6 +166,7 @@ const jsonLd = {
 // auditoría a ?v=4 y las otras a ?v=3.
 const OG_V: Record<string, number> = { 'auditoria-seo-tecnica': 4 };
 const og = { src: `/assets/img/og-e12-${slug}.jpg?v=${OG_V[slug] ?? 3}`, alt: `SpindleLab: ${h1.tinta} ${h1.gris}` };
+const hero = heroDe(slug, copia);
 ---
 <Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
@@ -181,6 +183,9 @@ const og = { src: `/assets/img/og-e12-${slug}.jpg?v=${OG_V[slug] ?? 3}`, alt: `S
         <a class="boton boton--placa" href="/contacto/">{escribenos}<Icono nombre="flecha" /></a>
       </div>
     </section>
+
+    {/* LA IMAGEN DE CABECERA (obra E15) */}
+    <HeroImagen slug={slug} alt={hero.alt} pie={hero.pie} />
 
     {/* 2 · LO QUE INCLUYE (lista, c5 a c12) */}
     {secIncluye && (

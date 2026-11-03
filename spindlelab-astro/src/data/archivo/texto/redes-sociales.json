@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/redes-sociales.json",
- "sha256": "b9b4e3ecf25d1841bd6cb1493cdcdf3c149ba8fc0eceec532e09fbacdf5894e5",
+ "sha256": "5084fafb6bc51505ed9b9b7e095c51f21dcd4ba4679760b965e26b9125dc2814",
  "id": "redes-sociales",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -42,6 +42,14 @@
       "uso": "referencia",
       "origen": "spindlelab-astro/src/data/servicios-v3.json redes-sociales",
       "estado": "cambia"
+     },
+     {
+      "id": "redes-sociales.hero.alt",
+      "rol": "nota",
+      "texto": "Una pinza deja la foto de un megáfono en el único hueco de una grilla de publicaciones que se repiten: tazas de café, cámaras, manos y cuadros vacíos.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/redes-sociales-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
      }
     ]
    },
