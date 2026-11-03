@@ -1363,6 +1363,14 @@ html.a-mov .a-body [data-entra-in] > img { opacity: 1; transform: scale(calc(1 +
 /* La fila sin imagen (2-nov): tres columnas iguales, cada nota bajo su propio filete, los tres títulos del mismo tamaño */
 .a-body .k-tres--texto { border-top: 0; padding-top: 0; }
 .a-body .k-tres--texto .k-nota { border-top: 1px solid var(--a-linea-seccion); padding-top: 20px; }
+.a-body .k-nota__fig { width: 100%; margin: 0 0 4px; }
+.a-body .k-nota__fig .k-nota__medio { margin-bottom: 0; }
+.a-body .k-nota__medio img { width: 100%; height: 100%; object-fit: cover; }
+.a-body .k-tres--texto .k-nota__medio { aspect-ratio: 16 / 9; }  /* también en celular: la 4:5 ocupaba una pantalla por columna */
+.a-body .k-nota__fig .pie { margin: 8px 0 0; line-height: 20px; height: 20px; }
+@media (min-width: 834px) {  /* el pie de IA (solo la foto) no desalinea los títulos: las otras dos reservan su alto */
+  .a-body .k-nota__fig:not(:has(.pie)) { padding-bottom: 28px; }
+}
 @media (min-width: 834px) {
   .a-body .k-tres--texto { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   .a-body .k-tres--texto .k-nota .t-titulo, .a-body .k-tres--texto .k-nota:first-child .t-titulo { font-size: var(--a-t-titulo); }
