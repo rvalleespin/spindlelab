@@ -11,7 +11,6 @@ const cuerpo = document.body;
 cuerpo.classList.remove('a-sin-js');
 const reducir = window.matchMedia('(prefers-reduced-motion: reduce)');
 const fino = window.matchMedia('(hover: hover) and (pointer: fine)');
-const ancho = window.matchMedia('(min-width: 834px)');
 
 // ---- La hora de Santiago, con su huso: la calcula el navegador de quien mira, y cambia el minuto (§5.5)
 function hora() {
@@ -90,6 +89,8 @@ function cortar() {
   cab.getAnimations({ subtree: true }).forEach((an) => an.cancel());
 }
 async function plegar(t) {
+  // Si se vuelve a bajar antes de que terminara de desplegarse, la clase sigue puesta: cortar() ya dejó todo plegado.
+  if (cab.classList.contains('cab--plegada')) return;
   const sal = visibles().map((li, i) => li.animate(
     [{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateX(-12px)' }],
     { duration: 150, delay: i * 22, easing: SALE, fill: 'forwards' }));
@@ -102,6 +103,9 @@ async function plegar(t) {
   if (queda) queda.animate([{ opacity: 0, transform: 'translateX(28px)' }, { opacity: 1, transform: 'none' }], { duration: 480, delay: 90, easing: LLEGA, fill: 'backwards' });
 }
 async function desplegar(t) {
+  // Si se sube antes de que llegara a plegarse (acta-qa-encabezado-v2, defecto 2), cortar() ya devolvió los ítems a su
+  // lugar: no se vuelven a animar, así el menú no parpadea.
+  if (!cab.classList.contains('cab--plegada')) return;
   const sal = [];
   if (queda) sal.push(queda.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 160, easing: SALE, fill: 'forwards' }));
   if (placa) sal.push(placa.animate([{ clipPath: 'inset(0 0% 0 0 round 4px)' }, { clipPath: 'inset(0 100% 0 0 round 4px)' }], { duration: 480, easing: 'cubic-bezier(0.65, 0, 0.35, 1)', fill: 'forwards' }));

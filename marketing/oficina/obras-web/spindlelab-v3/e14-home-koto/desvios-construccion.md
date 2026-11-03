@@ -133,3 +133,16 @@ Verificación: `extraer-texto.mjs --comprobar` sale 0; `npx astro build`, 22 pá
    - La mancha de abajo a la izquierda está tapada con `delogo` desde los 3,8 s.
    - El póster es el cuadro de 3,9 s, la acuarela a medio abrir.
 3. **Fichas sin año** («Cliente · Sitio web», «Propio · Herramienta»), en la home y en /trabajo/.
+
+## Encabezado que se pliega como Koto (3-nov-2026), decidido por Ramón
+- **Primera vuelta (PR #59):** placa chica con el logo y «Soluciones», y el botón «Hablemos» a la derecha. El cambio era de
+  golpe al primer movimiento, y Ramón la rechazó por eso.
+- **Segunda vuelta, medida en Koto:**
+  - se pliega pasado el 36 % de la pantalla (vuelve bajo el 30 %);
+  - los ítems se apagan escalonados, la placa crece con `clip-path` y entra «Soluciones»;
+  - el encabezado queda a 32/24 px del borde, y bajo 834 la placa va a todo el ancho.
+  - Está detallado en `e13/spec-home.md` §3.2 (segunda vuelta).
+- **Reparos del acta v2:**
+  - el parpadeo al bajar y subir de inmediato quedó cerrado;
+  - quedan como menores dos detalles: el texto visible bajo 834 durante ~0,2 s de la salida, y el Shift+Tab desde
+    «Hablemos», que salta a «Soluciones».

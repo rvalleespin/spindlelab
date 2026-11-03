@@ -200,9 +200,10 @@ body.a-body {
 .a-body .icono-pausa, .a-body .icono-seguir { width: 14px; height: 14px; fill: currentColor; }
 
 /* ------------------------------------------------------------------ encabezado (§2, lo común, 1) */
-/* Logo a 24 px en el margen (20 bajo 834), el menú en mono, a la derecha «SANTIAGO» con la hora. 64 de alto desde 834,
-   pegajoso, y al bajar se pliega en una placa de 48 (radio 4, a 8 del borde) con el resorte «entrada». Bajo 834, 90 de
-   alto: el menú pasa a una segunda fila de 44 y no hay botón «Menú». */
+/* Logo a 24 px (20 bajo 834), el menú en mono, a la derecha «SANTIAGO» con la hora y el botón. 64 de alto desde 834;
+   bajo 834, 90: el menú pasa a una segunda fila de 44 y no hay botón «Menú». Pegajoso. 3-nov (como Koto, medido): va a
+   32 px del borde (24 bajo 834) y, pasado el 36 % de la pantalla (vuelve bajo el 30 %), se pliega en una placa de 48
+   (radio 4) con el logo y «Soluciones» que base.mjs abre con un clip-path; bajo 834 la placa va a todo el ancho. */
 .a-body .cab { position: relative; z-index: 20; }
 .a-body .cab__fila {
   position: relative; display: flex; align-items: center; gap: 56px; min-height: 64px; padding: 0 var(--a-m);
