@@ -920,3 +920,114 @@ export async function enviarCorreoDeEntrega(pedido, informeFinal, titulos, token
   console.log(`[correo] entrega avisada: ${String(pedido.id).slice(0, 12)}…`);
   return true;
 }
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════ *
+ * EL CORREO DE LA DEVOLUCIÓN
+ *
+ * ── POR QUÉ LOS TRES MOTIVOS NO PUEDEN COMPARTIR EL TEXTO (4-nov-2026) ───────────────────
+ *
+ * «Te devolvimos el dinero» es la misma frase para tres hechos distintos, y escribirla igual
+ * en los tres sale mal de las dos maneras posibles:
+ *
+ *   - Si alguien ejerció su derecho a retracto y le pedimos perdón por una falla, le estamos
+ *     diciendo que algo se rompió cuando lo único que hizo fue usar un derecho que la ley le
+ *     da. Es tratarlo de problema.
+ *   - Si nosotros no pudimos entregar y le escribimos como si hubiera sido su decisión, le
+ *     estamos escondiendo que la falla fue nuestra.
+ *
+ * Así que el motivo cambia el texto, no solo el registro. Y ninguno de los tres promete que
+ * el dinero ya está en su cuenta: lo que decimos es que la devolución salió de nuestro lado,
+ * porque cuánto tarda en aparecer lo decide su banco y no nosotros.
+ * ══════════════════════════════════════════════════════════════════════════════════════════ */
+
+/** Los motivos. Lista cerrada: un texto libre no se puede contar ni redactar distinto. */
+export const MOTIVOS_DEVOLUCION = {
+  RETRACTO: 'retracto',
+  NO_SE_PUDO_ENTREGAR: 'no-se-pudo-entregar',
+  OTRO: 'otro',
+};
+
+export function motivoValido(m) {
+  return Object.values(MOTIVOS_DEVOLUCION).includes(String(m || '').trim());
+}
+
+export function correoDeDevolucion(pedido, motivo) {
+  const sitio = pedido.dominio || 'tu sitio';
+  const enlace = enlaceDelPedido(pedido.id);
+  const monto = PESOS(pedido.monto_total);
+
+  // La apertura, el reconocimiento y el cierre cambian por motivo. El resto es común, porque
+  // el hecho —cuánto, por dónde vuelve, cuánto tarda— sí es el mismo.
+  const porMotivo = {
+    [MOTIVOS_DEVOLUCION.RETRACTO]: {
+      asunto: `Devolución hecha · ${sitio}`,
+      abre: `Recibimos tu retracto y te devolvimos los ${monto} completos.`,
+      medio: 'Estás en tu derecho y no hace falta que expliques nada. El pedido queda ' +
+        'cerrado y no te vamos a cobrar nada más.',
+      cierra: 'Si más adelante te sirve, el chequeo gratis sigue abierto y nos puedes ' +
+        'escribir sin compromiso.',
+    },
+    [MOTIVOS_DEVOLUCION.NO_SE_PUDO_ENTREGAR]: {
+      asunto: `Te devolvimos el dinero · ${sitio}`,
+      abre: `No pudimos entregarte lo que compraste, así que te devolvimos los ${monto} completos.`,
+      // ⚠️ Acá SÍ corresponde decir que la falla fue nuestra. Cobrar y no poder entregar es
+      // nuestro problema, no de quien pagó, y un correo que lo deja ambiguo le hace pensar
+      // que hizo algo mal.
+      medio: 'La falla fue de nuestro lado. No te cobramos nada y el pedido queda cerrado.',
+      cierra: 'Si quieres que lo intentemos de nuevo cuando se resuelva lo que lo impidió, ' +
+        'escríbenos y lo vemos sin que tengas que pagar otra vez.',
+    },
+    [MOTIVOS_DEVOLUCION.OTRO]: {
+      asunto: `Devolución hecha · ${sitio}`,
+      abre: `Te devolvimos los ${monto} de tu pedido.`,
+      medio: 'El pedido queda cerrado y no te vamos a cobrar nada más.',
+      cierra: 'Cualquier duda, responde este correo.',
+    },
+  }[String(motivo || '').trim()] || null;
+
+  if (!porMotivo) return null;
+
+  // ⚠️ NO DICE «ya está en tu cuenta». La devolución sale de nuestro lado; cuándo aparece lo
+  // decide el banco del comprador. Prometer la fecha es prometer algo que no controlamos, y es
+  // exactamente el motivo por el que alguien escribe enojado tres días después.
+  const cuandoLlega = 'La devolución ya salió de nuestro lado. Según tu banco, puede tardar ' +
+    'unos días hábiles en aparecer en tu estado de cuenta o en el cupo de tu tarjeta.';
+
+  const lineas = [
+    porMotivo.abre,
+    '',
+    porMotivo.medio,
+    '',
+    cuandoLlega,
+    '',
+    'El estado de tu pedido, por si quieres verlo:',
+    enlace,
+    '',
+    porMotivo.cierra,
+    '',
+    'Verifica y Cumple',
+    BASE_SITIO,
+  ];
+
+  const html = `<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:24px;background:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#18181b;line-height:1.6">
+<div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:12px;padding:32px">
+<p style="margin:0 0 20px;font-size:17px"><strong>${escapar(porMotivo.abre)}</strong></p>
+<p style="margin:0 0 16px">${escapar(porMotivo.medio)}</p>
+<p style="margin:0 0 20px;padding:14px 16px;background:#f4f4f5;border-radius:8px;font-size:15px">${escapar(cuandoLlega)}</p>
+<p style="margin:0 0 8px">El estado de tu pedido, por si quieres verlo:</p>
+<p style="margin:0 0 20px"><a href="${enlace}" style="color:#be185d;font-weight:600;word-break:break-all">${enlace}</a></p>
+<p style="margin:0 0 24px">${escapar(porMotivo.cierra)}</p>
+<p style="margin:0;font-size:14px;color:#71717a">Verifica y Cumple · <a href="${BASE_SITIO}" style="color:#71717a">verifica.spindlelab.cl</a></p>
+</div></body></html>`;
+
+  return {
+    from: REMITENTE,
+    to: [pedido.correo],
+    reply_to: RESPONDER_A,
+    subject: porMotivo.asunto,
+    text: lineas.join('\n'),
+    html,
+  };
+}

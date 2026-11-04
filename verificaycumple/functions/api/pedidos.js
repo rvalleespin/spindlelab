@@ -540,7 +540,22 @@ CREATE TABLE IF NOT EXISTS pedidos (
   -- ningún almacenamiento aparte. Vive con el pedido porque es lo que se entregó, y de los
   -- dos caminos por los que le llega es el único que no depende de que un correo salga: la
   -- pantalla privada lo muestra siempre.
-  borrador_politica   TEXT
+  borrador_politica   TEXT,
+  -- ── LA DEVOLUCIÓN (4-nov-2026) ───────────────────────────────────────────────────────
+  -- Hasta hoy devuelto era un estado al que nada podía llegar con Flow: lo escribía solo el
+  -- mapa de Mercado Pago (cobro.js), y la pasarela viva desde el 30-oct es Flow. O sea que si
+  -- alguien ejercía el retracto, se le devolvía la plata en el panel y el pedido quedaba en
+  -- entregado para siempre, con su pantalla mostrándole el kit.
+  --
+  -- Los términos publicados el 3-nov declaran el retracto de 10 días y prometen el 100% con
+  -- tope de 45. La promesa estaba publicada y el sistema no tenía dónde anotar que se cumplió.
+  --
+  -- El MOTIVO es columna aparte y no un comentario suelto porque los tres casos tienen
+  -- consecuencias distintas: el retracto es un derecho del comprador, «no se pudo entregar» es
+  -- una falla nuestra, y el contracargo lo decide el emisor. Mezclarlos en un texto libre
+  -- vuelve imposible contestar «cuántos retractos tuvimos», que es justo lo que hay que saber.
+  devuelto_en        TEXT,
+  motivo_devolucion  TEXT
 );
 
 -- Para que el webhook encuentre el pedido por el id de Mercado Pago sin recorrer la tabla.

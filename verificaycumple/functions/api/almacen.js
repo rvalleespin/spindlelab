@@ -120,6 +120,10 @@ const EXTRA_PERMITIDO = new Set([
   // nosotros en la misma transacción que marca la entrega. Un borrador que el comprador
   // pudiera reemplazar no sería la constancia de lo que se le entregó.
   'borrador_politica',
+  // La devolución se escribe en la MISMA transacción que mueve el estado, por el mismo motivo
+  // que `pagado_en`: un pedido en `devuelto` sin fecha ni motivo es un registro que no sirve
+  // para contestar qué pasó, y dos escrituras separadas se pueden cortar en medio.
+  'devuelto_en', 'motivo_devolucion',
 ]);
 
 /**
@@ -505,6 +509,8 @@ export async function listarPedidos(db, { estado, tope } = {}) {
     // curso sin esta fecha es uno al que todavía le corre el plazo de retracto entero.
     'inicio_avisado_en',
     'entregado_en', 'informe_final_json',
+    // Sin esto, un pedido devuelto se ve en la cola igual que uno vivo.
+    'devuelto_en', 'motivo_devolucion',
     'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
   ].join(', ');
 
