@@ -3441,30 +3441,6 @@
     input.removeAttribute('aria-describedby');
   });
 
-  /* ── VOLVER A INTENTAR DESPUÉS DE UN PAGO RECHAZADO (4-nov-2026) ──────────────────────
-   *
-   * La pantalla del pedido rechazado decía «puedes intentarlo de nuevo» y el único botón que
-   * dibujaba era «Escríbenos». O sea que a la persona que quería comprar y cuya tarjeta falló
-   * —el camino no-feliz más frecuente que hay— se le ofrecía mandar un correo, no reintentar.
-   * Para volver a comprar tenía que adivinar que debía volver a la portada, escribir su
-   * dominio otra vez y esperar los dos chequeos de nuevo.
-   *
-   * Con `?dominio=` el botón de esa pantalla la trae de vuelta con el campo lleno y el chequeo
-   * rápido ya corriendo. No se saltea ninguna compuerta: corre el mismo chequeo y la misma
-   * elegibilidad del servidor que cualquier visita. Lo único que se le ahorra es volver a
-   * teclear lo que ya escribió. */
-  (function () {
-    let pedido = '';
-    try { pedido = new URLSearchParams(location.search).get('dominio') || ''; } catch { pedido = ''; }
-    pedido = String(pedido).trim().slice(0, 253);
-    if (!pedido) return;
-    input.value = pedido;
-    // `requestSubmit` y no `submit()`: `submit()` se salta el manejador de arriba, así que el
-    // chequeo no correría y el campo quedaría lleno sin que pasara nada.
-    if (typeof form.requestSubmit === 'function') form.requestSubmit();
-    else boton.click();
-  })();
-
   form.addEventListener('submit', async function (ev) {
     ev.preventDefault();
     const dominio = input.value.trim();
@@ -3522,6 +3498,44 @@
       boton.textContent = 'Revisar mi sitio';
     }
   });
+
+  /* ── VOLVER A INTENTAR DESPUÉS DE UN PAGO RECHAZADO (4-nov-2026) ──────────────────────
+   *
+   * La pantalla del pedido rechazado decía «puedes intentarlo de nuevo» y el único botón que
+   * dibujaba era «Escríbenos». O sea que a la persona que quería comprar y cuya tarjeta falló
+   * —el camino no-feliz más frecuente que hay— se le ofrecía mandar un correo, no reintentar.
+   *
+   * Con `?dominio=` el botón de esa pantalla la trae de vuelta con el campo lleno y el chequeo
+   * ya corriendo. No se saltea ninguna compuerta: corre el mismo chequeo y la misma
+   * elegibilidad del servidor que cualquier visita. Lo único que se le ahorra es volver a
+   * teclear lo que ya escribió.
+   *
+   * ⚠️ VA DESPUÉS DEL `addEventListener`, Y LA PRIMERA VERSIÓN IBA ANTES. Puesto arriba, el
+   * `requestSubmit` dispara el envío cuando todavía no hay manejador que lo intercepte, así que
+   * el formulario navega a `/?dominio=…` —la misma URL— y al cargar vuelve a autoenviarse: un
+   * bucle de recarga, con el campo vacío y sin chequeo. Se vio en el navegador contra
+   * producción; la prueba del fuente no podía verlo, porque `form.requestSubmit()` estaba
+   * escrito y lo que estaba mal era el ORDEN.
+   *
+   * ⚠️ Y SE LIMPIA EL PARÁMETRO DE LA URL antes de enviar. Es el cinturón de seguridad del
+   * mismo bucle: si algún día este bloque volviera a correr sin manejador, la recarga ya no
+   * traería el parámetro y se detendría sola en vez de girar para siempre. */
+  (function () {
+    let pedido = '';
+    try { pedido = new URLSearchParams(location.search).get('dominio') || ''; } catch { pedido = ''; }
+    pedido = String(pedido).trim().slice(0, 253);
+    if (!pedido) return;
+    input.value = pedido;
+    try {
+      const limpia = new URL(location.href);
+      limpia.searchParams.delete('dominio');
+      history.replaceState(null, '', limpia.pathname + (limpia.search || '') + limpia.hash);
+    } catch {}
+    // `requestSubmit` y no `submit()`: `submit()` se salta el manejador, así que el chequeo no
+    // correría y el campo quedaría lleno sin que pasara nada.
+    if (typeof form.requestSubmit === 'function') form.requestSubmit();
+    else boton.click();
+  })();
 
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
