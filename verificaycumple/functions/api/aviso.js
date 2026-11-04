@@ -60,11 +60,49 @@ export { esPasajero };
 /**
  * A dónde llegan los avisos internos.
  *
- * Es la casilla del negocio, la que Ramón lee. Coincide con el `reply_to` del correo al
- * comprador y no se importa de allá a propósito: son dos hechos distintos —dónde se contesta
- * una duda de un cliente, y a quién le avisamos de una venta— que hoy comparten dirección.
+ * ── POR QUÉ NO ES `hola@spindlelab.cl` (4-nov-2026) ──────────────────────────────────────
+ *
+ * Lo era, y Gmail los mandaba a spam. No es una sospecha: está en el registro de correo de
+ * Workspace, con la traza entera del aviso de la primera venta real.
+ *
+ *     Asunto:       Venta de Verifica y Cumple · sitio-de-prueba-vyc.pages.dev
+ *     Remitente:    …@rsend.envios.spindlelab.cl
+ *     Destinatario: hola@spindlelab.cl
+ *     10:35:07      Recibido desde un servidor SMTP · 250 2.0.0 OK
+ *     10:35:08      Insertado en la canalización de entrega de Gmail
+ *     10:35:08      Marcado como spam
+ *     Estado:       0/1 entregados
+ *
+ * La causa es la dirección, no el contenido ni el envío: un `From` de un SUBDOMINIO del
+ * propio dominio de Workspace, entrando desde una IP de afuera, es la señal clásica de
+ * suplantación, y Gmail la filtra aunque SPF y DKIM pasen —que pasan, los dos están bien
+ * configurados en `send.envios.spindlelab.cl`—. De eso se trata justamente esa protección.
+ *
+ * El recibo al comprador, mandado en el MISMO `Promise.all`, con la misma clave y en el mismo
+ * segundo, llegó sin problema: va a un Gmail de consumidor, que no tiene esa regla. O sea que
+ * el único correo nuestro que cruza hacia nuestro propio dominio era este.
+ *
+ * ⚠️ Y el reintento de `mandarPorResend` no servía de nada acá: Resend contestó 250 OK. No
+ * hubo ningún fallo que reintentar. El sistema registraba «[aviso] salió» para un correo que
+ * nunca llegó a una bandeja, y por eso estuvo un día entero dándose por enviado.
+ *
+ * Se eligió mover el destino en vez de permitir el remitente en la consola de Workspace
+ * porque esta casilla ya está PROBADA —recibe el recibo del comprador y el resumen diario del
+ * copiloto— y porque una lista blanca en la consola es una configuración que alguien puede
+ * cambiar sin acordarse de por qué estaba.
+ *
+ * Esto es solo a dónde le avisamos a Ramón. Nada de lo que ve un cliente cambia: sus correos
+ * siguen saliendo desde el mismo remitente y con `reply_to` a la casilla del negocio.
  */
-export const DESTINO_AVISOS = 'hola@spindlelab.cl';
+export const DESTINO_AVISOS = 'manuvalleespin@gmail.com';
+
+/**
+ * La casilla del negocio, que sigue siendo donde se contesta una duda de un cliente.
+ *
+ * Vive acá para que el día que los avisos vuelvan a `hola@` —si la regla de Workspace se
+ * resuelve— se vea que son dos hechos distintos y no un solo valor que alguien duplicó.
+ */
+export const CASILLA_DEL_NEGOCIO = 'hola@spindlelab.cl';
 
 /** Cuántos caracteres del id se mandan. Suficiente para buscarlo, inútil para abrir nada. */
 export const LARGO_PREFIJO = 12;
