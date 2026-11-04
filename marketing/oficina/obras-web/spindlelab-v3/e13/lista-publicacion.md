@@ -407,3 +407,10 @@ Dos veces: una al principio, sobre `1c65e6a6`, para depurar el script; y la defi
   - a 1440 la franja mide 1408×504 y sirve las `-219` (en Nosotros corre el video `nosotros-anim-219.webm`);
   - a 390 queda la 4:5.
 - IndexNow de las 11 URL con franja, en api.indexnow.org y bing.com.
+
+## 4-nov-2026 · PR #68 (imágenes en la fila de tres de la home) publicado
+- Ramón lo fusionó a las 13:01 UTC y Cloudflare lo sirvió a los ~90 segundos.
+- Verificado en vivo a 1440 y 390: las tres imágenes cargan, sirven la variante `-169-800.webp`, los alt vienen del JSON
+  de cada página y los títulos quedan a la misma altura a 1440. El pie de IA aparece solo en la foto del bonsái.
+- IndexNow de `/` en api.indexnow.org y bing.com.
+- **Es provisorio:** se reemplaza cuando lleguen las piezas del ilustrador (`e15-heroes-internos/brief-ilustrador.md`).
