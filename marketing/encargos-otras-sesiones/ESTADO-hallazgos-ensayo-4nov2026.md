@@ -24,44 +24,47 @@ porque probé con `curl` en vez de con la página.
 caen en `SIN_PLATAFORMA`, que es un genérico deliberado y bien escrito. Las otras 7 plataformas
 sí tienen ficha propia.
 
-## Abierto, y es tuyo: #5, el aviso de venta que nunca llegó
+## CERRADO: #5, el aviso de venta — resuelto el 4-nov por la tarde
 
-**Lo que está verificado, no supuesto:**
+**La causa, con la evidencia del registro de correo de Workspace:**
 
-1. El recibo al cliente y el aviso de venta salen del **mismo `Promise.all`**, con la misma
-   clave de Resend y en el mismo instante (`flow-confirmacion.js:249`). El recibo llegó.
-   Entonces Resend funcionó.
-2. El destino del aviso es correcto: `hola@spindlelab.cl` (`aviso.js:67`).
-3. **No está en ninguna carpeta de esa casilla.** Busqué bandeja, spam y papelera: el spam está
-   **completamente vacío**, y lo único que aparece con «Verifica y Cumple» en el asunto después
-   del 3-nov es el resumen diario del copiloto.
-4. SPF y DKIM del subdominio de envío **están bien**. (Primero dije que faltaba el SPF; estaba
-   mirando el nombre equivocado. Resend lo pone en `send.envios.spindlelab.cl`, y ahí está:
-   `v=spf1 ip4:52.3.252.119 ...`. El DKIM también. DMARC del dominio es `p=quarantine`.)
+    Asunto:       Venta de Verifica y Cumple · sitio-de-prueba-vyc.pages.dev
+    Remitente:    …@rsend.envios.spindlelab.cl
+    Destinatario: hola@spindlelab.cl
+    10:35:07      Recibido desde un servidor SMTP · 250 2.0.0 OK
+    10:35:08      Insertado en la canalización de entrega de Gmail
+    10:35:08      Marcado como spam
+    Estado:       0/1 entregados
 
-**La única explicación que calza con las cuatro cosas:** el aviso tiene `From:`
-`hola@envios.spindlelab.cl` y `To:` `hola@spindlelab.cl` — o sea, un correo que *parece de tu
-propio dominio* entrando desde afuera. Google Workspace tiene una regla específica para eso
-(«protección contra correos entrantes que falsifican tu dominio»), que alcanza a los
-subdominios y **se aplica aunque SPF y DKIM pasen**, porque de eso justamente se trata. El
-recibo no la cruzó porque fue a un Gmail de consumidor, que no tiene esa regla.
+Gmail **lo recibió y lo marcó como spam**. La causa es la dirección, no el contenido ni el
+envío: un `From` de un subdominio del propio dominio de Workspace, entrando desde una IP de
+afuera, es la señal clásica de suplantación, y Gmail la filtra aunque SPF y DKIM pasen — que
+pasan, los dos están bien configurados. El recibo al comprador, mandado en el mismo
+`Promise.all` y en el mismo segundo, llegó sin problema porque va a un Gmail de consumidor,
+que no tiene esa regla.
 
-Y cuando esa regla actúa, el correo **no va al spam del usuario**: va a la *cuarentena del
-administrador*, que es otro lugar y solo se ve desde la consola. Eso explica por qué no está en
-ninguna de las tres carpetas.
+**El arreglo (decisión de Ramón, 4-nov):** el aviso interno pasa a su Gmail personal, que ya
+está probado —recibe el recibo del comprador y el resumen diario del copiloto— en vez de poner
+una lista blanca en la consola de Workspace, que es una configuración que alguien puede cambiar
+sin acordarse de por qué estaba. Nada de lo que ve un cliente cambia.
 
-**Dónde mirarlo (no lo puedo hacer yo, necesita tu consola de administrador):**
+Hay una aserción que impide la regresión: el destino de los avisos no puede estar en
+`spindlelab.cl` ni en ninguno de sus subdominios. Validada con tres mutaciones, incluida la
+sutil —un subdominio que parece distinto y no lo es—.
 
-- `admin.google.com` → **Informes → Cuarentena**. Si el aviso está ahí, queda confirmado.
-- Si está: `admin.google.com` → **Aplicaciones → Google Workspace → Gmail → Seguridad →
-  Suplantación de identidad y autenticación**, y agregar `envios.spindlelab.cl` a la lista de
-  remitentes permitidos (o cambiar la acción de «rechazar» a «mostrar advertencia»).
+### Dos cosas que afirmé y eran falsas
 
-**Y el defecto de fondo, que sí es de código y queda anotado:** si Workspace descarta el correo
-*después* de que Resend lo aceptó, Resend contesta 200 y el sistema registra «[aviso] salió».
-O sea que hoy damos por entregado un correo que nunca llegó, y el reintento del punto 1 no
-ayuda porque no hubo ningún fallo que reintentar. Cerrarlo de verdad pide escuchar el webhook
-`email.bounced` de Resend, que es un trabajo aparte.
+**«El spam está completamente vacío.»** Lo di por verificado y no lo estaba: el conector de
+Gmail no ve esa carpeta, así que mi búsqueda devolvió vacío por una limitación de la
+herramienta y lo leí como un hecho. El correo estaba ahí todo el tiempo.
+
+**«Workspace lo rechazó o lo puso en cuarentena de administrador.»** No: lo aceptó con un
+`250 OK` y lo filtró a spam. La dirección de la hipótesis era correcta (suplantación del propio
+dominio); el mecanismo, no.
+
+**Y el reintento que agregué por la mañana no servía para esto.** Resend contestó 250 OK: no
+hubo ningún fallo que reintentar. El sistema registraba «[aviso] salió» para un correo que
+nunca llegó a una bandeja, y por eso estuvo un día entero dándose por enviado.
 
 ## Lo otro que sigue siendo tuyo
 
