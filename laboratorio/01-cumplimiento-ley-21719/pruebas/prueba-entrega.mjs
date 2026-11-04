@@ -776,11 +776,143 @@ console.log('\n=== 10 · LA PANTALLA: LA AYUDA Y EL FIN DEL REFRESCO (promesas 1
   cierto('el tope tiene nombre', /var TOPE_REINTENTOS = 24;/.test(HTML));
   falso('y no queda un 24 suelto en el if', /reintentos < 24/.test(HTML));
   cierto('existe el aviso', /function dejamosDeRefrescar\(/.test(HTML));
+  // ⚠️ Esta aserción exigía `dejamosDeRefrescar()` con los paréntesis VACÍOS, y eso la volvió
+  // una aserción copiada del código en vez de una regla: cuando la función pasó a recibir la
+  // etapa, cayó sola aunque el comportamiento había mejorado. Lo que importa es que se la
+  // llame al agotar el tope, con lo que sea que necesite.
   cierto('se llama al agotar el tope',
-    /reintentos < TOPE_REINTENTOS[\s\S]{0,1200}dejamosDeRefrescar\(\)/.test(HTML));
-  cierto('el aviso dice que dejamos de revisar', /Dejamos de revisar/.test(HTML));
+    /reintentos < TOPE_REINTENTOS[\s\S]{0,1200}dejamosDeRefrescar\(/.test(HTML));
   cierto('y da un botón para revisar a mano', /Revisar de nuevo/.test(HTML));
   cierto('que reinicia el contador', /reintentos = 0;[\s\S]{0,300}pedir\(\)/.test(HTML));
+}
+
+console.log('\n=== 10 bis · EL AVISO DE «DEJAMOS DE REVISAR», EN UN NAVEGADOR ===\n');
+{
+  /* ── POR QUÉ ACÁ NO ALCANZA EL GREP ──────────────────────────────────────────────────────
+   *
+   * Lo de arriba son regex sobre el archivo, y un grep ve el nombre y no el ámbito. El riesgo
+   * real de este cambio es exactamente de ámbito: el aviso elige su texto según
+   * `res.j.etapa.etapa`, y si la respuesta del servidor tuviera otra forma —la etapa como
+   * cadena en vez de objeto— esa lectura daría `undefined`, la rama de la espera larga no
+   * correría NUNCA, y el archivo seguiría teniendo todas las palabras en su sitio.
+   *
+   * Así que el juez es el navegador, con la respuesta que de verdad arma el servidor.
+   *
+   * ⚠️ EL TOPE SE PARCHA A 0 EN LA COPIA SERVIDA, no en el repo. Con los 24 de producción esta
+   * sección tardaría dos minutos. Lo que se parcha es el reloj, no la lógica que se mide.
+   */
+  const CHROME = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+  const http = await import('node:http');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const { spawn } = await import('node:child_process');
+
+  const CONDUCTOR = `<script>
+(function () {
+  var intentos = 0;
+  var esperar = setInterval(function () {
+    var caja = document.querySelector('.sin-refresco');
+    if (!caja) { if (++intentos > 100) { clearInterval(esperar); volcar({ fatal: 'nunca apareció el aviso' }); } return; }
+    clearInterval(esperar);
+    volcar({ texto: caja.innerText, hayBoton: Boolean(caja.querySelector('button')) });
+  }, 50);
+  function volcar(x) {
+    var d = document.createElement('div');
+    d.id = 'resultado';
+    d.textContent = 'RESULTADO:' + btoa(unescape(encodeURIComponent(JSON.stringify(x))));
+    document.body.appendChild(d);
+  }
+})();
+<\/script>`;
+
+  async function avisoEnPantalla(estadoDelPedido) {
+    const { db } = await baseConPedido('creado');
+    /* ⚠️ EL `mp_order_id` NO ES DECORADO. `convieneRefrescar` se niega a refrescar un pedido en
+       `creado` sin él, y con razón: sin orden en la pasarela no hay ningún aviso en camino, así
+       que refrescar sería esperar para siempre algo que nadie va a mandar. Sin esta línea la
+       sección entera se quedaba sin aviso que mirar, y la culpa era del fixture. */
+    await A.marcarEstado(db, ID, 'creado', 'creado', { mp_order_id: 'ORD-DE-PRUEBA' });
+    if (estadoDelPedido !== 'creado') {
+      await A.marcarEstado(db, ID, 'creado', estadoDelPedido, {});
+    }
+    const crudo = await A.leerPedido(db, ID);
+    const cuerpo = {
+      ok: true, pedido: A.vistaPublica(crudo), etapa: E.etapaDelPedido(crudo),
+      señales: E.señalesDelPedido(crudo, E.TITULOS), acceso: null,
+      // Lo que de verdad decide el servidor para este estado. Si acá se escribiera `true` a
+      // mano, la prueba estaría afirmando algo que el servidor no dice.
+      refrescar: E.convieneRefrescar(crudo),
+    };
+    if (!cuerpo.refrescar) return { fatal: `el servidor no refresca en "${estadoDelPedido}"` };
+    const pagina = fs.readFileSync(
+      rutaEnElRepo('verificaycumple/public/pedido/index.html', 'VYC_PEDIDO_HTML'), 'utf8')
+      .replace('var TOPE_REINTENTOS = 24;', 'var TOPE_REINTENTOS = 0;');
+    const s = http.createServer((req, res) => {
+      const u = new URL(req.url, 'http://127.0.0.1');
+      if (u.pathname === '/api/pedido') {
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        return res.end(JSON.stringify(cuerpo));
+      }
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      return res.end(pagina.replace('</body>', CONDUCTOR + '</body>'));
+    });
+    await new Promise((r) => s.listen(0, '127.0.0.1', r));
+    const puerto = s.address().port;
+    const perfil = fs.mkdtempSync(path.join(os.tmpdir(), 'vyc-chrome-'));
+    try {
+      const dom = await new Promise((listo) => {
+        const ch = spawn(CHROME, [
+          '--headless', '--disable-gpu', '--no-sandbox', '--no-first-run',
+          '--disable-extensions', '--user-data-dir=' + perfil,
+          '--virtual-time-budget=20000', '--dump-dom',
+          `http://127.0.0.1:${puerto}/pedido/?id=${ID}`,
+        ], { stdio: ['ignore', 'pipe', 'ignore'], detached: true });
+        let salida = '', cerrado = false, muerte = null;
+        const matar = () => { try { process.kill(-ch.pid, 'SIGKILL'); } catch { try { ch.kill('SIGKILL'); } catch { /* ya murió */ } } };
+        const fin = () => { if (cerrado) return; cerrado = true; clearTimeout(muerte); matar(); listo(salida); };
+        muerte = setTimeout(fin, 60000);
+        ch.stdout.on('data', (d) => { salida += d; if (salida.includes('</html>')) fin(); });
+        ch.on('close', fin);
+        ch.on('error', fin);
+      });
+      const m = /RESULTADO:([A-Za-z0-9+/=]+)/.exec(dom);
+      if (!m) return { fatal: 'la página no llegó a reportar' };
+      return JSON.parse(Buffer.from(m[1], 'base64').toString('utf8'));
+    } finally {
+      s.close();
+      fs.rmSync(perfil, { recursive: true, force: true });
+    }
+  }
+
+  if (!fs.existsSync(CHROME)) {
+    malo++;
+    console.log(`  FALLA no está Chrome en ${CHROME}: esta sección no se puede saltar en silencio`);
+  } else {
+    // ── «confirmando»: el aviso del medio de pago tarda segundos, dos minutos sí es raro ──
+    const conf = await avisoEnPantalla('creado');
+    falso('en «confirmando» el aviso aparece', conf.fatal);
+    cierto('con su botón', conf.hayBoton);
+    cierto('y dice que el pago todavía no se confirma',
+      /todav[ií]a no se confirma/i.test(String(conf.texto || '')));
+
+    /* ── «pago pendiente»: una transferencia puede tardar hasta el día hábil siguiente ─────
+     *
+     * Acá estaba el defecto. Es el momento exacto en que alguien que YA transfirió su plata
+     * lee la pantalla, y el texto que leía describía el funcionamiento normal como si algo
+     * hubiera salido mal. */
+    const pend = await avisoEnPantalla('pendiente');
+    falso('en «pago pendiente» el aviso aparece', pend.fatal);
+    const tp = String(pend.texto || '');
+    cierto('y dice que la demora es lo normal con ese medio de pago', /es lo normal/i.test(tp));
+    cierto('nombrando cuánto puede tardar', /horas|d[ií]a h[áa]bil/i.test(tp));
+    cierto('y que no hace falta esperar ahí', /no hace falta que te quedes/i.test(tp));
+    cierto('que seguimos nosotros', /seguimos nosotros|te escribimos/i.test(tp));
+    // ═══ LA ASERCIÓN QUE MIDE LA DIFERENCIA, NO LA PRESENCIA ═══
+    // Sin ella, las dos etapas podrían compartir el texto de siempre y todo lo de arriba
+    // pasaría igual: «dice que es lo normal» no prueba que la OTRA no lo diga también.
+    falso('y NO le dice que el pago todavía no se confirma', /todav[ií]a no se confirma/i.test(tp));
+    cierto('los dos textos son distintos', String(conf.texto || '') !== tp);
+  }
 }
 
 console.log('\n=== 11 · EL FORMULARIO SIGUE DEVOLVIENDO LA AYUDA AL REPINTAR ===\n');
@@ -811,6 +943,159 @@ console.log('\n=== 11 · EL FORMULARIO SIGUE DEVOLVIENDO LA AYUDA AL REPINTAR ==
   cierto('con sus pasos', Array.isArray(a11.pasos) && a11.pasos.length >= 3);
   cierto('y el texto para reenviar', String(a11.textoParaReenviar || '').includes('ejemplo.cl'));
   falso('que no lleva el id', String(a11.textoParaReenviar || '').includes(ID));
+}
+
+console.log('\n=== 8 bis · EL BORRADOR DE UN PEDIDO ENTREGADO SE PUEDE CORREGIR ===\n');
+{
+  /* ── POR QUÉ ESTA SECCIÓN ────────────────────────────────────────────────────────────────
+   *
+   * Hallazgo del ensayo real del 4-nov-2026: el primer borrador salió en Markdown y el canal
+   * es texto plano. Se reescribió, y entonces se descubrió que no había por dónde meterlo: la
+   * rama de `entregado` cortaba en seco y la copia del cliente quedaba congelada con el error.
+   * Una errata, un RUT mal copiado o el texto que devuelve su abogado tienen que poder entrar.
+   *
+   * Lo que se prueba acá no es solo que la corrección funcione, sino sus dos bordes, que son
+   * donde esto se vuelve peligroso: que REPETIR el cierre no pise el borrador bueno, y que
+   * corregir NO mande otro correo.
+   */
+  const CLAVE = 'c'.repeat(64);
+  const CORREGIDO = BORRADOR.replace('Calle 1', 'Avenida Siempre Viva 742');
+  const OTRO_LARGO = BORRADOR.replace('EJEMPLO SPA', 'OTRA EMPRESA QUE NO ES') + '\nTexto que nadie pidió guardar.';
+
+  /** Un pedido ya entregado, con su borrador puesto. */
+  async function yaEntregado() {
+    const { db } = await baseConPedido('pagado', { razon_social: 'Ejemplo SpA', rut: '76.086.428-5' });
+    const red = conRed();
+    const r = await EN.onRequestPost({
+      request: peticion({ id: ID }, CLAVE),
+      env: { VYC_PEDIDOS: db, CLAVE_ENTREGA: CLAVE, RESEND_API_KEY: 'k' },
+    });
+    red.soltar();
+    if (r.status !== 200) throw new Error('la base de esta sección no quedó entregada: ' + r.status);
+    return { db, correosDelCierre: red.llamadas.length };
+  }
+
+  // ── El caso que faltaba: entra el texto nuevo ──────────────────────────────────────────
+  {
+    const { db } = await yaEntregado();
+    const red = conRed();
+    const r = await EN.onRequestPost({
+      request: peticion({ id: ID, corregir_borrador: true, borrador_politica: CORREGIDO }, CLAVE),
+      env: { VYC_PEDIDOS: db, CLAVE_ENTREGA: CLAVE, RESEND_API_KEY: 'k' },
+    });
+    red.soltar();
+    const j = await r.json();
+    eq('corregir un pedido entregado: 200', r.status, 200);
+    eq('y dice cuánto quedó escrito', j.borrador_corregido, CORREGIDO.length);
+    const puesto = await A.leerPedido(db, ID);
+    eq('el borrador de la base es el nuevo', puesto.borrador_politica, CORREGIDO);
+    eq('y el pedido sigue entregado', puesto.estado, 'entregado');
+    // ⚠️ ESTA ES LA ASERCIÓN QUE PROTEGE AL CLIENTE. Ya recibió su correo de cierre; otro le
+    // haría creer que hubo trabajo nuevo. Que lo corregimos se lo dice una persona.
+    eq('y NO se le manda otro correo', red.llamadas.length, 0);
+    eq('la respuesta lo declara', j.correo_enviado, false);
+  }
+
+  // ── El borde peligroso: repetir el cierre no pisa el borrador bueno ────────────────────
+  {
+    const { db } = await yaEntregado();
+    const red = conRed();
+    const r = await EN.onRequestPost({
+      /* Sin la bandera, y con OTRO texto en el cuerpo: es el caso normal de llamar dos veces.
+         ⚠️ El texto es LARGO a propósito. Con uno corto, quitar la bandera del código igual
+         daba 400 —lo frenaba la vara del largo— y la mutación se delataba por un camino que
+         no es el que esta prueba dice vigilar. Con un texto que pasa todas las puertas, lo
+         único que puede frenar la sobrescritura es la bandera, que es lo que se mide. */
+      request: peticion({ id: ID, borrador_politica: OTRO_LARGO }, CLAVE),
+      env: { VYC_PEDIDOS: db, CLAVE_ENTREGA: CLAVE, RESEND_API_KEY: 'k' },
+    });
+    red.soltar();
+    const j = await r.json();
+    eq('repetir el cierre: 200 y ya_estaba', r.status, 200);
+    cierto('lo dice', j.ya_estaba);
+    const puesto = await A.leerPedido(db, ID);
+    // Corregir se PIDE; repetir no corrige. Sin la bandera, un reintento del cierre pisaría
+    // el borrador bueno con lo que trajera el cuerpo, sin que nadie lo hubiera pedido.
+    eq('y el borrador NO se tocó', puesto.borrador_politica, BORRADOR);
+    falso('ni se declaró una corrección', 'borrador_corregido' in j);
+  }
+
+  // ── Pedir corregir sin texto no borra lo que había ─────────────────────────────────────
+  {
+    const { db } = await yaEntregado();
+    /* ⚠️ ENVUELTO A PROPÓSITO. Sin el try, quitar del código el rechazo por falta de texto no
+       hace caer estas aserciones: hace REVENTAR el archivo entero —`largoFueraDeRango(null)`
+       lanza un TypeError— y una prueba que revienta no acusa, porque las aserciones que
+       nombran el problema nunca llegan a correr. Acá la excepción se convierte en una falla
+       con nombre, que es lo que un informe tiene que poder leer. */
+    let r = null, j = {}, reventó = null;
+    try {
+      r = await EN.onRequestPost({
+        request: peticion({ id: ID, corregir_borrador: true, borrador_politica: null }, CLAVE),
+        env: { VYC_PEDIDOS: db, CLAVE_ENTREGA: CLAVE },
+      });
+      j = await r.json();
+    } catch (e) { reventó = String((e && e.message) || e); }
+    eq('corregir sin texto no revienta', reventó, null);
+    eq('corregir sin texto: 400', r ? r.status : 0, 400);
+    eq('por el motivo correcto', j.motivo, 'falta-borrador');
+    eq('y lo de antes sigue en pie', (await A.leerPedido(db, ID)).borrador_politica, BORRADOR);
+  }
+
+  // ── La misma vara de largo que el cierre, y desde un solo lugar ────────────────────────
+  {
+    const { db } = await yaEntregado();
+    const r = await EN.onRequestPost({
+      request: peticion({ id: ID, corregir_borrador: true, borrador_politica: 'muy corto' }, CLAVE),
+      env: { VYC_PEDIDOS: db, CLAVE_ENTREGA: CLAVE },
+    });
+    eq('un borrador demasiado corto: 400', r.status, 400);
+    // ⚠️ Mide la REGLA COMPARTIDA, no una copia de ella: `largoFueraDeRango` es la misma
+    // función que usa el cierre. Si alguien relaja una de las dos puertas, esta cae.
+    cierto('con el motivo del largo', /largo|corto/i.test((await r.json()).motivo || ''));
+    eq('y sin tocar el borrador bueno', (await A.leerPedido(db, ID)).borrador_politica, BORRADOR);
+  }
+
+  // ── Corregir no es una puerta sin llave ────────────────────────────────────────────────
+  {
+    const { db } = await yaEntregado();
+    const r = await EN.onRequestPost({
+      request: peticion({ id: ID, corregir_borrador: true, borrador_politica: CORREGIDO }, 'x'.repeat(64)),
+      env: { VYC_PEDIDOS: db, CLAVE_ENTREGA: CLAVE },
+    });
+    cierto('con la clave equivocada no entra', r.status === 401 || r.status === 403);
+    eq('y el borrador no cambió', (await A.leerPedido(db, ID)).borrador_politica, BORRADOR);
+  }
+
+  // ── Y en un pedido que todavía no está entregado, la bandera no inventa un camino ──────
+  {
+    const { db } = await baseConPedido('pagado');
+    // ⚠️ La red fingida ANTES de la llamada. Al revés, este bloque sale a la red de verdad
+    // —se vio: Resend contestó http-401 a la clave de juguete— y una prueba que llama a un
+    // tercero depende de que ese tercero esté arriba.
+    const red = conRed();
+    const r = await EN.onRequestPost({
+      // Un pedido pagado con la bandera puesta tiene que seguir el camino del CIERRE, no el
+      // de la corrección: si no, se marcaría «entregado» sin mandarle el correo a nadie.
+      request: peticion({ id: ID, corregir_borrador: true }, CLAVE),
+      env: { VYC_PEDIDOS: db, CLAVE_ENTREGA: CLAVE, RESEND_API_KEY: 'k' },
+    });
+    red.soltar();
+    const j = await r.json();
+    eq('un pedido pagado se cierra igual', r.status, 200);
+    eq('y a ese sí se le manda el correo de cierre', red.llamadas.length, 1);
+    falso('y no se declara una corrección', 'borrador_corregido' in j);
+    eq('queda entregado', (await A.leerPedido(db, ID)).estado, 'entregado');
+  }
+
+  // ── La función del almacén, por su cuenta: no toca lo que no está entregado ────────────
+  {
+    const { db } = await baseConPedido('pagado');
+    const r = await A.corregirBorrador(db, ID, CORREGIDO);
+    falso('corregirBorrador se niega sobre un pedido pagado', r.corregido);
+    eq('y dice por qué', r.motivo, 'no-esta-entregado');
+    eq('sin escribir nada', (await A.leerPedido(db, ID)).borrador_politica, null);
+  }
 }
 
 console.log(`\n${malo ? 'HAY FALLAS' : 'TODO EN VERDE'} — ${ok} aserciones, ${malo} fallas\n`);

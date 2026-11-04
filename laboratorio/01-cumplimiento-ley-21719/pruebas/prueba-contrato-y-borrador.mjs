@@ -705,6 +705,28 @@ console.log('\n=== 3 quinquies · EL BORRADOR EN UN NAVEGADOR DE VERDAD ===\n');
     clearInterval(esperar);
     var boton = document.querySelector('[data-copiar]');
     var antes = document.body.innerText;
+    /* ⚠️ EL PORTAPAPELES DE CHROME NO ES EL SUJETO DE ESTA PRUEBA (4-nov-2026).
+       127.0.0.1 es contexto seguro, así que navigator.clipboard SÍ existe en headless, y su
+       promesa tarda lo que quiere: a veces resuelve en 20 ms y a veces no resuelve nunca.
+       Contra una espera fija, esta aserción fallaba 4 de cada 6 corridas con el código
+       intacto, y mandó a buscar una regresión que no existía.
+       Lo que se quiere medir acá es que el MANEJADOR corre y deja un mensaje, no que Chrome
+       sepa copiar. Así que el portapapeles se reemplaza por un doble que contesta al instante,
+       y el modo se elige desde la URL para recorrer los DOS caminos del manejador —el que
+       copia y el de respaldo— en vez de uno al azar. */
+    var modo = (location.search.match(/[?&]portapapeles=([a-z]+)/) || [])[1] || 'rechaza';
+    try {
+      Object.defineProperty(navigator, 'clipboard', {
+        configurable: true,
+        value: {
+          writeText: function () {
+            return modo === 'acepta'
+              ? Promise.resolve()
+              : Promise.reject(new Error('doble: el portapapeles rechaza'));
+          },
+        },
+      });
+    } catch (e) { window.__sinDoble = String(e); }
     if (boton) boton.click();
     setTimeout(function () {
       var dicho = document.querySelector('.copiado');
@@ -712,6 +734,9 @@ console.log('\n=== 3 quinquies · EL BORRADOR EN UN NAVEGADOR DE VERDAD ===\n');
         texto: antes,
         enLaCaja: caja.value,
         hayBoton: Boolean(boton),
+        modo: modo,
+        sinDoble: window.__sinDoble || null,
+        seleccionado: caja.selectionEnd - caja.selectionStart,
         dijoAlCopiar: dicho ? dicho.textContent : null,
         avisos: [].slice.call(document.querySelectorAll('.aviso-borrador'))
           .map(function (e) { return e.innerText; }),
@@ -723,7 +748,7 @@ console.log('\n=== 3 quinquies · EL BORRADOR EN UN NAVEGADOR DE VERDAD ===\n');
 <\/script>`;
 
   /** La página real, servida contra una API que contesta lo que contesta el servidor. */
-  async function enElNavegador(pedidoCrudo) {
+  async function enElNavegador(pedidoCrudo, portapapeles = 'rechaza') {
     const etapa = E.etapaDelPedido(pedidoCrudo);
     const cuerpo = {
       ok: true, pedido: A.vistaPublica(pedidoCrudo), etapa,
@@ -751,7 +776,7 @@ console.log('\n=== 3 quinquies · EL BORRADOR EN UN NAVEGADOR DE VERDAD ===\n');
           '--headless', '--disable-gpu', '--no-sandbox', '--no-first-run',
           '--disable-extensions', '--user-data-dir=' + perfil,
           '--virtual-time-budget=20000', '--dump-dom',
-          `http://127.0.0.1:${puerto}/pedido/?id=${pedidoCrudo.id}`,
+          `http://127.0.0.1:${puerto}/pedido/?id=${pedidoCrudo.id}&portapapeles=${portapapeles}`,
         ], { stdio: ['ignore', 'pipe', 'ignore'], detached: true });
         let salida = '', cerrado = false, muerte = null;
         const matar = () => { try { process.kill(-ch.pid, 'SIGKILL'); } catch { try { ch.kill('SIGKILL'); } catch { /* ya murió */ } } };
@@ -786,13 +811,24 @@ console.log('\n=== 3 quinquies · EL BORRADOR EN UN NAVEGADOR DE VERDAD ===\n');
     await postEntregar({ id: ID, borrador_politica: BORRADOR }, db);
     red.soltar();
 
-    const r = await enElNavegador(crudo());
+    const r = await enElNavegador(crudo(), 'rechaza');
     falso('la página reporta', r.fatal);
     eq('y sin errores de JavaScript', r.errorJs, null);
     cierto('el borrador está en pantalla, entero', String(r.enLaCaja || '') === BORRADOR);
     cierto('con su botón', r.hayBoton);
-    // ═══ LA ASERCIÓN QUE MIDE LA EJECUCIÓN Y NO EL NOMBRE ═══
+    eq('el doble del portapapeles se pudo instalar', r.sinDoble, null);
+    // ═══ LAS ASERCIONES QUE MIDEN LA EJECUCIÓN Y NO EL NOMBRE ═══
+    // Camino de respaldo: el portapapeles rechaza y el cliente igual recibe una respuesta.
     cierto('y al apretarlo pasa algo', String(r.dijoAlCopiar || '').length > 10);
+    cierto('cuando el portapapeles rechaza, deja el texto seleccionado',
+      r.seleccionado === BORRADOR.length);
+    cierto('y le dice con qué teclas copiarlo',
+      /ctrl\+c|cmd\+c/i.test(String(r.dijoAlCopiar || '')));
+    // Camino feliz: el portapapeles acepta y confirma la copia, sin pedirle teclas.
+    const rOk = await enElNavegador(crudo(), 'acepta');
+    eq('con el portapapeles funcionando, tampoco hay errores', rOk.errorJs, null);
+    cierto('y confirma que lo copió', String(rOk.dijoAlCopiar || '').length > 10);
+    falso('sin pedirle que lo copie a mano', /ctrl\+c|cmd\+c/i.test(String(rOk.dijoAlCopiar || '')));
     // Las dos advertencias, en el DOM dibujado y no en el código que lo dibuja.
     eq('hay dos advertencias dibujadas', (r.avisos || []).length, 2);
     cierto('la primera dice que es un borrador para su abogado',

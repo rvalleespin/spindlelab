@@ -251,9 +251,10 @@ function conRed({ sitio = PORTADA, mp = null, mpEstado = 201, caeMP = false,
   return { llamadas, soltar: () => { globalThis.fetch = antes; } };
 }
 
-const pedir = (cuerpo, { host = 'verifica.spindlelab.cl', origen = null } = {}) => {
+const pedir = (cuerpo, { host = 'verifica.spindlelab.cl', origen = null, cabeceras = null } = {}) => {
   const h = { 'content-type': 'application/json' };
   if (origen) h.Origin = origen;
+  if (cabeceras) Object.assign(h, cabeceras);
   return new Request(`https://${host}/api/pedido`, {
     method: 'POST', headers: h, body: JSON.stringify(cuerpo),
   });
@@ -2179,6 +2180,121 @@ console.log('=== FLOW NO TIENE IDEMPOTENCIA: EL DOBLE CLIC NO PUEDE ABRIR DOS PA
     // perdida: es la mitad que ya falto una vez en este mismo archivo.
     eq('se avisa a una persona', red.llamadas.avisos, ['hola@spindlelab.cl']);
     eq('y la fila no se movio', filas(crudo)[0].estado, 'creado');
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════ *
+ * EL MONTO DE ENSAYO: solo con el secreto, y nunca desde el navegador (3-nov-2026)        *
+ * ══════════════════════════════════════════════════════════════════════════════════════ *
+ *
+ * El camino del dinero por Flow nunca corrió con plata, y probarlo exige una compra real. Las
+ * seis cosas que esa compra demuestra no dependen del monto, así que se agregó un precio de
+ * ensayo detrás de `CLAVE_ENTREGA`.
+ *
+ * Lo que estas aserciones cuidan NO es que exista el precio de ensayo: es que **no exista para
+ * nadie más**. La regla que el archivo del producto protege con un comentario largo —el monto
+ * lo fija el servidor, nunca el navegador— tiene que seguir siendo cierta después del cambio.
+ * Por eso casi todas las aserciones de abajo comprueban que se cobra 177.310.
+ */
+console.log('=== 25. el monto de ensayo ===');
+{
+  const CLAVE = 'una-clave-de-entrega-larga-para-la-prueba-0123456789';
+  const FLOW = { FLOW_API_KEY: 'clave', FLOW_SECRET_KEY: 'secreto', PASARELA: 'flow' };
+
+  const correr = async (cabeceras, extraEnv = {}) => {
+    const { db, crudo } = baseNueva();
+    const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+    const red = conRed();
+    const r = await E.onRequestPost({
+      request: pedir(BIEN, { cabeceras }),
+      env: { VYC_PEDIDOS: db, VYC_TOPES: kv, ...FLOW, CLAVE_ENTREGA: CLAVE, ...extraEnv },
+    });
+    const j = await r.json().catch(() => ({}));
+    red.restaurar?.();
+    return { r, j, fila: filas(crudo)[0], enviado: red.llamadas.cuerposFlow[0] };
+  };
+
+  // ── Lo que tiene que pasarle a CUALQUIERA que compre ────────────────────────────────
+  const normal = await correr(null);
+  eq('sin cabecera: el contrato queda en el precio real', normal.fila && normal.fila.monto_total, 177310);
+  eq('sin cabecera: a la pasarela se le pide el precio real', normal.enviado && normal.enviado.amount, '177310');
+
+  // Mandar la cabecera no sirve de nada sin el secreto, que es el punto entero.
+  for (const [caso, valor] of [
+    ['inventada', 'no-es-la-clave'],
+    ['vacía', ''],
+    ['solo espacios', '   '],
+    ['la clave con una letra cambiada', CLAVE.slice(0, -1) + 'X'],
+    ['la clave más un sufijo', CLAVE + 'X'],
+  ]) {
+    const malo_ = await correr({ 'X-Prueba-Monto': valor });
+    eq(`cabecera ${caso}: se cobra el precio real`, malo_.fila && malo_.fila.monto_total, 177310);
+    eq(`cabecera ${caso}: y la pasarela también`, malo_.enviado && malo_.enviado.amount, '177310');
+  }
+
+  // Falla hacia el precio real: sin la clave cargada en el entorno, la cabecera no habilita nada.
+  const sinClave = await correr({ 'X-Prueba-Monto': CLAVE }, { CLAVE_ENTREGA: undefined });
+  eq('sin CLAVE_ENTREGA en el entorno: precio real', sinClave.fila && sinClave.fila.monto_total, 177310);
+  const claveEnBlanco = await correr({ 'X-Prueba-Monto': '   ' }, { CLAVE_ENTREGA: '   ' });
+  eq('clave en blanco contra cabecera en blanco: NO habilita', claveEnBlanco.fila && claveEnBlanco.fila.monto_total, 177310);
+
+  // ── Y lo que tiene que pasarle a quien SÍ tiene el secreto ──────────────────────────
+  const ensayo = await correr({ 'X-Prueba-Monto': CLAVE });
+  eq('con el secreto: el contrato queda en el monto de ensayo', ensayo.fila && ensayo.fila.monto_total, 1190);
+  eq('con el secreto: a la pasarela se le pide ese mismo monto', ensayo.enviado && ensayo.enviado.amount, '1190');
+  eq('con espacios alrededor también vale', (await correr({ 'X-Prueba-Monto': ` ${CLAVE} ` })).fila.monto_total, 1190);
+
+  // El neto y el total guardan la misma aritmética en los dos precios: el correo de
+  // confirmación declara los dos y no pueden contradecirse.
+  eq('el IVA del precio real cuadra', Math.round(E.MONTO_NETO * 1.19), E.MONTO_TOTAL);
+  eq('el IVA del precio de ensayo cuadra', Math.round(E.MONTO_PRUEBA_NETO * 1.19), E.MONTO_PRUEBA_TOTAL);
+  cierto('el de ensayo es mucho menor que el real', E.MONTO_PRUEBA_TOTAL * 100 < E.MONTO_TOTAL);
+}
+
+console.log('=== 25 bis. un pedido reusado se cobra a SU monto, no al de la petición nueva ===');
+{
+  // ⚠️ ESTE ES EL DEFECTO QUE EL PRECIO DE ENSAYO DESTAPÓ, y existía antes.
+  //
+  // Dentro de la ventana de 24 h, el segundo intento de la misma pareja (dominio, correo)
+  // REUSA el pedido anterior. El monto que se le pedía a la pasarela salía de la constante, no
+  // de la fila. Con un solo precio en el mundo daba igual. Con dos, un pedido abierto a un
+  // precio y recobrado a otro deja el cobro sin calzar con lo vendido, y `decidirDesdeFlow`
+  // compara exactamente eso: lo mandaría a revisión en vez de marcarlo pagado.
+  const CLAVE = 'una-clave-de-entrega-larga-para-la-prueba-0123456789';
+  const { db, crudo } = baseNueva();
+  const kv = kvNuevo({ 'cache:clinicaejemplo.cl': JSON.stringify(PROFUNDO()) });
+  const env = { VYC_PEDIDOS: db, VYC_TOPES: kv, FLOW_API_KEY: 'clave', FLOW_SECRET_KEY: 'secreto',
+    PASARELA: 'flow', CLAVE_ENTREGA: CLAVE };
+
+  const red1 = conRed();
+  const a = await E.onRequestPost({ request: pedir(BIEN, { cabeceras: { 'X-Prueba-Monto': CLAVE } }), env });
+  const ja = await a.json().catch(() => ({}));
+  const montoPrimero = red1.llamadas.cuerposFlow[0] && red1.llamadas.cuerposFlow[0].amount;
+  red1.restaurar?.();
+  eq('el primero se abrió al monto de ensayo', montoPrimero, '1190');
+
+  // Ahora el MISMO comprador vuelve, y esta vez sin el secreto.
+  //
+  // El pago anterior tiene que estar RECHAZADO para que se abra uno nuevo: desde el arreglo
+  // del doble cobro, si el anterior sigue vivo se devuelve SU enlace y no se cobra otra vez.
+  // Con el anterior vivo esta prueba no medía nada y lo supe porque la aserción que importa
+  // no llegó a correr: cayó en la rama de respaldo.
+  const red2 = conRed({ flowPago: { status: 3, commerceOrder: ja.id, amount: 1190 } });
+  const b = await E.onRequestPost({ request: pedir(BIEN), env });
+  const jb = await b.json().catch(() => ({}));
+  const montoSegundo = red2.llamadas.cuerposFlow[0] && red2.llamadas.cuerposFlow[0].amount;
+  red2.restaurar?.();
+
+  const todas = filas(crudo);
+  eq('se reusó el pedido, no se creó otro', todas.length, 1);
+  eq('y es el mismo id', jb.id || (todas[0] && todas[0].id), ja.id);
+  eq('el contrato sigue diciendo lo que se vendió', todas[0] && todas[0].monto_total, 1190);
+  // La que importa: lo que se le cobra sale de la FILA, no de la petición de ahora.
+  if (montoSegundo !== undefined) {
+    eq('y se le cobra ESO, no el precio de la petición nueva', montoSegundo, '1190');
+  } else {
+    cierto('no se abrió un segundo cobro (la compuerta de Flow lo frenó, que también está bien)',
+      red2.llamadas.flow === 0);
   }
 }
 

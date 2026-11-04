@@ -141,9 +141,34 @@ function trozo(html, desde, hasta, nombre) {
   const hrefs = PRIVACIDAD.replace(/<!--[\s\S]*?-->/g, ' ').match(/href="[^"]*"/g) || [];
   falso('sin apuntar al host que da 404', hrefs.some((h) => h.includes('www.flow.cl/es-cl/legal')));
 
-  // La razón social no está verificada, así que NO puede aparecer inventada. Las de los otros
-  // proveedores sí están, y por eso sí se escriben.
-  falso('no se inventa una razón social para Flow', /Flow\s+(S\.?A\.?|SpA|Chile\s+S)/i.test(PRIVACIDAD));
+  // ⚠️ ESTA ASERCIÓN DECÍA LO CONTRARIO HASTA EL 4-NOV, Y SE PUSO ROJA ANTE UN CAMBIO BUENO.
+  //
+  // Escrita el 3-nov, exigía que NO apareciera ninguna razón social para Flow, porque ese día
+  // no estaba verificada y las fuentes de terceros no coincidían entre sí. Al día siguiente el
+  // dato se sacó de la propia página legal de Flow y se escribió en la política: la aserción
+  // se puso roja ante exactamente el cambio que había que hacer.
+  //
+  // El defecto no era el dato, era la aserción: fijaba EL ESTADO DE ESE DÍA («no hay razón
+  // social») en vez de LA REGLA («no se publica una razón social sin verificar»). Una prueba
+  // escrita así se vuelve un candado contra su propio arreglo.
+  //
+  // Reescrita para decir la regla: si aparece una razón social de Flow, tiene que ser una de
+  // las dos de su página legal, con su RUT al lado. Cualquier otra es inventada y cae.
+  {
+    const VERIFICADAS = [
+      ['Flow S.A.', '76.830.014-3'],
+      ['Flow Pagos Chile SpA', '76.644.017-7'],
+    ];
+    const mencionadas = PRIVACIDAD.match(/Flow[^.,;()]{0,24}?(?:S\.A\.|SpA)/g) || [];
+    for (const m of mencionadas) {
+      const limpia = m.replace(/\s+/g, ' ').trim();
+      const conocida = VERIFICADAS.find(([nombre]) => limpia.endsWith(nombre) || nombre.endsWith(limpia));
+      cierto(`«${limpia}» es una razón social verificada de Flow`, Boolean(conocida));
+      if (conocida) {
+        cierto(`y va con su RUT ${conocida[1]}`, PRIVACIDAD.includes(conocida[1]));
+      }
+    }
+  }
   cierto('pero queda anotado que falta', /raz[óo]n social de Flow/i.test(PRIVACIDAD));
 
   // Ninguna frase en PRESENTE puede seguir diciendo que cobra Mercado Pago. En pasado sí:

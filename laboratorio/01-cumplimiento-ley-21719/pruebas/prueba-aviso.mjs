@@ -336,5 +336,172 @@ console.log('=== 4. las TRES funciones se portan igual ===');
   eq('y no ensucian el registro de errores', sinPedido.errores.length, 0);
 }
 
+/* ══════════════════════════════════════════════════════════════════════════════════════ *
+ * EL REINTENTO DE RESEND (4-nov-2026)                                                    *
+ * ══════════════════════════════════════════════════════════════════════════════════════ *
+ *
+ * Hasta hoy `mandarPorResend` mandaba UNA vez: un 429, un 5xx, un corte de tiempo o una
+ * conexión caída perdían el correo para siempre. Y `esPasajero` ya clasificaba desde el 3-nov
+ * qué fallo se arregla esperando, pero solo se usaba para elegir las palabras del registro.
+ *
+ * Lo destapó la primera venta real: el aviso de venta no llegó mientras el recibo del
+ * comprador, mandado en el mismo instante y por el mismo canal, sí. La causa nunca se pudo
+ * determinar —no había registro de ese momento— y ése es justamente el caso para el que sirve
+ * un reintento: cubre el modo de falla sin tener que saber cuál fue.
+ *
+ * Estas aserciones NO comprueban que exista un reintento: comprueban CUÁNDO reintenta y
+ * cuándo no. Reintentar un 400 sería mandar dos veces algo que va a fallar igual, y reintentar
+ * sin clave sería esperar a que aparezca sola.
+ *
+ * La espera se inyecta para que las pruebas no duerman de verdad; en producción es la real.
+ */
+console.log('=== el reintento de Resend ===');
+{
+  const sinDormir = async () => {};
+  const CLAVE = 'rs_clave_de_prueba';
+  const MSG = { from: 'a@b.cl', to: ['c@d.cl'], subject: 's', text: 't' };
+
+  // Un doble de red que lleva la cuenta y puede contestar distinto en cada intento.
+  const red = (respuestas) => {
+    const llamadas = [];
+    const fake = async () => {
+      const i = Math.min(llamadas.length, respuestas.length - 1);
+      const r = respuestas[i];
+      llamadas.push(r);
+      if (r.red) throw new Error('conexión caída');
+      return {
+        ok: r.estado < 400,
+        status: r.estado,
+        text: async () => r.cuerpo || '',
+        headers: { get: (h) => (h.toLowerCase() === 'retry-after' ? (r.retryAfter ?? null) : null) },
+      };
+    };
+    return { fake, cuenta: () => llamadas.length };
+  };
+
+  // ── Lo que SÍ se reintenta ────────────────────────────────────────────────────────────
+  for (const [nombre, primera] of [
+    ['429 (tope del proveedor)', { estado: 429 }],
+    ['500 (del lado del proveedor)', { estado: 500 }],
+    ['503', { estado: 503 }],
+    ['conexión caída', { red: true }],
+  ]) {
+    const r = red([primera, { estado: 200 }]);
+    const res = await C.mandarPorResend(MSG, CLAVE, r.fake, sinDormir);
+    eq(`${nombre}: se intenta dos veces`, r.cuenta(), 2);
+    cierto(`${nombre}: y el segundo sale`, res.ok);
+    cierto(`${nombre}: queda dicho que hubo reintento`, res.reintentado === true);
+  }
+
+  // ── Lo que NO se reintenta, que es la mitad que importa ───────────────────────────────
+  for (const [nombre, primera] of [
+    ['400 (el mensaje está mal)', { estado: 400 }],
+    ['401 (clave rechazada)', { estado: 401 }],
+    ['422', { estado: 422 }],
+    ['403 (uso no permitido)', { estado: 403 }],
+  ]) {
+    const r = red([primera, { estado: 200 }]);
+    const res = await C.mandarPorResend(MSG, CLAVE, r.fake, sinDormir);
+    eq(`${nombre}: se intenta UNA sola vez`, r.cuenta(), 1);
+    falso(`${nombre}: y no sale`, res.ok);
+    cierto(`${nombre}: sin marca de reintento`, res.reintentado === undefined);
+  }
+
+  // Sin clave no se toca la red: esperar no hace aparecer una variable de entorno.
+  {
+    const r = red([{ estado: 200 }]);
+    const res = await C.mandarPorResend(MSG, '', r.fake, sinDormir);
+    eq('sin clave: no se llama a la red ni una vez', r.cuenta(), 0);
+    eq('sin clave: y lo dice', res.codigo, 'sin-clave');
+  }
+
+  // ── Si el segundo también falla, se devuelve ESE, y se sabe que hubo dos ──────────────
+  {
+    const r = red([{ estado: 429 }, { estado: 500, cuerpo: 'se cayó otra vez' }]);
+    const res = await C.mandarPorResend(MSG, CLAVE, r.fake, sinDormir);
+    eq('los dos fallan: dos intentos', r.cuenta(), 2);
+    eq('se devuelve el código del SEGUNDO', res.codigo, 'http-500');
+    eq('y se recuerda con qué empezó', res.primerCodigo, 'http-429');
+    cierto('con el cuerpo del segundo, que es el que hay que leer', /otra vez/.test(res.cuerpo));
+  }
+
+  // ── La espera: se respeta lo que pide el proveedor, con tope ──────────────────────────
+  {
+    const esperas = [];
+    const espiar = async (ms) => { esperas.push(ms); };
+
+    let r = red([{ estado: 429 }, { estado: 200 }]);
+    await C.mandarPorResend(MSG, CLAVE, r.fake, espiar);
+    eq('sin retry-after: se usa la espera propia', esperas[0], C.ESPERA_REINTENTO_MS);
+
+    r = red([{ estado: 429, retryAfter: '3' }, { estado: 200 }]);
+    await C.mandarPorResend(MSG, CLAVE, r.fake, espiar);
+    eq('con retry-after 3: se esperan 3 segundos', esperas[1], 3000);
+
+    r = red([{ estado: 429, retryAfter: '600' }, { estado: 200 }]);
+    await C.mandarPorResend(MSG, CLAVE, r.fake, espiar);
+    eq('con retry-after absurdo: se topa en 5 segundos', esperas[2], 5000);
+  }
+}
+
+/* ================================================================== */
+console.log('=== 12. el aviso de acceso dice DÓNDE está el acceso ===');
+{
+  /* ── POR QUÉ ESTA SECCIÓN ────────────────────────────────────────────────────────────────
+   *
+   * Hallazgo del ensayo real del 4-nov-2026, dicho por Ramón con el correo en la mano: «el
+   * segundo se supone que es de acceso declarado, pero no dice ningún dato de acceso». Y era
+   * cierto: el asunto prometía un acceso y el cuerpo solo decía «pruébalo».
+   *
+   * Que el aviso NO lleve las credenciales está bien y se prueba más abajo — todo este archivo
+   * existe para que un aviso no se lleve de más. Lo que faltaba es decir dónde están, porque
+   * un asunto que anuncia algo que el cuerpo no tiene se lee como un correo que se perdió.
+   */
+  const texto = async (plataforma, que = 'acceso') => {
+    const r = redQueAcepta();
+    await A.avisarAvance({ ...PEDIDO, plataforma }, que, ENV, r.red);
+    return String((r.visto.cuerpos[0] || {}).text || '');
+  };
+
+  const wp = await texto('wordpress');
+  cierto('el aviso de acceso trae el campo', wp.includes('Dónde está el acceso'));
+  cierto('dice que NO viene en este correo', /no viene en este correo/i.test(wp));
+  cierto('y a qué casilla llega', wp.includes('hola@spindlelab.cl'));
+  cierto('nombrando la plataforma que el cliente declaró', /mandada por WordPress/.test(wp));
+  // ⚠️ El spam se nombra a propósito: hoy hubo un aviso que no apareció en la bandeja y se
+  // fue a buscar la causa al código sin que nadie mirara la carpeta de no deseado.
+  cierto('y manda a mirar el spam antes de escribirle', /spam/i.test(wp));
+
+  // El de datos no lo lleva: ahí todavía no hay ningún acceso del que hablar, y un campo que
+  // aparece siempre deja de ser una señal.
+  const datos = await texto('wordpress', 'datos');
+  falso('el aviso de datos NO lleva el campo', datos.includes('Dónde está el acceso'));
+
+  // ── Y sigue sin llevarse lo que no debe ────────────────────────────────────────────────
+  falso('el campo nuevo no filtró el id entero', wp.includes(ID));
+  falso('ni el correo del comprador', wp.includes(PEDIDO.correo));
+
+  /* ── LAS DOS SALIDAS DEL FORMULARIO, QUE PIDEN ACCIONES DISTINTAS ──────────────────────
+   *
+   * `no-se` y `otro` no son huecos de la lista de plataformas: son las dos salidas que el
+   * formulario ofrece a propósito. En `no-se` el cliente dijo que no sabe quién administra su
+   * sitio, así que esperar una invitación es esperar algo que capaz no llegue nunca — y eso
+   * es lo contrario de lo que hay que hacer. El aviso tiene que distinguirlas.
+   */
+  const noSe = await texto('no-se');
+  cierto('con «no sé», el aviso advierte que capaz no llegue nada', /no sabe qui[eé]n/i.test(noSe));
+  const otro = await texto('otro');
+  cierto('con «otra», dice que no se sabe el remitente', /no\s+sabemos de qu[eé] remitente/i.test(otro));
+
+  /* ⚠️ LA ASERCIÓN QUE CUIDA UN TEXTO PRESTADO. `SIN_PLATAFORMA.nombre` es «tu sitio», y está
+     escrito para la pantalla DEL CLIENTE, donde se lee bien. Usarlo acá —que es lo que se hizo
+     en el primer intento— produce «la invitación la mandó tu sitio» en un correo interno: ni
+     cierto ni útil. Un texto se muda de lugar y se vuelve falso aunque la palabra no cambie. */
+  for (const [pl, salida] of [['no-se', noSe], ['otro', otro]]) {
+    falso(`y en «${pl}» no se cuela el «tu sitio» de la pantalla del cliente`,
+      /mandada por tu sitio/.test(salida));
+  }
+}
+
 console.log(`\n${ok} bien, ${malo} mal`);
 process.exit(malo ? 1 : 0);
