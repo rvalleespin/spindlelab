@@ -159,6 +159,38 @@ export async function marcarInicioAvisado(db, id, cuando) {
 }
 
 /**
+ * Corrige el borrador de un pedido YA ENTREGADO, y nada más que eso.
+ *
+ * ── POR QUÉ EXISTE (4-nov-2026) ───────────────────────────────────────────────────────────
+ *
+ * En la primera entrega real salió un borrador con formato equivocado, y no había forma de
+ * arreglarlo: `/api/entregar` corta en seco cuando el pedido ya está `entregado` y contesta
+ * `ya_estaba: true` sin tocar ninguna columna. La copia del cliente quedaba congelada con el
+ * error, en su pantalla, para siempre. Lo único que se podía hacer era mandarle otro texto por
+ * correo mientras su pantalla seguía mostrando el malo.
+ *
+ * Para un producto cuyo entregable central es un documento, eso no se sostiene: una errata, un
+ * RUT mal copiado o un dato cambiado por el abogado son casos normales, no excepciones.
+ *
+ * **Solo toca esta columna.** No mueve el estado, no escribe `entregado_en`, no toca el informe
+ * final y no manda ningún correo. Corregir un texto no es volver a entregar, y hacerle creer al
+ * cliente que hubo trabajo nuevo sería peor que el error que se está arreglando.
+ *
+ * El `WHERE ... estado = 'entregado'` no es decorativo: en `pagado` el camino normal ya guarda
+ * el borrador, y dejar dos puertas a la misma columna es cómo se separan.
+ */
+export async function corregirBorrador(db, id, texto) {
+  if (!id || !texto) return { corregido: false, motivo: 'sin-datos' };
+  const r = await db.prepare(
+    'UPDATE pedidos SET borrador_politica = ? WHERE id = ? AND estado = ?',
+  ).bind(String(texto), id, ESTADOS.ENTREGADO).run();
+  const cambios = (r && r.meta && r.meta.changes) || 0;
+  return cambios > 0
+    ? { corregido: true, motivo: 'ok', largo: String(texto).length }
+    : { corregido: false, motivo: 'no-esta-entregado' };
+}
+
+/**
  * El pedido en `creado` más nuevo de una pareja (dominio, correo), dentro de una ventana.
  *
  * ── POR QUÉ HACE FALTA ───────────────────────────────────────────────────────────────────

@@ -37,7 +37,7 @@
  * en los dos casos.
  */
 
-import { leerPedido, marcarEstado, vistaPublica } from './almacen.js';
+import { leerPedido, marcarEstado, vistaPublica, corregirBorrador } from './almacen.js';
 import { etapaDelPedido, señalesDelPedido, TITULOS } from './etapas.js';
 import { ESTADOS, ID_PEDIDO_NUESTRO } from './pedidos.js';
 import { enviarCorreoDeEntrega } from './correo.js';
@@ -129,6 +129,31 @@ export const MAXIMO_BORRADOR = 60000;
  * ahí no aporta nada y sí puede estropear el render. Los saltos de línea SÍ se conservan, que
  * es lo que distingue un documento de un párrafo.
  */
+/**
+ * El largo del borrador, como regla y no como dos copias.
+ *
+ * Desde el 4-nov la comprueban DOS caminos —el cierre y la corrección de un pedido ya
+ * entregado— y tener el piso y el techo escritos dos veces es cómo se separan en silencio.
+ * Devuelve el cuerpo del error, o `null` si el largo sirve.
+ */
+export function largoFueraDeRango(borrador) {
+  if (borrador.length < MINIMO_BORRADOR) {
+    return {
+      ok: false, motivo: 'borrador-muy-corto',
+      detalle: `El borrador trae ${borrador.length} caracteres y el mínimo son `
+        + `${MINIMO_BORRADOR}. Lo que la ley pide publicar no cabe en menos.`,
+    };
+  }
+  if (borrador.length > MAXIMO_BORRADOR) {
+    return {
+      ok: false, motivo: 'borrador-muy-largo',
+      detalle: `El borrador trae ${borrador.length} caracteres y el tope son `
+        + `${MAXIMO_BORRADOR}: va en el cuerpo del correo de cierre, y uno más largo rebota.`,
+    };
+  }
+  return null;
+}
+
 export function interpretarBorrador(v) {
   if (typeof v !== 'string') return null;
   const limpio = v
@@ -182,6 +207,42 @@ export async function onRequestPost(contexto) {
   if (!pedido) return json({ ok: false, motivo: 'no-existe' }, 404);
 
   if (pedido.estado === ESTADOS.ENTREGADO) {
+    // ── CORREGIR EL BORRADOR DE UN PEDIDO YA ENTREGADO (4-nov-2026) ────────────────────
+    //
+    // Hasta hoy esta rama cortaba en seco y la copia del cliente quedaba congelada con el
+    // error: una errata, un RUT mal copiado o el texto que devolvió su abogado no tenían por
+    // dónde entrar. Pasó en la primera entrega real.
+    //
+    // Hace falta la BANDERA explícita. Sin ella, un reintento del cierre —que es el caso
+    // normal de llamar dos veces— pisaría el borrador bueno con lo que trajera el cuerpo, sin
+    // que nadie lo pidiera. Corregir se pide; repetir no corrige.
+    //
+    // No manda correo, a propósito: el cliente ya recibió el cierre, y mandarle otro le haría
+    // creer que hubo trabajo nuevo. Que lo corregimos se lo dice una persona.
+    if (cuerpo && cuerpo.corregir_borrador === true) {
+      const texto = interpretarBorrador(cuerpo.borrador_politica);
+      if (!texto) {
+        return json({
+          ok: false, motivo: 'falta-borrador',
+          detalle: 'Pediste corregir el borrador y no vino texto en "borrador_politica".',
+        }, 400);
+      }
+      const fuera = largoFueraDeRango(texto);
+      if (fuera) return json(fuera, 400);
+
+      const r = await corregirBorrador(env.VYC_PEDIDOS, id, texto);
+      if (!r.corregido) return json({ ok: false, motivo: r.motivo }, 409);
+
+      const puesto = (await leerPedido(env.VYC_PEDIDOS, id)) || pedido;
+      return json({
+        ok: true, ya_estaba: true, correo_enviado: false,
+        borrador_corregido: r.largo,
+        pedido: vistaPublica(puesto),
+        etapa: etapaDelPedido(puesto),
+        señales: señalesDelPedido(puesto, TITULOS),
+      });
+    }
+
     // Entregar dos veces no es un error que haya que gritar, pero tampoco se vuelve a mandar el
     // correo: el cliente ya lo recibió, y repetirlo le haría creer que hubo un trabajo nuevo.
     return json({
@@ -225,20 +286,8 @@ export async function onRequestPost(contexto) {
         'al producto afirmando algo que no entregó.',
     }, 409);
   }
-  if (borrador.length < MINIMO_BORRADOR) {
-    return json({
-      ok: false, motivo: 'borrador-muy-corto',
-      detalle: `El borrador trae ${borrador.length} caracteres y el mínimo son ` +
-        `${MINIMO_BORRADOR}. Lo que la ley pide publicar no cabe en menos.`,
-    }, 400);
-  }
-  if (borrador.length > MAXIMO_BORRADOR) {
-    return json({
-      ok: false, motivo: 'borrador-muy-largo',
-      detalle: `El borrador trae ${borrador.length} caracteres y el tope son ` +
-        `${MAXIMO_BORRADOR}: va en el cuerpo del correo de cierre, y uno más largo rebota.`,
-    }, 400);
-  }
+  const fueraDeRango = largoFueraDeRango(borrador);
+  if (fueraDeRango) return json(fueraDeRango, 400);
 
   const movido = await marcarEstado(env.VYC_PEDIDOS, id, ESTADOS.PAGADO, ESTADOS.ENTREGADO, {
     entregado_en: new Date().toISOString(),

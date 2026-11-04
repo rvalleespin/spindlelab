@@ -747,17 +747,36 @@
    * refresco automático. Así la corrección se lee junto a la promesa y no al final de la
    * página, donde nadie la ataría a la frase que la contradice.
    */
-  function dejamosDeRefrescar() {
+  function dejamosDeRefrescar(etapa) {
     var caja = contenido.querySelector('.tarjeta');
     if (!caja || caja.querySelector('.sin-refresco')) return;
 
+    /* ⚠️ DOS ESPERAS DISTINTAS, Y ANTES LES DECÍAMOS LO MISMO (4-nov-2026).
+     *
+     * En «confirmando» el aviso del medio de pago tarda segundos, así que dos minutos sin
+     * noticias sí es raro y corresponde decirlo.
+     *
+     * En «pago pendiente» no: la persona eligió un medio que NO acredita al instante —una
+     * transferencia puede tardar horas, o hasta el día hábil siguiente— y leer «el pago
+     * todavía no se confirma, dejamos de revisar» después de haber pagado se entiende como que
+     * algo salió mal. Es el momento exacto en que alguien que ya transfirió su plata se
+     * asusta, y el texto que lo asusta describe el funcionamiento normal.
+     *
+     * La etapa ya sabe la diferencia (su detalle dice «no acredita al instante»); lo que
+     * faltaba era que este aviso también. */
+    var esperaLarga = etapa === 'pago-pendiente';
+
     var div = document.createElement('div');
     div.className = 'sin-refresco';
-    div.innerHTML =
-      '<p>Estuvimos revisando solos un par de minutos y el pago todavía no se confirma. ' +
-      'Dejamos de revisar para no tenerte esperando frente a una página que no cambia. ' +
-      'Tu pedido está guardado y este enlace sigue siendo válido.</p>' +
-      '<button type="button">Revisar de nuevo</button>';
+    div.innerHTML = (esperaLarga
+      ? '<p>Dejamos de revisar solos, pero esto es lo normal con el medio de pago que ' +
+        'elegiste: puede tardar horas, o hasta el día hábil siguiente. No hace falta que te ' +
+        'quedes esperando acá. Cuando el pago se acredite seguimos nosotros y te escribimos. ' +
+        'Tu pedido está guardado y este enlace sigue siendo válido.</p>'
+      : '<p>Estuvimos revisando solos un par de minutos y el pago todavía no se confirma. ' +
+        'Dejamos de revisar para no tenerte esperando frente a una página que no cambia. ' +
+        'Tu pedido está guardado y este enlace sigue siendo válido.</p>')
+      + '<button type="button">Revisar de nuevo</button>';
     caja.appendChild(div);
 
     div.querySelector('button').addEventListener('click', function () {
@@ -821,7 +840,7 @@
             //
             // El tope está bien —refrescar para siempre no ayuda a nadie y gasta batería—. Lo
             // que faltaba era decirlo y devolverle el control.
-            dejamosDeRefrescar();
+            dejamosDeRefrescar(res.j.etapa && res.j.etapa.etapa);
           }
         }
       })

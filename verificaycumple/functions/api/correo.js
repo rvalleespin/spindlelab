@@ -337,7 +337,88 @@ function resaltar(texto) {
  * @returns {{ok: boolean, codigo: string, cuerpo: string}}
  *   `codigo` es `http-<n>`, `sin-clave` o `sin-respuesta`.
  */
-export async function mandarPorResend(mensaje, token, fetchImpl = fetch) {
+/**
+ * ¿Reintentar podría salir distinto?
+ *
+ * ── POR QUÉ SE MIRA EL CÓDIGO Y NO EL MENSAJE (3-nov-2026) ───────────────────────────────
+ *
+ * Mientras el canal era Web3Forms, esto buscaba una frase literal —«method is not allowed»—
+ * porque teníamos esa respuesta medida delante. Con Resend no tenemos ninguna medida, y
+ * adivinar sus frases sería escribir una aserción sobre algo que no observé.
+ *
+ * El código HTTP sí dice lo suficiente, y dice algo verdadero de cualquier API: un 4xx es un
+ * problema de configuración o de permisos —la clave, el remitente, el destinatario, el
+ * cuerpo— y lo mismo mandado otra vez va a fallar igual. El 429 es la excepción y entra por
+ * nombre propio: es un tope de envíos, o sea justamente lo que el próximo minuto sí deja
+ * pasar. Un 5xx es del proveedor y un corte de tiempo es de la red: los dos pueden salir
+ * distinto.
+ *
+ * Importa que la línea lo diga, porque es la diferencia entre ir a arreglar algo y quedarse
+ * esperando que el próximo aviso sí salga. Eso ya pasó una vez, y duró meses.
+ */
+export function esPasajero(codigo) {
+  const c = String(codigo == null ? '' : codigo);
+  // La clave que no está es el caso MÁS definitivo de todos, y la primera versión de esta
+  // función lo contaba como pasajero por no tener forma de código HTTP. Lo encontró la prueba
+  // al exigir el cartel en los tres avisos: una variable sin cargar en el panel no se arregla
+  // esperando, y es justo el modo de fallar que más se parece al silencio de los meses
+  // anteriores —todo se ve bien y no llega nada.
+  if (c === 'sin-clave') return false;
+  const m = /^http-(\d{3})$/.exec(c);
+  if (!m) return true;              // sin-respuesta: corte de tiempo o conexión caída
+  const n = Number(m[1]);
+  if (n === 429) return true;       // tope de envíos: esperar es exactamente el arreglo
+  return n >= 500;                  // del lado del proveedor
+}
+
+/** Cuánto se espera antes del único reintento, si el proveedor no dice otra cosa. */
+export const ESPERA_REINTENTO_MS = 1200;
+
+/** La espera de verdad. Se puede reemplazar en las pruebas para no dormir de a de veras. */
+const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * ── EL REINTENTO, Y POR QUÉ NO EXISTÍA (4-nov-2026) ───────────────────────────────────────
+ *
+ * Hasta hoy esto mandaba UNA vez y punto. Un 429, un 5xx del proveedor, un corte de tiempo o
+ * una conexión caída perdían el correo para siempre, sin que nadie se enterara salvo yendo a
+ * mirar los registros de Cloudflare.
+ *
+ * Lo irónico es que la clasificación ya existía: `esPasajero` distinguía desde el 3-nov un
+ * fallo que se arregla esperando de uno que no, y **nadie actuaba sobre ella**. Solo elegía
+ * las palabras de la línea del registro. Una red de seguridad que clasifica y no hace nada es
+ * el mismo patrón que este repositorio ya se encontró dos veces.
+ *
+ * Lo que lo destapó: el 4-nov, en el primer pago real, el aviso de venta no llegó mientras el
+ * recibo del comprador —mandado en el mismo instante y por el mismo canal— sí. No se pudo
+ * determinar la causa (no había registro de ese momento y reproducirlo costaba otro pago), y
+ * ese es justamente el escenario para el que sirve un reintento: no hace falta saber cuál de
+ * los fallos pasajeros fue.
+ *
+ * **Un solo reintento, no una cola.** Dos intentos cubren el fallo puntual, que es lo que se
+ * vio; una cola de verdad pide infraestructura que este proyecto no tiene y que no se inventa
+ * por un caso. Si el segundo también falla, el rastro lo dice y queda para una persona.
+ *
+ * Se respeta `retry-after` cuando el proveedor lo manda, con tope, porque en un 429 esperar lo
+ * que el proveedor pide es exactamente el arreglo.
+ */
+export async function mandarPorResend(mensaje, token, fetchImpl = fetch, espera = dormir) {
+  const primero = await intentarResend(mensaje, token, fetchImpl);
+  if (primero.ok || !esPasajero(primero.codigo)) return primero;
+
+  const pedida = Number(primero.reintentarEn);
+  const ms = Number.isFinite(pedida) && pedida > 0
+    ? Math.min(pedida * 1000, 5000)
+    : ESPERA_REINTENTO_MS;
+  await espera(ms);
+
+  const segundo = await intentarResend(mensaje, token, fetchImpl);
+  // Se devuelve el SEGUNDO resultado, y se deja dicho que hubo dos: si el rastro dijera solo
+  // «http-429» sin más, quien lo lea mañana no sabría si ya se reintentó o si falta hacerlo.
+  return { ...segundo, reintentado: true, primerCodigo: primero.codigo };
+}
+
+async function intentarResend(mensaje, token, fetchImpl = fetch) {
   // El token se limpia, por lo mismo que el de Mercado Pago y el secreto de la firma: uno
   // pegado con un espacio al final se ve CARGADO en el panel y no sirve.
   token = typeof token === 'string' ? token.trim() : token;
@@ -355,7 +436,11 @@ export async function mandarPorResend(mensaje, token, fetchImpl = fetch) {
       let cuerpo = '';
       try { cuerpo = await r.text(); }
       catch (e) { cuerpo = `(no se pudo leer la respuesta: ${e && e.message})`; }
-      return { ok: false, codigo: `http-${r.status}`, cuerpo };
+      // `retry-after` solo lo manda el proveedor cuando sabe cuánto hay que esperar. Si no
+      // viene, el reintento usa su propia espera.
+      let reintentarEn = null;
+      try { reintentarEn = r.headers && r.headers.get && r.headers.get('retry-after'); } catch {}
+      return { ok: false, codigo: `http-${r.status}`, cuerpo, reintentarEn };
     }
     return { ok: true, codigo: `http-${r.status}`, cuerpo: '' };
   } catch (e) {

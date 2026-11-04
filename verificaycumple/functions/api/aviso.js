@@ -47,7 +47,15 @@
  * traga. Un pago que entró no se puede perder porque un aviso no salió.
  */
 
-import { REMITENTE, mandarPorResend } from './correo.js';
+import { REMITENTE, mandarPorResend, esPasajero } from './correo.js';
+// De acá sale el nombre de la plataforma y la casilla a la que el cliente manda la invitación.
+// No hay ciclo: `acceso.js` solo importa `etapas.js`, y ninguno de los dos importa este archivo.
+import { POR_PLATAFORMA, CORREO_ACCESO } from './acceso.js';
+
+// `esPasajero` se mudó a correo.js el 4-nov-2026, al lado del cliente de Resend, porque ahí
+// es donde por fin HACE algo: decide si vale la pena reintentar. Acá se reexporta para no
+// romper a quien ya la importaba de este módulo.
+export { esPasajero };
 
 /**
  * A dónde llegan los avisos internos.
@@ -95,6 +103,33 @@ export function cuerpoDelAviso(pedido) {
  * @param {'datos'|'acceso'} que  qué fue lo que el cliente completó
  * @param {object} env  de donde sale `RESEND_API_KEY`
  */
+/**
+ * Quién manda la invitación del acceso, dicho para un aviso INTERNO.
+ *
+ * ⚠️ NO SIRVE `fichaDePlataforma().nombre`, y por poco se usó. Ese nombre tiene otro papel:
+ * cuando la plataforma no está en la lista devuelve «tu sitio», que está escrito para la
+ * pantalla DEL CLIENTE y se lee bien ahí. Metido en un aviso interno sale «la invitación la
+ * mandó tu sitio», que no es ni cierto ni útil. Un texto se mueve de lugar y se vuelve falso
+ * aunque la palabra sea la misma.
+ */
+export function deQuienLlega(plataforma) {
+  const p = typeof plataforma === 'string' ? plataforma.toLowerCase().trim() : '';
+  const ficha = POR_PLATAFORMA[p];
+  if (ficha) return ficha.nombre;
+  // Las dos que caen fuera de POR_PLATAFORMA no son huecos de la lista: son las salidas que el
+  // formulario ofrece a propósito, y cada una pide algo distinto de quien lee este aviso.
+  if (p === 'no-se') {
+    return 'la plataforma de su sitio — OJO: el cliente dijo que no sabe quién lo administra, ' +
+      'así que puede que no llegue ninguna invitación y haya que averiguar nosotros en qué está ' +
+      'hecho y a quién pedírselo';
+  }
+  if (p === 'otro') {
+    return 'la plataforma de su sitio — el cliente eligió «otra», así que hasta mirarlo no ' +
+      'sabemos de qué remitente va a venir';
+  }
+  return 'la plataforma de su sitio (no declaró cuál es)';
+}
+
 export async function avisarAvance(pedido, que, env, fetchImpl = fetch) {
   if (!pedido || !pedido.id) return false;
   const prefijo = String(pedido.id).slice(0, LARGO_PREFIJO);
@@ -113,6 +148,24 @@ export async function avisarAvance(pedido, que, env, fetchImpl = fetch) {
           'su pantalla ya le dice que lo estamos probando, así que si no entra hay que escribirle.'
         : 'Ya tienes razón social, RUT, giro y dirección para armar el borrador. El cliente ' +
           'todavía tiene que darte el acceso a su sitio.',
+      /* ── POR QUÉ ESTE CAMPO (4-nov-2026) ──────────────────────────────────────────────
+       *
+       * Hallazgo del ensayo real: este aviso llegó con el asunto «Acceso declarado» y NO
+       * decía ningún dato de acceso. Es correcto que no los lleve —la invitación no pasa por
+       * acá, y meterle credenciales a un correo de aviso sería lo contrario de lo que hace
+       * el resto de este archivo— pero el aviso igual tiene que decir DÓNDE están, porque si
+       * no, parece que se perdieron.
+       *
+       * El spam se nombra a propósito: una invitación de panel es justo la clase de correo
+       * que se filtra, y hoy mismo hubo un aviso que no apareció en la bandeja y nadie miró
+       * la carpeta de no deseado antes de empezar a buscar la causa en el código. */
+      ...(esAcceso ? {
+        'Dónde está el acceso': `No viene en este correo. La invitación llega aparte, a ` +
+          `${CORREO_ACCESO}, mandada por ${deQuienLlega(pedido.plataforma)} en el ` +
+          `momento en que el cliente la crea. Búscala en esa casilla por el nombre del sitio. ` +
+          `Si no está, MIRA EL SPAM antes de escribirle: las invitaciones de panel se filtran ` +
+          `seguido, y una carpeta sin revisar manda a buscar la causa en el lugar equivocado.`,
+      } : {}),
     },
     `avance (${que}) ${prefijo}… · ${pedido.dominio || '(sin dominio)'}`,
     env,
@@ -181,39 +234,6 @@ export function mensajeDeAviso(cuerpo) {
  */
 export const LARGO_RASTRO = 400;
 
-/**
- * ¿Reintentar podría salir distinto?
- *
- * ── POR QUÉ SE MIRA EL CÓDIGO Y NO EL MENSAJE (3-nov-2026) ───────────────────────────────
- *
- * Mientras el canal era Web3Forms, esto buscaba una frase literal —«method is not allowed»—
- * porque teníamos esa respuesta medida delante. Con Resend no tenemos ninguna medida, y
- * adivinar sus frases sería escribir una aserción sobre algo que no observé.
- *
- * El código HTTP sí dice lo suficiente, y dice algo verdadero de cualquier API: un 4xx es un
- * problema de configuración o de permisos —la clave, el remitente, el destinatario, el
- * cuerpo— y lo mismo mandado otra vez va a fallar igual. El 429 es la excepción y entra por
- * nombre propio: es un tope de envíos, o sea justamente lo que el próximo minuto sí deja
- * pasar. Un 5xx es del proveedor y un corte de tiempo es de la red: los dos pueden salir
- * distinto.
- *
- * Importa que la línea lo diga, porque es la diferencia entre ir a arreglar algo y quedarse
- * esperando que el próximo aviso sí salga. Eso ya pasó una vez, y duró meses.
- */
-export function esPasajero(codigo) {
-  const c = String(codigo == null ? '' : codigo);
-  // La clave que no está es el caso MÁS definitivo de todos, y la primera versión de esta
-  // función lo contaba como pasajero por no tener forma de código HTTP. Lo encontró la prueba
-  // al exigir el cartel en los tres avisos: una variable sin cargar en el panel no se arregla
-  // esperando, y es justo el modo de fallar que más se parece al silencio de los meses
-  // anteriores —todo se ve bien y no llega nada.
-  if (c === 'sin-clave') return false;
-  const m = /^http-(\d{3})$/.exec(c);
-  if (!m) return true;              // sin-respuesta: corte de tiempo o conexión caída
-  const n = Number(m[1]);
-  if (n === 429) return true;       // tope de envíos: esperar es exactamente el arreglo
-  return n >= 500;                  // del lado del proveedor
-}
 
 /**
  * La línea que queda cuando un aviso NO salió.
