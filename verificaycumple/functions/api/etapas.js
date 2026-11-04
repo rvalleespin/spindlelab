@@ -263,7 +263,8 @@ export function etapaDelPedido(pedido) {
       titulo: 'El pago no se completó',
       detalle: 'El pago no fue aprobado. No te cobramos nada y no empezamos ningún trabajo.',
       quienActua: ACTUA.CLIENTE,
-      queHacer: 'Si quieres, puedes intentarlo de nuevo. Si te vuelve a pasar, escríbenos y lo vemos.',
+      queHacer: 'Con el botón de abajo vuelves al chequeo con tu sitio ya escrito, y puedes pagar otra ' +
+        'vez. Si te vuelve a pasar, escríbenos y lo vemos.',
       loQueSigue: null,
       recordatorios: null,
       terminado: true,

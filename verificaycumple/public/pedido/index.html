@@ -613,8 +613,23 @@
       // tiene que viajar —es lo que nos deja encontrar su pedido sin preguntárselo— así que va
       // al final, después de una línea divisoria, donde se lee como una referencia y no como
       // el tema del correo.
+      /* ⚠️ EL BOTÓN QUE FALTABA, Y POR QUÉ ES EL PRIMARIO (4-nov-2026).
+       *
+       * En `sin-pago` el texto dice «puedes intentarlo de nuevo» y acá no había con qué: el
+       * único control era el «Escríbenos» de abajo. Quien quería comprar y cuya tarjeta falló
+       * leía una invitación a reintentar y encontraba un formulario de contacto.
+       *
+       * Va ANTES del «Escríbenos» y como botón primario porque es lo que esa persona quiere
+       * hacer. Escribirnos es la salida para cuando reintentar tampoco funciona, no el primer
+       * paso. Y lleva su dominio en la URL para que no tenga que volver a escribirlo. */
+      if (e.etapa === 'sin-pago' && p.dominio) {
+        html += '<a class="boton" href="/?dominio=' + encodeURIComponent(p.dominio) +
+          '">Intentar el pago de nuevo</a>';
+      }
       var sitioCorreo = p.dominio || 'mi sitio';
-      html += '<a class="boton' + (e.etapa === 'falta-datos' ? ' secundario' : '') + '" href="mailto:hola@spindlelab.cl' +
+      // Secundario también en `sin-pago`: al lado de un primario, dos botones iguales no
+      // dicen cuál es el que la persona vino a apretar.
+      html += '<a class="boton' + (e.etapa === 'falta-datos' || e.etapa === 'sin-pago' ? ' secundario' : '') + '" href="mailto:hola@spindlelab.cl' +
         '?subject=' + encodeURIComponent('Pedido de ' + sitioCorreo) +
         '&body=' + encodeURIComponent(
           'Hola, les escribo por mi pedido de ' + sitioCorreo + ':\n\n\n\n' +

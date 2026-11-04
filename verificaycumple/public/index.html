@@ -3441,6 +3441,30 @@
     input.removeAttribute('aria-describedby');
   });
 
+  /* ── VOLVER A INTENTAR DESPUÉS DE UN PAGO RECHAZADO (4-nov-2026) ──────────────────────
+   *
+   * La pantalla del pedido rechazado decía «puedes intentarlo de nuevo» y el único botón que
+   * dibujaba era «Escríbenos». O sea que a la persona que quería comprar y cuya tarjeta falló
+   * —el camino no-feliz más frecuente que hay— se le ofrecía mandar un correo, no reintentar.
+   * Para volver a comprar tenía que adivinar que debía volver a la portada, escribir su
+   * dominio otra vez y esperar los dos chequeos de nuevo.
+   *
+   * Con `?dominio=` el botón de esa pantalla la trae de vuelta con el campo lleno y el chequeo
+   * rápido ya corriendo. No se saltea ninguna compuerta: corre el mismo chequeo y la misma
+   * elegibilidad del servidor que cualquier visita. Lo único que se le ahorra es volver a
+   * teclear lo que ya escribió. */
+  (function () {
+    let pedido = '';
+    try { pedido = new URLSearchParams(location.search).get('dominio') || ''; } catch { pedido = ''; }
+    pedido = String(pedido).trim().slice(0, 253);
+    if (!pedido) return;
+    input.value = pedido;
+    // `requestSubmit` y no `submit()`: `submit()` se salta el manejador de arriba, así que el
+    // chequeo no correría y el campo quedaría lleno sin que pasara nada.
+    if (typeof form.requestSubmit === 'function') form.requestSubmit();
+    else boton.click();
+  })();
+
   form.addEventListener('submit', async function (ev) {
     ev.preventDefault();
     const dominio = input.value.trim();
