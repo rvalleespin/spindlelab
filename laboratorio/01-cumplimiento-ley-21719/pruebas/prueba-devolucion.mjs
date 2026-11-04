@@ -408,6 +408,30 @@ console.log('=== 9 · EL PAGO RECHAZADO YA NO ES UN CALLEJÓN ===\n');
      que convierte el arreglo en nada, y por eso se afirma la palabra. */
   cierto('y dispara el chequeo con requestSubmit', /form\.requestSubmit\(\)/.test(PORTADA));
   falso('y NO con submit(), que se saltea el manejador', /form\.submit\(\)/.test(PORTADA));
+
+  /* ⚠️ EL ORDEN, QUE ES LO QUE DE VERDAD FALLÓ (4-nov-2026).
+   *
+   * La primera versión de este arreglo puso el autoenvío ANTES del `addEventListener`. El
+   * `requestSubmit` disparaba el envío cuando todavía no había manejador que lo interceptara,
+   * así que el formulario navegaba a `/?dominio=…` —la misma URL— y al cargar volvía a
+   * autoenviarse: un BUCLE DE RECARGA, con el campo vacío y sin chequeo.
+   *
+   * Y las dos aserciones de arriba pasaban igual, porque `form.requestSubmit()` estaba escrito.
+   * Lo que estaba mal era dónde. Se vio abriendo producción en un navegador, no leyendo el
+   * archivo — es el mismo juez de siempre.
+   *
+   * Esta aserción es de ORDEN y no de presencia. Es lo más cerca que una prueba del fuente
+   * puede estar de lo que pasó; la comprobación de verdad sigue siendo abrir la página. */
+  const posManejador = PORTADA.indexOf("form.addEventListener('submit', async function (ev)");
+  const posAutoenvio = PORTADA.indexOf('VOLVER A INTENTAR DESPUÉS DE UN PAGO RECHAZADO');
+  cierto('los dos bloques existen', posManejador > 0 && posAutoenvio > 0);
+  cierto('y el autoenvío va DESPUÉS del manejador', posAutoenvio > posManejador);
+
+  /* El cinturón de seguridad del mismo bucle: se borra `?dominio=` de la URL antes de enviar,
+     así que si el bloque volviera a correr sin manejador, la recarga ya no traería el parámetro
+     y se detendría sola en vez de girar para siempre. */
+  cierto('y limpia el parámetro de la URL antes de enviar',
+    /searchParams\.delete\('dominio'\)/.test(PORTADA));
   // El dominio viene de la URL, así que se acota: un valor largo en ese campo es basura.
   cierto('el dominio de la URL se acota', /\.slice\(0, 253\)/.test(PORTADA));
 }
