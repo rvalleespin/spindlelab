@@ -400,3 +400,10 @@ Dos veces: una al principio, sobre `1c65e6a6`, para depurar el script; y la defi
   - la franja bajo el título está en las páginas internas;
   - Nosotros, Soluciones y Método: el video del hero corre desde 834, y a 390 queda la imagen.
 - **IndexNow:** se avisaron 14 URL. api.indexnow.org y bing.com/indexnow respondieron 200.
+
+## 3-nov-2026 · PR #67 (heroes internos en 21:9) publicado
+- Ramón lo fusionó a las 20:26 UTC y Cloudflare lo sirvió unos 5 minutos después.
+- Verificado en vivo en Nosotros, Paid media y Contacto:
+  - a 1440 la franja mide 1408×504 y sirve las `-219` (en Nosotros corre el video `nosotros-anim-219.webm`);
+  - a 390 queda la 4:5.
+- IndexNow de las 11 URL con franja, en api.indexnow.org y bing.com.
