@@ -68,6 +68,7 @@ const I = await import(rutaEnElRepo('verificaycumple/functions/api/intake.js', '
 const EN = await import(rutaEnElRepo('verificaycumple/functions/api/entregar.js', 'ENTREGAR_JS'));
 const CO = await import(rutaEnElRepo('verificaycumple/functions/api/cola.js', 'COLA_JS'));
 const AC = await import(rutaEnElRepo('verificaycumple/functions/api/acceso.js', 'ACCESO_JS'));
+const AVISO = await import(rutaEnElRepo('verificaycumple/functions/api/aviso.js', 'AVISO_JS'));
 
 let ok = 0, malo = 0;
 const eq = (n, r, e) => {
@@ -178,8 +179,18 @@ function conRed({ flowPago = null } = {}) {
     // apartan por DESTINATARIO, que es lo que de verdad los distingue. Mantener el host como
     // criterio habria contado como «correo al comprador» un aviso interno mal dirigido.
     if (url.includes('resend')) {
+/* ⚠️ EL DESTINO DE LOS AVISOS SE LEE DE `aviso.js`, NO SE ESCRIBE ACÁ (4-nov-2026).
+ *
+ * Estaba escrito a mano, la dirección literal, en SEIS archivos de prueba. El día que
+ * cambió —Gmail estaba mandando esos avisos a spam porque iban del subdominio de envío al
+ * propio dominio de Workspace— los seis se pusieron rojos a la vez, y ninguno estaba
+ * midiendo un defecto: todos separaban «aviso interno» de «correo al cliente» por una
+ * dirección copiada.
+ *
+ * Leerla de la constante hace que ese cambio no toque ninguna prueba, y que la prueba siga
+ * hablando del HECHO —esto es el aviso interno— en vez de un valor que puede mudarse. */
       const a = String([].concat(cuerpo.to)[0] || '');
-      if (a === 'hola@spindlelab.cl') l.avisos.push(cuerpo); else l.correos.push(cuerpo);
+      if (a === AVISO.DESTINO_AVISOS) l.avisos.push(cuerpo); else l.correos.push(cuerpo);
       return { ok: true, status: 200, json: async () => ({ id: 'c' }) };
     }
     l.sitio++;

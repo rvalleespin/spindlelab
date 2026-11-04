@@ -25,6 +25,7 @@ const V = await import(rutaEnElRepo('verificaycumple/functions/api/flow-vuelta.j
 const C = await import(rutaEnElRepo('verificaycumple/functions/api/flow-confirmacion.js', 'FLOW_CONFIRMACION_JS'));
 const P = await import(rutaEnElRepo('verificaycumple/functions/api/pedidos.js', 'PEDIDOS_JS'));
 const A = await import(rutaEnElRepo('verificaycumple/functions/api/almacen.js', 'ALMACEN_JS'));
+const AVISO = await import(rutaEnElRepo('verificaycumple/functions/api/aviso.js', 'AVISO_JS'));
 
 let ok = 0, malo = 0;
 const eq = (n, r, e) => {
@@ -265,8 +266,18 @@ console.log('=== 4. EL PAGO BUENO: marca, fecha y avisa ===');
   // La primera version decia `avisos.length >= 1`. Al mutar el codigo para quitar el aviso de
   // venta, la prueba siguio VERDE: el correo al comprador tapaba la ausencia del otro, porque
   // contar no es identificar. Son dos destinos distintos y se exigen los dos.
+/* ⚠️ EL DESTINO DE LOS AVISOS SE LEE DE `aviso.js`, NO SE ESCRIBE ACÁ (4-nov-2026).
+ *
+ * Estaba escrito a mano, la dirección literal, en SEIS archivos de prueba. El día que
+ * cambió —Gmail estaba mandando esos avisos a spam porque iban del subdominio de envío al
+ * propio dominio de Workspace— los seis se pusieron rojos a la vez, y ninguno estaba
+ * midiendo un defecto: todos separaban «aviso interno» de «correo al cliente» por una
+ * dirección copiada.
+ *
+ * Leerla de la constante hace que ese cambio no toque ninguna prueba, y que la prueba siga
+ * hablando del HECHO —esto es el aviso interno— en vez de un valor que puede mudarse. */
   const destinos = red.avisos.map((a) => a.destino);
-  cierto('sale el aviso de venta (a quien vende)', destinos.includes('hola@spindlelab.cl'));
+  cierto('sale el aviso de venta (a quien vende)', destinos.includes(AVISO.DESTINO_AVISOS));
   cierto('y el correo al comprador (a quien compro)', destinos.includes('alguien@ejemplo.cl'));
 }
 
@@ -320,7 +331,7 @@ console.log('=== 6. LA SEGUNDA ENTREGA DEL MISMO AVISO NO HACE NADA ===');
   // Mismo criterio que arriba: por destino, no por cantidad. Si la segunda entrega repitiera
   // el correo, el comprador recibiria dos veces el mismo mensaje de que su pago entro.
   const porDestino = (d) => red.avisos.filter((a) => a.destino === d).length;
-  eq('no se repite el aviso de venta', porDestino('hola@spindlelab.cl'), 1);
+  eq('no se repite el aviso de venta', porDestino(AVISO.DESTINO_AVISOS), 1);
   eq('ni el correo al comprador', porDestino('alguien@ejemplo.cl'), 1);
   eq('y no salio nada mas', red.avisos.length, avisosPrimera);
 }
@@ -340,7 +351,7 @@ console.log('=== 7. UN PEDIDO RESUELTO QUE RECIBE OTRA COSA SE MIRA A MANO ===')
   eq('contesta 200', r.status, 200);
   eq('pero manda a revisar', (await r.json()).accion, 'revisar');
   eq('y NO cambia el pedido', crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'pagado');
-  cierto('avisando a una persona', red.avisos.some((a) => a.destino === 'hola@spindlelab.cl'));
+  cierto('avisando a una persona', red.avisos.some((a) => a.destino === AVISO.DESTINO_AVISOS));
   // Y sin mandarle al comprador el correo de «recibimos tu pago» por un pago rechazado.
   falso('y sin escribirle al comprador', red.avisos.some((a) => a.destino === 'alguien@ejemplo.cl'));
 }
@@ -390,7 +401,7 @@ console.log('=== 9. UN RECHAZO SEGUIDO DE UN PAGO: LA VENTA SE MARCA ===');
   // destinatario identifica el canal, no el mensaje — es el mismo error que contar en vez de
   // identificar, un nivel mas abajo. Los dos asuntos los pone `aviso.js`: «Venta de Verifica y
   // Cumple ·» y «REVISAR ·».
-  const internos = red.avisos.filter((a) => a.destino === 'hola@spindlelab.cl');
+  const internos = red.avisos.filter((a) => a.destino === AVISO.DESTINO_AVISOS);
   cierto('sale un aviso a quien vende', internos.length >= 1);
   cierto('y es el de una VENTA', internos.some((a) => a.texto.includes('Venta de Verifica y Cumple')));
   falso('no el de «esto hay que revisarlo»', internos.some((a) => a.texto.includes('REVISAR')));
@@ -437,7 +448,7 @@ console.log('=== 10. LO QUE LA TABLA NO PERMITE REABRIR SIGUE SIN REABRIRSE ==='
     eq(`${nombre}: contesta 200 (no se le pide reintentar a Flow)`, r.status, 200);
     eq(`${nombre}: NO se mueve el pedido`, crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, esperado);
     eq(`${nombre}: lo mira una persona`, j.accion, 'revisar');
-    cierto(`${nombre}: y se le avisa`, red.avisos.some((a) => a.destino === 'hola@spindlelab.cl'));
+    cierto(`${nombre}: y se le avisa`, red.avisos.some((a) => a.destino === AVISO.DESTINO_AVISOS));
     // ⚠️ Y NO se manda el correo de «tu pago entro» a quien no acaba de pagar.
     falso(`${nombre}: sin correo al comprador`, red.avisos.some((a) => a.destino === 'alguien@ejemplo.cl'));
   }
@@ -487,7 +498,7 @@ console.log('=== 11. UN CONTRACARGADO NO SE REABRE SOLO ===');
   eq('el pedido SIGUE contracargado',
     crudo.prepare('SELECT estado FROM pedidos WHERE id = ?').get(ID).estado, 'contracargado');
 
-  const internos = red.avisos.filter((a) => a.destino === 'hola@spindlelab.cl');
+  const internos = red.avisos.filter((a) => a.destino === AVISO.DESTINO_AVISOS);
   eq('sale un aviso a quien vende, y uno solo', internos.length, 1);
   // ⚠️ CON GUARDA, y no por prolijidad: al mutar el destino del aviso `internos` queda vacio y
   // `internos[0].texto` revienta el archivo. Una prueba que revienta acusa una sola vez; las

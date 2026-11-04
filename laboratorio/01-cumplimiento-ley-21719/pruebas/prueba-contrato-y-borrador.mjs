@@ -41,6 +41,7 @@ const E = await import(rutaEnElRepo('verificaycumple/functions/api/etapas.js', '
 const C = await import(rutaEnElRepo('verificaycumple/functions/api/correo.js', 'CORREO_JS'));
 const EN = await import(rutaEnElRepo('verificaycumple/functions/api/entregar.js', 'ENTREGAR_JS'));
 const I = await import(rutaEnElRepo('verificaycumple/functions/api/intake.js', 'INTAKE_JS'));
+const AVISO = await import(rutaEnElRepo('verificaycumple/functions/api/aviso.js', 'AVISO_JS'));
 const HTML = fs.readFileSync(
   rutaEnElRepo('verificaycumple/public/pedido/index.html', 'VYC_PEDIDO_HTML'), 'utf8');
 const TERMINOS = fs.readFileSync(
@@ -121,8 +122,18 @@ function conRed(contesta = () => ({ ok: true, status: 200 })) {
     const r = contesta(envios.length);
     if (r.lanza) throw new Error('conexión cortada');
     return { ok: r.ok, status: r.status, json: async () => ({}), text: async () => '' };
+/* ⚠️ EL DESTINO DE LOS AVISOS SE LEE DE `aviso.js`, NO SE ESCRIBE ACÁ (4-nov-2026).
+ *
+ * Estaba escrito a mano, la dirección literal, en SEIS archivos de prueba. El día que
+ * cambió —Gmail estaba mandando esos avisos a spam porque iban del subdominio de envío al
+ * propio dominio de Workspace— los seis se pusieron rojos a la vez, y ninguno estaba
+ * midiendo un defecto: todos separaban «aviso interno» de «correo al cliente» por una
+ * dirección copiada.
+ *
+ * Leerla de la constante hace que ese cambio no toque ninguna prueba, y que la prueba siga
+ * hablando del HECHO —esto es el aviso interno— en vez de un valor que puede mudarse. */
   };
-  const paraHola = (x) => JSON.stringify((x.cuerpo && x.cuerpo.to) || []) === '["hola@spindlelab.cl"]';
+  const paraHola = (x) => JSON.stringify((x.cuerpo && x.cuerpo.to) || []) === JSON.stringify([AVISO.DESTINO_AVISOS]);
   return {
     envios,
     get alCliente() { return envios.filter((x) => !paraHola(x)); },

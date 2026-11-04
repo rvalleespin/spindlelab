@@ -101,8 +101,18 @@ function conFetch(resp) {
   return () => { globalThis.fetch = antes; };
 }
 
+/* ⚠️ EL DESTINO DE LOS AVISOS SE LEE DE `aviso.js`, NO SE ESCRIBE ACÁ (4-nov-2026).
+ *
+ * Estaba escrito a mano, la dirección literal, en SEIS archivos de prueba. El día que
+ * cambió —Gmail estaba mandando esos avisos a spam porque iban del subdominio de envío al
+ * propio dominio de Workspace— los seis se pusieron rojos a la vez, y ninguno estaba
+ * midiendo un defecto: todos separaban «aviso interno» de «correo al cliente» por una
+ * dirección copiada.
+ *
+ * Leerla de la constante hace que ese cambio no toque ninguna prueba, y que la prueba siga
+ * hablando del HECHO —esto es el aviso interno— en vez de un valor que puede mudarse. */
 /** La casilla del negocio: a donde llegan los avisos internos. */
-const CASILLA = 'hola@spindlelab.cl';
+const CASILLA = AV.DESTINO_AVISOS;
 
 /**
  * El entorno minimo para que un aviso pueda salir. Desde el 3-nov-2026 los avisos internos

@@ -40,6 +40,7 @@ const E = await import(rutaEnElRepo('verificaycumple/functions/api/pedido.js', '
 const P = await import(rutaEnElRepo('verificaycumple/functions/api/pedidos.js', 'PEDIDOS_JS'));
 const A = await import(rutaEnElRepo('verificaycumple/functions/api/almacen.js', 'ALMACEN_JS'));
 const PR = await import(rutaEnElRepo('verificaycumple/functions/api/profundo.js', 'PROFUNDO_JS'));
+const AVISO = await import(rutaEnElRepo('verificaycumple/functions/api/aviso.js', 'AVISO_JS'));
 
 let ok = 0, malo = 0;
 const eq = (n, r, e) => {
@@ -1371,8 +1372,18 @@ console.log('=== 24. la red de seguridad: el pedido se reconcilia contra Mercado
         return { ok: true, status: 200, json: async () => ORDEN_PAGADA(ID) };
       }
       if (url.includes('api.resend.com')) {
+/* ⚠️ EL DESTINO DE LOS AVISOS SE LEE DE `aviso.js`, NO SE ESCRIBE ACÁ (4-nov-2026).
+ *
+ * Estaba escrito a mano, la dirección literal, en SEIS archivos de prueba. El día que
+ * cambió —Gmail estaba mandando esos avisos a spam porque iban del subdominio de envío al
+ * propio dominio de Workspace— los seis se pusieron rojos a la vez, y ninguno estaba
+ * midiendo un defecto: todos separaban «aviso interno» de «correo al cliente» por una
+ * dirección copiada.
+ *
+ * Leerla de la constante hace que ese cambio no toque ninguna prueba, y que la prueba siga
+ * hablando del HECHO —esto es el aviso interno— en vez de un valor que puede mudarse. */
         const c = o.body ? JSON.parse(o.body) : {};
-        if ([].concat(c.to)[0] === 'hola@spindlelab.cl') salidas.internos.push(c);
+        if ([].concat(c.to)[0] === AVISO.DESTINO_AVISOS) salidas.internos.push(c);
         else salidas.alComprador.push(c);
         return { ok: true, status: 200, json: async () => ({ id: 'x' }) };
       }
@@ -1942,7 +1953,7 @@ console.log('=== LA COMPRA VIEJA QUE RESULTA ESTAR PAGADA ===');
   // `red.avisos` no existia en este arnes: era verdadera SIEMPRE. Una asercion muerta es peor
   // que ninguna, porque ocupa el lugar de la que haria falta y se cuenta como cobertura.
   // Lo delato una mutacion que quito el aviso del codigo y no puso nada rojo.
-  eq('se avisa a una persona, y se sabe a cual', red.llamadas.avisos, ['hola@spindlelab.cl']);
+  eq('se avisa a una persona, y se sabe a cual', red.llamadas.avisos, [AVISO.DESTINO_AVISOS]);
 
   eq('NO se abrio un segundo cobro', red.llamadas.flow, 0);
   eq('y sigue habiendo un solo pedido', filas(crudo).length, 1);
@@ -2045,7 +2056,7 @@ console.log('=== FLOW NO TIENE IDEMPOTENCIA: EL DOBLE CLIC NO PUEDE ABRIR DOS PA
     // decir que si.
     falso('NO se le dice que no se le cobro nada', /no se te cobr/i.test(j.detalle || ''));
     cierto('se le da el enlace de SU pedido', String(j.detalle).includes(IDA));
-    eq('y se avisa a una persona, y se sabe a cual', red.llamadas.avisos, ['hola@spindlelab.cl']);
+    eq('y se avisa a una persona, y se sabe a cual', red.llamadas.avisos, [AVISO.DESTINO_AVISOS]);
     eq('el pedido no se cerro como rechazado', filas(crudo)[0].estado, 'creado');
   }
 
@@ -2101,7 +2112,7 @@ console.log('=== FLOW NO TIENE IDEMPOTENCIA: EL DOBLE CLIC NO PUEDE ABRIR DOS PA
     cierto('diciendole que no se le cobro nada', /no se te cobr/i.test(j.detalle || ''));
 
     // ⚠️⚠️ LA MITAD QUE FALTABA: que alguien se entere de esa fila.
-    eq('sale el aviso, a la casilla del negocio', red.llamadas.avisos, ['hola@spindlelab.cl']);
+    eq('sale el aviso, a la casilla del negocio', red.llamadas.avisos, [AVISO.DESTINO_AVISOS]);
   }
 
   /* -- el pago abierto fue RECHAZADO: ese enlace ya no cobra, se abre uno nuevo -- */
@@ -2178,7 +2189,7 @@ console.log('=== FLOW NO TIENE IDEMPOTENCIA: EL DOBLE CLIC NO PUEDE ABRIR DOS PA
     eq('y lo dice sin inventar un estado', j.motivo, 'pago-abierto-no-calza');
     // ⚠️ No se toca la fila Y se avisa. Dejarla viva sin que nadie se entere es dejarla
     // perdida: es la mitad que ya falto una vez en este mismo archivo.
-    eq('se avisa a una persona', red.llamadas.avisos, ['hola@spindlelab.cl']);
+    eq('se avisa a una persona', red.llamadas.avisos, [AVISO.DESTINO_AVISOS]);
     eq('y la fila no se movio', filas(crudo)[0].estado, 'creado');
   }
 }
