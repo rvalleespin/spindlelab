@@ -44,6 +44,7 @@ import { rutaEnElRepo } from './rutas.mjs';
 const A = await import(rutaEnElRepo('verificaycumple/functions/api/aviso.js', 'AVISO_JS'));
 const C = await import(rutaEnElRepo('verificaycumple/functions/api/correo.js', 'CORREO_JS'));
 
+const AC = await import(rutaEnElRepo('verificaycumple/functions/api/acceso.js', 'ACCESO_JS'));
 let ok = 0, malo = 0;
 const eq = (n, r, e) => {
   if (JSON.stringify(r) === JSON.stringify(e)) ok++;
@@ -149,7 +150,7 @@ console.log('=== 2. el mensaje que recibe Resend ===');
 
   // Lo primero: a quién le llega. Un aviso que sale perfecto a la casilla equivocada es el
   // mismo silencio con otro nombre.
-  eq('el aviso llega a la casilla del negocio', m.to, ['hola@spindlelab.cl']);
+  eq('el aviso llega al destino de avisos', m.to, [A.DESTINO_AVISOS]);
   // Y de dónde sale. Resend rechaza un remitente que no esté verificado, y el único verificado
   // del proyecto es el de `correo.js`: escribir otro acá sería volver al 403 por otra puerta.
   eq('sale del único remitente verificado que tenemos', m.from, C.REMITENTE);
@@ -299,7 +300,7 @@ console.log('=== 4. las TRES funciones se portan igual ===');
     eq(`${nombre}: le habla a Resend y a nadie más`, r5.visto.urls, ['https://api.resend.com/emails']);
     cierto(`${nombre}: con la clave del entorno`,
       String(r5.visto.cabeceras[0].Authorization) === `Bearer ${ENV.RESEND_API_KEY}`);
-    eq(`${nombre}: a la casilla del negocio`, r5.visto.cuerpos[0].to, ['hola@spindlelab.cl']);
+    eq(`${nombre}: al destino de avisos`, r5.visto.cuerpos[0].to, [A.DESTINO_AVISOS]);
     eq(`${nombre}: desde el remitente verificado`, r5.visto.cuerpos[0].from, C.REMITENTE);
     falso(`${nombre}: sin el id entero en lo que viaja`, JSON.stringify(r5.visto.cuerpos[0]).includes(ID));
 
@@ -501,6 +502,54 @@ console.log('=== 12. el aviso de acceso dice DÓNDE está el acceso ===');
     falso(`y en «${pl}» no se cuela el «tu sitio» de la pantalla del cliente`,
       /mandada por tu sitio/.test(salida));
   }
+}
+
+/* ================================================================== */
+console.log('=== 13. el aviso interno NO puede ir al dominio de Workspace ===');
+{
+  /* ── POR QUÉ ESTA SECCIÓN, CON LA EVIDENCIA ──────────────────────────────────────────────
+   *
+   * El aviso de la primera venta real no llegó, y se pasó un día entero sin saber por qué. La
+   * respuesta estaba en el registro de correo de Workspace:
+   *
+   *     Destinatario: hola@spindlelab.cl
+   *     10:35:07      Recibido desde un servidor SMTP · 250 2.0.0 OK
+   *     10:35:08      Marcado como spam
+   *     Estado:       0/1 entregados
+   *
+   * La causa es la DIRECCIÓN, no el contenido ni el envío: un `From` de un subdominio del
+   * propio dominio de Workspace, entrando desde una IP de afuera, es la señal clásica de
+   * suplantación, y Gmail la filtra aunque SPF y DKIM pasen. El recibo al comprador, mandado
+   * en el mismo `Promise.all` y en el mismo segundo, llegó sin problema porque va a un Gmail
+   * de consumidor, que no tiene esa regla.
+   *
+   * O sea que esto no se arregla con un reintento —Resend contestó 250 OK, no hubo fallo que
+   * reintentar— ni se nota en ninguna prueba que mire el cuerpo del correo. Solo se nota
+   * mirando a dónde va. */
+  const dominioDelRemitente = String(C.REMITENTE).replace(/.*@|>.*/g, '');
+  cierto('el remitente es un subdominio de spindlelab.cl',
+    /\.spindlelab\.cl$/.test(dominioDelRemitente));
+
+  // ═══ LA ASERCIÓN QUE IMPIDE LA REGRESIÓN ═══
+  const dominioDelDestino = String(A.DESTINO_AVISOS).split('@')[1] || '';
+  falso('y el destino de los avisos NO está en spindlelab.cl, que es lo que los mandaba a spam',
+    /(^|\.)spindlelab\.cl$/.test(dominioDelDestino));
+  cierto('el destino es una dirección real', /@.+\..+/.test(String(A.DESTINO_AVISOS)));
+
+  /* ⚠️ Y LOS DOS HECHOS NO VUELVEN A COLAPSAR. «A quién le avisamos de una venta» y «a dónde
+     el cliente manda la invitación de acceso» compartían dirección hasta hoy, y el comentario
+     del código ya decía que eran dos hechos distintos. Ahora divergieron. Si alguien
+     reemplazara uno por el otro para «simplificar», esto se pone rojo. */
+  eq('la invitación del cliente sigue yendo a la casilla del negocio',
+    AC.CORREO_ACCESO, 'hola@spindlelab.cl');
+  eq('y la constante de la casilla del negocio sigue existiendo',
+    A.CASILLA_DEL_NEGOCIO, 'hola@spindlelab.cl');
+  falso('los dos destinos ya no son el mismo', A.DESTINO_AVISOS === AC.CORREO_ACCESO);
+
+  // Y de verdad sale así, no solo en la constante.
+  const r = redQueAcepta();
+  await A.avisarVenta(PEDIDO, ENV, r.red);
+  eq('el aviso de venta sale al destino nuevo', (r.visto.cuerpos[0] || {}).to, [A.DESTINO_AVISOS]);
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
