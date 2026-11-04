@@ -362,5 +362,55 @@ console.log('=== 8 · DEVUELTO ES TERMINAL: NADA PUEDE DES-DEVOLVER UN PEDIDO ==
   eq('el pedido sigue devuelto', (await A.leerPedido(db, ID)).estado, 'devuelto');
 }
 
+/* ================================================================== */
+console.log('=== 9 · EL PAGO RECHAZADO YA NO ES UN CALLEJÓN ===\n');
+{
+  /* ── POR QUÉ ESTÁ EN ESTE ARCHIVO ────────────────────────────────────────────────────────
+   *
+   * Es el otro camino por el que una venta se cae sin que nadie la devuelva: la tarjeta se
+   * rechaza. La etapa decía «puedes intentarlo de nuevo» y la pantalla dibujaba UN botón,
+   * «Escríbenos». O sea que a la persona que quería comprar y cuya tarjeta falló —el camino
+   * no-feliz más frecuente que hay— se le ofrecía mandar un correo en vez de reintentar.
+   *
+   * Se mira el HTML servido y no solo el texto de la etapa, porque el botón lo dibuja el
+   * front: la etapa puede decir «apreta el botón de abajo» y el botón no existir, que es
+   * exactamente lo que pasaba. */
+  const fs = await import('node:fs');
+  const PANTALLA = fs.readFileSync(
+    rutaEnElRepo('verificaycumple/public/pedido/index.html', 'VYC_PEDIDO_HTML'), 'utf8');
+  const PORTADA = fs.readFileSync(
+    rutaEnElRepo('verificaycumple/public/index.html', 'VYC_PORTADA_HTML'), 'utf8');
+
+  const e = E.etapaDelPedido({
+    id: ID, estado: 'rechazado', dominio: 'ejemplo.cl',
+    senales_contratadas: '["cmp"]', senales_fuera: '[]',
+  });
+  eq('la etapa del rechazo', e.etapa, 'sin-pago');
+  cierto('dice que no se cobró nada', /no te cobramos nada/i.test(e.detalle || ''));
+  // ⚠️ El texto ya no promete un reintento sin decir por dónde: nombra el botón.
+  cierto('y manda al botón, no al correo', /bot[oó]n de abajo/i.test(e.queHacer || ''));
+
+  // ═══ EL BOTÓN EXISTE, Y ES EL PRIMARIO ═══
+  cierto('la pantalla dibuja el botón de reintento en sin-pago',
+    /e\.etapa === 'sin-pago' && p\.dominio[\s\S]{0,400}Intentar el pago de nuevo/.test(PANTALLA));
+  cierto('lleva el dominio en la URL para no volver a escribirlo',
+    /href="\/\?dominio=' \+ encodeURIComponent\(p\.dominio\)/.test(PANTALLA));
+  /* ⚠️ Y el «Escríbenos» pasa a secundario. Dos botones con el mismo peso no dicen cuál es el
+     que la persona vino a apretar, y el que vino a apretar es el del pago. */
+  cierto('y el «Escríbenos» queda secundario al lado',
+    /falta-datos' \|\| e\.etapa === 'sin-pago' \? ' secundario'/.test(PANTALLA));
+
+  // ═══ Y LA PORTADA RECIBE ESE DOMINIO Y CORRE EL CHEQUEO SOLA ═══
+  cierto('la portada lee ?dominio=', /URLSearchParams\(location\.search\)\.get\('dominio'\)/.test(PORTADA));
+  cierto('y lo pone en el campo', /input\.value = pedido;/.test(PORTADA));
+  /* ⚠️ `requestSubmit` y NO `submit()`: `submit()` se salta el manejador del formulario, así
+     que el campo quedaría lleno y el chequeo no correría nunca. Es un cambio de una palabra
+     que convierte el arreglo en nada, y por eso se afirma la palabra. */
+  cierto('y dispara el chequeo con requestSubmit', /form\.requestSubmit\(\)/.test(PORTADA));
+  falso('y NO con submit(), que se saltea el manejador', /form\.submit\(\)/.test(PORTADA));
+  // El dominio viene de la URL, así que se acota: un valor largo en ese campo es basura.
+  cierto('el dominio de la URL se acota', /\.slice\(0, 253\)/.test(PORTADA));
+}
+
 console.log(`\n${malo ? 'HAY FALLAS' : 'TODO EN VERDE'} — ${ok} aserciones, ${malo} fallas\n`);
 process.exit(malo ? 1 : 0);
