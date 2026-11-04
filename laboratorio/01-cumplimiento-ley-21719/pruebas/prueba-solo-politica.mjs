@@ -550,11 +550,21 @@ console.log('=== 6. la pantalla del pedido: lo que hubo y no hubo que tocar ==='
   cierto('el detalle también', /escapar\(e\.detalle\)/.test(HTML));
   cierto('y lo que sigue', /e\.loQueSigue/.test(HTML));
   const porNombre = [...HTML.matchAll(/e\.etapa === '([a-z-]+)'/g)].map((m) => m[1]);
-  // Las dos que se mapean son las que montan un control: el formulario y el botón del acceso.
-  // Si alguien agregara acá un `e.etapa === 'redactando'`, sería una pantalla especial para
-  // una etapa que no pide nada, y esta aserción obliga a justificarlo.
-  eq('solo dos etapas se mapean por nombre, y son las que montan un control',
-    [...new Set(porNombre)].sort(), ['falta-acceso', 'falta-datos']);
+  /* Las que se mapean son las que montan un CONTROL, y ese es el criterio, no el número.
+   *
+   *   - `falta-datos`   → el formulario de la empresa.
+   *   - `falta-acceso`  → las instrucciones y el botón que declara el acceso.
+   *   - `sin-pago`      → el botón «Intentar el pago de nuevo» (agregado el 4-nov-2026).
+   *
+   * El tercero entró porque esta aserción hizo exactamente lo que tenía que hacer: se puso
+   * roja y obligó a justificarlo. Y se justifica con su mismo criterio — la etapa decía
+   * «puedes intentarlo de nuevo» y la pantalla dibujaba un solo botón, «Escríbenos», así que
+   * el camino no-feliz más frecuente que hay terminaba en un formulario de contacto.
+   *
+   * Si alguien agregara acá un `e.etapa === 'redactando'`, sería una pantalla especial para
+   * una etapa que no pide nada, y esto vuelve a ponerse rojo. Eso es lo que cuida. */
+  eq('solo se mapean por nombre las etapas que montan un control',
+    [...new Set(porNombre)].sort(), ['falta-acceso', 'falta-datos', 'sin-pago']);
 
   // ⚠️ LA REGLA ESTÁ ESCRITA DOS VECES —servidor y navegador— PORQUE NO HAY OTRA FORMA: el
   // formulario corre en el navegador y no puede importar nada de `functions/`. Lo que sí se
