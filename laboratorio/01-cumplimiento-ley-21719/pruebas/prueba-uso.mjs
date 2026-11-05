@@ -35,9 +35,10 @@ import { pathToFileURL } from 'node:url';
 import { rutaEnElRepo } from './rutas.mjs';
 
 const RUTA = rutaEnElRepo('verificaycumple/functions/api/profundo.js', 'PROFUNDO_JS');
-const { origenDeLaVisita, origenDeLaPagina, ORIGENES_VALIDOS, anotarUso, TTL_USO_S } = await import(RUTA);
+const { origenDeLaVisita, origenDeLaPagina, ORIGENES_VALIDOS, anotarUso, anotarElegibilidad, TTL_USO_S } = await import(RUTA);
 
 let ok = 0, malo = 0;
+const cierto = (n, v) => eq(n, Boolean(v), true);
 const eq = (n, r, e) => {
   if (JSON.stringify(r) === JSON.stringify(e)) ok++;
   else { malo++; console.log(`  FALLA ${n}: esperado ${JSON.stringify(e)}, real ${JSON.stringify(r)}`); }
@@ -459,6 +460,107 @@ function kvFalso() {
     }
   }
   eq('las dos implementaciones contestan igual en todos los casos', iguales, CASOS.length);
+}
+
+/* ================================================================== */
+console.log('=== el contador de elegibilidad: si se le ofreció el botón ===');
+{
+  /* ── POR QUÉ EXISTE, CON LOS NÚMEROS QUE LO PIDIERON (5-nov-2026) ───────────────────────
+   *
+   * Midiendo el embudo de la campaña quedó un hueco que impedía decidir qué arreglar:
+   *
+   *     847  visitas a la página (Meta: $26.879, CTR 9,74%, CPC $20)
+   *     101  corrieron el chequeo rápido
+   *      35  llegaron al chequeo profundo
+   *       0  apretaron «quiero el kit» — cero, nunca, de nadie
+   *
+   * No había forma de saber si esos 35 VIERON el botón. Son dos problemas con arreglos
+   * opuestos: si lo vieron y no quisieron, se trabaja la oferta; si nunca se les ofreció
+   * porque el chequeo dijo que estaban bien, el problema es a quién le hablamos y tocar la
+   * página no sirve de nada. */
+  const dia = new Date('2026-11-05T15:00:00Z');
+
+  {
+    const kv = kvFalso();
+    /* ⚠️ CON MOTIVO, Y NO ES UN DETALLE. La primera versión de este caso pasaba `{puede:true}`
+       pelado, y entonces la mutación «anota el motivo también cuando puede» no tenía nada que
+       disparar: la aserción de abajo pasaba igual con el código bueno y con el roto.
+       Un veredicto real de `elegibilidad()` SÍ trae motivo cuando puede comprar, así que el
+       caso tiene que tener la forma real o no está probando nada. */
+    await anotarElegibilidad(kv, { puede: true, motivo: 'hay-que-cerrar' }, dia);
+    eq('cuando puede comprar, una sola llave', kv.puestas.map((p) => p.k), ['uso:elegible:2026-11-05:si']);
+    // El motivo NO se anota cuando puede: no agrega nada y sería una clave por día que nadie lee.
+    eq('y sin clave de motivo', kv.puestas.filter((p) => p.k.includes('nocompra')).length, 0);
+  }
+
+  {
+    const kv = kvFalso();
+    await anotarElegibilidad(kv, { puede: false, motivo: 'nada-que-cerrar' }, dia);
+    eq('cuando NO puede, se anotan las dos', kv.puestas.map((p) => p.k).sort(),
+      ['uso:elegible:2026-11-05:no', 'uso:nocompra:2026-11-05:nada-que-cerrar']);
+    /* ⚠️ ESTA ES LA ASERCIÓN QUE DECIDE SI EL CONTADOR SIRVE. Un «no se le ofreció» sin la
+       razón deja la misma duda un nivel más abajo: no es lo mismo que al sitio no le falte
+       nada que no haberlo podido medir, y la primera es un problema de a quién le hablamos
+       mientras la segunda es un defecto nuestro. */
+    const kv2 = kvFalso();
+    await anotarElegibilidad(kv2, { puede: false, motivo: 'nada-que-cerrar' }, dia);
+    await anotarElegibilidad(kv2, { puede: false, motivo: 'nada-que-cerrar' }, dia);
+    await anotarElegibilidad(kv2, { puede: false, motivo: 'no-se-pudo-medir' }, dia);
+    eq('los motivos se cuentan por separado', kv2.datos.get('uso:nocompra:2026-11-05:nada-que-cerrar'), '2');
+    eq('sin mezclarse', kv2.datos.get('uso:nocompra:2026-11-05:no-se-pudo-medir'), '1');
+    eq('y el total de «no» los suma a todos', kv2.datos.get('uso:elegible:2026-11-05:no'), '3');
+  }
+
+  {
+    const kv = kvFalso();
+    await anotarElegibilidad(kv, { puede: true }, dia);
+    eq('vence igual que el resto de los contadores',
+      kv.puestas.every((p) => p.opt && p.opt.expirationTtl === TTL_USO_S), true);
+  }
+
+  // Un motivo larguísimo no escribe una clave larguísima en KV.
+  {
+    const kv = kvFalso();
+    await anotarElegibilidad(kv, { puede: false, motivo: 'x'.repeat(200) }, dia);
+    const clave = kv.puestas.map((p) => p.k).find((k) => k.includes('nocompra'));
+    eq('el motivo se acota', clave.length, 'uso:nocompra:2026-11-05:'.length + 40);
+  }
+
+  // Y no revienta con lo que puede venir mal.
+  for (const malo of [null, undefined, {}]) {
+    let reventó = null;
+    try { await anotarElegibilidad(kvFalso(), malo, dia); } catch (e) { reventó = String(e.message || e); }
+    eq(`con ${JSON.stringify(malo)} no revienta`, reventó, null);
+  }
+  {
+    let reventó = null;
+    try { await anotarElegibilidad(null, { puede: true }, dia); } catch (e) { reventó = String(e.message || e); }
+    eq('y sin KV tampoco', reventó, null);
+  }
+}
+
+/* ================================================================== */
+console.log('=== y la contabilidad NO le puede quitar el informe a nadie ===');
+{
+  /* ⚠️ LA ASERCIÓN MÁS IMPORTANTE DE ESTE AGREGADO.
+   *
+   * El contador corre DESPUÉS de que el visitante ya tiene su informe, y necesita una
+   * petición HTTP más (el chequeo rápido, porque `elegibilidad()` mezcla señales de los dos).
+   * Si esa petición falla —o si `elegibilidad()` revienta con una forma que no esperaba— el
+   * visitante no puede perder su chequeo por una cuenta interna nuestra.
+   *
+   * Se mide sobre el FUENTE porque el camino está envuelto en un try/catch y no hay forma de
+   * observarlo desde afuera sin levantar un navegador: lo que se afirma es que el envoltorio
+   * existe y que nada de la contabilidad queda fuera de él. */
+  const fuente = fs.readFileSync(RUTA.replace('file://', ''), 'utf8');
+  const i = fuente.indexOf("const rapido = await chequear(entrada);");
+  cierto('el chequeo extra existe', i > 0);
+  const antes = fuente.slice(Math.max(0, i - 400), i);
+  cierto('y está dentro de un try', /try \{\s*$/.test(antes.replace(/[^\S\n]*\n\s*$/, '\n')) || antes.includes('try {'));
+  const despues = fuente.slice(i, i + 500);
+  cierto('con su catch, que no vuelve a lanzar', /\} catch \{[^}]*\}/.test(despues));
+  cierto('y la llamada al contador va adentro del mismo try',
+    despues.indexOf('anotarElegibilidad') > 0 && despues.indexOf('anotarElegibilidad') < despues.indexOf('} catch'));
 }
 
 console.log(`\n${ok} bien, ${malo} mal`);
