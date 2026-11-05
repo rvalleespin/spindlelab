@@ -1,0 +1,82 @@
+{
+  "url": "https://yeppo.cl/",
+  "cuando": "2026-11-04T17:34:28.240Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://yeppo.cl/",
+      "titulo": "Browser verification",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 76,
+      "muestra": "Verifying your browser\n\nOne quick check before you continue.\n\nVerify browser",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 11
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://yeppo.cl/",
+      "titulo": "Browser verification",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 76,
+      "muestra": "Verifying your browser\n\nOne quick check before you continue.\n\nVerify browser",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 11
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://yeppo.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://yeppo.cl/?__shopify_bv_challenge=AaGnoAK7AAEBQw4LDyM5osAdnIwL5EAVXfHyfsyGI50ouBObtmH2RStPlVPDNphsduwYyx1OCR9bMkhECI2Ku-WBuFGtDxGwoRWfq4mtrGmLAp_X4xzxKkXqrp7Hv9e4fxkfOe8UQjuqKVGO_GI7pfWr4cIk0c3GBUOJKy8YqVLro61bJlAdZAIqMScYqCS6Agl7LjjFgw8VCx_PnVuK0DhbJa9i98Tcb_OMv2Z5O2Es_X8L820UcxiEyJaGD91tRf4xKOlHVIzijJoJ9-narZeHC0q2u1s0QxIwGuB_NSz1nzyOeDc1kDKDFGSWrbe2WWSToUP5Y446f9_on_nI6k0XjWWeOYZtOQyU9Sp",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://yeppo.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 9866,
+    "al_abrir_bytes": 9866,
+    "n_peticiones": 1,
+    "mas_pesados": [
+      {
+        "url": "https://yeppo.cl/",
+        "bytes": 9866
+      }
+    ]
+  },
+  "html_len": 24212
+}

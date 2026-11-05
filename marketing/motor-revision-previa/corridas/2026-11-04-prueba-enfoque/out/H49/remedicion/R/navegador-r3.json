@@ -1,0 +1,68 @@
+{
+  "url": "https://hoteloceanic.cl/",
+  "cuando": "2026-11-04T17:32:58.819Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://hoteloceanic.cl/",
+      "titulo": "Browser verification",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 76,
+      "muestra": "Verifying your browser\n\nOne quick check before you continue.\n\nVerify browser",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 11
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://hoteloceanic.cl/",
+      "titulo": "Browser verification",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 76,
+      "muestra": "Verifying your browser\n\nOne quick check before you continue.\n\nVerify browser",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 11
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 10140,
+    "al_abrir_bytes": 10140,
+    "n_peticiones": 1,
+    "mas_pesados": [
+      {
+        "url": "https://hoteloceanic.cl/",
+        "bytes": 10140
+      }
+    ]
+  },
+  "html_len": 24229
+}

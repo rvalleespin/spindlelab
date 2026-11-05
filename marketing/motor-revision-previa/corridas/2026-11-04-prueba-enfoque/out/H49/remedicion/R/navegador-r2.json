@@ -1,0 +1,196 @@
+{
+  "url": "https://hoteloceanic.cl/",
+  "cuando": "2026-11-04T17:32:25.570Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "hoteloceanic.cl",
+        "expira_dias": 365
+      }
+    ],
+    "dom": {
+      "url": "https://hoteloceanic.cl/en",
+      "titulo": "Verify your browser",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 66,
+      "muestra": "Verify your browser\n\nPlease complete the verification to continue.",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 9
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "hoteloceanic.cl",
+        "expira_dias": 365
+      }
+    ],
+    "dom": {
+      "url": "https://hoteloceanic.cl/en",
+      "titulo": "Verify your browser",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 66,
+      "muestra": "Verify your browser\n\nPlease complete the verification to continue.",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 9
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/en",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/turnstile/v0/g/5c2e6b612edd/api.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/av0/rch/iiz8y/0x4AAAAAAFqx6qoC6VTjLWSW/auto/fbE/new/normal?lang=auto",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/d37bdc82-7945-4b9f-bee0-bf368e38fa52",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/2577496654:1793808932:yNO-qGnRM3KxaqIVI7pvv_125SuiaBL1XIpKKM62uUY/a5555b113d4aabe9/CneZatUk8HFS3zBlZ88tws0YE_z5Fws6DUxFrttbo5T7p_5_1cA_S5qp5oMBHx5s1V1cgs3gKJ0UJcqTGBRX_vXa3Qp6nXxSgh8veOZ9bL6OYO2MiI9OuBgNM_wKZqU3yQ",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/fb21bc59-73f4-462e-aeaf-844a2530d82c",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/i/a5555b113d4aabe9/CneZatUk8HFS3zBlZ88tws0YE_z5Fws6DUxFrttbo5T7p_5_1cA_S5qp5oMBHx5s1V1cgs3gKJ0UJcqTGBRX_vXa3Qp6nXxSgh8veOZ9bL6OYO2MiI9OuBgNM_wKZqU3yQ",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a5555b113d4aabe9/1793813522723/97bf8d97dded6cbac6d499c27f2f196afaaba94686b568df9adb4cc46b85e220/CqPAWRcIgaL_MhBfNbf6sttEbIkPohmp55XJv01Z32f7o8vqBRAzqoDa51O8QihjNcEeai7SKGbeeY3uyc70glEqKjj2-DNQekj2d2l6PPdppRYwo8zrEnF3VOSHIdeIXGNRAAlYrpJTQ70ySvo1dA-4Gl7o_TkvMmz0rv2XeQj1cHKZVC-LHKaOblQTF1zKXM24BnySv6GXTUrIzKkRol1wZ0KZ3wK9BZM3hJs2CGU",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/fb21bc59-73f4-462e-aeaf-844a2530d82c",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/ci/a5555b113d4aabe9/1793813522725/CkyCzuyIy7ZBY5tBTxoDzim79THeYW91R5GFrVO2pgBkgVVV4zbVQnHSgDlLs1SdGDYQgk1vG5FmPidCbiU8N8z2uIb0zFo0vb4ZbCiuDN6nD1ioh3QoLGekmbNxvReugSczbkNG4wq3mTLH2eYtPrQMWFGdwnlS1yZFGWBI-etFnsbTKesJ9b9esgfJbtvrfXZ4BnBuEtlNpuDLOumM9nAAl4i6Qp-COMv5sul_EANHhzD57Jgy7wm_IDwGtdmHeX8phq1KkPIGocbznzbvigCOxrLjCroJFCv6EfBKfRZBq",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/fb21bc59-73f4-462e-aeaf-844a2530d82c",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/2577496654:1793808932:yNO-qGnRM3KxaqIVI7pvv_125SuiaBL1XIpKKM62uUY/a5555b113d4aabe9/CneZatUk8HFS3zBlZ88tws0YE_z5Fws6DUxFrttbo5T7p_5_1cA_S5qp5oMBHx5s1V1cgs3gKJ0UJcqTGBRX_vXa3Qp6nXxSgh8veOZ9bL6OYO2MiI9OuBgNM_wKZqU3yQ",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/e69e4822-c281-416c-83f7-99e45b9017f4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "_shopify_essential",
+      "desde": "hoteloceanic.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 1974392,
+    "al_abrir_bytes": 1974392,
+    "n_peticiones": 13,
+    "mas_pesados": [
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/2577496654:1793808932:yNO-qGnRM3KxaqIVI7pvv_125SuiaBL1XIpKKM62uUY/a5555b113d4aabe9/CneZatUk8",
+        "bytes": 1512799
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/av0/rch/iiz8y/0x4AAAAAAFqx6qoC6VTjLWSW/auto/fbE/new/normal?lang=auto",
+        "bytes": 221737
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/2577496654:1793808932:yNO-qGnRM3KxaqIVI7pvv_125SuiaBL1XIpKKM62uUY/a5555b113d4aabe9/CneZatUk8",
+        "bytes": 206456
+      },
+      {
+        "url": "https://challenges.cloudflare.com/turnstile/v0/g/5c2e6b612edd/api.js",
+        "bytes": 28245
+      }
+    ]
+  },
+  "html_len": 3373
+}
