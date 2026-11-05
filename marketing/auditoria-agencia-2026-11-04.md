@@ -15,8 +15,8 @@
 
 ## 0. Veredicto en diez líneas
 
-1. **No es un problema de «quedarse atrás de la IA».** En cuatro meses salieron dos clientes, los dos de sitio web, por contacto directo y por referido. Eso son unos **$1,9 millones contratados** y unos **$937.000 cobrados** [R]. No es cero, pero no lo produjo el sistema que se construyó.
-2. **Lo que vende es un sitio web a medida, vendido a personas que ya conocían o les recomendaron a Ramón.** Los dos cierres y las dos propuestas de origen frío que más avanzaron (Cortes Zamora y Eduardo) son sitios web [M]. Las propuestas de servicios mensuales (redes para Bla!, el plan de Carlos Soya) no han cerrado. Ninguna venta vino de SEO, visibilidad en IA, anuncios, redes ni de la campaña masiva de Verifica y Cumple.
+1. **No es un problema de «quedarse atrás de la IA».** En cuatro meses salieron **tres clientes**: dos de sitio web (Bernardo y María) y uno de marketing en Meta (Carlos Soya, piloto de tres meses acordado el 28-oct). Son unos **$2,5 millones contratados** y unos **$937.000 cobrados** sin contar a Carlos, cuyo primer pago no consta en Gmail [R]. No es cero, pero no lo produjo el sistema que se construyó. *(La primera versión de este informe no contó a Carlos como cliente; fue un error.)*
+2. **Lo que vende es un sitio web a medida, vendido a personas que ya conocían o les recomendaron a Ramón.** Los dos cierres y las dos propuestas de origen frío que más avanzaron (Cortes Zamora y Eduardo) son sitios web [M]. El único servicio de marketing vendido es el piloto de Meta de Carlos Soya, a $200.000 al mes, muy por debajo del catálogo. Ninguna venta vino de SEO, visibilidad en IA, anuncios propios, redes propias ni de la campaña masiva de Verifica y Cumple.
 3. **Se construyó una máquina enorme para producir y casi nada para que alguien compre.** 893 commits en `main` y unos 916 más solo en ramas; 26 skills; 2.242 archivos de marketing; un producto de 12.400 líneas. El alcance real es mínimo: 383 seguidores en el LinkedIn personal, 15 en la página, 19 en Instagram, 0 consultas por el formulario del sitio en 90 días [V].
 4. **El embudo pierde después de que alguien responde.** El correo frío responde 4,9 %, una cifra normal a buena. Las conversaciones mueren con «quedo atento», silencio tras la cotización, cancelación o presupuesto.
 5. **El test fue demasiado pequeño para condenar la oferta.** Con las tasas típicas de correo frío, 142 correos dan unos 1 interesado [W, extracto]. Que dieran 0 clientes no prueba que «no vende»: prueba que casi no se probó.
@@ -28,6 +28,28 @@
 
 ---
 
+## 0b. Lo de fondo: seis ideas que ordenan todo lo demás
+
+*(Agregado el 5-nov, después de que Ramón dijo que el informe no se entendía y que había cosas más profundas. Son hipótesis con pocos casos; abajo está qué las desmentiría.)*
+
+**1. Los que compran son personas que se venden a sí mismas, no empresas.** Los cuatro que llegaron a una cotización real tienen una cara y un nombre propio: Bernardo (fotógrafo y modelo), María (galería de arte, con artistas), Carlos (cantante y productor, ahora academia vocal) y Eduardo (contador con canal de YouTube y cursos propios) [M, V]. En cambio, las 270 primeras tomas de contacto fueron a abogados, clínicas, asesoras financieras, hoteles e inmobiliarias [M]: 0 ventas. La agencia se describe como consultoría de SEO técnico para empresas B2B y de salud, legal y finanzas, pero quienes han pagado son creadores y marcas personales.
+
+**2. Se compra en una conversación, no leyendo el sitio.** Cada venta tuvo una conversación en vivo antes del precio: contacto directo, WhatsApp de un cliente, reunión por Meet. Ninguna vino del sitio, de anuncios ni de redes. Por eso hay 0 consultas por el formulario en 90 días. El sitio no genera clientes hoy: sirve para que el referido compruebe que Ramón es serio (Hinge: la gente revisa el sitio antes de hablar).
+
+**3. Compran a alguien que lo haga con ellos, no «IA».** Lo que describen las ventas es un proceso: cotización a medida, fases con aprobación, un panel para editar. La IA es el motor de producción y el cliente no la compra. Por eso comparar a SpindleLab con quienes «ganan con IA» confunde: ellos suelen vender agentes y automatizaciones a empresas medianas, o cursos a otros que quieren vender IA. Ese comprador no es el de Ramón.
+
+**4. Todo lo que se vendió se construyó después de que alguien lo pidió; todo lo que se construyó antes de que alguien lo pidiera tiene 0 ventas.** Vendido: los dos sitios y el piloto de Carlos, cotizados tras una conversación. Construido primero y sin ventas: el servicio de visibilidad en IA y su blog, el motor de revisión previa (6.892 archivos), Verifica y Cumple (12.402 líneas), el agente de WhatsApp (descartado), el rediseño del sitio en tres rondas. Es la regla más útil de esta auditoría: **no construir nada que no tenga un nombre propio al lado.**
+
+**5. Los canales construidos apuntan a donde no están los compradores.** El correo frío y LinkedIn (383 y 15 seguidores) apuntan a profesionales de empresa; los compradores reales están en Instagram, en galerías, en el mundo de la música y de la fotografía y en la red de Bernardo. Instagram tiene 19 seguidores y llevaba 43 días sin publicar al 19-oct [M]. Es la hipótesis más fácil de probar: diez mensajes a creadores del círculo de Bernardo y de María, comparados con la tasa de abogados.
+
+**6. Falta la meta escrita.** El plan de 90 días pedía «1 a 2 clientes al día 60» y hay tres. No existe en ningún documento cuánto necesita Ramón facturar al mes ni desde cuándo. Sin ese número, «no he tenido éxito» no se puede medir, y la comparación termina siendo con desconocidos de internet. Es el dato que falta para decidir cuánto tiempo darle a cada camino.
+
+**Qué desmentiría estas ideas:** si diez conversaciones con creadores en dos semanas dan menos respuesta que los abogados (5,8 %), o si los cuatro de arriba tienen en común otra cosa (por ejemplo, haber conocido antes a Ramón en persona), entonces el factor es la relación y no el tipo de cliente. Esa diferencia importa: cambia dónde buscar.
+
+**Una advertencia sobre Carlos.** Es el primer cliente de marketing, y por eso el más valioso para probar la línea «marketing con IA». También el más frágil: el alcance cambió dos veces (de terapias 5D a academia vocal), su cuenta tiene unos 1.019 seguidores, nunca ha dado clases formalmente y la pauta la paga con su tarjeta. Si el piloto logra alumnos en EE.UU., es el segundo caso; si no, hay que saber pronto por qué.
+
+---
+
 ## 1. Dónde estamos: los números
 
 ### 1.1 Clientes y dinero
@@ -36,12 +58,12 @@
 |---|---|---|---|---|
 | Bernardo Combeau | Contacto directo (8-jul) | Plan Esencial $392.000 + ampliación $120.000 = **$512.000** (IVA incluido, como persona natural) | Pagado al 100 % según Ramón; solo $156.800 con comprobante en el repo | [R] |
 | María Loreto (Módulo 369) | Referida por Bernardo (26-sep) | Sitio Completo $1.190.000 + IVA = **$1.416.100** | 30 % ($424.830) cobrado; saldo ≈ $991.270 en entrega | [R] |
-| Carlos Soya | Reunión 10-sep, origen no consta | $200.000/mes por 3 meses + $100.000/mes de pauta con su tarjeta | $0 comprobado; sin pago a la vista | [R] |
+| Carlos Soya (academia vocal) | Reunión 10-sep, origen no consta | **Piloto de Meta y Reels, 3 meses**: $200.000/mes de honorarios (= $600.000) + $100.000/mes de pauta con su tarjeta. Cliente según Ramón | Primer pago: no consta en Gmail | [R] |
 | Focus Contable (Eduardo Bascur) | Correo frío (30-sep) | Sitio Completo, cotización SPL-COT-2026-017 | Dijo que sí con fecha: **posterga a mayo-junio de 2027** | [V] |
 | Bla! (redes, $390.000/mes) | LinkedIn | Cotización de redes, envío sin verificar | $0 | [R] |
 | Cortes Zamora, Chef & Hotel, Legal Prisma, Altum, Dentimagen | Correo frío | Cotizaciones o diagnósticos | $0. Cortes cerrado por tope, Legal Prisma en pausa por rebrand con otra consultora | [M] |
 
-**Resumen:** contratado ≈ $1,93 M; cobrado ≈ $937.000 [R]; propuestas con precio, unas 8 [E]. De las 3 propuestas nacidas de correo frío, 0 se ganaron, y una (Eduardo) quedó en «sí, más adelante».
+**Resumen:** contratado ≈ $2,53 M (sitios $1,93 M + piloto de Carlos $0,6 M); cobrado ≈ $937.000 sin contar a Carlos [R]; propuestas con precio, unas 8 [E]. De las 3 propuestas nacidas de correo frío, 0 se ganaron, y una (Eduardo) quedó en «sí, más adelante».
 
 ### 1.2 Embudo por canal
 
@@ -135,12 +157,12 @@ Por mes: julio 143, agosto 159, **septiembre 394**, octubre 158, noviembre 39 (a
 
 **Lo que se repite en las conversaciones que sí avanzaron** (Eduardo, Cortes Zamora, Legal Prisma, Bernardo, María) [E sobre M]:
 1. Un **hecho concreto y comprobable en el propio sitio del prospecto** («vende cursos y no tiene política de privacidad», «su sitio está caído», «su robots.txt bloquea a la IA») más algo gratis y verificable.
-2. **Los dos cierres y las dos propuestas de origen frío que más avanzaron fueron sitios web.** Nunca SEO/visibilidad en IA, Verifica y Cumple ni suscripción. Las propuestas mensuales (redes para Bla!, plan de Carlos Soya) no han cerrado.
+2. **Los dos cierres y las dos propuestas de origen frío que más avanzaron fueron sitios web.** Nunca SEO/visibilidad en IA, Verifica y Cumple ni suscripción. La propuesta de redes para Bla! no cerró; el piloto de Meta de Carlos sí, a un precio bajo el catálogo y con el alcance cambiado dos veces.
 3. La respuesta llegó **en el primer toque y dentro de un día**.
 4. Las que murieron murieron **después** de la respuesta: «quedo atento», silencio tras la cotización, cancelación, presupuesto, o un pago que no llega.
 5. **Cero conversaciones vienen de anuncios, de redes o del mensaje masivo de Verifica y Cumple.**
 
-**Lo que nunca se ha vendido:** el acompañamiento mensual ($590.000), la auditoría SEO ($490.000), la visibilidad en IA ($400.000), las redes, el paid y el kit de Verifica y Cumple. De los seis servicios del sitio, cinco tienen 0 ventas; el kit también.
+**Lo que nunca se ha vendido:** el acompañamiento mensual ($590.000), la auditoría SEO ($490.000), la visibilidad en IA ($400.000), las redes, el paid y el kit de Verifica y Cumple. De los seis servicios del sitio, cuatro tienen 0 ventas; el kit también. El quinto (redes con pauta) tiene solo el piloto de Carlos, a menos de la mitad del precio de lista.
 
 **Una verdad incómoda sobre el producto estrella:** SpindleLab vende «visibilidad en IA» y el propio equipo midió **0 menciones en 45 pruebas** de respuestas de IA [M, informe del 27-sep]. Es una contradicción que un comprador puede comprobar en un minuto.
 
