@@ -2,7 +2,9 @@
  * Chequeo Ley 21.719 — Cloudflare Pages Function.
  *
  * Lee UN sitio público y reporta señales técnicas ligadas a la Ley 21.719 (protección de
- * datos personales, vigencia plena 1-dic-2026). Solo evalúa lo que un fetch de HTML crudo
+ * datos personales; la fecha vigente y el estado del proyecto de postergación viven en
+ * `ley.js`, no acá, para que no haya dos versiones de lo mismo). Solo evalúa lo que un
+ * fetch de HTML crudo
  * puede ver — sin navegador, sin ejecutar JavaScript — según la factibilidad técnica
  * registrada en laboratorio/01-cumplimiento-ley-21719/brief.md (§4, "lanzamiento liviano").
  *

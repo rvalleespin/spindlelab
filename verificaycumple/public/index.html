@@ -270,7 +270,8 @@
           "name": "¿Desde cuándo rige la Ley 21.719?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Entra en plena vigencia el 1 de diciembre de 2026, pero hay un proyecto en el Senado para moverla y la fecha puede cambiar. Lo que no cambia con esa votación es lo que tu sitio tiene o no tiene publicado hoy."
+            "_comentario": "ley:faq-jsonld · NO EDITAR A MANO. Lo escribe sincronizar-ley.mjs; tiene que decir LO MISMO que la pregunta visible o le estaríamos diciendo una cosa a la gente y otra a los buscadores.",
+            "text": "Entra en plena vigencia el 1 de diciembre de 2026. El Senado ya aprobó moverla al 15 de octubre de 2027, pero falta el resto de la tramitación y la fecha puede cambiar. Lo que no cambia con esa votación es lo que tu sitio tiene o no tiene publicado hoy."
           }
         },
         {
@@ -1732,7 +1733,9 @@
            sitio cuyo valor entero es no dar por bueno lo que no vimos, no podemos abrir con una
            suposición sobre su sitio. Y la fecha se queda, porque es un hecho y porque el
            público son abogados; lo que ya no hace es cargar sola con el motivo para actuar. -->
+      <!-- ley:insignia · NO EDITAR A MANO. Ver el bloque ley:la-fecha. -->
       <div class="fecha-limite">Si pides datos, te aplica desde el <strong>1 dic 2026</strong></div>
+          <!-- /ley:insignia -->
     </div>
   </div>
 </header>
@@ -1873,19 +1876,15 @@
         <div class="paso reveal">
           <span class="paso-num">01</span>
           <h3>La fecha</h3>
-          <p>La Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Desde ese día fiscaliza la Agencia de Protección de Datos Personales, que puede partir por su cuenta o porque alguien reclama.</p>
-          <!-- El proyecto de postergación va acá y no en la insignia del header: es el bloque
-               de la fecha, o sea donde va a mirar quien se pregunte por la postergación, y es
-               el único lugar con espacio para decir que existe y que todavía no se aprueba.
-               Los datos son de la ficha oficial de tramitación del Senado al 23-sep-2026
-               (boletín 18.623-07, mensaje 110-374, primer trámite, sin informe de comisión).
-               Para revisarlo:
-               curl -s "https://tramitacion.senado.cl/wspublico/tramitacion.php?boletin=18623"
-               (el número va sin el -07 y sin puntos, o responde vacío). El Ejecutivo le
-               renovó la urgencia Suma el 22-sep, así que esto puede cambiar en semanas:
-               si cambia, se actualiza este párrafo y la fecha de revisión de abajo. -->
-          <p>Hay un proyecto en el Senado (boletín 18.623-07) para mover esa fecha al 1 de diciembre de 2027. Todavía no se aprueba, así que hoy rige el 1 de diciembre de 2026.</p>
-          <p class="paso-revisado">Revisado el 23-sep-2026.</p>
+          <!-- ley:la-fecha · NO EDITAR A MANO.
+               Este bloque lo escribe `node herramientas/sincronizar-ley.mjs` desde
+               `functions/api/ley.js`, que es donde vive la fecha y el estado del proyecto.
+               Editarlo acá lo deja distinto de las otras cuatro pantallas que dicen lo mismo,
+               que es exactamente lo que pasaba antes. `prueba-ley.mjs` se pone roja si alguien
+               lo hace. -->
+          <p>La Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Desde ese día fiscaliza la Agencia de Protección de Datos Personales, que puede partir por su cuenta o porque alguien reclama. Hay un proyecto para mover esa fecha (boletín 18.623-07). El 28 de octubre de 2026 el Senado lo aprobó, con 33 votos a favor y 6 en contra, y fijó el 15 de octubre de 2027. Falta que lo apruebe la Cámara de Diputados, así que hoy rige el 1 de diciembre de 2026.</p>
+          <p class="paso-revisado">Revisado el 5-nov-2026.</p>
+          <!-- /ley:la-fecha -->
         </div>
         <div class="paso reveal">
           <span class="paso-num">02</span>
@@ -2089,7 +2088,9 @@
         </div>
         <div class="pregunta">
           <h3>¿Desde cuándo rige la Ley 21.719?</h3>
-          <p>Entra en plena vigencia el 1 de diciembre de 2026, pero hay un proyecto en el Senado para moverla y la fecha puede cambiar. Lo que no cambia con esa votación es lo que tu sitio tiene o no tiene publicado hoy.</p>
+          <!-- ley:faq · NO EDITAR A MANO. Ver el bloque ley:la-fecha. -->
+          <p>Entra en plena vigencia el 1 de diciembre de 2026. El Senado ya aprobó moverla al 15 de octubre de 2027, pero falta el resto de la tramitación y la fecha puede cambiar. Lo que no cambia con esa votación es lo que tu sitio tiene o no tiene publicado hoy.</p>
+          <!-- /ley:faq -->
         </div>
         <div class="pregunta">
           <h3>¿Cuánto cuesta arreglar lo que salga pendiente?</h3>

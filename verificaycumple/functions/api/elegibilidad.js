@@ -49,7 +49,8 @@
  * de la mitad llegaba al resultado SIN botón de compra, y el caso dominante no era «no le
  * falta nada» sino «no tiene un solo rastreador y le falta publicar la política». De cuatro
  * validados con el chequeo profundo, tres salieron 100/100 con la política como único
- * pendiente. Con la ley en vigencia el 1 de diciembre, esa gente tiene un problema real y el
+ * pendiente. Con la ley ya vigente (la fecha vive en `ley.js`), esa gente tiene un
+ * problema real y el
  * kit sí hace algo por ella: le entrega el borrador y vuelve a verificar.
  *
  * ⚠️ LO QUE ESTO OBLIGA, y está hecho: que la pantalla del pedido diga qué se entrega

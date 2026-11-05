@@ -43,6 +43,7 @@
  */
 
 import { ETAPAS } from './etapas.js';
+import { VIGENCIA } from './ley.js';
 
 /** A dónde se manda la invitación. La casilla del negocio, no el subdominio de envíos. */
 export const CORREO_ACCESO = 'hola@spindlelab.cl';
@@ -257,7 +258,10 @@ export function textoParaReenviar(pedido) {
     'Hola,',
     '',
     `Contraté un trabajo de cumplimiento de la Ley 21.719 para ${sitio}. Es la ley de datos ` +
-      'personales que entra en vigencia el 1 de diciembre. La empresa que lo hace necesita un ' +
+      // La fecha sale de `ley.js` y no escrita acá: este texto se lo reenvía el cliente a quien
+      // administra su sitio, o sea que una fecha vencida viaja a un tercero que no nos conoce.
+      `personales que entra en vigencia el ${VIGENCIA.larga}. La empresa que lo hace necesita ` +
+      'un ' +
       'acceso temporal al sitio para instalar el gestor de consentimiento.',
     '',
     quePedir,
