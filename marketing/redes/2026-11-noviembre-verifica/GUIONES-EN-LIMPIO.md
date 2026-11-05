@@ -34,12 +34,12 @@ Preguntar primero, también.
 
 ## 2 · SALUD
 
-**131 palabras · ~45 segundos**
+**126 palabras · ~43 segundos**
 
 Saber de dónde llegan tus pacientes está bien.
 Medirlo en tu sitio, también.
-Pero que alguien entre a tu sitio a pedir hora ya dice algo de esa persona.
-Y para medir, tu sitio instala un rastreador en su teléfono, antes de que acepte nada.
+Pero para medir, tu sitio instala un rastreador en el teléfono de quien entró a pedir hora.
+Y lo instala antes de que esa persona acepte nada.
 En la mitad de las clínicas y centros médicos que revisé, pasa eso mismo.
 No lo decidió nadie en tu clínica.
 Vino instalado con el sitio.

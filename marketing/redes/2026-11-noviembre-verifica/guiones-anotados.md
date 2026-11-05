@@ -79,7 +79,7 @@ es lo que hace que el loop se sienta continuo.
 
 **Fórmula:** 1 · Enseñar la Prueba (principal) · 5 · Quitar la Excusa (secundaria)
 
-**129 palabras, 44 segundos.** Rehecho el 5-nov: ver «dos historias», abajo.
+**126 palabras, 43 segundos.** Rehecho dos veces el 5-nov: ver «dos historias» y «explicar la implicación», abajo.
 
 ⚠️ **Tono: el más difícil de los cuatro.** *"Ya dice algo de esa persona"* se dice **plano y bajo**,
 nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se sostiene solo.
@@ -92,14 +92,14 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
   está bien.                                        [ENTONACIÓN SUSPENDIDA]
   Medirlo en tu sitio, también.                     [REMATE ABAJO]
 
-[ZONA DE ENGANCHE · la idea propia del rubro manda]
-  Pero que alguien entre a tu sitio
-  a pedir hora / ya dice algo de esa persona.       [ÉNFASIS: ya dice algo]
+[ZONA DE ENGANCHE · mecanismo y persona en la misma frase]
+  Pero para medir, / tu sitio instala un rastreador
+  en el teléfono de quien entró a pedir hora.       [ÉNFASIS: pedir hora]
                                       [REMATE ABAJO · plano, sin peso]
+  Y lo instala / antes de que esa persona
+  acepte nada.                                      [ÉNFASIS: antes]
 
 [TEXTO EN PANTALLA]: g2-2 · LA MITAD
-  Y para medir, tu sitio instala un rastreador
-  en su teléfono, / antes de que acepte nada.       [ÉNFASIS: antes]
   En la mitad de las clínicas y centros
   médicos que revisé, / pasa eso mismo.             [ÉNFASIS: la mitad]
                                                     [REMATE ABAJO]
@@ -271,3 +271,25 @@ que alguien buscó atención médica. Explicarlo dos veces era lo que lo enredab
 
 **Prueba de que quedó bien:** ahora se resume sin «y». *En una clínica la visita misma es el dato, y
 queda registrada antes de que el paciente diga que sí.*
+
+### 5-nov-2026 · explicar la implicación en vez de mostrarla
+
+Ramón, sobre la versión anterior: *"está demás decir «ya dice algo de esa persona» versus el «sitio
+instala un rastreador». O es lo uno o lo otro. No se explica bien o se enreda"*.
+
+**Era el mismo diagnóstico de antes sin terminar de aplicar.** Se dijo «elige una historia» y después
+quedaron las dos, solo que reordenadas.
+
+**Pero no eran separables:** el rastreador es el mecanismo, y sin él el cartel del final no tiene
+sentido. **Lo que sobraba era la explicación de la implicación.** *«Ya dice algo de esa persona»* es
+el guion diciéndole al espectador qué pensar.
+
+**Se arregla juntando las dos en una frase:** *«un rastreador en el teléfono de quien entró a pedir
+hora»*. El mecanismo y de quién es ese teléfono, pegados. **Nadie tiene que decir que eso pesa.**
+
+**Regla:** si una frase existe para explicar lo que significa la frase anterior, se borra y se
+reescribe la anterior para que lo signifique sola. Es pariente del primer tic documentado en la skill
+(la coletilla que evalúa lo ya dicho), visto desde el oficio del guion.
+
+✅ **Y la diferenciación con el guion del café no se pierde**: no está en una frase de más, está en
+**de quién es el teléfono**. Misma forma, otro peso.
