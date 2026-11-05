@@ -2,7 +2,9 @@
  * Chequeo Ley 21.719 — Cloudflare Pages Function.
  *
  * Lee UN sitio público y reporta señales técnicas ligadas a la Ley 21.719 (protección de
- * datos personales, vigencia plena 1-dic-2026). Solo evalúa lo que un fetch de HTML crudo
+ * datos personales; la fecha vigente y el estado del proyecto de postergación viven en
+ * `ley.js`, no acá, para que no haya dos versiones de lo mismo). Solo evalúa lo que un
+ * fetch de HTML crudo
  * puede ver — sin navegador, sin ejecutar JavaScript — según la factibilidad técnica
  * registrada en laboratorio/01-cumplimiento-ley-21719/brief.md (§4, "lanzamiento liviano").
  *
@@ -26,7 +28,7 @@
  * 'entrada' si lo que se escribió no es un dominio revisable, 'sitio' si no pudimos leerlo.
  */
 
-import { anotarUso, origenDeLaVisita } from './profundo.js';
+import { anotarUso, origenDeLaPagina } from './profundo.js';
 
 const TIMEOUT_MS = 8000;
 // Presupuestos de espera. El reloj de 8 s es por cadena de redirecciones (ver `traer`), pero
@@ -1837,7 +1839,7 @@ export async function onRequestGet(contexto) {
     // chequeos que salieron bien: los errores de entrada no son uso.
     if (r.ok) {
       const tarea = anotarUso(env && env.VYC_TOPES, 'rapido',
-        origenDeLaVisita(request.headers.get('Referer'), url));
+        origenDeLaPagina(url.searchParams.get('origen'), request.headers.get('Referer'), url));
       if (contexto.waitUntil) contexto.waitUntil(tarea); else await tarea;
     }
     return new Response(JSON.stringify(r), { status: r.ok ? 200 : 400, headers: CABECERAS });

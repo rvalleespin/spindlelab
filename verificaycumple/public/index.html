@@ -11,7 +11,20 @@
      Solo se manda PageView. `autoConfig` en falso apaga los eventos automáticos del Pixel
      (clics en botones y lectura de metadatos de la página), para que lo que se escribe en el
      chequeo o en el formulario no viaje a Meta por una opción que nadie pidió.
-     El mismo Pixel (2885353628478565) que usa spindlelab.cl: es el de la cuenta de anuncios. -->
+     ⚠️ EL ID CAMBIÓ EL 2-NOV-2026, Y EL ANTERIOR NO ERA NUESTRO.
+     Hasta hoy acá decía 2885353628478565. `ads_get_datasets` de la cuenta de anuncios
+     (2050319242539058) devuelve UN solo dataset, 1027024050073502 «SpindleLab», creado el
+     20-jul-2026; el ID viejo ni siquiera se puede leer con el token de Ramón («Invalid
+     dataset_id»). O sea que durante tres meses y medio las visitas de quien aceptaba el aviso
+     se iban a un dataset ajeno.
+     Dos cosas que eso explica: el dataset propio marca `last_fired_time` en epoch 0 —no ha
+     recibido un solo evento desde que se creó—, y el público de remarketing de julio nunca
+     creció pese a los $20.656 de esa campaña.
+     Y una que corrige: la política de privacidad dice que cargamos el Pixel «para saber si los
+     anuncios traen visitas a este sitio». Con el ID viejo eso era imposible de cumplir. Con
+     este, es cierto.
+     ⚠️ spindlelab.cl TODAVÍA carga el ID viejo. Su código no es `spindlelab-site/` de este
+     repositorio, que ya no se publica: el sitio vivo es Astro y vive en otra parte. -->
 <script>
   var __spindlelabConsent = (function(){
     try { return localStorage.getItem('spindlelab_consent'); } catch(e){ return null; }
@@ -27,8 +40,8 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('set', 'autoConfig', false, '2885353628478565');
-    fbq('init', '2885353628478565');
+    fbq('set', 'autoConfig', false, '1027024050073502');
+    fbq('init', '1027024050073502');
     fbq('track', 'PageView');
   }
   if(__spindlelabConsent === 'granted'){ __spindlelabInitMeta(); }
@@ -88,7 +101,7 @@
       "operatingSystem": "Navegador web",
       "inLanguage": "es-CL",
       "datePublished": "2026-09-23",
-      "dateModified": "2026-10-15",
+      "dateModified": "2026-10-24",
       "provider": {
         "@id": "https://spindlelab.cl/#org"
       },
@@ -100,13 +113,35 @@
       }
     },
     {
+      "@type": "Service",
+      "@id": "https://verifica.spindlelab.cl/#kit",
+      "name": "Kit de implementación Ley 21.719",
+      "serviceType": "Instalación de gestor de consentimiento",
+      "provider": {
+        "@id": "https://spindlelab.cl/#org"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Chile"
+      },
+      "description": "Instalación del gestor de consentimiento configurado para retener los rastreadores hasta que la persona acepte, la casilla de consentimiento de los formularios del cliente, borrador de política de privacidad para que lo revise su abogado, y el chequeo corrido de nuevo al final sobre la misma página que se midió al principio. Requiere acceso al sitio del cliente. No incluye el HTTPS, que depende de su proveedor de hosting, ni la revisión legal del caso.",
+      "offers": {
+        "@type": "Offer",
+        "price": "177310",
+        "priceCurrency": "CLP",
+        "valueAddedTaxIncluded": true,
+        "availability": "https://schema.org/InStock",
+        "url": "https://verifica.spindlelab.cl/#ayuda"
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://verifica.spindlelab.cl/#pagina",
       "url": "https://verifica.spindlelab.cl/",
       "name": "Verifica y Cumple · Chequeo técnico Ley 21.719",
       "inLanguage": "es-CL",
       "datePublished": "2026-09-23",
-      "dateModified": "2026-10-15",
+      "dateModified": "2026-10-24",
       "isPartOf": {
         "@id": "https://verifica.spindlelab.cl/#app"
       },
@@ -235,7 +270,8 @@
           "name": "¿Desde cuándo rige la Ley 21.719?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Entra en plena vigencia el 1 de diciembre de 2026, pero hay un proyecto en el Senado para moverla y la fecha puede cambiar. Lo que no cambia con esa votación es lo que tu sitio tiene o no tiene publicado hoy."
+            "_comentario": "ley:faq-jsonld · NO EDITAR A MANO. Lo escribe sincronizar-ley.mjs; tiene que decir LO MISMO que la pregunta visible o le estaríamos diciendo una cosa a la gente y otra a los buscadores.",
+            "text": "Entra en plena vigencia el 1 de diciembre de 2026. El Senado ya aprobó moverla al 15 de octubre de 2027, pero falta el resto de la tramitación y la fecha puede cambiar. Lo que no cambia con esa votación es lo que tu sitio tiene o no tiene publicado hoy."
           }
         },
         {
@@ -243,7 +279,7 @@
           "name": "¿Cuánto cuesta arreglar lo que salga pendiente?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "El kit de implementación parte en $149.000 más IVA, una vez. Instala el gestor de consentimiento, corrige las señales que tu chequeo dejó pendientes, incluye una plantilla de política de privacidad para que la revise tu abogado, y vuelve a correr el chequeo al final para que veas el cambio. No incluye la revisión legal de tu caso, que es de abogado."
+            "text": "El kit de implementación cuesta $149.000 más IVA, o sea $177.310 en total, una vez. Instala el gestor de consentimiento, corrige las señales que tu chequeo dejó pendientes, incluye una plantilla de política de privacidad para que la revise tu abogado, y vuelve a correr el chequeo al final para que veas el cambio. No incluye la revisión legal de tu caso, que es de abogado."
           }
         }
       ]
@@ -339,7 +375,10 @@
     --serif: Georgia, "Times New Roman", Times, serif;
     --vivo-azul: var(--azul-600);
     --vivo-rosa: var(--rosa-500);
-    --vivo-rosa-osc: var(--rosa-700);
+    /* El hover del botón principal. Bajó un paso más el 24-oct porque el estado en reposo
+       pasó a ser --rosa-700 por contraste, y si el hover fuera el mismo color el botón dejaría
+       de responder al puntero. Contraste 7,0 sobre blanco. */
+    --vivo-rosa-osc: #a3185f;
     --vivo-verde: var(--lima-400);
     --vivo-tinta: var(--tinta-900);
     --vivo-panel: var(--crema-100);
@@ -379,6 +418,19 @@
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     position: relative;
+    /* ── EL AVISO DE COOKIES TAPABA EL ÚNICO BOTÓN DE LA PRIMERA PANTALLA ──────────────
+       Medido el 2-nov-2026 en producción, con el aviso recién mostrado:
+         · en 375x812 (iPhone) el aviso mide 200 px, el 25% de la pantalla, y tapaba 36 de
+           los 55 px del botón «Revisar mi sitio gratis» — el 65%;
+         · en 360x640 (un Android corriente) mide el 31% y lo tapaba ENTERO.
+       Y no era solo verlo: `document.elementFromPoint` en el centro del botón devolvía el
+       aviso, no el enlace. En un Android el único camino a la acción no se podía tocar.
+       Eso le pasaba a cada visitante NUEVO, que es exactamente el que llega de la campaña.
+
+       `--alto-aviso` lo escribe /js/consent-banner.js, que es quien sabe cuánto mide el
+       aviso en cada ancho. Acá solo se reserva el espacio. Con el aviso cerrado vale 0 y
+       no cambia nada. */
+    padding-bottom: var(--alto-aviso, 0px);
   }
   /* Textura de grano sutil, vía filtro SVG en línea: cero imágenes, cero peticiones externas. */
   body::before {
@@ -559,9 +611,39 @@
   .boton-ayuda.hero-cta-abajo { display: none; }
   @media (max-width: 600px) {
     .boton-ayuda.hero-cta-arriba { display: none; }
-    .boton-ayuda.hero-cta-abajo { display: flex; width: fit-content; margin: 10px auto 0; position: relative; z-index: 6; }
-    /* Los 20 px que necesita el botón para entrar en la primera pantalla salen de acá arriba,
-       del aire entre el header y la etiqueta, y no del titular ni del caballo. */
+
+    /* ── EN TELÉFONO EL CAMPO VA PRIMERO ──────────────────────────────────────────────
+     *
+     * Hasta el 2-nov-2026 el orden era: titular, caballo, enunciados, y recién entonces el
+     * formulario. Medido en producción: `#dominio` quedaba en y≈920, o sea entre 1,1 y 1,4
+     * pantallas más abajo del pliegue en TODOS los teléfonos. Lo que había sobre el pliegue
+     * era un botón ancla que bajaba hasta el formulario.
+     *
+     * Con la campaña de Meta corriendo eso se midió: 490 visitas pagadas produjeron entre 24
+     * y 35 chequeos, un 5-7%. El corte grande del embudo estaba acá, antes del botón de
+     * compra y antes de la espera. Un ancla sobre el pliegue no es lo mismo que el control:
+     * el anuncio promete «te mostramos qué hace tu sitio» y la primera pantalla no mostraba
+     * dónde escribirlo.
+     *
+     * Y hay un segundo motivo para que suba, no solo para que exista: el aviso de cookies
+     * ocupa 200 px fijos al fondo —el 25% de un iPhone y el 31% de un Android corriente— y
+     * tapaba el botón ancla. Se midió que acortar el aviso NO lo resuelve: una franja al
+     * fondo deja libre el centro de un control solo si mide menos de 15 px en 375x635, y
+     * ningún aviso legible mide eso. La salida no era achicar el aviso: era que el control
+     * esté arriba, donde el aviso no llega.
+     *
+     * Se hace con `order` y no moviendo el HTML: el formulario ya vive dentro del hero, y
+     * una segunda copia en otro sitio significaría dos elementos con el mismo id.
+     */
+    /* El reorden vive más abajo, después de las reglas base del hero: acá arriba
+       `.hero-accion` todavía no está declarada y la base la pisaría. */
+
+    /* El ancla ya no tiene a dónde llevar: el campo está sobre el pliegue. Dejarla sería un
+       botón que hace scroll hacia arriba. */
+    .boton-ayuda.hero-cta-abajo { display: none; }
+
+    /* Los 20 px que necesita el formulario para entrar en la primera pantalla salen de acá
+       arriba, del aire entre el header y la etiqueta, y no del titular ni del caballo. */
     section.hero { padding-top: 26px; }
     .hero-arriba { margin-bottom: 16px; }
   }
@@ -608,6 +690,26 @@
      porque `section.hero` tiene overflow:hidden y si no, se corta la palabra. */
   /* El titular ya no necesita media query de tamaño: al ir en vw y con las dos líneas en
      proporción fija, se ajusta solo en cualquier ancho. */
+  /* ── PANTALLAS CORTAS: EL TITULAR TAMBIÉN TIENE QUE ENCOGER POR ALTO ────────────────
+   *
+   * El comentario de arriba dice que al ir en vw «se ajusta solo en cualquier ancho», y es
+   * cierto — y ahí está el hueco: en cualquier ANCHO. En un teléfono de 375 px el titular
+   * mide 138 px de alto da igual que la pantalla tenga 812 px o 635.
+   *
+   * Los 635 y 664 px no son un caso raro: son el alto útil del navegador embebido de
+   * Instagram y Facebook, que es por donde llega el 90% del tráfico de la campaña. Ahí esos
+   * 138 px empujaban el botón de enviar hasta y=462, y el aviso de cookies empieza en 435.
+   * El campo quedaba tocable y el botón no, que es la mitad de un formulario.
+   *
+   * Se mantiene la proporción 1,2484 entre las dos líneas, que es lo que hace que midan lo
+   * mismo de ancho y es el gesto de la referencia: 18,73/15 = 1,2487.
+   */
+  @media (max-width: 600px) and (max-height: 700px) {
+    .titulo-absurdo .t-blanco { font-size: clamp(2.7rem, 18.73vw, 30rem); }
+    .titulo-absurdo .t-verde  { font-size: clamp(2.16rem, 15vw, 24rem); }
+    section.hero { padding-top: 16px; }
+    .hero-arriba { margin-bottom: 10px; }
+  }
   .titulo-absurdo .t-blanco { color: var(--blanco); }
   .titulo-absurdo .t-verde { color: var(--vivo-verde); }
 
@@ -711,6 +813,27 @@
   .hero-accion #resultado,
   .hero-accion #profundo,
   .hero-accion #doce-puntos { color: var(--vivo-tinta); text-align: left; }
+
+  /* ── EL REORDEN DEL HERO EN TELÉFONO ──────────────────────────────────────────────────
+   *
+   * ⚠️ VA ACÁ, DESPUÉS DE LAS REGLAS BASE, Y NO ARRIBA CON EL RESTO DEL BLOQUE DE TELÉFONO.
+   * Una media query no suma especificidad: a igualdad, gana la última. Escrito antes de
+   * `.hero-accion { margin: 32px auto 0; z-index: 2 }`, el `order` sí se aplicaba —la base no
+   * lo declara— pero el margen y el z-index no, y el fallo era mudo: el orden cambiaba y uno
+   * daba por hecho que el resto también.
+   */
+  @media (max-width: 600px) {
+    .hero-envoltura { display: flex; flex-direction: column; }
+    /* z-index 7 porque ahora el caballo viene JUSTO DESPUÉS, y tiene z-index 5. Con el orden
+       viejo nunca se tocaban; al subir el formulario, la nota de privacidad quedó debajo de la
+       imagen y se leía cortada. El 7 pasa también sobre los enunciados, que llevan 6.
+       Ojo con comprobarlo: la imagen tiene `pointer-events: none`, así que
+       `document.elementFromPoint` NO la ve y dice que no tapa nada. Se mira la geometría y el
+       z-index, o se mira la captura. */
+    .hero-accion { order: 1; margin: 16px auto 0; z-index: 7; }
+    .hero-imagen-centro { order: 2; margin: 8px auto 0; }
+    .hero-enunciados { order: 3; }
+  }
 
   @media (max-width: 640px) {
     /* El titular se queda centrado, como la burbuja, el caballo y el formulario.
@@ -1054,6 +1177,101 @@
      fuerte para que se note que la tarjeta dice algo nuevo. */
   .profundo-espera p.espera-lenta { margin-top: 10px; font-size: 0.9rem; color: var(--texto); font-weight: 700; }
 
+  /* ── LA BARRA DE LA ESPERA ─────────────────────────────────────────────────────────
+     Mide NUESTRO procedimiento, no el avance del sitio ajeno. La diferencia no es
+     retórica: el chequeo es una sola llamada que vuelve cuando terminó, así que no hay
+     avance real que leer. Lo que sí conocemos son los tramos de nuestro propio guion
+     (11 s quieto, 7 s de gesto), y sobre eso se puede decir la verdad.
+     Cuando se pasa del estimado la barra DEJA de avanzar y pasa a rayas: admite que ya
+     no sabe, en vez de quedarse clavada en 95% fingiendo. */
+  .espera-barra {
+    margin-top: 14px;
+    height: 6px;
+    border-radius: 999px;
+    background: var(--arena-300);
+    overflow: hidden;
+  }
+  .espera-barra i {
+    display: block;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+    background: var(--sello);
+    transition: width 400ms linear;
+  }
+  /* Pasado el estimado: ya no se afirma cuánto falta. */
+  .profundo-espera.sin-estimado .espera-barra i {
+    width: 100% !important;
+    background: repeating-linear-gradient(135deg,
+      var(--sello) 0 10px, var(--arena-300) 10px 20px);
+    animation: espera-corre 900ms linear infinite;
+  }
+  @keyframes espera-corre { to { background-position: 28px 0; } }
+
+  /* ── LA FRANJA FIJA, PORQUE LA BARRA ESTABA DONDE NADIE LA VEÍA ──────────────────────
+     Medido el 30-oct en producción: durante los 25 s de la espera, la tarjeta vivía 3.252 px
+     por debajo de la ventana (que mide 768). O sea que la barra funcionaba perfecto y la
+     persona no la veía NUNCA. Estaba en el lugar correcto del documento y en ninguna parte
+     de la pantalla.
+     No se resuelve con un scroll automático: el código tiene una regla explícita de no mover
+     lo que la persona está leyendo (`sinMoverLoQueLeen`), y llevarla a la fuerza a otra parte
+     de la página sería romperla. Se resuelve trayendo el aviso a donde ya está mirando. */
+  .espera-flotante {
+    position: fixed;
+    /* Sube por encima del aviso de cookies mientras esté abierto. El aviso tiene z-index
+       999 y esta franja 40, así que para un visitante nuevo quedaba tapada: o sea que el
+       arreglo del 30-oct —traer la barra a donde la persona está mirando— quedaba anulado
+       justo para quien llega de la campaña y todavía no ha respondido el aviso. */
+    left: 0; right: 0; bottom: var(--alto-aviso, 0px);
+    z-index: 40;
+    background: var(--panel);
+    border-top: 1px solid var(--borde);
+    box-shadow: 0 -6px 20px rgba(0,0,0,.10);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .espera-flotante .ef-fila {
+    max-width: 680px; margin: 0 auto;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .espera-flotante .punto-vivo { flex: 0 0 auto; width: 10px; height: 10px; margin: 0; }
+  .espera-flotante .ef-texto {
+    flex: 1 1 auto; min-width: 0;
+    font-size: 0.85rem; color: var(--texto);
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .espera-flotante .espera-barra { margin: 8px auto 0; max-width: 680px; }
+
+  .espera-estimado { margin: 8px 0 0 !important; font-size: 0.82rem !important; color: var(--texto-suave) !important; }
+  .espera-estimado .e-no { display: none; }
+  .profundo-espera.sin-estimado .espera-estimado .e-si { display: none; }
+  .profundo-espera.sin-estimado .espera-estimado .e-no { display: inline; }
+
+  .espera-pasos { list-style: none; margin: 12px 0 0; padding: 0; }
+  .espera-pasos li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.87rem;
+    color: var(--texto-suave);
+    opacity: .5;
+    transition: opacity 200ms ease-out, color 200ms ease-out;
+  }
+  .espera-pasos li + li { margin-top: 4px; }
+  .espera-pasos li::before {
+    content: '';
+    position: absolute; left: 4px; top: 0.52em;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: currentColor;
+  }
+  .espera-pasos li.ahora { opacity: 1; color: var(--texto); font-weight: 600; }
+  .espera-pasos li.hecho { opacity: .85; }
+  .espera-pasos li.hecho::before { background: var(--sello); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .espera-barra i { transition: none; }
+    .profundo-espera.sin-estimado .espera-barra i { animation: none; }
+    .espera-pasos li { transition: none; }
+  }
+
   /* La medición guardada. La función devuelve hasta 24 h después el mismo informe, y hasta
      acá eso se veía igual que uno recién hecho. La línea dice cuándo se midió y ofrece
      rehacerla; el botón es texto, porque no compite con el del kit. */
@@ -1266,9 +1484,16 @@
   /* Solo los párrafos sueltos de la sección se centran; los de dentro de las tarjetas
      de precio mantienen su propia alineación. */
   .ayuda-caja > p { margin: 0 auto 26px; color: var(--vivo-suave); max-width: 54ch; font-size: 1.02rem; }
+  /* ⚠️ EL FONDO DEL BOTÓN NO ES `--vivo-rosa`, Y ES A PROPÓSITO (24-oct-2026).
+     El rosa de marca `#ff3ea0` con texto blanco da 3,26 de contraste, y el mínimo para texto
+     normal son 4,5. `--rosa-700` (#c21e78) es el mismo rosa de la paleta, un paso más oscuro, y
+     da 5,6. No es un color nuevo: ya estaba declarado.
+     Importa más de lo que parece ahora que hay campaña: la mayoría del tráfico llega por
+     teléfono, y un rosa claro con letras blancas bajo el sol deja de leerse justo en el único
+     botón que hay que apretar. El rosa de marca sigue en todo lo demás. */
   .boton-ayuda {
     display: inline-block;
-    background: var(--vivo-rosa);
+    background: var(--rosa-700);
     color: var(--blanco);
     font-weight: 700;
     padding: 15px 30px;
@@ -1314,7 +1539,7 @@
   }
   .kit-principal .kit-etiqueta { color: var(--vivo-verde); }
   .kit-secundario .kit-etiqueta { color: var(--vivo-rosa-osc); }
-  /* "Desde $149.000" mide 8,3 veces su tamaño de letra. En una tarjeta angosta (dos columnas
+  /* "$149.000" medía 8,3 veces su tamaño de letra cuando decía "Desde $149.000". En una tarjeta angosta (dos columnas
      cerca de 700 px, o tres cerca de 1100) no cabía y "$149.000" bajaba solo a otra línea,
      descuadrado contra "Desde $39.000" al lado. Con cqi la letra se achica justo lo necesario
      para caber en una línea; donde cqi no existe, queda el 2,1rem de siempre. */
@@ -1354,6 +1579,13 @@
     border: 2px solid var(--vivo-tinta); border-radius: var(--radio-tarjeta);
   }
   .pedir { scroll-margin-top: calc(var(--alto-header) + 16px); }
+  /* Cuando un campo obligatorio queda vacío, el navegador hace scroll HASTA ESE CAMPO —no
+     hasta el formulario— y dibuja ahí su globo de aviso. Sin este margen el campo aterriza
+     detrás del header pegajoso y lo único que se ve es el globo recortado contra el borde de
+     arriba, así que la persona concluye que el botón no hizo nada. Pasaba en los dos
+     formularios, el de preguntas y el de pago. */
+  .pedir input, .pedir textarea, .pedir select,
+  .compra input { scroll-margin-top: calc(var(--alto-header) + 16px); }
   .pedir-titulo {
     margin: 0 0 6px; font-family: "Archivo Black", Impact, var(--serif); font-weight: 400;
     text-transform: uppercase; font-size: 1.35rem; letter-spacing: -0.02em;
@@ -1385,6 +1617,39 @@
   .pedir-trampa { display: none; }
   .pedir .boton-ayuda { border: 0; font: inherit; font-weight: 700; cursor: pointer; }
   .pedir .boton-ayuda:disabled { background: var(--inactivo); cursor: wait; }
+  /* ⚠️ El color del texto va EXPLÍCITO, no heredado. Este panel se mueve junto al botón que se
+     apretó, y uno de esos botones vive dentro de una sección de fondo azul con texto claro: sin
+     declarar el color, el panel salía crema con letras blancas encima, ilegible. Se vio al
+     mirarlo renderizado, no al leer el markup. */
+  .compra { margin: 18px 0 0; padding: 20px; border-radius: 14px; background: var(--panel);
+            color: var(--texto); border: 1px solid var(--borde); max-width: 34rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+  .compra a { color: var(--verde-700); }
+  .compra[hidden] { display: none; }
+  .compra-kicker { margin: 0 0 6px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--texto-suave); }
+  .compra-monto { margin: 0 0 10px; font-size: 1.5rem; font-weight: 700; line-height: 1.1; }
+  .compra-monto span { display: block; font-size: .85rem; font-weight: 400; color: var(--texto-suave); }
+  .compra-que { margin: 0 0 12px; font-size: .95rem; }
+  /* Las condiciones van ANTES del botón y se leen, no se esconden tras un enlace: lo que
+     cambia la decisión de alguien que está por pagar tiene que estar a la vista. */
+  /* Alineada a la izquierda aunque el panel esté centrado: una lista con viñetas centrada
+     deja los puntos flotando y cuesta leerla. Se vio renderizando, no leyendo el CSS. */
+  .compra-condiciones { margin: 0 0 16px; padding-left: 20px; font-size: .88rem;
+    color: var(--texto-suave); line-height: 1.5; text-align: left; }
+  .compra-condiciones li { margin: 0 0 6px; }
+  .compra-condiciones strong { color: var(--texto); }
+  .compra .pedir-consiento { margin-top: 12px; }
+  .compra-ayuda { margin: 6px 0 0; font-size: .85rem; color: var(--texto-suave); }
+  .compra-sigue { margin: 12px 0 0; font-size: .85rem; color: var(--texto-suave); }
+  .compra-rescate { margin: 10px 0 0; font-size: .88rem; }
+  .compra-rescate[hidden] { display: none; }
+  .boton-rescate { font: inherit; font-weight: 600; cursor: pointer; margin-left: 4px;
+    background: transparent; color: var(--verde-700); border: 0; padding: 0;
+    text-decoration: underline; text-underline-offset: 3px; }
+  .compra label { display: block; margin-top: 4px; }
+  .compra input[type="email"] { display: block; width: 100%; margin-top: 6px; padding: 10px 12px;
+            font: inherit; border-radius: 9px; border: 1px solid rgba(0,0,0,.2); }
+  .compra button[disabled] { opacity: .6; cursor: progress; }
   .pedir-estado { margin: 12px 0 0; font-size: .9rem; color: var(--pendiente); }
   .pedir-estado:empty { display: none; }
   .pedir-listo { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
@@ -1468,7 +1733,9 @@
            sitio cuyo valor entero es no dar por bueno lo que no vimos, no podemos abrir con una
            suposición sobre su sitio. Y la fecha se queda, porque es un hecho y porque el
            público son abogados; lo que ya no hace es cargar sola con el motivo para actuar. -->
+      <!-- ley:insignia · NO EDITAR A MANO. Ver el bloque ley:la-fecha. -->
       <div class="fecha-limite">Si pides datos, te aplica desde el <strong>1 dic 2026</strong></div>
+          <!-- /ley:insignia -->
     </div>
   </div>
 </header>
@@ -1512,7 +1779,7 @@
           <input type="text" id="dominio" name="dominio" placeholder="tuempresa.cl" autocomplete="off" inputmode="url" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="go" required>
           <button type="submit" id="boton-chequeo">Revisar mi sitio</button>
         </form>
-        <p class="nota-privacidad">Solo leemos tu sitio público. No pedimos correo ni guardamos el dominio que revisas.</p>
+        <p class="nota-privacidad">Solo leemos tu sitio público. No pedimos correo ni te hacemos registrarte. Tu informe queda guardado 24 horas para no volver a abrir un navegador contra el mismo sitio; después se borra solo.</p>
         <!-- Aviso de espera. Va fuera de #resultado porque ese panel está con aria-busy
              mientras carga, y un lector de pantalla puede callar lo que cambie adentro. -->
         <p class="estado-chequeo" id="estado-chequeo" role="status" aria-live="polite"></p>
@@ -1521,6 +1788,50 @@
              abajo del formulario, y quien navega con teclado o lector de pantalla se quedaba
              en el botón sin saber que ya había algo que leer. -->
         <div id="resultado" role="region" aria-label="Resultado del chequeo" aria-live="polite" tabindex="-1"></div>
+
+        <!-- El paso de compra. Vive acá, estático y revisable, y el script lo MUEVE justo debajo
+             del botón que se apretó. Moverlo en vez de clonar markup en los cuatro lugares
+             posibles garantiza que nunca haya dos pasos de compra abiertos a la vez. -->
+        <form id="compra" class="compra" hidden>
+          <p class="compra-kicker">Comprar el kit</p>
+          <p class="compra-monto">$177.310 <span>IVA incluido · una vez</span></p>
+          <!-- ⚠️ CONDICIONAL EN LAS DOS PRIMERAS, Y NO ES UN MATIZ.
+               Decía «Dejamos instalado el gestor de consentimiento» en seco. Desde el 2-nov el
+               kit se le ofrece también a un sitio al que solo le falta publicar la política, y
+               a ese sitio no se le instala ningún gestor: no tiene un rastreador que retener.
+               Prometer en firme lo que no se va a hacer, justo en la pantalla donde la persona
+               pone su correo y paga $177.310, es la clase de cosa que este producto le marca en
+               rojo a otros sitios. El «si» lo hace cierto para los dos casos sin volverlo vago:
+               las tres cosas siguen nombradas. -->
+          <p class="compra-que">Arreglamos lo que el chequeo dejó pendiente de tu lado: dejamos instalado el gestor de consentimiento si tu sitio carga rastreadores, arreglamos la casilla de consentimiento de tus formularios si hace falta, y te entregamos el borrador de tu política para que lo revise tu abogado. Al final volvemos a correr el chequeo sobre la misma página.</p>
+          <ul class="compra-condiciones">
+            <li><strong>Necesitamos acceso temporal a tu sitio, con permisos mínimos</strong> (hosting, repositorio o gestor de contenidos). Después del pago te guiamos para darlo.</li>
+            <li><strong>Te devolvemos el 100%</strong> si no puedes darnos el acceso, o si desistes antes de que toquemos tu sitio.</li>
+            <li><strong>El HTTPS no está incluido:</strong> depende de tu hosting. Si falta, te decimos qué pedirle.</li>
+            <li><strong>La revisión legal no está incluida.</strong> El borrador lo revisa tu abogado.</li>
+          </ul>
+          <label>Correo <input type="email" name="correo" required autocomplete="email" placeholder="tu@empresa.cl"></label>
+          <p class="compra-ayuda">Lo necesita el medio de pago, y es donde te escribimos para pedirte el acceso a tu sitio. <strong>Después de pagar vuelves solo a la pantalla de tu pedido: guarda ese enlace</strong>, es la única forma de volver y no hace falta ninguna cuenta.</p>
+          <!-- ⚠️ EL ENLACE A LAS CONDICIONES VA ACÁ, NO SOLO EN EL PIE (3-nov-2026).
+               La página /terminos/ se escribió hoy y un `grep` de «/terminos» en `public/` y
+               en `functions/` devolvía CERO: existía y no la alcanzaba nadie. Una condición
+               de venta que no se puede leer antes de contratar no cumple su función, y el
+               art. 12 A de la Ley 19.496 pide justamente que estén accesibles antes.
+               Y hay una segunda razón, interna: el punto 05 de esa misma página dice que
+               marcar esta casilla es la aceptación de esas condiciones. Mientras el enlace no
+               estuviera acá, esa frase era falsa. Si se saca el enlace, hay que sacar también
+               esa frase. -->
+          <label class="pedir-consiento"><input type="checkbox" name="consiento" required> <span>Acepto las <a href="/terminos/">condiciones de venta</a> y que mis datos se usen para gestionar mi compra, según la <a href="/privacidad/">política de privacidad</a>.</span></label>
+          <button type="submit" class="boton-ayuda">Ir a pagar</button>
+          <p class="pedir-estado" role="status"></p>
+          <!-- Se muestra solo cuando el pago no se pudo abrir por algo NUESTRO. Quien llega
+               hasta acá es el visitante más interesado de todos: midió su sitio, leyó el precio
+               y decidió pagar. Dejarlo con un «vuelve a intentarlo» que va a volver a fallar es
+               perderlo justo en ese punto. -->
+          <p class="compra-rescate" hidden>No es cosa tuya, el problema está de nuestro lado.
+            <button type="button" class="boton-rescate" data-pedir="kit-sin-pago">Avísame cuando funcione</button></p>
+          <p class="compra-sigue">Te llevamos a la pantalla de pago. Vuelves a una página con tu pedido, y el enlace de esa página es tuyo: guárdalo.</p>
+        </form>
 
         <!-- El segundo resultado: lo que vio un navegador de verdad al abrir el sitio.
              Se dispara solo cuando el rápido ya está en pantalla y crece hacia abajo. No
@@ -1565,19 +1876,15 @@
         <div class="paso reveal">
           <span class="paso-num">01</span>
           <h3>La fecha</h3>
-          <p>La Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Desde ese día fiscaliza la Agencia de Protección de Datos Personales, que puede partir por su cuenta o porque alguien reclama.</p>
-          <!-- El proyecto de postergación va acá y no en la insignia del header: es el bloque
-               de la fecha, o sea donde va a mirar quien se pregunte por la postergación, y es
-               el único lugar con espacio para decir que existe y que todavía no se aprueba.
-               Los datos son de la ficha oficial de tramitación del Senado al 23-sep-2026
-               (boletín 18.623-07, mensaje 110-374, primer trámite, sin informe de comisión).
-               Para revisarlo:
-               curl -s "https://tramitacion.senado.cl/wspublico/tramitacion.php?boletin=18623"
-               (el número va sin el -07 y sin puntos, o responde vacío). El Ejecutivo le
-               renovó la urgencia Suma el 22-sep, así que esto puede cambiar en semanas:
-               si cambia, se actualiza este párrafo y la fecha de revisión de abajo. -->
-          <p>Hay un proyecto en el Senado (boletín 18.623-07) para mover esa fecha al 1 de diciembre de 2027. Todavía no se aprueba, así que hoy rige el 1 de diciembre de 2026.</p>
-          <p class="paso-revisado">Revisado el 23-sep-2026.</p>
+          <!-- ley:la-fecha · NO EDITAR A MANO.
+               Este bloque lo escribe `node herramientas/sincronizar-ley.mjs` desde
+               `functions/api/ley.js`, que es donde vive la fecha y el estado del proyecto.
+               Editarlo acá lo deja distinto de las otras cuatro pantallas que dicen lo mismo,
+               que es exactamente lo que pasaba antes. `prueba-ley.mjs` se pone roja si alguien
+               lo hace. -->
+          <p>La Ley 21.719 entra en plena vigencia el 1 de diciembre de 2026. Desde ese día fiscaliza la Agencia de Protección de Datos Personales, que puede partir por su cuenta o porque alguien reclama. Hay un proyecto para mover esa fecha (boletín 18.623-07). El 28 de octubre de 2026 el Senado lo aprobó, con 33 votos a favor y 6 en contra, y fijó el 15 de octubre de 2027. Falta que lo apruebe la Cámara de Diputados, así que hoy rige el 1 de diciembre de 2026.</p>
+          <p class="paso-revisado">Revisado el 5-nov-2026.</p>
+          <!-- /ley:la-fecha -->
         </div>
         <div class="paso reveal">
           <span class="paso-num">02</span>
@@ -1661,14 +1968,14 @@
               <path class="sello-check" d="M32 52 L44 64 L70 36"></path>
             </svg>
             <p class="kit-etiqueta">Kit de implementación</p>
-            <p class="kit-monto">Desde $149.000 <span>+ IVA · una vez</span></p>
+            <p class="kit-monto">$149.000 <span>+ IVA · $177.310 en total · una vez</span></p>
             <ul class="kit-incluye">
               <li>Instalamos el aviso de cookies (el gestor de consentimiento) que pide permiso antes de cargar rastreadores</li>
-              <li>Arreglamos las señales que tu chequeo dejó pendientes</li>
+              <li>Arreglamos las señales que tu chequeo dejó pendientes, incluida la casilla de consentimiento de tus formularios</li>
               <li>Plantilla de política de privacidad, para que la revise tu abogado</li>
               <li>Volvemos a correr el chequeo al final, para que veas el cambio</li>
             </ul>
-            <p class="kit-nota">El valor sube si tu sitio tiene más de lo que el chequeo alcanzó a ver, y te pasamos el monto exacto antes de empezar. No incluye la revisión legal de tu caso, que es de abogado.</p>
+            <p class="kit-nota">Este precio es para un sitio con una página de inicio medida. Si tienes carro de compras, varios dominios o integraciones a medida, el chequeo no te ofrece el kit y lo vemos caso a caso. <strong>Necesitamos acceso a tu sitio para trabajar</strong>, y si no nos lo puedes dar te devolvemos todo; mientras no lo hayamos tocado, la devolución es del 100%. No incluye el HTTPS, que depende de tu proveedor de hosting, ni la revisión legal de tu caso, que es de abogado.</p>
           </div>
           <div class="kit-precio kit-secundario">
             <p class="kit-etiqueta">Revisión trimestral</p>
@@ -1781,11 +2088,13 @@
         </div>
         <div class="pregunta">
           <h3>¿Desde cuándo rige la Ley 21.719?</h3>
-          <p>Entra en plena vigencia el 1 de diciembre de 2026, pero hay un proyecto en el Senado para moverla y la fecha puede cambiar. Lo que no cambia con esa votación es lo que tu sitio tiene o no tiene publicado hoy.</p>
+          <!-- ley:faq · NO EDITAR A MANO. Ver el bloque ley:la-fecha. -->
+          <p>Entra en plena vigencia el 1 de diciembre de 2026. El Senado ya aprobó moverla al 15 de octubre de 2027, pero falta el resto de la tramitación y la fecha puede cambiar. Lo que no cambia con esa votación es lo que tu sitio tiene o no tiene publicado hoy.</p>
+          <!-- /ley:faq -->
         </div>
         <div class="pregunta">
           <h3>¿Cuánto cuesta arreglar lo que salga pendiente?</h3>
-          <p>El kit de implementación parte en $149.000 más IVA, una vez. Instala el gestor de consentimiento, corrige las señales que tu chequeo dejó pendientes, incluye una plantilla de política de privacidad para que la revise tu abogado, y vuelve a correr el chequeo al final para que veas el cambio. No incluye la revisión legal de tu caso, que es de abogado.</p>
+          <p>El kit de implementación cuesta $149.000 más IVA, o sea $177.310 en total, una vez. Instala el gestor de consentimiento, corrige las señales que tu chequeo dejó pendientes, incluye una plantilla de política de privacidad para que la revise tu abogado, y vuelve a correr el chequeo al final para que veas el cambio. No incluye la revisión legal de tu caso, que es de abogado.</p>
         </div>
       </div>
     </div>
@@ -1805,7 +2114,7 @@
            Cloudflare, que cambia la dirección por "[email protected]" y un script. Sin
            JavaScript, o en un lector que no lo ejecute, el medio de contacto desaparecía. -->
       <p>SpindleLab SpA · RUT 78.474.925-8 · <!--email_off--><a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a><!--/email_off--></p>
-      <p>Este chequeo no almacena los dominios que revisas ni requiere registro. <a href="/privacidad/">Política de privacidad</a>.</p>
+      <p>Este chequeo no requiere registro. El resultado rápido no se guarda; la revisión con navegador queda 24 horas y después se borra sola. <a href="/privacidad/">Política de privacidad</a> · <a href="/terminos/">Condiciones de venta</a>.</p>
     </div>
   </div>
 </footer>
@@ -1815,6 +2124,92 @@
      dentro de un texto de JavaScript rompería el código entero, así que va envuelto igual. -->
 <!--email_off-->
 <script>
+/* ──────────────────────────────────────────────────────────────────────────────────────
+   DE DÓNDE LLEGÓ LA PERSONA — y por qué vive ACÁ, fuera de los dos IIFE.
+
+   Este <script> tiene dos funciones anónimas que se ejecutan solas y NO se ven entre sí: la
+   primera lleva el chequeo (y hace los fetch a /api/chequeo y /api/profundo), la segunda
+   lleva el formulario de contacto.
+
+   El origen lo necesitan LAS DOS: el formulario para decir de dónde vino quien escribe, y
+   los fetch para que el contador del servidor pueda distinguir una campaña pagada del
+   tráfico propio. Puesto dentro de cualquiera de los dos, la otra lo llama y recibe un
+   ReferenceError.
+
+   ⚠️ Y eso ya pasó, el 2-nov-2026, al escribir esto: `paramOrigen` quedó dentro del segundo
+   IIFE y el chequeo entero dejó de funcionar. No se vio en la revisión de sintaxis —el
+   archivo parsea perfecto— ni en la consola —el `try` de la página se tragaba el error y
+   mostraba «No pudimos completar el chequeo»—. Se vio sirviendo la versión anterior en el
+   mismo servidor y comparando: con ella el navegador hacía tres llamadas a la API, con la
+   nueva, ninguna. Un grep ve el nombre, no el ámbito.
+
+   La otra copia de esta lista está en `functions/api/profundo.js`; `prueba-uso.mjs` corre
+   los mismos casos por las dos y se pone roja si se separan.
+   ────────────────────────────────────────────────────────────────────────────────────── */
+  // ORIGENES-CERRADOS: instagram linkedin facebook whatsapp correo buscador meta propio directo otro
+  function origenExterno(referer, busqueda) {
+    const CONOCIDOS = ['instagram', 'linkedin', 'facebook', 'whatsapp', 'correo', 'buscador', 'meta', 'propio'];
+    try {
+      const utm = (new URLSearchParams(busqueda || '').get('utm_source') || '').toLowerCase().trim();
+      if (CONOCIDOS.indexOf(utm) !== -1) return utm;
+      if (utm) return 'otro';
+    } catch (e) {}
+
+    if (!referer) return 'directo';
+    let host = '';
+    try { host = new URL(referer).hostname.toLowerCase().replace(/^www\./, ''); } catch (e) { return 'otro'; }
+    if (!host) return 'otro';
+
+    if (host === 'instagram.com' || /\.instagram\.com$/.test(host)) return 'instagram';
+    if (host === 'linkedin.com' || /\.linkedin\.com$/.test(host) || host === 'lnkd.in') return 'linkedin';
+    if (host === 'facebook.com' || /\.facebook\.com$/.test(host) || host === 'fb.me') return 'facebook';
+    if (host === 'whatsapp.com' || /\.whatsapp\.com$/.test(host)) return 'whatsapp';
+    if (/^(google|bing|duckduckgo|ecosia|yahoo)\./.test(host) || /\.google\.com$/.test(host)) return 'buscador';
+    if (host === 'verifica.spindlelab.cl') return 'propio';
+    if (host === 'spindlelab.cl' || /\.spindlelab\.cl$/.test(host)) return 'propio';
+    return 'otro';
+  }
+
+  // Una vez al cargar, y no se toca más: es de la visita, no del chequeo. Por eso tampoco
+  // entra en limpiarContexto(), que borra lo que sí cambia entre un pedido y el siguiente.
+  /**
+   * El origen de ESTA visita, para mandárselo a la API.
+   *
+   * ⚠️ El servidor no lo puede calcular solo: la llamada a `/api/chequeo` la hace esta misma
+   * página con `fetch`, así que su referer es verifica.spindlelab.cl y su URL no lleva ningún
+   * utm. Hasta el 2-nov-2026 el contador por origen anotaba TODO como `propio` por eso, y diez
+   * días de campaña pagada quedaron contados como tráfico interno.
+   *
+   * Se calcula una vez, al cargar, igual que el del formulario y con la misma función.
+   */
+  // ⚠️ SE CALCULA LA PRIMERA VEZ QUE SE PIDE, no al cargar, y la diferencia importa.
+  //
+  // `paramOrigen()` se usa unas 300 líneas MÁS ARRIBA de donde está escrito. Con una `var`
+  // asignada acá, esas llamadas leerían `undefined` si alguna llegara a correr antes, y el
+  // modo de falla no es un error: es mandar el parámetro vacío y volver a contar todo como
+  // `propio`, que es exactamente el defecto que esto viene a arreglar. Un fallo silencioso
+  // que se ve igual que el bug original.
+  //
+  // Perezoso con memoria, el orden deja de importar.
+  var _origen = null;
+  function paramOrigen() {
+    if (_origen === null) {
+      try { _origen = origenExterno(document.referrer, location.search) || ''; }
+      catch (e) { _origen = ''; }
+    }
+    return _origen ? '&origen=' + encodeURIComponent(_origen) : '';
+  }
+
+  /* ⚠️ LA CASILLA DE CONTACTO VIVE ACÁ POR LO MISMO, y porque ya estaba mal (2-nov-2026).
+     Estaba declarada dentro del primer IIFE y la usaban TRES líneas del segundo: las dos del
+     `catch` de la compra y la de «No pudimos abrir el pago». O sea que cuando el pago no se
+     podía abrir —el único caso donde la página ofrece el rescate— en vez del mensaje saltaba
+     `ReferenceError: CONTACTO is not defined` y la persona se quedaba sin mensaje y sin
+     rescate, justo después de apretar «Ir a pagar».
+     No lo vio ninguna prueba del fuente: el nombre está escrito y el archivo parsea. Lo dijo
+     la consola del navegador, sirviendo la página contra un servidor que devolvía 409. */
+  var CONTACTO = 'hola@spindlelab.cl';
+
 (function () {
   const form = document.getElementById('form-chequeo');
   const input = document.getElementById('dominio');
@@ -1827,7 +2222,6 @@
   // API, una señal pendiente chica (como la casilla) puede dejar el puntaje sobre 80. Este
   // umbral queda de red para una respuesta sin estados (una versión anterior de la API).
   const UMBRAL_BIEN = 80;
-  const CONTACTO = 'hola@spindlelab.cl';
 
   function escapar(s) {
     const d = document.createElement('div');
@@ -1886,6 +2280,55 @@
   // falso, y ahí el tercer estado no existe.
   function estadoDe(item) {
     return ESTADOS[item.estado] ? item.estado : (item.ok ? 'ok' : 'pendiente');
+  }
+
+  // ⚠️ ESTA LISTA ESTÁ REPETIDA en functions/api/elegibilidad.js, que es la que decide de
+  // verdad. Acá vive solo para no OFRECER lo que el servidor va a rechazar. Si agregas una
+  // señal, va en los dos lados; `prueba-compuerta-boton.mjs` compara las dos y se pone roja si
+  // se separan. Es el mismo arreglo que ya tiene la lista de orígenes más abajo.
+  // ⚠️ Esta lista decide si sale «Quiero el kit», y su gemela vive en
+  // `functions/api/elegibilidad.js`. Las dos se mueven juntas o el botón promete algo que el
+  // servidor después niega. `politica` entró el 2-nov; ver el porqué largo allá.
+  var CIERRA_EL_KIT = ['cmp', 'carga', 'cookies', 'envio', 'aviso', 'politica'];
+
+  /**
+   * ¿Este informe permite ofrecer el kit?
+   *
+   * Hasta el 24-oct el botón se dibujaba con `pendientes > 0`, y eso no es lo que el servidor
+   * exige. La diferencia no era teórica: cuatro situaciones reales mostraban «Quiero el kit»,
+   * la persona escribía su correo, marcaba la casilla, apretaba pagar, y recibía un rechazo.
+   *
+   *   - solo `politica` pendiente (un sitio limpio al que solo le falta publicar su política);
+   *   - solo `casilla` pendiente (le falta la casilla en su formulario);
+   *   - `puntaje` nulo con pendientes, que es cuando no pudimos confirmar lo suficiente;
+   *   - un informe `parcial` o bloqueado, con pendientes.
+   *
+   * En los cuatro, el servidor contesta que no se puede cotizar lo que no se vio o que no hay
+   * nada que el kit cierre. Ofrecerlo igual es cobrarle a alguien su tiempo por un «no».
+   */
+  /**
+   * ¿Este informe alcanzó a MEDIR el sitio?
+   *
+   * Es la mitad de `sePuedeVender`, y está aparte porque hace falta en otro lado: el botón de
+   * pagar del panel se suelta mirando el estado del informe profundo, no el informe que se
+   * está pintando, y sin esta pregunta se soltaba igual cuando no habíamos visto nada.
+   *
+   * Es el gemelo de `noSePudoMedir` en `functions/api/elegibilidad.js`, negado. Los dos tienen
+   * que decir lo mismo: si acá dice que sí y allá que no, el botón promete y el servidor niega,
+   * que es exactamente el defecto que esto arregla.
+   */
+  function seAlcanzoAMedir(data) {
+    if (!data || data.puntaje === null || data.puntaje === undefined) return false;
+    return !data.bloqueado && !data.parcial;
+  }
+
+  function sePuedeVender(data) {
+    if (!seAlcanzoAMedir(data)) return false;
+    var items = data.items || [];
+    for (var i = 0; i < items.length; i++) {
+      if (estadoDe(items[i]) === 'pendiente' && CIERRA_EL_KIT.indexOf(items[i].id) >= 0) return true;
+    }
+    return false;
   }
 
   // Botón que lleva al formulario de pedido con el contexto del chequeo. El formulario lo
@@ -2107,7 +2550,7 @@
       if (sinConfirmar > 0) cuenta += ' <span class="sin-cortar">· ' + sinConfirmar + ' que no pudimos ver</span>';
     }
     html += '<div class="resumen-resultado"><p>' + cuenta + '</p>';
-    html += pendientes > 0
+    html += sePuedeVender(data)
       ? botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Resultado del chequeo')
       : botonPedir('pregunta', 'Pregúntanos', dominio, puntaje, 'Resultado del chequeo');
     html += '</div>';
@@ -2140,11 +2583,13 @@
     // --- El cierre. Solo ofrece el kit si quedó algo pendiente: venderlo para corregir
     // nada, o para "corregir" algo que no pudimos ver, era prometer de más. ---
     html += '<div class="panel-resolucion">';
-    if (pendientes > 0) {
+    // La misma compuerta que el botón: si el servidor va a rechazar la venta, este bloque
+    // tampoco la ofrece. Antes dependía solo de `pendientes > 0`.
+    if (sePuedeVender(data)) {
       html += '<p class="kicker">Lo que hace el kit</p>';
       html += '<p>Tu chequeo encontró <strong>' + plural(pendientes, 'señal pendiente', 'señales pendientes') + '</strong> en <strong>' + escapar(dominio) + '</strong>' +
         (sinConfirmar > 0 ? ', y ' + sinConfirmar + ' que no pudimos ver' : '') +
-        '. El kit se hace cargo de la parte técnica. El texto final de tu política lo revisa tu abogado. <span class="monto">Desde $149.000 + IVA</span>, una vez.</p>';
+        '. El kit se hace cargo de la parte técnica. El texto final de tu política lo revisa tu abogado. <span class="monto">$177.310</span>, IVA incluido, una vez.</p>';
       html += botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Resultado del chequeo');
     } else {
       // Sin pendientes no se vende nada. Con señales sin confirmar, el cierre no dice "sin
@@ -2230,6 +2675,32 @@
   // descarta: sin esto, revisar un segundo sitio dejaba el informe del primero
   // aterrizando encima del segundo.
   let corrida = 0;
+
+  /* ── ¿SE PUEDE COMPRAR YA? ────────────────────────────────────────────────────────────
+   *
+   * El servidor exige la revisión con navegador para vender: congela las dos mediciones en el
+   * contrato y no cotiza lo que no vio. Pero el botón «Quiero el kit» se dibuja con el chequeo
+   * RÁPIDO, que termina en un segundo, mientras la revisión con navegador tarda de 21 a 34.
+   *
+   * Hasta el 26-oct eso dejaba una ventana de medio minuto en la que la página invitaba a
+   * comprar algo que el servidor todavía no podía vender. Quien apretaba rápido —o sea, quien
+   * tenía más ganas— recibía un 409 pidiéndole repetir el chequeo que acababa de correr.
+   *
+   * ⚠️ POR QUÉ ESTO VIAJA POR EL DOM Y NO POR UNA VARIABLE. El primer intento usó un `let`
+   * compartido, y no funcionó: el código del chequeo y el del panel de compra viven en IIFE
+   * DISTINTAS, así que `abrirCompra` reventaba con «profundoListo is not defined» justo en esa
+   * línea. Y reventaba en silencio: el panel ya se había movido y enfocado antes, así que desde
+   * fuera parecía que todo iba bien y el botón quedaba habilitado igual. Lo cazó el navegador,
+   * no las pruebas: un `grep` del código encuentra la variable escrita y no ve el ámbito.
+   *
+   * Un atributo en `<html>` más un evento sí cruzan esa frontera, y además se pueden mirar
+   * desde fuera, que es lo que permite comprobarlo de verdad.
+   */
+  function anunciarProfundo(estado) {   // 'en-vuelo' · 'listo' · 'sin-medir' · 'fallo'
+    document.documentElement.setAttribute('data-profundo', estado);
+    try { document.dispatchEvent(new CustomEvent('vyc:profundo', { detail: { estado: estado } })); }
+    catch (e) { /* un navegador sin CustomEvent igual deja el atributo puesto */ }
+  }
   let abortarProfundo = null;
   // Cuántas señales dejó pendientes el chequeo rápido, para poder nombrar la
   // diferencia entre los dos informes en vez de dejar que el lector la descubra.
@@ -2242,6 +2713,105 @@
   let falloElNavegador = null;
   // El aviso de los 40 s, para poder cancelarlo.
   let avisoLentoProfundo = null;
+  let barraEspera = null;
+
+  /**
+   * Los tramos del guion del chequeo profundo.
+   *
+   * ⚠️ SON LOS MISMOS QUE EXPORTA `functions/api/profundo.js` (`TRAMO_PASIVO_MS` y
+   * `TRAMO_GESTO_MS`). Están repetidos acá porque esta página no puede importar del
+   * servidor, y eso es exactamente «dos constantes del mismo hecho»: el día que alguien
+   * cambie el guion allá, esta barra mentiría sin que nada se queje.
+   *
+   * Por eso hay una prueba que lee los dos archivos y se pone roja si dejan de calzar.
+   * La duplicación es inevitable; que sea silenciosa, no.
+   */
+  const ESPERA_TRAMO_PASIVO_MS = 11000;
+  const ESPERA_TRAMO_GESTO_MS = 7000;
+  // Abrir y leer no son constantes del servidor: son el resto del guion medido, que su
+  // propio comentario sitúa entre 21,6 y 25,4 s.
+  const ESPERA_ABRIR_MS = 4000;
+  const ESPERA_LEER_MS = 3000;
+  const ESPERA_ESTIMADO_MS =
+    ESPERA_ABRIR_MS + ESPERA_TRAMO_PASIVO_MS + ESPERA_TRAMO_GESTO_MS + ESPERA_LEER_MS;
+
+  /** Para la barra, borra la franja fija, y deja todo listo para la próxima medición. */
+  function pararBarraEspera() {
+    if (barraEspera) { clearInterval(barraEspera); barraEspera = null; }
+    const f = document.querySelector('.espera-flotante');
+    if (f) f.remove();
+  }
+
+  /**
+   * La franja fija abajo de la ventana. Misma barra, mismo paso, donde la persona SÍ mira.
+   *
+   * `aria-hidden` a propósito: el aviso hablado ya lo da la región viva de siempre, y
+   * anunciarlo dos veces no informa más, molesta.
+   */
+  function crearFlotante() {
+    let f = document.querySelector('.espera-flotante');
+    if (f) return f;
+    f = document.createElement('div');
+    f.className = 'espera-flotante';
+    f.setAttribute('aria-hidden', 'true');
+    f.innerHTML = '<div class="ef-fila"><span class="punto-vivo"></span>' +
+      '<span class="ef-texto"></span></div><div class="espera-barra"><i></i></div>';
+    document.body.appendChild(f);
+    return f;
+  }
+
+  /**
+   * Mueve la barra y enciende el paso que corresponde.
+   *
+   * No hay avance que consultar —el chequeo es una sola llamada que vuelve cuando
+   * terminó—, así que lo que se muestra es el TIEMPO contra un guion conocido. Eso se
+   * puede decir sin mentir. Lo que no se puede es quedarse en 95% fingiendo que falta
+   * poco: al pasar el estimado la barra cambia a rayas y deja de afirmar nada.
+   */
+  function arrancarBarraEspera(tarjeta) {
+    pararBarraEspera();
+    if (!tarjeta) return;
+    const relleno = tarjeta.querySelector('.espera-barra i');
+    const pasos = tarjeta.querySelectorAll('.espera-pasos li');
+    if (!relleno || !pasos.length) return;
+    const desde = Date.now();
+    const cortes = [
+      ESPERA_ABRIR_MS,
+      ESPERA_ABRIR_MS + ESPERA_TRAMO_PASIVO_MS,
+      ESPERA_ABRIR_MS + ESPERA_TRAMO_PASIVO_MS + ESPERA_TRAMO_GESTO_MS,
+    ];
+    const flotante = crearFlotante();
+    const rellenoF = flotante.querySelector('.espera-barra i');
+    const textoF = flotante.querySelector('.ef-texto');
+    const pintar = function () {
+      const ido = Date.now() - desde;
+      if (ido >= ESPERA_ESTIMADO_MS) {
+        tarjeta.classList.add('sin-estimado');
+        flotante.classList.add('sin-estimado');
+        pasos.forEach(function (li) { li.classList.remove('ahora'); li.classList.add('hecho'); });
+        textoF.textContent = 'Ya pasamos el medio minuto. Seguimos.';
+        rellenoF.style.width = '100%';
+        // ⚠️ Solo se detiene el RELOJ, no la franja: la persona sigue esperando y la franja
+        // tiene que seguir ahí diciéndoselo. Quien la borra es el final del chequeo.
+        if (barraEspera) { clearInterval(barraEspera); barraEspera = null; }
+        return;
+      }
+      // Tope en 96%: el 100% lo pone la llegada del informe, no el reloj.
+      const ancho = Math.min(96, (ido / ESPERA_ESTIMADO_MS) * 100).toFixed(1) + '%';
+      relleno.style.width = ancho;
+      rellenoF.style.width = ancho;
+      let actual = 0;
+      while (actual < cortes.length && ido >= cortes[actual]) actual++;
+      pasos.forEach(function (li, i) {
+        li.classList.toggle('ahora', i === actual);
+        li.classList.toggle('hecho', i < actual);
+      });
+      const paso = pasos[Math.min(actual, pasos.length - 1)];
+      if (paso) textoF.textContent = paso.textContent;
+    };
+    pintar();
+    barraEspera = setInterval(pintar, 400);
+  }
   const AVISO_LENTO_PROFUNDO = 40000;
   // Si esta corrida salió de apretar "Volver a medirlo". Cambia lo que se dice cuando la
   // respuesta vuelve a venir de la medición guardada.
@@ -2446,7 +3016,7 @@
     else cuenta = 'Nada pendiente';
     if (sinConfirmar > 0 && confirmados > 0) cuenta += ' <span class="sin-cortar">· ' + sinConfirmar + ' que no pudimos ver</span>';
     html += '<div class="resumen-resultado"><p>' + cuenta + '</p>';
-    html += pendientes > 0
+    html += sePuedeVender(data)
       ? botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Revisión con navegador')
       : botonPedir('pregunta', 'Pregúntanos', dominio, puntaje, 'Revisión con navegador');
     html += '</div>';
@@ -2517,14 +3087,16 @@
 
     // --- El cierre. Misma regla que el rápido: el kit solo si hay pendientes reales ---
     html += '<div class="panel-resolucion">';
-    if (pendientes > 0) {
+    // La misma compuerta que el botón: si el servidor va a rechazar la venta, este bloque
+    // tampoco la ofrece. Antes dependía solo de `pendientes > 0`.
+    if (sePuedeVender(data)) {
       html += '<p class="kicker">Lo que hace el kit</p>';
       html += '<p>Al abrir <strong>' + escapar(dominio) + '</strong> en un navegador encontramos <strong>' +
         plural(pendientes, 'cosa pendiente', 'cosas pendientes') + '</strong>' +
         (sinConfirmar > 0 ? ', y ' + sinConfirmar + ' que no pudimos ver' : '') +
         '. El kit se hace cargo de la parte técnica: que nada se cargue antes de que la persona acepte, y que ' +
         'rechazar cueste lo mismo que aceptar. El texto final de tu política lo revisa tu abogado. ' +
-        '<span class="monto">Desde $149.000 + IVA</span>, una vez.</p>';
+        '<span class="monto">$177.310</span>, IVA incluido, una vez.</p>';
       html += botonPedir('kit', 'Quiero el kit →', dominio, puntaje, 'Revisión con navegador');
     } else if (confirmados === 0) {
       // Nada pendiente porque no vimos nada. Acá no se afirma absolutamente nada sobre el
@@ -2678,6 +3250,9 @@
     abortarProfundo = control;
     rehacerPedido = !!rehacer;
     falloElNavegador = null;
+    // Una corrida nueva invalida la medición anterior para efectos de vender: lo que se
+    // contrata tiene que ser lo que se midió en ESTA vuelta.
+    anunciarProfundo('en-vuelo');
     // Lo que la persona tiene en pantalla, antes de taparlo con la tarjeta de espera. Solo
     // en un "Volver a medirlo": una corrida nueva empieza de cero y ahí no hay nada suyo
     // que cuidar. Se toma de la variable y no del DOM para que dos clics seguidos no
@@ -2696,8 +3271,23 @@
         '<div class="bloque"><h2>Y ahora lo abrimos de verdad</h2></div>' +
         '<div class="profundo-espera" aria-hidden="true"><span class="punto-vivo"></span><div class="espera-texto">' +
         '<p>Estamos abriendo tu sitio en un navegador de verdad, como lo vería un visitante.</p>' +
-        '<p>Lo dejamos cargar sin tocar nada y después movemos el mouse, que es cuando algunos sitios recién ' +
-        'despiertan sus rastreadores. Toma alrededor de medio minuto.</p>' +
+        '<div class="espera-barra"><i></i></div>' +
+        // ⚠️ ESTA LÍNEA ES DONDE LA HONESTIDAD SE VUELVE VISIBLE. Mientras la barra estima,
+        // dice cuánto estima. Cuando se pasa, lo admite en palabras en vez de dejar una
+        // barra clavada cerca del final insinuando que falta poco.
+        '<p class="espera-estimado"><span class="e-si">Toma alrededor de medio minuto.</span>' +
+        '<span class="e-no">Ya pasamos el medio minuto. Seguimos, y si no alcanzamos te lo decimos.</span></p>' +
+        // Los tres pasos son el guion real, en presente: lo que estamos haciendo AHORA, no
+        // una lista de casillas que se marcan solas. Y de paso dicen por qué este chequeo
+        // ve cosas que un escáner no: la espera explica el producto.
+        '<ul class="espera-pasos">' +
+          '<li data-paso="0">Abriendo tu sitio en un navegador de verdad</li>' +
+          '<li data-paso="1">Dejándolo cargar sin tocar nada</li>' +
+          '<li data-paso="2">Moviendo el mouse, que es cuando algunos sitios recién despiertan sus rastreadores</li>' +
+          // El cuarto cierra un hueco de tres segundos en que no había ningún paso
+          // encendido y la barra seguía avanzando sola. Lo vio el navegador, no el código.
+          '<li data-paso="3">Leyendo y sumando lo que encontramos</li>' +
+        '</ul>' +
         '</div></div>';
     });
     if (!rehacer) sinMoverLoQueLeen(seccionDoce, function () { seccionDoce.innerHTML = ''; });
@@ -2707,7 +3297,7 @@
     // Entre el segundo 30 y el 75 no cambiaba nada en pantalla: la misma tarjeta latiendo
     // y la misma frase de "medio minuto", ya vencida. A los 40 s se dice que va lento y
     // hasta cuándo esperamos, que es lo que el chequeo rápido ya hace a su escala.
-    clearTimeout(avisoLentoProfundo);
+    clearTimeout(avisoLentoProfundo); pararBarraEspera();
     avisoLentoProfundo = setTimeout(function () {
       if (mia !== corrida) return;
       const caja = seccionProfundo.querySelector('.profundo-espera .espera-texto');
@@ -2721,7 +3311,13 @@
       avisoProfundo.textContent = 'La revisión con navegador está tardando más de lo normal. Seguimos esperando.';
     }, AVISO_LENTO_PROFUNDO);
 
-    fetch('/api/profundo?dominio=' + encodeURIComponent(dominio) + (rehacer ? '&rehacer=1' : ''), {
+    // ⚠️ VA ACÁ Y NO ANTES, y el orden es el error que ya se cometió: arrancarla arriba del
+    // `clearTimeout(avisoLentoProfundo); pararBarraEspera()` la apagaba un instante después
+    // de encenderla. La barra quedaba 27 s clavada en 0% y leyendo el código parecía
+    // correcto — «la arranco, ahí está». Lo dijo el navegador, no el archivo.
+    arrancarBarraEspera(seccionProfundo.querySelector('.profundo-espera'));
+
+    fetch('/api/profundo?dominio=' + encodeURIComponent(dominio) + (rehacer ? '&rehacer=1' : '') + paramOrigen(), {
       cache: 'no-store',
       signal: control ? control.signal : undefined,
     })
@@ -2733,9 +3329,24 @@
         avisoProfundo.textContent = '';
         if (data && data.ok === true) {
           falloElNavegador = false;
+          // ⚠️ DOS COSAS DISTINTAS, Y CONFUNDIRLAS ERA EL DEFECTO (2-nov-2026).
+          //
+          // «La revisión terminó y hay algo que mostrar» no es «la revisión midió lo suficiente
+          // para cotizar». `/api/profundo` devuelve SIEMPRE `ok: true` y pone `parcial` y
+          // `bloqueado` como banderas aparte, así que un sitio que no terminó de cargar, o que
+          // nos cerró la puerta, volvía por acá con `ok: true`, se anunciaba «listo», y el
+          // panel soltaba «Ir a pagar». La persona escribía su correo, apretaba, y el servidor
+          // contestaba 409 `no-se-pudo-medir` —con razón: `elegibilidad.js` declina cuando no
+          // se midió—. Y era callejón sin salida, porque ese motivo no está en `FALLO_NUESTRO`,
+          // así que tampoco salía el botón de rescate.
+          //
+          // El informe igual se pinta y el aviso igual dice que está listo para leer: las dos
+          // cosas son ciertas. Lo que cambia es el estado que mira el botón.
+          anunciarProfundo(seAlcanzoAMedir(data) ? 'listo' : 'sin-medir');
           sinMoverLoQueLeen(seccionProfundo, function () { renderProfundo(data); });
           avisoProfundo.textContent = 'La revisión con navegador ya está lista, debajo del resultado.';
         } else {
+          anunciarProfundo('fallo');
           // Con el informe guardado abajo, el navegador SÍ llegó a abrir el sitio: fue en la
           // medición que sigue en pantalla. Decir lo contrario haría que la costura de los 12
           // puntos ("a tu política sí llegamos, aunque a tu sitio no") contradiga al informe
@@ -2755,6 +3366,7 @@
       .catch(function () {
         if (mia !== corrida) return;
         avisoProfundo.textContent = '';
+        anunciarProfundo('fallo');
         falloElNavegador = !informeGuardado;
         sinMoverLoQueLeen(seccionProfundo, function () { renderFallaProfunda(null, informeGuardado); });
         avisoProfundo.textContent = informeGuardado
@@ -2762,7 +3374,7 @@
           : 'No pudimos terminar la revisión con navegador.';
         if (falloElNavegador && datosDoce) pintarDoce();
       })
-      .finally(function () { clearTimeout(plazo); clearTimeout(avisoLentoProfundo); });
+      .finally(function () { clearTimeout(plazo); clearTimeout(avisoLentoProfundo); pararBarraEspera(); });
 
     if (!rehacer) {
       fetch('/api/doce-puntos?dominio=' + encodeURIComponent(dominio), { cache: 'no-store' })
@@ -2813,7 +3425,7 @@
   function limpiarProfundo() {
     corrida++;
     if (abortarProfundo) { abortarProfundo.abort(); abortarProfundo = null; }
-    clearTimeout(avisoLentoProfundo);
+    clearTimeout(avisoLentoProfundo); pararBarraEspera();
     pendientesRapido = null;
     datosDoce = null;
     falloElNavegador = null;
@@ -2860,7 +3472,7 @@
     try {
       // no-store: el resultado es de ahora. Guardado en caché, un error de hace un minuto se
       // repetía aunque el sitio ya respondiera.
-      const resp = await fetch('/api/chequeo?dominio=' + encodeURIComponent(dominio), { cache: 'no-store' });
+      const resp = await fetch('/api/chequeo?dominio=' + encodeURIComponent(dominio) + paramOrigen(), { cache: 'no-store' });
       const data = await resp.json();
       // El aviso de espera se borra ANTES de pintar, no en el finally. Si se borraba después,
       // el scroll se calculaba con el aviso todavía ocupando su lugar y, al desaparecer, el
@@ -2887,6 +3499,44 @@
       boton.textContent = 'Revisar mi sitio';
     }
   });
+
+  /* ── VOLVER A INTENTAR DESPUÉS DE UN PAGO RECHAZADO (4-nov-2026) ──────────────────────
+   *
+   * La pantalla del pedido rechazado decía «puedes intentarlo de nuevo» y el único botón que
+   * dibujaba era «Escríbenos». O sea que a la persona que quería comprar y cuya tarjeta falló
+   * —el camino no-feliz más frecuente que hay— se le ofrecía mandar un correo, no reintentar.
+   *
+   * Con `?dominio=` el botón de esa pantalla la trae de vuelta con el campo lleno y el chequeo
+   * ya corriendo. No se saltea ninguna compuerta: corre el mismo chequeo y la misma
+   * elegibilidad del servidor que cualquier visita. Lo único que se le ahorra es volver a
+   * teclear lo que ya escribió.
+   *
+   * ⚠️ VA DESPUÉS DEL `addEventListener`, Y LA PRIMERA VERSIÓN IBA ANTES. Puesto arriba, el
+   * `requestSubmit` dispara el envío cuando todavía no hay manejador que lo intercepte, así que
+   * el formulario navega a `/?dominio=…` —la misma URL— y al cargar vuelve a autoenviarse: un
+   * bucle de recarga, con el campo vacío y sin chequeo. Se vio en el navegador contra
+   * producción; la prueba del fuente no podía verlo, porque `form.requestSubmit()` estaba
+   * escrito y lo que estaba mal era el ORDEN.
+   *
+   * ⚠️ Y SE LIMPIA EL PARÁMETRO DE LA URL antes de enviar. Es el cinturón de seguridad del
+   * mismo bucle: si algún día este bloque volviera a correr sin manejador, la recarga ya no
+   * traería el parámetro y se detendría sola en vez de girar para siempre. */
+  (function () {
+    let pedido = '';
+    try { pedido = new URLSearchParams(location.search).get('dominio') || ''; } catch { pedido = ''; }
+    pedido = String(pedido).trim().slice(0, 253);
+    if (!pedido) return;
+    input.value = pedido;
+    try {
+      const limpia = new URL(location.href);
+      limpia.searchParams.delete('dominio');
+      history.replaceState(null, '', limpia.pathname + (limpia.search || '') + limpia.hash);
+    } catch {}
+    // `requestSubmit` y no `submit()`: `submit()` se salta el manejador, así que el chequeo no
+    // correría y el campo quedaría lleno sin que pasara nada.
+    if (typeof form.requestSubmit === 'function') form.requestSubmit();
+    else boton.click();
+  })();
 
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -2951,32 +3601,8 @@
      los contadores del servidor. `prueba-uso.mjs` compara las dos y se pone
      roja si se separan. Si agregas un origen, va en los dos lados.
   ------------------------------------------------------------------ */
-  // ORIGENES-CERRADOS: instagram linkedin facebook whatsapp correo buscador propio directo otro
-  function origenExterno(referer, busqueda) {
-    const CONOCIDOS = ['instagram', 'linkedin', 'facebook', 'whatsapp', 'correo', 'buscador', 'propio'];
-    try {
-      const utm = (new URLSearchParams(busqueda || '').get('utm_source') || '').toLowerCase().trim();
-      if (CONOCIDOS.indexOf(utm) !== -1) return utm;
-      if (utm) return 'otro';
-    } catch (e) {}
 
-    if (!referer) return 'directo';
-    let host = '';
-    try { host = new URL(referer).hostname.toLowerCase().replace(/^www\./, ''); } catch (e) { return 'otro'; }
-    if (!host) return 'otro';
 
-    if (host === 'instagram.com' || /\.instagram\.com$/.test(host)) return 'instagram';
-    if (host === 'linkedin.com' || /\.linkedin\.com$/.test(host) || host === 'lnkd.in') return 'linkedin';
-    if (host === 'facebook.com' || /\.facebook\.com$/.test(host) || host === 'fb.me') return 'facebook';
-    if (host === 'whatsapp.com' || /\.whatsapp\.com$/.test(host)) return 'whatsapp';
-    if (/^(google|bing|duckduckgo|ecosia|yahoo)\./.test(host) || /\.google\.com$/.test(host)) return 'buscador';
-    if (host === 'verifica.spindlelab.cl') return 'propio';
-    if (host === 'spindlelab.cl' || /\.spindlelab\.cl$/.test(host)) return 'propio';
-    return 'otro';
-  }
-
-  // Una vez al cargar, y no se toca más: es de la visita, no del chequeo. Por eso tampoco
-  // entra en limpiarContexto(), que borra lo que sí cambia entre un pedido y el siguiente.
   function marcarOrigen() {
     try {
       form.elements['Llego de'].value = origenExterno(document.referrer, location.search);
@@ -3007,10 +3633,297 @@
   }
 
   // Delegado en el documento: los botones del resultado se dibujan después, con innerHTML.
+  /* ── El paso de compra ───────────────────────────────────────────────────────────────
+   *
+   * Dos campos y un botón. Lo que NO lleva es el monto ni las señales: el servidor rearma todo
+   * eso por su cuenta, así que mandarlos desde acá sería darle al navegador un voto que no le
+   * corresponde. Lo único que viaja es el dominio, el correo y el consentimiento.
+   */
+  /* Los parámetros de campaña, capturados AL CARGAR.
+   *
+   * Se leen acá y no al momento de comprar porque la página cambia su propia URL mientras la
+   * persona la usa, y si se leyeran tarde podrían haberse perdido. Viajan en el cuerpo del POST
+   * porque la petición va a `/api/pedido`, que nunca los lleva: sin esto, ninguna venta se
+   * puede atribuir a la campaña que la trajo. */
+  const UTMS = (function () {
+    const out = {};
+    try {
+      const p = new URLSearchParams(location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (c) {
+        const v = p.get(c);
+        if (v) out[c] = v.slice(0, 200);
+      });
+    } catch {}
+    return out;
+  })();
+
+  const panelCompra = document.getElementById('compra');
+  const estadoCompra = panelCompra && panelCompra.querySelector('.pedir-estado');
+  let dominioCompra = '';
+  let avisoLentoCompra = null;
+
+  function mensajeCompra(texto) {
+    if (estadoCompra) estadoCompra.textContent = texto || '';
+    // La línea de «te llevamos a Mercado Pago» describe lo que pasa si sale bien. Dejarla
+    // visible debajo de un error la convierte en una promesa falsa justo cuando la persona está
+    // leyendo que algo no funcionó. Se vio mirando el render, no el código.
+    const sigue = panelCompra && panelCompra.querySelector('.compra-sigue');
+    if (sigue) sigue.hidden = Boolean(texto);
+  }
+
+  function soltarBotonCompra(texto) {
+    const b = panelCompra.querySelector('button[type="submit"]');
+    b.disabled = false;
+    b.textContent = texto || 'Ir a pagar';
+    panelCompra.querySelectorAll('input').forEach(function (i) { i.disabled = false; });
+    if (avisoLentoCompra) { clearTimeout(avisoLentoCompra); avisoLentoCompra = null; }
+  }
+
+  function abrirCompra(a) {
+    if (!panelCompra) return;
+    dominioCompra = a.getAttribute('data-dominio') || '';
+    mensajeCompra('');
+    soltarBotonCompra();
+    esconderRescate();
+    panelCompra.hidden = false;
+    // Se MUEVE junto al botón que se apretó, en vez de clonarlo: así nunca hay dos abiertos.
+    a.insertAdjacentElement('afterend', panelCompra);
+    const correo = panelCompra.querySelector('input[name="correo"]');
+    if (correo) correo.focus();
+
+    // Si la revisión con navegador todavía no llegó, el formulario se deja escribir —para que
+    // la persona vaya poniendo su correo— pero el botón espera. Decirle que aguarde unos
+    // segundos es cierto y se resuelve solo; mandarla a repetir el chequeo era falso.
+    pintarEspera();
+  }
+
+  /** Lo que dice el chequeo, leído del DOM porque vive en otra IIFE (ver `anunciarProfundo`). */
+  function estadoDelProfundo() {
+    return document.documentElement.getAttribute('data-profundo') || '';
+  }
+
+  /**
+   * Ajusta el botón del panel al estado de la revisión. Se llama al abrir y cada vez que el
+   * chequeo anuncia un cambio, así que la persona no tiene que hacer nada: el botón se suelta
+   * solo cuando la medición llega.
+   */
+  function pintarEspera() {
+    if (!panelCompra || panelCompra.hidden) return;
+    const b = panelCompra.querySelector('button[type="submit"]');
+    if (!b) return;
+    const estado = estadoDelProfundo();
+    if (estado === 'listo') {
+      if (b.textContent.trim() !== 'Ir a pagar') { soltarBotonCompra(); mensajeCompra(''); }
+      return;
+    }
+    b.disabled = true;
+    if (estado === 'fallo') {
+      b.textContent = 'No se pudo revisar';
+      mensajeCompra('No pudimos terminar la revisión con navegador de tu sitio, y sin ella no ' +
+        'podemos cotizar lo que no vimos. Apreta «Volver a medirlo» en el resultado.');
+    } else if (estado === 'sin-medir') {
+      // La revisión volvió, pero sin ver el sitio completo: no terminó de cargar en los
+      // segundos que esperamos, o el sitio nos cerró la puerta. El informe está abajo y se
+      // puede leer; lo que no se puede es cotizar sobre él, y el servidor lo rechazaría.
+      // Decirlo acá y no dejar que lo diga un 409 después de escribir el correo.
+      b.textContent = 'No alcanzamos a medirlo';
+      mensajeCompra('La revisión con navegador no alcanzó a ver tu sitio completo, y no podemos ' +
+        'cotizar lo que no vimos. Vuelve a medirlo desde el resultado: casi siempre es que tu ' +
+        'sitio tardó más de lo que alcanzamos a esperar.');
+    } else {
+      b.textContent = 'Revisando tu sitio…';
+      mensajeCompra('Estamos terminando de revisar tu sitio con un navegador. Son unos segundos ' +
+        'y el botón se activa solo.');
+    }
+  }
+
+  document.addEventListener('vyc:profundo', pintarEspera);
+
+  /**
+   * Antes de salir del sitio, se mira a dónde.
+   *
+   * La URL viene de nuestro servidor, pero nuestro servidor la recibió de un tercero, y un
+   * `location.assign` sobre una cadena sin mirar es el único punto de este flujo donde un valor
+   * malo se convierte en una redirección a cualquier parte.
+   */
+  function destinoDePagoValido(u) {
+    try {
+      const url = new URL(u);
+      if (url.protocol !== 'https:') return false;
+      // ⚠️ ESTA LISTA TIENE QUE CRECER CON CADA PASARELA, Y OLVIDARLO ROMPE LA COMPRA ENTERA.
+      //
+      // Pasó el 30-oct-2026: el servidor ya cobraba por Flow, devolvía su URL correctamente, y
+      // esta función la rechazaba por no ser de Mercado Pago. El pago quedaba CREADO del lado de
+      // Flow y la persona nunca llegaba a él: veía «Reintentar» y un mensaje que no explicaba
+      // nada. El checkout estaba 100% roto y el servidor no tenía ni un error que mostrar,
+      // porque desde su punto de vista todo había salido bien.
+      //
+      // `(^|\.)` importa: sin eso, `malvadoflow.cl` pasaría.
+      return /(^|\.)flow\.cl$/.test(url.hostname) ||
+             /(^|\.)mercadopago\.(com|cl)$/.test(url.hostname) ||
+             /(^|\.)mercadolibre\.(com|cl)$/.test(url.hostname);
+    } catch { return false; }
+  }
+
+  /* VOLVER CON EL BOTÓN «ATRÁS» DESDE MERCADO PAGO.
+   *
+   * Al salir hacia la pasarela el formulario queda deshabilitado y con el texto «Te estamos
+   * llevando a Mercado Pago…», a propósito: la navegación puede tardar y no queremos dos envíos.
+   * Pero si la persona se arrepiente y vuelve atrás, el navegador puede restaurar la página tal
+   * como estaba —desde su caché de ida y vuelta—, y entonces se encuentra con un formulario
+   * muerto, un mensaje que habla de una navegación que ya no está ocurriendo, y ninguna forma
+   * visible de reintentar. Con una campaña pagada encima, eso es alguien que se va.
+   *
+   * `pageshow` con `persisted` es el único aviso de que la página volvió de esa caché.
+   */
+  window.addEventListener('pageshow', function (ev) {
+    if (!panelCompra || !ev.persisted) return;
+    soltarBotonCompra();
+    const id = (function () { try { return sessionStorage.getItem('vyc-ultimo-pedido'); } catch { return null; } })();
+    mensajeCompra(id
+      ? 'Volviste sin terminar el pago. Puedes intentarlo de nuevo acá, o ver tu pedido en verifica.spindlelab.cl/pedido/?id=' + id
+      : 'Volviste sin terminar el pago. Puedes intentarlo de nuevo cuando quieras.');
+  });
+
+  const rescateCompra = panelCompra && panelCompra.querySelector('.compra-rescate');
+
+  /**
+   * Los fallos en los que el pago no se abrió por algo NUESTRO o de Mercado Pago.
+   *
+   * Los otros 409 del checkout —«vuelve a correr el chequeo», «este sitio no necesita el
+   * kit»— ya traen su propia salida y es clara. Ofrecerle encima un formulario a quien solo
+   * tiene que apretar un botón es ruido, y entrena a la gente a ignorar lo que la pantalla
+   * dice. Acá se ofrece únicamente cuando la persona no tiene nada que arreglar de su lado.
+   *
+   * ⚠️ Por eso `correo-no-aceptado` NO está en esta lista, y su ausencia es la decisión
+   * (3-nov-2026). Ese 409 sale cuando la pasarela rechaza el correo del comprador: él lo
+   * arregla escribiendo otro, el campo está ahí mismo y el botón vuelve a quedar activo.
+   * Meterlo acá le mostraría «No es cosa tuya, el problema está de nuestro lado» —el texto
+   * del bloque de rescate— a quien sí puede resolverlo en dos segundos, y lo mandaría a un
+   * formulario en vez de al campo que tiene que corregir.
+   */
+  const FALLO_NUESTRO = ['no-se-pudo-abrir-el-pago', 'no-se-pudo-guardar'];
+
+  function esconderRescate() { if (rescateCompra) rescateCompra.hidden = true; }
+
+  /**
+   * Ofrece dejar los datos cuando el pago no se pudo abrir.
+   *
+   * ── POR QUÉ EXISTE (28-oct-2026) ──────────────────────────────────────────────────────
+   *
+   * Hasta hoy, un fallo del pago terminaba en «vuelve a intentarlo en un momento». Cuando la
+   * causa es nuestra —la cuenta de Mercado Pago bloqueada, por ejemplo— ese reintento falla
+   * otra vez, y la persona se va. Y no es cualquiera: es la única que midió su sitio, leyó las
+   * condiciones y decidió pagar $177.310.
+   *
+   * No inventa un camino nuevo: reutiliza el del formulario, el mismo que usa «Pregúntanos».
+   * El botón lleva `data-pedir`, así que lo atiende el mismo manejador delegado; con un valor
+   * que NO es «kit» cae al camino del formulario en vez de reabrir el panel de compra.
+   */
+  function ofrecerRescate(motivo) {
+    if (!rescateCompra) return;
+    const b = rescateCompra.querySelector('[data-pedir]');
+    const kit = document.querySelector('[data-pedir="kit"]');
+    if (b) {
+      b.setAttribute('data-dominio', dominioCompra || (kit && kit.getAttribute('data-dominio')) || '');
+      b.setAttribute('data-puntaje', (kit && kit.getAttribute('data-puntaje')) || '');
+      // Va en el correo que recibe SpindleLab: estos pedidos no son una pregunta cualquiera,
+      // son una venta que se cayó, y hay que tratarlos distinto.
+      b.setAttribute('data-desde', 'No se pudo abrir el pago' + (motivo ? ' · ' + motivo : ''));
+    }
+    // El correo ya lo escribió una vez. Pedírselo de nuevo, después de que algo falló por
+    // nuestra culpa, es la forma más fácil de que cierre la pestaña.
+    try {
+      const suyo = panelCompra.querySelector('input[name="correo"]');
+      const campo = form && form.elements['Email'];
+      if (suyo && suyo.value && campo && !campo.value) campo.value = suyo.value.trim();
+    } catch (e) { /* si el formulario no está, el botón igual lleva a él */ }
+    rescateCompra.hidden = false;
+  }
+
+  if (panelCompra) panelCompra.addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    if (!panelCompra.reportValidity()) return;
+
+    // Sin medición no se envía, y no se confía en que el botón deshabilitado alcance: la
+    // tecla Enter dentro del campo del correo también envía un formulario, y que el navegador
+    // la frene depende de un detalle de la especificación. En un camino que termina en un
+    // cobro eso no se deja al azar. `pintarEspera` vuelve a dejar el botón como corresponde.
+    if (estadoDelProfundo() !== 'listo') { pintarEspera(); return; }
+
+    // PRIMERA sentencia del envío, antes del fetch: es la capa barata contra el doble clic. La
+    // de verdad está en el servidor, que busca un pedido reciente antes de crear otro.
+    const boton = panelCompra.querySelector('button[type="submit"]');
+    boton.disabled = true;
+    boton.textContent = 'Abriendo el pago…';
+    esconderRescate();
+    panelCompra.querySelectorAll('input').forEach(function (i) { i.disabled = true; });
+    mensajeCompra('Estamos confirmando el precio de tu sitio.');
+    // El mismo umbral y la misma frase que usa el chequeo rápido: dos definiciones distintas de
+    // «lento» en la misma página le enseñan a la gente que los números son arbitrarios.
+    avisoLentoCompra = setTimeout(function () {
+      mensajeCompra('Está tardando más de lo normal. Seguimos.');
+    }, 1500);
+
+    let r, data = null;
+    try {
+      r = await fetch('/api/pedido', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          dominio: dominioCompra,
+          correo: panelCompra.querySelector('input[name="correo"]').value.trim(),
+          consiento: panelCompra.querySelector('input[name="consiento"]').checked === true,
+          utms: UTMS,
+        }),
+        signal: AbortSignal.timeout(30000),
+      });
+      data = await r.json();
+    } catch (err) {
+      soltarBotonCompra('Reintentar');
+      // Dos fallas muy distintas caían en el mismo mensaje. Si `fetch` no llegó a contestar, la
+      // conexión sí es el problema. Si contestó y no pudimos leer la respuesta, el problema es
+      // NUESTRO, y decirle a alguien «revisa tu conexión» cuando su conexión está bien lo manda
+      // a buscar donde no hay nada.
+      mensajeCompra(r
+        ? 'Tuvimos un problema de nuestro lado y no se te cobró nada. Vuelve a intentarlo, o escríbenos a ' + CONTACTO + '.'
+        : 'No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo, o escríbenos a ' + CONTACTO + '.');
+      // Solo si contestó: si la conexión se cayó, el formulario tampoco va a poder enviarse, y
+      // ofrecerlo sería mandarla a otro callejón.
+      if (r) ofrecerRescate('respuesta-ilegible');
+      return;
+    }
+
+    if (data && data.ok && destinoDePagoValido(data.checkout_url)) {
+      mensajeCompra('Te estamos llevando al pago…');
+      // El enlace del pedido se guarda ANTES de salir del sitio. Si la persona abandona la
+      // pasarela y vuelve, esto es lo único que la devuelve a su pedido: el id no se puede
+      // adivinar y el correo tarda.
+      try { sessionStorage.setItem('vyc-ultimo-pedido', data.id); } catch {}
+      location.assign(data.checkout_url);
+      return;  // El botón queda deshabilitado a propósito: la navegación puede tardar.
+    }
+
+    soltarBotonCompra('Reintentar');
+    // `detalle` es texto redactado para una persona, no un código. Cuando no viene —o cuando la
+    // URL de pago no pasó la comprobación— se dice algo honesto en vez de mostrar el motivo
+    // técnico, que no le sirve a nadie en pantalla.
+    mensajeCompra((data && data.detalle) ||
+      'No pudimos abrir el pago. No se te cobró nada. Vuelve a intentarlo, y si te pasa de nuevo escríbenos a ' + CONTACTO + '.');
+    // Sin `motivo` tampoco sabemos de quién fue: ahí se ofrece igual, porque la persona no
+    // tiene cómo saber qué arreglar y el lado seguro es no perderla.
+    if (!data || !data.motivo || FALLO_NUESTRO.indexOf(data.motivo) >= 0) ofrecerRescate(data && data.motivo);
+    if (data && data.motivo) console.warn('compra:', data.motivo);
+  });
+
   document.addEventListener('click', function (ev) {
     const a = ev.target.closest && ev.target.closest('[data-pedir]');
     if (!a) return;
     ev.preventDefault();
+    // El kit se compra en el sitio, así que no baja al formulario largo: abre el paso de dos
+    // campos justo debajo del botón. Los caminos de «pregunta» y de la suscripción siguen
+    // exactamente igual que antes, que es lo que esta guarda de dos líneas protege.
+    if (a.getAttribute('data-pedir') === 'kit') { abrirCompra(a); return; }
     const valor = QUE[a.getAttribute('data-pedir')] || QUE.kit;
     form.querySelectorAll('input[name="Pedido"]').forEach(function (r) { r.checked = r.value === valor; });
     ajustarTextos();

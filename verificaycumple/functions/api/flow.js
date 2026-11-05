@@ -1,0 +1,434 @@
+/**
+ * Flow — el adaptador del medio de pago.
+ *
+ * ── POR QUÉ EXISTE (29-oct-2026) ────────────────────────────────────────────────────────
+ *
+ * Mercado Pago bloqueó la creación de órdenes en producción con un 403 del PolicyAgent y, al
+ * pedirles un plazo, contestaron por escrito que **no tienen uno que sirva para tomar una
+ * decisión operativa**. Eso es un «no nos esperen». Flow pasa a ser el medio de pago.
+ *
+ * Lo que NO cambia: la base de pedidos, los estados, el contrato congelado, la pantalla del
+ * pedido, el correo al comprador, el aviso de venta y el rescate. Todo eso ya está probado y
+ * no depende de quién cobre. Lo único que se reemplaza es abrir el pago y confirmarlo.
+ *
+ * ── EL MODELO DE SEGURIDAD, QUE ES EL MISMO QUE YA TENÍAMOS ──────────────────────────────
+ *
+ * Flow avisa el resultado haciendo POST a `urlConfirmation` con UN token y nada más. Con ese
+ * token hay que llamar a `payment/getStatus` para saber qué pasó. O sea: **no se le cree al
+ * cuerpo de la notificación, se vuelve a preguntar**. Es exactamente la disciplina que ya
+ * aplicamos con Mercado Pago, y por eso el webhook se puede reusar casi entero.
+ *
+ * Fuente: https://www.flow.cl/docs/api.html — leída el 29-oct-2026 antes de escribir una línea.
+ */
+
+import { ESTADOS, ACCIONES as ACCIONES_FLOW } from './pedidos.js';
+
+/** Dónde vive la API. El sandbox no mueve plata; producción sí. */
+export const BASE_SANDBOX = 'https://sandbox.flow.cl/api';
+export const BASE_PRODUCCION = 'https://www.flow.cl/api';
+
+/**
+ * Las credenciales y el entorno, derivados del env UNA sola vez.
+ *
+ * ⚠️ **El valor por defecto es sandbox, y esa dirección está elegida.** Si el día de mañana se
+ * despliega a producción y alguien olvida poner `FLOW_ENTORNO`, lo que pasa es que nadie puede
+ * pagar: ruidoso, gratis y reversible. Al revés —producción por defecto— un error de
+ * configuración en una prueba cobraría de verdad.
+ *
+ * Y se deriva en un solo lugar a propósito: el entorno y la base son el MISMO hecho, y dos
+ * constantes del mismo hecho se contradicen en silencio.
+ */
+export function credencialesFlow(env) {
+  const produccion = String((env && env.FLOW_ENTORNO) || '').trim().toLowerCase() === 'produccion';
+  return {
+    apiKey: env && env.FLOW_API_KEY,
+    secretKey: env && env.FLOW_SECRET_KEY,
+    base: produccion ? BASE_PRODUCCION : BASE_SANDBOX,
+    produccion,
+  };
+}
+
+/** `9` significa «todos los medios de pago» en el parámetro `paymentMethod`. */
+export const TODOS_LOS_MEDIOS = 9;
+
+/** Cuánto esperamos la respuesta de Flow. Mismo criterio que con el otro proveedor: una
+ *  conexión colgada no rechaza sola, y hay una persona mirando la pantalla. */
+const MS_ESPERA = 10000;
+
+/**
+ * Firma los parámetros con la secretKey.
+ *
+ * La receta de Flow, textual: se firman todos los parámetros MENOS `s`, ordenados de forma
+ * alfabética ascendente por nombre, concatenados como `nombrevalornombrevalor` SIN separador
+ * ninguno, y el resultado es un HMAC-SHA256 en hexadecimal.
+ *
+ * ⚠️ El `sort()` de JavaScript ordena por unidad de código UTF-16. Para los nombres de
+ * parámetro que usa Flow —todos ASCII en minúsculas y camelCase— eso coincide con el orden
+ * alfabético que espera su `sort()` de PHP. Si algún día aparece un parámetro con tilde o con
+ * mayúscula inicial, este supuesto deja de ser cierto y la firma empieza a fallar sin que el
+ * código cambie.
+ */
+export async function firmarFlow(params, secretKey) {
+  const limpio = typeof secretKey === 'string' ? secretKey.trim() : secretKey;
+  if (!limpio) throw new Error('No se puede firmar sin la secretKey de Flow');
+  const cadena = Object.keys(params)
+    .filter((k) => k !== 's' && params[k] !== undefined && params[k] !== null)
+    .sort()
+    .map((k) => k + params[k])
+    .join('');
+  const clave = await crypto.subtle.importKey(
+    'raw', new TextEncoder().encode(limpio),
+    { name: 'HMAC', hash: 'SHA-256' }, false, ['sign'],
+  );
+  const firma = await crypto.subtle.sign('HMAC', clave, new TextEncoder().encode(cadena));
+  return [...new Uint8Array(firma)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+/**
+ * Crea el pago y devuelve a dónde hay que mandar a la persona.
+ *
+ * Flow responde con `url` y `token`, y la dirección final se arma concatenando:
+ * `url + "?token=" + token`. Eso lo dice su documentación y no es intuitivo — no viene una
+ * URL lista para usar.
+ *
+ * `timeout` es en SEGUNDOS y reemplaza exactamente la vigencia de 24 horas que ya teníamos:
+ * sin él, una orden impaga queda pagable para siempre, y dos órdenes vivas por el mismo kit
+ * es cobrar dos veces.
+ */
+/**
+ * Los fallos que ocurren ANTES de mandar nada por la red.
+ *
+ * ⚠️ Importa para una frase concreta que la persona lee: «no se te cobró nada». Eso es una
+ * afirmación sobre la plata de alguien y solo se puede decir cuando es cierta.
+ *
+ * Con un fallo de red no lo sabemos: la petición pudo haber salido y el pago pudo haberse
+ * creado del otro lado sin que alcanzáramos a leer la respuesta. Con estos, sí lo sabemos,
+ * porque la llamada nunca ocurrió.
+ */
+export const FALLOS_ANTES_DE_LA_RED = new Set(['sin-credenciales', 'sin-id', 'sin-correo']);
+
+/**
+ * DE QUIÉN ES LA CULPA CUANDO FLOW RECHAZA EL `payment/create` (3-nov-2026).
+ *
+ * ── EL HECHO QUE LO MOTIVA ──────────────────────────────────────────────────────────────
+ *
+ * Se intentó abrir un pago con el correo `control@ejemplo.cl` y Flow contestó
+ * `400 {"code": 1620, "message": "The userEmail: … is not valid."}`. O sea: **Flow valida el
+ * correo del comprador y rechaza algunos**, y hasta hoy esa persona leía «no se pudo abrir el
+ * pago, vuelve a intentarlo» y se iba sin comprar, teniendo nosotros el motivo exacto en la
+ * mano. Reintentar con el mismo correo vuelve a fallar: el consejo era un callejón.
+ *
+ * ── POR QUÉ HACE FALTA EL CÓDIGO Y NO BASTA EL HTTP ─────────────────────────────────────
+ *
+ * Porque **todo es 400**. Medido contra el sandbox el 3-nov-2026, un caso por línea:
+ *
+ *   1620 · `control@ejemplo.cl`, `a@b.cl`, `prueba@gmail.con` y un dominio inexistente: los
+ *          CUATRO dieron `1620 The userEmail: … is not valid`. Es del comprador.
+ *    108 · secretKey equivocada → `Invalid Signature`.          ← nuestra
+ *    109 · apiKey equivocada    → `Invalid ApiKey`.             ← nuestra
+ *   1603 · `urlConfirmation` vacía → `is not valid URL`.        ← nuestra
+ *   1615 · `subject` vacío.                                      ← nuestra
+ *   1680 · moneda `XXX` no soportada.                            ← nuestra
+ *   1682 · monto con decimales.                                  ← nuestra
+ *   1901 · monto 0 → «The minimum amount is 350 CLP».            ← nuestra
+ *   1990 · medio de pago que el comercio no tiene contratado.    ← nuestra
+ *
+ * Los ocho últimos salen de campos que **fija el servidor**, no la persona. El único campo de
+ * este `payment/create` que escribe el comprador es el correo, y tiene su propio código.
+ *
+ * ⚠️ **La especificación pública de Flow NO trae esta tabla.** Se leyó `apiFlow.yaml`, que es
+ * lo que alimenta https://www.flow.cl/docs/api.html: documenta el esquema del error (`code` y
+ * `message`), que 400 es «error del Api» y 401 «error de negocio», y una tabla de códigos de
+ * *intento de pago* (-1, -2, …) que es de otra cosa. Los 16xx no están escritos en ninguna
+ * parte. Por eso esto se midió, igual que `ESTADOS_FLOW`, en vez de suponerse.
+ *
+ * ⚠️ **La lista es de lo que es DEL COMPRADOR, y lo que no está en ella es NUESTRO.** La
+ * dirección está elegida: equivocarse hacia «es nuestro» produce una disculpa de más;
+ * equivocarse hacia «es tuyo» manda a alguien a corregir un correo que estaba bien, por un
+ * problema de configuración que él no puede tocar. Para agregar un código: provocarlo contra
+ * el sandbox y escribirlo con su evidencia, uno por vez.
+ */
+export const RECHAZOS_DEL_COMPRADOR = { 1620: 'correo' };
+
+/**
+ * Qué campo del comprador rechazó Flow, o `null` si el rechazo es nuestro o no lo conocemos.
+ *
+ * Solo cuenta un rechazo de verdad: si Flow contestó `200` y el cuerpo salió raro
+ * (`sin-url-ni-token`), eso no es un veredicto suyo sobre quien compra, es un problema
+ * nuestro aunque el cuerpo traiga un `code`.
+ */
+export function rechazoDelComprador(resultado) {
+  if (!resultado || resultado.ok) return null;
+  if (!(resultado.estadoHttp >= 400)) return null;
+  const c = resultado.detalleFlow && resultado.detalleFlow.code;
+  // El código llega como número en todo lo observado, pero se acepta la forma string por lo
+  // mismo que `montoDe` más abajo: un proveedor que cambia el tipo de un campo no debería
+  // convertir un error del comprador en uno nuestro.
+  const n = typeof c === 'number' ? c
+    : (typeof c === 'string' && c.trim() !== '' && Number.isFinite(Number(c)) ? Number(c) : null);
+  if (n === null || !Object.prototype.hasOwnProperty.call(RECHAZOS_DEL_COMPRADOR, n)) return null;
+  return RECHAZOS_DEL_COMPRADOR[n];
+}
+
+export async function crearPagoFlow({ idPedido, correo, monto, titulo, urls, timeoutSegundos },
+  { apiKey, secretKey, base }, fetchImpl = fetch) {
+  if (!apiKey || !secretKey) return { ok: false, error: 'sin-credenciales' };
+  if (!idPedido) return { ok: false, error: 'sin-id' };
+  if (!correo) return { ok: false, error: 'sin-correo' };
+  if (!Number.isInteger(monto) || monto <= 0) return { ok: false, error: `monto-invalido:${monto}` };
+
+  const params = {
+    apiKey: String(apiKey).trim(),
+    // NUESTRO id de pedido. Es el equivalente de `external_reference`: lo que nos permite
+    // reconocer de quién es el pago cuando Flow avise.
+    commerceOrder: idPedido,
+    subject: String(titulo).slice(0, 255),
+    currency: 'CLP',
+    amount: monto,
+    email: correo,
+    paymentMethod: TODOS_LOS_MEDIOS,
+    urlConfirmation: urls.confirmacion,
+    urlReturn: urls.vuelta,
+  };
+  if (timeoutSegundos) params.timeout = timeoutSegundos;
+
+  let r;
+  try {
+    params.s = await firmarFlow(params, secretKey);
+    r = await fetchImpl(`${base}/payment/create`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(params).toString(),
+      signal: AbortSignal.timeout(MS_ESPERA),
+    });
+  } catch (e) {
+    return { ok: false, error: `red: ${e && e.message}` };
+  }
+
+  let cuerpo = null;
+  try { cuerpo = await r.json(); } catch {}
+  if (!r.ok) {
+    return {
+      ok: false, estadoHttp: r.status, error: `http-${r.status}`, detalleFlow: cuerpo,
+      // El mismo motivo que con el otro proveedor: cuando una API ajena rechaza algo, su
+      // identificador de petición es lo único que les permite encontrar su propio registro.
+      requestId: (r.headers && typeof r.headers.get === 'function'
+        && (r.headers.get('x-request-id') || r.headers.get('X-Request-Id'))) || null,
+    };
+  }
+  if (!cuerpo || !cuerpo.url || !cuerpo.token) {
+    // Sin estos dos no hay a dónde mandar a la persona. El pago PUEDE haber quedado creado del
+    // otro lado, así que esto no es «no pasó nada» y se informa aparte.
+    return { ok: false, error: 'sin-url-ni-token', detalleFlow: cuerpo };
+  }
+  return {
+    ok: true,
+    token: cuerpo.token,
+    flowOrder: cuerpo.flowOrder || null,
+    destino: `${cuerpo.url}?token=${encodeURIComponent(cuerpo.token)}`,
+  };
+}
+
+/**
+ * La página donde paga la persona, armada desde la base de la API.
+ *
+ * ── POR QUÉ HAY QUE ARMARLA, SI FLOW YA LA DEVUELVE (3-nov-2026) ─────────────────────────
+ *
+ * Para el camino feliz no hace falta: `payment/create` devuelve `url` y de ahí sale el
+ * `destino` de acá arriba. Hace falta para REUSAR un pago que ya está abierto, y ahí no hay a
+ * quién preguntárselo:
+ *
+ *   - `payment/getStatus` NO devuelve ninguna URL. Comprobado leyendo el cuerpo entero de tres
+ *     pagos del sandbox el 3-nov-2026: trae `flowOrder`, `commerceOrder`, `status`, `amount`,
+ *     `payer`, `pending_info` y `paymentData`, y nada más.
+ *   - de la fila del pedido solo guardamos el token. Guardar además la URL pedía una columna
+ *     nueva —un ALTER TABLE sobre una base que ya está en producción— para repetir un dato que
+ *     es el MISMO para todos los pagos del entorno.
+ *
+ * ⚠️ **LA RUTA ES OBSERVADA, NO SUPUESTA, Y SOLO EN EL SANDBOX.** Los tres `payment/create` del
+ * experimento del 3-nov devolvieron `url: "https://sandbox.flow.cl/app/web/pay.php"`: el mismo
+ * origen de `BASE_SANDBOX`, con esta ruta. De producción no tenemos ningún pago observado,
+ * porque la cuenta todavía no está aprobada.
+ *
+ * Así que la dirección en que esto puede equivocarse está elegida, igual que el entorno por
+ * defecto de `credencialesFlow`: si en producción la ruta fuera otra, lo que se rompe es el
+ * enlace de quien abandonó el pago y volvió dentro de las 24 h —una página de Flow que no
+ * carga, visible y reclamable—. Lo que NO pasa es cobrarle dos veces, que es lo que pasaba
+ * antes de esto y no se puede deshacer.
+ *
+ * Y no queda sin vigilancia: hay una prueba que compara esta ruta contra el `url` que Flow
+ * devolvió de verdad en el sandbox, así que el día que cambie, se pone rojo.
+ */
+export const RUTA_PAGINA_DE_PAGO = '/app/web/pay.php';
+
+export function paginaDePagoFlow(token, { base } = {}) {
+  if (!token || !base) return null;
+  let pagina;
+  try { pagina = new URL(RUTA_PAGINA_DE_PAGO, base).href; } catch { return null; }
+  // La concatenación es la misma que la del camino feliz, y por el mismo motivo: Flow no
+  // entrega una URL lista, el token va pegado en el query.
+  return `${pagina}?token=${encodeURIComponent(token)}`;
+}
+
+/**
+ * Pregunta por el estado de un pago. Es lo que se llama al recibir la notificación.
+ *
+ * Es un GET con los parámetros en la URL, firmados igual que los del POST.
+ */
+export async function leerPagoFlow(token, { apiKey, secretKey, base }, fetchImpl = fetch) {
+  if (!apiKey || !secretKey) return { ok: false, error: 'sin-credenciales' };
+  if (!token) return { ok: false, error: 'sin-token' };
+  const params = { apiKey: String(apiKey).trim(), token };
+  let r;
+  try {
+    params.s = await firmarFlow(params, secretKey);
+    r = await fetchImpl(`${base}/payment/getStatus?${new URLSearchParams(params).toString()}`, {
+      method: 'GET',
+      signal: AbortSignal.timeout(MS_ESPERA),
+    });
+  } catch (e) {
+    return { ok: false, error: `red: ${e && e.message}` };
+  }
+  let pago = null;
+  try { pago = await r.json(); } catch {}
+  if (!r.ok) return { ok: false, estadoHttp: r.status, error: `http-${r.status}`, detalleFlow: pago };
+  if (!pago || typeof pago !== 'object') return { ok: false, error: 'json-invalido' };
+  return { ok: true, pago };
+}
+
+/**
+ * EL MAPA DE ESTADOS, LLENADO CON PAGOS REALES (29-oct-2026, sandbox).
+ *
+ * `payment/getStatus` devuelve un campo `status` con un número y **Flow no documenta qué
+ * significa cada uno** en su referencia pública. Adivinarlo falla en las dos direcciones: dar
+ * por pagado un rechazo regala el kit, y no reconocer un pago deja al comprador mirando una
+ * pantalla que no avanza.
+ *
+ * Así que no se adivinó. Cada número de acá abajo tiene un pago detrás, hecho en el sandbox y
+ * leído con la sonda (`herramientas/sonda-flow.mjs`):
+ *
+ *   1 · `sonda_bf5b5af5…` recién creado, sin tocar → `paymentData` entero en `null`.
+ *       Es «existe y nadie pagó».
+ *   2 · el mismo pago, después de pagarlo → `paymentData.date "2026-10-29 22:38:02"`,
+ *       `media "Webpay"`, `amount "1000.00"`, `fee "32.00"`, `balance 962`.
+ *       **Observado dos veces**, en dos pagos distintos.
+ *   3 · `sonda_…` rechazado a propósito en el simulador → `paymentData` entero en `null`.
+ *
+ * ⚠️ **El 4 NO está, y es a propósito.** Flow tiene al menos un estado más que no se observó
+ * acá. Escribirlo «porque seguro significa anulada» sería exactamente la suposición que este
+ * mapa existe para evitar. Mientras no esté, un 4 cae en «revisar» y alguien lo mira: molesto,
+ * pero nunca entrega un kit que no se pagó ni cierra una venta que sí.
+ *
+ * Para agregar uno: provocarlo en el sandbox, leerlo con la sonda, y escribirlo con su
+ * evidencia. Un número por vez.
+ *
+ * El valor es el estado DESTINO del pedido, o `null` cuando no hay que moverlo — misma forma
+ * que `MAPA_ORDEN` en `cobro.js`, para que el webhook no tenga que aprender dos contratos.
+ */
+export const ESTADOS_FLOW = {
+  1: null,                   // pendiente: el pedido se queda como está
+  2: ESTADOS.PAGADO,
+  3: ESTADOS.RECHAZADO,
+};
+
+/** Qué decirle a quien lea el registro, por número. */
+const TEXTO_FLOW = {
+  1: 'Flow todavía no recibe el pago.',
+  2: 'Flow confirma el pago.',
+  3: 'Flow rechazó el pago.',
+};
+
+// Las acciones son las mismas para toda pasarela y viven en `pedidos.js`. Se reexporta el
+// MISMO objeto con el nombre que ya usan las pruebas y el endpoint de confirmación: son el
+// mismo hecho, no una copia que pueda divergir.
+export { ACCIONES_FLOW };
+
+/** Un monto de Flow puede venir como número o como string. Se compara en enteros o no se compara. */
+function montoDe(v) {
+  if (typeof v === 'number' && Number.isFinite(v)) return Math.round(v);
+  if (typeof v === 'string' && v.trim() !== '' && !isNaN(Number(v))) return Math.round(Number(v));
+  return null;
+}
+
+/**
+ * Decide qué hacer con un pedido a partir de lo que Flow dice del pago.
+ *
+ * Las comprobaciones son las mismas que ya aprendimos a hacer con el otro proveedor, y cada
+ * una está acá porque allá hizo falta:
+ *   1. Que el pago sea de ESTE pedido (`commerceOrder`), no de otro.
+ *   2. Que el monto calce EXACTO con lo que se vendió.
+ *   3. Que el estado sea uno que conocemos. Lo que no reconocemos, se mira a mano.
+ */
+export function decidirDesdeFlow({ pedido, pago }) {
+  if (!pedido) {
+    return {
+      accion: ACCIONES_FLOW.IGNORAR, estado: null, motivo: 'pedido-desconocido',
+      detalle: 'La notificación no corresponde a ningún pedido nuestro.',
+    };
+  }
+  if (!pago || typeof pago !== 'object') {
+    return {
+      accion: ACCIONES_FLOW.REVISAR, estado: null, motivo: 'sin-pago',
+      detalle: 'No se pudo releer el pago contra la API de Flow. No se toca el pedido.',
+    };
+  }
+  if (pago.commerceOrder !== pedido.id) {
+    return {
+      accion: ACCIONES_FLOW.REVISAR, estado: null, motivo: 'referencia-no-calza',
+      detalle: `El pago dice ser del pedido ${pago.commerceOrder} y se buscó ${pedido.id}.`,
+    };
+  }
+  const monto = montoDe(pago.amount);
+  if (monto === null || monto !== Math.round(Number(pedido.monto_total))) {
+    return {
+      accion: ACCIONES_FLOW.REVISAR, estado: null, motivo: 'monto-no-calza',
+      detalle: `Se vendió en ${pedido.monto_total} y el pago dice ${pago.amount}.`,
+    };
+  }
+
+  const n = pago.status;
+  if (!(n in ESTADOS_FLOW)) {
+    return {
+      accion: ACCIONES_FLOW.REVISAR, estado: null, motivo: 'estado-sin-confirmar',
+      detalle: `Flow devolvió el estado ${n}, que no hemos observado en un pago real. El pedido ` +
+        `NO se mueve hasta que alguien lo mire. Ver ESTADOS_FLOW en flow.js.`,
+    };
+  }
+
+  const destino = ESTADOS_FLOW[n];
+  if (destino === null) {
+    // Existe y nadie pagó. No es un fallo ni hay nada que hacer: es el estado normal entre que
+    // se abre el pago y la persona vuelve. Se devuelve el estado ACTUAL del pedido para que
+    // quien llame no tenga que decidir si eso significa «no lo muevas».
+    return {
+      accion: ACCIONES_FLOW.NADA, estado: pedido.estado, motivo: `flow-${n}`, detalle: TEXTO_FLOW[n],
+    };
+  }
+
+  // ── EL PAGO PARCIAL, QUE ES EL QUE CUESTA PLATA ────────────────────────────────────────
+  //
+  // Un estado «pagado» dice QUE se pagó, no CUÁNTO entró. Con el otro proveedor eso ya fue un
+  // hallazgo real: un reembolso parcial dejaba el pedido en `pagado` y el kit se entregaba
+  // igual, con parte de la plata devuelta.
+  //
+  // La condición es MENOR, no DISTINTO, y la diferencia no es cosmética: en cuotas lo
+  // acreditado puede superar el precio, y comparar por igualdad frenaría la mayoría de las
+  // ventas chilenas, que es la forma más cara de equivocarse en este archivo.
+  //
+  // Si el campo no viene, se sigue. Misma decisión que `DETALLES_PAGO_LIMPIO` en `cobro.js`:
+  // lo ausente no acusa, lo legible y malo sí. Solo vimos `paymentData.amount` en UN pago
+  // observado, y exigirlo siempre convertiría cualquier variación del proveedor en ventas
+  // cobradas y sin marcar.
+  if (destino === ESTADOS.PAGADO) {
+    const acreditado = montoDe(pago.paymentData && pago.paymentData.amount);
+    if (acreditado !== null && acreditado < monto) {
+      return {
+        accion: ACCIONES_FLOW.REVISAR, estado: null, motivo: 'pagado-no-alcanza',
+        detalle: `Flow dice pagado, pero lo acreditado (${pago.paymentData.amount}) es menor que ` +
+          `los ${monto} que se vendieron. No se entrega sin mirarlo.`,
+      };
+    }
+  }
+
+  return { accion: ACCIONES_FLOW.MARCAR, estado: destino, motivo: `flow-${n}`, detalle: TEXTO_FLOW[n] };
+}
