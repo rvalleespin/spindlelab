@@ -473,6 +473,51 @@
   //    archivo llega después y vuelve a escribir _ga cuando ya lo habíamos borrado.
   if (leer() !== 'granted') borrarCookies();
 
+  /* ── EL AVISO NO PUEDE TAPAR NADA ───────────────────────────────────────────────────
+   *
+   * Está fijo al fondo con z-index 999, así que se come lo que haya debajo. Medido el
+   * 2-nov-2026 en producción, con el aviso recién abierto:
+   *   · 375x812 (iPhone): mide 200 px, el 25% de la pantalla, y tapaba 36 de los 55 px del
+   *     botón «Revisar mi sitio gratis» — el 65%;
+   *   · 360x640 (un Android corriente): el 31%, y lo tapaba entero.
+   * Y `document.elementFromPoint` en el centro del botón devolvía este aviso, no el enlace:
+   * en un Android el único camino a la acción de la primera pantalla no se podía tocar.
+   * Le pasaba a cada visitante NUEVO, o sea a todos los que llegan de la campaña.
+   *
+   * Acá solo se PUBLICA cuánto mide, en `--alto-aviso`. La portada lo usa para reservar
+   * espacio al pie del cuerpo y para subir la franja de la espera, que también vive abajo y
+   * quedaba debajo de este aviso.
+   *
+   * ⚠️ Se sincroniza OBSERVANDO el elemento, no llamando desde cada sitio que toca
+   * `banner.hidden`. Hay tres hoy, y el día que aparezca un cuarto nadie se va a acordar de
+   * este bloque: así es como una regla nueva rompe en silencio los `if` viejos. Un
+   * observador no se puede olvidar.
+   */
+  (function publicarAltoDelAviso() {
+    if (!banner) return;
+    var raiz = document.documentElement;
+    var ultimo = null;
+    function sincronizar() {
+      var alto = banner.hidden ? 0 : Math.round(banner.getBoundingClientRect().height);
+      if (alto === ultimo) return;   // sin esto, el observador podría reaccionar a sí mismo
+      ultimo = alto;
+      if (alto > 0) raiz.style.setProperty('--alto-aviso', alto + 'px');
+      else raiz.style.removeProperty('--alto-aviso');
+    }
+    sincronizar();
+    try {
+      if (window.ResizeObserver) new ResizeObserver(sincronizar).observe(banner);
+      if (window.MutationObserver) {
+        new MutationObserver(sincronizar)
+          .observe(banner, { attributes: true, attributeFilter: ['hidden', 'style', 'class'] });
+      }
+    } catch (e) { /* sin observadores quedan los eventos de abajo */ }
+    // Respaldo: el alto del aviso cambia sobre todo cuando cambia el ancho, porque su fila
+    // se parte en dos líneas.
+    window.addEventListener('resize', sincronizar);
+    window.addEventListener('orientationchange', sincronizar);
+  })();
+
   montarControl();
   if (!leer()) abrirBanner(false);
 })();

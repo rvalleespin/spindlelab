@@ -1,0 +1,357 @@
+/**
+ * POST /api/entregar — marcar un pedido como entregado y cerrarlo con el cliente.
+ *
+ * ── POR QUÉ EXISTE (30-oct-2026) ─────────────────────────────────────────────────────────
+ *
+ * Porque `entregado` era un estado INALCANZABLE. Estaba en `ESTADOS`, tenía su transición
+ * válida en `TRANSICIONES` (`pagado → entregado`), tenía su etapa redactada en `etapas.js`,
+ * tenía sus columnas en el esquema (`entregado_en`, `informe_final_json`) y la pantalla del
+ * cliente sabía dibujarlo —hasta cambiaba el rótulo de la lista a «Lo que dejamos hecho»—.
+ *
+ * Y ningún código lo escribía. El grep de `ENTREGADO` daba solo lecturas. O sea que el camino
+ * del producto terminaba en «Estamos trabajando en tu sitio», para siempre, y el único cierre
+ * posible era un UPDATE a mano en la base de producción, que además no manda ningún correo.
+ *
+ * ── LA LLAVE NO ES EL ENLACE, ACÁ SÍ HAY SECRETO ─────────────────────────────────────────
+ *
+ * Todo el resto del producto se abre con el enlace del pedido, y eso es correcto para lo que
+ * el cliente puede hacer: escribir su razón social, declarar que dio el acceso. Son cosas
+ * suyas y reversibles.
+ *
+ * Esto es distinto. Este endpoint cierra un trabajo, le dice a alguien que su sitio está
+ * listo, y deja constancia de una entrega que podría tener que defenderse. No lo puede
+ * disparar quien tenga el enlace: lo disparamos nosotros. Así que va con un secreto en
+ * `CLAVE_ENTREGA`, que vive solo en los secretos de Pages.
+ *
+ * **Y FALLA CERRADO.** Si el secreto no está cargado, no se entrega nada: se contesta que no
+ * se puede autenticar. La alternativa —«sin clave configurada, pasa»— es la forma más rápida
+ * de dejar un endpoint que marca entregas abierto a internet, y ya vimos en este mismo
+ * producto lo que cuesta un secreto que se ve «presente» y no sirve.
+ *
+ * ── Y NO MIENTE SOBRE EL CORREO ──────────────────────────────────────────────────────────
+ *
+ * El correo de cierre puede no salir (Resend caído, clave vencida). El trabajo igual está
+ * hecho y el pedido igual se marca: desmarcar una entrega real porque un correo falló sería
+ * peor. Lo que NO se hace es callarlo — la respuesta trae `correo_enviado`, y la etapa del
+ * cliente dice «te mandamos el detalle por correo; si no te llegó, escríbenos», que es cierto
+ * en los dos casos.
+ */
+
+import { leerPedido, marcarEstado, vistaPublica, corregirBorrador } from './almacen.js';
+import { etapaDelPedido, señalesDelPedido, TITULOS } from './etapas.js';
+import { ESTADOS, ID_PEDIDO_NUESTRO } from './pedidos.js';
+import { enviarCorreoDeEntrega } from './correo.js';
+
+function json(cuerpo, estado = 200) {
+  return new Response(JSON.stringify(cuerpo), {
+    status: estado,
+    headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
+  });
+}
+
+/**
+ * Compara dos secretos sin que el TIEMPO de la comparación diga cuántos caracteres acertó.
+ *
+ * Un `===` se corta en el primer byte distinto, así que medir el tiempo de muchos intentos
+ * filtra el secreto letra por letra. Acá no es la defensa principal —son 64 hex de azar sobre
+ * una red con latencia— pero cuesta ocho líneas y evita tener que argumentar por qué no.
+ *
+ * Compara SIEMPRE el largo completo del esperado, y el largo distinto se trata como un fallo
+ * más (no como un atajo), para no filtrar el largo tampoco.
+ */
+export function mismoSecreto(dado, esperado) {
+  if (typeof dado !== 'string' || typeof esperado !== 'string') return false;
+  if (!esperado) return false;
+  let distinto = dado.length === esperado.length ? 0 : 1;
+  for (let i = 0; i < esperado.length; i++) {
+    distinto |= esperado.charCodeAt(i) ^ (dado.charCodeAt(i % (dado.length || 1)) || 0);
+  }
+  return distinto === 0;
+}
+
+/** El secreto que llega en la cabecera, o cadena vacía. */
+export function claveDeLaPeticion(request) {
+  const h = (request && request.headers && request.headers.get('Authorization')) || '';
+  const m = /^Bearer\s+(.+)$/i.exec(h.trim());
+  return m ? m[1].trim() : '';
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════ *
+ * EL BORRADOR DE LA POLÍTICA, QUE AHORA VIAJA POR ACÁ
+ *
+ * ── POR QUÉ ES OBLIGATORIO PARA CERRAR (3-nov-2026) ──────────────────────────────────────
+ *
+ * Era el hueco más grande entre pagar y recibir: el documento central del kit no tenía forma
+ * de llegar. Este endpoint cerraba el pedido, el correo de cierre decía qué quedó cerrado y el
+ * antes y el después, la pantalla afirmaba «lo que dejamos hecho», y el texto por el que la
+ * persona pagó $177.310 no salía por ningún camino implementado. Sin adjunto, sin columna, sin
+ * nada.
+ *
+ * Y no es solo del que compró la señal `politica`. TODO pedido lo lleva: el correo de pago le
+ * pide los datos de su empresa «para armar el borrador de tu política», las condiciones de
+ * venta lo listan dentro del kit, y `recordatoriosDeCierre` le dice a los dos tipos de
+ * comprador que lo tiene que revisar su abogado. O sea que cerrar un pedido sin borrador deja
+ * al producto afirmando por escrito, tres veces, algo que no entregó.
+ *
+ * Por eso cerrar sin él no es un descuido que se avise: es un 409. Es el mismo criterio de
+ * «falla cerrado» de la clave de arriba, aplicado a lo que se entrega en vez de a quién
+ * entrega. Si alguna vez hace falta cerrar un pedido sin borrador, la respuesta dice cómo.
+ *
+ * ── Y NO HACE FALTA NINGÚN ALMACENAMIENTO NUEVO ──────────────────────────────────────────
+ *
+ * Es texto. Una política de privacidad son unas decenas de KB de prosa, así que viaja en el
+ * mismo JSON que ya trae `informe_final`, se guarda en su columna del pedido, se muestra en la
+ * pantalla privada y va en el correo de cierre. Nada de buckets ni de servicios aparte.
+ * ══════════════════════════════════════════════════════════════════════════════════════════ */
+
+/**
+ * Lo más corto que puede ser un borrador de política para que sea uno.
+ *
+ * El número es arbitrario y el motivo no: sin un piso, un `borrador_politica: "listo"` pasaría
+ * la validación, se guardaría como entregado, y el correo de cierre le mandaría al cliente una
+ * palabra bajo el rótulo «el borrador de tu política de privacidad». Los doce puntos que la
+ * ley pide publicar no caben en 200 caracteres ni escribiéndolos en clave.
+ */
+export const MINIMO_BORRADOR = 200;
+
+/**
+ * Y el techo. No es una restricción de la base —D1 aguanta mucho más— sino del correo: el
+ * borrador viaja en el cuerpo, y un texto de megabytes lo hace rebotar en vez de llegar.
+ * 60.000 caracteres son unas quince páginas, bastante más de lo que ocupa cualquier política.
+ */
+export const MAXIMO_BORRADOR = 60000;
+
+/**
+ * El borrador tal como se va a guardar, o `null` si lo que vino no sirve.
+ *
+ * Se normalizan los saltos de Windows y se quitan los caracteres de control que no son salto
+ * ni tabulación: este texto termina en un correo HTML y en una pantalla, y un byte de control
+ * ahí no aporta nada y sí puede estropear el render. Los saltos de línea SÍ se conservan, que
+ * es lo que distingue un documento de un párrafo.
+ */
+/**
+ * El largo del borrador, como regla y no como dos copias.
+ *
+ * Desde el 4-nov la comprueban DOS caminos —el cierre y la corrección de un pedido ya
+ * entregado— y tener el piso y el techo escritos dos veces es cómo se separan en silencio.
+ * Devuelve el cuerpo del error, o `null` si el largo sirve.
+ */
+export function largoFueraDeRango(borrador) {
+  if (borrador.length < MINIMO_BORRADOR) {
+    return {
+      ok: false, motivo: 'borrador-muy-corto',
+      detalle: `El borrador trae ${borrador.length} caracteres y el mínimo son `
+        + `${MINIMO_BORRADOR}. Lo que la ley pide publicar no cabe en menos.`,
+    };
+  }
+  if (borrador.length > MAXIMO_BORRADOR) {
+    return {
+      ok: false, motivo: 'borrador-muy-largo',
+      detalle: `El borrador trae ${borrador.length} caracteres y el tope son `
+        + `${MAXIMO_BORRADOR}: va en el cuerpo del correo de cierre, y uno más largo rebota.`,
+    };
+  }
+  return null;
+}
+
+export function interpretarBorrador(v) {
+  if (typeof v !== 'string') return null;
+  const limpio = v
+    .replace(/\r\n?/g, '\n')
+    // eslint-disable-next-line no-control-regex
+    .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g, '')
+    .trim();
+  return limpio ? limpio : null;
+}
+
+/** El informe final, venga como objeto o como su texto JSON. `null` si no vino o no sirve. */
+export function interpretarInforme(v) {
+  if (typeof v === 'string') {
+    try { v = JSON.parse(v); } catch { return null; }
+  }
+  return (v && typeof v === 'object' && !Array.isArray(v)) ? v : null;
+}
+
+export async function onRequestPost(contexto) {
+  const { request, env } = contexto;
+
+  // El secreto se limpia por lo mismo que el de Flow y el de Resend: uno pegado con un espacio
+  // al final se ve CARGADO en el panel y no calza con nada.
+  const esperado = typeof env.CLAVE_ENTREGA === 'string' ? env.CLAVE_ENTREGA.trim() : '';
+  if (!esperado) {
+    return json({
+      ok: false, motivo: 'sin-clave',
+      detalle: 'Falta CLAVE_ENTREGA en los secretos del proyecto. Sin ella no se puede ' +
+        'autenticar una entrega, así que no se entrega nada.',
+    }, 409);
+  }
+  if (!mismoSecreto(claveDeLaPeticion(request), esperado)) {
+    return json({ ok: false, motivo: 'sin-permiso' }, 401);
+  }
+
+  if (!env.VYC_PEDIDOS) return json({ ok: false, motivo: 'sin-base' }, 409);
+
+  let cuerpo = null;
+  try { cuerpo = await request.json(); } catch { cuerpo = null; }
+  if (!cuerpo || typeof cuerpo !== 'object') {
+    return json({ ok: false, motivo: 'cuerpo-invalido' }, 400);
+  }
+
+  const id = typeof cuerpo.id === 'string' ? cuerpo.id : '';
+  if (!ID_PEDIDO_NUESTRO.test(id)) return json({ ok: false, motivo: 'id-invalido' }, 400);
+
+  let pedido;
+  try { pedido = await leerPedido(env.VYC_PEDIDOS, id); } catch {
+    return json({ ok: false, motivo: 'error-de-lectura' }, 409);
+  }
+  if (!pedido) return json({ ok: false, motivo: 'no-existe' }, 404);
+
+  if (pedido.estado === ESTADOS.ENTREGADO) {
+    // ── CORREGIR EL BORRADOR DE UN PEDIDO YA ENTREGADO (4-nov-2026) ────────────────────
+    //
+    // Hasta hoy esta rama cortaba en seco y la copia del cliente quedaba congelada con el
+    // error: una errata, un RUT mal copiado o el texto que devolvió su abogado no tenían por
+    // dónde entrar. Pasó en la primera entrega real.
+    //
+    // Hace falta la BANDERA explícita. Sin ella, un reintento del cierre —que es el caso
+    // normal de llamar dos veces— pisaría el borrador bueno con lo que trajera el cuerpo, sin
+    // que nadie lo pidiera. Corregir se pide; repetir no corrige.
+    //
+    // No manda correo, a propósito: el cliente ya recibió el cierre, y mandarle otro le haría
+    // creer que hubo trabajo nuevo. Que lo corregimos se lo dice una persona.
+    if (cuerpo && cuerpo.corregir_borrador === true) {
+      const texto = interpretarBorrador(cuerpo.borrador_politica);
+      if (!texto) {
+        return json({
+          ok: false, motivo: 'falta-borrador',
+          detalle: 'Pediste corregir el borrador y no vino texto en "borrador_politica".',
+        }, 400);
+      }
+      const fuera = largoFueraDeRango(texto);
+      if (fuera) return json(fuera, 400);
+
+      const r = await corregirBorrador(env.VYC_PEDIDOS, id, texto);
+      if (!r.corregido) return json({ ok: false, motivo: r.motivo }, 409);
+
+      const puesto = (await leerPedido(env.VYC_PEDIDOS, id)) || pedido;
+      return json({
+        ok: true, ya_estaba: true, correo_enviado: false,
+        borrador_corregido: r.largo,
+        pedido: vistaPublica(puesto),
+        etapa: etapaDelPedido(puesto),
+        señales: señalesDelPedido(puesto, TITULOS),
+      });
+    }
+
+    // Entregar dos veces no es un error que haya que gritar, pero tampoco se vuelve a mandar el
+    // correo: el cliente ya lo recibió, y repetirlo le haría creer que hubo un trabajo nuevo.
+    return json({
+      ok: true, ya_estaba: true, correo_enviado: false,
+      pedido: vistaPublica(pedido),
+      etapa: etapaDelPedido(pedido),
+      señales: señalesDelPedido(pedido, TITULOS),
+    });
+  }
+  if (pedido.estado !== ESTADOS.PAGADO) {
+    return json({
+      ok: false, motivo: 'no-se-puede-entregar',
+      detalle: `Este pedido está en "${pedido.estado}". Solo se entrega uno pagado.`,
+      estado: pedido.estado,
+    }, 409);
+  }
+
+  // El informe se acepta como objeto O como el texto JSON de un objeto. Lo segundo es la
+  // forma natural de mandarlo desde un script que acaba de leer la salida del chequeo de un
+  // archivo, y antes se descartaba EN SILENCIO: el cuerpo se aceptaba, la entrega salía 200,
+  // y la medición que alguien sí había corrido se perdía. El propio `correoDeEntrega` ya
+  // tolera las dos formas para `informe_json`, así que acá era una incoherencia, no un
+  // criterio.
+  //
+  // Un array no entra: `[]` es `typeof 'object'` y no es un informe. Y si el texto no parsea,
+  // tampoco: se trata igual que no haberlo mandado, y el correo lo dice.
+  const informeFinal = interpretarInforme(cuerpo.informe_final);
+
+  // ── EL BORRADOR. Ver el bloque de arriba: sin él no se cierra. ─────────────────────────
+  //
+  // Un borrador ya guardado también vale, para que un cierre que haya fallado después de
+  // escribirlo se pueda repetir sin volver a mandar el texto entero.
+  const borrador = interpretarBorrador(cuerpo.borrador_politica)
+    || interpretarBorrador(pedido.borrador_politica);
+  if (!borrador) {
+    return json({
+      ok: false, motivo: 'falta-borrador',
+      detalle: 'Este pedido no se cierra sin el borrador de la política. Manda el texto en ' +
+        '"borrador_politica". Todo kit lo incluye: el correo de pago se lo prometió y el ' +
+        'correo de cierre le va a decir que lo revise su abogado, así que cerrar sin él deja ' +
+        'al producto afirmando algo que no entregó.',
+    }, 409);
+  }
+  const fueraDeRango = largoFueraDeRango(borrador);
+  if (fueraDeRango) return json(fueraDeRango, 400);
+
+  const movido = await marcarEstado(env.VYC_PEDIDOS, id, ESTADOS.PAGADO, ESTADOS.ENTREGADO, {
+    entregado_en: new Date().toISOString(),
+    // Se guarda incluso cuando no vino: `null` es el dato de que no se pudo rehacer la
+    // medición, y es distinto de una columna que nadie escribió nunca.
+    informe_final_json: informeFinal ? JSON.stringify(informeFinal) : null,
+    // En la MISMA transacción que marca la entrega, a propósito. Si el borrador se escribiera
+    // después, un fallo entre las dos escrituras dejaría un pedido entregado cuya pantalla
+    // afirma el trabajo y no tiene el texto que lo justifica, que es exactamente el estado del
+    // que venimos.
+    borrador_politica: borrador,
+  });
+  if (!movido.movido) {
+    return json({ ok: false, motivo: movido.motivo }, 409);
+  }
+
+  const fresco = (await leerPedido(env.VYC_PEDIDOS, id)) || pedido;
+
+  // El correo se ESPERA, al revés que los avisos internos. Acá quien está del otro lado no es
+  // un cliente con una pantalla cargando: somos nosotros entregando, y lo único que queremos
+  // saber es si el cierre le llegó. Esperarlo es el punto.
+  // ⚠️ EL try/catch ES DE ACÁ, AUNQUE EL QUE MANDA EL CORREO YA TENGA EL SUYO.
+  //
+  // `enviarCorreoDeEntrega` promete no lanzar nunca, y hoy cumple. Pero este `await` ocurre
+  // DESPUÉS de haber escrito el estado en la base: si algún día esa promesa se rompe —un
+  // cambio en el módulo del correo, una excepción antes de su propio try— el pedido quedaría
+  // marcado como entregado y la Function lanzaría, o sea un 500 que Cloudflare reemplaza por
+  // su página de error. Quien entregó vería un fallo sobre un trabajo que sí quedó entregado,
+  // y lo más probable es que reintentara.
+  //
+  // El invariante que importa es local: pasada la escritura, de acá no sale una excepción.
+  // Depender de que un módulo vecino siga cumpliendo su promesa es dejarlo escrito en otro
+  // archivo. Lo encontró una mutación: al hacer lanzar al mailer, la prueba ABORTABA en vez
+  // de acusar, que es justo lo que pasaría en producción.
+  let correoEnviado = false;
+  try {
+    correoEnviado = await enviarCorreoDeEntrega(
+      fresco, informeFinal, TITULOS, env.RESEND_API_KEY,
+    );
+  } catch (e) {
+    console.log(`[entregar] el correo de cierre lanzó: ${e && e.message}`);
+  }
+
+  return json({
+    ok: true,
+    entregado: true,
+    correo_enviado: correoEnviado,
+    // Tres cosas que quien entrega necesita ver sin ir a la base.
+    hubo_informe_final: Boolean(informeFinal),
+    // El largo y no el texto: es la constancia de que el borrador quedó guardado, y devolver
+    // el documento entero en la respuesta de un cierre no le sirve a nadie.
+    borrador_guardado: borrador.length,
+    sin_acceso_declarado: !fresco.acceso_recibido_en,
+    // ⚠️ El que se entrega SIN que nadie le haya avisado que empezamos. Su plazo de retracto
+    // nunca se cerró (art. 5 del Decreto 52 de 2024), así que el cierre le llega con el
+    // derecho a retractarse todavía abierto. No se arregla mandando el aviso ahora: se mira.
+    sin_aviso_de_inicio: !fresco.inicio_avisado_en,
+    pedido: vistaPublica(fresco),
+    etapa: etapaDelPedido(fresco),
+    señales: señalesDelPedido(fresco, TITULOS),
+  });
+}
+
+export async function onRequest(contexto) {
+  if (contexto.request.method === 'POST') return onRequestPost(contexto);
+  return new Response('Method Not Allowed', { status: 405, headers: { Allow: 'POST' } });
+}

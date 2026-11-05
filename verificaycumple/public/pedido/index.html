@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tu pedido · Verifica y Cumple</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://verifica.spindlelab.cl/pedido/">
+<meta name="description" content="El estado de tu pedido del kit de implementación de Verifica y Cumple.">
+
+<!--
+  LA PANTALLA DEL PEDIDO.
+
+  Se entra con el enlace y nada más: el id son 32 caracteres hexadecimales de azar, así que la
+  URL es la llave. Sin cuenta, sin contraseña, sin registro. Es coherente con el chequeo
+  gratuito, que tampoco pide correo, y era el hueco que marcó la revisión externa: el brief
+  creaba un «espacio privado» sin decir nunca cómo se entra.
+
+  `noindex` porque es una página personal: no tiene por qué estar en un buscador.
+
+  Lo que esta pantalla NO hace, a propósito:
+   - No muestra una barra de seis pasos. El sistema sabe cinco etapas y cada una sale de un
+     dato guardado. Fingir que sabe más sería teatro, y este producto declina en vez de
+     inventar en todas sus otras partes.
+   - No pide nada cuando no le toca al cliente. Una pantalla que siempre pide algo entrena a
+     la persona a ignorarla.
+   - No se refresca sola salvo mientras se confirma el pago, que es lo único que se mueve sin
+     que nadie haga nada.
+-->
+
+<style>
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: swap;
+    src: url("/assets/fonts/archivo-black-latin.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+      U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+      U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Archivo Black"; font-style: normal; font-weight: 400; font-display: swap;
+    src: url("/assets/fonts/archivo-black-latin-ext.woff2") format("woff2");
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+      U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+      U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  :root {
+    --azul-600: #2e5bff; --lima-400: #d6ff3d; --rosa-500: #ff3ea0;
+    --tinta-900: #17163a; --tinta-500: #56547a;
+    --crema-50: #fffdf9; --crema-100: #fffaf0; --crema-200: #f7f2ea;
+    --arena-300: #e2d6bf; --blanco: #fff;
+    --verde-700: #0d6d61; --verde-100: #e2f1ed;
+    --ambar-700: #a8560f; --ambar-100: #fbe8d6;
+    --display: "Archivo Black", Impact, Georgia, serif;
+    --cuerpo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--crema-100); color: var(--tinta-900);
+    font-family: var(--cuerpo); font-size: 17px; line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .envoltura { max-width: 680px; margin: 0 auto; padding: 32px 20px 80px; }
+
+  .marca { font-family: var(--display); font-size: 20px; letter-spacing: -.02em; margin: 0 0 32px; }
+  .marca a { color: var(--tinta-900); text-decoration: none; }
+  .marca .punto { color: var(--azul-600); }
+
+  .tarjeta {
+    background: var(--blanco); border: 1px solid var(--arena-300);
+    border-radius: 18px; padding: 28px 24px; margin: 0 0 20px;
+  }
+  .etiqueta {
+    font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--tinta-500); margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--display); font-size: 29px; line-height: 1.15; letter-spacing: -.02em;
+    margin: 0 0 14px;
+  }
+  .detalle { margin: 0 0 4px; color: var(--tinta-900); }
+  .sigue { margin: 16px 0 0; color: var(--tinta-500); font-size: 15.5px; }
+
+  /* Lo que le toca hacer al cliente. Es lo único con color fuerte en la página: si hay una
+     acción pendiente, tiene que ser lo primero que se vea. */
+  .te-toca {
+    margin: 20px 0 0; padding: 18px 18px; border-radius: 14px;
+    background: var(--ambar-100); border: 1px solid #e8c49b;
+  }
+  .te-toca .etiqueta { color: var(--ambar-700); }
+  .te-toca p { margin: 0; }
+  .intake { margin: 14px 0 12px; display: grid; gap: 10px; }
+  .intake label { display: block; font-size: .92rem; }
+  .intake input, .intake select { display: block; width: 100%; margin-top: 5px; padding: 9px 11px;
+            font: inherit; border-radius: 9px; border: 1px solid rgba(0,0,0,.22); background: #fff; }
+  .intake button[disabled] { opacity: .6; cursor: progress; }
+  .intake-estado { margin: 2px 0 0; font-size: .88rem; }
+  /* ⚠️ `display: none` NO, aunque esté vacío. Son regiones vivas (role="status"): un lector
+     de pantalla las anuncia cuando CAMBIAN, y una región que entra al árbol de accesibilidad
+     ya poblada —porque estaba oculta y apareció con texto en la misma mutación— es justo el
+     caso que los lectores no anuncian. El margen en cero le da altura cero mientras está
+     vacía, que es lo que queríamos, sin sacarla del árbol. */
+  .intake-estado:empty { margin: 0; }
+  .boton.secundario { background: none; border: 1px solid currentColor; }
+  .te-toca .boton {
+    display: inline-block; margin: 14px 0 0; padding: 12px 20px; border-radius: 999px;
+    background: var(--tinta-900); color: var(--blanco); text-decoration: none;
+    font-weight: 700; font-size: 15.5px;
+  }
+  .te-toca .boton:hover { background: var(--azul-600); }
+
+  /* Las tres salidas para dar el acceso. Van en <details> nativos: se abren sin JS, el
+     teclado los recorre solo, y el que no te sirve ocupa una línea en vez de un párrafo. */
+  .ayuda { margin: 16px 0 0; }
+  .ayuda details { border-top: 1px solid #e8c49b; padding: 11px 0; }
+  .ayuda details:last-of-type { border-bottom: 1px solid #e8c49b; }
+  .ayuda summary { cursor: pointer; font-weight: 700; font-size: 15.5px; }
+  .ayuda summary:focus-visible { outline: 2px solid var(--tinta-900); outline-offset: 3px; }
+  .ayuda ol, .ayuda ul { margin: 11px 0 0; padding-left: 20px; }
+  .ayuda li { margin-bottom: 7px; }
+  .ayuda p { margin: 11px 0 0; font-size: 15.5px; }
+  .ayuda .porque, .ayuda .alfinal { color: var(--tinta-500); font-size: 14.8px; }
+  .ayuda textarea {
+    width: 100%; margin: 11px 0 0; padding: 12px; font: inherit; font-size: 14px;
+    line-height: 1.5; border-radius: 9px; border: 1px solid rgba(0,0,0,.22);
+    background: var(--blanco); resize: vertical;
+  }
+  .ayuda .copiar {
+    margin: 9px 0 0; padding: 9px 16px; border-radius: 999px; background: none;
+    border: 1px solid var(--tinta-900); color: var(--tinta-900);
+    font: inherit; font-weight: 700; font-size: 14.5px; cursor: pointer;
+  }
+  .ayuda .copiado { margin: 7px 0 0; font-size: .88rem; }
+  .ayuda .copiado:empty { margin: 0; }  /* misma razón: es role="status" */
+
+  /* Cuando la página deja de revisar sola. Ver el comentario del script: la etapa dice «esta
+     página se actualiza sola» y eso dejaba de ser cierto a los dos minutos, sin avisar. */
+  .sin-refresco {
+    margin: 20px 0 0; padding: 15px 16px; border-radius: 12px;
+    background: var(--crema-200); font-size: 15.5px;
+  }
+  .sin-refresco p { margin: 0 0 11px; }
+  .sin-refresco button {
+    padding: 10px 18px; border-radius: 999px; background: none;
+    border: 1px solid var(--tinta-900); color: var(--tinta-900);
+    font: inherit; font-weight: 700; font-size: 15px; cursor: pointer;
+  }
+
+  /* Lo que queda del lado del cliente en un pedido TERMINADO. Deliberadamente calmado: no
+     bloquea nada, no lleva botón, y no compite con la caja ámbar —que significa «tu pedido
+     está detenido esperándote» y acá sería falsa—. Pero tiene que quedar visible para
+     siempre: una de las dos cosas es borrar una cuenta de administrador nuestra que quedó
+     viva en su sitio. */
+  .recordatorios {
+    margin: 20px 0 0; padding: 16px 18px; border-radius: 14px;
+    background: var(--crema-100); border: 1px solid var(--crema-200);
+  }
+  .recordatorios ul { list-style: none; padding: 0; margin: 0; }
+  .recordatorios li { padding: 7px 0 7px 22px; position: relative; font-size: 15.5px; }
+  .recordatorios li::before {
+    content: ""; position: absolute; left: 0; top: 14px;
+    width: 12px; height: 2px; border-radius: 2px; background: var(--tinta-500);
+  }
+
+  .listo { background: var(--verde-100); border-color: #b9dcd4; }
+  .listo .etiqueta { color: var(--verde-700); }
+
+  .dato { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0;
+          border-bottom: 1px solid var(--crema-200); font-size: 15.5px; }
+  .dato:last-child { border-bottom: 0; }
+  .dato span:first-child { color: var(--tinta-500); }
+  .dato span:last-child { text-align: right; font-weight: 600; }
+
+  ul.senales { list-style: none; padding: 0; margin: 10px 0 0; }
+  ul.senales li { padding: 7px 0 7px 26px; position: relative; font-size: 15.5px; }
+  ul.senales li::before {
+    content: ""; position: absolute; left: 0; top: 14px;
+    width: 14px; height: 2px; border-radius: 2px; background: var(--azul-600);
+  }
+  ul.senales.fuera li::before { background: var(--arena-300); }
+  .nota { font-size: 14.5px; color: var(--tinta-500); margin: 12px 0 0; }
+
+  /* La tarjeta del borrador. El texto va en un textarea y no en un <pre> a propósito: el
+     botón de copiar necesita poder seleccionarlo, y un campo de solo lectura se recorre con el
+     teclado y se puede ampliar arrastrando. La advertencia lleva color porque es la frase que
+     no se puede perder de vista: entregamos un borrador, no una política publicada. */
+  .aviso-borrador {
+    margin: 0 0 12px; padding: 13px 15px; border-radius: 12px;
+    background: var(--ambar-100); border: 1px solid #e8c49b;
+    font-size: 15.5px;
+  }
+  .tarjeta > textarea {
+    width: 100%; margin: 14px 0 0; padding: 13px; font: inherit; font-size: 14.5px;
+    line-height: 1.55; border-radius: 10px; border: 1px solid rgba(0,0,0,.22);
+    background: var(--crema-50); resize: vertical;
+  }
+  .tarjeta > .copiar {
+    margin: 10px 0 0; padding: 10px 18px; border-radius: 999px; background: none;
+    border: 1px solid var(--tinta-900); color: var(--tinta-900);
+    font: inherit; font-weight: 700; font-size: 15px; cursor: pointer;
+  }
+  .tarjeta > .copiado { margin: 8px 0 14px; font-size: .9rem; }
+  .tarjeta > .copiado:empty { margin: 0 0 14px; }  /* misma razón que las otras: es role="status" */
+
+  .cargando, .error { text-align: center; padding: 50px 0; color: var(--tinta-500); }
+  .pie { margin: 36px 0 0; font-size: 14.5px; color: var(--tinta-500); text-align: center; }
+  .pie a { color: var(--tinta-500); }
+
+  @media (max-width: 520px) {
+    .envoltura { padding: 24px 16px 60px; }
+    h1 { font-size: 25px; }
+    .dato { flex-direction: column; gap: 2px; }
+    .dato span:last-child { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="envoltura">
+  <p class="marca"><a href="/">Verifica y Cumple<span class="punto">.</span></a></p>
+  <div id="contenido"><p class="cargando">Buscando tu pedido…</p></div>
+  <p class="pie">
+    ¿Algo no calza? Escríbenos a
+    <a href="mailto:hola@spindlelab.cl">hola@spindlelab.cl</a> con este enlace.
+  </p>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var contenido = document.getElementById('contenido');
+
+  function escapar(t) {
+    return String(t == null ? '' : t)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function pesos(n) {
+    if (typeof n !== 'number' || !isFinite(n)) return '';
+    return '$' + n.toLocaleString('es-CL');
+  }
+
+  function fecha(iso) {
+    if (!iso) return '';
+    try {
+      return new Date(iso).toLocaleDateString('es-CL', { day: 'numeric', month: 'long', year: 'numeric' });
+    } catch (e) { return ''; }
+  }
+
+  /* La fecha CON HORA, que se usa en un solo dato y por un motivo concreto: el aviso de que
+     el trabajo empezó. Las condiciones de venta dicen que queda anotado acá con su fecha y su
+     hora, y de ese instante depende hasta cuándo se podía retractar. Para el resto de las
+     fechas la hora no le aporta nada a nadie. */
+  function fechaYHora(iso) {
+    if (!iso) return '';
+    try {
+      return new Date(iso).toLocaleString('es-CL',
+        { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+    } catch (e) { return ''; }
+  }
+
+  // El id sale de la ruta (/pedido/vyc_abc) o del query (?id=vyc_abc). Las dos formas, porque
+  // el enlace del correo puede quedar de cualquiera de las dos maneras.
+  function idDelPedido() {
+    var porQuery = new URLSearchParams(location.search).get('id');
+    if (porQuery) return porQuery;
+    var m = location.pathname.match(/\/pedido\/(vyc_[0-9a-f]+)\/?$/i);
+    return m ? m[1] : null;
+  }
+
+  function noEncontrado() {
+    contenido.innerHTML =
+      '<div class="tarjeta">' +
+        '<h1>No encontramos este pedido</h1>' +
+        '<p class="detalle">El enlace puede estar incompleto. Fíjate que lo hayas copiado entero, ' +
+        'incluyendo todo lo que va después de la última barra.</p>' +
+        '<p class="sigue">Si lo copiaste bien y aun así no aparece, escríbenos y lo buscamos.</p>' +
+      '</div>';
+  }
+
+  /* ── Los datos de la empresa ──────────────────────────────────────────────────────────
+   *
+   * Son los cuatro que la ley pide publicar en una política, más en qué plataforma está el
+   * sitio, que es lo que nos deja decirle dónde crear la invitación.
+   *
+   * No pide contraseña ni crea una cuenta: la llave es este enlace. Y no pide el acceso por acá,
+   * porque un acceso no se manda por un formulario — se crea una invitación en su plataforma y
+   * nosotros comprobamos que entra.
+   */
+  var PLATAFORMAS = [
+    ['wordpress', 'WordPress'], ['webflow', 'Webflow'], ['wix', 'Wix'],
+    ['squarespace', 'Squarespace'], ['shopify', 'Shopify'], ['jimdo', 'Jimdo'],
+    ['a-medida', 'Hecho a medida'], ['no-se', 'No sé'], ['otro', 'Otra'],
+  ];
+
+  /**
+   * El botón de «ya te di el acceso».
+   *
+   * No es un formulario porque no hay nada que escribir: es una declaración. Y es una
+   * DECLARACIÓN, no una comprobación — el texto de la etapa siguiente ya lo dice así («Nos
+   * dijiste que el acceso ya está. Lo estamos probando»), porque afirmar que el acceso entra
+   * sin haberlo probado sería justo lo que este producto le marca en rojo a otros sitios.
+   *
+   * Lo que de verdad desbloquea es el aviso que dispara del otro lado: alguien se entera.
+   */
+  function montarBotonAcceso(data) {
+    var hueco = contenido.querySelector('[data-boton-acceso]');
+    if (!hueco) return;
+    var id = data.pedido.id;
+
+    var caja = document.createElement('div');
+    caja.className = 'intake';
+    caja.innerHTML =
+      '<button type="button" class="boton" data-acceso>Ya te di el acceso</button>' +
+      '<p class="intake-estado" role="status"></p>';
+    hueco.replaceWith(caja);
+
+    var b = caja.querySelector('[data-acceso]');
+    var estado = caja.querySelector('.intake-estado');
+    b.addEventListener('click', function () {
+      b.disabled = true;
+      b.textContent = 'Avisando…';
+      estado.textContent = '';
+      fetch('/api/intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: id, acceso_listo: true }),
+      })
+        .then(function (r) {
+          return r.json()
+            .then(function (j) { return { j: j, hubo: true }; })
+            .catch(function () { return { j: null, hubo: true }; });
+        })
+        .then(function (res) {
+          if (res.j && res.j.ok) { dibujar(res.j); montarIntake(res.j); montarBotonAcceso(res.j); montarCopiar(); return; }
+          b.disabled = false;
+          b.textContent = 'Ya te di el acceso';
+          estado.textContent = (res.j && res.j.detalle) ||
+            'No pudimos guardarlo ahora. Vuelve a intentarlo, o escríbenos con este enlace.';
+        })
+        .catch(function () {
+          b.disabled = false;
+          b.textContent = 'Ya te di el acceso';
+          // Mismo criterio que el formulario: acá el fetch no llegó a contestar, así que la
+          // conexión SÍ es el problema.
+          estado.textContent = 'No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo.';
+        });
+    });
+  }
+
+  /* ── LAS TRES SALIDAS PARA DAR EL ACCESO ───────────────────────────────────────────────
+   *
+   * La etapa prometía, literal: «si eres tú, te explicamos dónde crear la invitación; si es
+   * otra persona o una agencia, te damos el texto listo para reenviarle; y si no sabes, lo
+   * averiguamos nosotros». Las dos primeras no existían en ninguna parte y la tercera era un
+   * «Escríbenos» pelado.
+   *
+   * Todo el contenido viene del servidor (`data.acceso`, ver `acceso.js`). Acá no se escribe
+   * ni una instrucción: si la ruta de un menú se pudiera afirmar o no se decidiera en el
+   * front, la regla de «no se inventa una ruta» quedaría a medias, con la mitad del criterio
+   * en un archivo y la otra mitad en este.
+   */
+  function bloqueDeAcceso(a) {
+    if (!a) return '';
+    var h = '<div class="ayuda">';
+
+    h += '<details><summary>Lo administro yo</summary>';
+    if (a.porQue) h += '<p class="porque">' + escapar(a.porQue) + '</p>';
+    // Una de las dos, nunca las dos: el servidor manda `pasos` cuando la ruta del menú se
+    // puede nombrar y `buscar` cuando no. Mandar las dos dejaría que esta función eligiera.
+    if (a.pasos && a.pasos.length) {
+      h += '<ol>';
+      a.pasos.forEach(function (x) { h += '<li>' + escapar(x) + '</li>'; });
+      h += '</ol>';
+    } else if (a.buscar) {
+      h += '<p>' + escapar(a.buscar) + '</p>';
+    }
+    if (a.alFinal) h += '<p class="alfinal">' + escapar(a.alFinal) + '</p>';
+    h += '</details>';
+
+    h += '<details><summary>Lo administra otra persona o una agencia</summary>';
+    h += '<p>Copia este texto y mándaselo. Está escrito para que no tengas que editar nada.</p>';
+    h += '<textarea readonly rows="16" data-texto-reenviar data-caja-copiable>' +
+      escapar(a.textoParaReenviar) + '</textarea>';
+    h += '<button type="button" class="copiar" data-copiar ' +
+      'data-copiado="Copiado. Pégalo en un correo o un WhatsApp.">Copiar el texto</button>';
+    h += '<p class="copiado" role="status"></p>';
+    // Se dice en voz alta, porque es la pregunta que alguien se hace al reenviar algo de su
+    // pedido a un tercero: ese texto NO lleva el enlace de su pedido (ver el comentario de
+    // `textoParaReenviar`: esos 32 hex son la única llave de esta pantalla).
+    h += '<p class="alfinal">Ese texto no lleva el enlace de tu pedido. Quien administra tu ' +
+      'sitio no necesita ver tus datos, solo saber qué invitación crear.</p>';
+    h += '</details>';
+
+    if (a.siNoSabes) {
+      h += '<details><summary>' + escapar(a.siNoSabes.titulo) + '</summary>';
+      h += '<p>' + escapar(a.siNoSabes.texto) + '</p>';
+      h += '<p class="alfinal">' + escapar(a.siNoSabes.comoSigue) + '</p>';
+      h += '</details>';
+    }
+
+    h += '</div>';
+    return h;
+  }
+
+  /**
+   * El botón de copiar. `navigator.clipboard` no está en todos lados —hace falta contexto
+   * seguro y a veces permiso— así que si no se puede, no se finge: se selecciona el texto y se
+   * le dice qué apretar. Un «¡Copiado!» que no copió nada es peor que no tener botón.
+   */
+  function montarCopiar() {
+    /* ⚠️ ESTO TUVO QUE DEJAR DE SER UNA FUNCIÓN DE UN SOLO BOTÓN (3-nov-2026).
+       Era un `querySelector('[data-copiar]')` que buscaba su caja con
+       `querySelector('[data-texto-reenviar]')`, o sea con el nombre del ÚNICO texto copiable
+       que existía: el que se le reenvía a quien administra el sitio. Desde que el borrador de
+       la política se muestra en esta misma pantalla hay dos textos copiables, y el del
+       borrador no es un texto para reenviar: con el código viejo su botón encontraba `caja`
+       en `null` y el clic reventaba con un TypeError. En pantalla eso no se ve: el botón
+       simplemente no copia, en la página de alguien que ya pagó y que lo que tiene que copiar
+       es lo que compró.
+       Son dos arreglos y conviene no confundirlos. El atributo genérico (`data-caja-copiable`)
+       es el que repara el defecto de hoy. El `querySelectorAll` es por lo que viene: hoy las
+       dos cajas no coinciden nunca en la misma pantalla —el borrador aparece en `entregado` y
+       el texto del acceso en `falta-acceso`, que se excluyen— pero el día que coincidan, el
+       segundo botón quedaría muerto sin que nada se ponga rojo.
+       Cada botón busca su caja y su aviso DENTRO de su propio contenedor, así que los dos no
+       se pisan ni copian el texto del otro. */
+    var botones = contenido.querySelectorAll('[data-copiar]');
+    Array.prototype.forEach.call(botones, function (b) {
+      var caja = b.parentNode.querySelector('[data-caja-copiable]');
+      var dicho = b.parentNode.querySelector('.copiado');
+      if (!caja || !dicho) return;
+      // Qué se dice al copiar depende de para qué sirve el texto: el del acceso se reenvía a
+      // quien administra el sitio, y el borrador va a su abogado. Lo manda el HTML que dibuja
+      // la caja, porque es el que sabe cuál es cuál.
+      var listo = b.getAttribute('data-copiado') || 'Copiado.';
+      b.addEventListener('click', function () {
+        function aMano() {
+          caja.focus();
+          caja.select();
+          dicho.textContent = 'Lo dejamos seleccionado. Cópialo con Ctrl+C (o Cmd+C en Mac).';
+        }
+        if (!navigator.clipboard || !navigator.clipboard.writeText) { aMano(); return; }
+        navigator.clipboard.writeText(caja.value).then(function () {
+          dicho.textContent = listo;
+        }).catch(aMano);
+      });
+    });
+  }
+
+  /* ⚠️ LAS SEÑALES QUE SE ENTREGAN SIN ENTRAR AL SITIO DEL CLIENTE.
+   *
+   * Es la MISMA regla que `SIN_ENTRAR_AL_SITIO` en `functions/api/etapas.js`, y está repetida
+   * acá porque este formulario corre en el navegador y no puede importar nada del servidor
+   * —igual que `PLATAFORMAS`, que también vive en los dos lados—.
+   *
+   * Las dos se revisan juntas, y no por buena voluntad: hay una prueba que las compara y se
+   * pone roja si se separan. Un comentario no obliga a nadie; una prueba sí.
+   */
+  var SIN_ENTRAR_AL_SITIO = ['politica'];
+
+  function hayQueEntrarAlSitio(pedido) {
+    var s = (pedido && pedido.senales_contratadas) || [];
+    // Falla hacia «sí hace falta», igual que el servidor: ver el comentario de
+    // `hayQueEntrarAlSitio` en etapas.js. Equivocarse hacia pedir el acceso es una molestia;
+    // hacia no pedirlo, es un pedido que nadie puede trabajar.
+    if (!s.length) return true;
+    return s.some(function (id) { return SIN_ENTRAR_AL_SITIO.indexOf(id) === -1; });
+  }
+
+  function montarIntake(data) {
+    var hueco = contenido.querySelector('[data-form-intake]');
+    if (!hueco) return;
+    var id = data.pedido.id;
+
+    var opciones = PLATAFORMAS.map(function (o) {
+      return '<option value="' + o[0] + '">' + escapar(o[1]) + '</option>';
+    }).join('');
+
+    /* ⚠️ LA PLATAFORMA SOLO SE PREGUNTA CUANDO SIRVE PARA ALGO (3-nov-2026).
+     *
+     * El campo existe para poder decirle dónde crear la invitación de acceso. A quien compró
+     * solo el borrador de su política no le vamos a pedir ninguna invitación, así que
+     * obligarlo a elegir una plataforma —con `required`, antes de poder enviar— es pedirle un
+     * dato que su compra no necesita, que es el mismo defecto que el arreglo de hoy vino a
+     * sacar de la etapa siguiente.
+     *
+     * Y hay una razón más dura: la etapa está escrita bajo la regla de «esta frase nombra
+     * EXACTAMENTE los campos que el formulario pide». Su texto ya no nombra la plataforma. Si
+     * el campo se quedara, la pantalla pediría cinco cosas diciendo cuatro.
+     */
+    var pideLaPlataforma = hayQueEntrarAlSitio(data.pedido);
+
+    var f = document.createElement('form');
+    f.className = 'intake';
+    f.innerHTML =
+      '<label>Razón social <input name="razon_social" required maxlength="200" autocomplete="organization"></label>' +
+      '<label>RUT de la empresa <input name="rut" required maxlength="12" placeholder="76.086.428-5" inputmode="text"></label>' +
+      '<label>Giro <input name="giro" required maxlength="200"></label>' +
+      '<label>Dirección <input name="direccion" required maxlength="200" autocomplete="street-address"></label>' +
+      (pideLaPlataforma
+        ? '<label>¿En qué está hecho tu sitio? <select name="plataforma" required>' +
+          '<option value="" selected disabled>Elige una</option>' + opciones +
+          '</select></label>'
+        : '') +
+      '<button type="submit" class="boton">Enviar mis datos</button>' +
+      '<p class="intake-estado" role="status"></p>';
+    hueco.replaceWith(f);
+
+    var estado = f.querySelector('.intake-estado');
+    f.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (!f.reportValidity()) return;
+      var b = f.querySelector('button');
+      b.disabled = true;
+      b.textContent = 'Enviando…';
+      estado.textContent = '';
+
+      var cuerpo = { id: id };
+      // Solo los campos que el formulario de VERDAD dibujó. Recorrer una lista fija y leer
+      // `.value` de un campo que no existe revienta con un TypeError, y el envío se moriría en
+      // silencio justo después de que la persona apretó el botón.
+      ['razon_social', 'rut', 'giro', 'direccion', 'plataforma'].forEach(function (c) {
+        if (f.elements[c]) cuerpo[c] = f.elements[c].value.trim();
+      });
+
+      fetch('/api/intake', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(cuerpo),
+      })
+        // Se conserva si HUBO respuesta, para no confundir dos fallas distintas más abajo.
+        .then(function (r) {
+          return r.json()
+            .then(function (j) { return { estado: r.status, j: j, hubo: true }; })
+            .catch(function () { return { estado: r.status, j: null, hubo: true }; });
+        })
+        .then(function (res) {
+          if (res.j && res.j.ok) {
+            // Se repinta con el estado NUEVO que el propio endpoint devolvió, para que no haya
+            // forma de quedar mirando el estado viejo después de haber escrito.
+            dibujar(res.j);
+            montarIntake(res.j);
+            montarBotonAcceso(res.j);
+            montarCopiar();
+            return;
+          }
+          b.disabled = false;
+          b.textContent = 'Enviar mis datos';
+          estado.textContent = (res.j && res.j.detalle) ||
+            'Tuvimos un problema de nuestro lado y no pudimos guardar tus datos. Vuelve a ' +
+            'intentarlo, o escríbenos con este enlace.';
+        })
+        .catch(function () {
+          b.disabled = false;
+          b.textContent = 'Enviar mis datos';
+          // Acá el fetch no llegó a contestar, así que la conexión SÍ es el problema. Cuando sí
+          // contesta y el cuerpo no se puede leer, el mensaje es otro (ver arriba): decirle
+          // «revisa tu conexión» a alguien que ya pagó y cuya conexión está bien lo manda a
+          // buscar donde no hay nada, y lo más probable es que abandone.
+          estado.textContent = 'No pudimos conectarnos. Revisa tu conexión y vuelve a intentarlo.';
+        });
+    });
+  }
+
+  function dibujar(data) {
+    var e = data.etapa, p = data.pedido, s = data.señales || data.senales || { incluidas: [], fuera: [] };
+    var html = '';
+
+    html += '<div class="tarjeta">';
+    html += '<p class="etiqueta">Tu pedido</p>';
+    html += '<h1>' + escapar(e.titulo) + '</h1>';
+    html += '<p class="detalle">' + escapar(e.detalle) + '</p>';
+    if (e.loQueSigue) html += '<p class="sigue">' + escapar(e.loQueSigue) + '</p>';
+
+    // Lo que queda de su lado sin que nada esté esperándolo. Ver el comentario del CSS: es
+    // otro concepto que `queHacer`, y por eso es otro campo y otro recuadro.
+    if (e.recordatorios && e.recordatorios.length) {
+      html += '<div class="recordatorios">';
+      // Sin el número en el rótulo: «Dos cosas» sería el largo de la lista escrito a mano en
+      // otro lugar, y el día que la lista tenga tres, el título miente sin que nada se rompa.
+      html += '<p class="etiqueta">Lo que queda de tu lado</p>';
+      html += '<ul>';
+      e.recordatorios.forEach(function (r) { html += '<li>' + escapar(r) + '</li>'; });
+      html += '</ul></div>';
+    }
+
+    // Lo que le toca al cliente. Solo aparece si de verdad le toca.
+    if (e.queHacer) {
+      html += '<div class="te-toca' + (e.terminado ? '' : '') + '">';
+      html += '<p class="etiqueta">Te toca a ti</p>';
+      html += '<p>' + escapar(e.queHacer) + '</p>';
+      // En la etapa de los datos, el botón no puede ser solo un «escríbenos»: lo que falta son
+      // cuatro campos, y pedirlos por correo convierte en una conversación lo que cabe en un
+      // formulario. El mailto se queda abajo como salida si algo no funciona.
+      if (e.etapa === 'falta-datos') html += '<p class="te-toca-form" data-form-intake></p>';
+      // ⚠️ Y EL CONTROL DEL ACCESO, QUE FALTABA Y MATABA EL PEDIDO.
+      //
+      // Hasta el 30-oct esta etapa pedía el acceso y NO ofrecía con qué darlo: ni botón, ni
+      // casilla, solo un «Escríbenos». El endpoint sí aceptaba el dato (`acceso_listo`) y
+      // nadie se lo mandaba nunca — el grep daba cero llamadores. Un pedido pagado llegaba
+      // acá y se quedaba para siempre, salvo que alguien lo moviera a mano en la base.
+      if (e.etapa === 'falta-acceso') {
+        // Primero CÓMO se da el acceso, y solo después el botón que declara que ya se dio. Al
+        // revés, el único control visible era un botón para declarar algo que la pantalla no
+        // explicaba cómo hacer.
+        html += bloqueDeAcceso(data.acceso);
+        html += '<p class="te-toca-form" data-boton-acceso></p>';
+      }
+      // El asunto y la primera línea hablan del SITIO, no del número de pedido. Esos 32 hex no
+      // le dicen nada a quien escribe, y verlos dos veces en un correo que está empezando a
+      // redactar hace que el mensaje parezca un ticket y no una conversación. El número igual
+      // tiene que viajar —es lo que nos deja encontrar su pedido sin preguntárselo— así que va
+      // al final, después de una línea divisoria, donde se lee como una referencia y no como
+      // el tema del correo.
+      /* ⚠️ EL BOTÓN QUE FALTABA, Y POR QUÉ ES EL PRIMARIO (4-nov-2026).
+       *
+       * En `sin-pago` el texto dice «puedes intentarlo de nuevo» y acá no había con qué: el
+       * único control era el «Escríbenos» de abajo. Quien quería comprar y cuya tarjeta falló
+       * leía una invitación a reintentar y encontraba un formulario de contacto.
+       *
+       * Va ANTES del «Escríbenos» y como botón primario porque es lo que esa persona quiere
+       * hacer. Escribirnos es la salida para cuando reintentar tampoco funciona, no el primer
+       * paso. Y lleva su dominio en la URL para que no tenga que volver a escribirlo. */
+      if (e.etapa === 'sin-pago' && p.dominio) {
+        html += '<a class="boton" href="/?dominio=' + encodeURIComponent(p.dominio) +
+          '">Intentar el pago de nuevo</a>';
+      }
+      var sitioCorreo = p.dominio || 'mi sitio';
+      // Secundario también en `sin-pago`: al lado de un primario, dos botones iguales no
+      // dicen cuál es el que la persona vino a apretar.
+      html += '<a class="boton' + (e.etapa === 'falta-datos' || e.etapa === 'sin-pago' ? ' secundario' : '') + '" href="mailto:hola@spindlelab.cl' +
+        '?subject=' + encodeURIComponent('Pedido de ' + sitioCorreo) +
+        '&body=' + encodeURIComponent(
+          'Hola, les escribo por mi pedido de ' + sitioCorreo + ':\n\n\n\n' +
+          '--\nNúmero de pedido: ' + p.id + '\n') +
+        '">Escríbenos</a>';
+      html += '</div>';
+    }
+    html += '</div>';
+
+    // Qué se compró. Del contrato congelado, no del chequeo de hoy.
+    html += '<div class="tarjeta">';
+    html += '<p class="etiqueta">Qué compraste</p>';
+    html += '<div class="dato"><span>Sitio</span><span>' + escapar(p.dominio || '') + '</span></div>';
+    if (p.url_medida) {
+      html += '<div class="dato"><span>Página que medimos</span><span>' + escapar(p.url_medida) + '</span></div>';
+    }
+    html += '<div class="dato"><span>Total</span><span>' + pesos(p.monto_total) + '</span></div>';
+    if (p.pagado_en) {
+      html += '<div class="dato"><span>Pagado el</span><span>' + escapar(fecha(p.pagado_en)) + '</span></div>';
+    }
+    /* ⚠️ EL DATO DEL QUE DEPENDE SU PLAZO PARA RETRACTARSE (3-nov-2026).
+     *
+     * El artículo 5 del Decreto 52 de 2024 dice que un servicio contratado a distancia se
+     * entiende iniciado cuando el proveedor se lo NOTIFICA al consumidor, no cuando se pone a
+     * trabajar. Hasta ese aviso el retracto sigue abierto. Las condiciones de venta prometen,
+     * literal, que el aviso queda anotado acá con su fecha y hora, así que acá está: con hora,
+     * porque el plazo se cuenta desde un instante y no desde un día.
+     */
+    if (p.inicio_avisado_en) {
+      html += '<div class="dato"><span>Te avisamos que empezamos</span><span>' +
+        escapar(fechaYHora(p.inicio_avisado_en)) + '</span></div>';
+    }
+    if (p.entregado_en) {
+      html += '<div class="dato"><span>Entregado el</span><span>' + escapar(fecha(p.entregado_en)) + '</span></div>';
+    }
+
+    if (s.incluidas.length) {
+      // El tiempo verbal depende del estado. «Lo que dejamos hecho» en un pedido que todavía
+      // espera el acceso es falso, y se ve en la pantalla: no hemos hecho nada.
+      var rotulo = (p.estado === 'entregado') ? 'Lo que dejamos hecho' : 'Lo que incluye tu kit';
+      html += '<p class="etiqueta" style="margin-top:22px">' + rotulo + '</p>';
+      html += '<ul class="senales">';
+      s.incluidas.forEach(function (i) { html += '<li>' + escapar(i.titulo) + '</li>'; });
+      html += '</ul>';
+
+      /* ⚠️ QUÉ SIGNIFICA EXACTAMENTE «la política» DENTRO DEL KIT.
+       *
+       * `politica` entró a lo que el kit cierra el 2-nov-2026, porque cerca de la mitad de los
+       * sitios reales llegaba al resultado sin nada que comprar y su único pendiente era ese.
+       * Pero el título de la señal es «Enlace a tu política de privacidad», y en una lista
+       * titulada «lo que incluye tu kit» eso se lee como si nosotros la publicáramos.
+       *
+       * No la publicamos. Entregamos el borrador, lo revisa SU abogado y lo publica él: es lo
+       * que dice la oferta, lo que dice el correo de cierre y lo que decía la nota de «lo que
+       * queda fuera» cuando la política estaba del otro lado. Al cambiarla de lista, esa nota
+       * dejó de salir para quien no tiene señales fuera — que es justo este caso. Sin esto, el
+       * cambio de hoy convierte una venta honesta en una promesa que no cumplimos.
+       */
+      if ((s.incluidas || []).some(function (i) { return i.id === 'politica'; })) {
+        html += '<p class="nota">De la política te entregamos el <strong>borrador</strong>, ' +
+          'armado con los datos de tu empresa y con lo que la ley pide publicar. La revisa tu ' +
+          'abogado y la publicas tú: nosotros no damos asesoría legal y el texto final no es ' +
+          'nuestro.</p>';
+      }
+    }
+    if (s.fuera.length) {
+      html += '<p class="etiqueta" style="margin-top:22px">Lo que queda fuera del kit</p>';
+      html += '<ul class="senales fuera">';
+      s.fuera.forEach(function (i) { html += '<li>' + escapar(i.titulo) + '</li>'; });
+      html += '</ul>';
+      // Se dice acá y no solo en la oferta: es el punto donde alguien podría pensar que se le
+      // entregó de menos.
+      html += '<p class="nota">Esto no lo cierra el kit y no estaba incluido en el precio. ' +
+        'El texto final de tu política lo revisa tu abogado.</p>';
+    }
+    html += '</div>';
+
+    /* ── EL BORRADOR DE LA POLÍTICA (3-nov-2026) ───────────────────────────────────────────
+     *
+     * Era el hueco más grande entre pagar y recibir: el documento central del kit no tenía
+     * ningún camino hasta el cliente. El correo de cierre no llevaba adjuntos, no había
+     * columna que lo guardara, y esta pantalla afirmaba «lo que dejamos hecho» sin mostrar lo
+     * único que se dejó hecho.
+     *
+     * Vive acá y no solo en el correo porque este camino NO depende de que un correo salga.
+     * Resend puede estar caído, la clave puede estar vencida, el filtro del cliente puede
+     * comerse un mensaje con cuatro páginas de prosa legal: el enlace de su pedido es su
+     * credencial y acá el texto está siempre.
+     *
+     * ⚠️ LA ADVERTENCIA VA ARRIBA Y ABAJO, y no es insistencia: quien copie el texto va a
+     * seleccionar desde donde empieza, así que una advertencia que estuviera solo arriba se
+     * quedaría fuera de lo que pega en su sitio. Es la decisión del 2-nov y es lo que separa
+     * entregar un borrador de ejercer el derecho sin ser abogado.
+     */
+    if (p.borrador_politica) {
+      html += '<div class="tarjeta">';
+      html += '<p class="etiqueta">El borrador de tu política de privacidad</p>';
+      html += '<p class="aviso-borrador">Es un <strong>borrador para que lo revise tu ' +
+        'abogado</strong>. No está publicado, no lo publicamos nosotros y no es asesoría legal.</p>';
+      html += '<p class="nota">Está escrito con los datos de tu empresa y con los puntos que ' +
+        'la ley pide publicar. Cópialo, mándaselo a tu abogado, y publica el texto que él te ' +
+        'devuelva.</p>';
+      html += '<textarea readonly rows="18" data-caja-copiable aria-label="Borrador de tu ' +
+        'política de privacidad">' + escapar(p.borrador_politica) + '</textarea>';
+      html += '<button type="button" class="copiar" data-copiar ' +
+        'data-copiado="Copiado. Mándaselo a tu abogado antes de publicarlo.">' +
+        'Copiar el borrador</button>';
+      html += '<p class="copiado" role="status"></p>';
+      html += '<p class="aviso-borrador">Hasta que tu abogado lo revise y lo publiques, sigue ' +
+        'siendo un borrador: no es asesoría legal y el texto final no es nuestro.</p>';
+      html += '</div>';
+    }
+
+    html += '<p class="nota" style="text-align:center">Guarda este enlace. Es la forma de volver ' +
+      'a esta página, y no hace falta ninguna cuenta.</p>';
+
+    contenido.innerHTML = html;
+  }
+
+  var reintentos = 0;
+  // Dos minutos de revisión automática, cada cinco segundos. El número vive acá con nombre y
+  // no suelto en el `if`, porque el aviso que sale al agotarlo tiene que hablar del mismo
+  // número: un tope escrito dos veces se contradice en silencio el día que alguien cambia uno.
+  var TOPE_REINTENTOS = 24;
+
+  /**
+   * Avisar que dejamos de revisar solo, y dar el botón para revisar a mano.
+   *
+   * Se cuelga de la primera tarjeta, que es donde está el texto de la etapa que prometía el
+   * refresco automático. Así la corrección se lee junto a la promesa y no al final de la
+   * página, donde nadie la ataría a la frase que la contradice.
+   */
+  function dejamosDeRefrescar(etapa) {
+    var caja = contenido.querySelector('.tarjeta');
+    if (!caja || caja.querySelector('.sin-refresco')) return;
+
+    /* ⚠️ DOS ESPERAS DISTINTAS, Y ANTES LES DECÍAMOS LO MISMO (4-nov-2026).
+     *
+     * En «confirmando» el aviso del medio de pago tarda segundos, así que dos minutos sin
+     * noticias sí es raro y corresponde decirlo.
+     *
+     * En «pago pendiente» no: la persona eligió un medio que NO acredita al instante —una
+     * transferencia puede tardar horas, o hasta el día hábil siguiente— y leer «el pago
+     * todavía no se confirma, dejamos de revisar» después de haber pagado se entiende como que
+     * algo salió mal. Es el momento exacto en que alguien que ya transfirió su plata se
+     * asusta, y el texto que lo asusta describe el funcionamiento normal.
+     *
+     * La etapa ya sabe la diferencia (su detalle dice «no acredita al instante»); lo que
+     * faltaba era que este aviso también. */
+    var esperaLarga = etapa === 'pago-pendiente';
+
+    var div = document.createElement('div');
+    div.className = 'sin-refresco';
+    div.innerHTML = (esperaLarga
+      ? '<p>Dejamos de revisar solos, pero esto es lo normal con el medio de pago que ' +
+        'elegiste: puede tardar horas, o hasta el día hábil siguiente. No hace falta que te ' +
+        'quedes esperando acá. Cuando el pago se acredite seguimos nosotros y te escribimos. ' +
+        'Tu pedido está guardado y este enlace sigue siendo válido.</p>'
+      : '<p>Estuvimos revisando solos un par de minutos y el pago todavía no se confirma. ' +
+        'Dejamos de revisar para no tenerte esperando frente a una página que no cambia. ' +
+        'Tu pedido está guardado y este enlace sigue siendo válido.</p>')
+      + '<button type="button">Revisar de nuevo</button>';
+    caja.appendChild(div);
+
+    div.querySelector('button').addEventListener('click', function () {
+      reintentos = 0;
+      div.querySelector('button').disabled = true;
+      div.querySelector('button').textContent = 'Revisando…';
+      pedir();
+    });
+  }
+
+
+  function pedir() {
+    var id = idDelPedido();
+    if (!id) { noEncontrado(); return; }
+
+    fetch('/api/pedido?id=' + encodeURIComponent(id), { headers: { Accept: 'application/json' } })
+      // Si el cuerpo no se puede leer —una página de error del borde, una respuesta cortada— eso
+      // NO es un problema de conexión: la respuesta llegó. Sin este catch caía en el de abajo y
+      // se le decía a alguien que ya pagó que revisara su conexión.
+      .then(function (r) {
+        return r.json()
+          .then(function (j) { return { estado: r.status, j: j }; })
+          .catch(function () { return { estado: r.status, j: null }; });
+      })
+      .then(function (res) {
+        if (res.estado === 404) { noEncontrado(); return; }
+        if (!res.j || !res.j.ok) {
+          contenido.innerHTML =
+            '<div class="tarjeta"><h1>No pudimos cargar tu pedido</h1>' +
+            '<p class="detalle">Fue un problema nuestro, no tuyo. Vuelve a intentarlo en un minuto.</p>' +
+            '<p class="sigue">Si sigue pasando, escríbenos con este enlace.</p></div>';
+          return;
+        }
+        dibujar(res.j);
+        montarIntake(res.j);
+        // ⚠️ Acá es donde más importa: es la carga inicial de la pantalla, o sea el caso
+        // normal de alguien que abre el enlace de su pedido. Sin esta línea el botón del
+        // acceso solo aparecía después de enviar el formulario de datos, que es justo cuando
+        // ya no hace falta.
+        montarBotonAcceso(res.j);
+        // El botón de copiar el texto para reenviar. Va en los TRES lugares que repintan la
+        // pantalla —la carga, el envío de los datos y la declaración del acceso— por la misma
+        // razón que `montarBotonAcceso`: `dibujar` reemplaza todo el HTML, así que un
+        // enganche que falte en uno de los tres deja un botón muerto en ese camino.
+        montarCopiar();
+
+        // Se vuelve a preguntar SOLO mientras el pago se confirma, que es lo único que cambia
+        // sin que nadie haga nada. Y con un tope: si a los dos minutos no llegó, refrescar más
+        // no va a ayudar y lo honesto es decirlo.
+        if (res.j.refrescar) {
+          if (reintentos < TOPE_REINTENTOS) {
+            reintentos++;
+            setTimeout(pedir, 5000);
+          } else {
+            // ⚠️ ACÁ ESTABA LA CUARTA PROMESA SIN CUMPLIR.
+            //
+            // La etapa dice «esta página se actualiza sola», y era cierto durante dos minutos.
+            // Pasados los 24 intentos el bucle se cortaba y la frase se quedaba en pantalla
+            // siendo falsa, sin que nada lo dijera: la persona veía «se actualiza sola» en una
+            // página que ya no se actualizaba, y podía esperar ahí indefinidamente.
+            //
+            // El tope está bien —refrescar para siempre no ayuda a nadie y gasta batería—. Lo
+            // que faltaba era decirlo y devolverle el control.
+            dejamosDeRefrescar(res.j.etapa && res.j.etapa.etapa);
+          }
+        }
+      })
+      .catch(function () {
+        // Lo mismo acá: este catch solo se alcanza si el fetch no llegó a contestar. El caso de
+        // «contestó y no se pudo leer» lo atiende el `then`, que no culpa a la conexión.
+        contenido.innerHTML =
+          '<div class="tarjeta"><h1>No pudimos conectarnos</h1>' +
+          '<p class="detalle">Revisa tu conexión y vuelve a cargar la página. Tu pedido está ' +
+          'guardado y este enlace sigue siendo válido.</p></div>';
+      });
+  }
+
+  pedir();
+})();
+</script>
+</body>
+</html>
