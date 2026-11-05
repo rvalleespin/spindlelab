@@ -79,7 +79,7 @@ es lo que hace que el loop se sienta continuo.
 
 **Fórmula:** 1 · Enseñar la Prueba (principal) · 5 · Quitar la Excusa (secundaria)
 
-**130 palabras, 45 segundos.** Rehecho tres veces el 5-nov; el historial completo abajo.
+**128 palabras, 44 segundos.** Rehecho tres veces el 5-nov; el historial completo abajo.
 
 ⚠️ **Tono: el más difícil de los cuatro.** *"Ya dice algo de esa persona"* se dice **plano y bajo**,
 nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se sostiene solo.
@@ -103,18 +103,18 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
   médicos que revisé, / pasa eso mismo.             [ÉNFASIS: la mitad]
                                                     [REMATE ABAJO]
 
-  No lo decidió nadie en tu clínica.                [ENTONACIÓN SUSPENDIDA]
-  Vino instalado con el sitio.                      [REMATE ABAJO]
+  Nadie en tu clínica decidió eso.                  [ENTONACIÓN SUSPENDIDA]
+  El rastreador viene configurado
+  para partir al tiro.                              [ÉNFASIS: al tiro] [REMATE ABAJO]
 
-[SOLUCIÓN]
+[SOLUCIÓN · la urgencia es comparativa, no fabricada]
 [TEXTO EN PANTALLA]: g2-4 · el cartel maquetado (sin bloque)
-  Se arregla con ese cartel que le pregunta
-  al paciente si acepta las cookies.                [ENTONACIÓN SUSPENDIDA]
-  El que ves en cualquier sitio europeo.            [ÉNFASIS: europeo]
-
-  La ley va a pedir que preguntes primero.          [ENTONACIÓN SUSPENDIDA]
-  Y cambia menos de lo que parece.                  [ENTONACIÓN SUSPENDIDA]
-  Al que acepta lo sigues midiendo igual.           [REMATE ABAJO]
+  En Europa esto se resolvió hace años.             [ÉNFASIS: hace años]
+                                                    [REMATE ABAJO]
+  Es ese cartel que has visto mil veces, /
+  el que pregunta antes de instalar nada.           [ENTONACIÓN SUSPENDIDA]
+  Y la ley acá va a pedir lo mismo.                 [ÉNFASIS: acá] [REMATE ABAJO]
+  Al paciente que dice que sí / lo mides igual.     [REMATE ABAJO]
 
 [CIERRE]
 [TEXTO EN PANTALLA]: g0-cierre · verifica.spindlelab.cl
@@ -337,3 +337,30 @@ firma.**
 
 ⚠️ **Lo único que sí se repite a propósito es la solución** (el cartel y la referencia europea). Es
 el producto: tiene que decirse igual en las cuatro piezas o deja de reconocerse.
+
+### 5-nov-2026 · el arreglo que sonaba banal
+
+Ramón: *"«Vino instalado con el sitio» está extraña esta parte"*. Y: *"«Se arregla con ese cartel»
+prefiero que el gancho esté mucho mejor hecho. Suena como un arreglo banal, no entrega un sentido de
+urgencia"*.
+
+**(a) «Vino instalado con el sitio»** es vago y, peor, **le echa la culpa a quien hizo el sitio**,
+que es un rol que esta misma casa vende. Lo que pasa de verdad es que el rastreador **está diseñado
+para arrancar solo**: nadie lo decidió porque nadie se lo preguntó. Queda *«El rastreador viene
+configurado para partir al tiro»*.
+
+**(b) El cartel sonaba banal porque se presentaba como «un arreglo».** Un arreglo es chico por
+definición, y presentar la solución así le quita peso al problema que se acaba de contar.
+
+⚠️ **No se puede fabricar urgencia** (regla dura: cero miedo, cero cifra de multa, cero cuenta
+regresiva). **Pero sí se puede dejar de esconder la que ya existe:** *«En Europa esto se resolvió
+hace años»*. Es un hecho comparativo verificable, no una amenaza, y pesa más que cualquier plazo
+inventado porque coloca a quien escucha **llegando tarde a algo normal**, no en riesgo de castigo.
+
+**Y la ley deja de llegar sola.** Antes era una frase suelta (*«La ley va a pedir que preguntes
+primero»*); ahora llega como **«lo mismo»** que ya pasó allá: *«Y la ley acá va a pedir lo mismo»*.
+Por eso se pudo sacar el puente *«y cambia menos de lo que parece»*: hacía falta cuando las dos
+frases no se hablaban.
+
+**Regla:** cuando una solución suene trivial, el problema no es la solución, es que se la está
+presentando como un trámite. Se nombra por lo que cambia, no por lo que es.
