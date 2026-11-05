@@ -2,8 +2,7 @@
 
 **Generados desde los `teleprompter-*.txt`**, no escritos a mano. Una frase por renglón.
 
-Léelos en voz alta una vez antes de grabar. Esa prueba encontró un defecto real todas las veces que
-se hizo, y es la única de la matriz que una sesión de Claude no puede hacer.
+Léelos en voz alta una vez antes de grabar.
 
 
 ---
@@ -34,7 +33,7 @@ Preguntar primero, también.
 
 ## 2 · SALUD
 
-**128 palabras · ~44 segundos**
+**132 palabras · ~46 segundos**
 
 Alguien entra a tu sitio a pedir hora.
 Antes de que apriete nada, el sitio ya instaló un rastreador en su teléfono.
@@ -42,7 +41,7 @@ Está puesto para medir de dónde llegan tus pacientes.
 Pero esa persona no dijo que sí.
 En la mitad de las clínicas y centros médicos que revisé, pasa eso mismo.
 Nadie en tu clínica decidió eso.
-El rastreador viene configurado para partir al tiro.
+El rastreador viene así configurado de fábrica, para partir apenas alguien entra.
 En Europa esto se resolvió hace años.
 Es ese cartel que has visto mil veces, el que pregunta antes de instalar nada.
 Y la ley acá va a pedir lo mismo.
@@ -56,16 +55,17 @@ Preguntar primero, también.
 
 ## 3 · CONTABILIDAD
 
-**113 palabras · ~39 segundos**
+**111 palabras · ~38 segundos**
 
 Tu formulario pide nombre, correo y a veces teléfono.
 Eso es normal y no tiene nada de malo.
-Pero en nueve de los treinta y nueve sitios de contadores que revisé, al lado del formulario no hay dónde leer qué haces con esos datos.
-Y no hace falta un abogado para notarlo.
-Es un enlace que está o no está.
-La política sí la escribe un abogado.
-Publicarla y dejarla donde se vea lo haces tú.
-Y tenerla publicada va a ser obligatorio por ley.
+Pero al lado debería estar el enlace que dice qué haces con esos datos.
+En nueve de los treinta y nueve sitios de contadores que revisé, no estaba.
+Al menos no en la portada.
+Y no hace falta un abogado para verlo.
+Está o no está.
+La política la escribe un abogado, pero publicarla la publicas tú.
+Y eso va a ser obligatorio por ley.
 Hice un chequeo gratis que te dice si tu sitio la tiene publicada.
 Soy Ramón, de SpindleLab.
 Pedir los datos está bien.
@@ -75,14 +75,14 @@ Decir qué haces con ellos, también.
 
 ## 4 · TUTORIAL
 
-**106 palabras · ~37 segundos**
+**92 palabras · ~32 segundos**
 
-Puedes ver qué guarda tu sitio sin que nadie te lo cuente.
-Toma treinta segundos y no hay que saber nada técnico.
-Lo que te va a aparecer ahí no lo aceptó nadie.
-Abre tu sitio en una ventana de incógnito.
-Espera diez segundos y no toques nada.
-Después aprieta el candado que está al lado de la dirección.
+Puedes ver qué guarda tu sitio.
+Sin que nadie te lo cuente, y en treinta segundos.
+Lo que aparezca ahí nadie lo aceptó.
+Abre tu sitio en incógnito.
+Espera diez segundos sin tocar nada.
+Y aprieta el candado que está al lado de la dirección.
 Ahí salen los rastreadores que tu sitio dejó en tu teléfono.
 Y se instalaron solos, al abrir la página.
 Si te sale algo que no entiendes, escríbeme por acá y lo miramos.
