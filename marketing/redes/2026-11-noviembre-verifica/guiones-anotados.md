@@ -79,25 +79,24 @@ es lo que hace que el loop se sienta continuo.
 
 **Fórmula:** 1 · Enseñar la Prueba (principal) · 5 · Quitar la Excusa (secundaria)
 
-**126 palabras, 43 segundos.** Rehecho dos veces el 5-nov: ver «dos historias» y «explicar la implicación», abajo.
+**132 palabras, 45 segundos.** Rehecho tres veces el 5-nov; el historial completo abajo.
 
 ⚠️ **Tono: el más difícil de los cuatro.** *"Ya dice algo de esa persona"* se dice **plano y bajo**,
 nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se sostiene solo.
 
 ```
-[GANCHO · 0 a 3 s]
+[GANCHO · 0 a 3 s · una escena, no una concesión]
 [TEXTO EN PANTALLA]: g2-1 · SIN PREGUNTAR / AL PACIENTE.
 
-  Saber de dónde llegan tus pacientes
-  está bien.                                        [ENTONACIÓN SUSPENDIDA]
-  Medirlo en tu sitio, también.                     [REMATE ABAJO]
+  Alguien entra a tu sitio a pedir hora.            [ENTONACIÓN SUSPENDIDA]
 
-[ZONA DE ENGANCHE · mecanismo y persona en la misma frase]
-  Pero para medir, / tu sitio instala un rastreador
-  en el teléfono de quien entró a pedir hora.       [ÉNFASIS: pedir hora]
+[ZONA DE ENGANCHE]
+  Antes de que apriete nada, / el sitio ya
+  instaló un rastreador en su teléfono.             [ÉNFASIS: antes] [REMATE ABAJO]
+  Está puesto para medir de dónde llegan
+  tus pacientes.                                    [ENTONACIÓN SUSPENDIDA]
+  Pero esa persona no dijo que sí.                  [ÉNFASIS: no dijo que sí]
                                       [REMATE ABAJO · plano, sin peso]
-  Y lo instala / antes de que esa persona
-  acepte nada.                                      [ÉNFASIS: antes]
 
 [TEXTO EN PANTALLA]: g2-2 · LA MITAD
   En la mitad de las clínicas y centros
@@ -112,10 +111,10 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
   Se arregla con ese cartel que le pregunta
   al paciente si acepta las cookies.                [ENTONACIÓN SUSPENDIDA]
   El que ves en cualquier sitio europeo.            [ÉNFASIS: europeo]
-  Si el paciente acepta, / mides igual que hoy.     [REMATE ABAJO]
 
-  Y preguntar primero va a ser obligatorio
-  por ley.                                          [REMATE ABAJO]
+  La ley va a pedir que preguntes primero.          [ENTONACIÓN SUSPENDIDA]
+  Y cambia menos de lo que parece.                  [ENTONACIÓN SUSPENDIDA]
+  Al que acepta lo sigues midiendo igual.           [REMATE ABAJO]
 
 [CIERRE]
 [TEXTO EN PANTALLA]: g0-cierre · verifica.spindlelab.cl
@@ -123,9 +122,9 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
   sitio lo tiene.
   Soy Ramón, de SpindleLab.                         [REMATE ABAJO]
 
-[ÚLTIMO GANCHO]
-  Medir está bien.                                  [ENTONACIÓN SUSPENDIDA]
-  Preguntar primero, también.                       [REMATE ABAJO]
+[ÚLTIMO GANCHO · enlaza con la primera línea]
+  La próxima persona que entre a pedir hora,        [ENTONACIÓN SUSPENDIDA]
+  pregúntale primero.                               [REMATE ABAJO]
 ```
 
 ---
@@ -293,3 +292,38 @@ reescribe la anterior para que lo signifique sola. Es pariente del primer tic do
 
 ✅ **Y la diferenciación con el guion del café no se pierde**: no está en una frase de más, está en
 **de quién es el teléfono**. Misma forma, otro peso.
+
+### 5-nov-2026 · dos frases que no se podían decir, y un guion demasiado parecido al 1
+
+Ramón: *"«Si el paciente acepta, mides igual que hoy. Y preguntar primero va a ser obligatorio por
+ley» está bien pero al contarlo suena extraño… recuerda que esto es algo que voy a decir y la gente
+lo va a escuchar"*. Y: *"tiene mucha similitud con el guion 1"*.
+
+**(a) Por qué no se podía decir.** Dos frases medias seguidas (8 y 9 palabras), pegadas con un «y»
+que finge una conexión inexistente: una tranquiliza, la otra obliga. Registros distintos. Y
+*«obligatorio por ley»* no pasa la prueba del mensaje de WhatsApp.
+
+Queda en tres, con una frase puente en el medio y cadencia de boxeador (7, 7, 7 pero con la del
+medio bajando el peso):
+
+> La ley va a pedir que preguntes primero. / **Y cambia menos de lo que parece.** / Al que acepta lo
+> sigues midiendo igual.
+
+**La del medio es el puente**: convierte dos ideas sueltas en una. Primero la obligación, después
+que no cuesta nada. Antes iban al revés y sin nada que las uniera.
+
+**(b) Por qué se parecía demasiado.** Compartía con el guion 1 la apertura, la frase del rastreador,
+el quita-excusas, la solución **y el cierre**. Lo único propio era *«de quien entró a pedir hora»*.
+Para dos piezas que salen con ocho días de diferencia en la misma cuenta, eso es una plantilla, que
+es justo lo que la skill de voz marca.
+
+**Se rehízo desde la apertura.** En vez de repetir la concesión del café (*«X está bien. Y, también»*),
+**abre con una escena**: *«Alguien entra a tu sitio a pedir hora»*. La concesión no se pierde, la
+carga el quita-excusas.
+
+**Y el cierre es otro:** *«La próxima persona que entre a pedir hora, pregúntale primero»*. Engancha
+con la primera línea, así que el loop sigue, pero no es el remate del café. **El remate del café se
+queda en el café, donde nació.**
+
+⚠️ **Lo único que sí se repite a propósito es la solución** (el cartel y la referencia europea). Es
+el producto: tiene que decirse igual en las cuatro piezas o deja de reconocerse.

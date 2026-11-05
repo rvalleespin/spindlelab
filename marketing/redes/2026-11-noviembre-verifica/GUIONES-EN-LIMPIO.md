@@ -34,23 +34,23 @@ Preguntar primero, también.
 
 ## 2 · SALUD
 
-**126 palabras · ~43 segundos**
+**133 palabras · ~46 segundos**
 
-Saber de dónde llegan tus pacientes está bien.
-Medirlo en tu sitio, también.
-Pero para medir, tu sitio instala un rastreador en el teléfono de quien entró a pedir hora.
-Y lo instala antes de que esa persona acepte nada.
+Alguien entra a tu sitio a pedir hora.
+Antes de que apriete nada, el sitio ya instaló un rastreador en su teléfono.
+Está puesto para medir de dónde llegan tus pacientes.
+Pero esa persona no dijo que sí.
 En la mitad de las clínicas y centros médicos que revisé, pasa eso mismo.
 No lo decidió nadie en tu clínica.
 Vino instalado con el sitio.
 Se arregla con ese cartel que le pregunta al paciente si acepta las cookies.
 El que ves en cualquier sitio europeo.
-Si el paciente acepta, mides igual que hoy.
-Y preguntar primero va a ser obligatorio por ley.
+La ley va a pedir que preguntes primero.
+Y cambia menos de lo que parece.
+Al que acepta lo sigues midiendo igual.
 Hice un chequeo gratis que te dice si tu sitio lo tiene.
 Soy Ramón, de SpindleLab.
-Medir está bien.
-Preguntar primero, también.
+La próxima persona que entre a pedir hora, pregúntale primero.
 
 ---
 
