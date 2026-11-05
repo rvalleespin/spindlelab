@@ -1,0 +1,1017 @@
+{
+  "url": "https://www.ogrcafe.cl/",
+  "cuando": "2026-10-29T16:56:22.028Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "_session_id",
+        "dominio": "www.ogrcafe.cl",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://www.ogrcafe.cl/",
+      "titulo": "Original Green Roasters",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://www.ogrcafe.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://www.ogrcafe.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "https://www.facebook.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://www.twitter.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56956365004&text=Hola%20Original Green Roasters",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/customer/login",
+          "t": ""
+        },
+        {
+          "h": "/cart",
+          "t": "0"
+        },
+        {
+          "h": "/sobre-nosotros",
+          "t": "QUIÉNES SOMOS"
+        },
+        {
+          "h": "/cafe-tostado",
+          "t": "CAFÉ TOSTADO"
+        },
+        {
+          "h": "/cafe-tostado/colombia-1",
+          "t": "COLOMBIA"
+        },
+        {
+          "h": "/cafe-tostado/sumatra",
+          "t": "SUMATRA"
+        },
+        {
+          "h": "/cafe-tostado/etiopia",
+          "t": "ETIOPIA"
+        },
+        {
+          "h": "/cafe-tostado/kenia",
+          "t": "KENIA"
+        },
+        {
+          "h": "/cafe-tostado/ruanda",
+          "t": "RUANDA"
+        },
+        {
+          "h": "/chocolate",
+          "t": "CHOCOLATE"
+        },
+        {
+          "h": "/accesorios",
+          "t": "ACCESORIOS"
+        },
+        {
+          "h": "/equipos",
+          "t": "EQUIPOS DE CAFETERÍA"
+        },
+        {
+          "h": "/despachos",
+          "t": "DESPACHOS"
+        },
+        {
+          "h": "/sobre-nosotros",
+          "t": "Quiénes somos"
+        },
+        {
+          "h": "/cafe-tostado/colombia-1",
+          "t": "COLOMBIA"
+        },
+        {
+          "h": "/cafe-tostado/sumatra",
+          "t": "SUMATRA"
+        },
+        {
+          "h": "/cafe-tostado/etiopia",
+          "t": "ETIOPIA"
+        },
+        {
+          "h": "/cafe-tostado/kenia",
+          "t": "KENIA"
+        },
+        {
+          "h": "/cafe-tostado/ruanda",
+          "t": "RUANDA"
+        },
+        {
+          "h": "/cafe-tostado",
+          "t": "Ir a Café tostado"
+        },
+        {
+          "h": "/chocolate",
+          "t": "Chocolate"
+        },
+        {
+          "h": "/accesorios",
+          "t": "Accesorios"
+        },
+        {
+          "h": "/equipos",
+          "t": "Equipos de cafetería"
+        },
+        {
+          "h": "/despachos",
+          "t": "Despachos"
+        },
+        {
+          "h": "/customer/login",
+          "t": "Ingresar / Registrarse"
+        },
+        {
+          "h": "https://www.facebook.com/ogrcafe",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.twitter.com/ogrcafe",
+          "t": "Twitter"
+        },
+        {
+          "h": "https://www.instagram.com/ogrcafe",
+          "t": "Instagram"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56956365004&text=Hola%20Original Green Roasters",
+          "t": "WhatsApp"
+        },
+        {
+          "h": "/obolo-chocolate-merken-smoked-chili",
+          "t": "AGOTADO"
+        },
+        {
+          "h": "/obolo-chocolate-merken-smoked-chili",
+          "t": "ÓBOLO CHOCOLATE MERKÉN SMOKED CHILI"
+        },
+        {
+          "h": "/kit-v60",
+          "t": ""
+        },
+        {
+          "h": "/kit-v60",
+          "t": "KIT V60"
+        },
+        {
+          "h": "/jairo-arcila",
+          "t": "NO DISPONIBLE"
+        },
+        {
+          "h": "/jairo-arcila",
+          "t": "JAIRO ARCILLA CASTILLO ICE NATURAL"
+        },
+        {
+          "h": "/muhororo",
+          "t": "NO DISPONIBLE"
+        },
+        {
+          "h": "/muhororo",
+          "t": "RUANDA MUHORORO FW"
+        },
+        {
+          "h": "/jairo-arcilla-castillo-moras",
+          "t": "NO DISPONIBLE"
+        },
+        {
+          "h": "/jairo-arcilla-castillo-moras",
+          "t": "JAIRO ARCILLA CASTILLO MORAS"
+        },
+        {
+          "h": "/luz-helena-salazar",
+          "t": "NO DISPONIBLE"
+        },
+        {
+          "h": "/luz-helena-salazar",
+          "t": "LUZ HELENA SALAZAR - FINCA BUENOS AIRES"
+        },
+        {
+          "h": "/jairo-arcilla-castillo-uva",
+          "t": ""
+        },
+        {
+          "h": "/jairo-arcilla-castillo-uva",
+          "t": "JAIRO ARCILLA CASTILLO UVA"
+        },
+        {
+          "h": "https://www.instagram.com/reel/DCc-xm5R-nB/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DB3oy2Bp4qQ/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DBwQ_i-R2Te/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DBG68MQxCi6/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DA6YIDmRBPi/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DApEnoFRSaM/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/ogrcafe",
+          "t": "SÍGUENOS"
+        },
+        {
+          "h": "mailto:info@ogrcafe.cl",
+          "t": "info@ogrcafe.cl"
+        },
+        {
+          "h": "tel:+56956365004",
+          "t": "+56 9 56365004"
+        },
+        {
+          "h": "/sobre-nosotros",
+          "t": "Quienes somos"
+        },
+        {
+          "h": "/cafe-tostado",
+          "t": "Café tostado"
+        },
+        {
+          "h": "/chocolate",
+          "t": "Chocolate"
+        },
+        {
+          "h": "/accesorios",
+          "t": "Accesorios"
+        },
+        {
+          "h": "/equipos",
+          "t": "Equipos"
+        },
+        {
+          "h": "/despachos",
+          "t": "Despachos"
+        },
+        {
+          "h": "https://www.facebook.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://www.twitter.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56956365004&text=Hola Original Green Roasters!",
+          "t": ""
+        },
+        {
+          "h": "https://jumpseller.cl/?utm_medium=store&utm_campaign=powered_by&utm_source=original-green-roasters",
+          "t": "Desarrollado por Jumpseller"
+        },
+        {
+          "h": "/",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 783,
+      "muestra": "   \n   0\nQUIÉNES SOMOS\nCAFÉ TOSTADO\nCHOCOLATE\nACCESORIOS\nEQUIPOS DE CAFETERÍA\nDESPACHOS\nProductos Destacados\nAGOTADO\nÓBOLO CHOCOLATE MERKÉN SMOKED CHILI\n$7.000\nKIT V60\n$30.000\nNO DISPONIBLE\nJAIRO ARCILLA CASTILLO ICE NATURAL\n$25.000\nNO DISPONIBLE\nRUANDA MUHORORO FW\nDesde $12.000\nNO DISPONIBLE\nJAIRO ARCILLA CASTILLO MORAS\n$25.000\nNO DISPONIBLE\nLUZ HELENA SALAZAR - FINCA BUENOS AIRES\nDesde $16.000\nJAIRO ARCILLA CASTILLO UVA\n$25.000\nInstagram\nInstagram\n SÍGUENOS\nSobre Nosotros\nCalidad desde el orig",
+      "cta_en_pantalla": [
+        {
+          "t": "",
+          "h": "https://api.whatsapp.com/send?phone=56956365004&text=Hola%20Original Green Roasters"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 2,
+        "palabras": 107
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "_session_id",
+        "dominio": "www.ogrcafe.cl",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://www.ogrcafe.cl/",
+      "titulo": "Original Green Roasters",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://www.ogrcafe.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://www.ogrcafe.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "https://www.facebook.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://www.twitter.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56956365004&text=Hola%20Original Green Roasters",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/customer/login",
+          "t": ""
+        },
+        {
+          "h": "/cart",
+          "t": "0"
+        },
+        {
+          "h": "/sobre-nosotros",
+          "t": "QUIÉNES SOMOS"
+        },
+        {
+          "h": "/cafe-tostado",
+          "t": "CAFÉ TOSTADO"
+        },
+        {
+          "h": "/cafe-tostado/colombia-1",
+          "t": "COLOMBIA"
+        },
+        {
+          "h": "/cafe-tostado/sumatra",
+          "t": "SUMATRA"
+        },
+        {
+          "h": "/cafe-tostado/etiopia",
+          "t": "ETIOPIA"
+        },
+        {
+          "h": "/cafe-tostado/kenia",
+          "t": "KENIA"
+        },
+        {
+          "h": "/cafe-tostado/ruanda",
+          "t": "RUANDA"
+        },
+        {
+          "h": "/chocolate",
+          "t": "CHOCOLATE"
+        },
+        {
+          "h": "/accesorios",
+          "t": "ACCESORIOS"
+        },
+        {
+          "h": "/equipos",
+          "t": "EQUIPOS DE CAFETERÍA"
+        },
+        {
+          "h": "/despachos",
+          "t": "DESPACHOS"
+        },
+        {
+          "h": "/sobre-nosotros",
+          "t": "Quiénes somos"
+        },
+        {
+          "h": "/cafe-tostado/colombia-1",
+          "t": "COLOMBIA"
+        },
+        {
+          "h": "/cafe-tostado/sumatra",
+          "t": "SUMATRA"
+        },
+        {
+          "h": "/cafe-tostado/etiopia",
+          "t": "ETIOPIA"
+        },
+        {
+          "h": "/cafe-tostado/kenia",
+          "t": "KENIA"
+        },
+        {
+          "h": "/cafe-tostado/ruanda",
+          "t": "RUANDA"
+        },
+        {
+          "h": "/cafe-tostado",
+          "t": "Ir a Café tostado"
+        },
+        {
+          "h": "/chocolate",
+          "t": "Chocolate"
+        },
+        {
+          "h": "/accesorios",
+          "t": "Accesorios"
+        },
+        {
+          "h": "/equipos",
+          "t": "Equipos de cafetería"
+        },
+        {
+          "h": "/despachos",
+          "t": "Despachos"
+        },
+        {
+          "h": "/customer/login",
+          "t": "Ingresar / Registrarse"
+        },
+        {
+          "h": "https://www.facebook.com/ogrcafe",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.twitter.com/ogrcafe",
+          "t": "Twitter"
+        },
+        {
+          "h": "https://www.instagram.com/ogrcafe",
+          "t": "Instagram"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56956365004&text=Hola%20Original Green Roasters",
+          "t": "WhatsApp"
+        },
+        {
+          "h": "/obolo-chocolate-merken-smoked-chili",
+          "t": "AGOTADO"
+        },
+        {
+          "h": "/obolo-chocolate-merken-smoked-chili",
+          "t": "ÓBOLO CHOCOLATE MERKÉN SMOKED CHILI"
+        },
+        {
+          "h": "/kit-v60",
+          "t": ""
+        },
+        {
+          "h": "/kit-v60",
+          "t": "KIT V60"
+        },
+        {
+          "h": "/jairo-arcila",
+          "t": "NO DISPONIBLE"
+        },
+        {
+          "h": "/jairo-arcila",
+          "t": "JAIRO ARCILLA CASTILLO ICE NATURAL"
+        },
+        {
+          "h": "/muhororo",
+          "t": "NO DISPONIBLE"
+        },
+        {
+          "h": "/muhororo",
+          "t": "RUANDA MUHORORO FW"
+        },
+        {
+          "h": "/jairo-arcilla-castillo-moras",
+          "t": "NO DISPONIBLE"
+        },
+        {
+          "h": "/jairo-arcilla-castillo-moras",
+          "t": "JAIRO ARCILLA CASTILLO MORAS"
+        },
+        {
+          "h": "/luz-helena-salazar",
+          "t": "NO DISPONIBLE"
+        },
+        {
+          "h": "/luz-helena-salazar",
+          "t": "LUZ HELENA SALAZAR - FINCA BUENOS AIRES"
+        },
+        {
+          "h": "/jairo-arcilla-castillo-uva",
+          "t": ""
+        },
+        {
+          "h": "/jairo-arcilla-castillo-uva",
+          "t": "JAIRO ARCILLA CASTILLO UVA"
+        },
+        {
+          "h": "https://www.instagram.com/reel/DCc-xm5R-nB/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DB3oy2Bp4qQ/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DBwQ_i-R2Te/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DBG68MQxCi6/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DA6YIDmRBPi/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DApEnoFRSaM/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/ogrcafe",
+          "t": "SÍGUENOS"
+        },
+        {
+          "h": "mailto:info@ogrcafe.cl",
+          "t": "info@ogrcafe.cl"
+        },
+        {
+          "h": "tel:+56956365004",
+          "t": "+56 9 56365004"
+        },
+        {
+          "h": "/sobre-nosotros",
+          "t": "Quienes somos"
+        },
+        {
+          "h": "/cafe-tostado",
+          "t": "Café tostado"
+        },
+        {
+          "h": "/chocolate",
+          "t": "Chocolate"
+        },
+        {
+          "h": "/accesorios",
+          "t": "Accesorios"
+        },
+        {
+          "h": "/equipos",
+          "t": "Equipos"
+        },
+        {
+          "h": "/despachos",
+          "t": "Despachos"
+        },
+        {
+          "h": "https://www.facebook.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://www.twitter.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/ogrcafe",
+          "t": ""
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56956365004&text=Hola Original Green Roasters!",
+          "t": ""
+        },
+        {
+          "h": "https://jumpseller.cl/?utm_medium=store&utm_campaign=powered_by&utm_source=original-green-roasters",
+          "t": "Desarrollado por Jumpseller"
+        },
+        {
+          "h": "/",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 783,
+      "muestra": "   \n   0\nQUIÉNES SOMOS\nCAFÉ TOSTADO\nCHOCOLATE\nACCESORIOS\nEQUIPOS DE CAFETERÍA\nDESPACHOS\nProductos Destacados\nAGOTADO\nÓBOLO CHOCOLATE MERKÉN SMOKED CHILI\n$7.000\nKIT V60\n$30.000\nNO DISPONIBLE\nJAIRO ARCILLA CASTILLO ICE NATURAL\n$25.000\nNO DISPONIBLE\nRUANDA MUHORORO FW\nDesde $12.000\nNO DISPONIBLE\nJAIRO ARCILLA CASTILLO MORAS\n$25.000\nNO DISPONIBLE\nLUZ HELENA SALAZAR - FINCA BUENOS AIRES\nDesde $16.000\nJAIRO ARCILLA CASTILLO UVA\n$25.000\nInstagram\nInstagram\n SÍGUENOS\nSobre Nosotros\nCalidad desde el orig",
+      "cta_en_pantalla": [
+        {
+          "t": "info@ogrcafe.cl",
+          "h": "mailto:info@ogrcafe.cl"
+        },
+        {
+          "t": "+56 9 56365004",
+          "h": "tel:+56956365004"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 2,
+        "palabras": 107
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://www.ogrcafe.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://use.fontawesome.com/releases/v5.7.2/css/all.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/app.css?1584017086",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/color_pickers.css?1705935365",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://files.jumpseller.com/common/packs/js/jumpseller-2.0.1-bf38c9a0f664f9e3.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images.jumpseller.com/store/original-green-roasters/store/logo/OGR_Logo.jpg?0",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/original-green-roasters/image/8675302/resize/255/255?1633697189",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/original-green-roasters/image/58602004/resize/255/255?1735223531",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/original-green-roasters/image/61036562/resize/255/255?1741294394",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/original-green-roasters/image/62970119/resize/255/255?1745776875",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/original-green-roasters/image/62993435/resize/255/255?1745881693",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/original-green-roasters/image/62994180/resize/255/255?1770743653",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/original-green-roasters/image/69935038/resize/255/255?1763655681",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/options/15676579/OGR%20Logo%200%2C5cm.png?1605099089",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/pay-webpay.png?1584017085",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/pay-visa.png?1584017084",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/pay-master.png?1584017086",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/pay-american.png?1584017085",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/pay-diners.png?1584017085",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/pay-wire-es.png?1584017087",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/bootstrap.filestyle/1.1.0/js/bootstrap-filestyle.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/owl.carousel2.thumbs.min.js?1584017087",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/main.js?1584017085",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800%7CMontserrat:300,400,500,600,700,800%7CMontserrat:300,400,500,600,700,800",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.ogrcafe.cl/instagram-app/media?count=6",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/settings/49a83038b781bdb0820c/WhatsApp%20Image%202024-01-22%20at%2011.55.27.jpeg?1705935360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-brands-400.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr8-1.cdninstagram.com/v/t51.75761-15/467255008_18474664864042116_4978611351090267704_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=18de74&_nc_ohc=eK6fFQ-5IbsQ7kNvgFSvPbr&_nc_zt=23&_nc_ht=scontent-lhr8-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=AxKb_D6VSq3hXEe9VvPZF-e&oh=00_AYA_Ips9-N2iV6g4XsjO22byi5YFTcqgR0Khv-W1FmRcOg&oe=6756486B",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/465299456_538232385728438_6092456168788851045_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=18de74&_nc_ohc=vnSBWNYJqlsQ7kNvgHhzWb5&_nc_zt=23&_nc_ht=scontent-lhr8-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=AxKb_D6VSq3hXEe9VvPZF-e&oh=00_AYAUbjsst9aYIibd0_BRNIdwA-64wfHwqVeB4kDrpQeIOw&oe=67561E0A",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr6-1.cdninstagram.com/v/t51.29350-15/465080503_582436200873991_5940800509093339656_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=18de74&_nc_ohc=iLSws68KKQcQ7kNvgGmW9h4&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=AxKb_D6VSq3hXEe9VvPZF-e&oh=00_AYCByvnnaslv6Z0tzo1YWHiesj4_Fe8ZL503CmvHIYEJfg&oe=67564F16",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr6-2.cdninstagram.com/v/t51.29350-15/462823702_1552050755682617_7485770514258709587_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=t6fWT0Xl_9kQ7kNvgH8KYC_&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=AxKb_D6VSq3hXEe9VvPZF-e&oh=00_AYATpF2b8jWntwqejudCn7ihg1wkLK1vJXpTtP6ub81kaw&oe=67564BA4",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr6-2.cdninstagram.com/v/t51.29350-15/462691090_535508652757134_8335721006381811191_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=18de74&_nc_ohc=_-Uc_VoKoEMQ7kNvgEH6_EJ&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=AxKb_D6VSq3hXEe9VvPZF-e&oh=00_AYBF9Eb0W0sazraoFTYNEQxcMVT_d2XwU06Fj6kVtbINmQ&oe=675636B9",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr6-2.cdninstagram.com/v/t51.29350-15/461823410_1609882236260969_7603164078371693648_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=18de74&_nc_ohc=-WhjE7AB77YQ7kNvgE_dV0Z&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=AxKb_D6VSq3hXEe9VvPZF-e&oh=00_AYDPBCkqyBtzFiNDCtIX-7rtupcW6g2VMQKHMlzaaq3H1g&oe=67562E7B",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/options/15676456/OGR%20Logo_webtab.jpg?1588186604",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "_session_id",
+      "desde": "www.ogrcafe.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_session_id",
+      "desde": "www.ogrcafe.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 765762,
+    "al_abrir_bytes": 765762,
+    "n_peticiones": 45,
+    "mas_pesados": [
+      {
+        "url": "https://assets.jumpseller.com/store/original-green-roasters/themes/241326/settings/49a83038b781bdb0820c/WhatsApp%20Image%202024-01-22%20at%2011.55.27.jpeg?17059",
+        "bytes": 110956
+      },
+      {
+        "url": "https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2",
+        "bytes": 74731
+      },
+      {
+        "url": "https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-brands-400.woff2",
+        "bytes": 72518
+      },
+      {
+        "url": "https://fonts.gstatic.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2",
+        "bytes": 48853
+      }
+    ]
+  },
+  "html_len": 34584
+}

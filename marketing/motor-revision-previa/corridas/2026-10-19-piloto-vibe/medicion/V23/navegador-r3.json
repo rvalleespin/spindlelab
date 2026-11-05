@@ -1,0 +1,75 @@
+{
+  "url": "http://silvacorreaconsultora.cl/",
+  "cuando": "2026-10-19T13:57:03.988Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "chrome-error://chromewebdata/",
+      "titulo": "",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 0,
+      "muestra": "",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 0,
+        "palabras": 0
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "chrome-error://chromewebdata/",
+      "titulo": "",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 0,
+      "muestra": "",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 0,
+        "palabras": 0
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "http://silvacorreaconsultora.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://silvacorreaconsultora.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 13,
+    "al_abrir_bytes": 13,
+    "n_peticiones": 1,
+    "mas_pesados": [
+      {
+        "url": "https://silvacorreaconsultora.cl/",
+        "bytes": 13
+      }
+    ]
+  },
+  "html_len": 39
+}

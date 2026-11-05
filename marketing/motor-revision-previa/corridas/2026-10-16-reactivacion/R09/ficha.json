@@ -1,0 +1,408 @@
+{
+  "id": "R09",
+  "dominio": "vlfabogados.cl",
+  "motor": "v0",
+  "cuando": "2026-10-16T23:03:55.541Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "no-concluyente",
+  "url": "https://vlfabogados.cl/",
+  "hallazgo": null,
+  "ruta_interna": [],
+  "ofertas_adicionales": [],
+  "capa1": {
+    "consecuencia": [],
+    "higiene": []
+  },
+  "notas": [
+    "El navegador no pudo cargar la portada en ninguna de las corridas (error de red o página en blanco). Puede ser el firewall del sitio contra una IP de datacenter. No se afirma nada: reintentar desde otra red o abrir el sitio a mano."
+  ],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 1,
+      "mailto": [
+        "contacto@vlfabogados.cl      "
+      ],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "Apache",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": false
+    },
+    "llms_txt": false,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "CollectionPage",
+        "BreadcrumbList",
+        "WebSite"
+      ],
+      "org": []
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 393938,
+      "al_abrir_bytes": 393938,
+      "n_peticiones": 31,
+      "mas_pesados": [
+        {
+          "url": "https://fonts.gstatic.com/s/worksans/v24/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K67QNig.ttf",
+          "bytes": 60192
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/worksans/v24/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32KxfXNig.ttf",
+          "bytes": 58923
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/worksans/v24/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K0nXNig.ttf",
+          "bytes": 56085
+        },
+        {
+          "url": "https://vlfabogados.cl/wp-content/themes/vlf/js/jquery.js",
+          "bytes": 31258
+        }
+      ]
+    },
+    {
+      "total_bytes": 393916,
+      "al_abrir_bytes": 393916,
+      "n_peticiones": 31,
+      "mas_pesados": [
+        {
+          "url": "https://fonts.gstatic.com/s/worksans/v24/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K67QNig.ttf",
+          "bytes": 59806
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/worksans/v24/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32KxfXNig.ttf",
+          "bytes": 59313
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/worksans/v24/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K0nXNig.ttf",
+          "bytes": 56085
+        },
+        {
+          "url": "https://vlfabogados.cl/wp-content/themes/vlf/js/jquery.js",
+          "bytes": 31249
+        }
+      ]
+    },
+    {
+      "total_bytes": 393918,
+      "al_abrir_bytes": 393918,
+      "n_peticiones": 31,
+      "mas_pesados": [
+        {
+          "url": "https://fonts.gstatic.com/s/worksans/v24/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K67QNig.ttf",
+          "bytes": 59776
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/worksans/v24/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32KxfXNig.ttf",
+          "bytes": 59309
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/worksans/v24/QGY_z_wNahGAdqQ43RhVcIgYT2Xz5u32K0nXNig.ttf",
+          "bytes": 56065
+        },
+        {
+          "url": "https://vlfabogados.cl/wp-content/themes/vlf/js/jquery.js",
+          "bytes": 31249
+        }
+      ]
+    }
+  ],
+  "soporte": {},
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 42826
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 42826
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 42826,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "vlfabogados.cl      ",
+            "dominio": "vlfabogados.cl      ",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "vlfabogados.cl",
+            "dominio": "vlfabogados.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "vlfabogados.cl      ",
+            "dominio": "vlfabogados.cl      ",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "vlfabogados.cl",
+            "dominio": "vlfabogados.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Vial Larraín Femenías"
+      },
+      {
+        "fuente": "title",
+        "valor": "Vial Larraín Femenías -"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 5,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

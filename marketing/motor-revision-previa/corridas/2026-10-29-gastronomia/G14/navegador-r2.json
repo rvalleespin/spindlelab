@@ -1,0 +1,559 @@
+{
+  "url": "https://toteat.app/",
+  "cuando": "2026-10-29T16:37:21.574Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "_ga",
+        "dominio": ".toteat.app",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_Z79FYPT9QD",
+        "dominio": ".toteat.app",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://toteat.app/",
+      "titulo": "Toteat App",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [
+        {
+          "h": "javascript:void(0)",
+          "t": ""
+        },
+        {
+          "h": "https://cloud.google.com/blog/topics/customers/announcing-winners-of-google-cloud-customer-awards",
+          "t": ""
+        },
+        {
+          "h": "javascript:void(0)",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 321,
+      "muestra": "Pizzas\nBurgers\nSushi\nSalads\nVegetarian\nAsian\nPeruvian\nMexican\nCoffee Shop\nDesserts\nClose to you\n\nThere are currently no locations near you that meet your search requirements\n\nPlease change the address or try again later\n\nOPTIONS\nHome\nLogin\nCOUNTRY\nEnglish\n Version 334\nDelete local data of this app stored on this device.",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 3,
+        "h2": 0,
+        "palabras": 51
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "_ga",
+        "dominio": ".toteat.app",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga_Z79FYPT9QD",
+        "dominio": ".toteat.app",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://toteat.app/",
+      "titulo": "Toteat App",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [
+        {
+          "h": "javascript:void(0)",
+          "t": ""
+        },
+        {
+          "h": "https://cloud.google.com/blog/topics/customers/announcing-winners-of-google-cloud-customer-awards",
+          "t": ""
+        },
+        {
+          "h": "javascript:void(0)",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 321,
+      "muestra": "Pizzas\nBurgers\nSushi\nSalads\nVegetarian\nAsian\nPeruvian\nMexican\nCoffee Shop\nDesserts\nClose to you\n\nThere are currently no locations near you that meet your search requirements\n\nPlease change the address or try again later\n\nOPTIONS\nHome\nLogin\nCOUNTRY\nEnglish\n Version 334\nDelete local data of this app stored on this device.",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 3,
+        "h2": 0,
+        "palabras": 51
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://toteat.app/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/styles/fonts2.css?v=1.20261002.334",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/styles/fonts/ToteatShop/style.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.mercadopago.com/v2/security.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/css/app.3046261a.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/css/chunk-vendors.e5621c94.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/js/app.dbdbe68d.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/js/chunk-vendors.9d86341a.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/logoNuevo_250.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.hotjar.com/c/hotjar-3474995.js?sv=6",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Hotjar",
+        "tipo": "envio"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/js/Carrocompras.68635e80.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/js/GAEorders.349f3c40.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/js/cards.c7145675.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/js/chunk-2d0b6d39.6aec5e09.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/js/chunk-2d0b9b88.ce02c7ed.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/js/chunk-2d0bd614.0c55e206.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/js/chunk-2d0da337.80f8a1ec.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/js/chunk-2d2105ae.871ca562.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-Z79FYPT9QD&l=dataLayer",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-Z79FYPT9QD"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/srv/idiomas?xmod=2000",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/styles/fonts/Manrope/Manrope-Regular.ttf",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://storage.googleapis.com/lang.toteat.com/trads/2000/en-US/b3c480fea8e6b9949f1ca13fe4f2c214",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://storage.googleapis.com/lang.toteat.com/trads/2000/en-US/b3c480fea8e6b9949f1ca13fe4f2c214",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-Z79FYPT9QD&gtm=45je6as0v872573084za200zd872573084xf1&_p=1793291818049&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGA&are=1&cid=570468212.1793291818&frm=0&pscdl=&rcb=2&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=1&tag_exp=115616985~115938465~115938468~118897",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-Z79FYPT9QD"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://stats.g.doubleclick.net/g/collect?v=2&tid=G-Z79FYPT9QD&cid=570468212.1793291818&gtm=45je6as0v872573084za200zd872573084xf1&rcb=2&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=115616985~115938465~115938468~118897920~118897930~120213116~120385423~120469145~120469153~121246026~121246034",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://api.mercadopago.com/v1/device_sessions/web_device",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://api.mercadopago.com/v1/device_sessions/web_device",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/isotipo-toteat-250.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/banners/pizza.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/banners/hamburguesa.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/banners/sushi.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/banners/ensalada.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/banners/vegetariana.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/banners/asiatica.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/banners/peruana.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/banners/mexicana.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/banners/cafeteria.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/banners/postres.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/mapa-error.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/GCP_CustomerAwardWinner_CrossIndustry240.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/Basket_toteat_icon.53346576.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/srv/restosavailable?amb=PROD&dist=30",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/loading-orange.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/img/toteat-iconos2.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/styles/fonts/ToteatShop/ToteatApp.ttf?9uqh3g",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/styles/fonts/Manrope/Manrope-Medium.ttf",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/styles/fonts/Chalet/ChaletLondonNineteenSixty.otf",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://toteat.app/styles/fonts/Chalet/ChaletNewYorkNineteenSixty.otf",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.mercadolibre.com/jms/lgz/background/etid",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.mercadolibre.com/jms/lgz/background/session/armor.c35ce8c374057556f26e37a436033cb19e2c68f5196c135585343b82bdf418d05f258467f9aeb4e1cac254d7c860e48492071c799a7a757f2126ad447e0158464869d15733d826f69b966fdc49df0178f38b2235eb3d35ad52051ea975db4bc4.a9dc35369585826729b52c7a5cb84a12?background=armor.c35ce8c374057556f26e37a436033cb19e2c68f5196c135585343b82bdf418d05f258467f9aeb4e1cac254d7c860e48",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.mercadolivre.com/jms/mlb/lgz/background/session/armor.c35ce8c374057556f26e37a436033cb19e2c68f5196c135585343b82bdf418d05f258467f9aeb4e1cac254d7c860e48492071c799a7a757f2126ad447e0158464869d15733d826f69b966fdc49df0178f38b2235eb3d35ad52051ea975db4bc4.a9dc35369585826729b52c7a5cb84a12?background=armor.c35ce8c374057556f26e37a436033cb19e2c68f5196c135585343b82bdf418d05f258467f9aeb4e1cac254d7c86",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.mercadolivre.com/jms/mlb/lgz/background/session/armor.c35ce8c374057556f26e37a436033cb19e2c68f5196c135585343b82bdf418d05f258467f9aeb4e1cac254d7c860e48492071c799a7a757f2126ad447e0158464869d15733d826f69b966fdc49df0178f38b2235eb3d35ad52051ea975db4bc4.a9dc35369585826729b52c7a5cb84a12?message=eyJqc3V1aWQiOiIiLCJpZGJ1dWlkIjoiIiwic3VwcG9ydF9pZGIiOmZhbHNlLCJqc190eXBlIjoianNfc3RvcmFnZXMiLCJ0aW1l",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://api.mercadopago.com/v1/device_sessions/anonymous_device_session",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://api.mercadopago.com/v1/device_sessions/anonymous_device_session",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-Z79FYPT9QD&gtm=45je6as0v872573084za200zd872573084xf1&_p=1793291818049&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQ&ae=a&are=1&cid=570468212.1793291818&frm=0&pscdl=&rcb=2&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&gaf=2&_s=2&tag_exp=115616985~115938465~115938468~11889792",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "scroll",
+        "tid": "G-Z79FYPT9QD"
+      }
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "_d2id",
+      "desde": "www.mercadopago.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "profile",
+      "desde": "api.mercadopago.com"
+    }
+  ],
+  "peso": {
+    "total_bytes": 4871440,
+    "al_abrir_bytes": 4871440,
+    "n_peticiones": 58,
+    "mas_pesados": [
+      {
+        "url": "https://toteat.app/js/chunk-vendors.9d86341a.js",
+        "bytes": 645158
+      },
+      {
+        "url": "https://toteat.app/img/banners/pizza.jpg",
+        "bytes": 414938
+      },
+      {
+        "url": "https://toteat.app/img/banners/vegetariana.jpg",
+        "bytes": 369313
+      },
+      {
+        "url": "https://toteat.app/img/banners/asiatica.jpg",
+        "bytes": 312902
+      }
+    ]
+  },
+  "html_len": 81403
+}

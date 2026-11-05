@@ -7,7 +7,7 @@ import { pedir } from '../lib/http.mjs';
 
 const RAIZ = path.resolve(fileURLToPath(new URL('../../../../', import.meta.url)));
 const NO_PROPIOS = /(^|\.)(facebook|instagram|linkedin|twitter|x|youtube|tiktok|wa|wix|wixsite|business|google|linktr|linktree|yelp|tripadvisor|booking|portalinmobiliario|yapo|mercadolibre|goo|bit)\.(com|cl|me|ee|ly|site)$/i;
-const PARKING = /domain (is )?for sale|this domain|dominio (en venta|disponible)|parked|buy this domain|godaddy|sedo\.com|hugedomains/i;
+const PARKING = /domain (is )?for sale|this domain|dominio (en venta|disponible)|parked|buy this domain|godaddy|sedo\.com|hugedomains|sitio en construcci[oó]n|p[aá]gina en construcci[oó]n|coming soon|under conn?struction|bluehosting|haulmer|default web site page|welcome to nginx|apache2 (ubuntu )?default page/i;   // incluye paginas de relleno de hosting: el dueño diria "ese no es mi sitio"
 
 export function limpiarDominio(d) {
   return String(d).trim().toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
@@ -16,7 +16,8 @@ export function limpiarDominio(d) {
 // Solo lectura. Por correo Y por dominio: la baja es de la empresa, no del buzon.
 export function enExclusion(dominio, correo) {
   const filas = leerCsv(path.join(RAIZ, 'ventas/lista-exclusion.csv'));
-  const hit = filas.find((f) => limpiarDominio(f.dominio) === dominio || (correo && f.email && f.email.toLowerCase() === correo.toLowerCase()));
+  // `direccion-invalida` bloquea SOLO la direccion (ventas/LEEME-lista-exclusion.md: la empresa puede seguir valida por otra); el resto bloquea tambien por dominio.
+  const hit = filas.find((f) => (f.tipo !== 'direccion-invalida' && limpiarDominio(f.dominio) === dominio) || (correo && f.email && f.email.toLowerCase() === correo.toLowerCase()));
   return hit ? { tipo: hit.tipo, motivo: hit.motivo, fecha: hit.fecha } : null;
 }
 
@@ -52,12 +53,35 @@ export function yaContactado(dominio) {
   return { seguro, posible };
 }
 
+// Redireccion a otro sitio: mismo dominio registrable (ultimas dos etiquetas) = www o subdominio, no cuenta.
+const base = (h) => h.replace(/^www\./, '').split('.').slice(-2).join('.');
+const redirigeFuera = (dominio, host) => !!host && base(host) !== base(dominio);
+
+// descartado antes: otra sesion o Dereck ya lo marco como no escribir (dominio reciclado, aparcado, distribuidor, sitio caido, hallazgo flaco).
+const MARCA_DESCARTE = /descartad|descartar|mal etiquetado|NO escribir|DOMINIO RECICLADO|aparcad|parked|no es cl[ií]nica|distribuidor de|fuera de perfil|vende prote[cs]ci[oó]n|vende proteccion/i;   // 'vende proteccion de datos' = el prospecto vende lo mismo que Verifica y Cumple (estrategia §9 y §11)
+export function descartadoAntes(dominio) {
+  const dir = path.join(RAIZ, 'ventas'); if (!fs.existsSync(dir)) return null;
+  const re = new RegExp('(^|[@.\\s/])' + dominio.replace(/\./g, '\\.') + '([^a-z0-9-]|$)', 'i');
+  for (const f of fs.readdirSync(dir).filter((x) => /\.csv$/i.test(x) && x !== 'lista-exclusion.csv')) {
+    try {
+      for (const r of leerCsv(path.join(dir, f))) {
+        const dom = String(r.dominio || (r.email || '').split('@')[1] || '').toLowerCase();
+        if (!(dom === dominio || re.test(dom))) continue;
+        const marca = [r.estado, r.hallazgo_medido, r.hallazgo].filter(Boolean).join(' ');
+        if (MARCA_DESCARTE.test(marca)) return { en: 'ventas/' + f, motivo: marca.slice(0, 160) };
+      }
+    } catch { /* csv raro: se ignora */ }
+  }
+  return null;
+}
+
 // remedir: se mide un prospecto YA contactado (para un seguimiento). Se salta 'ya contactado', pero la lista de exclusion SIGUE mandando.
-export async function pasada0(dominio, { correo, sinCorte = false, remedir = false } = {}) {
+export async function pasada0(dominio, { correo, sinCorte = false, remedir = false, aunContactado = false } = {}) {
   const out = { pasada: 0, dominio, ...(sinCorte ? { sin_corte: true } : {}) };
   const ex = enExclusion(dominio, correo);
   if (ex && !sinCorte) return { ...out, corte: 'excluido', detalle: ex };
-  const cont = (sinCorte || remedir) ? { seguro: [], posible: [] } : yaContactado(dominio);
+  if (!sinCorte && !remedir) { const d = descartadoAntes(dominio); if (d) return { ...out, corte: 'descartado-antes', detalle: { ...d, nota: 'Ya estaba marcado como no escribir en una lista de ventas/. Si cambio, correr con --sin-corte.' } }; }
+  const cont = (sinCorte || remedir || aunContactado) ? { seguro: [], posible: [] } : yaContactado(dominio);   // aunContactado: reactivacion, se mide a quien ya recibio correos; exclusion y descartes siguen vigentes
   if (cont.seguro.length) return { ...out, corte: 'ya-contactado', detalle: { en: cont.seguro.slice(0, 5), nota: 'Hay un envio registrado. Confirmar en Gmail (in:sent to:dominio).' } };
 
   let r = null;
@@ -70,12 +94,16 @@ export async function pasada0(dominio, { correo, sinCorte = false, remedir = fal
   const final = new URL(r.url);
   const host = final.host.replace(/^www\./, '');
   if (NO_PROPIOS.test(host) && host !== dominio) return { ...out, corte: 'no-es-sitio-propio', detalle: { final: final.host } };
-  if (!sinCorte && PARKING.test(r.cuerpo.slice(0, 20000)) && r.cuerpo.length < 20000) return { ...out, corte: 'parking', detalle: {} };
-
   const texto = r.cuerpo.replace(/<(script|style|noscript)[\s\S]*?<\/\1>/gi, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  // Se mide el texto visible, no el HTML: una pagina de relleno puede pesar cientos de KB por assets en linea.
+  if (!sinCorte && texto.length < 4000 && PARKING.test(texto)) return { ...out, corte: 'parking', detalle: { texto: texto.slice(0, 120) } };
   const spa = /<div[^>]+id=["'](root|app|__next|__nuxt)["']/i.test(r.cuerpo);
   return { ...out, corte: null, url_final: r.url, status: r.status, cabeceras: r.cab, html: r.cuerpo,
-    advertencias: cont.posible.length ? [`El dominio se menciona en ${cont.posible.slice(0, 3).join(', ')} pero ningun registro prueba un envio. Confirmar en Gmail (in:sent to:dominio) antes de escribir.`] : [],
+    advertencias: [
+      ...(cont.posible.length ? [`El dominio se menciona en ${cont.posible.slice(0, 3).join(', ')} pero ningun registro prueba un envio. Confirmar en Gmail (in:sent to:dominio) antes de escribir.`] : []),
+      ...(redirigeFuera(dominio, host) ? [`El dominio ${dominio} redirige a ${host}: lo medido (cookies, formulario, contacto) es del sitio de destino. No decir "tu sitio ${dominio}" sin confirmar que el destinatario administra ${host}.`] : []),
+      ...(/sample page/i.test(r.cuerpo) && /hello world/i.test(r.cuerpo) ? ['Parece una plantilla de WordPress sin personalizar ("Sample Page", "Hello world!"): puede ser un sitio abandonado o un dominio que ya no es el sitio real. Redactar con cautela.'] : []),
+    ],
     html_no_alcanza: texto.length < 500 && spa, largo_texto_html: texto.length, spa_detectada: spa,
     redirige_a_otro_host: host !== dominio ? host : null };
 }

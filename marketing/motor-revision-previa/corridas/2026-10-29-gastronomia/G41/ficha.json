@@ -1,0 +1,832 @@
+{
+  "id": "G41",
+  "dominio": "tavelli.cl",
+  "motor": "v0",
+  "cuando": "2026-10-29T16:51:07.902Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://www.tavelli.cl/pedir",
+  "hallazgo": {
+    "id": "F2",
+    "nombre": "No hay a la vista cómo contactar al negocio",
+    "linea": "Desarrollo Web",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, en 30 segundos",
+    "donde_mirar": "Abrir la portada y buscar por dónde un cliente puede escribir o llamar.",
+    "condiciones": {
+      "1": {
+        "v": "no",
+        "razon": "Se ve mirando el sitio."
+      },
+      "2": {
+        "v": "si",
+        "razon": "Sin ruta de contacto, cada visita que quiere comprar se va."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve a simple vista."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Cualquier herramienta lo ve: es capa 1."
+      }
+    },
+    "afirmable": "En la portada no hay formulario, ni teléfono, ni correo, ni WhatsApp, ni un enlace de contacto.",
+    "no_afirmable": [
+      "que el negocio no tenga contacto en otras páginas del sitio (solo se revisó la portada)"
+    ],
+    "advertencias": [],
+    "datos": {},
+    "propuesta": {
+      "en_castellano": "En la portada de tu sitio no encontré cómo contactarte: ni formulario, ni teléfono, ni correo, ni WhatsApp.",
+      "problema_tecnico": "En la portada no hay formulario, ni teléfono, ni correo, ni WhatsApp, ni un enlace de contacto.",
+      "donde_mirar": "Abrir la portada y buscar por dónde un cliente puede escribir o llamar.",
+      "se_vende": {
+        "linea": "Desarrollo Web",
+        "producto": "Desarrollo Web a medida",
+        "alcance": "Poner a la vista un formulario, teléfono o WhatsApp y probarlo.",
+        "vehiculo_publicado": "Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Desarrollo Web a medida, página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "fuerte",
+      "frase_de_arreglo": "Eso se arregla: dejo a la vista por dónde te escriben y lo pruebo de punta a punta.",
+      "apertura_a_reunion": "Vi otra cosa que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "C1",
+      "nombre": "Rastreadores que escriben antes de cualquier consentimiento",
+      "linea": "Verifica y Cumple",
+      "estado": "estable",
+      "quien_comprueba": "el dueño, en 30 segundos",
+      "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Las cookies las escriben scripts de terceros; el dueño ve el sitio normal."
+        },
+        "2": {
+          "v": "si",
+          "razon": "Cookies de medición o publicidad escritas sin que nadie haya aceptado: _ga, _ga_33SM4HJSCV, _fbp. Se describe la señal, no la obligación."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en el panel de cookies del navegador."
+        },
+        "4": {
+          "v": "si",
+          "razon": "Exige dos tramos, atribuir cada cookie a su script y leer Consent Mode (gcs); no lo entrega una API."
+        }
+      },
+      "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga, _ga_33SM4HJSCV, _fbp.",
+      "no_afirmable": [
+        "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+        "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+        "lo que la ley \"exige\"",
+        "cualquier cosa que no aparezca en las dos corridas"
+      ],
+      "advertencias": [],
+      "propuesta": {
+        "en_castellano": "Abrí tu sitio sin tocar nada ni aceptar nada, y ya había dejado en mi navegador cookies de Google y Meta.",
+        "problema_tecnico": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga, _ga_33SM4HJSCV, _fbp.",
+        "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
+        "se_vende": {
+          "linea": "Verifica y Cumple",
+          "producto": "Kit de implementación de Verifica y Cumple",
+          "alcance": "Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.",
+          "vehiculo_publicado": "Desde $149.000 + IVA, una vez (correos aprobados 23-sep y estrategia §1)",
+          "precio_en_el_correo": "Desde $149.000 + IVA, una vez",
+          "linea_de_precio": null,
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "fuerte",
+        "frase_de_arreglo": "Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": "Gratis y sin registro: https://verifica.spindlelab.cl",
+        "estado_del_texto": "APROBADO: tomado de correos ya revisados.",
+        "por_definir": [],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "C4",
+      "nombre": "El nombre del negocio no es el mismo dentro del sitio",
+      "linea": "Visibilidad en IA",
+      "estado": "sospecha",
+      "tope": "El cruce con la ficha de Google y LinkedIn es manual: nunca pasa de sospecha.",
+      "quien_comprueba": "el dueño, buscando su propio nombre",
+      "donde_mirar": "Buscar el nombre del negocio y comparar con: JSON-LD name: Tavelli - Tavelli Ñuñoa / og:site_name: Cafeterías Tavelli - Clásico sabor y estilo. Después, la ficha de Google y LinkedIn (a mano).",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Cada pieza se ve bien por separado."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "El costo (que ningún modelo consolide quién es) es blando."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se compara a simple vista."
+        },
+        "4": {
+          "v": "medias",
+          "razon": "Comparar texto es automático; interpretarlo y cruzarlo con otras fuentes es oficio."
+        }
+      },
+      "afirmable": "Dentro del sitio el nombre aparece como: JSON-LD name: Tavelli - Tavelli Ñuñoa y og:site_name: Cafeterías Tavelli - Clásico sabor y estilo.",
+      "no_afirmable": [
+        "que ocurre lo mismo en Google o LinkedIn (no revisado)"
+      ],
+      "advertencias": [],
+      "propuesta": {
+        "en_castellano": "SIN REDACTAR: todavía es una sospecha, no se usa en un correo.",
+        "problema_tecnico": "Dentro del sitio el nombre aparece como: JSON-LD name: Tavelli - Tavelli Ñuñoa y og:site_name: Cafeterías Tavelli - Clásico sabor y estilo.",
+        "donde_mirar": "Buscar el nombre del negocio y comparar con: JSON-LD name: Tavelli - Tavelli Ñuñoa / og:site_name: Cafeterías Tavelli - Clásico sabor y estilo. Después, la ficha de Google y LinkedIn (a mano).",
+        "se_vende": {
+          "linea": "Visibilidad en IA",
+          "producto": "Auditoría de Visibilidad en IA",
+          "alcance": "Un solo nombre del negocio, igual en el sitio y en los datos estructurados.",
+          "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo el nombre igual en el sitio y en los datos que leen Google y la IA.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "C1"
+  ],
+  "capa1": {
+    "consecuencia": [
+      "sin_ruta_de_contacto_visible"
+    ],
+    "higiene": [
+      "sin_llms_txt"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [
+        "GTM-PBHQX73"
+      ],
+      "ga4": [
+        "G-33SM4HJSCV"
+      ],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": null,
+      "cloudflare": false,
+      "x_powered_by": "Express"
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": false,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "WebSite",
+        "Restaurant"
+      ],
+      "org": [
+        {
+          "name": "Tavelli - Tavelli Ñuñoa"
+        },
+        {
+          "name": "Tavelli - Tavelli Marina Arauco"
+        },
+        {
+          "name": "Tavelli - Tavelli Vitacura"
+        },
+        {
+          "name": "Tavelli - Tavelli Providencia Drugstore"
+        },
+        {
+          "name": "Tavelli - Tavelli Colon"
+        },
+        {
+          "name": "Tavelli - Tavelli Apoquindo"
+        },
+        {
+          "name": "Tavelli - Tavelli Las Tranqueras"
+        },
+        {
+          "name": "Tavelli - Tavelli Mall Arauco Maipu"
+        },
+        {
+          "name": "Tavelli - Tavelli Mall Plaza Vespucio"
+        },
+        {
+          "name": "Tavelli - Tavelli Burgos"
+        },
+        {
+          "name": "Tavelli - Tavelli San Miguel"
+        },
+        {
+          "name": "Tavelli - Tavelli Manuel Montt"
+        },
+        {
+          "name": "Tavelli - Tavelli La Concepción"
+        },
+        {
+          "name": "Tavelli - Tavelli La Reina"
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": 12,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": 12,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 2896458,
+      "al_abrir_bytes": 2896458,
+      "n_peticiones": 278,
+      "mas_pesados": [
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-33SM4HJSCV",
+          "bytes": 180710
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-33SM4HJSCV&cx=c&gtm=4e6as0",
+          "bytes": 180701
+        },
+        {
+          "url": "https://connect.facebook.net/signals/config/413948823292691?v=2.9.429&r=stable&domain=www.tavelli.cl&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a7",
+          "bytes": 151894
+        },
+        {
+          "url": "https://tofuu.getjusto.com/orioneat-prod/tGpERssBXXQS5mv95-Inter-Light.ttf",
+          "bytes": 143066
+        }
+      ]
+    },
+    {
+      "total_bytes": 3078238,
+      "al_abrir_bytes": 3078238,
+      "n_peticiones": 280,
+      "mas_pesados": [
+        {
+          "url": "https://www.googletagmanager.com/gtag/destination?id=G-33SM4HJSCV&cx=c&gtm=4e6as1h2",
+          "bytes": 181006
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-33SM4HJSCV",
+          "bytes": 180704
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-33SM4HJSCV&cx=c&gtm=4e6as1h2",
+          "bytes": 180693
+        },
+        {
+          "url": "https://connect.facebook.net/signals/config/413948823292691?v=2.9.429&r=stable&domain=www.tavelli.cl&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a7",
+          "bytes": 151834
+        }
+      ]
+    },
+    {
+      "total_bytes": 2897185,
+      "al_abrir_bytes": 2897185,
+      "n_peticiones": 280,
+      "mas_pesados": [
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-33SM4HJSCV",
+          "bytes": 180944
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-33SM4HJSCV&cx=c&gtm=4e6as0",
+          "bytes": 180724
+        },
+        {
+          "url": "https://connect.facebook.net/signals/config/413948823292691?v=2.9.429&r=stable&domain=www.tavelli.cl&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a7",
+          "bytes": 151877
+        },
+        {
+          "url": "https://tofuu.getjusto.com/orioneat-prod/tGpERssBXXQS5mv95-Inter-Light.ttf",
+          "bytes": 143065
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [
+        {
+          "nombre": "_ga",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_ga_33SM4HJSCV",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_fbp",
+          "proveedor": "Meta",
+          "primera_fase": "A"
+        }
+      ],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [
+        "Google Tag",
+        "Meta"
+      ],
+      "envio_en_ambas": [
+        "Google Analytics"
+      ],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": {
+      "gtm": [
+        "GTM-PBHQX73"
+      ],
+      "contenedores": [
+        {
+          "id": "GTM-PBHQX73",
+          "leido": true,
+          "funciones": [
+            "__e",
+            "__v",
+            "__gas",
+            "__u",
+            "__f",
+            "__ua",
+            "__cvt_61107576_5",
+            "__paused",
+            "__lcl"
+          ],
+          "tags_de_evento": [],
+          "html_personalizado": 0
+        }
+      ],
+      "eventos_inline": [],
+      "eventos_observados_en_sesion": [
+        "page_view"
+      ],
+      "ads_instalado": false
+    },
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 485925
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 485925
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 485925,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "tavelli.cl",
+            "dominio": "tavelli.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "tavelli.cl",
+            "dominio": "tavelli.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "tavelli.cl",
+            "dominio": "tavelli.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "tavelli.cl",
+            "dominio": "tavelli.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "tavelli.cl",
+            "dominio": "tavelli.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "tavelli.cl",
+            "dominio": "tavelli.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "tavelli.cl",
+            "dominio": "tavelli.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "tavelli.cl",
+            "dominio": "tavelli.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "tavelli.cl",
+            "dominio": "tavelli.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "tavelli.cl",
+            "dominio": "tavelli.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Cafeterías Tavelli - Clásico sabor y estilo"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Ñuñoa"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Marina Arauco"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Vitacura"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Providencia Drugstore"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Colon"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Apoquindo"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Las Tranqueras"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Mall Arauco Maipu"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Mall Plaza Vespucio"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Burgos"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli San Miguel"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli Manuel Montt"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli La Concepción"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Tavelli - Tavelli La Reina"
+      },
+      {
+        "fuente": "title",
+        "valor": "Pide"
+      },
+      {
+        "fuente": "title",
+        "valor": "Cafeterías Tavelli"
+      },
+      {
+        "fuente": "title",
+        "valor": "Clásico sabor y estilo"
+      }
+    ],
+    "nombres_en_conflicto": [
+      [
+        "JSON-LD name: Tavelli - Tavelli Ñuñoa",
+        "og:site_name: Cafeterías Tavelli - Clásico sabor y estilo"
+      ],
+      [
+        "JSON-LD name: Tavelli - Tavelli Marina Arauco",
+        "og:site_name: Cafeterías Tavelli - Clásico sabor y estilo"
+      ],
+      [
+        "JSON-LD name: Tavelli - Tavelli Marina Arauco",
+        "JSON-LD name: Tavelli - Tavelli Ñuñoa"
+      ]
+    ],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 30,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

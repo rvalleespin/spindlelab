@@ -1,0 +1,90 @@
+{
+  "url": "https://linkr.bio/",
+  "cuando": "2026-10-29T16:44:56.802Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://linkr.bio/",
+      "titulo": "Upgrading - Linkr Service",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 36,
+      "muestra": "Upgrading\nLinkr service.\nStay tuned!",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 3,
+        "h2": 0,
+        "palabras": 5
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://linkr.bio/",
+      "titulo": "Upgrading - Linkr Service",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 36,
+      "muestra": "Upgrading\nLinkr service.\nStay tuned!",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 3,
+        "h2": 0,
+        "palabras": 5
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://linkr.bio/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://linkr.bio/img_v3.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://linkr.bio/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 189012,
+    "al_abrir_bytes": 189012,
+    "n_peticiones": 3,
+    "mas_pesados": [
+      {
+        "url": "https://linkr.bio/img_v3.png",
+        "bytes": 187425
+      },
+      {
+        "url": "https://linkr.bio/",
+        "bytes": 1253
+      },
+      {
+        "url": "https://linkr.bio/favicon.ico",
+        "bytes": 334
+      }
+    ]
+  },
+  "html_len": 3058
+}

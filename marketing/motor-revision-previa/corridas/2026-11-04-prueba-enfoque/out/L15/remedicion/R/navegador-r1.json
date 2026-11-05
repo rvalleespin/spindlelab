@@ -1,0 +1,82 @@
+{
+  "url": "https://www.cela.cl/",
+  "cuando": "2026-11-04T17:31:59.559Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://www.cela.cl/",
+      "titulo": "Browser verification",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 76,
+      "muestra": "Verifying your browser\n\nOne quick check before you continue.\n\nVerify browser",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 11
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://www.cela.cl/",
+      "titulo": "Browser verification",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 76,
+      "muestra": "Verifying your browser\n\nOne quick check before you continue.\n\nVerify browser",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 11
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://www.cela.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.cela.cl/?__shopify_bv_challenge=AaGnnb4fAAEBccVorPTDxcx4y97yHME4x4Inu2qY-077pv6EZbFZo5VSS2lymP0q4-FK52Q8bE7U_m1OVZPsBuS9qDe0ZK7UnOInLPEymMEnVo7ZQu_Nq491nujqArm47sBXnq4cKAH31TWLg_oHBoSmj8qfgT-4zV_npqbDdw5247nwiJaasjwB6QGhr-TBWhPn8xiaI5FWM693SfHpO-VhjK-Q63fJV-GyuTZobWYhu0tAg1w1E8lebnJzdvtkVIR9sgS58geGrNTVOIXLdunkze8h7tsvmIkotdwNCq1Sgemk_tvTHVi-i8KHmxCBT5bHRRKC-lSHzn05sP6ZrW69HDZUivYbDlpT",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.cela.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 9823,
+    "al_abrir_bytes": 9823,
+    "n_peticiones": 1,
+    "mas_pesados": [
+      {
+        "url": "https://www.cela.cl/",
+        "bytes": 9823
+      }
+    ]
+  },
+  "html_len": 24221
+}

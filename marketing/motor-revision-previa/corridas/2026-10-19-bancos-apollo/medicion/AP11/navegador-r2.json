@@ -1,0 +1,139 @@
+{
+  "url": "https://bufeteabogados.cl/",
+  "cuando": "2026-10-19T17:53:34.993Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://bufeteabogados.cl/",
+      "titulo": "Bufete Abogados. Santiago - Chile",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [
+        {
+          "h": "estudio_juridico/lo_que_hacemos.htm",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 10,
+      "muestra": " \n\n\t\t\n\n\n\n ",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 0,
+        "palabras": 0
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://bufeteabogados.cl/",
+      "titulo": "Bufete Abogados. Santiago - Chile",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [
+        {
+          "h": "estudio_juridico/lo_que_hacemos.htm",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 10,
+      "muestra": " \n\n\t\t\n\n\n\n ",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 0,
+        "palabras": 0
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://bufeteabogados.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://bufeteabogados.cl/images/logo.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://bufeteabogados.cl/images/linea.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://bufeteabogados.cl/images/requerimientos.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://bufeteabogados.cl/images/entrar.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://bufeteabogados.cl/images/fondo-bufete.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://bufeteabogados.cl/entrar_sus.gif",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://bufeteabogados.cl/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 47702,
+    "al_abrir_bytes": 47702,
+    "n_peticiones": 8,
+    "mas_pesados": [
+      {
+        "url": "https://bufeteabogados.cl/images/fondo-bufete.jpg",
+        "bytes": 40649
+      },
+      {
+        "url": "https://bufeteabogados.cl/images/requerimientos.gif",
+        "bytes": 2271
+      },
+      {
+        "url": "https://bufeteabogados.cl/images/logo.gif",
+        "bytes": 1861
+      },
+      {
+        "url": "https://bufeteabogados.cl/",
+        "bytes": 1335
+      }
+    ]
+  },
+  "html_len": 2375
+}

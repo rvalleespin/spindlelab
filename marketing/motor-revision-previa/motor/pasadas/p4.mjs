@@ -42,7 +42,8 @@ export function candidatoC1(runs) {
   };
   if (!comunes.length) return { info, candidato: null };
   const soloTrasGesto = info.cookies.some((c) => c.primera_fase !== 'A');
-  return { info, candidato: {
+  const conAviso = aviso.some((a) => a.A || a.B);
+  const cand = {
     id: 'C1', nombre: NOMBRE.C1, linea: LINEA.C1, estado: 'estable', quien_comprueba: 'el dueño, en 30 segundos',
     donde_mirar: soloTrasGesto
       ? 'Abrir el sitio en una ventana nueva, mirar las cookies (candado > Cookies, o F12 > Application > Cookies) sin tocar nada ~10 s, y de nuevo tras mover el mouse y bajar por la página. Algunas aparecen solo tras el primer gesto.'
@@ -61,7 +62,14 @@ export function candidatoC1(runs) {
       ...(aviso.some((a) => a.implicito) ? ['El aviso dice aceptar "al continuar navegando": puede contar como consentimiento implícito. Revisar a mano.'] : []),
       ...(solo1.length + solo2.length ? [`Cambiaron entre corridas y por eso quedan fuera: ${[...new Set([...solo1, ...solo2])].join(', ')}.`] : []),
     ],
-  } };
+  };
+  if (conAviso) {   // verificado a mano por revisores independientes (16-oct): el aviso EXISTE y los rastreadores se escriben antes de elegir. Es otro hallazgo, mas debil y con otra frase.
+    cand.variante = 'con-aviso';
+    cand.afirmable = `El sitio muestra un aviso de cookies, pero antes de elegir nada en él ya había guardado: ${comunes.join(', ')}.`;
+    cand.donde_mirar = 'Abrir el sitio en una ventana nueva, NO responder el aviso, y mirar las cookies (candado > Cookies, o F12 > Application > Cookies): ya hay de medición o publicidad.';
+    cand.no_afirmable = [...cand.no_afirmable.filter((x) => !/no tiene aviso/.test(x)), 'que el sitio "no tiene aviso" (sí lo tiene)', 'que el aviso sea ilegal o insuficiente', 'que las cookies se escriban aun después de pulsar Rechazar (no se probó)'];
+  }
+  return { info, candidato: cand };
 }
 
 export function candidatoC3(edge) {

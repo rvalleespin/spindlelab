@@ -1,0 +1,561 @@
+[
+ {
+  "id": "AP01",
+  "dominio": "alessandri.cl",
+  "empresa": "Alessandri Abogados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _clck, _clsk.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics, Microsoft Clarity)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_clck",
+   "_clsk"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP01"
+ },
+ {
+  "id": "AP03",
+  "dominio": "jycabogados.cl",
+  "empresa": "JyC Abogados",
+  "oferta": "F10",
+  "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+  "no_afirmable": [
+   "que no exista contacto más abajo en la página"
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP03"
+ },
+ {
+  "id": "AP04",
+  "dominio": "alvearabogados.cl",
+  "empresa": "Alvear Abogados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_4NXMKRNN5R, _ga.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_4NXMKRNN5R",
+   "_ga"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP04"
+ },
+ {
+  "id": "AP10",
+  "dominio": "zielabogados.cl",
+  "empresa": "ZIEL Abogados y Consultores Tributarios",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga, _ga_FE8PEV3FSW, _gcl_au, _ga_ZSR1CDDE0V.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga",
+   "_ga_FE8PEV3FSW",
+   "_gcl_au",
+   "_ga_ZSR1CDDE0V"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP10"
+ },
+ {
+  "id": "AP11",
+  "dominio": "bufeteabogados.cl",
+  "empresa": "Bufete Abogados S.A.",
+  "oferta": "F2",
+  "afirmable": "En la portada no hay formulario, ni teléfono, ni correo, ni WhatsApp, ni un enlace de contacto.",
+  "no_afirmable": [
+   "que el negocio no tenga contacto en otras páginas del sitio (solo se revisó la portada)"
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP11"
+ },
+ {
+  "id": "AP12",
+  "dominio": "fhmabogados.cl",
+  "empresa": "FMS abogados",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP12"
+ },
+ {
+  "id": "AP13",
+  "dominio": "barrazayasociados.cl",
+  "empresa": "Barraza & Asociados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _ga, _ga_P2PWPS5F2Q, _ga_0Q2JL4S2BT.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gcl_au",
+   "_ga",
+   "_ga_P2PWPS5F2Q",
+   "_ga_0Q2JL4S2BT"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP13"
+ },
+ {
+  "id": "AP14",
+  "dominio": "sanzyrodriguez.cl",
+  "empresa": "Sanz & Rodríguez Abogados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_4P7RHK5P2X, _ga, _ga_N1M6B67VMX.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_4P7RHK5P2X",
+   "_ga",
+   "_ga_N1M6B67VMX"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP14"
+ },
+ {
+  "id": "AP16",
+  "dominio": "rojaspacini.com",
+  "empresa": "RojasPacini Abogados",
+  "oferta": "F10",
+  "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+  "no_afirmable": [
+   "que no exista contacto más abajo en la página"
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP16"
+ },
+ {
+  "id": "AP17",
+  "dominio": "bloomycia.cl",
+  "empresa": "Bloomfield y Cía. Abogados SpA",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP17"
+ },
+ {
+  "id": "AP19",
+  "dominio": "agpp.cl",
+  "empresa": "AGPP Abogados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_L23FV53ZP8, _ga.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_L23FV53ZP8",
+   "_ga"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP19"
+ },
+ {
+  "id": "AP20",
+  "dominio": "peabogados.cl",
+  "empresa": "Eguiguren Abogados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_L6M7H9HDF5, _ga.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_L6M7H9HDF5",
+   "_ga"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP20"
+ },
+ {
+  "id": "AP22",
+  "dominio": "estudiolizana.cl",
+  "empresa": "Estudio Lizana Abogados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga, _gcl_au, _ga_Y5ZLG0PNG3.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga",
+   "_gcl_au",
+   "_ga_Y5ZLG0PNG3"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP22"
+ },
+ {
+  "id": "AP23",
+  "dominio": "cvrabogados.cl",
+  "empresa": "CVR Abogados",
+  "oferta": "F3",
+  "afirmable": "El enlace de WhatsApp usa un número de 9 dígitos sin código de país (95XXXXXXX).",
+  "no_afirmable": [
+   "que \"no abre\": el motor no probó el enlace en WhatsApp (solo lee el formato del número)"
+  ],
+  "cookies": [
+   "_gcl_au"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP23"
+ },
+ {
+  "id": "AP24",
+  "dominio": "mba.legal",
+  "empresa": "Misraji & Bejar Abogados",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP24"
+ },
+ {
+  "id": "AP27",
+  "dominio": "hurtadoybonito.cl",
+  "empresa": "Hurtado y Bonito Abogados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_8DSFF7GL2Z, _ga.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_8DSFF7GL2Z",
+   "_ga"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP27"
+ },
+ {
+  "id": "AP30",
+  "dominio": "pinaycia.cl",
+  "empresa": "Piña y Cía. Abogados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: ninguno)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gcl_au"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP30"
+ },
+ {
+  "id": "AP31",
+  "dominio": "defensoriaslaborales.cl",
+  "empresa": "Defensorías Laborales",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _ga, _gid, _gat, _gat_gtag_UA_117421071_1.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gcl_au",
+   "_ga",
+   "_gid",
+   "_gat",
+   "_gat_gtag_UA_117421071_1"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP31"
+ },
+ {
+  "id": "AP33",
+  "dominio": "estudioserrano.cl",
+  "empresa": "Estudio Serrano",
+  "oferta": "F10",
+  "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+  "no_afirmable": [
+   "que no exista contacto más abajo en la página"
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP33"
+ },
+ {
+  "id": "AP34",
+  "dominio": "hublegal.cl",
+  "empresa": "HubLegal",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP34"
+ },
+ {
+  "id": "AP36",
+  "dominio": "dreyse.cl",
+  "empresa": "Dreyse Abogados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_474EGNEZD7, _ga.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_474EGNEZD7",
+   "_ga"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP36"
+ },
+ {
+  "id": "AP37",
+  "dominio": "cerco.legal",
+  "empresa": "Cerco Legal",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_82WSG5QBDF, _ga.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_82WSG5QBDF",
+   "_ga"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP37"
+ },
+ {
+  "id": "AP41",
+  "dominio": "eypabogados.cl",
+  "empresa": "Eugenin & Pieranni Abogados",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP41"
+ },
+ {
+  "id": "AP42",
+  "dominio": "slabogados.cl",
+  "empresa": "Subiabre Lucero Abogados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_1C7XTMSTH2, _ga.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_1C7XTMSTH2",
+   "_ga"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP42"
+ },
+ {
+  "id": "AP45",
+  "dominio": "lexy.cl",
+  "empresa": "Lexy",
+  "oferta": "F10",
+  "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+  "no_afirmable": [
+   "que no exista contacto más abajo en la página"
+  ],
+  "cookies": [
+   "_fbp",
+   "_ga_BNMME8B9S0",
+   "_ga"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP45"
+ },
+ {
+  "id": "AP47",
+  "dominio": "cozblavi.cl",
+  "empresa": "Coz Vial & Blavi",
+  "oferta": "F10",
+  "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+  "no_afirmable": [
+   "que no exista contacto más abajo en la página"
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP47"
+ },
+ {
+  "id": "AP48",
+  "dominio": "riescoyasociados.cl",
+  "empresa": "Riesco y Asociados",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_R5HSRS21GX, _ga, _ga_MZQZT8PR0E.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_R5HSRS21GX",
+   "_ga",
+   "_ga_MZQZT8PR0E"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP48"
+ },
+ {
+  "id": "AP50",
+  "dominio": "valdesmunita.cl",
+  "empresa": "Valdés & Munita",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP50"
+ },
+ {
+  "id": "AP53",
+  "dominio": "ax.legal",
+  "empresa": "Ax Legal",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga, _ga_51SM6WE2DB, _fbp, __hstc, hubspotutk, __hssrc, __hssc.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga",
+   "_ga_51SM6WE2DB",
+   "_fbp",
+   "__hstc",
+   "hubspotutk",
+   "__hssrc",
+   "__hssc"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP53"
+ },
+ {
+  "id": "AP54",
+  "dominio": "garcianadal.cl",
+  "empresa": "García Nadal & Cía.",
+  "oferta": "F1",
+  "afirmable": "La portada tiene un formulario que pide correo o teléfono y no hay ningún enlace a una política de privacidad (ni en el HTML ni tras ejecutar la página).",
+  "no_afirmable": [
+   "que \"no tiene política\" en todo el sitio (solo se revisó la portada)",
+   "lo que la ley \"exige\""
+  ],
+  "cookies": [],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP54"
+ },
+ {
+  "id": "AP55",
+  "dominio": "chiledeudas.cl",
+  "empresa": "ChileDeudas",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_1EV8SWCCW5, _ga.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_1EV8SWCCW5",
+   "_ga"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP55"
+ },
+ {
+  "id": "AP56",
+  "dominio": "moraip.cl",
+  "empresa": "MORA IP",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gcl_au"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP56"
+ },
+ {
+  "id": "AP57",
+  "dominio": "segal.cl",
+  "empresa": "Grupo Segal",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _ga_TEG4XTQ9Q8, _ga, _fbp.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_ga_TEG4XTQ9Q8",
+   "_ga",
+   "_fbp"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP57"
+ },
+ {
+  "id": "AP58",
+  "dominio": "sgfertility.cl",
+  "empresa": "SGFertility",
+  "oferta": "C1",
+  "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _ga_89NBEK4GNY, _ga, _tt_enable_cookie, _ttp, _fbp.",
+  "no_afirmable": [
+   "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+   "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+   "lo que la ley \"exige\"",
+   "cualquier cosa que no aparezca en las dos corridas"
+  ],
+  "cookies": [
+   "_gcl_au",
+   "_ga_89NBEK4GNY",
+   "_ga",
+   "_tt_enable_cookie",
+   "_ttp",
+   "_fbp"
+  ],
+  "dir": "/home/user/spindlelab/marketing/motor-revision-previa/corridas/2026-10-19-bancos-apollo/medicion/AP58"
+ }
+]

@@ -1,0 +1,685 @@
+{
+  "id": "H42",
+  "dominio": "blackcathostal.com",
+  "motor": "v0",
+  "cuando": "2026-10-30T14:13:22.174Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://blackcathostal.com/",
+  "hallazgo": {
+    "id": "F7",
+    "nombre": "Enlaces de la portada que llevan a páginas que no existen",
+    "linea": "Auditoría SEO Técnica",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, haciendo clic",
+    "donde_mirar": "Hacer clic en los enlaces de la portada y el menú.",
+    "condiciones": {
+      "1": {
+        "v": "medias",
+        "razon": "Solo se nota al hacer clic en ese enlace."
+      },
+      "2": {
+        "v": "medias",
+        "razon": "Cada clic roto es una visita perdida."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se prueba con un clic."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Cualquier verificador de enlaces lo ve: es capa 1."
+      }
+    },
+    "afirmable": "1 enlace(s) internos de la portada responden 404 (revisados 24), en dos rondas.",
+    "no_afirmable": [
+      "que sean todos los rotos del sitio (solo se revisó la portada)"
+    ],
+    "advertencias": [],
+    "datos": {
+      "cantidad": 1,
+      "ejemplo": "/denuncias"
+    },
+    "propuesta": {
+      "en_castellano": "En tu portada hay un enlace que lleva a una página que no existe (error 404): /denuncias.",
+      "problema_tecnico": "1 enlace(s) internos de la portada responden 404 (revisados 24), en dos rondas.",
+      "donde_mirar": "Hacer clic en los enlaces de la portada y el menú.",
+      "se_vende": {
+        "linea": "Arreglo puntual",
+        "producto": "Arreglo puntual de la portada",
+        "alcance": "Corregir los enlaces rotos de la portada y revisar que no queden más en ella.",
+        "vehiculo_publicado": "$149.000 + IVA, una vez (decisión de Ramón, 30-oct-2026)",
+        "precio_en_el_correo": "$149.000 + IVA, una vez",
+        "linea_de_precio": null,
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "media",
+      "frase_de_arreglo": "Eso se arregla: dejo cada enlace llevando a una página que existe y reviso que no queden más rotos en la portada.",
+      "apertura_a_reunion": "Vi 3 cosas más que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F12",
+      "nombre": "La portada descarga demasiado peso",
+      "linea": "Auditoría SEO Técnica",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "quien administra el sitio, con las herramientas del navegador",
+      "donde_mirar": "En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Nadie mira cuánto pesa su portada."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "En un celular con datos, una portada pesada tarda en abrir."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en la pestaña Network."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Cualquier medidor de velocidad lo ve: es capa 1."
+        }
+      },
+      "afirmable": "La portada descarga 16.7 MB solo al abrirse, sin bajar la página (mínimo de las 3 corridas).",
+      "no_afirmable": [
+        "cuánto tarda en abrir para un visitante real (se mide desde un datacenter)"
+      ],
+      "advertencias": [],
+      "datos": {
+        "mb": 16.7,
+        "mas_pesado": {
+          "url": "https://blackcathostal.com/cappa/img/about/5.webp",
+          "bytes": 1594617
+        }
+      },
+      "propuesta": {
+        "en_castellano": "Tu portada descarga 16.7 MB solo al abrirse; en un celular con datos eso tarda.",
+        "problema_tecnico": "La portada descarga 16.7 MB solo al abrirse, sin bajar la página (mínimo de las 3 corridas).",
+        "donde_mirar": "En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.",
+        "se_vende": {
+          "linea": "Arreglo puntual",
+          "producto": "Arreglo puntual de la portada",
+          "alcance": "Reducir el peso de la portada y medir el antes y el después.",
+          "vehiculo_publicado": "$149.000 + IVA, una vez (decisión de Ramón, 30-oct-2026)",
+          "precio_en_el_correo": "$149.000 + IVA, una vez",
+          "linea_de_precio": null,
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla: dejo la portada liviana y mido cuánto baja.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F4",
+      "nombre": "No hay ninguna herramienta de medición instalada",
+      "linea": "Acompañamiento",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con acceso a su panel",
+      "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+      "condiciones": {
+        "1": {
+          "v": "no",
+          "razon": "No se ve, pero lo confirma cualquier extensión gratuita."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin medición no se sabe qué trae clientes."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con Tag Assistant."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Es capa 1."
+        }
+      },
+      "afirmable": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+      "no_afirmable": [
+        "que \"no mides nada\" (puede haber medición del lado del servidor o la propia de la plataforma)"
+      ],
+      "advertencias": [],
+      "datos": {
+        "plataforma": null
+      },
+      "propuesta": {
+        "en_castellano": "No veo Google Analytics ni Tag Manager en tu sitio.",
+        "problema_tecnico": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+        "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+        "se_vende": {
+          "linea": "Acompañamiento",
+          "producto": "Acompañamiento Mensual, plan Esencial (foco en una capa)",
+          "alcance": "Instalar analítica y medir consultas, llamadas y WhatsApp.",
+          "vehiculo_publicado": "Desde $590.000 + IVA al mes (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Acompañamiento Mensual, plan Esencial (foco en una capa), desde $590.000 + IVA al mes (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla: dejo medido lo que importa, que te escriban, te llamen o te hablen por WhatsApp, para que veas qué trae clientes.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F8",
+      "nombre": "El negocio no está declarado como entidad en datos estructurados",
+      "linea": "Visibilidad en IA",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con una herramienta gratuita",
+      "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Los datos estructurados no se ven."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin entidad declarada, la IA y Google adivinan quién eres."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con una herramienta gratuita."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Los chequeos gratis lo muestran: es capa 1."
+        }
+      },
+      "afirmable": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+      "no_afirmable": [
+        "que \"Google no te entiende\""
+      ],
+      "advertencias": [],
+      "datos": {},
+      "propuesta": {
+        "en_castellano": "Tu sitio no le dice a Google ni a la IA qué negocio eres en el formato que ellos leen (datos estructurados).",
+        "problema_tecnico": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+        "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+        "se_vende": {
+          "linea": "Visibilidad en IA",
+          "producto": "Auditoría de Visibilidad en IA",
+          "alcance": "Declarar el negocio como entidad en datos estructurados.",
+          "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo declarado qué negocio eres, con tu dirección y tu contacto, en el formato que leen Google y la IA.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F12",
+    "F4",
+    "F8"
+  ],
+  "capa1": {
+    "consecuencia": [
+      "sin_analitica"
+    ],
+    "higiene": [
+      "sin_llms_txt",
+      "sin_entidad_en_jsonld"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": [
+        "https://wa.me/56949105984"
+      ]
+    },
+    "analitica": {
+      "gtm": [],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": null,
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": false,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [],
+      "org": []
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 16713960,
+      "al_abrir_bytes": 16713642,
+      "n_peticiones": 127,
+      "mas_pesados": [
+        {
+          "url": "https://blackcathostal.com/cappa/img/about/5.webp",
+          "bytes": 1594617
+        },
+        {
+          "url": "https://blackcathostal.com/cappa/img/santiago/11.webp",
+          "bytes": 1099190
+        },
+        {
+          "url": "https://api.blackcathostal.com/uploads/posts/ai-post-72be4a881ffb4eb8bd93aa0ab7085900.webp",
+          "bytes": 923070
+        },
+        {
+          "url": "https://blackcathostal.com/cappa/img/video-blackcat.webp?v=4",
+          "bytes": 859233
+        }
+      ]
+    },
+    {
+      "total_bytes": 16714062,
+      "al_abrir_bytes": 16713744,
+      "n_peticiones": 127,
+      "mas_pesados": [
+        {
+          "url": "https://blackcathostal.com/cappa/img/about/5.webp",
+          "bytes": 1594615
+        },
+        {
+          "url": "https://blackcathostal.com/cappa/img/santiago/11.webp",
+          "bytes": 1099150
+        },
+        {
+          "url": "https://api.blackcathostal.com/uploads/posts/ai-post-72be4a881ffb4eb8bd93aa0ab7085900.webp",
+          "bytes": 923070
+        },
+        {
+          "url": "https://blackcathostal.com/cappa/img/video-blackcat.webp?v=4",
+          "bytes": 859126
+        }
+      ]
+    },
+    {
+      "total_bytes": 16714113,
+      "al_abrir_bytes": 16713795,
+      "n_peticiones": 127,
+      "mas_pesados": [
+        {
+          "url": "https://blackcathostal.com/cappa/img/about/5.webp",
+          "bytes": 1594616
+        },
+        {
+          "url": "https://blackcathostal.com/cappa/img/santiago/11.webp",
+          "bytes": 1099169
+        },
+        {
+          "url": "https://api.blackcathostal.com/uploads/posts/ai-post-72be4a881ffb4eb8bd93aa0ab7085900.webp",
+          "bytes": 923070
+        },
+        {
+          "url": "https://blackcathostal.com/cappa/img/video-blackcat.webp?v=4",
+          "bytes": 859126
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": null,
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 49879
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 49879
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 49879,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "blackcathostal.com",
+            "dominio": "blackcathostal.com",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "blackcathostal.com",
+            "dominio": "blackcathostal.com",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Black Cat Hostal"
+      },
+      {
+        "fuente": "title",
+        "valor": "Black Cat Hostal Boutique"
+      },
+      {
+        "fuente": "title",
+        "valor": "Santiago"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 24,
+    "rotos_en_ambas": [
+      "https://blackcathostal.com/denuncias"
+    ],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

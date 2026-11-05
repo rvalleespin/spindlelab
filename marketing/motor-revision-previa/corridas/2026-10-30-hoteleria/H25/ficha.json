@@ -1,0 +1,645 @@
+{
+  "id": "H25",
+  "dominio": "hoteles-australis.com",
+  "motor": "v0",
+  "cuando": "2026-10-30T14:06:09.064Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://www.hoteles-australis.com/",
+  "hallazgo": {
+    "id": "F7",
+    "nombre": "Enlaces de la portada que llevan a páginas que no existen",
+    "linea": "Auditoría SEO Técnica",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, haciendo clic",
+    "donde_mirar": "Hacer clic en los enlaces de la portada y el menú.",
+    "condiciones": {
+      "1": {
+        "v": "medias",
+        "razon": "Solo se nota al hacer clic en ese enlace."
+      },
+      "2": {
+        "v": "medias",
+        "razon": "Cada clic roto es una visita perdida."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se prueba con un clic."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Cualquier verificador de enlaces lo ve: es capa 1."
+      }
+    },
+    "afirmable": "1 enlace(s) internos de la portada responden 404 (revisados 6), en dos rondas.",
+    "no_afirmable": [
+      "que sean todos los rotos del sitio (solo se revisó la portada)"
+    ],
+    "advertencias": [],
+    "datos": {
+      "cantidad": 1,
+      "ejemplo": "/pt"
+    },
+    "propuesta": {
+      "en_castellano": "En tu portada hay un enlace que lleva a una página que no existe (error 404): /pt.",
+      "problema_tecnico": "1 enlace(s) internos de la portada responden 404 (revisados 6), en dos rondas.",
+      "donde_mirar": "Hacer clic en los enlaces de la portada y el menú.",
+      "se_vende": {
+        "linea": "Arreglo puntual",
+        "producto": "Arreglo puntual de la portada",
+        "alcance": "Corregir los enlaces rotos de la portada y revisar que no queden más en ella.",
+        "vehiculo_publicado": "$149.000 + IVA, una vez (decisión de Ramón, 30-oct-2026)",
+        "precio_en_el_correo": "$149.000 + IVA, una vez",
+        "linea_de_precio": null,
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "media",
+      "frase_de_arreglo": "Eso se arregla: dejo cada enlace llevando a una página que existe y reviso que no queden más rotos en la portada.",
+      "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "C4",
+      "nombre": "El nombre del negocio no es el mismo dentro del sitio",
+      "linea": "Visibilidad en IA",
+      "estado": "sospecha",
+      "tope": "El cruce con la ficha de Google y LinkedIn es manual: nunca pasa de sospecha.",
+      "quien_comprueba": "el dueño, buscando su propio nombre",
+      "donde_mirar": "Buscar el nombre del negocio y comparar con: JSON-LD name: Hoteles Australis MB / og:site_name: Hoteles Australis - Portal. Después, la ficha de Google y LinkedIn (a mano).",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Cada pieza se ve bien por separado."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "El costo (que ningún modelo consolide quién es) es blando."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se compara a simple vista."
+        },
+        "4": {
+          "v": "medias",
+          "razon": "Comparar texto es automático; interpretarlo y cruzarlo con otras fuentes es oficio."
+        }
+      },
+      "afirmable": "Dentro del sitio el nombre aparece como: JSON-LD name: Hoteles Australis MB y og:site_name: Hoteles Australis - Portal.",
+      "no_afirmable": [
+        "que ocurre lo mismo en Google o LinkedIn (no revisado)"
+      ],
+      "advertencias": [],
+      "propuesta": {
+        "en_castellano": "SIN REDACTAR: todavía es una sospecha, no se usa en un correo.",
+        "problema_tecnico": "Dentro del sitio el nombre aparece como: JSON-LD name: Hoteles Australis MB y og:site_name: Hoteles Australis - Portal.",
+        "donde_mirar": "Buscar el nombre del negocio y comparar con: JSON-LD name: Hoteles Australis MB / og:site_name: Hoteles Australis - Portal. Después, la ficha de Google y LinkedIn (a mano).",
+        "se_vende": {
+          "linea": "Visibilidad en IA",
+          "producto": "Auditoría de Visibilidad en IA",
+          "alcance": "Un solo nombre del negocio, igual en el sitio y en los datos estructurados.",
+          "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo el nombre igual en el sitio y en los datos que leen Google y la IA.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [],
+  "capa1": {
+    "consecuencia": [
+      "sin_ruta_de_contacto_visible"
+    ],
+    "higiene": [
+      "sin_llms_txt"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [
+        "GTM-TL2MM4B",
+        "GTM-MQJ9BPX"
+      ],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "GLXD-AKA",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": false,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "BreadcrumbList",
+        "Organization"
+      ],
+      "org": [
+        {
+          "name": "Hoteles Australis MB"
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": null,
+      "textos_chicos_pct": null,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 3214564,
+      "al_abrir_bytes": 3214564,
+      "n_peticiones": 69,
+      "mas_pesados": [
+        {
+          "url": "https://image-tc.galaxy.tf/wiwebp-7z6a3cfnbu1cul6bo2ye4c0lj/hoteles-australis-chile-punta-arenas-puerto-natales-mejores-patagonia-03.webp?width=1920",
+          "bytes": 440807
+        },
+        {
+          "url": "https://www.hoteles-australis.com/integration/tc-theme/public/js/bundle.js?vb312f8eee29a561198b7aa280bd32c58",
+          "bytes": 437848
+        },
+        {
+          "url": "https://image-tc.galaxy.tf/wiwebp-5a3jojvs32ur7b2yc0cxx4m5s/hoteles-australis-chile-punta-arenas-puerto-natales-mejores-patagonia-01.webp?width=1920",
+          "bytes": 255914
+        },
+        {
+          "url": "https://image-tc.galaxy.tf/wiwebp-f3ein0eb88ubik2i7zgrvgo1h/hoteles-australis-chile-punta-arenas-puerto-natales-mejores-patagonia-05.webp?width=1920",
+          "bytes": 182979
+        }
+      ]
+    },
+    {
+      "total_bytes": 3213871,
+      "al_abrir_bytes": 3213871,
+      "n_peticiones": 70,
+      "mas_pesados": [
+        {
+          "url": "https://image-tc.galaxy.tf/wiwebp-7z6a3cfnbu1cul6bo2ye4c0lj/hoteles-australis-chile-punta-arenas-puerto-natales-mejores-patagonia-03.webp?width=1920",
+          "bytes": 440771
+        },
+        {
+          "url": "https://www.hoteles-australis.com/integration/tc-theme/public/js/bundle.js?vb312f8eee29a561198b7aa280bd32c58",
+          "bytes": 437776
+        },
+        {
+          "url": "https://image-tc.galaxy.tf/wiwebp-5a3jojvs32ur7b2yc0cxx4m5s/hoteles-australis-chile-punta-arenas-puerto-natales-mejores-patagonia-01.webp?width=1920",
+          "bytes": 255938
+        },
+        {
+          "url": "https://image-tc.galaxy.tf/wiwebp-f3ein0eb88ubik2i7zgrvgo1h/hoteles-australis-chile-punta-arenas-puerto-natales-mejores-patagonia-05.webp?width=1920",
+          "bytes": 182862
+        }
+      ]
+    },
+    {
+      "total_bytes": 3213990,
+      "al_abrir_bytes": 3213990,
+      "n_peticiones": 70,
+      "mas_pesados": [
+        {
+          "url": "https://image-tc.galaxy.tf/wiwebp-7z6a3cfnbu1cul6bo2ye4c0lj/hoteles-australis-chile-punta-arenas-puerto-natales-mejores-patagonia-03.webp?width=1920",
+          "bytes": 440771
+        },
+        {
+          "url": "https://www.hoteles-australis.com/integration/tc-theme/public/js/bundle.js?vb312f8eee29a561198b7aa280bd32c58",
+          "bytes": 437785
+        },
+        {
+          "url": "https://image-tc.galaxy.tf/wiwebp-5a3jojvs32ur7b2yc0cxx4m5s/hoteles-australis-chile-punta-arenas-puerto-natales-mejores-patagonia-01.webp?width=1920",
+          "bytes": 255896
+        },
+        {
+          "url": "https://image-tc.galaxy.tf/wiwebp-f3ein0eb88ubik2i7zgrvgo1h/hoteles-australis-chile-punta-arenas-puerto-natales-mejores-patagonia-05.webp?width=1920",
+          "bytes": 182862
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [
+        "Google Tag"
+      ],
+      "envio_en_ambas": [
+        "Google Analytics"
+      ],
+      "google_gcs": [
+        [
+          "G100"
+        ],
+        [
+          "G100"
+        ],
+        [
+          "G100"
+        ]
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": {
+      "gtm": [
+        "GTM-TL2MM4B",
+        "GTM-MQJ9BPX"
+      ],
+      "contenedores": [
+        {
+          "id": "GTM-TL2MM4B",
+          "leido": true,
+          "funciones": [
+            "__u",
+            "__remm",
+            "__e",
+            "__j",
+            "__v",
+            "__jsm",
+            "__smm",
+            "__f",
+            "__aev",
+            "__ctv",
+            "__cid",
+            "__googtag",
+            "__gaawe",
+            "__paused",
+            "__tg",
+            "__html"
+          ],
+          "tags_de_evento": [
+            "__gaawe"
+          ],
+          "html_personalizado": 3
+        },
+        {
+          "id": "GTM-MQJ9BPX",
+          "leido": true,
+          "funciones": [
+            "__e",
+            "__c",
+            "__v",
+            "__jsm",
+            "__smm",
+            "__u",
+            "__f",
+            "__aev",
+            "__ctv",
+            "__cid",
+            "__googtag",
+            "__gaawe",
+            "__html"
+          ],
+          "tags_de_evento": [
+            "__gaawe"
+          ],
+          "html_personalizado": 0
+        }
+      ],
+      "eventos_inline": [],
+      "eventos_observados_en_sesion": [
+        "page_view"
+      ],
+      "ads_instalado": false
+    },
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 83699
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 83699
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 83699,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [
+          {
+            "action": "https://www.hoteles-australis.com/sign-up",
+            "estado": "vivo",
+            "status": 200
+          }
+        ],
+        "mails": []
+      },
+      {
+        "forms": [
+          {
+            "action": "https://www.hoteles-australis.com/sign-up",
+            "estado": "vivo",
+            "status": 200
+          }
+        ],
+        "mails": []
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Hoteles Australis - Portal"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Hoteles Australis MB"
+      },
+      {
+        "fuente": "title",
+        "valor": "Hoteles Australis"
+      },
+      {
+        "fuente": "title",
+        "valor": "Hoteles en la Patagonia"
+      }
+    ],
+    "nombres_en_conflicto": [
+      [
+        "JSON-LD name: Hoteles Australis MB",
+        "og:site_name: Hoteles Australis - Portal"
+      ]
+    ],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 6,
+    "rotos_en_ambas": [
+      "https://www.hoteles-australis.com/pt"
+    ],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

@@ -1,0 +1,1278 @@
+{
+  "url": "https://reb-chile.cl/",
+  "cuando": "2026-10-19T14:27:38.051Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "ASP.NET_SessionId",
+        "dominio": "reb-chile.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://reb-chile.cl/",
+      "titulo": "REB Real Estate Brokerage",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "./",
+          "accion_abs": "https://reb-chile.cl/",
+          "metodo": "post",
+          "campos": 14,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "tel:+56 9339 27249",
+          "t": "+56 9339 27249"
+        },
+        {
+          "h": "mailto:reb@reb-chile.cl",
+          "t": "reb@reb-chile.cl"
+        },
+        {
+          "h": "https://www.linkedin.com/company/rebchile/",
+          "t": ""
+        },
+        {
+          "h": "https://goo.gl/maps/ZokMHv2S4A4hWxtn6",
+          "t": "Cerro El Plomo N° 5630, Piso 13, Las Condes"
+        },
+        {
+          "h": "mailto:reb@reb-chile.cl",
+          "t": "reb@reb-chile.cl"
+        },
+        {
+          "h": "tel:+56 9339 27249",
+          "t": "+56 9339 27249"
+        },
+        {
+          "h": "/index.aspx",
+          "t": "REB Real Estate Brokerage"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "/Industrial/Venta_Arriendo/Todas_las_comunas",
+          "t": "INDUSTRIAL"
+        },
+        {
+          "h": "/Local_Comercial/Venta_Arriendo/Todas_las_comunas",
+          "t": "COMERCIAL"
+        },
+        {
+          "h": "/Oficina/Venta_Arriendo/Todas_las_comunas",
+          "t": "OFICINAS"
+        },
+        {
+          "h": "/Sitio/Venta_Arriendo/Todas_las_comunas",
+          "t": "TERRENOS"
+        },
+        {
+          "h": "/Residencial/Venta_Arriendo/Todas_las_comunas",
+          "t": "RESIDENCIAL"
+        },
+        {
+          "h": "/Parcela/Venta_Arriendo/Todas_las_comunas",
+          "t": "CAMPOS"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "BUSCAR"
+        },
+        {
+          "h": "#",
+          "t": "Filtros Adicionales"
+        },
+        {
+          "h": "/Industrial/Venta_Arriendo/Todas_las_comunas",
+          "t": "INDUSTRIAL"
+        },
+        {
+          "h": "/Local_Comercial/Venta_Arriendo/Todas_las_comunas",
+          "t": "COMERCIAL"
+        },
+        {
+          "h": "/Oficina/Venta_Arriendo/Todas_las_comunas",
+          "t": "OFICINAS"
+        },
+        {
+          "h": "/Sitio/Venta_Arriendo/Todas_las_comunas",
+          "t": "TERRENOS"
+        },
+        {
+          "h": "/Residencial/Venta_Arriendo/Todas_las_comunas",
+          "t": "RESIDENCIAL"
+        },
+        {
+          "h": "/Parcela/Venta_Arriendo/Todas_las_comunas",
+          "t": "CAMPOS"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas",
+          "t": "Listado de propiedades"
+        },
+        {
+          "h": "/6389",
+          "t": "Industrial en San Pedro de la Paz"
+        },
+        {
+          "h": "/6389",
+          "t": "DETALLES"
+        },
+        {
+          "h": "/6626",
+          "t": "Industrial en Pudahuel"
+        },
+        {
+          "h": "/6626",
+          "t": "DETALLES"
+        },
+        {
+          "h": "/6484",
+          "t": "Oficina en Las Condes"
+        },
+        {
+          "h": "/6484",
+          "t": "DETALLES"
+        },
+        {
+          "h": "/5819",
+          "t": "Industrial en San Bernardo"
+        },
+        {
+          "h": "/5819",
+          "t": "DETALLES"
+        },
+        {
+          "h": "/6298",
+          "t": "Sitio en Coronel"
+        },
+        {
+          "h": "/6298",
+          "t": "DETALLES"
+        },
+        {
+          "h": "/6632",
+          "t": "Sitio en Casablanca"
+        },
+        {
+          "h": "/6632",
+          "t": "DETALLES"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56933927249",
+          "t": "CONTÁCTANOS"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=FrenteAlMar",
+          "t": "FRENTE AL MAR"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=FrenteAlLago",
+          "t": "FRENTE AL LAGO"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=Campo",
+          "t": "CAMPOS Y PARCELAS"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=Golf",
+          "t": "GOLF Y MARINA"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=Vina",
+          "t": "VIÑAS Y VALLES"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=PatagoniaChilena",
+          "t": "PATAGONIA CHILENA"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=Montanas",
+          "t": "MONTAÑA Y SKI"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=IslasFiordos",
+          "t": "ISLAS Y FIORDOS"
+        },
+        {
+          "h": "https://www.canchamchile.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://britcham.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://auscham.cl/",
+          "t": ""
+        },
+        {
+          "h": "http://www.chicit.cl/sitio/",
+          "t": ""
+        },
+        {
+          "h": "https://amchamchile.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://camacoes.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://www.camit.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://chile.ahk.de/es/",
+          "t": ""
+        },
+        {
+          "h": "/index.aspx#",
+          "t": "• Inicio"
+        },
+        {
+          "h": "/listado.aspx",
+          "t": "• Propiedades"
+        },
+        {
+          "h": "/index.aspx#servicios-index",
+          "t": "• Servicios"
+        },
+        {
+          "h": "/index.aspx#equipo-index",
+          "t": "• Equipo"
+        },
+        {
+          "h": "/index.aspx#lifestyle-index",
+          "t": "• Lifestyle"
+        },
+        {
+          "h": "/index.aspx#partners-index",
+          "t": "• Membresía"
+        },
+        {
+          "h": "https://goo.gl/maps/ZokMHv2S4A4hWxtn6",
+          "t": "Cerro El Plomo N° 5630, Piso 13, Las Condes RM, Chile"
+        },
+        {
+          "h": "mailto:reb@reb-chile.cl",
+          "t": "reb@reb-chile.cl"
+        },
+        {
+          "h": "https://www.reb-chile.cl",
+          "t": "www.reb-chile.cl"
+        },
+        {
+          "h": "https://www.linkedin.com/company/rebchile/",
+          "t": ""
+        },
+        {
+          "h": "https://www.convecta.cl",
+          "t": "Desarrollado por CONVECTA"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 1998,
+      "muestra": " Cerro El Plomo N° 5630, Piso 13, Las Condes\n reb@reb-chile.cl\n +56 9339 27249\nUF $ 41.183,94\nREB Real Estate Brokerage\nINDUSTRIAL\nCOMERCIAL\nOFICINAS\nTERRENOS\nRESIDENCIAL\nCAMPOS\nOK\nEXCELENTE CONEXIÓN, ACCESOS Y SEGURIDAD.\nOPERACIÓN\nSeleccione\nTIPO PROPIEDAD\nSeleccione\nREGIÓN\nSeleccione\nCOMUNA\nSeleccione\nBUSCAR\nPropiedades Activos Inmobiliarios\n\n\nINDUSTRIAL\nCOMERCIAL\nOFICINAS\nTERRENOS\nRESIDENCIAL\nCAMPOS\nPropiedades Destacadas\n\n\n\nListado de propiedades \nIndustrial en San Pedro de la Paz\n\n RUTA 160",
+      "cta_en_pantalla": [
+        {
+          "t": " reb@reb-chile.cl",
+          "h": "mailto:reb@reb-chile.cl"
+        },
+        {
+          "t": " +56 9339 27249",
+          "h": "tel:+56 9339 27249"
+        }
+      ],
+      "formulario_en_pantalla": true,
+      "estructura": {
+        "h1": 2,
+        "h2": 7,
+        "palabras": 291
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "ASP.NET_SessionId",
+        "dominio": "reb-chile.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://reb-chile.cl/",
+      "titulo": "REB Real Estate Brokerage",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "./",
+          "accion_abs": "https://reb-chile.cl/",
+          "metodo": "post",
+          "campos": 14,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "tel:+56 9339 27249",
+          "t": "+56 9339 27249"
+        },
+        {
+          "h": "mailto:reb@reb-chile.cl",
+          "t": "reb@reb-chile.cl"
+        },
+        {
+          "h": "https://www.linkedin.com/company/rebchile/",
+          "t": ""
+        },
+        {
+          "h": "https://goo.gl/maps/ZokMHv2S4A4hWxtn6",
+          "t": "Cerro El Plomo N° 5630, Piso 13, Las Condes"
+        },
+        {
+          "h": "mailto:reb@reb-chile.cl",
+          "t": "reb@reb-chile.cl"
+        },
+        {
+          "h": "tel:+56 9339 27249",
+          "t": "+56 9339 27249"
+        },
+        {
+          "h": "/index.aspx",
+          "t": "REB Real Estate Brokerage"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "/Industrial/Venta_Arriendo/Todas_las_comunas",
+          "t": "INDUSTRIAL"
+        },
+        {
+          "h": "/Local_Comercial/Venta_Arriendo/Todas_las_comunas",
+          "t": "COMERCIAL"
+        },
+        {
+          "h": "/Oficina/Venta_Arriendo/Todas_las_comunas",
+          "t": "OFICINAS"
+        },
+        {
+          "h": "/Sitio/Venta_Arriendo/Todas_las_comunas",
+          "t": "TERRENOS"
+        },
+        {
+          "h": "/Residencial/Venta_Arriendo/Todas_las_comunas",
+          "t": "RESIDENCIAL"
+        },
+        {
+          "h": "/Parcela/Venta_Arriendo/Todas_las_comunas",
+          "t": "CAMPOS"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": "BUSCAR"
+        },
+        {
+          "h": "#",
+          "t": "Filtros Adicionales"
+        },
+        {
+          "h": "/Industrial/Venta_Arriendo/Todas_las_comunas",
+          "t": "INDUSTRIAL"
+        },
+        {
+          "h": "/Local_Comercial/Venta_Arriendo/Todas_las_comunas",
+          "t": "COMERCIAL"
+        },
+        {
+          "h": "/Oficina/Venta_Arriendo/Todas_las_comunas",
+          "t": "OFICINAS"
+        },
+        {
+          "h": "/Sitio/Venta_Arriendo/Todas_las_comunas",
+          "t": "TERRENOS"
+        },
+        {
+          "h": "/Residencial/Venta_Arriendo/Todas_las_comunas",
+          "t": "RESIDENCIAL"
+        },
+        {
+          "h": "/Parcela/Venta_Arriendo/Todas_las_comunas",
+          "t": "CAMPOS"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas",
+          "t": "Listado de propiedades"
+        },
+        {
+          "h": "/6389",
+          "t": "Industrial en San Pedro de la Paz"
+        },
+        {
+          "h": "/6389",
+          "t": "DETALLES"
+        },
+        {
+          "h": "/6626",
+          "t": "Industrial en Pudahuel"
+        },
+        {
+          "h": "/6626",
+          "t": "DETALLES"
+        },
+        {
+          "h": "/6484",
+          "t": "Oficina en Las Condes"
+        },
+        {
+          "h": "/6484",
+          "t": "DETALLES"
+        },
+        {
+          "h": "/5819",
+          "t": "Industrial en San Bernardo"
+        },
+        {
+          "h": "/5819",
+          "t": "DETALLES"
+        },
+        {
+          "h": "/6298",
+          "t": "Sitio en Coronel"
+        },
+        {
+          "h": "/6298",
+          "t": "DETALLES"
+        },
+        {
+          "h": "/6632",
+          "t": "Sitio en Casablanca"
+        },
+        {
+          "h": "/6632",
+          "t": "DETALLES"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56933927249",
+          "t": "CONTÁCTANOS"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=FrenteAlMar",
+          "t": "FRENTE AL MAR"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=FrenteAlLago",
+          "t": "FRENTE AL LAGO"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=Campo",
+          "t": "CAMPOS Y PARCELAS"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=Golf",
+          "t": "GOLF Y MARINA"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=Vina",
+          "t": "VIÑAS Y VALLES"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=PatagoniaChilena",
+          "t": "PATAGONIA CHILENA"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=Montanas",
+          "t": "MONTAÑA Y SKI"
+        },
+        {
+          "h": "/Todos_los_tipos/Venta_y_Arriendo/Todas_las_comunas?life=IslasFiordos",
+          "t": "ISLAS Y FIORDOS"
+        },
+        {
+          "h": "https://www.canchamchile.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://britcham.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://auscham.cl/",
+          "t": ""
+        },
+        {
+          "h": "http://www.chicit.cl/sitio/",
+          "t": ""
+        },
+        {
+          "h": "https://amchamchile.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://camacoes.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://www.camit.cl/",
+          "t": ""
+        },
+        {
+          "h": "https://chile.ahk.de/es/",
+          "t": ""
+        },
+        {
+          "h": "/index.aspx#",
+          "t": "• Inicio"
+        },
+        {
+          "h": "/listado.aspx",
+          "t": "• Propiedades"
+        },
+        {
+          "h": "/index.aspx#servicios-index",
+          "t": "• Servicios"
+        },
+        {
+          "h": "/index.aspx#equipo-index",
+          "t": "• Equipo"
+        },
+        {
+          "h": "/index.aspx#lifestyle-index",
+          "t": "• Lifestyle"
+        },
+        {
+          "h": "/index.aspx#partners-index",
+          "t": "• Membresía"
+        },
+        {
+          "h": "https://goo.gl/maps/ZokMHv2S4A4hWxtn6",
+          "t": "Cerro El Plomo N° 5630, Piso 13, Las Condes RM, Chile"
+        },
+        {
+          "h": "mailto:reb@reb-chile.cl",
+          "t": "reb@reb-chile.cl"
+        },
+        {
+          "h": "https://www.reb-chile.cl",
+          "t": "www.reb-chile.cl"
+        },
+        {
+          "h": "https://www.linkedin.com/company/rebchile/",
+          "t": ""
+        },
+        {
+          "h": "https://www.convecta.cl",
+          "t": "Desarrollado por CONVECTA"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 1990,
+      "muestra": " Cerro El Plomo N° 5630, Piso 13, Las Condes\n reb@reb-chile.cl\n +56 9339 27249\nUF $ 41.183,94\nREB Real Estate Brokerage\nINDUSTRIAL\nCOMERCIAL\nOFICINAS\nTERRENOS\nRESIDENCIAL\nCAMPOS\nOK\nPOLOS DE NEGOCIOS Y FINANCIEROS.\nOPERACIÓN\nSeleccione\nTIPO PROPIEDAD\nSeleccione\nREGIÓN\nSeleccione\nCOMUNA\nSeleccione\nBUSCAR\nPropiedades Activos Inmobiliarios\n\n\nINDUSTRIAL\nCOMERCIAL\nOFICINAS\nTERRENOS\nRESIDENCIAL\nCAMPOS\nPropiedades Destacadas\n\n\n\nListado de propiedades \nIndustrial en San Pedro de la Paz\n\n RUTA 160 - RUTA ",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": true,
+      "estructura": {
+        "h1": 2,
+        "h2": 7,
+        "palabras": 291
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/jquery-1.12.4.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/plugins.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css?family=Open+Sans:400,600|Raleway:700,800|Roboto:400,500,700",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/plugins.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/all.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/bootstrap.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/bootstrap-select.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/style.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/cnvct/custom_v05.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/loading.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/owl.carousel.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/owl.theme.default.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/reb_v02.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/css/cnvct/font-style.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/logoReb.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/slider/sl01.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/slider/sl02.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/slider/sl03.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/slider/sl04.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/slider/sl05.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/slider/sl06.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/slider/lodge.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/images/icon_map.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/images/icon_search.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/images/arquitectura.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/images/soluciones.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/images/Icon_negotiation.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/images/tasacion.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/m1.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/m2.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/m3.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/m4.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/m5.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/m6.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/m7.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/m8.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/bootstrap.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/bootstrap-select.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/all.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/jquery.cokie.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/custom.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/owl.carousel.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/cnvct/global_v02.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/cnvct/inicio_v02.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/cnvct/custom.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/js/cnvct/contacto_v03.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Lato:wght@400;700&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.cdnfonts.com/css/nehad",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/cIndustrial.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/cComercial.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/cOficinas.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/cTerrenos.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/cResidencial.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/global/cCampos.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/reb/img/propiedades/6389_b2fyvILxG5Xm3TSebXye20260130200511.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/reb/img/propiedades/6626_zy4wliIprQqAauvSdmCV20260816151741.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/reb/img/propiedades/6484_vd1qiEfu5QahAant8fPn20260412185316.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/reb/img/propiedades/5819_zu28fHOvDuiaazGNmjog20251125201247.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/reb/img/propiedades/6298_nHmsRbiUM4slqKpcOytg20250520203544.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://demoazimg.prop360.cl/reb/img/propiedades/6632_SNguk3ZucR8jI9oJ7vpO20260826205345.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/web/servicios01.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/lifestyle/Stylelife_FrenteMar2.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/lifestyle/Stylelife_FrenteLago2.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/lifestyle/Stylelife_Campo2.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/lifestyle/Stylelife_Golf2.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/lifestyle/Stylelife_Vin%CC%83a2.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/lifestyle/Stylelife_PatagoniaChilena2.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/lifestyle/Stylelife_Montan%CC%83aSki2.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/lifestyle/Stylelife_IslasFiordos2.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/images/uploads/new_york_1.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/fonts/fa-brands-400.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/fonts/fa-solid-900.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/librebaskerville/v24/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxM.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/fonts/fontawesome-webfont.woff2?v=4.4.0",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/fonts/ionicons.ttf?v=2.0.0",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/fonts/OpenSans-Regular.ttf",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/raleway/v37/1Ptug8zYS_SKggPNyC0ITw.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/fonts/revicons/revicons.woff?5510888",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LejadUmAAAAAJjd0sKrcdiCVPOBFhECnvQSWmQu&co=aHR0cHM6Ly9yZWItY2hpbGUuY2w6NDQz&hl=en&v=4EDjxXf4knsx6UBM1L2V6cv8&theme=dark&size=invisible&badge=bottomleft&anchor-ms=20000&execute-ms=30000&cb=8wqvch7ljpnn",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/404.html",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/styles__ltr.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/webworker.js?hl=en&v=4EDjxXf4knsx6UBM1L2V6cv8",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/api2/logo_48.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://reb-chile.cl/assets/img/favIconNew/favicon-32x32.png",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "ASP.NET_SessionId",
+      "desde": "reb-chile.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 5993873,
+    "al_abrir_bytes": 5993873,
+    "n_peticiones": 91,
+    "mas_pesados": [
+      {
+        "url": "https://reb-chile.cl/assets/js/all.js",
+        "bytes": 601208
+      },
+      {
+        "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+        "bytes": 355638
+      },
+      {
+        "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+        "bytes": 355225
+      },
+      {
+        "url": "https://reb-chile.cl/assets/js/plugins.js",
+        "bytes": 298802
+      }
+    ]
+  },
+  "html_len": 150807
+}

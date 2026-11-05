@@ -1,0 +1,2746 @@
+{
+  "url": "https://gatoflojo.cl/",
+  "cuando": "2026-10-29T16:45:32.751Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "gatoflojo.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "gatoflojo.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "gatoflojo.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "gatoflojo.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_ga_LLRLDWY00R",
+        "dominio": ".gatoflojo.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".gatoflojo.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".gatoflojo.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://gatoflojo.cl/",
+      "titulo": "Cafetería Gato Flojo – Gatoflojo",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/cart",
+          "accion_abs": "https://gatoflojo.cl/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://gatoflojo.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://gatoflojo.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://gatoflojo.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/contact#ContactFooter",
+          "accion_abs": "https://gatoflojo.cl/contact#ContactFooter",
+          "metodo": "post",
+          "campos": 1,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir directamente al contenido"
+        },
+        {
+          "h": "/collections/all",
+          "t": "Seguir comprando"
+        },
+        {
+          "h": "https://gatoflojo.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Inicia sesión"
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/collections/cafe-en-grano",
+          "t": "Café en grano"
+        },
+        {
+          "h": "/collections/merchandisign",
+          "t": "Merchandising"
+        },
+        {
+          "h": "/pages/carta",
+          "t": "Carta"
+        },
+        {
+          "h": "/pages/nosotros",
+          "t": "Nosotros"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://gatoflojo.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/collections/cafe-en-grano",
+          "t": "Café en grano"
+        },
+        {
+          "h": "/collections/merchandisign",
+          "t": "Merchandising"
+        },
+        {
+          "h": "/pages/carta",
+          "t": "Carta"
+        },
+        {
+          "h": "/pages/nosotros",
+          "t": "Nosotros"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://gatoflojo.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/cart",
+          "t": "Carrito"
+        },
+        {
+          "h": "/collections/all",
+          "t": "Ver productos"
+        },
+        {
+          "h": "/collections/cafe-en-grano",
+          "t": "Café en grano"
+        },
+        {
+          "h": "/collections/cafe-en-grano",
+          "t": "Café en grano"
+        },
+        {
+          "h": "/products/caja-drips-de-cafe",
+          "t": "Caja drips de café"
+        },
+        {
+          "h": "/products/caja-drips-de-cafe",
+          "t": "Caja drips de café"
+        },
+        {
+          "h": "/products/cafe-en-grano-colombia-la-colombia",
+          "t": "Perú Cajamarca"
+        },
+        {
+          "h": "/products/cafe-en-grano-colombia-la-colombia",
+          "t": "Perú Cajamarca"
+        },
+        {
+          "h": "/products/costa-rica-black",
+          "t": "Costa Rica Black"
+        },
+        {
+          "h": "/products/costa-rica-black",
+          "t": "Costa Rica Black"
+        },
+        {
+          "h": "/products/caja-capsulas-de-cafe",
+          "t": "Caja cápsulas de café"
+        },
+        {
+          "h": "/products/caja-capsulas-de-cafe",
+          "t": "Caja cápsulas de café"
+        },
+        {
+          "h": "/products/brasil-carmo-de-minas",
+          "t": "Costa Rica Colibrí Tarrazú"
+        },
+        {
+          "h": "/products/brasil-carmo-de-minas",
+          "t": "Costa Rica Colibrí Tarrazú"
+        },
+        {
+          "h": "/products/cafe-en-grano-colombia-la-gabriela",
+          "t": "Colombia Huila"
+        },
+        {
+          "h": "/products/cafe-en-grano-colombia-la-gabriela",
+          "t": "Colombia Huila"
+        },
+        {
+          "h": "/collections/merchandisign",
+          "t": "Shop"
+        },
+        {
+          "h": "/collections/merchandisign",
+          "t": "Shop"
+        },
+        {
+          "h": "/collections/cafe-en-grano",
+          "t": "Café en grano"
+        },
+        {
+          "h": "/collections/merchandisign",
+          "t": "Shop"
+        },
+        {
+          "h": "/pages/carta",
+          "t": "Carta"
+        },
+        {
+          "h": "https://goo.gl/maps/uWoq9qADZY8JPmxBA",
+          "t": "Estámos en Diagonal Pedro Aguirre Cerda 1265, Plaza Perú, Concepción"
+        },
+        {
+          "h": "/",
+          "t": "Gatoflojo"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 927,
+      "muestra": "Ir directamente al contenido\nInicio\nTienda\nCarta\nNosotros\nContacto\nIniciar sesión\nCarrito\nTienda\nVer productos\nCafé en grano\nCaja drips de café\nPrecio habitual\n$13,700 CLP\nAgregar al carrito\nAgotado\nPerú Cajamarca\nPrecio habitual\n$11,500 CLP\nSeleccionar opciones\nCosta Rica Black\nPrecio habitual\n$12,500 CLP\nSeleccionar opciones\nAgotado\nCaja cápsulas de café\nPrecio habitual\n$13,000 CLP\nAgotado\nAgotado\nCosta Rica Colibrí Tarrazú\nPrecio habitual\n$12,500 CLP\nSeleccionar opciones\nAgotado\nColombia Huil",
+      "cta_en_pantalla": [
+        {
+          "t": "contacto",
+          "h": "/pages/contact"
+        },
+        {
+          "t": "carrito",
+          "h": "/cart"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 10,
+        "palabras": 136
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "gatoflojo.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "gatoflojo.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "gatoflojo.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "gatoflojo.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_ga_LLRLDWY00R",
+        "dominio": ".gatoflojo.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".gatoflojo.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".gatoflojo.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://gatoflojo.cl/",
+      "titulo": "Cafetería Gato Flojo – Gatoflojo",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/cart",
+          "accion_abs": "https://gatoflojo.cl/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://gatoflojo.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://gatoflojo.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/cart/add",
+          "accion_abs": "https://gatoflojo.cl/cart/add",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/contact#ContactFooter",
+          "accion_abs": "https://gatoflojo.cl/contact#ContactFooter",
+          "metodo": "post",
+          "campos": 1,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir directamente al contenido"
+        },
+        {
+          "h": "/collections/all",
+          "t": "Seguir comprando"
+        },
+        {
+          "h": "https://gatoflojo.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Inicia sesión"
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/collections/cafe-en-grano",
+          "t": "Café en grano"
+        },
+        {
+          "h": "/collections/merchandisign",
+          "t": "Merchandising"
+        },
+        {
+          "h": "/pages/carta",
+          "t": "Carta"
+        },
+        {
+          "h": "/pages/nosotros",
+          "t": "Nosotros"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://gatoflojo.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/collections/cafe-en-grano",
+          "t": "Café en grano"
+        },
+        {
+          "h": "/collections/merchandisign",
+          "t": "Merchandising"
+        },
+        {
+          "h": "/pages/carta",
+          "t": "Carta"
+        },
+        {
+          "h": "/pages/nosotros",
+          "t": "Nosotros"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://gatoflojo.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/cart",
+          "t": "Carrito"
+        },
+        {
+          "h": "/collections/all",
+          "t": "Ver productos"
+        },
+        {
+          "h": "/collections/cafe-en-grano",
+          "t": "Café en grano"
+        },
+        {
+          "h": "/collections/cafe-en-grano",
+          "t": "Café en grano"
+        },
+        {
+          "h": "/products/caja-drips-de-cafe",
+          "t": "Caja drips de café"
+        },
+        {
+          "h": "/products/caja-drips-de-cafe",
+          "t": "Caja drips de café"
+        },
+        {
+          "h": "/products/cafe-en-grano-colombia-la-colombia",
+          "t": "Perú Cajamarca"
+        },
+        {
+          "h": "/products/cafe-en-grano-colombia-la-colombia",
+          "t": "Perú Cajamarca"
+        },
+        {
+          "h": "/products/costa-rica-black",
+          "t": "Costa Rica Black"
+        },
+        {
+          "h": "/products/costa-rica-black",
+          "t": "Costa Rica Black"
+        },
+        {
+          "h": "/products/caja-capsulas-de-cafe",
+          "t": "Caja cápsulas de café"
+        },
+        {
+          "h": "/products/caja-capsulas-de-cafe",
+          "t": "Caja cápsulas de café"
+        },
+        {
+          "h": "/products/brasil-carmo-de-minas",
+          "t": "Costa Rica Colibrí Tarrazú"
+        },
+        {
+          "h": "/products/brasil-carmo-de-minas",
+          "t": "Costa Rica Colibrí Tarrazú"
+        },
+        {
+          "h": "/products/cafe-en-grano-colombia-la-gabriela",
+          "t": "Colombia Huila"
+        },
+        {
+          "h": "/products/cafe-en-grano-colombia-la-gabriela",
+          "t": "Colombia Huila"
+        },
+        {
+          "h": "/collections/merchandisign",
+          "t": "Shop"
+        },
+        {
+          "h": "/collections/merchandisign",
+          "t": "Shop"
+        },
+        {
+          "h": "/collections/cafe-en-grano",
+          "t": "Café en grano"
+        },
+        {
+          "h": "/collections/merchandisign",
+          "t": "Shop"
+        },
+        {
+          "h": "/pages/carta",
+          "t": "Carta"
+        },
+        {
+          "h": "https://goo.gl/maps/uWoq9qADZY8JPmxBA",
+          "t": "Estámos en Diagonal Pedro Aguirre Cerda 1265, Plaza Perú, Concepción"
+        },
+        {
+          "h": "/",
+          "t": "Gatoflojo"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 927,
+      "muestra": "Ir directamente al contenido\nInicio\nTienda\nCarta\nNosotros\nContacto\nIniciar sesión\nCarrito\nTienda\nVer productos\nCafé en grano\nCaja drips de café\nPrecio habitual\n$13,700 CLP\nAgregar al carrito\nAgotado\nPerú Cajamarca\nPrecio habitual\n$11,500 CLP\nSeleccionar opciones\nCosta Rica Black\nPrecio habitual\n$12,500 CLP\nSeleccionar opciones\nAgotado\nCaja cápsulas de café\nPrecio habitual\n$13,000 CLP\nAgotado\nAgotado\nCosta Rica Colibrí Tarrazú\nPrecio habitual\n$12,500 CLP\nSeleccionar opciones\nAgotado\nColombia Huil",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 10,
+        "palabras": 136
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/storefront/assets/storefront/storefronts.moderate.specrules-eb468f32.json",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-LLRLDWY00R",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "G-LLRLDWY00R"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/global.js?v=8830785395116216071671719913",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/checkouts/internal/preloads.js?locale=es-CL",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/storefront/assets/storefront/load_feature-ed94c51f.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-318ab40a.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/compiled_assets/scripts.js?v=30616774314825499031671719961",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/base.css?v=88290808517547527771671719915",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/fonts/montserrat/montserrat_n4.81949fa0ac9fd2021e16436151e8eaa539321637.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-predictive-search.css?v=83512081251802922551671719912",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.14.0.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/cart.js?v=83971781268232213281671719912",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-cart-drawer.css?v=35930391193938886121671719911",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-cart.css?v=61086454150987525971671719915",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-totals.css?v=86168756436424464851671719912",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-price.css?v=65402837579211014041671719912",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-discounts.css?v=152760482443307489271671719913",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-loading-overlay.css?v=167310470843593579841671719915",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/details-disclosure.js?v=153497636716254413831671719914",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/details-modal.js?v=4511761896672669691671719914",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/cart-notification.js?v=160453272920806432391671719911",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/cart-drawer.js?v=44260131999403604181671719913",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/files/LOGO_blanco.png?v=1672070913&width=100",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/section-image-banner.css?v=170916557215809668651671719912",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/collage.css?v=66057739542734032651671719915",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-card.css?v=13116108056750117421671719914",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-modal-video.css?v=48762958730556882751671719915",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/quick-add.js?v=74786941491750185401671719911",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/product-form.js?v=24702737604959294451671719911",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-rating.css?v=24573085263941240431671719914",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/section-footer.css?v=83777583229853969691671719915",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/predictive-search.js?v=31278710863581584031671719913",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/storefront/standard-actions.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/wpm/b56a6403cw68eaaf33p29d38119m7a4be5cam.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/s/trekkie.storefront.25c1cbbda0e2f0b638912871b921232f1392e9e9.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/storefront/assets/shop_events_listener-4e26a9ce.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-list-menu.css?v=151968516119678728991671719913",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-search.css?v=96455689198851321781671719911",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-menu-drawer.css?v=182311192829367774911671719912",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-cart-notification.css?v=183358051719344305851671719911",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-cart-items.css?v=23917223812499722491671719915",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_BuOUs61v.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.document_DMcRsBXN.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.window_CAbVMZox.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.init_BASu_Hxb.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_oML0Hu4L.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.networkErrorMessages_Du380vAr.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-cart-sync_Dj6CfXoY.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.defineInitFunction_CIjOjzsO.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.casing_U_9x-Om3.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.utils_K8y2k-BJ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.v4_C3N_0s0v.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useUserRecognitionSignal_DzPQujSK.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.storage_DQF5v-OM.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_C48kTNUX.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.authorize_DINGMyE5.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useEventListener_BeiI7eri.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.validators_09U1U9sZ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/files/cafeteria-gato-flojo.jpg?v=1672071377&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-deferred-media.css?v=54092797763792720131671719914",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-rte.css?v=69919436638515329781671719915",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/section-rich-text.css?v=155250126305810049721671719914",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-slider.css?v=111384418465749404671671719912",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/template-collection.css?v=145944865380958730931671719914",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/quick-add.css?v=33503823355406569531671719912",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/collections/cafe-en-grano.jpg?v=1672066883&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/files/1761681666782_8ab13e83-7e69-44e7-9395-2faa1f2bc3e0.png?v=1761683213&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/files/1761681654993_4bb14ea4-11df-4712-9739-46cb6a361043.png?v=1761828237&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/files/1000008170.png?v=1758815751&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/files/Gemini_Generated_Image_t6q6h0t6q6h0t6q6.png?v=1785872529&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/web-pixels@56a6403cw68eaaf33p29d38119m7a4be5ca/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/web-pixels@56a6403cw68eaaf33p29d38119m7a4be5ca/app/web-pixel-385679641@bd2f978c17a94bbb8a74d43de2165dc5~2/pixel.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/web-pixels@56a6403cw68eaaf33p29d38119m7a4be5ca/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/files/1762705036609.jpg?v=1762707585&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/files/1762704509147.jpg?v=1762707585&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/files/1000008168.png?v=1758804994&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-newsletter.css?v=103472482056003053551671719915",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-list-payment.css?v=69253961410771838501671719913",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/component-list-social.css?v=52211663153726659061671719911",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/t/2/assets/disclosure.css?v=646595190999601341671719913",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shop.app/pay/hop?analytics_trace_id=33d5083c-f104-46f3-a553-65f0ac0b39c9&target_origin=https%3A%2F%2Fgatoflojo.cl&client_handle=elgatoflojo.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-LLRLDWY00R&gtm=45je6as0v9220343600za208zd9220343600xf1&_p=1793292308596&gcd=13l3l3l3l1l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz&are=1&cid=268174467.1793292309&frm=0&ngs=1&pscdl=&rcb=13&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-us&_s=1&tag_exp=115616986~115938466~1159384",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Analytics",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0",
+        "evento": "page_view",
+        "tid": "G-LLRLDWY00R"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/web-pixels/strict/app/web-pixel-shopify-app-pixel@0530.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/signals/config/2942832072731517?v=2.9.429&r=stable&domain=gatoflojo.cl&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a756cccd512&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABNEAAABkBAMAAABayruYAAAAJFBMVEUAAADa2tr/////9/e6urpTU1O5ubn39/f///9ZWVlfX1/z8/O/OctmAAAACXRSTlMA//////////ZO3iNwAAALPElEQVR4AezdwY6bShMF4GP6krX9Bqgk9kiI/SzyAAir9lnlFfL6N26OWhXckDae9mClj/L7L1czMMbfbYDMOCgpKSkpwelyRmIEd6mEhTQpDabvu1C7vsf2ALM6cLlctquVtq2YDwC1jrfHEVDV8fagvln7p7XOlUKVi9SKWrncY5GQnN0DhLuZ1HZJa7WZPemU0GCc6hUMBtVue4BZHeD3v1caTn9KIyiPSimIvjw8Sq",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACY4AAADCCAMAAADT9DSoAAAANlBMVEUAAADa2tr/////9/e5ubn39/dTU1P29vbv7+/+/v74+Pjw8PD///9ZWVlfX1/z8/P5+fn///9RgilMAAAAEnRSTlMA///////////////2////9gn80juWAAAR/UlEQVR4AezdAW+jOBPG8QcgVPv9P+xqHQPvu9nrTWWd1enNuY7D/ydpS+gwdqRq44yN0WUBAAAAAAAA06u/sVPPbZZ0/Ie5LNvIEWbRu11msCsK7duYZM4OcaWzf1+rVk13fbTpj1SctXMWZJHluSLYTmxlUBlVxJlkZz/py2a/txeV/o1qls9B3q55/TALAAAAHa16Ke",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/signals/config/494785596191640?v=2.9.429&r=stable&domain=gatoflojo.cl&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a756cccd512&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.reportAssetMetrics_D1lZchzb.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shop/files/ICONO.jpg?crop=center&height=32&v=1672067521&width=32",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/polyfills.Cm4XMvKf.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/app.cAthPeiN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.DrRCn3HG.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.DqfKWMZb.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/5587f402.BLOv5NpY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/cf29e63b.BRQXh2EH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/bfe75f31.6yCNtNv-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/8b3289d0.Bt3qZnT_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.DOeij2sJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/204243fa.V7gQ36sj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/5c5817f3.BEu0evcd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/8f46f026.Bz0NEFVt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/f05935e5.bhemP6c2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/32e8c018.BVeb327i.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/7336bdaf.DcxaUsDT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/6f2620f5.D_02a169.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/cf6ddc11.DMeQLHv7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.C0PFpUAK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.BaBGTrLm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.DQs60AXV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.B1TfVO1E.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.B0cVlpvy.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BI5RQVDa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.DXa3DaPc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.B_FoJ8Ig.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.DmSw67Cj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.wULXKuPc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/39921a74.3CxTFnjT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.BBDsaE4D.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/8599b02a.SMqdFzKQ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.CMQnj3Km.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.DOeqFAvq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.DrLHo2nc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/c8760fd8.Be0EZ9hi.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/53bbdad9.CVg-OYc7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.DFPNjnst.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/1a6c2867.DIvU9A1-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.CTDVcfb6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.BAghc-fu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.CFeNdDM-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.BeDDbBvp.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.Dl0SRkiU.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/f7861534.Bd8yhhUE.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.BXt-43WV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.4EMhYNtA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/17425706.BcJPt7Oh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.DH-HAOXQ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.r_2iWLRe.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/06ef5503.Dv-zBuK4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/acc42fa8.DaJQita_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/cccd6056.DePXU1Wc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.D-I2um0-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/79974aab.zZ2KWkIs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.BYEQZ8wJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.hwBClo-8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.BAMqjCt6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.BM7R-elq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.Dz8MQz2P.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.CDFLXjau.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.CRpHa0fS.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.jfu5yGpw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.wWS96b1U.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.CWf9aWZN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/c09515bf.B71fejgK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.B0c9qjLX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.ns171nJ5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.DygUyRW2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.DFN8f_R0.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.DVXb3TBr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.Do-pzA-t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.Aek1wZmx.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.Ddqlep8a.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/ddf59287.CYD1TGGD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.DH2lZj47.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/58314944.C8tOb_bS.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.1JARX8O_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.DxN44MdX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.CjdbXfg7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/9068a4ed.D9qjdpv1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.8wYVCzKV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/f1968089.yy6CXKcX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.DS6ygtkl.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/347b440c.DPGZDqyz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/5ade1ef3.DXB4L25S.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.C2MFP83j.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/5a347040.DqqqLoQW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/792bb671.MG_raAxs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.B_r4aISK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.D1Mwbrt6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.B2WWgZOD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/ca0c3e72.mAtaVirp.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.C8MS0jza.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.Dtj-XP1M.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/d5d34b3b.BdlOFFHa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.DTB5eJ2J.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.DTJ0PR2t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.DcUdfhSw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.fiS1Nr-I.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.BRydut8V.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.B5HdvqVg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/0724c71d.O32rwBsR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/7114e006.lrS99emJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/9babe369.ocvpn2KV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/e0989459.BN6EGpPC.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.Cs835jgd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.Bvz9lXAd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/ca3c8263.DkbnVCmF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/083cdde5.DYEjGEf-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.rUOq8lM6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.ClHl3T7C.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/d93ca466.C9R5umgP.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.SSgFk5gO.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/d7065744.CK6x5CHa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.ZeHo6koi.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.BLLdTe6K.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/8fe56fc9.DKeGEDf5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/2210eadb.DF0gIp_2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/8a00b682.BEOU-kK4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.BIoL9TQ3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.B7RRII2U.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/c6b02d73.DFxNKn7U.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.Bdvld-6t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/24773686.C8B24loc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/7048f38b.Ct0cMld6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/c3c7c048.B_bxvive.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/7aa3b627.DU4dK-Iv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.CS-vFszt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.B31SY0iW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.DrMLKbeq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/app.DBH01810.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/is-address-empty.DDArxpAV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.LpOe7KaD.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.DZtuG_UK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.BMdzfW_y.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ChangeCompanyLocationLink.B1YSPUDc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/index.Du9dByaI.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useApplePayButtonStatus.ct4xfivv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/findSelectedDeliveryMethod.xO_7ctnq.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.BAjucZ-8.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BrandedPromise.B0RErzdh.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shop/files/mujer-usando-tote-bag-gatoflojo.jpg?v=1674228385&width=550",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shop/collections/marchandising-gato-flojo.jpg?v=1672073134&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.DRJckcGa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.kQR0txJ7.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/collections/cafe-en-grano",
+      "metodo": "GET",
+      "tipo": "Prefetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.B8v_QGNW.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/MissingFields.BbxB_6wt.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.CyQZvZOO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useOnePageFormSubmit.1WzRSowg.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/checkout-pay-button-exit.KhTiKgPS.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/observe-fit-scale.DpLOWYa8.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.btyKOfco.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Payment.DrWvAMMF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0696/1715/6377/files/LOGO_blanco_x320.png?v=1672070913",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shop/files/cafe-helado-gato-flojo-concepcion.jpg?v=1672073645&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/products/cafe-en-grano-colombia-la-colombia",
+      "metodo": "GET",
+      "tipo": "Prefetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/.well-known/shopify/fec/produce",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/cdn/shop/files/LOGOTIPO.jpg?v=1672067843&width=200",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://gatoflojo.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "localization",
+      "desde": "gatoflojo.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_essential",
+      "desde": "gatoflojo.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_analytics",
+      "desde": "gatoflojo.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_marketing",
+      "desde": "gatoflojo.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shop_app_essential",
+      "desde": "shop.app"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "gatoflojo.cl"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "gatoflojo.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 2352809,
+    "al_abrir_bytes": 2028990,
+    "n_peticiones": 302,
+    "mas_pesados": [
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=G-LLRLDWY00R",
+        "bytes": 181763
+      },
+      {
+        "url": "https://gatoflojo.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.B1TfVO1E.js",
+        "bytes": 178904
+      },
+      {
+        "url": "https://connect.facebook.net/en_US/fbevents.js",
+        "bytes": 117647
+      },
+      {
+        "url": "https://connect.facebook.net/signals/config/2942832072731517?v=2.9.429&r=stable&domain=gatoflojo.cl&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a75",
+        "bytes": 107578
+      }
+    ]
+  },
+  "html_len": 176776
+}

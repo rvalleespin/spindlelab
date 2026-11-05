@@ -1,0 +1,568 @@
+{
+  "id": "G45",
+  "dominio": "890.cl",
+  "motor": "v0",
+  "cuando": "2026-10-29T16:53:27.038Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://890.cl/",
+  "hallazgo": {
+    "id": "F7",
+    "nombre": "Enlaces de la portada que llevan a páginas que no existen",
+    "linea": "Auditoría SEO Técnica",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, haciendo clic",
+    "donde_mirar": "Hacer clic en los enlaces de la portada y el menú.",
+    "condiciones": {
+      "1": {
+        "v": "medias",
+        "razon": "Solo se nota al hacer clic en ese enlace."
+      },
+      "2": {
+        "v": "medias",
+        "razon": "Cada clic roto es una visita perdida."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se prueba con un clic."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Cualquier verificador de enlaces lo ve: es capa 1."
+      }
+    },
+    "afirmable": "3 enlace(s) internos de la portada responden 404 (revisados 3), en dos rondas.",
+    "no_afirmable": [
+      "que sean todos los rotos del sitio (solo se revisó la portada)"
+    ],
+    "advertencias": [],
+    "datos": {
+      "cantidad": 3,
+      "ejemplo": "/tienda"
+    },
+    "propuesta": {
+      "en_castellano": "En tu portada hay 3 enlaces que llevan a páginas que no existen (error 404), por ejemplo /tienda.",
+      "problema_tecnico": "3 enlace(s) internos de la portada responden 404 (revisados 3), en dos rondas.",
+      "donde_mirar": "Hacer clic en los enlaces de la portada y el menú.",
+      "se_vende": {
+        "linea": "Auditoría SEO Técnica",
+        "producto": "Auditoría SEO Técnica, Completa",
+        "alcance": "Corregir los enlaces rotos de la portada y revisar el resto del sitio.",
+        "vehiculo_publicado": "Desde $490.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría SEO Técnica, Completa, desde $490.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "media",
+      "frase_de_arreglo": "Eso se arregla: dejo cada enlace llevando a una página que existe y reviso que no queden más rotos.",
+      "apertura_a_reunion": "Vi 2 cosas más que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F4",
+      "nombre": "No hay ninguna herramienta de medición instalada",
+      "linea": "Acompañamiento",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con acceso a su panel",
+      "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+      "condiciones": {
+        "1": {
+          "v": "no",
+          "razon": "No se ve, pero lo confirma cualquier extensión gratuita."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin medición no se sabe qué trae clientes."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con Tag Assistant."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Es capa 1."
+        }
+      },
+      "afirmable": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+      "no_afirmable": [
+        "que \"no mides nada\" (puede haber medición del lado del servidor o la propia de la plataforma)"
+      ],
+      "advertencias": [],
+      "datos": {
+        "plataforma": null
+      },
+      "propuesta": {
+        "en_castellano": "No veo Google Analytics ni Tag Manager en tu sitio.",
+        "problema_tecnico": "No hay Google Analytics, Tag Manager ni otra herramienta de medición visible en el sitio.",
+        "donde_mirar": "Preguntar a quien administra el sitio si hay Google Analytics u otra herramienta; o abrir el sitio con Tag Assistant.",
+        "se_vende": {
+          "linea": "Acompañamiento",
+          "producto": "Acompañamiento Mensual, plan Esencial (foco en una capa)",
+          "alcance": "Instalar analítica y medir consultas, llamadas y WhatsApp.",
+          "vehiculo_publicado": "Desde $590.000 + IVA al mes (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Acompañamiento Mensual, plan Esencial (foco en una capa), desde $590.000 + IVA al mes (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla: dejo medido lo que importa, que te escriban, te llamen o te hablen por WhatsApp, para que veas qué trae clientes.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F8",
+      "nombre": "El negocio no está declarado como entidad en datos estructurados",
+      "linea": "Visibilidad en IA",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con una herramienta gratuita",
+      "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Los datos estructurados no se ven."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin entidad declarada, la IA y Google adivinan quién eres."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con una herramienta gratuita."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Los chequeos gratis lo muestran: es capa 1."
+        }
+      },
+      "afirmable": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+      "no_afirmable": [
+        "que \"Google no te entiende\""
+      ],
+      "advertencias": [],
+      "datos": {},
+      "propuesta": {
+        "en_castellano": "Tu sitio no le dice a Google ni a la IA qué negocio eres en el formato que ellos leen (datos estructurados).",
+        "problema_tecnico": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+        "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+        "se_vende": {
+          "linea": "Visibilidad en IA",
+          "producto": "Auditoría de Visibilidad en IA",
+          "alcance": "Declarar el negocio como entidad en datos estructurados.",
+          "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo declarado qué negocio eres, con tu dirección y tu contacto, en el formato que leen Google y la IA.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F4",
+    "F8"
+  ],
+  "capa1": {
+    "consecuencia": [
+      "sin_ruta_de_contacto_visible",
+      "sin_analitica"
+    ],
+    "higiene": [
+      "sin_llms_txt",
+      "sin_sitemap",
+      "sin_entidad_en_jsonld",
+      "sin_meta_description"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "Apache",
+      "cloudflare": false,
+      "x_powered_by": null
+    },
+    "robots": {
+      "ausente": true
+    },
+    "llms_txt": false,
+    "sitemap": false,
+    "jsonld": {
+      "tipos": [],
+      "org": []
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 14,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 14,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 1042203,
+      "al_abrir_bytes": 1042203,
+      "n_peticiones": 61,
+      "mas_pesados": [
+        {
+          "url": "https://firebasestorage.googleapis.com/v0/b/bakery-management-system-df4i5.firebasestorage.app/o/carousel-images%2Fslide1-image-1766232760591.jpeg?alt=media&tok",
+          "bytes": 189830
+        },
+        {
+          "url": "https://890.cl/fondo-slider.jpg",
+          "bytes": 105178
+        },
+        {
+          "url": "https://firebasestorage.googleapis.com/v0/b/bakery-management-system-df4i5.firebasestorage.app/o/carousel-images%2Fslide2-1756512723024.jpg?alt=media&token=50af",
+          "bytes": 90111
+        },
+        {
+          "url": "https://app.890.cl/_next/static/chunks/bc9e92e6-74cd226caad28d98.js",
+          "bytes": 77714
+        }
+      ]
+    },
+    {
+      "total_bytes": 1091355,
+      "al_abrir_bytes": 1091355,
+      "n_peticiones": 61,
+      "mas_pesados": [
+        {
+          "url": "https://firebasestorage.googleapis.com/v0/b/bakery-management-system-df4i5.firebasestorage.app/o/carousel-images%2Fslide1-image-1766232760591.jpeg?alt=media&tok",
+          "bytes": 190047
+        },
+        {
+          "url": "https://890.cl/fondo-slider.jpg",
+          "bytes": 105178
+        },
+        {
+          "url": "https://fastly.picsum.photos/id/975/1200/300.jpg?hmac=GePu-XNdpOuonRHl8WoX9ltcK-iBtF6VjxgY9cpvdx4",
+          "bytes": 92427
+        },
+        {
+          "url": "https://firebasestorage.googleapis.com/v0/b/bakery-management-system-df4i5.firebasestorage.app/o/carousel-images%2Fslide2-1756512723024.jpg?alt=media&token=50af",
+          "bytes": 89894
+        }
+      ]
+    },
+    {
+      "total_bytes": 1027142,
+      "al_abrir_bytes": 1027142,
+      "n_peticiones": 61,
+      "mas_pesados": [
+        {
+          "url": "https://firebasestorage.googleapis.com/v0/b/bakery-management-system-df4i5.firebasestorage.app/o/carousel-images%2Fslide1-image-1766232760591.jpeg?alt=media&tok",
+          "bytes": 190053
+        },
+        {
+          "url": "https://890.cl/fondo-slider.jpg",
+          "bytes": 105178
+        },
+        {
+          "url": "https://firebasestorage.googleapis.com/v0/b/bakery-management-system-df4i5.firebasestorage.app/o/carousel-images%2Fslide2-1756512723024.jpg?alt=media&token=50af",
+          "bytes": 89894
+        },
+        {
+          "url": "https://app.890.cl/_next/static/chunks/bc9e92e6-74cd226caad28d98.js",
+          "bytes": 77680
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": null,
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 8169
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 8169
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 8169,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": []
+      },
+      {
+        "forms": [],
+        "mails": []
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "title",
+        "valor": "Bienvenido"
+      },
+      {
+        "fuente": "title",
+        "valor": "Salón de té 890"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": null
+  },
+  "enlaces": {
+    "revisados": 3,
+    "rotos_en_ambas": [
+      "https://890.cl/tienda",
+      "https://890.cl/tienda/perfil",
+      "https://890.cl/tienda/reservas"
+    ],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

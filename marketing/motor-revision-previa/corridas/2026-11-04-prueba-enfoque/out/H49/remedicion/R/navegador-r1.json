@@ -1,0 +1,2963 @@
+{
+  "url": "https://hoteloceanic.cl/",
+  "cuando": "2026-11-04T17:31:59.929Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "hoteloceanic.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "hoteloceanic.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "hoteloceanic.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "hoteloceanic.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_ga_FE3K1C47QQ",
+        "dominio": ".hoteloceanic.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".hoteloceanic.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".hoteloceanic.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://hoteloceanic.cl/en",
+      "titulo": "Hotel Oceanic – Promoción hasta el 30 de Octubre",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/en/localization",
+          "accion_abs": "https://hoteloceanic.cl/en/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/en/localization",
+          "accion_abs": "https://hoteloceanic.cl/en/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": true,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/en/search",
+          "accion_abs": "https://hoteloceanic.cl/en/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/en/cart",
+          "accion_abs": "https://hoteloceanic.cl/en/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/contact",
+          "accion_abs": "https://hoteloceanic.cl/contact",
+          "metodo": "post",
+          "campos": 1,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        },
+        {
+          "action": "/en/localization",
+          "accion_abs": "https://hoteloceanic.cl/en/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Skip to content"
+        },
+        {
+          "h": "/en/pages/habitaciones",
+          "t": "ROOMS"
+        },
+        {
+          "h": "/en/pages/restobar",
+          "t": "RESTAURANT"
+        },
+        {
+          "h": "/en/pages/galeria",
+          "t": "GALERÍA"
+        },
+        {
+          "h": "/en/pages/2027",
+          "t": "2027"
+        },
+        {
+          "h": "/en/pages/experiencias",
+          "t": "EXPERIENCES"
+        },
+        {
+          "h": "/en/pages/escapada-oceanic",
+          "t": "ESCAPADAS"
+        },
+        {
+          "h": "/en/pages/spa",
+          "t": "SPA"
+        },
+        {
+          "h": "/en/pages/eventosempresas",
+          "t": "EVENTOS"
+        },
+        {
+          "h": "#",
+          "t": "Español"
+        },
+        {
+          "h": "#",
+          "t": "Deutsch"
+        },
+        {
+          "h": "#",
+          "t": "English"
+        },
+        {
+          "h": "https://www.instagram.com/hotel_oceanic/",
+          "t": "Instagram"
+        },
+        {
+          "h": "/en",
+          "t": ""
+        },
+        {
+          "h": "/en/pages/habitaciones",
+          "t": "ROOMS"
+        },
+        {
+          "h": "/en/pages/restobar",
+          "t": "RESTAURANT"
+        },
+        {
+          "h": "/en/pages/galeria",
+          "t": "GALERÍA"
+        },
+        {
+          "h": "/en/pages/2027",
+          "t": "2027"
+        },
+        {
+          "h": "/en/pages/experiencias",
+          "t": "EXPERIENCES"
+        },
+        {
+          "h": "/en/pages/escapada-oceanic",
+          "t": "ESCAPADAS"
+        },
+        {
+          "h": "/en/pages/spa",
+          "t": "SPA"
+        },
+        {
+          "h": "/en/pages/eventosempresas",
+          "t": "EVENTOS"
+        },
+        {
+          "h": "#",
+          "t": "Español"
+        },
+        {
+          "h": "#",
+          "t": "Deutsch"
+        },
+        {
+          "h": "#",
+          "t": "English"
+        },
+        {
+          "h": "/en/cart",
+          "t": "Cart"
+        },
+        {
+          "h": "/en/cart",
+          "t": "View cart"
+        },
+        {
+          "h": "https://hoteloceanic.myshopify.com/pages/restobar",
+          "t": "RESTOBAR"
+        },
+        {
+          "h": "https://hoteloceanic.myshopify.com/pages/habitaciones",
+          "t": "HABITACIONES"
+        },
+        {
+          "h": "https://hoteloceanic.cl/pages/booking",
+          "t": "RESERVAS"
+        },
+        {
+          "h": "https://hoteloceanic.myshopify.com/pages/experiencias",
+          "t": "EXPERIENCIAS"
+        },
+        {
+          "h": "/en/pages/booking",
+          "t": "SEE SUITE"
+        },
+        {
+          "h": "/en/pages/restobar",
+          "t": "SEE MORE"
+        },
+        {
+          "h": "/en/pages/experiencias",
+          "t": "VER MÁS"
+        },
+        {
+          "h": "/en/pages/escapada-oceanic",
+          "t": "EXPLORA AQUÍ"
+        },
+        {
+          "h": "/en/pages/spa",
+          "t": "MORE INFORMATION"
+        },
+        {
+          "h": "https://gx18.admintour.com/MotorReservasAdmintour/disponibilidad/habitaciones?hotCod=20",
+          "t": "🛎️ Reservar Ahora"
+        },
+        {
+          "h": "https://gx18.admintour.com/MotorReservasAdmintour/disponibilidad/habitaciones?hotCod=20",
+          "t": "Reservar Ahora"
+        },
+        {
+          "h": "https://www.musabusiness.cl/pages/contacto",
+          "t": "Musabusiness.cl"
+        },
+        {
+          "h": "https://www.instagram.com/hotel_oceanic/",
+          "t": "Instagram"
+        },
+        {
+          "h": "/en/pages/habitaciones",
+          "t": "ROOMS"
+        },
+        {
+          "h": "/en/pages/experiencias",
+          "t": "EXPERIENCES"
+        },
+        {
+          "h": "/en/pages/escapada-oceanic",
+          "t": "ESCAPADA"
+        },
+        {
+          "h": "/en/pages/restobar",
+          "t": "RESTAURANT"
+        },
+        {
+          "h": "/en/pages/spa",
+          "t": "SPA"
+        },
+        {
+          "h": "/en/pages/eventosempresas",
+          "t": "EVENTOS"
+        },
+        {
+          "h": "#",
+          "t": "Español"
+        },
+        {
+          "h": "#",
+          "t": "Deutsch"
+        },
+        {
+          "h": "#",
+          "t": "English"
+        },
+        {
+          "h": "https://www.musabusiness.cl/",
+          "t": "Musabusiness.cl"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 1143,
+      "muestra": "Skip to content\nHOTEL\n2027\nEXPERIENCES\nESCAPADAS\nSPA\nEVENTOS\nLanguage\nEnglish\nHOTEL OCEANIC REÑACA\n\nUN REFUGIO EXCLUSIVO CON VISTAS PANORÁMICAS AL MAR Y UNA EXPERIENCIA INIGUALABLE\n\nNUESTROS SERVICIOS\nRESTOBAR\nHABITACIONES\nRESERVAS\nEXPERIENCIAS\n\nOCEAN VIEW SUITES\nCarefully designed spaces for enjoying quality relaxation in a serene and sophisticated atmosphere.\nSEE SUITE\n\nRESTAURANT\nEnjoy an exclusive experience in our restobar, overlooking the sea in a private setting.\nSEE MORE\n\nEXPERIENCIAS\n\nI",
+      "cta_en_pantalla": [
+        {
+          "t": "🛎️ reservar ahora",
+          "h": "https://gx18.admintour.com/MotorReservasAdmintour/disponibilidad/habitaciones?hotCod=20"
+        },
+        {
+          "t": "",
+          "h": ""
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 2,
+        "h2": 14,
+        "palabras": 162
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "hoteloceanic.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "hoteloceanic.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "hoteloceanic.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "hoteloceanic.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_ga_FE3K1C47QQ",
+        "dominio": ".hoteloceanic.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".hoteloceanic.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".hoteloceanic.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://hoteloceanic.cl/en",
+      "titulo": "Hotel Oceanic – Promoción hasta el 30 de Octubre",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/en/localization",
+          "accion_abs": "https://hoteloceanic.cl/en/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/en/localization",
+          "accion_abs": "https://hoteloceanic.cl/en/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/en/search",
+          "accion_abs": "https://hoteloceanic.cl/en/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/en/cart",
+          "accion_abs": "https://hoteloceanic.cl/en/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/contact",
+          "accion_abs": "https://hoteloceanic.cl/contact",
+          "metodo": "post",
+          "campos": 1,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        },
+        {
+          "action": "/en/localization",
+          "accion_abs": "https://hoteloceanic.cl/en/localization",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Skip to content"
+        },
+        {
+          "h": "/en/pages/habitaciones",
+          "t": "ROOMS"
+        },
+        {
+          "h": "/en/pages/restobar",
+          "t": "RESTAURANT"
+        },
+        {
+          "h": "/en/pages/galeria",
+          "t": "GALERÍA"
+        },
+        {
+          "h": "/en/pages/2027",
+          "t": "2027"
+        },
+        {
+          "h": "/en/pages/experiencias",
+          "t": "EXPERIENCES"
+        },
+        {
+          "h": "/en/pages/escapada-oceanic",
+          "t": "ESCAPADAS"
+        },
+        {
+          "h": "/en/pages/spa",
+          "t": "SPA"
+        },
+        {
+          "h": "/en/pages/eventosempresas",
+          "t": "EVENTOS"
+        },
+        {
+          "h": "#",
+          "t": "Español"
+        },
+        {
+          "h": "#",
+          "t": "Deutsch"
+        },
+        {
+          "h": "#",
+          "t": "English"
+        },
+        {
+          "h": "https://www.instagram.com/hotel_oceanic/",
+          "t": "Instagram"
+        },
+        {
+          "h": "/en",
+          "t": ""
+        },
+        {
+          "h": "/en/pages/habitaciones",
+          "t": "ROOMS"
+        },
+        {
+          "h": "/en/pages/restobar",
+          "t": "RESTAURANT"
+        },
+        {
+          "h": "/en/pages/galeria",
+          "t": "GALERÍA"
+        },
+        {
+          "h": "/en/pages/2027",
+          "t": "2027"
+        },
+        {
+          "h": "/en/pages/experiencias",
+          "t": "EXPERIENCES"
+        },
+        {
+          "h": "/en/pages/escapada-oceanic",
+          "t": "ESCAPADAS"
+        },
+        {
+          "h": "/en/pages/spa",
+          "t": "SPA"
+        },
+        {
+          "h": "/en/pages/eventosempresas",
+          "t": "EVENTOS"
+        },
+        {
+          "h": "#",
+          "t": "Español"
+        },
+        {
+          "h": "#",
+          "t": "Deutsch"
+        },
+        {
+          "h": "#",
+          "t": "English"
+        },
+        {
+          "h": "/en/cart",
+          "t": "Cart"
+        },
+        {
+          "h": "/en/cart",
+          "t": "View cart"
+        },
+        {
+          "h": "https://hoteloceanic.myshopify.com/pages/restobar",
+          "t": "RESTOBAR"
+        },
+        {
+          "h": "https://hoteloceanic.myshopify.com/pages/habitaciones",
+          "t": "HABITACIONES"
+        },
+        {
+          "h": "https://hoteloceanic.cl/pages/booking",
+          "t": "RESERVAS"
+        },
+        {
+          "h": "https://hoteloceanic.myshopify.com/pages/experiencias",
+          "t": "EXPERIENCIAS"
+        },
+        {
+          "h": "/en/pages/booking",
+          "t": "SEE SUITE"
+        },
+        {
+          "h": "/en/pages/restobar",
+          "t": "SEE MORE"
+        },
+        {
+          "h": "/en/pages/experiencias",
+          "t": "VER MÁS"
+        },
+        {
+          "h": "/en/pages/escapada-oceanic",
+          "t": "EXPLORA AQUÍ"
+        },
+        {
+          "h": "/en/pages/spa",
+          "t": "MORE INFORMATION"
+        },
+        {
+          "h": "https://gx18.admintour.com/MotorReservasAdmintour/disponibilidad/habitaciones?hotCod=20",
+          "t": "🛎️ Reservar Ahora"
+        },
+        {
+          "h": "https://gx18.admintour.com/MotorReservasAdmintour/disponibilidad/habitaciones?hotCod=20",
+          "t": "Reservar Ahora"
+        },
+        {
+          "h": "https://www.musabusiness.cl/pages/contacto",
+          "t": "Musabusiness.cl"
+        },
+        {
+          "h": "https://www.instagram.com/hotel_oceanic/",
+          "t": "Instagram"
+        },
+        {
+          "h": "/en/pages/habitaciones",
+          "t": "ROOMS"
+        },
+        {
+          "h": "/en/pages/experiencias",
+          "t": "EXPERIENCES"
+        },
+        {
+          "h": "/en/pages/escapada-oceanic",
+          "t": "ESCAPADA"
+        },
+        {
+          "h": "/en/pages/restobar",
+          "t": "RESTAURANT"
+        },
+        {
+          "h": "/en/pages/spa",
+          "t": "SPA"
+        },
+        {
+          "h": "/en/pages/eventosempresas",
+          "t": "EVENTOS"
+        },
+        {
+          "h": "#",
+          "t": "Español"
+        },
+        {
+          "h": "#",
+          "t": "Deutsch"
+        },
+        {
+          "h": "#",
+          "t": "English"
+        },
+        {
+          "h": "https://www.musabusiness.cl/",
+          "t": "Musabusiness.cl"
+        }
+      ],
+      "politica": [],
+      "largo_texto": 1143,
+      "muestra": "Skip to content\nHOTEL\n2027\nEXPERIENCES\nESCAPADAS\nSPA\nEVENTOS\nLanguage\nEnglish\nHOTEL OCEANIC REÑACA\n\nUN REFUGIO EXCLUSIVO CON VISTAS PANORÁMICAS AL MAR Y UNA EXPERIENCIA INIGUALABLE\n\nNUESTROS SERVICIOS\nRESTOBAR\nHABITACIONES\nRESERVAS\nEXPERIENCIAS\n\nOCEAN VIEW SUITES\nCarefully designed spaces for enjoying quality relaxation in a serene and sophisticated atmosphere.\nSEE SUITE\n\nRESTAURANT\nEnjoy an exclusive experience in our restobar, overlooking the sea in a private setting.\nSEE MORE\n\nEXPERIENCIAS\n\nI",
+      "cta_en_pantalla": [
+        {
+          "t": "🛎️ reservar ahora",
+          "h": "https://gx18.admintour.com/MotorReservasAdmintour/disponibilidad/habitaciones?hotCod=20"
+        },
+        {
+          "t": "",
+          "h": ""
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 2,
+        "h2": 14,
+        "palabras": 162
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/en",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0603/4758/0491/files/Abygaer_Regular.ttf?v=1740609684",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0603/4758/0491/files/Sztos-Thin.otf?v=1741718759",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-localization-form.css?v=170315343355214948141739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/compiled_assets/styles.css?v=11633542708252979871776192441&subset=AQ",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/LOGOS-02.png?v=1739891851&width=210",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/constants.js?v=132983761750457495441739890445",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/pubsub.js?v=158357773527763999511739890447",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/global.js?v=152862011079830610291739890445",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/details-disclosure.js?v=13653116266235556501739890445",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/details-modal.js?v=25581673532751508451739890445",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/search-form.js?v=133129549252120666541739890447",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/checkouts/internal/preloads.js?locale=en-CL",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.en.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/storefront/assets/storefront/load_feature-ed94c51f.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-318ab40a.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/compiled_assets/scripts.js?v=184325197989695213571739890463",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/base.css?v=175829372806993720621788294764",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/fonts/assistant/assistant_n4.9120912a469cad1cc292572851508ca49d12e768.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/localization-form.js?v=144176611646395275351739890447",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.15.1.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/cart-notification.js?v=133508293167896966491739890445",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0603/4758/0491/files/Abygaer_Regular.ttf?v=1740609684",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0603/4758/0491/files/Sztos-Thin.otf?v=1741718759",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/section-image-banner.css?v=124819179385751388401739890447",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-slider.css?v=14039311878856620671739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-slideshow.css?v=17933591812325749411739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/DJI_0984_1293de8f-0f09-4479-8ad2-3cb760ef8a85.jpg?v=1742340863&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0603/4758/0491/files/RESTAURANT_82de8f8b-5741-4eab-a2b6-eccac845e203.jpg?v=1741974301",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0603/4758/0491/files/HABITACIONES_0faadc44-dc56-4755-a5e7-b4522dee3b9a.jpg?v=1741974301",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0603/4758/0491/files/LOGOS-08_0846ff61-49cd-43dc-aad1-d06bb15f6e44.jpg?v=1741974301",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0603/4758/0491/files/PANORAMAS_50ae1dcd-6c87-4712-b05c-8e3fd13004bd.jpg?v=1741974301",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-image-with-text.css?v=159347133892345898421739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/section-footer.css?v=60318643098753476351739890447",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-newsletter.css?v=4727253280200485261739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-list-menu.css?v=151968516119678728991739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-list-payment.css?v=69253961410771838501739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-list-social.css?v=35792976012981934991739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/storefront/standard-actions.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-cart-items.css?v=123238115697927560811739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/wpm/b8623cf63wa37add5bpb2771a08mfc45efacm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_BjETNI4-.en.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.document_DMcRsBXN.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.window_CAbVMZox.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.init_GAYUK9VY.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_BoetXJ5o.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.networkErrorMessages_Du380vAr.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-cart-sync_GBnbrB2c.en.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.defineInitFunction_CIjOjzsO.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.casing_U_9x-Om3.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.utils_K8y2k-BJ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.v4_C3N_0s0v.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useUserRecognitionSignal_Be-LX1VX.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.storage_DQF5v-OM.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_NQw5b9qv.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.authorize_DINGMyE5.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useEventListener_UUODl-9x.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.validators_09U1U9sZ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/storefront/assets/shop_events_listener-819172a8.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-search.css?v=165164710990765432851739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-menu-drawer.css?v=147478906057189667651739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/assets/component-cart-notification.css?v=54116361853792938221739890445",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/Sztos-Thin.otf?v=1741718759",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/Abygaer_Regular.ttf?v=1740609684",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/videos/c/o/v/09ee1c90c5d8410682a4fb2019bf8d3c.mp4",
+      "metodo": "GET",
+      "tipo": "Media",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/t/1/compiled_assets/styles.css?v=11633542708252979871776192441",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0710_1258ce01-35f3-4839-bbcb-f36899dec9e2.jpg?v=1742340865&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0603/4758/0491/files/Sztos-Thin.otf?v=1741718759",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0636.jpg?v=1740053124&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0848.jpg?v=1740053136&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/web-pixels@8623cf63wa37add5bpb2771a08mfc45efac/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/web-pixels@8623cf63wa37add5bpb2771a08mfc45efac/app/web-pixel-1885864011@a3321ca85cf5aaf6b57585fcd8d67b3a~2/pixel.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/web-pixels@8623cf63wa37add5bpb2771a08mfc45efac/custom/web-pixel-133759051@1/sandbox/modern/en",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/web-pixels@8623cf63wa37add5bpb2771a08mfc45efac/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/en",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/wpm/s8623cf63wa37add5bpb2771a08mfc45efacm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=GT-5R897SVX",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GT-5R897SVX"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=AW-18292009571",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "AW-18292009571"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/videos/c/o/v/09ee1c90c5d8410682a4fb2019bf8d3c.mp4",
+      "metodo": "GET",
+      "tipo": "Media",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/wpm/s8623cf63wa37add5bpb2771a08mfc45efacm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/wpm/s8623cf63wa37add5bpb2771a08mfc45efacm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-brands-400.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shop.app/pay/hop?analytics_trace_id=64d0ed28-d551-43ea-9806-ae9616c12dc0&target_origin=https%3A%2F%2Fhoteloceanic.cl&client_handle=1k1pfq-iv.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/web-pixels/strict/app/web-pixel-shopify-app-pixel@0530.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=AW-18292009571&cx=c&gtm=4e6b30",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "AW-18292009571"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.merchant-center-analytics.goog/mc/collect?v=2&tid=MC-FE3K1C47QQ&gtm=45Pe6b30v9262395869za200zd9262395869xf1&_p=1793813496704&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&are=1&cid=627221858.1793813497&excid=shp.a701f683-a3f9-40e5-bcc1-de576cce9790&frm=0&pscdl=&rcb=16&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&u",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/18292009571/?random=1793813497416&cv=11&fst=1793813497416&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6b30v9262400505za200zb9262395869zd9262395869xecxf1&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938465~115938469~117776795~118897920~118897930~120213116~120385422~120412526~120420416~120469145~120469153~121191155~121246026~121246034~12369137",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": null,
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/rmkt/collect/18292009571/?random=1793813497416&cv=11&fst=1793813497416&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6b30v9262400505za200zb9262395869zd9262395869xecxf1&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938465~115938469~117776795~118897920~118897930~120213116~120385422~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814183~123814944&u",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=11&frm=0&apvc=1&auid=515941106.1793813497&dt=Hotel%20Oceanic%20%E2%80%93%20Promoci%C3%B3n%20hasta%20el%2030%20de%20Octubre&tid=AW-18292009571&en=page_view&dl=https%3A%2F%2Fhoteloceanic.cl%2Fen&scrsrc=www.googletagmanager.com&rnd=465953689.1793813497&navt=n&npa=0&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_tu=AAI&gtm=45be6b30v9262400505za208z",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ad.doubleclick.net/ccm/s/collect?_gsid=5VlgpWu5EkXEUG7b3yW87U2LMWIUghx1JA&auid=515941106.1793813497&gtm=45be6b30v9262400505za208zb9262395869zd9262395869xecxf1&fmt=8",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=11&frm=0&apvc=0&auid=515941106.1793813497&dt=Hotel%20Oceanic%20%E2%80%93%20Promoci%C3%B3n%20hasta%20el%2030%20de%20Octubre&tid=AW-18292009571&en=page_view&dl=https%3A%2F%2Fhoteloceanic.cl%2Fen&scrsrc=www.googletagmanager.com&rnd=465953689.1793813497&navt=n&npa=0&ep.shopify_event_name=page_viewed&evnid=sh-a79dc9a0-4F2D-41D6-98EB-C019937D4D1B&excid=shp.a701f683",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABNEAAABkBAMAAABayruYAAAAJFBMVEUAAADa2tr/////9/e6urpTU1O5ubn39/f///9ZWVlfX1/z8/O/OctmAAAACXRSTlMA//////////ZO3iNwAAALPElEQVR4AezdwY6bShMF4GP6krX9Bqgk9kiI/SzyAAir9lnlFfL6N26OWhXckDae9mClj/L7L1czMMbfbYDMOCgpKSkpwelyRmIEd6mEhTQpDabvu1C7vsf2ALM6cLlctquVtq2YDwC1jrfHEVDV8fagvln7p7XOlUKVi9SKWrncY5GQnN0DhLuZ1HZJa7WZPemU0GCc6hUMBtVue4BZHeD3v1caTn9KIyiPSimIvjw8Sq",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACY4AAADCCAMAAADT9DSoAAAANlBMVEUAAADa2tr/////9/e5ubn39/dTU1P29vbv7+/+/v74+Pjw8PD///9ZWVlfX1/z8/P5+fn///9RgilMAAAAEnRSTlMA///////////////2////9gn80juWAAAR/UlEQVR4AezdAW+jOBPG8QcgVPv9P+xqHQPvu9nrTWWd1enNuY7D/ydpS+gwdqRq44yN0WUBAAAAAAAA06u/sVPPbZZ0/Ie5LNvIEWbRu11msCsK7duYZM4OcaWzf1+rVk13fbTpj1SctXMWZJHluSLYTmxlUBlVxJlkZz/py2a/txeV/o1qls9B3q55/TALAAAAHa16Ke",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-user-list/18292009571/?random=1793813497416&cv=11&fst=1793811600000&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6b30v9262400505za200zb9262395869zd9262395869xecxf1&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938465~115938469~117776795~118897920~118897930~120213116~120385422~120412526~120420416~120469145~120469153~121191155~121246026~121246034~123691370~123814183~123814944&",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/LOGOS_BLANCO_-06.png?crop=center&height=32&v=1739892530&width=32",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/polyfills.BTl4RMTS.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/app.Brf0HhLf.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/630ba094.BwF_yRmq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/4509beb0.CCkTTgvg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.CoDDwW6x.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/f025431a.BlsbPO0-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/6ec9a0fa.Cw43zij1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.BJE9yKX-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/fb3b4968.CXyT1AlU.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/7d6bf786.DD8CavT0.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/0f5b1987.Dn20opVu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/9e5d8eb8.LM7m9FaB.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a45fed45.DPVBeAGY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/c328865d.Bj11LM-n.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/f1384cc2.BX1JbjgR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/4618373b.ByDsIbTI.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/486c3fda.CTW52zBF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/17f6d6d8.DLqASrLh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/19286c78.eL0CggCU.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/c7b92b97.BKOxc1Hd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/faece749.DZoU6PYN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/77d9e668.Dy9ZCSpq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/e7cc4629.Cdz7dS8N.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/2c7267bc.DGEldCBK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/4661cd61.B5sQBH2A.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/928dbd30.CaT0u_Sk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/77821758.CIHBOvKY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/82d59f8f.ifBNVAU2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/08e2c58d.JFiYE2FD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a8202753.Df9j6OZU.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/dfb65aab.C8TBQozI.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/e1177f6f.BosZRXls.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/2f5db8a5.BVcc7Q6I.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/c0466e46.Bp6i9lX5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/8d7e1337.D1SAQfdV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/5bf177e7.Bq5TWhPt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/f3089cd3.DMBc5Nc5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/8da28279.1t4LjuxW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a541bc81.BJ9XQ1_-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/6b0dea54.CmNGsb_5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/9c33421f.C5UhYlo8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/37c3ef79.WlWkY11d.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/651bb548.CvKmq2xp.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/83f74304.DfJwF_6I.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/7edfee1d.CZ7i1X44.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/ce604576.DRj3vMAG.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/b01c110b.C5yr60gu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/4e32eceb.Brd5q1On.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/f00fed33.C4GLLNye.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/94493b3a.BBfef9Fi.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/99cd9b25.BywLNNR-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/890c145f.KtUJu1G5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a9ee22a0.DWPC8dGB.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0549_39fdfcd8-5e0b-4f09-a5af-5ec3b738bd83.jpg?v=1742340864&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/56132226.CTq2F3Yc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/676eb8e9.aexuqUkN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/0e3247a0.BmYj2-jK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/1dbf806c.Ci4nFWM-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a56386a6.tdyWXUJq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/674595ba.BJ2qWvbu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/173d1fdf.BH3m-PEC.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/0d85278a.BTCokTvy.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/16138b9e.DztJe1G3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/29cc4709.BunULJNN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/d84045bf.QPS-6fY2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/55432860.BjulWBHA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/0be192b6.Ai4zZHX3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/2bce9289.Bp029mwJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/62a11d3e.BfZM5giv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/9a493f3d.Dv89Oxnt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/402b40d8.Dp80qVN1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/17db3e71.C8B0t_Jp.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/b4f06cd6.CwW_AIzI.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/2b0d1656.RNKZGKow.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/64c3067d.Dj2aQtMm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/bbe16958.D2HdOJdL.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/6a8181a5.BB_IhzBI.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/4205169c.BRoT-0wT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/1befea5c.CedeZqJx.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/ff52cf6d.C-_S3LI1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/74e5a557.BpyG8H3e.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/f4d0afee.CBQgxqHw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/0b704646.CHZqwQbX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a7ef2c81.7ntwYd15.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/f0b3b291.Cfd0O-ug.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/114cc9d1.C_JEseqR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/e7ae9e74.ClibYnk3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/91e796b6.DhTlPAP9.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a222330e.Bt4ctJt9.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/c380a132.1m2uzBi1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/3839d836.B3wYyWxz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/72fde58e.D4AlQj6j.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/8cad6ded.CaRNXdJ4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/9e556116.CoJmfUKK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/abf134e3.CaQMqV-h.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/e6a05f36.DDI4Ewsk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/8e6bd8e5.DAZxoJQ7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a012ee00.d2sOWS7z.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.CQGYaI4E.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/05f561d4.4pegsxpT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/89318bee.CNZUqgrW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/0ee3e0d5.ClZG7PXy.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/38cb0284.DM_0PnT3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/bdb60128.CX6ZhYpy.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a0df1226.llJxPnOY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/8efef14b.DyOdR0xl.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/c1adaf81.Cx57sSL5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/21162507.ZBi71-Xy.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/139f607b.DCodZFng.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/5f1fce8b.e4QsuNYD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/bace9a08.D2NM4Wnc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/8e2be3f2.DvoIBjJn.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/2d034bf2.zkV7XcW3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/c302da96.BBwXHSXE.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/5ebef1a7.DiWih_aP.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/972590c9.dSfN0fWj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/9961965b.D5XHW7-v.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/bc751930.Dh3XXtum.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/842452fd.YAD1IfOc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0619_5ae90f2a-c6f1-4345-be7b-2d4d6700c008.jpg?v=1742340864&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a70a5b74.DukGHwGF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/b068efe0.DbdNY4GB.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/2692118b.CKw_gu8N.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/c4303b96.unx4D42b.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/7ee3a05c.BcJHtkaL.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/0d8691fc.B8DWAgbg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/b0923a20.CeDS0HL7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/7e9c6d7c.CwXy3q-7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/ea392d18.DiGSvAAF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/b2ef26e8.Xf2JZO3s.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/99bfe9cf.DVQrqQ9C.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/1493337c.CiqgmcVV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/3c46c6f5.MRk_TWi4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/e29daa9a.DOUcBrOB.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/b2371320.CScXdacE.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/a735741f.BvujiLK4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/WEB_PANORAMAS_Mesa_de_trabajo_1.jpg?v=1744405161&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/5a1effbb.BNWA_-E2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/67e8c664.BWd7Lfof.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/4bb32466.D-taCWqG.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/e32a8416.DoJrwZZA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/eb0f242a.DWYM7CpL.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/35fb5eb6.BtV_9tzQ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/69f8f26d.Ch5oKtHD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/WEB_PANORAMAS.jpg?v=1744415261&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/app.CGRs8DQS.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/deferred-boot.BNIJ4_x8.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.1nMCMpIm.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/256cc32287.B1YSPUDc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/a50c8864f4.BMdzfW_y.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/7188aae948xccd7bc85.Bi1nHaU-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/90ea855f49.uZEuHncj.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.7585022240823!2d-71.54801929999999!3d-32.98377269999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689dda1dba6dbe7%3A0x32c068697e7139ce!2sHotel%20Oceanic!5e0!3m2!1ses-419!2scl!4v1741985129756!5m2!1ses-419!2scl",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0835.jpg?v=1740053137&width=750",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/69c8bed031.BEvzDDvy.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/fed0657f2bxc9b4d095.CuRoM9zv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/6e3faf45e1.Du9dByaI.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/6e3faf45e1x0e0212c9.ct4xfivv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/c0d88fcb7bxbaeb52f9.BAjucZ-8.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.gstatic.com/maps-api-v3/embed/js/66/12d/intl/es_419/init_embed.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps/api/js?key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&paint_origin=&libraries=geometry,search&v=weekly&loading=async&language=es_419&region=cl&experimentation=allowed&callback=onApiLoad",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/f409e9cd1fx9f0ef4a6.B0RErzdh.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/621ec27e44.BQzWZtyb.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0712.jpg?v=1740053138&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/5caf6ce603.87JMHPUK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/de4d443464.DPEapfiO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/966e3f4d79.gzvCNwz_.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/d4951797f3.CtjKurIY.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/search.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/geometry.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/main.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/df684aa9a8.B0R7Gq-A.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/f2a87b867b.CepnMqbE.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps/api/mapsjs/gen_204?csp_test=true",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/common.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/util.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/map.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/controls.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/places_impl.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/places.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2069%2029%22%3E%3Cg%20fill%3D%22%23fff%22%20stroke%3D%22%23fff%22%20stroke-width%3D%221.5%22%20opacity%3D%22.6%22%3E%3Cpath%20d%3D%22m17.4706%207.33616.5412-.54112-.5519-.53011c-1.3636-1.30974-3.2017-2.31971-5.7591-2.31971-4.6137%200-8.50262%203.75517-8.50262%208.39578%200%204.6407%203.8",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/onion.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://maps.googleapis.com/maps-api-v3/api/js/66/12d/intl/es_419/search_impl.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/4d60858badxb036935a.xO_7ctnq.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/65db0eadda.qa_ACxP4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://fonts.googleapis.com/css?family=Google+Sans+Text:400&text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93&lang=es",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400,500,700&lang=es",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/5a34f22f1a.FOMlDqkM.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/e8404cbaefx27591707.BS8yVgoP.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/7aa3c6599b.C5b9n-0_.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/e07f74760d.DU0m5rdF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/e07f74760dxbaeb52f9.B0hio2RO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/6559bc5a39x1573b800.vTcdVGq4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/89f3b0bff6.D7Ujmshx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/500596e378.CyQZvZOO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/bde15ff106x11e90a44.t4ylkATc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/04e578408ax11e90a44.KhTiKgPS.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/04e578408ax6d8a6990.DpLOWYa8.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/d34ebf45edx11e90a44.btyKOfco.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/81ca749d51x11e90a44.DrWvAMMF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/d455ee2f96x11e90a44.wM_XNdAI.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/d455ee2f96x670d76d4.BbxB_6wt.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/d455ee2f96x03fe6ed3.CVKcAbIN.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/d455ee2f96xd17a0c7b.BULdn7yC.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/343ea67e0bx11e90a44.s-Kd_X2E.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/401ac968b4x11e90a44.JBO5WNhc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/81ca749d51.DRJckcGa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://hoteloceanic.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "_shopify_essential",
+      "desde": "hoteloceanic.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_analytics",
+      "desde": "hoteloceanic.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_marketing",
+      "desde": "hoteloceanic.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "localization",
+      "desde": "hoteloceanic.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shop_app_essential",
+      "desde": "shop.app"
+    },
+    {
+      "fase": "A",
+      "nombre": "test_cookie",
+      "desde": "googleads.g.doubleclick.net"
+    }
+  ],
+  "peso": {
+    "total_bytes": 4827406,
+    "al_abrir_bytes": 3358135,
+    "n_peticiones": 319,
+    "mas_pesados": [
+      {
+        "url": "https://hoteloceanic.cl/cdn/shop/files/DJI_0984_1293de8f-0f09-4479-8ad2-3cb760ef8a85.jpg?v=1742340863&width=1500",
+        "bytes": 501160
+      },
+      {
+        "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/6ec9a0fa.Cw43zij1.js",
+        "bytes": 367962
+      },
+      {
+        "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0712.jpg?v=1740053138&width=1500",
+        "bytes": 324046
+      },
+      {
+        "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0710_1258ce01-35f3-4839-bbcb-f36899dec9e2.jpg?v=1742340865&width=1500",
+        "bytes": 188833
+      }
+    ]
+  },
+  "html_len": 183680
+}

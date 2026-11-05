@@ -1,0 +1,1064 @@
+[
+ {
+  "id": "R24",
+  "dominio": "paragonadvisors.cl",
+  "oferta": "F1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "En la portada (paragonadvisors.cl, que redirige a www.paragonadvisors.cl) hay una sección \"Contacto\" con un formulario que pide Nombre, Teléfono, Correo y Mensaje, con botón \"Enviar\". Cerca del formulario no hay enlace ni texto sobre política de privacidad o tratamiento de datos personales. El pie de la página solo dice \"Paragon Advisors - 2023\", sin enlaces. En todos los enlaces de la portada (menú principal, submenús y logo) ninguno menciona privacidad, datos personales ni términos legales. Hecho acotado a la portada, revisada el 17-oct-2026.",
+   "Hechos comprobables en https://www.paragonadvisors.cl/ (portada): en la sección \"Contacto\" hay un formulario con los campos Nombre, Teléfono, Correo y Mensaje y botón \"Enviar\". Junto al formulario no hay casilla de consentimiento ni enlace a política de privacidad. El pie de la portada solo dice \"Paragon Advisors - 2023\", sin enlaces. En el menú y en todos los enlaces de la portada (30 en total) no aparece ninguno de privacidad, datos personales, términos o cookies. Lo mismo ocurre en la versión en inglés (/en/) y en /contacto, que repiten el formulario y el pie sin enlace de privacidad."
+  ],
+  "advertencias": [
+   "No afirmar que el sitio completo no tiene política de privacidad: la afirmación vale solo para la portada. Revisé de más la página /documentos/ (GET): lista 5 PDFs (Código de Ética y Conducta, Resumen CV Asesores, Estructura de Honorarios, Políticas de Gestión de Riesgos y Control interno en Asesoría de Inversiones, Preguntas Frecuentes). Ninguno se llama política de privacidad, pero no abrí los PDFs y no sé si alguno trata datos personales.",
+   "No decir lo que la ley 'exige' ni que incumplen la Ley 21.719 u otra norma: solo se puede decir que no se ve el enlace.",
+   "No decir que el formulario guarda o envía los datos a algún lado: no lo envié ni lo probé. El form no tiene action; el envío parece ir por JavaScript (atributo form-contacto-1).",
+   "El formulario no está en la primera pantalla: aparece al hacer scroll en la portada (sección 2 de 2). No escribir que está 'arriba' o 'a la vista de entrada'. La misma sección Contacto existe también en /contacto/, y ahí tampoco vi enlace de privacidad (verificado solo por texto y href).",
+   "El mapa de Google embebido tiene un enlace 'Condiciones' dentro del iframe. Es de Google, no del sitio, y no cuenta como política de privacidad de la empresa.",
+   "El sitio parece desactualizado (pie con '2023', aunque los PDFs de Documentos son de 2026). No usarlo como argumento sin más evidencia.",
+   "La empresa es de asesoría financiera (inversiones, finanzas corporativas, empresas familiares). Tema sensible: tono cuidadoso, sin alarmismo.",
+   "No afirmar que el sitio 'no tiene política de privacidad' en general: solo se revisó la portada (y se miraron /contacto, /en/ y /documentos como contexto, no como base de la afirmación).",
+   "La sección Documentos (/documentos) lista 5 PDFs: Código de Ética y Conducta, Resumen CV Asesores, Estructura de Honorarios, Políticas de Gestión de Riesgos y Control interno en Asesoría de Inversiones, y Preguntas Frecuentes. Ninguno se titula como privacidad o datos personales, pero NO abrí los PDFs, así que no afirmar nada sobre su contenido (el Código de Ética podría tocar confidencialidad o datos).",
+   "El enlace 'Documentos' está en el menú de la portada; si el dueño responde 'tenemos documentos legales ahí', hay que reconocer que existe, aunque no se titule política de privacidad.",
+   "La portada es de scroll por secciones y el formulario está en la última sección (abajo de la imagen principal); no está en la primera pantalla. No decir que el formulario aparece 'arriba' o 'al entrar'. Decir 'en la sección Contacto al final de la portada'.",
+   "No hice clic ni envié el formulario: no sé a dónde van los datos ni qué hace al enviar (el form no tiene name/action útil, lo maneja el script de la página). No afirmar nada sobre el tratamiento de los datos.",
+   "El enlace 'Condiciones' que se ve en el mapa de Google embebido pertenece a Google, no al sitio. No contarlo como política del sitio, pero tampoco ignorarlo si el dueño lo menciona.",
+   "No afirmar lo que la ley 'exige' ni que haya incumplimiento: es una observación de ausencia de enlace, no un juicio legal.",
+   "Es una empresa de asesoría financiera y de inversiones (Inversiones Financieras, Finanzas Corporativas, Empresas Familiares, Asesoría Legal y Tributaria): no se ofrece protección de datos como servicio, así que no es competidor directo."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   null,
+   null
+  ]
+ },
+ {
+  "id": "R32",
+  "dominio": "clavetributariacontadores.cl",
+  "oferta": "F1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "1) La portada (página única) tiene en la sección Contacto un formulario \"Envía un mensaje\" que pide Nombre, Email, Teléfono y Mensaje (email requerido, teléfono opcional) y tiene botón \"Enviar\". 2) No hay ningún enlace a una política de privacidad, aviso de datos personales ni términos en la portada. Los únicos enlaces de toda la página son el teléfono (tel:), el correo (mailto:) y el Instagram @ClaveTributaria. 3) El pie contiene solo \"© 2026 Clave Tributaria. Todos los derechos reservados.\" y el teléfono y correo, sin enlaces. 4) Junto al formulario no hay casilla ni texto de consentimiento sobre el uso de los datos. 5) El hallazgo se verificó sobre la portada, en una sola carga, sin clics ni envíos. 6) Dato de contexto que se puede comprobar: el sitio carga Google Maps (iframe), Google Fonts y Tailwind CDN. No escribe cookies en la carga inicial (lista vacía en mi medición), así que no hay que mezclar este hallazgo con cookies.",
+   "En la portada de clavetributariacontadores.cl, sección \"Contacto\", hay un formulario \"Envía un mensaje\" con los campos Nombre, Email, Teléfono y Mensaje y un botón \"Enviar\". Junto al formulario no hay casilla ni texto de consentimiento. En toda la portada hay solo tres enlaces (teléfono, correo, Instagram) y el pie contiene solo \"© 2026 Clave Tributaria. Todos los derechos reservados.\" con el teléfono y el correo. Ningún enlace ni texto menciona política de privacidad, datos personales ni aviso legal."
+  ],
+  "advertencias": [
+   "Solo se revisó la portada. No afirmar que el sitio no tiene política de privacidad en ninguna parte, solo que la portada no la enlaza (ni en el HTML ni en el DOM ya ejecutado). No probé URLs como /privacidad.",
+   "No afirmar qué exige la ley ni que haya incumplimiento: solo el hecho observable de formulario con correo y teléfono sin enlace a política.",
+   "No hay enlace a Términos y condiciones ni a otro aviso legal en la portada (tampoco en el pie), por lo que no hay un aviso alternativo que matizar.",
+   "El script.js del sitio, leído como recurso público sin enviar nada, maneja el envío del formulario con preventDefault y muestra 'Mensaje enviado correctamente.' sin hacer fetch ni mailto (el comentario del propio código dice 'no hay backend real'). No envié el formulario, así que no lo probé en vivo. No decir en el correo que el formulario no funciona ni que los datos se pierden: es lectura de código, no prueba, y se aleja del hallazgo de privacidad.",
+   "El formulario es visible y está en la portada sin interacción previa, pero está al final de la página única (sección Contacto), no en la primera pantalla.",
+   "Los enlaces de WhatsApp son botones con JavaScript (wa.me/56999075933 armado en script.js), no relevantes para este hallazgo.",
+   "No hay indicio de identidad dudosa: no hubo redirección y el sitio corresponde a la empresa.",
+   "Solo se puede afirmar lo de la PORTADA. No decir 'el sitio no tiene política de privacidad'. Mis GET a /privacidad, /politica-de-privacidad, /politica-privacidad, /privacy y /terminos dieron 404 nginx, y /sitemap.xml y /robots.txt también 404, pero fue una adivinanza de rutas y no prueba nada; la portada no enlaza otras páginas (es una sola página con secciones).",
+   "El formulario probablemente NO envía los datos a ningún lado: script.js (leído por GET) tiene el comentario 'Formulario de contacto: confirmación local (no hay backend real)', hace preventDefault, muestra un mensaje de éxito 2,5 s y resetea el formulario; el form no tiene action. No lo probé (no se puede enviar formularios). No afirmar 'recogen/almacenan datos de sus clientes' ni 'el formulario funciona o no funciona'; lo seguro es 'la portada tiene un formulario que pide email y teléfono'. Si el dueño responde 'ese formulario ni guarda nada', es un argumento posible, y además sería un hallazgo aparte (un formulario que aparenta enviar y no envía), que no hay que mencionar sin probarlo en un celular o con un envío real autorizado.",
+   "No afirmar qué 'exige' la ley; solo describir lo observado.",
+   "No hay enlace a 'Términos y condiciones' ni a aviso legal; 'Términos de giro' es un servicio contable y no cuenta como enlace legal. El pie es solo copyright y datos de contacto.",
+   "No se midieron cookies ni banner (esta oferta es F1, no C1); no decir nada sobre cookies.",
+   "El teléfono y el correo del pie sí son canales de contacto visibles, y el botón de WhatsApp usa wa.me/56999075933 (con código de país); no es parte de este hallazgo, no mezclarlo.",
+   "Identidad: el sitio es el real de la empresa (marca Clave Tributaria Contadores, dirección Av. Providencia 1017 piso 3 of. 31, Providencia); no es plantilla ni página de hosting. Es una reconstrucción estática reciente (script.js menciona que reemplaza bundles de React/Next), lo que podría significar que el sitio cambió hace poco."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   [],
+   []
+  ]
+ },
+ {
+  "id": "R44",
+  "dominio": "a2rcontadores.cl",
+  "oferta": "F1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "En la portada de a2rcontadores.cl (sección \"Contacto\") hay un \"Formulario de Contacto\" que pide Nombre y Apellido, Empresa, Teléfono, Email y Mensaje. En esa página (menú, cuerpo y pie) no hay ningún enlace a una política de privacidad ni a un aviso sobre el tratamiento de datos personales, y junto al formulario tampoco hay una casilla ni un texto de aceptación. El pie solo tiene accesos directos, dirección, teléfonos, correo y \"© 2018 A2R Contadores | Design by W3layouts\". Se revisó la portada, no el resto del sitio. Medido el 17-oct-2026 con una carga de página nueva (HTTP 200).",
+   "En la portada de a2rcontadores.cl, sección \"Contacto\", hay un \"Formulario de Contacto\" que pide Nombre y Apellido, Empresa, Teléfono, Email y Mensaje, con botón \"Enviar\" (y reCAPTCHA). En esa portada, incluido el pie, no encontré ningún enlace a una política de privacidad o de datos personales. Tampoco hay enlace a términos y condiciones ni a otro aviso legal. El pie solo trae \"© 2018 A2R Contadores. All rights reserved | Design by W3layouts\", los enlaces internos de navegación, la dirección, los teléfonos y el correo. Junto al formulario no hay ninguna leyenda sobre el uso de los datos que se envían. Revisé el HTML original y la página ya renderizada, y el resultado es el mismo."
+  ],
+  "advertencias": [
+   "No decir que el sitio completo no tiene política de privacidad: solo se revisó la portada, y el enlace podría existir en otra ruta no enlazada desde ella. Decir 'en la portada no hay enlace'.",
+   "No afirmar qué 'exige' la ley ni que el formulario sea ilegal o incumpla la Ley 19.628 o la 21.719: es criterio, no medición.",
+   "No afirmar que el formulario recoge datos sin consentimiento en un sentido legal. Lo medido es que no hay casilla ni texto de aceptación visible junto al formulario.",
+   "No se envió ni se probó el formulario (el action es 'php\\\\enviacorreo.php'): no se sabe qué pasa con los datos al enviarlo.",
+   "Tampoco hay enlace a 'Términos y condiciones' ni a otro aviso legal ni a cookies: no mencionar uno como si existiera.",
+   "El formulario incluye reCAPTCHA de Google (iframes de google.com/recaptcha); no afirmar nada sobre cookies ni rastreo, porque no era el objeto de esta medición.",
+   "El pie dice '© 2018' y 'Design by W3layouts' (plantilla); es dato verificable pero no usarlo en tono burlón.",
+   "La sección de Facebook/Twitter/Instagram del menú y pie lleva href='#' (no funcionan como enlaces), no es parte del hallazgo.",
+   "Solo se revisó la portada (una sola URL). NO afirmar que el sitio 'no tiene política de privacidad' en general, solo que no hay enlace a ella desde la portada ni su pie.",
+   "No afirmar lo que la ley 'exige' o 'obliga'. Es un hecho observable (formulario con teléfono y correo, sin enlace a política), no una conclusión jurídica.",
+   "No hay enlace a 'Términos y condiciones' ni a otro aviso legal en la portada, así que tampoco se puede decir que sí lo hay.",
+   "El formulario tiene un reCAPTCHA de Google. Si el widget muestra su propio 'Privacidad - Condiciones', eso es de Google y no la política de A2R. No pude comprobar el widget en mis capturas, así que no mencionarlo como política del sitio.",
+   "No envié el formulario (regla de solo GET) y su action es 'php\\enviacorreo.php' con barra invertida. No afirmar que el formulario funciona ni que falla.",
+   "El sitio parece una plantilla de 2018 (W3layouts) personalizada con contenido real de la empresa. No decir que está abandonado ni desactualizado, porque no consta.",
+   "Los íconos de redes sociales del menú y del pie apuntan a '#'. No es parte del hallazgo y no conviene mencionarlo en el correo."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   null,
+   []
+  ]
+ },
+ {
+  "id": "R46",
+  "dominio": "neosit.cl",
+  "oferta": "F1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "En la portada de neosit.cl hay un formulario \"Contactenos\" que pide Nombre Completo, Email y Teléfono (más un campo Mensaje) y se envía con el botón \"CONTACTAR\". El formulario no tiene casilla de consentimiento ni aviso al lado. En toda la portada (menú, cuerpo y pie) no hay ningún enlace a una política de privacidad ni a términos o aviso legal: los únicos enlaces son el menú (Inicio, Quienes somos, Servicios, Rubros, Contacto), el botón \"Nuestros servicios\", el correo de contacto y, en el pie, \"Powered by DGSoft\". Revisé el HTML original y la página ya renderizada, y el resultado es el mismo.",
+   "En la portada de neosit.cl, en la sección \"Contactenos\", hay un formulario que pide nombre completo, email, teléfono y mensaje (botón \"Contactar\"). En la portada, incluido el pie de página, no hay ningún enlace a una política de privacidad ni a un aviso sobre el tratamiento de datos personales. El pie solo muestra el logo y \"Powered by DGSoft\". Tampoco hay casilla de consentimiento ni texto de aviso junto al formulario. Observado el 17-oct-2026, cargando la portada en un navegador, antes de cualquier interacción."
+  ],
+  "advertencias": [
+   "Solo se revisó la portada. No se visitaron /contacto, /somos, /servicios ni /rubros, así que no se puede afirmar que el sitio entero carezca de política de privacidad; solo que la portada no enlaza ninguna.",
+   "No afirmar lo que la ley 'exige' ni citar un artículo; es criterio del remitente.",
+   "No afirmar que el formulario envía o almacena datos de verdad: no se envió nada, solo se leyó el formulario (POST a './').",
+   "No se verificó que el formulario funcione ni dónde terminan los datos.",
+   "No decir que la página 'no tiene aviso de cookies' como hecho de este hallazgo: no se midió consentimiento y no se escribió ninguna cookie en la carga.",
+   "El correo y el teléfono visibles en la cabecera son los datos de contacto de la empresa, no un formulario; no confundirlos.",
+   "No se encontró enlace a 'Términos y condiciones' ni a otro aviso legal en la portada.",
+   "Solo se revisó la portada: NO afirmar que el sitio completo no tiene política de privacidad. No abrí /somos, /servicios, /rubros ni /contacto, y podría existir una en otra página no enlazada desde la portada.",
+   "NO afirmar lo que la ley 'exige' ni que incumplen la Ley 19.628 o la 21.719. Decir solo lo observado: el formulario recoge datos personales y no hay enlace a política ni aviso en la portada.",
+   "No hay enlace a 'Términos y condiciones' ni a otro aviso legal en la portada: no hay nada que matizar en ese sentido.",
+   "El sitio es una plantilla de DGSoft ('Powered by DGSoft') con contenido de relleno visible en la portada: 'Lorem ipsum' en la sección Rubros ('Comercial / Industrial / Transportes Lorem ipsum') y en tres testimonios 'Nombre Apellido / Cargo'. Los iconos sociales apuntan a '#'. Es un dato objetivo, pero criticar el diseño o el relleno desvía el correo del hallazgo y puede parecer descortés.",
+   "No afirmar que el formulario no funciona ni que los datos se guardan mal: no lo probé (no envié nada).",
+   "No afirmar que no tienen aviso de cookies como hallazgo aparte: no medí cookies y no vi banner, pero esta oferta (F1) no trata de cookies.",
+   "Medición hecha una sola vez desde una IP de nube y con un navegador de escritorio (1280x800). No probé móvil."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   [],
+   null
+  ]
+ },
+ {
+  "id": "R57",
+  "dominio": "gesinpropiedades.cl",
+  "oferta": "F1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "En la portada de gesinpropiedades.cl, a la derecha del hero, hay un formulario \"Contáctanos!\" que pide nombre, correo electrónico, teléfono y un mensaje, con reCAPTCHA y botón \"Enviar\". No hay casilla de consentimiento ni aviso junto al formulario. Al revisar todos los enlaces de la portada (menú, cuerpo y pie) no aparece ninguno a una política de privacidad, tratamiento de datos personales o términos y condiciones. El pie solo contiene \"Copyright © Todos los derechos reservados\" y el crédito \"Diseño de páginas web Bysnet\". La búsqueda de esas palabras en el HTML descargado y en el texto visible dio cero resultados. Medido el 17-oct-2026 con una carga de la portada, sin interactuar con nada.",
+   "En la portada de gesinpropiedades.cl, a la vista en la primera pantalla, hay un formulario \"Contáctanos!\" que pide nombre, correo electrónico y número de teléfono, además de un mensaje. Revisé los enlaces de la portada (menú, cabecera y pie) y también el HTML de la página: no hay ningún enlace ni texto sobre política de privacidad o tratamiento de datos personales, y junto al formulario no hay aviso ni casilla de consentimiento. El pie de la portada solo muestra \"Copyright © Todos los derechos reservados\" y el crédito del diseñador web (Bysnet). Medición hecha el 17-oct-2026 sobre la portada solamente."
+  ],
+  "advertencias": [
+   "Solo se revisó la portada: NO afirmar que el sitio completo carece de política de privacidad. Las páginas internas (Contacto, Antecedentes, Confíenos su Propiedad, Quiénes Somos) no se cargaron y podrían tener su propio formulario o aviso.",
+   "NO afirmar lo que la ley 'exige' ni que incumplen la Ley 19.628 o la 21.719; solo describir lo observado (formulario con correo y teléfono y sin enlace a política en la portada).",
+   "No hay enlace a 'Términos y condiciones' ni a ningún otro aviso legal en la portada (el pie solo trae copyright genérico y el crédito del diseñador). No se debe decir que hay un aviso legal alternativo.",
+   "El widget de reCAPTCHA es un iframe de Google; puede mostrar enlaces propios de Google (privacidad/condiciones de Google). Eso no es una política de la empresa, pero conviene no escribir 'ningún enlace de privacidad en toda la pantalla' sin precisar 'de la empresa'.",
+   "Hay un botón flotante 'Contacto' (widget de chat/callback) con un formulario de teléfono oculto que solo aparece al abrirlo. No lo abrí (regla de no hacer clic), así que no se puede afirmar nada sobre su contenido.",
+   "La sección 'Últimas Propiedades' muestra '¡No se han encontrado resultados!' al cargar. No es parte del hallazgo; no usarlo como crítica sin mirar más (puede ser temporal).",
+   "Si el formulario llega a funcionar o no (envío, destino) no se probó: no se envió nada.",
+   "Solo se revisó la portada: NO afirmar que el sitio completo carece de política de privacidad (otras páginas como /contacto/, /quienes-somos/ o /antecedentes/ no se inspeccionaron para este hallazgo, aunque comparten el mismo pie).",
+   "NO afirmar lo que la ley 'exige' ni que incumplen la ley 21.719 o la 19.628; limitarse al hecho observable (formulario que pide correo y teléfono, sin enlace a política de privacidad en la portada).",
+   "El widget reCAPTCHA del formulario es de Google y sus propios enlaces de privacidad/términos viven dentro de un iframe de google.com; no son una política del sitio. El dueño podría señalarlo, pero no es un enlace a una política de Gesin.",
+   "No se vio aviso de cookies en la portada, pero eso no es parte del hallazgo: no mencionarlo como hallazgo (no se midieron cookies de rastreo en esta verificación).",
+   "El formulario visible es el de contacto de la hero; el sitio tiene además un buscador de propiedades, un login oculto y un callback de teléfono oculto del widget flotante. Citar solo el formulario 'Contáctanos!'.",
+   "No hay ningún enlace a Términos y condiciones u otro aviso legal en la portada (tampoco en el pie), así que la frase 'sin política' no se compensa con otro aviso.",
+   "Observación ajena al hallazgo: la sección 'Ultimas Propiedades' muestra '¡No se han encontrado resultados!' en la portada; no usarlo como gancho sin revisarlo más, puede ser un problema temporal del catálogo.",
+   "Mi curl directo por el proxy fue reseteado; la medición válida es la del navegador (Playwright), que cargó el sitio completo con HTTP 200 sin problemas."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   [],
+   null
+  ]
+ },
+ {
+  "id": "R63",
+  "dominio": "silvecpropiedades.cl",
+  "oferta": "F1",
+  "final": "refutado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "refuta",
+   "refuta"
+  ],
+  "hechos": [
+   "",
+   "No usar como hallazgo F1. La condición del hallazgo (formulario visible en la portada que pide correo o teléfono) no se cumple: la portada no muestra ningún formulario; la vía de contacto es un botón \"Contáctanos aquí\", el menú \"Contacto\" y correo/teléfono escritos. Los únicos formularios con correo están ocultos en ventanas emergentes de inicio de sesión/registro del plugin Estatik (se abren al hacer clic en el corazón \"Salvar\" de una propiedad), y no los vi abiertos porque no hice clic. Dato verificable pero distinto y más débil: ese modal de registro menciona \"Condiciones de uso\" y \"Política de privacidad\" como texto no enlazado (en inglés/español mezclado: \"By clicking the «INSCRIBIRSE»...\"). Eso no basta para afirmar un formulario en la portada sin política."
+  ],
+  "advertencias": [
+   "NO afirmar que la portada tiene un formulario que pide correo o teléfono: los únicos formularios del DOM son los del popup oculto de login/registro de Estatik, que aparece solo al hacer clic en el corazón 'Salvar' de una propiedad. Un visitante que solo mira la portada no ve ninguno.",
+   "Es cierto, y medido, que la portada y el pie no tienen ningún enlace a política de privacidad ni a términos, pero eso por sí solo no es el hallazgo F1 (requiere formulario visible) y no debería presentarse como 'formulario sin política'.",
+   "El popup oculto de inscripción (correo y contraseña) trae un texto suelto en inglés: 'By clicking the «INSCRIBIRSE» button you agree to the Condiciones de uso and Política de privacidad'. No son enlaces (no hay <a>), así que no cuentan como enlace a política. No lo abrí: solo lo leí en el HTML ya renderizado.",
+   "No se revisó /contacto/ ni otras páginas; el botón 'Contáctanos aquí' lleva a /contacto/, donde podría haber un formulario real. No afirmar nada sobre esa página ni sobre 'todo el sitio'.",
+   "El enlace 'Asesoría Legal' del menú es un servicio inmobiliario (estudio de títulos, escrituras, desalojos), no una política legal del sitio.",
+   "No afirmar lo que la ley 'exige'.",
+   "NO afirmar que la portada tiene un formulario: ninguno es visible; los 3 del DOM son modales ocultos de login/registro de Estatik, que sólo aparecen al hacer clic (no medido por la regla de no hacer clic).",
+   "NO afirmar que el sitio no tiene política de privacidad: sólo se revisó la portada; no se visitó /contacto/ (probablemente tenga el formulario de contacto real, no verificado).",
+   "Si se quisiera usar el modal de registro: no consta que se muestre a un visitante sin interacción, y el texto 'Política de privacidad' está en el modal sin enlace; sería un hallazgo distinto (texto no enlazado en un formulario de cuenta de favoritos), no el F1 afirmado.",
+   "Los correos y teléfonos visibles son distintos entre secciones (atencionclientes@ y atencionalcliente@; +56 9 9445 6994 y +56 9 68333916), irrelevante para F1.",
+   "No afirmar lo que la ley exige."
+  ],
+  "motivos": [
+   "Mi medición no repite el hallazgo del motor: en la portada no hay ningún formulario visible que pida correo o teléfono. Los formularios con campo de correo existen solo en el DOM, ocultos en el popup de autenticación de Estatik, y requieren un clic para aparecer. Con la regla de confirmar solo si hay un formulario visible sin enlace a política, no corresponde confirmar. Mis capturas y las del motor coinciden en que no se ve formulario.",
+   "El motor afirma un formulario en la portada que pide correo o teléfono, pero en mi medición en vivo la portada no muestra ningún formulario; los únicos formularios del DOM están ocultos (modales de login/registro de Estatik que requieren un clic en el corazón de favoritos) y las capturas del motor tampoco muestran uno. Cualquier dueño respondería con razón que su portada no tiene formulario (tiene botón Contáctanos, menú Contacto, teléfono y correo). Refuto."
+  ],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   [],
+   null
+  ]
+ },
+ {
+  "id": "R21",
+  "dominio": "vicapital.cl",
+  "oferta": "F10",
+  "final": "no_concluyente",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "no_concluyente"
+  ],
+  "hechos": [
+   "Primera pantalla de vicapital.cl (escritorio 1280x720 y móvil 390x844): solo el logo con \"Multi Family Office\" y, arriba a la derecha, \"ACCESO CLIENTES\", \"ENG\", \"ESP\" y un ícono de menú hamburguesa. No hay botón de contacto, de cotización, de WhatsApp ni teléfono visible sin bajar o abrir el menú. El acceso a \"Contacto\" está dentro del menú desplegable (un clic) y los datos de contacto (teléfono +562 2233 6060 y contacto@vicapital.cl) aparecen recién en el pie, al final de la página.",
+   "Hecho comprobable y acotado: sin abrir el menú, la primera pantalla de vicapital.cl (escritorio y móvil) muestra solo el logo, \"Acceso Clientes\", el selector ENG/ESP y el ícono de menú; ningún botón de contacto, cotización ni WhatsApp. El enlace \"Contacto\" existe dentro del menú de hamburguesa y el teléfono (+562 2233 6060) y el correo (contacto@vicapital.cl) están en el pie, al final de la portada. Como el sitio sí tiene ruta de contacto (menú y pie), este hallazgo no sirve como defecto claro. Si se usara, solo podría decir que el contacto no está a la vista en la primera pantalla sin abrir el menú, nunca que el sitio no tenga contacto."
+  ],
+  "advertencias": [
+   "NO afirmar que el sitio no tiene contacto ni que no hay forma de contactarlos: existe un ítem 'Contacto' (/contacto) dentro del menú hamburguesa, y el pie de la portada trae teléfono +562 2233 6060, correo contacto@vicapital.cl y enlace CONTACTO.",
+   "Depende del criterio: la regla del encargo cuenta un ítem de menú 'Contacto' como acción de contacto. Aquí ese ítem NO es visible en la primera pantalla (está oculto tras el ícono de menú en escritorio y móvil), por eso confirmo; si se decide que un ítem dentro de un menú hamburguesa cuenta como acción visible, el hallazgo se refuta. El correo debe decir 'en la primera pantalla no se ve ningún botón de contacto' y reconocer que el acceso está en el menú, no omitirlo.",
+   "No verifiqué el contenido del menú abierto con la vista; sé que contiene Inicio, Quiénes Somos, Servicios, Filosofía de inversión, Equipo y Contacto solo por el HTML (sin clic).",
+   "'ACCESO CLIENTES' es un acceso de login a un portal (clientes.vicapital.cl), no una acción de contacto para prospectos; no presentarlo como botón de contacto ni como lo contrario.",
+   "El diseño de pantalla de inicio minimalista (logo sobre video) parece deliberado para una marca de family office; evitar un tono que lo trate como un error de diseño. El hallazgo es sobre conversión (falta de una acción de contacto a la vista), no sobre algo roto.",
+   "Hay un enlace con ícono sin texto (#section-1) en la zona derecha de la portada que solo baja a 'Quiénes somos'; no es contacto.",
+   "No afirmar nada sobre la versión en inglés (/en) ni sobre otras páginas (/contacto, /equipo, /asesoria-en-inversiones): no las visité.",
+   "NO afirmar que el sitio no tiene contacto: hay ítem 'Contacto' en el menú, página /contacto, teléfono y correo en el pie.",
+   "El ítem 'Contacto' está dentro de un menú de hamburguesa cerrado, no visible en la primera pantalla. Según el criterio de la tarea, un ítem de menú 'Contacto' cuenta como acción de contacto, por lo que el dueño podría refutarlo con razón. Depende del criterio si un menú colapsado cuenta como 'visible'.",
+   "'Acceso Clientes' es un acceso a la plataforma de clientes (clientes.vicapital.cl), no una acción de contacto o cotización; no se debe describir como contacto.",
+   "Es una portada minimalista deliberada (hero con logo y video de fondo) de un Multi Family Office regulado por la CMF; el dueño probablemente lo ve como una decisión de diseño, no como un error.",
+   "No abrí el menú ni visité /contacto (solo GET de la portada), así que no sé qué muestra esa página.",
+   "El video de fondo no cargó en mi medición; no puedo descartar que con el video reproduciéndose haya algún texto superpuesto, aunque el HTML del hero solo contiene logo, h1 y la flecha de scroll."
+  ],
+  "motivos": [
+   "Confirmo con reservas de criterio: en la primera pantalla visible (ambos tamaños) no hay ninguna acción de contacto, pero el ítem Contacto sí está en el menú colapsado, y la regla dice que un ítem de menú 'Contacto' cuenta como acción.",
+   "El hecho literal es cierto: no hay botón o enlace de contacto visible en la primera pantalla en ninguno de los dos tamaños. Pero el menú de hamburguesa cerrado contiene 'Contacto' y el pie tiene teléfono y correo. El criterio de la tarea trata un ítem de menú 'Contacto' como acción de contacto, y no está claro si un menú colapsado cuenta. Ante esa duda real, y porque el dueño tiene una respuesta inmediata y verdadera ('está en el menú'), no confirmo. Tampoco refuto del todo, porque el ítem no está a la vista sin abrir el menú."
+  ],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   null,
+   null
+  ]
+ },
+ {
+  "id": "R25",
+  "dominio": "redlaser.cl",
+  "oferta": "F10",
+  "final": "refutado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "refuta",
+   "refuta"
+  ],
+  "hechos": [
+   "No confirma. No se puede afirmar que la portada no tenga acción de contacto sobre el pliegue: en móvil (390x844) hay una barra fija con tres botones de WhatsApp (Santiago, Talca, Concepción) visibles desde que carga. En desktop (1280x720) la primera pantalla solo muestra menú, \"SUCURSALES\" y \"VER SERVICIOS\", pero eso por sí solo no sostiene el hallazgo. La cookie _gcl_au que figura en el hallazgo no se midió porque esta oferta es F10.",
+   "No confirma. No se puede afirmar que la primera pantalla de redlaser.cl no tenga contacto: en móvil hay botones de WhatsApp (Santiago, Talca, Concepción) visibles desde el primer momento, en una barra fija inferior. Solo en escritorio la primera pantalla carece de una acción directa de contacto (tiene \"SUCURSALES\" y \"VER SERVICIOS\"), y eso por sí solo no sostiene la afirmación del hallazgo."
+  ],
+  "advertencias": [
+   "No decir que la portada carece de botón de contacto o WhatsApp sobre el pliegue: en móvil sí existe (barra fija inferior con tres botones de WhatsApp).",
+   "Solo en desktop 1280x720 el pliegue no tiene acción de contacto directa; el botón 'SUCURSALES' lleva a la sección de sucursales con teléfonos, y eso depende del criterio. Aun así, el motor no puede generalizar desde desktop.",
+   "Los enlaces de WhatsApp existen en el HTML de desktop pero están ocultos (ancho 0), es decir, la versión desktop no los muestra; la versión móvil sí.",
+   "El dominio sin www redirige a https://www.redlaser.cl/ (mismo sitio, sin alerta de identidad).",
+   "No hice clic en nada ni probé los enlaces de WhatsApp en un celular.",
+   "NO afirmar que la portada no tiene botón de WhatsApp o contacto sobre el pliegue: en móvil sí lo tiene (barra fija SANTIAGO / TALCA / CONCEPCIÓN con enlaces api.whatsapp.com).",
+   "Dependiente del criterio: en escritorio 1280x720 la primera pantalla solo tiene el botón 'SUCURSALES' (ancla a la sección de sedes con teléfonos y correos) y 'VER SERVICIOS'; no es un contacto directo, pero tampoco es una página sin salida a contacto.",
+   "Más abajo en la portada hay botones 'EVALUACIÓN' por sede, teléfonos escritos (+56 9 4058 2182, +56 712232252, +56 412186100) y cuatro correos; el motor ya marcaba que eso no era afirmable.",
+   "El dominio redirige de redlaser.cl a www.redlaser.cl; es la misma organización, no hay alerta de identidad."
+  ],
+  "motivos": [
+   "Mi medición en 390x844 muestra tres botones de WhatsApp visibles en la primera pantalla (barra fija inferior), y la captura móvil del propio motor lo confirma. La afirmación exige que no haya acción de contacto en ningún tamaño, así que se refuta.",
+   "Refutado. Tanto mi medición como la captura móvil del propio motor muestran botones de WhatsApp en la primera pantalla a 390x844. La afirmación del motor ('ningún botón o enlace para ... escribir por WhatsApp') es falsa en móvil. Por regla, solo se confirma si no hay contacto visible en ninguno de los dos tamaños."
+  ],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   null,
+   null
+  ]
+ },
+ {
+  "id": "R58",
+  "dominio": "ppartnersgroup.com",
+  "oferta": "F10",
+  "final": "refutado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "refuta",
+   "refuta"
+  ],
+  "hechos": [
+   "No usar. No hay hallazgo afirmable: la primera pantalla de la portada sí tiene una acción de contacto visible (botón flotante verde de WhatsApp, esquina inferior derecha, en escritorio y móvil). No escribir que la portada no tiene forma de contactar.",
+   "No confirma. No se puede afirmar que la primera pantalla no tiene acción de contacto: hay un botón flotante de WhatsApp visible sobre el pliegue en escritorio y móvil. Esta oferta (F10) no debe usarse para este sitio."
+  ],
+  "advertencias": [
+   "REFUTADO: en la primera pantalla hay un botón flotante de WhatsApp visible en 1280x720 y en 390x844 (confirmado en mis capturas y en r1-A.jpg del motor). Por la regla de F10 un chat flotante o WhatsApp cuenta como acción de contacto.",
+   "No se afirma a dónde lleva el botón de WhatsApp: no hice clic. No hay <a> con wa.me en el DOM; es un <button> que probablemente abre WhatsApp por JavaScript.",
+   "El dominio redirige a /en-us/ (versión EE.UU. en inglés) según mi medición y la captura del motor. No revisé la versión /es-cl/ ni otras rutas del sitio.",
+   "El enlace 'Join Us' del menú apunta a /sumate/#contacto, pero es captación de corredores, no contacto de clientes. No sirve como argumento ni a favor ni en contra.",
+   "El motor probablemente solo contó enlaces y botones con texto y se le escapó el botón de ícono sin etiqueta. Si el patrón se repite en otros sitios, el detector F10 está dando falsos positivos con widgets flotantes de WhatsApp.",
+   "NO afirmar que no hay contacto en la primera pantalla: el botón flotante de WhatsApp lo desmiente, y ya se ve en la captura r1-A.jpg del propio motor.",
+   "El botón de WhatsApp es un button sin href (se activa por JavaScript); no hice clic ni probé a qué número o URL lleva, solo que está visible y es de WhatsApp.",
+   "ALERTA DE IDENTIDAD: el sitio es el grupo Property Partners con sede en Key Biscayne, Florida (328 Crandon Blvd), y desde mi IP me redirigió a la versión /en-us/ en inglés para Estados Unidos. Chile aparece solo como una de las sucursales en el pie ('Find us: Chile'). No es claro que esta portada represente a la entidad chilena que se pretende contactar; una visita desde Chile podría mostrar otra versión del sitio.",
+   "El enlace 'Join Us' de la primera pantalla es de reclutamiento de asesores, no de contacto comercial; no cuenta como argumento a favor ni en contra, pero el WhatsApp sí.",
+   "Existen en el pie 'Privacy Policy' y 'Terms and Conditions' (vistos en la captura del motor), por si se pensaba usar otra oferta sobre este sitio."
+  ],
+  "motivos": [
+   "Hay un botón flotante de WhatsApp visible en la primera pantalla en ambos tamaños, así que la afirmación 'no hay ningún botón o enlace para contactar o escribir por WhatsApp' es falsa.",
+   "Refutado: en la primera pantalla de la portada hay un botón flotante de WhatsApp visible, en 1280x720 y en 390x844, que según las reglas del verificador cuenta como acción de contacto (equivale a un chat flotante / WhatsApp). La propia captura del motor (r1-A.jpg) lo muestra, así que la afirmación del motor es incorrecta."
+  ],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   null,
+   []
+  ]
+ },
+ {
+  "id": "R23",
+  "dominio": "altis.cl",
+  "oferta": "F2",
+  "final": "refutado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "refuta",
+   "refuta"
+  ],
+  "hechos": [
+   "No usar este hallazgo. La portada de altis.cl sí muestra un teléfono (+56 22 5998000) y una dirección física (Espoz 3150, 4° Piso, Vitacura) como texto visible en la primera pantalla, en escritorio y móvil. No se puede decir que no tenga ruta de contacto.",
+   "No confirma. No se debe usar este hallazgo. Hecho comprobable en contra: la portada de altis.cl muestra el teléfono \"+56 22 5998000\" y la dirección \"Espoz 3150, 4° Piso, Vitacura\" en el pie de la primera pantalla."
+  ],
+  "advertencias": [
+   "NO afirmar que la portada no tiene teléfono: está visible como texto (+56 22 5998000) en escritorio y móvil.",
+   "El teléfono no es un enlace tocable: el href es '#', no tel:. Un correo podría decir con cuidado que el número no se puede tocar para llamar desde el móvil, pero eso es otro hallazgo y no es la afirmación del motor.",
+   "Sí es cierto, pero insuficiente para afirmar F2, que la portada no muestra correo, WhatsApp ni formulario. Con el teléfono visible, F2 queda refutado.",
+   "La portada es una pantalla mínima (logo y 4 pestañas). El único enlace de tipo contacto es 'Canal de integridad y denuncias', un canal de cumplimiento y no de contacto comercial. No presentarlo como ruta de contacto.",
+   "No se revisó si existe una página de contacto en otras rutas; solo miré /hacemos/, /altis/ y /somos/ para identidad y servicios. Ninguna muestra formulario, pero no es una búsqueda exhaustiva.",
+   "NO afirmar que la portada no tiene teléfono ni ruta de contacto: el teléfono +56 22 5998000 y la dirección están visibles en la primera pantalla (escritorio y móvil).",
+   "El teléfono es texto con href=\"#\", no un enlace tel: pulsable. Eso sería un hallazgo distinto y menor (no se puede tocar para llamar desde el móvil), pero no es la afirmación del motor y no corresponde a la oferta F2.",
+   "No hay formulario, correo ni WhatsApp en la portada; eso solo no basta, porque el teléfono cuenta como ruta de contacto.",
+   "Hay un enlace 'Canal de integridad y denuncias' en la portada; es un canal de cumplimiento, no de ventas, pero es una ruta de contacto adicional.",
+   "No se revisaron las demás páginas del sitio en busca de contacto (solo se leyeron /hacemos/ y /altis/ para clasificar el rubro)."
+  ],
+  "motivos": [
+   "La afirmación del motor ('no hay teléfono ni ruta de contacto en la portada') es falsa. Hay un teléfono y una dirección visibles como texto en la primera pantalla en ambos tamaños, y la captura del motor lo confirma. La regla de F2 y F10 indica refutar cuando hay un teléfono visible escrito como texto.",
+   "La afirmación del motor (\"no hay ... teléfono\") es contradicha por mi propia medición y por la propia captura del motor: la portada muestra \"+56 22 5998000\" a la vista en la primera pantalla, en escritorio y en móvil. Seguramente el motor no lo contó porque el enlace usa href=\"#\" en vez de tel:. Para F2 se confirma solo si no hay ninguna ruta de contacto, y aquí hay una."
+  ],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   null,
+   null
+  ]
+ },
+ {
+  "id": "R34",
+  "dominio": "tuoficinacontable.cl",
+  "oferta": "F3",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "Hechos comprobables: (1) en la sección Planes de la portada, los 4 botones 'CONTRATAR' (Básico 1,5 UF, Intermedio 2.5 UF, Full 3.5 UF y el del plan personalizado) apuntan a wa.me/962830584 con un mensaje prellenado, y ese número es de 9 dígitos sin código de país (le falta el 56). El formato que pide WhatsApp para estos enlaces es el internacional completo: wa.me/56962830584. (2) Al pedir esa URL a WhatsApp, la página que devuelve muestra el número tal cual, 962830584, mientras que con el 56 lo muestra como +56 9 6283 0584, es decir, reconocido como número chileno. (3) Estos son los botones que usa quien ya decidió contratar un plan, así que es el punto donde un enlace mal armado cuesta más. (4) Dato menor: el texto prellenado del plan personalizado dice 'Perzonalizado' (con z). Redacción segura: 'los botones Contratar de la sección Planes enlazan a wa.me/962830584, un número sin el código de país 56; el formato correcto es wa.me/56962830584'. El número empieza con 96 y el mismo número aparece con 56 en el botón flotante, así que el arreglo es solo agregar el 56 en esos 4 enlaces.",
+   "Hechos comprobables: (1) En la seccion \"Planes\" de la portada hay 4 botones \"CONTRATAR\" (planes Basico, Intermedio, Full y Personalizado). (2) Los 4 llevan a wa.me/962830584, es decir un numero de 9 digitos que empieza con 9, sin el 56 de Chile. (3) wa.me exige el numero en formato internacional completo; al abrir el enlace, WhatsApp redirige a api.whatsapp.com/send/?phone=962830584, o sea usa el numero tal como esta escrito. (4) El numero movil con codigo (56962830584) si aparece en la configuracion del boton verde flotante, asi que el problema esta acotado a los botones de los planes, no a todo el WhatsApp del sitio. (5) El mensaje precargado de los botones es \"Hola, me interesa contratar el plan ...\" (el cuarto dice \"Perzonalizado\", con falta ortografica). Redaccion segura: \"en los botones CONTRATAR de la seccion de planes, el enlace de WhatsApp usa el numero 962830584 sin el codigo de pais (56), y wa.me pide el formato internacional completo\". Ofrecer como algo que conviene revisar/probar, no como falla comprobada."
+  ],
+  "advertencias": [
+   "NO decir que 'el WhatsApp del sitio no funciona' ni que 'no abre': no lo probé en un celular, y el botón flotante de WhatsApp usa el número con 56 (56962830584), así que el sitio sí tiene un canal de WhatsApp bien armado. El problema se limita a los 4 botones CONTRATAR de Planes.",
+   "NO decir 'el enlace de WhatsApp de su sitio' en singular y sin matiz: hay dos vías (botones de planes sin 56, botón flotante con 56). Hay que nombrar los botones 'Contratar' de la sección Planes.",
+   "NO afirmar cuánto se pierde ni que hayan perdido clientes por esto: no hay dato de conversión. Cómo se comporta wa.me con 9 dígitos sin 56 depende del celular y de la cuenta de WhatsApp de quien lo toque; mi GET solo mostró cómo lo muestra la página web de WhatsApp, no el resultado en el teléfono.",
+   "El número 962830584 no aparece escrito como texto visible en la página: solo está en los enlaces (y en un enlace oculto 'Llamar' tel:962830584, también sin +56, que no se ve en pantalla). Lo visible es el fijo +56 2 6465 5180, que sí trae código de país.",
+   "La cabecera y el pie sí tienen otras vías de contacto (botón CONTÁCTANOS, formulario, teléfono fijo, correo); no insinuar que el sitio carece de contacto.",
+   "El hallazgo es de lectura de código del enlace, no de uso real; el correo debe presentarse como 'revisé el sitio y vi que...', no como una prueba de falla.",
+   "NO afirmar que el WhatsApp 'no abre', 'no funciona' o 'esta roto': ni el motor ni yo probamos el enlace en un celular; solo se lee el formato del numero y un GET a wa.me/api.whatsapp.com no equivale a probarlo en WhatsApp.",
+   "NO decir 'el WhatsApp del sitio' en general ni 'el boton de WhatsApp': el boton verde flotante (Joinchat) SI usa 56962830584 con codigo de pais. El hallazgo aplica solo a los 4 botones CONTRATAR de la seccion Planes. Si el dueno dice 'mi WhatsApp funciona', puede tener razon sobre el flotante.",
+   "No afirmar a que pais o persona llegaria el enlace sin codigo de pais. Es inferencia (962 coincide con el prefijo de otro pais) y no se verifico en un celular. Mejor no mencionarlo.",
+   "El numero 962830584 corresponde al mismo movil que aparece como 56962830584 en el boton flotante; es muy probable que sea el mismo numero escrito sin el 56, pero esa equivalencia es inferencia, no algo que el sitio declare.",
+   "El numero movil no se ve escrito como texto en la pagina; el unico telefono visible es +56 2 6465 5180 (fijo). Un enlace oculto tel:962830584 'Llamar' tampoco lleva +56, pero esta oculto y no hay que citarlo.",
+   "El telefono fijo visible usa tel:264655180 sin +56 en el href; es un detalle menor de formato que no se debe presentar como falla comprobada.",
+   "La portada si tiene contacto (CONTACTANOS, telefono, correo, formulario): no sugerir que el sitio no tiene forma de contacto.",
+   "No se hizo clic en nada; si los botones CONTRATAR se comportaran distinto por JavaScript al hacer clic, no lo pude ver. El href estatico, en HTML crudo y DOM renderizado, es wa.me/962830584."
+  ],
+  "motivos": [
+   "Confirmado con alcance acotado: los 4 enlaces wa.me de la portada usan 962830584 sin código de país. Se matiza porque el botón flotante de WhatsApp usa 56962830584 y no se probó en un celular.",
+   "Confirmado tras intentar refutar. El unico matiz que encontre (el boton flotante usa 56962830584) acota el alcance pero no desmiente la afirmacion sobre los enlaces CONTRATAR."
+  ],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   null,
+   []
+  ]
+ },
+ {
+  "id": "R30",
+  "dominio": "oscplus.cl",
+  "oferta": "F9",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "- El enlace \"Aviso legal\" del pie del sitio apunta a https://oscplus.cl/legal-notice y esa dirección responde HTTP 404 (página de error \"404 Not Found\" del servidor LiteSpeed). Verificado el 17-oct-2026, con una carga propia además de las rondas del motor.\n- El enlace \"Privacidad\" del pie (https://oscplus.cl/privacy) también responde HTTP 404 con la misma página de error. Ojo: esto lo medí yo; la afirmación del motor solo menciona /legal-notice, así que si se quiere usar, se apoya en mi medición.\n- Ambos enlaces aparecen en el pie de las cuatro páginas navegables (inicio, nuestros-servicios, sobre-nosotros, contacto) y en ninguna hay otro enlace a una política que funcione.\n- Detalle verificable adicional: en /contacto, la casilla del formulario junto al botón \"Entregar\" muestra el texto sin renderizar \"{{ 'content.forms.privacy'|trans }}\" en vez de una frase de consentimiento. El formulario pide nombre, teléfono, correo y mensaje.\n- Redacción segura: \"los enlaces 'Aviso legal' y 'Privacidad' del pie de oscplus.cl llevan a una página 404\", sin más.",
+   "En el pie de la portada de oscplus.cl hay dos enlaces: 'Aviso legal' (https://oscplus.cl/legal-notice) y 'Privacidad' (https://oscplus.cl/privacy). Al abrir /legal-notice el servidor responde 404 Not Found (pagina de error de LiteSpeed). /privacy tambien responde 404 en mi medicion (dato adicional al hallazgo del motor, que solo menciono /legal-notice). Las demas paginas del sitio (/contacto, /nuestros-servicios, /sobre-nosotros) cargan normal (200), de modo que los enlaces del pie apuntan a paginas que no existen. El sitemap.xml no incluye ninguna pagina de politica o aviso legal. Verificado el 17-oct-2026 con carga de pagina (GET), sin hacer clic."
+  ],
+  "advertencias": [
+   "No afirmar que el sitio 'no tiene política de privacidad': solo se comprobó que los enlaces del pie llevan a 404 y que cinco direcciones alternativas probadas también dan 404; podría existir una política en otra dirección o en un PDF no enlazado.",
+   "No afirmar lo que la ley 'exige' ni que esto 'infringe' la Ley 19.628 o la 21.719; solo describir el hecho observable (enlace roto).",
+   "Solo comprobé el estado HTTP y lo que se ve en un navegador de escritorio desde un servidor; no equivale a probarlo desde un celular ni desde otra red, y el sitio podría arreglarse en cualquier momento.",
+   "La mención a /privacy (también 404) es medición propia, no parte de la afirmación original del motor; el texto sin renderizar '{{ ... |trans }}' del formulario es un detalle del sitio construido con plantilla, mencionarlo con tono de aviso amistoso, no de acusación.",
+   "El hallazgo cubre el enlace legal/privacidad del pie, no las prácticas reales de datos de la empresa.",
+   "No afirmar lo que la ley 'exige' ni citar articulos de la Ley 19.628 o 21.719 como incumplimiento comprobado: es criterio juridico, no hecho medido.",
+   "No afirmar que el sitio 'no tiene politica de privacidad': solo se comprobo que los dos enlaces del pie dan 404 y que no hay otra politica enlazada o en el sitemap; podria existir en otra direccion no enlazada (no se puede descartar).",
+   "Medicion hecha por GET directo de la URL, sin hacer clic en el enlace; el servidor responde 404 de LiteSpeed en ambas rutas, y las otras rutas responden 200 en la misma sesion, por lo que no parece un artefacto de la IP.",
+   "El hallazgo del motor menciona solo /legal-notice. Que /privacy tambien da 404 lo vi yo; si se incluye en el correo, decir que se verifico en esta revision, no que el motor lo reporto.",
+   "Los 404 son la pagina generica del servidor (no una pagina 'no encontrada' disenada por el sitio); es consistente con enlaces de plantilla sin pagina asociada. No atribuir intencion ni causa.",
+   "No decir que el sitio no tiene formularios ni que no recoge datos: no lo evalue (solo mire portada y pie). El sitio muestra telefonos y correos de contacto, no formulario en la portada."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   null,
+   null
+  ],
+  "cookies": [
+   null,
+   null
+  ]
+ },
+ {
+  "id": "R33",
+  "dominio": "contable.app",
+  "oferta": "C1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "Al abrir https://contable.app/ en un navegador nuevo, sin hacer clic, sin aceptar nada y sin mover el mouse, a los 11 segundos el navegador ya había guardado las cookies _gcl_au (Google Ads), _ga y _ga_05M5Q3X1N3 (Google Analytics 4, ID de medición G-05M5Q3X1N3) y _fbp (píxel de Meta/Facebook), todas con dominio .contable.app. Ninguna captura de la portada (parte alta a los 11 s y después de bajar por la página) muestra un aviso o banner de cookies. En esa misma carga hubo envío observado a Google Analytics (analytics.google.com/g/collect) y a Google Ads (googleads.g.doubleclick.net, ID 827389724). El pie de página tiene enlaces a \"Política de Privacidad\" (/privacidad) y \"Términos del Servicio\" (/terminos-y-condiciones); no los abrí.",
+   "Al abrir contable.app sin aceptar ni tocar nada, el navegador guardó las cookies _gcl_au, _ga, _ga_05M5Q3X1N3 y _fbp (de Google Ads/conversiones, Google Analytics y Meta/Facebook Pixel), ya a los pocos segundos y sin ninguna interacción. En las capturas (inicio de página y a media página) no se ve ningún aviso ni banner de cookies, ni opción de aceptar o rechazar. La configuración de consentimiento de Google en el código de la página viene en 'granted' por defecto. La política de privacidad existe (enlazada en el pie, /privacidad)."
+  ],
+  "advertencias": [
+   "Mi medición muestra que NO hay aviso de cookies visible en la portada (banner_visible=false). Aun así, el correo debe limitarse a lo medido en estas capturas (portada, escritorio 1280x800, primera visita) y no afirmar que el sitio no informa sobre cookies en ninguna otra parte: no abrí /privacidad ni /terminos-y-condiciones.",
+   "No afirmar que Meta (Facebook) recibió la visita: el script del píxel y su config se descargaron y _fbp quedó escrita, pero no vi una petición a facebook.com/tr, y el píxel registró en su log 'Bot traffic detected and blocked' porque el navegador es automatizado. Los proveedores con envío observado son solo Google Analytics y Google Ads, que es lo mismo que dice el motor.",
+   "Mi lista de cookies de rastreo coincide con la del motor, pero hay más cookies que el motor no menciona: ab_vid y ct_attr (propias, de pruebas A/B y atribución de campañas) y test_cookie en .doubleclick.net (de terceros). Si el correo da una lista, debe decir 'entre ellas'.",
+   "El dataLayer declara consent default = granted para las cuatro señales (anuncios y analítica). Es un hecho técnico de la configuración. No afirmar qué 'exige' o 'permite' la ley, ni que el sitio 'incumple', ni usar este dato como prueba legal.",
+   "El correo no debe afirmar que las cookies se escribieron 'sin ninguna interacción' más allá de lo medido: estaban a los 11 s con el mouse quieto, en un navegador automatizado de Playwright con IP de centro de datos. No medí en móvil ni desde un celular real.",
+   "Esto es una medición puntual (una visita) hecha hoy; el sitio puede cambiar su configuración de etiquetas.",
+   "Hay una Política de Privacidad enlazada en el pie y SÍ menciona 'Facebook Píxel y Google Analytics' y el uso de cookies, y dice que al aceptar la política el usuario acepta su uso. El correo NO puede decir que el sitio no informa del uso de cookies ni que no tiene política: solo que no vi un aviso o banner de cookies al abrir el sitio y que no hay forma de aceptar o rechazar antes de que se guarden.",
+   "No afirmar que Meta/Facebook 'recibió la visita': vi que se cargó connect.facebook.net y que se escribió _fbp, pero en mi medición no observé una petición de envío a facebook.com/tr. Lo observado como envío es Google (analytics.google.com, doubleclick/googleads); incluso eso debe decirse con cautela, solo como 'se hicieron peticiones a Google'.",
+   "No afirmar lo que la ley 'exige' ni que haya incumplimiento legal: es criterio de quien escribe.",
+   "Las cookies ab_vid y ct_attr (propias) y test_cookie (.doubleclick.net) también aparecieron, pero no están en la afirmación del motor; mencionar solo las cuatro confirmadas por el motor y por mí, o clasificar las otras como no concluyentes (ab_vid es probablemente de pruebas A/B, ct_attr de atribución).",
+   "Mi medición se hizo desde un solo origen de red (IP de la nube); no probé desde otro país ni con otro navegador. Un aviso solo para ciertos países no se puede descartar del todo, aunque el motor y yo vimos lo mismo, sin aviso en el DOM y con consentimiento 'granted' por defecto en el código.",
+   "El sitio tiene versiones para Colombia (/co) y México (/mx); mi medición fue solo de la portada chilena."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   false,
+   false
+  ],
+  "cookies": [
+   [
+    "ab_vid",
+    "_gcl_au",
+    "_ga",
+    "_ga_05M5Q3X1N3",
+    "ct_attr",
+    "test_cookie (.doubleclick.net)",
+    "_fbp"
+   ],
+   [
+    "_gcl_au",
+    "_ga",
+    "_ga_05M5Q3X1N3",
+    "_fbp",
+    "ab_vid",
+    "ct_attr",
+    "test_cookie"
+   ]
+  ]
+ },
+ {
+  "id": "R35",
+  "dominio": "akcontadores.cl",
+  "oferta": "C1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "Al abrir https://akcontadores.cl/ sin aceptar ni tocar nada, a los 11 segundos el navegador ya tenia guardadas las cookies _gcl_au, _ga_D9WPPCQNW2, _ga y _fbp (dominio .akcontadores.cl; las de Google Analytics vencen en ~13 meses). En ese momento no se ve ningun aviso o banner de cookies; lo que aparece encima de la portada es un modal de formulario ('Podemos Ayudarte!'). El sitio carga Google Tag Manager (GTM-TJCMH7ZB), Google Analytics 4 (G-D9WPPCQNW2), Google Ads (AW-384378550) y el pixel de Meta (982618201256749). Se observaron envios a Google Analytics y a Google Ads (doubleclick) en la misma carga inicial. Medido con Chromium limpio, un solo GET de la portada, sin clics.",
+   "Al abrir https://akcontadores.cl/ sin aceptar ni tocar nada, a los 11 segundos el navegador ya tenía guardadas las cookies _gcl_au (Google Ads), _ga y _ga_D9WPPCQNW2 (Google Analytics 4, ID de medición G-D9WPPCQNW2) y _fbp (Meta). Mover el mouse y hacer scroll no cambió ese conjunto: ya estaban antes de cualquier interacción. En la misma carga se vieron envíos a analytics.google.com (page_view del G-D9WPPCQNW2) y a googleads.g.doubleclick.net (conversión para la cuenta AW-384378550), cargados desde Google Tag Manager GTM-TJCMH7ZB. En las capturas de la portada (dos mías y dos del motor) no se ve ningún aviso de cookies: lo que aparece encima de la página es un formulario emergente de captación de leads. El HTML de la portada no incluye ningún script de gestor de consentimiento."
+  ],
+  "advertencias": [
+   "No afirmar que Meta/Facebook 'recibio la visita': en mi corrida solo cargo fbevents.js y la config del pixel, sin peticion de evento observada. Solo Google Analytics y Google Ads tienen envio observado.",
+   "Las peticiones de Google llevan parametros de modo de consentimiento (gcd=13l3l3l3l1l1, npa=0). No afirmar que Google 'recibio datos personales' ni interpretar el estado de consentimiento: solo se mide que las cookies se escribieron y que hubo peticiones.",
+   "El sitio SI muestra una ventana al cargar (modal 'Podemos Ayudarte!'), pero es un formulario de captacion, no un aviso de cookies. El correo no debe decir 'ventana emergente' sin aclarar que no es de cookies.",
+   "No decir que el sitio 'no tiene politica de cookies' ni 'politica de privacidad': solo se reviso la portada (sin enlaces de ese tipo en el HTML). Decir 'no se ve aviso de cookies al cargar'.",
+   "No afirmar lo que la ley 'exige' ni que sea 'ilegal'.",
+   "No atribuir a rastreo las otras cookies (_tccl_*, _scc_session, trustedsite_*, test_cookie de doubleclick): no se identifico su proveedor. Hay un sello TrustedSite en la esquina inferior derecha.",
+   "Medicion desde IP de datacenter (no de Chile); en este tipo de sitio las etiquetas de GTM pueden variar segun origen, aunque mi corrida coincide con las del motor.",
+   "Las capturas A y B mias son identicas porque el modal bloquea el scroll; la conclusion se apoya en cookies y HTML, no en que la pagina se desplazara.",
+   "Redactar como 'no vi un aviso de cookies en la portada' (observación en 4 capturas y en el HTML), no como 'el sitio no tiene política de cookies' ni 'incumple la ley': lo que la ley exige es criterio de Ramón y no se verificó.",
+   "El modal de formulario oscurece la página; el HTML crudo no trae ningún gestor de consentimiento, pero el correo debe decir que se ve la portada con un formulario emergente y sin aviso, no 'sin ningún aviso en todo el sitio' (solo se revisó la portada y /servicios/ por HTML).",
+   "No afirmar que Meta 'recibió la visita': el script fbevents.js se cargó y _fbp se escribió, pero en mi corrida no observé envío a facebook.com/tr. Solo hay envío observado a Google Analytics y Google Ads (coincide con la regla del motor).",
+   "No afirmar que las cookies _tccl_*, _scc_session, trustedsite_* o test_cookie sean de rastreo del sitio: vienen del badge TrustedSite o de doubleclick; el hallazgo se limita a _gcl_au, _ga_D9WPPCQNW2, _ga y _fbp.",
+   "No afirmar el ID de cuenta de Google Ads como dato sensible ni decir que las cookies se escribieron 'sin consentimiento' como hecho jurídico: es un hecho técnico (escritas antes de interactuar).",
+   "Las cookies se midieron desde una IP de datacenter con navegador automatizado; un visitante real en Chile podría ver el mismo comportamiento, pero no se probó en otro dispositivo."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   false,
+   false
+  ],
+  "cookies": [
+   [
+    "_gcl_au",
+    "_ga_D9WPPCQNW2",
+    "_ga",
+    "_fbp"
+   ],
+   [
+    "_gcl_au",
+    "_ga_D9WPPCQNW2",
+    "_ga",
+    "_fbp"
+   ]
+  ]
+ },
+ {
+  "id": "R42",
+  "dominio": "mcontabilidad.cl",
+  "oferta": "C1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "Al abrir https://mcontabilidad.cl/ en un navegador nuevo, sin aceptar ni tocar nada, a los 11 segundos el navegador ya tenia guardadas _ga_4WWBGH6K5C, _ga, _clck y _clsk (dominio .mcontabilidad.cl; _ga y _ga_* son de Google Analytics, _clck y _clsk de Microsoft Clarity). Mismo resultado tras mover el mouse y hacer scroll. En ninguna de las capturas (mias y del motor) aparece un aviso de cookies, y en la portada y el pie no hay enlace a politica de privacidad, cookies ni datos personales (el pie muestra horarios, direccion, telefonos, Blog, Videotutoriales, Intranet y el credito \"Desarrollado por Imago Digital\"). Hecho adicional observado: el sitio carga un chat (Chatbase) que guarda chatbase_anon_id, y Clarity deja ademas CLID/MUID en dominios de clarity.ms y bing.com.",
+   "Al cargar https://mcontabilidad.cl/ sin hacer clic ni aceptar nada, el navegador guardó en el dominio del sitio las cookies _ga, _ga_4WWBGH6K5C, _clck y _clsk (Google Analytics y Microsoft Clarity), ya a los 11 segundos y antes de mover el mouse o hacer scroll. En ese mismo momento el navegador enviaba el page_view a google-analytics.com (propiedad G-4WWBGH6K5C) y cargaba el script de Clarity (clarity.ms). Estas cookies aparecieron en mis dos mediciones de la portada (la del motor y la mía). El único elemento flotante visible era el chat (globo \"¿En qué puedo ayudarte?\" y botón), sin banner de cookies en ninguna de mis dos capturas. El HTML de la portada no contiene ningún gestor de consentimiento ni mención de cookies o privacidad."
+  ],
+  "advertencias": [
+   "Usar solo los cuatro nombres afirmados (_ga_4WWBGH6K5C, _ga, _clck, _clsk); chatbase_anon_id es del chat y no se debe presentar como cookie de rastreo publicitario.",
+   "No afirmar lo que 'exige' la ley ni que el sitio 'incumple': eso es criterio, no medicion.",
+   "No afirmar que Google o Microsoft 'recibieron la visita' o datos de la persona: vi solicitudes a google-analytics.com y c.clarity.ms durante la carga completa, pero no las separe por tramo ni inspeccione el contenido.",
+   "La ausencia de aviso, de pagina de cookies y de enlace de privacidad esta verificada solo en la portada (DOM y captura de dos tramos) y su pie. No visite subpaginas, asi que no decir 'el sitio no tiene politica de privacidad', solo 'no la vi enlazada en la portada ni el pie'.",
+   "Medi con Chromium headless desde una IP de nube (locale es-CL, pero IP no chilena). Un aviso condicionado por pais no se puede descartar del todo, aunque la captura del motor tambien muestra cero aviso.",
+   "No usar 'sin aviso' como si el hallazgo fuera el aviso: el hecho central son las cookies escritas antes de cualquier interaccion; la ausencia de aviso es observacion complementaria.",
+   "La burbuja 'En qué puedo ayudarte?' y el boton flotante son un chat, no un banner de consentimiento.",
+   "No afirmar que el sitio 'no tiene aviso de cookies' como hecho general: solo se puede decir que en las capturas de esta medición (desde esta IP, locale es-CL, sin interactuar) no se vio ningún aviso, y que el HTML no carga ningún gestor de consentimiento. Un aviso condicionado a otra geolocalización no se puede descartar al 100%, aunque no hay código de CMP en el HTML.",
+   "No afirmar que Google o Microsoft 'recibieron la visita' como hecho del motor: la regla del motor lo exige solo con envío observado en ambas corridas. Yo sí vi en mi corrida GETs a google-analytics.com/g/collect y l.clarity.ms/collect, pero eso es una medición mía, no la del motor.",
+   "No afirmar lo que la ley 'exige' ni que esto sea un incumplimiento: es un hecho técnico observable, la valoración legal queda fuera.",
+   "chatbase_anon_id (cookie de sesión del widget de chat Chatbase) y las cookies de terceros de Microsoft (CLID, MUID, MR, SRM_B, SM, ANONCHK en clarity.ms y bing.com) no estaban en la afirmación del motor: no incluirlas en el correo salvo que se quiera ampliar; mencionar solo _ga, _ga_4WWBGH6K5C, _clck y _clsk.",
+   "El globo 'En qué puedo ayudarte?' y el botón flotante son el chat Chatbase, no un aviso de cookies: no confundirlos ni describirlos como aviso.",
+   "No afirmar que la política de privacidad no existe: en la portada no hay enlace ni mención de privacidad, política o datos personales, pero no revisé otras páginas del sitio (no era parte de C1).",
+   "Las cookies pudieron venir de GTM-WQF5BNW o del plugin Site Kit de Google; no afirmar cuál mecanismo las instala, solo que están escritas antes de cualquier consentimiento."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   false,
+   false
+  ],
+  "cookies": [
+   [
+    "_ga_4WWBGH6K5C",
+    "_ga",
+    "_clck",
+    "_clsk"
+   ],
+   [
+    "_ga_4WWBGH6K5C",
+    "_ga",
+    "_clck",
+    "_clsk",
+    "chatbase_anon_id",
+    "CLID",
+    "MUID",
+    "MR",
+    "SRM_B",
+    "SM",
+    "ANONCHK"
+   ]
+  ]
+ },
+ {
+  "id": "R48",
+  "dominio": "taxwork.cl",
+  "oferta": "C1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "Al abrir https://taxwork.cl/ en un navegador nuevo, sin hacer clic ni aceptar nada y esperando 11 segundos, el navegador ya tenia guardadas tres cookies de medicion/publicidad en el dominio .taxwork.cl: _ga y _ga_PCTG4KSHMK (Google Analytics, cuya propiedad G-PCTG4KSHMK se carga via Google Tag Manager GTM-WNXSPNC) y _fbp (Meta Pixel 421014515598701). Mover el mouse y hacer scroll no agrego otras. En la portada no aparece ningun aviso, banner ni selector de cookies (ni en la primera pantalla ni mas abajo), y el texto de la portada no menciona cookies ni privacidad. Se observo ademas el envio de la visita a Google Analytics (POST a analytics.google.com/g/collect). Estas cookies se escriben porque la pagina carga las etiquetas de Google y Meta apenas abre.",
+   "Al abrir taxwork.cl sin aceptar ni tocar nada, el navegador guardó 3 cookies de medición/publicidad en el dominio .taxwork.cl: _ga y _ga_PCTG4KSHMK (Google Analytics 4, propiedad G-PCTG4KSHMK) y _fbp (píxel de Meta). Estaban presentes a los 11 s sin interacción y no se agregaron más tras mover el mouse y hacer scroll. En esa carga también se observaron pedidos de Google Analytics (analytics.google.com/g/collect con page_view) antes de cualquier clic. En la portada no se ve ningún aviso o banner de cookies en las capturas, no hay texto que mencione cookies, política de privacidad o datos personales, y no hay gestor de consentimiento cargado. El pie de página solo tiene dirección, teléfonos, correos y el copyright. Etiquetas presentes en el HTML: GA4 G-PCTG4KSHMK, GTM-WNXSPNC, UA-167553900-1 y píxel Meta 421014515598701."
+  ],
+  "advertencias": [
+   "banner_visible=false: no vi aviso de cookies ni en mis capturas ni en las del motor (r1-A y r1-B), asi que el correo si puede decir que en la portada no se ve ningun aviso; pero decirlo solo de la portada, no de 'todo el sitio' (no revise otras paginas).",
+   "Mi navegador sale desde un datacenter, no desde una IP chilena: un banner condicionado por pais (p. ej. solo para visitantes de la UE) no se mostraria aqui. No afirmar que 'ningun visitante ve un aviso', solo que no aparece en la portada al abrirla desde estas mediciones.",
+   "No decir que Meta/Facebook 'recibio la visita': solo observe la carga de fbevents.js y del GET signals/config, no un request a facebook.com/tr. Lo unico observado como envio es Google Analytics (POST a analytics.google.com/g/collect y stats.g.doubleclick.net/g/collect). No fije en que momento exacto salio ese POST (mi captura de requests cubre carga + 11 s + scroll).",
+   "No afirmar 'la ley exige aviso/consentimiento' ni que incumple ninguna norma: solo describir lo que se midio.",
+   "Las cookies son escritas por las etiquetas (GTM, gtag, Meta Pixel) que el propio sitio carga; no atribuir intencion ni decir que 'no sabe' que las tiene.",
+   "El hero de la portada es un carrusel: la primera pantalla muestra distinto titular segun el momento ('Contabilidad para Pymes' en mi captura, 'Auditoria de Estados Financieros' en la del motor); no es discrepancia, no afecta el hallazgo.",
+   "El sitio carga ademas un gtag UA-167553900-1 (Universal Analytics, producto ya descontinuado): dato curioso, pero no es parte del hallazgo y no hay que afirmar nada sobre ello en el correo.",
+   "No hay en la portada enlace a politica de privacidad ni a cookies segun el texto visible; no mezclar este hecho con el hallazgo C1 salvo que el correo lo trate aparte.",
+   "No afirmar que Meta/Facebook 'recibió la visita': en mi corrida solo se cargaron fbevents.js y la config del píxel desde connect.facebook.net y no vi ningún pedido de envío a facebook.com/tr; de _fbp solo consta que la cookie se escribió.",
+   "Sí hay envío observado a Google (analytics.google.com/g/collect y stats.g.doubleclick.net) en mi corrida, pero no verifiqué que se repita en las corridas del motor; si el correo dice 'Google Analytics recibió la visita', conviene respaldarlo con las dos corridas del motor.",
+   "No decir 'el sitio no tiene aviso de cookies' como afirmación absoluta ni 'está prohibido/lo exige la ley': lo comprobable es que en la portada no se ve aviso en las capturas, el DOM no menciona cookies ni privacidad y no hay CMP cargado. Medí desde una IP de esta infraestructura, no desde Chile, aunque al no haber script de consentimiento un aviso geolocalizado es poco probable.",
+   "Medición con un solo navegador headless de escritorio (1280x800); no probé móvil ni otras páginas internas (solo hay una página con anclas). No hay enlace a política de privacidad en la portada, pero eso es otro hallazgo (F1/F9), no el de C1.",
+   "El sitio también carga el widget de WhatsApp (GetButton) y Google Maps embebido; no afirmar nada sobre cookies de esos terceros, no se guardó ninguna cookie de ellos en mi medición.",
+   "Es un hallazgo técnico observable, no una conclusión legal: no calificar el cumplimiento de la Ley 19.628 / 21.719 ni usar 'incumple'."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   false,
+   false
+  ],
+  "cookies": [
+   [
+    "_ga_PCTG4KSHMK",
+    "_ga",
+    "_fbp"
+   ],
+   [
+    "_ga_PCTG4KSHMK",
+    "_ga",
+    "_fbp"
+   ]
+  ]
+ },
+ {
+  "id": "R50",
+  "dominio": "rento.cl",
+  "oferta": "C1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "Al abrir https://rento.cl/ como visitante nuevo, sin aceptar ni tocar nada, a los 11 segundos el navegador ya había guardado estas cookies de medición y publicidad en el dominio rento.cl: _ga, _gid, _ga_BSLHZCYFD1, _ga_1MWKW5BMPY, _gat_gtag_UA_106407276_3 (Google Analytics), _gcl_au (Google Ads) y _fbp (Meta/Facebook). No apareció ningún aviso ni banner de cookies en la portada, ni arriba, ni al hacer scroll, ni en la página completa. El código de la portada no incluye ningún gestor de consentimiento. Las etiquetas cargan desde Google Tag Manager (GTM-W7TP6NS) y se observaron envíos a Google Analytics (analytics.google.com) y a Google Ads (googleads.g.doubleclick.net) en la misma carga. La portada tampoco enlaza a una política de privacidad ni de cookies (se ve solo un crédito de diseño y íconos de redes en el pie). Medido en una sola visita con navegador automatizado (Chromium, configuración es-CL, zona horaria Santiago).",
+   "Al abrir https://rento.cl/ sin aceptar ni tocar nada, y esperando 11 segundos, el navegador guardó en el dominio rento.cl las cookies _gcl_au, _ga_BSLHZCYFD1, _ga_1MWKW5BMPY, _ga, _gid, _gat_gtag_UA_106407276_3 y _fbp (son cookies de medición y publicidad: Google Analytics, Google Ads y Meta). Lo medí por separado con dos user-agents (uno de navegador automatizado y uno de Chrome común) y salió la misma lista. Después de mover el mouse y hacer scroll no apareció ninguna cookie adicional de esa familia, o sea que estaban escritas desde la carga. En la portada hay un sitio de WordPress con Google Tag Manager, Google Site Kit, píxel de Meta (471578470267670) y Yandex Metrica (contador 67781170) cargando en la primera visita. El HTML incluye un script de Hu-manity.co (plugin de aviso de cookies) configurado con 'blocking': false, es decir, sin bloquear nada antes del consentimiento."
+  ],
+  "advertencias": [
+   "No decir que Meta/Facebook 'recibió la visita': vi cookie _fbp y la carga de fbevents.js desde connect.facebook.net, pero no observé una petición de evento hacia facebook.com/tr en mi corrida. Solo se puede afirmar que la cookie _fbp quedó guardada.",
+   "Sí hay envío observado a Google Analytics (analytics.google.com/g/collect, page_view) y a Google Ads (googleads.g.doubleclick.net/viewthroughconversion). Eso coincide con lo que el motor permite afirmar. No afirmar nada de lo que Google 'hace' con esos datos.",
+   "Yandex Metrica (_ym_uid, _ym_d, _ym_isad y cookies de yandex.ru/.com) apareció en mi medición pero no está en la afirmación del motor. Si se menciona, hacerlo con cuidado (solo que se guardaron cookies y hubo conexiones a mc.yandex.*). Lo más seguro es limitarse a las 7 cookies del motor.",
+   "banner_visible = false: no hay aviso de cookies en mis capturas ni en las del motor, y tampoco hay gestor de consentimiento en el HTML. Aun así, medí desde una IP de centro de datos, no desde Chile, así que no conviene afirmar que 'ningún visitante verá jamás un aviso'. Decir lo observado: sin aviso en la portada al abrirla.",
+   "No afirmar lo que la ley 'exige' ni que el sitio 'incumple' la Ley 19.628 o la 21.719. Solo describir lo observado (cookies guardadas antes de cualquier interacción, sin aviso visible).",
+   "_gat_gtag_UA_106407276_3 es una cookie de limitación de peticiones del antiguo Universal Analytics. Si se nombra, se puede describir como cookie de Google Analytics sin entrar en detalle técnico.",
+   "No se hizo clic en nada, así que no se sabe si el chat flotante de WhatsApp o las páginas internas (Arriendo, Ventas, formularios) cambian el cuadro. No extender la afirmación más allá de la portada.",
+   "En el pie no hay enlace a privacidad ni términos (hecho observado en el HTML), pero eso es una observación aparte; si se usa en el correo, hay que mencionarlo como hecho y no como 'incumplimiento'.",
+   "No decir que el sitio 'no tiene aviso de cookies': el HTML trae un plugin de aviso de cookies (Hu-manity.co, appID rentocl-7252bc9) que solo se sirve a navegadores normales y que, en mi medición desde esta IP, no se inicializó ni pintó banner. No puedo descartar que un visitante real desde Chile lo vea (el script tiene reglas por región). Decir solo que en mi medición no apareció ningún aviso visible y que las cookies ya estaban escritas antes de cualquier interacción.",
+   "El plugin está configurado con 'blocking': false, así que aunque algún visitante viera el aviso, las cookies de medición se escriben igual antes de que elija. Esa es la afirmación sostenible: cookies escritas antes de cualquier consentimiento, no 'sin aviso'.",
+   "El servidor entrega un HTML distinto según el user-agent: a HeadlessChrome no le llega el plugin de cookies, a un Chrome normal sí. Si el motor midió con user-agent de navegador automatizado, sus capturas pueden no representar lo que ve un visitante real en cuanto al aviso.",
+   "En mi medición aparecieron cookies de Yandex Metrica (_ym_uid, _ym_d, _ym_isad), test_cookie de doubleclick.net y otras de yandex.com/.ru que no están en la lista del motor; no afirmarlas salvo que se verifiquen también en sus corridas.",
+   "No afirmar que un proveedor 'recibió la visita' más allá de lo que el motor observó en ambas corridas (Google Ads, Google Analytics). En mi carga vi solicitudes a Google (analytics.google.com/g/collect, viewthroughconversion de Google Ads), a Meta y a Yandex, pero varias solicitudes de analytics.google.com y google.com figuran como ERR_ABORTED en Playwright; no equivale a prueba de recepción.",
+   "No afirmar lo que la ley exige ni que sea ilegal; el criterio jurídico depende del abogado.",
+   "No afirmar que el sitio no tenga política de privacidad: en la portada renderizada no encontré enlaces de privacidad/datos/términos, pero eso no es lo medido aquí y no revisé otras páginas.",
+   "Nota de proceso: hice 5 cargas completas de la portada (la principal más 4 para investigar la diferencia de user-agent y el plugin), todas solo GET, sin clics ni envío de formularios."
+  ],
+  "motivos": [
+   "No refuté: busqué las razones típicas (banner existente, página que no cargó, sitio equivocado) y no se sostienen. La página cargó (200) y es el sitio real de Rento Propiedades. Las 7 cookies de rastreo/medición aparecen en dos contextos distintos (user-agent automatizado y de Chrome normal) antes de cualquier interacción. El único matiz es que el HTML sí incluye un plugin de aviso de cookies (Hu-manity.co, sin bloqueo) que no se pintó en mi medición; por eso el correo no debe decir 'sin aviso'."
+  ],
+  "vende_nota": [],
+  "banner": [
+   false,
+   false
+  ],
+  "cookies": [
+   [
+    "_gcl_au",
+    "_ga_BSLHZCYFD1",
+    "_ga_1MWKW5BMPY",
+    "_ga",
+    "_gid",
+    "_gat_gtag_UA_106407276_3",
+    "_fbp",
+    "_ym_uid",
+    "_ym_d",
+    "_ym_isad",
+    "test_cookie (.doubleclick.net)",
+    "yandexuid",
+    "yuidss",
+    "i",
+    "ymex",
+    "bh",
+    "sync_cookie_csrf",
+    "sync_cookie_csrf_secondary",
+    "sync_cookie_ok_secondary",
+    "yabs-sid"
+   ],
+   [
+    "_gcl_au",
+    "_ga_BSLHZCYFD1",
+    "_ga_1MWKW5BMPY",
+    "_ga",
+    "_gid",
+    "_gat_gtag_UA_106407276_3",
+    "_fbp",
+    "_ym_uid",
+    "_ym_d",
+    "_ym_isad",
+    "test_cookie (doubleclick.net)"
+   ]
+  ]
+ },
+ {
+  "id": "R59",
+  "dominio": "gpremium.cl",
+  "oferta": "C1",
+  "final": "refutado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "refuta",
+   "refuta"
+  ],
+  "hechos": [
+   "",
+   ""
+  ],
+  "advertencias": [
+   "NO decir 'al abrir el sitio sin tocar nada' ni 'apenas carga': en 3 de 3 visitas, sin interacción no se guardó ninguna cookie (hasta 41 s); con solo mover el mouse aparecieron las 6. Quien abra el sitio y revise DevTools sin mover el mouse verá 0 cookies, y el correo perdería credibilidad.",
+   "Variante más estrecha que SÍ medí, pero distinta de lo que afirmó el motor: 'en cuanto el visitante mueve el mouse o hace scroll, sin haber aceptado nada y sin que aparezca ningún aviso, se guardan _ga, _gid, _gcl_au y _fbp'. Se vio en 2 de 2 visitas con interacción. Es decisión de quien escribe si usarla; no es lo que verificó el motor en su tramo A.",
+   "No hay banner visible en ninguna de mis capturas, pero el sitio carga Google Funding Choices (cookies FCCDCF/FCNEC, 3 iframes de 0x0, fundingchoicesmessages.google.com): puede mostrar un mensaje a visitantes de otras regiones (p. ej. UE). No afirmar que 'no tiene ningún mecanismo de consentimiento', solo que en Chile no se mostró aviso.",
+   "No afirmar que Meta 'recibió la visita': solo vi la carga de connect.facebook.net y la cookie _fbp, no vi una petición a facebook.com/tr. Sí vi envíos a Google Analytics y Google Ads (ambos con interacción).",
+   "_gat_UA-186246262-1 es una cookie de la era Universal Analytics (propiedad UA antigua); no inferir que esa propiedad sigue activa.",
+   "No afirmar lo que la ley 'exige'. El pie no trae enlace a política de privacidad (fuera del alcance de este hallazgo C1).",
+   "NO afirmar 'al abrir el sitio sin tocar nada' ni 'al cargar la página': con la página quieta durante 30 s no se guardó ninguna cookie en dos visitas distintas. La formulación literal del motor es falsa en mi medición.",
+   "Lo que sí observé y se podría decir, si un humano decide reformular: 'apenas se mueve el mouse o se hace scroll, sin aceptar nada ni hacer clic, el navegador guarda _gcl_au, _ga, _ga_5BDFWX7PY3, _gid, _gat_UA-186246262-1 y _fbp, y no se ve ningún aviso de cookies'. Es un hallazgo defendible solo con esa precisión, y a un dueño que haga la prueba con DevTools abierto (moviendo el mouse) le va a salir igual.",
+   "El sitio retiene los scripts hasta la primera interacción pasiva (cargador diferido tipo 10Web); eso puede leerse como 'no hay rastreo hasta que el usuario interactúa'. Interacción pasiva no es consentimiento, pero el dueño puede alegarlo. No afirmar qué 'exige' la ley.",
+   "Hay cookies de Google Funding Choices (FCCDCF, FCNEC) y se piden fundingchoicesmessages.google.com y adsbygoogle: puede existir un mensaje de consentimiento que Google muestra solo en ciertas regiones (p. ej. EEE). Desde esta IP chilena no se mostró ningún aviso, así que solo se puede decir que no se ve aviso desde Chile, no que el sitio no tenga ningún mecanismo de consentimiento.",
+   "Una llamada a Google Ads/Analytics/Meta/Metricool se observó solo tras la interacción (y en una sola de mis visitas con registro de peticiones completo); no afirmar 'envió datos a X' como hecho de las dos corridas del motor.",
+   "Observación lateral no asignada a este hallazgo: la portada y el pie no tienen ningún enlace a política de privacidad ni a términos, y el pie tiene un formulario de newsletter con campo E-mail. No es parte de R59; si se usa, debe verificarse como F1 aparte.",
+   "_GRECAPTCHA (www.google.com) e IDE (.doubleclick.net) son de terceros; los seis nombres afirmados por el motor son los de dominio .gpremium.cl más _gat, que son de medición y publicidad. FCCDCF/FCNEC son de consentimiento/Funding Choices y no deben presentarse como rastreo."
+  ],
+  "motivos": [
+   "La afirmación del motor dice 'sin aceptar ni tocar nada'. Al repetirla como visitante nuevo, sin interacción no se guarda ninguna cookie (0 cookies en 6 s, 11 s y 41 s); las 6 aparecen solo después del primer movimiento del mouse, porque el sitio difiere la ejecución de sus scripts hasta la primera interacción. La instrucción pide confirmar solo si hay cookies de rastreo antes de cualquier interacción y eso no ocurrió. Existe un hecho más estrecho y real (cookies de rastreo escritas al primer movimiento, sin aviso ni consentimiento), pero es otro enunciado, no el que se midió ni el que se puede escribir tal cual.",
+   "Refuto la afirmación tal como está redactada ('al abrir el sitio sin aceptar ni tocar nada'). El criterio de C1 es cookies de rastreo escritas antes de cualquier interacción, y en mis tres medidas (dos con la página totalmente quieta, hasta 30 s) no hubo ninguna. Las seis cookies existen, pero solo se escriben tras el primer movimiento de mouse, scroll, tecla o toque, porque el sitio demora los scripts de rastreo hasta esa interacción (mecanismo visible en su propio HTML). No refuto que se guarden sin consentimiento ni sin aviso (no hay aviso visible y nunca hubo clic de aceptación), pero eso es una afirmación distinta y más débil, que el motor no formuló; un humano debería decidir si quiere usarla con la precisión 'tras mover el mouse o hacer scroll'. Dejo detalle_para_correo vacío por la regla de no confirmar."
+  ],
+  "vende_nota": [],
+  "banner": [
+   false,
+   false
+  ],
+  "cookies": [
+   [],
+   [
+    "_gcl_au",
+    "_ga_5BDFWX7PY3",
+    "_ga",
+    "_gid",
+    "_gat_UA-186246262-1",
+    "_fbp",
+    "FCCDCF",
+    "FCNEC",
+    "_GRECAPTCHA",
+    "IDE"
+   ]
+  ]
+ },
+ {
+  "id": "R60",
+  "dominio": "propiedadescima.com",
+  "oferta": "C1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "Al abrir la portada sin aceptar ni tocar nada, el navegador guardo cuatro cookies de medicion y publicidad: _ga, _ga_ZR07YY1F68, _ga_5CH92BLCPN (Google Analytics, dos propiedades de medicion) y _fbp (Meta/Facebook Pixel). Se guardaron a los pocos segundos de cargar, antes de cualquier clic, scroll o mouse, y el conjunto no cambio despues de mover el mouse y hacer scroll. En mi medicion el sitio no mostraba ningun aviso o banner de cookies, y en el codigo no hay herramienta de consentimiento. El pixel de Meta (id 688043291920223) esta inicializado con PageView directo en el HTML, y Google Analytics envia el page_view al cargar para G-ZR07YY1F68 y G-5CH92BLCPN. Dato de contexto: propiedadescima.com redirige (301) a inmocimapropiedades.cl y las cookies quedan en ese dominio.",
+   "Hechos comprobables: (1) Al abrir la portada sin aceptar ni tocar nada, a los 11 segundos el navegador ya había guardado 4 cookies: _ga, _ga_ZR07YY1F68, _ga_5CH92BLCPN y _fbp (las tres primeras de Google Analytics, con dos identificadores de medición distintos, G-ZR07YY1F68 y G-5CH92BLCPN; _fbp es del píxel de Meta, ID 688043291920223). (2) En ninguna de mis capturas, ni en las del motor, aparece un aviso o banner de cookies. (3) El código de la portada no incluye ningún plugin o herramienta de consentimiento de cookies, y en el HTML de la portada no hay ningún enlace ni texto de privacidad, política o cookies. (4) El sitio al que se llega es inmocimapropiedades.cl, porque propiedadescima.com redirige ahí con un 301; las cookies quedan en ese dominio. (5) Es una corredora inmobiliaria que vende, arrienda y administra propiedades, con oficinas en Santiago, Viña del Mar y Concepción."
+  ],
+  "advertencias": [
+   "Cuidado con el dominio: propiedadescima.com hace 301 a inmocimapropiedades.cl y las cookies estan escritas en .inmocimapropiedades.cl. El sitio de destino se presenta como 'InmoCima Propiedades' (logo y pie), mientras el nombre del registro es 'Cima Propiedades'. Todo indica la misma empresa (titulo 'Blog Cima Propiedades', texto 'Cima Propiedades' en las resenas), pero conviene mencionar el sitio tal como lo ve el visitante o usar el dominio de destino.",
+   "No afirmar que Meta o Facebook 'recibio la visita': vi cargar fbevents.js y la config del pixel y se escribio _fbp, pero no observe ninguna peticion a www.facebook.com/tr. Lo unico con envio observado es Google Analytics (peticiones g/collect page_view).",
+   "'Sin aviso' vale solo para lo que vi: portada, 1280x800, a los 11 s, tras scroll y en captura de pagina completa, mas ausencia de plugin de consentimiento en el HTML. No revise otras rutas ni vista movil. Decir 'no vi ningun aviso de cookies en la portada' y no 'el sitio no tiene aviso en ninguna parte'.",
+   "Ausencia de enlace a politica de privacidad o cookies: lo busque por texto y href en los enlaces de la portada (menu y pie) y no hay ninguno. Es un hecho de la portada, no de todo el sitio; no extenderlo.",
+   "No afirmar lo que la ley 'exige' ni que haya incumplimiento legal: es criterio del remitente.",
+   "Las cookies son de medicion/publicidad; no afirmar 'rastreo de personas' ni identificacion de usuarios, solo que se guardaron antes de interactuar.",
+   "Los vencimientos (~400 dias _ga, ~90 dias _fbp) son lo que escribio el navegador en mi corrida; no es necesario citarlos en el correo.",
+   "ALERTA DE IDENTIDAD (leve): propiedadescima.com redirige con 301 a inmocimapropiedades.cl. La marca coincide (Cima Propiedades / INMOCIMA Propiedades, reseñas a nombre de Cima), así que parece la misma empresa, pero el sitio que el visitante ve y donde se guardan las cookies es inmocimapropiedades.cl. El correo no debe decir que las cookies se guardan en propiedadescima.com.",
+   "El hallazgo se midió desde una sola IP y con configuración regional es-CL. No sé si el sitio muestra aviso distinto en otro país o dispositivo. Dos capturas de la portada y el análisis del DOM y del HTML no muestran ninguno.",
+   "Solo revisé la portada. No afirmar que el sitio no tiene política de privacidad en ninguna parte; solo que en la portada no hay enlace ni texto de privacidad, política o cookies. Tampoco afirmar que no tiene 'aviso legal' u otras páginas.",
+   "No afirmar que Meta/Facebook recibió la visita: vi la carga de fbevents.js y la inicialización del píxel con PageView, pero no observé una solicitud de envío a facebook.com/tr. Lo comprobado de _fbp es que la cookie quedó guardada.",
+   "Sobre Google Analytics, lo que vi fue envío a google-analytics.com/g/collect en mi corrida. El motor pide envío observado en ambas corridas para decir que un proveedor 'recibió la visita'. Mejor limitarse a 'el navegador guardó estas cookies'.",
+   "No decir lo que la ley 'exige' ni calificar el hecho como incumplimiento. Es un hecho técnico observado, y lo que implica depende del criterio del remitente.",
+   "Las cookies _ga y _fbp son de medición y publicidad, no funcionales. Que estén escritas antes de cualquier interacción es lo observado, pero no sé si el sitio las considera 'consentidas' por otro medio no visible."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   false,
+   false
+  ],
+  "cookies": [
+   [
+    "_ga_ZR07YY1F68",
+    "_ga",
+    "_ga_5CH92BLCPN",
+    "_fbp"
+   ],
+   [
+    "_ga_ZR07YY1F68",
+    "_ga",
+    "_ga_5CH92BLCPN",
+    "_fbp"
+   ]
+  ]
+ },
+ {
+  "id": "R62",
+  "dominio": "corredoresintegrados.cl",
+  "oferta": "C1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "Al abrir corredoresintegrados.cl en un navegador nuevo, sin aceptar ni tocar nada, a los 11 segundos ya habia 9 cookies de medicion y publicidad guardadas en el dominio del sitio: _ga, _gid, _gat, _ga_0Q2JL4S2BT, _ga_9NQ624P4CD (Google Analytics), _gcl_au (Google Ads), _fbp (Meta/Facebook), _clck y _clsk (Microsoft Clarity). Tambien aparecieron cookies de terceros como IDE (doubleclick.net) y MUID (bing.com / clarity.ms). En mis capturas de escritorio (portada, scroll hasta el pie y de vuelta arriba) no se ve ningun aviso o banner de cookies; lo unico que aparece es el chat de ventas. El pie de la portada no tiene enlace a politica de privacidad ni de cookies. El resultado fue el mismo en la corrida del motor y en la mia.",
+   "Hechos comprobables: (1) al abrir https://corredoresintegrados.cl/ sin aceptar ni tocar nada, el navegador guardó en el dominio del sitio las cookies _ga, _gid, _gat, _ga_0Q2JL4S2BT, _ga_9NQ624P4CD (Google Analytics), _gcl_au (Google Ads), _fbp (Meta) y _clck, _clsk (Microsoft Clarity), ya a los 11 s y antes de cualquier clic o scroll. (2) En la portada y en el pie no se ve ningún aviso o banner de cookies. (3) En el código de la portada, el Meta Pixel (ID 240588316748307), Google Analytics (UA-42073854-1) y Microsoft Clarity (nbiw4c71bk) están pegados directo en el head y se ejecutan al cargar, sin ningún bloque que espere consentimiento. (4) En los enlaces de la portada y del pie (menú, Inicio, Quiénes somos, Contacto, Confíanos tu propiedad, Intranet, redes, \"Desarrollado por Convecta\") no hay ninguno cuyo texto o URL mencione privacidad, política, términos o datos personales; esto es un dato de la portada, no de todo el sitio."
+  ],
+  "advertencias": [
+   "Decir 'no vi un aviso de cookies en la portada (escritorio 1280x800)' es un hecho; decir 'el sitio no tiene aviso' o 'incumple la ley' no lo es. No lo probe en movil ni en otras paginas, y no hice clic en nada.",
+   "No afirmar que Meta/Facebook 'recibio la visita': el script fbevents.js cargo y escribio _fbp, pero en mi lista de solicitudes no aparecio una llamada a facebook.com/tr. Solo hay cookie escrita, no envio observado.",
+   "Sobre envio a proveedores, lo observado en mi corrida fue Google Analytics (analytics.js, doubleclick g/collect), Google Ads/DoubleClick (ccm/s/collect) y Microsoft Clarity (o.clarity.ms/collect, c.clarity.ms) y Bing (c.bing.com/c.gif); las reglas del motor limitan a Google Ads, Google Analytics y Clarity, y repeti solo una visita.",
+   "El chat de Cliengo que se abre solo y el boton 'Chatea con nosotros' NO son un aviso de cookies; no confundirlos si el prospecto dice 'tenemos un aviso'.",
+   "Hay otras cookies del propio sitio que no estan en el hallazgo y no deben citarse como rastreo sin mas: ldkRefererTracking (de proposito no confirmado, parece de seguimiento de referer), ASP.NET_SessionId (sesion, funcional) y userHasInteracted (chat, funcional).",
+   "Las cookies de terceros (IDE, MUID, CLID, ANONCHK, SM, MR, SRM_B) aparecieron en mi contexto de Playwright; en un navegador real con bloqueo de terceros pueden no guardarse. Para el correo usar las 9 cookies del dominio propio.",
+   "No citar lo que la ley 'exige' ni el numero de cookies como infraccion; es una observacion tecnica, el criterio legal depende de quien lo evalua.",
+   "Si el hallazgo se usa para un correo comercial, el sitio es una red de corredoras de propiedades; en la pagina de inicio no figura enlace a politica de privacidad, pero esa es otra oferta (F1/F9) y no la verifique en profundidad.",
+   "Sí hay una pieza visible en pantalla, pero NO es un aviso de cookies: un chat de Cliengo ('Chat de ventas') abierto por defecto y un botón flotante de WhatsApp. No describirlo como aviso de privacidad.",
+   "Si el motor o el correo dicen 'el sitio no tiene aviso de cookies', está respaldado por mis capturas (A, 11 s, y B, tras scroll) y por las del motor (r1-A, r1-B), pero conviene redactarlo como 'no vi ningún aviso al abrir la portada' y no como afirmación absoluta sobre todo el sitio.",
+   "No afirmar que Meta (Facebook) recibió la visita: en mi medición solo se cargó el script desde connect.facebook.net y no vi ninguna petición a facebook.com/tr; solo se escribió la cookie _fbp. Sí hubo peticiones observadas a Google Analytics (google-analytics.com, analytics.google.com), Google Ads/DoubleClick y Microsoft Clarity (clarity.ms), pero para decir 'recibió la visita' se necesita envío observado en ambas corridas, como indica el propio motor.",
+   "No decir lo que 'la ley exige' ni que incumplen la Ley 19.628 o la 21.719: es criterio jurídico, no un hecho medido.",
+   "Medición desde una IP fuera de Chile (cloud); un aviso condicionado por geolocalización no puede descartarse al 100 %, aunque el HTML y el script de Cliengo no contienen ningún código de consentimiento ni de banner, y el motor vio lo mismo.",
+   "_gat es una cookie auxiliar de Google Analytics (limitación de peticiones), y las 'ldkRefererTracking' y 'userHasInteracted' son del chat Cliengo: no incluirlas en el listado de rastreo del correo. ASP.NET_SessionId es de sesión y no cuenta.",
+   "El enlace de 'Linkedin' del pie apunta a una URL de administración (linkedin.com/company/33251973/admin/dashboard/), un detalle ajeno a este hallazgo; no mencionarlo como parte de él.",
+   "Empresa real e identidad correcta: red inmobiliaria 'Corredores Integrados S.A', oficina coordinadora en Américo Vespucio Sur 306, Las Condes, correo coor@corredoresintegrados.cl. Sitio hecho por Convecta (posible interlocutor técnico)."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   false,
+   false
+  ],
+  "cookies": [
+   [
+    "_gid",
+    "_gat",
+    "_fbp",
+    "_clck",
+    "_clsk",
+    "_ga",
+    "_gcl_au",
+    "_ga_0Q2JL4S2BT",
+    "_ga_9NQ624P4CD",
+    "IDE",
+    "MUID",
+    "CLID",
+    "ANONCHK",
+    "SM",
+    "MR",
+    "SRM_B"
+   ],
+   [
+    "_gid",
+    "_gat",
+    "_fbp",
+    "_clck",
+    "_clsk",
+    "_ga",
+    "_gcl_au",
+    "_ga_0Q2JL4S2BT",
+    "_ga_9NQ624P4CD"
+   ]
+  ]
+ },
+ {
+  "id": "R68",
+  "dominio": "urbac.cl",
+  "oferta": "C1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "Al abrir urbac.cl en un navegador nuevo, sin aceptar ni tocar nada, a los 11 segundos ya estaban guardadas en el navegador las cookies _ga, _gid, _gat_UA-102700061-1, _ga_L7M7BRHW68 y _gcl_au (dominio .urbac.cl). En la portada, arriba, al bajar y en el pie, no apareció ningún aviso ni banner de cookies. Las cookies _ga, _gid y _gat son de Google Analytics y _gcl_au es de Google (conversiones/publicidad). El sitio carga Google Tag Manager (GTM-PMGHMFP) y Google Analytics (G-L7M7BRHW68, además de una propiedad antigua UA-102700061-1). Medido el 17-oct-2026 en una visita limpia desde Chromium.",
+   "Al abrir urbac.cl por primera vez y sin hacer clic ni aceptar nada, el navegador guardó estas cookies de medición/publicidad de Google: _ga, _gid, _gat_UA-102700061-1, _ga_L7M7BRHW68 y _gcl_au (dominio .urbac.cl). Esto se vio a los 11 segundos de cargar la portada, antes de cualquier interacción. En la portada no se ve ningún aviso o banner de cookies (ni arriba ni al pie), y el pie solo muestra el copyright 2023 y los datos de contacto, sin enlace a política de privacidad. Observado en una carga desde un navegador limpio con configuración regional es-CL; el motor lo registró igual en sus capturas."
+  ],
+  "advertencias": [
+   "banner_visible=false: en mis capturas de la portada (arriba, scroll y pie) no se ve aviso de cookies. Solo revisé la portada en escritorio (1280x800), no otras páginas ni móvil. Decir 'la portada no mostró aviso' y no 'el sitio no tiene aviso'.",
+   "No afirmar que Google 'recibió la visita' o que hubo envío de datos: yo vi pedidos a dominios de Google en mi corrida, pero el criterio del motor exige verlo en ambas corridas. Limitarse a lo que quedó guardado en el navegador.",
+   "No afirmar qué 'exige' la ley ni que sea ilegal. Describir el hecho: cookies escritas antes de cualquier acción y sin aviso visible.",
+   "ASP.NET_SessionId es cookie de sesión y NO debe listarse como rastreo. _gat_UA-102700061-1 es una cookie auxiliar de Analytics (limita la frecuencia de pedidos) de una propiedad Universal Analytics antigua. Listarla es exacto, pero no presentarla como la medición principal.",
+   "No afirmar que tengan o no política de privacidad: no la busqué (el texto de la portada no menciona privacidad, política ni datos personales, pero no verifiqué otras rutas).",
+   "Medí una sola visita limpia desde IP de datacenter fuera de Chile. Los cookies de Google pudieron variar con la región; en el pedido de GA vi dma=0 y npa=0 (sin señal de consentimiento denegado). No interpretar parámetros de consent mode.",
+   "Banner no visto: la afirmación 'sin aviso' se sostiene en mis capturas (A, tras scroll y página completa) y en las del motor (r1-A, r1-B), pero decir 'no tiene aviso' es un hecho de lo que se ve, no de que no exista en otro país, dispositivo o configuración. Redactar como 'no vi aviso de cookies al abrir la portada'.",
+   "No afirmar que Google 'recibió la visita' o 'recibió datos' como hecho legal: vi las peticiones a analytics.google.com y google-analytics.com en MI corrida (una sola), pero la instrucción del motor exige envío observado en ambas corridas; solo afirmar las cookies guardadas.",
+   "No afirmar lo que 'exige' la ley chilena ni que esto sea una infracción; es criterio del remitente. Chile no tiene hoy una norma de cookies equivalente a la europea con banner obligatorio de forma indiscutible (la nueva Ley 21.719 aplica a tratamiento de datos personales, y si estas cookies son datos personales es interpretación).",
+   "_gat_UA-102700061-1 es una cookie de Universal Analytics (limitación de tasa); el id UA- es de una propiedad antigua. Se puede nombrar como cookie guardada, sin afirmar que esa propiedad esté activa hoy.",
+   "ASP.NET_SessionId también se guarda pero es de sesión/funcional: no incluirla entre las cookies de rastreo.",
+   "El sitio tiene señales de ser antiguo (copyright 2023, ids UA-); no afirmar nada sobre mantenimiento ni intención de la empresa.",
+   "No concluir que existe un banner cargado tardíamente por GTM: no lo vi en 11 s + 9 s de scroll, pero no se midió más tiempo."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   false,
+   false
+  ],
+  "cookies": [
+   [
+    "_ga_L7M7BRHW68",
+    "_gcl_au",
+    "_ga",
+    "_gid",
+    "_gat_UA-102700061-1"
+   ],
+   [
+    "_ga_L7M7BRHW68",
+    "_gcl_au",
+    "_ga",
+    "_gid",
+    "_gat_UA-102700061-1"
+   ]
+  ]
+ },
+ {
+  "id": "R69",
+  "dominio": "goycooleapropiedades.cl",
+  "oferta": "C1",
+  "final": "confirmado",
+  "vende_proteccion_datos": false,
+  "veredictos": [
+   "confirma",
+   "confirma"
+  ],
+  "hechos": [
+   "Al abrir la portada sin hacer clic ni aceptar nada, el navegador guardó en 11 s las cookies _gcl_au, _ga, _ga_C14F0ZR28E y _fbp (Google Ads/Analytics y Meta), además de una de sesión de ASP.NET. En esa visita no apareció ningún aviso ni banner de cookies, ni al cargar ni después de mover el mouse y bajar por la página. La medición se repitió de forma independiente y dio las mismas cuatro cookies. Se observó envío de datos de la visita a Google Analytics (propiedad G-C14F0ZR28E) vía GTM-KRTDN5ZP. El pixel de Meta (id 1137832354112106) se carga y escribe _fbp.",
+   "Al abrir goycooleapropiedades.cl desde cero, sin aceptar ni tocar nada, el navegador guardó estas cookies de medición y publicidad: _gcl_au (Google Ads, 90 días), _ga y _ga_C14F0ZR28E (Google Analytics, 400 días) y _fbp (Meta, 90 días). Ya estaban a los 11 segundos, antes de cualquier clic o scroll. En la portada no se ve ningún aviso o banner de cookies, y el HTML no menciona cookies ni política de privacidad; el pie solo trae teléfonos, correo, dirección, redes sociales y el crédito de desarrollo. El sitio carga Google Tag Manager (GTM-KRTDN5ZP), Google Analytics 4 (G-C14F0ZR28E) y un píxel de Meta (ID 1137832354112106). Observé envío de page_view a analytics.google.com/g/collect antes de cualquier interacción."
+  ],
+  "advertencias": [
+   "No afirmar que Meta o Facebook recibió la visita: solo vi que se carga fbevents.js y la configuración del pixel y que se escribe _fbp; no observé ninguna petición a facebook.com/tr en mi visita. Lo único con envío observado es Google (analytics.google.com/g/collect y doubleclick).",
+   "Mi visita fue una sola y no puedo separar en qué tramo (antes o después de mover el mouse) salió cada petición de red. Lo comprobado antes de interactuar son las cookies guardadas a los 11 s.",
+   "Solo puede decirse que no se vio aviso de cookies en la portada y en la visita medida. No afirmar que el sitio no tiene política de privacidad en ninguna otra página (no visité otras rutas), ni lo que la ley exige.",
+   "No incluir ASP.NET_SessionId entre las cookies de rastreo: es funcional.",
+   "No afirmar que las cookies sean 'ilegales'. Es un hecho técnico observable: se escriben antes de cualquier consentimiento y no hay aviso visible.",
+   "No decir nada sobre el modo de consentimiento de Google (Consent Mode): no lo verifiqué.",
+   "No afirmar que Meta 'recibió la visita': vi cargar fbevents.js y signals/config del píxel y una llamada a v7.deviatetracking.com/capi con PageView, pero no una petición a facebook.com/tr. Solo hay envío observado de Google Analytics (page_view y search, ambos antes de interactuar).",
+   "No decir que la ley 'exige' un aviso o consentimiento, ni que el sitio 'incumple' algo. Solo describir lo observado: cookies escritas antes de cualquier interacción y ausencia de aviso visible.",
+   "'Sin aviso' vale para lo que se ve en una carga desde un servidor en la nube (IP de datacenter, Chromium headless, a 1280x800). No descarto que GTM muestre un aviso solo a ciertos países o dispositivos. Tampoco probé móvil, y el modal oculto #modalAvisos está vacío.",
+   "ASP.NET_SessionId es funcional y no debe mencionarse como rastreo.",
+   "Pasó algo que el correo no debe mencionar: la petición a deviatetracking.com incluye en su URL un token de API de Meta (fbToken) y un correo interno (dhiriart@goycooleapropiedades.cl). No citar ni reproducir ninguno de los dos en el correo, y tampoco inferir nada sobre ellos.",
+   "El sitio sí muestra rutas de contacto (menú 'Contacto', teléfonos, correo, WhatsApp flotante). El hallazgo no trata de contacto ni de formularios, así que no mezclar ofertas.",
+   "Sobre el pedido del usuario: esto verifica un hecho técnico observable, no cambia el criterio de que el correo se base solo en lo confirmado aquí."
+  ],
+  "motivos": [],
+  "vende_nota": [],
+  "banner": [
+   false,
+   false
+  ],
+  "cookies": [
+   [
+    "_gcl_au",
+    "_ga",
+    "_ga_C14F0ZR28E",
+    "_fbp",
+    "ASP.NET_SessionId (funcional)"
+   ],
+   [
+    "_gcl_au",
+    "_ga",
+    "_ga_C14F0ZR28E",
+    "_fbp"
+   ]
+  ]
+ }
+]

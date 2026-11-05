@@ -1,0 +1,534 @@
+{
+  "id": "R",
+  "dominio": "hoteloceanic.cl",
+  "motor": "v0",
+  "cuando": "2026-11-04T17:31:30.528Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "sin-gancho",
+  "url": "https://hoteloceanic.cl/",
+  "hallazgo": null,
+  "ruta_interna": [
+    {
+      "id": "C5",
+      "nombre": "La ruta de contacto apunta a algo que no responde",
+      "linea": "Desarrollo Web",
+      "estado": "sospecha",
+      "quien_comprueba": "el dueño o quien administra el sitio",
+      "donde_mirar": "El formulario envía a https://hoteloceanic.cl/contact, que al pedirlo responde HTTP 404. Probar el envío con un dato de prueba propio.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "El dueño ve un formulario o un correo que parecen normales."
+        },
+        "2": {
+          "v": "si",
+          "razon": "Cada consulta enviada por ahí se pierde."
+        },
+        "3": {
+          "v": "medias",
+          "razon": "Hay que enviar el formulario para probarlo; el motor nunca lo hace."
+        },
+        "4": {
+          "v": "medias",
+          "razon": "La detección estructural es barata; distinguir rotura real de un destino que solo acepta POST exige criterio."
+        }
+      },
+      "afirmable": "El destino del formulario (https://hoteloceanic.cl/contact) responde 404 al pedirlo.",
+      "no_afirmable": [
+        "que \"el formulario no funciona\" (un GET no es un envío; el motor nunca envía)",
+        "cuántas consultas se perdieron"
+      ],
+      "advertencias": [
+        "Tope: la rotura de formulario nunca pasa de sospecha sin probar el envío."
+      ],
+      "propuesta": {
+        "en_castellano": "SIN REDACTAR: todavía es una sospecha, no se usa en un correo.",
+        "problema_tecnico": "El destino del formulario (https://hoteloceanic.cl/contact) responde 404 al pedirlo.",
+        "donde_mirar": "El formulario envía a https://hoteloceanic.cl/contact, que al pedirlo responde HTTP 404. Probar el envío con un dato de prueba propio.",
+        "se_vende": {
+          "linea": "Desarrollo Web",
+          "producto": "Desarrollo Web a medida",
+          "alcance": "Corregir el destino del formulario o del correo y probarlo de punta a punta.",
+          "vehiculo_publicado": "Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Desarrollo Web a medida, página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "fuerte",
+        "frase_de_arreglo": "Eso lo arreglo yo y lo pruebo de punta a punta, para que cada consulta llegue.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [],
+  "capa1": {
+    "consecuencia": [
+      "sin_ruta_de_contacto_visible"
+    ],
+    "higiene": []
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [],
+      "ga4": [],
+      "ua": [],
+      "ads": [
+        "AW-18292009571"
+      ],
+      "meta_pixel": false,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "cloudflare",
+      "cloudflare": true,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": true,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "VideoObject",
+        "Organization",
+        "WebSite"
+      ],
+      "org": [
+        {
+          "name": "HOTEL OCEANIC"
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 15,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 15,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 4827406,
+      "al_abrir_bytes": 3358135,
+      "n_peticiones": 319,
+      "mas_pesados": [
+        {
+          "url": "https://hoteloceanic.cl/cdn/shop/files/DJI_0984_1293de8f-0f09-4479-8ad2-3cb760ef8a85.jpg?v=1742340863&width=1500",
+          "bytes": 501160
+        },
+        {
+          "url": "https://hoteloceanic.cl/cdn/shopifycloud/checkout-web/assets/c1/6ec9a0fa.Cw43zij1.js",
+          "bytes": 367962
+        },
+        {
+          "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0712.jpg?v=1740053138&width=1500",
+          "bytes": 324046
+        },
+        {
+          "url": "https://hoteloceanic.cl/cdn/shop/files/IMG_0710_1258ce01-35f3-4839-bbcb-f36899dec9e2.jpg?v=1742340865&width=1500",
+          "bytes": 188833
+        }
+      ]
+    },
+    {
+      "total_bytes": 1974392,
+      "al_abrir_bytes": 1974392,
+      "n_peticiones": 13,
+      "mas_pesados": [
+        {
+          "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/2577496654:1793808932:yNO-qGnRM3KxaqIVI7pvv_125SuiaBL1XIpKKM62uUY/a5555b113d4aabe9/CneZatUk8",
+          "bytes": 1512799
+        },
+        {
+          "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/av0/rch/iiz8y/0x4AAAAAAFqx6qoC6VTjLWSW/auto/fbE/new/normal?lang=auto",
+          "bytes": 221737
+        },
+        {
+          "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/2577496654:1793808932:yNO-qGnRM3KxaqIVI7pvv_125SuiaBL1XIpKKM62uUY/a5555b113d4aabe9/CneZatUk8",
+          "bytes": 206456
+        },
+        {
+          "url": "https://challenges.cloudflare.com/turnstile/v0/g/5c2e6b612edd/api.js",
+          "bytes": 28245
+        }
+      ]
+    },
+    {
+      "total_bytes": 10140,
+      "al_abrir_bytes": 10140,
+      "n_peticiones": 1,
+      "mas_pesados": [
+        {
+          "url": "https://hoteloceanic.cl/",
+          "bytes": 10140
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [
+        "_ga_FE3K1C47QQ",
+        "_ga",
+        "_gcl_au"
+      ],
+      "carga_en_ambas": [],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": null,
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 158656
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 158656
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 158656,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [
+          {
+            "action": "https://hoteloceanic.cl/contact",
+            "estado": "roto-404",
+            "status": 404
+          }
+        ],
+        "mails": [
+          {
+            "correo_dominio": "hoteloceanic.cl",
+            "dominio": "hoteloceanic.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "correo.com",
+            "dominio": "correo.com",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [
+          {
+            "action": "https://hoteloceanic.cl/contact",
+            "estado": "roto-404",
+            "status": 404
+          }
+        ],
+        "mails": [
+          {
+            "correo_dominio": "hoteloceanic.cl",
+            "dominio": "hoteloceanic.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          },
+          {
+            "correo_dominio": "correo.com",
+            "dominio": "correo.com",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [
+      {
+        "action": "https://hoteloceanic.cl/contact",
+        "estado": "roto-404",
+        "status": 404
+      }
+    ],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "HOTEL OCEANIC"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "HOTEL OCEANIC"
+      },
+      {
+        "fuente": "title",
+        "valor": "Hotel Oceanic"
+      },
+      {
+        "fuente": "title",
+        "valor": "Promoción hasta el 30 de Octubre"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 11,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "url": "https://hmycia.com/",
+  "cuando": "2026-10-19T18:14:04.920Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "chrome-error://chromewebdata/",
+      "titulo": "",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 0,
+      "muestra": "",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 0,
+        "palabras": 0
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "chrome-error://chromewebdata/",
+      "titulo": "",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 0,
+      "muestra": "",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 0,
+        "palabras": 0
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://hmycia.com/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "http://www.techlex.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.techlex.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://hmycia.com/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://techlex.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 1050,
+    "al_abrir_bytes": 1050,
+    "n_peticiones": 3,
+    "mas_pesados": [
+      {
+        "url": "https://hmycia.com/",
+        "bytes": 519
+      },
+      {
+        "url": "https://hmycia.com/favicon.ico",
+        "bytes": 518
+      },
+      {
+        "url": "https://techlex.cl/",
+        "bytes": 13
+      }
+    ]
+  },
+  "html_len": 39
+}

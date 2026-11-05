@@ -1,0 +1,438 @@
+{
+  "id": "R",
+  "dominio": "cela.cl",
+  "motor": "v0",
+  "cuando": "2026-11-04T17:31:30.528Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "sin-hallazgo",
+  "url": "https://www.cela.cl/",
+  "hallazgo": null,
+  "ruta_interna": [],
+  "ofertas_adicionales": [],
+  "capa1": {
+    "consecuencia": [],
+    "higiene": []
+  },
+  "notas": [
+    "La analitica esta instalada pero no se disparo en la sesion (probable consentimiento previo): sus eventos no se pueden ver sin clics."
+  ],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 1,
+      "mailto": [],
+      "whatsapp": [
+        "https://api.whatsapp.com/send?phone=56972431102&text=Hola,%20estoy%20interesado%20en%20los%20servicios%20de%20Cl%C3%ADnica%20CELA%20by%20Espa%C3%A7olaser,%20%C2%BFme%20pueden%20ayudar?",
+        "https://api.whatsapp.com/send?phone=56972431102&text=Hola,%20estoy%20interesado%20en%20los%20servicios%20de%20Cl%C3%ADnica%20CELA%20by%20Espa%C3%A7olaser,%20%C2%BFme%20pueden%20ayudar?",
+        "https://wa.me/56972431102?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20depilaci%C3%B3n%20l%C3%A1ser"
+      ]
+    },
+    "analitica": {
+      "gtm": [
+        "GTM-PLMPL7T"
+      ],
+      "ga4": [
+        "G-BEB0C0PMTV"
+      ],
+      "ua": [],
+      "ads": [
+        "AW-938158062"
+      ],
+      "meta_pixel": false,
+      "clarity": true,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "cloudflare",
+      "cloudflare": true,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": true,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "Organization",
+        "WebSite"
+      ],
+      "org": [
+        {
+          "name": "Clínica CELA"
+        }
+      ]
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 14.4,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 14.4,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 9823,
+      "al_abrir_bytes": 9823,
+      "n_peticiones": 1,
+      "mas_pesados": [
+        {
+          "url": "https://www.cela.cl/",
+          "bytes": 9823
+        }
+      ]
+    },
+    {
+      "total_bytes": 9832,
+      "al_abrir_bytes": 9832,
+      "n_peticiones": 1,
+      "mas_pesados": [
+        {
+          "url": "https://www.cela.cl/",
+          "bytes": 9832
+        }
+      ]
+    },
+    {
+      "total_bytes": 4344900,
+      "al_abrir_bytes": 3817195,
+      "n_peticiones": 422,
+      "mas_pesados": [
+        {
+          "url": "https://www.cela.cl/cdn/shopifycloud/checkout-web/assets/c1/6ec9a0fa.Cw43zij1.js",
+          "bytes": 367947
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-BEB0C0PMTV&cx=c&gtm=4e6b30",
+          "bytes": 203216
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=G-BEB0C0PMTV",
+          "bytes": 202849
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtm.js?id=GTM-PLMPL7T",
+          "bytes": 191649
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [
+        "_gcl_au",
+        "_ga_BEB0C0PMTV",
+        "_ga_8M1L53V84Y",
+        "_ga_XM1ZJZDWWS",
+        "_ga",
+        "_gid",
+        "_gat_UA-35361339-1",
+        "_clck",
+        "_tt_enable_cookie",
+        "_ttp",
+        "_fbp",
+        "_pin_unauth",
+        "_clsk"
+      ],
+      "carga_en_ambas": [],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        [
+          "G111"
+        ]
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": null,
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 491780
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 491780
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 493462,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 491780,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": []
+      },
+      {
+        "forms": [],
+        "mails": []
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Clínica CELA"
+      },
+      {
+        "fuente": "JSON-LD name",
+        "valor": "Clínica CELA"
+      },
+      {
+        "fuente": "title",
+        "valor": "Depilación Láser Alexandrita y Nd Yag"
+      },
+      {
+        "fuente": "title",
+        "valor": "Clínica CELA"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 30,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

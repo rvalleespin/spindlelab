@@ -1,0 +1,13 @@
+{
+  "id": "H28",
+  "dominio": "harenua.com",
+  "motor": "v0",
+  "cuando": "2026-10-30T14:08:31.360Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "descartado:excluido",
+  "detalle": {
+    "tipo": "tope-alcanzado",
+    "motivo": "3 correos reales en 3 hilos distintos (25-sep, 30-sep, 5-oct), confirmados uno por uno por el copiloto el 14-oct. El hilo partido por el bug de hilos hacia que la cola lo siguiera ofreciendo",
+    "fecha": "2026-10-14"
+  }
+}

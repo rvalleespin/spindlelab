@@ -1,0 +1,4197 @@
+{
+  "url": "https://area52.cl/",
+  "cuando": "2026-10-29T16:43:11.664Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "area52.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "area52.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "area52.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "area52.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".area52.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_ga_8DX9M9BJG6",
+        "dominio": ".area52.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".area52.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".area52.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://area52.cl/",
+      "titulo": "Area52.cl | Juegos de mesa, Magic, TCG y Rol en Santiago – Area 52",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/cart",
+          "accion_abs": "https://area52.cl/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://area52.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/contact#contact_form",
+          "accion_abs": "https://area52.cl/contact#contact_form",
+          "metodo": "post",
+          "campos": 1,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir directamente al contenido"
+        },
+        {
+          "h": "/collections/all",
+          "t": "Seguir comprando"
+        },
+        {
+          "h": "https://area52.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Inicia sesión"
+        },
+        {
+          "h": "/policies/shipping-policy",
+          "t": "envío"
+        },
+        {
+          "h": "/collections/all",
+          "t": "Todos los productos"
+        },
+        {
+          "h": "/collections/juegos-de-mesa",
+          "t": "Juegos de mesa"
+        },
+        {
+          "h": "/collections/party-games",
+          "t": "Party Games"
+        },
+        {
+          "h": "/collections/en-pareja",
+          "t": "En Pareja"
+        },
+        {
+          "h": "/collections/5-o-mas-jugadores",
+          "t": "5 o más jugadores"
+        },
+        {
+          "h": "/collections/para-toda-la-familia",
+          "t": "Para toda la Familia"
+        },
+        {
+          "h": "/collections/menos-de-20-000",
+          "t": "Menos de $20.000"
+        },
+        {
+          "h": "/collections/rol",
+          "t": "Juegos de Rol"
+        },
+        {
+          "h": "/collections/preventas",
+          "t": "🚨 Preventas"
+        },
+        {
+          "h": "/collections/eventos",
+          "t": "🎫 Eventos"
+        },
+        {
+          "h": "/collections/magic-the-gathering",
+          "t": "Magic: The Gathering"
+        },
+        {
+          "h": "/collections/pokemon-tcg",
+          "t": "Pokémon"
+        },
+        {
+          "h": "/collections/riftbound-tcg",
+          "t": "Riftbound"
+        },
+        {
+          "h": "/collections/tcg",
+          "t": "Todos"
+        },
+        {
+          "h": "/pages/liga-budget-commander",
+          "t": "Magic: Liga Budget Commander"
+        },
+        {
+          "h": "/pages/%EF%B8%8F-danyeon",
+          "t": "🧙‍♂️ Rol: Sala Danyeon"
+        },
+        {
+          "h": "/products/giftcard-area52",
+          "t": "🎁 Giftcard"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "🛸 Nosotros"
+        },
+        {
+          "h": "/blogs/noticias",
+          "t": "👽 Noticias"
+        },
+        {
+          "h": "https://area52.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "https://www.facebook.com/area52.cl/",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/area52.cl/",
+          "t": "@Area52.cl"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/collections/all",
+          "t": "Todos los productos"
+        },
+        {
+          "h": "/collections/juegos-de-mesa",
+          "t": "Juegos de mesa"
+        },
+        {
+          "h": "/collections/party-games",
+          "t": "Party Games"
+        },
+        {
+          "h": "/collections/en-pareja",
+          "t": "En Pareja"
+        },
+        {
+          "h": "/collections/5-o-mas-jugadores",
+          "t": "5 o más jugadores"
+        },
+        {
+          "h": "/collections/para-toda-la-familia",
+          "t": "Para toda la Familia"
+        },
+        {
+          "h": "/collections/menos-de-20-000",
+          "t": "Menos de $20.000"
+        },
+        {
+          "h": "/collections/rol",
+          "t": "Juegos de Rol"
+        },
+        {
+          "h": "/collections/preventas",
+          "t": "🚨 Preventas"
+        },
+        {
+          "h": "/collections/eventos",
+          "t": "🎫 Eventos"
+        },
+        {
+          "h": "/collections/magic-the-gathering",
+          "t": "Magic: The Gathering"
+        },
+        {
+          "h": "/collections/pokemon-tcg",
+          "t": "Pokémon"
+        },
+        {
+          "h": "/collections/riftbound-tcg",
+          "t": "Riftbound"
+        },
+        {
+          "h": "/collections/tcg",
+          "t": "Todos"
+        },
+        {
+          "h": "/pages/liga-budget-commander",
+          "t": "Magic: Liga Budget Commander"
+        },
+        {
+          "h": "/pages/%EF%B8%8F-danyeon",
+          "t": "🧙‍♂️ Rol: Sala Danyeon"
+        },
+        {
+          "h": "/products/giftcard-area52",
+          "t": "🎁 Giftcard"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "🛸 Nosotros"
+        },
+        {
+          "h": "/blogs/noticias",
+          "t": "👽 Noticias"
+        },
+        {
+          "h": "https://area52.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/cart",
+          "t": "Carrito"
+        },
+        {
+          "h": "/collections/pokemon-delta-reign-preventa",
+          "t": "Revisar los productos"
+        },
+        {
+          "h": "/collections/star-trek-preventa",
+          "t": "Revisar los productos"
+        },
+        {
+          "h": "https://area52.cl/pages/%EF%B8%8F-danyeon",
+          "t": "¡Reserva tu lugar!"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-torneo-commander-bracket-3-star-trek",
+          "t": "Inscripción — Magic: the gathering - Torneo commander Bracket 3 — Star trek"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-torneo-commander-bracket-3-star-trek",
+          "t": "Inscripción — Magic: the gathering - Torneo commander Bracket 3 — Star trek"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-academy-aprende-a-jugar-the-hobbit",
+          "t": "Inscripción — Magic: the gathering - Academy Aprende a jugar — The Hobbit"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-academy-aprende-a-jugar-the-hobbit",
+          "t": "Inscripción — Magic: the gathering - Academy Aprende a jugar — The Hobbit"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-torneo-commander-bracket-2-star-trek",
+          "t": "Inscripción — Magic: The gathering - Torneo commander bracket 2 — Star trek"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-torneo-commander-bracket-2-star-trek",
+          "t": "Inscripción — Magic: The gathering - Torneo commander bracket 2 — Star trek"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-gigante-de-dos-cabezas-commander-preconstruido-star-trek",
+          "t": "Inscripción — Magic: The gathering - Gigante de dos cabezas Commander preconstru"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-gigante-de-dos-cabezas-commander-preconstruido-star-trek",
+          "t": "Inscripción — Magic: The gathering - Gigante de dos cabezas Commander preconstru"
+        },
+        {
+          "h": "/collections/eventos",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-klingon-fury-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: Klingon Fury - Commander Deck (Español) [Prevent"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-klingon-fury-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: Klingon Fury - Commander Deck (Español) [Prevent"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-we-are-the-borg-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: We Are the Borg - Commander Deck (Español) [Prev"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-we-are-the-borg-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: We Are the Borg - Commander Deck (Español) [Prev"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-landing-party-commander-deck-ingles-preventa-copia-1",
+          "t": "Magic: The Gathering Star Trek: Landing Party - Commander Deck (Español) [Preven"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-landing-party-commander-deck-ingles-preventa-copia-1",
+          "t": "Magic: The Gathering Star Trek: Landing Party - Commander Deck (Español) [Preven"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-federation-fleet-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: Federation Fleet - Commander Deck (Español) [Pre"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-federation-fleet-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: Federation Fleet - Commander Deck (Español) [Pre"
+        },
+        {
+          "h": "/collections/preventas",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/products/altered-whispers-of-the-maze-pre-release-kit",
+          "t": "Altered: Susurros del Laberinto - Kit de Presentación (Español)"
+        },
+        {
+          "h": "/products/altered-whispers-of-the-maze-pre-release-kit",
+          "t": "Altered: Susurros del Laberinto - Kit de Presentación (Español)"
+        },
+        {
+          "h": "/products/magic-the-gathering-avatar-the-last-airbender-bundle-ingles-preventa",
+          "t": "Magic: The Gathering: Avatar: The Last Airbender - Bundle (Inglés)"
+        },
+        {
+          "h": "/products/magic-the-gathering-avatar-the-last-airbender-bundle-ingles-preventa",
+          "t": "Magic: The Gathering: Avatar: The Last Airbender - Bundle (Inglés)"
+        },
+        {
+          "h": "/products/criaturas-de-las-sombras",
+          "t": "Criaturas de las Sombras"
+        },
+        {
+          "h": "/products/criaturas-de-las-sombras",
+          "t": "Criaturas de las Sombras"
+        },
+        {
+          "h": "/products/mtg-final-fantasy-commander-decks-collectors-edition-revival-trance-en",
+          "t": "MTG Final Fantasy Commander Decks Collector's Edition: Revival Trance [EN]"
+        },
+        {
+          "h": "/products/mtg-final-fantasy-commander-decks-collectors-edition-revival-trance-en",
+          "t": "MTG Final Fantasy Commander Decks Collector's Edition: Revival Trance [EN]"
+        },
+        {
+          "h": "/collections/cyberday-2026",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/collections/pokemon-tcg",
+          "t": "Pokemon TCG"
+        },
+        {
+          "h": "/collections/pokemon-tcg",
+          "t": "Pokemon TCG"
+        },
+        {
+          "h": "/collections/party-games",
+          "t": "Party Games"
+        },
+        {
+          "h": "/collections/party-games",
+          "t": "Party Games"
+        },
+        {
+          "h": "/collections/en-pareja",
+          "t": "En Pareja"
+        },
+        {
+          "h": "/collections/en-pareja",
+          "t": "En Pareja"
+        },
+        {
+          "h": "/collections/tcg",
+          "t": "TCG"
+        },
+        {
+          "h": "/collections/tcg",
+          "t": "TCG"
+        },
+        {
+          "h": "/collections",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/collections/magic-the-gathering",
+          "t": "Ver productos"
+        },
+        {
+          "h": "https://chat.whatsapp.com/CVbmwLvrVaLGokdJbQj8CE",
+          "t": "¡Únete a nuestra comunidad!"
+        },
+        {
+          "h": "https://maps.app.goo.gl/aUEw3RrLuFxyRpEL7",
+          "t": "Santa Isabel 962, Providencia"
+        },
+        {
+          "h": "https://www.facebook.com/area52.cl/",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/area52.cl/",
+          "t": "@Area52.cl"
+        },
+        {
+          "h": "/",
+          "t": "Area 52"
+        },
+        {
+          "h": "https://es.shopify.com/?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore",
+          "t": "Tecnología de Shopify"
+        },
+        {
+          "h": "/policies/refund-policy",
+          "t": "Política de reembolso"
+        },
+        {
+          "h": "/policies/contact-information",
+          "t": "Información de contacto"
+        },
+        {
+          "h": "/policies/terms-of-service",
+          "t": "Términos del servicio"
+        },
+        {
+          "h": "/policies/subscription-policy",
+          "t": "Política de cancelación"
+        },
+        {
+          "h": "/policies/privacy-policy",
+          "t": "Política de privacidad"
+        },
+        {
+          "h": "/policies/shipping-policy",
+          "t": "Política de envío"
+        },
+        {
+          "h": "https://www.instagram.com/reel/De-P-MNgS58/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_mnUHFEl/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_ggLHARN/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_cwzHA-A/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJmiiMcn/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJwoHGcw/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJWwD8CX/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJMGDVbP/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/reel/DesCzMIOdtu/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/reel/DefmPJtAO0C/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/reel/De-P-MNgS58/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_mnUHFEl/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_ggLHARN/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_cwzHA-A/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJmiiMcn/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJwoHGcw/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJWwD8CX/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJMGDVbP/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/reel/DesCzMIOdtu/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/reel/DefmPJtAO0C/",
+          "t": "area52.cl"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://area52.cl/policies/refund-policy",
+          "t": "Política de reembolso"
+        },
+        {
+          "h": "https://area52.cl/policies/subscription-policy",
+          "t": "Política de cancelación"
+        },
+        {
+          "h": "https://area52.cl/policies/privacy-policy",
+          "t": "Política de privacidad"
+        },
+        {
+          "h": "https://area52.cl/policies/shipping-policy",
+          "t": "Política de envío"
+        }
+      ],
+      "largo_texto": 2645,
+      "muestra": "Ir directamente al contenido\n\nEnvíos a todo Chile · Retiro en tienda - Santa Isabel 962, Providencia\n\n🎲 Catálogo\n🚨 Preventas\n🎫 Eventos\n🃏 TCG\n🏆 Ligas\n🧙‍♂️ Rol: Sala Danyeon\n🎁 Giftcard\n🛸 Nosotros\n👽 Noticias\nIniciar sesión\nCarrito\nPreventa de Pokemon Delta Reign\n\nEncuentra todos los productos de la nueva edición aquí\n\nRevisar los productos\nEncuentra toda la preventa de Star Trek \n\nNo te quedes fuera y asegura tus mazos de la nueva edición\n\nRevisar los productos\nVive una aventura épica en n",
+      "cta_en_pantalla": [
+        {
+          "t": "carrito",
+          "h": "/cart"
+        },
+        {
+          "t": "¡reserva tu lugar!",
+          "h": "https://area52.cl/pages/%EF%B8%8F-danyeon"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 14,
+        "palabras": 405
+      }
+    },
+    "captura": "r1-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "localization",
+        "dominio": "area52.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_essential",
+        "dominio": "area52.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_analytics",
+        "dominio": "area52.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_shopify_marketing",
+        "dominio": "area52.cl",
+        "expira_dias": 365
+      },
+      {
+        "nombre": "_gcl_au",
+        "dominio": ".area52.cl",
+        "expira_dias": 90
+      },
+      {
+        "nombre": "_ga_8DX9M9BJG6",
+        "dominio": ".area52.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_ga",
+        "dominio": ".area52.cl",
+        "expira_dias": 400
+      },
+      {
+        "nombre": "_fbp",
+        "dominio": ".area52.cl",
+        "expira_dias": 90
+      }
+    ],
+    "dom": {
+      "url": "https://area52.cl/",
+      "titulo": "Area52.cl | Juegos de mesa, Magic, TCG y Rol en Santiago – Area 52",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/cart",
+          "accion_abs": "https://area52.cl/cart",
+          "metodo": "post",
+          "campos": 0,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://area52.cl/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/contact#contact_form",
+          "accion_abs": "https://area52.cl/contact#contact_form",
+          "metodo": "post",
+          "campos": 1,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "#MainContent",
+          "t": "Ir directamente al contenido"
+        },
+        {
+          "h": "/collections/all",
+          "t": "Seguir comprando"
+        },
+        {
+          "h": "https://area52.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Inicia sesión"
+        },
+        {
+          "h": "/policies/shipping-policy",
+          "t": "envío"
+        },
+        {
+          "h": "/collections/all",
+          "t": "Todos los productos"
+        },
+        {
+          "h": "/collections/juegos-de-mesa",
+          "t": "Juegos de mesa"
+        },
+        {
+          "h": "/collections/party-games",
+          "t": "Party Games"
+        },
+        {
+          "h": "/collections/en-pareja",
+          "t": "En Pareja"
+        },
+        {
+          "h": "/collections/5-o-mas-jugadores",
+          "t": "5 o más jugadores"
+        },
+        {
+          "h": "/collections/para-toda-la-familia",
+          "t": "Para toda la Familia"
+        },
+        {
+          "h": "/collections/menos-de-20-000",
+          "t": "Menos de $20.000"
+        },
+        {
+          "h": "/collections/rol",
+          "t": "Juegos de Rol"
+        },
+        {
+          "h": "/collections/preventas",
+          "t": "🚨 Preventas"
+        },
+        {
+          "h": "/collections/eventos",
+          "t": "🎫 Eventos"
+        },
+        {
+          "h": "/collections/magic-the-gathering",
+          "t": "Magic: The Gathering"
+        },
+        {
+          "h": "/collections/pokemon-tcg",
+          "t": "Pokémon"
+        },
+        {
+          "h": "/collections/riftbound-tcg",
+          "t": "Riftbound"
+        },
+        {
+          "h": "/collections/tcg",
+          "t": "Todos"
+        },
+        {
+          "h": "/pages/liga-budget-commander",
+          "t": "Magic: Liga Budget Commander"
+        },
+        {
+          "h": "/pages/%EF%B8%8F-danyeon",
+          "t": "🧙‍♂️ Rol: Sala Danyeon"
+        },
+        {
+          "h": "/products/giftcard-area52",
+          "t": "🎁 Giftcard"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "🛸 Nosotros"
+        },
+        {
+          "h": "/blogs/noticias",
+          "t": "👽 Noticias"
+        },
+        {
+          "h": "https://area52.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "https://www.facebook.com/area52.cl/",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/area52.cl/",
+          "t": "@Area52.cl"
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/collections/all",
+          "t": "Todos los productos"
+        },
+        {
+          "h": "/collections/juegos-de-mesa",
+          "t": "Juegos de mesa"
+        },
+        {
+          "h": "/collections/party-games",
+          "t": "Party Games"
+        },
+        {
+          "h": "/collections/en-pareja",
+          "t": "En Pareja"
+        },
+        {
+          "h": "/collections/5-o-mas-jugadores",
+          "t": "5 o más jugadores"
+        },
+        {
+          "h": "/collections/para-toda-la-familia",
+          "t": "Para toda la Familia"
+        },
+        {
+          "h": "/collections/menos-de-20-000",
+          "t": "Menos de $20.000"
+        },
+        {
+          "h": "/collections/rol",
+          "t": "Juegos de Rol"
+        },
+        {
+          "h": "/collections/preventas",
+          "t": "🚨 Preventas"
+        },
+        {
+          "h": "/collections/eventos",
+          "t": "🎫 Eventos"
+        },
+        {
+          "h": "/collections/magic-the-gathering",
+          "t": "Magic: The Gathering"
+        },
+        {
+          "h": "/collections/pokemon-tcg",
+          "t": "Pokémon"
+        },
+        {
+          "h": "/collections/riftbound-tcg",
+          "t": "Riftbound"
+        },
+        {
+          "h": "/collections/tcg",
+          "t": "Todos"
+        },
+        {
+          "h": "/pages/liga-budget-commander",
+          "t": "Magic: Liga Budget Commander"
+        },
+        {
+          "h": "/pages/%EF%B8%8F-danyeon",
+          "t": "🧙‍♂️ Rol: Sala Danyeon"
+        },
+        {
+          "h": "/products/giftcard-area52",
+          "t": "🎁 Giftcard"
+        },
+        {
+          "h": "/pages/contact",
+          "t": "🛸 Nosotros"
+        },
+        {
+          "h": "/blogs/noticias",
+          "t": "👽 Noticias"
+        },
+        {
+          "h": "https://area52.cl/customer_authentication/redirect?locale=es&region_country=CL",
+          "t": "Iniciar sesión"
+        },
+        {
+          "h": "/cart",
+          "t": "Carrito"
+        },
+        {
+          "h": "/collections/pokemon-delta-reign-preventa",
+          "t": "Revisar los productos"
+        },
+        {
+          "h": "/collections/star-trek-preventa",
+          "t": "Revisar los productos"
+        },
+        {
+          "h": "https://area52.cl/pages/%EF%B8%8F-danyeon",
+          "t": "¡Reserva tu lugar!"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-torneo-commander-bracket-3-star-trek",
+          "t": "Inscripción — Magic: the gathering - Torneo commander Bracket 3 — Star trek"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-torneo-commander-bracket-3-star-trek",
+          "t": "Inscripción — Magic: the gathering - Torneo commander Bracket 3 — Star trek"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-academy-aprende-a-jugar-the-hobbit",
+          "t": "Inscripción — Magic: the gathering - Academy Aprende a jugar — The Hobbit"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-academy-aprende-a-jugar-the-hobbit",
+          "t": "Inscripción — Magic: the gathering - Academy Aprende a jugar — The Hobbit"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-torneo-commander-bracket-2-star-trek",
+          "t": "Inscripción — Magic: The gathering - Torneo commander bracket 2 — Star trek"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-torneo-commander-bracket-2-star-trek",
+          "t": "Inscripción — Magic: The gathering - Torneo commander bracket 2 — Star trek"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-gigante-de-dos-cabezas-commander-preconstruido-star-trek",
+          "t": "Inscripción — Magic: The gathering - Gigante de dos cabezas Commander preconstru"
+        },
+        {
+          "h": "/products/inscripcion-magic-the-gathering-gigante-de-dos-cabezas-commander-preconstruido-star-trek",
+          "t": "Inscripción — Magic: The gathering - Gigante de dos cabezas Commander preconstru"
+        },
+        {
+          "h": "/collections/eventos",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-klingon-fury-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: Klingon Fury - Commander Deck (Español) [Prevent"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-klingon-fury-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: Klingon Fury - Commander Deck (Español) [Prevent"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-we-are-the-borg-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: We Are the Borg - Commander Deck (Español) [Prev"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-we-are-the-borg-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: We Are the Borg - Commander Deck (Español) [Prev"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-landing-party-commander-deck-ingles-preventa-copia-1",
+          "t": "Magic: The Gathering Star Trek: Landing Party - Commander Deck (Español) [Preven"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-landing-party-commander-deck-ingles-preventa-copia-1",
+          "t": "Magic: The Gathering Star Trek: Landing Party - Commander Deck (Español) [Preven"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-federation-fleet-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: Federation Fleet - Commander Deck (Español) [Pre"
+        },
+        {
+          "h": "/products/magic-the-gathering-star-trek-federation-fleet-commander-deck-espanol-preventa",
+          "t": "Magic: The Gathering Star Trek: Federation Fleet - Commander Deck (Español) [Pre"
+        },
+        {
+          "h": "/collections/preventas",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/products/altered-whispers-of-the-maze-pre-release-kit",
+          "t": "Altered: Susurros del Laberinto - Kit de Presentación (Español)"
+        },
+        {
+          "h": "/products/altered-whispers-of-the-maze-pre-release-kit",
+          "t": "Altered: Susurros del Laberinto - Kit de Presentación (Español)"
+        },
+        {
+          "h": "/products/magic-the-gathering-avatar-the-last-airbender-bundle-ingles-preventa",
+          "t": "Magic: The Gathering: Avatar: The Last Airbender - Bundle (Inglés)"
+        },
+        {
+          "h": "/products/magic-the-gathering-avatar-the-last-airbender-bundle-ingles-preventa",
+          "t": "Magic: The Gathering: Avatar: The Last Airbender - Bundle (Inglés)"
+        },
+        {
+          "h": "/products/criaturas-de-las-sombras",
+          "t": "Criaturas de las Sombras"
+        },
+        {
+          "h": "/products/criaturas-de-las-sombras",
+          "t": "Criaturas de las Sombras"
+        },
+        {
+          "h": "/products/mtg-final-fantasy-commander-decks-collectors-edition-revival-trance-en",
+          "t": "MTG Final Fantasy Commander Decks Collector's Edition: Revival Trance [EN]"
+        },
+        {
+          "h": "/products/mtg-final-fantasy-commander-decks-collectors-edition-revival-trance-en",
+          "t": "MTG Final Fantasy Commander Decks Collector's Edition: Revival Trance [EN]"
+        },
+        {
+          "h": "/collections/cyberday-2026",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/collections/pokemon-tcg",
+          "t": "Pokemon TCG"
+        },
+        {
+          "h": "/collections/pokemon-tcg",
+          "t": "Pokemon TCG"
+        },
+        {
+          "h": "/collections/party-games",
+          "t": "Party Games"
+        },
+        {
+          "h": "/collections/party-games",
+          "t": "Party Games"
+        },
+        {
+          "h": "/collections/en-pareja",
+          "t": "En Pareja"
+        },
+        {
+          "h": "/collections/en-pareja",
+          "t": "En Pareja"
+        },
+        {
+          "h": "/collections/tcg",
+          "t": "TCG"
+        },
+        {
+          "h": "/collections/tcg",
+          "t": "TCG"
+        },
+        {
+          "h": "/collections",
+          "t": "Ver todo"
+        },
+        {
+          "h": "/collections/magic-the-gathering",
+          "t": "Ver productos"
+        },
+        {
+          "h": "https://chat.whatsapp.com/CVbmwLvrVaLGokdJbQj8CE",
+          "t": "¡Únete a nuestra comunidad!"
+        },
+        {
+          "h": "https://maps.app.goo.gl/aUEw3RrLuFxyRpEL7",
+          "t": "Santa Isabel 962, Providencia"
+        },
+        {
+          "h": "https://www.facebook.com/area52.cl/",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/area52.cl/",
+          "t": "@Area52.cl"
+        },
+        {
+          "h": "/",
+          "t": "Area 52"
+        },
+        {
+          "h": "https://es.shopify.com/?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore",
+          "t": "Tecnología de Shopify"
+        },
+        {
+          "h": "/policies/refund-policy",
+          "t": "Política de reembolso"
+        },
+        {
+          "h": "/policies/contact-information",
+          "t": "Información de contacto"
+        },
+        {
+          "h": "/policies/terms-of-service",
+          "t": "Términos del servicio"
+        },
+        {
+          "h": "/policies/subscription-policy",
+          "t": "Política de cancelación"
+        },
+        {
+          "h": "/policies/privacy-policy",
+          "t": "Política de privacidad"
+        },
+        {
+          "h": "/policies/shipping-policy",
+          "t": "Política de envío"
+        },
+        {
+          "h": "https://www.instagram.com/reel/De-P-MNgS58/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_mnUHFEl/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_ggLHARN/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_cwzHA-A/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJmiiMcn/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJwoHGcw/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJWwD8CX/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJMGDVbP/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/reel/DesCzMIOdtu/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/reel/DefmPJtAO0C/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/reel/De-P-MNgS58/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_mnUHFEl/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_ggLHARN/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2_cwzHA-A/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJmiiMcn/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJwoHGcw/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJWwD8CX/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/p/De2lJMGDVbP/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/reel/DesCzMIOdtu/",
+          "t": "area52.cl"
+        },
+        {
+          "h": "https://www.instagram.com/reel/DefmPJtAO0C/",
+          "t": "area52.cl"
+        }
+      ],
+      "politica": [
+        {
+          "h": "https://area52.cl/policies/refund-policy",
+          "t": "Política de reembolso"
+        },
+        {
+          "h": "https://area52.cl/policies/subscription-policy",
+          "t": "Política de cancelación"
+        },
+        {
+          "h": "https://area52.cl/policies/privacy-policy",
+          "t": "Política de privacidad"
+        },
+        {
+          "h": "https://area52.cl/policies/shipping-policy",
+          "t": "Política de envío"
+        }
+      ],
+      "largo_texto": 2645,
+      "muestra": "Ir directamente al contenido\n\nEnvíos a todo Chile · Retiro en tienda - Santa Isabel 962, Providencia\n\n🎲 Catálogo\n🚨 Preventas\n🎫 Eventos\n🃏 TCG\n🏆 Ligas\n🧙‍♂️ Rol: Sala Danyeon\n🎁 Giftcard\n🛸 Nosotros\n👽 Noticias\nIniciar sesión\nCarrito\nPreventa de Pokemon Delta Reign\n\nEncuentra todos los productos de la nueva edición aquí\n\nRevisar los productos\nEncuentra toda la preventa de Star Trek \n\nNo te quedes fuera y asegura tus mazos de la nueva edición\n\nRevisar los productos\nVive una aventura épica en n",
+      "cta_en_pantalla": [
+        {
+          "t": "¡unete a nuestra comunidad!",
+          "h": "https://chat.whatsapp.com/CVbmwLvrVaLGokdJbQj8CE"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 14,
+        "palabras": 405
+      }
+    },
+    "captura": "r1-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://area52.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/storefront/assets/storefront/storefronts.moderate.specrules-eb468f32.json",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/constants.js?v=132983761750457495441783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/pubsub.js?v=25310214064522200911783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/global.js?v=1942545902055418081783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/cart-disclosure-modal.js?v=154804774285276548271783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/cart-disclosure-tooltip.js?v=71764992101190568491783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/details-disclosure.js?v=13653116266235556501783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/details-modal.js?v=25581673532751508451783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/search-form.js?v=133129549252120666541783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/standard-actions-override.js?v=179748164002689766821783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/animations.js?v=88693664871331136111783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/storefront/standard-events.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/checkouts/internal/preloads.js?locale=es-CL",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/loader.init-shop-cart-sync.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/storefront/assets/storefront/load_feature-ed94c51f.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/storefront/assets/storefront/origin_trials-318ab40a.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/compiled_assets/scripts.js?v=90487813905515327061783471489",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/base.css?v=1539170451765018161783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-cart-items.css?v=21057267699993713401783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-cart-drawer.css?v=39223250576183958541783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-cart.css?v=164708765130180853531783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-totals.css?v=15906652033866631521783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-price.css?v=47596247576480123001783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-discounts.css?v=152760482443307489271783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/fonts/chakra_petch/chakrapetch_n7.9ecc2c668ce54377589a11c1d6b170fa6dd35296.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-predictive-search.css?v=118923337488134913561783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a177a5-f2ab-766f-ba13-4295f8d9dc65/countdown-timer-30-104/assets/countdown_timer_essential_apps.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/019a15d4-71d4-7279-8062-f2f76f98d8e1/musbu-49/assets/cx_whatsapp_button.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/019a15d4-71d4-7279-8062-f2f76f98d8e1/musbu-49/assets/musbu-chat-support.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/perf-kit/shopify-perf-kit-3.14.0.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/quantity-popover.css?v=160630540099520878331783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-card.css?v=120341546515895839841783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/cart.js?v=55895714950147091831783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/quantity-popover.js?v=987015268078116491783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-slideshow.css?v=17933591812325749411783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-slider.css?v=14039311878856620671783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-list-social.css?v=35792976012981934991783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/cart-notification.js?v=15724493798342716601783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/logo.png?v=1704750116&width=80",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/section-image-banner.css?v=124819179385751388401783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/RAYQUAZA_BANNER_WEB.png?v=1793229699&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/template-collection.css?v=58558206033505836701783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-rating.css?v=179577762467860590411783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-volume-pricing.css?v=111870094811454961941783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/quick-order-list.css?v=86354568948591544181783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/TORNCOMMBRAC3STARTREKpubli.png?v=1792783284&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/MAGIC_ACADEMY_APRENDE_A_JUGAR_28_NOV_publi.png?v=1792782936&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/TORNEOCOMMANDERBR228DENOVpubli.png?v=1792782492&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/GIGANTE_DE_DOS_CABEZAS_COMMANDER_PRECONSTRUIDO_14_NOV_publi_3.png?v=1792782228&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/MTGTRK_EN_Cmndr_OtrBx_03_02.png?v=1793206197&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/MTGTRK_EN_Cmndr_OtrBx_04_02.png?v=1793206414&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/MTGTRK_EN_Cmndr_OtrBx_02_02.png?v=1793205708&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/MTGTRK_EN_Cmndr_OtrBx_01_02.png?v=1793205317&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/ALT-WFM-EN-Pre-Release-Kit.png?v=1748372871&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/mtgtla-en-otrbx-bndl-01-028253.png?v=1762268351&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/20230526090656_11356.png?v=1732897043&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/mtg-collector-commander-deck-final-fantasy-revival-trance.png?v=1744392062&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/section-collection-list.css?v=70863279319435850561783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-newsletter.css?v=4727253280200485261783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/newsletter-section.css?v=62410470717655853621783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/section-footer.css?v=60318643098753476351783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-list-menu.css?v=151968516119678728991783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-list-payment.css?v=69253961410771838501783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/predictive-search.js?v=35771933781168458101783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/cart-drawer.js?v=141283134586783120501783471471",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a186c5-e883-7dd8-8744-43ede192eb99/essential-pre-order-presale-3708/assets/app-embed-BDZOP1Nq.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a186c5-e883-7dd8-8744-43ede192eb99/essential-pre-order-presale-3708/assets/product-Dwsyw1ak.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a186c5-e883-7dd8-8744-43ede192eb99/essential-pre-order-presale-3708/assets/product-xsJi2SZ1.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a186c5-e883-7dd8-8744-43ede192eb99/essential-pre-order-presale-3708/assets/browse-B7zqMNmU.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/01a186c5-e883-7dd8-8744-43ede192eb99/essential-pre-order-presale-3708/assets/app-embed-BQKD--QH.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/storefront/standard-actions.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.init-shop-cart-sync_BuOUs61v.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.document_DMcRsBXN.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.window_CAbVMZox.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.init_BASu_Hxb.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.register_oML0Hu4L.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.networkErrorMessages_Du380vAr.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/client.shop-cart-sync_Dj6CfXoY.es.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.defineInitFunction_CIjOjzsO.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.casing_U_9x-Om3.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.utils_K8y2k-BJ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.v4_C3N_0s0v.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useUserRecognitionSignal_DzPQujSK.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.storage_DQF5v-OM.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.hooks_C48kTNUX.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.authorize_DINGMyE5.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.useEventListener_BeiI7eri.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.validators_09U1U9sZ.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/wpm/b56a6403cw68eaaf33p29d38119m7a4be5cam.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/s/trekkie.storefront.25c1cbbda0e2f0b638912871b921232f1392e9e9.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/storefront/assets/shop_events_listener-4e26a9ce.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-search.css?v=165164710990765432851783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-menu-drawer.css?v=147478906057189667651783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/t/6/assets/component-cart-notification.css?v=20889559782744007811783471471",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMaxKUBGEe.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/roboto/v51/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/Mesa_de_trabajo_1.png?v=1793229086&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/preventa-d58990000.png?v=1793199974&width=360",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/web-pixels@56a6403cw68eaaf33p29d38119m7a4be5ca/web-pixel-shopify-app-pixel@0530/sandbox/worker.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/web-pixels@56a6403cw68eaaf33p29d38119m7a4be5ca/app/web-pixel-770408684@bd2f978c17a94bbb8a74d43de2165dc5~2/pixel.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/web-pixels@56a6403cw68eaaf33p29d38119m7a4be5ca/app/web-pixel-676888812@a3321ca85cf5aaf6b57585fcd8d67b3a~2/pixel.modern.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/web-pixels@56a6403cw68eaaf33p29d38119m7a4be5ca/custom/web-pixel-shopify-custom-pixel@0530/sandbox/modern/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=AW-16850054496",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "AW-16850054496"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=GT-TNPW9LM4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GT-TNPW9LM4"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/web-pixels/strict/app/web-pixel-shopify-app-pixel@0530.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/en_US/fbevents.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/.well-known/shopify/monorail/unstable/produce_batch",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googletagmanager.com/gtag/js?id=GT-TNPW9LM4&cx=c&gtm=4e6as0",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Google Tag",
+        "tipo": "carga",
+        "id": "GT-TNPW9LM4"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.googleadservices.com/pagead/conversion/16850054496/?random=1793292168696&cv=11&fst=1793292168696&fmt=7&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6as0za200xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120385422~120469145~120469153~121246026~121246034~123620777&u_w=800&u_h=600&url=https%3A%2F%2Farea52.cl%2F&rcb=10&label=VsTACNjNq5gaEODa3eI-&c",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=1&auid=1670170300.1793292169&dt=Area52.cl%20%7C%20Juegos%20de%20mesa%2C%20Magic%2C%20TCG%20y%20Rol%20en%20Santiago%20%E2%80%93%20Area%2052&tid=AW-16850054496&en=page_view&dl=https%3A%2F%2Farea52.cl%2F&scrsrc=www.googletagmanager.com&rnd=1706313606.1793292169&navt=n&npa=0&did=dN2ZkMj%2CdNTU0Yz%2CdYmNjMT&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&_tu=AAI&gtm=45",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ad.doubleclick.net/ccm/s/collect?auid=1670170300.1793292169&gtm=45be6as0z8f_AW-16850054496za208xecxf1&fmt=8",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.merchant-center-analytics.goog/mc/collect?v=2&tid=MC-8DX9M9BJG6&gtm=45Pe6as0v9201656160za200xf1&_p=1793292168107&gcs=G111&gcd=13t3t3t3t5l1&npa=0&dma=0&gdid=dN2ZkMj.dNTU0Yz.dYmNjMT&are=1&cid=38007666.1793292169&excid=shp.13896f2f-a2c9-4363-80f2-d1f65db340ef&frm=0&pscdl=&rcb=9&sr=800x600&uaa=x86&uab=64&uafvl=Chromium%3B141.0.7390.37%7CNot%253FA_Brand%3B8.0.0.0&uam=&uamb=0&uap=Linux&uapv=",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://connect.facebook.net/signals/config/596308922008986?v=2.9.429&r=stable&domain=area52.cl&hme=e7a5ac71fbf0293a48c0a6b6de35ad61286effa29f2279ff1fce9a756cccd512&ex_m=118%2C241%2C171%2C27%2C82%2C83%2C162%2C78%2C77%2C11%2C181%2C102%2C20%2C153%2C141%2C46%2C85%2C90%2C149%2C176%2C183%2C8%2C4%2C5%2C7%2C6%2C3%2C103%2C115%2C32%2C17%2C31%2C18%2C33%2C34%2C35%2C37%2C55%2C163%2C87%2C126%2C22%2C24%2C51%2C4",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": {
+        "prov": "Meta",
+        "tipo": "carga"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://code.jquery.com/jquery-3.6.0.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.nfcube.com/instafeed-642cf3152dd04f20816fe3eb4cdddd2a.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://shop.app/pay/hop?analytics_trace_id=2fad0da8-1396-4642-a832-0d42ecc3083c&target_origin=https%3A%2F%2Farea52.cl&client_handle=490458-2.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/16850054496/?random=240216716&cv=11&fst=1793292168696&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6as0za200xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120385422~120469145~120469153~121246026~121246034~123620777&u_w=800&u_h=600&url=https%3A%2F%2Farea52.cl%2F&rcb=10&label=VsTACNjNq5ga",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": {
+        "prov": "Google Ads",
+        "tipo": "envio",
+        "gcs": "G111",
+        "npa": "0"
+      }
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "OPTIONS",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://instafeed.nfcube.com/cdn/instafeed-16.8.0.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.28/moment-timezone-with-data.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0756/0599/9919/files/musbu-chat-support.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/products/inscripcion-magic-the-gathering-academy-aprende-a-jugar-the-hobbit.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/products/magic-the-gathering-star-trek-landing-party-commander-deck-ingles-preventa-copia-1.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://instafeed.nfcube.com/feed/v5?limit=10&account=490458-2.myshopify.com&fu=0&fid=0&hash=d05226ea05327c22e61d62b86f2cf1ef&locale=es&handle=",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/products/magic-the-gathering-star-trek-we-are-the-borg-commander-deck-espanol-preventa.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/products/inscripcion-magic-the-gathering-torneo-commander-bracket-3-star-trek.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/products/magic-the-gathering-star-trek-klingon-fury-commander-deck-espanol-preventa.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/products/inscripcion-magic-the-gathering-torneo-commander-bracket-2-star-trek.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/products/inscripcion-magic-the-gathering-gigante-de-dos-cabezas-commander-preconstruido-star-trek.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/pagead/1p-conversion/16850054496/?random=240216716&cv=11&fst=1793292168696&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6as0za200xecxf1&gcs=G111&gcd=13t3t3t3t5l1&dma=0&tag_exp=115938465~115938468~118897920~118897930~120385422~120469145~120469153~121246026~121246034~123620777&u_w=800&u_h=600&url=https%3A%2F%2Farea52.cl%2F&rcb=10&label=VsTACNjNq5gaEODa3eI-&capi=1&gtm_e",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/s/files/1/0756/0599/9919/files/cx-constant.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/products/magic-the-gathering-star-trek-federation-fleet-commander-deck-espanol-preventa.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.nfcube.com/instafeed-642cf3152dd04f20816fe3eb4cdddd2a.js?shop=490458-2.myshopify.com",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/shopifycloud/shop-js/modules/v2/chunk.reportAssetMetrics_D1lZchzb.esm.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/iso-ufo-area-logo.png?crop=center&height=32&v=1704752608&width=32",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/polyfills.Cm4XMvKf.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://instafeed.nfcube.com/feed/v5?limit=10&account=490458-2.myshopify.com&fu=0&fid=0&hash=d05226ea05327c22e61d62b86f2cf1ef&locale=es&handle=",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/app.cAthPeiN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.shopify.com/extensions/019a15d4-71d4-7279-8062-f2f76f98d8e1/musbu-49/assets/assets/img/czm-chat-support-close-white.svg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://instafeed.nfcube.com/assets/img/placeholder.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/2c1ab0fe.DrRCn3HG.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/6a2fc6d6.DqfKWMZb.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/5587f402.BLOv5NpY.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/cf29e63b.BRQXh2EH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/bfe75f31.6yCNtNv-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/8b3289d0.Bt3qZnT_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/2255f8fa.DOeij2sJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/204243fa.V7gQ36sj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/5c5817f3.BEu0evcd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/8f46f026.Bz0NEFVt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/f05935e5.bhemP6c2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/32e8c018.BVeb327i.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/7336bdaf.DcxaUsDT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/6f2620f5.D_02a169.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/cf6ddc11.DMeQLHv7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/b8733b27.C0PFpUAK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/e39bc11c.BaBGTrLm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/08a3b809.DQs60AXV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.B1TfVO1E.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/69fae6d4.B0cVlpvy.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/e12db40c.BI5RQVDa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/60a453ce.DXa3DaPc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/c639b2b4.B_FoJ8Ig.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/f8706cb6.DmSw67Cj.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/0e9ee714.wULXKuPc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/39921a74.3CxTFnjT.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/7a8217fd.BBDsaE4D.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/8599b02a.SMqdFzKQ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/dffdfb34.CMQnj3Km.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/a422df8c.DOeqFAvq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/efa0389a.DrLHo2nc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shop/files/20250710_182856.jpg?v=1754151314&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/c8760fd8.Be0EZ9hi.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/53bbdad9.CVg-OYc7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/1f5e7811.DFPNjnst.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/1a6c2867.DIvU9A1-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/2fdb3dd3.CTDVcfb6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/22345fd4.BAghc-fu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/0e67bd3b.CFeNdDM-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/a9fa9fda.BeDDbBvp.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/ca3e798e.Dl0SRkiU.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/f7861534.Bd8yhhUE.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/47b970b2.BXt-43WV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/064f6ac1.4EMhYNtA.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/17425706.BcJPt7Oh.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/71ae3d5c.DH-HAOXQ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/cb5cf153.r_2iWLRe.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/06ef5503.Dv-zBuK4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/acc42fa8.DaJQita_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/cccd6056.DePXU1Wc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/0b8657b8.D-I2um0-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/79974aab.zZ2KWkIs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/89e2d30a.BYEQZ8wJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/ed9f2238.hwBClo-8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/6fb6f9d8.BAMqjCt6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/1444e6bd.BM7R-elq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/55098bf1.Dz8MQz2P.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/f49d4216.CDFLXjau.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/7b0c98ea.CRpHa0fS.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/d22d2b80.jfu5yGpw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/f58f39d8.wWS96b1U.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/e03065ab.CWf9aWZN.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/c09515bf.B71fejgK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/6bfea526.B0c9qjLX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/ac5a19ff.ns171nJ5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/598fef4e.DygUyRW2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/e77f7fe0.DFN8f_R0.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/cc6ff67d.DVXb3TBr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/bf513f9c.Do-pzA-t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/dfca5da5.Aek1wZmx.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/dae24aab.Ddqlep8a.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/ddf59287.CYD1TGGD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/01973ac7.DH2lZj47.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/58314944.C8tOb_bS.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/945a08d6.1JARX8O_.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/a25deb9a.DxN44MdX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/2b89a178.CjdbXfg7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/9068a4ed.D9qjdpv1.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/b684bff6.8wYVCzKV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/f1968089.yy6CXKcX.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/910cd6e2.DS6ygtkl.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/347b440c.DPGZDqyz.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/5ade1ef3.DXB4L25S.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/181d38d3.C2MFP83j.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/5a347040.DqqqLoQW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/792bb671.MG_raAxs.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/9ca7d819.B_r4aISK.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/f51e663e.D1Mwbrt6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/21cc90a2.DHzOO82q.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/64de7b49.B2WWgZOD.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/ca0c3e72.mAtaVirp.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/8e79be58.C8MS0jza.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/90e26f5f.Dtj-XP1M.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/31cc568e.95lmLO5k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/65f3d4da.Bb3QiqCm.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/d5d34b3b.BdlOFFHa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/ca5e9c49.DTB5eJ2J.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/f3e117aa.DTJ0PR2t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/7aefefff.DcUdfhSw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/b3389d5c.fiS1Nr-I.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/73a9b0a0.BRydut8V.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/86720dbb.B5HdvqVg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/0724c71d.O32rwBsR.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/7114e006.lrS99emJ.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/9babe369.ocvpn2KV.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/434e3b0a.oup8Ur0H.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/e0989459.BN6EGpPC.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/cdfd59e6.Cs835jgd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/d2e6a587.Bvz9lXAd.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/ca3c8263.DkbnVCmF.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/083cdde5.DYEjGEf-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/fe885b80.rUOq8lM6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/f78726c8.ClHl3T7C.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/d93ca466.C9R5umgP.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/e129c76e.SSgFk5gO.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/051149c8.lHD9iIAq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/d7065744.CK6x5CHa.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/products/inscripcion-magic-the-gathering-torneo-commander-bracket-2-star-trek",
+      "metodo": "GET",
+      "tipo": "Prefetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/7ee73f43.ZeHo6koi.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/0c0ad074.BLLdTe6K.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/8fe56fc9.DKeGEDf5.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/2210eadb.DF0gIp_2.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shop/files/LEAGUE_CHALLENGE_7_NOV_publi_1.png?v=1792618920&width=535",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shop/files/bibliotecarios.jpg?v=1764776740&width=535",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shop/files/ALT-WFM-EN-Pre-Release-Kit.png?v=1748372871&width=535",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shop/files/20240827133737_14319.png?v=1733346449&width=535",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://490458-2.myshopify.com/api/2026-07/graphql.json",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/8a00b682.BEOU-kK4.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/87bfafec.BIoL9TQ3.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/products/mtg-final-fantasy-commander-decks-collectors-edition-revival-trance-en.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/products/magic-the-gathering-avatar-the-last-airbender-bundle-ingles-preventa.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/products/magic-the-gathering-star-trek-landing-party-commander-deck-ingles-preventa-copia-1",
+      "metodo": "GET",
+      "tipo": "Prefetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/products/altered-whispers-of-the-maze-pre-release-kit.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/e477f96c.B7RRII2U.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/products/criaturas-de-las-sombras.js",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/c6b02d73.DFxNKn7U.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/71b60e0a.Bdvld-6t.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/.well-known/shopify/fec/produce",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/24773686.C8B24loc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shop/files/EOE_Ci8OqXOR5v_5.jpg?v=1754152501&width=1500",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/7048f38b.Ct0cMld6.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/c3c7c048.B_bxvive.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/7aa3b627.DU4dK-Iv.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/dada7e07.CS-vFszt.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/c10167e6.B31SY0iW.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/.well-known/shopify/fec/produce",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/17e57de1.DrMLKbeq.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/4b77f49a.CyG1Klp-.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/66338e00.DR2Qkpyp.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/products/criaturas-de-las-sombras",
+      "metodo": "GET",
+      "tipo": "Prefetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/e77d135d.BXQQ2IOo.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/24fcbaf6.GBIVC8df.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/b13c0af6.D4eDtiLH.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/49758c58.C51lwO05.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/28ac86c0.CxiVeehi.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/3e6029dd.D59lDMNk.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/30074413.DDP_wHXw.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/collections/en-pareja",
+      "metodo": "GET",
+      "tipo": "Prefetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/9f57d2aa.gCTWiyh8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/8574876b.BGWf_Tl7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/33d2e4fc.BRi_nKWu.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/.well-known/shopify/fec/produce",
+      "metodo": "POST",
+      "tipo": "Ping",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/27f09e31.BXJMJYRg.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/137622f3.DT0mKJmr.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/b0f8cb8f.CcUJMRQp.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/54bf0ebb.ZCS0ahw8.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/29034f35.7wA1nTg7.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://otlp-http-production.shopifysvc.com/v1/metrics",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/c610ba76.BL1PKFRc.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/33682ee7.DgLs3l9k.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/sandbox.BiZ3KrCA.worker.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/sandbox-2025-07.RMuCwn3l.worker.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://extensions.shopifycdn.com/shopifycloud/checkout-web/assets/c1/polyfills-entry-modern.Cu6fUfaP.worker.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/app.DBH01810.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/is-address-empty.DDArxpAV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/hydrate.LpOe7KaD.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/OnePage.C_uC3EPz.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/StickyPayButton.D-gNjNDa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Switch.BS8yVgoP.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayProgressIntercepts.CIy8uDiZ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/VatNumberValidationField.DZtuG_UK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EmptyState.BEvzDDvy.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Choice.BMdzfW_y.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShopPayLogo.87JMHPUK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ChangeCompanyLocationLink.B1YSPUDc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PhoneField.uZEuHncj.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Popover.Bi1nHaU-.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/index.Du9dByaI.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useApplePayButtonStatus.ct4xfivv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/TransitionHeight.CuRoM9zv.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/api/collect",
+      "metodo": "POST",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Tipping.BcTJoNaV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentIcon.gzvCNwz_.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentLine.DT05kVlY.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Section.CU18S7Ap.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/findSelectedDeliveryMethod.xO_7ctnq.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Middot.D7Ujmshx.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/EstimatedDeliveryContent.BAjucZ-8.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BrandedPromise.B0RErzdh.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethods.DU0m5rdF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/ShippingMethodSelector.B0hio2RO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/SubscriptionPriceBreakdown.vTcdVGq4.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/BelowTheFoldContent.DRJckcGa.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RememberMeSection.JBO5WNhc.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentMethodProgressionHost.kQR0txJ7.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RedirectionNotice.B8v_QGNW.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/MissingFields.BbxB_6wt.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/MobileOrderSummary.CyQZvZOO.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useOnePageFormSubmit.1WzRSowg.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/checkout-pay-button-exit.KhTiKgPS.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/observe-fit-scale.DpLOWYa8.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/useShopPayButtonClassName.btyKOfco.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Payment.DrWvAMMF.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PaymentOptionSelector.s-Kd_X2E.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/RuntimeExtension.DWkDBM73.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/AnnouncementRuntimeExtensions.DbBB6lBJ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/QRCode.BZ_m5G5a.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Pressable.D9SfDfsb.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/DateField.CFFsBmUK.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/NumberField.CRpcZnVJ.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/PressButton.C_ll_XEC.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/assets/Sheet.CpR5hiDV.css",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "B",
+      "url": "https://cdn.shopify.com/s/files/1/0682/4234/2124/files/logo_x320.png?v=1704750116",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "localization",
+      "desde": "area52.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_essential",
+      "desde": "area52.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_analytics",
+      "desde": "area52.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shopify_marketing",
+      "desde": "area52.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "_shop_app_essential",
+      "desde": "shop.app"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "area52.cl"
+    },
+    {
+      "fase": "B",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "__cf_bm",
+      "desde": "490458-2.myshopify.com"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "area52.cl"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "area52.cl"
+    },
+    {
+      "fase": "B",
+      "nombre": "localization",
+      "desde": "area52.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 4217890,
+    "al_abrir_bytes": 3064566,
+    "n_peticiones": 405,
+    "mas_pesados": [
+      {
+        "url": "https://area52.cl/cdn/shopifycloud/checkout-web/assets/c1/164ad2e3.B1TfVO1E.js",
+        "bytes": 178908
+      },
+      {
+        "url": "https://area52.cl/cdn/shop/files/EOE_Ci8OqXOR5v_5.jpg?v=1754152501&width=1500",
+        "bytes": 163258
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=GT-TNPW9LM4",
+        "bytes": 159134
+      },
+      {
+        "url": "https://www.googletagmanager.com/gtag/js?id=GT-TNPW9LM4&cx=c&gtm=4e6as0",
+        "bytes": 158904
+      }
+    ]
+  },
+  "html_len": 366787
+}

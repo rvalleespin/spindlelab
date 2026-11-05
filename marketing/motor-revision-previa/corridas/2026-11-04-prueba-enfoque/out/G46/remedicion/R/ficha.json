@@ -1,0 +1,492 @@
+{
+  "id": "R",
+  "dominio": "yeppo.cl",
+  "motor": "v0",
+  "cuando": "2026-11-04T17:34:01.558Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://yeppo.cl/",
+  "hallazgo": {
+    "id": "F8",
+    "nombre": "El negocio no está declarado como entidad en datos estructurados",
+    "linea": "Visibilidad en IA",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, con una herramienta gratuita",
+    "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+    "condiciones": {
+      "1": {
+        "v": "si",
+        "razon": "Los datos estructurados no se ven."
+      },
+      "2": {
+        "v": "medias",
+        "razon": "Sin entidad declarada, la IA y Google adivinan quién eres."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se comprueba con una herramienta gratuita."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Los chequeos gratis lo muestran: es capa 1."
+      }
+    },
+    "afirmable": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+    "no_afirmable": [
+      "que \"Google no te entiende\""
+    ],
+    "advertencias": [],
+    "datos": {},
+    "propuesta": {
+      "en_castellano": "Tu sitio no le dice a Google ni a la IA qué negocio eres en el formato que ellos leen (datos estructurados).",
+      "problema_tecnico": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+      "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+      "se_vende": {
+        "linea": "Visibilidad en IA",
+        "producto": "Auditoría de Visibilidad en IA",
+        "alcance": "Declarar el negocio como entidad en datos estructurados.",
+        "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "débil",
+      "frase_de_arreglo": "Eso lo arreglo yo: dejo declarado qué negocio eres, con tu dirección y tu contacto, en el formato que leen Google y la IA.",
+      "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [],
+  "ofertas_adicionales": [],
+  "capa1": {
+    "consecuencia": [],
+    "higiene": [
+      "sin_entidad_en_jsonld",
+      "sin_meta_description"
+    ]
+  },
+  "notas": [
+    "La analitica esta instalada pero no se disparo en la sesion (probable consentimiento previo): sus eventos no se pueden ver sin clics."
+  ],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": [
+        "https://wa.me/56961450273?text=Hola+Yeppo%21+%C2%BFMe+pueden+ayudar%3F"
+      ]
+    },
+    "analitica": {
+      "gtm": [
+        "GTM-TTGK2JM"
+      ],
+      "ga4": [
+        "G-5C8ELRKX79",
+        "G-F0G67MJ7WE"
+      ],
+      "ua": [],
+      "ads": [
+        "AW-740252731"
+      ],
+      "meta_pixel": false,
+      "clarity": true,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": "cloudflare",
+      "cloudflare": true,
+      "x_powered_by": null
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": true
+    },
+    "llms_txt": true,
+    "sitemap": true,
+    "jsonld": {
+      "tipos": [
+        "WebSite"
+      ],
+      "org": []
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 13,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 1,
+      "fuente_minima_px": 13,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 9866,
+      "al_abrir_bytes": 9866,
+      "n_peticiones": 1,
+      "mas_pesados": [
+        {
+          "url": "https://yeppo.cl/",
+          "bytes": 9866
+        }
+      ]
+    },
+    {
+      "total_bytes": 10137,
+      "al_abrir_bytes": 10137,
+      "n_peticiones": 1,
+      "mas_pesados": [
+        {
+          "url": "https://yeppo.cl/",
+          "bytes": 10137
+        }
+      ]
+    },
+    {
+      "total_bytes": 8301135,
+      "al_abrir_bytes": 7304697,
+      "n_peticiones": 532,
+      "mas_pesados": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0638/7348/2901/files/mercado-pago.svg",
+          "bytes": 379174
+        },
+        {
+          "url": "https://yeppo.cl/cdn/shopifycloud/checkout-web/assets/c1/6ec9a0fa.Cw43zij1.js",
+          "bytes": 368008
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=AW-740252731&cx=c&gtm=4e6b30",
+          "bytes": 199887
+        },
+        {
+          "url": "https://www.googletagmanager.com/gtag/js?id=AW-740252731",
+          "bytes": 199856
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [],
+      "solo_en_una_corrida": [
+        "_ga_5C8ELRKX79",
+        "_ga",
+        "_ga_HG67F6H69Y",
+        "_gcl_au",
+        "_ga_F0G67MJ7WE",
+        "_clck",
+        "_fbp",
+        "_clsk"
+      ],
+      "carga_en_ambas": [],
+      "envio_en_ambas": [],
+      "google_gcs": [
+        [],
+        [],
+        [
+          "G111"
+        ]
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": null,
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 468993
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 468993
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 468993,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "yeppo.cl",
+            "dominio": "yeppo.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      },
+      {
+        "forms": [],
+        "mails": [
+          {
+            "correo_dominio": "yeppo.cl",
+            "dominio": "yeppo.cl",
+            "tiene_mx": null,
+            "no_evaluable": "el resolutor de este entorno no sirve registros MX (falla con gmail.com)"
+          }
+        ]
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "og:site_name",
+        "valor": "Yeppo®"
+      },
+      {
+        "fuente": "title",
+        "valor": "Yeppo®"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": false
+  },
+  "enlaces": {
+    "revisados": 30,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Motor de revision previa. Detector de SOSPECHA: dice donde mirar. No produce el hallazgo del correo.
-// Uso:  NODE_USE_ENV_PROXY=1 node revisar.mjs <dominio> --id S01 --out ../corridas/<carpeta> [--correo x@y.cl] [--sin-corte]
+// Uso:  NODE_USE_ENV_PROXY=1 node revisar.mjs <dominio> --id S01 --out ../corridas/<carpeta> [--correo x@y.cl] [--sin-corte] [--aun-contactados]
 import fs from 'node:fs';
 import path from 'node:path';
 import { pasada0, limpiarDominio } from './pasadas/p0.mjs';
@@ -22,7 +22,7 @@ const log = (...x) => console.error(`[${id}]`, ...x);
 
 const ficha = { id, dominio, motor: 'v0', cuando: new Date().toISOString(), entorno: process.env.CLAUDE_CODE_REMOTE ? 'cloud (IP de datacenter, via proxy)' : 'local', sin_corte: args.includes('--sin-corte') || undefined };
 
-const p0 = await pasada0(dominio, { correo: flag('--correo'), sinCorte: args.includes('--sin-corte'), remedir: args.includes('--remedir') });
+const p0 = await pasada0(dominio, { correo: flag('--correo'), sinCorte: args.includes('--sin-corte'), remedir: args.includes('--remedir'), aunContactado: args.includes('--aun-contactados') });
 if (p0.corte) {
   Object.assign(ficha, { resultado: `descartado:${p0.corte}`, detalle: p0.detalle });
   escribir('ficha.json', ficha); escribir('ficha.md', `# ${id}\n\n**resultado:** descartado:${p0.corte}\n\n${JSON.stringify(p0.detalle, null, 2)}\n`);
@@ -54,7 +54,11 @@ log('enlaces de la portada');
 const enlaces = await sondaEnlaces(p0.url_final, corridas.flatMap((r) => (r.B.dom?.enlaces || []).map((e) => e.h)));
 const entidad = entidadInterna(p1.html);
 
-const v = veredicto({ p0, p1, runs: corridas, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado, enlaces, movil: moviles });
+// Si el navegador no pudo cargar la portada en NINGUNA corrida (error de red, pagina en blanco), no se mide nada: "no hay contacto" sobre una pagina vacia es un falso hallazgo.
+const sinCarga = corridas.every((r) => { const d = r.B.dom || {}; return String(d.url || '').startsWith('chrome-error') || ((d.largo_texto || 0) === 0 && !(d.estructura?.palabras)); });
+const v = sinCarga
+  ? { resultado: 'no-concluyente', hallazgo: null, punteros: [], extras: [], capa1: { consecuencia: [], higiene: [] }, soporte: {}, notas: ['El navegador no pudo cargar la portada en ninguna de las corridas (error de red o página en blanco). Puede ser el firewall del sitio contra una IP de datacenter. No se afirma nada: reintentar desde otra red o abrir el sitio a mano.'] }
+  : veredicto({ p0, p1, runs: corridas, edge, contacto, entidad, contenedores, gtmIds, htmlEjecutado, enlaces, movil: moviles });
 Object.assign(ficha, {
   resultado: v.resultado, url: p0.url_final, html_no_alcanza: p0.html_no_alcanza || undefined,
   hallazgo: v.hallazgo, ruta_interna: v.punteros, ofertas_adicionales: v.extras, capa1: v.capa1, notas: [...v.notas, ...(p0.advertencias || [])], corridas_de_navegador: corridas.length,

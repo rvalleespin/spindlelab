@@ -1,0 +1,241 @@
+{
+  "url": "https://www.audiprop.com/",
+  "cuando": "2026-10-30T14:44:26.231Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "__cf_bm",
+        "dominio": ".www.audiprop.com",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://www.audiprop.com/",
+      "titulo": "Un momento…",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 112,
+      "muestra": "CHECKING YOUR REQUEST\n\nwww.audiprop.com\n\nPlease wait while we verify your request.\nThis will only take a moment.",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 1,
+        "palabras": 17
+      }
+    },
+    "captura": "r3-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "__cf_bm",
+        "dominio": ".www.audiprop.com",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://www.audiprop.com/",
+      "titulo": "Un momento…",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 112,
+      "muestra": "CHECKING YOUR REQUEST\n\nwww.audiprop.com\n\nPlease wait while we verify your request.\nThis will only take a moment.",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 1,
+        "palabras": 17
+      }
+    },
+    "captura": "r3-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://www.audiprop.com/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.audiprop.com/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.audiprop.com/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a52b321989d237bf",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.audiprop.com/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://www.audiprop.com/22125b78-9959-4cd7-bc78-106927f934d1",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/turnstile/v0/g/c787ce48cf6b/api.js?onload=Kncsd9&render=explicit",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.audiprop.com/cdn-cgi/challenge-platform/h/g/fo/2831838527:1793369461:CNfFLlLgSoYQ0-UzGDJARHdL1xXP_7Gr40ZGwsK-5W4/a52b321989d237bf/TQ9rpXc8EhzN7DwYeQplCOHQ8rxiCZlT6VNonA6Q4N0-1793371442-1.2.1.1-zsUCKI43laXsbSUwElM2WluuSIHCLsV10lFxm_gTKuYTeq1D6EVkGobrjcchRvHS",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://www.audiprop.com/1144549b-3c35-4fa0-944f-8b7d233413ca",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/av0/rch/l4s53/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal?lang=auto&offlabel=true",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.audiprop.com/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/263a5686-118f-4042-ac33-9a46faf23570",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/3105943818:1793369464:a9rSSWtpCXzokVMfcw9QazFTiVge9O-uwEtRCXP6YgM/a52b321e686af01a/Cm5H1hha60DTyoHSvEa2akBJqBu7tl82eXLgRPbu7beIK6gpacgunpEojUJsKKfmoJXTO1RkGIiNtd30jmhwJe7b5VZy9VhAuzG1JZd3Qf42P7f0cu465mr8GYRu7___fQ",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/17e5fc91-3f96-48f1-9f20-070176b6be4b",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/i/a52b321e686af01a/Cm5H1hha60DTyoHSvEa2akBJqBu7tl82eXLgRPbu7beIK6gpacgunpEojUJsKKfmoJXTO1RkGIiNtd30jmhwJe7b5VZy9VhAuzG1JZd3Qf42P7f0cu465mr8GYRu7___fQ",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a52b321e686af01a/1793371443256/f9198a721c19c6f24c78a9ea77703b2c77579fe1699e8f3b94ea705b695d9900/CiN48LHStoD1HkDRA8vTQN72uyBwn7ASzftULBPCWaZdV2nbTK7J-uvLNYZU5drKTTTylKAlDOdQuEC1eHnjbVfRcRjWDFdG7PR-Tfn1-GPwL80Q2biH2injRH05gSj67rfNaEy0DdQWMmGFvf8AUOt5LBdF8BuByCLQyRUrlrNuZmOd3fSt_UnGjlRX7PygActg_s6CjGNvc5BSCNAO0Zule79vOuZ2O8cdim8XCtR",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/17e5fc91-3f96-48f1-9f20-070176b6be4b",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/17e5fc91-3f96-48f1-9f20-070176b6be4b",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/ci/a52b321e686af01a/1793371443264/ChvO-5lOqdEUw1Tp_uYbHhGJ8N2NgGMo-boS6TPJkTUUgyQ3eQVgvlIkxer4bYHKYYx-6QsKIfXAx8F6AhV1S8jluKC6ZPllq_chJxuVoYBKET2kI5fpodTZyRoxOLBJmyepvKNKAnsV-Q_-7JuT71m7L4MF2x5Xtai-xz1pXoQ2Y2rpwB8WQ3VKmr8h0N8zMrSUKTFsxhJeZir9sZn8jr49ftTgcYX4Umvbmdg0BL0cWoWLRSYzPhqjwMrNg3bqwVRtUz1qaAIrr9XbX5tVb5OgV9f42AxabBS85gGuZ-3dd",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/3105943818:1793369464:a9rSSWtpCXzokVMfcw9QazFTiVge9O-uwEtRCXP6YgM/a52b321e686af01a/Cm5H1hha60DTyoHSvEa2akBJqBu7tl82eXLgRPbu7beIK6gpacgunpEojUJsKKfmoJXTO1RkGIiNtd30jmhwJe7b5VZy9VhAuzG1JZd3Qf42P7f0cu465mr8GYRu7___fQ",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/3c730281-8919-4b05-bb31-bba68d0dcd66",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "www.audiprop.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "www.audiprop.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "www.audiprop.com"
+    }
+  ],
+  "peso": {
+    "total_bytes": 1293076,
+    "al_abrir_bytes": 1293076,
+    "n_peticiones": 19,
+    "mas_pesados": [
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/3105943818:1793369464:a9rSSWtpCXzokVMfcw9QazFTiVge9O-uwEtRCXP6YgM/a52b321e686af01a/Cm5H1hha6",
+        "bytes": 652271
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/turnstile/f/av0/rch/l4s53/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal?lang=auto&offlabel=true",
+        "bytes": 209254
+      },
+      {
+        "url": "https://www.audiprop.com/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a52b321989d237bf",
+        "bytes": 188314
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/3105943818:1793369464:a9rSSWtpCXzokVMfcw9QazFTiVge9O-uwEtRCXP6YgM/a52b321e686af01a/Cm5H1hha6",
+        "bytes": 94376
+      }
+    ]
+  },
+  "html_len": 11419
+}

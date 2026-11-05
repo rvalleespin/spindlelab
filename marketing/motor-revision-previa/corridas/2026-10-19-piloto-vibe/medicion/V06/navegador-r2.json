@@ -1,0 +1,1425 @@
+{
+  "url": "https://cypauditores.cl/",
+  "cuando": "2026-10-19T13:39:47.690Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "next-auth.csrf-token",
+        "dominio": "cypauditores.cl",
+        "expira_dias": 0
+      },
+      {
+        "nombre": "next-auth.callback-url",
+        "dominio": "cypauditores.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://cypauditores.cl/",
+      "titulo": "CYP Auditores",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "bat/rd-mailform.php",
+          "accion_abs": "https://cypauditores.cl/bat/rd-mailform.php",
+          "metodo": "post",
+          "campos": 4,
+          "requeridos": 4,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "https://goo.gl/maps/onG1f5gz8bQzxfdz5",
+          "t": "San Sebastían 2839, oficina 601\nLas Condes, Santiago, Chile"
+        },
+        {
+          "h": "tel:+56229484579",
+          "t": "(56) 229 484 579"
+        },
+        {
+          "h": "mailto:contacto@cypauditores.cl",
+          "t": "contacto@cypauditores.cl"
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/mision",
+          "t": "Misión"
+        },
+        {
+          "h": "/equipo",
+          "t": "Nuestro Equipo"
+        },
+        {
+          "h": "/servicios",
+          "t": "Servicios"
+        },
+        {
+          "h": "/reclutamiento",
+          "t": "Reclutamiento y selección"
+        },
+        {
+          "h": "/contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/denuncias",
+          "t": "Canal de denuncias"
+        },
+        {
+          "h": "/auth",
+          "t": "Iniciar Sesión"
+        },
+        {
+          "h": "https://www.linkedin.com/company/c-y-p-auditores/",
+          "t": ""
+        },
+        {
+          "h": "/servicios",
+          "t": "Nuestros Servicios"
+        },
+        {
+          "h": "/contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/servicios",
+          "t": "Nuestros servicios"
+        },
+        {
+          "h": "https://www.integra-international.net",
+          "t": "Representantes Oficiales"
+        },
+        {
+          "h": "https://www.cmfchile.cl",
+          "t": "Visitar"
+        },
+        {
+          "h": "/servicios",
+          "t": "Nuestros Servicios"
+        },
+        {
+          "h": "/contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/mision",
+          "t": "Nuestra misión"
+        },
+        {
+          "h": "/contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/servicios",
+          "t": "Ver Servicios"
+        },
+        {
+          "h": "team-member-profile.html",
+          "t": "Cristian Zepeda"
+        },
+        {
+          "h": "team-member-profile.html",
+          "t": "Iván Rojas"
+        },
+        {
+          "h": "team-member-profile.html",
+          "t": "Juan González"
+        },
+        {
+          "h": "team-member-profile.html",
+          "t": "Anuar Barake"
+        },
+        {
+          "h": "/equipo",
+          "t": "Ver mas"
+        },
+        {
+          "h": "https://goo.gl/maps/onG1f5gz8bQzxfdz5",
+          "t": "Dirección\nSan Sebastían 2839, oficina 601, Las Condes, Chile"
+        },
+        {
+          "h": "tel:+56229484579",
+          "t": "(56) 229 484 579"
+        },
+        {
+          "h": "mailto:contacto@cypauditores.cl",
+          "t": "contacto@cypauditores.cl"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/mision",
+          "t": "Nosotros"
+        },
+        {
+          "h": "/servicios",
+          "t": "Servicios"
+        },
+        {
+          "h": "/contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56998898832&text=Hola%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20de%20sus%20servicios%20de%20CyP",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 1874,
+      "muestra": "Lun - Jue: 9:00 - 18:00\nViernes 9:00 - 16:30\nSan Sebastían 2839, oficina 601\nLas Condes, Santiago, Chile\n(56) 229 484 579\ncontacto@cypauditores.cl\nInicioNosotrosServiciosReclutamiento y selecciónContactoCanal de denuncias\nIniciar Sesión\nSoluciones integrales\n\nDeje que nuestro equipo de profesionales lo guíe hacia el éxito contable\ny tributario\n\nNuestros ServiciosContacto\nSoluciones que\nno pierden su objetivo\nNuestros servicios\nRepresentantes Oficiales\nInscritos en la CMF\n\nPara emitir informes de",
+      "cta_en_pantalla": [
+        {
+          "t": "(56) 229 484 579",
+          "h": "tel:+56229484579"
+        },
+        {
+          "t": "contacto@cypauditores.cl",
+          "h": "mailto:contacto@cypauditores.cl"
+        },
+        {
+          "t": "contacto",
+          "h": "/contacto"
+        },
+        {
+          "t": "contacto",
+          "h": "/contacto"
+        },
+        {
+          "t": "contacto",
+          "h": "/contacto"
+        },
+        {
+          "t": "contacto",
+          "h": "/contacto"
+        },
+        {
+          "t": "",
+          "h": "https://api.whatsapp.com/send?phone=56998898832&text=Hola%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20de%20sus%20servicios%20de%20CyP"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 5,
+        "h2": 3,
+        "palabras": 259
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "next-auth.csrf-token",
+        "dominio": "cypauditores.cl",
+        "expira_dias": 0
+      },
+      {
+        "nombre": "next-auth.callback-url",
+        "dominio": "cypauditores.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://cypauditores.cl/",
+      "titulo": "CYP Auditores",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "bat/rd-mailform.php",
+          "accion_abs": "https://cypauditores.cl/bat/rd-mailform.php",
+          "metodo": "post",
+          "campos": 4,
+          "requeridos": 4,
+          "visible": true,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "https://goo.gl/maps/onG1f5gz8bQzxfdz5",
+          "t": "San Sebastían 2839, oficina 601Las Condes, Santiago, Chile"
+        },
+        {
+          "h": "tel:+56229484579",
+          "t": "(56) 229 484 579"
+        },
+        {
+          "h": "mailto:contacto@cypauditores.cl",
+          "t": "contacto@cypauditores.cl"
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/mision",
+          "t": "Misión"
+        },
+        {
+          "h": "/equipo",
+          "t": "Nuestro Equipo"
+        },
+        {
+          "h": "/servicios",
+          "t": "Servicios"
+        },
+        {
+          "h": "/reclutamiento",
+          "t": "Reclutamiento y selección"
+        },
+        {
+          "h": "/contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/denuncias",
+          "t": "Canal de denuncias"
+        },
+        {
+          "h": "/auth",
+          "t": "Iniciar Sesión"
+        },
+        {
+          "h": "https://www.linkedin.com/company/c-y-p-auditores/",
+          "t": ""
+        },
+        {
+          "h": "/servicios",
+          "t": "Nuestros Servicios"
+        },
+        {
+          "h": "/contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/servicios",
+          "t": "Nuestros servicios"
+        },
+        {
+          "h": "https://www.integra-international.net",
+          "t": "Representantes Oficiales"
+        },
+        {
+          "h": "https://www.cmfchile.cl",
+          "t": "Visitar"
+        },
+        {
+          "h": "/servicios",
+          "t": "Nuestros Servicios"
+        },
+        {
+          "h": "/contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/mision",
+          "t": "Nuestra misión"
+        },
+        {
+          "h": "/contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "/servicios",
+          "t": "Ver Servicios"
+        },
+        {
+          "h": "team-member-profile.html",
+          "t": "Cristian Zepeda"
+        },
+        {
+          "h": "team-member-profile.html",
+          "t": "Iván Rojas"
+        },
+        {
+          "h": "team-member-profile.html",
+          "t": "Juan González"
+        },
+        {
+          "h": "team-member-profile.html",
+          "t": "Anuar Barake"
+        },
+        {
+          "h": "/equipo",
+          "t": "Ver mas"
+        },
+        {
+          "h": "https://goo.gl/maps/onG1f5gz8bQzxfdz5",
+          "t": "Dirección\nSan Sebastían 2839, oficina 601, Las Condes, Chile"
+        },
+        {
+          "h": "tel:+56229484579",
+          "t": "(56) 229 484 579"
+        },
+        {
+          "h": "mailto:contacto@cypauditores.cl",
+          "t": "contacto@cypauditores.cl"
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "#",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "Inicio"
+        },
+        {
+          "h": "/mision",
+          "t": "Nosotros"
+        },
+        {
+          "h": "/servicios",
+          "t": "Servicios"
+        },
+        {
+          "h": "/contacto",
+          "t": "Contacto"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56998898832&text=Hola%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20de%20sus%20servicios%20de%20CyP",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 1727,
+      "muestra": "InicioNosotrosServiciosReclutamiento y selecciónContactoCanal de denuncias\nIniciar Sesión\nSoluciones integrales\n\nDeje que nuestro equipo de profesionales lo guíe hacia el éxito contable\ny tributario\n\nNuestros ServiciosContacto\nSoluciones que\nno pierden su objetivo\nNuestros servicios\nRepresentantes Oficiales\nInscritos en la CMF\n\nPara emitir informes de auditoria\n\nVisitar\nNo deje que los números\nlo abrumen\n\nDeje que nuestro equipo de expertos lo maneje\n\nNuestros ServiciosContacto\nNuestro objetivo\n",
+      "cta_en_pantalla": [
+        {
+          "t": "contacto",
+          "h": "/contacto"
+        },
+        {
+          "t": "(56) 229 484 579",
+          "h": "tel:+56229484579"
+        },
+        {
+          "t": "contacto@cypauditores.cl",
+          "h": "mailto:contacto@cypauditores.cl"
+        },
+        {
+          "t": "contacto",
+          "h": "/contacto"
+        },
+        {
+          "t": "",
+          "h": "https://api.whatsapp.com/send?phone=56998898832&text=Hola%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20de%20sus%20servicios%20de%20CyP"
+        }
+      ],
+      "formulario_en_pantalla": true,
+      "estructura": {
+        "h1": 5,
+        "h2": 3,
+        "palabras": 235
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/css/d580bc38c4645765.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/css/ca2225a2a80215f7.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/css/cb39ea297f59691e.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/logo.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/icon-linkedin.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/integra3.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/team/czepeda.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/team/irojas.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/team/jgonzalez.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/team/abarake.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/webpack-034890d06cdd0c9b.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/2443530c-966ae89ae0291bc1.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/8139-6f207428979e8b3c.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/main-app-260ffb52f15e241f.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/carousel6.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/carousel5.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/carousel-1.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/carousel-8.jpg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/carousel-6.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/carousel3.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/media/decoration-border.9d82f073.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/media/fl-bigmug-line.7035abf7.woff",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/media/fontawesome-webfont.a955727b.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/036e460e-5a1250d1e264b959.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/543ac898-39e5ecc5af3e2b7c.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/5455-ff528d19a65829aa.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/4751-1cfc063e06a645bf.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/5167-c546b85d453c66ca.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/5106-8d734796470c3214.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/987-6174621de09f9c62.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/8581-77d698c9c42fb6da.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/app/layout-321e7438054d7353.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/5846-a491b1dd25f204e3.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/4988-80f6aa1bb7bcdb54.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/9049-599b837c6f28b867.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/app/page-06593a16f6b7ea72.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/cdn-cgi/rum?",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api.js?render=6LeYvqQkAAAAAIqMlSD8qgpEh9aPCTxqQzUCnPOj",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/api/auth/session",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/media/revicons.ff59b316.woff",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/cchc.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/ucentral.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/fanatiz.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/fun_salvador.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/stocksur.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/corporacion_aprender.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/textil_velutti.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/tangram.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/emprenurban.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/china_rail.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/cesha.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/serv_cons.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/thef.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/jacaranda.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/alimab.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/continental_blower.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/plantec.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/ram_diesel.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/ram_brands.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/ram_guess.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/crearq.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/senfood.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/ferbas.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/tower_food.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/wilson.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/eat100.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/devaid.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/fund_ref.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/neopol.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/amicorp.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/alcalde_cia.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/san_vicente.jpeg",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/assets/images/clients/celltrion.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/contacto",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/css/2c54a09666ac0e5f.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cypauditores.cl/_next/static/chunks/app/contacto/page-75ba26803c1da283.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LeYvqQkAAAAAIqMlSD8qgpEh9aPCTxqQzUCnPOj&co=aHR0cHM6Ly9jeXBhdWRpdG9yZXMuY2w6NDQz&hl=en&v=4EDjxXf4knsx6UBM1L2V6cv8&size=invisible&anchor-ms=20000&execute-ms=30000&cb=47pki5n30mr0",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/styles__ltr.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.google.com/recaptcha/api2/webworker.js?hl=en&v=4EDjxXf4knsx6UBM1L2V6cv8",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/api2/logo_48.png",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/roboto/v48/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.gstatic.com/recaptcha/releases/4EDjxXf4knsx6UBM1L2V6cv8/recaptcha__en.js",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "next-auth.csrf-token",
+      "desde": "cypauditores.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "next-auth.callback-url",
+      "desde": "cypauditores.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 12701180,
+    "al_abrir_bytes": 12701180,
+    "n_peticiones": 89,
+    "mas_pesados": [
+      {
+        "url": "https://cypauditores.cl/assets/images/carousel-6.png",
+        "bytes": 2700593
+      },
+      {
+        "url": "https://cypauditores.cl/assets/images/team/abarake.jpeg",
+        "bytes": 1512415
+      },
+      {
+        "url": "https://cypauditores.cl/assets/images/carousel6.png",
+        "bytes": 1230798
+      },
+      {
+        "url": "https://cypauditores.cl/assets/images/team/jgonzalez.jpeg",
+        "bytes": 1114164
+      }
+    ]
+  },
+  "html_len": 43209
+}

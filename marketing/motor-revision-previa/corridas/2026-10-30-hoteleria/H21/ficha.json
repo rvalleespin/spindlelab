@@ -1,0 +1,13 @@
+{
+  "id": "H21",
+  "dominio": "cascadadelasanimas.cl",
+  "motor": "v0",
+  "cuando": "2026-10-30T12:59:09.220Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "descartado:excluido",
+  "detalle": {
+    "tipo": "tope-alcanzado",
+    "motivo": "3 correos reales en 3 hilos (25-sep, 30-sep, 5-oct), confirmados por el copiloto el 14-oct. El correo es del dominio cascada.net y el sitio es cascadadelasanimas.cl",
+    "fecha": "2026-10-14"
+  }
+}

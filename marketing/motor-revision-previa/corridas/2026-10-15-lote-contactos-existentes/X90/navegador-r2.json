@@ -1,0 +1,241 @@
+{
+  "url": "https://www.cvlareina.cl/",
+  "cuando": "2026-10-16T13:54:55.312Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "__cf_bm",
+        "dominio": ".www.cvlareina.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://www.cvlareina.cl/",
+      "titulo": "Just a moment...",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 112,
+      "muestra": "CHECKING YOUR REQUEST\n\nwww.cvlareina.cl\n\nPlease wait while we verify your request.\nThis will only take a moment.",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 1,
+        "palabras": 17
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "__cf_bm",
+        "dominio": ".www.cvlareina.cl",
+        "expira_dias": 0
+      }
+    ],
+    "dom": {
+      "url": "https://www.cvlareina.cl/",
+      "titulo": "Just a moment...",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 112,
+      "muestra": "CHECKING YOUR REQUEST\n\nwww.cvlareina.cl\n\nPlease wait while we verify your request.\nThis will only take a moment.",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 0,
+        "h2": 1,
+        "palabras": 17
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://www.cvlareina.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.cvlareina.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.cvlareina.cl/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a4b78e513f1c476b",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.cvlareina.cl/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://www.cvlareina.cl/965cb162-a4c2-4bd5-98e8-8aa0fcc581cc",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/turnstile/v0/b/d2d3316b729e/api.js?onload=DraY9&render=explicit",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.cvlareina.cl/cdn-cgi/challenge-platform/h/b/fo/2504021711:1792155622:yCry0iydYyKMHRv6PTCmxjjj6w9yLZOorI0ILw8y7wg/a4b78e513f1c476b/CqhhaQEHeOlyTXE4bPN5S6Xz2jpejULAq3Qm.jst6_U-1792158871-1.2.1.1-xOiCZt8gN4TxNKwKL_dKXcTbLZ7w5H_7cORW1qNLW4PhfnWnrcoNU5F13e6PvPMP",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://www.cvlareina.cl/favicon.ico",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://www.cvlareina.cl/2ba2b4da-e5d6-4341-a026-4592b5854406",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/av0/rch/ze49w/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal?lang=auto&offlabel=true",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/b3f9d0a3-519f-4b7b-a00e-fb8ade3e169a",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/2029850935:1792155624:bPa2SLvHW2qpyC3bwxiEww82sUmR19sLMQ1Hp2RS5m0/a4b78e569faea9b4/AmjAUoAnz62A6izKvr0Mp7TXEN_2IBxBCV6HzQqUA3o-1792158872-1.2.1.1-i6ZOLAzV9.b3eHVE6OJ0MV00ovgQus2VIeh_MHEYxVZtyB4XVsKOJYcZxQ4QCIco",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/c1a94dfa-0fad-4fd1-aaad-75b8f476b580",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a4b78e569faea9b4/AmjAUoAnz62A6izKvr0Mp7TXEN_2IBxBCV6HzQqUA3o-1792158872-1.2.1.1-i6ZOLAzV9.b3eHVE6OJ0MV00ovgQus2VIeh_MHEYxVZtyB4XVsKOJYcZxQ4QCIco",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a4b78e569faea9b4/1792158872570/f8e7800440f528f01801e29bf06ccb6c55b97939f0481f056101d650a5cbd953/xxvIKHh3mwHuUvUPKBTr2JOMWl.YWTP2phin5hxN72A-1792158872-1.3.1.1-K6j6ShmcAwCyR1R9BnIn3Ge19BzZo7kEshSH5hC1tm3PUZTGCo8F4sfjl5nqUXSnnbicdr2uwTxLijAWbxjw3yVHucloJ1IzNpYBRq92LNKv1qr9_fj_71tlTUBG4Kzv2oisq13PAMaJkqmi.fLoSR8ckmeUNpXzrZyM6kTWWCMp",
+      "metodo": "GET",
+      "tipo": "Fetch",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/c1a94dfa-0fad-4fd1-aaad-75b8f476b580",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/ci/a4b78e569faea9b4/1792158872571/Z3PwFwPj.vGAYrTYeHl50ItRbnoOnNebpT7Ag5QE3EI-1792158872-1.3.1.1-0cjdH8ZAd84UzpYqQqxRtb4T2uinY5H1MspFp4VR9ndKziAZfXRZ8FiGRwBADy4eLYgtq4ULAd2Y0b9uzSuvCuwW_6LPWNVx.0JAMjntoHx164X4Pucqm.QKrSUZ0jCs3dKZXv4LlZEDre9fKqZaukxBFNbED3ysccCMEKc39sdxv.llRbwsXwF6Dp5A6uwV4rVFie5psfE4bXV4oNuDaeQ_stEUCH4YZjDK8MeqHRQZ8q",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/c1a94dfa-0fad-4fd1-aaad-75b8f476b580",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/2029850935:1792155624:bPa2SLvHW2qpyC3bwxiEww82sUmR19sLMQ1Hp2RS5m0/a4b78e569faea9b4/AmjAUoAnz62A6izKvr0Mp7TXEN_2IBxBCV6HzQqUA3o-1792158872-1.2.1.1-i6ZOLAzV9.b3eHVE6OJ0MV00ovgQus2VIeh_MHEYxVZtyB4XVsKOJYcZxQ4QCIco",
+      "metodo": "POST",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "blob:https://challenges.cloudflare.com/a8ad8e4f-0440-4984-900f-23ffa7d3ae17",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "www.cvlareina.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "www.cvlareina.cl"
+    },
+    {
+      "fase": "A",
+      "nombre": "__cf_bm",
+      "desde": "www.cvlareina.cl"
+    }
+  ],
+  "peso": {
+    "total_bytes": 1082740,
+    "al_abrir_bytes": 1082740,
+    "n_peticiones": 19,
+    "mas_pesados": [
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/2029850935:1792155624:bPa2SLvHW2qpyC3bwxiEww82sUmR19sLMQ1Hp2RS5m0/a4b78e569faea9b4/AmjAUoAnz",
+        "bytes": 621141
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/turnstile/f/av0/rch/ze49w/0x4AAAAAAADnPIDROrmt1Wwj/light/fbE/new/normal?lang=auto&offlabel=true",
+        "bytes": 118763
+      },
+      {
+        "url": "https://www.cvlareina.cl/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a4b78e513f1c476b",
+        "bytes": 101838
+      },
+      {
+        "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/2029850935:1792155624:bPa2SLvHW2qpyC3bwxiEww82sUmR19sLMQ1Hp2RS5m0/a4b78e569faea9b4/AmjAUoAnz",
+        "bytes": 92482
+      }
+    ]
+  },
+  "html_len": 11426
+}

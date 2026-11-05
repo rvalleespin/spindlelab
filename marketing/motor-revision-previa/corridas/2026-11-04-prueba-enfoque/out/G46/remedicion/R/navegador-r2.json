@@ -1,0 +1,68 @@
+{
+  "url": "https://yeppo.cl/",
+  "cuando": "2026-11-04T17:34:53.123Z",
+  "A": {
+    "cookies": [],
+    "dom": {
+      "url": "https://yeppo.cl/",
+      "titulo": "Browser verification",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 76,
+      "muestra": "Verifying your browser\n\nOne quick check before you continue.\n\nVerify browser",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 11
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [],
+    "dom": {
+      "url": "https://yeppo.cl/",
+      "titulo": "Browser verification",
+      "aviso": null,
+      "formularios": [],
+      "enlaces": [],
+      "politica": [],
+      "largo_texto": 76,
+      "muestra": "Verifying your browser\n\nOne quick check before you continue.\n\nVerify browser",
+      "cta_en_pantalla": [],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 0,
+        "palabras": 11
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://yeppo.cl/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    }
+  ],
+  "setCookies": [],
+  "peso": {
+    "total_bytes": 10137,
+    "al_abrir_bytes": 10137,
+    "n_peticiones": 1,
+    "mas_pesados": [
+      {
+        "url": "https://yeppo.cl/",
+        "bytes": 10137
+      }
+    ]
+  },
+  "html_len": 24226
+}

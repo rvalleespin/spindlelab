@@ -1,0 +1,859 @@
+{
+  "id": "G48",
+  "dominio": "thecoffee.jp",
+  "motor": "v0",
+  "cuando": "2026-10-29T16:55:48.026Z",
+  "entorno": "cloud (IP de datacenter, via proxy)",
+  "resultado": "oferta-capa-1",
+  "url": "https://thecoffee.jp/",
+  "hallazgo": {
+    "id": "F2",
+    "nombre": "No hay a la vista cómo contactar al negocio",
+    "linea": "Desarrollo Web",
+    "capa": 1,
+    "estado": "estable",
+    "quien_comprueba": "el dueño, en 30 segundos",
+    "donde_mirar": "Abrir la portada y buscar por dónde un cliente puede escribir o llamar.",
+    "condiciones": {
+      "1": {
+        "v": "no",
+        "razon": "Se ve mirando el sitio."
+      },
+      "2": {
+        "v": "si",
+        "razon": "Sin ruta de contacto, cada visita que quiere comprar se va."
+      },
+      "3": {
+        "v": "si",
+        "razon": "Se ve a simple vista."
+      },
+      "4": {
+        "v": "no",
+        "razon": "Cualquier herramienta lo ve: es capa 1."
+      }
+    },
+    "afirmable": "En la portada no hay formulario, ni teléfono, ni correo, ni WhatsApp, ni un enlace de contacto.",
+    "no_afirmable": [
+      "que el negocio no tenga contacto en otras páginas del sitio (solo se revisó la portada)"
+    ],
+    "advertencias": [],
+    "datos": {},
+    "propuesta": {
+      "en_castellano": "En la portada de tu sitio no encontré cómo contactarte: ni formulario, ni teléfono, ni correo, ni WhatsApp.",
+      "problema_tecnico": "En la portada no hay formulario, ni teléfono, ni correo, ni WhatsApp, ni un enlace de contacto.",
+      "donde_mirar": "Abrir la portada y buscar por dónde un cliente puede escribir o llamar.",
+      "se_vende": {
+        "linea": "Desarrollo Web",
+        "producto": "Desarrollo Web a medida",
+        "alcance": "Poner a la vista un formulario, teléfono o WhatsApp y probarlo.",
+        "vehiculo_publicado": "Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl, leído el 15-oct-2026)",
+        "precio_en_el_correo": "Solo como referencia, no como cotización: Desarrollo Web a medida, página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+        "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+        "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+      },
+      "fuerza": "fuerte",
+      "frase_de_arreglo": "Eso se arregla: dejo a la vista por dónde te escriben y lo pruebo de punta a punta.",
+      "apertura_a_reunion": "Vi varias cosas más que no te anoto acá. Si quieres, lo vemos en una llamada de 20 minutos.",
+      "cierre_sugerido": null,
+      "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+      "por_definir": [
+        "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+      ],
+      "revision_de_tono": "limpia",
+      "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+    }
+  },
+  "ruta_interna": [
+    {
+      "id": "F10",
+      "nombre": "En la primera pantalla no hay cómo contactar, cotizar o comprar",
+      "linea": "Desarrollo Web",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, mirando la primera pantalla",
+      "donde_mirar": "Abrir el sitio y, sin bajar, buscar un botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+      "condiciones": {
+        "1": {
+          "v": "medias",
+          "razon": "El dueño ve su sitio todos los días y no ve lo que falta."
+        },
+        "2": {
+          "v": "si",
+          "razon": "Quien llega y no ve cómo seguir, se va."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve a simple vista."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Es capa 1."
+        }
+      },
+      "afirmable": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+      "no_afirmable": [
+        "que no exista contacto más abajo en la página"
+      ],
+      "advertencias": [
+        "Mirar la captura del tramo A (escritorio) antes de usarlo: la heurística busca palabras de acción, y un botón con otro texto no cuenta."
+      ],
+      "datos": {},
+      "propuesta": {
+        "en_castellano": "En la primera pantalla de tu sitio no hay ningún botón para contactarte, cotizar o escribir por WhatsApp.",
+        "problema_tecnico": "En la primera pantalla de la portada no hay ningún botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+        "donde_mirar": "Abrir el sitio y, sin bajar, buscar un botón o enlace para contactar, cotizar, escribir por WhatsApp o comprar.",
+        "se_vende": {
+          "linea": "Desarrollo Web",
+          "producto": "Desarrollo Web a medida",
+          "alcance": "Poner una acción de contacto visible en la primera pantalla, en escritorio y en celular.",
+          "vehiculo_publicado": "Página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Desarrollo Web a medida, página desde $390.000 + IVA; Sitio Esencial desde $690.000 + IVA (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "fuerte",
+        "frase_de_arreglo": "Eso se arregla: dejo a la vista, desde la primera pantalla, la forma de escribirte y lo pruebo en el celular.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "C1",
+      "nombre": "Rastreadores que escriben antes de cualquier consentimiento",
+      "linea": "Verifica y Cumple",
+      "estado": "estable",
+      "quien_comprueba": "el dueño, en 30 segundos",
+      "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Las cookies las escriben scripts de terceros; el dueño ve el sitio normal."
+        },
+        "2": {
+          "v": "si",
+          "razon": "Cookies de medición o publicidad escritas sin que nadie haya aceptado: _gcl_au, _fbp, _ga_2P5J7EWKYP, _ga. Se describe la señal, no la obligación."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en el panel de cookies del navegador."
+        },
+        "4": {
+          "v": "si",
+          "razon": "Exige dos tramos, atribuir cada cookie a su script y leer Consent Mode (gcs); no lo entrega una API."
+        }
+      },
+      "afirmable": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _fbp, _ga_2P5J7EWKYP, _ga.",
+      "no_afirmable": [
+        "que algún proveedor \"recibió la visita\" salvo que haya envío observado en ambas corridas (hoy: Google Ads, Google Analytics)",
+        "que el sitio \"no tiene aviso\" sin ver la captura del tramo B",
+        "lo que la ley \"exige\"",
+        "cualquier cosa que no aparezca en las dos corridas"
+      ],
+      "advertencias": [],
+      "propuesta": {
+        "en_castellano": "Abrí tu sitio sin tocar nada ni aceptar nada, y ya había dejado en mi navegador cookies de Google y Meta.",
+        "problema_tecnico": "Al abrir el sitio sin aceptar ni tocar nada, el navegador guardó: _gcl_au, _fbp, _ga_2P5J7EWKYP, _ga.",
+        "donde_mirar": "Abrir el sitio en una ventana nueva y, sin tocar nada ~10 s, mirar las cookies (candado > Cookies, o F12 > Application > Cookies).",
+        "se_vende": {
+          "linea": "Verifica y Cumple",
+          "producto": "Kit de implementación de Verifica y Cumple",
+          "alcance": "Lo que el chequeo gratis deje pendiente. El kit no incluye asesoría legal: entrega la plantilla de política para que la revise el abogado del cliente. Eso se dice, no se esconde.",
+          "vehiculo_publicado": "Desde $149.000 + IVA, una vez (correos aprobados 23-sep y estrategia §1)",
+          "precio_en_el_correo": "Desde $149.000 + IVA, una vez",
+          "linea_de_precio": null,
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "fuerte",
+        "frase_de_arreglo": "Eso lo arreglo yo, con lo demás que el chequeo deje pendiente. Desde $149.000 + IVA, una vez.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": "Gratis y sin registro: https://verifica.spindlelab.cl",
+        "estado_del_texto": "APROBADO: tomado de correos ya revisados.",
+        "por_definir": [],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F13",
+      "nombre": "La información de la portada está mal estructurada",
+      "linea": "Auditoría SEO Técnica",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con el código de la página",
+      "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "La estructura del código no se ve."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Google y la IA usan esa estructura para entender de qué trata la página."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en el código fuente."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Cualquier auditor SEO gratuito lo ve: es capa 1."
+        }
+      },
+      "afirmable": "La portada no tiene un título principal (H1).",
+      "no_afirmable": [
+        "que el resto del sitio tenga el mismo problema",
+        "que tenga poco texto en total: solo se cuentan las palabras visibles al cargar la portada, no el texto oculto"
+      ],
+      "advertencias": [],
+      "datos": {
+        "tipos": [
+          "sin-h1"
+        ],
+        "h1": 0,
+        "palabras": 947
+      },
+      "propuesta": {
+        "en_castellano": "Tu portada no tiene un título principal.",
+        "problema_tecnico": "La portada no tiene un título principal (H1).",
+        "donde_mirar": "Ver el código fuente (clic derecho > ver código) y buscar \"<h1\"; o contar las palabras de la portada.",
+        "se_vende": {
+          "linea": "Auditoría SEO Técnica",
+          "producto": "Auditoría SEO Técnica, Completa",
+          "alcance": "Ordenar la información de la portada: un título principal claro y el contenido que explica la oferta.",
+          "vehiculo_publicado": "Desde $490.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría SEO Técnica, Completa, desde $490.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo la información ordenada, con un título que diga qué haces y para quién.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F12",
+      "nombre": "La portada descarga demasiado peso",
+      "linea": "Auditoría SEO Técnica",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "quien administra el sitio, con las herramientas del navegador",
+      "donde_mirar": "En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Nadie mira cuánto pesa su portada."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "En un celular con datos, una portada pesada tarda en abrir."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se ve en la pestaña Network."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Cualquier medidor de velocidad lo ve: es capa 1."
+        }
+      },
+      "afirmable": "La portada descarga 17.7 MB solo al abrirse, sin bajar la página (mínimo de las 3 corridas).",
+      "no_afirmable": [
+        "cuánto tarda en abrir para un visitante real (se mide desde un datacenter)"
+      ],
+      "advertencias": [],
+      "datos": {
+        "mb": 17.7,
+        "mas_pesado": {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/France-Paris-Batignolles-app_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.com&",
+          "bytes": 606842
+        }
+      },
+      "propuesta": {
+        "en_castellano": "Tu portada descarga 17.7 MB solo al abrirse; en un celular con datos eso tarda.",
+        "problema_tecnico": "La portada descarga 17.7 MB solo al abrirse, sin bajar la página (mínimo de las 3 corridas).",
+        "donde_mirar": "En el navegador: F12, pestaña Network, recargar y mirar el total transferido abajo.",
+        "se_vende": {
+          "linea": "Auditoría SEO Técnica",
+          "producto": "Auditoría SEO Técnica, Completa",
+          "alcance": "Reducir el peso de la portada y medir el antes y el después.",
+          "vehiculo_publicado": "Desde $490.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría SEO Técnica, Completa, desde $490.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso se arregla: dejo la portada liviana y mido cuánto baja.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    },
+    {
+      "id": "F8",
+      "nombre": "El negocio no está declarado como entidad en datos estructurados",
+      "linea": "Visibilidad en IA",
+      "capa": 1,
+      "estado": "estable",
+      "quien_comprueba": "el dueño, con una herramienta gratuita",
+      "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+      "condiciones": {
+        "1": {
+          "v": "si",
+          "razon": "Los datos estructurados no se ven."
+        },
+        "2": {
+          "v": "medias",
+          "razon": "Sin entidad declarada, la IA y Google adivinan quién eres."
+        },
+        "3": {
+          "v": "si",
+          "razon": "Se comprueba con una herramienta gratuita."
+        },
+        "4": {
+          "v": "no",
+          "razon": "Los chequeos gratis lo muestran: es capa 1."
+        }
+      },
+      "afirmable": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+      "no_afirmable": [
+        "que \"Google no te entiende\""
+      ],
+      "advertencias": [],
+      "datos": {},
+      "propuesta": {
+        "en_castellano": "Tu sitio no le dice a Google ni a la IA qué negocio eres en el formato que ellos leen (datos estructurados).",
+        "problema_tecnico": "El sitio no declara el negocio (Organization o LocalBusiness) en datos estructurados.",
+        "donde_mirar": "Pegar la dirección en el probador de resultados enriquecidos de Google, o buscar \"application/ld+json\" en el código de la página.",
+        "se_vende": {
+          "linea": "Visibilidad en IA",
+          "producto": "Auditoría de Visibilidad en IA",
+          "alcance": "Declarar el negocio como entidad en datos estructurados.",
+          "vehiculo_publicado": "Desde $400.000 + IVA, una vez (spindlelab.cl, leído el 15-oct-2026)",
+          "precio_en_el_correo": "Solo como referencia, no como cotización: Auditoría de Visibilidad en IA, desde $400.000 + IVA, una vez (spindlelab.cl). El valor del arreglo se cierra en la llamada.",
+          "linea_de_precio": "Los precios de referencia están publicados en spindlelab.cl, y el valor final se cierra en la llamada.",
+          "plazo": "no se ofrece plazo (ningún correo aprobado lo hace)"
+        },
+        "fuerza": "débil",
+        "frase_de_arreglo": "Eso lo arreglo yo: dejo declarado qué negocio eres, con tu dirección y tu contacto, en el formato que leen Google y la IA.",
+        "apertura_a_reunion": "Si quieres, lo vemos en una llamada de 20 minutos y te muestro cómo lo dejaría.",
+        "cierre_sugerido": null,
+        "estado_del_texto": "BORRADOR: no está en el corpus aprobado. Requiere revisión de Ramón.",
+        "por_definir": [
+          "No hay precio publicado para un arreglo puntual: el sitio publica el \"desde\" del servicio y dice que el valor final se cierra tras el diagnóstico gratuito y una llamada de 20 minutos. Por decisión de Ramón, el correo apunta a la base publicada como referencia y el valor se cierra en la llamada."
+        ],
+        "revision_de_tono": "limpia",
+        "registro": "singular (firma Ramón, estrategia §7). Para sitio o redes, usar la versión plural."
+      }
+    }
+  ],
+  "ofertas_adicionales": [
+    "F10",
+    "C1",
+    "F13",
+    "F12",
+    "F8"
+  ],
+  "capa1": {
+    "consecuencia": [
+      "sin_ruta_de_contacto_visible"
+    ],
+    "higiene": [
+      "sin_llms_txt",
+      "sin_sitemap",
+      "sin_entidad_en_jsonld"
+    ]
+  },
+  "notas": [],
+  "corridas_de_navegador": 3,
+  "mapa": {
+    "contacto": {
+      "tel": 0,
+      "mailto": [],
+      "whatsapp": []
+    },
+    "analitica": {
+      "gtm": [
+        "GTM-NPGDQKVG"
+      ],
+      "ga4": [],
+      "ua": [],
+      "ads": [],
+      "meta_pixel": true,
+      "clarity": false,
+      "hotjar": false,
+      "gtag_eventos_inline": []
+    },
+    "infraestructura": {
+      "server": null,
+      "cloudflare": false,
+      "x_powered_by": "Next.js"
+    },
+    "robots": {
+      "agentes": {
+        "GPTBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "OAI-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ChatGPT-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "ClaudeBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-SearchBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Claude-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "PerplexityBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Perplexity-User": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "Google-Extended": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        },
+        "CCBot": {
+          "bloquea_en_robots": false,
+          "regla_de": "*"
+        }
+      },
+      "sitemap_declarado": false
+    },
+    "llms_txt": false,
+    "sitemap": false,
+    "jsonld": {
+      "tipos": [],
+      "org": []
+    }
+  },
+  "movil": [
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": 12,
+      "textos_chicos_pct": 0,
+      "captura": "m1-movil.jpg"
+    },
+    {
+      "ancho_viewport": 390,
+      "ancho_contenido": 390,
+      "desborde_px": 0,
+      "meta_viewport": true,
+      "cta_en_pantalla": 0,
+      "fuente_minima_px": 12,
+      "textos_chicos_pct": 0,
+      "captura": "m2-movil.jpg"
+    }
+  ],
+  "peso": [
+    {
+      "total_bytes": 17729891,
+      "al_abrir_bytes": 17729891,
+      "n_peticiones": 173,
+      "mas_pesados": [
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/France-Paris-Batignolles-app_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.com&",
+          "bytes": 606842
+        },
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/1B%28capa%29-bogota-app_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.com&Expir",
+          "bytes": 579051
+        },
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/SaintGervasi-Barcelona-Espanha_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.co",
+          "bytes": 547395
+        },
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/mexico-metepec-townsquare-app_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.com",
+          "bytes": 530851
+        }
+      ]
+    },
+    {
+      "total_bytes": 17730023,
+      "al_abrir_bytes": 17730023,
+      "n_peticiones": 173,
+      "mas_pesados": [
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/France-Paris-Batignolles-app_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.com&",
+          "bytes": 606842
+        },
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/1B%28capa%29-bogota-app_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.com&Expir",
+          "bytes": 579051
+        },
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/SaintGervasi-Barcelona-Espanha_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.co",
+          "bytes": 547418
+        },
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/mexico-metepec-townsquare-app_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.com",
+          "bytes": 530851
+        }
+      ]
+    },
+    {
+      "total_bytes": 17731234,
+      "al_abrir_bytes": 17731234,
+      "n_peticiones": 174,
+      "mas_pesados": [
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/France-Paris-Batignolles-app_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.com&",
+          "bytes": 606834
+        },
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/1B%28capa%29-bogota-app_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.com&Expir",
+          "bytes": 579047
+        },
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/SaintGervasi-Barcelona-Espanha_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.co",
+          "bytes": 547392
+        },
+        {
+          "url": "https://storage.googleapis.com/thecoffee-ws/images/mexico-metepec-townsquare-app_800x800.jpg?GoogleAccessId=thecoffee-ws%40thecoffee-gke.iam.gserviceaccount.com",
+          "bytes": 530841
+        }
+      ]
+    }
+  ],
+  "soporte": {
+    "c1": {
+      "cookies": [
+        {
+          "nombre": "_gcl_au",
+          "proveedor": "Google Ads",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_fbp",
+          "proveedor": "Meta",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_ga_2P5J7EWKYP",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        },
+        {
+          "nombre": "_ga",
+          "proveedor": "Google Analytics",
+          "primera_fase": "A"
+        }
+      ],
+      "solo_en_una_corrida": [],
+      "carga_en_ambas": [
+        "Google Tag",
+        "Meta",
+        "Microsoft Clarity"
+      ],
+      "envio_en_ambas": [
+        "Google Ads",
+        "Google Analytics"
+      ],
+      "google_gcs": [
+        [],
+        [],
+        []
+      ],
+      "aviso_en_dom": [
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        },
+        {
+          "A": false,
+          "B": false,
+          "implicito": false
+        }
+      ],
+      "capturas": [
+        [
+          "r1-A.jpg",
+          "r1-B.jpg"
+        ],
+        [
+          "r2-A.jpg",
+          "r2-B.jpg"
+        ],
+        [
+          "r3-A.jpg",
+          "r3-B.jpg"
+        ]
+      ]
+    },
+    "c2": {
+      "gtm": [
+        "GTM-NPGDQKVG"
+      ],
+      "contenedores": [
+        {
+          "id": "GTM-NPGDQKVG",
+          "leido": true,
+          "funciones": [
+            "__e",
+            "__v",
+            "__aev",
+            "__c",
+            "__u",
+            "__cvt_239930902_53",
+            "__jsm",
+            "__j",
+            "__k",
+            "__awec",
+            "__gtes",
+            "__f",
+            "__paused",
+            "__cvt_239930902_44",
+            "__sp",
+            "__gclidw",
+            "__gaawe",
+            "__awud",
+            "__awct",
+            "__googtag",
+            "__cvt_239930902_87",
+            "__fsl",
+            "__lcl",
+            "__html"
+          ],
+          "tags_de_evento": [
+            "__gaawe",
+            "__awct"
+          ],
+          "html_personalizado": 1
+        }
+      ],
+      "eventos_inline": [],
+      "eventos_observados_en_sesion": [
+        "page_view"
+      ],
+      "ads_instalado": false
+    },
+    "c3": null
+  },
+  "borde": {
+    "rondas": [
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 127697
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      },
+      {
+        "normal": {
+          "ok": true,
+          "status": 200,
+          "bytes": 127697
+        },
+        "agentes": {
+          "GPTBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "OAI-SearchBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ChatGPT-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "ClaudeBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Claude-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "PerplexityBot": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          },
+          "Perplexity-User": {
+            "ok": true,
+            "status": 200,
+            "bytes": 127697,
+            "bloqueado": false,
+            "causa": null
+          }
+        }
+      }
+    ],
+    "probados": [
+      "GPTBot",
+      "OAI-SearchBot",
+      "ChatGPT-User",
+      "ClaudeBot",
+      "Claude-User",
+      "PerplexityBot",
+      "Perplexity-User"
+    ],
+    "omitidos_por_robots": [],
+    "normal_ok_en_ambas": true,
+    "bloqueados_en_ambas": [],
+    "causa_nombrada": null,
+    "discrepancia_entre_rondas": false,
+    "limite": "UA presentado desde una IP que no es la oficial del agente: un firewall que verifica bots por IP puede dejar pasar al real."
+  },
+  "contacto_estructural": {
+    "rondas": [
+      {
+        "forms": [],
+        "mails": []
+      },
+      {
+        "forms": [],
+        "mails": []
+      }
+    ],
+    "formularios_rotos_en_ambas": [],
+    "correos_sin_mx_en_ambas": []
+  },
+  "entidad": {
+    "fuentes": [
+      {
+        "fuente": "title",
+        "valor": "The Coffee"
+      }
+    ],
+    "nombres_en_conflicto": [],
+    "marca_declarada_ausente_del_title": null
+  },
+  "enlaces": {
+    "revisados": 20,
+    "rotos_en_ambas": [],
+    "discrepancia_entre_rondas": 0
+  },
+  "evidencia": {
+    "capturas": [
+      "r1-A.jpg",
+      "r1-B.jpg",
+      "r2-A.jpg",
+      "r2-B.jpg",
+      "r3-A.jpg",
+      "r3-B.jpg",
+      "m1-movil.jpg",
+      "m2-movil.jpg"
+    ],
+    "corridas": [
+      "navegador-r1.json",
+      "navegador-r2.json",
+      "navegador-r3.json"
+    ]
+  },
+  "limites": [
+    "Ninguna afirmación está verificada: la palabra verificado la escribe un humano que abrió el sitio.",
+    "Contenedor de Tag Manager leído una vez (es un archivo estático)."
+  ]
+}

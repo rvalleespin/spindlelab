@@ -1,0 +1,1469 @@
+{
+  "url": "https://cochlear.azimuthmd.com/",
+  "cuando": "2026-10-19T16:01:19.654Z",
+  "A": {
+    "cookies": [
+      {
+        "nombre": "_session_id",
+        "dominio": "cochlear.azimuthmd.com",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://cochlear.azimuthmd.com/",
+      "titulo": "Azimuth Cochlear",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://cochlear.azimuthmd.com/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://cochlear.azimuthmd.com/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "https://www.cochlear.com/la/es/connect/contact-us/join-cochlear-family",
+          "accion_abs": "https://www.cochlear.com/la/es/connect/contact-us/join-cochlear-family",
+          "metodo": "post",
+          "campos": 2,
+          "requeridos": 1,
+          "visible": false,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "https://www.facebook.com/AzimuthMedical",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/azimuthmedical",
+          "t": ""
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56920084196&text=Hola%20Azimuth Cochlear",
+          "t": ""
+        },
+        {
+          "h": "https://youtube.com/@AzimuthMedicalCochlear",
+          "t": ""
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com",
+          "t": "Azimuth Cochlear"
+        },
+        {
+          "h": "/customer/login",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "HOME"
+        },
+        {
+          "h": "/implantes-cocleares-1",
+          "t": "IMPLANTES COCLEARES"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleus-7",
+          "t": "Procesador de sonido Nucleus ® 7"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleusc2ae-8",
+          "t": "Procesador de sonido Nucleus® 8"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleus%C2%AE-kanso%C2%AE-2",
+          "t": "Procesador de sonido Nucleus® Kanso® 2"
+        },
+        {
+          "h": "/implantes-acusticos-1",
+          "t": "IMPLANTES ACÚSTICOS"
+        },
+        {
+          "h": "/",
+          "t": "Soluciones No Quirúrgicas"
+        },
+        {
+          "h": "/cochlear%E2%84%A2-baha%C2%AE-start",
+          "t": "Cochlear™ Baha® Start"
+        },
+        {
+          "h": "/",
+          "t": "Implantes Baha®"
+        },
+        {
+          "h": "/sistemas-bahac2ae-6-max",
+          "t": "Sistemas Baha® 6 Max"
+        },
+        {
+          "h": "/",
+          "t": "Implantes Osia®"
+        },
+        {
+          "h": "/implantes-osia%C2%AE",
+          "t": "Implantes Osia ®"
+        },
+        {
+          "h": "/",
+          "t": "NUESTROS ACCESORIOS"
+        },
+        {
+          "h": "/baterias-y-cables",
+          "t": "Baterias y Cargadores"
+        },
+        {
+          "h": "/bobinas-y-cables",
+          "t": "Bobinas y Cables"
+        },
+        {
+          "h": "/accesorios-aqua",
+          "t": "Accesorios Aqua+"
+        },
+        {
+          "h": "/dispositivos-true-wireless%E2%84%A2",
+          "t": "Dispositivos True Wireless™"
+        },
+        {
+          "h": "/programa-de-conserjeria-y-voluntarios",
+          "t": "CONSERJERÍA Y VOLUNTARIOS"
+        },
+        {
+          "h": "/",
+          "t": "CONTACTO"
+        },
+        {
+          "h": "/agendamiento-de-hora",
+          "t": "Agendamiento de Hora"
+        },
+        {
+          "h": "/contact",
+          "t": "¡Escríbenos!"
+        },
+        {
+          "h": "/preguntasfrecuentes",
+          "t": "PREGUNTAS FRECUENTES"
+        },
+        {
+          "h": "/blog",
+          "t": "BLOG-CONECTADOS"
+        },
+        {
+          "h": "/noticias-sus-historias-con-cochlear",
+          "t": "NOTICIAS - SUS HISTORIAS CON COCHLEAR"
+        },
+        {
+          "h": "/",
+          "t": "Home"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleus-7",
+          "t": "Procesador de sonido Nucleus ® 7"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleusc2ae-8",
+          "t": "Procesador de sonido Nucleus® 8"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleus%C2%AE-kanso%C2%AE-2",
+          "t": "Procesador de sonido Nucleus® Kanso® 2"
+        },
+        {
+          "h": "/implantes-cocleares-1",
+          "t": "Ir a Implantes Cocleares"
+        },
+        {
+          "h": "/cochlear%E2%84%A2-baha%C2%AE-start",
+          "t": "Cochlear™ Baha® Start"
+        },
+        {
+          "h": "/",
+          "t": "Ir a Soluciones No Quirúrgicas"
+        },
+        {
+          "h": "/sistemas-bahac2ae-6-max",
+          "t": "Sistemas Baha® 6 Max"
+        },
+        {
+          "h": "/",
+          "t": "Ir a Implantes Baha®"
+        },
+        {
+          "h": "/implantes-osia%C2%AE",
+          "t": "Implantes Osia ®"
+        },
+        {
+          "h": "/",
+          "t": "Ir a Implantes Osia®"
+        },
+        {
+          "h": "/implantes-acusticos-1",
+          "t": "Ir a Implantes Acústicos"
+        },
+        {
+          "h": "/baterias-y-cables",
+          "t": "Baterias y Cargadores"
+        },
+        {
+          "h": "/bobinas-y-cables",
+          "t": "Bobinas y Cables"
+        },
+        {
+          "h": "/accesorios-aqua",
+          "t": "Accesorios Aqua+"
+        },
+        {
+          "h": "/dispositivos-true-wireless%E2%84%A2",
+          "t": "Dispositivos True Wireless™"
+        },
+        {
+          "h": "/",
+          "t": "Ir a Nuestros Accesorios"
+        },
+        {
+          "h": "/programa-de-conserjeria-y-voluntarios",
+          "t": "Conserjería y Voluntarios"
+        },
+        {
+          "h": "/agendamiento-de-hora",
+          "t": "Agendamiento de Hora"
+        },
+        {
+          "h": "/contact",
+          "t": "¡Escríbenos!"
+        },
+        {
+          "h": "/",
+          "t": "Ir a Contacto"
+        },
+        {
+          "h": "/preguntasfrecuentes",
+          "t": "Preguntas Frecuentes"
+        },
+        {
+          "h": "/blog",
+          "t": "Blog-Conectados"
+        },
+        {
+          "h": "/noticias-sus-historias-con-cochlear",
+          "t": "Noticias - Sus historias con Cochlear"
+        },
+        {
+          "h": "/customer/login",
+          "t": "Ingresar / Registrarse"
+        },
+        {
+          "h": "https://www.facebook.com/AzimuthMedical",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/azimuthmedical",
+          "t": "Instagram"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56920084196&text=Hola%20Azimuth Cochlear",
+          "t": "WhatsApp"
+        },
+        {
+          "h": "https://youtube.com/@AzimuthMedicalCochlear",
+          "t": "Youtube"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "Sistema Osia®\nla reinvención\ndel implante\nauditivo"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus%C2%AE-8",
+          "t": "Procesador Nucleus 8\nMás pequeño, más inteligente\ny mejor conectado,\nEl procesad"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus%C2%AE-8",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/kanso-2",
+          "t": "Procesador Kanso 2\nConectividad avanzada\nfuera de la oreja.\nRendimiento auditivo"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/kanso-2",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cocleares.jumpseller.com/implantes-baha",
+          "t": "Sistema Baha®\nUd. decide\ncómo conectarse\ncon su audición."
+        },
+        {
+          "h": "https://cocleares.jumpseller.com/implantes-baha",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus-7",
+          "t": "Sistema Nucleus®\nrendimiento auditivo\npara hoy y siempre"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus-7",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "Sistema Osia®\nla reinvención\ndel implante\nauditivo"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus%C2%AE-8",
+          "t": "Procesador Nucleus 8\nMás pequeño, más inteligente\ny mejor conectado,\nEl procesad"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus%C2%AE-8",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/kanso-2",
+          "t": "Procesador Kanso 2\nConectividad avanzada\nfuera de la oreja.\nRendimiento auditivo"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/kanso-2",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cocleares.jumpseller.com/implantes-baha",
+          "t": "Sistema Baha®\nUd. decide\ncómo conectarse\ncon su audición."
+        },
+        {
+          "h": "https://cocleares.jumpseller.com/implantes-baha",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus-7",
+          "t": "Sistema Nucleus®\nrendimiento auditivo\npara hoy y siempre"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus-7",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "Sistema Osia®\nla reinvención\ndel implante\nauditivo"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares-1",
+          "t": "IMPLANTES\nCOCLEARES"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-acusticos-1",
+          "t": "IMPLANTES\nACÚSTICOS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/dispositivos-true-wireless%E2%84%A2",
+          "t": "ACCESORIOS\nINALÁMBRICOS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/agendamiento-de-hora",
+          "t": "AGENDAMIENTO\nDE HORA"
+        },
+        {
+          "h": "https://www.instagram.com/p/DedGhhCERmG/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/DeUTNNzR4Qi/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DePlGgPPDAl/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/Dd_3G0XEQip/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/Ddtr9f6Atl-/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/Ddl60SbxaDu/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DdAD6k7MmXM/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/Dc4HtcXke5o/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/DcjSbWukXqX/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DccngQgMOZK/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/DbtSHwvkWH5/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/DboRrzIifXF/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/azimuthmedical",
+          "t": "SÍGUENOS"
+        },
+        {
+          "h": "mailto:hola@azimuthmd.com",
+          "t": "hola@azimuthmd.com"
+        },
+        {
+          "h": "tel:<b>EscríbenossoloporWhatsapp</b> <br>+56920084196",
+          "t": "Escríbenos solo por Whatsapp \n+56920084196"
+        },
+        {
+          "h": "/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/nuestros-accesorios",
+          "t": "Nuestros Accesorios"
+        },
+        {
+          "h": "/preguntasfrecuentes",
+          "t": "Preguntas Frecuentes"
+        },
+        {
+          "h": "https://www.facebook.com/AzimuthMedical",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/azimuthmedical",
+          "t": ""
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56920084196&text=Hola Azimuth Cochlear!",
+          "t": ""
+        },
+        {
+          "h": "https://youtube.com/@AzimuthMedicalCochlear",
+          "t": ""
+        },
+        {
+          "h": "https://jumpseller.cl/?utm_medium=store&utm_campaign=powered_by&utm_source=cocleares",
+          "t": "Desarrollado por Jumpseller"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 2820,
+      "muestra": "Azimuth Medical Devices único Distribuidor Certificado Cochlear® en Chile\n   \nAzimuth Cochlear\n \nHOME\nIMPLANTES COCLEARES\nIMPLANTES ACÚSTICOS\nNUESTROS ACCESORIOS\nCONSERJERÍA Y VOLUNTARIOS\nCONTACTO\nPREGUNTAS FRECUENTES\nBLOG-CONECTADOS\nNOTICIAS - SUS HISTORIAS CON COCHLEAR\nSistema Osia®\nla reinvención\ndel implante\nauditivo\nCONOZCA MÁS\nProcesador Nucleus 8\nMás pequeño, más inteligente\ny mejor conectado,\nEl procesador de sonido Nucleus® 8 abre un mundo de posibilidades\nCONOZCA MÁS\nProcesador Kanso 2",
+      "cta_en_pantalla": [
+        {
+          "t": "",
+          "h": "https://api.whatsapp.com/send?phone=56920084196&text=Hola%20Azimuth Cochlear"
+        },
+        {
+          "t": "contacto",
+          "h": "/"
+        },
+        {
+          "t": "agendamiento\nde hora",
+          "h": "https://cochlear.azimuthmd.com/agendamiento-de-hora"
+        }
+      ],
+      "formulario_en_pantalla": false,
+      "estructura": {
+        "h1": 1,
+        "h2": 14,
+        "palabras": 403
+      }
+    },
+    "captura": "r2-A.jpg"
+  },
+  "B": {
+    "cookies": [
+      {
+        "nombre": "_session_id",
+        "dominio": "cochlear.azimuthmd.com",
+        "expira_dias": 400
+      }
+    ],
+    "dom": {
+      "url": "https://cochlear.azimuthmd.com/",
+      "titulo": "Azimuth Cochlear",
+      "aviso": null,
+      "formularios": [
+        {
+          "action": "/search",
+          "accion_abs": "https://cochlear.azimuthmd.com/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "/search",
+          "accion_abs": "https://cochlear.azimuthmd.com/search",
+          "metodo": "get",
+          "campos": 1,
+          "requeridos": 0,
+          "visible": false,
+          "pide_correo_o_tel": false
+        },
+        {
+          "action": "https://www.cochlear.com/la/es/connect/contact-us/join-cochlear-family",
+          "accion_abs": "https://www.cochlear.com/la/es/connect/contact-us/join-cochlear-family",
+          "metodo": "post",
+          "campos": 2,
+          "requeridos": 1,
+          "visible": true,
+          "pide_correo_o_tel": true
+        }
+      ],
+      "enlaces": [
+        {
+          "h": "https://www.facebook.com/AzimuthMedical",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/azimuthmedical",
+          "t": ""
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56920084196&text=Hola%20Azimuth Cochlear",
+          "t": ""
+        },
+        {
+          "h": "https://youtube.com/@AzimuthMedicalCochlear",
+          "t": ""
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com",
+          "t": "Azimuth Cochlear"
+        },
+        {
+          "h": "/customer/login",
+          "t": ""
+        },
+        {
+          "h": "/",
+          "t": "HOME"
+        },
+        {
+          "h": "/implantes-cocleares-1",
+          "t": "IMPLANTES COCLEARES"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleus-7",
+          "t": "Procesador de sonido Nucleus ® 7"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleusc2ae-8",
+          "t": "Procesador de sonido Nucleus® 8"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleus%C2%AE-kanso%C2%AE-2",
+          "t": "Procesador de sonido Nucleus® Kanso® 2"
+        },
+        {
+          "h": "/implantes-acusticos-1",
+          "t": "IMPLANTES ACÚSTICOS"
+        },
+        {
+          "h": "/",
+          "t": "Soluciones No Quirúrgicas"
+        },
+        {
+          "h": "/cochlear%E2%84%A2-baha%C2%AE-start",
+          "t": "Cochlear™ Baha® Start"
+        },
+        {
+          "h": "/",
+          "t": "Implantes Baha®"
+        },
+        {
+          "h": "/sistemas-bahac2ae-6-max",
+          "t": "Sistemas Baha® 6 Max"
+        },
+        {
+          "h": "/",
+          "t": "Implantes Osia®"
+        },
+        {
+          "h": "/implantes-osia%C2%AE",
+          "t": "Implantes Osia ®"
+        },
+        {
+          "h": "/",
+          "t": "NUESTROS ACCESORIOS"
+        },
+        {
+          "h": "/baterias-y-cables",
+          "t": "Baterias y Cargadores"
+        },
+        {
+          "h": "/bobinas-y-cables",
+          "t": "Bobinas y Cables"
+        },
+        {
+          "h": "/accesorios-aqua",
+          "t": "Accesorios Aqua+"
+        },
+        {
+          "h": "/dispositivos-true-wireless%E2%84%A2",
+          "t": "Dispositivos True Wireless™"
+        },
+        {
+          "h": "/programa-de-conserjeria-y-voluntarios",
+          "t": "CONSERJERÍA Y VOLUNTARIOS"
+        },
+        {
+          "h": "/",
+          "t": "CONTACTO"
+        },
+        {
+          "h": "/agendamiento-de-hora",
+          "t": "Agendamiento de Hora"
+        },
+        {
+          "h": "/contact",
+          "t": "¡Escríbenos!"
+        },
+        {
+          "h": "/preguntasfrecuentes",
+          "t": "PREGUNTAS FRECUENTES"
+        },
+        {
+          "h": "/blog",
+          "t": "BLOG-CONECTADOS"
+        },
+        {
+          "h": "/noticias-sus-historias-con-cochlear",
+          "t": "NOTICIAS - SUS HISTORIAS CON COCHLEAR"
+        },
+        {
+          "h": "/",
+          "t": "Home"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleus-7",
+          "t": "Procesador de sonido Nucleus ® 7"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleusc2ae-8",
+          "t": "Procesador de sonido Nucleus® 8"
+        },
+        {
+          "h": "/procesador-de-sonido-nucleus%C2%AE-kanso%C2%AE-2",
+          "t": "Procesador de sonido Nucleus® Kanso® 2"
+        },
+        {
+          "h": "/implantes-cocleares-1",
+          "t": "Ir a Implantes Cocleares"
+        },
+        {
+          "h": "/cochlear%E2%84%A2-baha%C2%AE-start",
+          "t": "Cochlear™ Baha® Start"
+        },
+        {
+          "h": "/",
+          "t": "Ir a Soluciones No Quirúrgicas"
+        },
+        {
+          "h": "/sistemas-bahac2ae-6-max",
+          "t": "Sistemas Baha® 6 Max"
+        },
+        {
+          "h": "/",
+          "t": "Ir a Implantes Baha®"
+        },
+        {
+          "h": "/implantes-osia%C2%AE",
+          "t": "Implantes Osia ®"
+        },
+        {
+          "h": "/",
+          "t": "Ir a Implantes Osia®"
+        },
+        {
+          "h": "/implantes-acusticos-1",
+          "t": "Ir a Implantes Acústicos"
+        },
+        {
+          "h": "/baterias-y-cables",
+          "t": "Baterias y Cargadores"
+        },
+        {
+          "h": "/bobinas-y-cables",
+          "t": "Bobinas y Cables"
+        },
+        {
+          "h": "/accesorios-aqua",
+          "t": "Accesorios Aqua+"
+        },
+        {
+          "h": "/dispositivos-true-wireless%E2%84%A2",
+          "t": "Dispositivos True Wireless™"
+        },
+        {
+          "h": "/",
+          "t": "Ir a Nuestros Accesorios"
+        },
+        {
+          "h": "/programa-de-conserjeria-y-voluntarios",
+          "t": "Conserjería y Voluntarios"
+        },
+        {
+          "h": "/agendamiento-de-hora",
+          "t": "Agendamiento de Hora"
+        },
+        {
+          "h": "/contact",
+          "t": "¡Escríbenos!"
+        },
+        {
+          "h": "/",
+          "t": "Ir a Contacto"
+        },
+        {
+          "h": "/preguntasfrecuentes",
+          "t": "Preguntas Frecuentes"
+        },
+        {
+          "h": "/blog",
+          "t": "Blog-Conectados"
+        },
+        {
+          "h": "/noticias-sus-historias-con-cochlear",
+          "t": "Noticias - Sus historias con Cochlear"
+        },
+        {
+          "h": "/customer/login",
+          "t": "Ingresar / Registrarse"
+        },
+        {
+          "h": "https://www.facebook.com/AzimuthMedical",
+          "t": "Facebook"
+        },
+        {
+          "h": "https://www.instagram.com/azimuthmedical",
+          "t": "Instagram"
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56920084196&text=Hola%20Azimuth Cochlear",
+          "t": "WhatsApp"
+        },
+        {
+          "h": "https://youtube.com/@AzimuthMedicalCochlear",
+          "t": "Youtube"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "Sistema Osia®\nla reinvención\ndel implante\nauditivo"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus%C2%AE-8",
+          "t": "Procesador Nucleus 8\nMás pequeño, más inteligente\ny mejor conectado,\nEl procesad"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus%C2%AE-8",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/kanso-2",
+          "t": "Procesador Kanso 2\nConectividad avanzada\nfuera de la oreja.\nRendimiento auditivo"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/kanso-2",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cocleares.jumpseller.com/implantes-baha",
+          "t": "Sistema Baha®\nUd. decide\ncómo conectarse\ncon su audición."
+        },
+        {
+          "h": "https://cocleares.jumpseller.com/implantes-baha",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus-7",
+          "t": "Sistema Nucleus®\nrendimiento auditivo\npara hoy y siempre"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus-7",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "Sistema Osia®\nla reinvención\ndel implante\nauditivo"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus%C2%AE-8",
+          "t": "Procesador Nucleus 8\nMás pequeño, más inteligente\ny mejor conectado,\nEl procesad"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus%C2%AE-8",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/kanso-2",
+          "t": "Procesador Kanso 2\nConectividad avanzada\nfuera de la oreja.\nRendimiento auditivo"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/kanso-2",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cocleares.jumpseller.com/implantes-baha",
+          "t": "Sistema Baha®\nUd. decide\ncómo conectarse\ncon su audición."
+        },
+        {
+          "h": "https://cocleares.jumpseller.com/implantes-baha",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus-7",
+          "t": "Sistema Nucleus®\nrendimiento auditivo\npara hoy y siempre"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/procesador-de-sonido-nucleus-7",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "Sistema Osia®\nla reinvención\ndel implante\nauditivo"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares/implantes-osia",
+          "t": "CONOZCA MÁS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-cocleares-1",
+          "t": "IMPLANTES\nCOCLEARES"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/implantes-acusticos-1",
+          "t": "IMPLANTES\nACÚSTICOS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/dispositivos-true-wireless%E2%84%A2",
+          "t": "ACCESORIOS\nINALÁMBRICOS"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com/agendamiento-de-hora",
+          "t": "AGENDAMIENTO\nDE HORA"
+        },
+        {
+          "h": "https://www.instagram.com/p/DedGhhCERmG/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/DeUTNNzR4Qi/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DePlGgPPDAl/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/Dd_3G0XEQip/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/Ddtr9f6Atl-/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/Ddl60SbxaDu/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DdAD6k7MmXM/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/Dc4HtcXke5o/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/DcjSbWukXqX/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/reel/DccngQgMOZK/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/DbtSHwvkWH5/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/p/DboRrzIifXF/",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/azimuthmedical",
+          "t": "SÍGUENOS"
+        },
+        {
+          "h": "mailto:hola@azimuthmd.com",
+          "t": "hola@azimuthmd.com"
+        },
+        {
+          "h": "tel:<b>EscríbenossoloporWhatsapp</b> <br>+56920084196",
+          "t": "Escríbenos solo por Whatsapp \n+56920084196"
+        },
+        {
+          "h": "/contact",
+          "t": "Contacto"
+        },
+        {
+          "h": "/nuestros-accesorios",
+          "t": "Nuestros Accesorios"
+        },
+        {
+          "h": "/preguntasfrecuentes",
+          "t": "Preguntas Frecuentes"
+        },
+        {
+          "h": "https://www.facebook.com/AzimuthMedical",
+          "t": ""
+        },
+        {
+          "h": "https://www.instagram.com/azimuthmedical",
+          "t": ""
+        },
+        {
+          "h": "https://api.whatsapp.com/send?phone=56920084196&text=Hola Azimuth Cochlear!",
+          "t": ""
+        },
+        {
+          "h": "https://youtube.com/@AzimuthMedicalCochlear",
+          "t": ""
+        },
+        {
+          "h": "https://jumpseller.cl/?utm_medium=store&utm_campaign=powered_by&utm_source=cocleares",
+          "t": "Desarrollado por Jumpseller"
+        },
+        {
+          "h": "https://cochlear.azimuthmd.com",
+          "t": ""
+        }
+      ],
+      "politica": [],
+      "largo_texto": 2820,
+      "muestra": "Azimuth Medical Devices único Distribuidor Certificado Cochlear® en Chile\n   \nAzimuth Cochlear\n \nHOME\nIMPLANTES COCLEARES\nIMPLANTES ACÚSTICOS\nNUESTROS ACCESORIOS\nCONSERJERÍA Y VOLUNTARIOS\nCONTACTO\nPREGUNTAS FRECUENTES\nBLOG-CONECTADOS\nNOTICIAS - SUS HISTORIAS CON COCHLEAR\nSistema Osia®\nla reinvención\ndel implante\nauditivo\nCONOZCA MÁS\nProcesador Nucleus 8\nMás pequeño, más inteligente\ny mejor conectado,\nEl procesador de sonido Nucleus® 8 abre un mundo de posibilidades\nCONOZCA MÁS\nProcesador Kanso 2",
+      "cta_en_pantalla": [
+        {
+          "t": "contacto",
+          "h": "/"
+        },
+        {
+          "t": "hola@azimuthmd.com",
+          "h": "mailto:hola@azimuthmd.com"
+        },
+        {
+          "t": "escribenos solo por whatsapp \n+569200841",
+          "h": "tel:<b>EscríbenossoloporWhatsapp</b> <br>+56920084196"
+        },
+        {
+          "t": "contacto",
+          "h": "/contact"
+        }
+      ],
+      "formulario_en_pantalla": true,
+      "estructura": {
+        "h1": 1,
+        "h2": 14,
+        "palabras": 403
+      }
+    },
+    "captura": "r2-B.jpg"
+  },
+  "peticiones": [
+    {
+      "fase": "A",
+      "url": "https://cochlear.azimuthmd.com/",
+      "metodo": "GET",
+      "tipo": "Document",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://use.fontawesome.com/releases/v5.7.2/css/all.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/app.css?1616785141",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/color_pickers.min.css?1787572396",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://files.jumpseller.com/common/packs/js/jumpseller-2.0.1-bf38c9a0f664f9e3.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://images.jumpseller.com/store/cocleares/store/logo/logos_juntos-big-raya.png?1619579959",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/component_banners.css?1616785142",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/component_testimonials.min.css?1787572396",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/component_slider.css?1616785137",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/component_instagram.css?1616785140",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093229/2021-04-28T03%3A31%3A56.943Z2.png?1619580864",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093232/2021-08-23T19%3A45%3A28.159Zbannerwebcochlear-2.png?1629747949",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093235/2021-04-28T03%3A32%3A23.235Z3.png?1619580864",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/settings/1ff32f2c8ab528500872/Disen%CC%83o%20sin%20ti%CC%81tulo%20%2828%29.png?1703274044",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/cocleares/theme_option/13747046/resize/50/50?1619583103",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/cocleares/theme_option/13747047/resize/50/50?1619583104",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/cocleares/theme_option/13747048/resize/50/50?1619583104",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnx.jumpseller.com/cocleares/theme_option/13747050/resize/50/50?1619583321",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/pay-webpay.png?1616785137",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/pay-visa.png?1616785138",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/pay-master.png?1616785140",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/pay-american.png?1616785137",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/pay-paypal.png?1616785138",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cdn.jsdelivr.net/bootstrap.filestyle/1.1.0/js/bootstrap-filestyle.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/main.js?1616785139",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800%7COpen+Sans:300,400,500,600,700,800%7COpen+Sans:300,400,500,600,700,800",
+      "metodo": "GET",
+      "tipo": "Stylesheet",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://go.botmaker.com/rest/webchat/p/KE0706J6OT/init.js",
+      "metodo": "GET",
+      "tipo": "Script",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-brands-400.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-solid-900.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093263/2021-08-23T19%3A41%3A37.592Z6.png?1629747749",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093271/2021-04-28T13%3A31%3A15.750Z2.png?1619616692",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093279/2021-08-23T19%3A42%3A07.154Z5.png?1629747749",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093287/220527_09_Card_Game_8672.jpeg?1677256616",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093295/2021-08-18T16%3A19%3A50.313Z4.png?1629303769",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://cochlear.azimuthmd.com/instagram-app/media?count=12",
+      "metodo": "GET",
+      "tipo": "XHR",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://use.fontawesome.com/releases/v5.7.2/webfonts/fa-regular-400.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://fonts.gstatic.com/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTUGmu1aB.woff2",
+      "metodo": "GET",
+      "tipo": "Font",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093311/logo-Azimuth-Cochlear_iso.jpg?1619571119",
+      "metodo": "GET",
+      "tipo": "Other",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr6-2.cdninstagram.com/v/t51.82787-15/846612198_18444941278134050_3857243634178080662_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=c0VDa-9WK9kQ7kNvwGzn835&_nc_oc=AdoB6JNgIRsMZfbLDlrSoYAp5Y_XtzpFcadm6I7wKFyxsMiSeqON-D8AAorTHyNW3BM&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr6-1.cdninstagram.com/v/t51.82787-15/842328857_18444294154134050_393159819331528985_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=NowZS99BVGQQ7kNvwEsyKNJ&_nc_oc=AdoT24JWjAbf1_f1bqtxb0JZlzWWcp7ibwjoBU2njvMPFaL3xeDVh3D02xHKYPcyZDU&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_g",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr6-2.cdninstagram.com/v/t51.82787-15/836198178_18443944534134050_4216500185444938709_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=1yzjwFXrg-wQ7kNvwHQ_-9I&_nc_oc=Adrlzi4ZALESN8ieAsxVxf3Y8RW6mblz6nXA9G5a-FDre_I87qklQ8CIP05tiJsFmF8&_nc_zt=23&_nc_ht=scontent-lhr6-2.cdninstagram.com&edm=ANo9K5cEA",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr6-1.cdninstagram.com/v/t51.82787-15/836084394_18442847203134050_3409747909159196224_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=tZ_bODqZ-64Q7kNvwEzKFgC&_nc_oc=AdqBjdhBR6NuYaBdU2USzRGFU3Cjz2c4sYT8wZWSnN9TKszkk5VZJN2nTujKEGbyXeA&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=ANo9K",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr6-1.cdninstagram.com/v/t51.82787-15/821405248_18441603610134050_8476953677911556278_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=Vb0AZXKcIPEQ7kNvwHHepMP&_nc_oc=AdqrmkQcH73R4o9oAR06jxJ88juZwSbKS7C5YFqf0EF8jY84pBCyPyEUF7FlmI_K8FY&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=ANo9K5cEA",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr6-1.cdninstagram.com/v/t51.82787-15/818636512_18441067585134050_5973778780216322218_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=yDGhTGYEG0oQ7kNvwHmSoyb&_nc_oc=Adr_gD4sbmJAsYj6WF25u3zaTCrjMQPr8S9QFeqSnO0l51p-rgWB0zWhjygqUPxefAw&_nc_zt=23&_nc_ht=scontent-lhr6-1.cdninstagram.com&edm=ANo9K5cEA",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr11-1.cdninstagram.com/v/t51.82787-15/799767601_18438511117134050_2147910139384087869_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=lwcmMg0Ek5gQ7kNvwGlY_YG&_nc_oc=Adokvl-VRXgzDlvAgxV08mt-MfuEvjwu35RwBnTJ_EJpBsf5z3RX2PN8nhxEJ4eOQzg&_nc_zt=23&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=ANo9K5c",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr11-1.cdninstagram.com/v/t51.82787-15/794957896_18437964739134050_2489229297475234624_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiRkVFRC5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=B_mRTeZaIdMQ7kNvwGXBxsK&_nc_oc=AdpLlNaGK54A4b2XZ-2QX6RqsZB3NcCUzCuTus-JVstoRWedhHmH5xjwRAmM-huGP5c&_nc_zt=23&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=ANo9K5cEAAAA&_n",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr11-1.cdninstagram.com/v/t51.82787-15/786453724_18436495729134050_3138122325302583714_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=dYEixiXtGPQQ7kNvwGgjc5v&_nc_oc=Adouf8xwk66E3mw9h88ReKipeUfIVzm2lH9UY2l3VB4UGM1p2UXdKPTuj1yN77lfTnI&_nc_zt=23&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=ANo",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr11-1.cdninstagram.com/v/t51.82787-15/786955474_18436056727134050_3097110755069381670_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=jpCviPtn2KQQ7kNvwF83e_7&_nc_oc=AdoR00Ea_bLiLILBRF1LKsryW1XlqmJLLIS4Wa6psQbQF7csJeKZnaKhpOcSqTV0Lvs&_nc_zt=23&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=ANo9K5c",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr11-1.cdninstagram.com/v/t51.82787-15/766517645_18432658837134050_1971899421695890856_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=mA3-gDwHuH0Q7kNvwG2uVs9&_nc_oc=AdpdEqFz8MwlmeXxT-SyCxgRTicFEF5O9Ben9Z91VghNu2ia877IhgSnt1ck31zZ780&_nc_zt=23&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=ANo",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    },
+    {
+      "fase": "A",
+      "url": "https://scontent-lhr11-1.cdninstagram.com/v/t51.82787-15/765239748_18432326242134050_6969612293690161275_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=WtixoewZUJkQ7kNvwGSVuM1&_nc_oc=AdpeVyhoz2yYzmlNvAX3AJ5IfrlvDL7M6x2Bn9V_h5I_o8_2IWfU7GAsc2Og4i2AnfI&_nc_zt=23&_nc_ht=scontent-lhr11-1.cdninstagram.com&edm=ANo",
+      "metodo": "GET",
+      "tipo": "Image",
+      "clasif": null
+    }
+  ],
+  "setCookies": [
+    {
+      "fase": "A",
+      "nombre": "_session_id",
+      "desde": "cochlear.azimuthmd.com"
+    },
+    {
+      "fase": "A",
+      "nombre": "_session_id",
+      "desde": "cochlear.azimuthmd.com"
+    }
+  ],
+  "peso": {
+    "total_bytes": 10748073,
+    "al_abrir_bytes": 10748073,
+    "n_peticiones": 59,
+    "mas_pesados": [
+      {
+        "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093271/2021-04-28T13%3A31%3A15.750Z2.png?1619616692",
+        "bytes": 1715492
+      },
+      {
+        "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093295/2021-08-18T16%3A19%3A50.313Z4.png?1629303769",
+        "bytes": 1432438
+      },
+      {
+        "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093263/2021-08-23T19%3A41%3A37.592Z6.png?1629747749",
+        "bytes": 1328879
+      },
+      {
+        "url": "https://assets.jumpseller.com/store/cocleares/themes/374404/options/39093279/2021-08-23T19%3A42%3A07.154Z5.png?1629747749",
+        "bytes": 955221
+      }
+    ]
+  },
+  "html_len": 61645
+}
