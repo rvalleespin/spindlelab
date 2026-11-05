@@ -34,7 +34,7 @@ Preguntar primero, también.
 
 ## 2 · SALUD
 
-**133 palabras · ~46 segundos**
+**129 palabras · ~44 segundos**
 
 Alguien entra a tu sitio a pedir hora.
 Antes de que apriete nada, el sitio ya instaló un rastreador en su teléfono.
@@ -50,7 +50,8 @@ Y cambia menos de lo que parece.
 Al que acepta lo sigues midiendo igual.
 Hice un chequeo gratis que te dice si tu sitio lo tiene.
 Soy Ramón, de SpindleLab.
-La próxima persona que entre a pedir hora, pregúntale primero.
+Medir está bien.
+Preguntar primero, también.
 
 ---
 

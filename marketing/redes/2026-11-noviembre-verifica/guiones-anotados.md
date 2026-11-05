@@ -79,7 +79,7 @@ es lo que hace que el loop se sienta continuo.
 
 **Fórmula:** 1 · Enseñar la Prueba (principal) · 5 · Quitar la Excusa (secundaria)
 
-**132 palabras, 45 segundos.** Rehecho tres veces el 5-nov; el historial completo abajo.
+**130 palabras, 45 segundos.** Rehecho tres veces el 5-nov; el historial completo abajo.
 
 ⚠️ **Tono: el más difícil de los cuatro.** *"Ya dice algo de esa persona"* se dice **plano y bajo**,
 nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se sostiene solo.
@@ -122,9 +122,9 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
   sitio lo tiene.
   Soy Ramón, de SpindleLab.                         [REMATE ABAJO]
 
-[ÚLTIMO GANCHO · enlaza con la primera línea]
-  La próxima persona que entre a pedir hora,        [ENTONACIÓN SUSPENDIDA]
-  pregúntale primero.                               [REMATE ABAJO]
+[ÚLTIMO GANCHO · la firma de la campaña]
+  Medir está bien.                                  [ENTONACIÓN SUSPENDIDA]
+  Preguntar primero, también.                       [REMATE ABAJO]
 ```
 
 ---
@@ -321,9 +321,19 @@ es justo lo que la skill de voz marca.
 **abre con una escena**: *«Alguien entra a tu sitio a pedir hora»*. La concesión no se pierde, la
 carga el quita-excusas.
 
-**Y el cierre es otro:** *«La próxima persona que entre a pedir hora, pregúntale primero»*. Engancha
-con la primera línea, así que el loop sigue, pero no es el remate del café. **El remate del café se
-queda en el café, donde nació.**
+**El cierre se intentó cambiar y Ramón lo repuso:** *"el cierre no lo quites, eso es lo único que
+dejaría"*. Se había reemplazado por un remate propio (*«La próxima persona que entre a pedir hora,
+pregúntale primero»*) para que no se pareciera al del café.
+
+**Vuelve *«Medir está bien. Preguntar primero, también»*, y es la decisión correcta.** Es la firma de
+la campaña: la tesis en seis palabras. **Una firma que se repite en las cuatro piezas vale más que un
+loop perfecto por pieza.**
+
+⚠️ **Consecuencia, dicha para que nadie la "arregle" después:** con la apertura de escena
+(*«Alguien entra a tu sitio a pedir hora»*), el cierre **ya no engancha gramaticalmente** con la
+primera línea, como sí pasa en el del café. El enlace queda temático: el cierre dice el principio y
+el replay muestra la escena donde aplica. **Es más débil como loop y está aceptado a cambio de la
+firma.**
 
 ⚠️ **Lo único que sí se repite a propósito es la solución** (el cartel y la referencia europea). Es
 el producto: tiene que decirse igual en las cuatro piezas o deja de reconocerse.
