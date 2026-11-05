@@ -57,3 +57,13 @@ export function medioDe(copia, archivo) {
   if (!hallado) throw new Error(`Falta el medio «${archivo}» en la copia «${copia.id}» de texto-obra.json`);
   return hallado;
 }
+
+// La imagen de cabecera de una página interna (obra E15): su alt y, si lo tiene, su pie, los dos de Clara
+// (<prefijo>.hero.alt, <prefijo>.hero.pie). El alt es obligatorio: si falta, el build se cae.
+export function heroDe(prefijo, ...copias) {
+  const t = textoDe(...copias);
+  const alt = t(`${prefijo}.hero.alt`).texto;
+  let pie;
+  try { pie = t(`${prefijo}.hero.pie`).texto; } catch { pie = undefined; }
+  return { alt, pie };
+}

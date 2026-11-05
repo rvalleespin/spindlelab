@@ -14,8 +14,12 @@ import Miga from '../components/a/Miga.astro';
 import Icono from '../components/a/Icono.astro';
 import { LAYOUT_A } from '../components/a/layout-a';
 import { metodo } from '../data/archivo/interiores.mjs';
+import HeroImagen from '../components/a/HeroImagen.astro';
+import { heroDe } from '../data/archivo/texto.mjs';
+import tHeroMet from '../data/archivo/texto/metodo.json';
 
 const m = metodo();
+const hero = heroDe('metodo', tHeroMet);
 ---
 <Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
@@ -24,6 +28,8 @@ const m = metodo();
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1] }]} />
       <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
+      {/* LA IMAGEN DE CABECERA (E15; 3-nov, Ramón: franja bajo el título, como el hero de la home) */}
+      <HeroImagen slug='metodo' alt={hero.alt} pie={hero.pie} enCabecera animado />
       <p class="cuerpo caja">{m.linea}</p>
       <div class="botones">
         {m.botones.map((b) => <a class={`boton boton--${b.clase}`} href={b.href}>{b.texto}</a>)}

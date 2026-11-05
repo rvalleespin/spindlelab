@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/trabajo.json",
- "sha256": "e0fe09f89514274be3c989bb322fad7a5e11d91b02b40dd768dc839a53ef8961",
+ "sha256": "9a90761f1d71ebc19ca803e9663a2c99a8c8f3faf6834224f6a7f1dc2288a424",
  "id": "trabajo",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -77,6 +77,14 @@
       "donde": "aria-label del grupo de botones del filtro (cada botón con aria-pressed)",
       "estado": "queda",
       "nota": "Sale junto con el filtro si Diego lo saca."
+     },
+     {
+      "id": "trabajo.hero.alt",
+      "rol": "nota",
+      "texto": "La foto de una jarra colgada de un cordel con un perro de ropa, y al lado una mano que cuelga una plomada: trabajo terminado y medido.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/trabajo-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
      }
     ],
     "borrado": [
@@ -116,8 +124,8 @@
     "tipo": "Propio",
     "anio": "2026",
     "linea": "Propio · Herramienta",
-    "destino": "https://verifica.spindlelab.cl/",
-    "cursor": "Ver el sitio",
+    "destino": "/trabajo/verifica-y-cumple/",
+    "cursor": "Ver el caso",
     "fuente": "inventario-casos §2.3 y §4.1 y §7 («describe señales; no certifica»). Sin puntajes: ni el 36, ni el 73, ni el 100.",
     "estado": "queda",
     "origen": "texto-paso2.json trabajo.entradas «verifica-y-cumple»",
@@ -125,11 +133,13 @@
      "Cloudflare Pages Functions"
     ],
     "pie": "La persona a caballo de esta portada está generada con IA.",
-    "nota": "Enlaza al producto, que responde; con la flecha ↗ en SVG junto al nombre y, oculto a la vista, «(sitio aparte: verifica.spindlelab.cl)».",
+    "nota": "Enlaza a su página de caso (/trabajo/verifica-y-cumple/), interna. «pie» queda para la tarjeta de la portada que sigue usando /servicios/desarrollo-web/; en /trabajo/ la única tarjeta es el spot, con «pie_video».",
     "antes_linea": "Propio · 2026",
     "por_que_linea": "Ramón, 2-nov-2026: las fichas van sin año (igual que en la home, que usa el mismo componente).",
-    "pie_video": "Este video está generado con IA, a partir de la portada.",
-    "descripcion_video": "Un dibujo a lápiz de una persona a caballo se forma solo sobre papel en blanco, toma color fucsia como acuarela y sale galopando por un cielo azul."
+    "pie_video": "Este video está generado con IA.",
+    "descripcion_video": "Un dibujo a lápiz de una persona a caballo se forma solo sobre papel en blanco, toma color fucsia como acuarela y sale galopando por un cielo azul.",
+    "antes_destino": "https://verifica.spindlelab.cl/ («Ver el sitio»)",
+    "por_que_destino": "Ramón, 3-nov-2026 (obra E16): «para verifica solo dejaría el video como tarjeta de vista previa. de ahí pasa a la descripción completa del proyecto con el video ahora en el hero». Una sola tarjeta (el spot) y el enlace a su página de caso, con el cursor de Combeau."
    }
   ],
   "orden": "Combeau primero y Verifica y Cumple después: el único caso con página, y la pieza propia que enlaza afuera."

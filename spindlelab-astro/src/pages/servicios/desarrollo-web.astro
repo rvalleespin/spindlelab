@@ -23,7 +23,7 @@ import Imagen from '../../components/a/Imagen.astro';
 import TrabajoFijo from '../../components/a/TrabajoFijo.astro';
 import Icono from '../../components/a/Icono.astro';
 import { LAYOUT_A } from '../../components/a/layout-a';
-import { textoDe, igualQue, contiene, medioDe } from '../../data/archivo/texto.mjs';
+import { textoDe, heroDe, igualQue, contiene, medioDe } from '../../data/archivo/texto.mjs';
 import caso from '../../data/archivo/texto/caso-combeau.json';
 import { SITIO, trozos, siguiente, soloMontosDe, monto } from '../../data/archivo/servicios.mjs';
 import comun from '../../data/archivo/texto/comun.json';
@@ -31,6 +31,7 @@ import dw from '../../data/archivo/texto/desarrollo-web.json';
 import trabajo from '../../data/archivo/texto/trabajo.json';
 import medios from '../../data/archivo/medios.json';
 import oferta from '../../data/oferta-v3.json';
+import HeroImagen from '../../components/a/HeroImagen.astro';
 
 const t = textoDe(dw, comun);
 const pagina = dw.texto;
@@ -71,9 +72,12 @@ const incluye = ['1', '2', '3', '4', '7'].map((n) => {
 // es un sitio aparte: la flecha ↗, el aviso para el lector de pantalla y el pie de la persona generada con IA.
 // Combeau va con su book de modelo y no con la portada de fotografía: esa ya es la franja de esta misma página.
 const libro = { src: '/v3/trabajo/combeau/combeau-modelo-169.webp', ancho: 1600, alto: 900, chica: { src: '/v3/trabajo/combeau/combeau-modelo-960.webp', ancho: 960 }, alt: (medioDe(caso, 'combeau-modelo-169.webp') as { alt: string }).alt };
+const S = '/v3/trabajo/verifica/verifica-spot2';
 const obra = [
   { id: 'combeau-fotografia', ancha: libro, angosta: { src: '/v3/medios/combeau-modelo-45.webp', ancho: 780, alto: 975 } },
-  { id: 'verifica-y-cumple', ancha: m['verifica-y-cumple-53'], angosta: m['verifica-y-cumple-45'] },
+  // 3-nov (Ramón): Verifica y Cumple va con su spot, como en la home y en /trabajo/, y lleva a su caso
+  { id: 'verifica-y-cumple', ancha: { src: `${S}-1280-poster.webp`, ancho: 1280, alto: 720, chica: { src: `${S}-960-poster.webp`, ancho: 960 }, alt: '' }, angosta: { src: `${S}-390-poster.webp`, ancho: 624, alto: 780 },
+    video: { ancho: { webm: `${S}-1280.webm`, mp4: `${S}-1280.mp4` }, angosto: { webm: `${S}-390.webm`, mp4: `${S}-390.mp4` } } },
 ].map((p) => {
   const e = entrada(p.id);
   return {
@@ -86,8 +90,10 @@ const obra = [
       ancha: { src: p.ancha.src, ancho: p.ancha.ancho, alto: p.ancha.alto, chica: (p.ancha as { chica?: { src: string; ancho: number } }).chica },
       angosta: { src: p.angosta.src, ancho: p.angosta.ancho, alto: p.angosta.alto },
       alt: p.ancha.alt,
-      pie: e.pie,
+      pie: (p as { video?: unknown }).video ? (e as { pie_video?: string }).pie_video : e.pie,
+      video: (p as { video?: { ancho: { webm: string; mp4: string }; angosto: { webm: string; mp4: string } } }).video,
     }],
+    descripcion: (p as { video?: unknown }).video ? (e as { descripcion_video?: string }).descripcion_video : undefined,
   };
 });
 const refObra = t('dw.obra.entradas').texto;
@@ -184,6 +190,7 @@ const jsonLd = {
   ],
 };
 const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=4', alt: `SpindleLab: ${dos('dw.h1').tinta} ${dos('dw.h1').gris}` };
+const hero = heroDe('dw', dw);
 ---
 <Layout title={title} description={description} ogImage={og.src} ogImageAlt={og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
@@ -192,6 +199,8 @@ const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=4', alt: `SpindleLab:
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: miga[0], href: '/' }, { texto: miga[1], href: '/servicios/' }, { texto: miga[2] }]} />
       <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{dos('dw.h1').tinta}</span> <span class="gris">{dos('dw.h1').gris}</span></h1>
+      {/* LA IMAGEN DE CABECERA (E15; 3-nov, Ramón: franja bajo el título, como el hero de la home) */}
+      <HeroImagen slug='desarrollo-web' alt={hero.alt} pie={hero.pie} enCabecera />
       <p class="cuerpo caja">{trozosEntradilla.map((p) => (p.href ? <a href={p.href}>{p.texto}</a> : p.texto))}</p>
       <div class="botones">
         <a class="boton boton--claro" href={aPlanes}>{bPlanes.texto}</a>
@@ -201,7 +210,7 @@ const og = { src: '/assets/img/og-e12-desarrollo-web.jpg?v=4', alt: `SpindleLab:
 
     {/* 2 · LA FRANJA (§2.4.2, §3.4): Combeau fotografía a 2,39 desde 834 y 16:9 bajo 834, recortada al centro */}
     <figure class="reticula franja" data-entrada>
-      <Imagen src={franja.medio.src} alt={franja.alt} ancho={franja.medio.ancho} alto={franja.medio.alto} primeraPantalla />
+      <Imagen src={franja.medio.src} alt={franja.alt} ancho={franja.medio.ancho} alto={franja.medio.alto} />
       <figcaption class="pie"><span class="tinta">{franja.pieza.nombre}</span> <span class="rotulo">· {franja.pieza.linea}</span></figcaption>
     </figure>
 

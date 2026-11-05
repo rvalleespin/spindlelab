@@ -24,7 +24,10 @@ import Video from '../components/a/Video.astro';
 import Icono from '../components/a/Icono.astro';
 import TrabajoFijo from '../components/a/TrabajoFijo.astro';
 import { LAYOUT_A } from '../components/a/layout-a';
-import { textoDe, igualQue, medioDe } from '../data/archivo/texto.mjs';
+import { textoDe, igualQue, medioDe, heroDe } from '../data/archivo/texto.mjs';
+import tPaid from '../data/archivo/texto/paid-media.json';
+import tAco from '../data/archivo/texto/acompanamiento-mensual.json';
+import tDiag from '../data/archivo/texto/diagnostico.json';
 import comun from '../data/archivo/texto/comun.json';
 import home from '../data/archivo/texto/home.json';
 import trabajo from '../data/archivo/texto/trabajo.json';
@@ -75,12 +78,12 @@ const precioAco = igualQue(precioDe('acompanamiento-mensual', 0), tx('home.acomp
 igualQue(aco.nombre, dos('home.acompanamiento.h2').tinta, 'home, el nombre del Acompañamiento mensual');
 const partimos = t('home.partimos.boton');
 
-// ---- 3 · Trabajo: dos piezas, tres tarjetas (el recorrido de Combeau en video, su book y Verifica y Cumple)
+// ---- 3 · Trabajo: dos piezas, tres tarjetas (el recorrido de Combeau en video, su book y el spot de Verifica y Cumple).
+// E16 (Ramón, 3-nov): Verifica y Cumple queda con una sola tarjeta, el spot, y lleva a su página de caso.
 const recorrido = medio('combeau-fotografia-recorrido-1440.webm');
 const modelo = medio('combeau-modelo-169.webp');
-const verifica = medio('verifica-y-cumple-53.webp');
-const spot = medio('verifica-spot-1280.webm');
-const S = '/v3/trabajo/verifica/verifica-spot';
+const spot = medio('verifica-spot2-1280.webm');
+const S = '/v3/trabajo/verifica/verifica-spot2';
 const V = '/v3/trabajo/combeau/combeau-fotografia-recorrido';
 const piezas = [
   {
@@ -112,19 +115,12 @@ const piezas = [
     descripcion: spot.descripcion,
     enlace: { texto: tx('home.trabajo.verifica.boton'), destino: t('home.trabajo.verifica.boton').destino as string },
     tarjetas: [
-      // el spot (idea de Ramón, 2-nov): el caballo a lápiz en un cuaderno toma color y sale galopando; la portada, después
+      // el spot (idea de Ramón, 2-nov): el caballo a lápiz en un cuaderno toma color y sale galopando. La portada salió en E16
       {
         ancha: { src: `${S}-1280-poster.webp`, ancho: 1280, alto: 720, chica: { src: `${S}-960-poster.webp`, ancho: 960 } },
         angosta: { src: `${S}-390-poster.webp`, ancho: 624, alto: 780 },
         video: { ancho: { webm: `${S}-1280.webm`, mp4: `${S}-1280.mp4` }, angosto: { webm: `${S}-390.webm`, mp4: `${S}-390.mp4` } },
         pie: tx(spot.pie as string),
-      },
-      {
-        ancha: { src: m['verifica-y-cumple-53'].src, ancho: m['verifica-y-cumple-53'].ancho, alto: m['verifica-y-cumple-53'].alto },
-        angosta: { src: m['verifica-y-cumple-45'].src, ancho: m['verifica-y-cumple-45'].ancho, alto: m['verifica-y-cumple-45'].alto },
-        alt: verifica.alt,
-        // obligatorio con la -53 y con la -45: en las dos se ve la persona a caballo (comparacion-koto.md §5.1)
-        pie: tx(verifica.pie as string),
       },
     ],
   },
@@ -139,12 +135,13 @@ const panel = medio('combeau-panel-colecciones-169.webp');
 const chequeo = medio('chequeo-spindlelab-169.webp');
 const chequeoEnlace = t('home.busqueda.chequeo');
 
-// ---- 6 a 8 · La fila de tres, sin imagen por ahora (Ramón, 2-nov-2026: ni las del hilo, ni ilustraciones, ni pizarra, ni
-// fotos de prueba lo convencieron; se publica solo con texto y las imágenes vuelven cuando se definan con referencias).
+// ---- 6 a 8 · La fila de tres. 3-nov (Ramón, prueba): cada columna lleva la imagen de cabecera de la página a la que
+// lleva (E15), con el alt y el pie de esa página (heroDe): la linterna de Paid Media, el bonsái de Acompañamiento y el
+// tensiómetro del chequeo. Así la home y la página destino se reconocen entre sí.
 const notas = [
-  { k: 'anuncios', precio: anunciosPrecio, enlaces: [paid, redes] },
-  { k: 'acompanamiento', precio: { a: precioAco, b: '' }, enlaces: [aco] },
-  { k: 'partimos', precio: null, enlaces: [{ texto: partimos.texto as string, href: partimos.destino as string }] },
+  { k: 'anuncios', precio: anunciosPrecio, enlaces: [paid, redes], img: 'paid-media', hero: heroDe('paid-media', tPaid) },
+  { k: 'acompanamiento', precio: { a: precioAco, b: '' }, enlaces: [aco], img: 'acompanamiento-mensual', hero: heroDe('acompanamiento-mensual', tAco) },
+  { k: 'partimos', precio: null, enlaces: [{ texto: partimos.texto as string, href: partimos.destino as string }], img: 'diagnostico', hero: heroDe('diagnostico', tDiag) },
 ].map((n) => ({ ...n, h2: dos(`home.${n.k}.h2`), texto: tx(`home.${n.k}.texto`) }));
 
 // ---- 9 · Contacto
@@ -273,10 +270,18 @@ const SIZES_BANDA = '(min-width: 1194px) 62vw, (min-width: 834px) 58vw, calc(100
       </figure>
     </section>
 
-    {/* 6 a 8 · LA FILA DE TRES, por ahora solo texto: tres columnas iguales, cada una bajo su filete */}
+    {/* 6 a 8 · LA FILA DE TRES: tres columnas iguales, cada una bajo su filete, con la imagen de su página arriba */}
     <section class="k-tres k-tres--texto" aria-labelledby="h-anuncios">
       {notas.map((n, i) => (
         <article class="k-nota">
+          <figure class="k-nota__fig">
+            <div class="medio k-nota__medio">
+              <picture>
+                <img src={`/v3/heroes/${n.img}-169-800.webp`} srcset={`/v3/heroes/${n.img}-169-800.webp 800w, /v3/heroes/${n.img}-169.webp 1600w`} sizes="(min-width: 834px) 31vw, 92vw" alt={n.hero.alt} width="1600" height="900" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+            {n.hero.pie && <figcaption class="pie">{n.hero.pie}</figcaption>}
+          </figure>
           <h2 class="t-titulo" id={i === 0 ? 'h-anuncios' : undefined}><span class="tinta">{n.h2.tinta}</span> <span class="gris">{n.h2.gris}</span></h2>
           <p class="chico caja">{n.texto}</p>
           {n.precio && <p class="k-precio">{n.precio.a}{n.precio.b && <> <span class="gris">{n.precio.b}</span></>}</p>}

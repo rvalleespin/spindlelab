@@ -1,0 +1,39 @@
+---
+// LA IMAGEN DE CABECERA DE UNA PÁGINA INTERNA (obra E15, 3-nov-2026): bajo la cabecera (miga, h1, entradilla) y antes
+// del primer bloque, al ancho de la caja de la cabecera. Radio 6, como los .medio del sistema (spec §3.3); 4:5 bajo 834
+// y desde 834 21:9 en la franja bajo el h1 (<slug>-219, rehechas para ese encuadre) o 16:9 en el blog (<slug>-169). Es la primera pantalla: eager, fetchpriority high.
+// El alt y el pie los escribe Clara en texto/<pagina>.json (<pagina>.hero.alt y .hero.pie, que leen con heroDe()):
+// aquí no se escribe una letra. Va en un <picture>, así que el fundido de carga de .medio > img no la toca: se ve de
+// entrada, que es lo que se quiere en la imagen más grande de la primera pantalla.
+interface Props {
+  slug: string;
+  alt: string;
+  pie?: string;
+  /** Dentro de una columna que ya tiene su retícula (el índice del blog): sin la retícula ni el margen propio. */
+  enColumna?: boolean;
+  /** Dentro de la cabecera, justo bajo el h1 (3-nov, Ramón): franja ancha y baja, como el hero de la home. */
+  enCabecera?: boolean;
+  /** 3-nov (Ramón): las isométricas van animadas desde 834 (<slug>-anim-219.webm/.mp4, 21:9 a 1600×686, bucle de ~6,6 s; la franja de cabecera usa <slug>-219.webp). Bajo 834 queda
+   *  la imagen quieta 4:5. Usa el Video de A: arranca a la vista, se pausa con su botón y no corre con movimiento reducido. */
+  animado?: boolean;
+}
+const { slug, alt, pie, enColumna = false, enCabecera = false, animado = false } = Astro.props;
+const base = `/v3/heroes/${slug}`;
+import Video from './Video.astro';
+---
+<figure class:list={['hero-int', { reticula: !enColumna && !enCabecera, 'hero-int--columna': enColumna, 'hero-int--cab': enCabecera }]} data-hero={slug}>
+  {animado ? (
+    <Video poster={enCabecera ? `${base}-219.webp` : `${base}-169.webp`} ancho={enCabecera ? 2400 : 1600} alto={enCabecera ? 1029 : 900} fuentes={[{ desde: 834, webm: `${base}-anim-219.webm`, mp4: `${base}-anim-219.mp4` }]}
+      posterAngosto={{ src: `${base}-45.webp`, ancho: 900, alto: 1125 }} descripcion={alt} primeraPantalla />
+  ) : (
+    <div class="medio">
+      <picture>
+        <source media="(max-width: 833px)" srcset={`${base}-45.webp`} width="900" height="1125" type="image/webp" />
+        {enCabecera
+          ? <img src={`${base}-219.webp`} alt={alt} width="2400" height="1029" loading="eager" fetchpriority="high" decoding="async" />
+          : <img src={`${base}-169.webp`} alt={alt} width="1600" height="900" loading="eager" fetchpriority="high" decoding="async" />}
+      </picture>
+    </div>
+  )}
+  {pie && <figcaption class="pie">{pie}</figcaption>}
+</figure>

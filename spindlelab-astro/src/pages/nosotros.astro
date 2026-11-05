@@ -21,9 +21,13 @@ import Icono from '../components/a/Icono.astro';
 import { LAYOUT_A } from '../components/a/layout-a';
 import { nosotros } from '../data/archivo/interiores.mjs';
 import medios from '../data/archivo/medios.json';
+import HeroImagen from '../components/a/HeroImagen.astro';
+import { heroDe } from '../data/archivo/texto.mjs';
+import tHeroNos from '../data/archivo/texto/nosotros.json';
 
 const m = nosotros();
 const retrato = medios.medios['ramon-vallejos-34'];
+const hero = heroDe('nosotros', tHeroNos);
 ---
 <Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
@@ -32,6 +36,8 @@ const retrato = medios.medios['ramon-vallejos-34'];
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1] }]} />
       <h1 class="t-declaracion" id="h-titulo">{m.h1}</h1>
+      {/* LA IMAGEN DE CABECERA (E15; 3-nov, Ramón: franja bajo el título, como el hero de la home) */}
+      <HeroImagen slug='nosotros' alt={hero.alt} pie={hero.pie} enCabecera animado />
       <p class="cuerpo caja">{m.linea}</p>
       <div class="botones">
         {m.botones.map((b) => <a class={`boton boton--${b.clase}`} href={b.href}>{b.texto}</a>)}
@@ -41,7 +47,7 @@ const retrato = medios.medios['ramon-vallejos-34'];
     {/* 2 · EL RETRATO Y LA BIO: el retrato 3:4 entero en c1-c5, la bio en c7-c14 apoyada abajo */}
     <section class="seccion reticula quien" aria-labelledby="h-trayectoria">
       <div class="quien__retrato" data-entrada>
-        <Imagen src={retrato.src} alt={m.alt} ancho={retrato.ancho} alto={retrato.alto} clase="p-34" primeraPantalla />
+        <Imagen src={retrato.src} alt={m.alt} ancho={retrato.ancho} alto={retrato.alto} clase="p-34" />
       </div>
       <div class="quien__txt">
         <p class="cuerpo caja">{m.bio}</p>

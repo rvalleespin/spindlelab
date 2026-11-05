@@ -1,8 +1,8 @@
-# Aprobado, sin publicar: la analítica no ve a la IA (no es que la IA influya poco)
+# Publicado el 4-nov: la analítica no ve a la IA (no es que la IA influya poco)
 
-**Cuándo:** propuesto MIÉRCOLES 4-nov-2026 (el lunes 2-nov salió el de la ley, editado) · **Canal:** perfil personal de Ramón · **Voz:** singular
+**Cuándo:** MIÉRCOLES 4-nov-2026 (el lunes 2-nov había salido el de la ley, editado) · **Canal:** perfil personal de Ramón · **Voz:** singular
 **Escribe:** agente-copywriter (Renata) · **Aprobó el texto:** Ramón, 2-nov ("me gusta. este sí tiene mejor sentido para potenciar el negocio")
-**Estado:** ✅ TEXTO APROBADO · ⏳ SIN PUBLICAR (falta que Ramón confirme el día). Antes de publicar: mirar el perfil y comparar el texto del editor con este.
+**Estado:** ✅ PUBLICADO el 4-nov-2026 en el perfil personal de Ramón (urn:li:activity:7523730231447285760), tras su «hoy toca publicar», con el primer comentario de abajo. Verificado en vivo: el texto del perfil coincide con el aprobado y el post muestra 1 comentario (el de Ramón). Mediciones pendientes: 2-3 días (6-7 nov) para comparar con el 28-oct (55 impresiones), el 30-oct (69) y el 2-nov.
 
 ## Historia del borrador (por qué no es la primera versión)
 

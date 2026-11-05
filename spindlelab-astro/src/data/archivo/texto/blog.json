@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/blog.json",
- "sha256": "469eae5aee7fba5c29cb89d7488bf89294bf5bcddd652aeb0fd11032b8d8eae2",
+ "sha256": "4c9b6277b958659580ee56974d3c44891a5a87062d05b93bfb8d828c8bc9adc9",
  "id": "blog",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -101,6 +101,14 @@
       "destino": "/diagnostico/",
       "nota": "Pasa de principal a secundario.",
       "estado": "queda"
+     },
+     {
+      "id": "blog.hero.alt",
+      "rol": "nota",
+      "texto": "Un sombrero de copa en corte, con el resorte y el conejo escondidos en el fondo, y una mano con varita entre dos columnas de texto: el truco, explicado por dentro.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/blog-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
      }
     ]
    },

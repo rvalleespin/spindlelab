@@ -14,8 +14,12 @@ import Miga from '../../components/a/Miga.astro';
 import Icono from '../../components/a/Icono.astro';
 import { LAYOUT_A } from '../../components/a/layout-a';
 import { indiceBlog } from '../../data/archivo/blog.mjs';
+import HeroImagen from '../../components/a/HeroImagen.astro';
+import { heroDe } from '../../data/archivo/texto.mjs';
+import tHeroBlog from '../../data/archivo/texto/blog.json';
 
 const m = indiceBlog();
+const hero = heroDe('blog', tHeroBlog);
 ---
 <Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
@@ -28,6 +32,7 @@ const m = indiceBlog();
         <p class="chico">{m.linea}</p>
       </div>
       <div class="blog__columna">
+        <HeroImagen slug='blog' alt={hero.alt} pie={hero.pie} enColumna />
         <ol class="filas-blog" aria-label="Artículos, del más reciente al más antiguo">
           {m.filas.map((f) => (
             <li class="fila-blog">

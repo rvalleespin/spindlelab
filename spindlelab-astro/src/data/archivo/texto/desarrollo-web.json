@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/desarrollo-web.json",
- "sha256": "bc8d95dc374d2ffd4d92b9954b2bc62c9226101f95a2665418ce605994ec0d7d",
+ "sha256": "03ed54017cfd27c9c51836a031cfdeb68b6ad236b26e9bf2a94a0410ed302585",
  "id": "desarrollo-web",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -76,6 +76,22 @@
       "texto": "La portada del sitio de fotografía de Bernardo Combeau: un retrato en luz verde con su frase.",
       "uso": "alt",
       "donde": "La franja 2,39:1 (combeau-fotografia-169 recortada al centro; spec §3.4)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "dw.hero.alt",
+      "rol": "nota",
+      "texto": "Unas manos cortan con tijera una página web impresa en papel, con una huincha de medir y alfileres al lado: un sitio hecho a la medida, como una prenda.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/desarrollo-web-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
+     },
+     {
+      "id": "dw.hero.pie",
+      "rol": "pie",
+      "texto": "Imagen generada con IA.",
+      "uso": "pie",
+      "origen": "E15, 3-nov-2026: la foto lleva manos y se lee como fotografía; el pie lo dice.",
       "estado": "nuevo"
      }
     ]
@@ -170,11 +186,13 @@
       "id": "dw.obra.entradas",
       "rol": "nota",
       "uso": "referencia",
-      "texto": "Dos entradas del índice, con su nombre, bajada y la línea corta (tipo · año): Combeau (→ /trabajo/combeau/) · Verifica y Cumple (→ https://verifica.spindlelab.cl/). Ver «trabajo.entradas».",
+      "texto": "Dos entradas del índice, con su nombre, bajada y la línea corta (tipo · año): Combeau (→ /trabajo/combeau/) · Verifica y Cumple (→ /trabajo/verifica-y-cumple/). Ver «trabajo.entradas».",
       "estado": "cambia",
       "antes": "Tres entradas del índice: Combeau (→ /trabajo/combeau/#fotografia) · Praxi (→ /trabajo/praxi/) · Sesenta, concepto (→ /trabajo/sesenta/).",
       "por_que": "Praxi y Sesenta salen (brief de obra §3 y §5). Combeau es un solo caso con dos partes y su entrada lleva a la página, sin ancla.",
-      "origen": "texto-paso2.json «dw.obra.entradas»"
+      "origen": "texto-paso2.json «dw.obra.entradas»",
+      "antes_e16": "Verifica y Cumple (→ https://verifica.spindlelab.cl/)",
+      "por_que_e16": "E16: Verifica y Cumple tiene página de caso y su entrada de trabajo.json lleva ahí (es una nota de referencia que el build compara con el destino)."
      },
      {
       "id": "dw.obra.boton",

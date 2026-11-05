@@ -17,8 +17,12 @@ import Chequeo from '../components/a/Chequeo.astro';
 import Icono from '../components/a/Icono.astro';
 import { LAYOUT_A } from '../components/a/layout-a';
 import { diagnostico } from '../data/archivo/interiores.mjs';
+import HeroImagen from '../components/a/HeroImagen.astro';
+import { heroDe } from '../data/archivo/texto.mjs';
+import tHeroDiag from '../data/archivo/texto/diagnostico.json';
 
 const m = diagnostico();
+const hero = heroDe('diagnostico', tHeroDiag);
 ---
 <Layout title={m.title} description={m.description} ogImage={m.og.src} ogImageAlt={m.og.alt} {...LAYOUT_A}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(m.jsonLd)} />
@@ -27,6 +31,8 @@ const m = diagnostico();
     <section class="reticula int-cab" aria-labelledby="h-titulo">
       <Miga items={[{ texto: m.miga[0], href: '/' }, { texto: m.miga[1] }]} />
       <h1 class="t-declaracion" id="h-titulo"><span class="tinta">{m.h1.tinta}</span> <span class="gris">{m.h1.gris}</span></h1>
+      {/* LA IMAGEN DE CABECERA (E15; 3-nov, Ramón: franja bajo el título, como el hero de la home) */}
+      <HeroImagen slug='diagnostico' alt={hero.alt} pie={hero.pie} enCabecera />
       <p class="cuerpo caja">{m.linea}</p>
       <div class="int-instr" id="chequeo">
         <Chequeo rotulo="" intro="" etiqueta={m.chequeo.etiqueta} ejemplo={m.chequeo.ejemplo} boton={m.chequeo.boton} ayuda={m.chequeo.ayuda} tituloResultado="Resultado del chequeo" />

@@ -1,6 +1,6 @@
 {
  "origen": "marketing/oficina/obras-web/spindlelab-v3/e13/texto/auditoria-seo-tecnica.json",
- "sha256": "24bbc274fdfdefeca080297d91ce600f49298f5246090b6ad1f8cda387527e0b",
+ "sha256": "859d23f55a8d4f8d5f82f59a7b2d27be59f60b5ddbd172e5feeb04ca326fca93",
  "id": "auditoria-seo-tecnica",
  "nota": "Copia tal cual de Clara; no se edita a mano: se vuelve a sacar con e13/herramientas/extraer-texto.mjs.",
  "texto": {
@@ -44,6 +44,14 @@
       "uso": "referencia",
       "origen": "spindlelab-astro/src/data/servicios-v3.json auditoria-seo-tecnica",
       "estado": "cambia"
+     },
+     {
+      "id": "auditoria-seo-tecnica.hero.alt",
+      "rol": "nota",
+      "texto": "Un técnico abre la carcasa de una máquina que muestra una página web por fuera y revisa con lupa los tubos y engranajes etiquetados de adentro: lo que el sitio tiene detrás de lo que se ve.",
+      "uso": "alt",
+      "origen": "E15, 3-nov-2026 (Clara, mirando public/v3/heroes/auditoria-seo-tecnica-169.webp, aprobada por Ramón)",
+      "estado": "nuevo"
      }
     ]
    },
