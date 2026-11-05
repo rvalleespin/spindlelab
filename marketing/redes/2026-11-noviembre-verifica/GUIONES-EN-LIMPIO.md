@@ -42,10 +42,10 @@ Pero esa persona no dijo que sí.
 En la mitad de las clínicas y centros médicos que revisé, pasa eso mismo.
 Nadie en tu clínica decidió eso.
 El rastreador viene así configurado de fábrica, para partir apenas alguien entra.
-En Europa esto se resolvió hace años.
-Es ese cartel que has visto mil veces, el que pregunta antes de instalar nada.
-Y la ley acá va a pedir lo mismo.
-Al paciente que dice que sí lo mides igual.
+En Europa los sitios piden permiso hace años.
+Es el cartel que has visto mil veces, el que pregunta antes de que el rastreador entre.
+Acá la ley va a pedir lo mismo.
+Y al que acepta lo mides igual.
 Hice un chequeo gratis que te dice si tu sitio lo tiene.
 Soy Ramón, de SpindleLab.
 Medir está bien.

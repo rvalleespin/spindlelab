@@ -109,12 +109,15 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
 
 [SOLUCIÓN · la urgencia es comparativa, no fabricada]
 [TEXTO EN PANTALLA]: g2-4 · el cartel maquetado (sin bloque)
-  En Europa esto se resolvió hace años.             [ÉNFASIS: hace años]
+  En Europa los sitios piden permiso
+  hace años.                                        [ÉNFASIS: hace años]
                                                     [REMATE ABAJO]
-  Es ese cartel que has visto mil veces, /
-  el que pregunta antes de instalar nada.           [ENTONACIÓN SUSPENDIDA]
-  Y la ley acá va a pedir lo mismo.                 [ÉNFASIS: acá] [REMATE ABAJO]
-  Al paciente que dice que sí / lo mides igual.     [REMATE ABAJO]
+  Es el cartel que has visto mil veces, /
+  el que pregunta antes de que el
+  rastreador entre.                                 [ÉNFASIS: rastreador]
+                                                    [ENTONACIÓN SUSPENDIDA]
+  Acá la ley va a pedir lo mismo.                   [ÉNFASIS: acá] [REMATE ABAJO]
+  Y al que acepta lo mides igual.                   [REMATE ABAJO]
 
 [CIERRE]
 [TEXTO EN PANTALLA]: g0-cierre · verifica.spindlelab.cl
@@ -364,3 +367,29 @@ frases no se hablaban.
 
 **Regla:** cuando una solución suene trivial, el problema no es la solución, es que se la está
 presentando como un trámite. Se nombra por lo que cambia, no por lo que es.
+
+### 5-nov-2026 · cuatro pronombres sin dueño en cuatro frases
+
+Ramón señaló el bloque de Europa sin decir qué fallaba. Leído con el oído, era
+siempre lo mismo: **cada frase apuntaba a algo que no estaba nombrado.**
+
+| Decía | Apuntaba a |
+|---|---|
+| *«**Esto** se resolvió»* | ninguna cosa nombrada |
+| *«**Es** ese cartel»* | encadenaba con ese «esto», ya vago |
+| *«va a pedir **lo mismo**»* | dos frases atrás |
+| *«**Al paciente**… **lo** mides»* | el clítico a cinco palabras de su dueño, que es la regla del 2-nov incumplida otra vez |
+
+Más *«antes de instalar nada»*: instalar **qué**, y «nada» en afirmativa suena raro dicho.
+
+**Y cuatro sujetos distintos en cuatro frases seguidas** (Europa, el cartel, la ley, la medición),
+sin nada que las encadenara.
+
+**Arreglo: nombrar cada cosa, y encadenar con una palabra que ya venía del guion.**
+
+> En Europa los sitios piden **permiso** hace años. / Es el cartel que has visto mil veces, / el que
+> pregunta antes de que el **rastreador** entre. / Acá la ley va a pedir lo mismo. / Y al que acepta
+> lo mides igual.
+
+«Rastreador» es el hilo: la misma palabra que abre el problema cierra la solución. Primera frase,
+qué hacen allá; segunda, con qué; tercera, que acá viene igual; cuarta, la objeción muerta.
