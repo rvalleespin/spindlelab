@@ -33,7 +33,7 @@ Preguntar primero, también.
 
 ## 2 · SALUD
 
-**132 palabras · ~46 segundos**
+**131 palabras · ~45 segundos**
 
 Alguien entra a tu sitio a pedir hora.
 Antes de que apriete nada, el sitio ya instaló un rastreador en su teléfono.
@@ -42,9 +42,9 @@ Pero esa persona no dijo que sí.
 En la mitad de las clínicas y centros médicos que revisé, pasa eso mismo.
 Nadie en tu clínica decidió eso.
 El rastreador viene así configurado de fábrica, para partir apenas alguien entra.
-En Europa los sitios piden permiso hace años.
-Es el cartel que has visto mil veces, el que pregunta antes de que el rastreador entre.
-Acá la ley va a pedir lo mismo.
+Lo que falta es ese cartel de cookies que has visto mil veces en sitios de afuera.
+Pregunta antes, y el rastreador espera.
+La ley acá va a pedir que preguntes antes.
 Y al que acepta lo mides igual.
 Hice un chequeo gratis que te dice si tu sitio lo tiene.
 Soy Ramón, de SpindleLab.

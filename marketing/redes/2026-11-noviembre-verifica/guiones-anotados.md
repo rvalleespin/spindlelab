@@ -109,14 +109,12 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
 
 [SOLUCIÓN · la urgencia es comparativa, no fabricada]
 [TEXTO EN PANTALLA]: g2-4 · el cartel maquetado (sin bloque)
-  En Europa los sitios piden permiso
-  hace años.                                        [ÉNFASIS: hace años]
-                                                    [REMATE ABAJO]
-  Es el cartel que has visto mil veces, /
-  el que pregunta antes de que el
-  rastreador entre.                                 [ÉNFASIS: rastreador]
+  Lo que falta es ese cartel de cookies /
+  que has visto mil veces en sitios
+  de afuera.                                        [ÉNFASIS: mil veces]
                                                     [ENTONACIÓN SUSPENDIDA]
-  Acá la ley va a pedir lo mismo.                   [ÉNFASIS: acá] [REMATE ABAJO]
+  Pregunta antes, / y el rastreador espera.         [ÉNFASIS: espera] [REMATE ABAJO]
+  La ley acá va a pedir que preguntes antes.        [ÉNFASIS: acá] [REMATE ABAJO]
   Y al que acepta lo mides igual.                   [REMATE ABAJO]
 
 [CIERRE]
@@ -385,11 +383,24 @@ Más *«antes de instalar nada»*: instalar **qué**, y «nada» en afirmativa s
 **Y cuatro sujetos distintos en cuatro frases seguidas** (Europa, el cartel, la ley, la medición),
 sin nada que las encadenara.
 
-**Arreglo: nombrar cada cosa, y encadenar con una palabra que ya venía del guion.**
+**Primer intento, fallido.** Se nombraron tres de los cuatro y **quedó «lo mismo» en pie**. Ramón:
+*"dices «acá la ley va a pedir lo mismo», ¿qué va a pedir? Está extraño"*. Y: *"no la encuentro muy
+aporte o sigue un poco vacía"*.
 
-> En Europa los sitios piden **permiso** hace años. / Es el cartel que has visto mil veces, / el que
-> pregunta antes de que el **rastreador** entre. / Acá la ley va a pedir lo mismo. / Y al que acepta
-> lo mides igual.
+**Lo segundo era el diagnóstico de fondo: la frase de Europa no era sobre quien escucha.** Era una
+clase de geografía ocupando un renglón entero. El reconocimiento que aportaba se consigue con dos
+palabras dentro de otra frase.
 
-«Rastreador» es el hilo: la misma palabra que abre el problema cierra la solución. Primera frase,
-qué hacen allá; segunda, con qué; tercera, que acá viene igual; cuarta, la objeción muerta.
+**Versión final:**
+
+> Lo que falta es ese cartel de **cookies** / que has visto mil veces en sitios de **afuera**. /
+> Pregunta **antes**, / y el rastreador **espera**. / La ley acá va a pedir que preguntes **antes**. /
+> Y al que **acepta** lo mides **igual**.
+
+Tres cosas: **Europa pasa de frase a dos palabras** (*«en sitios de afuera»*); **«lo mismo»
+desaparece** y la ley pide algo nombrado (*que preguntes antes*); y entra la frase que faltaba,
+*«Pregunta antes, y el rastreador espera»*, que **describe el cartel por lo que hace y no por su
+forma**, con la palabra que viene desde el principio del guion.
+
+**Regla:** una referencia que ocupa una frase entera tiene que ser sobre quien escucha. Si es sobre
+otro país, otro rubro u otra empresa, cabe dentro de otra frase o no cabe.
