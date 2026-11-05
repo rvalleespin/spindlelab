@@ -1,8 +1,25 @@
 # Tablero de sesiones de SpindleLab
 
-**Fecha:** martes 3-nov-2026, 13:35 (hora de Chile) · **Lo escribe:** la sesión maestra (reemplaza a la troncal anterior, [Agente Troncal Marketing Spindlelab](#local_27fe0fb8-d429-438b-9960-baa49cc922cd)) · **Se actualiza:** cada vez que Ramón pide el panorama.
+**Fecha:** martes 3-nov-2026, 13:35 (hora de Chile) · **puesto al día el 5-nov** (secciones 0 y 2) · **Lo escribe:** la sesión maestra (reemplaza a la troncal anterior, [Agente Troncal Marketing Spindlelab](#local_27fe0fb8-d429-438b-9960-baa49cc922cd)) · **Se actualiza:** cada vez que Ramón pide el panorama.
 
 **Cómo leer el estado.** Cada dato lleva su prueba. *Comprobado* quiere decir que lo vi yo en git, en el sitio vivo, en la cuenta de Meta o en Gmail. *Reportado, sin verificar* quiere decir que lo dice la propia sesión y no pude contrastarlo. *No visible* quiere decir que no puedo ver ni contactar esa sesión. Las horas son de Chile; la app las guarda en UTC y aquí van restadas 3 horas.
+
+---
+
+## 0. Cifras vigentes (fuente única: los demás documentos las citan, no las repiten)
+
+*Puestas al día el 5-nov-2026.*
+
+| Qué | Dato | Marca |
+|---|---|---|
+| Clientes | **3**: Bernardo Combeau ($512.000, pagado), María Loreto ($1.416.100 con IVA; anticipo de $424.830 cobrado) y Carlos Soya (piloto de Meta de 3 meses: $200.000/mes de honorarios + $100.000/mes de pauta con su tarjeta; **el primer pago no consta en Gmail**) | [R] |
+| Cobrado | ≈ $937.000 sin contar a Carlos, según Ramón. Con comprobante en el repo: $156.800 | [R] |
+| Cómo llegaron | Por contacto directo (y un referido) y uno por la red social personal de Ramón (respuesta de Ramón, 5-nov). **Ninguno por la campaña de Meta** | [R] |
+| Anuncios | Google $100.411 (detenida desde el 24-ago, 0 conversiones). Meta julio $20.656. Meta Verifica y Cumple $21.653 al 3-nov (1.062 clics, 647 vistas de página, **0 pedidos de clientes**) | [M][V] |
+| Pixel de la cuenta de Meta | `1027024050073502`, único dataset; ambos sitios lo cargan desde el 2-nov. Lo que se midió antes con `2885353628478565` no sirve | [V 5-nov] |
+| Alcance | LinkedIn personal 383, página 15, Instagram 19 seguidores | [M] |
+| Verifica y Cumple | 0 pedidos de clientes reales; ensayo propio de $1.190 el 4-nov. Su fecha de ley sigue falsa en vivo (ver sección 1, fila 2) | [M][V] |
+| Cortes vigentes | ≥ 3 llamadas de venta sostenidas al **19-nov**; ≥ 1 cliente nuevo al **3-dic**; campaña de Meta se decide el **7-nov** | [M] |
 
 ---
 
@@ -50,7 +67,7 @@
 
 | Sesión | Qué hace | Estado real | Última actividad | Espera de Ramón | ¿Choca con otra? |
 |---|---|---|---|---|---|
-| [Verificaycumple Cloudflare auto-deploy](#local_f95bf610-db5b-4685-b9d1-27b9f707e355) | Todo Verifica y Cumple: sitio, pagos, entrega, campaña. Lleva 4.117 mensajes desde el 8-sep. | **Reportado y a medias:** movió los avisos internos de Web3Forms a Resend, sacó el contracargado del camino automático, escribió la política 1.9 y los términos; dice 4.778 pruebas verdes. **Comprobado:** nada de eso está publicado ni guardado en git: 19 archivos modificados en `/Users/ramon/vyc-ley21719` (rama `laboratorio/ley-21719`, 0 commits nuevos) y en vivo la política todavía nombra a Web3Forms 19 veces y no dice «1.9». El último trabajo (confirmación de compra, aviso de inicio, entrega del borrador) **se cortó sin escribir nada**, según la sesión lateral de abajo. | 3-nov 13:36, **corriendo** | Ver sección 4, punto 4: el sí a «commitear, ensayar la compra y apagar ultracode»; después la razón social de Flow y el OK de publicar (el push a producción lo corres tú). | **No ha corregido las dos frases falsas de la fecha**: el aviso del 28-oct y su actualización del 2-nov están en archivos, y el segundo aviso solo vive en la rama de la sesión de redes (ver sección 3). |
+| [Verificaycumple Cloudflare auto-deploy](#local_f95bf610-db5b-4685-b9d1-27b9f707e355) | Todo Verifica y Cumple: sitio, pagos, entrega, campaña. Lleva 4.117 mensajes desde el 8-sep. | **Reportado y a medias:** movió los avisos internos de Web3Forms a Resend, sacó el contracargado del camino automático, escribió la política 1.9 y los términos; dice 4.778 pruebas verdes. **Puesto al día el 5-nov:** ya está guardado en git (rama `laboratorio/ley-21719`, carpeta limpia, 0 commits sin subir). El 3-nov no lo estaba. **Sigue en vivo la fecha falsa de la ley** (comprobado hoy). El último trabajo (confirmación de compra, aviso de inicio, entrega del borrador) **se cortó sin escribir nada**, según la sesión lateral de abajo. | 3-nov 13:36, **corriendo** | Ver sección 4, punto 4: el sí a «commitear, ensayar la compra y apagar ultracode»; después la razón social de Flow y el OK de publicar (el push a producción lo corres tú). | **No ha corregido las dos frases falsas de la fecha**: el aviso del 28-oct y su actualización del 2-nov están en archivos, y el segundo aviso solo vive en la rama de la sesión de redes (ver sección 3). |
 | [btw: en esa parte estoy un poco perdido…](#local_8b5fec69-85db-43e1-bfa9-7a2c83f7319b) | Conversación lateral que salió de la anterior: Ramón dijo que estaba perdido con lo que llevan. | **Reportado:** respondió que hay 18 archivos del producto y 12 de pruebas sin commitear (1.974 líneas), que nada está desplegado desde la rotación de la clave de esta mañana, y que las cuatro cosas que faltan **no bloquean el ensayo de la compra**. Su recomendación: commitear todo, ensayar la compra tú mismo y apagar ultracode. **Comprobado en parte:** hay 19 archivos modificados sin commit en `/Users/ramon/vyc-ley21719`. | 3-nov 13:30, inactiva | Responder sí o no a esa recomendación (sección 4, punto 4). | Es la misma obra que la sesión de arriba: hablan de lo mismo y hay que contestar en una sola. |
 | [Harden spindlelab.cl checker regexes](#local_842ed7b7-91a1-4465-9861-2104e3586f0d) | Endurecimiento del chequeo (23-sep). | Sin trabajo propio fuera de `main`. Sin actividad hace 41 días. | 23-sep | Archivable. | No. |
 
