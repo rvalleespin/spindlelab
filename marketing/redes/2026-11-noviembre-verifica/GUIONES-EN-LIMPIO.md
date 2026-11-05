@@ -1,9 +1,8 @@
 # Los cuatro guiones en limpio, para ensayar en voz alta
 
-**Generados desde los `teleprompter-*.txt`**, no escritos a mano, para que no vuelvan a
-desincronizarse. Una frase por renglón.
+**Generados desde los `teleprompter-*.txt`**, no escritos a mano. Una frase por renglón.
 
-Léelos en voz alta una vez antes de grabar. Esa prueba encontró un defecto real las tres veces que
+Léelos en voz alta una vez antes de grabar. Esa prueba encontró un defecto real todas las veces que
 se hizo, y es la única de la matriz que una sesión de Claude no puede hacer.
 
 
@@ -35,17 +34,15 @@ Preguntar primero, también.
 
 ## 2 · SALUD
 
-**143 palabras · ~49 segundos**
+**131 palabras · ~45 segundos**
 
 Saber de dónde llegan tus pacientes está bien.
 Medirlo en tu sitio, también.
-Pero para medir, tu sitio instala un rastreador en el teléfono del paciente.
-Sirve para reconocerlo cuando vuelva.
-Y se instala antes de que acepte nada.
+Pero que alguien entre a tu sitio a pedir hora ya dice algo de esa persona.
+Y para medir, tu sitio instala un rastreador en su teléfono, antes de que acepte nada.
 En la mitad de las clínicas y centros médicos que revisé, pasa eso mismo.
 No lo decidió nadie en tu clínica.
-Vino instalado con el sitio, y trabaja apenas alguien entra.
-Que alguien entre a pedir una hora ya dice algo de esa persona.
+Vino instalado con el sitio.
 Se arregla con ese cartel que le pregunta al paciente si acepta las cookies.
 El que ves en cualquier sitio europeo.
 Si el paciente acepta, mides igual que hoy.

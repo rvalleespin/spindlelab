@@ -79,44 +79,33 @@ es lo que hace que el loop se sienta continuo.
 
 **Fórmula:** 1 · Enseñar la Prueba (principal) · 5 · Quitar la Excusa (secundaria)
 
+**129 palabras, 44 segundos.** Rehecho el 5-nov: ver «dos historias», abajo.
+
 ⚠️ **Tono: el más difícil de los cuatro.** *"Ya dice algo de esa persona"* se dice **plano y bajo**,
 nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se sostiene solo.
 
 ```
 [GANCHO · 0 a 3 s]
 [TEXTO EN PANTALLA]: g2-1 · SIN PREGUNTAR / AL PACIENTE.
-[ACCIÓN/VISUAL]: Ramón a cámara desde el primer fotograma. Sin inserto.
 
-  Saber de dónde llegan tus pacientes está bien.    [ENTONACIÓN SUSPENDIDA]
+  Saber de dónde llegan tus pacientes
+  está bien.                                        [ENTONACIÓN SUSPENDIDA]
   Medirlo en tu sitio, también.                     [REMATE ABAJO]
 
-[ZONA DE ENGANCHE]
+[ZONA DE ENGANCHE · la idea propia del rubro manda]
+  Pero que alguien entre a tu sitio
+  a pedir hora / ya dice algo de esa persona.       [ÉNFASIS: ya dice algo]
+                                      [REMATE ABAJO · plano, sin peso]
+
 [TEXTO EN PANTALLA]: g2-2 · LA MITAD
-
-  Pero para medir, tu sitio instala
-  un rastreador en el teléfono del paciente.        [ÉNFASIS: rastreador]
-  Sirve para reconocerlo cuando vuelva.             [ENTONACIÓN SUSPENDIDA]
-  Y se instala antes de que acepte nada.            [ÉNFASIS: antes] [REMATE ABAJO]
-
+  Y para medir, tu sitio instala un rastreador
+  en su teléfono, / antes de que acepte nada.       [ÉNFASIS: antes]
   En la mitad de las clínicas y centros
   médicos que revisé, / pasa eso mismo.             [ÉNFASIS: la mitad]
                                                     [REMATE ABAJO]
 
   No lo decidió nadie en tu clínica.                [ENTONACIÓN SUSPENDIDA]
-  Vino instalado con el sitio, / y trabaja
-  apenas alguien entra.                             [REMATE ABAJO]
-
-  Que alguien entre a pedir una hora /
-  ya dice algo de esa persona.                      [ÉNFASIS: ya dice algo]
-                                                    [REMATE ABAJO · plano, sin peso]
-
-[DESARROLLO]
-[TEXTO EN PANTALLA]: g2-3 · PUEDES SEGUIR MIDIENDO
-  Puedes seguir midiendo igual.                     [REMATE ABAJO]
-  Solo hay que preguntarle al paciente primero.     [ÉNFASIS: primero]
-
-  Y preguntar primero va a ser obligatorio
-  por ley.                                          [REMATE ABAJO]
+  Vino instalado con el sitio.                      [REMATE ABAJO]
 
 [SOLUCIÓN]
 [TEXTO EN PANTALLA]: g2-4 · el cartel maquetado (sin bloque)
@@ -124,6 +113,9 @@ nunca con dramatismo. Si suena a advertencia, está mal dicho: el argumento se s
   al paciente si acepta las cookies.                [ENTONACIÓN SUSPENDIDA]
   El que ves en cualquier sitio europeo.            [ÉNFASIS: europeo]
   Si el paciente acepta, / mides igual que hoy.     [REMATE ABAJO]
+
+  Y preguntar primero va a ser obligatorio
+  por ley.                                          [REMATE ABAJO]
 
 [CIERRE]
 [TEXTO EN PANTALLA]: g0-cierre · verifica.spindlelab.cl
@@ -255,3 +247,27 @@ Meterla en los otros tres sería relleno, y la guía misma lo advierte.
 
 **La fórmula 4, «la caja mágica», no se usa en ninguno.** Bautizar un método con un nombre pegajoso
 sería fabricar autoridad, que es lo que esta marca no hace.
+
+### 5-nov-2026 · el guion de salud tenía dos historias
+
+Ramón: *"el guion 2 está muy largo y enredado, se pierde con tanta historia"*.
+
+**No era el largo.** Eran 143 palabras contra 138 del café: cinco más. **Eran dos argumentos
+compitiendo.** El del rastreador, igual que en el café, **más** el propio de salud (*que alguien
+entre a pedir hora ya dice algo de esa persona*), que llegaba suelto después del quita-excusas y no
+se enganchaba con nada.
+
+Es la regla que ya estaba escrita en la skill de voz y que no apliqué: **una sola idea; si al
+resumir la pieza necesitas una «y», sobra algo.** Salud necesitaba una: era sobre rastreadores **y**
+sobre lo que revela una visita médica.
+
+**El arreglo no fue recortar, fue elegir cuál manda**, y manda la de salud: si no, el guion es el
+del café con la palabra cambiada, que es justo lo que la skill marca como plantilla.
+
+**Lo que salió, y por qué podía salir:** *"sirve para reconocerlo cuando vuelva"* y *"trabaja apenas
+alguien entra"*. Las dos explicaban por qué el rastreador es peligroso, que en el del café hacía
+falta. **Acá sobraban**, porque el peligro lo dice ya la primera frase: lo que queda registrado es
+que alguien buscó atención médica. Explicarlo dos veces era lo que lo enredaba.
+
+**Prueba de que quedó bien:** ahora se resume sin «y». *En una clínica la visita misma es el dato, y
+queda registrada antes de que el paciente diga que sí.*
