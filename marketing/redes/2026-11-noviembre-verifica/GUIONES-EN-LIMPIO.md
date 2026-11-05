@@ -75,12 +75,12 @@ Decir qué haces con ellos, también.
 
 ## 4 · TUTORIAL
 
-**92 palabras · ~32 segundos**
+**98 palabras · ~34 segundos**
 
 Puedes ver qué guarda tu sitio.
 Sin que nadie te lo cuente, y en treinta segundos.
 Lo que aparezca ahí nadie lo aceptó.
-Abre tu sitio en incógnito.
+Abre tu sitio en una ventana de incógnito, en tu teléfono.
 Espera diez segundos sin tocar nada.
 Y aprieta el candado que está al lado de la dirección.
 Ahí salen los rastreadores que tu sitio dejó en tu teléfono.
