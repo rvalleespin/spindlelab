@@ -66,7 +66,10 @@
 // mismo código verificado que usa el chequeo rápido, con sus 1.206 comprobaciones detrás.
 // Duplicarlo sería crear una segunda versión que se va a desincronizar, y la lógica que se
 // desincronice va a ser justamente la de seguridad.
-import { destinoPermitido, normalizarDominio } from './chequeo.js';
+import { destinoPermitido, normalizarDominio, chequear } from './chequeo.js';
+// La misma función que decide la compuerta de la compra. Si acá se usara otra, el contador
+// diría una cosa y la venta haría otra, que es el defecto que este contador existe para medir.
+import { elegibilidad } from './elegibilidad.js';
 
 /* ================================================================== *
  * Tiempos del guion. Medidos, no intuidos.                            *
@@ -1692,6 +1695,48 @@ export async function anotarUso(kv, que, origen, ahora = new Date()) {
   }
 }
 
+/**
+ * Anota si al visitante se le habría ofrecido el botón de compra, y por qué no.
+ *
+ * ── POR QUÉ EXISTE (5-nov-2026) ─────────────────────────────────────────────────────────
+ *
+ * Al medir el embudo quedó un hueco que impedía decidir qué arreglar. Los números reales de
+ * la campaña, del 23-oct al 5-nov:
+ *
+ *     847  visitas a la página (Meta: $26.879, CTR 9,74%, CPC $20)
+ *     101  corrieron el chequeo rápido
+ *      35  llegaron al chequeo profundo
+ *       0  apretaron «quiero el kit» — cero, nunca, de nadie
+ *
+ * Y no había forma de saber si esos 35 **vieron** el botón. Son dos problemas distintos con
+ * arreglos opuestos: si lo vieron y no quisieron, hay que trabajar la oferta o el precio; si
+ * nunca se les ofreció porque el chequeo dijo que estaban bien, el problema es a quién le
+ * estamos hablando, y tocar la página no serviría de nada.
+ *
+ * ⚠️ Se anota el veredicto DEL SERVIDOR, el de `elegibilidad()`, que es la misma función que
+ * decide la compuerta de la compra. No el del front: el front tiene su propia copia de la
+ * lista y lo que importa saber es si la venta estaba disponible, no si el navegador la pintó.
+ *
+ * Y se anota el MOTIVO, no solo sí/no. «No se le ofreció» sin la razón deja la misma duda un
+ * nivel más abajo: no es lo mismo que no le falte nada que no haberlo podido medir.
+ */
+export async function anotarElegibilidad(kv, veredicto, ahora = new Date()) {
+  if (!kv || !veredicto) return;
+  const dia = ahora.toISOString().slice(0, 10);
+  const claves = [`uso:elegible:${dia}:${veredicto.puede ? 'si' : 'no'}`];
+  // El motivo solo cuando no puede: cuando puede, el motivo no agrega nada y sería una clave
+  // por día que nadie va a leer.
+  if (!veredicto.puede && veredicto.motivo) {
+    claves.push(`uso:nocompra:${dia}:${String(veredicto.motivo).slice(0, 40)}`);
+  }
+  for (const clave of claves) {
+    try {
+      const actual = Number((await kv.get(clave)) || 0);
+      await kv.put(clave, String(actual + 1), { expirationTtl: TTL_USO_S });
+    } catch {}
+  }
+}
+
 /* ================================================================== *
  * El endpoint.                                                        *
  * ================================================================== */
@@ -1792,6 +1837,23 @@ export async function onRequestGet({ request, env }) {
   if (r.ok && !r.deCache) {
     await anotarUso(env && env.VYC_TOPES, 'profundo',
       origenDeLaPagina(url.searchParams.get('origen'), request.headers.get('Referer'), url));
+
+    /* ── Y SI SE LE HABRÍA OFRECIDO EL BOTÓN (5-nov-2026) ─────────────────────────────
+     *
+     * Hace falta el chequeo rápido porque `elegibilidad()` mezcla señales de los dos
+     * informes: `cmp` sale del rápido y las otras cuatro del profundo. Es una petición HTTP
+     * más sobre un endpoint que acaba de abrir un navegador remoto, así que el costo es
+     * marginal.
+     *
+     * NO puede romper la respuesta: el visitante ya tiene su informe y esto es contabilidad
+     * nuestra. Si el rápido falla o la elegibilidad revienta, se anota lo que se pueda y el
+     * chequeo sale igual. */
+    try {
+      const rapido = await chequear(entrada);
+      if (rapido && rapido.ok) {
+        await anotarElegibilidad(env && env.VYC_TOPES, elegibilidad({ rapido, profundo: r }));
+      }
+    } catch { /* la contabilidad no le quita el informe a nadie */ }
   }
 
   return new Response(JSON.stringify(r), {
