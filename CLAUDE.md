@@ -6,7 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is **not a software project** — it is the operations repository for **SpindleLab**, a solo consultancy whose line since 30-oct-2026 is «Sitios web a medida y marketing con IA» (Desarrollo web is the main business; SEO técnico + visibilidad en motores de IA / AEO/GEO now connect to the site instead of being the core; see **Línea vigente** below) run by Ramón Vallejos Espíndola for Chilean B2B and YMYL companies. It holds three distinct things:
 
-- **`spindlelab-site/`** — the public marketing website (static HTML, deployed to Cloudflare Pages).
+- **`spindlelab-astro/`** — the public marketing website (Astro, deployed to Cloudflare Pages from `main`). The older `spindlelab-site/` (static HTML) and `spindlelab-site-v2/` (Vite) were superseded on 2-ago-2026: do not edit them.
+- **Not in `main`:** the Verifica y Cumple product (`verificaycumple/`, branch `laboratorio/ley-21719`) and the Motor de revisión previa (branch `claude/motor-revision-previa-build`). Where each thing deploys from, and every open branch, is in `marketing/oficina/mapa-de-ramas.md`. Where sessions stand, and the current numbers, are in `marketing/oficina/tablero-sesiones.md`.
 - **`marketing/`** — the brand system, 90-day strategy, content production (LinkedIn/Instagram), cold-outbound material, and cross-session coordination docs.
 - **`ventas/`** — sales pipeline (`pipeline.md`) and delivered-project tracking (`proyectos-en-curso.md` — deliberately a separate document: pipeline tracks a prospect until won/lost, proyectos-en-curso tracks delivery phases of an already-won project). The "Desarrollo Web" client-site work itself (e.g. Bernardo Combeau's site) is reported to live in a sibling repo, not here.
 
@@ -27,7 +28,7 @@ The defining structure here is that **multiple Claude Code sessions work on this
 - `agente-troncal-marketing` — the trunk/coordinator. The **only** session meant to write the shared tracking docs (`marketing/plan-operativo-90-dias.md`, `ventas/pipeline.md`, the outbound trackers). Runs in the cloud (Claude Code Remote).
 - `persona-social-media`, `persona-director-creativo` — LinkedIn/Instagram content and visual production (carousels, Reels, Stories, banners).
 - `persona-paid-media` (Google Ads) / `persona-meta-ads` (Meta Ads) — paid channels. Browser access differs per session/environment (see below) — never assume one has it just because another does.
-- `persona-disenador-web` — `spindlelab-site/` and client web-dev delivery. For anything
+- `persona-disenador-web` — `spindlelab-astro/` and client web-dev delivery. For anything
   with its own composition (a site, a redesign, a landing) this session is now one role
   inside a pipeline, not the whole job — see **The web team** below.
 - `mini-diagnostico` — generates the free one-page review («revisión gratis de una página») offered to prospects who already have a site, answered within one business day («un día hábil»). Until oct-2026 it was the «mini-diagnóstico en 48 h».
@@ -100,9 +101,9 @@ Every skill is duplicated: the versioned copy in `.claude/skills/` (this repo) *
 
 ## Commands
 
-There is **no build, lint, or test suite** — `spindlelab-site/` is hand-written static HTML with inline/linked CSS, no framework, no package.json.
+There is **no repo-wide build or lint**. `spindlelab-astro/` is an Astro site with its own `package.json` (`npm run dev`, `npm run build`, `npm run verificar`); its build runs guard checks, and when a guard fails you fix the text, not the guard. Everything else in the repo is documents and data.
 
-- **Preview the site locally:** serve the folder with any static server, e.g. `python3 -m http.server --directory spindlelab-site 8000`.
+- **Preview the site locally:** `cd spindlelab-astro && npm run dev` (or `npm run build && npm run preview` to see what ships).
 - **Verify a visual/site change before calling it done:** render with headless Chromium rather than trusting the markup by eye.
   - In this cloud environment: `find /opt/pw-browsers -iname "chrome"` to locate the binary, then run with `--headless --no-sandbox --disable-gpu --screenshot=...`.
   - In a local Mac session: the real Chrome binary works the same way (`/Applications/Google Chrome.app/Contents/MacOS/Google Chrome --headless=new --disable-gpu --screenshot=...`).
@@ -110,9 +111,9 @@ There is **no build, lint, or test suite** — `spindlelab-site/` is hand-writte
 - Video b-roll is generated via the Higgsfield MCP; there's no local video compositor, so text overlays are delivered as separate transparent PNGs for assembly in CapCut rather than baked into the clip.
 - **Deploy** is Cloudflare Pages connected to this repo's `main` branch — pushing to `main` is what ships the site.
 
-## The public site (`spindlelab-site/`)
+## The public site (`spindlelab-astro/`)
 
-- One HTML file per route, Spanish (es-CL). `_headers` sets cache policy (fonts/images cached hard and long).
+- One page per route, Spanish (es-CL); text lives in `src/data/` (`*-v3.json`, `archivo/texto/`). `_headers` sets cache policy (fonts/images cached hard and long).
 - **Cache-poisoning trap:** because assets are cached aggressively, overwriting a CSS/image/favicon at the same path needs a bumped version query string (`?v=N`) on every reference, or visitors and even your own checks can keep seeing the stale asset.
 - Blog posts need the same `@graph` JSON-LD (Article + BreadcrumbList + FAQPage, fixed author `#autor-ramon`) and meta-tag structure as existing posts, and publishing one updates three places: the new file, the card in `blog/index.html`, and `sitemap.xml`. Full detail in `.claude/skills/persona-disenador-web/SKILL.md`.
 

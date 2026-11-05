@@ -30,8 +30,10 @@
     lo que entrega el negocio. Oro `#C9A227` escaso (un uso por pieza). Cero prueba
     social inventada; prospectos/clientes sin nombrar sin permiso.
 - **Repo y ramas:** este repo (`SPINDLELAB`). Rama de producción: `main`. Sitio en
-  **Astro v2**, deploy a Cloudflare Pages. `git push` no funciona desde Bash
-  (Keychain) → se empuja por GitHub Desktop.
+  **Astro** (`spindlelab-astro/`, v3 desde el 30-oct-2026), deploy a Cloudflare Pages. `git push`
+  **sí funciona desde Bash** (verificado 3-nov-2026); `gh` no está instalado, así que el PR se abre
+  con el enlace `…/pull/new/<rama>`. **Verifica y Cumple no vive en `main`:** ver
+  `marketing/oficina/mapa-de-ramas.md`.
 - **Restricciones:** nada de cifras/casos/testimonios inventados. Todo lo público
   pasa por revisión humana antes de salir (la marca vende criterio experto; copy
   con olor a IA es anti-credibilidad).
@@ -50,7 +52,10 @@ cliente; su estado por cuenta vive acá.*
 `manuvalleespin@gmail.com` (`497-377-4579`, `authuser=0`) que Chrome abre por
 defecto — verificar el número antes de diagnosticar. Acceso:
 `https://ads.google.com/aw/campaigns?ocid=8402723510&authuser=1`. Campaña de
-Búsqueda activa (14 jul), $1.500 CLP/día, conversión `generate_lead` desde GA4.
+Búsqueda creada el 14-jul, conversión `generate_lead` desde GA4. **Estado al 5-nov-2026: DETENIDA
+desde el 24-ago** (Google la frenó por forma de pago sin validar; decisión del 21-sep: no
+reactivar hasta resolver la conversión del sitio). El presupuesto real era $3.000 CLP/día, no
+$1.500 (`marketing/metricas/checkpoint-dia77-2026-09-21.md`). Gasto total: $100.411, 104 clics, 0 conversiones.
 Criterio de corte: semana 12, ≥2 mini-diagnósticos originados en ads.
 
 **Prospección (Dereck):** **Apollo está CANCELADO** (decisión de Ramón, 26-ago-2026,
@@ -70,9 +75,10 @@ supera el 5%, se corta**. Semana de Fiestas Patrias: cero lotes.
 
 **Meta Ads (Fran):** Página FB `61592147941168` (portafolio propio `1025351160247165`);
 IG profesional `@spindlelab.cl` (`17841414909841532`); cuenta publicitaria
-`2050319242539058` (CLP, Santiago); **Meta Pixel `2885353628478565`** (evento `Lead`
-en `/contacto/`; falta desplegar el Pixel en vivo + acumular tráfico antes de la 1ª
-campaña). Primer uso previsto: **remarketing** de visitantes, no interés frío.
+`2050319242539058` (CLP, Santiago); **Meta Pixel `1027024050073502`** (único dataset de
+la cuenta, verificado en Meta el 5-nov-2026; lo cargan spindlelab.cl y verifica.spindlelab.cl
+desde el 2-nov. El ID `2885353628478565` que figuraba acá cargó del 20-jul al 2-nov y **no es de la
+cuenta**: los datos de ese período no sirven para remarketing). Primer uso previsto: **remarketing** de visitantes, no interés frío.
 
 **Config exacta de la campaña de Google (Gonzalo) — no reconstruir desde cero:**
 Búsqueda únicamente (sin Máx. rendimiento), $1.500 CLP/día. 4 keywords en frase/exacta:
@@ -97,7 +103,7 @@ originados en ads** → si no se cumple, se apaga. Reportes en `marketing/report
 
 ## Estado operacional — Sitio y web (Diego)
 
-Sitio propio en **Astro v2**, deploy a Cloudflare Pages (repo `SPINDLELAB`, rama `main`).
+Sitio propio en **Astro** (`spindlelab-astro/`, v3 desde el 30-oct), deploy a Cloudflare Pages (repo `SPINDLELAB`, rama `main`). Los sitios `spindlelab-site/` y `spindlelab-site-v2/` son anteriores (superados el 2-ago-2026): no se editan.
 Convenciones al publicar un post: copiar la plantilla de un post existente (mismo
 header/footer, clase `.prose` para el cuerpo, `.nota` para callouts, `.faq` con
 `<details>`); **JSON-LD `@graph`** con `Article` + `BreadcrumbList` + `FAQPage`, autor
@@ -119,7 +125,7 @@ secundario). Convenciones vigentes:
 - El **perfil personal de Ramón sí puede compartir/comentar** los posts de la página
   (relajado el 12-jul; da el empujón inicial de alcance). Al compartir, el comentario va
   en su voz personal (1ª persona); los posts de la página los firma la marca.
-- **Cadencia:** página 2 posts/semana (mar y jue); cuenta personal ~1/semana (mié).
+- **Cadencia:** página 2 posts/semana (mié y jue, vigente desde el 9-sep; ver «Estructura semanal» más abajo); cuenta personal ~1/semana (mié).
 - **Formato de la cuenta personal** (no es reciclaje del de empresa): problema del cliente
   → por qué importa ahora (sin cifras/precios, "suenan robóticas") → la solución sin
   vender → storytelling con arco → CTA suave a un servicio. No abrir con "revisé el sitio
